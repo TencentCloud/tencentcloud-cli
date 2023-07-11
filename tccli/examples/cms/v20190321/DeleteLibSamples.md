@@ -7,7 +7,8 @@ Input:
 ```
 tccli cms DeleteLibSamples --cli-unfold-argument  \
     --LibID abc \
-    --SampleIDs abc
+    --SampleIDs abc \
+    --SampleContents 违规
 ```
 
 Output: 

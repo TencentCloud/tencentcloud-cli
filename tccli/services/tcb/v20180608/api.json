@@ -1929,7 +1929,7 @@
           "example": "test-001",
           "member": "string",
           "name": "VersionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1939,7 +1939,7 @@
           "example": "normal",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1949,7 +1949,7 @@
           "example": "1",
           "member": "int64",
           "name": "FlowRatio",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1959,7 +1959,7 @@
           "example": "2020-01-01 12:00:00",
           "member": "string",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1969,7 +1969,7 @@
           "example": "2020-01-01 12:00:00",
           "member": "string",
           "name": "UpdatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1979,7 +1979,7 @@
           "example": "12345",
           "member": "int64",
           "name": "BuildId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1989,7 +1989,7 @@
           "example": "Image",
           "member": "string",
           "name": "UploadType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1999,7 +1999,7 @@
           "example": "test",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2009,7 +2009,7 @@
           "example": "test",
           "member": "ObjectKV",
           "name": "UrlParam",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2019,7 +2019,7 @@
           "example": "1",
           "member": "int64",
           "name": "Priority",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2029,7 +2029,7 @@
           "example": "1",
           "member": "bool",
           "name": "IsDefaultPriority",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -2039,7 +2039,7 @@
           "example": "[]",
           "member": "CloudBaseRunKVPriority",
           "name": "FlowParams",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2049,7 +2049,7 @@
           "example": "1",
           "member": "int64",
           "name": "MinReplicas",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2059,7 +2059,7 @@
           "example": "2",
           "member": "int64",
           "name": "MaxReplicas",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2069,7 +2069,7 @@
           "example": "aa123",
           "member": "string",
           "name": "RunId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2079,7 +2079,7 @@
           "example": "100",
           "member": "int64",
           "name": "Percent",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2089,7 +2089,7 @@
           "example": "1",
           "member": "int64",
           "name": "CurrentReplicas",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2099,7 +2099,7 @@
           "example": "xx",
           "member": "string",
           "name": "Architecture",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -10425,29 +10425,27 @@
       "document": "安全网关版本路由信息限额配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "限额对象 \"ConnectionsLimit\" 或 \"QPSLimit\"",
+          "document": "限额对象 \"ConnectionsLimit\" 或 \"QPSLimit\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ConnectionsLimit",
           "member": "string",
           "name": "LimitObject",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "限额配置",
+          "document": "限额配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{value:1000}",
           "member": "string",
           "name": "LimitConfig",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "FunctionInfo": {
       "document": "函数的信息",
@@ -13199,7 +13197,6 @@
       "document": "安全网关路由",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "安全网关路由名称",
           "example": "无",
@@ -13210,7 +13207,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全网关路由协议",
           "example": "无",
@@ -13221,7 +13217,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全网关路由地址",
           "example": "无",
@@ -13232,7 +13227,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全网关路由描述",
           "example": "无",
@@ -13243,7 +13237,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全网关后端集群id，如果是外网服务，该id与GatewayRountName相同",
           "example": "无",
@@ -13254,7 +13247,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全网关创建时间",
           "example": "无",
@@ -13265,7 +13257,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全网关路由限制\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -13276,7 +13267,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ip代表绑定后端ip。cbr代表云托管服务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cbr",
@@ -13287,7 +13277,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -13298,7 +13287,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.0.0.1",
@@ -13309,7 +13297,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "gatewayversion",
@@ -13320,7 +13307,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "path",
@@ -13331,7 +13317,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求模式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "GET",
@@ -13342,7 +13327,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "4层端口\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "80",
@@ -13350,6 +13334,16 @@
           "name": "GatewayRoutePort",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路由环境ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "env-xxx",
+          "member": "string",
+          "name": "GatewayRouteEnvId",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

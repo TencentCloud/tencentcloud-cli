@@ -84,6 +84,20 @@
       "output": "CreateFlowEvidenceReportResponse",
       "status": "online"
     },
+    "CreateFlowGroupByFiles": {
+      "document": "此接口（CreateFlowGroupByFiles）通过多文件创建合同组签署流程。<br/>\nPDF资源Id 通过上传文件接口获取\n此接口合同组中的子合同必须都是文件发起的合同",
+      "input": "CreateFlowGroupByFilesRequest",
+      "name": "通过多文件创建合同组签署流程",
+      "output": "CreateFlowGroupByFilesResponse",
+      "status": "online"
+    },
+    "CreateFlowGroupByTemplates": {
+      "document": "此接口（CreateFlowGroupByTemplates）通过多模板创建合同组签署流程。<br/>\n此接口合同组中的子合同必须都是模板发起的合同。 <br/>目前最大仅支持50个子合同",
+      "input": "CreateFlowGroupByTemplatesRequest",
+      "name": "通过多模板创建合同组签署流程",
+      "output": "CreateFlowGroupByTemplatesResponse",
+      "status": "online"
+    },
     "CreateFlowReminds": {
       "document": "指定需要批量催办的签署流程Id，批量催办合同，最多100个; 接口失败后返回错误信息\n注意:\n该接口不可直接调用，请联系客户经理申请使用\n仅能催办当前状态为“待签署”的签署人，且只能催办一次\n发起合同时，签署人的NotifyType需设置为sms，否则无法催办",
       "input": "CreateFlowRemindsRequest",
@@ -490,21 +504,21 @@
         },
         {
           "disabled": false,
-          "document": "签署人的签署控件列表",
-          "example": "无",
-          "member": "Component",
-          "name": "SignComponents",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
           "document": "如果签署方是企业签署方，则为企业名",
           "example": "无",
           "member": "string",
           "name": "OrganizationName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签署人的签署控件列表",
+          "example": "无",
+          "member": "Component",
+          "name": "SignComponents",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -2072,6 +2086,172 @@
       ],
       "type": "object"
     },
+    "CreateFlowGroupByFilesRequest": {
+      "document": "CreateFlowGroupByFiles请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "调用方用户信息，userId 必填。支持填入集团子公司经办人 userId 代发合同",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合同（流程）组名称,最大长度200个字符",
+          "example": "无",
+          "member": "string",
+          "name": "FlowGroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合同（流程）组的子合同信息，支持2-50个子合同",
+          "example": "无",
+          "member": "FlowGroupInfo",
+          "name": "FlowGroupInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合同（流程）组的配置项信息。包括是否通知本企业签署方，是否通知其他签署方",
+          "example": "无",
+          "member": "FlowGroupOptions",
+          "name": "FlowGroupOptions",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFlowGroupByFilesResponse": {
+      "document": "CreateFlowGroupByFiles返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同(流程)组的合同组Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合同(流程)组中子合同列表.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFlowGroupByTemplatesRequest": {
+      "document": "CreateFlowGroupByTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "调用方用户信息，userId 必填。支持填入集团子公司经办人 userId 代发合同",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合同组名称,最大长度200个字符",
+          "example": "无",
+          "member": "string",
+          "name": "FlowGroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合同组的子合同信息，支持2-50个子合同",
+          "example": "无",
+          "member": "FlowGroupInfo",
+          "name": "FlowGroupInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合同组的配置信息。包括是否通知本企业签署方，是否通知其他签署方",
+          "example": "无",
+          "member": "FlowGroupOptions",
+          "name": "FlowGroupOptions",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFlowGroupByTemplatesResponse": {
+      "document": "CreateFlowGroupByTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同(流程)组的合同组Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合同(流程)组中子合同列表.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateFlowRemindsRequest": {
       "document": "CreateFlowReminds请求参数结构体",
       "members": [
@@ -3163,6 +3343,15 @@
         },
         {
           "disabled": false,
+          "document": "合同组ID",
+          "example": "无",
+          "member": "string",
+          "name": "FlowGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "跳转页面 1: 小程序合同详情 2: 小程序合同列表页 0: 不传, 默认主页",
           "example": "1",
           "member": "uint64",
@@ -3200,6 +3389,7 @@
           "example": "weixin://dl/business/?t= *TICKET*",
           "member": "string",
           "name": "SchemeUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4274,15 +4464,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要查询的流程ID列表，限制最大100个",
-          "example": "无",
-          "member": "string",
-          "name": "FlowIds",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
           "document": "调用方用户信息，userId 必填",
           "example": "无",
           "member": "UserInfo",
@@ -4292,12 +4473,30 @@
         },
         {
           "disabled": false,
+          "document": "需要查询的流程ID列表，限制最大100个",
+          "example": "无",
+          "member": "string",
+          "name": "FlowIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合同组ID",
+          "example": "无",
+          "member": "string",
+          "name": "FlowGroupId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4311,7 +4510,28 @@
           "example": "无",
           "member": "FlowDetailInfo",
           "name": "FlowDetailInfos",
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同组ID",
+          "example": "无",
+          "member": "string",
+          "name": "FlowGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同组名称",
+          "example": "无",
+          "member": "string",
+          "name": "FlowGroupName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -5574,7 +5794,7 @@
           "example": "无",
           "member": "string",
           "name": "ApproveMessage",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5584,7 +5804,7 @@
           "example": "无",
           "member": "string",
           "name": "ApproveName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5594,7 +5814,7 @@
           "example": "无",
           "member": "int64",
           "name": "ApproveStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5604,7 +5824,7 @@
           "example": "无",
           "member": "string",
           "name": "ReceiptId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5614,7 +5834,7 @@
           "example": "无",
           "member": "string",
           "name": "CustomUserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5624,7 +5844,7 @@
           "example": "无",
           "member": "string",
           "name": "Mobile",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5634,7 +5854,7 @@
           "example": "无",
           "member": "int64",
           "name": "SignOrder",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5644,7 +5864,7 @@
           "example": "无",
           "member": "int64",
           "name": "ApproveTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5654,7 +5874,7 @@
           "example": "无",
           "member": "string",
           "name": "ApproveType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5664,7 +5884,7 @@
           "example": "无",
           "member": "string",
           "name": "ApproverSource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5674,7 +5894,7 @@
           "example": "无",
           "member": "string",
           "name": "CustomApproverTag",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5684,7 +5904,7 @@
           "example": "无",
           "member": "string",
           "name": "OrganizationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5694,7 +5914,7 @@
           "example": "无",
           "member": "string",
           "name": "OrganizationName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -6048,7 +6268,7 @@
           "example": "无",
           "member": "string",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6058,7 +6278,7 @@
           "example": "无",
           "member": "string",
           "name": "FlowName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6068,7 +6288,7 @@
           "example": "无",
           "member": "string",
           "name": "FlowType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6078,7 +6298,7 @@
           "example": "无",
           "member": "int64",
           "name": "FlowStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6088,7 +6308,7 @@
           "example": "无",
           "member": "string",
           "name": "FlowMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6098,7 +6318,7 @@
           "example": "无",
           "member": "string",
           "name": "FlowDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6108,7 +6328,7 @@
           "example": "无",
           "member": "int64",
           "name": "CreatedOn",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6118,7 +6338,7 @@
           "example": "无",
           "member": "FlowApproverDetail",
           "name": "FlowApproverInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6128,7 +6348,7 @@
           "example": "无",
           "member": "FlowApproverDetail",
           "name": "CcInfos",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6138,12 +6358,168 @@
           "example": "无",
           "member": "string",
           "name": "Creator",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
       ],
       "usage": "out"
+    },
+    "FlowGroupInfo": {
+      "document": "此结构体(FlowGroupInfo)描述的是合同组(流程组)的单个合同(流程)信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同（流程）的名称",
+          "example": "无",
+          "member": "string",
+          "name": "FlowName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合同（流程）的签署方信息",
+          "example": "无",
+          "member": "ApproverInfo",
+          "name": "Approvers",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "发起合同（流程）的资源Id,此资源必须是PDF文件,来自UploadFiles,使用文件发起合同(流程)组时必传",
+          "example": "无",
+          "member": "string",
+          "name": "FileIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "发起合同（流程）的模板Id,用模板发起合同（流程）组时必填",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合同（流程）的类型",
+          "example": "无",
+          "member": "string",
+          "name": "FlowType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合同（流程）的描述",
+          "example": "无",
+          "member": "string",
+          "name": "FlowDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合同（流程）的截止时间戳，单位秒。默认是一年",
+          "example": "无",
+          "member": "int64",
+          "name": "Deadline",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "合同（流程）的回调地址",
+          "example": "无",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "第三方平台传递过来的信息, 限制1024字符 格式必须是base64的",
+          "example": "无",
+          "member": "string",
+          "name": "UserData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合同（流程）的签署是否是无序签, true - 无序。 false - 有序, 默认 ",
+          "example": "无",
+          "member": "bool",
+          "name": "Unordered",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "合同（流程）发起方的填写控件，用户",
+          "example": "无",
+          "member": "Component",
+          "name": "Components",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "本企业（发起方）是否需要签署审批，若需要审批则只允许查看不允许签署，需要您调用接口CreateFlowSignReview提交审批结果。",
+          "example": "无",
+          "member": "bool",
+          "name": "NeedSignReview",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "本企业（发起方）自动签署，需要您在发起合同时给印章控件指定自动签的印章。",
+          "example": "无",
+          "member": "string",
+          "name": "AutoSignScene",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "FlowGroupOptions": {
+      "document": "此结构体(FlowGroupOptions)描述的是合同组的个性化配置，支持控制是否发送短信、未实名个人签署方查看合同组时是否需要实名认证（仅在合同组文件发起配置时生效）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发起合同（流程）组的合同（流程）签署人校验方式\nVerifyCheck: 人脸识别（默认）\nMobileCheck：手机号验证\n参数说明：此参数仅在合同组文件发起有效，可选人脸识别或手机号验证两种方式，若选择后者，未实名个人签署方在签署合同时，无需经过实名认证和意愿确认两次人脸识别，该能力仅适用于个人签署方。",
+          "example": "无",
+          "member": "string",
+          "name": "ApproverVerifyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "发起合同（流程）组本方企业经办人通知方式\n签署通知类型：sms--短信，none--不通知",
+          "example": "无",
+          "member": "string",
+          "name": "SelfOrganizationApproverNotifyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "发起合同（流程）组他方经办人通知方式\n签署通知类型：sms--短信，none--不通知",
+          "example": "无",
+          "member": "string",
+          "name": "OtherApproverNotifyType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "FormField": {
       "document": "电子文档的控件填充信息。按照控件类型进行相应的填充。\n\n【数据表格传参说明】\n当模板的 ComponentType='DYNAMIC_TABLE'时，FormField.ComponentValue需要传递json格式的字符串参数，用于确定表头&填充数据表格（支持内容的单元格合并）\n输入示例1：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\"\n        },\n        {\n            \"content\":\"head2\"\n        },\n        {\n            \"content\":\"head3\"\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n\n输入示例2（表格表头宽度比例配置）：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head2\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head3\",\n            \"widthPercent\": 40\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n表格参数说明\n\n| 名称                | 类型    | 描述                                              |\n| ------------------- | ------- | ------------------------------------------------- |\n| headers             | Array   | 表头：不超过10列，不支持单元格合并，字数不超过100 |\n| rowCount            | Integer | 表格内容最大行数                                  |\n| cells.N.rowStart    | Integer | 单元格坐标：行起始index                           |\n| cells.N.rowEnd      | Integer | 单元格坐标：行结束index                           |\n| cells.N.columnStart | Integer | 单元格坐标：列起始index                           |\n| cells.N.columnEnd   | Integer | 单元格坐标：列结束index                           |\n| cells.N.content     | String  | 单元格内容，字数不超过100                         |\n\n表格参数headers说明\nwidthPercent Integer 表头单元格列占总表头的比例，例如1：30表示 此列占表头的30%，不填写时列宽度平均拆分；例如2：总2列，某一列填写40，剩余列可以为空，按照60计算。；例如3：总3列，某一列填写30，剩余2列可以为空，分别为(100-30)/2=35\ncontent String 表头单元格内容，字数不超过100",

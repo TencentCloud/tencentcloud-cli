@@ -3597,6 +3597,7 @@
           "example": "无",
           "member": "DeployedResources",
           "name": "DeployedResources",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

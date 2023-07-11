@@ -1,0 +1,167 @@
+{
+  "actions": {
+    "DescribeEvents": {
+      "document": "本接口用于查询腾讯云健康看板的可用性事件信息，可以通过产品列表、地域列表和事件发生日期进行过滤查询。",
+      "input": "DescribeEventsRequest",
+      "name": "查看事件列表",
+      "output": "DescribeEventsResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2023-03-06",
+    "api_brief": "支持腾讯云用户通过API获取云产品健康看板数据",
+    "serviceNameCN": "腾讯云健康看板",
+    "serviceShortName": "tchd"
+  },
+  "objects": {
+    "DescribeEventsRequest": {
+      "document": "DescribeEvents请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件的发生日期",
+          "example": "2023-06-22",
+          "member": "date",
+          "name": "EventDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1. 不指定产品列表时将查询所有产品。\n2. 产品ID示例：cvm、lb、cdb、cdn、crs",
+          "example": "[\"cvm\",\"clb\"]",
+          "member": "string",
+          "name": "ProductIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "1. 不指定地域列表时将查询所有地域。\n2. 查询非区域性产品事件时，地域ID指定为：non-regional\n3. 其他地域ID取值请参考：https://cloud.tencent.com/document/api/213/15692",
+          "example": "[\"ap-guangzhou\",\"ap-shanghai\"]",
+          "member": "string",
+          "name": "RegionIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEventsResponse": {
+      "document": "DescribeEvents返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件详情列表",
+          "example": "无",
+          "member": "ProductEventList",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EventDetail": {
+      "document": "事件详情信息，包含：产品名称、地域名称、事件开始时间、事件结束时间、事件当前状态；",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "cvm",
+          "member": "string",
+          "name": "ProductId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品名称",
+          "example": "云服务器",
+          "member": "string",
+          "name": "ProductName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域ID，非区域性地域返回non-regional",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "RegionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域名称",
+          "example": "北京",
+          "member": "string",
+          "name": "RegionName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件开始时间",
+          "example": "2023-06-22 09:55:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件结束时间，当事件正在发生还未结束时，结束时间返回空",
+          "example": "2023-06-22 10:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件当前状态：提示、异常、正常",
+          "example": "异常",
+          "member": "string",
+          "name": "CurrentStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProductEventList": {
+      "document": "产品可用性事件详情列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EventDetail",
+          "name": "EventList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

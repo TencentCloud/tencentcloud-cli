@@ -10,7 +10,8 @@ tccli cms DescribeLibSamples --cli-unfold-argument  \
     --Limit 0 \
     --Offset 0 \
     --Content abc \
-    --EvilTypeList 0
+    --EvilTypeList 0 \
+    --SampleIDs 123 456
 ```
 
 Output: 

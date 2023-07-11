@@ -562,7 +562,7 @@
     ],
     "InquiryPriceRenewDBInstance": [
       {
-        "document": "",
+        "document": "查询单个实例续费价格",
         "input": "https://sqlserver.tencentcloudapi.com/?Action=InquiryPriceRenewDBInstance\n&InstanceId=mssql-njj2mtpl\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"41e0018d-857d-4c8c-9763-57afa2c062f9\",\n        \"OriginalPrice\": 42720,\n        \"Price\": 42720\n    }\n}",
         "title": "查询单个实例续费价格"
@@ -570,7 +570,7 @@
     ],
     "InquiryPriceUpgradeDBInstance": [
       {
-        "document": "",
+        "document": "查询实例扩容价格",
         "input": "https://sqlserver.tencentcloudapi.com/?Action=InquiryPriceUpgradeDBInstance\n&InstanceId=mssql-njj2mtpl\n&Memory=8\n&Storage=300\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dcff5304-324e-4cd6-a5f2-02cb16bde2da\",\n        \"OriginalPrice\": 149696,\n        \"Price\": 149696\n    }\n}",
         "title": "查询实例扩容价格"

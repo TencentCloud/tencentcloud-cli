@@ -127,9 +127,9 @@
       "status": "online"
     },
     "CreateRebuildMediaTemplate": {
-      "document": "创建音画质重生模板。",
+      "document": "创建视频重生模板。",
       "input": "CreateRebuildMediaTemplateRequest",
-      "name": "创建音画质重生模板",
+      "name": "创建视频重生模板",
       "output": "CreateRebuildMediaTemplateResponse",
       "status": "online"
     },
@@ -309,9 +309,9 @@
       "status": "online"
     },
     "DeleteRebuildMediaTemplate": {
-      "document": "删除音画质重生模板。",
+      "document": "删除视频重生模板。",
       "input": "DeleteRebuildMediaTemplateRequest",
-      "name": "删除音画质重生模板",
+      "name": "删除视频重生模板",
       "output": "DeleteRebuildMediaTemplateResponse",
       "status": "online"
     },
@@ -10324,10 +10324,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "音画质重生模板 ID。",
+          "document": "视频重生模板 ID。",
           "example": "10000",
           "member": "int64",
           "name": "Definition",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11883,7 +11884,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "音画质重生模板号。",
+          "document": "视频重生模板号。",
           "example": "无",
           "member": "int64",
           "name": "Definition",

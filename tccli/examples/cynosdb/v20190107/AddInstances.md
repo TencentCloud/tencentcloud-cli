@@ -18,17 +18,17 @@ Output:
 ```
 {
     "Response": {
-        "BigDealIds": [
-            "xx"
+        "TranId": "abc",
+        "DealNames": [
+            "abc"
         ],
         "ResourceIds": [
-            "cynosdbpg-ins-n8497zx8"
+            "abc"
         ],
-        "RequestId": "ed1bf4b2-4917-4f4f-9f7d-1562e34c9eeb",
-        "TranId": "xx",
-        "DealNames": [
-            "xx"
-        ]
+        "BigDealIds": [
+            "abc"
+        ],
+        "RequestId": "abc"
     }
 }
 ```

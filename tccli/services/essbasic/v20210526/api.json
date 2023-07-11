@@ -63,6 +63,13 @@
       "output": "ChannelCreateFlowGroupByFilesResponse",
       "status": "online"
     },
+    "ChannelCreateFlowGroupByTemplates": {
+      "document": "接口（ChannelCreateFlowGroupByTemplates）用于通过多模板创建合同组签署流程。",
+      "input": "ChannelCreateFlowGroupByTemplatesRequest",
+      "name": "通过多模板创建合同组签署流程",
+      "output": "ChannelCreateFlowGroupByTemplatesResponse",
+      "status": "online"
+    },
     "ChannelCreateFlowReminds": {
       "document": "指定需要批量催办的签署流程Id，批量催办合同，最多100个；接口失败后返回错误信息\n注意:\n该接口不可直接调用，请联系客户经理申请使用\n仅能催办当前状态为“待签署”的签署人，且只能催办一次",
       "input": "ChannelCreateFlowRemindsRequest",
@@ -155,9 +162,9 @@
       "status": "online"
     },
     "ChannelDescribeRoles": {
-      "document": "查询用户角色",
+      "document": "查询角色列表，支持根据类型和状态过滤角色列表",
       "input": "ChannelDescribeRolesRequest",
-      "name": "查询用户角色",
+      "name": "查询角色列表",
       "output": "ChannelDescribeRolesResponse",
       "status": "online"
     },
@@ -1292,7 +1299,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "每个子合同的发起所需的信息，数量限制2-100",
+          "document": "每个子合同的发起所需的信息，数量限制2-50",
           "example": "无",
           "member": "FlowFileInfo",
           "name": "FlowFileInfos",
@@ -1360,6 +1367,81 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateFlowGroupByTemplatesRequest": {
+      "document": "ChannelCreateFlowGroupByTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 均必填。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "每个子合同的发起所需的信息，数量限制2-50（合同组暂不支持抄送功能）",
+          "example": "无",
+          "member": "FlowInfo",
+          "name": "FlowInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "合同组名称，长度不超过200个字符",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "FlowGroupName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateFlowGroupByTemplatesResponse": {
+      "document": "ChannelCreateFlowGroupByTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同组ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "FlowGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子合同ID列表",
+          "example": "[\"xx\",\"yy\"]",
+          "member": "string",
+          "name": "FlowIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "复杂文档合成任务（如，包含动态表格的预览任务）的任务信息数组；\n如果文档需要异步合成，此字段会返回该异步任务的任务信息，后续可以通过ChannelGetTaskResultApi接口查询任务详情；",
+          "example": "无",
+          "member": "TaskInfo",
+          "name": "TaskInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5122,6 +5204,15 @@
         },
         {
           "disabled": false,
+          "document": "签署文件中的发起方的填写控件，需要在发起的时候进行填充",
+          "example": "无",
+          "member": "Component",
+          "name": "Components",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始",
           "example": "\"xxx\"",
           "member": "string",
@@ -6869,6 +6960,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6878,6 +6970,7 @@
           "example": "无",
           "member": "SyncFailReason",
           "name": "FailedList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

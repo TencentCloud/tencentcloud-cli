@@ -470,14 +470,14 @@
       "status": "online"
     },
     "InquiryPriceRenewDBInstance": {
-      "document": "本接口（InquiryPriceRenewDBInstance）用于查询续费实例的价格。",
+      "document": "本接口（InquiryPriceRenewDBInstance）用于查询包年包月实例的续费价格。",
       "input": "InquiryPriceRenewDBInstanceRequest",
       "name": "查询实例续费价格",
       "output": "InquiryPriceRenewDBInstanceResponse",
       "status": "online"
     },
     "InquiryPriceUpgradeDBInstance": {
-      "document": "本接口（InquiryPriceUpgradeDBInstance）用于查询升级实例的价格。",
+      "document": "本接口（InquiryPriceUpgradeDBInstance）用于查询包年包月实例升级变配的价格。\n按量计费实例变配后的价格参考InquiryPriceCreateDBInstances接口。",
       "input": "InquiryPriceUpgradeDBInstanceRequest",
       "name": "查询升级实例价格",
       "output": "InquiryPriceUpgradeDBInstanceResponse",
@@ -9014,7 +9014,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "未打折前价格，其值除以100表示多少钱。例如10010表示100.10元",
+          "document": "未打折前价格，其值除以100表示最终的价格。\nInstanceChargeType=PREPAID时，单位是\"每月\"。\nInstanceChargeType=POSTPAID时，单位是\"每小时\"。\n例如10010，在InstanceChargeType=PREPAID情况下，表示每月100.10元。",
           "example": "20988",
           "member": "int64",
           "name": "OriginalPrice",
@@ -9024,7 +9024,7 @@
         },
         {
           "disabled": false,
-          "document": "实际需要支付的价格，其值除以100表示多少钱。例如10010表示100.10元",
+          "document": "实际需要支付的价格，其值除以100表示最终的价格。\nInstanceChargeType=PREPAID时，单位是\"每月\"。\nInstanceChargeType=POSTPAID时，单位是\"每小时\"。\n例如10010，在InstanceChargeType=PREPAID情况下，表示每月100.10元。",
           "example": "20988",
           "member": "int64",
           "name": "Price",
@@ -9045,7 +9045,6 @@
       "document": "InquiryPriceRenewDBInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "mssql-njj2mtpl",
@@ -9055,7 +9054,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "续费周期。按月续费最多48个月。默认查询续费一个月的价格",
           "example": "1",
@@ -9065,7 +9063,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "续费周期单位。month表示按月续费，当前只支持按月付费查询价格",
           "example": "month",
@@ -9086,7 +9083,7 @@
           "example": "42720",
           "member": "uint64",
           "name": "OriginalPrice",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9096,7 +9093,7 @@
           "example": "42720",
           "member": "uint64",
           "name": "Price",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9113,7 +9110,6 @@
       "document": "InquiryPriceUpgradeDBInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，形如mssql-njj2mtpl",
           "example": "mssql-njj2mtpl",
@@ -9123,7 +9119,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例升级后的内存大小，单位GB，其值不能比当前实例内存小",
           "example": "8",
@@ -9133,7 +9128,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例升级后的磁盘大小，单位GB，其值不能比当前实例磁盘小",
           "example": "300",
@@ -9143,7 +9137,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例升级后的CPU核心数，其值不能比当前实例CPU小",
           "example": "2",
@@ -9164,7 +9157,7 @@
           "example": "149696",
           "member": "int64",
           "name": "OriginalPrice",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9174,7 +9167,7 @@
           "example": "149696",
           "member": "int64",
           "name": "Price",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

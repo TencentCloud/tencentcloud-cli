@@ -1272,7 +1272,7 @@
         },
         {
           "disabled": false,
-          "document": "参数模版ID",
+          "document": "参数模板ID",
           "example": "0",
           "member": "int64",
           "name": "ParamTemplateId",
@@ -1309,6 +1309,7 @@
           "example": "myTranId",
           "member": "string",
           "name": "TranId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1318,6 +1319,7 @@
           "example": "[123]",
           "member": "string",
           "name": "DealNames",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1327,6 +1329,7 @@
           "example": "[cynosmysql-xxxxxxxx]",
           "member": "string",
           "name": "ResourceIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1336,6 +1339,7 @@
           "example": "[234]",
           "member": "string",
           "name": "BigDealIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3378,8 +3382,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "模版名称",
-          "example": "参数模版5.7",
+          "document": "模板名称",
+          "example": "参数模板5.7",
           "member": "string",
           "name": "TemplateName",
           "required": true,
@@ -3396,8 +3400,8 @@
         },
         {
           "disabled": false,
-          "document": "模版描述",
-          "example": "常用模版",
+          "document": "模板描述",
+          "example": "常用模板",
           "member": "string",
           "name": "TemplateDescription",
           "required": false,
@@ -3405,7 +3409,7 @@
         },
         {
           "disabled": false,
-          "document": "可选参数，需要复制的模版ID",
+          "document": "可选参数，需要复制的模板ID",
           "example": "93",
           "member": "int64",
           "name": "TemplateId",
@@ -3438,10 +3442,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "模版ID",
+          "document": "模板ID",
           "example": "1000",
           "member": "int64",
           "name": "TemplateId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3504,7 +3509,7 @@
         },
         {
           "disabled": false,
-          "document": "连接池阀值：单位（秒）",
+          "document": "连接池阈值：单位（秒）",
           "example": "0",
           "member": "int64",
           "name": "ConnectionPoolTimeOut",
@@ -3741,7 +3746,7 @@
         },
         {
           "disabled": false,
-          "document": "连接池阀值：单位（秒）",
+          "document": "连接池阈值：单位（秒）",
           "example": "0",
           "member": "int64",
           "name": "ConnectionPoolTimeOut",
@@ -6400,7 +6405,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数模版ID",
+          "document": "参数模板ID",
           "example": "1000",
           "member": "int64",
           "name": "TemplateId",
@@ -8192,6 +8197,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -8201,6 +8207,7 @@
           "example": "无",
           "member": "CynosdbErrorLogItem",
           "name": "ErrorLogs",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8714,7 +8721,6 @@
       "document": "DescribeParamTemplates请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库引擎版本号",
           "example": "无",
@@ -8724,9 +8730,8 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "模版名称",
+          "document": "模板名称",
           "example": "无",
           "member": "string",
           "name": "TemplateNames",
@@ -8734,9 +8739,8 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "模版ID",
+          "document": "模板ID",
           "example": "无",
           "member": "int64",
           "name": "TemplateIds",
@@ -8744,7 +8748,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库类型，可选值：NORMAL，SERVERLESS",
           "example": "无",
@@ -8754,7 +8757,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询偏移量",
           "example": "无",
@@ -8764,7 +8766,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询限制条数",
           "example": "无",
@@ -8774,7 +8775,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询的模板对应的产品类型",
           "example": "无",
@@ -8784,9 +8784,8 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "模版类型",
+          "document": "模板类型",
           "example": "无",
           "member": "string",
           "name": "TemplateTypes",
@@ -8794,7 +8793,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本类型",
           "example": "无",
@@ -8804,7 +8802,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回结果的排序字段",
           "example": "无",
@@ -8814,7 +8811,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式（asc、desc）",
           "example": "无",
@@ -8835,7 +8831,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8845,7 +8841,7 @@
           "example": "[{\"...\"}]",
           "member": "ParamTemplateListInfo",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12026,7 +12022,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模版ID",
+          "document": "模板ID",
           "example": "无",
           "member": "int64",
           "name": "TemplateId",
@@ -12035,7 +12031,7 @@
         },
         {
           "disabled": false,
-          "document": "模版名",
+          "document": "模板名",
           "example": "无",
           "member": "string",
           "name": "TemplateName",
@@ -12044,7 +12040,7 @@
         },
         {
           "disabled": false,
-          "document": "模版描述",
+          "document": "模板描述",
           "example": "无",
           "member": "string",
           "name": "TemplateDescription",
@@ -14000,82 +13996,82 @@
       "document": "安全组规则",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "策略，ACCEPT或者DROP",
+          "example": "无",
           "member": "string",
           "name": "Action",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "来源Ip或Ip段，例如192.168.0.0/16",
+          "document": "来源IP或IP段，例如192.168.0.0/16",
+          "example": "无",
           "member": "string",
           "name": "CidrIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "端口",
+          "example": "无",
           "member": "string",
           "name": "PortRange",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络协议，支持udp、tcp等",
+          "example": "无",
           "member": "string",
           "name": "IpProtocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议端口ID或者协议端口组ID。",
+          "example": "无",
           "member": "string",
           "name": "ServiceModule",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址ID或者ID地址组ID。",
+          "example": "无",
           "member": "string",
           "name": "AddressModule",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "id",
+          "example": "无",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
+          "example": "无",
           "member": "string",
           "name": "Desc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -14086,34 +14082,34 @@
       "document": "数据库代理连接池信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "连接池保持阈值：单位（秒）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "ConnectionPoolTimeOut",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启了连接池\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "no",
           "member": "string",
           "name": "OpenConnectionPool",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "连接池类型：SessionConnectionPool（会话级别连接池\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "连接池类型：SessionConnectionPool（会话级别连接池）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SessionConnectionPool",
           "member": "string",
           "name": "ConnectionPoolType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -15786,123 +15782,112 @@
       "document": "实例慢查询信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "执行时间戳",
           "example": "无",
           "member": "int64",
           "name": "Timestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行时长，单位秒",
           "example": "无",
           "member": "float",
           "name": "QueryTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "sql语句",
           "example": "无",
           "member": "string",
           "name": "SqlText",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端host",
           "example": "无",
           "member": "string",
           "name": "UserHost",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名",
           "example": "无",
           "member": "string",
           "name": "UserName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名",
           "example": "无",
           "member": "string",
           "name": "Database",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "锁时长，单位秒",
           "example": "无",
           "member": "float",
           "name": "LockTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扫描行数",
           "example": "无",
           "member": "int64",
           "name": "RowsExamined",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回行数",
           "example": "无",
           "member": "int64",
           "name": "RowsSent",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "sql模版",
+          "document": "sql模板",
           "example": "无",
           "member": "string",
           "name": "SqlTemplate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "sql语句md5",
           "example": "无",
           "member": "string",
           "name": "SqlMd5",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

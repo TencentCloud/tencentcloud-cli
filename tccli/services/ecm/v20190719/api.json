@@ -7,11 +7,39 @@
       "output": "AllocateAddressesResponse",
       "status": "online"
     },
+    "AllocateIpv6AddressesBandwidth": {
+      "document": "本接口用于给IPv6地址分配公网带宽",
+      "input": "AllocateIpv6AddressesBandwidthRequest",
+      "name": "IPv6地址分配公网带宽",
+      "output": "AllocateIpv6AddressesBandwidthResponse",
+      "status": "online"
+    },
     "AssignIpv6Addresses": {
       "document": "本接口（AssignIpv6Addresses）用于弹性网卡申请IPv6地址。",
       "input": "AssignIpv6AddressesRequest",
       "name": "分配IPv6地址",
       "output": "AssignIpv6AddressesResponse",
+      "status": "online"
+    },
+    "AssignIpv6CidrBlock": {
+      "document": "本接口（AssignIpv6CidrBlock）用于分配IPv6网段。\n\n使用本接口前，您需要已有VPC实例，如果没有可通过接口CreateVpc创建。",
+      "input": "AssignIpv6CidrBlockRequest",
+      "name": "分配IPv6网段",
+      "output": "AssignIpv6CidrBlockResponse",
+      "status": "online"
+    },
+    "AssignIpv6CidrBlocks": {
+      "document": "本接口（AssignIpv6CidrBlocks）用于分配IPv6网段。\n\n使用本接口前，您需要已有VPC实例，如果没有可通过接口CreateVpc创建。\n每个VPC 可以同时支持运营商网络('CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调)。本接口可以同时申请不同类型的IPv6网段",
+      "input": "AssignIpv6CidrBlocksRequest",
+      "name": "分配不同类型的IPv6网段",
+      "output": "AssignIpv6CidrBlocksResponse",
+      "status": "online"
+    },
+    "AssignIpv6SubnetCidrBlock": {
+      "document": "本接口（AssignIpv6SubnetCidrBlock）用于分配IPv6子网段。\n\n给子网分配 IPv6 网段，要求子网所属 VPC 已获得 IPv6 网段。如果尚未分配，请先通过接口 AssignIpv6CidrBlock 给子网所属 VPC 分配一个 IPv6 网段。否则无法分配 IPv6 子网段。\n每个子网只能分配一个IPv6网段。",
+      "input": "AssignIpv6SubnetCidrBlockRequest",
+      "name": "分配IPv6子网段",
+      "output": "AssignIpv6SubnetCidrBlockResponse",
       "status": "online"
     },
     "AssignPrivateIpAddresses": {
@@ -448,6 +476,13 @@
       "output": "DescribePriceRunInstanceResponse",
       "status": "online"
     },
+    "DescribeRegionIpv6Addresses": {
+      "document": "该接口（DescribeRegionIpv6Addresses）用于查询ECM地域之下的IPV6地址信息。",
+      "input": "DescribeRegionIpv6AddressesRequest",
+      "name": "查询地域下IPV6地址信息",
+      "output": "DescribeRegionIpv6AddressesResponse",
+      "status": "online"
+    },
     "DescribeRouteConflicts": {
       "document": "查询自定义路由策略与云联网路由策略冲突列表",
       "input": "DescribeRouteConflictsRequest",
@@ -665,6 +700,13 @@
       "output": "ModifyIpv6AddressesAttributeResponse",
       "status": "online"
     },
+    "ModifyIpv6AddressesBandwidth": {
+      "document": "该接口(ModifyIpv6AddressesBandwidth)用于修改IPV6地址访问internet的带宽",
+      "input": "ModifyIpv6AddressesBandwidthRequest",
+      "name": "修改IPV6访问internet的带宽",
+      "output": "ModifyIpv6AddressesBandwidthResponse",
+      "status": "online"
+    },
     "ModifyListener": {
       "document": "修改负载均衡监听器属性。",
       "input": "ModifyListenerRequest",
@@ -784,6 +826,13 @@
       "output": "ModifyVpcAttributeResponse",
       "status": "online"
     },
+    "QueryVpcTaskResult": {
+      "document": "查询私有网络下Vpc、子网、havip等异步任务请求结果",
+      "input": "QueryVpcTaskResultRequest",
+      "name": "查询Vpc异步任务请求结果",
+      "output": "QueryVpcTaskResultResponse",
+      "status": "online"
+    },
     "RebootInstances": {
       "document": "只有状态为RUNNING的实例才可以进行此操作；接口调用成功时，实例会进入REBOOTING状态；重启实例成功时，实例会进入RUNNING状态；支持强制重启，强制重启的效果等同于关闭物理计算机的电源开关再重新启动。强制重启可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常重启时使用。",
       "input": "RebootInstancesRequest",
@@ -803,6 +852,13 @@
       "input": "ReleaseIpv6AddressesRequest",
       "name": "释放IPv6地址",
       "output": "ReleaseIpv6AddressesResponse",
+      "status": "online"
+    },
+    "ReleaseIpv6AddressesBandwidth": {
+      "document": "该接口用于给弹性公网IPv6地址释放带宽。",
+      "input": "ReleaseIpv6AddressesBandwidthRequest",
+      "name": "释放弹性公网IPv6地址带宽",
+      "output": "ReleaseIpv6AddressesBandwidthResponse",
       "status": "online"
     },
     "RemovePrivateIpAddresses": {
@@ -908,6 +964,13 @@
       "input": "TerminateInstancesRequest",
       "name": "销毁实例",
       "output": "TerminateInstancesResponse",
+      "status": "online"
+    },
+    "UnassignIpv6SubnetCidrBlock": {
+      "document": "本接口（UnassignIpv6SubnetCidrBlock）用于释放IPv6子网段。\n子网段如果还有IP占用且未回收，则子网段无法释放。",
+      "input": "UnassignIpv6SubnetCidrBlockRequest",
+      "name": "释放IPv6子网段",
+      "output": "UnassignIpv6SubnetCidrBlockResponse",
       "status": "online"
     }
   },
@@ -1280,6 +1343,84 @@
       ],
       "type": "object"
     },
+    "AllocateIpv6AddressesBandwidthRequest": {
+      "document": "AllocateIpv6AddressesBandwidth请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "ECM 地域。",
+          "example": "ap-xian-ecm",
+          "member": "string",
+          "name": "EcmRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "需要开通公网访问能力的IPV6地址。",
+          "example": "无",
+          "member": "string",
+          "name": "Ipv6Addresses",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "带宽，单位Mbps，默认是1Mbps。",
+          "example": "1",
+          "member": "int64",
+          "name": "InternetMaxBandwidthOut",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "网络计费模式，当前支持 BANDWIDTH_PACKAGE。",
+          "example": "BANDWIDTH_PACKAGE",
+          "member": "string",
+          "name": "InternetChargeType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AllocateIpv6AddressesBandwidthResponse": {
+      "document": "AllocateIpv6AddressesBandwidth返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "弹性公网 IPV6 的唯一 ID 列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AddressSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异步任务TaskId。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Area": {
       "document": "区域信息",
       "members": [
@@ -1393,6 +1534,171 @@
           "example": "无",
           "member": "Ipv6Address",
           "name": "Ipv6AddressSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssignIpv6CidrBlockRequest": {
+      "document": "AssignIpv6CidrBlock请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "`VPC`实例`ID`，形如：`vpc-f49l6u0z`。\t",
+          "example": "vpc-f49l6u0z`",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络运营商类型 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调\t",
+          "example": "CMCC",
+          "member": "string",
+          "name": "ISPType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ECM地域。",
+          "example": "ap-hefei-ecm",
+          "member": "string",
+          "name": "EcmRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssignIpv6CidrBlockResponse": {
+      "document": "AssignIpv6CidrBlock返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分配的 `IPv6` 网段。形如：`3402:4e00:20:1000::/56`。\t",
+          "example": "3402:4e00:20:1000::/56\t",
+          "member": "string",
+          "name": "Ipv6CidrBlock",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssignIpv6CidrBlocksRequest": {
+      "document": "AssignIpv6CidrBlocks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "`VPC`实例`ID`，形如：`vpc-f49l6u0z`。\t",
+          "example": "vpc-rkxd3pgh\t",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络运营商类型 取值范围:'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调\t",
+          "example": "[{\"ISPType\":\"BGP\", \"Count\":1}]\t",
+          "member": "ISPTypeItem",
+          "name": "ISPTypes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "ECM地域。",
+          "example": "ap-hefei-ecm",
+          "member": "string",
+          "name": "EcmRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssignIpv6CidrBlocksResponse": {
+      "document": "AssignIpv6CidrBlocks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IPv6网段和所属运营商。\t",
+          "example": "无",
+          "member": "ISPIPv6CidrBlock",
+          "name": "IPv6CidrBlockSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssignIpv6SubnetCidrBlockRequest": {
+      "document": "AssignIpv6SubnetCidrBlock请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子网所在私有网络`ID`。形如：`vpc-f49l6u0z`。\t",
+          "example": "vpc-f49l6u0z",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分配 `IPv6` 子网段列表。",
+          "example": "无",
+          "member": "Ipv6SubnetCidrBlock",
+          "name": "Ipv6SubnetCidrBlocks",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "ECM地域。",
+          "example": "ap-hefei-ecm",
+          "member": "string",
+          "name": "EcmRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssignIpv6SubnetCidrBlockResponse": {
+      "document": "AssignIpv6SubnetCidrBlock返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分配 `IPv6` 子网段列表。\t",
+          "example": "[{ \"SubnetId\": \"subnet-oy2v3j92\", \"Ipv6CidrBlock\": \"2402:4e00:1717:8700::/64\", \"ISPType\": \"BGP\"} ]\t",
+          "member": "Ipv6SubnetCidrBlock",
+          "name": "Ipv6SubnetCidrBlockSet",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -5397,6 +5703,84 @@
       ],
       "type": "object"
     },
+    "DescribeRegionIpv6AddressesRequest": {
+      "document": "DescribeRegionIpv6Addresses请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "ECM 地域，为空时返回所有地域的IPv6地址。",
+          "example": "ap-qingdao-ecm",
+          "member": "string",
+          "name": "EcmRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "详细的过滤条件如下：\naddress-id - String - 是否必填：否 - （过滤条件）按照 EIP 的 ID 过滤。\naddress-ip - String - 是否必填：否 - （过滤条件）按照 EIP 的 IP 地址过滤。\nnetwork-interface-id - String - 是否必填：否 - （过滤条件）按照弹性网卡的唯一ID过滤。\ninstance-id - String - 是否必填：否 - （过滤条件）按照 EIP 所绑定的实例 ID 过滤。\nvpc-id - String - 是否必填：否 - （过滤条件）按照 EIP 所在 VPC 的 ID 进行过滤。\naddress-isp - String - 是否必填：否 - （过滤条件）按照 EIP 的运营商进行过滤。\naddress-status  - String - 是否必填：否 - （过滤条件）按照 EIP  的状态信息进行过滤。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRegionIpv6AddressesResponse": {
+      "document": "DescribeRegionIpv6Addresses返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的 IPV6 数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IPV6 详细信息列表。",
+          "example": "无",
+          "member": "Address",
+          "name": "AddressSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRouteConflictsRequest": {
       "document": "DescribeRouteConflicts请求参数结构体",
       "members": [
@@ -7375,6 +7759,30 @@
       ],
       "usage": "out"
     },
+    "ISPTypeItem": {
+      "document": "申请ipv6 cidr block的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IPv6 Cidr所属运营商类型，支持的类型有 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调。作为入参数时为必选。",
+          "example": "CMCC",
+          "member": "string",
+          "name": "ISPType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "申请IPv6 Cidr Block的个数。作为入参数时为必选。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Count",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
     "Image": {
       "document": "镜像信息",
       "members": [
@@ -8604,6 +9012,34 @@
       ],
       "usage": "both"
     },
+    "Ipv6SubnetCidrBlock": {
+      "document": "IPv6子网段对象。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子网实例`ID`。形如：`subnet-pxir56ns`。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-pxir56ns",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "`IPv6`子网段。形如：`3402:4e00:20:1001::/64`\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3402:4e00:20:1001::/64",
+          "member": "string",
+          "name": "Ipv6CidrBlock",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "KeyPair": {
       "document": "描述密钥对信息",
       "members": [
@@ -9590,6 +10026,64 @@
     },
     "ModifyIpv6AddressesAttributeResponse": {
       "document": "ModifyIpv6AddressesAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIpv6AddressesBandwidthRequest": {
+      "document": "ModifyIpv6AddressesBandwidth请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "ECM 地域",
+          "example": "ap-guangzhou-ecm-cu2",
+          "member": "string",
+          "name": "EcmRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "修改的目标带宽，单位Mbps",
+          "example": "50",
+          "member": "int64",
+          "name": "InternetMaxBandwidthOut",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "IPV6地址。Ipv6Addresses和Ipv6AddressId必须且只能传一个",
+          "example": "无",
+          "member": "Ipv6Address",
+          "name": "Ipv6Addresses",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "IPV6地址对应的唯一ID，形如eip-xxxxxxxx。Ipv6Addresses和Ipv6AddressId必须且只能传一个",
+          "example": "无",
+          "member": "string",
+          "name": "Ipv6AddressIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIpv6AddressesBandwidthResponse": {
+      "document": "ModifyIpv6AddressesBandwidth返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12059,6 +12553,54 @@
       ],
       "usage": "out"
     },
+    "QueryVpcTaskResultRequest": {
+      "document": "QueryVpcTaskResult请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "无",
+          "example": "92126c28-17f4-4c93-b295-fed5d759f2f9",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryVpcTaskResultResponse": {
+      "document": "QueryVpcTaskResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行结果，包括\"SUCCESS\", \"FAILED\", \"RUNNING\"",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异步任务执行输出。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Output",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RebootInstancesRequest": {
       "document": "RebootInstances请求参数结构体",
       "members": [
@@ -12172,6 +12714,64 @@
           "document": "异步任务TaskId。可以使用DescribeTaskResult接口查询任务状态。",
           "member": "string",
           "name": "TaskId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReleaseIpv6AddressesBandwidthRequest": {
+      "document": "ReleaseIpv6AddressesBandwidth请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "ECM 地域。",
+          "example": "ap-xian-ecm",
+          "member": "string",
+          "name": "EcmRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "IPV6地址。Ipv6Addresses和Ipv6AddressIds必须且只能传一个。",
+          "example": "无",
+          "member": "string",
+          "name": "Ipv6Addresses",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "IPV6地址对应的唯一ID，形如eip-xxxxxxxx。Ipv6Addresses和Ipv6AddressIds必须且只能传一个。",
+          "example": "无",
+          "member": "string",
+          "name": "Ipv6AddressIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ReleaseIpv6AddressesBandwidthResponse": {
+      "document": "ReleaseIpv6AddressesBandwidth返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务TaskId。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14725,6 +15325,51 @@
       ],
       "type": "object"
     },
+    "UnassignIpv6SubnetCidrBlockRequest": {
+      "document": "UnassignIpv6SubnetCidrBlock请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子网所在私有网络`ID`。形如：`vpc-f49l6u0z`。\t",
+          "example": "vpc-q26u781x\t",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "`IPv6` 子网段列表。\t",
+          "example": "[{'SubnetId': 'subnet-8uwg949c'}]\t",
+          "member": "Ipv6SubnetCidrBlock",
+          "name": "Ipv6SubnetCidrBlocks",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "ECM地域。",
+          "example": "ap-hefei-ecm",
+          "member": "string",
+          "name": "EcmRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnassignIpv6SubnetCidrBlockResponse": {
+      "document": "UnassignIpv6SubnetCidrBlock返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "VirtualPrivateCloud": {
       "document": "私有网络相关信息配置。",
       "members": [
@@ -15027,81 +15672,67 @@
       "document": "实例可用区及对应的实例创建数目及运营商的组合；",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "创建实例的可用区。",
           "example": "ap-dongguan-ecm-1",
           "member": "string",
           "name": "Zone",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "在当前可用区欲创建的实例数目。",
+          "document": "在当前可用区创建的实例数目。",
           "example": "1",
           "member": "int64",
           "name": "InstanceCount",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运营商如下：\nCTCC：中国电信\nCUCC：中国联通\nCMCC：中国移动\n多个运营商用英文分号连接\";\"，例如：\"CMCC;CUCC;CTCC\"。多运营商需要开通白名单，请直接联系腾讯云客服。",
           "example": "CMCC",
           "member": "string",
           "name": "ISP",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定私有网络编号，SubnetId与VpcId必须同时指定或不指定",
           "example": "vpc-kcejgmxt",
           "member": "string",
           "name": "VpcId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定子网编号，SubnetId与VpcId必须同时指定或不指定",
           "example": "subnet-5r8jj7kg",
           "member": "string",
           "name": "SubnetId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定主网卡内网IP。条件：SubnetId与VpcId必须同时指定，并且IP数量与InstanceCount相同，多IP主机副网卡内网IP在相同子网内通过DHCP获取。",
           "example": "10.212.2.153",
           "member": "string",
           "name": "PrivateIpAddresses",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "为弹性网卡指定随机生成的IPv6地址数量，目前数量不能大于1。",
           "example": "1",
           "member": "int64",
           "name": "Ipv6AddressCount",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"

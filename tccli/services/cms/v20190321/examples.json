@@ -4,14 +4,14 @@
       {
         "document": "创建关键词",
         "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateKeywordsSamples\n<公共请求参数>\n\n{\n    \"LibID\": \"abc\",\n    \"UserKeywords\": [\n        {\n            \"Content\": \"abc\",\n            \"Label\": \"abc\",\n            \"Remark\": \"abc\",\n            \"WordType\": \"abc\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"SampleIDs\": [\n            \"abc\"\n        ],\n        \"DupInfos\": [\n            {\n                \"ID\": \"abc\",\n                \"Content\": \"abc\",\n                \"Label\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"Remark\": \"abc\",\n                \"WordType\": \"abc\"\n            }\n        ],\n        \"InvalidSamples\": [\n            {\n                \"Content\": \"abc\",\n                \"InvalidCode\": 0,\n                \"InvalidMessage\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SampleIDs\": [\n            \"abc\"\n        ],\n        \"SuccessInfos\": [\n            {\n                \"ID\": \"abc\",\n                \"Content\": \"abc\",\n                \"Label\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"Remark\": \"abc\",\n                \"WordType\": \"abc\"\n            }\n        ],\n        \"DupInfos\": [\n            {\n                \"ID\": \"abc\",\n                \"Content\": \"abc\",\n                \"Label\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"Remark\": \"abc\",\n                \"WordType\": \"abc\"\n            }\n        ],\n        \"InvalidSamples\": [\n            {\n                \"Content\": \"abc\",\n                \"InvalidCode\": 0,\n                \"InvalidMessage\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建关键词"
       }
     ],
     "DeleteLibSamples": [
       {
         "document": "删除词库关键词",
-        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLibSamples\n<公共请求参数>\n\n{\n    \"LibID\": \"abc\",\n    \"SampleIDs\": [\n        \"abc\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLibSamples\n<公共请求参数>\n\n{\n    \"LibID\": \"abc\",\n    \"SampleIDs\": [\n        \"abc\"\n    ],\n    \"SampleContents\": [\n        \"违规\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"Details\": [\n            {\n                \"SampleID\": \"1\",\n                \"Content\": \"\",\n                \"Deleted\": false,\n                \"ErrorInfo\": \"NotFound\"\n            },\n            {\n                \"SampleID\": \"2\",\n                \"Content\": \"xixi\",\n                \"Deleted\": true,\n                \"ErrorInfo\": \"\"\n            }\n        ],\n        \"RequestId\": \"xxx\"\n    }\n}",
         "title": "删除关键词接口示例"
       }
@@ -27,7 +27,7 @@
     "DescribeLibSamples": [
       {
         "document": "获取关键词",
-        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLibSamples\n<公共请求参数>\n\n{\n    \"LibID\": \"abc\",\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"Content\": \"abc\",\n    \"EvilTypeList\": [\n        0\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLibSamples\n<公共请求参数>\n\n{\n    \"LibID\": \"abc\",\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"Content\": \"abc\",\n    \"EvilTypeList\": [\n        0\n    ],\n    \"SampleIDs\": [\n        \"123\",\n        \"456\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Infos\": [\n            {\n                \"ID\": \"abc\",\n                \"Content\": \"abc\",\n                \"Label\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"Remark\": \"abc\",\n                \"WordType\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取关键词接口"
       }

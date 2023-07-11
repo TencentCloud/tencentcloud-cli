@@ -10,8 +10,8 @@
     ],
     "DeleteLibrary": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLibrary\n<公共请求参数>\n\n{\n    \"LibraryId\": \"smh0q8nrvsg7t6y6\"\n}",
+        "document": "删除媒体库",
+        "input": "POST / HTTP/1.1 \nHost: smh.tencentcloudapi.com \nContent-Type: application/json \nX-TC-Action: DeleteLibrary \n\n{\n    \"LibraryId\": \"smh0q8nrvsg7t6y6\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ea829232-caa0-4dfe-9bbb-2f428cfae08c\"\n    }\n}",
         "title": "删除媒体库"
       }

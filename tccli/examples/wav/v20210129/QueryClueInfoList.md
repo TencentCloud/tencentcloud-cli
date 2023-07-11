@@ -71,6 +71,7 @@ Output:
                 "InvalidTime": 1618322621,
                 "DealerName": "dealer1",
                 "ShopId": 1234567890,
+                "CorpShopId": "S1234",
                 "ShopName": "shop1",
                 "Position": "销售"
             }

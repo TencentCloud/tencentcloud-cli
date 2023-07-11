@@ -20,6 +20,16 @@ Output:
         "SampleIDs": [
             "abc"
         ],
+        "SuccessInfos": [
+            {
+                "ID": "abc",
+                "Content": "abc",
+                "Label": "abc",
+                "CreateTime": "abc",
+                "Remark": "abc",
+                "WordType": "abc"
+            }
+        ],
         "DupInfos": [
             {
                 "ID": "abc",

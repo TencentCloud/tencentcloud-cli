@@ -3228,6 +3228,7 @@
         {
           "disabled": false,
           "document": "支持的导入镜像的操作系统类型。",
+          "example": "无",
           "member": "ImageOsList",
           "name": "ImportImageOsListSupported",
           "type": "object",
@@ -3236,6 +3237,7 @@
         {
           "disabled": false,
           "document": "支持的导入镜像的操作系统版本。",
+          "example": "无",
           "member": "OsVersion",
           "name": "ImportImageOsVersionSet",
           "type": "list",

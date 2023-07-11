@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ssl DescribeDeployedResources --cli-unfold-argument  \
-    --ResourceType xx \
-    --CertificateIds xx
+    --ResourceType xx1 \
+    --CertificateIds xx1
 ```
 
 Output: 
@@ -16,14 +16,14 @@ Output:
     "Response": {
         "DeployedResources": [
             {
-                "CertificateId": "xx",
+                "CertificateId": "xx1",
                 "ResourceIds": null,
                 "Resources": [],
-                "Type": "xx",
+                "Type": "xx1",
                 "Count": 0
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "xx1-xxx"
     }
 }
 ```

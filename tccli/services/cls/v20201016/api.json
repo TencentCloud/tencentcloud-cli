@@ -5967,7 +5967,7 @@
       "type": "object"
     },
     "DynamicIndex": {
-      "document": "动态更新索引配置",
+      "document": "动态更新索引配置\n\n注意：该功能尚处于内测阶段，如需使用请联系技术支持",
       "members": [
         {
           "disabled": false,
@@ -5975,6 +5975,7 @@
           "example": "false",
           "member": "bool",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -9612,6 +9613,7 @@
           "example": "空",
           "member": "FullTextInfo",
           "name": "FullText",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -9622,6 +9624,7 @@
           "example": "空",
           "member": "RuleKeyValueInfo",
           "name": "KeyValue",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -9632,16 +9635,18 @@
           "example": "空",
           "member": "RuleTagInfo",
           "name": "Tag",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "动态索引配置，如果为空时代表未开启动态段索引\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "动态索引配置，如果为空时代表未开启动态段索引\n\n注意：该功能尚处于内测阶段，如需使用请联系技术支持\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DynamicIndex",
           "name": "DynamicIndex",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true

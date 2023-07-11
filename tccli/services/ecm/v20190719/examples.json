@@ -8,12 +8,44 @@
         "title": "创建EIP"
       }
     ],
+    "AllocateIpv6AddressesBandwidth": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=AllocateIpv6AddressesBandwidth\n&EcmRegion=ap-xian-ecm\n&Ipv6Addresses.0=2402:4e00:1000:200:0:8d8a:60b7:87f8\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AddressSet\": [\n            \"eip-3l4nwzvo\"\n        ],\n        \"TaskId\": 202869021,\n        \"RequestId\": \"aac03e7b-3c91-4970-b2bc-c20f0c6bdd38\"\n    }\n}",
+        "title": "指定ipv6地址开通公网访问能力"
+      }
+    ],
     "AssignIpv6Addresses": [
       {
         "document": "按个数自动分配IPv6地址",
         "input": "https://ecm.tencentcloudapi.com/?Action=AssignIpv6Addresses\n&EcmRegion=ap-xian-ecm\n&NetworkInterfaceId=eni-1snva0vd\n&Ipv6AddressCount=1\n&SkipCheckIPv6Address=true\n&SkipAllocateBandwidth=true\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Ipv6AddressSet\": [\n            {\n                \"Address\": \"3402:4e00:20:1202:0:8d05:c272:f514\",\n                \"AddressId\": \"\",\n                \"Primary\": false,\n                \"Description\": \"\",\n                \"IsWanIpBlocked\": false,\n                \"State\": \"PENDING\"\n            }\n        ],\n        \"RequestId\": \"4a8d6fc0-bc48-4394-b1f7-2818a217359a\"\n    }\n}",
         "title": "按个数自动分配IPv6地址"
+      }
+    ],
+    "AssignIpv6CidrBlock": [
+      {
+        "document": "分配IPv6网段\n",
+        "input": "https://vpc.tencentcloudapi.com/?Action=AssignIpv6CidrBlock\n&VpcId=vpc-rkxd3pgh\n&ISPType=CMCC\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Ipv6CidrBlock\": \"3402:4e00:20:1000::/56\",\n        \"RequestId\": \"75221557-b667-440a-8cfe-ccd1bde2a234\"\n    }\n}",
+        "title": "分配IPv6网段"
+      }
+    ],
+    "AssignIpv6CidrBlocks": [
+      {
+        "document": "申请多个运营商IPv6网段\n",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssignIpv6CidrBlocks\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-2loean7x\",\n    \"ISPTypes\": [\n        {\n            \"ISPType\": \"BGP\",\n            \"Count\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"IPv6CidrBlockSet\": [\n            {\n                \"IPv6CidrBlock\": \"2001::85b:3c51:f5ff:ffdb\",\n                \"ISPType\": \"BGP\"\n            }\n        ],\n        \"RequestId\": \"d4d30315-a652-47f3-a22b-598fb17a6218\"\n    }\n}",
+        "title": "申请多个运营商IPv6网段"
+      }
+    ],
+    "AssignIpv6SubnetCidrBlock": [
+      {
+        "document": "申请IPv6子网\n",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssignIpv6SubnetCidrBlock\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-q26u781x\",\n    \"Ipv6SubnetCidrBlocks\": [\n        {\n            \"SubnetId\": \"subnet-8uwg949c\",\n            \"Ipv6CidrBlock\": \"2001::85b:3c51:f5ff:ffdb\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Ipv6SubnetCidrBlockSet\": [\n            {\n                \"SubnetId\": \"subnet-8uwg949c\",\n                \"Ipv6CidrBlock\": \"2001::85b:3c51:f5ff:ffdb\"\n            }\n        ],\n        \"RequestId\": \"d681727c-6291-4409-9ab6-6ecbb493243c\"\n    }\n}",
+        "title": "分配IPv6子网段"
       }
     ],
     "AssignPrivateIpAddresses": [
@@ -560,6 +592,14 @@
         "title": "查询实例价格"
       }
     ],
+    "DescribeRegionIpv6Addresses": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=DescribeRegionIpv6Addresses\n&EcmRegion=ap-qingdao-ecm\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AddressSet\": [\n            {\n                \"AddressId\": \"eip-lrhy2lpe\",\n                \"AddressIp\": \"2402:4e00:1000:2d00:0:8f3f:6:9895\",\n                \"AddressStatus\": \"BIND\",\n                \"InstanceId\": \"ein-190087yw\",\n                \"NetworkInterfaceId\": \"eni-rw4fh3gn\",\n                \"IsArrears\": false,\n                \"CreatedTime\": \"2020-01-13T04:09:52Z\",\n                \"Bandwidth\": 6,\n                \"IsEipDirectConnection\": true,\n                \"PrivateAddressIp\": \"\",\n                \"AddressName\": \"name\",\n                \"PayMode\": \"0\",\n                \"CascadeRelease\": true,\n                \"InternetServiceProvider\": \"CTCC\",\n                \"AddressType\": \"\",\n                \"IsBlocked\": true\n            }\n        ],\n        \"RequestId\": \"bfe06911-32f5-4862-9d42-6bb4954dcb59\"\n    }\n}",
+        "title": "根据Ip6AddressIds查询地域下的IPV6信息"
+      }
+    ],
     "DescribeRouteConflicts": [
       {
         "document": "",
@@ -814,6 +854,14 @@
         "title": "修改弹性网卡IPv6地址属性"
       }
     ],
+    "ModifyIpv6AddressesBandwidth": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=ModifyIpv6AddressesBandwidth\n&EcmRegion=ap-guangzhou-ecm-cu2\n&Ipv6Addresses.0.Address=2402:4e00:1000:200:0:8d8a:60b7:87f8\n&InternetMaxBandwidthOut=50\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"61b49567-8cbf-4523-8f25-7a2c9da23ddb\"\n    }\n}",
+        "title": "修改IPV6地址带宽"
+      }
+    ],
     "ModifyListener": [
       {
         "document": "",
@@ -950,6 +998,14 @@
         "title": "修改VPC名称&描述"
       }
     ],
+    "QueryVpcTaskResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ecm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryVpcTaskResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"92126c28-17f4-4c93-b295-fed5d759f2f9\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"SUCCESS\",\n        \"Output\": \"SUCCESS\",\n        \"RequestId\": \"92122228-17f4-4f93-4295-fe32d759f2f9\"\n    }\n}",
+        "title": "查询Task任务"
+      }
+    ],
     "RebootInstances": [
       {
         "document": "实例重启",
@@ -972,6 +1028,14 @@
         "input": "https://ecm.tencentcloudapi.com/?Action=ReleaseIpv6Addresses\n&NetworkInterfaceId=eni-9c8zkfev\n&EcmRegion=ap-xian-ecm \n&Ipv6Addresses.0.Address=3402:4e00:20:1202:0:8d01:ee9c:3e22\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"75221557-b667-440a-8cfe-ccd1bde2a234\",\n        \"TaskId\": 3082\n    }\n}",
         "title": "释放IPv6地址"
+      }
+    ],
+    "ReleaseIpv6AddressesBandwidth": [
+      {
+        "document": "",
+        "input": "https://ecm.tencentcloudapi.com/?Action=ReleaseIpv6AddressesBandwidth\n&EcmRegion=ap-xian-ecm\n&Ipv6Addresses.0=2402:4e00:1000:200:0:8d8a:60b7:87f8\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 202869021,\n        \"RequestId\": \"aac03e7b-3c91-4970-b2bc-c20f0c6bdd38\"\n    }\n}",
+        "title": "释放弹性公网IPv6地址带宽"
       }
     ],
     "RemovePrivateIpAddresses": [
@@ -1092,6 +1156,14 @@
         "input": "https://ecm.tencentcloudapi.com/?Action=TerminateInstances\n&TerminateDelay=true\n&InstanceIdSet.0=ein-197252sp\n&InstanceIdSet.1=ein-187232ag\n&TerminateTime=2019-08-01 18:32:56\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"df348fj3-03g7-4ss0-y7sj-78e2322a3242\"\n    }\n}",
         "title": "销毁实例"
+      }
+    ],
+    "UnassignIpv6SubnetCidrBlock": [
+      {
+        "document": "释放IPv6子网段\n",
+        "input": "https://vpc.tencentcloudapi.com/?Action=UnassignIpv6SubnetCidrBlock\n&VpcId=vpc-rkxd3pgh\n&Ipv6SubnetCidrBlocks.0.SubnetId=subnet-ewhv1m9e\n&Ipv6SubnetCidrBlocks.1.SubnetId=subnet-3s5bhzb0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"75221557-b667-440a-8cfe-ccd1bde2a234\"\n    }\n}",
+        "title": "释放IPv6子网段"
       }
     ]
   },

@@ -20,7 +20,7 @@
       {
         "document": "新增只读实例",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddInstances\n<公共请求参数>\n\n{\n    \"ReadOnlyCount\": \"1\",\n    \"VpcId\": \"vpc-1ptuei0b\",\n    \"ClusterId\": \"cynosdbmysql-6gtlgm5l\",\n    \"Memory\": \"4\",\n    \"SubnetId\": \"subnet-1tmw9t4o\",\n    \"Cpu\": \"2\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BigDealIds\": [\n            \"xx\"\n        ],\n        \"ResourceIds\": [\n            \"cynosdbpg-ins-n8497zx8\"\n        ],\n        \"RequestId\": \"ed1bf4b2-4917-4f4f-9f7d-1562e34c9eeb\",\n        \"TranId\": \"xx\",\n        \"DealNames\": [\n            \"xx\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TranId\": \"abc\",\n        \"DealNames\": [\n            \"abc\"\n        ],\n        \"ResourceIds\": [\n            \"abc\"\n        ],\n        \"BigDealIds\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "新增实例"
       }
     ],
@@ -456,10 +456,10 @@
     ],
     "DescribeParamTemplates": [
       {
-        "document": "",
+        "document": "参数板列表",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeParamTemplates\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"fc791b35-d5e5-4e08-859d-1c095e783199\",\n        \"Items\": [\n            {\n                \"TemplateDescription\": \"API测试\",\n                \"TemplateName\": \"API测试\",\n                \"Id\": 27,\n                \"EngineVersion\": \"5.7\",\n                \"ParamInfoSet\": [\n                    {\n                        \"CurrentValue\": \"12\",\n                        \"Description\": \"API测试\",\n                        \"Min\": \"10\",\n                        \"Default\": \"10\",\n                        \"Max\": \"10000\",\n                        \"ParamType\": \"integer\",\n                        \"EnumValue\": [\n                            \"test\"\n                        ],\n                        \"ParamName\": \"param1\",\n                        \"NeedReboot\": 0\n                    }\n                ],\n                \"DbMode\": \"NORMAL\"\n            },\n            {\n                \"TemplateName\": \"API测试\",\n                \"TemplateDescription\": \"API测试\",\n                \"Id\": 28,\n                \"EngineVersion\": \"5.7\",\n                \"ParamInfoSet\": [\n                    {\n                        \"CurrentValue\": \"12\",\n                        \"Description\": \"API测试\",\n                        \"Min\": \"10\",\n                        \"Default\": \"10\",\n                        \"Max\": \"10000\",\n                        \"ParamType\": \"integer\",\n                        \"EnumValue\": [\n                            \"tste\",\n                            \"test2\"\n                        ],\n                        \"ParamName\": \"param2\",\n                        \"NeedReboot\": 0\n                    }\n                ],\n                \"DbMode\": \"NORMAL\"\n            }\n        ]\n    }\n}",
-        "title": "参数模版列表"
+        "title": "参数板列表"
       }
     ],
     "DescribeProjectSecurityGroups": [

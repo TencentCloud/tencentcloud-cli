@@ -267,8 +267,19 @@
           "example": "无",
           "member": "string",
           "name": "SampleIDs",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成功入库关键词列表",
+          "example": "无",
+          "member": "UserKeywordInfo",
+          "name": "SuccessInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -276,6 +287,7 @@
           "example": "无",
           "member": "UserKeywordInfo",
           "name": "DupInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -285,6 +297,7 @@
           "example": "无",
           "member": "InvalidSample",
           "name": "InvalidSamples",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -348,8 +361,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "关键词ID",
-          "example": "346",
+          "document": "关键词ID列表",
+          "example": "[\"123\",\"456\"]",
           "member": "string",
           "name": "SampleIDs",
           "required": true,
@@ -363,6 +376,15 @@
           "name": "LibID",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关键词内容列表",
+          "example": "[\"违规\",\"告警\"]",
+          "member": "string",
+          "name": "SampleContents",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -376,6 +398,7 @@
           "example": "1",
           "member": "int64",
           "name": "Count",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -385,6 +408,7 @@
           "example": "无",
           "member": "DeleteSampleDetails",
           "name": "Details",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -557,6 +581,15 @@
           "name": "EvilTypeList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "样本词ID列表过滤",
+          "example": "[\"23231\",\"232133\"]",
+          "member": "string",
+          "name": "SampleIDs",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -570,6 +603,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -579,6 +613,7 @@
           "example": "无",
           "member": "UserKeywordInfo",
           "name": "Infos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

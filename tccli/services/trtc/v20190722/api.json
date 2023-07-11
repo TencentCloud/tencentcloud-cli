@@ -42,13 +42,6 @@
       "output": "DescribeCloudRecordingResponse",
       "status": "online"
     },
-    "DescribeExternalTrtcMeasure": {
-      "document": "接口内部调用计量接口，计量接口迁通用集群后不可用。目前已有新的对外接口可以供用户使用。\n\n获取Trtc的用量统计数据。走计费渠道二期 只允许查两天的数据。\n当前接口已不再更新维护，请使用新版音视频用量接口：DescribeTrtcUsage （https://cloud.tencent.com/document/product/647/81425）",
-      "input": "DescribeExternalTrtcMeasureRequest",
-      "name": "查询音视频用量计费时长（旧）",
-      "output": "DescribeExternalTrtcMeasureResponse",
-      "status": "deprecated"
-    },
     "DescribeMixTranscodingUsage": {
       "document": "获取TRTC混流转码的用量明细。\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 该接口只用于历史用量数据统计或核对数据使用，关键业务逻辑不能使用。\n- 默认接口请求频率限制：5次/秒。",
       "input": "DescribeMixTranscodingUsageRequest",
@@ -1039,84 +1032,6 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeExternalTrtcMeasureRequest": {
-      "document": "DescribeExternalTrtcMeasure请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "查询开始日期。",
-          "example": "2022-01-03 00:00:00",
-          "member": "string",
-          "name": "StartTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "查询结束日期。",
-          "example": "2022-01-03 00:00:00",
-          "member": "string",
-          "name": "EndTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "对应的应用。如果没有这个参数，表示获取用户名下全部实时音视频应用的汇总。",
-          "example": "134324524",
-          "member": "uint64",
-          "name": "SdkAppId",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeExternalTrtcMeasureResponse": {
-      "document": "DescribeExternalTrtcMeasure返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "每个SdkAppId的时长使用信息",
-          "example": "无",
-          "member": "SdkAppIdNewTrtcTimeUsage",
-          "name": "SdkAppIdTrtrTimeUsages",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "主播的用量统计方式。取值\"InRoomTime\":房间时长,\"SubscribeTime\":\"订阅时长\",\"Bandwidth\":带宽",
-          "example": "无",
-          "member": "string",
-          "name": "AnchorUsageMode",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "观众的用量统计方式。取值\"InRoomTime\":在房间时长,\"SubscribeTime\":\"订阅时长\",\"Bandwidth\":带宽,\"MergeWithAnchor\":\"不区分麦上麦下\"",
-          "example": "无",
-          "member": "string",
-          "name": "AudienceUsageMode",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4653,45 +4568,6 @@
       ],
       "usage": "out"
     },
-    "SdkAppIdNewTrtcTimeUsage": {
-      "document": "SdkAppId级别实时音视频的用量数据",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "SdkAppId的值。",
-          "example": "无",
-          "member": "string",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "统计的时间点数据。",
-          "example": "无",
-          "member": "TrtcTimeNewUsage",
-          "name": "TrtcTimeUsages",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "统计的麦下用量的时间点数据。",
-          "example": "无",
-          "member": "TrtcTimeNewUsage",
-          "name": "AudienceTrtcTimeUsages",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "SdkAppIdRecordUsage": {
       "document": "SdkAppId级别录制时长数据。",
       "members": [
@@ -5590,122 +5466,6 @@
           "name": "Value",
           "required": true,
           "type": "float",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "TrtcTimeNewUsage": {
-      "document": "实时音视频用量的某一时间段的统计信息.  ",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "时间点。",
-          "example": "无",
-          "member": "string",
-          "name": "TimeKey",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "通话人数。仅供参考。在线人数以仪表盘查询结果为准。",
-          "example": "无",
-          "member": "uint64",
-          "name": "VoiceUserNum",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "音视频通话收费时长。单位：秒。",
-          "example": "无",
-          "member": "uint64",
-          "name": "VideoTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "标清视频通话收费时长。单位：秒。",
-          "example": "无",
-          "member": "uint64",
-          "name": "Class1VideoTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "高清视频通话收费时长。单位：秒。",
-          "example": "无",
-          "member": "uint64",
-          "name": "Class2VideoTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "超高清视频通话收费时长。单位：秒。",
-          "example": "无",
-          "member": "uint64",
-          "name": "Class3VideoTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "音频通话收费时长。单位：秒。",
-          "example": "无",
-          "member": "uint64",
-          "name": "AudioTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "带宽。单位：Mbps。",
-          "example": "无",
-          "member": "float",
-          "name": "Bandwidth",
-          "required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "2k视频通话收费时长。单位：秒。",
-          "example": "无",
-          "member": "uint64",
-          "name": "Video2KTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "4k视频通话收费时长。单位：秒。",
-          "example": "无",
-          "member": "uint64",
-          "name": "Video4KTime",
-          "required": true,
-          "type": "int",
           "value_allowed_null": false
         }
       ],

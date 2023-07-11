@@ -4687,7 +4687,6 @@
       "document": "CreateTopic请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境（命名空间）名称。",
           "example": "default",
@@ -4697,7 +4696,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主题名，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。",
           "example": "test_topic",
@@ -4707,7 +4705,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入参为1，即是创建非分区topic，无分区；入参大于1，表示分区topic的分区数，最大不允许超过128。",
           "example": "2",
@@ -4717,7 +4714,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注，128字符以内。",
           "example": "2个分区的普通消息队列",
@@ -4727,17 +4723,15 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该入参将逐步弃用，可切换至PulsarTopicType参数\n0： 普通消息；\n1 ：全局顺序消息；\n2 ：局部顺序消息；\n3 ：重试队列；\n4 ：死信队列。",
-          "example": "0",
+          "example": "TopicType 和 PulsarTopicType 两者不能同时为空，有一个必选",
           "member": "uint64",
           "name": "TopicType",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Pulsar 集群的ID",
           "example": "pulsar-xxx",
@@ -4747,10 +4741,9 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Pulsar 主题类型\n0: 非持久非分区\n1: 非持久分区\n2: 持久非分区\n3: 持久分区",
-          "example": "0",
+          "example": "TopicType 和 PulsarTopicType 两者不能同时为空，有一个必选",
           "member": "int64",
           "name": "PulsarTopicType",
           "required": false,
@@ -4768,7 +4761,7 @@
           "example": "default",
           "member": "string",
           "name": "EnvironmentId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4778,7 +4771,7 @@
           "example": "test_topic",
           "member": "string",
           "name": "TopicName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4788,7 +4781,7 @@
           "example": "2",
           "member": "uint64",
           "name": "Partitions",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4798,7 +4791,7 @@
           "example": "2个分区的普通消息队列",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4808,7 +4801,7 @@
           "example": "0",
           "member": "uint64",
           "name": "TopicType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
