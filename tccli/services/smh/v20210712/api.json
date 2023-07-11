@@ -143,6 +143,7 @@
           "example": "smhfoobar",
           "member": "string",
           "name": "LibraryId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -160,14 +161,14 @@
       "document": "DeleteLibrary请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "媒体库 ID",
           "example": "smh3ptyc9mscifdi",
           "member": "string",
           "name": "LibraryId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

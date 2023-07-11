@@ -11,7 +11,8 @@ tccli cms DeleteLibSamples --cli-unfold-argument  \
     --UserUin abc \
     --UserSubUin abc \
     --LibID abc \
-    --SampleIDs abc
+    --SampleIDs abc \
+    --SampleContents 违规
 ```
 
 Output: 

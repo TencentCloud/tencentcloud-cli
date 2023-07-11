@@ -19,7 +19,21 @@ Output:
 {
     "Response": {
         "DataEngineConfigInstanceInfos": [
-            {}
+            {
+                "DataEngineId": "abc",
+                "DataEngineConfigPairs": [
+                    {
+                        "ConfigItem": "abc",
+                        "ConfigValue": "abc"
+                    }
+                ],
+                "SessionResourceTemplate": {
+                    "DriverSize": "abc",
+                    "ExecutorSize": "abc",
+                    "ExecutorNums": 1,
+                    "ExecutorMaxNumbers": 1
+                }
+            }
         ],
         "TotalCount": 1,
         "RequestId": "abc"

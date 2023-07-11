@@ -266,6 +266,13 @@
       "output": "DescribeErrorResponse",
       "status": "online"
     },
+    "DescribeGrafanaData": {
+      "document": "获取Grafana自定义看板",
+      "input": "DescribeGrafanaDataRequest",
+      "name": "获取Grafana自定义看板",
+      "output": "DescribeGrafanaDataResponse",
+      "status": "online"
+    },
     "DescribeLogExports": {
       "document": "接口请求域名： rum.tencentcloudapi.com 。\n\n本接口用于获取日志下载任务列表\n\n默认接口请求频率限制：20次/秒",
       "input": "DescribeLogExportsRequest",
@@ -6142,6 +6149,44 @@
           "example": "20210520",
           "member": "string",
           "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGrafanaDataRequest": {
+      "document": "DescribeGrafanaData请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "query查询",
+          "example": "query",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGrafanaDataResponse": {
+      "document": "DescribeGrafanaData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果",
+          "example": "success",
+          "member": "string",
+          "name": "Result",
           "required": true,
           "type": "string",
           "value_allowed_null": false

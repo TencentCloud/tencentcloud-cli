@@ -630,6 +630,16 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "模块信息",
+          "example": "无",
+          "member": "Module",
+          "name": "Modules",
+          "required": false,
+          "type": "list",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -902,6 +912,16 @@
           "required": false,
           "type": "bool",
           "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "模块信息",
+          "example": "无",
+          "member": "Module",
+          "name": "Modules",
+          "required": false,
+          "type": "list",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -998,6 +1018,16 @@
           "required": false,
           "type": "string",
           "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "CMDB 管理员",
+          "example": "无",
+          "member": "User",
+          "name": "CMDBAdmins",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -1485,7 +1515,7 @@
           "name": "EnvironmentName",
           "required": true,
           "type": "string",
-          "visibility": 2
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -1495,7 +1525,7 @@
           "name": "ApplicationID",
           "required": true,
           "type": "string",
-          "visibility": 2
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -1515,17 +1545,37 @@
           "name": "ComponentName",
           "required": true,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Trait 名称 Deprecated",
+          "example": "无",
+          "member": "string",
+          "name": "TraitName",
+          "required": false,
+          "type": "string",
           "visibility": 2
         },
         {
           "disabled": false,
-          "document": "Trait 名称",
+          "document": "Trait 类型",
           "example": "无",
           "member": "string",
-          "name": "TraitName",
-          "required": true,
+          "name": "TraitType",
+          "required": false,
           "type": "string",
-          "visibility": 2
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Trait Object 标识数组",
+          "example": "无",
+          "member": "string",
+          "name": "TraitObjectIDs",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2768,7 +2818,7 @@
           "name": "ApplicationID",
           "required": true,
           "type": "string",
-          "visibility": 2
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -2788,7 +2838,7 @@
           "name": "EnvironmentName",
           "required": true,
           "type": "string",
-          "visibility": 2
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -2798,17 +2848,27 @@
           "name": "ComponentName",
           "required": true,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Trait 名称 Deprecated",
+          "example": "无",
+          "member": "string",
+          "name": "TraitName",
+          "required": false,
+          "type": "string",
           "visibility": 2
         },
         {
           "disabled": false,
-          "document": "Trait 名称",
+          "document": "Trait 类型",
           "example": "无",
           "member": "string",
-          "name": "TraitName",
-          "required": true,
+          "name": "TraitType",
+          "required": false,
           "type": "string",
-          "visibility": 2
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2822,6 +2882,7 @@
           "example": "无",
           "member": "Trait",
           "name": "Trait",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 2
@@ -2856,7 +2917,7 @@
           "name": "ApplicationID",
           "required": true,
           "type": "string",
-          "visibility": 2
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -2876,7 +2937,7 @@
           "name": "EnvironmentName",
           "required": true,
           "type": "string",
-          "visibility": 2
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -2886,17 +2947,27 @@
           "name": "ComponentName",
           "required": true,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Trait 名称 Deprecated",
+          "example": "无",
+          "member": "string",
+          "name": "TraitName",
+          "required": false,
+          "type": "string",
           "visibility": 2
         },
         {
           "disabled": false,
-          "document": "Trait 名称",
+          "document": "Trait 类型",
           "example": "无",
           "member": "string",
-          "name": "TraitName",
-          "required": true,
+          "name": "TraitType",
+          "required": false,
           "type": "string",
-          "visibility": 2
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2910,6 +2981,7 @@
           "example": "无",
           "member": "TraitStatus",
           "name": "TraitStatus",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 2
@@ -3111,7 +3183,18 @@
     },
     "ModifyApplicationRequest": {
       "document": "ModifyApplication请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "模块信息",
+          "example": "无",
+          "member": "Module",
+          "name": "Modules",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        }
+      ],
       "type": "object"
     },
     "ModifyApplicationResponse": {
@@ -3341,6 +3424,16 @@
           "required": false,
           "type": "bool",
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "模块信息",
+          "example": "无",
+          "member": "Module",
+          "name": "Modules",
+          "required": false,
+          "type": "list",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -3447,6 +3540,16 @@
           "required": false,
           "type": "list",
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "CMDB 管理员信息",
+          "example": "无",
+          "member": "User",
+          "name": "CMDBAdmins",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3540,6 +3643,48 @@
         }
       ],
       "type": "object"
+    },
+    "Module": {
+      "document": "模块信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "模块 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "模块名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "模块级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Level",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
     },
     "PVC": {
       "document": "PVC信息",

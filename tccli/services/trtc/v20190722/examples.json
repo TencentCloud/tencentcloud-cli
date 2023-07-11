@@ -48,14 +48,6 @@
         "title": "查询SdkAppId 为 1234 TaskId 为 xx 的录制状态。"
       }
     ],
-    "DescribeExternalTrtcMeasure": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExternalTrtcMeasure\n<公共请求参数>\n\n{\n    \"EndTime\": \"2022-01-01 00:00:00\",\n    \"StartTime\": \"2022-01-03 00:00:00\",\n    \"SdkAppId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"AnchorUsageMode\": \"xx\",\n        \"AudienceUsageMode\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"SdkAppIdTrtrTimeUsages\": [\n            {\n                \"TrtcTimeUsages\": [\n                    {\n                        \"AudioTime\": 1,\n                        \"Video4KTime\": 1,\n                        \"VideoTime\": 1,\n                        \"Class1VideoTime\": 1,\n                        \"TimeKey\": \"xx\",\n                        \"Class3VideoTime\": 1,\n                        \"Video2KTime\": 1,\n                        \"Bandwidth\": 0.0,\n                        \"VoiceUserNum\": 1,\n                        \"Class2VideoTime\": 1\n                    },\n                    {\n                        \"AudioTime\": 1,\n                        \"Video4KTime\": 1,\n                        \"TimeKey\": \"xx\",\n                        \"Class1VideoTime\": 1,\n                        \"VideoTime\": 1,\n                        \"Class3VideoTime\": 1,\n                        \"Video2KTime\": 1,\n                        \"Bandwidth\": 0.0,\n                        \"VoiceUserNum\": 1,\n                        \"Class2VideoTime\": 1\n                    },\n                    {\n                        \"AudioTime\": 1,\n                        \"Video4KTime\": 1,\n                        \"TimeKey\": \"xx\",\n                        \"Class1VideoTime\": 1,\n                        \"VideoTime\": 1,\n                        \"Class3VideoTime\": 1,\n                        \"Video2KTime\": 1,\n                        \"Bandwidth\": 0.0,\n                        \"VoiceUserNum\": 1,\n                        \"Class2VideoTime\": 1\n                    }\n                ],\n                \"AudienceTrtcTimeUsages\": [\n                    {\n                        \"AudioTime\": 1,\n                        \"Video4KTime\": 1,\n                        \"VideoTime\": 1,\n                        \"Class1VideoTime\": 1,\n                        \"TimeKey\": \"xx\",\n                        \"Class3VideoTime\": 1,\n                        \"Video2KTime\": 1,\n                        \"Bandwidth\": 0.0,\n                        \"VoiceUserNum\": 1,\n                        \"Class2VideoTime\": 1\n                    }\n                ],\n                \"SdkAppId\": \"xx\"\n            }\n        ]\n    }\n}",
-        "title": "获取实时音视频的时长统计数据 。走计费渠道第二版"
-      }
-    ],
     "DescribeMixTranscodingUsage": [
       {
         "document": "",

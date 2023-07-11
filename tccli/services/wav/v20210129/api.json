@@ -1499,6 +1499,17 @@
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "自定义的门店id",
+          "example": "S1234",
+          "member": "string",
+          "name": "CorpShopId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"

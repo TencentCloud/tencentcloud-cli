@@ -139,7 +139,7 @@
     "DeleteTrait": [
       {
         "document": "删除 Trait",
-        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTrait\n<公共请求参数>\n\n{\n    \"ApplicationID\": \"app-sb5z5mmj\",\n    \"ProjectID\": \"prj-d2bd4gfn\",\n    \"InstanceID\": \"ins-xxxx\",\n    \"ComponentName\": \"app\",\n    \"TraitName\": \"app-v2\"\n}",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTrait\n<公共请求参数>\n\n{\n    \"ProjectID\": \"abc\",\n    \"EnvironmentName\": \"abc\",\n    \"ApplicationID\": \"abc\",\n    \"InstanceID\": \"abc\",\n    \"ComponentName\": \"abc\",\n    \"TraitName\": \"abc\",\n    \"TraitType\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "删除 Trait"
       }
@@ -395,7 +395,7 @@
     "DescribeTrait": [
       {
         "document": "查询 Trait 信息",
-        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrait\n<公共请求参数>\n\n{\n    \"ApplicationID\": \"app-sb5z5mmj\",\n    \"ProjectID\": \"prj-d2bd4gfn\",\n    \"InstanceID\": \"ins-xxxx\",\n    \"ComponentName\": \"app\",\n    \"TraitName\": \"app-v1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrait\n<公共请求参数>\n\n{\n    \"ProjectID\": \"abc\",\n    \"ApplicationID\": \"abc\",\n    \"InstanceID\": \"abc\",\n    \"EnvironmentName\": \"abc\",\n    \"ComponentName\": \"abc\",\n    \"TraitName\": \"abc\",\n    \"TraitType\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"Trait\": {},\n        \"RequestId\": \"bitliu-rid-xxxxx\"\n    }\n}",
         "title": "查询 Trait 信息"
       }

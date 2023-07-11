@@ -6,11 +6,13 @@ Input:
 
 ```
 tccli camp DescribeTrait --cli-unfold-argument  \
-    --ApplicationID app-sb5z5mmj \
-    --ProjectID prj-d2bd4gfn \
-    --InstanceID ins-xxxx \
-    --ComponentName app \
-    --TraitName app-v1
+    --ProjectID abc \
+    --ApplicationID abc \
+    --InstanceID abc \
+    --EnvironmentName abc \
+    --ComponentName abc \
+    --TraitName abc \
+    --TraitType abc
 ```
 
 Output: 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ess CreateFlowReminds --cli-unfold-argument  \
-    --Operator.UserId xxx \
-    --FlowIds xxx
+    --Operator.UserId yDxMkUyxxxxxxxxxxxVI2JmKxPkk \
+    --FlowIds yDwXiUUcxxxxxxxxxxSZ0uIW72Qaxm
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
         "RemindFlowRecords": [
             {
                 "CanRemind": true,
-                "FlowId": "xxx",
+                "FlowId": "yDwxxxxxxxW72Qaxm",
                 "RemindMessage": "签署人 xxx: 此签署人已催办过；"
             }
         ],

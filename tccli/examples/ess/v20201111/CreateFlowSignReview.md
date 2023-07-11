@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ess CreateFlowSignReview --cli-unfold-argument  \
-    --Operator.UserId 1956103********520fde6a \
-    --FlowId xxxx \
+    --Operator.UserId yDxMkUy************8VI2JmKxPkk \
+    --FlowId yDwXiUUc***********uIW72Qaxm \
     --ReviewType PASS \
     --ReviewMessage 企业内部审核通过，允许签署
 ```

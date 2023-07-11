@@ -4975,12 +4975,71 @@
     },
     "DataEngineConfigInstanceInfo": {
       "document": "引擎配置信息",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Dataengine-xx",
+          "member": "string",
+          "name": "DataEngineId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义配置项集合",
+          "example": "无",
+          "member": "DataEngineConfigPair",
+          "name": "DataEngineConfigPairs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "作业集群资源参数配置模版",
+          "example": "无",
+          "member": "SessionResourceTemplate",
+          "name": "SessionResourceTemplate",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
       "usage": "out"
     },
     "DataEngineConfigPair": {
       "document": "引擎配置",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ConfigItem",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "配置值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "ConfigValue",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
       "usage": "both"
     },
     "DataEngineInfo": {

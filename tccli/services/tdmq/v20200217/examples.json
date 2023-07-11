@@ -198,7 +198,7 @@
     ],
     "CreateTopic": [
       {
-        "document": "",
+        "document": "创建主题",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"default\",\n    \"Remark\": \"2个分区的普通消息队列\",\n    \"TopicType\": \"0\",\n    \"TopicName\": \"test_topic\",\n    \"Partitions\": \"2\"\n}",
         "output": "{\n    \"Response\": {\n        \"EnvironmentId\": \"default\",\n        \"TopicName\": \"test_topic\",\n        \"Partitions\": 2,\n        \"TopicType\": 0,\n        \"Remark\": \"2个分区的普通消息队列\",\n        \"RequestId\": \"d9686bf9-8d7d-4e78-bb44-5140d70a1ffa\"\n    }\n}",
         "title": "创建主题"

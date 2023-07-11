@@ -72,6 +72,14 @@
         "title": "通过多文件创建合同组签署流程"
       }
     ],
+    "ChannelCreateFlowGroupByTemplates": [
+      {
+        "document": "通过多模板创建合同组签署流程",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateFlowGroupByTemplates\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"test\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"test\"\n        },\n        \"AppId\": \"test\"\n    },\n    \"FlowGroupName\": \"testx\",\n    \"FlowInfos\": [\n        {\n            \"FlowName\": \"testx\",\n            \"TemplateId\": \"testx\",\n            \"FlowDescription\": \"testx\",\n            \"Deadline\": 1604910797,\n            \"CallbackUrl\": \"testx\",\n            \"FormFields\": [\n                {\n                    \"ComponentName\": \"testx\",\n                    \"ComponentValue\": \"testx\"\n                }\n            ],\n            \"FlowApprovers\": [\n                {\n                    \"ApproverType\": \"PERSON\",\n                    \"Name\": \"testx\",\n                    \"Mobile\": \"testx\",\n                    \"RecipientId\": \"testx\"\n                },\n                {\n                    \"ApproverType\": \"ORGANIZATION\",\n                    \"OpenId\": \"testx\",\n                    \"OrganizationOpenId\": \"testx\",\n                    \"OrganizationName\": \"testx\",\n                    \"RecipientId\": \"testx\"\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowGroupId\": \"test\",\n        \"FlowIds\": [\n            \"test\"\n        ],\n        \"TaskInfos\": [\n            {\n                \"TaskId\": \"test\",\n                \"TaskStatus\": \"test\"\n            }\n        ],\n        \"RequestId\": \"test\"\n    }\n}",
+        "title": "通过多模板创建合同组签署流程"
+      }
+    ],
     "ChannelCreateFlowReminds": [
       {
         "document": "对合同中尚未完成的用户推送催办",
