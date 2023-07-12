@@ -310,8 +310,8 @@
     ],
     "DeletePrometheusScrapeJobs": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrometheusScrapeJobs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"AgentId\": \"xx\",\n    \"JobIds\": [\n        \"xx\"\n    ]\n}",
+        "document": "删除 Prometheus 抓取任务",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrometheusScrapeJobs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-evrh1x32\",\n    \"AgentId\": \"agent-hod16m3f\",\n    \"JobIds\": [\n        \"job-afeiig0x\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
         "title": "删除 Prometheus 抓取任务"
       }
@@ -512,9 +512,9 @@
     ],
     "DescribeExporterIntegrations": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExporterIntegrations\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Kind\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"KubeType\": 3\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xyz\",\n        \"IntegrationSet\": []\n    }\n}",
+        "document": "查询 exporter 集成列表",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExporterIntegrations\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-evrh1x32\",\n    \"Kind\": \"mysql-exporter\",\n    \"ClusterId\": \"cls-evrh1x32\",\n    \"KubeType\": 3\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\",\n        \"IntegrationSet\": []\n    }\n}",
         "title": "查询 exporter 集成列表"
       }
     ],
@@ -648,9 +648,9 @@
     ],
     "DescribePrometheusAgents": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusAgents\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AgentSet\": [\n            {\n                \"AgentId\": \"xx\",\n                \"Name\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"HeartbeatTime\": \"xx\",\n                \"Ipv4\": \"xx\",\n                \"LastError\": \"xx\",\n                \"AgentVersion\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"TotalCount\": 12\n    }\n}",
+        "document": "查询 Prometheus Agent 列表",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusAgents\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-m4fb9h34\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentSet\": [\n            {\n                \"AgentId\": \"agent-hod16m34\",\n                \"Name\": \"node-agent\",\n                \"InstanceId\": \"prom-m4fb9h34\",\n                \"HeartbeatTime\": \"2021-12-03T16:16:24+08:00\",\n                \"Ipv4\": \"199.21.24.90\",\n                \"LastError\": \"\",\n                \"AgentVersion\": \"2.31.1-rig.1\"\n            }\n        ],\n        \"RequestId\": \"e6a09531-0b40-41ab-a932-33061e9e1832\",\n        \"TotalCount\": 12\n    }\n}",
         "title": "列出 Prometheus Agent"
       }
     ],
@@ -758,9 +758,9 @@
     ],
     "DescribePrometheusScrapeJobs": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusScrapeJobs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"AgentId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\",\n        \"ScrapeJobSet\": [\n            {\n                \"AgentId\": \"xx\",\n                \"Config\": \"xx\",\n                \"Name\": \"xx\",\n                \"JobId\": \"xx\"\n            }\n        ]\n    }\n}",
+        "document": "查询 Prometheus 抓取任务列表",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusScrapeJobs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-evrh1x32\",\n    \"AgentId\": \"agent-hod16m43\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"5fa8c92-3072-4f46-8553-4cb82c30943c\",\n        \"ScrapeJobSet\": [\n            {\n                \"AgentId\": \"agent-hod16m43\",\n                \"Config\": \"job_name: static\\nhonor_timestamps: true\\nmetrics_path: /metrics\\nscheme: http\\nfollow_redirects: true\\nstatic_configs:\\n- targets:\\n  - localhost:9090\\n\",\n                \"Name\": \"node-exporter\",\n                \"JobId\": \"job-afeiig0k\"\n            }\n        ]\n    }\n}",
         "title": "列出 Prometheus 抓取任务"
       }
     ],

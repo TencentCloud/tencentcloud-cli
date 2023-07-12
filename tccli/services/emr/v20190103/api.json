@@ -4862,9 +4862,8 @@
       "document": "InquiryPriceRenewInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "实例续费的时长。需要结合TimeUnit一起使用。1表示续费1一个月",
+          "document": "实例续费的时长。需要结合TimeUnit一起使用。1表示续费一个月",
           "example": "1",
           "member": "uint64",
           "name": "TimeSpan",
@@ -4872,7 +4871,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。",
           "example": "[\"emr-vm-jv1s4zas\\r\\n\"]",
@@ -4882,7 +4880,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
           "example": "无",
@@ -4892,7 +4889,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例计费模式。此处只支持取值为1，表示包年包月。",
           "example": "1",
@@ -4902,7 +4898,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例续费的时间单位。取值范围：\n<li>m：表示月份。</li>",
           "example": "m",
@@ -4912,7 +4907,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "货币种类。取值范围：\n<li>CNY：表示人民币。\u0007</li>",
           "example": "CNY",
@@ -4922,7 +4916,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否按量转包年包月。0：否，1：是。",
           "example": "1",
@@ -4943,7 +4936,7 @@
           "example": "898.9",
           "member": "float",
           "name": "OriginalCost",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -4953,7 +4946,7 @@
           "example": "596.54",
           "member": "float",
           "name": "DiscountCost",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -4963,7 +4956,7 @@
           "example": "m",
           "member": "string",
           "name": "TimeUnit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4973,7 +4966,7 @@
           "example": "1",
           "member": "int64",
           "name": "TimeSpan",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },

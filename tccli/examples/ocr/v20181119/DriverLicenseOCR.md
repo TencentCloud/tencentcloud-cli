@@ -64,10 +64,10 @@ Output:
         "Name": "李明",
         "Nationality": "中国",
         "RecognizeWarnCode": [
-            -9106
+            -9102
         ],
         "RecognizeWarnMsg": [
-            "WARN_DRIVER_LICENSE_PS_CARD"
+            "WARN_DRIVER_LICENSE_COPY_CARD"
         ],
         "Record": "",
         "RequestId": "c5ceedaa-cb6f-4210-af49-0a5dee461259",

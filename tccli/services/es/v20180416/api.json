@@ -133,6 +133,13 @@
       "output": "GetRequestTargetNodeTypesResponse",
       "status": "online"
     },
+    "ModifyEsVipSecurityGroup": {
+      "document": "修改绑定VIP的安全组，传安全组id列表",
+      "input": "ModifyEsVipSecurityGroupRequest",
+      "name": "修改集群VIP绑定的安全组",
+      "output": "ModifyEsVipSecurityGroupResponse",
+      "status": "online"
+    },
     "RestartInstance": {
       "document": "重启ES集群实例(用于系统版本更新等操作) ",
       "input": "RestartInstanceRequest",
@@ -4954,6 +4961,42 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyEsVipSecurityGroupRequest": {
+      "document": "ModifyEsVipSecurityGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "es集群的实例id",
+          "example": "es-3p7lkxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "安全组id列表",
+          "example": "[\"sg-cyc7u0pp\", \"sg-k3jsu0jf\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEsVipSecurityGroupResponse": {
+      "document": "ModifyEsVipSecurityGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "NodeInfo": {
       "document": "集群中一种节点类型（如热数据节点，冷数据节点，专用主节点等）的规格描述信息，包括节点类型，节点个数，节点规格，磁盘类型，磁盘大小等, Type不指定时默认为热数据节点；如果节点为master节点，则DiskType和DiskSize参数会被忽略（主节点无数据盘）",

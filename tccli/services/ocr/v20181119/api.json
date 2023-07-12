@@ -71,7 +71,7 @@
       "status": "online"
     },
     "DriverLicenseOCR": {
-      "document": "本接口支持驾驶证主页和副页所有字段的自动定位与识别，重点字段的识别准确度达到99%以上。\n\n驾驶证主页：包括证号、姓名、性别、国籍、住址、出生日期、初次领证日期、准驾车型、有效期限、发证单位\n\n驾驶证副页：包括证号、姓名、档案编号、记录。\n\n另外，本接口还支持复印件、翻拍和PS告警功能。同时支持识别交管12123APP发放的电子驾驶证正页。\n\n电子驾驶证正页：包括证号、姓名、性别、国籍、出生日期、初次领证日期、准驾车型、有效期开始时间、有效期截止时间、档案编号、状态、累积记分。\n\n默认接口请求频率限制：10次/秒。",
+      "document": "本接口支持驾驶证主页和副页所有字段的自动定位与识别，重点字段的识别准确度达到99%以上。\n\n驾驶证主页：包括证号、姓名、性别、国籍、住址、出生日期、初次领证日期、准驾车型、有效期限、发证单位\n\n驾驶证副页：包括证号、姓名、档案编号、记录。\n\n另外，本接口还支持复印件、翻拍告警功能。同时支持识别交管12123 APP发放的电子驾驶证正页。\n\n电子驾驶证正页：包括证号、姓名、性别、国籍、出生日期、初次领证日期、准驾车型、有效期开始时间、有效期截止时间、档案编号、状态、累积记分。\n\n默认接口请求频率限制：10次/秒。",
       "input": "DriverLicenseOCRRequest",
       "name": "驾驶证识别",
       "output": "DriverLicenseOCRResponse",
@@ -2459,6 +2459,7 @@
           "example": "李明",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2468,6 +2469,7 @@
           "example": "男",
           "member": "string",
           "name": "Sex",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2477,6 +2479,7 @@
           "example": "中国",
           "member": "string",
           "name": "Nationality",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2486,6 +2489,7 @@
           "example": "上海市徐汇区田林路397号腾云大厦6F",
           "member": "string",
           "name": "Address",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2495,6 +2499,7 @@
           "example": "1987-01-01",
           "member": "string",
           "name": "DateOfBirth",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2504,6 +2509,7 @@
           "example": "2011-10-01",
           "member": "string",
           "name": "DateOfFirstIssue",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2513,6 +2519,7 @@
           "example": "C1",
           "member": "string",
           "name": "Class",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2522,6 +2529,7 @@
           "example": "2011-10-01",
           "member": "string",
           "name": "StartDate",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2531,6 +2539,7 @@
           "example": "2017-10-01",
           "member": "string",
           "name": "EndDate",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2540,6 +2549,7 @@
           "example": "440524198701010014",
           "member": "string",
           "name": "CardCode",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2549,6 +2559,7 @@
           "example": "无",
           "member": "string",
           "name": "ArchivesCode",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2558,24 +2569,27 @@
           "example": "无",
           "member": "string",
           "name": "Record",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Code 告警码列表和释义：\n-9102  复印件告警\n-9103  翻拍件告警\n-9106  ps告警\n注：告警码可以同时存在多个",
-          "example": "[-9106]",
+          "document": "Code 告警码列表和释义：\n-9102  复印件告警\n-9103  翻拍件告警\n注：告警码可以同时存在多个",
+          "example": "[-9102]",
           "member": "int64",
           "name": "RecognizeWarnCode",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警码说明：\nWARN_DRIVER_LICENSE_COPY_CARD 复印件告警\nWARN_DRIVER_LICENSE_SCREENED_CARD 翻拍件告警\nWARN_DRIVER_LICENSE_PS_CARD ps告警\n注：告警信息可以同时存在多个",
-          "example": "[\"WARN_DRIVER_LICENSE_PS_CARD\"]",
+          "document": "告警码说明：\nWARN_DRIVER_LICENSE_COPY_CARD 复印件告警\nWARN_DRIVER_LICENSE_SCREENED_CARD 翻拍件告警\n注：告警信息可以同时存在多个",
+          "example": "[\"WARN_DRIVER_LICENSE_COPY_CARD\"]",
           "member": "string",
           "name": "RecognizeWarnMsg",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2585,6 +2599,7 @@
           "example": "上海市公安局交通警察总队",
           "member": "string",
           "name": "IssuingAuthority",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2594,6 +2609,7 @@
           "example": "无",
           "member": "string",
           "name": "State",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2603,6 +2619,7 @@
           "example": "无",
           "member": "string",
           "name": "CumulativeScore",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

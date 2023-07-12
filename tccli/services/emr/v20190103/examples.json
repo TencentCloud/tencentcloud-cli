@@ -146,10 +146,16 @@
     ],
     "InquiryPriceRenewInstance": [
       {
-        "document": "",
+        "document": "续费询价示例",
         "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceRenewInstance\n<公共请求参数>\n\n{\n    \"Placement\": {\n        \"ProjectId\": \"0\",\n        \"Zone\": \"ap-guangzhou-4\"\n    },\n    \"Currency\": \"CNY\",\n    \"TimeSpan\": \"1\",\n    \"PayMode\": \"1\",\n    \"ResourceIds\": [\n        \"emr-vm-jv1s4zas\"\n    ],\n    \"TimeUnit\": \"m\"\n}",
         "output": "{\n    \"Response\": {\n        \"DiscountCost\": 596.54,\n        \"OriginalCost\": 898.9,\n        \"RequestId\": \"223c838e-ce27-4adf-9a41-89661fe7ad21\",\n        \"TimeSpan\": 1,\n        \"TimeUnit\": \"m\"\n    }\n}",
         "title": "续费询价示例"
+      },
+      {
+        "document": "续费询价",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceRenewInstance\n<公共请求参数>\n\n{\n    \"TimeUnit\": \"abc\",\n    \"TimeSpan\": 1,\n    \"ResourceIds\": [\n        \"abc\"\n    ],\n    \"Currency\": \"abc\",\n    \"Placement\": {\n        \"ProjectId\": 0,\n        \"Zone\": \"abc\"\n    },\n    \"PayMode\": 0,\n    \"ModifyPayMode\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"OriginalCost\": 0,\n        \"DiscountCost\": 0,\n        \"TimeUnit\": \"abc\",\n        \"TimeSpan\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "续费询价"
       }
     ],
     "InquiryPriceScaleOutInstance": [

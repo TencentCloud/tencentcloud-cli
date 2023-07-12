@@ -2938,6 +2938,7 @@
           "member": "bool",
           "name": "IsScaleDownEnabled",
           "output_required": true,
+          "required": false,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -2948,6 +2949,7 @@
           "member": "string",
           "name": "Expander",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2958,6 +2960,7 @@
           "member": "int64",
           "name": "MaxEmptyBulkDelete",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2968,6 +2971,7 @@
           "member": "int64",
           "name": "ScaleDownDelay",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2978,6 +2982,7 @@
           "member": "int64",
           "name": "ScaleDownUnneededTime",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2988,6 +2993,7 @@
           "member": "int64",
           "name": "ScaleDownUtilizationThreshold",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2998,6 +3004,7 @@
           "member": "bool",
           "name": "SkipNodesWithLocalStorage",
           "output_required": true,
+          "required": false,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -3008,6 +3015,7 @@
           "member": "bool",
           "name": "SkipNodesWithSystemPods",
           "output_required": true,
+          "required": false,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -3018,6 +3026,7 @@
           "member": "bool",
           "name": "IgnoreDaemonSetsUtilization",
           "output_required": true,
+          "required": false,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -3028,6 +3037,7 @@
           "member": "int64",
           "name": "OkTotalUnreadyCount",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3038,6 +3048,7 @@
           "member": "int64",
           "name": "MaxTotalUnreadyPercentage",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3048,6 +3059,7 @@
           "member": "int64",
           "name": "ScaleDownUnreadyTime",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3058,11 +3070,12 @@
           "member": "int64",
           "name": "UnregisteredNodeRemovalTime",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "ClusterBasicSettings": {
       "document": "描述集群的基本配置信息",

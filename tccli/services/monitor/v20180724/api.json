@@ -5236,27 +5236,27 @@
       "document": "DeletePrometheusScrapeJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID",
+          "example": " prom-evrh1x32",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Agent ID",
+          "example": "agent-hod16m43",
           "member": "string",
           "name": "AgentId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务 ID 列表",
+          "example": "[\"job-afeiigf\"]",
           "member": "string",
           "name": "JobIds",
           "required": true,
@@ -7726,17 +7726,15 @@
       "document": "DescribeExporterIntegrations请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID",
-          "example": "prom-xx",
+          "example": "prom-evrh1x32",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Kubernetes 集群类型，取值如下：\n<li> 1= 容器集群(TKE) </li>\n<li> 2=弹性集群<EKS> </li>\n<li> 3= Prometheus管理的弹性集群<MEKS> </li>",
           "example": "3",
@@ -7746,17 +7744,15 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群 ID",
-          "example": "cls-xxx",
+          "example": "cls-evrh1x32",
           "member": "string",
           "name": "ClusterId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型",
           "example": "mysql-exporter",
@@ -7766,7 +7762,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名字",
           "example": "test",
@@ -7787,7 +7782,7 @@
           "example": "[]",
           "member": "IntegrationConfiguration",
           "name": "IntegrationSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10773,7 +10768,6 @@
       "document": "DescribePrometheusAgents请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID",
           "example": "xx",
@@ -10783,7 +10777,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Agent 名称",
           "example": "无",
@@ -10793,7 +10786,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Agent ID 列表",
           "example": "无",
@@ -10803,7 +10795,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
           "example": "无",
@@ -10813,7 +10804,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100",
           "example": "无",
@@ -10834,7 +10824,7 @@
           "example": "无",
           "member": "PrometheusAgent",
           "name": "AgentSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -10844,7 +10834,7 @@
           "example": "12",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11506,6 +11496,7 @@
           "example": "无",
           "member": "PrometheusInstancesOverview",
           "name": "Instances",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11515,6 +11506,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11785,54 +11777,54 @@
       "document": "DescribePrometheusScrapeJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID",
+          "example": "prom-evrh1x32",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Agent ID",
+          "example": "agent-hod16m43",
           "member": "string",
           "name": "AgentId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务名",
+          "example": "node-exporter",
           "member": "string",
           "name": "Name",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务 ID 列表",
+          "example": "[\"job-afeiigf\"]",
           "member": "string",
           "name": "JobIds",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -11847,16 +11839,20 @@
         {
           "disabled": false,
           "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{                 \"AgentId\": \"agent-hod16m43\",                  \"Config\": \"job_name: static\\nhonor_timestamps: true\\nmetrics_path: /metrics\\nscheme: http\\nfollow_redirects: true\\nstatic_configs:\\n- targets:\\n  - localhost:9090\\n\",                  \"Name\": \"node-exporter\",                  \"JobId\": \"job-afeiig0k\"}]",
           "member": "PrometheusScrapeJob",
           "name": "ScrapeJobSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "任务总量",
+          "example": "12",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

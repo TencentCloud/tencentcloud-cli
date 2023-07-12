@@ -448,6 +448,14 @@
         "title": "获取集群命名空间列表"
       }
     ],
+    "DescribeColumnLineage": [
+      {
+        "document": "列出表血缘信息",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeColumnLineage\n<公共请求参数>\n\n{\n    \"Direction\": \"xx\",\n    \"InputDepth\": 0,\n    \"ExtParams\": [\n        {\n            \"Name\": \"xx\",\n            \"Value\": \"xx\"\n        }\n    ],\n    \"OutputDepth\": 0,\n    \"IgnoreTemp\": true,\n    \"Data\": {\n        \"ParentId\": \"xx\",\n        \"Params\": \"xx\",\n        \"MetastoreType\": \"xx\",\n        \"RelationParams\": \"xx\",\n        \"QualifiedName\": \"xx\",\n        \"Description\": \"xx\",\n        \"TableName\": \"xx\",\n        \"ColumnNameCn\": \"xx\",\n        \"ParentSet\": \"xx\",\n        \"ChildSet\": \"xx\",\n        \"ColumnType\": \"xx\",\n        \"UpStreamCount\": 0,\n        \"PrefixPath\": \"xx\",\n        \"DatasourceId\": \"xx\",\n        \"ModifyTime\": \"xx\",\n        \"MetastoreTypeName\": \"xx\",\n        \"Tasks\": [\n            \"xx\"\n        ],\n        \"DownStreamCount\": 0,\n        \"ExtParams\": [\n            {\n                \"Name\": \"xx\",\n                \"Value\": \"xx\"\n            }\n        ],\n        \"Id\": \"xx\",\n        \"ColumnName\": \"xx\",\n        \"TableId\": \"xx\",\n        \"CreateTime\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"ColumnAggregationLineage\": {\n            \"ChildSet\": \"xx\",\n            \"ParentSet\": \"xx\",\n            \"ParentId\": \"xx\",\n            \"TableName\": \"xx\",\n            \"MetastoreType\": \"xx\",\n            \"ColumnInfoSet\": [\n                {\n                    \"QualifiedName\": \"xx\",\n                    \"Tasks\": [\n                        \"xx\"\n                    ],\n                    \"ColumnType\": \"xx\",\n                    \"Description\": \"xx\",\n                    \"DownStreamCount\": 0,\n                    \"UpStreamCount\": 0,\n                    \"CreateTime\": \"xx\",\n                    \"ColumnName\": \"xx\",\n                    \"PrefixPath\": \"xx\",\n                    \"Params\": \"xx\",\n                    \"ModifyTime\": \"xx\",\n                    \"RelationParams\": \"xx\",\n                    \"ColumnNameCn\": \"xx\",\n                    \"Id\": \"xx\",\n                    \"DatasourceId\": \"xx\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "列出表血缘信息"
+      }
+    ],
     "DescribeDataBases": [
       {
         "document": "",
@@ -1078,6 +1086,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableInfoList\n<公共请求参数>\n\n{\n    \"Catalog\": \"HIVE\",\n    \"ConnectionType\": \"rpc\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"7\"\n            ],\n            \"Name\": \"datasourceId\"\n        },\n        {\n            \"Values\": [\n                \"hive\"\n            ],\n            \"Name\": \"type\"\n        },\n        {\n            \"Values\": [\n                \"rost_test_hive384\"\n            ],\n            \"Name\": \"databaseName\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TableInfo\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取数据表信息"
+      }
+    ],
+    "DescribeTableLineage": [
+      {
+        "document": "列出表血缘信息",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableLineage\n<公共请求参数>\n\n{\n    \"Direction\": \"xx\",\n    \"InputDepth\": 0,\n    \"ExtParams\": [\n        {\n            \"Name\": \"xx\",\n            \"Value\": \"xx\"\n        }\n    ],\n    \"OutputDepth\": 0,\n    \"IgnoreTemp\": true,\n    \"Data\": {\n        \"ChildSet\": \"xx\",\n        \"Tasks\": [\n            \"xx\"\n        ],\n        \"Description\": \"xx\",\n        \"DownStreamCount\": 0,\n        \"ProjectId\": \"xx\",\n        \"ExtParams\": [\n            {\n                \"Name\": \"xx\",\n                \"Value\": \"xx\"\n            }\n        ],\n        \"MetastoreType\": \"xx\",\n        \"TableName\": \"xx\",\n        \"QualifiedName\": \"xx\",\n        \"CreateTime\": \"xx\",\n        \"UpStreamCount\": 0,\n        \"PrefixPath\": \"xx\",\n        \"Params\": [\n            {\n                \"Name\": \"xx\",\n                \"Value\": \"xx\"\n            }\n        ],\n        \"DatasourceId\": \"xx\",\n        \"ModifyTime\": \"xx\",\n        \"TableId\": \"xx\",\n        \"ParentSet\": \"xx\",\n        \"Id\": \"xx\",\n        \"MetastoreTypeName\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TableLineage\": {\n            \"ChildSet\": \"xx\",\n            \"Tasks\": [\n                \"xx\"\n            ],\n            \"Description\": \"xx\",\n            \"DownStreamCount\": 0,\n            \"ProjectId\": \"xx\",\n            \"ExtParams\": [\n                {\n                    \"Name\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ],\n            \"MetastoreType\": \"xx\",\n            \"TableName\": \"xx\",\n            \"QualifiedName\": \"xx\",\n            \"CreateTime\": \"xx\",\n            \"UpStreamCount\": 0,\n            \"PrefixPath\": \"xx\",\n            \"Params\": [\n                {\n                    \"Name\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ],\n            \"DatasourceId\": \"xx\",\n            \"ModifyTime\": \"xx\",\n            \"TableId\": \"xx\",\n            \"ParentSet\": \"xx\",\n            \"Id\": \"xx\",\n            \"MetastoreTypeName\": \"xx\"\n        }\n    }\n}",
+        "title": "列出表血缘信息"
       }
     ],
     "DescribeTableQualityDetails": [

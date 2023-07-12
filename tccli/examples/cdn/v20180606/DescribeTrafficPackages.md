@@ -1,6 +1,6 @@
 **Example 1: 查询流量包列表**
 
-
+查询流量包列表
 
 Input: 
 
@@ -14,33 +14,35 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "604e7ebe-041c-4684-ab59-e0c825c3a788",
+        "RequestId": "b1a70a67f5500913be355ac2f09ff191",
         "TrafficPackages": [
             {
-                "Id": 888890106,
+                "Id": 22890370,
                 "Type": "日常流量包",
                 "ConfigId": 672,
                 "Bytes": 100000000000,
                 "BytesUsed": 0,
-                "Status": "enabled",
-                "CreateTime": "2021-11-10 17:59:24",
-                "EnableTime": "2021-11-01 00:00:00",
-                "ExpireTime": "2022-10-31 23:59:59",
+                "Status": "frozen",
+                "CreateTime": "2022-11-11 15:52:28",
+                "EnableTime": "2022-11-11 15:00:00",
+                "ExpireTime": "2023-11-11 15:00:00",
                 "ContractExtension": false,
-                "AutoExtension": true,
-                "ExtensionMode": 3,
+                "AutoExtension": false,
+                "ExtensionMode": 0,
                 "Area": "mainland",
                 "LifeTimeMonth": 12,
                 "RefundAvailable": false,
                 "Channel": "ACTIVE_PURCHASE",
-                "ExtensionAvailable": true,
-                "Region": 0
+                "ExtensionAvailable": false,
+                "Region": 0,
+                "TrueEnableTime": "2022-11-11 15:00:00",
+                "TrueExpireTime": "2023-11-11 15:59:59"
             }
         ],
-        "TotalCount": 6,
+        "TotalCount": 1,
         "ExpiringCount": 0,
-        "EnabledCount": 6,
-        "PaidCount": 6
+        "EnabledCount": 0,
+        "PaidCount": 1
     }
 }
 ```

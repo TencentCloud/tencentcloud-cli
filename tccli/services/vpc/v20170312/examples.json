@@ -1534,7 +1534,7 @@
     ],
     "DescribeSecurityGroups": [
       {
-        "document": "",
+        "document": "查看安全组",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityGroups\n<公共请求参数>\n\n{\n    \"Limit\": \"1\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"TestGroup\"\n            ],\n            \"Name\": \"security-group-name\"\n        },\n        {\n            \"Values\": [\n                \"0\"\n            ],\n            \"Name\": \"project-id\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"SecurityGroupSet\": [\n            {\n                \"SecurityGroupId\": \"sg-05bb4upy\",\n                \"SecurityGroupName\": \"TestGroup\",\n                \"SecurityGroupDesc\": \"test-group-desc\",\n                \"ProjectId\": \"0\",\n                \"IsDefault\": true,\n                \"CreatedTime\": \"2017-04-18 21:02:30\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "查看安全组"

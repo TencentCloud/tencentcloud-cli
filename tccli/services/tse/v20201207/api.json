@@ -3465,8 +3465,7 @@
           "member": "string",
           "name": "Host",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3475,8 +3474,7 @@
           "member": "int64",
           "name": "Port",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3485,18 +3483,16 @@
           "member": "string",
           "name": "SourceID",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "名字空间",
+          "document": "命名空间",
           "example": "Default",
           "member": "string",
           "name": "Namespace",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3505,8 +3501,7 @@
           "member": "string",
           "name": "ServiceName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3515,8 +3510,7 @@
           "member": "KongTarget",
           "name": "Targets",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         },
         {
           "disabled": false,
@@ -3525,8 +3519,7 @@
           "member": "string",
           "name": "SourceType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3535,8 +3528,7 @@
           "member": "string",
           "name": "ScfType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3545,8 +3537,7 @@
           "member": "string",
           "name": "ScfNamespace",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3555,8 +3546,7 @@
           "member": "string",
           "name": "ScfLambdaName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3565,8 +3555,7 @@
           "member": "string",
           "name": "ScfLambdaQualifier",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3575,8 +3564,7 @@
           "member": "int64",
           "name": "SlowStart",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3585,8 +3573,7 @@
           "member": "string",
           "name": "Algorithm",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3595,8 +3582,7 @@
           "member": "string",
           "name": "AutoScalingGroupID",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3605,8 +3591,7 @@
           "member": "uint64",
           "name": "AutoScalingCvmPort",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3615,8 +3600,7 @@
           "member": "string",
           "name": "AutoScalingTatCmdStatus",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3625,8 +3609,7 @@
           "member": "string",
           "name": "AutoScalingHookStatus",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3635,8 +3618,7 @@
           "member": "string",
           "name": "SourceName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3645,8 +3627,7 @@
           "member": "string",
           "name": "RealSourceType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         }
       ],
       "usage": "in"

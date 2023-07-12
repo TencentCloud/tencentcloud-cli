@@ -152,6 +152,14 @@
         "title": "获取接收客户端请求的节点类型"
       }
     ],
+    "ModifyEsVipSecurityGroup": [
+      {
+        "document": "修改集群VIP绑定的安全组信息",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEsVipSecurityGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-3p7lkvxx\",\n    \"SecurityGroupIds\": [\n        \"sg-1\",\n        \"sg-2\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
+        "title": "修改集群VIP绑定的安全组信息"
+      }
+    ],
     "RestartInstance": [
       {
         "document": "用以进行版本更新等操作",

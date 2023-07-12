@@ -4942,6 +4942,15 @@
           "name": "SignId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SMS: 短信; NONE: 不发信息\n默认为SMS(该字段对子客无效)",
+          "example": "SMS",
+          "member": "string",
+          "name": "NotifyType",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

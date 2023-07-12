@@ -139,15 +139,15 @@
     "CreateFlowReminds": [
       {
         "document": "对合同中尚未完成的用户推送催办",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowReminds\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"xxx\"\n    },\n    \"FlowIds\": [\n        \"xxx\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RemindFlowRecords\": [\n            {\n                \"CanRemind\": true,\n                \"FlowId\": \"xxx\",\n                \"RemindMessage\": \"签署人 xxx: 此签署人已催办过；\"\n            }\n        ],\n        \"RequestId\": \"s1675154686215203499\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowReminds\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxMkUyxxxxxxxxxxxVI2JmKxPkk\"\n    },\n    \"FlowIds\": [\n        \"yDwXiUUcxxxxxxxxxxSZ0uIW72Qaxm\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RemindFlowRecords\": [\n            {\n                \"CanRemind\": true,\n                \"FlowId\": \"yDwxxxxxxxW72Qaxm\",\n                \"RemindMessage\": \"签署人 xxx: 此签署人已催办过；\"\n            }\n        ],\n        \"RequestId\": \"s1675154686215203499\"\n    }\n}",
         "title": "合同催办"
       }
     ],
     "CreateFlowSignReview": [
       {
         "document": "提交企业签署流程审批结果",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowSignReview\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"1956103********520fde6a\"\n    },\n    \"FlowId\": \"xxxx\",\n    \"ReviewType\": \"PASS\",\n    \"ReviewMessage\": \"企业内部审核通过，允许签署\"\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowSignReview\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxMkUy************8VI2JmKxPkk\"\n    },\n    \"FlowId\": \"yDwXiUUc***********uIW72Qaxm\",\n    \"ReviewType\": \"PASS\",\n    \"ReviewMessage\": \"企业内部审核通过，允许签署\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1234345677xxxx\"\n    }\n}",
         "title": "提交企业签署流程审批结果"
       }

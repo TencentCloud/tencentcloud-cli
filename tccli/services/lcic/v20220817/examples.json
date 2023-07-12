@@ -202,10 +202,16 @@
     ],
     "DescribeDocument": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDocument\n<公共请求参数>\n\n{\n    \"DocumentId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"UpdateTime\": 1,\n        \"DocumentUrl\": \"xx\",\n        \"TranscodeState\": 1,\n        \"Permission\": 1,\n        \"TranscodeType\": 1,\n        \"DocumentName\": \"xx\",\n        \"TranscodeInfo\": \"xx\",\n        \"DocumentSize\": 1,\n        \"TranscodeResult\": \"xx\",\n        \"SdkAppId\": 1,\n        \"DocumentType\": \"xx\",\n        \"Owner\": \"xx\",\n        \"TranscodeProgress\": 1,\n        \"DocumentId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "获取文档信息"
+        "document": "pdf 示例",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDocument\n<公共请求参数>\n\n{\n    \"DocumentId\": \"omxxxsdc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DocumentId\": \"omxxxsdc\",\n        \"DocumentName\": \"滴滴电子发票 (1).pdf\",\n        \"DocumentSize\": 38673,\n        \"DocumentType\": \"pdf\",\n        \"DocumentUrl\": \"https://tcic-source.qcloudclass.com/uploads/5390248a-5eb7-4fe8-be27-c43dbad1380f/3520371/1679021408_KzpMGD38.pdf\",\n        \"Owner\": \"2N1zP0mW7E3Vr3xJ2ZQ9GeFDK4t\",\n        \"Pages\": 1,\n        \"Permission\": 0,\n        \"RequestId\": \"ee3fdca0-c88c-43f1-81b4-4f51f9e50521\",\n        \"SdkAppId\": 3520371,\n        \"TranscodeInfo\": \"\",\n        \"TranscodeProgress\": 100,\n        \"TranscodeResult\": \"https://tcic-test-1257307760.qcloudclass.com/doc/01aq2v7djsh31noat9gc_tiw/picture/\",\n        \"TranscodeState\": 3,\n        \"TranscodeType\": 1,\n        \"UpdateTime\": 1679021410\n    }\n}",
+        "title": "测试示例"
+      },
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDocument\n<公共请求参数>\n\n{\n    \"DocumentId\": \"ntxsfrzk\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DocumentId\": \"ntxsfrzk\",\n        \"DocumentName\": \"test.pptx\",\n        \"DocumentSize\": 15814364,\n        \"DocumentType\": \"pptx\",\n        \"DocumentUrl\": \"https://tcic-source.qcloudclass.com/uploads/5390248a-5eb7-4fe8-be27-c43dbad1380f/3520371/1677202414_85bt9f0X.pptx\",\n        \"Owner\": \"2M04q0j5mhsbq1lAEbCW1dhRvA2\",\n        \"Pages\": 0,\n        \"Permission\": 0,\n        \"RequestId\": \"d97f98d7-de89-455a-a1f3-b9dae84d84bb\",\n        \"SdkAppId\": 3520371,\n        \"TranscodeInfo\": \"Microsoft Macintosh PowerPoint\",\n        \"TranscodeProgress\": 100,\n        \"TranscodeResult\": \"https://tcic-test-1257307760.qcloudclass.com/doc/gsutgbm7ssh31ns71sfc_tiw/h5/index.html\",\n        \"TranscodeState\": 3,\n        \"TranscodeType\": 1,\n        \"UpdateTime\": 1677202419\n    }\n}",
+        "title": "获取文档详情"
       }
     ],
     "DescribeDocuments": [

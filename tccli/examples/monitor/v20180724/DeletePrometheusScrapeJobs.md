@@ -1,14 +1,14 @@
 **Example 1: 删除 Prometheus 抓取任务**
 
-
+删除 Prometheus 抓取任务
 
 Input: 
 
 ```
 tccli monitor DeletePrometheusScrapeJobs --cli-unfold-argument  \
-    --InstanceId xx \
-    --AgentId xx \
-    --JobIds xx
+    --InstanceId prom-evrh1x32 \
+    --AgentId agent-hod16m3f \
+    --JobIds job-afeiig0x
 ```
 
 Output: 

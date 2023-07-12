@@ -596,9 +596,9 @@
       "status": "online"
     },
     "DescribeRebuildMediaTemplates": {
-      "document": "获取音画质重生模板列表。",
+      "document": "获取视频重生模板列表。",
       "input": "DescribeRebuildMediaTemplatesRequest",
-      "name": "获取音画质重生模板列表",
+      "name": "获取视频重生模板列表",
       "output": "DescribeRebuildMediaTemplatesResponse",
       "status": "online"
     },
@@ -883,9 +883,9 @@
       "status": "online"
     },
     "ModifyRebuildMediaTemplate": {
-      "document": "修改音画质重生模板。",
+      "document": "修改视频重生模板。",
       "input": "ModifyRebuildMediaTemplateRequest",
-      "name": "修改音画质重生模板",
+      "name": "修改视频重生模板",
       "output": "ModifyRebuildMediaTemplateResponse",
       "status": "online"
     },
@@ -1030,16 +1030,16 @@
       "status": "online"
     },
     "RebuildMedia": {
-      "document": "发起音画质重生",
+      "document": "发起视频重生",
       "input": "RebuildMediaRequest",
-      "name": "发起音画质重生",
+      "name": "发起视频重生",
       "output": "RebuildMediaResponse",
       "status": "online"
     },
     "RebuildMediaByTemplate": {
-      "document": "使用模板发起音画质重生。",
+      "document": "使用模板发起视频重生。",
       "input": "RebuildMediaByTemplateRequest",
-      "name": "使用模板发起音画质重生",
+      "name": "使用模板发起视频重生",
       "output": "RebuildMediaByTemplateResponse",
       "status": "online"
     },
@@ -6319,34 +6319,31 @@
       "document": "AI 样本管理，人脸数据操作。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "操作类型，可选值：add（添加）、delete（删除）、reset（重置）。重置操作将清空该人物已有人脸数据，并添加 FaceContents 指定人脸数据。",
+          "example": "无",
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸 ID 集合，当 Type为delete 时，该字段必填。",
+          "example": "无",
           "member": "string",
           "name": "FaceIds",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串集合。\n<li>当 Type为add 或 reset 时，该字段必填；</li>\n<li>数组长度限制：5 张图片。</li>\n注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。",
+          "document": "人脸图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串集合，仅支持 jpeg、png 图片格式。\n<li>当 Type为add 或 reset 时，该字段必填；</li>\n<li>数组长度限制：5 张图片。</li>\n注意：图片必须是单人像正面人脸较清晰的照片，像素不低于 200*200。",
+          "example": "无",
           "member": "string",
           "name": "FaceContents",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -14645,7 +14642,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "音画质重生模板列表。",
+          "document": "视频重生模板列表。",
           "example": "无",
           "member": "int64",
           "name": "Definitions",
@@ -14700,15 +14697,17 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "音画质重生模板详情列表。",
+          "document": "视频重生模板详情列表。",
           "example": "无",
           "member": "RebuildMediaTemplate",
           "name": "RebuildMediaTemplateSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14813,7 +14812,7 @@
         },
         {
           "disabled": false,
-          "document": "审核模版唯一标识过滤条件，数组长度限制：100。",
+          "document": "审核模板唯一标识过滤条件，数组长度限制：100。",
           "example": "123",
           "member": "int64",
           "name": "Definitions",
@@ -14859,6 +14858,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14868,6 +14868,7 @@
           "example": "无",
           "member": "ReviewTemplate",
           "name": "ReviewTemplateSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -24606,7 +24607,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "音画质重生模板号。",
+          "document": "视频重生模板号。",
           "example": "无",
           "member": "int64",
           "name": "Definition",
@@ -24624,7 +24625,7 @@
         },
         {
           "disabled": false,
-          "document": "音画质重生模板名称。",
+          "document": "视频重生模板名称。",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -24633,7 +24634,7 @@
         },
         {
           "disabled": false,
-          "document": "音画质重生模板描述。",
+          "document": "视频重生模板描述。",
           "example": "无",
           "member": "string",
           "name": "Comment",
@@ -24642,7 +24643,7 @@
         },
         {
           "disabled": false,
-          "document": "音画质重生视频控制信息。",
+          "document": "视频重生视频控制信息。",
           "example": "无",
           "member": "RebuildVideoInfo",
           "name": "RebuildVideoInfo",
@@ -24651,7 +24652,7 @@
         },
         {
           "disabled": false,
-          "document": "音画质重生音频控制信息。",
+          "document": "视频重生音频控制信息。",
           "example": "无",
           "member": "RebuildAudioInfo",
           "name": "RebuildAudioInfo",
@@ -29170,7 +29171,7 @@
         },
         {
           "disabled": false,
-          "document": "音画质重生模板 ID。",
+          "document": "视频重生模板 ID。",
           "example": "无",
           "member": "int64",
           "name": "Definition",
@@ -29206,7 +29207,7 @@
         },
         {
           "disabled": false,
-          "document": "音画质重生后的文件配置。",
+          "document": "视频重生后的文件配置。",
           "example": "无",
           "member": "RebuildMediaOutputConfig",
           "name": "OutputConfig",
@@ -29257,10 +29258,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "音画质重生的任务 ID，可以通过该 ID 查询音画质重生任务的状态。",
+          "document": "视频重生的任务 ID，可以通过该 ID 查询视频重生任务的状态。",
           "example": "无",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -29509,10 +29511,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "音画质重生的任务 ID，可以通过该 ID 查询音画质重生任务的状态。",
+          "document": "视频重生的任务 ID，可以通过该 ID 查询视频重生任务的状态。",
           "example": "123-xxx-xx",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
