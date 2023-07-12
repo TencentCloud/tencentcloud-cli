@@ -830,6 +830,8 @@ tccli/services/tem/v20201221/api.json
 tccli/services/tem/v20201221/examples.json
 tccli/services/tem/v20210701/api.json
 tccli/services/tem/v20210701/examples.json
+tccli/services/teo/__init__.py
+tccli/services/teo/teo_client.py
 tccli/services/thpc/__init__.py
 tccli/services/thpc/thpc_client.py
 tccli/services/tia/__init__.py

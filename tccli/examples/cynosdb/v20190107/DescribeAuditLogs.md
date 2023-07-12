@@ -1,6 +1,6 @@
-**Example 1: 创建审计日志文件**
+**Example 1: 查询审计日志**
 
-
+查询审计日志
 
 Input: 
 
@@ -19,20 +19,20 @@ Output:
         "TotalCount": "1",
         "Items": [
             {
-                "PolicyName": "xx",
+                "PolicyName": "sys_default",
                 "ExecTime": 0,
-                "Timestamp": "xx",
+                "Timestamp": "2023-06-26 10:32:36.000",
                 "AffectRows": 0,
                 "ThreadId": 0,
-                "TableName": "xx",
+                "TableName": "",
                 "ErrCode": 0,
-                "Host": "xx",
+                "Host": "10.0.0.1",
                 "SentRows": 0,
-                "User": "xx",
-                "Sql": "xx",
-                "SqlType": "xx",
-                "InstanceName": "xx",
-                "DBName": "xx"
+                "User": "test",
+                "Sql": "SELECT * FROM test LIMIT 1;",
+                "SqlType": "SELECT",
+                "InstanceName": "test",
+                "DBName": "test_db"
             }
         ]
     }

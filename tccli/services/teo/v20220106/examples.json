@@ -1,0 +1,51 @@
+{
+  "actions": {
+    "CreatePrefetchTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrefetchTask\n<公共请求参数>\n\n{\n    \"Targets\": [\n        \"http://www.qq.com/a.txt\",\n        \"www.qq.com/1.txt\"\n    ],\n    \"ZoneId\": \"abc\",\n    \"EncodeUrl\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"20ga521cpwch\",\n        \"FailedList\": [],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "预热URL"
+      }
+    ],
+    "CreatePurgeTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePurgeTask\n<公共请求参数>\n\n{\n    \"Targets\": [\n        \"http://www.qq.com/a.txt\",\n        \"www.qq.com/1.txt\"\n    ],\n    \"Type\": \"purge_url\",\n    \"ZoneId\": \"abc\",\n    \"EncodeUrl\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"20ga521cpwch\",\n        \"FailedList\": [],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "清除URL"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePurgeTask\n<公共请求参数>\n\n{\n    \"Type\": \"purge_all\",\n    \"ZoneId\": \"abc\",\n    \"EncodeUrl\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"20ga521cpwch\",\n        \"FailedList\": [],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "清除abc站点下的所有资源"
+      }
+    ],
+    "DescribePrefetchTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrefetchTasks\n<公共请求参数>\n\n{\n    \"ZoneId\": \"abc\",\n    \"StartTime\": \"2022-02-09T00:00:00+08:00\",\n    \"EndTime\": \"2022-02-09T23:59:00+08:00\",\n    \"Statuses\": [\n        \"success\"\n    ],\n    \"Limit\": 1,\n    \"Offset\": 7,\n    \"Domains\": [\n        \"www.qq.com\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc-afhhakf-24hkahf-2424\",\n        \"Tasks\": [\n            {\n                \"JobId\": \"20g9wz8m9mgx\",\n                \"Status\": \"success\",\n                \"Target\": \"http://www.qq.com/a.txt\",\n                \"Type\": \"prefetch_url\",\n                \"CreateTime\": \"2022-02-09T02:28:43Z\",\n                \"UpdateTime\": \"2022-02-09T02:28:52Z\"\n            }\n        ],\n        \"TotalCount\": 8\n    }\n}",
+        "title": "查询预热任务"
+      }
+    ],
+    "DescribePurgeTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePurgeTasks\n<公共请求参数>\n\n{\n    \"ZoneId\": \"abc\",\n    \"StartTime\": \"2022-02-09T00:00:00+08:00\",\n    \"EndTime\": \"2022-02-09T23:59:00+08:00\",\n    \"Statuses\": [\n        \"success\"\n    ],\n    \"Limit\": 1,\n    \"Offset\": 7,\n    \"Domains\": [\n        \"www.qq.com\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc-afhhakf-24hkahf-2424\",\n        \"Tasks\": [\n            {\n                \"JobId\": \"20g9wz8m9mgx\",\n                \"Status\": \"success\",\n                \"Target\": \"http://www.qq.com/a.txt\",\n                \"Type\": \"purge_url\",\n                \"CreateTime\": \"2022-02-09T02:28:43Z\",\n                \"UpdateTime\": \"2022-02-09T02:28:52Z\"\n            }\n        ],\n        \"TotalCount\": 8\n    }\n}",
+        "title": "查询清除缓存历史记录"
+      }
+    ],
+    "DescribeZones": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeZones\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Zones\": [\n            {\n                \"Id\": \"zone-27q0p0bali16\",\n                \"Name\": \"example.com\",\n                \"OriginalNameServers\": [\n                    \"ns1.example.com.\",\n                    \"ns2.example.com.\"\n                ],\n                \"NameServers\": [\n                    \"ns1.teodns.com.\",\n                    \"ns2.teodns.com.\"\n                ],\n                \"Status\": \"active\",\n                \"Type\": \"full\",\n                \"Paused\": false,\n                \"CnameSpeedUp\": \"enabled\",\n                \"CnameStatus\": \"finished\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"test\",\n                        \"TagValue\": \"example\"\n                    }\n                ],\n                \"Resources\": [],\n                \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"CreatedOn\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fd9d86df-b7e8-4469-b928-18cb7fd1d341\"\n    }\n}",
+        "title": "查询用户站点信息列表"
+      }
+    ]
+  },
+  "version": "1.0"
+}

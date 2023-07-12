@@ -1,3 +1,181 @@
+# Release 3.0.806.1
+
+## API 网关(apigateway) 版本：2018-08-08
+
+### 第 24 次发布
+
+发布时间：2023-07-13 01:06:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeLogSearch](http://document.tencentcloudapi.woa.com/document/product/628/45203)
+
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 68 次发布
+
+发布时间：2023-07-13 01:11:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AnalyzeAuditLogs](http://document.tencentcloudapi.woa.com/document/product/236/77307)
+
+	* 新增入参：LogFilter
+
+* [CreateAuditLogFile](http://document.tencentcloudapi.woa.com/document/product/236/45461)
+
+	* 新增入参：LogFilter
+
+
+新增数据结构：
+
+* [InstanceAuditLogFilters](http://document.tencentcloudapi.woa.com/document/product/236/15878#InstanceAuditLogFilters)
+
+
+
+## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 69 次发布
+
+发布时间：2023-07-13 01:13:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Route](http://document.tencentcloudapi.woa.com/document/product/597/40861#Route)
+
+	* <font color="#dd0000">**修改成员**：</font>VpcId
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 51 次发布
+
+发布时间：2023-07-13 01:18:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAuditLogFile](http://document.tencentcloudapi.woa.com/document/product/1003/76408)
+
+	* 新增入参：LogFilter
+
+* [DescribeAuditLogs](http://document.tencentcloudapi.woa.com/document/product/1003/76405)
+
+	* 新增入参：LogFilter
+
+
+新增数据结构：
+
+* [InstanceAuditLogFilter](http://document.tencentcloudapi.woa.com/document/product/1003/48097#InstanceAuditLogFilter)
+
+修改数据结构：
+
+* [AuditLog](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AuditLog)
+
+	* 新增成员：CheckRows, CpuTime, IoWaitTime, LockWaitTime, TrxLivingTime, NsTime
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+
+### 第 21 次发布
+
+发布时间：2023-07-13 01:19:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CloseAuditService](http://document.tencentcloudapi.woa.com/document/product/1130/81228)
+* [DescribeAuditInstanceList](http://document.tencentcloudapi.woa.com/document/product/1130/81227)
+* [ModifyAuditService](http://document.tencentcloudapi.woa.com/document/product/1130/81226)
+* [OpenAuditService](http://document.tencentcloudapi.woa.com/document/product/1130/81225)
+
+新增数据结构：
+
+* [AuditInstance](http://document.tencentcloudapi.woa.com/document/product/1130/57812#AuditInstance)
+* [AuditInstanceFilter](http://document.tencentcloudapi.woa.com/document/product/1130/57812#AuditInstanceFilter)
+* [AuditInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1130/57812#AuditInstanceInfo)
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 68 次发布
+
+发布时间：2023-07-13 01:24:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CreateFlowOption](http://document.tencentcloudapi.woa.com/document/product/1595/75258#CreateFlowOption)
+
+	* 新增成员：HideShowFlowName, HideShowFlowType, HideShowDeadline, CanSkipAddApprover, CustomCreateFlowDescription
+
+* [FormField](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FormField)
+
+	* 新增成员：LockComponentValue
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 55 次发布
+
+发布时间：2023-07-13 01:40:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRole](http://document.tencentcloudapi.woa.com/document/product/1179/62401)
+
+	* 新增出参：EnvironmentRoleSets
+
+
+新增数据结构：
+
+* [EnvironmentRoleSet](http://document.tencentcloudapi.woa.com/document/product/1179/46089#EnvironmentRoleSet)
+
+
+
 # Release 3.0.805.1
 
 ## 内容分发网络 CDN(cdn) 版本：2018-06-06

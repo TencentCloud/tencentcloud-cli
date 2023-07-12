@@ -182,9 +182,9 @@
     ],
     "CreateRole": [
       {
-        "document": "",
+        "document": "创建角色",
         "input": "https://tdmq.tencentcloudapi.com/?Action=CreateRole\n&RoleName=test_role_123\n&Remark=创建角色\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RoleName\": \"test_role_123\",\n        \"Token\": \"eyJrZXlJZCI6InN1bmdvxxxxx0X3JvbGVfMyJ9.dbHR8m6gc4L4vZUrodhW_O9bDulZQ6lraNswNLtcUcY\",\n        \"Remark\": \"创建角色\",\n        \"RequestId\": \"gggxxxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RoleName\": \"abc\",\n        \"Token\": \"abc\",\n        \"Remark\": \"abc\",\n        \"EnvironmentRoleSets\": [\n            {\n                \"EnvironmentId\": \"abc\",\n                \"Permissions\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建角色"
       }
     ],
