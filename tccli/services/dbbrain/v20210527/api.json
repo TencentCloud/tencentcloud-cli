@@ -14,6 +14,13 @@
       "output": "CancelKillTaskResponse",
       "status": "online"
     },
+    "CloseAuditService": {
+      "document": "不用审计日志时，关闭数据库审计",
+      "input": "CloseAuditServiceRequest",
+      "name": "关闭数据审计",
+      "output": "CloseAuditServiceResponse",
+      "status": "online"
+    },
     "CreateAuditLogFile": {
       "document": "用于创建云数据库实例的审计日志文件，最多下载600w审计日志。",
       "input": "CreateAuditLogFileRequest",
@@ -124,6 +131,13 @@
       "input": "DescribeAllUserGroupRequest",
       "name": "获取邮件发送中联系组信息",
       "output": "DescribeAllUserGroupResponse",
+      "status": "online"
+    },
+    "DescribeAuditInstanceList": {
+      "document": "查询实例列表",
+      "input": "DescribeAuditInstanceListRequest",
+      "name": "查询实例列表",
+      "output": "DescribeAuditInstanceListResponse",
       "status": "online"
     },
     "DescribeAuditLogFiles": {
@@ -329,6 +343,13 @@
       "output": "KillMySqlThreadsResponse",
       "status": "online"
     },
+    "ModifyAuditService": {
+      "document": "修改审计配置相关信息，如高频存储时长等",
+      "input": "ModifyAuditServiceRequest",
+      "name": "修改审计配置",
+      "output": "ModifyAuditServiceResponse",
+      "status": "online"
+    },
     "ModifyDiagDBInstanceConf": {
       "document": "修改实例巡检开关。",
       "input": "ModifyDiagDBInstanceConfRequest",
@@ -341,6 +362,13 @@
       "input": "ModifySqlFiltersRequest",
       "name": "更改实例限流任务状态",
       "output": "ModifySqlFiltersResponse",
+      "status": "online"
+    },
+    "OpenAuditService": {
+      "document": "开启数据库审计服务",
+      "input": "OpenAuditServiceRequest",
+      "name": "开通数据库审计",
+      "output": "OpenAuditServiceResponse",
       "status": "online"
     },
     "VerifyUserAccount": {
@@ -415,6 +443,224 @@
         }
       ],
       "type": "object"
+    },
+    "AuditInstance": {
+      "document": "实例详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审计状态，已开通审计为：YES，未开通审计为：ON。",
+          "example": "NO",
+          "member": "string",
+          "name": "AuditStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审计日志大小，为兼容老版本用。",
+          "example": "12",
+          "member": "int64",
+          "name": "BillingAmount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费确认状态，0-未确认；1-已确认。",
+          "example": "0",
+          "member": "int64",
+          "name": "BillingConfirmed",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "低频存储时长。",
+          "example": "23",
+          "member": "int64",
+          "name": "ColdLogExpireDay",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "低频日志存储量单位MB。",
+          "example": "0",
+          "member": "int64",
+          "name": "ColdLogSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高频日志存储天数。",
+          "example": "7",
+          "member": "int64",
+          "name": "HotLogExpireDay",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高频日志存储量，单位MB。",
+          "example": "1222",
+          "member": "int64",
+          "name": "HotLogSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例Id。",
+          "example": "tdsql-kisjgx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志保存总天数，为高频存储时长+低频存储时长。",
+          "example": "30",
+          "member": "int64",
+          "name": "LogExpireDay",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例创建时间。",
+          "example": "2023-06-14 15:18:07",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例详细信息。",
+          "example": "无",
+          "member": "AuditInstanceInfo",
+          "name": "InstanceInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AuditInstanceFilter": {
+      "document": "实例列表查询条件",
+      "members": [
+        {
+          "ValueAllowedNull": true,
+          "disabled": false,
+          "document": "搜索条件名称",
+          "example": "InstanceId",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "ValueAllowedNull": true,
+          "disabled": false,
+          "document": "要搜索的条件的值",
+          "example": "tdsql-fk4kasq",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "AuditInstanceInfo": {
+      "document": "实例详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "appId。",
+          "example": "1235675344",
+          "member": "int64",
+          "name": "AppId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审计状态，0-未开通审计；1-已开通审计。",
+          "example": "1",
+          "member": "int64",
+          "name": "AuditStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例Id。",
+          "example": "tdsql-ijlopwe",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称。",
+          "example": "test-env",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "项目Id。",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例所在地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源Tags。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "AuditLogFile": {
       "document": "审计日志文件",
@@ -614,6 +860,60 @@
           "member": "int64",
           "name": "Status",
           "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseAuditServiceRequest": {
+      "document": "CloseAuditService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务产品类型，支持值包括： \"dcdb\" - 云数据库 Tdsql， \"mariadb\" - 云数据库 MariaDB for MariaDB。",
+          "example": "dcdb",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "与Product保持一致。如：\"dcdb\" ,\"mariadb\"。",
+          "example": "dcdb",
+          "member": "string",
+          "name": "NodeRequestType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例Id。",
+          "example": "tdsql-shartsdf",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseAuditServiceResponse": {
+      "document": "CloseAuditService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0-关闭审计成功，非0关闭审计失败。",
+          "example": "0",
+          "member": "int64",
+          "name": "TaskId",
           "type": "int",
           "value_allowed_null": false
         },
@@ -1772,6 +2072,96 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditInstanceListRequest": {
+      "document": "DescribeAuditInstanceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务产品类型，支持值包括： \"dcdb\" - 云数据库 Tdsql， \"mariadb\" - 云数据库 MariaDB for MariaDB。",
+          "example": "dcdb",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "与Product保持一致。如：\"dcdb\" ,\"mariadb\"。",
+          "example": "dcdb",
+          "member": "string",
+          "name": "NodeRequestType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "审计状态标识，0-未开通审计；1-已开通审计，默认为0。",
+          "example": "1",
+          "member": "int64",
+          "name": "AuditSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询数目，默认为20，最大为100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询实例的搜索条件。",
+          "example": "无",
+          "member": "AuditInstanceFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditInstanceListResponse": {
+      "document": "DescribeAuditInstanceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的实例个数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例详情。",
+          "example": "{}",
+          "member": "AuditInstance",
+          "name": "Items",
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5587,6 +5977,78 @@
       ],
       "usage": "both"
     },
+    "ModifyAuditServiceRequest": {
+      "document": "ModifyAuditService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务产品类型，支持值包括： \"dcdb\" - 云数据库 Tdsql， \"mariadb\" - 云数据库 MariaDB for MariaDB。",
+          "example": "dcdb",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "与Product保持一致。如：\"dcdb\" ,\"mariadb\"。",
+          "example": "dcdb",
+          "member": "string",
+          "name": "NodeRequestType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "tdsql-njshdu",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志保存总时长，只能是7,30,90,180,365,1095,1825",
+          "example": "30",
+          "member": "int64",
+          "name": "LogExpireDay",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "高频日志保存时长，只能是7,30,90,180,365,1095,1825",
+          "example": "7",
+          "member": "int64",
+          "name": "HotLogExpireDay",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAuditServiceResponse": {
+      "document": "ModifyAuditService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审计配置修改结果，0-修改成功,非0-修改失败。",
+          "example": "0",
+          "member": "int64",
+          "name": "Success",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDiagDBInstanceConfRequest": {
       "document": "ModifyDiagDBInstanceConf请求参数结构体",
       "members": [
@@ -5935,6 +6397,78 @@
         }
       ],
       "usage": "out"
+    },
+    "OpenAuditServiceRequest": {
+      "document": "OpenAuditService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "与Product保持一致。如：\"dcdb\" ,\"mariadb\"。",
+          "example": "dcdb",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "与Product保持一致。如：\"dcdb\" ,\"mariadb\"。",
+          "example": "dcdb",
+          "member": "string",
+          "name": "NodeRequestType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "tdsql-njshdu",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志保存总时长，只能是7,30,90,180,365,1095,1825",
+          "example": "30",
+          "member": "int64",
+          "name": "LogExpireDay",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "高频日志保存时长，只能是7,30,90,180,365,1095,1825",
+          "example": "7",
+          "member": "int64",
+          "name": "HotLogExpireDay",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenAuditServiceResponse": {
+      "document": "OpenAuditService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "taskId 为0表示开通审计成功，否则开通失败",
+          "example": "0",
+          "member": "int64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ProcessStatistic": {
       "document": "实时会话统计详情。",

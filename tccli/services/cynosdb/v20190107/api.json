@@ -1430,158 +1430,204 @@
       "document": "审计日志详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "影响行数。",
           "example": "0",
           "member": "int64",
           "name": "AffectRows",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误码。",
-          "example": "2019-03-20 17:09:13",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SQL类型。",
-          "example": "无",
+          "example": "UPDATE",
           "member": "string",
           "name": "SqlType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表名称。",
           "example": "1234",
           "member": "string",
           "name": "TableName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称。",
           "example": "cynosdbmysql-ins-xxxxxxxx",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审计策略名称。",
           "example": "审计策略",
           "member": "string",
           "name": "PolicyName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称。",
           "example": "数据库名称",
           "member": "string",
           "name": "DBName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SQL语句。",
           "example": "无",
           "member": "string",
           "name": "Sql",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端地址。",
           "example": "无",
           "member": "string",
           "name": "Host",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名。",
           "example": "user",
           "member": "string",
           "name": "User",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "执行时间。",
+          "document": "执行时间，微秒。",
           "example": "12345678",
           "member": "int64",
           "name": "ExecTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "时间戳。",
+          "document": "时间。",
           "example": "无",
           "member": "string",
           "name": "Timestamp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "发送行数。",
+          "document": "返回行数。",
           "example": "1",
           "member": "int64",
           "name": "SentRows",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行线程ID。",
           "example": "1",
           "member": "int64",
           "name": "ThreadId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扫描行数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CheckRows",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cpu执行时间，微秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "289.474",
+          "member": "float",
+          "name": "CpuTime",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "IO等待时间，微秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11",
+          "member": "int64",
+          "name": "IoWaitTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "锁等待时间，微秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "57",
+          "member": "int64",
+          "name": "LockWaitTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事物持续等待时间，微秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1092",
+          "member": "int64",
+          "name": "TrxLivingTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间，与timestamp构成一个精确到纳秒的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "106483229",
+          "member": "int64",
+          "name": "NsTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2642,7 +2688,6 @@
       "document": "CreateAuditLogFile请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "cynosdbmysql-ins-xx",
@@ -2652,7 +2697,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间，格式为：\"2017-07-12 10:29:20\"。",
           "example": "2017-07-12 10:29:20",
@@ -2662,7 +2706,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间，格式为：\"2017-07-12 10:29:20\"。",
           "example": "2017-07-12 10:29:20",
@@ -2672,7 +2715,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式。支持值包括：\"ASC\" - 升序，\"DESC\" - 降序。",
           "example": "ASC",
@@ -2682,7 +2724,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段。支持值包括：\n\"timestamp\" - 时间戳；\n\"affectRows\" - 影响行数；\n\"execTime\" - 执行时间。",
           "example": "timestap",
@@ -2692,14 +2733,22 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "过滤条件。可按设置的过滤条件过滤日志。",
+          "document": "已废弃。",
           "example": "无",
           "member": "AuditLogFilter",
           "name": "Filter",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "审计日志过滤条件",
+          "example": "无",
+          "member": "InstanceAuditLogFilter",
+          "name": "LogFilter",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2710,10 +2759,10 @@
         {
           "disabled": false,
           "document": "审计日志文件名称。",
-          "example": "无",
+          "example": "*****.csv",
           "member": "string",
           "name": "FileName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6773,7 +6822,6 @@
       "document": "DescribeAuditLogs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "cynosdbmysql-ins-xx",
@@ -6783,7 +6831,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间，格式为：\"2017-07-12 10:29:20\"。",
           "example": "2017-07-12 10:29:20",
@@ -6793,7 +6840,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间，格式为：\"2017-07-12 10:29:20\"。",
           "example": "2017-07-12 10:29:20",
@@ -6803,7 +6849,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式。支持值包括：\"ASC\" - 升序，\"DESC\" - 降序。",
           "example": "ASC",
@@ -6813,7 +6858,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段。支持值包括：\n\"timestamp\" - 时间戳；\n\"affectRows\" - 影响行数；\n\"execTime\" - 执行时间。",
           "example": "timestap",
@@ -6823,9 +6867,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "过滤条件。可按设置的过滤条件过滤日志。",
+          "document": "已废弃。",
           "example": "无",
           "member": "AuditLogFilter",
           "name": "Filter",
@@ -6833,7 +6876,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数，单次返回的数据条数。默认值为100，最大值为100。",
           "example": "1",
@@ -6843,7 +6885,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量。",
           "example": "0",
@@ -6851,6 +6892,15 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "审计日志过滤条件。",
+          "example": "无",
+          "member": "InstanceAuditLogFilter",
+          "name": "LogFilter",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6864,7 +6914,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6874,7 +6924,7 @@
           "example": "无",
           "member": "AuditLog",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -10358,6 +10408,39 @@
         }
       ],
       "type": "object"
+    },
+    "InstanceAuditLogFilter": {
+      "document": "审计日志搜索条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤项。支持以下搜索条件:\n\n分词搜索：\nsql - SQL语句；\n\n等于、不等于、包含、不包含：\nhost - 客户端地址；\nuser - 用户名；\ndbName - 数据库名称；\n\n等于、不等于：\nsqlType - SQL类型；\nerrCode - 错误码；\nthreadId - 线程ID；\n\n范围搜索（时间类型统一为微妙）：\nexecTime - 执行时间；\nlockWaitTime - 执行时间；\nioWaitTime - IO等待时间；\ntrxLivingTime - 事物持续时间；\ncpuTime - cpu时间；\ncheckRows - 扫描行数；\naffectRows - 影响行数；\nsentRows - 返回行数。\n",
+          "example": "host",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件。支持以下选项:\nINC - 包含,\nEXC - 不包含,\nEQS - 等于,\nNEQ - 不等于,\nRA - 范围.",
+          "example": "INC",
+          "member": "string",
+          "name": "Compare",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤的值。",
+          "example": "100.0.",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "InstanceAuditRule": {
       "document": "实例的审计规则详情，DescribeAuditRuleWithInstanceIds接口的出参。",

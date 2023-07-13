@@ -236,7 +236,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HKIDCardOCR\n<公共请求参数>\n\n{\n    \"DetectFake\": \"true\",\n    \"ReturnHeadImage\": \"false\",\n    \"ImageUrl\": \"https://xx/a.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"CnName\": \"申能\",\n        \"EnName\": \"SAN, Nan\",\n        \"TelexCode\": \"300000000000\",\n        \"Sex\": \"女F\",\n        \"Birthday\": \"01-01-2001\",\n        \"Permanent\": 1,\n        \"IdNum\": \"C000000(E)\",\n        \"Symbol\": \"***AZ\",\n        \"FirstIssueDate\": \"(09-99)\",\n        \"CurrentIssueDate\": \"23-09-10\",\n        \"FakeDetectResult\": 1,\n        \"WarningCode\": [\n            -9102,\n            -9103\n        ],\n        \"HeadImage\": \"xx\",\n        \"RequestId\": \"fba1c9ad-aeb3-4418-9ecf-80ab1b5fc875\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"CnName\": \"申能\",\n        \"EnName\": \"SAN, Nan\",\n        \"TelexCode\": \"300000000000\",\n        \"Sex\": \"女F\",\n        \"Birthday\": \"01-01-2001\",\n        \"Permanent\": 1,\n        \"IdNum\": \"C000000(E)\",\n        \"Symbol\": \"***AZ\",\n        \"FirstIssueDate\": \"(09-99)\",\n        \"CurrentIssueDate\": \"23-09-10\",\n        \"FakeDetectResult\": 1,\n        \"WarningCode\": [\n            -9102,\n            -9103\n        ],\n        \"HeadImage\": \"\",\n        \"RequestId\": \"fba1c9ad-aeb3-4418-9ecf-80ab1b5fc875\"\n    }\n}",
         "title": "中国香港身份证识别示例代码"
       }
     ],
@@ -672,21 +672,21 @@
     ],
     "VehicleLicenseOCR": [
       {
-        "document": "",
+        "document": "行驶证主页正面识别示例代码1",
         "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VehicleLicenseOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg\",\n    \"CardSide\": \"FRONT\"\n}",
-        "output": "{\n    \"Response\": {\n        \"FrontInfo\": {\n            \"PlateNo\": \"沪AA1234\",\n            \"VehicleType\": \"小型轿车\",\n            \"Owner\": \"李明\",\n            \"Address\": \"上海市徐汇区田林路397号腾云大厦6F\",\n            \"UseCharacter\": \"非营运\",\n            \"Model\": \"别克牌SGM7151LAAA\",\n            \"Vin\": \"ABCDEFGH123456789\",\n            \"EngineNo\": \"8B54321\",\n            \"RegisterDate\": \"2011-10-10\",\n            \"IssueDate\": \"\",\n            \"Seal\": \"上海市公安局交通警寨总队\"\n        },\n        \"BackInfo\": null,\n        \"RecognizeWarnCode\": [\n            -9106\n        ],\n        \"RecognizeWarnMsg\": [\n            \"WARN_DRIVER_LICENSE_PS_CARD\"\n        ],\n        \"RequestId\": \"820916b4-b391-40a8-9203-7ae87e3f1954\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FrontInfo\": {\n            \"PlateNo\": \"沪AA1234\",\n            \"VehicleType\": \"小型轿车\",\n            \"Owner\": \"李明\",\n            \"Address\": \"上海市徐汇区田林路397号腾云大厦6F\",\n            \"UseCharacter\": \"非营运\",\n            \"Model\": \"别克牌SGM7151LAAA\",\n            \"Vin\": \"ABCDEFGH123456789\",\n            \"EngineNo\": \"8B54321\",\n            \"RegisterDate\": \"2011-10-10\",\n            \"IssueDate\": \"\",\n            \"Seal\": \"上海市公安局交通警寨总队\"\n        },\n        \"BackInfo\": null,\n        \"RecognizeWarnCode\": [\n            -9102\n        ],\n        \"RecognizeWarnMsg\": [\n            \"WARN_DRIVER_LICENSE_COPY_CARD\"\n        ],\n        \"RequestId\": \"820916b4-b391-40a8-9203-7ae87e3f1954\"\n    }\n}",
         "title": "行驶证主页正面识别示例代码1"
       },
       {
-        "document": "",
+        "document": "行驶证副页正面识别示例代码2",
         "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VehicleLicenseOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg\",\n    \"CardSide\": \"BACK\"\n}",
-        "output": "{\n    \"Response\": {\n        \"FrontInfo\": null,\n        \"BackInfo\": {\n            \"PlateNo\": \"皖AC4L50\",\n            \"FileNo\": \"A00-00476807\",\n            \"AllowNum\": \"5人\",\n            \"TotalMass\": \"1837kg\",\n            \"CurbWeight\": \"1431kg\",\n            \"LoadQuality\": \"--\",\n            \"ExternalSize\": \"4620×1780×1498mm\",\n            \"TotalQuasiMass\": \"--\",\n            \"Marks\": \"\",\n            \"Record\": \"检验有效期至2015年11月皖A(4S)\"\n        },\n        \"RecognizeWarnCode\": [\n            -9106\n        ],\n        \"RecognizeWarnMsg\": [\n            \"WARN_DRIVER_LICENSE_PS_CARD\"\n        ],\n        \"RequestId\": \"e2ebfaa0-19d3-4d2b-9ed8-7c7c21eb2b74\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FrontInfo\": null,\n        \"BackInfo\": {\n            \"PlateNo\": \"皖AC4L50\",\n            \"FileNo\": \"A00-00476807\",\n            \"AllowNum\": \"5人\",\n            \"TotalMass\": \"1837kg\",\n            \"CurbWeight\": \"1431kg\",\n            \"LoadQuality\": \"--\",\n            \"ExternalSize\": \"4620×1780×1498mm\",\n            \"TotalQuasiMass\": \"--\",\n            \"Marks\": \"\",\n            \"Record\": \"检验有效期至2015年11月皖A(4S)\"\n        },\n        \"RecognizeWarnCode\": [\n            -9102\n        ],\n        \"RecognizeWarnMsg\": [\n            \"WARN_DRIVER_LICENSE_COPY_CARD\"\n        ],\n        \"RequestId\": \"e2ebfaa0-19d3-4d2b-9ed8-7c7c21eb2b74\"\n    }\n}",
         "title": "行驶证副页正面识别示例代码2"
       },
       {
-        "document": "",
+        "document": "行驶证副页正面识别示例代码3",
         "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VehicleLicenseOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg\",\n    \"CardSide\": \"BACK\"\n}",
-        "output": "{\n    \"Response\": {\n        \"FrontInfo\": null,\n        \"BackInfo\": {\n            \"PlateNo\": \"皖AC4L50\",\n            \"FileNo\": \"A00-00476807\",\n            \"AllowNum\": \"5人\",\n            \"TotalMass\": \"1837kg\",\n            \"CurbWeight\": \"1431kg\",\n            \"LoadQuality\": \"--\",\n            \"ExternalSize\": \"4620×1780×1498mm\",\n            \"TotalQuasiMass\": \"--\",\n            \"Marks\": \"\",\n            \"Record\": \"检验有效期至2015年11月皖A(4S)\"\n        },\n        \"RecognizeWarnCode\": [\n            -9106,\n            -9103\n        ],\n        \"RecognizeWarnMsg\": [\n            \"WARN_DRIVER_LICENSE_PS_CARD\",\n            \"WARN_DRIVER_LICENSE_SCREENED_CARD\"\n        ],\n        \"RequestId\": \"e2ebfaa0-19d3-4d2b-9ed8-7c7c21eb2b74\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FrontInfo\": null,\n        \"BackInfo\": {\n            \"PlateNo\": \"皖AC4L50\",\n            \"FileNo\": \"A00-00476807\",\n            \"AllowNum\": \"5人\",\n            \"TotalMass\": \"1837kg\",\n            \"CurbWeight\": \"1431kg\",\n            \"LoadQuality\": \"--\",\n            \"ExternalSize\": \"4620×1780×1498mm\",\n            \"TotalQuasiMass\": \"--\",\n            \"Marks\": \"\",\n            \"Record\": \"检验有效期至2015年11月皖A(4S)\"\n        },\n        \"RecognizeWarnCode\": [\n            -9103\n        ],\n        \"RecognizeWarnMsg\": [\n            \"WARN_DRIVER_LICENSE_SCREENED_CARD\"\n        ],\n        \"RequestId\": \"e2ebfaa0-19d3-4d2b-9ed8-7c7c21eb2b74\"\n    }\n}",
         "title": "行驶证副页正面识别示例代码3"
       }
     ],

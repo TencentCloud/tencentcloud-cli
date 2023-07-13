@@ -4501,7 +4501,6 @@
       "document": "CreateRole请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "角色名称，不支持中字以及除了短线和下划线外的特殊字符且长度必须大于0且小等于32。",
           "example": "test_role_123",
@@ -4511,7 +4510,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注说明，长度必须大等于0且小等于128。",
           "example": "创建角色",
@@ -4521,7 +4519,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "必填字段，集群Id",
           "example": "pulsar-xxxx",
@@ -4542,7 +4539,7 @@
           "example": "test_role_123",
           "member": "string",
           "name": "RoleName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4552,7 +4549,7 @@
           "example": "eyJrZXlJZCI6InN1bmdvxxxxx0X3JvbGVfMyJ9.dbHR8m6gc4L4vZUrodhW_O9bDulZQ6lraNswNLtcUcY",
           "member": "string",
           "name": "Token",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4562,8 +4559,18 @@
           "example": "创建角色",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "批量绑定名字空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EnvironmentRoleSet",
+          "name": "EnvironmentRoleSets",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -9623,6 +9630,32 @@
         }
       ],
       "usage": "out"
+    },
+    "EnvironmentRoleSet": {
+      "document": "批量绑定名字空间和角色权限关系",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要绑定的命名空间Id，不重复且存在资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名字空间需要绑定的权限，枚举为 \"consume\" \"produce\" 组合，但是不为空\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"produce\"]",
+          "member": "string",
+          "name": "Permissions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ExchangeQuota": {
       "document": "exchange使用配额信息",

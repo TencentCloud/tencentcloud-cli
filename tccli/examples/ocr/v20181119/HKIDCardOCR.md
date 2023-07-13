@@ -30,7 +30,7 @@ Output:
             -9102,
             -9103
         ],
-        "HeadImage": "xx",
+        "HeadImage": "",
         "RequestId": "fba1c9ad-aeb3-4418-9ecf-80ab1b5fc875"
     }
 }

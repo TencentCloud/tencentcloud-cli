@@ -90,7 +90,7 @@
     ],
     "CreateAuditLogFile": [
       {
-        "document": "",
+        "document": "创建审计日志文件",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditLogFile\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-qwerasdf\",\n    \"StartTime\": \"2017-07-12 10:29:20\",\n    \"EndTime\": \"2017-07-13 10:29:20\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"FileName\": \"test.csv\"\n    }\n}",
         "title": "创建审计日志文件"
@@ -248,10 +248,10 @@
     ],
     "DescribeAuditLogs": [
       {
-        "document": "",
+        "document": "查询审计日志",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditLogs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-qwerasdf\",\n    \"StartTime\": \"2017-07-12 10:29:20\",\n    \"EndTime\": \"2017-07-13 10:29:20\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": \"1\",\n        \"Items\": [\n            {\n                \"PolicyName\": \"xx\",\n                \"ExecTime\": 0,\n                \"Timestamp\": \"xx\",\n                \"AffectRows\": 0,\n                \"ThreadId\": 0,\n                \"TableName\": \"xx\",\n                \"ErrCode\": 0,\n                \"Host\": \"xx\",\n                \"SentRows\": 0,\n                \"User\": \"xx\",\n                \"Sql\": \"xx\",\n                \"SqlType\": \"xx\",\n                \"InstanceName\": \"xx\",\n                \"DBName\": \"xx\"\n            }\n        ]\n    }\n}",
-        "title": "创建审计日志文件"
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": \"1\",\n        \"Items\": [\n            {\n                \"PolicyName\": \"sys_default\",\n                \"ExecTime\": 0,\n                \"Timestamp\": \"2023-06-26 10:32:36.000\",\n                \"AffectRows\": 0,\n                \"ThreadId\": 0,\n                \"TableName\": \"\",\n                \"ErrCode\": 0,\n                \"Host\": \"10.0.0.1\",\n                \"SentRows\": 0,\n                \"User\": \"test\",\n                \"Sql\": \"SELECT * FROM test LIMIT 1;\",\n                \"SqlType\": \"SELECT\",\n                \"InstanceName\": \"test\",\n                \"DBName\": \"test_db\"\n            }\n        ]\n    }\n}",
+        "title": "查询审计日志"
       }
     ],
     "DescribeAuditRuleTemplates": [

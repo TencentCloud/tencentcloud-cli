@@ -22,7 +22,7 @@
       "status": "online"
     },
     "CreateLink": {
-      "document": "创建媒体链接或分类路径链接，将源资源信息链接到目标。",
+      "document": "创建媒体链接或分类路径链接，将资源信息链接到目标。",
       "input": "CreateLinkRequest",
       "name": "创建链接",
       "output": "CreateLinkResponse",
@@ -1173,6 +1173,7 @@
           "example": "5fec3806b4e0960001ed9ce5",
           "member": "string",
           "name": "MaterialId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2157,6 +2158,7 @@
           "example": "无",
           "member": "MaterialInfo",
           "name": "MaterialInfoSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3277,7 +3279,7 @@
         },
         {
           "disabled": false,
-          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，轨道数据中使的媒资该操作者需要拥有使用权限。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，轨道数据中使用的媒资该操作者需要拥有使用权限。",
           "example": "b64e98ad",
           "member": "string",
           "name": "Operator",
@@ -3296,6 +3298,7 @@
           "example": "125009388839-tfusion-0a54392053f84053942f9308c49404d7",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4305,15 +4308,17 @@
           "example": "materialId",
           "member": "string",
           "name": "MaterialId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "媒体文预处理任务 ID，如果未指定发起预处理任务则为空。",
+          "document": "媒体文件预处理任务 ID，如果未指定发起预处理任务则为空。",
           "example": "taskId",
           "member": "string",
           "name": "PreProcessTaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5510,79 +5515,72 @@
       "document": "点播转直播项目信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "点播转直播项目状态，取值有：\n<li>Working ：运行中；</li>\n<li>Idle ：空闲。</li>",
           "example": "Working",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输入源列表。",
           "example": "无",
           "member": "MediaCastSourceInfo",
           "name": "SourceInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输出源列表。",
           "example": "无",
           "member": "MediaCastDestinationInfo",
           "name": "DestinationInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输出媒体配置。",
           "example": "无",
           "member": "MediaCastOutputMediaSetting",
           "name": "OutputMediaSetting",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放参数。",
           "example": "无",
           "member": "MediaCastPlaySetting",
           "name": "PlaySetting",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目启动时间。采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
           "example": "2021-03-23T07:51:18.029Z",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "项目结束时间。采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。如果项目还在运行中，改字段为空。",
+          "document": "项目结束时间。采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。如果项目还在运行中，该字段为空。",
           "example": "2021-03-23T07:51:18.029Z",
           "member": "string",
           "name": "StopTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6306,7 +6304,6 @@
       "document": "ModifyTeamMember请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
@@ -6316,7 +6313,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "团队 ID。",
           "example": "1kdk882ddd88338ddd3k3",
@@ -6326,7 +6322,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "团队成员 ID。",
           "example": "1kd3ej3okjdije3lejjdjk99",
@@ -6336,7 +6331,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "成员备注，长度不能超过15个字符。",
           "example": "主编辑李四",
@@ -6346,7 +6340,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "成员角色，可取值有：\n<li>Admin：团队管理员；</li>\n<li>Member：普通成员。</li>",
           "example": "Admin",
@@ -6356,9 +6349,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以个改任意团队成员的信息。如果指定操作者，则操作者必须为团队的管理员或者所有者。",
+          "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以修改任意团队成员的信息。如果指定操作者，则操作者必须为团队的管理员或者所有者。",
           "example": "60097a8a8ea83d00017b484b",
           "member": "string",
           "name": "Operator",

@@ -42,7 +42,7 @@ Output:
                         "tag2"
                     ],
                     "SourceInfo": {
-                        "SourceType": "Upload",
+                        "SourceType": "Record",
                         "SourceContext": "",
                         "TrtcRecordInfo": {
                             "SdkAppId": 1,
@@ -62,13 +62,13 @@ Output:
                 "MetaData": {
                     "Size": 10556,
                     "Container": "m4a",
-                    "Duration": 3601.0,
+                    "Duration": 3601,
                     "Bitrate": 246035,
                     "Height": 480,
                     "Width": 640,
                     "Rotate": 0,
-                    "VideoDuration": 3601.0,
-                    "AudioDuration": 3601.0,
+                    "VideoDuration": 3601,
+                    "AudioDuration": 3601,
                     "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                     "VideoStreamSet": [
                         {
@@ -100,7 +100,7 @@ Output:
                             "Height": 378,
                             "Width": 672,
                             "Container": "m4a",
-                            "Duration": 3601.0,
+                            "Duration": 3601,
                             "Size": 10502,
                             "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                             "VideoStreamSet": [
@@ -123,7 +123,8 @@ Output:
                                     "Bitrate": 35
                                 }
                             ],
-                            "DigitalWatermarkType": "None"
+                            "DigitalWatermarkType": "None",
+                            "CopyRightWatermarkText": "None"
                         },
                         {
                             "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/f0.f210.m3u8",
@@ -132,7 +133,7 @@ Output:
                             "Height": 378,
                             "Width": 672,
                             "Container": "mov",
-                            "Duration": 3601.0,
+                            "Duration": 3601,
                             "Size": 10502,
                             "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                             "VideoStreamSet": [
@@ -155,12 +156,13 @@ Output:
                                     "Bitrate": 35
                                 }
                             ],
-                            "DigitalWatermarkType": "None"
+                            "DigitalWatermarkType": "None",
+                            "CopyRightWatermarkText": "None"
                         },
                         {
                             "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/master_playlist.m3u8",
                             "Definition": 10000,
-                            "Duration": 145.0,
+                            "Duration": 145,
                             "Size": 265,
                             "Bitrate": 2840055,
                             "Height": 1080,
@@ -187,7 +189,8 @@ Output:
                                     "Codec": "aac"
                                 }
                             ],
-                            "DigitalWatermarkType": "None"
+                            "DigitalWatermarkType": "None",
+                            "CopyRightWatermarkText": "None"
                         }
                     ]
                 },
@@ -202,8 +205,8 @@ Output:
                             "Bitrate": 1000000,
                             "Size": 600000,
                             "Md5": "bfcf7c6f154b1842a661f9e80b07a1d0",
-                            "StartTimeOffset": 10.0,
-                            "EndTimeOffset": 15.0
+                            "StartTimeOffset": 10,
+                            "EndTimeOffset": 15
                         }
                     ]
                 },
@@ -248,11 +251,11 @@ Output:
                             "Definition": 10,
                             "PicInfoSet": [
                                 {
-                                    "TimeOffset": 0.0,
+                                    "TimeOffset": 0,
                                     "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx1.jpg"
                                 },
                                 {
-                                    "TimeOffset": 1000.0,
+                                    "TimeOffset": 1000,
                                     "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx2.jpg"
                                 }
                             ]
@@ -262,11 +265,11 @@ Output:
                 "KeyFrameDescInfo": {
                     "KeyFrameDescSet": [
                         {
-                            "TimeOffset": 1.0,
+                            "TimeOffset": 1,
                             "Content": "abc"
                         },
                         {
-                            "TimeOffset": 100.0,
+                            "TimeOffset": 100,
                             "Content": "def"
                         }
                     ]
@@ -279,7 +282,7 @@ Output:
                             "ReviewResult": "Pass",
                             "ReviewSummary": [
                                 {
-                                    "Confidence": 0.0,
+                                    "Confidence": 0,
                                     "Type": "Porn",
                                     "Suggestion": "pass"
                                 }
@@ -287,7 +290,7 @@ Output:
                             "MetaData": {
                                 "Rotate": 0,
                                 "Container": "mp4",
-                                "AudioDuration": 0.0,
+                                "AudioDuration": 0,
                                 "Md5": "md5",
                                 "VideoStreamSet": [
                                     {
@@ -303,9 +306,9 @@ Output:
                                     }
                                 ],
                                 "Height": 0,
-                                "VideoDuration": 0.0,
+                                "VideoDuration": 0,
                                 "Width": 0,
-                                "Duration": 0.0,
+                                "Duration": 0,
                                 "Size": 0,
                                 "Bitrate": 0,
                                 "AudioStreamSet": [
@@ -404,13 +407,13 @@ Output:
                 "MetaData": {
                     "Size": 10556,
                     "Container": "m4a",
-                    "Duration": 3601.0,
+                    "Duration": 3601,
                     "Bitrate": 246035,
                     "Height": 480,
                     "Width": 640,
                     "Rotate": 0,
-                    "VideoDuration": 3601.0,
-                    "AudioDuration": 3601.0,
+                    "VideoDuration": 3601,
+                    "AudioDuration": 3601,
                     "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                     "VideoStreamSet": [
                         {
@@ -442,7 +445,7 @@ Output:
                             "Height": 378,
                             "Width": 672,
                             "Container": "m4a",
-                            "Duration": 3601.0,
+                            "Duration": 3601,
                             "Size": 10502,
                             "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                             "VideoStreamSet": [
@@ -465,7 +468,8 @@ Output:
                                     "Bitrate": 35
                                 }
                             ],
-                            "DigitalWatermarkType": "None"
+                            "DigitalWatermarkType": "None",
+                            "CopyRightWatermarkText": "None"
                         },
                         {
                             "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/f0.f210.m3u8",
@@ -474,7 +478,7 @@ Output:
                             "Height": 378,
                             "Width": 672,
                             "Container": "mov",
-                            "Duration": 3601.0,
+                            "Duration": 3601,
                             "Size": 10502,
                             "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                             "VideoStreamSet": [
@@ -497,12 +501,13 @@ Output:
                                     "Bitrate": 35
                                 }
                             ],
-                            "DigitalWatermarkType": "None"
+                            "DigitalWatermarkType": "None",
+                            "CopyRightWatermarkText": "None"
                         },
                         {
                             "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/master_playlist.m3u8",
                             "Definition": 10000,
-                            "Duration": 145.0,
+                            "Duration": 145,
                             "Size": 265,
                             "Bitrate": 2840055,
                             "Height": 1080,
@@ -529,7 +534,8 @@ Output:
                                     "Codec": "aac"
                                 }
                             ],
-                            "DigitalWatermarkType": "None"
+                            "DigitalWatermarkType": "None",
+                            "CopyRightWatermarkText": "None"
                         }
                     ]
                 },
@@ -544,8 +550,8 @@ Output:
                             "Bitrate": 1000000,
                             "Size": 600000,
                             "Md5": "bfcf7c6f154b1842a661f9e80b07a1d0",
-                            "StartTimeOffset": 10.0,
-                            "EndTimeOffset": 15.0
+                            "StartTimeOffset": 10,
+                            "EndTimeOffset": 15
                         }
                     ]
                 },
@@ -590,11 +596,11 @@ Output:
                             "Definition": 10,
                             "PicInfoSet": [
                                 {
-                                    "TimeOffset": 0.0,
+                                    "TimeOffset": 0,
                                     "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx1.jpg"
                                 },
                                 {
-                                    "TimeOffset": 1000.0,
+                                    "TimeOffset": 1000,
                                     "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx2.jpg"
                                 }
                             ]
@@ -604,11 +610,11 @@ Output:
                 "KeyFrameDescInfo": {
                     "KeyFrameDescSet": [
                         {
-                            "TimeOffset": 1.0,
+                            "TimeOffset": 1,
                             "Content": "abc"
                         },
                         {
-                            "TimeOffset": 100.0,
+                            "TimeOffset": 100,
                             "Content": "def"
                         }
                     ]
@@ -621,7 +627,7 @@ Output:
                             "ReviewResult": "Pass",
                             "ReviewSummary": [
                                 {
-                                    "Confidence": 0.0,
+                                    "Confidence": 0,
                                     "Type": "Porn",
                                     "Suggestion": "pass"
                                 }
@@ -629,7 +635,7 @@ Output:
                             "MetaData": {
                                 "Rotate": 0,
                                 "Container": "mp4",
-                                "AudioDuration": 0.0,
+                                "AudioDuration": 0,
                                 "Md5": "md5",
                                 "VideoStreamSet": [
                                     {
@@ -645,9 +651,9 @@ Output:
                                     }
                                 ],
                                 "Height": 0,
-                                "VideoDuration": 0.0,
+                                "VideoDuration": 0,
                                 "Width": 0,
-                                "Duration": 0.0,
+                                "Duration": 0,
                                 "Size": 0,
                                 "Bitrate": 0,
                                 "AudioStreamSet": [
@@ -746,13 +752,13 @@ Output:
                 "MetaData": {
                     "Size": 10556,
                     "Container": "m4a",
-                    "Duration": 3601.0,
+                    "Duration": 3601,
                     "Bitrate": 246035,
                     "Height": 480,
                     "Width": 640,
                     "Rotate": 0,
-                    "VideoDuration": 3601.0,
-                    "AudioDuration": 3601.0,
+                    "VideoDuration": 3601,
+                    "AudioDuration": 3601,
                     "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                     "VideoStreamSet": [
                         {
@@ -784,7 +790,7 @@ Output:
                             "Height": 378,
                             "Width": 672,
                             "Container": "m4a",
-                            "Duration": 3601.0,
+                            "Duration": 3601,
                             "Size": 10502,
                             "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                             "VideoStreamSet": [
@@ -807,7 +813,8 @@ Output:
                                     "Bitrate": 35
                                 }
                             ],
-                            "DigitalWatermarkType": "None"
+                            "DigitalWatermarkType": "None",
+                            "CopyRightWatermarkText": "None"
                         },
                         {
                             "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/f0.f210.m3u8",
@@ -816,7 +823,7 @@ Output:
                             "Height": 378,
                             "Width": 672,
                             "Container": "mov",
-                            "Duration": 3601.0,
+                            "Duration": 3601,
                             "Size": 10502,
                             "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                             "VideoStreamSet": [
@@ -839,12 +846,13 @@ Output:
                                     "Bitrate": 35
                                 }
                             ],
-                            "DigitalWatermarkType": "None"
+                            "DigitalWatermarkType": "None",
+                            "CopyRightWatermarkText": "None"
                         },
                         {
                             "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/master_playlist.m3u8",
                             "Definition": 10000,
-                            "Duration": 145.0,
+                            "Duration": 145,
                             "Size": 265,
                             "Bitrate": 2840055,
                             "Height": 1080,
@@ -871,7 +879,8 @@ Output:
                                     "Codec": "aac"
                                 }
                             ],
-                            "DigitalWatermarkType": "None"
+                            "DigitalWatermarkType": "None",
+                            "CopyRightWatermarkText": "None"
                         }
                     ]
                 },
@@ -886,8 +895,8 @@ Output:
                             "Bitrate": 1000000,
                             "Size": 600000,
                             "Md5": "bfcf7c6f154b1842a661f9e80b07a1d0",
-                            "StartTimeOffset": 10.0,
-                            "EndTimeOffset": 15.0
+                            "StartTimeOffset": 10,
+                            "EndTimeOffset": 15
                         }
                     ]
                 },
@@ -932,11 +941,11 @@ Output:
                             "Definition": 10,
                             "PicInfoSet": [
                                 {
-                                    "TimeOffset": 0.0,
+                                    "TimeOffset": 0,
                                     "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx1.jpg"
                                 },
                                 {
-                                    "TimeOffset": 1000.0,
+                                    "TimeOffset": 1000,
                                     "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx2.jpg"
                                 }
                             ]
@@ -946,11 +955,11 @@ Output:
                 "KeyFrameDescInfo": {
                     "KeyFrameDescSet": [
                         {
-                            "TimeOffset": 1.0,
+                            "TimeOffset": 1,
                             "Content": "abc"
                         },
                         {
-                            "TimeOffset": 100.0,
+                            "TimeOffset": 100,
                             "Content": "def"
                         }
                     ]
@@ -963,7 +972,7 @@ Output:
                             "ReviewResult": "Pass",
                             "ReviewSummary": [
                                 {
-                                    "Confidence": 0.0,
+                                    "Confidence": 0,
                                     "Type": "Porn",
                                     "Suggestion": "pass"
                                 }
@@ -971,7 +980,7 @@ Output:
                             "MetaData": {
                                 "Rotate": 0,
                                 "Container": "mp4",
-                                "AudioDuration": 0.0,
+                                "AudioDuration": 0,
                                 "Md5": "md5",
                                 "VideoStreamSet": [
                                     {
@@ -987,9 +996,9 @@ Output:
                                     }
                                 ],
                                 "Height": 0,
-                                "VideoDuration": 0.0,
+                                "VideoDuration": 0,
                                 "Width": 0,
-                                "Duration": 0.0,
+                                "Duration": 0,
                                 "Size": 0,
                                 "Bitrate": 0,
                                 "AudioStreamSet": [
@@ -1153,7 +1162,8 @@ Output:
                                     "Bitrate": 35
                                 }
                             ],
-                            "DigitalWatermarkType": "None"
+                            "DigitalWatermarkType": "None",
+                            "CopyRightWatermarkText": "None"
                         },
                         {
                             "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/f0.f210.m3u8",
@@ -1185,7 +1195,8 @@ Output:
                                     "Bitrate": 35
                                 }
                             ],
-                            "DigitalWatermarkType": "None"
+                            "DigitalWatermarkType": "None",
+                            "CopyRightWatermarkText": "None"
                         },
                         {
                             "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/master_playlist.m3u8",
@@ -1217,7 +1228,8 @@ Output:
                                     "Codec": "aac"
                                 }
                             ],
-                            "DigitalWatermarkType": "None"
+                            "DigitalWatermarkType": "None",
+                            "CopyRightWatermarkText": "None"
                         }
                     ]
                 },

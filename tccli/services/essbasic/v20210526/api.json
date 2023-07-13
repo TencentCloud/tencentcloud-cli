@@ -3552,6 +3552,51 @@
           "name": "CanEditFlow",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许发起合同弹窗隐藏合同名称",
+          "example": "true",
+          "member": "bool",
+          "name": "HideShowFlowName",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许发起合同弹窗隐藏合同类型",
+          "example": "true",
+          "member": "bool",
+          "name": "HideShowFlowType",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许发起合同弹窗隐藏合同到期时间",
+          "example": "true",
+          "member": "bool",
+          "name": "HideShowDeadline",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许发起合同步骤跳过指定签署方步骤",
+          "example": "true",
+          "member": "bool",
+          "name": "CanSkipAddApprover",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "定制化发起合同页合同描述信息",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CustomCreateFlowDescription",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -5449,6 +5494,17 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否锁定模版控件值，锁定后无法修改（用于嵌入式发起合同）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "LockComponentValue",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

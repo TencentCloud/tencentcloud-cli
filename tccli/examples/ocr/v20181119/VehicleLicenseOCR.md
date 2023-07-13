@@ -1,6 +1,6 @@
 **Example 1: 行驶证主页正面识别示例代码1**
 
-
+行驶证主页正面识别示例代码1
 
 Input: 
 
@@ -29,10 +29,10 @@ Output:
         },
         "BackInfo": null,
         "RecognizeWarnCode": [
-            -9106
+            -9102
         ],
         "RecognizeWarnMsg": [
-            "WARN_DRIVER_LICENSE_PS_CARD"
+            "WARN_DRIVER_LICENSE_COPY_CARD"
         ],
         "RequestId": "820916b4-b391-40a8-9203-7ae87e3f1954"
     }
@@ -41,7 +41,7 @@ Output:
 
 **Example 2: 行驶证副页正面识别示例代码2**
 
-
+行驶证副页正面识别示例代码2
 
 Input: 
 
@@ -69,10 +69,10 @@ Output:
             "Record": "检验有效期至2015年11月皖A(4S)"
         },
         "RecognizeWarnCode": [
-            -9106
+            -9102
         ],
         "RecognizeWarnMsg": [
-            "WARN_DRIVER_LICENSE_PS_CARD"
+            "WARN_DRIVER_LICENSE_COPY_CARD"
         ],
         "RequestId": "e2ebfaa0-19d3-4d2b-9ed8-7c7c21eb2b74"
     }
@@ -81,7 +81,7 @@ Output:
 
 **Example 3: 行驶证副页正面识别示例代码3**
 
-
+行驶证副页正面识别示例代码3
 
 Input: 
 
@@ -109,11 +109,9 @@ Output:
             "Record": "检验有效期至2015年11月皖A(4S)"
         },
         "RecognizeWarnCode": [
-            -9106,
             -9103
         ],
         "RecognizeWarnMsg": [
-            "WARN_DRIVER_LICENSE_PS_CARD",
             "WARN_DRIVER_LICENSE_SCREENED_CARD"
         ],
         "RequestId": "e2ebfaa0-19d3-4d2b-9ed8-7c7c21eb2b74"

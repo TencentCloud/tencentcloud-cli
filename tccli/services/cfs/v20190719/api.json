@@ -554,32 +554,32 @@
       "document": "版本控制-类型数组",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "协议与售卖详情",
+          "example": "无",
           "member": "AvailableProtoStatus",
           "name": "Protocols",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "存储类型。返回值中 SD 为标准型存储、HP 为性能型存储",
+          "document": "存储类型。返回值中 SD 为通用标准型存储， HP为通用性能型存储， TB为Turbo标准型， TP 为Turbo性能型。",
+          "example": "无",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否支持预付费。返回值中 true 为支持、false 为不支持",
+          "example": "无",
           "member": "bool",
           "name": "Prepayment",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         }
@@ -590,52 +590,52 @@
       "document": "版本控制-可用区数组",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "可用区名称",
+          "example": "ap-beijing-1",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区ID",
+          "example": "800001",
           "member": "int64",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区中文名称",
+          "example": "北京一区",
           "member": "string",
           "name": "ZoneCnName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Type数组",
+          "example": "无",
           "member": "AvailableType",
           "name": "Types",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区中英文名称",
+          "example": "北京一区",
           "member": "string",
           "name": "ZoneName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3662,7 +3662,7 @@
         {
           "disabled": false,
           "document": "文件系统Id",
-          "example": "cfs-x",
+          "example": "cfs-ailtest1",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
@@ -3670,7 +3670,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容的目标容量",
+          "document": "扩容的目标容量（单位GiB）",
           "example": "10240",
           "member": "uint64",
           "name": "TargetCapacity",
@@ -3695,7 +3695,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容的目标容量",
+          "document": "扩容的目标容量（单位GiB）",
           "example": "10240",
           "member": "uint64",
           "name": "TargetCapacity",

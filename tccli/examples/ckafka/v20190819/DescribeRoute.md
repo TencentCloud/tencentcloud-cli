@@ -27,7 +27,15 @@ Output:
                     ],
                     "Domain": "abc",
                     "DomainPort": 0,
-                    "DeleteTimestamp": "abc"
+                    "DeleteTimestamp": "abc",
+                    "Subnet": "abc",
+                    "BrokerVipList": [
+                        {
+                            "Vip": "1.1.1.2",
+                            "Vport": "90"
+                        }
+                    ],
+                    "VpcId": "vpc-fdafdsa"
                 }
             ]
         },

@@ -1637,12 +1637,21 @@
         },
         {
           "disabled": false,
-          "document": "该过滤条件下的审计日志结果集作为分析日志。",
+          "document": "已废弃。该过滤条件下的审计日志结果集作为分析日志。",
           "example": "无",
           "member": "AuditLogFilter",
           "name": "AuditLogFilter",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "该过滤条件下的审计日志结果集作为分析日志。",
+          "example": "无",
+          "member": "InstanceAuditLogFilters",
+          "name": "LogFilter",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1656,6 +1665,7 @@
           "example": "无",
           "member": "AuditLogAggregationResult",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1665,6 +1675,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3964,58 +3975,67 @@
       "document": "CreateAuditLogFile请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "document": "实例 ID，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-cdtkp3hr",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "开始时间，格式为：\"2017-07-12 10:29:20\"。",
+          "document": "开始时间。",
+          "example": "2023-06-07 15:59:45",
           "member": "string",
           "name": "StartTime",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "结束时间，格式为：\"2017-07-12 10:29:20\"。",
+          "document": "结束时间。",
+          "example": "2023-06-16 14:27:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式。支持值包括：\"ASC\" - 升序，\"DESC\" - 降序。",
+          "example": "DESC",
           "member": "string",
           "name": "Order",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段。支持值包括：\n\"timestamp\" - 时间戳；\n\"affectRows\" - 影响行数；\n\"execTime\" - 执行时间。",
+          "example": "timestamp",
           "member": "string",
           "name": "OrderBy",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "过滤条件。可按设置的过滤条件过滤日志。",
+          "document": "已废弃。",
+          "example": "无",
           "member": "AuditLogFilter",
           "name": "Filter",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件。可按设置的过滤条件过滤日志。",
+          "example": "无",
+          "member": "InstanceAuditLogFilters",
+          "name": "LogFilter",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4026,8 +4046,10 @@
         {
           "disabled": false,
           "document": "审计日志文件名称。",
+          "example": "*****.csv",
           "member": "string",
           "name": "FileName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12245,6 +12267,39 @@
         }
       ],
       "type": "object"
+    },
+    "InstanceAuditLogFilters": {
+      "document": "审计日志搜索过滤器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤项。目前支持以下搜索条件：\n\n分词搜索：\nsql - SQL语句；\n\n等于、不等于、包含、不包含：\nhost - 客户端地址；\nuser - 用户名；\ndbName - 数据库名称；\n\n等于、不等于：\nsqlType - SQL类型；\nerrCode - 错误码；\nthreadId - 线程ID；\n\n范围搜索（时间类型统一为微妙）：\nexecTime - 执行时间；\nlockWaitTime - 执行时间；\nioWaitTime - IO等待时间；\ntrxLivingTime - 事物持续时间；\ncpuTime - cpu时间；\ncheckRows - 扫描行数；\naffectRows - 影响行数；\nsentRows - 返回行数。",
+          "example": "host",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件。支持以下条件：\nINC - 包含,\nEXC - 不包含,\nEQS - 等于,\nNEQ - 不等于,\nRA - 范围。",
+          "example": "EXC",
+          "member": "string",
+          "name": "Compare",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤的值。",
+          "example": "10.0.",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "InstanceInfo": {
       "document": "实例详细信息",
