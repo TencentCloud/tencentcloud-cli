@@ -17,6 +17,7 @@ Output:
             {
                 "UserType": "Uid",
                 "UserId": "1000",
+                "FileSystemId": "cfs-12345",
                 "CapacityHardLimit": 10,
                 "FileHardLimit": 10000
             }

@@ -8616,7 +8616,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "排序方式，desc表示正序，asc表示反序",
+          "document": "排序方式，desc表示倒序，asc表示正序",
           "example": "无",
           "member": "string",
           "name": "Sorting",

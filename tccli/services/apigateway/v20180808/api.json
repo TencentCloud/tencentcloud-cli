@@ -323,9 +323,9 @@
       "status": "online"
     },
     "DescribeIPStrategysStatus": {
-      "document": "本接口（DescribeIPStrategysStatus）用于查询服务IP策略列表。",
+      "document": "本接口（DescribeIPStrategysStatus）用于查询服务IP策略列表，因为接口名拼写错误，已不推荐使用，请优先使用DescribeIPStrategiesStatus接口。",
       "input": "DescribeIPStrategysStatusRequest",
-      "name": "查询服务IP策略列表",
+      "name": "查询服务IP策略列表（旧）",
       "output": "DescribeIPStrategysStatusResponse",
       "status": "online"
     },
@@ -1199,7 +1199,7 @@
       ],
       "usage": "out"
     },
-    "ApiEnvironmentStrategyStataus": {
+    "ApiEnvironmentStrategyStatus": {
       "document": "API绑定策略列表",
       "members": [
         {
@@ -5905,54 +5905,54 @@
       "document": "DescribeApiEnvironmentStrategy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "API所属服务唯一ID。",
           "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境列表。",
           "example": "[\"test\\r\\n\"]",
           "member": "string",
           "name": "EnvironmentNames",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "API唯一ID。",
           "example": "XX",
           "member": "string",
           "name": "ApiId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。",
           "example": "XX",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为 0。",
           "example": "XX",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5964,11 +5964,12 @@
           "disabled": false,
           "document": "api绑定策略详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "ApiEnvironmentStrategyStataus",
+          "member": "ApiEnvironmentStrategyStatus",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6963,24 +6964,24 @@
       "document": "DescribeIPStrategysStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "服务唯一ID。",
           "example": "service-ody35h5e",
           "member": "string",
           "name": "ServiceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件。支持StrategyName。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6992,11 +6993,12 @@
           "disabled": false,
           "document": "符合条件的策略列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "IPStrategysStatus",
+          "member": "IPStrategiesStatus",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9444,6 +9446,32 @@
       ],
       "usage": "both"
     },
+    "IPStrategiesStatus": {
+      "document": "策略列表",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "策略数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "策略列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "IPStrategy",
+          "name": "StrategySet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "IPStrategy": {
       "document": "ip策略",
       "members": [
@@ -9635,32 +9663,6 @@
           "document": "环境绑定API详情。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "IPStrategyApi",
           "name": "ApiIdStatusSet",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "IPStrategysStatus": {
-      "document": "策略列表",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "策略数量。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "int64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "策略列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "member": "IPStrategy",
-          "name": "StrategySet",
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -13211,34 +13213,37 @@
       "document": "服务发布列表详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "版本号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "VersionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "VersionDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本发布时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "ReleaseTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

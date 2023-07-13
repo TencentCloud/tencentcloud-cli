@@ -68,3 +68,39 @@ Output:
 }
 ```
 
+**Example 3: 示例**
+
+课件预览示例
+
+Input: 
+
+```
+tccli lcic DescribeDocument --cli-unfold-argument  \
+    --DocumentId ntxsfrzk
+```
+
+Output: 
+```
+{
+    "Response": {
+        "DocumentId": "ntxsfrzk",
+        "DocumentName": "test.pptx",
+        "DocumentSize": 15814364,
+        "DocumentType": "pptx",
+        "DocumentUrl": "https://tcic-source.qcloudclass.com/uploads/5390248a-5eb7-4fe8-be27-c43dbad1380f/3520371/1677202414_85bt9f0X.pptx",
+        "Owner": "2M04q0j5mhsbq1lAEbCW1dhRvA2",
+        "Pages": 2,
+        "Permission": 0,
+        "Preview": "https://class.qcloudclass.com/temp/preview.html?isppt=1&url=https://tcic-test-1257307760.qcloudclass.com/doc/gsutgbm7ssh31ns71sfc_tiw/h5/index.html&total=2",
+        "RequestId": "8a7bafba-bc67-4040-8203-475532db535f",
+        "SdkAppId": 3520371,
+        "TranscodeInfo": "Microsoft Macintosh PowerPoint",
+        "TranscodeProgress": 100,
+        "TranscodeResult": "https://tcic-test-1257307760.qcloudclass.com/doc/gsutgbm7ssh31ns71sfc_tiw/h5/index.html",
+        "TranscodeState": 3,
+        "TranscodeType": 1,
+        "UpdateTime": 1677202419
+    }
+}
+```
+

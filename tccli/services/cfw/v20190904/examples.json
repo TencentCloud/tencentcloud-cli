@@ -32,6 +32,14 @@
         "title": "创建规则"
       }
     ],
+    "CreateAddressTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAddressTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"Detail\": \"abc\",\n    \"IpString\": \"abc\",\n    \"Type\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建地址模板"
+      }
+    ],
     "CreateChooseVpcs": [
       {
         "document": "",
@@ -90,6 +98,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAcRule\n<公共请求参数>\n\n{\n    \"Id\": 36069,\n    \"Direction\": 1,\n    \"EdgeId\": \"\",\n    \"Area\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Info\": \"\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "删除规则"
+      }
+    ],
+    "DeleteAddressTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAddressTemplate\n<公共请求参数>\n\n{\n    \"Uuid\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除地址模板规则"
       }
     ],
     "DeleteAllAccessControlRule": [

@@ -872,114 +872,125 @@
       "document": "策略下实例的扫描结果概览。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "策略Id",
           "example": "1",
           "member": "int64",
           "name": "StrategyId",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略的扫描状态。策略执行情况: init 初始化 running 进行中 success 成功 fail失败。",
           "example": "success",
           "member": "string",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略对应的分类Id。",
           "example": "1",
           "member": "int64",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该策略下高风险的实例数量(不包括忽略实例数量)。",
           "example": "1",
           "member": "int64",
           "name": "HighRiskCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该策略下中风险的实例数量(不包括忽略实例数量)",
           "example": "1",
           "member": "int64",
           "name": "MediumRiskCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该策略下低风险的实例数量(不包括忽略实例数量)。",
           "example": "1",
           "member": "int64",
           "name": "LowRiskCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该策略下无风险的实例数量(不包括忽略实例数量)。",
           "example": "1",
           "member": "int64",
           "name": "NoRiskCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该策略下被忽略的实例数量。",
           "example": "1",
           "member": "int64",
           "name": "IgnoredInstanceCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "对象存储（COS）未设置子账号访问",
           "member": "string",
           "name": "StrategyName",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高风险+中风险+无风险\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "Count",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "跳转链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccessUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

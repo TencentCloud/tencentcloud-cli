@@ -1,6 +1,6 @@
 **Example 1: 获取已验证的手机邮箱列表**
 
-
+默认
 
 Input: 
 
@@ -17,13 +17,14 @@ Output:
     "Response": {
         "PhoneEmailList": [
             {
-                "Code": "12376542345",
+                "Code": "abc",
                 "Type": 1,
-                "CreatedOn": "2021-09-12 12:12:34"
+                "CreatedOn": "abc",
+                "CheckStatus": 0
             }
         ],
         "TotalCount": 1,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

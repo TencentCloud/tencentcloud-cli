@@ -926,7 +926,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务产品类型，支持值包括： \"dcdb\" - 云数据库 Tdsql， \"mariadb\" - 云数据库 MariaDB for MariaDB。",
+          "document": "服务产品类型，支持值包括： \"dcdb\" - 云数据库 Tdsql， \"mariadb\" - 云数据库 MariaDB。",
           "example": "dcdb",
           "member": "string",
           "name": "Product",
@@ -966,6 +966,7 @@
           "example": "0",
           "member": "int64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -2189,7 +2190,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务产品类型，支持值包括： \"dcdb\" - 云数据库 Tdsql， \"mariadb\" - 云数据库 MariaDB for MariaDB。",
+          "document": "服务产品类型，支持值包括： \"dcdb\" - 云数据库 Tdsql， \"mariadb\" - 云数据库 MariaDB。",
           "example": "dcdb",
           "member": "string",
           "name": "Product",
@@ -2259,6 +2260,7 @@
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -2269,6 +2271,7 @@
           "example": "{}",
           "member": "AuditInstance",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -6555,7 +6558,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务产品类型，支持值包括： \"dcdb\" - 云数据库 Tdsql， \"mariadb\" - 云数据库 MariaDB for MariaDB。",
+          "document": "服务产品类型，支持值包括： \"dcdb\" - 云数据库 Tdsql， \"mariadb\" - 云数据库 MariaDB。",
           "example": "dcdb",
           "member": "string",
           "name": "Product",
@@ -6585,7 +6588,7 @@
         },
         {
           "disabled": false,
-          "document": "日志保存总时长，只能是7,30,90,180,365,1095,1825",
+          "document": "日志保存总时长，只能是7,30,90,180,365,1095,1825。",
           "example": "30",
           "member": "int64",
           "name": "LogExpireDay",
@@ -6595,7 +6598,7 @@
         },
         {
           "disabled": false,
-          "document": "高频日志保存时长，只能是7,30,90,180,365,1095,1825",
+          "document": "高频日志保存时长，只能是7,30,90,180,365,1095,1825。",
           "example": "7",
           "member": "int64",
           "name": "HotLogExpireDay",
@@ -6615,6 +6618,7 @@
           "example": "0",
           "member": "int64",
           "name": "Success",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6987,7 +6991,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "与Product保持一致。如：\"dcdb\" ,\"mariadb\"。",
+          "document": "服务产品类型，支持值包括： \"dcdb\" - 云数据库 Tdsql， \"mariadb\" - 云数据库 MariaDB。",
           "example": "dcdb",
           "member": "string",
           "name": "Product",
@@ -7007,7 +7011,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例ID。",
           "example": "tdsql-njshdu",
           "member": "string",
           "name": "InstanceId",
@@ -7017,7 +7021,7 @@
         },
         {
           "disabled": false,
-          "document": "日志保存总时长，只能是7,30,90,180,365,1095,1825",
+          "document": "日志保存总时长，只能是7,30,90,180,365,1095,1825。",
           "example": "30",
           "member": "int64",
           "name": "LogExpireDay",
@@ -7027,7 +7031,7 @@
         },
         {
           "disabled": false,
-          "document": "高频日志保存时长，只能是7,30,90,180,365,1095,1825",
+          "document": "高频日志保存时长，只能是7,30,90,180,365,1095,1825。",
           "example": "7",
           "member": "int64",
           "name": "HotLogExpireDay",
@@ -7047,6 +7051,7 @@
           "example": "0",
           "member": "int64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
