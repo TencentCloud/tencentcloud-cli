@@ -726,7 +726,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "一级分类。分类详情见附录-三级分类体系表。",
+          "document": "一级分类。（请参见附录[三级分类体系表](https://cloud.tencent.com/document/product/271/94286)）",
           "example": "无",
           "member": "Category",
           "name": "FirstClassification",
@@ -736,7 +736,7 @@
         },
         {
           "disabled": false,
-          "document": "二级分类。分类详情见附录-三级分类体系表。",
+          "document": "二级分类。（请参见附录[三级分类体系表](https://cloud.tencent.com/document/product/271/94286)）",
           "example": "无",
           "member": "Category",
           "name": "SecondClassification",
@@ -746,7 +746,7 @@
         },
         {
           "disabled": false,
-          "document": "三级分类。分类详情见附录-三级分类体系表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "三级分类。（请参见附录[三级分类体系表](https://cloud.tencent.com/document/product/271/94286)）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Category",
           "name": "ThirdClassification",
@@ -2056,33 +2056,37 @@
           "example": "无",
           "member": "string",
           "name": "NormalText",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "基础粒度分词和词性标注的结果。（词性表请参见附录）\n",
+          "document": "基础粒度分词和词性标注的结果。（请参见附录[词性表](https://cloud.tencent.com/document/product/271/36460)）",
           "example": "无",
           "member": "BasicParticiple",
           "name": "BasicParticiples",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "复合粒度分词和词性标注的结果。（词性表请参见附录）",
+          "document": "复合粒度分词和词性标注的结果。（请参见附录[词性表](https://cloud.tencent.com/document/product/271/36460)）",
           "example": "无",
           "member": "CompoundParticiple",
           "name": "CompoundParticiples",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实体识别结果。（实体类型数据请参见附录）\n",
+          "document": "实体识别结果。（请参见附录[实体类型数据](https://cloud.tencent.com/document/product/271/90592)）\n",
           "example": "无",
           "member": "Entity",
           "name": "Entities",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

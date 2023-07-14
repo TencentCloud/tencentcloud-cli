@@ -15,47 +15,47 @@ Output:
 ```
 {
     "Response": {
-        "VersionName": "xx",
-        "Remark": "xx",
-        "DockerfilePath": "xx",
-        "BuildDir": "xx",
+        "VersionName": "abc",
+        "Remark": "abc",
+        "DockerfilePath": "abc",
+        "BuildDir": "abc",
         "MinNum": 0,
         "MaxNum": 0,
-        "PolicyType": "xx",
+        "PolicyType": "abc",
         "PolicyThreshold": 0,
-        "EnvParams": "xx",
-        "CreatedTime": "xx",
-        "UpdatedTime": "xx",
-        "VersionIP": "xx",
+        "EnvParams": "abc",
+        "CreatedTime": "abc",
+        "UpdatedTime": "abc",
+        "VersionIP": "abc",
         "VersionPort": 0,
-        "Status": "xx",
-        "PackageName": "xx",
-        "PackageVersion": "xx",
-        "UploadType": "xx",
-        "RepoType": "xx",
-        "Repo": "xx",
-        "Branch": "xx",
-        "ServerName": "xx",
+        "Status": "abc",
+        "PackageName": "abc",
+        "PackageVersion": "abc",
+        "UploadType": "abc",
+        "RepoType": "abc",
+        "Repo": "abc",
+        "Branch": "abc",
+        "ServerName": "abc",
         "IsPublic": true,
-        "VpcId": "xx",
+        "VpcId": "abc",
         "SubnetIds": [
-            "xx"
+            "abc"
         ],
-        "CustomLogs": "xx",
+        "CustomLogs": "abc",
         "ContainerPort": 0,
         "InitialDelaySeconds": 0,
-        "ImageUrl": "xx",
+        "ImageUrl": "abc",
         "CpuSize": 0,
         "MemSize": 0,
         "PolicyDetail": [
             {
-                "PolicyType": "xx",
+                "PolicyType": "abc",
                 "PolicyThreshold": 0
             }
         ],
         "Cpu": 0,
         "Mem": 0,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

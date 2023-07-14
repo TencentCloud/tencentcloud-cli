@@ -339,7 +339,7 @@
         },
         {
           "disabled": false,
-          "document": "联系人证件类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "联系人证件类型。\nSFZ: 身份证。\nHZ: 护照。\nTXZ: 中国港澳居民来往内地通行证。\nTWSFZ: 中国台湾居民来往大陆通行证。\nGWSFZ: 外国人永久居留身份证。\nORG: 组织机构代码证\nYYZZ: 工商营业执照。\nTYDMZ: 统一社会信用代码证书。\nBDDH: 部队代号\nJDXKZ: 军队单位对外有偿服务许可证。\nSYZS: 事业单位法定代表人证书。\nGWCZDJZ: 外国企业常驻代表机构登记证。\nSTDJZ: 社会团体法定代表人登记证书。\nZJDJZ: 宗教活动场所登记证。\nMBDJZ: 民办非企业单位登记证书。\nJJDJZ: 基金会法定代表人登记证书。\nLSXKZ: 律师事务所执业许可证。\nGWZHDJZ: 外国在华文化中心登记证。\nGWLYDJZ: 外国政府旅游部门常驻代表机构批准登记证。\nSFXKZ: 司法鉴定许可证\nGWJGZJ: 外国机构证件。\nSHFWJGZ: 社会服务机构登记证书。\nMBXXXKZ: 民办学校办学许可证。\nYLJGXKZ: 医疗机构执业许可证。\nGAJZZ: 中国港澳居住证。\nTWJZZ: 中国台湾居住证。\nQTTYDM: 其他-统一社会信用代码证书。\nGZJGZY: 公证机构执业证。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "RegistrantCertificateType",
@@ -1352,7 +1352,6 @@
       "document": "DescribePhoneEmailList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "0：所有类型  1：手机  2：邮箱，默认0",
           "example": "1",
@@ -1362,7 +1361,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
           "example": "20",
@@ -1372,7 +1370,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，取值范围[1,200]",
           "example": "20",
@@ -1382,9 +1379,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "手机或者邮箱精确搜索",
+          "document": "手机或者邮箱，用于精确搜索",
           "example": "12345678977",
           "member": "string",
           "name": "Code",
@@ -1403,7 +1399,6 @@
           "example": "无",
           "member": "PhoneEmailData",
           "name": "PhoneEmailList",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1413,7 +1408,6 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1467,7 +1461,7 @@
         },
         {
           "disabled": false,
-          "document": "域名所有者筛选",
+          "document": "关键字，用于域名所有者筛选",
           "example": "域名所有者",
           "member": "string",
           "name": "Keyword",

@@ -6499,21 +6499,21 @@
         {
           "disabled": false,
           "document": "请使用CPUSize",
-          "example": "1",
-          "member": "int64",
+          "example": "1.0",
+          "member": "float",
           "name": "Cpu",
           "output_required": true,
-          "type": "int",
+          "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "请使用MemSize",
-          "example": "1024",
-          "member": "int64",
+          "example": "2.0",
+          "member": "float",
           "name": "Mem",
           "output_required": true,
-          "type": "int",
+          "type": "float",
           "value_allowed_null": false
         },
         {
@@ -6897,6 +6897,7 @@
           "example": "sv-001",
           "member": "string",
           "name": "VersionName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6906,6 +6907,7 @@
           "example": "无",
           "member": "string",
           "name": "Remark",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6915,6 +6917,7 @@
           "example": "Dockefile",
           "member": "string",
           "name": "DockerfilePath",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6924,6 +6927,7 @@
           "example": ".",
           "member": "string",
           "name": "BuildDir",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6933,6 +6937,7 @@
           "example": "1",
           "member": "int64",
           "name": "MinNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6942,6 +6947,7 @@
           "example": "50",
           "member": "int64",
           "name": "MaxNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6951,6 +6957,7 @@
           "example": "Dockefile",
           "member": "string",
           "name": "PolicyType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6960,6 +6967,7 @@
           "example": "无",
           "member": "float",
           "name": "PolicyThreshold",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -6969,6 +6977,7 @@
           "example": "无",
           "member": "string",
           "name": "EnvParams",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6978,6 +6987,7 @@
           "example": "无",
           "member": "string",
           "name": "CreatedTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6987,6 +6997,7 @@
           "example": "无",
           "member": "string",
           "name": "UpdatedTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6996,6 +7007,7 @@
           "example": "无",
           "member": "string",
           "name": "VersionIP",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7005,6 +7017,7 @@
           "example": "无",
           "member": "int64",
           "name": "VersionPort",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7014,6 +7027,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7023,6 +7037,7 @@
           "example": "无",
           "member": "string",
           "name": "PackageName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7032,6 +7047,7 @@
           "example": "无",
           "member": "string",
           "name": "PackageVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7041,6 +7057,7 @@
           "example": "无",
           "member": "string",
           "name": "UploadType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7050,6 +7067,7 @@
           "example": "无",
           "member": "string",
           "name": "RepoType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7059,6 +7077,7 @@
           "example": "无",
           "member": "string",
           "name": "Repo",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7068,6 +7087,7 @@
           "example": "无",
           "member": "string",
           "name": "Branch",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7077,6 +7097,7 @@
           "example": "无",
           "member": "string",
           "name": "ServerName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7086,6 +7107,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsPublic",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -7095,6 +7117,7 @@
           "example": "无",
           "member": "string",
           "name": "VpcId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7104,6 +7127,7 @@
           "example": "无",
           "member": "string",
           "name": "SubnetIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7113,6 +7137,7 @@
           "example": "无",
           "member": "string",
           "name": "CustomLogs",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7122,6 +7147,7 @@
           "example": "无",
           "member": "int64",
           "name": "ContainerPort",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7131,6 +7157,7 @@
           "example": "无",
           "member": "int64",
           "name": "InitialDelaySeconds",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7140,6 +7167,7 @@
           "example": "无",
           "member": "string",
           "name": "ImageUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7149,6 +7177,7 @@
           "example": "无",
           "member": "float",
           "name": "CpuSize",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -7158,6 +7187,7 @@
           "example": "无",
           "member": "float",
           "name": "MemSize",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -7167,6 +7197,7 @@
           "example": "无",
           "member": "HpaPolicy",
           "name": "PolicyDetail",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7176,6 +7207,7 @@
           "example": "1.0",
           "member": "float",
           "name": "Cpu",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -7185,6 +7217,7 @@
           "example": "2.0",
           "member": "float",
           "name": "Mem",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -7423,7 +7456,7 @@
           "member": "float",
           "name": "NewValues",
           "output_required": true,
-          "type": "float",
+          "type": "list",
           "value_allowed_null": false
         },
         {

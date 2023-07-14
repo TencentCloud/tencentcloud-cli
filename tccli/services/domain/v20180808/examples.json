@@ -114,9 +114,9 @@
     ],
     "DescribePhoneEmailList": [
       {
-        "document": "",
+        "document": "默认",
         "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePhoneEmailList\n<公共请求参数>\n\n{\n    \"Type\": 1,\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"PhoneEmailList\": [\n            {\n                \"Code\": \"12376542345\",\n                \"Type\": 1,\n                \"CreatedOn\": \"2021-09-12 12:12:34\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"PhoneEmailList\": [\n            {\n                \"Code\": \"abc\",\n                \"Type\": 1,\n                \"CreatedOn\": \"abc\",\n                \"CheckStatus\": 0\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取已验证的手机邮箱列表"
       }
     ],

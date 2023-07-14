@@ -259,6 +259,13 @@
       "output": "DescribeAuditLogFilesResponse",
       "status": "online"
     },
+    "DescribeAuditLogs": {
+      "document": "本接口(DescribeAuditLogs)用于查询数据库审计日志。",
+      "input": "DescribeAuditLogsRequest",
+      "name": "查询数据库审计日志",
+      "output": "DescribeAuditLogsResponse",
+      "status": "online"
+    },
     "DescribeAuditPolicies": {
       "document": "本接口(DescribeAuditPolicies)用于查询云数据库实例的审计策略。",
       "input": "DescribeAuditPoliciesRequest",
@@ -1771,6 +1778,192 @@
         }
       ],
       "usage": "both"
+    },
+    "AuditLog": {
+      "document": "审计日志详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "影响行数。",
+          "example": "0",
+          "member": "int64",
+          "name": "AffectRows",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码。",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SQL 类型。",
+          "example": "“SELECT”",
+          "member": "string",
+          "name": "SqlType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审计策略名称，逐步下线。",
+          "example": "“sys_default”",
+          "member": "string",
+          "name": "PolicyName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称。",
+          "example": "“test_db”",
+          "member": "string",
+          "name": "DBName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SQL 语句。",
+          "example": "“SELECT * FROM test LIMIT 1;\"",
+          "member": "string",
+          "name": "Sql",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端地址。",
+          "example": "“10.0.10.3”",
+          "member": "string",
+          "name": "Host",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户名。",
+          "example": "“Test”",
+          "member": "string",
+          "name": "User",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行时间，微秒。",
+          "example": "ExecTime",
+          "member": "int64",
+          "name": "ExecTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间。",
+          "example": "\"2023-06-17 17:50:05\"",
+          "member": "string",
+          "name": "Timestamp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回行数。",
+          "example": "0",
+          "member": "int64",
+          "name": "SentRows",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "线程ID。",
+          "example": "1015",
+          "member": "int64",
+          "name": "ThreadId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扫描行数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CheckRows",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cpu执行时间，微秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "289.474",
+          "member": "float",
+          "name": "CpuTime",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "IO等待时间，微秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11",
+          "member": "uint64",
+          "name": "IoWaitTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "锁等待时间，微秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "57",
+          "member": "uint64",
+          "name": "LockWaitTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间，与timestamp构成一个精确到纳秒的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "106483229",
+          "member": "uint64",
+          "name": "NsTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事物持续时间，微秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TrxLivingTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "AuditLogAggregationResult": {
       "document": "审计日志分析结果",
@@ -6835,6 +7028,116 @@
           "name": "Items",
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditLogsRequest": {
+      "document": "DescribeAuditLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID。",
+          "example": "cdb-of5qmu1b",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间。",
+          "example": "2023-06-18 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间。",
+          "example": "2023-06-19 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数，单次返回的数据条数。默认值为100，最大值为100。",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式。支持值包括：\"ASC\" - 升序，\"DESC\" - 降序。",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段。支持值包括：\n\"timestamp\" - 时间戳；\n\"affectRows\" - 影响行数；\n\"execTime\" - 执行时间。",
+          "example": "timestamp",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件。可按设置的过滤条件过滤日志。",
+          "example": "无",
+          "member": "InstanceAuditLogFilters",
+          "name": "LogFilter",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditLogsResponse": {
+      "document": "DescribeAuditLogs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的审计日志条数。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审计日志详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuditLog",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

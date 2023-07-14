@@ -197,7 +197,7 @@
       "status": "online"
     },
     "DescribeUserQuota": {
-      "document": "查询文件系统配额",
+      "document": "查询文件系统配额（仅部分Turbo实例能使用，若需要调用请提交工单与我们联系）",
       "input": "DescribeUserQuotaRequest",
       "name": "查询文件系统配额",
       "output": "DescribeUserQuotaResponse",
@@ -311,27 +311,27 @@
           "example": "asp-xx",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "快照策略ID",
-          "example": "xx",
+          "example": "default",
           "member": "string",
           "name": "PolicyName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "快照策略创建时间",
-          "example": "xx",
+          "example": "2020-05-23 19:00:45",
           "member": "string",
           "name": "CreationTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -341,57 +341,57 @@
           "example": "2",
           "member": "uint64",
           "name": "FileSystemNums",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "快照定期备份在一星期哪一天，该参数与DayOfMonth,IntervalDays互斥",
-          "example": "['1','2']",
+          "example": "'1,2'",
           "member": "string",
           "name": "DayOfWeek",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "快照定期备份在一天的哪一小时",
-          "example": "['3','4']",
+          "example": "'3,4'",
           "member": "string",
           "name": "Hour",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否激活定期快照功能",
+          "document": "是否激活定期快照功能,1代表已激活，0代表未激活",
           "example": "1",
           "member": "uint64",
           "name": "IsActivated",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "下一次触发快照时间",
-          "example": "xx",
+          "example": "2020-05-25 19:00:45",
           "member": "string",
           "name": "NextActiveTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "快照策略状态",
+          "document": "快照策略状态，1代表快照策略状态正常。这里只有一种状态",
           "example": "1",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -401,7 +401,7 @@
           "example": "122445",
           "member": "uint64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -411,17 +411,17 @@
           "example": "3",
           "member": "uint64",
           "name": "AliveDays",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地域",
-          "example": "xx",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "RegionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -431,7 +431,7 @@
           "example": "112",
           "member": "FileSystemByPolicy",
           "name": "FileSystems",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -441,7 +441,7 @@
           "example": "'1,2,3,4'",
           "member": "string",
           "name": "DayOfMonth",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -451,17 +451,17 @@
           "example": "20",
           "member": "uint64",
           "name": "IntervalDays",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "跨地域复制的快照保留时间",
+          "document": "跨地域复制的快照保留时间，单位天",
           "example": "10",
           "member": "uint64",
           "name": "CrossRegionsAliveDays",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -720,8 +720,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "快照重复时间点",
-          "example": "xx",
+          "document": "快照重复时间点,0-23",
+          "example": "'1,3,5'",
           "member": "string",
           "name": "Hour",
           "required": true,
@@ -730,7 +730,7 @@
         {
           "disabled": false,
           "document": "策略名称",
-          "example": "xx",
+          "example": "test",
           "member": "string",
           "name": "PolicyName",
           "required": false,
@@ -738,8 +738,8 @@
         },
         {
           "disabled": false,
-          "document": "快照重复日期，星期一到星期日",
-          "example": "xx",
+          "document": "快照重复日期，星期一到星期日。 1代表星期一、7代表星期天",
+          "example": "'2,3'",
           "member": "string",
           "name": "DayOfWeek",
           "required": false,
@@ -747,7 +747,7 @@
         },
         {
           "disabled": false,
-          "document": "快照保留时长",
+          "document": "快照保留时长，单位天",
           "example": "3",
           "member": "uint64",
           "name": "AliveDays",
@@ -757,7 +757,7 @@
         {
           "disabled": false,
           "document": "快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "DayOfMonth",
           "required": false,
@@ -766,7 +766,7 @@
         {
           "disabled": false,
           "document": "间隔天数",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "IntervalDays",
           "required": false,
@@ -784,6 +784,7 @@
           "example": "asp-xx",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2528,7 +2529,6 @@
       "document": "DescribeUserQuota请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统 ID",
           "example": "cfs-12345",
@@ -2538,7 +2538,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件。\n<br><li>UserType - Array of String - 是否必填：否 -（过滤条件）按配额类型过滤。(Uid| Gid )\n<br><li>UserId - Array of String - 是否必填：否 -（过滤条件）按UID/GID过滤。",
           "example": "无",
@@ -2548,7 +2547,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Offset 分页码",
           "example": "0",
@@ -2558,9 +2556,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "Limit 页面大小",
+          "document": "Limit 页面大小，可填范围为大于0的整数",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -2579,7 +2576,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2589,7 +2586,7 @@
           "example": "无",
           "member": "UserQuota",
           "name": "UserQuotaInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2606,79 +2603,72 @@
       "document": "绑定快照策略的文件系统信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统名称",
-          "example": "xx",
+          "example": "default",
           "member": "string",
           "name": "CreationToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID",
           "example": "cfs-xx",
           "member": "string",
           "name": "FileSystemId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "文件系统大小",
+          "document": "文件系统大小，单位Byte",
           "example": "1",
           "member": "uint64",
           "name": "SizeByte",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "存储类型",
+          "document": "存储类型，HP：通用性能型；SD：通用标准型；TP:turbo性能型；TB：turbo标准型；THP：吞吐型",
           "example": "HP",
           "member": "string",
           "name": "StorageType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "快照总大小",
+          "document": "快照总大小，单位GiB",
           "example": "1",
           "member": "uint64",
           "name": "TotalSnapshotSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统创建时间",
           "example": "2022-08-20 11:22:33",
           "member": "string",
           "name": "CreationTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统所在区ID",
           "example": "100001",
           "member": "uint64",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -2757,150 +2747,150 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2020-08-11 20:57:17",
           "member": "string",
           "name": "CreationTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户自定义名称",
-          "example": "无",
+          "example": "default",
           "member": "string",
           "name": "CreationToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件系统 ID",
-          "example": "无",
+          "example": "cfs-xx",
           "member": "string",
           "name": "FileSystemId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件系统状态。取值范围：\n- creating:创建中\n- mounting:挂载中\n- create_failed:创建失败\n- available:可使用\n- unserviced:停服中\n- upgrading:升级中",
-          "example": "无",
+          "example": "creating",
           "member": "string",
           "name": "LifeCycleState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件系统已使用容量",
-          "example": "无",
+          "document": "文件系统已使用容量,单位Byte",
+          "example": "10",
           "member": "uint64",
           "name": "SizeByte",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件系统最大空间限制",
-          "example": "无",
+          "document": "文件系统最大空间限制,GiB",
+          "example": "50",
           "member": "uint64",
           "name": "SizeLimit",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "区域 ID",
-          "example": "无",
+          "example": "100001",
           "member": "uint64",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "区域名称",
-          "example": "无",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件系统协议类型",
-          "example": "无",
+          "document": "文件系统协议类型, 支持 NFS,CIFS,TURBO",
+          "example": "SMB",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件系统存储类型",
-          "example": "无",
+          "document": "存储类型，HP：通用性能型；SD：通用标准型；TP:turbo性能型；TB：turbo标准型；THP：吞吐型",
+          "example": "HP",
           "member": "string",
           "name": "StorageType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件系统绑定的预付费存储包",
-          "example": "无",
+          "example": "cfspkg-xx",
           "member": "string",
           "name": "StorageResourcePkg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件系统绑定的预付费带宽包（暂未支持）",
-          "example": "无",
+          "example": "cfspkg-xx",
           "member": "string",
           "name": "BandwidthResourcePkg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件系统绑定权限组信息",
-          "example": "无",
+          "example": "pgroupbasic",
           "member": "PGroup",
           "name": "PGroup",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户自定义名称",
-          "example": "无",
+          "example": "default",
           "member": "string",
           "name": "FsName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件系统是否加密",
-          "example": "无",
+          "document": "文件系统是否加密,true：代表加密，false：非加密",
+          "example": "true",
           "member": "bool",
           "name": "Encrypted",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2910,37 +2900,37 @@
           "example": "无",
           "member": "string",
           "name": "KmsKeyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "无",
+          "example": "1000443431",
           "member": "int64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件系统吞吐上限，吞吐上限是根据文件系统当前已使用存储量、绑定的存储资源包以及吞吐资源包一同确定",
-          "example": "无",
+          "document": "文件系统吞吐上限，吞吐上限是根据文件系统当前已使用存储量、绑定的存储资源包以及吞吐资源包一同确定. 单位MiB/s",
+          "example": "100",
           "member": "float",
           "name": "BandwidthLimit",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件系统总容量",
-          "example": "无",
+          "example": "100",
           "member": "uint64",
           "name": "Capacity",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2950,17 +2940,17 @@
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件系统生命周期管理状态",
+          "document": "文件系统生命周期管理状态\nNotAvailable：不可用\nAvailable:可用",
           "example": "无",
           "member": "string",
           "name": "TieringState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2970,7 +2960,7 @@
           "example": "无",
           "member": "TieringDetailInfo",
           "name": "TieringDetail",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -3813,7 +3803,7 @@
         {
           "disabled": false,
           "document": "创建快照时间",
-          "example": "xx",
+          "example": "2020-09-16 16:34:33",
           "member": "string",
           "name": "CreationTime",
           "output_required": true,
@@ -3823,7 +3813,7 @@
         {
           "disabled": false,
           "document": "快照名称",
-          "example": "xx",
+          "example": "default",
           "member": "string",
           "name": "SnapshotName",
           "output_required": true,
@@ -3842,7 +3832,7 @@
         },
         {
           "disabled": false,
-          "document": "快照状态",
+          "document": "快照状态，createing-创建中；available-运行中；deleting-删除中；rollbacking-new 创建新文件系统中；create-failed 创建失败",
           "example": "available ",
           "member": "string",
           "name": "Status",
@@ -3853,7 +3843,7 @@
         {
           "disabled": false,
           "document": "地域名称",
-          "example": "beijing",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "RegionName",
           "output_required": true,
@@ -3892,7 +3882,7 @@
         },
         {
           "disabled": false,
-          "document": "快照进度",
+          "document": "快照进度百分比，1表示1%",
           "example": "1",
           "member": "uint64",
           "name": "Percent",
@@ -3913,7 +3903,7 @@
         {
           "disabled": false,
           "document": "快照删除时间",
-          "example": "xx",
+          "example": "2020-10-01 16:34:33",
           "member": "string",
           "name": "DeleteTime",
           "output_required": true,
@@ -3923,7 +3913,7 @@
         {
           "disabled": false,
           "document": "文件系统名称",
-          "example": "xx",
+          "example": "default",
           "member": "string",
           "name": "FsName",
           "output_required": true,
@@ -3942,8 +3932,8 @@
         },
         {
           "disabled": false,
-          "document": "快照类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "Turbo",
+          "document": "快照类型, general为通用系列快照，turbo为Turbo系列快照\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "turbo",
           "member": "string",
           "name": "SnapshotType",
           "output_required": true,
@@ -3952,7 +3942,7 @@
         },
         {
           "disabled": false,
-          "document": "实际快照时间，这里主要是为了标识跨地域复制快照的时间快照时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实际快照时间，反应快照对应文件系统某个时刻的数据。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2023-05-16 14:45:15",
           "member": "string",
           "name": "SnapshotTime",
@@ -3967,57 +3957,52 @@
       "document": "快照操作日志",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "操作类型",
-          "example": "create",
+          "document": "操作类型\nCreateCfsSnapshot：创建快照\nDeleteCfsSnapshot：删除快照\nCreateCfsFileSystem：创建文件系统\nUpdateCfsSnapshotAttribute：更新快照",
+          "example": "CreateCfsSnapshot",
           "member": "string",
           "name": "Action",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作时间",
-          "example": "xx",
+          "example": "2020-08-11 20:57:17",
           "member": "string",
           "name": "ActionTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "操作名称",
-          "example": "xx",
+          "document": "操作名称\nCreateCfsSnapshot\nDeleteCfsSnapshot\nCreateCfsFileSystem\nUpdateCfsSnapshotAttribute",
+          "example": "UpdateCfsSnapshotAttribute",
           "member": "string",
           "name": "ActionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "操作者",
-          "example": "xx",
+          "document": "操作者uin",
+          "example": "1000004435",
           "member": "string",
           "name": "Operator",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "结果",
-          "example": "xx",
+          "document": "1-任务进行中；2-任务成功；3-任务失败",
+          "example": "2",
           "member": "uint64",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -4213,7 +4198,7 @@
         {
           "disabled": false,
           "document": "快照策略名称",
-          "example": "xx",
+          "example": "test",
           "member": "string",
           "name": "PolicyName",
           "required": false,
@@ -4221,8 +4206,8 @@
         },
         {
           "disabled": false,
-          "document": "快照定期备份在一星期哪一天",
-          "example": "['0','1']",
+          "document": "快照定期备份，按照星期一到星期日。 1代表星期一，7代表星期日",
+          "example": "'1,2'",
           "member": "string",
           "name": "DayOfWeek",
           "required": false,
@@ -4231,7 +4216,7 @@
         {
           "disabled": false,
           "document": "快照定期备份在一天的哪一小时",
-          "example": "['0','1']",
+          "example": "'1,3,4'",
           "member": "string",
           "name": "Hour",
           "required": false,
@@ -4248,7 +4233,7 @@
         },
         {
           "disabled": false,
-          "document": "是否激活定期快照功能",
+          "document": "是否激活定期快照功能；1代表激活，0代表未激活",
           "example": "0",
           "member": "uint64",
           "name": "IsActivated",
@@ -4285,6 +4270,7 @@
           "example": "asp-xx",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

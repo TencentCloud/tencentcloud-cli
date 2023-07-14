@@ -1036,7 +1036,7 @@
         },
         {
           "disabled": false,
-          "document": "WEB嵌入资源类型。\nCREATE_SEAL: 创建印章\nCREATE_TEMPLATE：创建模版\nMODIFY_TEMPLATE：修改模版\nPREVIEW_TEMPLATE：预览模版\nPREVIEW_FLOW：预览合同文档\nPREVIEW_FLOW_DETAIL：预览合同详情\nPREVIEW_SEAL_LIST：预览印章列表\nPREVIEW_SEAL_DETAIL：预览印章详情\nEXTEND_SERVICE：扩展服务",
+          "document": "WEB嵌入资源类型。\nCREATE_SEAL: 创建印章\nCREATE_TEMPLATE：创建模板\nMODIFY_TEMPLATE：修改模板\nPREVIEW_TEMPLATE：预览模板\nPREVIEW_FLOW：预览合同文档\nPREVIEW_FLOW_DETAIL：预览合同详情\nPREVIEW_SEAL_LIST：预览印章列表\nPREVIEW_SEAL_DETAIL：预览印章详情\nEXTEND_SERVICE：扩展服务",
           "example": "无",
           "member": "string",
           "name": "EmbedType",
@@ -1045,7 +1045,7 @@
         },
         {
           "disabled": false,
-          "document": "WEB嵌入的业务资源ID\nEmbedType取值MODIFY_TEMPLATE，PREVIEW_TEMPLATE时必填，取值为模版id\nPREVIEW_FLOW，PREVIEW_FLOW_DETAIL时必填，取值为合同id\nPREVIEW_SEAL_DETAIL，必填，取值为印章id",
+          "document": "WEB嵌入的业务资源ID\nEmbedType取值MODIFY_TEMPLATE，PREVIEW_TEMPLATE时必填，取值为模板id\nPREVIEW_FLOW，PREVIEW_FLOW_DETAIL时必填，取值为合同id\nPREVIEW_SEAL_DETAIL，必填，取值为印章id",
           "example": "无",
           "member": "string",
           "name": "BusinessId",
@@ -3555,7 +3555,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许发起合同弹窗隐藏合同名称",
+          "document": "是否允许发起合同弹窗隐藏合同名称，true-允许，false-不允许",
           "example": "true",
           "member": "bool",
           "name": "HideShowFlowName",
@@ -3564,7 +3564,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许发起合同弹窗隐藏合同类型",
+          "document": "是否允许发起合同弹窗隐藏合同类型，true-允许，false-不允许",
           "example": "true",
           "member": "bool",
           "name": "HideShowFlowType",
@@ -3573,7 +3573,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许发起合同弹窗隐藏合同到期时间",
+          "document": "是否允许发起合同弹窗隐藏合同到期时间，true-允许，false-不允许",
           "example": "true",
           "member": "bool",
           "name": "HideShowDeadline",
@@ -3582,7 +3582,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许发起合同步骤跳过指定签署方步骤",
+          "document": "是否允许发起合同步骤跳过指定签署方步骤，true-允许，false-不允许",
           "example": "true",
           "member": "bool",
           "name": "CanSkipAddApprover",
@@ -3591,7 +3591,7 @@
         },
         {
           "disabled": false,
-          "document": "定制化发起合同页合同描述信息",
+          "document": "定制化发起合同弹窗的描述信息，描述信息最长500",
           "example": "\"\"",
           "member": "string",
           "name": "CustomCreateFlowDescription",
@@ -4990,7 +4990,7 @@
         },
         {
           "disabled": false,
-          "document": "SMS: 短信; NONE: 不发信息\n默认为SMS(该字段对子客无效)",
+          "document": "SMS: 短信(需确保“电子签短信通知签署方”功能是开启状态才能生效); NONE: 不发信息\n默认为SMS(签署方为子客时该字段不生效)",
           "example": "SMS",
           "member": "string",
           "name": "NotifyType",
@@ -5498,7 +5498,7 @@
         },
         {
           "disabled": false,
-          "document": "是否锁定模版控件值，锁定后无法修改（用于嵌入式发起合同）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否锁定模版控件值，锁定后无法修改（用于嵌入式发起合同），true-锁定，false-不锁定\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "LockComponentValue",
@@ -5830,7 +5830,7 @@
         },
         {
           "disabled": false,
-          "document": "描述模版可见性更改的结果，和参数中Available无关，全部成功-\"all-success\",部分成功-\"part-success\", 全部失败-\"fail\"失败的会在FailMessageList中展示。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述模板可见性更改的结果，和参数中Available无关，全部成功-\"all-success\",部分成功-\"part-success\", 全部失败-\"fail\"失败的会在FailMessageList中展示。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "all-success",
           "member": "string",
           "name": "OperateResult",

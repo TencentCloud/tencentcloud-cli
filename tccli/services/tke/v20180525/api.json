@@ -1881,7 +1881,6 @@
       "document": "自动变配集群等级",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启自动变配集群等级",
           "example": "true",
@@ -1892,7 +1891,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "AutoscalingAdded": {
       "document": "自动扩所容的节点",
@@ -4912,17 +4911,6 @@
       "document": "CreateCluster请求参数结构体",
       "members": [
         {
-          "default": "",
-          "disabled": false,
-          "document": "集群容器网络配置信息",
-          "example": "无",
-          "member": "ClusterCIDRSettings",
-          "name": "ClusterCIDRSettings",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。",
           "example": "MANAGED_CLUSTER",
@@ -4932,7 +4920,15 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "集群容器网络配置信息",
+          "example": "无",
+          "member": "ClusterCIDRSettings",
+          "name": "ClusterCIDRSettings",
+          "required": true,
+          "type": "object"
+        },
+        {
           "disabled": false,
           "document": "CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。总机型(包括地域)数量不超过10个，相同机型(地域)购买多台机器可以通过设置参数中RunInstances中InstanceCount来实现。",
           "example": "无",
@@ -4942,7 +4938,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群的基本配置信息",
           "example": "无",
@@ -4952,7 +4947,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群高级配置信息",
           "example": "无",
@@ -4962,7 +4956,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点高级配置信息",
           "example": "无",
@@ -4972,7 +4965,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100，不支持添加竞价实例。",
           "example": "无",
@@ -4982,7 +4974,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CVM类型和其对应的数据盘挂载配置信息",
           "example": "无",
@@ -4992,7 +4983,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要安装的扩展组件信息",
           "example": "无",
@@ -5010,10 +5000,10 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "cls-xxx",
+          "example": "cls-7ph3twqu",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6768,73 +6758,73 @@
       "document": "描述了k8s节点数据盘相关配置与信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "云盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "DiskType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统(ext3/ext4/xfs)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ext4",
           "member": "string",
           "name": "FileSystem",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云盘大小(G）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "50",
           "member": "int64",
           "name": "DiskSize",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否自动化格式盘并挂载\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "AutoFormatAndMount",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "挂载目录\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/var/lib/docker",
           "member": "string",
           "name": "MountTarget",
-          "required": false,
+          "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "挂载设备名或分区名，当且仅当添加已有节点时需要\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/dev/vdb",
           "member": "string",
           "name": "DiskPartition",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "DeleteAddonRequest": {
       "document": "DeleteAddon请求参数结构体",
@@ -14812,7 +14802,6 @@
       "document": "不同角色的已存在节点配置参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "节点角色，取值:MASTER_ETCD, WORKER。MASTER_ETCD只有在创建 INDEPENDENT_CLUSTER 独立集群时需要指定。MASTER_ETCD节点数量为3～7，建议为奇数。MASTER_ETCD最小配置为4C8G。",
           "example": "worker",
@@ -14823,7 +14812,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已存在实例的重装参数",
           "example": "无",
@@ -14834,7 +14822,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点高级设置，会覆盖集群级别设置的InstanceAdvancedSettings（当前只对节点自定义参数ExtraArgs生效）",
           "example": "无",
@@ -14845,7 +14832,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义模式集群，可指定每个节点的pod数量",
           "example": "[16,32]",

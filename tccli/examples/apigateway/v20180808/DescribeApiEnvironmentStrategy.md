@@ -1,6 +1,6 @@
 **Example 1: DescribeApiEnvironmentStrategy**
 
-
+用于展示API绑定的限流策略。
 
 Input: 
 

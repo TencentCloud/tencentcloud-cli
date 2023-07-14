@@ -78,7 +78,20 @@ Output:
                         "TagName": "abc",
                         "TagId": "etAJ2GCAAAXtWyujaWJHDDGi0mACHAAA"
                     }
-                ]
+                ],
+                "LeadId": 1348080105398452200,
+                "WxId": "李四_1234",
+                "Position": "销售",
+                "IsBindWx": 1,
+                "IsInvalid": 1,
+                "InvalidType": "001",
+                "InvalidTypeName": "无效",
+                "InvalidTime": 1618322621,
+                "InvalidRemark": "无效",
+                "IsLose": 1,
+                "LoseType": "001",
+                "LoseTypeName": "战败",
+                "LoseRemark": "战败"
             }
         ],
         "RequestId": "fea177dd-9fa6-4e76-9c8f-67f5a21f20bb"

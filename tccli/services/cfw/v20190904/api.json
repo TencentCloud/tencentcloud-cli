@@ -28,6 +28,13 @@
       "output": "CreateAcRulesResponse",
       "status": "online"
     },
+    "CreateAddressTemplate": {
+      "document": "创建地址模板规则",
+      "input": "CreateAddressTemplateRequest",
+      "name": "创建地址模板规则",
+      "output": "CreateAddressTemplateResponse",
+      "status": "online"
+    },
     "CreateChooseVpcs": {
       "document": "创建、选择vpc",
       "input": "CreateChooseVpcsRequest",
@@ -68,6 +75,13 @@
       "input": "DeleteAcRuleRequest",
       "name": "删除规则",
       "output": "DeleteAcRuleResponse",
+      "status": "online"
+    },
+    "DeleteAddressTemplate": {
+      "document": "删除地址模板规则",
+      "input": "DeleteAddressTemplateRequest",
+      "name": "删除地址模板规则",
+      "output": "DeleteAddressTemplateResponse",
       "status": "online"
     },
     "DeleteAllAccessControlRule": {
@@ -1498,6 +1512,70 @@
       ],
       "type": "object"
     },
+    "CreateAddressTemplateRequest": {
+      "document": "CreateAddressTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板名称",
+          "example": "模板名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模板描述",
+          "example": "模板描述",
+          "member": "string",
+          "name": "Detail",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Type为1，ip模板eg：1.1.1.1,2.2.2.2；\nType为5，域名模板eg：www.qq.com,www.tencent.com",
+          "example": "模板地址",
+          "member": "string",
+          "name": "IpString",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1 ip模板\n5 域名模板",
+          "example": "模板类型",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAddressTemplateResponse": {
+      "document": "CreateAddressTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建结果,0成功",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateChooseVpcsRequest": {
       "document": "CreateChooseVpcs请求参数结构体",
       "members": [
@@ -2241,6 +2319,43 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAddressTemplateRequest": {
+      "document": "DeleteAddressTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板id",
+          "example": "mb_***_***",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAddressTemplateResponse": {
+      "document": "DeleteAddressTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除结果,0成功",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

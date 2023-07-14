@@ -320,6 +320,14 @@
         "title": "查询审计日志文件"
       }
     ],
+    "DescribeAuditLogs": [
+      {
+        "document": "查询审计日志成功",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeAuditLogs\n&InstanceId=cdb-qwer1234\n&StartTime=2023-06-18 00:00:00\n&EndTime=2023-06-19 00:00:00\n&Limit=100\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"AffectRows\": 1,\n                \"CheckRows\": 0,\n                \"CpuTime\": 375.786,\n                \"DBName\": \"wyang\",\n                \"ErrCode\": 0,\n                \"ExecTime\": 1503,\n                \"Host\": \"100.122.76.176\",\n                \"IoWaitTime\": 7,\n                \"LockWaitTime\": 1140,\n                \"NsTime\": 104188594,\n                \"PolicyName\": \"sys_default\",\n                \"SentRows\": 0,\n                \"Sql\": \"INSERT INTO `test_db` values('张三',0)\",\n                \"SqlType\": \"INSERT\",\n                \"ThreadId\": 162,\n                \"Timestamp\": \"2023-06-07 17:50:05.104\",\n                \"TrxLivingTime\": 1475,\n                \"User\": \"root\"\n            }\n        ],\n        \"RequestId\": \"b3951c71-1da4-4b8f-9de5-ad71ab1e2917-0\"\n    }\n}",
+        "title": "查询数据库审计日志"
+      }
+    ],
     "DescribeAuditPolicies": [
       {
         "document": "",

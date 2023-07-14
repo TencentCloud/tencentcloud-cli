@@ -2149,7 +2149,7 @@
           "example": "1234567890",
           "member": "uint64",
           "name": "CustomerId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2159,7 +2159,7 @@
           "example": "无",
           "member": "string",
           "name": "DealerCode",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2169,7 +2169,7 @@
           "example": "ozynqsulJFCZ2z1aYeS8h",
           "member": "string",
           "name": "UnionId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2179,7 +2179,7 @@
           "example": "2023-01-01 00:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2189,7 +2189,7 @@
           "example": "张三",
           "member": "string",
           "name": "UserName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2199,7 +2199,7 @@
           "example": "1",
           "member": "int64",
           "name": "Gender",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2209,7 +2209,7 @@
           "example": "123****4567",
           "member": "string",
           "name": "Phone",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2219,7 +2219,7 @@
           "example": "26-30",
           "member": "string",
           "name": "AgeRangeName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2229,7 +2229,7 @@
           "example": "无",
           "member": "string",
           "name": "JobTypeName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2239,7 +2239,7 @@
           "example": "地址1",
           "member": "string",
           "name": "Address",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2249,7 +2249,7 @@
           "example": "0",
           "member": "int64",
           "name": "LeadsProcessStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2259,7 +2259,7 @@
           "example": "1",
           "member": "int64",
           "name": "LeadType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2269,7 +2269,7 @@
           "example": "自然到店",
           "member": "string",
           "name": "SourceName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2279,7 +2279,7 @@
           "example": "101",
           "member": "string",
           "name": "LeadsLevelCode",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2289,7 +2289,7 @@
           "example": "品牌编号",
           "member": "string",
           "name": "VehicleBrandCode",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2299,7 +2299,7 @@
           "example": "车系编号",
           "member": "string",
           "name": "VehicleSeriesCode",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2309,7 +2309,7 @@
           "example": "车型编号",
           "member": "string",
           "name": "VehicleTypeCode",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2319,7 +2319,7 @@
           "example": "无",
           "member": "VehiclePurpose",
           "name": "VehiclePurpose",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2329,7 +2329,7 @@
           "example": "无",
           "member": "PurchaseConcern",
           "name": "PurchaseConcern",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2339,7 +2339,7 @@
           "example": "张三",
           "member": "string",
           "name": "SalesName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2349,7 +2349,7 @@
           "example": "123****4567",
           "member": "string",
           "name": "SalesPhone",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2359,7 +2359,7 @@
           "example": "1618322621",
           "member": "uint64",
           "name": "RealArrivalTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2369,7 +2369,7 @@
           "example": "2023-01-01 00:00:00",
           "member": "string",
           "name": "CompleteTestDriveTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2379,7 +2379,7 @@
           "example": "1618322621",
           "member": "uint64",
           "name": "OrderTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2389,7 +2389,7 @@
           "example": "1618322621",
           "member": "uint64",
           "name": "DeliveryTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2399,7 +2399,7 @@
           "example": "1618322621",
           "member": "uint64",
           "name": "InvoiceTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2409,7 +2409,7 @@
           "example": "1618322621",
           "member": "uint64",
           "name": "LoseTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2419,7 +2419,7 @@
           "example": "1618322621",
           "member": "uint64",
           "name": "CreatedAtTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2429,7 +2429,7 @@
           "example": "1618322621",
           "member": "uint64",
           "name": "ImportAtTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2439,7 +2439,7 @@
           "example": "1618322621",
           "member": "uint64",
           "name": "DistributeTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2449,7 +2449,7 @@
           "example": "1618322621",
           "member": "uint64",
           "name": "LeadCreateTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2459,7 +2459,7 @@
           "example": "jack",
           "member": "string",
           "name": "Nickname",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2469,7 +2469,7 @@
           "example": "[\"1\", \"2\"]",
           "member": "string",
           "name": "OrgIdList",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2479,7 +2479,7 @@
           "example": "李四",
           "member": "string",
           "name": "Introducer",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2489,7 +2489,7 @@
           "example": "123****4567",
           "member": "string",
           "name": "IntroducerPhone",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2499,7 +2499,7 @@
           "example": "1618322621",
           "member": "uint64",
           "name": "FollowTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2509,7 +2509,7 @@
           "example": "1618322621",
           "member": "uint64",
           "name": "NextFollowTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2519,7 +2519,7 @@
           "example": "无",
           "member": "EnterpriseTag",
           "name": "EnterpriseTags",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2529,9 +2529,139 @@
           "example": "无",
           "member": "ChannelTag",
           "name": "ChannelTags",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联线索id",
+          "example": "无",
+          "member": "uint64",
+          "name": "LeadId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户微信id",
+          "example": "无",
+          "member": "string",
+          "name": "WxId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "顾问职位",
+          "example": "无",
+          "member": "string",
+          "name": "Position",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否关联微信 1 是 0 否",
+          "example": "无",
+          "member": "int64",
+          "name": "IsBindWx",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否无效",
+          "example": "无",
+          "member": "int64",
+          "name": "IsInvalid",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "无效类型",
+          "example": "无",
+          "member": "string",
+          "name": "InvalidType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "无效类型名称",
+          "example": "无",
+          "member": "string",
+          "name": "InvalidTypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "无效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "InvalidTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "由顾问手动输入的无效原因文字",
+          "example": "无",
+          "member": "string",
+          "name": "InvalidRemark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "线索是否战败",
+          "example": "无",
+          "member": "int64",
+          "name": "IsLose",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "战败类型",
+          "example": "无",
+          "member": "string",
+          "name": "LoseType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "战败类型名称",
+          "example": "无",
+          "member": "string",
+          "name": "LoseTypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "战败申请原因",
+          "example": "无",
+          "member": "string",
+          "name": "LoseRemark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4272,6 +4402,7 @@
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw",
           "member": "string",
           "name": "NextCursor",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4281,6 +4412,7 @@
           "example": "无",
           "member": "CustomerProfile",
           "name": "PageData",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
