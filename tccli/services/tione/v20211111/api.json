@@ -2263,6 +2263,26 @@
           "required": false,
           "type": "string",
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。",
+          "example": "无",
+          "member": "bool",
+          "name": "ModelTurboEnable",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "服务分类",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceCategory",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2276,6 +2296,7 @@
           "example": "无",
           "member": "Service",
           "name": "Service",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -5693,7 +5714,6 @@
       "document": "DescribeModelServiceHotUpdated请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "镜像信息，配置服务运行所需的镜像地址等信息",
           "example": "无",
@@ -5704,7 +5724,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模型信息，需要挂载模型时填写",
           "example": "无",
@@ -5715,7 +5734,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "挂载信息",
           "example": "无",
@@ -5734,10 +5752,10 @@
         {
           "disabled": false,
           "document": "热更新标志位. \nAllowed 允许开启热更新.\nForbiddenForEmptyModel 未选择模型，禁止开启热更新.\nForbiddenForIllegalModelType 模型来源非法（仅支持来自模型仓库的模型），禁止开启热更新.\nForbiddenForIllegalImage 镜像来源非法（仅支持tfserving镜像），禁止开启热更新.\nForbiddenForUnAutoCleanModel 模型未配置自动清理，禁止开启热更新.",
-          "example": "无",
+          "example": "Allowed",
           "member": "string",
           "name": "HotUpdatedFlag",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 2
@@ -5748,10 +5766,21 @@
           "example": "无",
           "member": "string",
           "name": "Reason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "模型加速标志位.Allowed 允许模型加速. Forbidden 禁止模型加速",
+          "example": "Allowed",
+          "member": "string",
+          "name": "ModelTurboFlag",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6843,29 +6872,31 @@
       "document": "gpu 详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "GPU 显卡类型；枚举值: V100 A100 T4\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "V100",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "GPU 显卡数；单位为1/100卡，比如100代表1卡\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
           "name": "Value",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "GroupResource": {
       "document": "资源信息",
@@ -7084,6 +7115,17 @@
           "example": "{”safety_checker“:null}",
           "member": "string",
           "name": "PipelineArgs",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Stable Diffusion 模型优化参数，控制Lora模型的影响效果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.1",
+          "member": "string",
+          "name": "LoraScale",
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -7936,96 +7978,108 @@
       "document": "模型描述信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模型版本id, DescribeTrainingModelVersion查询模型接口时的id\n自动学习类型的模型填写自动学习的任务id",
           "example": "m-dddd-1",
           "member": "string",
           "name": "ModelVersionId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模型id",
           "example": "m-dddd",
           "member": "string",
           "name": "ModelId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模型名",
           "example": "test",
           "member": "string",
           "name": "ModelName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模型版本",
           "example": "1",
           "member": "string",
           "name": "ModelVersion",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模型来源",
           "example": "COS",
           "member": "string",
           "name": "ModelSource",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cos路径信息",
           "example": "{}",
           "member": "CosPathInfo",
           "name": "CosPathInfo",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模型对应的算法框架，预留\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "pmml",
           "member": "string",
           "name": "AlgorithmFramework",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认为 NORMAL, 已加速模型: ACCELERATE, 自动学习模型 AUTO_ML\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ACCELERATE",
           "member": "string",
           "name": "ModelType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "模型格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModelFormat",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -8128,7 +8182,6 @@
       "document": "ModifyModelService请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "服务id",
           "example": "ms-testtest-0",
@@ -8139,7 +8192,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模型信息，需要挂载模型时填写",
           "example": "无",
@@ -8150,7 +8202,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "镜像信息，配置服务运行所需的镜像地址等信息",
           "example": "无",
@@ -8161,7 +8212,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境变量，可选参数，用于配置容器中的环境变量",
           "example": "无",
@@ -8172,7 +8222,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源描述，指定预付费模式下的cpu,mem,gpu等信息，后付费无需填写",
           "example": "无",
@@ -8183,7 +8232,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用DescribeBillingSpecs接口返回的规格列表中的值，或者参考实例列表:\nTI.S.MEDIUM.POST\t2C4G\nTI.S.LARGE.POST\t4C8G\nTI.S.2XLARGE16.POST\t8C16G\nTI.S.2XLARGE32.POST\t8C32G\nTI.S.4XLARGE32.POST\t16C32G\nTI.S.4XLARGE64.POST\t16C64G\nTI.S.6XLARGE48.POST\t24C48G\nTI.S.6XLARGE96.POST\t24C96G\nTI.S.8XLARGE64.POST\t32C64G\nTI.S.8XLARGE128.POST 32C128G\nTI.GN7.LARGE20.POST\t4C20G T4*1/4\nTI.GN7.2XLARGE40.POST\t10C40G T4*1/2\nTI.GN7.2XLARGE32.POST\t8C32G T4*1\nTI.GN7.5XLARGE80.POST\t20C80G T4*1\nTI.GN7.8XLARGE128.POST\t32C128G T4*1\nTI.GN7.10XLARGE160.POST\t40C160G T4*2\nTI.GN7.20XLARGE320.POST\t80C320G T4*4",
           "example": "TI.S.MEDIUM.POS",
@@ -8194,7 +8242,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩缩容类型 支持：自动 - \"AUTO\", 手动 - \"MANUAL\"",
           "example": "AUTO",
@@ -8205,7 +8252,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例数量, 不同计费模式和调节模式下对应关系如下\nPREPAID 和 POSTPAID_BY_HOUR:\n手动调节模式下对应 实例数量\n自动调节模式下对应 基于时间的默认策略的实例数量\nHYBRID_PAID:\n后付费实例手动调节模式下对应 实例数量\n后付费实例自动调节模式下对应 时间策略的默认策略的实例数量",
           "example": "1",
@@ -8216,7 +8262,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动伸缩信息",
           "example": "无",
@@ -8227,7 +8272,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启日志投递，开启后需填写配置投递到指定cls",
           "example": "true",
@@ -8238,7 +8282,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志配置，需要投递服务日志到指定cls时填写",
           "example": "无",
@@ -8249,7 +8292,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "特殊更新行为： \"STOP\": 停止, \"RESUME\": 重启, \"SCALE\": 扩缩容, 存在这些特殊更新行为时，会忽略其他更新字段",
           "example": "STOP",
@@ -8260,7 +8302,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务的描述",
           "example": "ms-testtest",
@@ -8271,7 +8312,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动伸缩策略",
           "example": "HPA",
@@ -8282,7 +8322,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动伸缩策略配置 HPA : 通过HPA进行弹性伸缩 CRON 通过定时任务进行伸缩",
           "example": "无",
@@ -8293,7 +8332,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数, 若不填则默认为1",
           "example": "1",
@@ -8304,7 +8342,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启模型的热更新。默认不开启",
           "example": "false",
@@ -8315,7 +8352,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "定时停止配置",
           "example": "无",
@@ -8326,7 +8362,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务限速限流相关配置",
           "example": "无",
@@ -8337,7 +8372,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "挂载配置，目前只支持CFS",
           "example": "无",
@@ -8345,6 +8379,16 @@
           "name": "VolumeMount",
           "required": false,
           "type": "object",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。默认不开启",
+          "example": "无",
+          "member": "bool",
+          "name": "ModelTurboEnable",
+          "required": false,
+          "type": "bool",
           "visibility": 1
         }
       ],
@@ -8359,7 +8403,7 @@
           "example": "无",
           "member": "Service",
           "name": "Service",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -9417,6 +9461,17 @@
         },
         {
           "disabled": false,
+          "document": "服务的详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "ServiceInfo",
+          "name": "ServiceInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
           "document": "集群id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cls-sssss",
           "member": "string",
@@ -9465,6 +9520,39 @@
           "example": "rr-sssss",
           "member": "string",
           "name": "ResourceGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "包年包月服务对应的资源组名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pregroup",
+          "member": "string",
+          "name": "ResourceGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "服务的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "服务所在的 ingress 的 name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "my-ingress",
+          "member": "string",
+          "name": "IngressName",
           "required": true,
           "type": "string",
           "value_allowed_null": true,
@@ -9538,39 +9626,6 @@
         },
         {
           "disabled": false,
-          "document": "版本号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
-          "member": "string",
-          "name": "Version",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
-        },
-        {
-          "disabled": false,
-          "document": "服务组下服务的最高版本号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
-          "member": "string",
-          "name": "LatestVersion",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
-        },
-        {
-          "disabled": false,
-          "document": "服务的详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
-          "member": "ServiceInfo",
-          "name": "ServiceInfo",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
-        },
-        {
-          "disabled": false,
           "document": "服务的业务状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CREATING",
           "member": "string",
@@ -9582,62 +9637,7 @@
         },
         {
           "disabled": false,
-          "document": "服务的创建来源\nAUTO_ML: 来自自动学习的一键发布\nDEFAULT: 其他来源\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "AUTO_ML",
-          "member": "string",
-          "name": "CreateSource",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
-        },
-        {
-          "disabled": false,
-          "document": "费用信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "模型服务计费中：1.2元/小时",
-          "member": "string",
-          "name": "BillingInfo",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
-        },
-        {
-          "disabled": false,
-          "document": "服务状态\nCREATING 创建中\nCREATE_FAILED 创建失败\nNormal\t正常运行中\nStopped  已停止\nStopping 停止中\nAbnormal 异常\nPending 启动中\nWaiting 就绪中\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "Normal",
-          "member": "string",
-          "name": "Status",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
-        },
-        {
-          "disabled": false,
-          "document": "模型权重\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "20",
-          "member": "int64",
-          "name": "Weight",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
-        },
-        {
-          "disabled": false,
-          "document": "服务所在的 ingress 的 name\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "my-ingress",
-          "member": "string",
-          "name": "IngressName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
-        },
-        {
-          "disabled": false,
-          "document": "服务限速限流相关配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "ServiceLimit",
           "name": "ServiceLimit",
@@ -9648,7 +9648,7 @@
         },
         {
           "disabled": false,
-          "document": "定时停止的配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "ScheduledAction",
           "name": "ScheduledAction",
@@ -9670,10 +9670,10 @@
         },
         {
           "disabled": false,
-          "document": "包年包月服务对应的资源组名字\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "pregroup",
+          "document": "服务状态\nCREATING 创建中\nCREATE_FAILED 创建失败\nNormal\t正常运行中\nStopped  已停止\nStopping 停止中\nAbnormal 异常\nPending 启动中\nWaiting 就绪中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Normal",
           "member": "string",
-          "name": "ResourceGroupName",
+          "name": "Status",
           "required": true,
           "type": "string",
           "value_allowed_null": true,
@@ -9681,12 +9681,56 @@
         },
         {
           "disabled": false,
-          "document": "服务的标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
-          "member": "Tag",
-          "name": "Tags",
+          "document": "费用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "模型服务计费中：1.2元/小时",
+          "member": "string",
+          "name": "BillingInfo",
           "required": true,
-          "type": "list",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "模型权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "服务的创建来源\nAUTO_ML: 来自自动学习的一键发布\nDEFAULT: 其他来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AUTO_ML",
+          "member": "string",
+          "name": "CreateSource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "服务组下服务的最高版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "LatestVersion",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -10044,6 +10088,7 @@
           "example": "1",
           "member": "int64",
           "name": "Replicas",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true,
@@ -10055,6 +10100,7 @@
           "example": "{}",
           "member": "ImageInfo",
           "name": "ImageInfo",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": true,
@@ -10066,6 +10112,7 @@
           "example": "{name: \"k\", value: \"v\"}",
           "member": "EnvVar",
           "name": "Env",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true,
@@ -10077,6 +10124,7 @@
           "example": "{}",
           "member": "ResourceInfo",
           "name": "Resources",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": true,
@@ -10088,6 +10136,7 @@
           "example": "TI.S.MEDIUM.POS",
           "member": "string",
           "name": "InstanceType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true,
@@ -10099,6 +10148,7 @@
           "example": "{}",
           "member": "ModelInfo",
           "name": "ModelInfo",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": true,
@@ -10110,6 +10160,7 @@
           "example": "true",
           "member": "bool",
           "name": "LogEnable",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": true,
@@ -10121,6 +10172,7 @@
           "example": "{}",
           "member": "LogConfig",
           "name": "LogConfig",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": true,
@@ -10132,6 +10184,7 @@
           "example": "true",
           "member": "bool",
           "name": "AuthorizationEnable",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": true,
@@ -10143,6 +10196,7 @@
           "example": "{}",
           "member": "HorizontalPodAutoscaler",
           "name": "HorizontalPodAutoscaler",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": true,
@@ -10154,6 +10208,7 @@
           "example": "Normal",
           "member": "WorkloadStatus",
           "name": "Status",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": true,
@@ -10165,6 +10220,7 @@
           "example": "100",
           "member": "uint64",
           "name": "Weight",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true,
@@ -10176,6 +10232,7 @@
           "example": "sss",
           "member": "string",
           "name": "PodList",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true,
@@ -10187,6 +10244,7 @@
           "example": "{}",
           "member": "ResourceInfo",
           "name": "ResourceTotal",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": true,
@@ -10198,6 +10256,7 @@
           "example": "1",
           "member": "int64",
           "name": "OldReplicas",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true,
@@ -10209,6 +10268,7 @@
           "example": "1",
           "member": "int64",
           "name": "HybridBillingPrepaidReplicas",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true,
@@ -10220,6 +10280,7 @@
           "example": "1",
           "member": "int64",
           "name": "OldHybridBillingPrepaidReplicas",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true,
@@ -10231,6 +10292,7 @@
           "example": "false",
           "member": "bool",
           "name": "ModelHotUpdateEnable",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": true,
@@ -10238,32 +10300,11 @@
         },
         {
           "disabled": false,
-          "document": "Pod列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "Pod",
-          "name": "Pods",
-          "required": false,
-          "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
-        },
-        {
-          "disabled": false,
-          "document": "Pod列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "Pod",
-          "name": "PodInfos",
-          "required": false,
-          "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
-        },
-        {
-          "disabled": false,
-          "document": "定时伸缩策略\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "HPC",
+          "document": "实例数量调节方式,默认为手动\n支持：自动 - \"AUTO\", 手动 - \"MANUAL\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AUTO",
           "member": "string",
-          "name": "ScaleStrategy",
+          "name": "ScaleMode",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -10275,6 +10316,7 @@
           "example": "无",
           "member": "CronScaleJob",
           "name": "CronScaleJobs",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true,
@@ -10282,23 +10324,13 @@
         },
         {
           "disabled": false,
-          "document": "实例数量调节方式,默认为手动\n支持：自动 - \"AUTO\", 手动 - \"MANUAL\"\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "AUTO",
+          "document": "定时伸缩策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HPC",
           "member": "string",
-          "name": "ScaleMode",
+          "name": "ScaleStrategy",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
-        },
-        {
-          "disabled": false,
-          "document": "服务限速限流相关配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "ServiceLimit",
-          "name": "ServiceLimit",
-          "required": false,
-          "type": "object",
           "value_allowed_null": true,
           "visibility": 1
         },
@@ -10308,8 +10340,57 @@
           "example": "无",
           "member": "string",
           "name": "ScheduledAction",
+          "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Pod列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Pod",
+          "name": "Pods",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Pod列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Pod",
+          "name": "PodInfos",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "服务限速限流相关配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceLimit",
+          "name": "ServiceLimit",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "ModelTurboEnable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -12311,7 +12392,6 @@
       "document": "工作负载的状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "当前实例数",
           "example": "1",
@@ -12323,7 +12403,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新的实例数",
           "example": "0",
@@ -12335,7 +12414,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "就绪的实例数",
           "example": "1",
@@ -12347,7 +12425,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用的实例数",
           "example": "1",
@@ -12359,7 +12436,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不可用的实例数",
           "example": "0",
@@ -12371,7 +12447,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Normal\t正常运行中\nAbnormal\t服务异常，例如容器启动失败等\nWaiting\t服务等待中，例如容器下载镜像过程等\nStopped   已停止 \nPending 启动中\nStopping 停止中",
           "example": "Normal",
@@ -12383,7 +12458,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作负载的状况信息",
           "example": "{}",
@@ -12395,7 +12469,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作负载历史的状况信息",
           "example": "[]",
@@ -12404,6 +12477,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "状态异常时，展示原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Reason",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
           "visibility": 1
         }
       ],

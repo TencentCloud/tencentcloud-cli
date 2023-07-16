@@ -16,6 +16,14 @@
         "title": "申请创建客户账户"
       }
     ],
+    "DescribeBillDetail": [
+      {
+        "document": "子客查询l3账单\n\t\nPOST / HTTP/1.1\n\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerBillDetail\n<公共请求参数>\n\n",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillDetail\n<公共请求参数>\n\n{\n    \"Month\": \"2023-02\",\n    \"PayMode\": \"postPay\",\n    \"ActionType\": \"postpay_deduct_h\",\n    \"PageSize\": \"10\",\n    \"Page\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"DetailSet\": [\n            {\n                \"PayerAccountId\": 1230,\n                \"OwnerAccountId\": 132,\n                \"OperatorAccountId\": 321,\n                \"ProductName\": \"cloud block storage\",\n                \"BillingMode\": \"Pay-As-You-Go resources\",\n                \"ProjectName\": \"default\",\n                \"Region\": \"East Chinaxa0(Shanghai)\",\n                \"AvailabilityZone\": \"Shanghai Zone 1\",\n                \"InstanceId\": \"123456\",\n                \"InstanceName\": \"the name\",\n                \"SubProductName\": \"HDD cloud block storage\",\n                \"TransactionType\": \"Hourly settlement\",\n                \"TransactionId\": \"2023010112345678\",\n                \"TransactionTime\": \"2023-01-01 00:01:02\",\n                \"UsageStartTime\": \"2023-01-01 00:01:02\",\n                \"UsageEndTime\": \"2023-01-01 00:01:02\",\n                \"ComponentType\": \"volume size\",\n                \"ComponentName\": \"HDD cloud block storage-volume size\",\n                \"ComponentListPrice\": \"0.1\",\n                \"ComponentPriceMeasurementUnit\": \"USD/GB/Second\",\n                \"ComponentUsage\": \"100\",\n                \"ComponentUsageUnit\": \"GB\",\n                \"UsageDuration\": \"100\",\n                \"DurationUnit\": \"Second\",\n                \"OriginalCost\": \"10\",\n                \"Currency\": \"USD\",\n                \"TotalCost\": \"10\"\n            }\n        ],\n        \"RequestId\": \"asdfgh\"\n    }\n}",
+        "title": "DescribeBillDetail"
+      }
+    ],
     "DescribeBillSummaryByPayMode": [
       {
         "document": "通过API获取子客账单付费模式汇总值",

@@ -245,6 +245,13 @@
       "output": "SaveAndDeployLogstashPipelineResponse",
       "status": "online"
     },
+    "SearchServerlessData": {
+      "document": "serverless索引内部检索接口",
+      "input": "SearchServerlessDataRequest",
+      "name": "serverless索引内部检索接口",
+      "output": "SearchServerlessDataResponse",
+      "status": "online"
+    },
     "StartLogstashPipelines": {
       "document": "用于启动Logstash管道",
       "input": "StartLogstashPipelinesRequest",
@@ -7814,6 +7821,314 @@
         }
       ],
       "type": "object"
+    },
+    "SearchServerlessDataFile": {
+      "document": "SearchServerlessDataFile",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/data",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
+    },
+    "SearchServerlessDataHitArray": {
+      "document": "SearchServerlessDataHitArray",
+      "members": [
+        {
+          "disabled": false,
+          "document": "索引名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "index-xxx",
+          "member": "string",
+          "name": "IndexName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "查询数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SearchServerlessDataSource",
+          "name": "SearchServerlessDataSource",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "sort值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Sort",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
+    },
+    "SearchServerlessDataHost": {
+      "document": "SearchServerlessDataHost",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无 ",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
+    },
+    "SearchServerlessDataLog": {
+      "document": "SearchServerlessDataLog",
+      "members": [
+        {
+          "disabled": false,
+          "document": "file值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SearchServerlessDataFile",
+          "name": "SearchServerlessDataFile",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
+    },
+    "SearchServerlessDataRequest": {
+      "document": "SearchServerlessData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据源集群id",
+          "example": "无",
+          "member": "string",
+          "name": "Uuid",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "集群节点ip",
+          "example": "无",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "集群节点日志路径",
+          "example": "无",
+          "member": "string",
+          "name": "LogPath",
+          "required": true,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "查询时间戳起始时间",
+          "example": "无",
+          "member": "string",
+          "name": "From",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "查询时间戳截止时间",
+          "example": "无",
+          "member": "string",
+          "name": "To",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "查询过滤条件，支持AND、OR等语法",
+          "example": "无",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "Serverless索引id",
+          "example": "无",
+          "member": "string",
+          "name": "ServerlessId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "翻页标记：0向上滚动、1向下滚动",
+          "example": "无",
+          "member": "int64",
+          "name": "Scroll",
+          "required": true,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "无",
+          "member": "string",
+          "name": "Username",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "密码",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "翻页标识",
+          "example": "无",
+          "member": "string",
+          "name": "SearchAfterKey",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "SearchServerlessDataResponse": {
+      "document": "SearchServerlessData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "第一条数据的翻页标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "SearchAfterKeyFirst",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "最后一条数据的翻页标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "SearchAfterKeyLast",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "查询结果数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SearchServerlessDataHitArray",
+          "name": "Results",
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "查询数据条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Count",
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchServerlessDataSource": {
+      "document": "SearchServerlessDataSource",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Timestamp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "日志数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "主机ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SearchServerlessDataHost",
+          "name": "SearchServerlessDataHost",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "日志路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SearchServerlessDataLog",
+          "name": "SearchServerlessDataLog",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
     },
     "ServerlessDi": {
       "document": "创建serverless索引时创建数据接入",

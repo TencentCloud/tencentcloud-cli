@@ -463,7 +463,7 @@
       "status": "online"
     },
     "ListFirmwares": {
-      "document": "本接口（ListFirmwares）用于获取固件列表 ",
+      "document": "本接口（ListFirmwares）用于获取固件列表",
       "input": "ListFirmwaresRequest",
       "name": "获取固件列表",
       "output": "ListFirmwaresResponse",
@@ -3276,34 +3276,34 @@
       "document": "DescribeDevice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "ABCDE12345",
           "member": "string",
           "name": "ProductId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名",
           "example": "dev01",
           "member": "string",
           "name": "DeviceName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备ID，该字段有值将代替 ProductId/DeviceName",
           "example": "ABCDE12345/dev01",
           "member": "string",
           "name": "DeviceId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3317,9 +3317,9 @@
           "example": "无",
           "member": "DeviceInfo",
           "name": "Device",
-          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3510,34 +3510,34 @@
       "document": "DescribeFirmwareTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "ABCDE12345",
           "member": "string",
           "name": "ProductID",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "固件版本号",
           "example": "1.0.0",
           "member": "string",
           "name": "FirmwareVersion",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "固件任务ID",
           "example": "10000",
           "member": "uint64",
           "name": "TaskId",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3551,9 +3551,10 @@
           "example": "1000175",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -3561,9 +3562,10 @@
           "example": "3",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -3571,9 +3573,10 @@
           "example": "1589466879",
           "member": "int64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -3581,9 +3584,10 @@
           "example": "1",
           "member": "int64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -3591,9 +3595,10 @@
           "example": "门锁",
           "member": "string",
           "name": "ProductName",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -3601,9 +3606,10 @@
           "example": "originalVersion",
           "member": "string",
           "name": "UpgradeMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -3611,9 +3617,10 @@
           "example": "ABCDE12345",
           "member": "string",
           "name": "ProductId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -3621,9 +3628,32 @@
           "example": "xx",
           "member": "string",
           "name": "OriginalVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "创建账号ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "uint64",
+          "name": "CreateUserId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "创建账号ID昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "CreatorNickName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4053,14 +4083,14 @@
       "document": "DescribeProject请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "prj-4r2kajtp",
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -4074,9 +4104,9 @@
           "example": "无",
           "member": "ProjectEntryEx",
           "name": "Project",
-          "required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4387,7 +4417,6 @@
       "document": "设备详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备名",
           "example": "1",
@@ -4399,7 +4428,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0: 离线, 1: 在线, 2: 获取失败, 3 未激活",
           "example": "2",
@@ -4411,7 +4439,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备密钥，密钥加密的设备返回",
           "example": "2",
@@ -4423,7 +4450,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "首次上线时间\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -4435,7 +4461,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后一次上线时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -4447,7 +4472,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -4459,7 +4483,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备固件版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -4471,7 +4494,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备证书\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -4483,7 +4505,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志级别\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -4495,7 +4516,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "LoRaWAN 设备地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -4507,7 +4527,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "LoRaWAN 应用密钥\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -4519,7 +4538,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "LoRaWAN 设备唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -4531,7 +4549,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "LoRaWAN 应用会话密钥\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -4543,7 +4560,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "LoRaWAN 网络会话密钥\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -4555,7 +4571,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建人Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -4567,7 +4582,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建人昵称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -4579,7 +4593,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "启用/禁用状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -4591,7 +4604,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TOIDHQ3AOQ",
@@ -4603,7 +4615,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "智能音箱",
@@ -4615,7 +4626,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备类型（设备、子设备、网关）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "设备",
@@ -4627,7 +4637,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是 lora 设备\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -4639,25 +4648,23 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1111",
           "member": "uint64",
           "name": "ConnIP",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 2
         },
         {
-          "default": "",
           "disabled": false,
           "document": "连接城市代码 2:北京 36:天津 1533:张家口 30:深圳 73:广州 1439:清远 28:上海 21:南京 1941:昆山\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "73",
           "member": "int64",
           "name": "ConnCityCode",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 2
@@ -5681,64 +5688,64 @@
       "document": "GetDeviceList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要查看设备列表的产品ID, -1代表ProjectId来筛选",
           "example": "ABCDE12345",
           "member": "string",
           "name": "ProductId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页的大小，数值范围 10-100",
           "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备固件版本号，若不带此参数会返回所有固件版本的设备。传\"None-FirmwareVersion\"查询无版本号的设备",
           "example": "1",
           "member": "string",
           "name": "FirmwareVersion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要过滤的设备名称",
           "example": "1",
           "member": "string",
           "name": "DeviceName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID。产品 ID 为 -1 时，该参数必填",
           "example": "test",
           "member": "string",
           "name": "ProjectId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -5752,9 +5759,9 @@
           "example": "无",
           "member": "DeviceInfo",
           "name": "Devices",
-          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -5762,9 +5769,9 @@
           "example": "3",
           "member": "int64",
           "name": "Total",
-          "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6119,74 +6126,74 @@
       "document": "GetProjectList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "个数限制",
           "example": "0",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "ins-fdaf1231",
           "member": "string",
           "name": "InstanceId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按项目ID搜索",
           "example": "prj-fda123f",
           "member": "string",
           "name": "ProjectId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按产品ID搜索",
           "example": "TOIDHQ3AOQ",
           "member": "string",
           "name": "ProductId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加载 ProductCount、DeviceCount、ApplicationCount，可选值：ProductCount、DeviceCount、ApplicationCount，可多选",
           "example": "[\"ProductCount\",\"DeviceCount\"]",
           "member": "string",
           "name": "Includes",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按项目名称搜索",
           "example": "测试项目",
           "member": "string",
           "name": "ProjectName",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6200,9 +6207,9 @@
           "example": "无",
           "member": "ProjectEntryEx",
           "name": "Projects",
-          "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -6210,9 +6217,9 @@
           "example": "9",
           "member": "int64",
           "name": "Total",
-          "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6507,44 +6514,44 @@
       "document": "ListFirmwares请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "获取的页数",
           "example": "1",
           "member": "uint64",
           "name": "PageNum",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页的大小",
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "ABCDE12345",
           "member": "string",
           "name": "ProductID",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索过滤条件",
           "example": "无",
           "member": "SearchKeyword",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -6558,9 +6565,9 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -6568,9 +6575,9 @@
           "example": "无",
           "member": "FirmwareInfo",
           "name": "Firmwares",
-          "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8699,7 +8706,6 @@
       "document": "SearchStudioProduct请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "prj-zunfat46",
@@ -8710,7 +8716,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品名称",
           "example": "testtproduct",
@@ -8721,7 +8726,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "列表Limit",
           "example": "0",
@@ -8732,7 +8736,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "列表Offset",
           "example": "0",
@@ -8743,7 +8746,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品Status",
           "example": "dev",
@@ -8754,7 +8756,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "FSDA213D",
@@ -8776,7 +8777,6 @@
           "example": "无",
           "member": "ProductEntry",
           "name": "Products",
-          "required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -8787,7 +8787,6 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1

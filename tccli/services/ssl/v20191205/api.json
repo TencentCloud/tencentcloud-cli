@@ -2733,6 +2733,7 @@
           "example": "无",
           "member": "string",
           "name": "OwnerUin",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2743,6 +2744,7 @@
           "example": "无",
           "member": "string",
           "name": "ProjectId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2753,6 +2755,7 @@
           "example": "无",
           "member": "string",
           "name": "From",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2763,6 +2766,7 @@
           "example": "无",
           "member": "string",
           "name": "CertificateType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2773,6 +2777,7 @@
           "example": "无",
           "member": "string",
           "name": "PackageType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2783,6 +2788,7 @@
           "example": "无",
           "member": "string",
           "name": "ProductZhName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2793,6 +2799,7 @@
           "example": "无",
           "member": "string",
           "name": "Domain",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2803,6 +2810,7 @@
           "example": "无",
           "member": "string",
           "name": "Alias",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2813,6 +2821,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Status",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -2823,6 +2832,7 @@
           "example": "无",
           "member": "string",
           "name": "StatusMsg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2833,6 +2843,7 @@
           "example": "无",
           "member": "string",
           "name": "VerifyType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2843,6 +2854,7 @@
           "example": "无",
           "member": "string",
           "name": "VulnerabilityStatus",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2853,6 +2865,7 @@
           "example": "无",
           "member": "datetime",
           "name": "CertBeginTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2863,6 +2876,7 @@
           "example": "无",
           "member": "datetime",
           "name": "CertEndTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2873,6 +2887,7 @@
           "example": "无",
           "member": "string",
           "name": "ValidityPeriod",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2883,6 +2898,7 @@
           "example": "无",
           "member": "datetime",
           "name": "InsertTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2893,6 +2909,7 @@
           "example": "无",
           "member": "string",
           "name": "OrderId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2903,6 +2920,7 @@
           "example": "无",
           "member": "CertificateExtra",
           "name": "CertificateExtra",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -2913,6 +2931,7 @@
           "example": "无",
           "member": "string",
           "name": "CertificatePrivateKey",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2923,6 +2942,7 @@
           "example": "无",
           "member": "string",
           "name": "CertificatePublicKey",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2933,6 +2953,7 @@
           "example": "无",
           "member": "DvAuthDetail",
           "name": "DvAuthDetail",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -2943,6 +2964,7 @@
           "example": "无",
           "member": "string",
           "name": "VulnerabilityReport",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2953,6 +2975,7 @@
           "example": "无",
           "member": "string",
           "name": "CertificateId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2963,6 +2986,7 @@
           "example": "无",
           "member": "string",
           "name": "TypeName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2973,6 +2997,7 @@
           "example": "无",
           "member": "string",
           "name": "StatusName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2983,6 +3008,7 @@
           "example": "无",
           "member": "string",
           "name": "SubjectAltName",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -2993,6 +3019,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsVip",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -3003,6 +3030,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsWildcard",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -3013,6 +3041,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsDv",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -3023,6 +3052,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsVulnerability",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -3033,6 +3063,7 @@
           "example": "无",
           "member": "SubmittedData",
           "name": "SubmittedData",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -3043,6 +3074,7 @@
           "example": "无",
           "member": "bool",
           "name": "RenewAble",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -3053,6 +3085,7 @@
           "example": "无",
           "member": "bool",
           "name": "Deployable",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -3063,6 +3096,7 @@
           "example": "无",
           "member": "Tags",
           "name": "Tags",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -3073,6 +3107,7 @@
           "example": "无",
           "member": "RootCertificates",
           "name": "RootCert",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -3083,6 +3118,7 @@
           "example": "无",
           "member": "string",
           "name": "EncryptCert",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3093,6 +3129,7 @@
           "example": "无",
           "member": "string",
           "name": "EncryptPrivateKey",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3103,6 +3140,7 @@
           "example": "无",
           "member": "string",
           "name": "CertFingerprint",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3113,6 +3151,7 @@
           "example": "无",
           "member": "string",
           "name": "EncryptCertFingerprint",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3123,7 +3162,19 @@
           "example": "无",
           "member": "string",
           "name": "EncryptAlgorithm",
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "DV证书吊销验证值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DvAuths",
+          "name": "DvRevokeAuthDetail",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": true,
           "visibility": 1
         },
@@ -3239,6 +3290,7 @@
           "example": "无",
           "member": "string",
           "name": "OwnerUin",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3249,6 +3301,7 @@
           "example": "无",
           "member": "string",
           "name": "ProjectId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3259,6 +3312,7 @@
           "example": "无",
           "member": "string",
           "name": "From",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3269,6 +3323,7 @@
           "example": "无",
           "member": "string",
           "name": "CertificateType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3279,6 +3334,7 @@
           "example": "无",
           "member": "string",
           "name": "PackageType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3289,6 +3345,7 @@
           "example": "无",
           "member": "string",
           "name": "ProductZhName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3299,6 +3356,7 @@
           "example": "无",
           "member": "string",
           "name": "Domain",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3309,6 +3367,7 @@
           "example": "无",
           "member": "string",
           "name": "Alias",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3319,6 +3378,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Status",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -3329,6 +3389,7 @@
           "example": "无",
           "member": "string",
           "name": "StatusMsg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3339,6 +3400,7 @@
           "example": "无",
           "member": "string",
           "name": "VerifyType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3349,6 +3411,7 @@
           "example": "无",
           "member": "string",
           "name": "VulnerabilityStatus",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3359,6 +3422,7 @@
           "example": "无",
           "member": "string",
           "name": "CertBeginTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3369,6 +3433,7 @@
           "example": "无",
           "member": "string",
           "name": "CertEndTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3379,6 +3444,7 @@
           "example": "无",
           "member": "string",
           "name": "ValidityPeriod",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3389,6 +3455,7 @@
           "example": "无",
           "member": "string",
           "name": "InsertTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3399,6 +3466,7 @@
           "example": "无",
           "member": "string",
           "name": "OrderId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3409,6 +3477,7 @@
           "example": "无",
           "member": "CertificateExtra",
           "name": "CertificateExtra",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -3419,6 +3488,7 @@
           "example": "无",
           "member": "DvAuthDetail",
           "name": "DvAuthDetail",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -3429,6 +3499,7 @@
           "example": "无",
           "member": "string",
           "name": "VulnerabilityReport",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3439,6 +3510,7 @@
           "example": "无",
           "member": "string",
           "name": "CertificateId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3449,6 +3521,7 @@
           "example": "无",
           "member": "string",
           "name": "PackageTypeName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3459,6 +3532,7 @@
           "example": "无",
           "member": "string",
           "name": "StatusName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3469,6 +3543,7 @@
           "example": "无",
           "member": "string",
           "name": "SubjectAltName",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -3479,6 +3554,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsVip",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -3489,6 +3565,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsWildcard",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -3499,6 +3576,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsDv",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -3509,6 +3587,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsVulnerability",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -3519,6 +3598,7 @@
           "example": "无",
           "member": "bool",
           "name": "RenewAble",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -3529,6 +3609,7 @@
           "example": "无",
           "member": "SubmittedData",
           "name": "SubmittedData",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -3539,6 +3620,7 @@
           "example": "无",
           "member": "bool",
           "name": "Deployable",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -3549,6 +3631,7 @@
           "example": "无",
           "member": "Tags",
           "name": "Tags",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -3559,6 +3642,7 @@
           "example": "无",
           "member": "string",
           "name": "CAEncryptAlgorithms",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -3569,6 +3653,7 @@
           "example": "无",
           "member": "string",
           "name": "CACommonNames",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -3579,6 +3664,18 @@
           "example": "无",
           "member": "string",
           "name": "CAEndTimes",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "DV证书吊销验证值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DvAuths",
+          "name": "DvRevokeAuthDetail",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1

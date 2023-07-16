@@ -26,54 +26,54 @@
       "document": "ApplyEmbedInterval请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分享项目id，必选",
           "example": "1",
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分享页面id，嵌出看板时此为空值0",
           "example": "1",
           "member": "uint64",
           "name": "PageId",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要申请延期的Token",
           "example": "1",
           "member": "string",
           "name": "BIToken",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备用字段",
           "example": "1",
           "member": "string",
           "name": "ExtraParam",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "panel,看板；page，页面",
           "example": "page",
           "member": "string",
           "name": "Scope",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -87,9 +87,10 @@
           "example": "\"\"",
           "member": "string",
           "name": "Extra",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -97,9 +98,10 @@
           "example": "无",
           "member": "ApplyEmbedTokenInfo",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -107,9 +109,10 @@
           "example": "success",
           "member": "string",
           "name": "Msg",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

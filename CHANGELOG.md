@@ -1,3 +1,355 @@
+# Release 3.0.808.1
+
+## 云顾问(advisor) 版本：2020-07-21
+
+### 第 3 次发布
+
+发布时间：2023-07-17 01:05:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DownloadReportFileAsync](http://document.tencentcloudapi.woa.com/document/product/1660/78748)
+
+	* 新增入参：CloudMapUuid
+
+	* 新增出参：ReportAuthorized
+
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 43 次发布
+
+发布时间：2023-07-17 01:14:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AclRulesOutput](http://document.tencentcloudapi.woa.com/document/product/214/30694#AclRulesOutput)
+
+	* <font color="#dd0000">**修改成员**：</font>SrcIp, DstIp, SrcPort, DstPort, Protocol, CreateTime
+
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 51 次发布
+
+发布时间：2023-07-17 01:16:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/213/15753#Instance)
+
+	* 新增成员：DedicatedClusterId
+
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 33 次发布
+
+发布时间：2023-07-17 01:23:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [SearchServerlessData](http://document.tencentcloudapi.woa.com/document/product/845/81232)
+
+新增数据结构：
+
+* [SearchServerlessDataFile](http://document.tencentcloudapi.woa.com/document/product/845/30634#SearchServerlessDataFile)
+* [SearchServerlessDataHitArray](http://document.tencentcloudapi.woa.com/document/product/845/30634#SearchServerlessDataHitArray)
+* [SearchServerlessDataHost](http://document.tencentcloudapi.woa.com/document/product/845/30634#SearchServerlessDataHost)
+* [SearchServerlessDataLog](http://document.tencentcloudapi.woa.com/document/product/845/30634#SearchServerlessDataLog)
+* [SearchServerlessDataSource](http://document.tencentcloudapi.woa.com/document/product/845/30634#SearchServerlessDataSource)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 7 次发布
+
+发布时间：2023-07-17 01:23:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateChannelSubOrganizationModifyQrCode
+
+修改数据结构：
+
+* [FlowCreateApprover](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowCreateApprover)
+
+	* 新增成员：SignComponents, Components, ComponentLimitType
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 69 次发布
+
+发布时间：2023-07-17 01:24:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChannelCreateOrganizationModifyQrCode](http://document.tencentcloudapi.woa.com/document/product/1595/81233)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 人脸试妆(fmu) 版本：2019-12-13
+
+### 第 2 次发布
+
+发布时间：2023-07-17 01:24:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [QueryBeautifyVideoJob](http://document.tencentcloudapi.woa.com/document/product/1172/47792)
+
+	* 新增出参：JobStatusCode
+
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 3 次发布
+
+发布时间：2023-07-17 01:26:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBillDetail](http://document.tencentcloudapi.woa.com/document/product/1724/81234)
+
+新增数据结构：
+
+* [CustomerBillDetailData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#CustomerBillDetailData)
+
+
+
+## 加速物联网套件(iot) 版本：2018-01-23
+
+### 第 2 次发布
+
+发布时间：2023-07-17 01:26:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* UnassociateSubDeviceFromGatewayProduct
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 24 次发布
+
+发布时间：2023-07-17 01:27:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeFirmwareTask](http://document.tencentcloudapi.woa.com/document/product/1081/53875)
+
+	* 新增出参：CreateUserId, CreatorNickName
+
+
+修改数据结构：
+
+* [DeviceInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#DeviceInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>ConnIP, ConnCityCode
+
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 27 次发布
+
+发布时间：2023-07-17 01:32:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeJobSubmissionLog](http://document.tencentcloudapi.woa.com/document/product/849/81236)
+
+新增数据结构：
+
+* [JobInstanceForSubmissionLog](http://document.tencentcloudapi.woa.com/document/product/849/52010#JobInstanceForSubmissionLog)
+* [LogContent](http://document.tencentcloudapi.woa.com/document/product/849/52010#LogContent)
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 32 次发布
+
+发布时间：2023-07-17 01:36:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCertificate](http://document.tencentcloudapi.woa.com/document/product/400/41674)
+
+	* 新增出参：DvRevokeAuthDetail
+
+* [DescribeCertificateDetail](http://document.tencentcloudapi.woa.com/document/product/400/41673)
+
+	* 新增出参：DvRevokeAuthDetail
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 56 次发布
+
+发布时间：2023-07-17 01:40:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateAMQPCluster
+* CreateAMQPExchange
+* CreateAMQPQueue
+* CreateAMQPRouteRelation
+* CreateAMQPVHost
+* DeleteAMQPCluster
+* DeleteAMQPExchange
+* DeleteAMQPQueue
+* DeleteAMQPRouteRelation
+* DeleteAMQPVHost
+* DescribeAMQPCluster
+* DescribeAMQPCreateQuota
+* DescribeAMQPExchanges
+* DescribeAMQPQueues
+* DescribeAMQPRouteRelations
+* DescribeAMQPVHosts
+* ModifyAMQPExchange
+* ModifyAMQPQueue
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* AMQPClusterRecentStats
+* AMQPExchange
+* AMQPQueueDetail
+* AMQPRouteRelation
+* AMQPVHost
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 27 次发布
+
+发布时间：2023-07-17 01:42:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateModelService](http://document.tencentcloudapi.woa.com/document/product/851/76500)
+
+	* 新增入参：ModelTurboEnable, ServiceCategory
+
+* [DescribeModelServiceHotUpdated](http://document.tencentcloudapi.woa.com/document/product/851/76491)
+
+	* 新增出参：ModelTurboFlag
+
+* [ModifyModelService](http://document.tencentcloudapi.woa.com/document/product/851/76703)
+
+	* 新增入参：ModelTurboEnable
+
+
+修改数据结构：
+
+* [GpuDetail](http://document.tencentcloudapi.woa.com/document/product/851/74915#GpuDetail)
+
+	* <font color="#dd0000">**修改成员**：</font>Name, Value
+
+* [HyperParameter](http://document.tencentcloudapi.woa.com/document/product/851/74915#HyperParameter)
+
+	* 新增成员：LoraScale
+
+* [ModelInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ModelInfo)
+
+	* 新增成员：ModelFormat
+
+* [ServiceInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ServiceInfo)
+
+	* 新增成员：ModelTurboEnable
+
+* [WorkloadStatus](http://document.tencentcloudapi.woa.com/document/product/851/74915#WorkloadStatus)
+
+	* 新增成员：Reason
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
 # Release 3.0.807.1
 
 ## 云顾问(advisor) 版本：2020-07-21

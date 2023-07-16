@@ -677,18 +677,16 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
           "disabled": false,
-          "document": "服务使用方的私有网络唯一ID。",
+          "document": "租户的私有网络唯一ID。",
           "example": "vpc-user",
           "member": "string",
           "name": "VpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -699,7 +697,6 @@
           "name": "Action",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -710,7 +707,6 @@
           "name": "SrcIp",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -721,7 +717,6 @@
           "name": "DstIp",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -732,7 +727,6 @@
           "name": "SrcPort",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -743,7 +737,6 @@
           "name": "DstPort",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -754,7 +747,6 @@
           "name": "Protocol",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
           "visibility": 1
         }
       ],
@@ -769,18 +761,18 @@
           "example": "in",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
           "disabled": false,
-          "document": "服务使用方的私有网络唯一ID。",
+          "document": "租户的私有网络唯一ID。",
           "example": "vpc-user",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -791,7 +783,7 @@
           "example": "bypass",
           "member": "string",
           "name": "Action",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -802,7 +794,7 @@
           "example": "无",
           "member": "string",
           "name": "SrcIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -813,7 +805,7 @@
           "example": "无",
           "member": "string",
           "name": "DstIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -824,7 +816,7 @@
           "example": "无",
           "member": "int64",
           "name": "SrcPort",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -835,7 +827,7 @@
           "example": "无",
           "member": "int64",
           "name": "DstPort",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -846,7 +838,7 @@
           "example": "无",
           "member": "string",
           "name": "Protocol",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -857,7 +849,7 @@
           "example": "2023-03-22 11:37:27",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1

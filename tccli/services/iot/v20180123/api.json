@@ -295,11 +295,11 @@
       "status": "online"
     },
     "UnassociateSubDeviceFromGatewayProduct": {
-      "document": "取消子设备产品与网关设备产品的关联",
+      "document": "业务无客户使用，下线接口。\n\n取消子设备产品与网关设备产品的关联",
       "input": "UnassociateSubDeviceFromGatewayProductRequest",
       "name": "取消子设备产品与网关设备产品的关联",
       "output": "UnassociateSubDeviceFromGatewayProductResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "UpdateProduct": {
       "document": "提供修改产品信息及数据模板的能力。",

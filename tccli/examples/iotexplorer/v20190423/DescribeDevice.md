@@ -15,28 +15,29 @@ Output:
 {
     "Response": {
         "Device": {
+            "DeviceName": "deviceName",
             "Status": 0,
-            "DeviceName": "xx",
-            "NwkSKey": "xx",
-            "Version": "xx",
-            "DevicePsk": "xx",
-            "DevAddr": "xx",
+            "DevicePsk": "EbhU****==",
+            "CreateTime": 1663741732,
+            "FirstOnlineTime": 1664354011,
+            "LoginTime": 1664356768,
             "LogLevel": 0,
-            "CreatorNickName": "xx",
-            "AppSKey": "xx",
+            "Version": "x",
+            "DeviceCert": "",
+            "DevEUI": "",
+            "AppKey": "",
+            "DevAddr": "",
+            "AppSKey": "",
+            "NwkSKey": "",
+            "CreatorNickName": "xxx",
+            "CreateUserId": 1,
             "EnableState": 0,
-            "LoginTime": 0,
-            "ProductName": "xx",
-            "CreateUserId": 0,
-            "FirstOnlineTime": 0,
-            "DeviceType": "xx",
-            "DeviceCert": "xx",
-            "DevEUI": "xx",
-            "CreateTime": 0,
-            "AppKey": "xx",
-            "ProductId": "xx"
+            "ProductId": "productId",
+            "DeviceType": "设备",
+            "ProductName": "name",
+            "IsLora": false
         },
-        "RequestId": "xx"
+        "RequestId": "beee318d-ae0a-44f0-a743-a1744f30c651"
     }
 }
 ```

@@ -280,6 +280,14 @@
         "title": "保存并部署管道"
       }
     ],
+    "SearchServerlessData": [
+      {
+        "document": "Serverless索引查询内部接口",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetServerlessInstances\n<公共请求参数>\n\n{\n    \"ServerlessId\": \"index-35sj24o2\",\n    \"Host\": [\n        \"10.0.0.84\",\n        \"10.0.0.1\"\n    ],\n    \"LogPath\": [\n        \"/root/filebeat-7.14.2-linux-x86_64/access.log\"\n    ],\n    \"From\": \"1609905184000\",\n    \"To\": \"1679905184000\",\n    \"Query\": \"*\",\n    \"Username\": \"cdw-filebeat\",\n    \"Password\": \"123456*\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 0,\n        \"RequestId\": \"828f306d-cc86-11ed-bc7c-5254005fab95\",\n        \"Results\": [],\n        \"SearchAfterKeyFirst\": null,\n        \"SearchAfterKeyLast\": null\n    }\n}",
+        "title": "Serverless索引查询内部接口"
+      }
+    ],
     "StartLogstashPipelines": [
       {
         "document": "",

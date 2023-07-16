@@ -34,10 +34,10 @@
     ],
     "DownloadReportFileAsync": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: advisor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadReportFileAsync\n<公共请求参数>\n\n{\n    \"Type\": \"Group\",\n    \"Id\": \"1\",\n    \"TaskId\": \"a0b7cfdd-83e6-49c5-b156-37272bada0da\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ResultId\": \"-1#Group#0f7c2fac-20ee-4da9-8e71-944577bf7616\",\n        \"RequestId\": \"\"\n    }\n}",
-        "title": "创建下载扫描报告任务"
+        "document": "下载报告",
+        "input": "POST / HTTP/1.1\nHost: advisor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadReportFileAsync\n<公共请求参数>\n\n{\n    \"Id\": 0,\n    \"Type\": \"abc\",\n    \"TaskId\": \"abc\",\n    \"Env\": \"abc\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValues\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"TaskType\": \"abc\",\n    \"TopicType\": 0,\n    \"CloudMapUuid\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultId\": \"abc\",\n        \"ReportAuthorized\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "下载报告"
       }
     ]
   },

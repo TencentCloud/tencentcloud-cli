@@ -604,7 +604,6 @@
       "document": "DownloadReportFileAsync请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "评估结果对应产品的Id，与Type字段配合使用。当Type为Group时，表示类别Id（-1：总览，1：安全，2：可靠，3：服务限制），当Type为Strategy时，表示策略Id。",
           "example": "1",
@@ -615,7 +614,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品类型，可为Group（类别）和Strategy（策略）。",
           "example": "Group",
@@ -626,7 +624,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务Id。",
           "example": "a0b7cfdd-83e6-49c5-b156-37272bada0da",
@@ -637,7 +634,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境",
           "example": "\"public\"",
@@ -648,7 +644,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签",
           "example": "无",
@@ -659,7 +654,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务类型",
           "example": "\"allTaskType\"",
@@ -670,7 +664,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "传0走tsa页面下载，传1走架构巡检下载",
           "example": "0",
@@ -678,6 +671,16 @@
           "name": "TopicType",
           "required": false,
           "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "架构图cmp-id",
+          "example": "无",
+          "member": "string",
+          "name": "CloudMapUuid",
+          "required": false,
+          "type": "string",
           "visibility": 1
         }
       ],
@@ -692,8 +695,19 @@
           "example": "-1#Group#0f7c2fac-20ee-4da9-8e71-944577bf7616",
           "member": "string",
           "name": "ResultId",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否授权报告",
+          "example": "true",
+          "member": "bool",
+          "name": "ReportAuthorized",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": false,
           "visibility": 1
         },

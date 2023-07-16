@@ -4504,7 +4504,6 @@
           "name": "RecordMode",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
@@ -4515,7 +4514,6 @@
           "name": "MaxIdleTime",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
@@ -4526,7 +4524,6 @@
           "name": "StreamType",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
@@ -4537,18 +4534,16 @@
           "name": "SubscribeStreamUserIds",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
           "disabled": false,
-          "document": "输出文件的格式，上传到云点播时此参数无效，存储到云点播时请关注TencentVod内的MediaType参数。0：(默认)输出文件为hls格式。1：输出文件格式为hls+mp4。2：输出文件格式为hls+aac 。",
+          "document": "输出文件的格式，上传到云点播时此参数无效，存储到云点播时请关注TencentVod内的MediaType参数。0：(默认)输出文件为hls格式。1：输出文件格式为hls+mp4。2：输出文件格式为hls+aac 。3：输出文件格式为mp4。4：输出文件格式为aac。",
           "example": "0",
           "member": "uint64",
           "name": "OutputFormat",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
@@ -4559,7 +4554,6 @@
           "name": "AvMerge",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
@@ -4570,7 +4564,6 @@
           "name": "MaxMediaFileDuration",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
@@ -4581,7 +4574,6 @@
           "name": "MediaId",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
           "visibility": 1
         }
       ],

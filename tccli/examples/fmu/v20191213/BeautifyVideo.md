@@ -1,17 +1,17 @@
 **Example 1: 调用返回成功**
 
-
+调用返回成功
 
 Input: 
 
 ```
 tccli fmu BeautifyVideo --cli-unfold-argument  \
-    --Url 字符串 \
-    --OutputVideoType 字符串 \
-    --BeautyParam.0.WhitenLevel 整型 \
-    --BeautyParam.0.SmoothingLevel 整型 \
-    --BeautyParam.0.EyeEnlargeLevel 整型 \
-    --BeautyParam.0.FaceShrinkLevel 整型
+    --Url abc \
+    --BeautyParam.0.WhitenLevel 1 \
+    --BeautyParam.0.SmoothingLevel 1 \
+    --BeautyParam.0.EyeEnlargeLevel 1 \
+    --BeautyParam.0.FaceShrinkLevel 1 \
+    --OutputVideoType abc
 ```
 
 Output: 

@@ -1,29 +1,31 @@
 **Example 1: 查询固件升级任务详情**
 
-
+查询固件升级任务详情
 
 Input: 
 
 ```
 tccli iotexplorer DescribeFirmwareTask --cli-unfold-argument  \
-    --ProductID ABCDE12345 \
+    --TaskId 1 \
     --FirmwareVersion 1.0.0 \
-    --TaskId 10000
+    --ProductID ABCDE12345
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TaskId": 1000175,
-        "Status": 3,
-        "CreateTime": 1589466879,
-        "Type": 1,
-        "ProductName": "门锁",
-        "OriginalVersion": "xx",
-        "UpgradeMode": "originalVersion",
+        "RequestId": "3c11474f-9501-482f-8b59-97213b8779d4",
+        "UpgradeMode": "filename",
+        "ProductName": "name",
+        "CreateUserId": 0,
         "ProductId": "ABCDE12345",
-        "RequestId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        "Type": 1,
+        "TaskId": 1,
+        "CreateTime": 1686291740,
+        "OriginalVersion": "",
+        "CreatorNickName": "-",
+        "Status": 5
     }
 }
 ```
