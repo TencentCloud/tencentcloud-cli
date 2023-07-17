@@ -288,7 +288,7 @@
           "example": "100",
           "member": "float",
           "name": "AmountOfUsedStorage",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true,
           "visibility": 1
@@ -299,7 +299,7 @@
           "example": "测试Demo",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -310,7 +310,7 @@
           "example": "无",
           "member": "ApmTag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -321,7 +321,7 @@
           "example": "52Dpv13GR",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -332,7 +332,7 @@
           "example": "12543625",
           "member": "string",
           "name": "CreateUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -343,7 +343,7 @@
           "example": "2",
           "member": "int64",
           "name": "ServiceCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -354,7 +354,7 @@
           "example": "100",
           "member": "int64",
           "name": "CountOfReportSpanPerDay",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -365,7 +365,7 @@
           "example": "12653698",
           "member": "int64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -376,7 +376,7 @@
           "example": "604800",
           "member": "int64",
           "name": "TraceDuration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -387,7 +387,7 @@
           "example": "无",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -398,7 +398,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -409,7 +409,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -420,7 +420,7 @@
           "example": "500000",
           "member": "int64",
           "name": "SpanDailyCounters",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -431,7 +431,7 @@
           "example": "1",
           "member": "int64",
           "name": "BillingInstance",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -442,7 +442,7 @@
           "example": "30",
           "member": "int64",
           "name": "ErrRateThreshold",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -453,7 +453,7 @@
           "example": "1",
           "member": "int64",
           "name": "SampleRate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -464,7 +464,7 @@
           "example": "0",
           "member": "int64",
           "name": "ErrorSample",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -475,7 +475,7 @@
           "example": "500",
           "member": "int64",
           "name": "SlowRequestSavedThreshold",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -486,7 +486,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "LogRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -497,7 +497,7 @@
           "example": "CLS",
           "member": "string",
           "name": "LogSource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -508,7 +508,7 @@
           "example": "0",
           "member": "int64",
           "name": "IsRelatedLog",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -519,7 +519,7 @@
           "example": "xxxxxx",
           "member": "string",
           "name": "LogTopicID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -530,7 +530,7 @@
           "example": "3",
           "member": "int64",
           "name": "ClientCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -541,7 +541,7 @@
           "example": "5",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -552,7 +552,7 @@
           "example": "xxx",
           "member": "string",
           "name": "LogSet",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -563,8 +563,19 @@
           "example": "30",
           "member": "int64",
           "name": "MetricDuration",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义展示标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CustomShowTags",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -1544,7 +1555,6 @@
       "document": "ModifyApmInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "6Dxp7Nd0B",
@@ -1555,7 +1565,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名",
           "example": "云监控-测试",
@@ -1566,7 +1575,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签列表",
           "example": "无",
@@ -1577,7 +1585,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例详情",
           "example": "无",
@@ -1588,7 +1595,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Trace数据保存时长",
           "example": "604800",
@@ -1599,7 +1605,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启计费",
           "example": "true",
@@ -1610,7 +1615,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例上报额度",
           "example": "10000000",
@@ -1621,7 +1625,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误率阈值",
           "example": "11",
@@ -1632,7 +1635,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "采样率",
           "example": "11",
@@ -1643,7 +1645,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启错误采样 0 关 1 开",
           "example": "10",
@@ -1654,7 +1655,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "慢请求阈值",
           "example": "500",
@@ -1665,7 +1665,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启日志功能 0 关 1 开",
           "example": "0",
@@ -1676,7 +1675,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志地域",
           "example": "ap-guangzhou",
@@ -1687,7 +1685,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CLS日志主题ID | ES 索引名",
           "example": "xxxxx",
@@ -1698,7 +1695,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CLS日志集 | ES集群ID",
           "example": "xxxxx",
@@ -1709,7 +1705,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CLS | ES",
           "example": "CLS",
@@ -1717,6 +1712,16 @@
           "name": "LogSource",
           "required": false,
           "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义展示标签列表",
+          "example": "无",
+          "member": "string",
+          "name": "CustomShowTags",
+          "required": false,
+          "type": "list",
           "visibility": 1
         }
       ],

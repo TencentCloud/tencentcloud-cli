@@ -36,6 +36,7 @@ Output:
                 "TimeOffset": [
                     1
                 ],
+                "SdkMode": "xx",
                 "EndTime": 1,
                 "CpuUsed": [
                     0.0

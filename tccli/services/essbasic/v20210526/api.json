@@ -1735,6 +1735,16 @@
           "required": false,
           "type": "object",
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "签署完之后的H5页面的跳转链接，此链接支持http://和https://，最大长度1000个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "JumpUrl",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"

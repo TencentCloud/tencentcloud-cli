@@ -7,6 +7,13 @@
       "output": "CorrectTextResponse",
       "status": "online"
     },
+    "DescribeDocumentList": {
+      "document": "提供文档相关信息，包括文档ID,文档名称,文档Markdown等常用的字段",
+      "input": "DescribeDocumentListRequest",
+      "name": "文档列表",
+      "output": "DescribeDocumentListResponse",
+      "status": "online"
+    },
     "GetCurrentPolicy": {
       "document": "获取纠错系统当前支持的具体策略",
       "input": "GetCurrentPolicyRequest",
@@ -76,6 +83,229 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeDocumentListRequest": {
+      "document": "DescribeDocumentList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "限制数目。取值范围：1~100。默认值：100。\n\n",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "偏移量。取值是limit的整数倍。默认值 : 0。\n\n",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "文档ID。",
+          "example": "44971",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "文档分类ID。",
+          "example": "213",
+          "member": "uint64",
+          "name": "CategoryId",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "首次发布时间筛选开始时间（示例值：2021-08-02）",
+          "example": "2021-08-02",
+          "member": "date",
+          "name": "FirstReleaseTimeStart",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "首次发布时间筛选结束时间（示例值：2023-08-02）",
+          "example": "2022-08-02",
+          "member": "date",
+          "name": "FirstReleaseTimeEnd",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "最近更新时间筛选开始时间（示例值：2021-08-02）",
+          "example": "2021-08-02",
+          "member": "date",
+          "name": "RecentReleaseTimeStart",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "最近更新时间筛选结束时间（示例值：2023-08-02）",
+          "example": "2022-08-02",
+          "member": "date",
+          "name": "RecentReleaseTimeEnd",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDocumentListResponse": {
+      "document": "DescribeDocumentList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档总数量",
+          "example": "100",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "文档列表",
+          "example": "无",
+          "member": "DocumentItem",
+          "name": "List",
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DocumentItem": {
+      "document": "文档信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档ID",
+          "example": "81874",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "文档名称",
+          "example": "表格自适应宽度",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "文档分类ID",
+          "example": "2436",
+          "member": "uint64",
+          "name": "CategoryId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "文档分类名称",
+          "example": "表格自适应宽度",
+          "member": "string",
+          "name": "CategoryName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "文档Markdown",
+          "example": "无",
+          "member": "string",
+          "name": "Markdown",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "文档Html",
+          "example": "无",
+          "member": "string",
+          "name": "Html",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "文档首次发布时间",
+          "example": "无",
+          "member": "string",
+          "name": "FirstReleaseTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "文档最近更新时间",
+          "example": "无",
+          "member": "string",
+          "name": "RecentReleaseTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "是否弃用（1:弃用，0:正常）",
+          "example": "0",
+          "member": "uint64",
+          "name": "Disable",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
     },
     "GetCurrentPolicyRequest": {
       "document": "GetCurrentPolicy请求参数结构体",

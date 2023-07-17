@@ -10658,7 +10658,6 @@
       "document": "Es类型入参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例资源",
           "example": "xxx",
@@ -10666,11 +10665,9 @@
           "name": "Resource",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Es的连接port",
           "example": "0",
@@ -10678,11 +10675,9 @@
           "name": "Port",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Es用户名",
           "example": "xxx",
@@ -10690,11 +10685,9 @@
           "name": "UserName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Es密码",
           "example": "xxx",
@@ -10702,11 +10695,9 @@
           "name": "Password",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为自建集群",
           "example": "false",
@@ -10714,11 +10705,9 @@
           "name": "SelfBuilt",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例vip",
           "example": "xxx",
@@ -10726,11 +10715,9 @@
           "name": "ServiceVip",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的vpcId",
           "example": "xxx",
@@ -10738,11 +10725,9 @@
           "name": "UniqVpcId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Es是否抛弃解析失败的消息",
           "example": "true",
@@ -10750,11 +10735,9 @@
           "name": "DropInvalidMessage",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Es自定义index名称",
           "example": "xxx",
@@ -10762,11 +10745,9 @@
           "name": "Index",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Es自定义日期后缀",
           "example": "yyyy-MM-dd",
@@ -10774,11 +10755,9 @@
           "name": "DateFormat",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "非json格式数据的自定义key",
           "example": "xxx",
@@ -10786,11 +10765,9 @@
           "name": "ContentKey",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Es是否抛弃非json格式的消息",
           "example": "true",
@@ -10798,11 +10775,9 @@
           "name": "DropInvalidJsonMessage",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转储到Es中的文档ID取值字段名",
           "example": "$.payload.name",
@@ -10810,11 +10785,9 @@
           "name": "DocumentIdField",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Es自定义index名称的类型，STRING，JSONPATH，默认为STRING",
           "example": "JSONPATH",
@@ -10822,11 +10795,9 @@
           "name": "IndexType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效",
           "example": "xxx",
@@ -10834,11 +10805,9 @@
           "name": "DropCls",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转储到ES的消息为Database的binlog时，如果需要同步数据库操作，即增删改的操作到ES时填写数据库表主键",
           "example": "xxx",
@@ -10846,11 +10815,9 @@
           "name": "DatabasePrimaryKey",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "死信队列",
           "example": "xxx",
@@ -10858,7 +10825,52 @@
           "name": "DropDlq",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "使用数据订阅格式导入 es 时，消息与 es 索引字段映射关系。不填默认为默认字段匹配",
+          "example": "无",
+          "member": "EsRecordMapping",
+          "name": "RecordMappingList",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "消息要映射为 es 索引中 @timestamp 的字段，如果当前配置为空，则使用消息的时间戳进行映射",
+          "example": "create_timestamp",
+          "member": "string",
+          "name": "DateField",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
+    "EsRecordMapping": {
+      "document": "消息字段与 es 索引的映射关系",
+      "members": [
+        {
+          "disabled": false,
+          "document": "es 索引成员名称",
+          "example": "member",
+          "member": "string",
+          "name": "ColumnName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "消息字段名称",
+          "example": "key",
+          "member": "string",
+          "name": "JsonKey",
+          "required": false,
+          "type": "string",
           "visibility": 1
         }
       ],

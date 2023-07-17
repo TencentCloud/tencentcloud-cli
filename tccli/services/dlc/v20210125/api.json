@@ -13410,7 +13410,7 @@
           "example": "database1",
           "member": "string",
           "name": "DatabaseName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -13421,7 +13421,7 @@
           "example": "1024",
           "member": "int64",
           "name": "DataAmount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -13432,7 +13432,7 @@
           "example": "89570c65-49de-4bbd-ac0a-a67c724fc80f",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -13443,7 +13443,7 @@
           "example": "60000",
           "member": "int64",
           "name": "UsedTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -13454,7 +13454,7 @@
           "example": "cosn://test-bucket-123434324234/result/",
           "member": "string",
           "name": "OutputPath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -13465,18 +13465,18 @@
           "example": "1611646962000",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
           "disabled": false,
-          "document": "任务状态：0 初始化， 1 执行中， 2 执行成功，-1 执行失败，-3 已取消。",
+          "document": "任务状态：0 初始化， 1 执行中， 2 执行成功，3 数据写入中，4 排队中。-1 执行失败，-3 已取消。",
           "example": "2",
           "member": "int64",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -13487,7 +13487,7 @@
           "example": "DDL",
           "member": "string",
           "name": "SQLType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -13498,7 +13498,7 @@
           "example": "U0VMRUNUICogRlJPTSBgdGVzdGA7",
           "member": "string",
           "name": "SQL",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -13509,7 +13509,7 @@
           "example": "false",
           "member": "bool",
           "name": "ResultExpired",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false,
           "visibility": 1
@@ -13520,7 +13520,7 @@
           "example": "500 rows selected (0.077 seconds)",
           "member": "string",
           "name": "RowAffectInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -13531,7 +13531,7 @@
           "example": "{\"Schema\":[\"name\",\"age\"],\"Data\":[{\"name\":\"29\",\"age\":\"Michael\"}]}",
           "member": "string",
           "name": "DataSet",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -13542,7 +13542,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Error",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -13553,7 +13553,7 @@
           "example": "100",
           "member": "int64",
           "name": "Percentage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -13564,7 +13564,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "OutputMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -13575,7 +13575,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "TaskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -13586,7 +13586,7 @@
           "example": "[{\"jobId\":1,\"stages\":[{\"stageId\":1,\"numTasks\":3,\"numActiveTasks\"",
           "member": "string",
           "name": "ProgressDetail",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -13597,7 +13597,7 @@
           "example": "1611646962000",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -13608,7 +13608,7 @@
           "example": "resource-1gghpd1t",
           "member": "string",
           "name": "DataEngineId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -13619,7 +13619,7 @@
           "example": "****",
           "member": "string",
           "name": "OperateUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -13630,7 +13630,7 @@
           "example": "shared_presto",
           "member": "string",
           "name": "DataEngineName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -13641,7 +13641,7 @@
           "example": "local",
           "member": "string",
           "name": "InputType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -13652,7 +13652,7 @@
           "example": "[{\"Key\":\"paths\",\"Value\":\"lakefs://20000003366d155f79a522c8349496",
           "member": "string",
           "name": "InputConf",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -13663,7 +13663,7 @@
           "example": "111",
           "member": "int64",
           "name": "DataNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -13674,7 +13674,7 @@
           "example": "false",
           "member": "bool",
           "name": "CanDownload",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -13685,7 +13685,7 @@
           "example": "testname",
           "member": "string",
           "name": "UserAlias",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -13696,7 +13696,7 @@
           "example": "spark_app",
           "member": "string",
           "name": "SparkJobName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -13707,7 +13707,7 @@
           "example": "batch_sdafa",
           "member": "string",
           "name": "SparkJobId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -13718,7 +13718,7 @@
           "example": "example.jar",
           "member": "string",
           "name": "SparkJobFile",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -13729,7 +13729,7 @@
           "example": "https://dlc-spark-ui.cloud.tencent.com/history/spark-893c606226b",
           "member": "string",
           "name": "UiUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -13740,7 +13740,7 @@
           "example": "80000",
           "member": "int64",
           "name": "TotalTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -13751,7 +13751,7 @@
           "example": "spark.sql.shuffle.partitions",
           "member": "string",
           "name": "CmdArgs",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -13762,7 +13762,7 @@
           "example": "SuperSQL P 1.0",
           "member": "string",
           "name": "ImageVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -13773,7 +13773,7 @@
           "example": "small",
           "member": "string",
           "name": "DriverSize",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -13784,7 +13784,7 @@
           "example": "small",
           "member": "string",
           "name": "ExecutorSize",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -13795,7 +13795,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ExecutorNums",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -13806,7 +13806,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ExecutorMaxNumbers",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -13817,7 +13817,7 @@
           "example": "无",
           "member": "CommonMetrics",
           "name": "CommonMetrics",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -13828,7 +13828,7 @@
           "example": "无",
           "member": "SparkMonitorMetrics",
           "name": "SparkMonitorMetrics",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -13839,7 +13839,7 @@
           "example": "无",
           "member": "PrestoMonitorMetrics",
           "name": "PrestoMonitorMetrics",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1

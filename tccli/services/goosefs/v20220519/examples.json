@@ -8,6 +8,30 @@
         "title": "创建上传文件系统数据到存储桶任务"
       }
     ],
+    "DescribeClusterClientToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterClientToken\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_0yz04uv3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClientTokens\": [\n            {\n                \"LocalDirectory\": \"/data\"\n            }\n        ],\n        \"RequestId\": \"9ecdc30f-4e06-4995-89b6-ffaf3a085a2e\"\n    }\n}",
+        "title": "查询GooseFS集群客户端凭证"
+      }
+    ],
+    "DescribeClusterRoleToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterRoleToken\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_0yz04uv3\",\n    \"RoleName\": \"root\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RoleTokens\": [\n            {\n                \"RoleName\": \"root\",\n                \"Token\": \"MTY4ODQ2NTA1NF84MzM2X2E3ZWFmMDVmLWI0MzMtNGE2Yi1iOWU2LTZiZDY5OTYwXXXXXX==\"\n            }\n        ],\n        \"RequestId\": \"2a5ab488-0221-4315-8670-3873452be22d \"\n    }\n}",
+        "title": "查询GooseFS集群角色凭证"
+      }
+    ],
+    "DescribeClusterRoles": [
+      {
+        "document": "查询集群角色列表",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterRoles\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterRoles\": [\n            {\n                \"ClusterId\": \"abc\",\n                \"RoleName\": \"abc\",\n                \"Description\": \"abc\",\n                \"DirectoryList\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询集群角色列表"
+      }
+    ],
     "DescribeDataRepositoryTaskStatus": [
       {
         "document": "创建数据流通任务后, 获取任务的状态",

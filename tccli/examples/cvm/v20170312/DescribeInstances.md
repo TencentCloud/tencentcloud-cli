@@ -32,6 +32,7 @@ Output:
                 "IPv6Addresses": [
                     "2001:0db8:86a3:08d3:1319:8a2e:0370:7344"
                 ],
+                "DedicatedClusterId": "",
                 "RestrictState": "PROTECTIVELY_ISOLATED",
                 "ExpiredTime": "2020-09-22T00:00:00+00:00",
                 "DisasterRecoverGroupId": "",
@@ -180,6 +181,7 @@ Output:
                 "SecurityGroupIds": [
                     "sg-p1ezv4wz"
                 ],
+                "DedicatedClusterId": "",
                 "InstanceName": "测试实例",
                 "DataDisks": [],
                 "VirtualPrivateCloud": {
@@ -245,6 +247,7 @@ Output:
                 "CPU": 1,
                 "RdmaIpAddresses": [],
                 "CamRoleName": "",
+                "DedicatedClusterId": "",
                 "PublicIpAddresses": [
                     "123.207.11.190"
                 ],

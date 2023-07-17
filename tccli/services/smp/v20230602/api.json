@@ -8,7 +8,7 @@
       "status": "online"
     },
     "DescribeResourcesSLAPayment": {
-      "document": "SLA赔付金额计算\n\n\n## 参数示例\n\n```\n{\n    \"ProductCode\": \"p_cvm\",\n    \"SubProductCode\"：\"\",\n    \"PayerUin\": \"客户UIN\",\n    \"Operator\": \"rockyjiepan\",\n    \"Resources\": [\n        {\n            \"ResourceId\": \"资源ID\",\n            \"DownMonth\": \"2023-05\",\n            \"DownTime\": 10\n        }\n    ]\n}\n```\n\n## 响应示例\n\n```\n{\n    \"Response\": {\n        \"RequestId\": \"dadcbddc-cc96-488d-b072-6de6bc713f00\",\n        \"Data\": {\n            \"PaymentInfos\": [\n                {\n                    \"PaymentResType\": 1,\n                    \"ResourceId\": \"资源ID\",\n                    \"PaymentAmount\": 0.87,\n                    \"Availability\": 95.448,\n                    \"PaymentRatio\": 25,\n                    \"ExceptionMsg\": \"\"\n                }\n            ],\n            \"PaymentAmountTotal\": 0.87\n        }\n    }\n}\n\n异常响应：\n{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"RequestLimitExceeded\",\n            \"Message\": \"查询失败，用户【rockyjiepan】过去24小时内已查询超过【5】次，请稍后再重试\"\n        },\n        \"RequestId\": \"676d01f0-4082-4057-a902-95cbd734f1ef\"\n    }\n}\n```",
+      "document": "SLA赔付金额计算\n\n\n## 参数示例\n\n```\n{\n\t\"ProductCode\": \"p_cvm\",\n\t\"SubProductCode\": \"\",\n\t\"PayerUin\": \"客户UIN\",\n\t\"Operator\": \"abc\",\n\t\"Resources\": [{\n\t\t\"ResourceId\": \"资源ID\",\n\t\t\"DownMonth\": \"2023-05\",\n\t\t\"DownTime\": 10,\n\t\t\"ConsumptionBill\": [{\n\t\t\t\t\"BusinessCode\": \"p_cvm\",\n\t\t\t\t\"BusinessCodeName\": \"云服务器CVM\",\n\t\t\t\t\"CashPayAmount\": \"7.71\",\n\t\t\t\t\"ConsumptionTypeName\": \"续费分摊\",\n\t\t\t\t\"DailyTotalCost\": 0.72580645,\n\t\t\t\t\"DayDiff\": 19,\n\t\t\t\t\"FeeBeginTime\": \"2023-05-13 00:00:00\",\n\t\t\t\t\"FeeEndTime\": \"2023-05-31 23:59:59\",\n\t\t\t\t\"IncentivePayAmount\": \"0.00000000\",\n\t\t\t\t\"OrderId\": \"20230513400032203961682\",\n\t\t\t\t\"PayMode\": \"prePay\",\n\t\t\t\t\"PayModeName\": \"包年包月\",\n\t\t\t\t\"ProjectId\": \"0\",\n\t\t\t\t\"ProjectName\": \"默认项目\",\n\t\t\t\t\"RealCost\": \"13.79\",\n\t\t\t\t\"RealTotalCost\": \"7.71\",\n\t\t\t\t\"RegionId\": \"1\",\n\t\t\t\t\"RegionName\": \"华南地区（广州）\",\n\t\t\t\t\"ResourceId\": \"资源ID\",\n\t\t\t\t\"ResourceName\": \"未命名\",\n\t\t\t\t\"TransferPayAmount\": \"0.00\",\n\t\t\t\t\"VoucherPayAmount\": \"0.00000000\"\n\t\t\t}\n\t\t],\n\t\t\"DeviceDealInfo\": [{\n\t\t\t\"OrderId\": \"20230513400032203961682\",\n\t\t\t\"OrderData\": {\n\t\t\t\t\"UseBeginTime\": \"2023-03-31 10:04:23\",\n\t\t\t\t\"UseEndTime\": \"2024-03-31 23:59:59\",\n\t\t\t\t\"ResourceId\": \"资源ID\"\n\t\t\t}\n\t\t}]\n\t}]\n}\n```\n\n## 响应示例\n\n```\n{\n    \"Response\": {\n        \"RequestId\": \"dadcbddc-cc96-488d-b072-6de6bc713f00\",\n        \"Data\": {\n            \"PaymentInfos\": [\n                {\n                    \"PaymentResType\": 1,\n                    \"ResourceId\": \"资源ID\",\n                    \"PaymentAmount\": 0.87,\n                    \"Availability\": 95.448,\n                    \"PaymentRatio\": 25,\n                    \"ExceptionMsg\": \"\"\n                }\n            ],\n            \"PaymentAmountTotal\": 0.87\n        }\n    }\n}\n\n异常响应：\n{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"RequestLimitExceeded\",\n            \"Message\": \"查询失败，用户【rockyjiepan】过去24小时内已查询超过【5】次，请稍后再重试\"\n        },\n        \"RequestId\": \"676d01f0-4082-4057-a902-95cbd734f1ef\"\n    }\n}\n```",
       "input": "DescribeResourcesSLAPaymentRequest",
       "name": "SLA赔付金额计算",
       "output": "DescribeResourcesSLAPaymentResponse",
@@ -22,6 +22,232 @@
     "serviceShortName": "smp"
   },
   "objects": {
+    "ConsumptionBill": {
+      "document": "消耗账单结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云产品一级编码",
+          "example": "p_cvm",
+          "member": "string",
+          "name": "BusinessCode",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "云产品名称",
+          "example": "云服务器CVM",
+          "member": "string",
+          "name": "BusinessCodeName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "现金支付金额",
+          "example": "7.71",
+          "member": "string",
+          "name": "CashPayAmount",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "消耗分摊类型",
+          "example": "续费分摊",
+          "member": "string",
+          "name": "ConsumptionTypeName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "日总消耗金额",
+          "example": "无",
+          "member": "float",
+          "name": "DailyTotalCost",
+          "required": true,
+          "type": "float",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "跨度天数",
+          "example": "19",
+          "member": "int64",
+          "name": "DayDiff",
+          "required": true,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "费用开始时间",
+          "example": "2023-05-13 00:00:00",
+          "member": "string",
+          "name": "FeeBeginTime",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "费用结束时间",
+          "example": "2023-05-31 23:59:59",
+          "member": "string",
+          "name": "FeeEndTime",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "关联订单ID",
+          "example": "无",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "支付模式",
+          "example": "prePay",
+          "member": "string",
+          "name": "PayMode",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "支付模式名称",
+          "example": "包年包月",
+          "member": "string",
+          "name": "PayModeName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "实际费用",
+          "example": "13.79",
+          "member": "string",
+          "name": "RealCost",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "实际总费用",
+          "example": "7.71",
+          "member": "string",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "资源ID",
+          "example": "ins-mdlzl123",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "资源名称",
+          "example": "未命名",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "赠送金支付金额",
+          "example": "0.00",
+          "member": "string",
+          "name": "TransferPayAmount",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "代金券支付金额",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "VoucherPayAmount",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "奖励支付金额",
+          "example": "无",
+          "member": "string",
+          "name": "IncentivePayAmount",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "0",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "项目名称",
+          "example": "默认项目",
+          "member": "string",
+          "name": "ProjectName",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "区域ID",
+          "example": "1",
+          "member": "string",
+          "name": "RegionId",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "区域名称",
+          "example": "华南地区（广州）",
+          "member": "string",
+          "name": "RegionName",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "usage": "in"
+    },
     "DescribeProductInputTypeRequest": {
       "document": "DescribeProductInputType请求参数结构体",
       "members": [
@@ -139,6 +365,32 @@
         }
       ],
       "type": "object"
+    },
+    "DeviceDealInfo": {
+      "document": "资源订单信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单ID",
+          "example": "20230513400032203961682",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "订单数据详情",
+          "example": "无",
+          "member": "OrderData",
+          "name": "OrderData",
+          "required": true,
+          "type": "object",
+          "visibility": 2
+        }
+      ],
+      "usage": "in"
     },
     "ExtraPara": {
       "document": "特殊场景参数：\n例如\n- 负载均衡CLB-域名化\n- 云数据库Redis-部署架构\n- 云数据库Mysql-部署方式\n- 云联网CCN-服务等级\n- ...",
@@ -278,6 +530,42 @@
         }
       ],
       "usage": "out"
+    },
+    "OrderData": {
+      "document": "资源订单数据详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2023-03-31 10:04:23",
+          "member": "string",
+          "name": "UseBeginTime",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2024-03-31 23:59:59",
+          "member": "string",
+          "name": "UseEndTime",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "资源ID",
+          "example": "ns-mdlzl123",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "usage": "in"
     },
     "PaymentInfos": {
       "document": "计算结果数据",
@@ -442,6 +730,26 @@
           "name": "ExtraPara",
           "required": false,
           "type": "object",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "消耗账单数据",
+          "example": "无",
+          "member": "ConsumptionBill",
+          "name": "ConsumptionBill",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "资源订单数据",
+          "example": "无",
+          "member": "DeviceDealInfo",
+          "name": "DeviceDealInfo",
+          "required": false,
+          "type": "list",
           "visibility": 2
         }
       ],

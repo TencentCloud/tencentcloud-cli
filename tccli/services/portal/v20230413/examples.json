@@ -8,6 +8,14 @@
         "title": "错别字及单词拼写检查"
       }
     ],
+    "DescribeDocumentList": [
+      {
+        "document": "获取文档列表",
+        "input": "POST / HTTP/1.1\nHost: portal.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDocumentList\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"CategoryId\": 2436,\n                \"CategoryName\": \"test\",\n                \"Disable\": 0,\n                \"FirstReleaseTime\": \"0001-01-01T00:00:00Z\",\n                \"Html\": \"\",\n                \"Id\": 81880,\n                \"Markdown\": \"\",\n                \"RecentReleaseTime\": \"0001-01-01T00:00:00Z\",\n                \"Title\": \"test\"\n            }\n        ],\n        \"RequestId\": \"887cf563-a330-4a67-90e1-9dc343a6a7b1\",\n        \"Total\": 63999\n    }\n}",
+        "title": "获取文档列表"
+      }
+    ],
     "GetCurrentPolicy": [
       {
         "document": "纠错系统当前支持的所有检查策略",

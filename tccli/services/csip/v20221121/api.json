@@ -3448,7 +3448,7 @@
           "example": "-",
           "member": "string",
           "name": "AssetId",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -3459,7 +3459,7 @@
           "example": "-",
           "member": "string",
           "name": "AssetName",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -3470,7 +3470,7 @@
           "example": "-",
           "member": "string",
           "name": "AssetType",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -3481,7 +3481,7 @@
           "example": "-",
           "member": "string",
           "name": "Region",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -3492,7 +3492,7 @@
           "example": "-",
           "member": "uint64",
           "name": "WAFStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -3503,7 +3503,7 @@
           "example": "-",
           "member": "string",
           "name": "AssetCreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3514,7 +3514,7 @@
           "example": "-",
           "member": "uint64",
           "name": "AppId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -3525,7 +3525,7 @@
           "example": "-",
           "member": "string",
           "name": "Uin",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3536,7 +3536,7 @@
           "example": "-",
           "member": "string",
           "name": "NickName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3547,7 +3547,7 @@
           "example": "-",
           "member": "uint64",
           "name": "IsCore",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -3558,7 +3558,7 @@
           "example": "-",
           "member": "uint64",
           "name": "IsCloud",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -3569,7 +3569,7 @@
           "example": "-",
           "member": "uint64",
           "name": "Attack",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -3580,7 +3580,7 @@
           "example": "-",
           "member": "uint64",
           "name": "Access",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -3591,7 +3591,7 @@
           "example": "-",
           "member": "uint64",
           "name": "Intercept",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -3602,7 +3602,7 @@
           "example": "-",
           "member": "string",
           "name": "InBandwidth",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3613,7 +3613,7 @@
           "example": "-",
           "member": "string",
           "name": "OutBandwidth",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3624,7 +3624,7 @@
           "example": "-",
           "member": "string",
           "name": "InFlow",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3635,7 +3635,7 @@
           "example": "-",
           "member": "string",
           "name": "OutFlow",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3646,7 +3646,7 @@
           "example": "-",
           "member": "string",
           "name": "LastScanTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3657,7 +3657,7 @@
           "example": "-",
           "member": "uint64",
           "name": "PortRisk",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -3668,7 +3668,7 @@
           "example": "-",
           "member": "uint64",
           "name": "VulnerabilityRisk",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -3679,7 +3679,7 @@
           "example": "-",
           "member": "uint64",
           "name": "ConfigurationRisk",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -3690,7 +3690,7 @@
           "example": "-",
           "member": "uint64",
           "name": "ScanTask",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -3701,7 +3701,7 @@
           "example": "-",
           "member": "string",
           "name": "SubDomain",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3712,7 +3712,7 @@
           "example": "无",
           "member": "string",
           "name": "SeverIp",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -3723,7 +3723,7 @@
           "example": "无",
           "member": "uint64",
           "name": "BotCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -3734,7 +3734,7 @@
           "example": "无",
           "member": "uint64",
           "name": "WeakPassword",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -3745,7 +3745,7 @@
           "example": "无",
           "member": "uint64",
           "name": "WebContentRisk",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -3756,7 +3756,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tag",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -3767,7 +3767,7 @@
           "example": "无",
           "member": "string",
           "name": "SourceType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3778,7 +3778,7 @@
           "example": "无",
           "member": "string",
           "name": "MemberId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3789,7 +3789,7 @@
           "example": "无",
           "member": "int64",
           "name": "CCAttack",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -3800,7 +3800,18 @@
           "example": "无",
           "member": "int64",
           "name": "WebAttack",
-          "required": false,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "风险服务暴露数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ServiceRisk",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1

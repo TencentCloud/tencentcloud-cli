@@ -1,25 +1,33 @@
-**Example 1: 修改APM实例**
+**Example 1: 成功事例**
 
-修改APM实例
+修改APM Instance参数
 
 Input: 
 
 ```
 tccli apm ModifyApmInstance --cli-unfold-argument  \
-    --Name xx \
-    --Tags.0.Value xx \
-    --Tags.0.Key xx \
-    --InstanceId xx \
-    --OpenBilling True \
+    --InstanceId abc \
+    --Description abc \
     --TraceDuration 0 \
-    --Description xx
+    --Name abc \
+    --OpenBilling True \
+    --SpanDailyCounters 1 \
+    --ErrRateThreshold 5 \
+    --SampleRate 50 \
+    --ErrorSample 1 \
+    --SlowRequestSavedThreshold 500 \
+    --IsRelatedLog 0 \
+    --LogRegion  \
+    --LogTopicID  \
+    --LogSet  \
+    --LogSource 
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "wcl-9esoxoii8t2exer215won26rkzc8"
+        "RequestId": "abc"
     }
 }
 ```
