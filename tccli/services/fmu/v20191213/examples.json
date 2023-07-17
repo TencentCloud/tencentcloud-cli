@@ -10,8 +10,8 @@
     ],
     "BeautifyVideo": [
       {
-        "document": "",
-        "input": "https://fmu.tencentcloudapi.com/?Action=BeautifyVideo\n&Url=字符串\n&OutputVideoType=字符串\n&BeautyParam.0.WhitenLevel=整型\n&BeautyParam.0.SmoothingLevel=整型\n&BeautyParam.0.EyeEnlargeLevel=整型\n&BeautyParam.0.FaceShrinkLevel=整型\n&<公共请求参数>",
+        "document": "调用返回成功",
+        "input": "POST / HTTP/1.1\nHost: fmu.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BeautifyVideo\n<公共请求参数>\n\n{\n    \"Url\": \"abc\",\n    \"BeautyParam\": [\n        {\n            \"WhitenLevel\": 1,\n            \"SmoothingLevel\": 1,\n            \"EyeEnlargeLevel\": 1,\n            \"FaceShrinkLevel\": 1\n        }\n    ],\n    \"OutputVideoType\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"Vi6QGs7jO3uylsZY\",\n        \"EstimatedProcessTime\": 30,\n        \"RequestId\": \"327cd4c8-e544-43db-ba0c-3afda873ac73\"\n    }\n}",
         "title": "调用返回成功"
       }
@@ -64,7 +64,7 @@
       {
         "document": "",
         "input": "https://fmu.tencentcloudapi.com/?Action=QueryBeautifyVideoJob\n&JobId=Iyjz4Rj3OCt5Az9a\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"JobStatus\": \"处理完成\",\n        \"BeautifyVideoOutput\": {\n            \"VideoUrl\": \"http://bda-video-bodyseg-1254418846.cos.ap-guangzhou.myqcloud.com/video_beautify_prod/1.0/251006279/20200820144608_6dddf5c7-1828-42b8-8512-419cf16a2d3c_result.mp4\",\n            \"VideoMD5\": \"8A1737F730437CBFDFD8154F6845919C\",\n            \"CoverImage\": \"\",\n            \"Width\": 540,\n            \"Height\": 960,\n            \"Fps\": 22.847341537476,\n            \"DurationInSec\": 1.6194444894791\n        },\n        \"RequestId\": \"a2924747-04ca-4810-827d-8d2bd42d45ea\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"JobStatusCode\": 7,\n        \"JobStatus\": \"处理完成\",\n        \"BeautifyVideoOutput\": {\n            \"VideoUrl\": \"http://bda-video-bodyseg-1254418846.cos.ap-guangzhou.myqcloud.com/video_beautify_prod/1.0/251006279/20200820144608_6dddf5c7-1828-42b8-8512-419cf16a2d3c_result.mp4\",\n            \"VideoMD5\": \"8A1737F730437CBFDFD8154F6845919C\",\n            \"CoverImage\": \"\",\n            \"Width\": 540,\n            \"Height\": 960,\n            \"Fps\": 22.847341537476,\n            \"DurationInSec\": 1.6194444894791\n        },\n        \"RequestId\": \"a2924747-04ca-4810-827d-8d2bd42d45ea\"\n    }\n}",
         "title": "调用返回成功"
       }
     ],

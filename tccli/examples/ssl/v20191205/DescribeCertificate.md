@@ -112,6 +112,16 @@ Output:
         "CAEndTimes": [
             "abc"
         ],
+        "DvRevokeAuthDetail": [
+            {
+                "DvAuthKey": "abc",
+                "DvAuthValue": "abc",
+                "DvAuthDomain": "abc",
+                "DvAuthPath": "abc",
+                "DvAuthSubDomain": "abc",
+                "DvAuthVerifyType": "abc"
+            }
+        ],
         "RequestId": "abc"
     }
 }

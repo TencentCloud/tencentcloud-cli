@@ -1,6 +1,6 @@
 **Example 1: 查询实例详情**
 
-
+查询实例详情
 
 Input: 
 
@@ -19,111 +19,139 @@ Output:
 ```
 {
     "Response": {
+        "TotalCnt": 0,
         "ClusterList": [
             {
-                "AddTime": "2021-01-20 21:28:05",
-                "AlarmInfo": "",
-                "AliasInfo": "eyJjb21tb24iOiJjb21tb24iLCJjb3JlIjoiY29yZSIsIm1hc3RlciI6Im1hc3RlciIsInRhc2siOiJ0YXNrIn0=",
-                "AppId": 1258469122,
-                "ChargeType": 1,
-                "ClusterId": "emr-myzhptk6",
-                "ClusterName": "ganlu-hdfs-study-一直在用-勿删",
+                "Id": 0,
+                "ClusterId": "abc",
+                "Ftitle": "abc",
+                "ClusterName": "abc",
+                "RegionId": 0,
+                "ZoneId": 0,
+                "AppId": 0,
+                "Uin": "abc",
+                "ProjectId": 0,
+                "VpcId": 0,
+                "SubnetId": 0,
+                "Status": 0,
+                "AddTime": "abc",
+                "RunTime": "abc",
                 "Config": {
-                    "ApplicationRole": "",
-                    "CbsEncrypt": 0,
-                    "ChargeType": 1,
+                    "SoftInfo": [
+                        "abc"
+                    ],
+                    "MasterNodeSize": 0,
+                    "CoreNodeSize": 0,
+                    "TaskNodeSize": 0,
                     "ComNodeSize": 0,
-                    "ComResource": {
+                    "MasterResource": {
+                        "Spec": "abc",
+                        "SpecName": "abc",
+                        "StorageType": 0,
+                        "DiskType": "abc",
+                        "RootSize": 0,
+                        "MemSize": 0,
                         "Cpu": 0,
                         "DiskSize": 0,
-                        "DiskType": "",
-                        "InstanceType": "",
-                        "MemSize": 0,
-                        "RootSize": 0,
-                        "Spec": "",
-                        "SpecName": "",
-                        "StorageType": 0
+                        "InstanceType": "abc"
                     },
-                    "CoreNodeSize": 2,
                     "CoreResource": {
-                        "Cpu": 4,
-                        "DiskSize": 100,
-                        "DiskType": "CLOUD_PREMIUM",
-                        "InstanceType": "",
-                        "MemSize": 8192,
+                        "Spec": "abc",
+                        "SpecName": "abc",
+                        "StorageType": 0,
+                        "DiskType": "abc",
                         "RootSize": 0,
-                        "Spec": "CVM.S2",
-                        "SpecName": "EMR标准型S2",
-                        "StorageType": 5
+                        "MemSize": 0,
+                        "Cpu": 0,
+                        "DiskSize": 0,
+                        "InstanceType": "abc"
                     },
-                    "MasterNodeSize": 1,
-                    "MasterResource": {
-                        "Cpu": 4,
-                        "DiskSize": 100,
-                        "DiskType": "CLOUD_PREMIUM",
-                        "InstanceType": "",
-                        "MemSize": 8192,
-                        "RootSize": 0,
-                        "Spec": "CVM.S2",
-                        "SpecName": "EMR标准型S2",
-                        "StorageType": 5
-                    },
-                    "OnCos": false,
-                    "RouterNodeSize": 0,
-                    "SecurityGroup": "sg-9zhz084e",
-                    "SecurityGroups": [
-                        "sg-9zhz084e"
-                    ],
-                    "SecurityOn": false,
-                    "SoftInfo": [
-                        "zookeeper-3.6.1",
-                        "yarn-3.1.2",
-                        "hdfs-3.1.2",
-                        "knox-1.2.0",
-                        "hive-3.1.1",
-                        "tez-0.9.2"
-                    ],
-                    "SupportHA": false,
-                    "TaskNodeSize": 2,
                     "TaskResource": {
-                        "Cpu": 4,
-                        "DiskSize": 100,
-                        "DiskType": "CLOUD_PREMIUM",
-                        "InstanceType": "",
-                        "MemSize": 8192,
+                        "Spec": "abc",
+                        "SpecName": "abc",
+                        "StorageType": 0,
+                        "DiskType": "abc",
                         "RootSize": 0,
-                        "Spec": "CVM.S2",
-                        "SpecName": "EMR标准型S2",
-                        "StorageType": 5
-                    }
+                        "MemSize": 0,
+                        "Cpu": 0,
+                        "DiskSize": 0,
+                        "InstanceType": "abc"
+                    },
+                    "OnCos": true,
+                    "ChargeType": 0,
+                    "RouterNodeSize": 0,
+                    "SupportHA": true,
+                    "SecurityOn": true,
+                    "SecurityGroup": "abc",
+                    "CbsEncrypt": 0,
+                    "ApplicationRole": "abc",
+                    "SecurityGroups": [
+                        "abc"
+                    ],
+                    "PublicKeyId": "abc"
                 },
-                "EmrVersion": "EMR-V3.1.0",
-                "Ftitle": "集群安装组件中",
-                "HiveMetaDb": "cdb-709c8dh9",
-                "Id": 150118,
-                "IsTradeCluster": 0,
-                "IsWoodpeckerCluster": 1,
-                "MasterIp": "170.106.101.90",
-                "MetaDb": "cdb-709c8dh9",
-                "ProductId": 25,
-                "ProjectId": 0,
-                "RegionId": 15,
+                "MasterIp": "abc",
+                "EmrVersion": "abc",
+                "ChargeType": 0,
+                "TradeVersion": 0,
                 "ResourceOrderId": 0,
-                "RunTime": "146天21小时50分钟30秒",
-                "ServiceClass": "HADOOP",
-                "Status": 6,
-                "SubnetId": 85503,
-                "Tags": [],
-                "TradeVersion": 1,
-                "Uin": "100008965662",
-                "VpcId": 848834,
-                "Zone": "na-siliconvalley-2",
-                "ZoneId": 150002
+                "IsTradeCluster": 0,
+                "AlarmInfo": "abc",
+                "IsWoodpeckerCluster": 0,
+                "MetaDb": "abc",
+                "Tags": [
+                    {
+                        "TagKey": "abc",
+                        "TagValue": "abc"
+                    }
+                ],
+                "HiveMetaDb": "abc",
+                "ServiceClass": "abc",
+                "AliasInfo": "abc",
+                "ProductId": 0,
+                "Zone": "abc",
+                "SceneName": "abc",
+                "SceneServiceClass": "abc",
+                "SceneEmrVersion": "abc",
+                "DisplayName": "abc",
+                "VpcName": "abc",
+                "SubnetName": "abc",
+                "ClusterExternalServiceInfo": [
+                    {
+                        "DependType": 0,
+                        "Service": "abc",
+                        "ClusterId": "abc",
+                        "ClusterStatus": 0
+                    }
+                ],
+                "UniqVpcId": "abc",
+                "UniqSubnetId": "abc",
+                "TopologyInfoList": [
+                    {
+                        "ZoneId": 0,
+                        "Zone": "abc",
+                        "SubnetInfoList": [
+                            {
+                                "SubnetName": "abc",
+                                "SubnetId": "abc"
+                            }
+                        ],
+                        "NodeInfoList": [
+                            {
+                                "NodeType": "abc",
+                                "NodeSize": 1
+                            }
+                        ]
+                    }
+                ],
+                "IsMultiZoneCluster": true,
+                "IsCvmReplace": true
             }
         ],
-        "RequestId": "7ee88474-b29a-45b8-9ecc-595d03c4ef95",
-        "TagKeys": [],
-        "TotalCnt": 1
+        "TagKeys": [
+            "abc"
+        ],
+        "RequestId": "abc"
     }
 }
 ```

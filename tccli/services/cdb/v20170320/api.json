@@ -12576,7 +12576,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤项。目前支持以下搜索条件：\n\n分词搜索：\nsql - SQL语句；\n\n等于、不等于、包含、不包含：\nhost - 客户端地址；\nuser - 用户名；\ndbName - 数据库名称；\n\n等于、不等于：\nsqlType - SQL类型；\nerrCode - 错误码；\nthreadId - 线程ID；\n\n范围搜索（时间类型统一为微妙）：\nexecTime - 执行时间；\nlockWaitTime - 执行时间；\nioWaitTime - IO等待时间；\ntrxLivingTime - 事物持续时间；\ncpuTime - cpu时间；\ncheckRows - 扫描行数；\naffectRows - 影响行数；\nsentRows - 返回行数。",
+          "document": "过滤项。sql 暂时不支持搜索。目前支持以下搜索条件：\n\n等于、不等于、包含、不包含：\nhost - 客户端地址；\nuser - 用户名；\ndbName - 数据库名称；\n\n等于、不等于：\nsqlType - SQL类型；\nerrCode - 错误码；\nthreadId - 线程ID；\n\n范围搜索（时间类型统一为微妙）：\nexecTime - 执行时间；\nlockWaitTime - 执行时间；\nioWaitTime - IO等待时间；\ntrxLivingTime - 事物持续时间；\ncpuTime - cpu时间；\ncheckRows - 扫描行数；\naffectRows - 影响行数；\nsentRows - 返回行数。",
           "example": "host",
           "member": "string",
           "name": "Type",

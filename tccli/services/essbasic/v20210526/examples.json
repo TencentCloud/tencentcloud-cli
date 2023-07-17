@@ -112,6 +112,14 @@
         "title": "ChannelCreateMultiFlowSignQRCode"
       }
     ],
+    "ChannelCreateOrganizationModifyQrCode": [
+      {
+        "document": "渠道商生成修改子客企业二维码链接",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateOrganizationModifyQrCode\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFYUU*****UekPZF8PM7tLlo6p\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1684401637,\n        \"QrCodeUrl\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "渠道商生成修改子客企业二维码链接"
+      }
+    ],
     "ChannelCreatePrepareFlow": [
       {
         "document": "创建预发起合同链接-BBC",

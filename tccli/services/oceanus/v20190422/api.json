@@ -98,6 +98,13 @@
       "output": "DescribeJobSavepointResponse",
       "status": "online"
     },
+    "DescribeJobSubmissionLog": {
+      "document": "查询作业实例启动日志",
+      "input": "DescribeJobSubmissionLogRequest",
+      "name": "查询作业实例启动日志",
+      "output": "DescribeJobSubmissionLogResponse",
+      "status": "online"
+    },
     "DescribeJobs": {
       "document": "查询作业",
       "input": "DescribeJobsRequest",
@@ -2214,6 +2221,164 @@
       ],
       "type": "object"
     },
+    "DescribeJobSubmissionLogRequest": {
+      "document": "DescribeJobSubmissionLog请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "作业ID，例如：cql-6v1jkxrn",
+          "example": "cql-ebgioapf",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "起始时间，unix时间戳，毫秒级，例如：1611754219108",
+          "example": "1585749042",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "结束时间，unix时间戳，毫秒级，例如：1611754219108",
+          "example": "1585749042",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "作业运行的实例ID, 例如：1,2,3。默认为0，表示未选中任何实例，搜索该时间段内最近的一个实例的日志",
+          "example": "0",
+          "member": "int64",
+          "name": "RunningOrderId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "日志搜索的关键词，默认为空",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "日志搜索的游标，可透传上次返回的值，默认为空",
+          "example": "无",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "时间戳排序规则，asc - 升序，desc - 降序。默认为升序",
+          "example": "asc",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "搜索的日志条数上限值，最大为100",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobSubmissionLogResponse": {
+      "document": "DescribeJobSubmissionLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志搜索的游标，需要搜索更多时透传这个值",
+          "example": "Y29udGV4dC1hNTI3ZmVhYy01YmE0LTQ5MWMtYjAwZS1kZGQwZWEwZWU2NDAxNTg2",
+          "member": "string",
+          "name": "Cursor",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否返回了所有的日志记录",
+          "example": "false",
+          "member": "bool",
+          "name": "ListOver",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "作业启动的requestId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dfd73175-f8d4-4981-8cd3-8072e0a52fbd",
+          "member": "string",
+          "name": "JobRequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该时间段内符合关键字的所有的作业实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "JobInstanceForSubmissionLog",
+          "name": "JobInstanceList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "废弃，请使用LogContentList\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " [             \"2020-04-08 11:57:32.703 [queuedThreadPool-57106 ",
+          "member": "string",
+          "name": "LogList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "LogContent",
+          "name": "LogContentList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeJobsRequest": {
       "document": "DescribeJobs请求参数结构体",
       "members": [
@@ -3204,6 +3369,42 @@
       ],
       "usage": "out"
     },
+    "JobInstanceForSubmissionLog": {
+      "document": "搜索启动日志时返回的作业实例",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例的Id, 按照启动的时间顺序，从1开始",
+          "member": "int64",
+          "name": "RunningOrderId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "作业实例的启动时间",
+          "member": "string",
+          "name": "JobInstanceStartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "作业实例启动的时间（毫秒）",
+          "member": "int64",
+          "name": "StartingMillis",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "JobV1": {
       "document": "Job详细信息",
       "members": [
@@ -3525,6 +3726,67 @@
           "name": "Tags",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LogContent": {
+      "document": "日志查询的每行日志信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "日志内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "Log",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "毫秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611816200076",
+          "member": "int64",
+          "name": "Time",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "日志组Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2014BF16012637D-6",
+          "member": "string",
+          "name": "PkgId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "日志Id，在日志组范围里唯一",
+          "example": "131072",
+          "member": "int64",
+          "name": "PkgLogId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "日志所属的容器名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "flink-job-manager",
+          "member": "string",
+          "name": "ContainerName",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

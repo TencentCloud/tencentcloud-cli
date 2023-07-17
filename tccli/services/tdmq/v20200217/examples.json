@@ -24,46 +24,6 @@
         "title": "清空订阅者消息标签"
       }
     ],
-    "CreateAMQPCluster": [
-      {
-        "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?\nAction=CreateAMQPCluster\n&Remark=example\n&Name=xxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0604a303-6d5f-40e6-9dfe-6c4ddd8fe2df\",\n        \"ClusterId\": \"xx\"\n    }\n}",
-        "title": "创建AMQP集群"
-      }
-    ],
-    "CreateAMQPExchange": [
-      {
-        "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?\nAction=CreateAMQPExchange\n&VHosts.0=test\n&Remark=example\n&Type=Topic\n&Exchange=dasd\n&ClusterId=amqp-dsadasd\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0604a303-6d5f-40e6-9dfe-6c4ddd8fe2df\"\n    }\n}",
-        "title": "创建AMQP Exchange"
-      }
-    ],
-    "CreateAMQPQueue": [
-      {
-        "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?\nAction=CreateAMQPQueue\n&VHostId=test\n&Remark=example\n&AutoDelete=true\n&Queue=test\n&DeadLetterExchange=test-exchange\n&DeadLetterRoutingKey=testKey\n&ClusterId=amqp-dsadasd\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0604a303-6d5f-40e6-9dfe-6c4ddd8fe2df\"\n    }\n}",
-        "title": "创建AMQP队列"
-      }
-    ],
-    "CreateAMQPRouteRelation": [
-      {
-        "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?\nAction=CreateAMQPRouteRelation\n&Remark=example\n&RoutingKey=dsadsa\n&DestValue=dsdsa\n&DestType=Queue\n&VHostId=test-sss\n&SourceExchange=excasd\n&ClusterId=amqp-dsadasd\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0604a303-6d5f-40e6-9dfe-6c4ddd8fe2df\"\n    }\n}",
-        "title": "创建AMQP路由关系"
-      }
-    ],
-    "CreateAMQPVHost": [
-      {
-        "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?\nAction=CreateAMQPVHost\n&VHostId=test\n&Remark=example\n&MsgTtl=1\n&ClusterId=amqp-dsadasd\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0604a303-6d5f-40e6-9dfe-6c4ddd8fe2df\"\n    }\n}",
-        "title": "创建Amqp Vhost"
-      }
-    ],
     "CreateCluster": [
       {
         "document": "",
@@ -204,46 +164,6 @@
         "title": "创建主题"
       }
     ],
-    "DeleteAMQPCluster": [
-      {
-        "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?\nAction=DeleteAMQPCluster\n&ClusterId=amqp-dsadasd\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0604a303-6d5f-40e6-9dfe-6c4ddd8fe2df\"\n    }\n}",
-        "title": "删除AMQP集群"
-      }
-    ],
-    "DeleteAMQPExchange": [
-      {
-        "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?\nAction=DeleteAMQPExchange\n&VHostId=test\n&Exchange=example\n&ClusterId=amqp-dsadasd\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0604a303-6d5f-40e6-9dfe-6c4ddd8fe2df\"\n    }\n}",
-        "title": "删除Amqp交换机"
-      }
-    ],
-    "DeleteAMQPQueue": [
-      {
-        "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?\nAction=DeleteAMQPQueue\n&VHostId=test\n&Queue=example\n&ClusterId=amqp-dsadasd\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0604a303-6d5f-40e6-9dfe-6c4ddd8fe2df\"\n    }\n}",
-        "title": "删除Amqp队列"
-      }
-    ],
-    "DeleteAMQPRouteRelation": [
-      {
-        "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?\nAction=DeleteAMQPRouteRelation\n&VHostId=test\n&RouteRelationId=rr-sfsffs\n&ClusterId=amqp-dsadasd\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0604a303-6d5f-40e6-9dfe-6c4ddd8fe2df\"\n    }\n}",
-        "title": "删除Amqp路由关系"
-      }
-    ],
-    "DeleteAMQPVHost": [
-      {
-        "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?\nAction=DeleteAMQPVHost\n&VHostId=test\n&ClusterId=amqp-dsadasd\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0604a303-6d5f-40e6-9dfe-6c4ddd8fe2df\"\n    }\n}",
-        "title": "删除Vhost"
-      }
-    ],
     "DeleteCluster": [
       {
         "document": "",
@@ -372,60 +292,12 @@
         "title": "删除主题列表"
       }
     ],
-    "DescribeAMQPCluster": [
-      {
-        "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?\nAction=DescribeAMQPCluster\n&ClusterId=amqp-dsadasd\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ClusterConfig\": {\n            \"MaxExchangeNum\": 1,\n            \"MaxRetentionTime\": 1,\n            \"UsedVHostNum\": 1,\n            \"UsedQueueNum\": 1,\n            \"MaxQueueNum\": 1,\n            \"MaxConnNumPerVHost\": 1,\n            \"MaxTpsPerVHost\": 1,\n            \"MaxVHostNum\": 1,\n            \"UsedExchangeNum\": 1\n        },\n        \"ClusterInfo\": {\n            \"Remark\": \"xx\",\n            \"PublicEndPoint\": \"xx\",\n            \"ClusterName\": \"xx\",\n            \"Region\": \"xx\",\n            \"ClusterId\": \"xx\",\n            \"VpcEndPoint\": \"xx\",\n            \"CreateTime\": 1\n        },\n        \"RequestId\": \"0604a303-6d5f-40e6-9dfe-6c4ddd8fe2df\",\n        \"ClusterStats\": {\n            \"ExchangeNum\": 1,\n            \"ProducedMsgNum\": 1,\n            \"AccumulativeMsgNum\": 1,\n            \"QueueNum\": 1\n        }\n    }\n}",
-        "title": "获取单个Amqp集群信息"
-      }
-    ],
     "DescribeAMQPClusters": [
       {
         "document": "",
         "input": "https://tdmq.tencentcloudapi.com/?\nAction=DescribeAMQPClusters\n&NameKeyword=test\n&IdKeyword=amqp-dsadasd\n&Limit=1\n&Offset=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ClusterList\": [\n            {\n                \"Info\": {\n                    \"Remark\": \"xx\",\n                    \"PublicEndPoint\": \"xx\",\n                    \"ClusterName\": \"xx\",\n                    \"Region\": \"xx\",\n                    \"ClusterId\": \"xx\",\n                    \"VpcEndPoint\": \"xx\",\n                    \"CreateTime\": 1\n                },\n                \"Config\": {\n                    \"MaxExchangeNum\": 1,\n                    \"MaxRetentionTime\": 1,\n                    \"UsedVHostNum\": 1,\n                    \"UsedQueueNum\": 1,\n                    \"MaxQueueNum\": 1,\n                    \"MaxConnNumPerVHost\": 1,\n                    \"MaxTpsPerVHost\": 1,\n                    \"MaxVHostNum\": 1,\n                    \"UsedExchangeNum\": 1\n                }\n            }\n        ],\n        \"RequestId\": \"0604a303-6d5f-40e6-9dfe-6c4ddd8fe2df\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "获取amqp集群列表"
-      }
-    ],
-    "DescribeAMQPCreateQuota": [
-      {
-        "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?\nAction=DescribeAMQPCreateQuota\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"MaxClusterNum\": 1,\n        \"ExchangeCapacity\": 1,\n        \"QueueCapacity\": 1,\n        \"RequestId\": \"0604a303-6d5f-40e6-9dfe-6c4ddd8fe2df\",\n        \"UsedClusterNum\": 1,\n        \"MaxTpsPerVHost\": 1\n    }\n}",
-        "title": "获取用户配额"
-      }
-    ],
-    "DescribeAMQPExchanges": [
-      {
-        "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?\nAction=DescribeAMQPExchanges\n&FilterName=test\n&ClusterId=amqp-dsadasd\n&FilterInternal=false\n&VHostId=test\n&Limit=1\n&Offset=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"0604a303-6d5f-40e6-9dfe-6c4ddd8fe2df\",\n        \"Exchanges\": [\n            {\n                \"Remark\": \"xx\",\n                \"AlternateExchangeDeleteMark\": true,\n                \"Name\": \"xx\",\n                \"AlternateExchange\": \"xx\",\n                \"DestBindedNum\": 1,\n                \"UpdateTime\": 1,\n                \"SourceBindedNum\": 1,\n                \"Internal\": true,\n                \"DelayType\": \"xx\",\n                \"Type\": \"xx\",\n                \"CreateTime\": 1\n            }\n        ]\n    }\n}",
-        "title": "获取AMQP Exchange列表"
-      }
-    ],
-    "DescribeAMQPQueues": [
-      {
-        "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?\nAction=DescribeAMQPQueues\n&VHostId=test\n&ClusterId=amqp-dsadasd\n&Limit=1\n&Offset=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Queues\": [\n            {\n                \"Remark\": \"xx\",\n                \"Name\": \"test\",\n                \"AutoDelete\": true,\n                \"DestBindedNum\": 1,\n                \"UpdateTime\": 1,\n                \"DeadLetterExchange\": \"xx\",\n                \"Tps\": 1,\n                \"TopicName\": \"xx\",\n                \"DeadLetterRoutingKey\": \"xx\",\n                \"OnlineConsumerNum\": 1,\n                \"CreateTime\": 156851400000,\n                \"AccumulativeMsgNum\": 1\n            }\n        ],\n        \"RequestId\": \"0604a303-6d5f-40e6-9dfe-6c4ddd8fe2df\"\n    }\n}",
-        "title": "获取Amqp队列列表"
-      }
-    ],
-    "DescribeAMQPRouteRelations": [
-      {
-        "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?\nAction=DescribeAMQPRouteRelations\n&FilterDestValue=test\n&FilterDestType=example\n&Limit=1\n&Offset=1\n&FilterSourceExchange=test\n&VHostId=test\n&ClusterId=amqp-dsadasd\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RouteRelations\": [\n            {\n                \"UpdateTime\": 1,\n                \"RoutingKey\": \"xx\",\n                \"DestValue\": \"xx\",\n                \"DestType\": \"xx\",\n                \"Remark\": \"xx\",\n                \"SourceExchangeType\": \"Topic\",\n                \"RouteRelationId\": \"xx\",\n                \"CreateTime\": 1,\n                \"SourceExchange\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xxdasdasdas\"\n    }\n}",
-        "title": "获取Amqp路由关系列表"
-      }
-    ],
-    "DescribeAMQPVHosts": [
-      {
-        "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?\nAction=DescribeAMQPVHosts\n&NameKeyword=test\n&ClusterId=amqp-dsadasd\n&Limit=1\n&Offset=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"VHosts\": [\n            {\n                \"Username\": \"xx\",\n                \"Remark\": \"xx\",\n                \"Password\": \"xx\",\n                \"UpdateTime\": 1,\n                \"MsgTtl\": 1,\n                \"Status\": 0,\n                \"VHostId\": \"test\",\n                \"CreateTime\": 1560000000\n            }\n        ],\n        \"RequestId\": \"0604a303-6d5f-40e6-9dfe-6c4ddd8fe2df\",\n        \"TotalCount\": 1\n    }\n}",
-        "title": "获取Amqp Vhost列表"
       }
     ],
     "DescribeAllTenants": [
@@ -730,22 +602,6 @@
         "input": "https://tdmq.tencentcloudapi.com/?\nAction=ModifyAMQPCluster\n&ClusterName=test\n&Remark=example\n&ClusterId=amqp-dsadasd\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0604a303-6d5f-40e6-9dfe-6c4ddd8fe2df\"\n    }\n}",
         "title": "更新Amqp集群信息"
-      }
-    ],
-    "ModifyAMQPExchange": [
-      {
-        "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?\nAction=ModifyAMQPExchange\n&VHostId=test\n&Remark=example\n&ClusterId=amqp-dsadasd\n&Exchange=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0604a303-6d5f-40e6-9dfe-6c4ddd8fe2df\"\n    }\n}",
-        "title": "更新Amqp交换机"
-      }
-    ],
-    "ModifyAMQPQueue": [
-      {
-        "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?\nAction=ModifyAMQPQueue\n&VHostId=test\n&AutoDelete=true\n&Queue=test\n&DeadLetterExchange=test\n&DeadLetterRoutingKey=testKey\n&Remark=xxx\n&ClusterId=amqp-dsadasd\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0604a303-6d5f-40e6-9dfe-6c4ddd8fe2df\"\n    }\n}",
-        "title": "更新Amqp队列"
       }
     ],
     "ModifyCluster": [

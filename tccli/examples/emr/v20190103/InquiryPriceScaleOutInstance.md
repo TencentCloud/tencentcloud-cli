@@ -1,6 +1,6 @@
 **Example 1: 扩容询价**
 
-
+扩容询价
 
 Input: 
 
@@ -21,43 +21,70 @@ Output:
 ```
 {
     "Response": {
-        "DiscountCost": "1.26",
+        "OriginalCost": "abc",
+        "DiscountCost": "abc",
+        "Unit": "abc",
         "PriceSpec": {
-            "InstanceType": "S5",
-            "DiskCnt": 1,
+            "Spec": "abc",
             "StorageType": 1,
-            "DiskNum": 1,
-            "DiskType": "2",
-            "LocalDiskNum": 0,
+            "DiskType": "abc",
+            "RootSize": 0,
+            "MemSize": 0,
             "Cpu": 0,
-            "DiskSize": 100,
-            "MemSize": 100,
-            "RootSize": 50,
-            "Spec": "S5.2XLARGE8"
+            "DiskSize": 0,
+            "MultiDisks": [
+                {
+                    "DiskType": "abc",
+                    "Volume": 0,
+                    "Count": 0
+                }
+            ],
+            "DiskCnt": 0,
+            "InstanceType": "abc",
+            "Tags": [
+                {
+                    "TagKey": "abc",
+                    "TagValue": "abc"
+                }
+            ],
+            "DiskNum": 0,
+            "LocalDiskNum": 0
         },
-        "Unit": "s",
-        "OriginalCost": "1.74",
         "MultipleEmrPrice": [
             {
-                "DiscountCost": "1.26",
+                "OriginalCost": "abc",
+                "DiscountCost": "abc",
+                "Unit": "abc",
                 "PriceSpec": {
-                    "InstanceType": "S5",
-                    "DiskCnt": 1,
+                    "Spec": "abc",
                     "StorageType": 1,
-                    "DiskNum": 1,
-                    "DiskType": "2",
-                    "LocalDiskNum": 0,
+                    "DiskType": "abc",
+                    "RootSize": 0,
+                    "MemSize": 0,
                     "Cpu": 0,
-                    "DiskSize": 100,
-                    "MemSize": 100,
-                    "RootSize": 50,
-                    "Spec": "S5.2XLARGE8"
+                    "DiskSize": 0,
+                    "MultiDisks": [
+                        {
+                            "DiskType": "abc",
+                            "Volume": 0,
+                            "Count": 0
+                        }
+                    ],
+                    "DiskCnt": 0,
+                    "InstanceType": "abc",
+                    "Tags": [
+                        {
+                            "TagKey": "abc",
+                            "TagValue": "abc"
+                        }
+                    ],
+                    "DiskNum": 0,
+                    "LocalDiskNum": 0
                 },
-                "Unit": "s",
-                "OriginalCost": "1.74"
+                "SupportSpotPaid": true
             }
         ],
-        "RequestId": "04daa603-e1e7-4243-b25d-31e6a6736528"
+        "RequestId": "abc"
     }
 }
 ```

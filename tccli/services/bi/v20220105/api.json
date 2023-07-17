@@ -26,7 +26,6 @@
       "document": "ApplyEmbedInterval请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分享项目id，必选",
           "example": "1",
@@ -36,7 +35,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分享页面id，嵌出看板时此为空值0",
           "example": "1",
@@ -46,7 +44,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要申请延期的Token",
           "example": "1",
@@ -56,7 +53,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备用字段",
           "example": "1",
@@ -66,7 +62,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "panel,看板；page，页面",
           "example": "page",
@@ -87,7 +82,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Extra",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -97,7 +92,7 @@
           "example": "无",
           "member": "ApplyEmbedTokenInfo",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -107,7 +102,7 @@
           "example": "success",
           "member": "string",
           "name": "Msg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

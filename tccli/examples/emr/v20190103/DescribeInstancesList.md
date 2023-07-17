@@ -1,6 +1,6 @@
 **Example 1: 查询实例详情**
 
-
+查询实例详情
 
 Input: 
 
@@ -17,59 +17,52 @@ Output:
 ```
 {
     "Response": {
-        "TotalCnt": 1,
+        "TotalCnt": 0,
         "InstancesList": [
             {
-                "Zone": "xx",
-                "IsMultiZoneCluster": true,
-                "SubnetName": "xx",
-                "Status": 1,
+                "ClusterId": "abc",
+                "StatusDesc": "abc",
+                "ClusterName": "abc",
+                "ZoneId": 1,
+                "AppId": 1,
+                "AddTime": "abc",
+                "RunTime": "abc",
+                "MasterIp": "abc",
+                "EmrVersion": "abc",
+                "ChargeType": 1,
+                "Id": 1,
+                "ProductId": 1,
+                "ProjectId": 1,
+                "RegionId": 1,
+                "SubnetId": 1,
                 "VpcId": 1,
-                "AlarmInfo": "xx",
+                "Zone": "abc",
+                "Status": 1,
                 "Tags": [
                     {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
-                    },
-                    {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
-                    },
-                    {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
+                        "TagKey": "abc",
+                        "TagValue": "abc"
                     }
                 ],
-                "RegionId": 1,
-                "ClusterId": "xx",
-                "IsHandsCluster": true,
-                "VpcName": "xx",
-                "AddTime": "xx",
-                "SubnetId": 1,
-                "MasterIp": "xx",
-                "ProjectId": 1,
-                "ZoneId": 1,
-                "StatusDesc": "xx",
-                "ProductId": 1,
-                "UniqVpcId": "xx",
-                "ClusterName": "xx",
-                "EmrVersion": "xx",
+                "AlarmInfo": "abc",
                 "IsWoodpeckerCluster": 1,
-                "UniqSubnetId": "xx",
-                "ChargeType": 1,
-                "AppId": 1,
-                "ClusterClass": "xx",
-                "RunTime": "xx",
-                "Id": 1,
+                "VpcName": "abc",
+                "SubnetName": "abc",
+                "UniqVpcId": "abc",
+                "UniqSubnetId": "abc",
+                "ClusterClass": "abc",
+                "IsMultiZoneCluster": true,
+                "IsHandsCluster": true,
                 "OutSideSoftInfo": [
                     {
-                        "SoftName": "hdfs-2.8.5",
+                        "SoftName": "abc",
                         "Required": true
                     }
-                ]
+                ],
+                "IsSupportOutsideCluster": true
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

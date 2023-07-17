@@ -211,9 +211,9 @@
       "status": "online"
     },
     "DescribeBackupFiles": {
-      "document": "本接口(DescribeBackupFiles)用于在非打包备份模式下单个库对应的备份文件",
+      "document": "本接口(DescribeBackupFiles)用于查询单库备份明细",
       "input": "DescribeBackupFilesRequest",
-      "name": "查询备份文件列表",
+      "name": "查询单库备份文件明细",
       "output": "DescribeBackupFilesResponse",
       "status": "online"
     },
@@ -1072,7 +1072,6 @@
       "document": "数据库账号权限变更信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库用户名",
           "example": "ac1",
@@ -1083,7 +1082,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号权限变更信息",
           "example": "无",
@@ -1094,9 +1092,8 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "是否为管理员账户,当值为true 等价于基础版AccountType=L0，高可用AccountType=L1，当值为false时，表示删除管理员权限，默认false",
+          "document": "表示是否为管理员账户，当值为true，表示是 管理员。若实例 是 单节点，则管理员所在的 账号类型为超级权限账号 ，即AccountType=L0；若实例 是 双节点，则管理员所在的 账号类型为高级权限账号，即AccountType=L1；当值为false，表示 不是管理员，则账号类型为普通账号，即AccountType=L3",
           "example": "true",
           "member": "bool",
           "name": "IsAdmin",
@@ -1105,7 +1102,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号类型，IsAdmin字段的扩展字段。 L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限，默认L3",
           "example": "L0",
@@ -1936,7 +1932,6 @@
       "document": "CreateBackup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "备份策略(0-实例备份 1-多库备份)",
           "example": "1",
@@ -1946,7 +1941,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要备份库名的列表(多库备份才填写)",
           "example": "[\"db1\\r\\n\",\"db2\\r\\n\"]",
@@ -1956,9 +1950,8 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例ID，形如mssql-i1z41iwd",
+          "document": "实例ID（必填），形如mssql-i1z41iwd",
           "example": "mssql-njj2mtpl",
           "member": "string",
           "name": "InstanceId",
@@ -1966,7 +1959,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份名称，若不填则自动生成“实例ID_备份开始时间戳”",
           "example": "BackupName",
@@ -1987,7 +1979,6 @@
           "example": "5293",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5618,7 +5609,6 @@
       "document": "DescribeBackupFiles请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，形如mssql-njj2mtpl",
           "example": "mssql-njj2mtpl",
@@ -5628,9 +5618,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "聚合ID, 可通过接口DescribeBackups获取",
+          "document": "单库备份的聚合ID, 可通过接口DescribeBackups获取（不支持查询打包备份记录）",
           "example": "123456789",
           "member": "string",
           "name": "GroupId",
@@ -5638,7 +5627,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回，每页返回的数目，取值为1-100，默认值为20",
           "example": "20",
@@ -5648,7 +5636,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回，页编号，默认值为第0页",
           "example": "0",
@@ -5658,7 +5645,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照备份的库名称筛选，不填则不筛选此项",
           "example": "db1",
@@ -5668,7 +5654,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "列表项排序，目前只按照备份大小排序（desc-降序，asc-升序），默认desc",
           "example": "desc",
@@ -5689,7 +5674,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5699,7 +5684,7 @@
           "example": "无",
           "member": "BackupFile",
           "name": "BackupFiles",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

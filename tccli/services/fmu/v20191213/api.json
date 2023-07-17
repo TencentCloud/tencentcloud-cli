@@ -8,16 +8,16 @@
       "status": "online"
     },
     "BeautifyVideo": {
-      "document": "视频美颜",
+      "document": "视频美颜(此接口目前已下线)",
       "input": "BeautifyVideoRequest",
-      "name": "视频美颜",
+      "name": "视频美颜(此接口目前已下线)",
       "output": "BeautifyVideoResponse",
       "status": "online"
     },
     "CancelBeautifyVideoJob": {
       "document": "撤销视频美颜任务请求",
       "input": "CancelBeautifyVideoJobRequest",
-      "name": "撤销视频美颜任务",
+      "name": "撤销视频美颜任务(此接口目前已下线)",
       "output": "CancelBeautifyVideoJobResponse",
       "status": "online"
     },
@@ -45,7 +45,7 @@
     "QueryBeautifyVideoJob": {
       "document": "查询视频美颜处理进度",
       "input": "QueryBeautifyVideoJobRequest",
-      "name": "查询视频美颜任务",
+      "name": "查询视频美颜任务(此接口目前已下线)",
       "output": "QueryBeautifyVideoJobResponse",
       "status": "online"
     },
@@ -257,27 +257,27 @@
       "document": "BeautifyVideo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频url地址",
+          "example": "string",
           "member": "string",
           "name": "Url",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "美颜参数 - 美白、平滑、大眼和瘦脸。参数值范围[0, 100]。参数值为0，则不做美颜。参数默认值为0。目前默认取数组第一个元素是对所有人脸美颜。",
+          "example": "{}",
           "member": "BeautyParam",
           "name": "BeautyParam",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目前只支持mp4",
+          "example": "string",
           "member": "string",
           "name": "OutputVideoType",
           "required": false,
@@ -292,16 +292,20 @@
         {
           "disabled": false,
           "document": "视频美颜任务的Job id",
+          "example": "string",
           "member": "string",
           "name": "JobId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "预估处理时间，粒度为秒",
+          "example": "1",
           "member": "int64",
           "name": "EstimatedProcessTime",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -364,9 +368,9 @@
       "document": "CancelBeautifyVideoJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "美颜视频的Job id",
+          "example": "string",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -646,9 +650,9 @@
       "document": "QueryBeautifyVideoJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频美颜Job id",
+          "example": "Iyjz4Rj3OCt5Az9a",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -663,18 +667,32 @@
         {
           "disabled": false,
           "document": "当前任务状态：排队中、处理中、处理失败或者处理完成",
+          "example": "处理完成",
           "member": "string",
           "name": "JobStatus",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频美颜输出的结果信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "BeautifyVideoOutput",
           "name": "BeautifyVideoOutput",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前任务状态码：1：排队中、3: 处理中、5: 处理失败、7:处理完成",
+          "example": "1",
+          "member": "int64",
+          "name": "JobStatusCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

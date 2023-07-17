@@ -4987,7 +4987,7 @@
           "example": "无",
           "member": "string",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4997,17 +4997,17 @@
           "example": "无",
           "member": "int64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "旋转后的图片四点坐标。",
+          "document": "该发票在原图片中的四点坐标。",
           "example": "无",
           "member": "Polygon",
           "name": "Polygon",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5017,7 +5017,7 @@
           "example": "无",
           "member": "float",
           "name": "Angle",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -5027,7 +5027,7 @@
           "example": "无",
           "member": "SingleInvoiceItem",
           "name": "SingleInvoiceInfos",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5037,7 +5037,7 @@
           "example": "无",
           "member": "int64",
           "name": "Page",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5047,7 +5047,7 @@
           "example": "VatSpecialInvoice",
           "member": "string",
           "name": "SubType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5057,7 +5057,7 @@
           "example": "增值税发票",
           "member": "string",
           "name": "TypeDescription",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5067,7 +5067,7 @@
           "example": "无",
           "member": "string",
           "name": "CutImage",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5077,7 +5077,7 @@
           "example": "无",
           "member": "string",
           "name": "SubTypeDescription",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

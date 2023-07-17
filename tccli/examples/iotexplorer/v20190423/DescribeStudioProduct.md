@@ -14,24 +14,24 @@ Output:
 {
     "Response": {
         "Product": {
-            "ProductId": "M5AWDSEUYO",
-            "ProductName": "testtproduct",
-            "CategoryId": 3,
+            "ProductId": "productId",
+            "ProductName": "name",
+            "CategoryId": 593,
             "ProductType": 0,
             "EncryptionType": "2",
-            "NetType": "else",
+            "NetType": "wifi",
             "DataProtocol": 1,
-            "ProductDesc": "desc",
-            "ProjectId": "prj-zunfat46",
+            "ProductDesc": "",
+            "ProjectId": "prj-wg9**b2",
             "DevStatus": "dev",
-            "EnableProductScript": "true",
-            "CreateTime": 1560341975,
-            "UpdateTime": 1560341975,
+            "CreateTime": 1686100765,
+            "UpdateTime": 1686100802,
             "Region": "gz",
             "ModuleId": 0,
+            "EnableProductScript": "",
+            "CreatorNickName": "name",
             "CreateUserId": 1,
-            "BindStrategy": 0,
-            "CreatorNickName": "test"
+            "BindStrategy": 0
         },
         "RequestId": "1c469fbf-d80c-4299-9b54-31340898b839"
     }

@@ -1,6 +1,6 @@
 **Example 1: 更新模型服务**
 
-
+更新模型服务
 
 Input: 
 
@@ -60,7 +60,10 @@ Output:
                 "Weight": 0,
                 "PodList": [],
                 "ResourceTotal": null,
-                "OldReplicas": 0
+                "OldReplicas": 0,
+                "ModelHotUpdateEnable": null,
+                "OldHybridBillingPrepaidReplicas": null,
+                "HybridBillingPrepaidReplicas": null
             },
             "ClusterId": "",
             "Region": "ap-beijing",
@@ -79,7 +82,13 @@ Output:
             "CreateFailedReason": "CREATE_SUCCEED",
             "Weight": 100,
             "Version": "1",
-            "LatestVersion": ""
+            "LatestVersion": "",
+            "CreateSource": null,
+            "ServiceLimit": null,
+            "BillingInfo": null,
+            "Status": null,
+            "IngressName": null,
+            "ScheduledAction": null
         },
         "RequestId": "f8601dc9-1319-4642-9b24-ba49fb550779"
     }

@@ -98,6 +98,13 @@
       "output": "ChannelCreateMultiFlowSignQRCodeResponse",
       "status": "online"
     },
+    "ChannelCreateOrganizationModifyQrCode": {
+      "document": "生成渠道子客编辑企业信息二维码",
+      "input": "ChannelCreateOrganizationModifyQrCodeRequest",
+      "name": "生成渠道子客编辑企业信息二维码",
+      "output": "ChannelCreateOrganizationModifyQrCodeResponse",
+      "status": "online"
+    },
     "ChannelCreatePrepareFlow": {
       "document": "创建预发起合同\n通过此接口指定：合同，签署人，填写控件信息，生成预创建合同链接，点击后跳转到web页面完成合同创建并发起\n可指定合同信息不可更改，签署人信息不可更改\n合同发起后，填写及签署流程与现有操作流程一致\n注意：目前仅支持模板发起",
       "input": "ChannelCreatePrepareFlowRequest",
@@ -1760,6 +1767,53 @@
           "name": "SignUrls",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateOrganizationModifyQrCodeRequest": {
+      "document": "ChannelCreateOrganizationModifyQrCode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用相关信息。 此接口Agent.AppId 必填。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateOrganizationModifyQrCodeResponse": {
+      "document": "ChannelCreateOrganizationModifyQrCode返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "二维码下载链接",
+          "example": "无",
+          "member": "string",
+          "name": "QrCodeUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "二维码失效时间 UNIX 时间戳 精确到秒",
+          "example": "无",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -4918,7 +4972,7 @@
         },
         {
           "disabled": false,
-          "document": "个人签署方指定签署控件类型，目前支持：OCR_ESIGN -AI智慧手写签名\nHANDWRITE -手写签名",
+          "document": "\t签署方控件类型为 SIGN_SIGNATURE时，可以指定签署方签名方式\n\tHANDWRITE – 手写签名\n\tOCR_ESIGN -- AI智能识别手写签名\n\tESIGN -- 个人印章类型\n\tSYSTEM_ESIGN -- 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）",
           "example": "[\"OCR_ESIGN\"]",
           "member": "string",
           "name": "ComponentLimitType",

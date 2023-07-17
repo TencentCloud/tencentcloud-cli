@@ -2842,7 +2842,6 @@
       "document": "DescribeInstancesList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群筛选策略。取值范围：<li>clusterList：表示查询除了已销毁集群之外的集群列表。</li><li>monitorManage：表示查询除了已销毁、创建中以及创建失败的集群之外的集群列表。</li><li>cloudHardwareManage/componentManage：目前这两个取值为预留取值，暂时和monitorManage表示同样的含义。</li>",
           "example": "clusterList",
@@ -2852,7 +2851,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页编号，默认值为0，表示第一页。",
           "example": "0",
@@ -2862,7 +2860,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页返回数量，默认值为10，最大值为100。",
           "example": "10",
@@ -2872,7 +2869,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段。取值范围：<li>clusterId：表示按照实例ID排序。</li><li>addTime：表示按照实例创建时间排序。</li><li>status：表示按照实例的状态码排序。</li>",
           "example": "clusterid",
@@ -2882,9 +2878,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "按照OrderField升序或者降序进行排序。取值范围：<li>0：表示降序。</li><li>1：表示升序。</li>默认值为0。\u0007",
+          "document": "按照OrderField升序或者降序进行排序。取值范围：<li>0：表示降序。</li><li>1：表示升序。</li>默认值为0。",
           "example": "0",
           "member": "int64",
           "name": "Asc",
@@ -2892,7 +2887,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义查询",
           "example": "无",
@@ -2913,7 +2907,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2923,7 +2917,7 @@
           "example": "无",
           "member": "EmrListInstance",
           "name": "InstancesList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2940,7 +2934,6 @@
       "document": "DescribeInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群筛选策略。取值范围：\n<li>clusterList：表示查询除了已销毁集群之外的集群列表。</li>\n<li>monitorManage：表示查询除了已销毁、创建中以及创建失败的集群之外的集群列表。</li>\n<li>cloudHardwareManage/componentManage：目前这两个取值为预留取值，暂时和monitorManage表示同样的含义。</li>",
           "example": "clusterList",
@@ -2950,7 +2943,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照一个或者多个实例ID查询。实例ID形如: emr-xxxxxxxx 。(此参数的具体格式可参考API[简介](https://cloud.tencent.com/document/api/213/15688)的 Ids.N 一节)。如果不填写实例ID，返回该APPID下所有实例列表。",
           "example": "[\"emr-p9f700x8\\r\\n\"]",
@@ -2960,7 +2952,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页编号，默认值为0，表示第一页。",
           "example": "0",
@@ -2970,7 +2961,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页返回数量，默认值为10，最大值为100。",
           "example": "10",
@@ -2980,9 +2970,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "建议必填-1，表示拉取所有项目下的集群。\n不填默认值为0，表示拉取默认项目下的集群。\n实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/378/4400) 的返回值中的 projectId 字段来获取。",
+          "document": "建议必填-1，表示拉取所有项目下的集群。\n不填默认值为0，表示拉取默认项目下的集群。\n实例所属项目ID。该参数可以通过调用 [DescribeProjects](https://cloud.tencent.com/document/product/651/78725) 的返回值中的 projectId 字段来获取。",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -2990,7 +2979,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段。取值范围：\n<li>clusterId：表示按照实例ID排序。</li>\n<li>addTime：表示按照实例创建时间排序。</li>\n<li>status：表示按照实例的状态码排序。</li>",
           "example": "clusterid",
@@ -3000,9 +2988,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "按照OrderField升序或者降序进行排序。取值范围：\n<li>0：表示降序。</li>\n<li>1：表示升序。</li>默认值为0。\u0007",
+          "document": "按照OrderField升序或者降序进行排序。取值范围：\n<li>0：表示降序。</li>\n<li>1：表示升序。</li>默认值为0。",
           "example": "0",
           "member": "int64",
           "name": "Asc",
@@ -3021,7 +3008,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3031,7 +3018,7 @@
           "example": "无",
           "member": "ClusterInstancesInfo",
           "name": "ClusterList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3041,7 +3028,7 @@
           "example": "无",
           "member": "string",
           "name": "TagKeys",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4506,7 +4493,6 @@
       "document": "InquirePriceRenewEmr请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例续费的时长。需要结合TimeUnit一起使用。1表示续费1一个月",
           "example": "1",
@@ -4516,7 +4502,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待续费集群ID列表。",
           "example": "emr-vm-jv1s4",
@@ -4526,7 +4511,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
           "example": "无",
@@ -4536,7 +4520,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例计费模式。此处只支持取值为1，表示包年包月。",
           "example": "1",
@@ -4546,7 +4529,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例续费的时间单位。取值范围：\n<li>m：表示月份。</li>",
           "example": "m",
@@ -4556,9 +4538,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "货币种类。取值范围：\n<li>CNY：表示人民币。\u0007</li>",
+          "document": "货币种类。取值范围：\n<li>CNY：表示人民币。</li>",
           "example": "CNY",
           "member": "string",
           "name": "Currency",
@@ -4577,7 +4558,7 @@
           "example": "898.9",
           "member": "float",
           "name": "OriginalCost",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -4587,17 +4568,17 @@
           "example": "596.54",
           "member": "float",
           "name": "DiscountCost",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "实例续费的时间单位。取值范围：\n<li>m：表示月份。\u0007</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例续费的时间单位。取值范围：\n<li>m：表示月份。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "m",
           "member": "string",
           "name": "TimeUnit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4607,7 +4588,7 @@
           "example": "1",
           "member": "int64",
           "name": "TimeSpan",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4624,7 +4605,6 @@
       "document": "InquiryPriceCreateInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "购买实例的时间单位。取值范围：\n<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>\n<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>",
           "example": "无",
@@ -4634,7 +4614,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买实例的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>",
           "example": "无",
@@ -4644,9 +4623,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "货币种类。取值范围：\n<li>CNY：表示人民币。\u0007</li>",
+          "document": "货币种类。取值范围：\n<li>CNY：表示人民币。</li>",
           "example": "无",
           "member": "string",
           "name": "Currency",
@@ -4654,7 +4632,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例计费模式。取值范围：\n<li>0：表示按量计费。</li>\n<li>1：表示包年包月。</li>",
           "example": "无",
@@ -4664,7 +4641,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启节点高可用。取值范围：\n<li>0：表示不开启节点高可用。</li>\n<li>1：表示开启节点高可用。\u0007</li>",
           "example": "无",
@@ -4674,7 +4650,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）需要选择不同的必选组件：\n<li>ProductId为1的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>\n<li>ProductId为2的时候，必选组件包括：hadoop-2.7.3、knox-1.2.0、zookeeper-3.4.9</li>\n<li>ProductId为4的时候，必选组件包括：hadoop-2.8.4、knox-1.2.0、zookeeper-3.4.9</li>\n<li>ProductId为7的时候，必选组件包括：hadoop-3.1.2、knox-1.2.0、zookeeper-3.4.9</li>",
           "example": "无",
@@ -4684,7 +4659,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "询价的节点规格。",
           "example": "无",
@@ -4694,7 +4668,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
           "example": "无",
@@ -4704,7 +4677,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。",
           "example": "无",
@@ -4714,7 +4686,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "hive共享元数据库类型。取值范围：\n<li>EMR_NEW_META：表示集群默认创建</li>\n<li>EMR_EXIT_METE：表示集群使用指定EMR-MetaDB。</li>\n<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>",
           "example": "无",
@@ -4724,7 +4695,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EMR-MetaDB实例",
           "example": "无",
@@ -4734,7 +4704,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义MetaDB信息",
           "example": "无",
@@ -4744,7 +4713,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID，不同产品ID表示不同的EMR产品版本。取值范围：\n<li>1：表示EMR-V1.3.1。</li>\n<li>2：表示EMR-V2.0.1。</li>\n<li>4：表示EMR-V2.1.0。</li>\n<li>7：表示EMR-V3.0.0。</li>",
           "example": "无",
@@ -4754,7 +4722,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景化取值：\nHadoop-Kudu\nHadoop-Zookeeper\nHadoop-Presto\nHadoop-Hbase",
           "example": "无",
@@ -4764,7 +4731,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "共用组件信息",
           "example": "无",
@@ -4774,7 +4740,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前默认值为0，跨AZ特性支持后为1",
           "example": "无",
@@ -4784,7 +4749,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区的规格信息",
           "example": "无",
@@ -4805,7 +4769,7 @@
           "example": "无",
           "member": "float",
           "name": "OriginalCost",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -4815,17 +4779,17 @@
           "example": "无",
           "member": "float",
           "name": "DiscountCost",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "购买实例的时间单位。取值范围：\n<li>s：表示秒。</li>\n<li>m：表示月份。\u0007</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "购买实例的时间单位。取值范围：\n<li>s：表示秒。</li>\n<li>m：表示月份。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "TimeUnit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4835,7 +4799,7 @@
           "example": "无",
           "member": "int64",
           "name": "TimeSpan",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4845,7 +4809,7 @@
           "example": "无",
           "member": "ZoneDetailPriceResult",
           "name": "PriceList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4872,7 +4836,7 @@
         },
         {
           "disabled": false,
-          "document": "待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。",
+          "document": "待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr)查询。",
           "example": "[\"emr-vm-jv1s4zas\\r\\n\"]",
           "member": "string",
           "name": "ResourceIds",
@@ -4908,7 +4872,7 @@
         },
         {
           "disabled": false,
-          "document": "货币种类。取值范围：\n<li>CNY：表示人民币。\u0007</li>",
+          "document": "货币种类。取值范围：\n<li>CNY：表示人民币。</li>",
           "example": "CNY",
           "member": "string",
           "name": "Currency",
@@ -4952,7 +4916,7 @@
         },
         {
           "disabled": false,
-          "document": "实例续费的时间单位。取值范围：\n<li>m：表示月份。\u0007</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例续费的时间单位。取值范围：\n<li>m：表示月份。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "m",
           "member": "string",
           "name": "TimeUnit",
@@ -4983,7 +4947,6 @@
       "document": "InquiryPriceScaleOutInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "扩容的时间单位。取值范围：\n<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>\n<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>",
           "example": "s",
@@ -4993,7 +4956,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩容的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>",
           "example": "3600",
@@ -5003,7 +4965,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例所属的可用区ID，例如100003。该参数可以通过调用 [DescribeZones](https://cloud.tencent.com/document/api/213/15707) 的返回值中的ZoneId字段来获取。",
           "example": "100003",
@@ -5013,7 +4974,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例计费模式。取值范围：\n<li>0：表示按量计费。</li>\n<li>1：表示包年包月。</li>",
           "example": "0",
@@ -5023,7 +4983,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID。",
           "example": "emr-3ida6zmi",
@@ -5033,7 +4992,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩容的Core节点数量。",
           "example": "1",
@@ -5043,7 +5001,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩容的Task节点数量。",
           "example": "0",
@@ -5053,9 +5010,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "货币种类。取值范围：\n<li>CNY：表示人民币。\u0007</li>",
+          "document": "货币种类。取值范围：\n<li>CNY：表示人民币。</li>",
           "example": "CNY",
           "member": "string",
           "name": "Currency",
@@ -5063,7 +5019,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩容的Router节点数量。",
           "example": "0",
@@ -5073,7 +5028,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩容的Master节点数量。",
           "example": "0",
@@ -5094,7 +5048,7 @@
           "example": "无",
           "member": "string",
           "name": "OriginalCost",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5104,17 +5058,17 @@
           "example": "无",
           "member": "string",
           "name": "DiscountCost",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "扩容的时间单位。取值范围：\n<li>s：表示秒。</li>\n<li>m：表示月份。\u0007</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "扩容的时间单位。取值范围：\n<li>s：表示秒。</li>\n<li>m：表示月份。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Unit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5124,7 +5078,7 @@
           "example": "无",
           "member": "PriceResource",
           "name": "PriceSpec",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5134,7 +5088,7 @@
           "example": "无",
           "member": "EmrPrice",
           "name": "MultipleEmrPrice",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5747,40 +5701,40 @@
       "document": "多云盘参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "云盘类型\n<li>CLOUD_SSD：表示云SSD。</li>\n<li>CLOUD_PREMIUM：表示高效云盘。</li>\n<li>CLOUD_HSSD：表示增强型SSD云硬盘。</li>",
+          "document": "云盘类型\n<li>CLOUD_SSD：表示云SSD。</li>\n<li>CLOUD_PREMIUM：表示高效云盘。</li>\n<li>CLOUD_HSSD：表示增强型SSD云硬盘。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "云盘大小",
+          "document": "云盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20000",
           "member": "int64",
           "name": "Volume",
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "该类型云盘个数",
+          "document": "该类型云盘个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Count",
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "MultiDiskMC": {
       "document": "多云盘参数",
@@ -9282,7 +9236,6 @@
       "document": "TerminateTasks请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID。",
           "example": "emr-4slr7ad7",
@@ -9292,9 +9245,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "待销毁节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr/static/hardware)查询。",
+          "document": "待销毁节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr)查询。",
           "example": "[\"emr-vm-xxx33tg\\r\\n\"]",
           "member": "string",
           "name": "ResourceIds",

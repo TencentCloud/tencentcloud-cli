@@ -36,11 +36,11 @@
       "status": "online"
     },
     "CreateChannelSubOrganizationModifyQrCode": {
-      "document": "生成子客编辑企业信息二维码",
+      "document": "根据产品要求，调整接口目录\n\n新接口：ChannelCreateOrganizationModifyQrCode \n\n老接口目前无线上流量，测试用例已下线处理\n\n生成子客编辑企业信息二维码",
       "input": "CreateChannelSubOrganizationModifyQrCodeRequest",
       "name": "生成子客编辑企业信息二维码",
       "output": "CreateChannelSubOrganizationModifyQrCodeResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateConvertTaskApi": {
       "document": "上传了word、excel、图片文件后，通过该接口发起文件转换任务，将word、excel、图片文件转换为pdf文件。",
@@ -6255,6 +6255,33 @@
           "name": "ApproverNeedSignReview",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "签署人签署控件",
+          "example": "无",
+          "member": "Component",
+          "name": "SignComponents",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "签署人填写控件",
+          "example": "无",
+          "member": "Component",
+          "name": "Components",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "签署方控件类型为 SIGN_SIGNATURE时，可以指定签署方签名方式\n\tHANDWRITE – 手写签名\n\tOCR_ESIGN -- AI智能识别手写签名\n\tESIGN -- 个人印章类型\n\tSYSTEM_ESIGN -- 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentLimitType",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
