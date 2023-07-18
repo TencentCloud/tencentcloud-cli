@@ -4825,7 +4825,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方CDN转推参数。",
+          "document": "第三方CDN转推参数。如需转推至腾讯云云直播，此参数无需填写，会默认转推",
           "example": "PublishCdnParams",
           "member": "PublishCdnParams",
           "name": "PublishCdnParams",
@@ -4897,7 +4897,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方CDN转推参数。",
+          "document": "第三方CDN转推参数。如需转推至腾讯云云直播，此参数无需填写，会默认转推",
           "example": "PublishCdnParams",
           "member": "PublishCdnParams",
           "name": "PublishCdnParams",

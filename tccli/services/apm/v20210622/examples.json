@@ -80,10 +80,10 @@
     ],
     "ModifyApmInstance": [
       {
-        "document": "修改APM实例",
-        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApmInstance\n<公共请求参数>\n\n{\n    \"Name\": \"xx\",\n    \"Tags\": [\n        {\n            \"Value\": \"xx\",\n            \"Key\": \"xx\"\n        }\n    ],\n    \"InstanceId\": \"xx\",\n    \"OpenBilling\": true,\n    \"TraceDuration\": 0,\n    \"Description\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"wcl-9esoxoii8t2exer215won26rkzc8\"\n    }\n}",
-        "title": "修改APM实例"
+        "document": "修改APM Instance参数",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApmInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Tags\": [],\n    \"Description\": \"abc\",\n    \"TraceDuration\": 0,\n    \"Name\": \"abc\",\n    \"OpenBilling\": true,\n    \"SpanDailyCounters\": 1,\n    \"ErrRateThreshold\": 5,\n    \"SampleRate\": 50,\n    \"ErrorSample\": 1,\n    \"SlowRequestSavedThreshold\": 500,\n    \"IsRelatedLog\": 0,\n    \"LogRegion\": \"\",\n    \"LogTopicID\": \"\",\n    \"LogSet\": \"\",\n    \"LogSource\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "成功事例"
       }
     ],
     "TerminateApmInstance": [

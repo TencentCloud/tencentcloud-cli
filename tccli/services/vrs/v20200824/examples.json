@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CancelVRSTask": [
+      {
+        "document": "声音复刻取消任务",
+        "input": "POST / HTTP/1.1\nHost: vrs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelVRSTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"efe36c79-1c71-41d1-b541-04075fb3b9aa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {},\n        \"RequestId\": \"33ccdce8-15d7-4536-9325-8259266c21\"\n    }\n}",
+        "title": "声音复刻取消任务"
+      }
+    ],
     "CreateVRSTask": [
       {
         "document": "声音复刻任务创建",
@@ -22,6 +30,14 @@
         "input": "POST / HTTP/1.1\nHost: vrs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectionEnvAndSoundQuality\n<公共请求参数>\n\n{\n    \"TextId\": \"00020\",\n    \"AudioData\": \"\",\n    \"Codec\": \"wav\",\n    \"TypeId\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"63f755d5cae78f1b126bdbb0\",\n        \"Data\": {\n            \"AudioId\": \"vrs8270f89c-51f8-41c9-8bee-19fb5b8b9708\",\n            \"DetectionCode\": 0,\n            \"DetectionMsg\": \"Success\"\n        }\n    }\n}",
         "title": "音质检测"
+      }
+    ],
+    "DownloadVRSModel": [
+      {
+        "document": "下载声音复刻离线模型",
+        "input": "POST / HTTP/1.1\nHost: vrs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadVRSModel\n<公共请求参数>\n\n{\n    \"TaskId\": \"efe36c79-1c71-41d1-b541-04075fb3b9aa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Model\": \"https://xxx-xxx-xxxx.cos.ap-guangzhou.myqcloud.com/xxxx.zip\",\n            \"VoiceName\": \"a\",\n            \"VoiceGender\": 1,\n            \"VoiceLanguage\": 1,\n            \"TaskId\": \"efe36c79-1c71-41d1-b541-04075fb3b9aa\"\n        },\n        \"RequestId\": \"3ccdce8-15d7-4536-9325-8259266c21\"\n    }\n}",
+        "title": "下载声音复刻离线模型"
       }
     ],
     "GetTrainingText": [

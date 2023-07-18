@@ -2216,7 +2216,7 @@
           "example": "remote",
           "member": "string",
           "name": "DeviceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2226,7 +2226,7 @@
           "example": "1650000000",
           "member": "uint64",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2236,7 +2236,7 @@
           "example": "1650000100",
           "member": "uint64",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2246,7 +2246,7 @@
           "example": "xxxx",
           "member": "string",
           "name": "SessionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2256,7 +2256,7 @@
           "example": "[10,20,30]",
           "member": "int64",
           "name": "Rate",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2266,7 +2266,7 @@
           "example": "[10,20,30]",
           "member": "int64",
           "name": "Fps",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2276,7 +2276,7 @@
           "example": "[10,20,30]",
           "member": "float",
           "name": "Lost",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2286,7 +2286,7 @@
           "example": "[10,20,30]",
           "member": "int64",
           "name": "NetworkLatency",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2296,7 +2296,7 @@
           "example": "[10,20,30]",
           "member": "int64",
           "name": "VideoLatency",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2306,7 +2306,7 @@
           "example": "[10,20,30]",
           "member": "float",
           "name": "CpuUsed",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2316,7 +2316,7 @@
           "example": "[10,20,30]",
           "member": "float",
           "name": "MemUsed",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2326,7 +2326,7 @@
           "example": "[0,2,4,6,8,10]",
           "member": "uint64",
           "name": "TimeOffset",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2336,7 +2336,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2346,9 +2346,129 @@
           "example": "xxx",
           "member": "string",
           "name": "DeviceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "sdk版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.4.7",
+          "member": "string",
+          "name": "Ver",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模式(p2p/server)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "server",
+          "member": "string",
+          "name": "SdkMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "解码耗时，单位：ms\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[20,20,30]",
+          "member": "int64",
+          "name": "DecodeCost",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "渲染耗时，单位：ms\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[20,20,30]",
+          "member": "int64",
+          "name": "RenderConst",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "卡顿k100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[20.12,20.25,30.16]",
+          "member": "float",
+          "name": "K100",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "卡顿k150\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[20.12,20.25,30.16]",
+          "member": "float",
+          "name": "K150",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "nack请求数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[0,0,0]",
+          "member": "int64",
+          "name": "NACK",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务端调控码率,单位：kbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3000",
+          "member": "int64",
+          "name": "BitRateEstimate",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "宽度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1280",
+          "member": "int64",
+          "name": "Width",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "高度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "720",
+          "member": "int64",
+          "name": "Height",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "编码耗时，单位：ms\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[20.12,20.25,30.16]",
+          "member": "int64",
+          "name": "EncodeCost",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集耗时，单位：ms\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[20.12,20.25,30.16]",
+          "member": "int64",
+          "name": "CaptureCost",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

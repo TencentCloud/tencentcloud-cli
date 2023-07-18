@@ -1,5 +1,12 @@
 {
   "actions": {
+    "CancelVRSTask": {
+      "document": "声音复刻取消任务接口",
+      "input": "CancelVRSTaskRequest",
+      "name": "声音复刻取消任务接口",
+      "output": "CancelVRSTaskResponse",
+      "status": "online"
+    },
     "CreateVRSTask": {
       "document": "本接口服务对提交音频进行声音复刻任务创建接口，异步返回复刻结果。\n• 请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n• 签名方法参考 公共参数 中签名方法v3。",
       "input": "CreateVRSTaskRequest",
@@ -21,6 +28,13 @@
       "output": "DetectEnvAndSoundQualityResponse",
       "status": "online"
     },
+    "DownloadVRSModel": {
+      "document": "下载声音复刻离线模型",
+      "input": "DownloadVRSModelRequest",
+      "name": "下载声音复刻离线模型",
+      "output": "DownloadVRSModelResponse",
+      "status": "online"
+    },
     "GetTrainingText": {
       "document": "本接口用于获取声音复刻训练文本信息。\n 请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n• 签名方法参考 公共参数 中签名方法v3。",
       "input": "GetTrainingTextRequest",
@@ -36,6 +50,47 @@
     "serviceShortName": "vrs"
   },
   "objects": {
+    "CancelVRSTaskRequest": {
+      "document": "CancelVRSTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelVRSTaskResponse": {
+      "document": "CancelVRSTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "无",
+          "member": "CancelVRSTaskRsp",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelVRSTaskRsp": {
+      "document": "取消任务响应",
+      "members": [],
+      "usage": "out"
+    },
     "CreateVRSTaskRequest": {
       "document": "CreateVRSTask请求参数结构体",
       "members": [
@@ -110,6 +165,15 @@
           "name": "CallbackUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务类型 1:在线 2:离线  默认为1",
+          "example": "无",
+          "member": "int64",
+          "name": "ModelType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -139,6 +203,7 @@
           "example": "无",
           "member": "CreateVRSTaskRespData",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -303,6 +368,7 @@
           "example": "无",
           "member": "DetectionEnvAndSoundQualityRespData",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -357,6 +423,98 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DownloadVRSModelRequest": {
+      "document": "DownloadVRSModel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadVRSModelResponse": {
+      "document": "DownloadVRSModel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应",
+          "example": "无",
+          "member": "DownloadVRSModelRsp",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadVRSModelRsp": {
+      "document": "离线声音复刻模型下载响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型cos地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Model",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音色名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VoiceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音色性别:\n1-male\n2-female\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "VoiceGender",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "语言类型：\n1-中文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "VoiceLanguage",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

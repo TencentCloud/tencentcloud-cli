@@ -148,7 +148,7 @@
       "status": "online"
     },
     "DescribeDistrictIspData": {
-      "document": "查询指定域名的区域、运营商明细数据\n注意事项：接口尚未全量开放，未在内测名单中的账号不支持调用",
+      "document": "查询指定域名的区域、运营商明细数据\n注意事项：接口尚未全面开放，未在内测名单中的账号不支持调用",
       "input": "DescribeDistrictIspDataRequest",
       "name": "地区运营商明细查询",
       "output": "DescribeDistrictIspDataResponse",
@@ -5851,6 +5851,7 @@
           "example": "无",
           "member": "DistrictIspInfo",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12255,7 +12256,7 @@
       "usage": "out"
     },
     "MainlandConfig": {
-      "document": "域名国内地区特殊配置。分地区特殊配置。UpdateDomainConfig接口只支持修改部分分地区配置，为了兼容旧版本配置，本类型会列出旧版本所有可能存在差异的配置列表，支持修改的配置列表如下：\n+ Authentication\n+ BandwidthAlert\n+ ErrorPage\n+ IpFilter\n+ Origin\n+ Referer",
+      "document": "域名国内地区特殊配置。分地区特殊配置。UpdateDomainConfig接口只支持修改部分地区配置，为了兼容旧版本配置，本类型会列出旧版本所有可能存在差异的配置列表，支持修改的配置列表如下：\n+ Authentication\n+ BandwidthAlert\n+ ErrorPage\n+ IpFilter\n+ Origin\n+ Referer",
       "members": [
         {
           "disabled": false,
@@ -12263,6 +12264,7 @@
           "example": "无",
           "member": "Authentication",
           "name": "Authentication",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12273,6 +12275,7 @@
           "example": "无",
           "member": "BandwidthAlert",
           "name": "BandwidthAlert",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12283,6 +12286,7 @@
           "example": "无",
           "member": "Cache",
           "name": "Cache",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12293,6 +12297,7 @@
           "example": "无",
           "member": "CacheKey",
           "name": "CacheKey",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12303,6 +12308,7 @@
           "example": "无",
           "member": "Compression",
           "name": "Compression",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12313,6 +12319,7 @@
           "example": "无",
           "member": "DownstreamCapping",
           "name": "DownstreamCapping",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12323,6 +12330,7 @@
           "example": "无",
           "member": "ErrorPage",
           "name": "ErrorPage",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12333,6 +12341,7 @@
           "example": "无",
           "member": "FollowRedirect",
           "name": "FollowRedirect",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12343,6 +12352,7 @@
           "example": "无",
           "member": "ForceRedirect",
           "name": "ForceRedirect",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12353,6 +12363,7 @@
           "example": "无",
           "member": "Https",
           "name": "Https",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12363,6 +12374,7 @@
           "example": "无",
           "member": "IpFilter",
           "name": "IpFilter",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12373,6 +12385,7 @@
           "example": "无",
           "member": "IpFreqLimit",
           "name": "IpFreqLimit",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12383,6 +12396,7 @@
           "example": "无",
           "member": "MaxAge",
           "name": "MaxAge",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12393,6 +12407,7 @@
           "example": "无",
           "member": "Origin",
           "name": "Origin",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12403,6 +12418,7 @@
           "example": "无",
           "member": "OriginPullOptimization",
           "name": "OriginPullOptimization",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12413,6 +12429,7 @@
           "example": "无",
           "member": "RangeOriginPull",
           "name": "RangeOriginPull",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12423,6 +12440,7 @@
           "example": "无",
           "member": "Referer",
           "name": "Referer",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12433,6 +12451,7 @@
           "example": "无",
           "member": "RequestHeader",
           "name": "RequestHeader",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12443,6 +12462,7 @@
           "example": "无",
           "member": "ResponseHeader",
           "name": "ResponseHeader",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12453,6 +12473,7 @@
           "example": "无",
           "member": "ResponseHeaderCache",
           "name": "ResponseHeaderCache",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12463,6 +12484,7 @@
           "example": "无",
           "member": "Seo",
           "name": "Seo",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12473,6 +12495,7 @@
           "example": "无",
           "member": "string",
           "name": "ServiceType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12483,6 +12506,7 @@
           "example": "无",
           "member": "StatusCodeCache",
           "name": "StatusCodeCache",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12493,6 +12517,7 @@
           "example": "无",
           "member": "VideoSeek",
           "name": "VideoSeek",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12503,6 +12528,7 @@
           "example": "无",
           "member": "AwsPrivateAccess",
           "name": "AwsPrivateAccess",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12513,6 +12539,7 @@
           "example": "无",
           "member": "OssPrivateAccess",
           "name": "OssPrivateAccess",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12523,6 +12550,7 @@
           "example": "无",
           "member": "HwPrivateAccess",
           "name": "HwPrivateAccess",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12533,6 +12561,7 @@
           "example": "无",
           "member": "QnPrivateAccess",
           "name": "QnPrivateAccess",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13280,7 +13309,7 @@
       "usage": "both"
     },
     "OverseaConfig": {
-      "document": "域名海外地区特殊配置。UpdateDomainConfig接口只支持修改部分分地区配置，为了兼容旧版本配置，本类型会列出旧版本所有可能存在差异的配置列表，支持修改的配置列表如下：\n+ Authentication\n+ BandwidthAlert\n+ ErrorPage\n+ IpFilter\n+ Origin\n+ Referer",
+      "document": "域名海外地区特殊配置。UpdateDomainConfig接口只支持修改部分地区配置，为了兼容旧版本配置，本类型会列出旧版本所有可能存在差异的配置列表，支持修改的配置列表如下：\n+ Authentication\n+ BandwidthAlert\n+ ErrorPage\n+ IpFilter\n+ Origin\n+ Referer",
       "members": [
         {
           "disabled": false,
@@ -13288,6 +13317,7 @@
           "example": "无",
           "member": "Authentication",
           "name": "Authentication",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13298,6 +13328,7 @@
           "example": "无",
           "member": "BandwidthAlert",
           "name": "BandwidthAlert",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13308,6 +13339,7 @@
           "example": "无",
           "member": "Cache",
           "name": "Cache",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13318,6 +13350,7 @@
           "example": "无",
           "member": "CacheKey",
           "name": "CacheKey",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13328,6 +13361,7 @@
           "example": "无",
           "member": "Compression",
           "name": "Compression",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13338,6 +13372,7 @@
           "example": "无",
           "member": "DownstreamCapping",
           "name": "DownstreamCapping",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13348,6 +13383,7 @@
           "example": "无",
           "member": "ErrorPage",
           "name": "ErrorPage",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13358,6 +13394,7 @@
           "example": "无",
           "member": "FollowRedirect",
           "name": "FollowRedirect",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13368,6 +13405,7 @@
           "example": "无",
           "member": "ForceRedirect",
           "name": "ForceRedirect",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13378,6 +13416,7 @@
           "example": "无",
           "member": "Https",
           "name": "Https",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13388,6 +13427,7 @@
           "example": "无",
           "member": "IpFilter",
           "name": "IpFilter",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13398,6 +13438,7 @@
           "example": "无",
           "member": "IpFreqLimit",
           "name": "IpFreqLimit",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13408,6 +13449,7 @@
           "example": "无",
           "member": "MaxAge",
           "name": "MaxAge",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13418,6 +13460,7 @@
           "example": "无",
           "member": "Origin",
           "name": "Origin",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13428,6 +13471,7 @@
           "example": "无",
           "member": "OriginPullOptimization",
           "name": "OriginPullOptimization",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13438,6 +13482,7 @@
           "example": "无",
           "member": "RangeOriginPull",
           "name": "RangeOriginPull",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13448,6 +13493,7 @@
           "example": "无",
           "member": "Referer",
           "name": "Referer",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13458,6 +13504,7 @@
           "example": "无",
           "member": "RequestHeader",
           "name": "RequestHeader",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13468,6 +13515,7 @@
           "example": "无",
           "member": "ResponseHeader",
           "name": "ResponseHeader",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13478,6 +13526,7 @@
           "example": "无",
           "member": "ResponseHeaderCache",
           "name": "ResponseHeaderCache",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13488,6 +13537,7 @@
           "example": "无",
           "member": "Seo",
           "name": "Seo",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13498,6 +13548,7 @@
           "example": "无",
           "member": "string",
           "name": "ServiceType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -13508,6 +13559,7 @@
           "example": "无",
           "member": "StatusCodeCache",
           "name": "StatusCodeCache",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13518,6 +13570,7 @@
           "example": "无",
           "member": "VideoSeek",
           "name": "VideoSeek",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13528,6 +13581,7 @@
           "example": "无",
           "member": "AwsPrivateAccess",
           "name": "AwsPrivateAccess",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13538,6 +13592,7 @@
           "example": "无",
           "member": "OssPrivateAccess",
           "name": "OssPrivateAccess",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13548,6 +13603,7 @@
           "example": "无",
           "member": "HwPrivateAccess",
           "name": "HwPrivateAccess",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13558,6 +13614,7 @@
           "example": "无",
           "member": "QnPrivateAccess",
           "name": "QnPrivateAccess",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -14376,56 +14433,56 @@
       "document": "Referer 黑白名单配置规则，针对特定资源生效",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则类型：\nall：所有文件生效\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效",
           "example": "all",
           "member": "string",
           "name": "RuleType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "RuleType 对应类型下的匹配内容：\nall 时填充 *\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test/\npath 时填充绝对路径，如 /xxx/test.html",
           "example": "*",
           "member": "string",
           "name": "RulePaths",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "referer 配置类型\nwhitelist：白名单\nblacklist：黑名单",
           "example": "whitelist",
           "member": "string",
           "name": "RefererType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "referer 内容列表列表",
+          "document": "referer 内容列表",
           "example": "qq.com",
           "member": "string",
           "name": "Referers",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否允许空 referer\n防盗链类型为白名单时，true表示允许空 referer，false表示不允许空 referer；\n防盗链类型为黑名单时，true表示拒绝空referer，false表示不拒绝空referer；",
           "example": "true",
           "member": "bool",
           "name": "AllowEmpty",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false
@@ -18176,62 +18233,62 @@
       "document": "违规 URL 详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "ID",
+          "example": "无",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "违规资源原始访问 URL",
+          "example": "无",
           "member": "string",
           "name": "RealUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照路径，用于控制台展示违规内容快照",
+          "example": "无",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "违规资源当前状态\nforbid：已封禁\nrelease：已解封\ndelay ： 延迟处理\nreject ：申诉驳回，状态仍为封禁态\ncomplain：申诉进行中",
+          "document": "违规资源当前状态\nforbid：已封禁\nrelease：已解封\ndelay ： 延迟处理\nreject ：申诉驳回，状态仍为封禁状态\ncomplain：申诉进行中",
+          "example": "无",
           "member": "string",
           "name": "UrlStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
+          "example": "无",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
+          "example": "无",
           "member": "datetime",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

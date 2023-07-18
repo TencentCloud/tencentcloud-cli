@@ -7,6 +7,27 @@
       "output": "CreateDataRepositoryTaskResponse",
       "status": "online"
     },
+    "DescribeClusterClientToken": {
+      "document": "查询GooseFS集群客户端凭证",
+      "input": "DescribeClusterClientTokenRequest",
+      "name": "查询GooseFS集群客户端凭证",
+      "output": "DescribeClusterClientTokenResponse",
+      "status": "online"
+    },
+    "DescribeClusterRoleToken": {
+      "document": "查询GooseFS集群角色凭证",
+      "input": "DescribeClusterRoleTokenRequest",
+      "name": "查询GooseFS集群角色凭证",
+      "output": "DescribeClusterRoleTokenResponse",
+      "status": "online"
+    },
+    "DescribeClusterRoles": {
+      "document": "查询GooseFS集群角色",
+      "input": "DescribeClusterRolesRequest",
+      "name": "查询GooseFS集群角色",
+      "output": "DescribeClusterRolesResponse",
+      "status": "online"
+    },
     "DescribeDataRepositoryTaskStatus": {
       "document": "获取数据流通任务实时状态，用作客户端控制",
       "input": "DescribeDataRepositoryTaskStatusRequest",
@@ -22,6 +43,68 @@
     "serviceShortName": "goosefs"
   },
   "objects": {
+    "ClientToken": {
+      "document": "查询Client Token",
+      "members": [
+        {
+          "disabled": false,
+          "document": "挂载点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/goosefs",
+          "member": "string",
+          "name": "LocalDirectory",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterRole": {
+      "document": "ClusterRole",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "角色名",
+          "example": "无",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目录列表",
+          "example": "无",
+          "member": "string",
+          "name": "DirectoryList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CreateDataRepositoryTaskRequest": {
       "document": "CreateDataRepositoryTask请求参数结构体",
       "members": [
@@ -112,6 +195,126 @@
       ],
       "type": "object"
     },
+    "DescribeClusterClientTokenRequest": {
+      "document": "DescribeClusterClientToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterClientTokenResponse": {
+      "document": "DescribeClusterClientToken返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户端凭证",
+          "example": "无",
+          "member": "ClientToken",
+          "name": "ClientTokens",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterRoleTokenRequest": {
+      "document": "DescribeClusterRoleToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色名",
+          "example": "无",
+          "member": "string",
+          "name": "RoleName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterRoleTokenResponse": {
+      "document": "DescribeClusterRoleToken返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色凭证",
+          "example": "无",
+          "member": "RoleToken",
+          "name": "RoleTokens",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterRolesRequest": {
+      "document": "DescribeClusterRoles请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterRolesResponse": {
+      "document": "DescribeClusterRoles返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群角色",
+          "example": "无",
+          "member": "ClusterRole",
+          "name": "ClusterRoles",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDataRepositoryTaskStatusRequest": {
       "document": "DescribeDataRepositoryTaskStatus请求参数结构体",
       "members": [
@@ -183,6 +386,32 @@
         }
       ],
       "type": "object"
+    },
+    "RoleToken": {
+      "document": "角色凭证",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色名",
+          "example": "无",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用于goosefs client/sdk等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Token",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

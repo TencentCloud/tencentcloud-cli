@@ -45,6 +45,7 @@ Output:
                 "SourceChannelName": "渠道1",
                 "Gender": 1,
                 "CreateTime": "2023-01-01 00:00:00",
+                "UpdateTime": "2023-01-01 00:00:00",
                 "LeadStatus": 101,
                 "LevelCode": "101",
                 "ImportAtTime": 1618322621,

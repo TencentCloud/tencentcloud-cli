@@ -150,7 +150,7 @@
     "CreatePrepareFlow": {
       "document": "创建快速发起流程\n适用场景：用户通过API 合同文件及签署信息，并可通过我们返回的URL在页面完成签署控件等信息的编辑与确认，快速发起合同.\n注：该接口文件的resourceId 是通过上传文件之后获取的。",
       "input": "CreatePrepareFlowRequest",
-      "name": "通过页面快速发起签署流程",
+      "name": "获取发起合同web页面",
       "output": "CreatePrepareFlowResponse",
       "status": "online"
     },
@@ -612,7 +612,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人查看合同时认证方式, \n1-实名查看 2-短信验证码查看(企业签署方不支持该方式)\n如果不传默认为1",
+          "document": "签署人查看合同时认证方式, \n1-实名查看 2-短信验证码查看(企业签署方不支持该方式)\n如果不传默认为1\n模板发起的时候,认证方式以模版配置为主",
           "example": "[1,2]",
           "member": "int64",
           "name": "ApproverVerifyTypes",
@@ -621,7 +621,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人签署合同时的认证方式\n1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)\n合同签署认证方式的优先级 verifyChannel>approverSignTypes",
+          "document": "签署人签署合同时的认证方式\n1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)\n合同签署认证方式的优先级 verifyChannel>approverSignTypes\n模板发起的时候,认证方式以模版配置为主",
           "example": "[1,2,3]",
           "member": "int64",
           "name": "ApproverSignTypes",
@@ -2616,6 +2616,15 @@
           "name": "Organization",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "签署完之后的H5页面的跳转链接，此链接支持http://和https://，最大长度1000个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "JumpUrl",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

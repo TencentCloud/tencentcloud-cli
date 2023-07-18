@@ -1313,24 +1313,22 @@
       "document": "扩展字段，对风险类型的说明",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "风险码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "string",
           "name": "RiskCode",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "风险码详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
           "name": "RiskCodeValue",
-          "required": false,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }

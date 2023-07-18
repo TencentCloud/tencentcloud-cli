@@ -1304,7 +1304,6 @@
       "document": "DescribeDomainSimpleInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "域名",
@@ -1325,7 +1324,7 @@
           "example": "无",
           "member": "DomainSimpleInfo",
           "name": "DomainInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1335,7 +1334,7 @@
           "example": "123456",
           "member": "string",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1993,7 +1992,7 @@
         {
           "default": "",
           "disabled": false,
-          "document": "域名状态。\nok：正常\nserverHold：注册局暂停解析 \nclientHold：注册商暂停解析\npendingTransfer：转移中\nrenewingPeriod：续费期\nredemptionPeriod：偿还期\npendingDelete：删除期\nserverTransferProhibited：注册局禁止转移\nserverUpdateProhibited：注册局禁止更新\nserverDeleteProhibited：注册局禁止删除\nclientTransferProhibited：注册商禁止转移\nclientUpdateProhibited：注册商禁止更新\nclientDeleteProhibited：注册商禁止删除",
+          "document": "域名状态。\nok：正常\nserverHold：注册局暂停解析 \nclientHold：注册商暂停解析\npendingTransfer：转移中\nrenewingPeriod：续费期\nredemptionPeriod：偿还期\npendingDelete：删除期\nserverTransferProhibited：注册局禁止转移\nserverUpdateProhibited：注册局禁止更新\nserverDeleteProhibited：注册局禁止删除\nclientTransferProhibited：注册商禁止转移\nclientUpdateProhibited：注册商禁止更新\nclientDeleteProhibited：注册商禁止删除\nserverRenewProhibited: 注册局禁止续费\nclientRenewProhobited: 注册商禁止续费",
           "example": "ok",
           "member": "string",
           "name": "DomainStatus",
@@ -2486,9 +2485,8 @@
       "document": "SetDomainAutoRenew请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "域名ID。",
+          "document": "域名ID 例如：domain-123abc",
           "example": "域名ID",
           "member": "string",
           "name": "DomainId",
@@ -2496,7 +2494,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "AutoRenew 有三个可选值：\n 0：不设置自动续费\n1：设置自动续费\n2：设置到期后不续费",
           "example": "1",

@@ -1416,14 +1416,6 @@
         "title": "查询定时检测配置信息"
       }
     ],
-    "DescribeSearchExportList": [
-      {
-        "document": "导出ES查询文档列表",
-        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeSearchExportList\n&Query={\\\"index\\\":[\\\"netflow\\\"],\\\"body\\\":{\\\"query\\\":{\\\"bool\\\":{\\\"filter\\\":{\\\"bool\\\":{\\\"filter\\\":{\\\"range\\\":{\\\"timestamp\\\":{\\\"gte\\\":1597075200000,\\\"lte\\\":1597161599999}}},\\\"must\\\":[],\\\"must_not\\\":[],\\\"should\\\":[]}}}},\\\"highlight\\\":{\\\"fields\\\":{\\\"*\\\":{}}}},\\\"sort\\\":[{\\\"timestamp\\\":\\\"desc\\\"}]}\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"www.xxxx.com\",\n        \"TaskId\": 10000,\n        \"RequestId\": \"e4ee7f6c-a036-43e7-b98f-96f174827fea\"\n    }\n}",
-        "title": "导出ES查询文档列表"
-      }
-    ],
     "DescribeSearchLogs": [
       {
         "document": "",

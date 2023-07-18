@@ -924,46 +924,42 @@
       "document": "备份文件下载信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "备份文件名称",
+          "document": "备份文件名称。",
           "example": "1.rdb",
           "member": "string",
           "name": "FileName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "备份文件大小，单位B，如果为0，表示无效",
+          "document": "备份文件大小，单位B，如果为0，表示无效。",
           "example": "1024",
-          "member": "uint64",
+          "member": "int64",
           "name": "FileSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "备份文件外网下载地址（6小时）",
+          "document": "备份文件外网下载地址。下载地址的有效时长为6小时，过期后请重新获取。",
           "example": "https://redis-database-backup-1251937656.cos.ap-chengdu.myqcl",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "备份文件内网下载地址（6小时）",
+          "document": "备份文件内网下载地址。下载地址的有效时长为6小时，过期后请重新获取。",
           "example": "https://redis-database-backup-1251937656.cos.ap-chengdu.myqcl",
           "member": "string",
           "name": "InnerDownloadUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

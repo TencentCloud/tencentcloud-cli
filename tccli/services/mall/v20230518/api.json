@@ -10,8 +10,8 @@
   },
   "metadata": {
     "apiVersion": "2023-05-18",
-    "api_brief": "商场客留通控制台服务",
-    "serviceNameCN": "商场客留通",
+    "api_brief": "商场客留大数据控制台服务",
+    "serviceNameCN": "商场客留大数据",
     "serviceShortName": "mall"
   },
   "objects": {

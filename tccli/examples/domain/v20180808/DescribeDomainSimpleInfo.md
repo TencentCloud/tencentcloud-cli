@@ -14,33 +14,35 @@ Output:
 {
     "Response": {
         "DomainInfo": {
-            "RegistrantType": "xx",
-            "DomainId": "xx",
-            "OrganizationName": "xx",
-            "DomainName": "xx",
-            "RegistrarType": "xx",
-            "RegistrantName": "xx",
-            "OrganizationNameCN": "xx",
-            "LockEndTime": "xx",
+            "RegistrantType": "E",
+            "DomainId": "domain-1234abcd",
+            "OrganizationName": "tencent cloud",
+            "ExpirationDate": "2018-08-08",
+            "DomainName": "cloud.tencent.com",
+            "RegistrarType": "qcloud",
+            "LockEndTime": "",
+            "OrganizationNameCN": "腾讯云",
+            "RegistrantName": "tencent",
             "DomainStatus": [
                 "ok"
             ],
-            "BuyStatus": "xx",
-            "RegistrantNameCN": "xx",
-            "RealNameAuditStatus": "xx",
-            "ExpirationDate": "xx",
-            "LockTransfer": true,
+            "BuyStatus": "ok",
+            "RegistrantNameCN": "腾讯云",
+            "RealNameAuditStatus": "Approved",
+            "DomainNameAuditStatus": "Approved",
+            "LockTransfer": false,
             "NameServer": [
-                "f1g1ns1.dnspod.net",
-                "f1g1ns2.dnspod.net"
+                "ns2.qq.com",
+                "ns4.qq.com",
+                "ns3.qq.com",
+                "ns1.qq.com"
             ],
-            "CreationDate": "xx",
-            "RealNameAuditUnpassReason": "xx",
-            "DomainNameAuditStatus": "xx",
-            "DomainNameAuditUnpassReason": "xx"
+            "CreationDate": "2018-08-08",
+            "RealNameAuditUnpassReason": "",
+            "DomainNameAuditUnpassReason": ""
         },
-        "RequestId": "xx",
-        "Uin": "xx"
+        "RequestId": "88888888-8888-8888-8888-888888888888",
+        "Uin": "100000000001"
     }
 }
 ```
