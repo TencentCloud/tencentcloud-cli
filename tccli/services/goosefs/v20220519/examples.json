@@ -12,7 +12,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterClientToken\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_0yz04uv3\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ClientTokens\": [\n            {\n                \"LocalDirectory\": \"/data\"\n            }\n        ],\n        \"RequestId\": \"9ecdc30f-4e06-4995-89b6-ffaf3a085a2e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ClientTokens\": [\n            {\n                \"NodeIp\": \"127.0.0.1\",\n                \"LocalDirectory\": \"/data\",\n                \"GooseFSDirectory\": \"/goosefs\",\n                \"Token\": \"MTY4ODQ2NTA1NF84MzM2X2E3ZWFmMDVmLWI0MzMtNGE2Yi1iOWU2LTZiZDY5OTYwNThiZQ==\"\n            }\n        ],\n        \"RequestId\": \"9ecdc30f-4e06-4995-89b6-ffaf3a085a2e\"\n    }\n}",
         "title": "查询GooseFS集群客户端凭证"
       }
     ],
@@ -27,7 +27,7 @@
     "DescribeClusterRoles": [
       {
         "document": "查询集群角色列表",
-        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterRoles\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterRoles\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"RoleName\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"ClusterRoles\": [\n            {\n                \"ClusterId\": \"abc\",\n                \"RoleName\": \"abc\",\n                \"Description\": \"abc\",\n                \"DirectoryList\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询集群角色列表"
       }

@@ -112,6 +112,14 @@
         "title": "测试获取云原生API网关节点列表"
       }
     ],
+    "DescribeCloudNativeAPIGatewayPorts": [
+      {
+        "document": "查询云原生网关端口协议列表",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayPorts\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx-xxx-xxx\",\n        \"Result\": {\n            \"GatewayId\": \"gateway-xxxxxx\",\n            \"GatewayInstancePortList\": [\n                {\n                    \"Scheme\": \"HTTP\",\n                    \"PortList\": [\n                        80\n                    ]\n                },\n                {\n                    \"Scheme\": \"HTTPS\",\n                    \"PortList\": [\n                        443\n                    ]\n                },\n                {\n                    \"Scheme\": \"TCP\",\n                    \"PortList\": [\n                        8001,\n                        8002\n                    ]\n                },\n                {\n                    \"Scheme\": \"UDP\",\n                    \"PortList\": [\n                        7001,\n                        7002\n                    ]\n                }\n            ]\n        }\n    }\n}",
+        "title": "查询云原生网关端口协议列表"
+      }
+    ],
     "DescribeCloudNativeAPIGatewayRouteRateLimit": [
       {
         "document": "展示云原生网关限流插件(路由)",

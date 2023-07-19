@@ -161,6 +161,13 @@
       "output": "GetBatchListResponse",
       "status": "online"
     },
+    "GetTreeNodeInfoByCodes": {
+      "document": "【有白名单限制，需要的童鞋，请联系neilqiao或zanderfang配置白名单 更多接入问题请看 http://tapd.oa.com/TC_CSIG_OM/markdown_wikis/view/#1020403412010282661】\n#### 响应参数说明\n|参数名称|数据类型|备注|\n|:--|:--:|:--:|\n| Codes |array string|节点code,支持批量,最大支持100, 支持聚合code和产业树code\n\n#### 返回参数说明参考\nhttp://tapd.woa.com/TC_CSIG_OM/markdown_wikis/show/#1220403412002308975",
+      "input": "GetTreeNodeInfoByCodesRequest",
+      "name": "获取产业树节点信息",
+      "output": "GetTreeNodeInfoByCodesResponse",
+      "status": "online"
+    },
     "ImportOfflineProduct": {
       "document": "导入线下产品，有白名单限制，需要的童鞋，请联系hansonwchen 或 joshuadu 配置白名单\n更多接入问题请看\nhttp://tapd.oa.com/pt_jifei/markdown_wikis/view/#1010140771008122957",
       "input": "ImportOfflineProductRequest",
@@ -2063,6 +2070,45 @@
       ],
       "type": "object"
     },
+    "GetTreeNodeInfoByCodesRequest": {
+      "document": "GetTreeNodeInfoByCodes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点code,支持批量,最大支持100, 支持聚合树codes和产业树codes",
+          "example": "[\"CA00001\",\"CC000049\"]\"]",
+          "member": "string",
+          "name": "Codes",
+          "required": true,
+          "type": "list",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "GetTreeNodeInfoByCodesResponse": {
+      "document": "GetTreeNodeInfoByCodes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NodeInfoList",
+          "name": "NodeInfoList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GoodsBaseInfoWithPriceAndMaterial": {
       "document": "线下产品/临时产品详细信息",
       "members": [
@@ -3294,6 +3340,100 @@
         }
       ],
       "type": "object"
+    },
+    "NodeInfoList": {
+      "document": "节点的基础信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点code\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CC000049",
+          "member": "string",
+          "name": "Code",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "中心id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1123,1101]",
+          "member": "int64",
+          "name": "CenterIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "部门id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1123,1101]",
+          "member": "int64",
+          "name": "DepartmentIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "节点层级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "Level",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "细类负责人,只有细类有值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[                     \"billxie\",                     \"yanzuwu\",                     \"yarkizhang\"                 ]",
+          "member": "string",
+          "name": "Managers",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"测试123\"",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "节点状态,1 生效 2失效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "节点版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Version",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
     },
     "SendOutsideEmailAndSmsRequest": {
       "document": "SendOutsideEmailAndSms请求参数结构体",

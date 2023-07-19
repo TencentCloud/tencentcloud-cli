@@ -1,131 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 借贷反欺诈(af) 版本：2020-02-26
+## 弹性伸缩(as) 版本：2018-04-19
 
-### 第 6 次发布
+### 第 27 次发布
 
-发布时间：2023-07-18 01:05:56
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [SimpleKindRiskDetail](http://document.tencentcloudapi.woa.com/document/product/668/44002#SimpleKindRiskDetail)
-
-	* <font color="#dd0000">**修改成员**：</font>RiskCode, RiskCodeValue
-
-
-
-
-## 定制建模(afc) 版本：2020-02-26
-
-### 第 4 次发布
-
-发布时间：2023-07-18 01:05:59
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [SimpleKindRiskDetail](http://document.tencentcloudapi.woa.com/document/product/1029/44018#SimpleKindRiskDetail)
-
-	* <font color="#dd0000">**修改成员**：</font>RiskCode, RiskCodeValue
-
-
-
-
-## 应用性能监控(apm) 版本：2021-06-22
-
-### 第 7 次发布
-
-发布时间：2023-07-18 01:07:28
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ModifyApmInstance](http://document.tencentcloudapi.woa.com/document/product/1463/77278)
-
-	* 新增入参：CustomShowTags
-
-
-修改数据结构：
-
-* [ApmInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1463/64927#ApmInstanceDetail)
-
-	* 新增成员：CustomShowTags
-
-
-
-
-## 语音识别(asr) 版本：2019-06-14
-
-### 第 15 次发布
-
-发布时间：2023-07-18 01:07:48
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [SentenceRecognition](http://document.tencentcloudapi.woa.com/document/product/1093/35646)
-
-	* 新增入参：InputSampleRate
-
-
-
-
-## 批量计算(batch) 版本：2017-03-12
-
-### 第 9 次发布
-
-发布时间：2023-07-18 01:08:06
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ItemPrice](http://document.tencentcloudapi.woa.com/document/product/599/15912#ItemPrice)
-
-	* <font color="#dd0000">**修改成员**：</font>UnitPrice, ChargeUnit, OriginalPrice, DiscountPrice, Discount, UnitPriceDiscount, UnitPriceSecondStep, UnitPriceDiscountSecondStep, UnitPriceThirdStep, UnitPriceDiscountThirdStep, OriginalPriceThreeYear, DiscountPriceThreeYear, DiscountThreeYear, OriginalPriceFiveYear, DiscountPriceFiveYear, DiscountFiveYear, OriginalPriceOneYear, DiscountPriceOneYear, DiscountOneYear
-
-
-
-
-## 应用管理平台(camp) 版本：2022-09-20
-
-### 第 4 次发布
-
-发布时间：2023-07-18 01:12:09
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Filter](http://document.tencentcloudapi.woa.com/document/product/1609/78009#Filter)
-
-	* 新增成员：Op
-
-
-
-
-## 消息队列 CKafka(ckafka) 版本：2019-08-19
-
-### 第 70 次发布
-
-发布时间：2023-07-18 01:15:47
+发布时间：2023-07-19 01:07:28
 
 本次发布包含了以下内容：
 
@@ -133,22 +12,22 @@
 
 新增数据结构：
 
-* [EsRecordMapping](http://document.tencentcloudapi.woa.com/document/product/597/40861#EsRecordMapping)
+* [RelatedInstance](http://document.tencentcloudapi.woa.com/document/product/377/20453#RelatedInstance)
 
 修改数据结构：
 
-* [EsParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#EsParam)
+* [Activity](http://document.tencentcloudapi.woa.com/document/product/377/20453#Activity)
 
-	* 新增成员：RecordMappingList, DateField
-
-
+	* 新增成员：RelatedInstanceSet
 
 
-## 云安全一体化平台(csip) 版本：2022-11-21
 
-### 第 2 次发布
 
-发布时间：2023-07-18 01:18:42
+## 批量计算(batch) 版本：2017-03-12
+
+### 第 10 次发布
+
+发布时间：2023-07-19 01:07:57
 
 本次发布包含了以下内容：
 
@@ -156,11 +35,183 @@
 
 修改数据结构：
 
-* [DomainAssetVO](http://document.tencentcloudapi.woa.com/document/product/1726/80814#DomainAssetVO)
+* [StorageBlock](http://document.tencentcloudapi.woa.com/document/product/599/15912#StorageBlock)
 
-	* 新增成员：ServiceRisk
+	* <font color="#dd0000">**修改成员**：</font>Type, MinSize, MaxSize
 
-	* <font color="#dd0000">**修改成员**：</font>AssetId, AssetName, AssetType, Region, WAFStatus, AssetCreateTime, AppId, Uin, NickName, IsCore, IsCloud, Attack, Access, Intercept, InBandwidth, OutBandwidth, InFlow, OutFlow, LastScanTime, PortRisk, VulnerabilityRisk, ConfigurationRisk, ScanTask, SubDomain, SeverIp, BotCount, WeakPassword, WebContentRisk, Tag, SourceType, MemberId, CCAttack, WebAttack
+
+
+
+## 访问管理(cam) 版本：2019-01-16
+
+### 第 21 次发布
+
+发布时间：2023-07-19 01:09:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetAccountSummary](http://document.tencentcloudapi.woa.com/document/product/598/58534)
+
+	* 新增出参：IdentityProviders
+
+
+
+
+## 磐石(clouddc) 版本：2018-08-30
+
+### 第 2 次发布
+
+发布时间：2023-07-19 01:15:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetTreeNodeInfoByCodes](http://document.tencentcloudapi.woa.com/document/product/1626/81246)
+
+新增数据结构：
+
+* [NodeInfoList](http://document.tencentcloudapi.woa.com/document/product/1626/78427#NodeInfoList)
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 30 次发布
+
+发布时间：2023-07-19 19:05:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckRechargeKafkaServer](http://document.tencentcloudapi.woa.com/document/product/614/81272)
+* [CreateDataTransform](http://document.tencentcloudapi.woa.com/document/product/614/72184)
+* [CreateKafkaRecharge](http://document.tencentcloudapi.woa.com/document/product/614/81271)
+* [CreateScheduledSql](http://document.tencentcloudapi.woa.com/document/product/614/81265)
+* [DeleteDataTransform](http://document.tencentcloudapi.woa.com/document/product/614/72183)
+* [DeleteKafkaRecharge](http://document.tencentcloudapi.woa.com/document/product/614/81270)
+* [DescribeAlertRecordHistory](http://document.tencentcloudapi.woa.com/document/product/614/81263)
+* [DescribeDataTransformInfo](http://document.tencentcloudapi.woa.com/document/product/614/72182)
+* [DescribeKafkaRecharges](http://document.tencentcloudapi.woa.com/document/product/614/81269)
+* [GetMetricLabelValues](http://document.tencentcloudapi.woa.com/document/product/614/81262)
+* [GetMetricSeries](http://document.tencentcloudapi.woa.com/document/product/614/81261)
+* [ModifyDataTransform](http://document.tencentcloudapi.woa.com/document/product/614/72181)
+* [ModifyKafkaRecharge](http://document.tencentcloudapi.woa.com/document/product/614/81268)
+* [PreviewKafkaRecharge](http://document.tencentcloudapi.woa.com/document/product/614/81267)
+* [QueryMetric](http://document.tencentcloudapi.woa.com/document/product/614/81260)
+* [QueryRangeMetric](http://document.tencentcloudapi.woa.com/document/product/614/81259)
+
+修改接口：
+
+* [CreateConfig](http://document.tencentcloudapi.woa.com/document/product/614/58620)
+
+	* 新增入参：AdvancedConfig
+
+* [CreateCosRecharge](http://document.tencentcloudapi.woa.com/document/product/614/77237)
+
+	* 新增出参：Id
+
+* [CreateMachineGroup](http://document.tencentcloudapi.woa.com/document/product/614/56440)
+
+	* 新增入参：MetaTags
+
+* [CreateShipper](http://document.tencentcloudapi.woa.com/document/product/614/58747)
+
+	* 新增入参：StartTime, EndTime
+
+* [CreateTopic](http://document.tencentcloudapi.woa.com/document/product/614/56456)
+
+	* 新增入参：HotPeriod, IsWebTracking
+
+* [DescribeLogHistogram](http://document.tencentcloudapi.woa.com/document/product/614/71726)
+
+	* 新增入参：SyntaxRule
+
+* [DescribeTopics](http://document.tencentcloudapi.woa.com/document/product/614/56454)
+
+	* 新增入参：PreciseSearch, BizType
+
+* [ModifyMachineGroup](http://document.tencentcloudapi.woa.com/document/product/614/56436)
+
+	* 新增入参：MetaTags
+
+* [ModifyTopic](http://document.tencentcloudapi.woa.com/document/product/614/56453)
+
+	* 新增入参：HotPeriod, IsWebTracking
+
+* [OpenKafkaConsumer](http://document.tencentcloudapi.woa.com/document/product/614/72339)
+
+	* 新增入参：ConsumerContent
+
+* [SearchLog](http://document.tencentcloudapi.woa.com/document/product/614/56447)
+
+	* 新增入参：SyntaxRule
+
+	* 新增出参：SamplingRate
+
+
+新增数据结构：
+
+* [AlertHistoryNotice](http://document.tencentcloudapi.woa.com/document/product/614/56471#AlertHistoryNotice)
+* [AlertHistoryRecord](http://document.tencentcloudapi.woa.com/document/product/614/56471#AlertHistoryRecord)
+* [DataTransformResouceInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#DataTransformResouceInfo)
+* [DataTransformTaskInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#DataTransformTaskInfo)
+* [DynamicIndex](http://document.tencentcloudapi.woa.com/document/product/614/56471#DynamicIndex)
+* [GroupTriggerConditionInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#GroupTriggerConditionInfo)
+* [KafkaConsumerContent](http://document.tencentcloudapi.woa.com/document/product/614/56471#KafkaConsumerContent)
+* [KafkaProtocolInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#KafkaProtocolInfo)
+* [KafkaRechargeInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#KafkaRechargeInfo)
+* [LogRechargeRuleInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#LogRechargeRuleInfo)
+* [MetaTagInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#MetaTagInfo)
+* [PreviewLogStatistic](http://document.tencentcloudapi.woa.com/document/product/614/56471#PreviewLogStatistic)
+* [ScheduledSqlResouceInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#ScheduledSqlResouceInfo)
+
+修改数据结构：
+
+* [AlarmTarget](http://document.tencentcloudapi.woa.com/document/product/614/56471#AlarmTarget)
+
+	* 新增成员：SyntaxRule
+
+* [ExtractRuleInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#ExtractRuleInfo)
+
+	* 新增成员：MetadataType, PathRegex, MetaTags
+
+* [JsonInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#JsonInfo)
+
+	* 新增成员：JsonType
+
+* [LogContextInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#LogContextInfo)
+
+	* 新增成员：RawLog, IndexStatus
+
+* [LogInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#LogInfo)
+
+	* 新增成员：RawLog, IndexStatus
+
+* [MachineGroupInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#MachineGroupInfo)
+
+	* 新增成员：MetaTags
+
+* [RuleInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#RuleInfo)
+
+	* 新增成员：DynamicIndex
+
+* [SearchLogErrors](http://document.tencentcloudapi.woa.com/document/product/614/56471#SearchLogErrors)
+
+	* 新增成员：ErrorCodeStr
+
+* [ShipperInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#ShipperInfo)
+
+	* 新增成员：StartTime, EndTime, Progress, RemainTime, HistoryStatus
 
 
 
@@ -171,9 +222,9 @@
 
 ## 云服务器(cvm) 版本：2017-03-12
 
-### 第 52 次发布
+### 第 53 次发布
 
-发布时间：2023-07-18 01:18:52
+发布时间：2023-07-19 01:17:23
 
 本次发布包含了以下内容：
 
@@ -181,18 +232,65 @@
 
 修改数据结构：
 
-* [ItemPrice](http://document.tencentcloudapi.woa.com/document/product/213/15753#ItemPrice)
+* [StorageBlock](http://document.tencentcloudapi.woa.com/document/product/213/15753#StorageBlock)
 
-	* <font color="#dd0000">**修改成员**：</font>UnitPrice, ChargeUnit, OriginalPrice, DiscountPrice, Discount, UnitPriceDiscount, UnitPriceSecondStep, UnitPriceDiscountSecondStep, UnitPriceThirdStep, UnitPriceDiscountThirdStep, OriginalPriceThreeYear, DiscountPriceThreeYear, DiscountThreeYear, OriginalPriceFiveYear, DiscountPriceFiveYear, DiscountFiveYear, OriginalPriceOneYear, DiscountPriceOneYear, DiscountOneYear
-
-
+	* <font color="#dd0000">**修改成员**：</font>Type, MinSize, MaxSize
 
 
-## 主机安全(cwp) 版本：2018-02-28
 
-### 第 68 次发布
 
-发布时间：2023-07-18 01:19:33
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 9 次发布
+
+发布时间：2023-07-19 01:24:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateReleaseFlow](http://document.tencentcloudapi.woa.com/document/product/1668/79336)
+
+	* 新增入参：Agent
+
+
+
+
+## 数据加速器 GooseFS(goosefs) 版本：2022-05-19
+
+### 第 3 次发布
+
+发布时间：2023-07-19 01:26:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeClusterRoles](http://document.tencentcloudapi.woa.com/document/product/1716/81238)
+
+	* 新增入参：RoleName
+
+
+修改数据结构：
+
+* [ClientToken](http://document.tencentcloudapi.woa.com/document/product/1716/81241#ClientToken)
+
+	* 新增成员：NodeIp, GooseFSDirectory, Token
+
+	* <font color="#dd0000">**修改成员**：</font>LocalDirectory
+
+
+
+
+## 加速物联网套件(iot) 版本：2018-01-23
+
+### 第 3 次发布
+
+发布时间：2023-07-19 01:27:38
 
 本次发布包含了以下内容：
 
@@ -200,34 +298,15 @@
 
 <font color="#dd0000">**删除接口**：</font>
 
-* DescribeSearchExportList
+* UnassociateSubDeviceFromGatewayProduct
 
 
 
-## 数据湖计算 DLC(dlc) 版本：2021-01-25
+## 云数据库 KeeWiDB(keewidb) 版本：2022-03-08
 
-### 第 61 次发布
+### 第 2 次发布
 
-发布时间：2023-07-18 01:22:52
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [TaskResponseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TaskResponseInfo)
-
-	* <font color="#dd0000">**修改成员**：</font>DriverSize, ExecutorSize, ExecutorNums, ExecutorMaxNumbers, CommonMetrics, SparkMonitorMetrics, PrestoMonitorMetrics
-
-
-
-
-## 腾讯电子签企业版(ess) 版本：2020-11-11
-
-### 第 8 次发布
-
-发布时间：2023-07-18 01:26:23
+发布时间：2023-07-19 01:29:47
 
 本次发布包含了以下内容：
 
@@ -235,41 +314,39 @@
 
 修改接口：
 
-* [CreateFlowSignUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79348)
+* [CreateInstances](http://document.tencentcloudapi.woa.com/document/product/1712/80432)
 
-	* 新增入参：JumpUrl
+	* 新增入参：Compression
+
+	* <font color="#dd0000">**修改入参**：</font>MachineCpu
 
 
 
 
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
 
-### 第 70 次发布
+### 第 34 次发布
 
-发布时间：2023-07-18 01:26:42
+发布时间：2023-07-19 01:30:30
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+修改数据结构：
 
-* [ChannelCreateFlowSignUrl](http://document.tencentcloudapi.woa.com/document/product/1595/76965)
+* [DockerContainerConfiguration](http://document.tencentcloudapi.woa.com/document/product/1207/47576#DockerContainerConfiguration)
 
-	* 新增入参：JumpUrl
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+	* 新增成员：RestartPolicy
 
 
 
-## 数据加速器 GooseFS(goosefs) 版本：2022-05-19
 
-### 第 2 次发布
+## 微服务引擎 TSE(tse) 版本：2020-12-07
 
-发布时间：2023-07-18 01:28:05
+### 第 27 次发布
+
+发布时间：2023-07-19 01:45:34
 
 本次发布包含了以下内容：
 
@@ -277,168 +354,48 @@
 
 新增接口：
 
-* [DescribeClusterClientToken](http://document.tencentcloudapi.woa.com/document/product/1716/81240)
-* [DescribeClusterRoleToken](http://document.tencentcloudapi.woa.com/document/product/1716/81239)
-* [DescribeClusterRoles](http://document.tencentcloudapi.woa.com/document/product/1716/81238)
+* [DescribeCloudNativeAPIGatewayPorts](http://document.tencentcloudapi.woa.com/document/product/1364/81247)
 
 新增数据结构：
 
-* [ClientToken](http://document.tencentcloudapi.woa.com/document/product/1716/81241#ClientToken)
-* [ClusterRole](http://document.tencentcloudapi.woa.com/document/product/1716/81241#ClusterRole)
-* [RoleToken](http://document.tencentcloudapi.woa.com/document/product/1716/81241#RoleToken)
+* [DescribeGatewayInstancePortResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#DescribeGatewayInstancePortResult)
+* [GatewayInstanceSchemeAndPorts](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GatewayInstanceSchemeAndPorts)
 
 
 
-## 保险反欺诈(iaf) 版本：2020-02-26
-
-### 第 2 次发布
-
-发布时间：2023-07-18 01:28:26
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [InsuranceRiskRecord](http://document.tencentcloudapi.woa.com/document/product/1651/78681#InsuranceRiskRecord)
-
-	* <font color="#dd0000">**修改成员**：</font>RiskInfo
-
-* [SimpleKindRiskDetail](http://document.tencentcloudapi.woa.com/document/product/1651/78681#SimpleKindRiskDetail)
-
-	* <font color="#dd0000">**修改成员**：</font>RiskCode, RiskCodeValue
-
-
-
-
-## 官网(portal) 版本：2023-04-13
-
-### 第 2 次发布
-
-发布时间：2023-07-18 01:36:10
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeDocumentList](http://document.tencentcloudapi.woa.com/document/product/1732/81243)
-
-新增数据结构：
-
-* [DocumentItem](http://document.tencentcloudapi.woa.com/document/product/1732/80923#DocumentItem)
-
-
-
-## 云数据库Redis(redis) 版本：2018-04-12
-
-### 第 33 次发布
-
-发布时间：2023-07-18 01:37:02
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [BackupDownloadInfo](http://document.tencentcloudapi.woa.com/document/product/239/20022#BackupDownloadInfo)
-
-	* <font color="#dd0000">**修改成员**：</font>FileSize
-
-
-
-
-## 服务管理平台(smp) 版本：2023-06-02
-
-### 第 3 次发布
-
-发布时间：2023-07-18 01:38:25
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [ConsumptionBill](http://document.tencentcloudapi.woa.com/document/product/1736/80965#ConsumptionBill)
-* [DeviceDealInfo](http://document.tencentcloudapi.woa.com/document/product/1736/80965#DeviceDealInfo)
-* [OrderData](http://document.tencentcloudapi.woa.com/document/product/1736/80965#OrderData)
-
-修改数据结构：
-
-* [Resources](http://document.tencentcloudapi.woa.com/document/product/1736/80965#Resources)
-
-	* 新增成员：ConsumptionBill, DeviceDealInfo
-
-
-
-
-## 远程实时操控(trro) 版本：2022-03-25
-
-### 第 2 次发布
-
-发布时间：2023-07-18 01:46:56
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [SessionDeviceDetail](http://document.tencentcloudapi.woa.com/document/product/1714/80497#SessionDeviceDetail)
-
-	* 新增成员：Ver, SdkMode, DecodeCost, RenderConst, K100, K150, NACK, BitRateEstimate, Width, Height, EncodeCost, CaptureCost
-
-
-
-
-## 声音复刻(vrs) 版本：2020-08-24
-
-### 第 2 次发布
-
-发布时间：2023-07-18 01:50:48
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CancelVRSTask](http://document.tencentcloudapi.woa.com/document/product/1664/81245)
-* [DownloadVRSModel](http://document.tencentcloudapi.woa.com/document/product/1664/81244)
-
-修改接口：
-
-* [CreateVRSTask](http://document.tencentcloudapi.woa.com/document/product/1664/79151)
-
-	* 新增入参：ModelType
-
-
-新增数据结构：
-
-* [CancelVRSTaskRsp](http://document.tencentcloudapi.woa.com/document/product/1664/79152#CancelVRSTaskRsp)
-* [DownloadVRSModelRsp](http://document.tencentcloudapi.woa.com/document/product/1664/79152#DownloadVRSModelRsp)
-
-
-
-## 企业微信汽车行业版(wav) 版本：2021-01-29
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
 
 ### 第 12 次发布
 
-发布时间：2023-07-18 01:51:17
+发布时间：2023-07-19 01:49:25
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+新增接口：
+
+* [BatchDeleteTasksDs](http://document.tencentcloudapi.woa.com/document/product/1607/81258)
+* [DeleteFilePath](http://document.tencentcloudapi.woa.com/document/product/1607/81251)
+* [DeleteProjectParamDs](http://document.tencentcloudapi.woa.com/document/product/1607/81250)
+* [DeleteResourceFiles](http://document.tencentcloudapi.woa.com/document/product/1607/81253)
+* [DeleteTaskDs](http://document.tencentcloudapi.woa.com/document/product/1607/81249)
+* [RemoveWorkflowDs](http://document.tencentcloudapi.woa.com/document/product/1607/81248)
+* [SubmitSqlTask](http://document.tencentcloudapi.woa.com/document/product/1607/81257)
+* [SubmitTaskTestRun](http://document.tencentcloudapi.woa.com/document/product/1607/81255)
+
+新增数据结构：
+
+* [AdhocDetail](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AdhocDetail)
+* [AdhocRecord](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AdhocRecord)
+* [StageCloudApiRequest](http://document.tencentcloudapi.woa.com/document/product/1607/77747#StageCloudApiRequest)
+* [UserFileInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#UserFileInfo)
+
 修改数据结构：
 
-* [ClueInfoDetail](http://document.tencentcloudapi.woa.com/document/product/1318/56791#ClueInfoDetail)
+* [TaskCanvasInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TaskCanvasInfo)
 
-	* 新增成员：UpdateTime
+	* 新增成员：UserId, OwnerId, TenantId
 
 
 
@@ -3708,6 +3665,25 @@
 
 ## 弹性伸缩(as) 版本：2018-04-19
 
+### 第 27 次发布
+
+发布时间：2023-07-19 01:07:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[RelatedInstance](http://document.tencentcloudapi.woa.com/document/product/377/20453#RelatedInstance)](http://document.tencentcloudapi.woa.com/document/product/377/20453#[RelatedInstance](http://document.tencentcloudapi.woa.com/document/product/377/20453#RelatedInstance))
+
+修改数据结构：
+
+* [Activity](http://document.tencentcloudapi.woa.com/document/product/377/20453#Activity)
+
+	* 新增成员：RelatedInstanceSet
+
+
 ### 第 26 次发布
 
 发布时间：2023-06-15 01:07:18
@@ -4640,6 +4616,21 @@
 
 
 ## 批量计算(batch) 版本：2017-03-12
+
+### 第 10 次发布
+
+发布时间：2023-07-19 01:07:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [StorageBlock](http://document.tencentcloudapi.woa.com/document/product/599/15912#StorageBlock)
+
+	* <font color="#dd0000">**修改成员**：</font>Type, MinSize, MaxSize
+
 
 ### 第 9 次发布
 
@@ -6300,6 +6291,21 @@
 
 
 ## 访问管理(cam) 版本：2019-01-16
+
+### 第 21 次发布
+
+发布时间：2023-07-19 01:09:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetAccountSummary](http://document.tencentcloudapi.woa.com/document/product/598/58534)
+
+	* 新增出参：IdentityProviders
+
 
 ### 第 20 次发布
 
@@ -13416,7 +13422,7 @@
 
 新增数据结构：
 
-* [[EsRecordMapping](http://document.tencentcloudapi.woa.com/document/product/597/40861#EsRecordMapping)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[EsRecordMapping](http://document.tencentcloudapi.woa.com/document/product/597/40861#EsRecordMapping))
+* [EsRecordMapping](http://document.tencentcloudapi.woa.com/document/product/597/40861#EsRecordMapping)
 
 修改数据结构：
 
@@ -16091,6 +16097,22 @@
 
 ## 磐石(clouddc) 版本：2018-08-30
 
+### 第 2 次发布
+
+发布时间：2023-07-19 01:15:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[GetTreeNodeInfoByCodes](http://document.tencentcloudapi.woa.com/document/product/1626/81246)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[NodeInfoList](http://document.tencentcloudapi.woa.com/document/product/1626/78427#NodeInfoList)](http://document.tencentcloudapi.woa.com/document/product/1626/78427#[NodeInfoList](http://document.tencentcloudapi.woa.com/document/product/1626/78427#NodeInfoList))
+
 ### 第 1 次发布
 
 发布时间：2023-06-27 19:47:09
@@ -16337,6 +16359,137 @@
 
 
 ## 日志服务(cls) 版本：2020-10-16
+
+### 第 30 次发布
+
+发布时间：2023-07-19 19:05:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CheckRechargeKafkaServer](http://document.tencentcloudapi.woa.com/document/product/614/81272)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreateDataTransform](http://document.tencentcloudapi.woa.com/document/product/614/72184)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreateKafkaRecharge](http://document.tencentcloudapi.woa.com/document/product/614/81271)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreateScheduledSql](http://document.tencentcloudapi.woa.com/document/product/614/81265)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteDataTransform](http://document.tencentcloudapi.woa.com/document/product/614/72183)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteKafkaRecharge](http://document.tencentcloudapi.woa.com/document/product/614/81270)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeAlertRecordHistory](http://document.tencentcloudapi.woa.com/document/product/614/81263)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeDataTransformInfo](http://document.tencentcloudapi.woa.com/document/product/614/72182)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeKafkaRecharges](http://document.tencentcloudapi.woa.com/document/product/614/81269)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[GetMetricLabelValues](http://document.tencentcloudapi.woa.com/document/product/614/81262)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[GetMetricSeries](http://document.tencentcloudapi.woa.com/document/product/614/81261)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyDataTransform](http://document.tencentcloudapi.woa.com/document/product/614/72181)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyKafkaRecharge](http://document.tencentcloudapi.woa.com/document/product/614/81268)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[PreviewKafkaRecharge](http://document.tencentcloudapi.woa.com/document/product/614/81267)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[QueryMetric](http://document.tencentcloudapi.woa.com/document/product/614/81260)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[QueryRangeMetric](http://document.tencentcloudapi.woa.com/document/product/614/81259)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改接口：
+
+* [CreateConfig](http://document.tencentcloudapi.woa.com/document/product/614/58620)
+
+	* 新增入参：AdvancedConfig
+
+* [CreateCosRecharge](http://document.tencentcloudapi.woa.com/document/product/614/77237)
+
+	* 新增出参：Id
+
+* [CreateMachineGroup](http://document.tencentcloudapi.woa.com/document/product/614/56440)
+
+	* 新增入参：MetaTags
+
+* [CreateShipper](http://document.tencentcloudapi.woa.com/document/product/614/58747)
+
+	* 新增入参：StartTime, EndTime
+
+* [CreateTopic](http://document.tencentcloudapi.woa.com/document/product/614/56456)
+
+	* 新增入参：HotPeriod, IsWebTracking
+
+* [DescribeLogHistogram](http://document.tencentcloudapi.woa.com/document/product/614/71726)
+
+	* 新增入参：SyntaxRule
+
+* [DescribeTopics](http://document.tencentcloudapi.woa.com/document/product/614/56454)
+
+	* 新增入参：PreciseSearch, BizType
+
+* [ModifyMachineGroup](http://document.tencentcloudapi.woa.com/document/product/614/56436)
+
+	* 新增入参：MetaTags
+
+* [ModifyTopic](http://document.tencentcloudapi.woa.com/document/product/614/56453)
+
+	* 新增入参：HotPeriod, IsWebTracking
+
+* [OpenKafkaConsumer](http://document.tencentcloudapi.woa.com/document/product/614/72339)
+
+	* 新增入参：ConsumerContent
+
+* [SearchLog](http://document.tencentcloudapi.woa.com/document/product/614/56447)
+
+	* 新增入参：SyntaxRule
+
+	* 新增出参：SamplingRate
+
+
+新增数据结构：
+
+* [[AlertHistoryNotice](http://document.tencentcloudapi.woa.com/document/product/614/56471#AlertHistoryNotice)](http://document.tencentcloudapi.woa.com/document/product/614/56471#[AlertHistoryNotice](http://document.tencentcloudapi.woa.com/document/product/614/56471#AlertHistoryNotice))
+* [[AlertHistoryRecord](http://document.tencentcloudapi.woa.com/document/product/614/56471#AlertHistoryRecord)](http://document.tencentcloudapi.woa.com/document/product/614/56471#[AlertHistoryRecord](http://document.tencentcloudapi.woa.com/document/product/614/56471#AlertHistoryRecord))
+* [[DataTransformResouceInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#DataTransformResouceInfo)](http://document.tencentcloudapi.woa.com/document/product/614/56471#[DataTransformResouceInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#DataTransformResouceInfo))
+* [[DataTransformTaskInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#DataTransformTaskInfo)](http://document.tencentcloudapi.woa.com/document/product/614/56471#[DataTransformTaskInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#DataTransformTaskInfo))
+* [[DynamicIndex](http://document.tencentcloudapi.woa.com/document/product/614/56471#DynamicIndex)](http://document.tencentcloudapi.woa.com/document/product/614/56471#[DynamicIndex](http://document.tencentcloudapi.woa.com/document/product/614/56471#DynamicIndex))
+* [[GroupTriggerConditionInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#GroupTriggerConditionInfo)](http://document.tencentcloudapi.woa.com/document/product/614/56471#[GroupTriggerConditionInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#GroupTriggerConditionInfo))
+* [[KafkaConsumerContent](http://document.tencentcloudapi.woa.com/document/product/614/56471#KafkaConsumerContent)](http://document.tencentcloudapi.woa.com/document/product/614/56471#[KafkaConsumerContent](http://document.tencentcloudapi.woa.com/document/product/614/56471#KafkaConsumerContent))
+* [[KafkaProtocolInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#KafkaProtocolInfo)](http://document.tencentcloudapi.woa.com/document/product/614/56471#[KafkaProtocolInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#KafkaProtocolInfo))
+* [[KafkaRechargeInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#KafkaRechargeInfo)](http://document.tencentcloudapi.woa.com/document/product/614/56471#[KafkaRechargeInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#KafkaRechargeInfo))
+* [[LogRechargeRuleInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#LogRechargeRuleInfo)](http://document.tencentcloudapi.woa.com/document/product/614/56471#[LogRechargeRuleInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#LogRechargeRuleInfo))
+* [[MetaTagInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#MetaTagInfo)](http://document.tencentcloudapi.woa.com/document/product/614/56471#[MetaTagInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#MetaTagInfo))
+* [[PreviewLogStatistic](http://document.tencentcloudapi.woa.com/document/product/614/56471#PreviewLogStatistic)](http://document.tencentcloudapi.woa.com/document/product/614/56471#[PreviewLogStatistic](http://document.tencentcloudapi.woa.com/document/product/614/56471#PreviewLogStatistic))
+* [[ScheduledSqlResouceInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#ScheduledSqlResouceInfo)](http://document.tencentcloudapi.woa.com/document/product/614/56471#[ScheduledSqlResouceInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#ScheduledSqlResouceInfo))
+
+修改数据结构：
+
+* [AlarmTarget](http://document.tencentcloudapi.woa.com/document/product/614/56471#AlarmTarget)
+
+	* 新增成员：SyntaxRule
+
+* [ExtractRuleInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#ExtractRuleInfo)
+
+	* 新增成员：MetadataType, PathRegex, MetaTags
+
+* [JsonInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#JsonInfo)
+
+	* 新增成员：JsonType
+
+* [LogContextInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#LogContextInfo)
+
+	* 新增成员：RawLog, IndexStatus
+
+* [LogInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#LogInfo)
+
+	* 新增成员：RawLog, IndexStatus
+
+* [MachineGroupInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#MachineGroupInfo)
+
+	* 新增成员：MetaTags
+
+* [RuleInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#RuleInfo)
+
+	* 新增成员：DynamicIndex
+
+* [SearchLogErrors](http://document.tencentcloudapi.woa.com/document/product/614/56471#SearchLogErrors)
+
+	* 新增成员：ErrorCodeStr
+
+* [ShipperInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#ShipperInfo)
+
+	* 新增成员：StartTime, EndTime, Progress, RemainTime, HistoryStatus
+
 
 ### 第 29 次发布
 
@@ -19420,6 +19573,21 @@
 
 
 ## 云服务器(cvm) 版本：2017-03-12
+
+### 第 53 次发布
+
+发布时间：2023-07-19 01:17:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [StorageBlock](http://document.tencentcloudapi.woa.com/document/product/213/15753#StorageBlock)
+
+	* <font color="#dd0000">**修改成员**：</font>Type, MinSize, MaxSize
+
 
 ### 第 52 次发布
 
@@ -31022,6 +31190,21 @@
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
 
+### 第 9 次发布
+
+发布时间：2023-07-19 01:24:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateReleaseFlow](http://document.tencentcloudapi.woa.com/document/product/1668/79336)
+
+	* 新增入参：Agent
+
+
 ### 第 8 次发布
 
 发布时间：2023-07-18 01:26:23
@@ -34693,6 +34876,30 @@
 
 ## 数据加速器 GooseFS(goosefs) 版本：2022-05-19
 
+### 第 3 次发布
+
+发布时间：2023-07-19 01:26:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeClusterRoles](http://document.tencentcloudapi.woa.com/document/product/1716/81238)
+
+	* 新增入参：RoleName
+
+
+修改数据结构：
+
+* [ClientToken](http://document.tencentcloudapi.woa.com/document/product/1716/81241#ClientToken)
+
+	* 新增成员：NodeIp, GooseFSDirectory, Token
+
+	* <font color="#dd0000">**修改成员**：</font>LocalDirectory
+
+
 ### 第 2 次发布
 
 发布时间：2023-07-18 01:28:05
@@ -34703,15 +34910,15 @@
 
 新增接口：
 
-* [[DescribeClusterClientToken](http://document.tencentcloudapi.woa.com/document/product/1716/81240)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeClusterRoleToken](http://document.tencentcloudapi.woa.com/document/product/1716/81239)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeClusterRoles](http://document.tencentcloudapi.woa.com/document/product/1716/81238)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeClusterClientToken](http://document.tencentcloudapi.woa.com/document/product/1716/81240)
+* [DescribeClusterRoleToken](http://document.tencentcloudapi.woa.com/document/product/1716/81239)
+* [DescribeClusterRoles](http://document.tencentcloudapi.woa.com/document/product/1716/81238)
 
 新增数据结构：
 
-* [[ClientToken](http://document.tencentcloudapi.woa.com/document/product/1716/81241#ClientToken)](http://document.tencentcloudapi.woa.com/document/product/1716/81241#[ClientToken](http://document.tencentcloudapi.woa.com/document/product/1716/81241#ClientToken))
-* [[ClusterRole](http://document.tencentcloudapi.woa.com/document/product/1716/81241#ClusterRole)](http://document.tencentcloudapi.woa.com/document/product/1716/81241#[ClusterRole](http://document.tencentcloudapi.woa.com/document/product/1716/81241#ClusterRole))
-* [[RoleToken](http://document.tencentcloudapi.woa.com/document/product/1716/81241#RoleToken)](http://document.tencentcloudapi.woa.com/document/product/1716/81241#[RoleToken](http://document.tencentcloudapi.woa.com/document/product/1716/81241#RoleToken))
+* [ClientToken](http://document.tencentcloudapi.woa.com/document/product/1716/81241#ClientToken)
+* [ClusterRole](http://document.tencentcloudapi.woa.com/document/product/1716/81241#ClusterRole)
+* [RoleToken](http://document.tencentcloudapi.woa.com/document/product/1716/81241#RoleToken)
 
 ### 第 1 次发布
 
@@ -36171,6 +36378,18 @@
 
 
 ## 加速物联网套件(iot) 版本：2018-01-23
+
+### 第 3 次发布
+
+发布时间：2023-07-19 01:27:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* UnassociateSubDeviceFromGatewayProduct
 
 ### 第 2 次发布
 
@@ -38218,6 +38437,23 @@
 
 ## 云数据库 KeeWiDB(keewidb) 版本：2022-03-08
 
+### 第 2 次发布
+
+发布时间：2023-07-19 01:29:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstances](http://document.tencentcloudapi.woa.com/document/product/1712/80432)
+
+	* 新增入参：Compression
+
+	* <font color="#dd0000">**修改入参**：</font>MachineCpu
+
+
 ### 第 1 次发布
 
 发布时间：2023-06-27 20:22:34
@@ -38661,6 +38897,21 @@
 
 
 ## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 34 次发布
+
+发布时间：2023-07-19 01:30:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DockerContainerConfiguration](http://document.tencentcloudapi.woa.com/document/product/1207/47576#DockerContainerConfiguration)
+
+	* 新增成员：RestartPolicy
+
 
 ### 第 33 次发布
 
@@ -48024,11 +48275,11 @@
 
 新增接口：
 
-* [[DescribeDocumentList](http://document.tencentcloudapi.woa.com/document/product/1732/81243)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeDocumentList](http://document.tencentcloudapi.woa.com/document/product/1732/81243)
 
 新增数据结构：
 
-* [[DocumentItem](http://document.tencentcloudapi.woa.com/document/product/1732/80923#DocumentItem)](http://document.tencentcloudapi.woa.com/document/product/1732/80923#[DocumentItem](http://document.tencentcloudapi.woa.com/document/product/1732/80923#DocumentItem))
+* [DocumentItem](http://document.tencentcloudapi.woa.com/document/product/1732/80923#DocumentItem)
 
 ### 第 1 次发布
 
@@ -51933,9 +52184,9 @@
 
 新增数据结构：
 
-* [[ConsumptionBill](http://document.tencentcloudapi.woa.com/document/product/1736/80965#ConsumptionBill)](http://document.tencentcloudapi.woa.com/document/product/1736/80965#[ConsumptionBill](http://document.tencentcloudapi.woa.com/document/product/1736/80965#ConsumptionBill))
-* [[DeviceDealInfo](http://document.tencentcloudapi.woa.com/document/product/1736/80965#DeviceDealInfo)](http://document.tencentcloudapi.woa.com/document/product/1736/80965#[DeviceDealInfo](http://document.tencentcloudapi.woa.com/document/product/1736/80965#DeviceDealInfo))
-* [[OrderData](http://document.tencentcloudapi.woa.com/document/product/1736/80965#OrderData)](http://document.tencentcloudapi.woa.com/document/product/1736/80965#[OrderData](http://document.tencentcloudapi.woa.com/document/product/1736/80965#OrderData))
+* [ConsumptionBill](http://document.tencentcloudapi.woa.com/document/product/1736/80965#ConsumptionBill)
+* [DeviceDealInfo](http://document.tencentcloudapi.woa.com/document/product/1736/80965#DeviceDealInfo)
+* [OrderData](http://document.tencentcloudapi.woa.com/document/product/1736/80965#OrderData)
 
 修改数据结构：
 
@@ -65218,6 +65469,23 @@
 
 ## 微服务引擎 TSE(tse) 版本：2020-12-07
 
+### 第 27 次发布
+
+发布时间：2023-07-19 01:45:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeCloudNativeAPIGatewayPorts](http://document.tencentcloudapi.woa.com/document/product/1364/81247)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[DescribeGatewayInstancePortResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#DescribeGatewayInstancePortResult)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[DescribeGatewayInstancePortResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#DescribeGatewayInstancePortResult))
+* [[GatewayInstanceSchemeAndPorts](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GatewayInstanceSchemeAndPorts)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[GatewayInstanceSchemeAndPorts](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GatewayInstanceSchemeAndPorts))
+
 ### 第 26 次发布
 
 发布时间：2023-07-10 01:48:12
@@ -72497,8 +72765,8 @@
 
 新增接口：
 
-* [[CancelVRSTask](http://document.tencentcloudapi.woa.com/document/product/1664/81245)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DownloadVRSModel](http://document.tencentcloudapi.woa.com/document/product/1664/81244)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CancelVRSTask](http://document.tencentcloudapi.woa.com/document/product/1664/81245)
+* [DownloadVRSModel](http://document.tencentcloudapi.woa.com/document/product/1664/81244)
 
 修改接口：
 
@@ -72509,8 +72777,8 @@
 
 新增数据结构：
 
-* [[CancelVRSTaskRsp](http://document.tencentcloudapi.woa.com/document/product/1664/79152#CancelVRSTaskRsp)](http://document.tencentcloudapi.woa.com/document/product/1664/79152#[CancelVRSTaskRsp](http://document.tencentcloudapi.woa.com/document/product/1664/79152#CancelVRSTaskRsp))
-* [[DownloadVRSModelRsp](http://document.tencentcloudapi.woa.com/document/product/1664/79152#DownloadVRSModelRsp)](http://document.tencentcloudapi.woa.com/document/product/1664/79152#[DownloadVRSModelRsp](http://document.tencentcloudapi.woa.com/document/product/1664/79152#DownloadVRSModelRsp))
+* [CancelVRSTaskRsp](http://document.tencentcloudapi.woa.com/document/product/1664/79152#CancelVRSTaskRsp)
+* [DownloadVRSModelRsp](http://document.tencentcloudapi.woa.com/document/product/1664/79152#DownloadVRSModelRsp)
 
 ### 第 1 次发布
 
@@ -73647,6 +73915,39 @@
 
 
 ## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 12 次发布
+
+发布时间：2023-07-19 01:49:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[BatchDeleteTasksDs](http://document.tencentcloudapi.woa.com/document/product/1607/81258)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteFilePath](http://document.tencentcloudapi.woa.com/document/product/1607/81251)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteProjectParamDs](http://document.tencentcloudapi.woa.com/document/product/1607/81250)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteResourceFiles](http://document.tencentcloudapi.woa.com/document/product/1607/81253)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteTaskDs](http://document.tencentcloudapi.woa.com/document/product/1607/81249)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[RemoveWorkflowDs](http://document.tencentcloudapi.woa.com/document/product/1607/81248)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[SubmitSqlTask](http://document.tencentcloudapi.woa.com/document/product/1607/81257)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[SubmitTaskTestRun](http://document.tencentcloudapi.woa.com/document/product/1607/81255)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[AdhocDetail](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AdhocDetail)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[AdhocDetail](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AdhocDetail))
+* [[AdhocRecord](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AdhocRecord)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[AdhocRecord](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AdhocRecord))
+* [[StageCloudApiRequest](http://document.tencentcloudapi.woa.com/document/product/1607/77747#StageCloudApiRequest)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[StageCloudApiRequest](http://document.tencentcloudapi.woa.com/document/product/1607/77747#StageCloudApiRequest))
+* [[UserFileInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#UserFileInfo)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[UserFileInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#UserFileInfo))
+
+修改数据结构：
+
+* [TaskCanvasInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TaskCanvasInfo)
+
+	* 新增成员：UserId, OwnerId, TenantId
+
 
 ### 第 11 次发布
 

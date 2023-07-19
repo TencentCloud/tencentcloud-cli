@@ -336,14 +336,6 @@
         "title": "重置设备"
       }
     ],
-    "UnassociateSubDeviceFromGatewayProduct": [
-      {
-        "document": "取消子设备产品与网关设备产品的关联",
-        "input": "https://iot.tencentcloudapi.com/?Action=UnassociateSubDeviceFromGatewayProduct\r\n&SubDeviceProductId=iot-4e0wsxpi\r\n&GatewayProductId=iot-43e0wsxas\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b78d722c-c32c-4108-b9d8-a75be705e227\"\n    }\n}",
-        "title": "取消子设备产品与网关设备产品的关联"
-      }
-    ],
     "UpdateProduct": [
       {
         "document": "更新产品信息",

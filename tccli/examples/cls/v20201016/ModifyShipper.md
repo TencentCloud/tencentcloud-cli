@@ -1,6 +1,6 @@
-**Example 1: 修改投递规则**
+**Example 1: 修改投递COS任务**
 
-修改cos投递规则
+修改投递COS任务
 
 Input: 
 

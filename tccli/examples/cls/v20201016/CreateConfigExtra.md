@@ -1,6 +1,6 @@
 **Example 1: 创建特殊采集配置任务**
 
-
+创建特殊采集配置任务
 
 Input: 
 
@@ -19,19 +19,19 @@ tccli cls CreateConfigExtra --cli-unfold-argument  \
     --ExtractRule.LogRegex .* \
     --ExtractRule.BeginRegex ^ \
     --ExtractRule.Keys date  content \
-    --ExtractRule.FilterKeyRegex.0.Key xxx \
+    --ExtractRule.FilterKeyRegex.0.Key xx-xx \
     --ExtractRule.FilterKeyRegex.0.Regex ssss \
     --ExtractRule.UnMatchLogKey testlog \
     --ExtractRule.UnMatchUpLoadSwitch True \
     --ExtractRule.Backtracking -1 \
-    --ExcludePaths.0.Type xx \
-    --ExcludePaths.0.Value xx \
-    --UserDefineRule xxxxxx \
-    --GroupId xxxxx \
+    --ExcludePaths.0.Type xx-xx \
+    --ExcludePaths.0.Value xx-xx \
+    --UserDefineRule xxx-xxx \
+    --GroupId xxx-xxx \
     --ConfigFlag label_k8s \
-    --LogsetId xxxxx \
-    --LogsetName xxxxxx \
-    --TopicName xxxxxxxx
+    --LogsetId xxx-xxx \
+    --LogsetName xxx-xxx \
+    --TopicName xxx-xxx-xxx
 ```
 
 Output: 

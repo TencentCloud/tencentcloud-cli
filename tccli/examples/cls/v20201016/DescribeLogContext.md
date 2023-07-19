@@ -1,6 +1,6 @@
 **Example 1: 检索上下文日志**
 
-
+检索上下文日志
 
 Input: 
 
@@ -23,6 +23,7 @@ Output:
         "LogContextInfos": [
             {
                 "Content": "xxxxxxx",
+                "HostName": "abc",
                 "Filename": "/usr/local/services/cls_cgi_api3-1.0/log/cls_cgi.log.20210425",
                 "PkgId": "528C1318606EFEB8-1A0",
                 "PkgLogId": 196609,
@@ -31,6 +32,7 @@ Output:
             },
             {
                 "Content": "x1x2x3",
+                "HostName": "abcd",
                 "Filename": "/usr/local/services/cls_cgi_api3-1.0/log/cls_cgi.log.20210425",
                 "PkgId": "528C1318606EFEB8-1A1",
                 "PkgLogId": 196609,

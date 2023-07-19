@@ -1,29 +1,39 @@
 **Example 1: 创建采集规则配置**
 
-
+创建采集规则配置
 
 Input: 
 
 ```
 tccli cls CreateConfig --cli-unfold-argument  \
-    --Name testname \
-    --Path /data/nginx/log/**/access.log \
-    --LogType delimiter_log \
-    --ExtractRule.TimeKey date \
-    --ExtractRule.TimeFormat %Y-%m-%d %H:%M:%S \
-    --ExtractRule.Delimiter | \
-    --ExtractRule.LogRegex .* \
-    --ExtractRule.BeginRegex ^ \
-    --ExtractRule.Keys date  content \
-    --ExtractRule.FilterKeyRegex.0.Key xxx \
-    --ExtractRule.FilterKeyRegex.0.Regex ssss \
-    --ExtractRule.UnMatchLogKey testlog \
+    --Name abc \
+    --Path abc \
+    --LogType abc \
+    --ExtractRule.TimeKey abc \
+    --ExtractRule.TimeFormat abc \
+    --ExtractRule.Delimiter abc \
+    --ExtractRule.LogRegex abc \
+    --ExtractRule.BeginRegex abc \
+    --ExtractRule.Keys abc \
+    --ExtractRule.FilterKeyRegex.0.Key abc \
+    --ExtractRule.FilterKeyRegex.0.Regex abc \
     --ExtractRule.UnMatchUpLoadSwitch True \
-    --ExtractRule.Backtracking -1 \
-    --ExcludePaths.0.Type xx \
-    --ExcludePaths.0.Value xx \
-    --Output xxxxxx-xxx-xxxxxx \
-    --UserDefineRule xxxxxx
+    --ExtractRule.UnMatchLogKey abc \
+    --ExtractRule.Backtracking 0 \
+    --ExtractRule.IsGBK 0 \
+    --ExtractRule.JsonStandard 0 \
+    --ExtractRule.Protocol abc \
+    --ExtractRule.Address abc \
+    --ExtractRule.ParseProtocol abc \
+    --ExtractRule.MetadataType 0 \
+    --ExtractRule.PathRegex abc \
+    --ExtractRule.MetaTags.0.Key abc \
+    --ExtractRule.MetaTags.0.Value abc \
+    --ExcludePaths.0.Type abc \
+    --ExcludePaths.0.Value abc \
+    --Output abc \
+    --UserDefineRule abc \
+    --AdvancedConfig abc
 ```
 
 Output: 

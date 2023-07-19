@@ -184,6 +184,14 @@
         "title": "获取批次列表"
       }
     ],
+    "GetTreeNodeInfoByCodes": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: clouddc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTreeNodeInfoByCodes\n<公共请求参数>\n\n{\n    \"Codes\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"NodeInfoList\": [\n            {\n                \"Code\": \"abc\",\n                \"CenterIds\": [\n                    0\n                ],\n                \"DepartmentIds\": [\n                    0\n                ],\n                \"Level\": 0,\n                \"Managers\": [\n                    \"abc\"\n                ],\n                \"Name\": \"abc\",\n                \"Status\": 0,\n                \"Version\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "ImportOfflineProduct": [
       {
         "document": "",

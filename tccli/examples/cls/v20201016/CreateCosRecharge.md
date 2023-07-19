@@ -31,7 +31,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx"
+        "Id": "abc-dec-ff-ee",
+        "RequestId": "xxx-x-xx-xx"
     }
 }
 ```

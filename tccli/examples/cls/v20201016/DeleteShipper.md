@@ -1,6 +1,6 @@
-**Example 1: 删除投递规则**
+**Example 1: 删除投递COS任务**
 
-
+删除投递COS任务
 
 Input: 
 

@@ -1,6 +1,6 @@
 **Example 1: 获取数据加工任务基本信息**
 
-
+获取数据加工任务基本信息
 
 Input: 
 
@@ -17,9 +17,9 @@ Output:
                 "Status": 0,
                 "EnableFlag": 0,
                 "UpdateTime": "2021-08-08 12:12:12",
-                "LastEnableTime": "xx",
+                "LastEnableTime": "xxxx",
                 "Name": "我的加工任务",
-                "LogsetId": "xx",
+                "LogsetId": "xxxx",
                 "SrcTopicName": "我的日志主题",
                 "SrcTopicId": "61b9XXXX-971a-48c7-984d-ca147cf242c1",
                 "DstResources": [

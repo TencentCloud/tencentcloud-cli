@@ -3540,6 +3540,16 @@
           "required": false,
           "type": "int",
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object",
+          "visibility": 1
         }
       ],
       "type": "object"
