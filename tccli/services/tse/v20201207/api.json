@@ -98,6 +98,13 @@
       "output": "DescribeCloudNativeAPIGatewayNodesResponse",
       "status": "online"
     },
+    "DescribeCloudNativeAPIGatewayPorts": {
+      "document": "获取云原生API网关实例端口信息",
+      "input": "DescribeCloudNativeAPIGatewayPortsRequest",
+      "name": "获取云原生API网关实例端口信息",
+      "output": "DescribeCloudNativeAPIGatewayPortsResponse",
+      "status": "online"
+    },
     "DescribeCloudNativeAPIGatewayRouteRateLimit": {
       "document": "查询云原生网关的限流插件(路由)",
       "input": "DescribeCloudNativeAPIGatewayRouteRateLimitRequest",
@@ -1684,6 +1691,43 @@
       ],
       "usage": "out"
     },
+    "DescribeCloudNativeAPIGatewayPortsRequest": {
+      "document": "DescribeCloudNativeAPIGatewayPorts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云原生API网关实例ID",
+          "example": "gateway-xxxxxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayPortsResponse": {
+      "document": "DescribeCloudNativeAPIGatewayPorts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云原生API网关实例协议端口列表响应结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeGatewayInstancePortResult",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCloudNativeAPIGatewayRouteRateLimitRequest": {
       "document": "DescribeCloudNativeAPIGatewayRouteRateLimit请求参数结构体",
       "members": [
@@ -1920,6 +1964,32 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeGatewayInstancePortResult": {
+      "document": "获取云原生API网关实例协议端口列表响应结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云原生API网关ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gateway-xxxxxx",
+          "member": "string",
+          "name": "GatewayId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关实例协议端口列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GatewayInstanceSchemeAndPorts",
+          "name": "GatewayInstancePortList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DescribeInstanceRegionInfo": {
       "document": "实例地域信息描述",
@@ -2904,6 +2974,32 @@
         }
       ],
       "usage": "in"
+    },
+    "GatewayInstanceSchemeAndPorts": {
+      "document": "网关实例协议端口列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "端口协议，可选HTTP、HTTPS、TCP和UDP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HTTP",
+          "member": "string",
+          "name": "Scheme",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[80]",
+          "member": "uint64",
+          "name": "PortList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "InstanceTagInfo": {
       "document": "引擎实例的标签信息",

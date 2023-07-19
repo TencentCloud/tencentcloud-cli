@@ -274,7 +274,7 @@
       "status": "online"
     },
     "GetAccountSummary": {
-      "document": "查询账户摘要 ",
+      "document": "查询账户摘要",
       "input": "GetAccountSummaryRequest",
       "name": "查询账户摘要",
       "output": "GetAccountSummaryResponse",
@@ -3089,7 +3089,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Policies",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3099,17 +3099,17 @@
           "example": "1",
           "member": "uint64",
           "name": "Roles",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "身份提供商数",
           "example": "1",
           "member": "uint64",
           "name": "Idps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3119,7 +3119,7 @@
           "example": "1",
           "member": "uint64",
           "name": "User",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3129,7 +3129,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Group",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3139,7 +3139,17 @@
           "example": "1",
           "member": "uint64",
           "name": "Member",
-          "required": true,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "身份提供商数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IdentityProviders",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

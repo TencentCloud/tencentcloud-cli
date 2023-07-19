@@ -5289,37 +5289,40 @@
       "document": "HDD的本地存储信息",
       "members": [
         {
-          "default": "LOCAL_PRO",
           "disabled": false,
           "document": "HDD本地存储类型，值为：LOCAL_PRO.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "HDD本地存储的最小容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "MinSize",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "HDD本地存储的最大容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "MaxSize",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "SubmitJobRequest": {
       "document": "SubmitJob请求参数结构体",

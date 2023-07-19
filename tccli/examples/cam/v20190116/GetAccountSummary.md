@@ -17,6 +17,7 @@ Output:
         "Policies": 1,
         "Roles": 1,
         "Idps": 1,
+        "IdentityProviders": 1,
         "RequestId": "e2ad0281-794d-4ff1-a840-794bca5da890"
     }
 }

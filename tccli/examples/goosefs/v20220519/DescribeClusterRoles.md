@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli goosefs DescribeClusterRoles --cli-unfold-argument  \
-    --ClusterId abc
+    --ClusterId abc \
+    --RoleName abc
 ```
 
 Output: 

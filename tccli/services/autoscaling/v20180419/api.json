@@ -362,167 +362,162 @@
       "document": "符合条件的伸缩活动相关信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "伸缩组ID。",
           "example": "无",
           "member": "string",
           "name": "AutoScalingGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "伸缩活动ID。",
           "example": "无",
           "member": "string",
           "name": "ActivityId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "伸缩活动类型。取值如下：<br>\n<li>SCALE_OUT：扩容活动<li>SCALE_IN：缩容活动<li>ATTACH_INSTANCES：添加实例<li>REMOVE_INSTANCES：销毁实例<li>DETACH_INSTANCES：移出实例<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例\n<li>START_INSTANCES：开启实例\n<li>STOP_INSTANCES：关闭实例\n<li>INVOKE_COMMAND：执行命令",
           "example": "无",
           "member": "string",
           "name": "ActivityType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "伸缩活动状态。取值如下：<br>\n<li>INIT：初始化中\n<li>RUNNING：运行中\n<li>SUCCESSFUL：活动成功\n<li>PARTIALLY_SUCCESSFUL：活动部分成功\n<li>FAILED：活动失败\n<li>CANCELLED：活动取消",
           "example": "无",
           "member": "string",
           "name": "StatusCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "伸缩活动状态描述。",
           "example": "无",
           "member": "string",
           "name": "StatusMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "伸缩活动起因。",
           "example": "无",
           "member": "string",
           "name": "Cause",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "伸缩活动描述。",
           "example": "无",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "伸缩活动开始时间。",
           "example": "无",
           "member": "datetime_iso",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "伸缩活动结束时间。",
           "example": "无",
           "member": "datetime_iso",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "伸缩活动创建时间。",
           "example": "无",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "disabled": false,
-          "document": "伸缩活动相关实例信息集合。",
+          "disabled": true,
+          "document": "该参数已废弃，请勿使用。",
           "example": "无",
           "member": "ActivtyRelatedInstance",
           "name": "ActivityRelatedInstanceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "伸缩活动状态简要描述。",
           "example": "无",
           "member": "string",
           "name": "StatusMessageSimplified",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "伸缩活动中生命周期挂钩的执行结果。",
           "example": "无",
           "member": "LifecycleActionResultInfo",
           "name": "LifecycleActionResultSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "伸缩活动状态详细描述。",
           "example": "无",
           "member": "DetailedStatusMessage",
           "name": "DetailedStatusMessageSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行命令结果。",
           "example": "无",
           "member": "InvocationResult",
           "name": "InvocationResultSet",
-          "required": true,
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "伸缩活动相关实例信息集合。",
+          "example": "无",
+          "member": "RelatedInstance",
+          "name": "RelatedInstanceSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -533,22 +528,22 @@
       "document": "与本次伸缩活动相关的实例信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID。",
+          "example": "无",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例在伸缩活动中的状态。取值如下：\n<li>INIT：初始化中\n<li>RUNNING：实例操作中\n<li>SUCCESSFUL：活动成功\n<li>FAILED：活动失败",
+          "example": "无",
           "member": "string",
           "name": "InstanceStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6000,6 +5995,32 @@
         }
       ],
       "usage": "both"
+    },
+    "RelatedInstance": {
+      "document": "与本次伸缩活动相关的实例信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例在伸缩活动中的状态。取值如下：\nINIT：初始化中\nRUNNING：实例操作中\nSUCCESSFUL：活动成功\nFAILED：活动失败",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "RemoveInstancesRequest": {
       "document": "RemoveInstances请求参数结构体",

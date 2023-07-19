@@ -128,6 +128,14 @@
         "title": "创建机器组"
       }
     ],
+    "CreateScheduledSql": [
+      {
+        "document": "创建ScheduledSQL任务",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScheduledSql\n<公共请求参数>\n\n{\n    \"EnableFlag\": 1,\n    \"ProcessStartTime\": 1,\n    \"Name\": \"abc1\",\n    \"DstResource\": {\n        \"TopicId\": \"abc\",\n        \"Region\": \"abc\"\n    },\n    \"ProcessTimeWindow\": \"abc\",\n    \"ProcessPeriod\": 0,\n    \"ScheduledSqlContent\": \"abc\",\n    \"SrcTopicId\": \"abc\",\n    \"ProcessDelay\": 0,\n    \"ProcessType\": 0,\n    \"SrcTopicRegion\": \"abc\",\n    \"ProcessEndTime\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"xxxx-xx-xx-xx-xxxxxxxx\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "创建ScheduledSQL任务"
+      }
+    ],
     "CreateShipper": [
       {
         "document": "用于创建cos投递任务规则",

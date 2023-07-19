@@ -6,7 +6,13 @@ Input:
 
 ```
 tccli ocr SmartStructuralOCRV2 --cli-unfold-argument  \
-    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/document/SmartStructuralOCR/SmartStructuralOCRV2.jpg
+    --ImageUrl abc \
+    --ImageBase64 abc \
+    --IsPdf True \
+    --PdfPageNumber 1 \
+    --ItemNames abc \
+    --ReturnFullText True \
+    --ConfigId abc
 ```
 
 Output: 
@@ -21,7 +27,8 @@ Output:
                         "Lines": [
                             {
                                 "Key": {
-                                    "AutoName": "abc"
+                                    "AutoName": "abc",
+                                    "ConfigName": "abc"
                                 },
                                 "Value": {
                                     "AutoContent": "abc",

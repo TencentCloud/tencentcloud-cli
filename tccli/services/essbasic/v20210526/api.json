@@ -3605,7 +3605,7 @@
       "type": "object"
     },
     "CreateFlowOption": {
-      "document": "创建合同配置信息",
+      "document": "创建合同个性化参数",
       "members": [
         {
           "disabled": false,

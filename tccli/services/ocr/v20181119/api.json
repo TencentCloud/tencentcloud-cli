@@ -449,7 +449,7 @@
       "status": "online"
     },
     "SealOCR": {
-      "document": "本接口支持各类印章识别，包括发票章，财务章等，适用于公文，票据等场景。\n\n默认接口请求频率限制：5次/秒。",
+      "document": "本接口支持各类印章主体内容、印章其他内容及形状识别，支持单图多印章识别，包括发票章、财务章等，适用于公文票据等场景。\n\n默认接口请求频率限制：5次/秒。",
       "input": "SealOCRRequest",
       "name": "印章识别",
       "output": "SealOCRResponse",
@@ -470,7 +470,7 @@
       "status": "online"
     },
     "SmartStructuralOCRV2": {
-      "document": "本接口支持识别并提取各类证照、票据、表单、合同等结构化场景的字段信息。无需任何配置，灵活高效。适用于各类结构化信息录入场景。\n\n默认接口请求频率限制：10次/秒。",
+      "document": "本接口支持智能提取各类证照、票据、表单、合同等结构化场景的key:value字段信息，并支持提取表格信息的key:value组的结构化，灵活高效，适用于各类非标准材料的信息录入场景，点击[立即体验](https://cloud.tencent.com/product/smart-ocr)。\n\n默认接口请求频率限制：10次/秒。",
       "input": "SmartStructuralOCRV2Request",
       "name": "智能结构化识别V2",
       "output": "SmartStructuralOCRV2Response",
@@ -3732,7 +3732,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href=\"https://cloud.tencent.com/document/product/866/45139\">如何纠正倾斜文本</a>",
           "example": "6.5",
           "member": "float",
@@ -3747,6 +3747,15 @@
           "member": "int64",
           "name": "PdfPageSize",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href=\"https://cloud.tencent.com/document/product/866/45139\">如何纠正倾斜文本</a>",
+          "example": "6.5",
+          "member": "float",
+          "name": "Angle",
+          "type": "float",
           "value_allowed_null": false
         },
         {
@@ -10969,7 +10978,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。建议卡片部分占据图片2/3以上。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
           "name": "ImageBase64",
@@ -10978,7 +10987,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。\n建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
+          "document": "图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。\n建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
           "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -10997,6 +11006,7 @@
           "example": "上海市宝山区市场监督管理局",
           "member": "string",
           "name": "SealBody",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11006,6 +11016,7 @@
           "example": "无",
           "member": "Rect",
           "name": "Location",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11015,6 +11026,7 @@
           "example": "[]",
           "member": "string",
           "name": "OtherTexts",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11024,6 +11036,7 @@
           "example": "无",
           "member": "SealInfo",
           "name": "SealInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11033,6 +11046,7 @@
           "example": "xx",
           "member": "string",
           "name": "SealShape",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11713,7 +11727,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n支持的图片像素：需介于20-10000px之间。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/docume",
           "member": "string",
           "name": "ImageUrl",
@@ -11722,7 +11736,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n支持的图片像素：需介于20-10000px之间。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
           "member": "string",
           "name": "ImageBase64",
@@ -11764,6 +11778,15 @@
           "name": "ReturnFullText",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "配置id支持：\nGeneral -- 通用场景\nOnlineTaxiItinerary -- 网约车行程单\nRideHailingDriverLicense -- 网约车驾驶证\nRideHailingTransportLicense -- 网约车运输证\nWayBill -- 快递运单\nAccountOpeningPermit -- 银行开户许可证",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -11777,6 +11800,7 @@
           "example": "无",
           "member": "float",
           "name": "Angle",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -11786,6 +11810,7 @@
           "example": "无",
           "member": "GroupInfo",
           "name": "StructuralList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11795,6 +11820,7 @@
           "example": "无",
           "member": "WordItem",
           "name": "WordList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

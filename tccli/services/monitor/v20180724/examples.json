@@ -1024,14 +1024,6 @@
         "title": "修改模板描述"
       }
     ],
-    "PutMonitorData": [
-      {
-        "document": "",
-        "input": "https://monitor.tencentcloudapi.com/?Action=PutMonitorData\r\n&Version=2018-07-24\r\n&AnnounceIp=10.0.0.1\r\n&AnnounceTimestamp=1569379988\r\n&Metrics.0.MetricName=name1\r\n&Metrics.0.Value=value1\r\n&Metrics.1.MetricName=name2\r\n&Metrics.1.Value=value2\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7cc6ae87-2aae-4394-8ccb-29777f5aeadx\"\n    }\n}",
-        "title": "客户端上报指标"
-      }
-    ],
     "ResumeGrafanaInstance": [
       {
         "document": "恢复 Grafana 实例",

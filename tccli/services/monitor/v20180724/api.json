@@ -854,13 +854,6 @@
       "output": "ModifyPrometheusTempResponse",
       "status": "online"
     },
-    "PutMonitorData": {
-      "document": "对应的功能控制台及后端服务已于2年前下线，剩余该API接口未下线。\n\n默认接口请求频率限制：50次/秒。\n默认单租户指标上限：100个。\n单次上报最多 30 个指标/值对，请求返回错误时，请求中所有的指标/值均不会被保存。\n\n上报的时间戳为期望保存的时间戳，建议构造整数分钟时刻的时间戳。\n时间戳时间范围必须为当前时间到 300 秒前之间。\n同一 IP 指标对的数据需按分钟先后顺序上报。",
-      "input": "PutMonitorDataRequest",
-      "name": "自定义监控上报数据",
-      "output": "PutMonitorDataResponse",
-      "status": "deprecated"
-    },
     "ResumeGrafanaInstance": {
       "document": "本接口（ResumeGrafanaInstance）用于 Grafana 包年包月实例的停服续费，调用后按原版本续费一个月。仍在运行中的实例无法使用该接口进行续费。",
       "input": "ResumeGrafanaInstanceRequest",
@@ -14171,32 +14164,6 @@
       ],
       "usage": "out"
     },
-    "MetricDatum": {
-      "document": "指标名称和值的封装",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "指标名称",
-          "member": "string",
-          "name": "MetricName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "指标的值",
-          "member": "uint64",
-          "name": "Value",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "in"
-    },
     "MetricObjectMeaning": {
       "document": "指标数据的解释",
       "members": [
@@ -17998,60 +17965,6 @@
         }
       ],
       "usage": "out"
-    },
-    "PutMonitorDataRequest": {
-      "document": "PutMonitorData请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "一组指标和数据",
-          "member": "MetricDatum",
-          "name": "Metrics",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "上报时自行指定的 IP",
-          "member": "string",
-          "name": "AnnounceIp",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "上报时自行指定的时间戳",
-          "member": "uint64",
-          "name": "AnnounceTimestamp",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "上报时自行指定的 IP 或 产品实例ID",
-          "member": "string",
-          "name": "AnnounceInstance",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "PutMonitorDataResponse": {
-      "document": "PutMonitorData返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "ReceiverInfo": {
       "document": "接收人信息",

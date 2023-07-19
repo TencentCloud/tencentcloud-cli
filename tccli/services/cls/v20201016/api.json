@@ -112,6 +112,13 @@
       "output": "CreateMachineGroupResponse",
       "status": "online"
     },
+    "CreateScheduledSql": {
+      "document": "本接口用于创建ScheduledSql任务",
+      "input": "CreateScheduledSqlRequest",
+      "name": "创建ScheduledSql任务",
+      "output": "CreateScheduledSqlResponse",
+      "status": "online"
+    },
     "CreateShipper": {
       "document": "新建投递到COS的任务，【！！！注意】使用此接口，需要检查是否配置了投递COS的角色和权限。如果没有配置，请参考文档投递权限查看和配置https://cloud.tencent.com/document/product/614/71623。",
       "input": "CreateShipperRequest",
@@ -3506,6 +3513,150 @@
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "GroupId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateScheduledSqlRequest": {
+      "document": "CreateScheduledSql请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源日志主题",
+          "example": "topicid-1",
+          "member": "string",
+          "name": "SrcTopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "task1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务启动状态.  1正常开启,  2关闭",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableFlag",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "加工任务目的topic_id以及别名",
+          "example": "{\"dst_topics\":[{\"topic_id\":\"xxx\", \"alias\":\"topic\"}]}",
+          "member": "ScheduledSqlResouceInfo",
+          "name": "DstResource",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "ScheduledSQL语句",
+          "example": "* | select count(*)",
+          "member": "string",
+          "name": "ScheduledSqlContent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调度开始时间,Unix时间戳，单位ms",
+          "example": "1634735855733",
+          "member": "uint64",
+          "name": "ProcessStartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "调度类型，1:持续运行 2:指定调度结束时间",
+          "example": "1",
+          "member": "int64",
+          "name": "ProcessType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "调度周期(分钟)",
+          "example": "2",
+          "member": "int64",
+          "name": "ProcessPeriod",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "调度时间窗口",
+          "example": "-15m@m",
+          "member": "string",
+          "name": "ProcessTimeWindow",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "执行延迟(秒)",
+          "example": "23",
+          "member": "int64",
+          "name": "ProcessDelay",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "源topicId的地域信息",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "SrcTopicRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调度结束时间，当ProcessType=2时为必传字段, Unix时间戳，单位ms",
+          "example": "1634735855733",
+          "member": "uint64",
+          "name": "ProcessEndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "语法规则。 默认值为0。0：Lucene语法，1：CQL语法  ",
+          "example": "0",
+          "member": "uint64",
+          "name": "SyntaxRule",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateScheduledSqlResponse": {
+      "document": "CreateScheduledSql返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "TaskId",
           "type": "string",
           "value_allowed_null": false
         },
@@ -9705,6 +9856,34 @@
           "name": "KeyValues",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ScheduledSqlResouceInfo": {
+      "document": "ScheduledSql的资源信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "目标主题id",
+          "example": "xxxxxxxx-0889-4ec0-accc-xxxxxxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "topic的地域信息",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

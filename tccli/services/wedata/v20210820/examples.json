@@ -16,6 +16,20 @@
         "title": "BatchDeleteIntegrationTasks"
       }
     ],
+    "BatchDeleteTasksDs": [
+      {
+        "document": "批量删除任务",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDeleteTasksDs\n<公共请求参数>\n\n{\n    \"TaskIdList\": [\n        \"abc\"\n    ],\n    \"DeleteMode\": true,\n    \"OperateInform\": true,\n    \"ProjectId\": \"abc\",\n    \"DeleteScript\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"SuccessCount\": 0,\n            \"FailedCount\": 0,\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "批量删除任务"
+      },
+      {
+        "document": "错误示例",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDeleteTasksDs\n<公共请求参数>\n\n{\n    \"TaskIdList\": [\n        \"abc\"\n    ],\n    \"DeleteMode\": true,\n    \"OperateInform\": true,\n    \"ProjectId\": \"abc\",\n    \"DeleteScript\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eb055faf-49d0-452b-9a5b-202343791bcc\"\n    }\n}",
+        "title": "错误示例"
+      }
+    ],
     "BatchDeleteTasksNew": [
       {
         "document": "",
@@ -336,6 +350,14 @@
         "title": "样例"
       }
     ],
+    "DeleteFilePath": [
+      {
+        "document": "开发空间-批量删除目录和文件",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFilePath\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1486804694126882816\",\n    \"ResourceIds\": [\n        \"5b4a1a4c-4e8c-4a0b-a952-29fb417d84b9\"\n    ],\n    \"UseStatus\": \"true\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0487b757-35ab-4853-9d8f-6c39bd24f28c\",\n        \"UserFileList\": []\n    }\n}",
+        "title": "开发空间-批量删除目录和文件"
+      }
+    ],
     "DeleteFolder": [
       {
         "document": "",
@@ -376,12 +398,28 @@
         "title": "删除任务"
       }
     ],
+    "DeleteProjectParamDs": [
+      {
+        "document": "删除项目参数",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProjectParamDs\n<公共请求参数>\n\n{\n    \"ParamKey\": \"abc\",\n    \"ProjectId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除项目参数"
+      }
+    ],
     "DeleteResource": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteResource\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1171938931991703552\",\n    \"ResourceId\": \"968a2cd4-fc1b-44eb-994f-8d99f95cf854\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "示例1"
+      }
+    ],
+    "DeleteResourceFiles": [
+      {
+        "document": "批量删除资源",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteResourceFiles\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\",\n    \"ResourceIds\": [\n        \"abc\"\n    ],\n    \"FilePaths\": [\n        \"abc\"\n    ],\n    \"UseStatus\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "资源管理-批量删除资源"
       }
     ],
     "DeleteRule": [
@@ -406,6 +444,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTaskAlarmRegular\n<公共请求参数>\n\n{\n    \"ProjectId\": \"123\",\n    \"Id\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"123\"\n    }\n}",
         "title": "删除告警规则"
+      }
+    ],
+    "DeleteTaskDs": [
+      {
+        "document": "任务删除",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTaskDs\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\",\n    \"DeleteScript\": true,\n    \"OperateInform\": true,\n    \"TaskId\": \"abc\",\n    \"VirtualTaskId\": \"abc\",\n    \"VirtualFlag\": true,\n    \"DeleteMode\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "任务删除"
       }
     ],
     "DeleteWorkflowNew": [
@@ -1498,6 +1544,14 @@
         "title": "范例"
       }
     ],
+    "RemoveWorkflowDs": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveWorkflowDs\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1460947878944567296\",\n    \"WorkflowId\": \"a09dac50-ed66-11ed-8909-bc97e105ba60\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"534ab7ba-7399-4dc7-b45d-9721e3aff985\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "RerunInstances": [
       {
         "document": "",
@@ -1578,12 +1632,28 @@
         "title": "提交自定义函数"
       }
     ],
+    "SubmitSqlTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitSqlTask\n<公共请求参数>\n\n{\n    \"ScriptContent\": \"select 1\",\n    \"ResourceQueue\": \"default\",\n    \"DatabaseName\": \"default\",\n    \"ProjectId\": 1,\n    \"DatabaseType\": \"HIVE\",\n    \"DatasourceType\": \"HIVE\",\n    \"DatasourceId\": 6,\n    \"GroupId\": \"default\",\n    \"EngineId\": \"default\",\n    \"ScriptId\": 100,\n    \"RunParams\": \"{\\\"name\\\":\\\"Tom\\\", \\\"age\\\":123}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"Record\": {\n            \"Id\": 858,\n            \"InstanceId\": \"20220218112409315_2022-03-02T17:07:37+08:00\",\n            \"ScriptContent\": \"select name from student where name='ccc';\",\n            \"CreateTime\": \"2022-03-02T17:07:36+08:00\",\n            \"Status\": null\n        },\n        \"Details\": [\n            {\n                \"Id\": 858,\n                \"ScriptContent\": \"select name from student where name='ccc';\",\n                \"StartTime\": \"2022-03-02T17:07:36+08:00\",\n                \"EndTime\": \"2022-03-02T17:07:36+08:00\",\n                \"Status\": \"CREATED\",\n                \"RecordId\": 858\n            }\n        ]\n    }\n}",
+        "title": "请求demo"
+      }
+    ],
     "SubmitTask": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitTask\n<公共请求参数>\n\n{\n    \"StartScheduling\": \"false\",\n    \"VersionRemark\": \"aa\",\n    \"TaskId\": \"20220727140613327\",\n    \"ProjectId\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e5be8fd-a346-40c0-b2fa-5e62a13f4879\",\n        \"Data\": true\n    }\n}",
         "title": "范例"
+      }
+    ],
+    "SubmitTaskTestRun": [
+      {
+        "document": "编排空间试运行",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitTaskTestRun\n<公共请求参数>\n\n{\n    \"WorkFlowId\": \"abc\",\n    \"Name\": \"abc\",\n    \"Tasks\": [\n        {\n            \"ClusterId\": \"abc\",\n            \"StageId\": \"abc\",\n            \"JobId\": \"abc\",\n            \"StageName\": \"abc\",\n            \"Type\": \"abc\",\n            \"Mode\": \"abc\",\n            \"Version\": \"abc\",\n            \"Queue\": \"abc\",\n            \"Content\": \"abc\",\n            \"Parameters\": [\n                {\n                    \"Key\": \"abc\",\n                    \"Value\": \"abc\"\n                }\n            ],\n            \"Description\": \"abc\",\n            \"ProjectId\": \"abc\",\n            \"JobType\": \"abc\",\n            \"WorkFlowId\": \"abc\"\n        }\n    ],\n    \"Description\": \"abc\",\n    \"TaskIds\": \"abc\",\n    \"ProjectId\": \"abc\",\n    \"RunParams\": \"abc\",\n    \"ScriptContent\": \"abc\",\n    \"VersionId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": 0,\n        \"RecordId\": [\n            0\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "编排空间试运行"
       }
     ],
     "SubmitWorkflow": [

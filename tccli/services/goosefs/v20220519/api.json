@@ -48,11 +48,41 @@
       "members": [
         {
           "disabled": false,
+          "document": "节点 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.2.3.4",
+          "member": "string",
+          "name": "NodeIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "挂载点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/goosefs",
           "member": "string",
           "name": "LocalDirectory",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可以访问的 GooseFS 目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/goosefs",
+          "member": "string",
+          "name": "GooseFSDirectory",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx-yyy",
+          "member": "string",
+          "name": "Token",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -288,6 +318,15 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色名",
+          "example": "无",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
           "type": "string"
         }
       ],

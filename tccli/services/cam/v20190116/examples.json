@@ -316,7 +316,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=GetAccountSummary\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"User\": 1,\n        \"Group\": 1,\n        \"Member\": 1,\n        \"Policies\": 1,\n        \"Roles\": 1,\n        \"Idps\": 1,\n        \"RequestId\": \"e2ad0281-794d-4ff1-a840-794bca5da890\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"User\": 1,\n        \"Group\": 1,\n        \"Member\": 1,\n        \"Policies\": 1,\n        \"Roles\": 1,\n        \"Idps\": 1,\n        \"IdentityProviders\": 1,\n        \"RequestId\": \"e2ad0281-794d-4ff1-a840-794bca5da890\"\n    }\n}",
         "title": "查询账户摘要"
       }
     ],

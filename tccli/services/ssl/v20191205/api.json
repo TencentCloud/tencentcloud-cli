@@ -5743,7 +5743,6 @@
       "document": "HostCertificate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "证书ID",
           "example": "无",
@@ -5753,7 +5752,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源类型：目前仅限于CLB,CDN",
           "example": "无",
@@ -5774,7 +5772,7 @@
           "example": "无",
           "member": "CertHostingInfo",
           "name": "CertHostingInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

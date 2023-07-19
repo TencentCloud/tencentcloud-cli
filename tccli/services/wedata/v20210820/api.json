@@ -14,6 +14,13 @@
       "output": "BatchDeleteIntegrationTasksResponse",
       "status": "online"
     },
+    "BatchDeleteTasksDs": {
+      "document": "Ds批量删除任务，仅对任务状态为”已停止“有效；",
+      "input": "BatchDeleteTasksDsRequest",
+      "name": "批量删除任务Ds",
+      "output": "BatchDeleteTasksDsResponse",
+      "status": "online"
+    },
     "BatchDeleteTasksNew": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n批量删除任务，仅对任务状态为”已停止“有效；\n",
       "input": "BatchDeleteTasksNewRequest",
@@ -294,6 +301,13 @@
       "output": "DeleteDataSourcesResponse",
       "status": "online"
     },
+    "DeleteFilePath": {
+      "document": "开发空间-批量删除目录和文件",
+      "input": "DeleteFilePathRequest",
+      "name": "开发空间-批量删除目录和文件",
+      "output": "DeleteFilePathResponse",
+      "status": "online"
+    },
     "DeleteFolder": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n删除文件夹",
       "input": "DeleteFolderRequest",
@@ -329,11 +343,25 @@
       "output": "DeleteOfflineTaskResponse",
       "status": "online"
     },
+    "DeleteProjectParamDs": {
+      "document": "删除项目参数",
+      "input": "DeleteProjectParamDsRequest",
+      "name": "删除项目参数",
+      "output": "DeleteProjectParamDsResponse",
+      "status": "online"
+    },
     "DeleteResource": {
       "document": "资源管理删除资源",
       "input": "DeleteResourceRequest",
       "name": "删除资源",
       "output": "DeleteResourceResponse",
+      "status": "online"
+    },
+    "DeleteResourceFiles": {
+      "document": "资源管理-批量删除资源文件",
+      "input": "DeleteResourceFilesRequest",
+      "name": "【资源管理】批量删除资源",
+      "output": "DeleteResourceFilesResponse",
       "status": "online"
     },
     "DeleteRule": {
@@ -355,6 +383,13 @@
       "input": "DeleteTaskAlarmRegularRequest",
       "name": "删除任务告警规则",
       "output": "DeleteTaskAlarmRegularResponse",
+      "status": "online"
+    },
+    "DeleteTaskDs": {
+      "document": "删除任务Ds",
+      "input": "DeleteTaskDsRequest",
+      "name": "删除任务Ds",
+      "output": "DeleteTaskDsResponse",
       "status": "online"
     },
     "DeleteWorkflowNew": {
@@ -1274,6 +1309,13 @@
       "output": "RegisterEventListenerResponse",
       "status": "online"
     },
+    "RemoveWorkflowDs": {
+      "document": "删除编排空间工作流",
+      "input": "RemoveWorkflowDsRequest",
+      "name": "删除编排空间工作流",
+      "output": "RemoveWorkflowDsResponse",
+      "status": "online"
+    },
     "RerunInstances": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n实例批量重跑",
       "input": "RerunInstancesRequest",
@@ -1344,11 +1386,25 @@
       "output": "SubmitCustomFunctionResponse",
       "status": "online"
     },
+    "SubmitSqlTask": {
+      "document": "即席分析提交SQL任务",
+      "input": "SubmitSqlTaskRequest",
+      "name": "提交SQL任务",
+      "output": "SubmitSqlTaskResponse",
+      "status": "online"
+    },
     "SubmitTask": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n提交任务",
       "input": "SubmitTaskRequest",
       "name": "提交任务【Beta版本】",
       "output": "SubmitTaskResponse",
+      "status": "online"
+    },
+    "SubmitTaskTestRun": {
+      "document": "无",
+      "input": "SubmitTaskTestRunRequest",
+      "name": "提交工作流测试运行任务",
+      "output": "SubmitTaskTestRunResponse",
       "status": "online"
     },
     "SubmitWorkflow": {
@@ -1408,6 +1464,139 @@
     "serviceShortName": "wedata"
   },
   "objects": {
+    "AdhocDetail": {
+      "document": "子任务记录",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "子任务记录Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "脚本内容",
+          "example": "select 1",
+          "member": "string",
+          "name": "ScriptContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当前任务状态",
+          "example": "CREATED",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "提交任务id",
+          "example": "1",
+          "member": "uint64",
+          "name": "RecordId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AdhocRecord": {
+      "document": "任务提交记录",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务提交记录id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "脚本内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ScriptContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务提交时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CREATED",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20220218112409315_2022-03-02T12:34:03+08:00",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "AlarmEventInfo": {
       "document": "告警事件详情",
       "members": [
@@ -2067,6 +2256,79 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDeleteTasksDsRequest": {
+      "document": "BatchDeleteTasksDs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量删除的任务TaskId",
+          "example": "[\"1111\",\"2222\"]",
+          "member": "string",
+          "name": "TaskIdList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "true : 删除后下游任务可正常运行\nfalse：删除后下游任务不可运行",
+          "example": "true",
+          "member": "bool",
+          "name": "DeleteMode",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "true：通知下游任务责任人\nfalse:  不通知下游任务责任人",
+          "example": "true",
+          "member": "bool",
+          "name": "OperateInform",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "项目Id",
+          "example": "1",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "true: 删除任务引用的脚本\nfalse: 不删除任务引用的脚本",
+          "example": "true",
+          "member": "bool",
+          "name": "DeleteScript",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDeleteTasksDsResponse": {
+      "document": "BatchDeleteTasksDs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回批量操作成功个数、失败个数、操作总数",
+          "example": "无",
+          "member": "BatchOperateResult",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6769,6 +7031,69 @@
       ],
       "type": "object"
     },
+    "DeleteFilePathRequest": {
+      "document": "DeleteFilePath请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源ID",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "使用状态",
+          "example": "无",
+          "member": "string",
+          "name": "UseStatus",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件路径",
+          "example": "无",
+          "member": "string",
+          "name": "FilePaths",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFilePathResponse": {
+      "document": "DeleteFilePath返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserFileInfo",
+          "name": "UserFileList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteFolderRequest": {
       "document": "DeleteFolder请求参数结构体",
       "members": [
@@ -7019,6 +7344,114 @@
       ],
       "type": "object"
     },
+    "DeleteProjectParamDsRequest": {
+      "document": "DeleteProjectParamDs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名",
+          "example": "无",
+          "member": "string",
+          "name": "ParamKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProjectParamDsResponse": {
+      "document": "DeleteProjectParamDs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结果",
+          "example": "无",
+          "member": "bool",
+          "name": "Data",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteResourceFilesRequest": {
+      "document": "DeleteResourceFiles请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用状态",
+          "example": "无",
+          "member": "bool",
+          "name": "UseStatus",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "资源id列表",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "资源路径列表",
+          "example": "无",
+          "member": "string",
+          "name": "FilePaths",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteResourceFilesResponse": {
+      "document": "DeleteResourceFiles返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源批量删除结果",
+          "example": "无",
+          "member": "bool",
+          "name": "Data",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteResourceRequest": {
       "document": "DeleteResource请求参数结构体",
       "members": [
@@ -7214,6 +7647,97 @@
           "example": "true",
           "member": "bool",
           "name": "Data",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTaskDsRequest": {
+      "document": "DeleteTaskDs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目Id",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否删除脚本",
+          "example": "无",
+          "member": "bool",
+          "name": "DeleteScript",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "任务操作是否消息通知下游任务责任人",
+          "example": "无",
+          "member": "bool",
+          "name": "OperateInform",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "虚拟任务id",
+          "example": "无",
+          "member": "string",
+          "name": "VirtualTaskId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "虚拟任务标记",
+          "example": "无",
+          "member": "bool",
+          "name": "VirtualFlag",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "任务删除方式",
+          "example": "无",
+          "member": "bool",
+          "name": "DeleteMode",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTaskDsResponse": {
+      "document": "DeleteTaskDs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Data",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -22478,6 +23002,51 @@
       ],
       "type": "object"
     },
+    "RemoveWorkflowDsRequest": {
+      "document": "RemoveWorkflowDs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "1111",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作流ID",
+          "example": "无",
+          "member": "string",
+          "name": "WorkflowId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveWorkflowDsResponse": {
+      "document": "RemoveWorkflowDs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作流ID",
+          "example": "11111",
+          "member": "bool",
+          "name": "Data",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RerunInstancesRequest": {
       "document": "RerunInstances请求参数结构体",
       "members": [
@@ -26707,6 +27276,152 @@
       ],
       "usage": "out"
     },
+    "StageCloudApiRequest": {
+      "document": "无",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "StageId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "JobId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "StageName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "Version",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "Queue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "Property",
+          "name": "Parameters",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "JobType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "WorkFlowId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
     "StartIntegrationTaskRequest": {
       "document": "StartIntegrationTask请求参数结构体",
       "members": [
@@ -26896,6 +27611,174 @@
       ],
       "type": "object"
     },
+    "SubmitSqlTaskRequest": {
+      "document": "SubmitSqlTask请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库类型",
+          "example": "无",
+          "member": "string",
+          "name": "DatabaseType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据源Id",
+          "example": "无",
+          "member": "int64",
+          "name": "DatasourceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "资源组Id",
+          "example": "无",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "脚本文件id",
+          "example": "123",
+          "member": "string",
+          "name": "ScriptId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "项目id",
+          "example": "1",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "无",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "执行引擎实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "EngineId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "脚本内容",
+          "example": "无",
+          "member": "string",
+          "name": "ScriptContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "资源队列",
+          "example": "default",
+          "member": "string",
+          "name": "ResourceQueue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "数据库类型",
+          "example": "无",
+          "member": "string",
+          "name": "DatasourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "计算资源名称",
+          "example": "无",
+          "member": "string",
+          "name": "ComputeResource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "高级运行参数",
+          "example": "无",
+          "member": "string",
+          "name": "RunParams",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "高级设置",
+          "example": "无",
+          "member": "string",
+          "name": "ConfParams",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitSqlTaskResponse": {
+      "document": "SubmitSqlTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务提交记录",
+          "example": "无",
+          "member": "AdhocRecord",
+          "name": "Record",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子任务记录列表",
+          "example": "无",
+          "member": "AdhocDetail",
+          "name": "Details",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SubmitTaskRequest": {
       "document": "SubmitTask请求参数结构体",
       "members": [
@@ -26953,6 +27836,125 @@
           "name": "Data",
           "required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitTaskTestRunRequest": {
+      "document": "SubmitTaskTestRun请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "TaskIds",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "WorkFlowId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "StageCloudApiRequest",
+          "name": "Tasks",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "RunParams",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "ScriptContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "VersionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitTaskTestRunResponse": {
+      "document": "SubmitTaskTestRun返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "int64",
+          "name": "JobId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "int64",
+          "name": "RecordId",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -28414,6 +29416,36 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "UserId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "OwnerId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OwnerId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TenantId\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TenantId",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -30627,6 +31659,276 @@
         }
       ],
       "usage": "out"
+    },
+    "UserFileInfo": {
+      "document": "开发空间-获取数据开发脚本信息响应体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111111",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1111",
+          "member": "string",
+          "name": "FileName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件类型，如 jar zip 等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "jar",
+          "member": "string",
+          "name": "FileExtensionType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件上传类型，资源管理为 resource\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "resouce",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件MD5值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aaaaa",
+          "member": "string",
+          "name": "Md5Value",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-02-27 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-02-27 00:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件大小，单位为字节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123123",
+          "member": "uint64",
+          "name": "Size",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本地路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/datastudio/resource/jaydenjhu/xxxx/wedata-spark-1.0-SNAPSHOT.ja",
+          "member": "string",
+          "name": "LocalPath",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本地临时路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/tmp/datastudio/resource/1171938931991703552/jaydenjhu/xxxx/wed",
+          "member": "string",
+          "name": "LocalTempPath",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "远程路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/datastudio/resource/1171938931991703552/jaydenjhu/xxxx/wedata-s",
+          "member": "string",
+          "name": "RemotePath",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件拥有者名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "fe",
+          "member": "string",
+          "name": "OwnerName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件拥有者uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100022256608",
+          "member": "string",
+          "name": "Owner",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件深度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PathDepth",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1111",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "附加信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "ParamInfo",
+          "name": "ExtraInfo",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本地临时压缩文件绝对路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ZipPath",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件所属存储桶\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "agent-test-1257305158",
+          "member": "string",
+          "name": "Bucket",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件所属存储桶的地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DeleteName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DeleteOwner",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Operator",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OperatorName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "附加信息 base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EncodeExtraInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "WeightInfo": {
       "document": "权重信息",
