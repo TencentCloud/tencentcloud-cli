@@ -605,7 +605,7 @@
           "example": "无",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -616,7 +616,7 @@
           "example": "无",
           "member": "string",
           "name": "Title",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -627,7 +627,7 @@
           "example": "无",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -638,20 +638,20 @@
           "example": "无",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
           "disabled": false,
-          "document": "数据源描述",
+          "document": "数据源描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
+          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -660,7 +660,7 @@
           "example": "无",
           "member": "string",
           "name": "Schema",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -671,7 +671,7 @@
           "example": "无",
           "member": "string",
           "name": "CmsProject",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -682,7 +682,7 @@
           "example": "无",
           "member": "string",
           "name": "PkgId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -693,7 +693,7 @@
           "example": "无",
           "member": "string",
           "name": "SchemaVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -704,7 +704,7 @@
           "example": "无",
           "member": "string",
           "name": "CreatorId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -715,7 +715,7 @@
           "example": "无",
           "member": "string",
           "name": "CreatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -726,7 +726,7 @@
           "example": "无",
           "member": "string",
           "name": "UpdatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -737,7 +737,7 @@
           "example": "无",
           "member": "string",
           "name": "EnvId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -748,7 +748,7 @@
           "example": "无",
           "member": "string",
           "name": "DataSourceVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -759,7 +759,7 @@
           "example": "无",
           "member": "DataSourceLinkApp",
           "name": "AppUsageList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -770,7 +770,7 @@
           "example": "无",
           "member": "string",
           "name": "PublishedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -781,7 +781,7 @@
           "example": "无",
           "member": "string",
           "name": "ChildDataSourceIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -792,7 +792,7 @@
           "example": "无",
           "member": "string",
           "name": "Fun",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -803,7 +803,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ScfStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -814,7 +814,7 @@
           "example": "无",
           "member": "string",
           "name": "Methods",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -825,7 +825,7 @@
           "example": "无",
           "member": "string",
           "name": "ChildDataSourceNames",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -836,7 +836,7 @@
           "example": "无",
           "member": "int64",
           "name": "IsNewDataSource",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -847,7 +847,7 @@
           "example": "无",
           "member": "string",
           "name": "ViewId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -858,7 +858,7 @@
           "example": "无",
           "member": "string",
           "name": "Configuration",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -869,7 +869,7 @@
           "example": "无",
           "member": "string",
           "name": "TemplateCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -880,18 +880,18 @@
           "example": "无",
           "member": "int64",
           "name": "Source",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "发布版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "PublishVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -902,7 +902,7 @@
           "example": "无",
           "member": "string",
           "name": "PublishViewId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -913,7 +913,7 @@
           "example": "无",
           "member": "string",
           "name": "SubType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -924,7 +924,7 @@
           "example": "无",
           "member": "int64",
           "name": "AuthStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -935,7 +935,7 @@
           "example": "无",
           "member": "TicketAuthInfo",
           "name": "AuthInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -946,7 +946,7 @@
           "example": "无",
           "member": "int64",
           "name": "PublishStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -957,20 +957,20 @@
           "example": "无",
           "member": "int64",
           "name": "UpdateVersion",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
           "disabled": false,
-          "document": "模型关联关系字段列表",
+          "document": "模型关联关系字段列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RelationField",
           "name": "RelationFieldList",
-          "required": false,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": false,
+          "value_allowed_null": true,
           "visibility": 1
         }
       ],
@@ -1008,59 +1008,70 @@
       "document": "数据源关联App信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用Id",
           "example": "app-xx",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MyApp",
           "member": "string",
           "name": "Title",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否编辑状态使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "EditStatusUse",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否预览状态使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "PreviewStatusUse",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否正式状态使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "OnlineStatusUse",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "数据源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "data-xxx",
+          "member": "string",
+          "name": "DataSourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

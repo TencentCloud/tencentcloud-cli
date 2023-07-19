@@ -1536,7 +1536,7 @@
           "name": "ResourceEnv",
           "required": false,
           "type": "object",
-          "visibility": 2
+          "visibility": 1
         }
       ],
       "type": "object"

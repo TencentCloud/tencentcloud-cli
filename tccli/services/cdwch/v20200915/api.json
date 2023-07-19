@@ -1894,7 +1894,7 @@
           "example": "cdwch-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1905,7 +1905,7 @@
           "example": "clickhouse集群",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1916,7 +1916,7 @@
           "example": "Running",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1927,7 +1927,7 @@
           "example": "20.7.2.30",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1938,7 +1938,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1949,7 +1949,7 @@
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1960,7 +1960,7 @@
           "example": "vpc-xxxxxx",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1971,7 +1971,7 @@
           "example": "subnet-xxxxx",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1982,7 +1982,7 @@
           "example": "hour",
           "member": "string",
           "name": "PayMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1993,7 +1993,7 @@
           "example": "2020-01-01 11:11:11",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2004,7 +2004,7 @@
           "example": "2020-02-01 11:11:11",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2015,7 +2015,7 @@
           "example": "无",
           "member": "NodesSummary",
           "name": "MasterSummary",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -2026,7 +2026,7 @@
           "example": "无",
           "member": "NodesSummary",
           "name": "CommonSummary",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -2037,7 +2037,7 @@
           "example": "false",
           "member": "string",
           "name": "HA",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2048,7 +2048,7 @@
           "example": "\"10.0.0.1:9000\"",
           "member": "string",
           "name": "AccessInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2059,7 +2059,7 @@
           "example": "1",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -2070,7 +2070,7 @@
           "example": "1",
           "member": "int64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -2081,7 +2081,7 @@
           "example": "广州三区",
           "member": "string",
           "name": "ZoneDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2092,7 +2092,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "FlowMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2103,7 +2103,7 @@
           "example": "运行中",
           "member": "string",
           "name": "StatusDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2114,7 +2114,7 @@
           "example": "false",
           "member": "bool",
           "name": "RenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -2125,7 +2125,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -2136,7 +2136,7 @@
           "example": "prom-aaaaa",
           "member": "string",
           "name": "Monitor",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2147,7 +2147,7 @@
           "example": "true",
           "member": "bool",
           "name": "HasClsTopic",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -2158,7 +2158,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ClsTopicId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2169,7 +2169,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ClsLogSetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2180,7 +2180,7 @@
           "example": "1",
           "member": "int64",
           "name": "EnableXMLConfig",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -2191,7 +2191,7 @@
           "example": "广州",
           "member": "string",
           "name": "RegionDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2202,7 +2202,7 @@
           "example": "127.0.0.1",
           "member": "string",
           "name": "Eip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2213,7 +2213,7 @@
           "example": "20",
           "member": "int64",
           "name": "CosMoveFactor",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -2224,7 +2224,7 @@
           "example": "yunti",
           "member": "string",
           "name": "Kind",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2235,7 +2235,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsElastic",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -2246,7 +2246,7 @@
           "example": "无",
           "member": "InstanceStateInfo",
           "name": "InstanceStateInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -2257,7 +2257,7 @@
           "example": "true",
           "member": "bool",
           "name": "HAZk",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -2268,7 +2268,7 @@
           "example": "无",
           "member": "int64",
           "name": "MountDiskType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -2279,7 +2279,7 @@
           "example": "无",
           "member": "string",
           "name": "CHProxyVip",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2290,7 +2290,7 @@
           "example": "无",
           "member": "string",
           "name": "CosBucketName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2301,7 +2301,7 @@
           "example": "true",
           "member": "bool",
           "name": "CanAttachCbs",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -2312,7 +2312,7 @@
           "example": "true",
           "member": "bool",
           "name": "CanAttachCbsLvm",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -2323,7 +2323,7 @@
           "example": "true",
           "member": "bool",
           "name": "CanAttachCos",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -2334,7 +2334,7 @@
           "example": "[]",
           "member": "ServiceInfo",
           "name": "Components",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -2345,8 +2345,52 @@
           "example": "xxx",
           "member": "string",
           "name": "UpgradeVersions",
-          "required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "ex-index\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EsIndexId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "username\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EsIndexUsername",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "password\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EsIndexPassword",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "true\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "HasEsIndex",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -2362,7 +2406,7 @@
           "example": "-",
           "member": "string",
           "name": "InstanceState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2373,7 +2417,7 @@
           "example": "-",
           "member": "string",
           "name": "FlowCreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2384,7 +2428,7 @@
           "example": "-",
           "member": "string",
           "name": "FlowName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2395,7 +2439,7 @@
           "example": "-",
           "member": "int64",
           "name": "FlowProgress",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -2406,7 +2450,7 @@
           "example": "-",
           "member": "string",
           "name": "InstanceStateDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2417,7 +2461,7 @@
           "example": "-",
           "member": "string",
           "name": "FlowMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2428,7 +2472,7 @@
           "example": "-",
           "member": "string",
           "name": "ProcessName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2439,7 +2483,18 @@
           "example": "xxxx",
           "member": "string",
           "name": "RequestId",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "流程的二级名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProcessSubName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
