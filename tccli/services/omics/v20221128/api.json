@@ -1394,6 +1394,15 @@
           "name": "TableRowUuids",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用版本ID。不填表示使用当前最新版本。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationVersionId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1407,6 +1416,7 @@
           "example": "无",
           "member": "string",
           "name": "RunGroupId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

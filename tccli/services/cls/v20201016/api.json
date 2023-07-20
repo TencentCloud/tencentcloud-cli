@@ -7012,7 +7012,7 @@
           "example": "xxxxxxxx",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7022,7 +7022,7 @@
           "example": "xxx-xxx-xxx-xxx",
           "member": "string",
           "name": "TopicId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7032,7 +7032,7 @@
           "example": "xxx任务导入",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7042,7 +7042,7 @@
           "example": "0",
           "member": "uint64",
           "name": "KafkaType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7052,7 +7052,7 @@
           "example": "无",
           "member": "string",
           "name": "KafkaInstance",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7062,7 +7062,7 @@
           "example": "test.cls.tencentyun.com:9095",
           "member": "string",
           "name": "ServerAddr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7072,7 +7072,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsEncryptionAddr",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -7082,7 +7082,7 @@
           "example": "无",
           "member": "KafkaProtocolInfo",
           "name": "Protocol",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7092,7 +7092,7 @@
           "example": "topic1,topic2\t",
           "member": "string",
           "name": "UserKafkaTopics",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7102,7 +7102,7 @@
           "example": "cls-xxxxx\t",
           "member": "string",
           "name": "ConsumerGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7112,17 +7112,17 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "导入数据位置，-1:最早（默认），-2：最晚，大于等于0: 指定offset\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "导入数据位置，-2:最早（默认），-1：最晚\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "Offset",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7132,7 +7132,7 @@
           "example": "2021-11-08 14:40:22",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7142,7 +7142,7 @@
           "example": "2021-11-08 14:40:22",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7152,7 +7152,7 @@
           "example": "无",
           "member": "LogRechargeRuleInfo",
           "name": "LogRechargeRule",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }

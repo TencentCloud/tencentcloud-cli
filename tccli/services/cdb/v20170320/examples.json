@@ -902,14 +902,6 @@
         "title": "配置数据库代理连接池"
       }
     ],
-    "ModifyCDBProxyDesc": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCDBProxyDesc\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-test\",\n    \"ProxyGroupId\": \"proxy-test\",\n    \"Desc\": \"test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3689c0eb-a92d-77ce-0ee2-17d99f604e64\"\n    }\n}",
-        "title": "修改代理描述"
-      }
-    ],
     "ModifyCDBProxyVipVPort": [
       {
         "document": "",

@@ -816,7 +816,6 @@
       "document": "CreateFace请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "人员ID，取值为创建人员接口中的PersonId",
           "example": "1001",
@@ -826,7 +825,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n人员人脸总数量不可超过5张。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "无",
@@ -836,7 +834,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。\n人员人脸总数量不可超过5张。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。",
           "example": "[\"http:\\/\\/test.image.myqcloud.com\\/testA.jpg\\r\\n\"]",
@@ -846,7 +843,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只有和该人员已有的人脸相似度超过FaceMatchThreshold值的人脸，才能增加人脸成功。 \n默认值60分。取值范围[0,100] 。",
           "example": "60",
@@ -856,7 +852,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片质量控制。 \n0: 不进行控制； \n1:较低的质量要求，图像存在非常模糊，眼睛鼻子嘴巴遮挡至少其中一种或多种的情况； \n2: 一般的质量要求，图像存在偏亮，偏暗，模糊或一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，至少其中三种的情况； \n3: 较高的质量要求，图像存在偏亮，偏暗，一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，其中一到两种的情况； \n4: 很高的质量要求，各个维度均为最好或最多在某一维度上存在轻微问题； \n默认 0。 \n若图片质量不满足要求，则返回结果中会提示图片质量检测不符要求。",
           "example": "0",
@@ -866,7 +861,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。",
           "example": "0",
@@ -887,7 +881,7 @@
           "example": "1",
           "member": "uint64",
           "name": "SucFaceNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -897,7 +891,7 @@
           "example": "[\"2875186538564559728\"]",
           "member": "string",
           "name": "SucFaceIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -907,17 +901,17 @@
           "example": "[0]",
           "member": "int64",
           "name": "RetCode",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "加入成功的人脸索引。索引顺序和入参中 Images 或 Urls 的顺序一致。 \n例， Urls 中 有 3 个 url，第二个 url 失败，则 SucIndexes 值为 [0,2] 。",
+          "document": "加入成功的人脸索引。索引顺序和入参中 Images 或 Urls 的顺序一致。 \n例如， Urls 中 有 3 个 url，第二个 url 失败，则 SucIndexes 值为 [0,2] 。",
           "example": "[0]",
           "member": "uint64",
           "name": "SucIndexes",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -927,7 +921,7 @@
           "example": "无",
           "member": "FaceRect",
           "name": "SucFaceRects",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -937,7 +931,7 @@
           "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2120,162 +2114,162 @@
       "document": "人脸属性信息，根据 FaceAttributesType 输入的类型，返回年龄（Age）、颜值（Beauty） \n情绪（Emotion）、眼睛信息（Eye）、眉毛（Eyebrow）、性别（Gender） \n头发（Hair）、帽子（Hat）、姿态（Headpose）、口罩（Mask）、嘴巴（Mouth）、胡子（Moustache） \n鼻子（Nose）、脸型（Shape）、肤色（Skin）、微笑（Smile）等人脸属性信息。  \n若 FaceAttributesType 没有输入相关类型，则FaceDetaiAttributesInfo返回的细项不具备参考意义。",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "年龄 [0,65]，其中65代表“65岁及以上”。 \nFaceAttributesType 不为含Age 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。",
+          "document": "年龄 [0,65]，其中65代表“65岁及以上”。 \nFaceAttributesType 不含Age 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。",
+          "example": "无",
           "member": "int64",
           "name": "Age",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "美丑打分[0,100]。 \nFaceAttributesType 不含 Beauty 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。",
+          "example": "无",
           "member": "int64",
           "name": "Beauty",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "情绪，可识别自然、高兴、惊讶、生气、悲伤、厌恶、害怕。 \nAttributeItem对应的Type为 —— 0：自然，1：高兴，2：惊讶，3：生气，4：悲伤，5：厌恶，6：害怕\nFaceAttributesType 不含Emotion 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。",
+          "example": "无",
           "member": "AttributeItem",
           "name": "Emotion",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "眼睛相关信息，可识别是否戴眼镜、是否闭眼、是否双眼皮和眼睛大小。 \nFaceAttributesType 不含Eye 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。",
+          "example": "无",
           "member": "Eye",
           "name": "Eye",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "眉毛相关信息，可识别眉毛浓密、弯曲、长短信息。 \nFaceAttributesType 不含Eyebrow 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。",
+          "example": "无",
           "member": "Eyebrow",
           "name": "Eyebrow",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "性别信息。 \nAttributeItem对应的Type为 —— \t0：男性，1：女性。\nFaceAttributesType 不含Gender 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。",
+          "example": "无",
           "member": "AttributeItem",
           "name": "Gender",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "头发信息，包含头发长度、有无刘海、头发颜色。 \nFaceAttributesType 不含Hair 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。",
+          "example": "无",
           "member": "Hair",
           "name": "Hair",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "帽子信息，可识别是否佩戴帽子、帽子款式、帽子颜色。 \nFaceAttributesType 不含Hat 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。",
+          "example": "无",
           "member": "Hat",
           "name": "Hat",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "姿态信息，包含人脸的上下偏移、左右偏移、平面旋转信息。 \nFaceAttributesType 不含Headpose 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。",
+          "example": "无",
           "member": "HeadPose",
           "name": "HeadPose",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "口罩佩戴信息。 \nAttributeItem对应的Type为 —— 0: 无口罩， 1: 有口罩不遮脸，2: 有口罩遮下巴，3: 有口罩遮嘴，4: 正确佩戴口罩。\nFaceAttributesType 不含Mask 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。",
+          "example": "无",
           "member": "AttributeItem",
           "name": "Mask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "嘴巴信息，可识别是否张嘴、嘴唇厚度。 \nFaceAttributesType 不含 Mouth 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。",
+          "example": "无",
           "member": "Mouth",
           "name": "Mouth",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "胡子信息。\nAttributeItem对应的Type为 —— 0：无胡子，1：有胡子。 \nFaceAttributesType 不含 Moustache 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。",
+          "example": "无",
           "member": "AttributeItem",
           "name": "Moustache",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "鼻子信息。 \nAttributeItem对应的Type为 —— 0：朝天鼻，1：鹰钩鼻，2：普通，3：圆鼻头\nFaceAttributesType 不含 Nose 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。",
+          "example": "无",
           "member": "AttributeItem",
           "name": "Nose",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "脸型信息。 \nAttributeItem对应的Type为 —— 0：方脸，1：三角脸，2：鹅蛋脸，3：心形脸，4：圆脸。\nFaceAttributesType 不含 Shape 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。",
+          "example": "无",
           "member": "AttributeItem",
           "name": "Shape",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "肤色信息。 \nAttributeItem对应的Type为 —— 0：黄色皮肤，1：棕色皮肤，2：黑色皮肤，3：白色皮肤。\nFaceAttributesType 不含 Skin 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。",
+          "example": "无",
           "member": "AttributeItem",
           "name": "Skin",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "微笑程度，[0,100]。 \nFaceAttributesType 不含 Smile 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。",
+          "example": "无",
           "member": "int64",
           "name": "Smile",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -3355,22 +3349,22 @@
       "document": "帽子信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "帽子佩戴状态信息。\nAttributeItem对应的Type为 —— 0：不戴帽子，1：普通帽子，2：头盔，3：保安帽。",
+          "example": "无",
           "member": "AttributeItem",
           "name": "Style",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "帽子颜色。\nAttributeItem对应的Type为 —— 0：不戴帽子，1：红色系，2：黄色系，3：蓝色系，4：黑色系，5：灰白色系，6：混色系子。",
+          "document": "帽子颜色。\nAttributeItem对应的Type为 —— 0：不戴帽子，1：红色系，2：黄色系，3：蓝色系，4：黑色系，5：灰白色系，6：混色系。",
+          "example": "无",
           "member": "AttributeItem",
           "name": "Color",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         }
@@ -3823,7 +3817,6 @@
       "document": "SearchFaces请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "希望搜索的人员库列表，上限100个。数组元素取值为创建人员库接口中的GroupId。\n不可同时搜索不同算法模型版本（FaceModelVersion）的人员库。",
           "example": "[\"TencentShenZhenEmployee\\n\"]",
@@ -3833,7 +3826,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "无",
@@ -3843,7 +3835,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "http://test.image.myqcloud.com/testA.jpg",
@@ -3853,9 +3844,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "最多识别的人脸数目。默认值为1（仅检测图片中面积最大的那张人脸），最大值为10。 \nMaxFaceNum用于，当输入的待识别图片包含多张人脸时，设定要搜索的人脸的数量。 \n例：输入的Image或Url中的图片包含多张人脸，设MaxFaceNum=5，则会识别图片中面积最大的5张人脸。",
+          "document": "最多识别的人脸数目。默认值为1（仅检测图片中面积最大的那张人脸），最大值为10。 \nMaxFaceNum用于，当输入的待识别图片包含多张人脸时，设定要搜索的人脸的数量。 \n例如：输入的Image或Url中的图片包含多张人脸，设MaxFaceNum=5，则会识别图片中面积最大的5张人脸。",
           "example": "1",
           "member": "uint64",
           "name": "MaxFaceNum",
@@ -3863,7 +3853,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸长和宽的最小尺寸，单位为像素。默认为34。低于34的人脸图片无法被识别。建议设置为80。",
           "example": "40",
@@ -3873,9 +3862,8 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "单张被识别的人脸返回的最相似人员数量。默认值为5，最大值为100。 \n例，设MaxFaceNum为1，MaxPersonNum为8，则返回Top8相似的人员信息。\n值越大，需要处理的时间越长。建议不要超过10。",
+          "document": "单张被识别的人脸返回的最相似人员数量。默认值为5，最大值为100。 \n例如，设MaxFaceNum为1，MaxPersonNum为8，则返回Top8相似的人员信息。\n值越大，需要处理的时间越长。建议不要超过10。",
           "example": "5",
           "member": "uint64",
           "name": "MaxPersonNum",
@@ -3883,7 +3871,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否返回人员具体信息。0 为关闭，1 为开启。默认为 0。其他非0非1值默认为0",
           "example": "0",
@@ -3893,7 +3880,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片质量控制。 \n0: 不进行控制； \n1:较低的质量要求，图像存在非常模糊，眼睛鼻子嘴巴遮挡至少其中一种或多种的情况； \n2: 一般的质量要求，图像存在偏亮，偏暗，模糊或一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，至少其中三种的情况； \n3: 较高的质量要求，图像存在偏亮，偏暗，一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，其中一到两种的情况； \n4: 很高的质量要求，各个维度均为最好或最多在某一维度上存在轻微问题； \n默认 0。 \n若图片质量不满足要求，则返回结果中会提示图片质量检测不符要求。",
           "example": "0",
@@ -3903,7 +3889,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "出参Score中，只有超过FaceMatchThreshold值的结果才会返回。默认为0。",
           "example": "0",
@@ -3913,7 +3898,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。",
           "example": "0",
@@ -3934,7 +3918,7 @@
           "example": "无",
           "member": "Result",
           "name": "Results",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3944,7 +3928,7 @@
           "example": "1",
           "member": "uint64",
           "name": "FaceNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3954,7 +3938,7 @@
           "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -2734,7 +2734,7 @@
     ],
     "ReturnNormalAddresses": [
       {
-        "document": "",
+        "document": "解绑并释放普通公网IP。",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReturnNormalAddresses\n<公共请求参数>\n\n{\n    \"AddressIps\": [\n        \"101.35.139.183\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5957a632-12b2-4051-b103-ecd77145ecbd\"\n    }\n}",
         "title": "解绑并释放普通公网IP"

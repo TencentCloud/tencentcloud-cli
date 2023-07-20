@@ -5551,59 +5551,49 @@
       "document": "音频流配置参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "音频流的编码格式。\n当外层参数 Container 为 mp3 时，可选值为：\n<li>libmp3lame。</li>\n当外层参数 Container 为 ogg 或 flac 时，可选值为：\n<li>flac。</li>\n当外层参数 Container 为 m4a 时，可选值为：\n<li>libfdk_aac；</li>\n<li>libmp3lame；</li>\n<li>ac3。</li>\n当外层参数 Container 为 mp4 或 flv 时，可选值为：\n<li>libfdk_aac：更适合 mp4；</li>\n<li>libmp3lame：更适合 flv；</li>\n<li>mp2。</li>\n当外层参数 Container 为 hls 时，可选值为：\n<li>libfdk_aac；</li>\n<li>libmp3lame。</li>",
           "example": "libmp3lame",
           "member": "string",
           "name": "Codec",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。 当取值为 0，表示音频码率和原始音频保持一致。",
           "example": "0",
           "member": "uint64",
           "name": "Bitrate",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频流的采样率，可选值：\n<li>32000</li>\n<li>44100</li>\n<li>48000</li>\n单位：Hz。",
           "example": "44100",
           "member": "uint64",
           "name": "SampleRate",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频通道方式，可选值：\n<li>1：单通道</li>\n<li>2：双通道</li>\n<li>6：立体声</li>\n当媒体的封装格式是音频格式时（flac，ogg，mp3，m4a）时，声道数不允许设为立体声。",
           "example": "2",
           "member": "int64",
           "name": "AudioChannel",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定输出要保留的音频轨道。默认是全部保留源的。",
           "example": "NULL",
           "member": "int64",
           "name": "StreamSelects",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -19527,6 +19517,7 @@
           "example": "mp4",
           "member": "string",
           "name": "Container",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -19537,6 +19528,7 @@
           "example": "0",
           "member": "uint64",
           "name": "RemoveVideo",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -19547,6 +19539,7 @@
           "example": "0",
           "member": "uint64",
           "name": "RemoveAudio",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -19557,6 +19550,7 @@
           "example": "NULL",
           "member": "VideoTemplateInfoForUpdate",
           "name": "VideoTemplate",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -19567,29 +19561,32 @@
           "example": "NULL",
           "member": "AudioTemplateInfoForUpdate",
           "name": "AudioTemplate",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "极速高清转码参数。",
+          "document": "极速高清转码参数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "TEHDConfigForUpdate",
           "name": "TEHDConfig",
+          "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "字幕流配置参数。",
+          "document": "字幕流配置参数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "SubtitleTemplate",
           "name": "SubtitleTemplate",
+          "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -19597,6 +19594,7 @@
           "example": "NULL",
           "member": "MediaInputInfo",
           "name": "AddonAudioStream",
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -21523,8 +21521,7 @@
           "member": "string",
           "name": "S3Bucket",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -21533,8 +21530,7 @@
           "member": "string",
           "name": "S3Region",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -21543,8 +21539,7 @@
           "member": "string",
           "name": "S3Object",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -21553,8 +21548,7 @@
           "member": "string",
           "name": "S3SecretId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -21563,8 +21557,7 @@
           "member": "string",
           "name": "S3SecretKey",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -22774,70 +22767,58 @@
       "document": "字幕流配置参数。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要压制到视频中的字幕文件地址。",
           "example": "\"\"",
           "member": "string",
           "name": "Path",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定要压制到视频中的字幕轨道，如果有指定Path，则Path 优先级更高。Path 和 StreamIndex 至少指定一个。",
           "example": "3",
           "member": "int64",
           "name": "StreamIndex",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字体类型，\n<li>hei.ttf：黑体</li>\n<li>song.ttf：宋体</li>\n<li>simkai.ttf：楷体</li>\n<li>arial.ttf：仅支持英文</li>\n默认hei.ttf",
           "example": "simhei.ttf",
           "member": "string",
           "name": "FontType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字体大小，格式：Npx，N 为数值，不指定则以字幕文件中为准。",
           "example": "5px",
           "member": "string",
           "name": "FontSize",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）",
           "example": "0xRRGGBB",
           "member": "string",
           "name": "FontColor",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文字透明度，取值范围：(0, 1]\n<li>0：完全透明</li>\n<li>1：完全不透明</li>\n默认值：1。",
           "example": "1",
           "member": "float",
           "name": "FontAlpha",
           "required": false,
-          "type": "float",
-          "value_allowed_null": false
+          "type": "float"
         }
       ],
       "usage": "in"
@@ -22969,8 +22950,7 @@
           "member": "string",
           "name": "Type",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -22979,8 +22959,7 @@
           "member": "uint64",
           "name": "MaxVideoBitrate",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -24524,114 +24503,94 @@
       "document": "视频流配置参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频流的编码格式，可选值：\n<li>libx264：H.264 编码</li>\n<li>libx265：H.265 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n注意：目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。\n注意：av1 编码容器目前只支持 mp4 。",
           "example": "libx264",
           "member": "string",
           "name": "Codec",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "视频帧率，取值范围：[0, 100]，单位：Hz。\n当取值为 0，表示帧率和原始视频保持一致。",
+          "document": "视频帧率，取值范围：[0, 120]，单位：Hz。\n当取值为 0，表示帧率和原始视频保持一致。",
           "example": "0",
           "member": "uint64",
           "name": "Fps",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。\n当取值为 0，表示视频码率和原始视频保持一致。",
           "example": "0",
           "member": "uint64",
           "name": "Bitrate",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n注意：自适应模式时，Width不能小于Height。",
           "example": "open",
           "member": "string",
           "name": "ResolutionAdaptive",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频流宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>",
           "example": "0",
           "member": "uint64",
           "name": "Width",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频流高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。",
           "example": "0",
           "member": "uint64",
           "name": "Height",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关键帧 I 帧之间的间隔，取值范围：0 和 [1, 100000]，单位：帧数。当填 0 时，系统将自动设置 gop 长度。",
           "example": "0",
           "member": "uint64",
           "name": "Gop",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊填充。</li>",
           "example": "stretch",
           "member": "string",
           "name": "FillType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频恒定码率控制因子。取值范围为[0, 51]，填0表示禁用该参数。\n如果没有特殊需求，不建议指定该参数。",
           "example": "0",
           "member": "uint64",
           "name": "Vcrf",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内容自适应编码。可选值：\n<li>0：不开启</li>\n<li>1：开启</li>\n默认值: 0.   当开启该参数时，将会自适应生成多个不同分辨率，不同码率的码流， 其中VideoTemplate的宽和高为多个码流中的最大分辨率，VideoTemplate中的码率为多个码流中的最高码率， VideoTemplate中的vcrf为多个码流中的最高质量。 当不设置分辨率、码率和vcrf时， ContentAdaptStream 参数生成的最高分辨率为视频源的分辨率，视频质量为接近vmaf95分。 若要开启该参数或了解计费细节, 请联系您的腾讯云商务。",
           "example": "0",
           "member": "uint64",
           "name": "ContentAdaptStream",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"

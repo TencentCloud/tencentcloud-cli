@@ -813,7 +813,7 @@
       "status": "online"
     },
     "DescribeBandwidthPackageResources": {
-      "document": "本接口 (DescribeBandwidthPackageResources) 用于根据共享带宽包唯一ID查询共享带宽包内的资源列表，支持按条件过滤查询结果和分页查询。\n",
+      "document": "本接口 (DescribeBandwidthPackageResources) 用于根据共享带宽包唯一ID查询共享带宽包内的资源列表，支持按条件过滤查询结果和分页查询。",
       "input": "DescribeBandwidthPackageResourcesRequest",
       "name": "查询共享带宽包内的资源",
       "output": "DescribeBandwidthPackageResourcesResponse",
@@ -10633,7 +10633,6 @@
       "document": "DescribeBandwidthPackageResources请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标识 共享带宽包 的唯一 ID 列表。共享带宽包 唯一 ID 形如：`bwp-11112222`。",
           "example": "bwp-7umnal1o",
@@ -10643,7 +10642,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AddressIds`和`Filters`。详细的过滤条件如下：\n<li> resource-id - String - 是否必填：否 - （过滤条件）按照 共享带宽包内资源 的唯一 ID 过滤。共享带宽包内资源 唯一 ID 形如：eip-11112222。</li>\n<li> resource-type - String - 是否必填：否 - （过滤条件）按照 共享带宽包内资源 类型过滤，目前仅支持 弹性IP 和 负载均衡 两种类型，可选值为 Address 和 LoadBalance。</li>",
           "example": "无",
@@ -10653,7 +10651,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。",
           "example": "0",
@@ -10663,7 +10660,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。",
           "example": "20",
@@ -10684,7 +10680,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10694,7 +10690,7 @@
           "example": "无",
           "member": "Resource",
           "name": "ResourceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -24730,7 +24726,6 @@
       "document": "ReturnNormalAddresses请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "EIP 的 IP 地址,示例：101.35.139.183",
           "example": "[\"101.35.139.183\"]",

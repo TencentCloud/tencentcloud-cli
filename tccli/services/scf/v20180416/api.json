@@ -1302,6 +1302,15 @@
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源池配置",
+          "example": "test",
+          "member": "NamespaceResourceEnv",
+          "name": "ResourceEnv",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3792,6 +3801,95 @@
       ],
       "type": "object"
     },
+    "K8SLabel": {
+      "document": "k8s label",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "label的名称",
+          "example": "labelkey",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "label的值",
+          "example": "labelvalue",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "K8SToleration": {
+      "document": "Kubernetes污点容忍，使用时请注意您的Kubernetes版本所支持的字段情况。\n可参考 https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/taint-and-toleration/",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "匹配的污点名",
+          "example": "key1",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "匹配方式，默认值为: Equal\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Equal",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "执行策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NoExecute",
+          "member": "string",
+          "name": "Effect",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "匹配的污点值，当Operator为Equal时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "value1",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "当污点不被容忍时，Pod还能在节点上运行多久\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3600",
+          "member": "uint64",
+          "name": "TolerationSeconds",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "LayerVersionInfo": {
       "document": "层版本信息",
       "members": [
@@ -4934,6 +5032,99 @@
         }
       ],
       "usage": "out"
+    },
+    "NamespaceResourceEnv": {
+      "document": "命名空间资源池配置",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "基于TKE集群的资源池\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "x",
+          "member": "NamespaceResourceEnvTKE",
+          "name": "TKE",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "NamespaceResourceEnvTKE": {
+      "document": "基于TKE的资源池选项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-xxxx",
+          "member": "string",
+          "name": "ClusterID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网ID",
+          "example": "subnet-xx",
+          "member": "string",
+          "name": "SubnetID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "kube-system",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据存储地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/var/lib/scf",
+          "member": "string",
+          "name": "DataPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "node选择器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Key0=a,Value0=x",
+          "member": "K8SLabel",
+          "name": "NodeSelector",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "污点容忍\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Key: \"key1\"   Operator: \"Exists\"",
+          "member": "K8SToleration",
+          "name": "Tolerations",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "scf组件将占用的节点端口起始号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "38002",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "NamespaceUsage": {
       "document": "名称空间已使用信息",

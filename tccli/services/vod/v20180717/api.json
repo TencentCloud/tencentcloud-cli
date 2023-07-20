@@ -10179,19 +10179,19 @@
         },
         {
           "disabled": false,
-          "document": "视频画面质量评价的控制参数。",
+          "document": "音频（静音、低音、爆音）检测的控制参数。",
           "example": "无",
-          "member": "QualityEvaluationConfigureInfo",
-          "name": "QualityEvaluationConfigure",
+          "member": "VoiceConfigureInfo",
+          "name": "VoiceConfigure",
           "required": false,
           "type": "object"
         },
         {
           "disabled": false,
-          "document": "音频（静音、低音、爆音）检测的控制参数。",
+          "document": "视频画面质量评价的控制参数。",
           "example": "无",
-          "member": "VoiceConfigureInfo",
-          "name": "VoiceConfigure",
+          "member": "QualityEvaluationConfigureInfo",
+          "name": "QualityEvaluationConfigure",
           "required": false,
           "type": "object"
         }
@@ -24573,19 +24573,19 @@
         },
         {
           "disabled": false,
-          "document": "视频画面质量评价的控制参数。",
+          "document": "音频（静音、低音、爆音）检测的控制参数。",
           "example": "无",
-          "member": "QualityEvaluationConfigureInfoForUpdate",
-          "name": "QualityEvaluationConfigure",
+          "member": "VoiceConfigureInfoForUpdate",
+          "name": "VoiceConfigure",
           "required": false,
           "type": "object"
         },
         {
           "disabled": false,
-          "document": "音频（静音、低音、爆音）检测的控制参数。",
+          "document": "视频画面质量评价的控制参数。",
           "example": "无",
-          "member": "VoiceConfigureInfoForUpdate",
-          "name": "VoiceConfigure",
+          "member": "QualityEvaluationConfigureInfoForUpdate",
+          "name": "QualityEvaluationConfigure",
           "required": false,
           "type": "object"
         }
@@ -28712,21 +28712,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "置信度，取值范围：[0, 100]。\n<font color=red>注意：</font> 仅当 Type 取值为下列之一时，本字段取值有效：\n<li>Mosaic：马赛克；</li>\n<li>QRCode：二维码；</li>\n<li>AppletCode：小程序码；</li>\n<li>BarCode：条形码。</li>",
-          "example": "无",
-          "member": "uint64",
-          "name": "Confidence",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "异常片段起始的偏移时间，单位：秒。",
           "example": "无",
           "member": "float",
           "name": "StartTimeOffset",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -28736,7 +28726,7 @@
           "example": "无",
           "member": "float",
           "name": "EndTimeOffset",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -28746,8 +28736,18 @@
           "example": "无",
           "member": "int64",
           "name": "AreaCoordSet",
-          "required": false,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "置信度，取值范围：[0, 100]。\n<font color=red>注意：</font> 仅当 Type 取值为下列之一时，本字段取值有效：\n<li>Mosaic：马赛克；</li>\n<li>QRCode：二维码；</li>\n<li>AppletCode：小程序码；</li>\n<li>BarCode：条形码。</li>",
+          "example": "无",
+          "member": "uint64",
+          "name": "Confidence",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

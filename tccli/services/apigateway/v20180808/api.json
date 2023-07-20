@@ -218,7 +218,7 @@
       "status": "online"
     },
     "DescribeApiApp": {
-      "document": "本接口（DescribeApiApp）用于根据应用ID搜索应用。",
+      "document": "本接口（DescribeApiApp）用于根据应用ID搜索应用。此接口已下线，如需使用功能请使用DescribeApiAppsStatus接口。",
       "input": "DescribeApiAppRequest",
       "name": "搜索应用",
       "output": "DescribeApiAppResponse",
@@ -1043,7 +1043,7 @@
           "example": "x x",
           "member": "string",
           "name": "ApiAppName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1053,17 +1053,17 @@
           "example": "x x",
           "member": "string",
           "name": "ApiAppId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用SECRET\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用SECRET\n注意:此字段可能返回null，表示取不到有效值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sajsnda",
           "member": "string",
           "name": "ApiAppSecret",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1073,7 +1073,7 @@
           "example": "x x",
           "member": "string",
           "name": "ApiAppDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1083,7 +1083,7 @@
           "example": "2021-09-01",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1093,17 +1093,17 @@
           "example": "2021-09-01",
           "member": "datetime_iso",
           "name": "ModifiedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "应用KEY\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用KEY\n注意:此字段可能返回null，表示取不到有效值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sajsnda",
           "member": "string",
           "name": "ApiAppKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -5499,7 +5499,6 @@
       "document": "DescribeApiApp请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID。",
           "example": "app-kzofrjbl",
@@ -5520,7 +5519,7 @@
           "example": "无",
           "member": "ApiAppInfos",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
