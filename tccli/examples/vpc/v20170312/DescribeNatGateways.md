@@ -62,7 +62,9 @@ Output:
                         "Key": "test-key",
                         "Value": "test-value1"
                     }
-                ]
+                ],
+                "RestrictState": "NORMAL",
+                "NatProductVersion": 1
             },
             {
                 "NatGatewayId": "nat-mxkohguo",
@@ -87,7 +89,9 @@ Output:
                 "IsExclusive": true,
                 "SubnetId": "sub-er88uji9",
                 "DirectConnectGatewayIds": [],
-                "SourceIpTranslationNatRuleSet": []
+                "SourceIpTranslationNatRuleSet": [],
+                "RestrictState": "NORMAL",
+                "NatProductVersion": 1
             }
         ],
         "TotalCount": 2,
@@ -161,7 +165,9 @@ Output:
                 "IsExclusive": true,
                 "SubnetId": "sub-er88uji9",
                 "DirectConnectGatewayIds": [],
-                "SourceIpTranslationNatRuleSet": []
+                "SourceIpTranslationNatRuleSet": [],
+                "RestrictState": "NORMAL",
+                "NatProductVersion": 1
             },
             {
                 "NatGatewayId": "nat-7xh58vea",
@@ -186,7 +192,9 @@ Output:
                 "IsExclusive": true,
                 "SubnetId": "sub-er88uji9",
                 "DirectConnectGatewayIds": [],
-                "SourceIpTranslationNatRuleSet": []
+                "SourceIpTranslationNatRuleSet": [],
+                "RestrictState": "NORMAL",
+                "NatProductVersion": 2
             }
         ],
         "TotalCount": 2,

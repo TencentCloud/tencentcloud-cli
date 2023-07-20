@@ -1,11 +1,11 @@
 {
   "actions": {
     "DescribeUserTasks": {
-      "document": "查询任务列表和详情",
+      "document": "公有云V3产品下线\n\n查询任务列表和详情",
       "input": "DescribeUserTasksRequest",
       "name": "查询任务列表",
       "output": "DescribeUserTasksResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

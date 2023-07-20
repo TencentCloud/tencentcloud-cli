@@ -72,36 +72,12 @@
         "title": "GetAuthorityIssuer"
       }
     ],
-    "GetConsortiumClusterList": [
-      {
-        "document": "获取联盟列表",
-        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetConsortiumClusterList\n<公共请求参数>\n\n{\n    \"ConsortiumId\": 661\n}",
-        "output": "{\n    \"Response\": {\n        \"ClusterList\": [\n            {\n                \"ChainId\": 591,\n                \"ChainName\": \"asdfafffffffffffffffffffffff\",\n                \"AgencyCount\": 2,\n                \"ConsortiumId\": 661,\n                \"CreateTime\": \"2021-08-07 15:40:46\",\n                \"ExpireTime\": \"2021-09-07 15:53:55\",\n                \"ChainStatus\": 1,\n                \"ResourceId\": \"tbaas-6s0ih1k0rg\",\n                \"ClusterId\": \"bcos-03z30qbg1c\",\n                \"ConsortiumName\": \"TDID测试\",\n                \"AgencyId\": 303,\n                \"AutoRenewFlag\": 1,\n                \"TotalNetworkNode\": 5,\n                \"TotalCreateNode\": 5,\n                \"TotalGroups\": 28\n            }\n        ],\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
-        "title": "GetConsortiumList"
-      }
-    ],
-    "GetConsortiumList": [
-      {
-        "document": "获取联盟列表",
-        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetConsortiumList\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"ConsortiumList\": [\n            {\n                \"Id\": 661,\n                \"Name\": \"TDID测试\"\n            }\n        ],\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
-        "title": "GetConsortiumList"
-      }
-    ],
     "GetCptInfo": [
       {
         "document": "凭证模版详情",
         "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCptInfo\n<公共请求参数>\n\n{\n    \"CptIndex\": 4\n}",
         "output": "{\n    \"Response\": {\n        \"CptJsonData\": \"{\\n  \\\"cptType\\\" : \\\"original\\\",\\n  \\\"$schema\\\" : \\\"http://json-schema.org/draft-04/schema#\\\",\\n  \\\"description\\\" : \\\"rtehreher\\\",\\n  \\\"title\\\" : \\\"fwwfwfw\\\",\\n  \\\"type\\\" : \\\"object\\\",\\n  \\\"properties\\\" : {\\n    \\\"age\\\" : {\\n      \\\"description\\\" : \\\"the age of certificate owner\\\",\\n      \\\"type\\\" : \\\"number\\\"\\n    },\\n    \\\"rtrey\\\" : {\\n      \\\"description\\\" : \\\"wrwetwe\\\",\\n      \\\"type\\\" : \\\"string\\\"\\n    }\\n  },\\n  \\\"required\\\" : [ \\\"rtrey\\\", \\\"age\\\" ]\\n}\",\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
         "title": "GetCptInfo"
-      }
-    ],
-    "GetCredentialCptRank": [
-      {
-        "document": "凭证颁发排行",
-        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCredentialCptRank\n<公共请求参数>\n\n{\n    \"StartTime\": \"2021-06-28\",\n    \"EndTime\": \"2021-07-28\",\n    \"ClusterId\": \"bcos-fmtkyt8xne\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RankIssueResult\": [\n            {\n                \"Count\": 1,\n                \"ApplyId\": 1,\n                \"ApplyName\": \"xx\",\n                \"CptName\": \"xx\",\n                \"Rank\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "CredentialIssueRank"
       }
     ],
     "GetCredentialStatus": [

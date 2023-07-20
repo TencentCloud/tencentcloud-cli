@@ -9,7 +9,7 @@ tccli waf SearchAttackLog --cli-unfold-argument  \
     --StartTime '2020-09-22 00:00:00' \
     --EndTime '2020-09-22 00:00:00' \
     --Domain all \
-    --Context xxxxx \
+    --Context  \
     --QueryString method:GET \
     --Sort desc
 ```

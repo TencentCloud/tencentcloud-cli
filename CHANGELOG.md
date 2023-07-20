@@ -1,3 +1,270 @@
+# Release 3.0.812.1
+
+## 多媒体创作引擎(cme) 版本：2019-10-29
+
+### 第 21 次发布
+
+发布时间：2023-07-21 01:15:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MediaCastProjectInfo](http://document.tencentcloudapi.woa.com/document/product/1156/40360#MediaCastProjectInfo)
+
+	* 新增成员：Duration
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 10 次发布
+
+发布时间：2023-07-21 01:24:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateSchemeUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79345)
+
+	* 新增入参：Hides
+
+
+修改数据结构：
+
+* [RegisterInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#RegisterInfo)
+
+	* 新增成员：UnifiedSocialCreditCode
+
+	* <font color="#dd0000">**修改成员**：</font>Uscc
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 71 次发布
+
+发布时间：2023-07-21 01:24:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateSignUrls](http://document.tencentcloudapi.woa.com/document/product/1595/75249)
+
+	* 新增入参：Hides
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 低代码互动课堂(lcic) 版本：2022-08-17
+
+### 第 6 次发布
+
+发布时间：2023-07-21 01:30:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRoom](http://document.tencentcloudapi.woa.com/document/product/1720/80652)
+
+	* 新增入参：IsGradingRequiredPostClass
+
+* [DescribeRoom](http://document.tencentcloudapi.woa.com/document/product/1720/80647)
+
+	* 新增出参：IsGradingRequiredPostClass
+
+* [ModifyRoom](http://document.tencentcloudapi.woa.com/document/product/1720/80640)
+
+	* 新增入参：IsGradingRequiredPostClass
+
+
+
+
+## 渠道合作伙伴(partners) 版本：2018-03-21
+
+### 第 10 次发布
+
+发布时间：2023-07-21 01:34:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [RefundMap](http://document.tencentcloudapi.woa.com/document/product/563/16047#RefundMap)
+
+修改数据结构：
+
+* [AgentDealNewElem](http://document.tencentcloudapi.woa.com/document/product/563/16047#AgentDealNewElem)
+
+	* 新增成员：RefundMap
+
+	* <font color="#dd0000">**修改成员**：</font>ResourceIds
+
+
+
+
+## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
+
+### 第 24 次发布
+
+发布时间：2023-07-21 01:35:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CloneDBInstance](http://document.tencentcloudapi.woa.com/document/product/409/68071)
+
+	* 新增入参：SyncMode
+
+
+
+
+## 云压测(pts) 版本：2021-07-28
+
+### 第 17 次发布
+
+发布时间：2023-07-21 01:35:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Scenario](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Scenario)
+
+	* <font color="#dd0000">**修改成员**：</font>ScenarioId, Name, Description, Type, Status, Load, EncodedScripts, Configs, Extensions, Datasets, SLAId, CronId, CreatedAt, UpdatedAt, ProjectId, AppId, Uin, SubAccountUin, TestScripts, Protocols, RequestFiles, SLAPolicy, Plugins, DomainNameConfig, NotificationHooks, Owner, ProjectName
+
+
+
+
+## TDSQL-A PostgreSQL 版(tdapg) 版本：2020-12-30
+
+### 第 2 次发布
+
+发布时间：2023-07-21 01:41:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeUserTasks
+
+
+
+## 分布式身份(tdid) 版本：2021-05-19
+
+### 第 8 次发布
+
+发布时间：2023-07-21 01:41:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* GetConsortiumClusterList
+* GetConsortiumList
+* GetCredentialCptRank
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* BcosClusterItem
+* ConsortiumItem
+* CptIssueRank
+
+
+
+## 互动白板(tiw) 版本：2019-09-19
+
+### 第 13 次发布
+
+发布时间：2023-07-21 01:44:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTranscode](http://document.tencentcloudapi.woa.com/document/product/1137/40059)
+
+	* 新增出参：CreateTime, AssignTime, FinishedTime
+
+
+
+
+## 微服务引擎 TSE(tse) 版本：2020-12-07
+
+### 第 28 次发布
+
+发布时间：2023-07-21 01:46:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeNativeGatewayServerGroups](http://document.tencentcloudapi.woa.com/document/product/1364/81365)
+
+新增数据结构：
+
+* [CloudNativeAPIGatewayNodeConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayNodeConfig)
+* [CloudNativeAPIGatewayStrategy](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategy)
+* [CloudNativeAPIGatewayStrategyAutoScalerConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyAutoScalerConfig)
+* [CloudNativeAPIGatewayStrategyAutoScalerConfigMetric](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyAutoScalerConfigMetric)
+* [CloudNativeAPIGatewayStrategyCronScalerConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyCronScalerConfig)
+* [CloudNativeAPIGatewayStrategyCronScalerConfigParam](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyCronScalerConfigParam)
+* [NativeGatewayServerGroup](http://document.tencentcloudapi.woa.com/document/product/1364/54942#NativeGatewayServerGroup)
+* [NativeGatewayServerGroups](http://document.tencentcloudapi.woa.com/document/product/1364/54942#NativeGatewayServerGroups)
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 42 次发布
+
+发布时间：2023-07-21 01:49:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddDomainWhiteRule](http://document.tencentcloudapi.woa.com/document/product/627/72650)
+
+	* <font color="#dd0000">**修改出参**：</font>Id
+
+
+
+
 # Release 3.0.811.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

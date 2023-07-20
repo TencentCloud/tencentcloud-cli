@@ -28,6 +28,8 @@ Output:
                         "DumpUrl": "",
                         "HitFlag": true,
                         "MainType": "abuse",
+                        "RoomId": "123",
+                        "OpenId": "123",
                         "Info": "",
                         "Offset": 0,
                         "Duration": 3400,
@@ -69,6 +71,7 @@ Output:
                     "default"
                 ],
                 "Status": "Success",
+                "BizId": 123456789,
                 "TaskId": "6330xxxx-9xx7-11ed-98e3-52xxxxe4ac3b",
                 "Url": "https://xxx/xxx.m4a"
             }

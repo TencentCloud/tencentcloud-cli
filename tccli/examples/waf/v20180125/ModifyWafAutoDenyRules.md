@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli waf ModifyWafAutoDenyRules --cli-unfold-argument  \
-    --Domain xx \
+    --Domain test.test.com \
     --TimeThreshold 0 \
     --DenyTimeThreshold 0 \
     --AttackThreshold 0 \

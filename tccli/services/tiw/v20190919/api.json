@@ -2614,6 +2614,7 @@
           "example": "1",
           "member": "int64",
           "name": "Pages",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -2624,6 +2625,7 @@
           "example": "100",
           "member": "int64",
           "name": "Progress",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -2634,6 +2636,7 @@
           "example": "793x1122",
           "member": "string",
           "name": "Resolution",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2644,6 +2647,7 @@
           "example": "https://transcode-result/0agdnligqtgtvkm65emb/index.html",
           "member": "string",
           "name": "ResultUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2654,6 +2658,7 @@
           "example": "FINISHED",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2664,6 +2669,7 @@
           "example": "0agdnligqtgtvkm65emb",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2674,6 +2680,7 @@
           "example": "59378.docx",
           "member": "string",
           "name": "Title",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2684,6 +2691,7 @@
           "example": "https://transcode-thumbnal/0agdnligqtgtvkm65emb/",
           "member": "string",
           "name": "ThumbnailUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2694,6 +2702,7 @@
           "example": "793x1122",
           "member": "string",
           "name": "ThumbnailResolution",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2704,6 +2713,7 @@
           "example": "无",
           "member": "string",
           "name": "CompressFileUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2714,6 +2724,7 @@
           "example": "无",
           "member": "string",
           "name": "ResourceListUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2724,7 +2735,41 @@
           "example": "office",
           "member": "string",
           "name": "Ext",
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文档转码任务创建时间，单位s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1688974545",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文档转码任务分配时间，单位s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1688974545",
+          "member": "uint64",
+          "name": "AssignTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文档转码任务完成时间，单位s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1688974545",
+          "member": "uint64",
+          "name": "FinishedTime",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true,
           "visibility": 1
         },
