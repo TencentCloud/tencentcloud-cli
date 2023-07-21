@@ -12655,40 +12655,40 @@
       "document": "DescribeNatGatewayDestinationIpPortTranslationNatRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关ID。",
           "example": "[\"nat-3isn9hr0\\r\\n\"]",
+          "is_base64": false,
           "member": "string",
           "name": "NatGatewayIds",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "过滤条件:\n参数不支持同时指定NatGatewayIds和Filters。\n<li> nat-gateway-id，NAT网关的ID，如`nat-0yi4hekt`</li>\n<li> vpc-id，私有网络VPC的ID，如`vpc-0yi4hekt`</li>\n<li> public-ip-address， 弹性IP，如`139.199.232.238`。</li>\n<li>public-port， 公网端口。</li>\n<li>private-ip-address， 内网IP，如`10.0.0.1`。</li>\n<li>private-port， 内网端口。</li>\n<li>description，规则描述。</li>",
+          "document": "过滤条件:\n参数不支持同时指定NatGatewayIds和Filters。每次请求的Filters的上限为10，Filter.Values的上限为5\n<li> nat-gateway-id，NAT网关的ID，如`nat-0yi4hekt`</li>\n<li> vpc-id，私有网络VPC的ID，如`vpc-0yi4hekt`</li>\n<li> public-ip-address， 弹性IP，如`139.199.232.238`。</li>\n<li>public-port， 公网端口。</li>\n<li>private-ip-address， 内网IP，如`10.0.0.1`。</li>\n<li>private-port， 内网端口。</li>\n<li>description，规则描述。</li>",
           "example": "无",
+          "is_base64": false,
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
+          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "10",
+          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -12706,7 +12706,7 @@
           "example": "无",
           "member": "NatGatewayDestinationIpPortTranslationNatRule",
           "name": "NatGatewayDestinationIpPortTranslationNatRuleSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12716,7 +12716,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12889,40 +12889,40 @@
       "document": "DescribeNatGateways请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "NAT网关统一 ID，形如：`nat-123xx454`。",
+          "document": "NAT网关统一 ID，形如：`nat-123xx454`。每次请求的实例上限为100。参数不支持同时指定NatGatewayIds和Filters。",
           "example": "[\"nat-3isn9hr0\\r\\n\",\"nat-mxkohguo\\r\\n\"]",
+          "is_base64": false,
           "member": "string",
           "name": "NatGatewayIds",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定NatGatewayIds和Filters。\n<li>nat-gateway-id - String - （过滤条件）协议端口模板实例ID，形如：`nat-123xx454`。</li>\n<li>vpc-id - String - （过滤条件）私有网络 唯一ID，形如：`vpc-123xx454`。</li>\n<li>nat-gateway-name - String - （过滤条件）协议端口模板实例ID，形如：`test_nat`。</li>\n<li>tag-key - String - （过滤条件）标签键，形如：`test-key`。</li>",
+          "document": "过滤条件，参数不支持同时指定NatGatewayIds和Filters。每次请求的Filters的上限为10，Filter.Values的上限为5。\n<li>nat-gateway-id - String - （过滤条件）协议端口模板实例ID，形如：`nat-123xx454`。</li>\n<li>vpc-id - String - （过滤条件）私有网络 唯一ID，形如：`vpc-123xx454`。</li>\n<li>nat-gateway-name - String - （过滤条件）协议端口模板实例ID，形如：`test_nat`。</li>\n<li>tag-key - String - （过滤条件）标签键，形如：`test-key`。</li>",
           "example": "无",
+          "is_base64": false,
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
+          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "10",
+          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -12940,7 +12940,7 @@
           "example": "无",
           "member": "NatGateway",
           "name": "NatGatewaySet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12950,7 +12950,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

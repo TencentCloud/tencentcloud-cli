@@ -7018,80 +7018,80 @@
       "document": "DescribePushTasks请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间，如2018-08-08 00:00:00。",
           "example": "2018-08-08 00:00:00",
+          "is_base64": false,
           "member": "datetime",
           "name": "StartTime",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间，如2018-08-08 23:59:59。",
           "example": "2018-08-08 23:59:59",
+          "is_base64": false,
           "member": "datetime",
           "name": "EndTime",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定任务 ID 查询\nTaskId 和起始时间必须指定一项",
           "example": "abc123",
+          "is_base64": false,
           "member": "string",
           "name": "TaskId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询关键字，请输入域名或 http(s):// 开头完整 URL",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Keyword",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页查询偏移量，默认为 0",
           "example": "0",
+          "is_base64": false,
           "member": "int64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页查询限制数目，默认为 20",
           "example": "10",
+          "is_base64": false,
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "指定地区查询预热纪录\nmainland：境内\noverseas：境外\nglobal：全球",
+          "document": "指定地区查询预热记录\nmainland：境内\noverseas：境外\nglobal：全球",
           "example": "mainland",
+          "is_base64": false,
           "member": "string",
           "name": "Area",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定任务状态查询\nfail：预热失败\ndone：预热成功\nprocess：预热中\ninvalid: 预热无效(源站返回4xx或5xx状态码)",
           "example": "done",
+          "is_base64": false,
           "member": "string",
           "name": "Status",
           "required": false,
@@ -7109,7 +7109,7 @@
           "example": "无",
           "member": "PushTask",
           "name": "PushLogs",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7119,7 +7119,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },

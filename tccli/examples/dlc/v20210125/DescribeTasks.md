@@ -6,17 +6,15 @@ Input:
 
 ```
 tccli dlc DescribeTasks --cli-unfold-argument  \
-    --Sorting desc \
-    --Filters.0.Values e386471f-139a-4e59-877f-50ece8135b99 \
-    --Filters.0.Name task-id \
-    --Filters.1.Values e386471f-139a-4e59-877f-50ece8135b98 \
-    --Filters.1.Name task-id \
-    --Limit 10 \
-    --SortBy create-time \
-    --StartTime 2019-01-21 00:00:00 \
+    --Limit 0 \
     --Offset 0 \
-    --EndTime 2019-01-22 00:00:00 \
-    --DataEngineName shared_presto
+    --Filters.0.Name abc \
+    --Filters.0.Values abc \
+    --SortBy abc \
+    --Sorting abc \
+    --StartTime abc \
+    --EndTime abc \
+    --DataEngineName abc
 ```
 
 Output: 
@@ -61,7 +59,28 @@ Output:
                 "DriverSize": "abc",
                 "ExecutorSize": "abc",
                 "ExecutorNums": 1,
-                "ExecutorMaxNumbers": 1
+                "ExecutorMaxNumbers": 1,
+                "CommonMetrics": {
+                    "CreateTaskTime": 0,
+                    "ProcessTime": 0,
+                    "QueueTime": 0,
+                    "ExecutionTime": 0,
+                    "IsResultCacheHit": true,
+                    "MatchedMVBytes": 0,
+                    "MatchedMVs": "abc",
+                    "AffectedBytes": "abc",
+                    "AffectedRows": 0,
+                    "ProcessedBytes": 0,
+                    "ProcessedRows": 0
+                },
+                "SparkMonitorMetrics": {
+                    "ShuffleWriteBytesCos": 0,
+                    "ShuffleWriteBytesTotal": 0
+                },
+                "PrestoMonitorMetrics": {
+                    "LocalCacheHitRate": 0,
+                    "FragmentCacheHitRate": 0
+                }
             }
         ],
         "TotalCount": 1,

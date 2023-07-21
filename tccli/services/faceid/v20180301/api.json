@@ -143,7 +143,7 @@
     "IdCardVerification": {
       "document": "传入姓名和身份证号，校验两者的真实性和一致性。",
       "input": "IdCardVerificationRequest",
-      "name": "身份信息认证",
+      "name": "身份信息认证（二要素核验）",
       "output": "IdCardVerificationResponse",
       "status": "online"
     },
@@ -707,7 +707,6 @@
       "document": "CheckIdCardInformation请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "身份证人像面的 Base64 值\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。\n请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。\nImageBase64、ImageUrl二者必须提供其中之一。若都提供了，则按照ImageUrl>ImageBase64的优先级使用参数。",
           "example": "\"\"",
@@ -717,7 +716,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "身份证人像面的 Url 地址\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "\"\"",
@@ -727,9 +725,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "以下可选字段均为bool 类型，默认false：\nCopyWarn，复印件告警\nBorderCheckWarn，边框和框内遮挡告警\nReshootWarn，翻拍告警\nDetectPsWarn，PS检测告警\nTempIdWarn，临时身份证告警\nQuality，图片质量告警（评价图片模糊程度）\n\nSDK 设置方式参考：\nConfig = Json.stringify({\"CopyWarn\":true,\"ReshootWarn\":true})\nAPI 3.0 Explorer 设置方式参考：\nConfig = {\"CopyWarn\":true,\"ReshootWarn\":true}",
+          "document": "以下可选字段均为bool 类型，默认false：\nCopyWarn，复印件告警\nBorderCheckWarn，边框和框内遮挡告警\nReshootWarn，翻拍告警\nDetectPsWarn，PS检测告警（疑似存在PS痕迹）\nTempIdWarn，临时身份证告警\nQuality，图片质量告警（评价图片模糊程度）\n\nSDK 设置方式参考：\nConfig = Json.stringify({\"CopyWarn\":true,\"ReshootWarn\":true})\nAPI 3.0 Explorer 设置方式参考：\nConfig = {\"CopyWarn\":true,\"ReshootWarn\":true}",
           "example": "无",
           "member": "string",
           "name": "Config",
@@ -737,7 +734,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要对返回中的敏感信息进行加密。默认false。\n其中敏感信息包括：Response.IdNum、Response.Name",
           "example": "false",
@@ -758,7 +754,7 @@
           "example": "98.819999694824",
           "member": "float",
           "name": "Sim",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -768,7 +764,7 @@
           "example": "FailedOperation.OcrWarningOccurred",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -778,7 +774,7 @@
           "example": "成功",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -788,7 +784,7 @@
           "example": "洪**",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -798,7 +794,7 @@
           "example": "男",
           "member": "string",
           "name": "Sex",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -808,7 +804,7 @@
           "example": "汉",
           "member": "string",
           "name": "Nation",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -818,7 +814,7 @@
           "example": "1995/8/6",
           "member": "string",
           "name": "Birth",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -828,7 +824,7 @@
           "example": "广东省xxxxxxxxxxxx",
           "member": "string",
           "name": "Address",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -838,7 +834,7 @@
           "example": "xxxxxxx",
           "member": "string",
           "name": "IdNum",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -848,17 +844,17 @@
           "example": "zok/tK7k2bLjyJE",
           "member": "string",
           "name": "Portrait",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警信息，当在Config中配置了告警信息会停止人像比对，Result返回错误（FailedOperation.OcrWarningOccurred）并有此告警信息，Code 告警码列表和释义：\n\n-9101 身份证边框不完整告警，\n-9102 身份证复印件告警，\n-9103 身份证翻拍告警，\n-9105 身份证框内遮挡告警，\n-9104 临时身份证告警，\n-9106 身份证 PS 告警。\n-8001 图片模糊告警\n多个会 |  隔开如 \"-9101|-9106|-9104\"",
+          "document": "告警信息，当在Config中配置了告警信息会停止人像比对，Result返回错误（FailedOperation.OcrWarningOccurred）并有此告警信息，Code 告警码列表和释义：\n\n-9101 身份证边框不完整告警，\n-9102 身份证复印件告警，\n-9103 身份证翻拍告警，\n-9105 身份证框内遮挡告警，\n-9104 临时身份证告警，\n-9106 身份证 PS 告警（疑似存在PS痕迹）。\n-8001 图片模糊告警\n多个会 |  隔开如 \"-9101|-9106|-9104\"",
           "example": "-9101|-9106|-9104",
           "member": "string",
           "name": "Warnings",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -868,7 +864,7 @@
           "example": "0",
           "member": "float",
           "name": "Quality",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -878,7 +874,7 @@
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1387,79 +1383,72 @@
       "document": "核身身份证图片信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "OCR正面照片的base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
           "name": "OcrFront",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "OCR反面照片的base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
           "name": "OcrBack",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "旋转裁边后的正面照片base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
           "name": "ProcessedFrontImage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "旋转裁边后的背面照片base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
           "name": "ProcessedBackImage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "身份证正面人像图base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
           "name": "Avatar",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "身份证人像面告警码，开启身份证告警功能后才会返回，返回数组中可能出现的告警码如下：\n-9100 身份证有效日期不合法告警，\n-9101 身份证边框不完整告警，\n-9102 身份证复印件告警，\n-9103 身份证翻拍告警，\n-9105 身份证框内遮挡告警，\n-9104 临时身份证告警，\n-9106 身份证 PS 告警，\n-9107 身份证反光告警。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证人像面告警码，开启身份证告警功能后才会返回，返回数组中可能出现的告警码如下：\n-9100 身份证有效日期不合法告警，\n-9101 身份证边框不完整告警，\n-9102 身份证复印件告警，\n-9103 身份证翻拍告警，\n-9105 身份证框内遮挡告警，\n-9104 临时身份证告警，\n-9106 身份证 PS 告警（疑似存在PS痕迹），\n-9107 身份证反光告警。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "int64",
           "name": "WarnInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "身份证国徽面告警码，开启身份证告警功能后才会返回，返回数组中可能出现的告警码如下：\n-9100 身份证有效日期不合法告警，\n-9101 身份证边框不完整告警，\n-9102 身份证复印件告警，\n-9103 身份证翻拍告警，\n-9105 身份证框内遮挡告警，\n-9104 临时身份证告警，\n-9106 身份证 PS 告警，\n-9107 身份证反光告警。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证国徽面告警码，开启身份证告警功能后才会返回，返回数组中可能出现的告警码如下：\n-9100 身份证有效日期不合法告警，\n-9101 身份证边框不完整告警，\n-9102 身份证复印件告警，\n-9103 身份证翻拍告警，\n-9105 身份证框内遮挡告警，\n-9104 临时身份证告警，\n-9106 身份证 PS 告警（疑似存在PS痕迹），\n-9107 身份证反光告警。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "int64",
           "name": "BackWarnInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -1920,62 +1909,67 @@
       "document": "敏感数据加密",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的一个或多个字段",
+          "document": "在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的一个或多个字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
+          "is_base64": false,
           "member": "string",
           "name": "EncryptList",
+          "output_required": false,
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅<a href=\"https://cloud.tencent.com/document/product/1007/47180\">数据加密</a> 文档。",
+          "document": "有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅<a href=\"https://cloud.tencent.com/document/product/1007/47180\">数据加密</a> 文档。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
+          "is_base64": false,
           "member": "string",
           "name": "CiphertextBlob",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。",
+          "document": "有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
+          "is_base64": false,
           "member": "string",
           "name": "Iv",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "加密使用的算法（支持'AES-256-CBC'、'SM4-GCM'），不传默认为'AES-256-CBC'",
+          "document": "加密使用的算法（支持'AES-256-CBC'、'SM4-GCM'），不传默认为'AES-256-CBC'\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SM4-GCM",
+          "is_base64": false,
           "member": "string",
           "name": "Algorithm",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "SM4-GCM算法生成的消息摘要（校验消息完整性时使用）",
+          "document": "SM4-GCM算法生成的消息摘要（校验消息完整性时使用）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
+          "is_base64": false,
           "member": "string",
           "name": "TagList",
+          "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "GetActionSequenceRequest": {
       "document": "GetActionSequence请求参数结构体",
@@ -3027,7 +3021,6 @@
       "document": "IdCardVerification请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "身份证号",
           "example": "xxxxxxxxxxxxxxxxx",
@@ -3037,7 +3030,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "姓名",
           "example": "xxxxxxxxxxxxxxxxx",
@@ -3047,7 +3039,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
           "example": "无",
@@ -3068,7 +3059,7 @@
           "example": "0",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3078,7 +3069,7 @@
           "example": "姓名和身份证号一致",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

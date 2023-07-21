@@ -10022,7 +10022,7 @@
           "example": "multi_tenant ｜ stand_alone_cluster",
           "member": "string",
           "name": "ArchitectureType",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },

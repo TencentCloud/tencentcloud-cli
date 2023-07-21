@@ -5583,6 +5583,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "推流时长，单位：秒。项目结束后，返回上次项目运行时的推流时长。如果项目是 Working 状态，返回的时长是0。",
+          "example": "无",
+          "member": "float",
+          "name": "Duration",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

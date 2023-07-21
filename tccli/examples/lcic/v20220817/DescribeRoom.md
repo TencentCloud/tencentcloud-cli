@@ -59,6 +59,7 @@ Output:
         "EndTime": 1687943391,
         "GroupId": "",
         "InteractionMode": 1,
+        "IsGradingRequiredPostClass": 0,
         "MaxMicNumber": 2,
         "Name": "测试1",
         "RecordUrl": "",

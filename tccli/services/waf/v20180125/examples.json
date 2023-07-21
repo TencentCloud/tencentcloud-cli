@@ -166,7 +166,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomWhiteRule\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloudwaf.com\",\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"1234567890\"\n            ],\n            \"Name\": \"RuleID\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d207f4f-0d41-4f5d-bce2-0320090c98d8\",\n        \"RuleList\": [\n            {\n                \"ActionType\": \"1\",\n                \"Bypass\": \"geoip,cc,owasp,ai,antileakage\",\n                \"CreateTime\": \"2020-02-20 14:00:12\",\n                \"ExpireTime\": \"0\",\n                \"Name\": \"test\",\n                \"Redirect\": \"/\",\n                \"RuleId\": \"17958569\",\n                \"SortId\": \"100\",\n                \"Status\": \"1\",\n                \"Strategies\": [\n                    {\n                        \"Arg\": \"\",\n                        \"CompareFunc\": \"ipmatch\",\n                        \"Content\": \"1.1.1.2\",\n                        \"Field\": \"IP\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": \"1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d207f4f-0d41-4f5d-bce2-0320090c98d8\",\n        \"RuleList\": [\n            {\n                \"EventId\": \"\",\n                \"ActionType\": \"1\",\n                \"Bypass\": \"geoip,cc,owasp,ai,antileakage\",\n                \"CreateTime\": \"2020-02-20 14:00:12\",\n                \"ExpireTime\": \"0\",\n                \"Name\": \"test\",\n                \"Redirect\": \"/\",\n                \"RuleId\": \"17958569\",\n                \"SortId\": \"100\",\n                \"Status\": \"1\",\n                \"Strategies\": [\n                    {\n                        \"Arg\": \"\",\n                        \"CompareFunc\": \"ipmatch\",\n                        \"Content\": \"1.1.1.2\",\n                        \"Field\": \"IP\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": \"1\"\n    }\n}",
         "title": "获取精准白名单规则列表"
       }
     ],
@@ -383,7 +383,7 @@
     "ModifyWafAutoDenyRules": [
       {
         "document": "修改ip惩罚配置",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWafAutoDenyRules\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\",\n    \"TimeThreshold\": 0,\n    \"DenyTimeThreshold\": 0,\n    \"AttackThreshold\": 0,\n    \"DefenseStatus\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWafAutoDenyRules\n<公共请求参数>\n\n{\n    \"Domain\": \"test.test.com\",\n    \"TimeThreshold\": 0,\n    \"DenyTimeThreshold\": 0,\n    \"AttackThreshold\": 0,\n    \"DefenseStatus\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "修改ip惩罚配置"
       }
@@ -423,7 +423,7 @@
     "SearchAttackLog": [
       {
         "document": "搜索攻击日志详情内容",
-        "input": "https://waf.tencentcloudapi.com/?Action=SearchAttackLog\n&StartTime=2020-09-22 00:00:00\n&EndTime=2020-09-22 00:00:00\n&Domain=all\n&Context=xxxxx\n&QueryString=method:GET\n&Sort=desc\n&<公共请求参数>",
+        "input": "https://waf.tencentcloudapi.com/?Action=SearchAttackLog\n&StartTime=2020-09-22 00:00:00\n&EndTime=2020-09-22 00:00:00\n&Domain=all\n&Context=\n&QueryString=method:GET\n&Sort=desc\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"Context\": \"abc\",\n        \"Data\": [\n            {\n                \"Content\": \"abc\",\n                \"FileName\": \"abc\",\n                \"Source\": \"abc\",\n                \"TimeStamp\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"ListOver\": true,\n        \"SqlFlag\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "搜索攻击日志详情内容"
       }

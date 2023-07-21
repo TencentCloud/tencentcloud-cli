@@ -28,11 +28,11 @@ Output:
         "Warnings": "-9101|-9106|-9104",
         "Quality": 0.0,
         "Encryption": {
-            "Iv": "xx",
+            "Iv": "abc",
             "EncryptList": [
                 "IdName"
             ],
-            "CiphertextBlob": "xx"
+            "CiphertextBlob": "abc"
         }
     }
 }

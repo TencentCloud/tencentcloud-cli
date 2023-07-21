@@ -7732,6 +7732,7 @@
           "example": "无",
           "member": "TaskResponseInfo",
           "name": "TaskList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7741,6 +7742,7 @@
           "example": "21",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7750,6 +7752,7 @@
           "example": "无",
           "member": "TasksOverview",
           "name": "TasksOverview",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },

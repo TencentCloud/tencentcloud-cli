@@ -10,7 +10,7 @@
     ],
     "CloneDBInstance": [
       {
-        "document": "",
+        "document": "原实例误删数据时，可用克隆实例功能恢复。",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloneDBInstance\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-2ot3acw1\",\n    \"AutoRenewFlag\": \"1\",\n    \"DBInstanceId\": \"postgres-abcd1234\",\n    \"RecoveryTargetTime\": \"2021-12-25 01:27:35\",\n    \"Storage\": \"10\",\n    \"Period\": \"1\",\n    \"AutoVoucher\": \"0\",\n    \"InstanceChargeType\": \"prepaid\",\n    \"SpecCode\": \"cdb.pg.z1.2g\",\n    \"SubnetId\": \"subnet-ppv9iw34\",\n    \"DBNodeSet\": [\n        {\n            \"Role\": \"Standby\",\n            \"Zone\": \"ap-guangzhou-3\"\n        },\n        {\n            \"Role\": \"Primary\",\n            \"Zone\": \"ap-guangzhou-3\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"DealName\": \"20211225711000768276461\",\n        \"BillId\": \"20211225711000768276471\",\n        \"DBInstanceId\": \"postgres-xxxx\"\n    }\n}",
         "title": "克隆实例"

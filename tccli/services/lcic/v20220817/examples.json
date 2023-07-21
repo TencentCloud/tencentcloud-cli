@@ -278,7 +278,7 @@
       {
         "document": "获取房间信息",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 331450358\n}",
-        "output": "{\n    \"Response\": {\n        \"Assistants\": [],\n        \"AudioQuality\": 0,\n        \"AutoMic\": 0,\n        \"DisableRecord\": 0,\n        \"EnableDirectControl\": 0,\n        \"EndTime\": 1687943391,\n        \"GroupId\": \"\",\n        \"InteractionMode\": 1,\n        \"MaxMicNumber\": 2,\n        \"Name\": \"测试1\",\n        \"RecordUrl\": \"\",\n        \"RequestId\": \"a8dea9b9-5172-4c01-a53d-5a53437f7fdf\",\n        \"Resolution\": 1,\n        \"SdkAppId\": 3923193,\n        \"StartTime\": 1687943339,\n        \"Status\": 0,\n        \"SubType\": \"video\",\n        \"TeacherId\": \"2O2bjPEXxStIac3NC9kfH3mHeBC\",\n        \"VideoOrientation\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Assistants\": [],\n        \"AudioQuality\": 0,\n        \"AutoMic\": 0,\n        \"DisableRecord\": 0,\n        \"EnableDirectControl\": 0,\n        \"EndTime\": 1687943391,\n        \"GroupId\": \"\",\n        \"InteractionMode\": 1,\n        \"IsGradingRequiredPostClass\": 0,\n        \"MaxMicNumber\": 2,\n        \"Name\": \"测试1\",\n        \"RecordUrl\": \"\",\n        \"RequestId\": \"a8dea9b9-5172-4c01-a53d-5a53437f7fdf\",\n        \"Resolution\": 1,\n        \"SdkAppId\": 3923193,\n        \"StartTime\": 1687943339,\n        \"Status\": 0,\n        \"SubType\": \"video\",\n        \"TeacherId\": \"2O2bjPEXxStIac3NC9kfH3mHeBC\",\n        \"VideoOrientation\": 1\n    }\n}",
         "title": "示例"
       }
     ],
