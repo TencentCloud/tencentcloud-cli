@@ -1,3 +1,208 @@
+# Release 3.0.813.1
+
+## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 28 次发布
+
+发布时间：2023-07-24 01:11:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeDiskOperationLogs
+* DescribeSnapshotOperationLogs
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* DiskOperationLog
+* SnapshotOperationLog
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 71 次发布
+
+发布时间：2023-07-24 01:11:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeCDBProxy
+* DescribeProxyConnectionPoolConf
+* ModifyCDBProxyConnectionPool
+* ModifyCDBProxyVipVPort
+* QueryCDBProxy
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* Address
+* BaseGroupInfo
+* ConnectionPoolInfo
+* PoolConf
+* ProxyGroup
+* ProxyGroups
+* ProxyNodeInfo
+* RWInfo
+* RWInfos
+* RWInstanceInfo
+
+
+
+## Cloud Studio（云端 IDE）(cloudstudio) 版本：2023-05-08
+
+### 第 3 次发布
+
+发布时间：2023-07-24 01:16:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateWorkspaceToken](http://document.tencentcloudapi.woa.com/document/product/1640/78592)
+
+	* 新增入参：Policies
+
+
+
+
+## Cloud Studio（云端 IDE）(cloudstudio) 版本：2021-05-24
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 16 次发布
+
+发布时间：2023-07-24 01:23:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateDomainRedemption](http://document.tencentcloudapi.woa.com/document/product/242/81366)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 11 次发布
+
+发布时间：2023-07-24 01:26:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BindEmployeeUserIdWithClientOpenId](http://document.tencentcloudapi.woa.com/document/product/1668/79334)
+
+	* 新增入参：Agent
+
+* [CreateFlowApprovers](http://document.tencentcloudapi.woa.com/document/product/1668/79339)
+
+	* 新增入参：Agent
+
+* [CreateUserAutoSignEnableUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79356)
+
+	* 新增入参：Agent
+
+* [DescribeThirdPartyAuthCode](http://document.tencentcloudapi.woa.com/document/product/1668/79355)
+
+	* 新增入参：Operator, Agent
+
+* [DescribeUserAutoSignStatus](http://document.tencentcloudapi.woa.com/document/product/1668/79354)
+
+	* 新增入参：Agent
+
+* [DisableUserAutoSign](http://document.tencentcloudapi.woa.com/document/product/1668/79353)
+
+	* 新增入参：Agent
+
+* [UnbindEmployeeUserIdWithClientOpenId](http://document.tencentcloudapi.woa.com/document/product/1668/79329)
+
+	* 新增入参：Agent
+
+
+修改数据结构：
+
+* [FillApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FillApproverInfo)
+
+	* 新增成员：ApproverName, ApproverMobile
+
+	* <font color="#dd0000">**修改成员**：</font>ApproverSource, CustomUserId
+
+
+
+
+## 官网(portal) 版本：2023-04-13
+
+### 第 3 次发布
+
+发布时间：2023-07-24 01:36:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeProductDictionaryList](http://document.tencentcloudapi.woa.com/document/product/1732/81368)
+
+新增数据结构：
+
+* [DictItem](http://document.tencentcloudapi.woa.com/document/product/1732/80923#DictItem)
+
+
+
+## 分布式身份(tdid) 版本：2021-05-19
+
+### 第 9 次发布
+
+发布时间：2023-07-24 01:44:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* AddLabel
+* GetAgencyTDid
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* Identity
+
+
+
+## 互动白板(tiw) 版本：2019-09-19
+
+### 第 14 次发布
+
+发布时间：2023-07-24 01:46:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTranscodeByUrl](http://document.tencentcloudapi.woa.com/document/product/1137/81369)
+
+
+
 # Release 3.0.812.1
 
 ## 多媒体创作引擎(cme) 版本：2019-10-29

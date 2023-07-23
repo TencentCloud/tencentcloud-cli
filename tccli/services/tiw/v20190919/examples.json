@@ -240,6 +240,14 @@
         "title": "查询文档静态转码任务"
       }
     ],
+    "DescribeTranscodeByUrl": [
+      {
+        "document": "通过url查询文档动态转码任务状态",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTranscode\n<公共请求参数>\n\n{\n    \"Url\": \"https://path/to/document.ppt\",\n    \"SdkAppId\": 1400000001\n}",
+        "output": "{\n    \"Response\": {\n        \"Progress\": 100,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"Status\": \"FINISHED\",\n        \"TaskId\": \"0agdnligqtgtvkm65emb\"\n    }\n}",
+        "title": "通过url查询文档动态转码任务状态"
+      }
+    ],
     "DescribeTranscodeCallback": [
       {
         "document": "查询文档转码回调地址",

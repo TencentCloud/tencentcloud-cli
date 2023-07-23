@@ -16,6 +16,14 @@
         "title": "获取文档列表"
       }
     ],
+    "DescribeProductDictionaryList": [
+      {
+        "document": "获取产品字典列表",
+        "input": "POST / HTTP/1.1\nHost: portal.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDictList\n<公共请求参数>\n\n{\n    \"DictIds\": [\n        2000\n    ],\n    \"IncludeActivity\": true,\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"DictId\": 2000,\n                \"ParentId\": 500,\n                \"Type\": 1,\n                \"Slug\": \"cvm\",\n                \"Name\": \"云服务器\",\n                \"ProductOwner\": [\n                    \"xxxxxxxxx\"\n                ],\n                \"DeveloperOwner\": [\n                    \"xxxxxxxxx\"\n                ],\n                \"FtId\": 100,\n                \"Weight\": 2030050000,\n                \"IntroPageLink\": \"https://cloud.tencent.com/product/cvm\",\n                \"IntroUpdateTime\": \"2023-07-03T09:53:44+08:00\",\n                \"Acts\": [\n                    \"https://cloud.tencent.com/act/pro/618season\"\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\",\n        \"Total\": 1\n    }\n}",
+        "title": "产品字典列表"
+      }
+    ],
     "GetCurrentPolicy": [
       {
         "document": "纠错系统当前支持的所有检查策略",

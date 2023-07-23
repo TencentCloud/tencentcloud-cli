@@ -1,186 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 多媒体创作引擎(cme) 版本：2019-10-29
+## 云硬盘(cbs) 版本：2017-03-12
 
-### 第 21 次发布
+### 第 28 次发布
 
-发布时间：2023-07-21 01:15:40
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [MediaCastProjectInfo](http://document.tencentcloudapi.woa.com/document/product/1156/40360#MediaCastProjectInfo)
-
-	* 新增成员：Duration
-
-
-
-
-## 腾讯电子签企业版(ess) 版本：2020-11-11
-
-### 第 10 次发布
-
-发布时间：2023-07-21 01:24:39
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateSchemeUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79345)
-
-	* 新增入参：Hides
-
-
-修改数据结构：
-
-* [RegisterInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#RegisterInfo)
-
-	* 新增成员：UnifiedSocialCreditCode
-
-	* <font color="#dd0000">**修改成员**：</font>Uscc
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 71 次发布
-
-发布时间：2023-07-21 01:24:58
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateSignUrls](http://document.tencentcloudapi.woa.com/document/product/1595/75249)
-
-	* 新增入参：Hides
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
-
-
-
-## 低代码互动课堂(lcic) 版本：2022-08-17
-
-### 第 6 次发布
-
-发布时间：2023-07-21 01:30:56
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateRoom](http://document.tencentcloudapi.woa.com/document/product/1720/80652)
-
-	* 新增入参：IsGradingRequiredPostClass
-
-* [DescribeRoom](http://document.tencentcloudapi.woa.com/document/product/1720/80647)
-
-	* 新增出参：IsGradingRequiredPostClass
-
-* [ModifyRoom](http://document.tencentcloudapi.woa.com/document/product/1720/80640)
-
-	* 新增入参：IsGradingRequiredPostClass
-
-
-
-
-## 渠道合作伙伴(partners) 版本：2018-03-21
-
-### 第 10 次发布
-
-发布时间：2023-07-21 01:34:53
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [RefundMap](http://document.tencentcloudapi.woa.com/document/product/563/16047#RefundMap)
-
-修改数据结构：
-
-* [AgentDealNewElem](http://document.tencentcloudapi.woa.com/document/product/563/16047#AgentDealNewElem)
-
-	* 新增成员：RefundMap
-
-	* <font color="#dd0000">**修改成员**：</font>ResourceIds
-
-
-
-
-## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
-
-### 第 24 次发布
-
-发布时间：2023-07-21 01:35:07
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CloneDBInstance](http://document.tencentcloudapi.woa.com/document/product/409/68071)
-
-	* 新增入参：SyncMode
-
-
-
-
-## 云压测(pts) 版本：2021-07-28
-
-### 第 17 次发布
-
-发布时间：2023-07-21 01:35:46
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Scenario](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Scenario)
-
-	* <font color="#dd0000">**修改成员**：</font>ScenarioId, Name, Description, Type, Status, Load, EncodedScripts, Configs, Extensions, Datasets, SLAId, CronId, CreatedAt, UpdatedAt, ProjectId, AppId, Uin, SubAccountUin, TestScripts, Protocols, RequestFiles, SLAPolicy, Plugins, DomainNameConfig, NotificationHooks, Owner, ProjectName
-
-
-
-
-## TDSQL-A PostgreSQL 版(tdapg) 版本：2020-12-30
-
-### 第 2 次发布
-
-发布时间：2023-07-21 01:41:49
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**预下线接口**：</font>
-
-* DescribeUserTasks
-
-
-
-## 分布式身份(tdid) 版本：2021-05-19
-
-### 第 8 次发布
-
-发布时间：2023-07-21 01:41:59
+发布时间：2023-07-24 01:11:26
 
 本次发布包含了以下内容：
 
@@ -188,23 +12,54 @@
 
 <font color="#dd0000">**删除接口**：</font>
 
-* GetConsortiumClusterList
-* GetConsortiumList
-* GetCredentialCptRank
+* DescribeDiskOperationLogs
+* DescribeSnapshotOperationLogs
 
 <font color="#dd0000">**删除数据结构**：</font>
 
-* BcosClusterItem
-* ConsortiumItem
-* CptIssueRank
+* DiskOperationLog
+* SnapshotOperationLog
 
 
 
-## 互动白板(tiw) 版本：2019-09-19
+## 云数据库 MySQL(cdb) 版本：2017-03-20
 
-### 第 13 次发布
+### 第 71 次发布
 
-发布时间：2023-07-21 01:44:09
+发布时间：2023-07-24 01:11:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeCDBProxy
+* DescribeProxyConnectionPoolConf
+* ModifyCDBProxyConnectionPool
+* ModifyCDBProxyVipVPort
+* QueryCDBProxy
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* Address
+* BaseGroupInfo
+* ConnectionPoolInfo
+* PoolConf
+* ProxyGroup
+* ProxyGroups
+* ProxyNodeInfo
+* RWInfo
+* RWInfos
+* RWInstanceInfo
+
+
+
+## Cloud Studio（云端 IDE）(cloudstudio) 版本：2023-05-08
+
+### 第 3 次发布
+
+发布时间：2023-07-24 01:16:08
 
 本次发布包含了以下内容：
 
@@ -212,18 +67,22 @@
 
 修改接口：
 
-* [DescribeTranscode](http://document.tencentcloudapi.woa.com/document/product/1137/40059)
+* [CreateWorkspaceToken](http://document.tencentcloudapi.woa.com/document/product/1640/78592)
 
-	* 新增出参：CreateTime, AssignTime, FinishedTime
-
-
+	* 新增入参：Policies
 
 
-## 微服务引擎 TSE(tse) 版本：2020-12-07
 
-### 第 28 次发布
 
-发布时间：2023-07-21 01:46:17
+## Cloud Studio（云端 IDE）(cloudstudio) 版本：2021-05-24
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 16 次发布
+
+发布时间：2023-07-24 01:23:14
 
 本次发布包含了以下内容：
 
@@ -231,26 +90,15 @@
 
 新增接口：
 
-* [DescribeNativeGatewayServerGroups](http://document.tencentcloudapi.woa.com/document/product/1364/81365)
-
-新增数据结构：
-
-* [CloudNativeAPIGatewayNodeConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayNodeConfig)
-* [CloudNativeAPIGatewayStrategy](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategy)
-* [CloudNativeAPIGatewayStrategyAutoScalerConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyAutoScalerConfig)
-* [CloudNativeAPIGatewayStrategyAutoScalerConfigMetric](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyAutoScalerConfigMetric)
-* [CloudNativeAPIGatewayStrategyCronScalerConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyCronScalerConfig)
-* [CloudNativeAPIGatewayStrategyCronScalerConfigParam](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyCronScalerConfigParam)
-* [NativeGatewayServerGroup](http://document.tencentcloudapi.woa.com/document/product/1364/54942#NativeGatewayServerGroup)
-* [NativeGatewayServerGroups](http://document.tencentcloudapi.woa.com/document/product/1364/54942#NativeGatewayServerGroups)
+* [CreateDomainRedemption](http://document.tencentcloudapi.woa.com/document/product/242/81366)
 
 
 
-## Web 应用防火墙(waf) 版本：2018-01-25
+## 腾讯电子签企业版(ess) 版本：2020-11-11
 
-### 第 42 次发布
+### 第 11 次发布
 
-发布时间：2023-07-21 01:49:49
+发布时间：2023-07-24 01:26:00
 
 本次发布包含了以下内容：
 
@@ -258,10 +106,100 @@
 
 修改接口：
 
-* [AddDomainWhiteRule](http://document.tencentcloudapi.woa.com/document/product/627/72650)
+* [BindEmployeeUserIdWithClientOpenId](http://document.tencentcloudapi.woa.com/document/product/1668/79334)
 
-	* <font color="#dd0000">**修改出参**：</font>Id
+	* 新增入参：Agent
 
+* [CreateFlowApprovers](http://document.tencentcloudapi.woa.com/document/product/1668/79339)
+
+	* 新增入参：Agent
+
+* [CreateUserAutoSignEnableUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79356)
+
+	* 新增入参：Agent
+
+* [DescribeThirdPartyAuthCode](http://document.tencentcloudapi.woa.com/document/product/1668/79355)
+
+	* 新增入参：Operator, Agent
+
+* [DescribeUserAutoSignStatus](http://document.tencentcloudapi.woa.com/document/product/1668/79354)
+
+	* 新增入参：Agent
+
+* [DisableUserAutoSign](http://document.tencentcloudapi.woa.com/document/product/1668/79353)
+
+	* 新增入参：Agent
+
+* [UnbindEmployeeUserIdWithClientOpenId](http://document.tencentcloudapi.woa.com/document/product/1668/79329)
+
+	* 新增入参：Agent
+
+
+修改数据结构：
+
+* [FillApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FillApproverInfo)
+
+	* 新增成员：ApproverName, ApproverMobile
+
+	* <font color="#dd0000">**修改成员**：</font>ApproverSource, CustomUserId
+
+
+
+
+## 官网(portal) 版本：2023-04-13
+
+### 第 3 次发布
+
+发布时间：2023-07-24 01:36:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeProductDictionaryList](http://document.tencentcloudapi.woa.com/document/product/1732/81368)
+
+新增数据结构：
+
+* [DictItem](http://document.tencentcloudapi.woa.com/document/product/1732/80923#DictItem)
+
+
+
+## 分布式身份(tdid) 版本：2021-05-19
+
+### 第 9 次发布
+
+发布时间：2023-07-24 01:44:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* AddLabel
+* GetAgencyTDid
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* Identity
+
+
+
+## 互动白板(tiw) 版本：2019-09-19
+
+### 第 14 次发布
+
+发布时间：2023-07-24 01:46:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTranscodeByUrl](http://document.tencentcloudapi.woa.com/document/product/1137/81369)
 
 
 
@@ -7319,6 +7257,24 @@
 
 ## 云硬盘(cbs) 版本：2017-03-12
 
+### 第 28 次发布
+
+发布时间：2023-07-24 01:11:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeDiskOperationLogs
+* DescribeSnapshotOperationLogs
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* DiskOperationLog
+* SnapshotOperationLog
+
 ### 第 27 次发布
 
 发布时间：2023-07-03 01:11:31
@@ -8593,6 +8549,35 @@
 
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 71 次发布
+
+发布时间：2023-07-24 01:11:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeCDBProxy
+* DescribeProxyConnectionPoolConf
+* ModifyCDBProxyConnectionPool
+* ModifyCDBProxyVipVPort
+* QueryCDBProxy
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* Address
+* BaseGroupInfo
+* ConnectionPoolInfo
+* PoolConf
+* ProxyGroup
+* ProxyGroups
+* ProxyNodeInfo
+* RWInfo
+* RWInfos
+* RWInstanceInfo
 
 ### 第 70 次发布
 
@@ -16225,6 +16210,21 @@
 
 
 ## Cloud Studio（云端 IDE）(cloudstudio) 版本：2023-05-08
+
+### 第 3 次发布
+
+发布时间：2023-07-24 01:16:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateWorkspaceToken](http://document.tencentcloudapi.woa.com/document/product/1640/78592)
+
+	* 新增入参：Policies
+
 
 ### 第 2 次发布
 
@@ -27596,6 +27596,18 @@
 
 ## 域名注册(domain) 版本：2018-08-08
 
+### 第 16 次发布
+
+发布时间：2023-07-24 01:23:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateDomainRedemption](http://document.tencentcloudapi.woa.com/document/product/242/81366)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 15 次发布
 
 发布时间：2023-05-25 01:28:41
@@ -31136,6 +31148,54 @@
 
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 11 次发布
+
+发布时间：2023-07-24 01:26:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BindEmployeeUserIdWithClientOpenId](http://document.tencentcloudapi.woa.com/document/product/1668/79334)
+
+	* 新增入参：Agent
+
+* [CreateFlowApprovers](http://document.tencentcloudapi.woa.com/document/product/1668/79339)
+
+	* 新增入参：Agent
+
+* [CreateUserAutoSignEnableUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79356)
+
+	* 新增入参：Agent
+
+* [DescribeThirdPartyAuthCode](http://document.tencentcloudapi.woa.com/document/product/1668/79355)
+
+	* 新增入参：Operator, Agent
+
+* [DescribeUserAutoSignStatus](http://document.tencentcloudapi.woa.com/document/product/1668/79354)
+
+	* 新增入参：Agent
+
+* [DisableUserAutoSign](http://document.tencentcloudapi.woa.com/document/product/1668/79353)
+
+	* 新增入参：Agent
+
+* [UnbindEmployeeUserIdWithClientOpenId](http://document.tencentcloudapi.woa.com/document/product/1668/79329)
+
+	* 新增入参：Agent
+
+
+修改数据结构：
+
+* [FillApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FillApproverInfo)
+
+	* 新增成员：ApproverName, ApproverMobile
+
+	* <font color="#dd0000">**修改成员**：</font>ApproverSource, CustomUserId
+
 
 ### 第 10 次发布
 
@@ -48114,7 +48174,7 @@
 
 新增数据结构：
 
-* [[RefundMap](http://document.tencentcloudapi.woa.com/document/product/563/16047#RefundMap)](http://document.tencentcloudapi.woa.com/document/product/563/16047#[RefundMap](http://document.tencentcloudapi.woa.com/document/product/563/16047#RefundMap))
+* [RefundMap](http://document.tencentcloudapi.woa.com/document/product/563/16047#RefundMap)
 
 修改数据结构：
 
@@ -48328,6 +48388,22 @@
 
 
 ## 官网(portal) 版本：2023-04-13
+
+### 第 3 次发布
+
+发布时间：2023-07-24 01:36:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeProductDictionaryList](http://document.tencentcloudapi.woa.com/document/product/1732/81368)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[DictItem](http://document.tencentcloudapi.woa.com/document/product/1732/80923#DictItem)](http://document.tencentcloudapi.woa.com/document/product/1732/80923#[DictItem](http://document.tencentcloudapi.woa.com/document/product/1732/80923#DictItem))
 
 ### 第 2 次发布
 
@@ -58234,6 +58310,23 @@
 
 ## 分布式身份(tdid) 版本：2021-05-19
 
+### 第 9 次发布
+
+发布时间：2023-07-24 01:44:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* AddLabel
+* GetAgencyTDid
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* Identity
+
 ### 第 8 次发布
 
 发布时间：2023-07-21 01:41:59
@@ -62346,6 +62439,18 @@
 
 ## 互动白板(tiw) 版本：2019-09-19
 
+### 第 14 次发布
+
+发布时间：2023-07-24 01:46:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeTranscodeByUrl](http://document.tencentcloudapi.woa.com/document/product/1137/81369)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 13 次发布
 
 发布时间：2023-07-21 01:44:09
@@ -65647,18 +65752,18 @@
 
 新增接口：
 
-* [[DescribeNativeGatewayServerGroups](http://document.tencentcloudapi.woa.com/document/product/1364/81365)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeNativeGatewayServerGroups](http://document.tencentcloudapi.woa.com/document/product/1364/81365)
 
 新增数据结构：
 
-* [[CloudNativeAPIGatewayNodeConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayNodeConfig)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[CloudNativeAPIGatewayNodeConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayNodeConfig))
-* [[CloudNativeAPIGatewayStrategy](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategy)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[CloudNativeAPIGatewayStrategy](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategy))
-* [[CloudNativeAPIGatewayStrategyAutoScalerConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyAutoScalerConfig)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[CloudNativeAPIGatewayStrategyAutoScalerConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyAutoScalerConfig))
-* [[CloudNativeAPIGatewayStrategyAutoScalerConfigMetric](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyAutoScalerConfigMetric)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[CloudNativeAPIGatewayStrategyAutoScalerConfigMetric](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyAutoScalerConfigMetric))
-* [[CloudNativeAPIGatewayStrategyCronScalerConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyCronScalerConfig)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[CloudNativeAPIGatewayStrategyCronScalerConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyCronScalerConfig))
-* [[CloudNativeAPIGatewayStrategyCronScalerConfigParam](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyCronScalerConfigParam)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[CloudNativeAPIGatewayStrategyCronScalerConfigParam](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyCronScalerConfigParam))
-* [[NativeGatewayServerGroup](http://document.tencentcloudapi.woa.com/document/product/1364/54942#NativeGatewayServerGroup)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[NativeGatewayServerGroup](http://document.tencentcloudapi.woa.com/document/product/1364/54942#NativeGatewayServerGroup))
-* [[NativeGatewayServerGroups](http://document.tencentcloudapi.woa.com/document/product/1364/54942#NativeGatewayServerGroups)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[NativeGatewayServerGroups](http://document.tencentcloudapi.woa.com/document/product/1364/54942#NativeGatewayServerGroups))
+* [CloudNativeAPIGatewayNodeConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayNodeConfig)
+* [CloudNativeAPIGatewayStrategy](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategy)
+* [CloudNativeAPIGatewayStrategyAutoScalerConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyAutoScalerConfig)
+* [CloudNativeAPIGatewayStrategyAutoScalerConfigMetric](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyAutoScalerConfigMetric)
+* [CloudNativeAPIGatewayStrategyCronScalerConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyCronScalerConfig)
+* [CloudNativeAPIGatewayStrategyCronScalerConfigParam](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyCronScalerConfigParam)
+* [NativeGatewayServerGroup](http://document.tencentcloudapi.woa.com/document/product/1364/54942#NativeGatewayServerGroup)
+* [NativeGatewayServerGroups](http://document.tencentcloudapi.woa.com/document/product/1364/54942#NativeGatewayServerGroups)
 
 ### 第 27 次发布
 

@@ -140,14 +140,6 @@
         "title": "查询上海五区高性能云硬盘的可售卖规格"
       }
     ],
-    "DescribeDiskOperationLogs": [
-      {
-        "document": "",
-        "input": "https://cbs.tencentcloudapi.com/?Action=DescribeDiskOperationLogs\n&Filters.0.Name=disk-id\n&Filters.0.Values.0=disk-ou4acu4i\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"DiskOperationLogSet\": [\n            {\n                \"OperationState\": \"xx\",\n                \"StartTime\": \"xx\",\n                \"Operator\": \"xx\",\n                \"Operation\": \"xx\",\n                \"EndTime\": \"xx\",\n                \"DiskId\": \"xx\"\n            }\n        ]\n    }\n}",
-        "title": "查询云盘操作日志"
-      }
-    ],
     "DescribeDiskStoragePool": [
       {
         "document": "部分用户(金融)对cbs集群有独享需求，该接口用来查询用户所拥有的独享集群。",
@@ -170,14 +162,6 @@
         "input": "https://cbs.tencentcloudapi.com/?Action=DescribeInstancesDiskNum\n&InstanceIds.0=ins-9w5d2buw\n&InstanceIds.1=ins-jw0vit58\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"AttachDetail\": [\n            {\n                \"InstanceId\": \"ins-9w5d2buw\",\n                \"AttachedDiskCount\": 1,\n                \"MaxAttachCount\": 10\n            },\n            {\n                \"InstanceId\": \"ins-jw0vit58\",\n                \"AttachedDiskCount\": 2,\n                \"MaxAttachCount\": 10\n            }\n        ],\n        \"RequestId\": \"55db49cf-b9d7-da27-825b-5a02ba6884ca\"\n    }\n}",
         "title": "查询多个实例挂载的云硬盘数量"
-      }
-    ],
-    "DescribeSnapshotOperationLogs": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSnapshotOperationLogs\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"snap-0y61iiyj\"\n            ],\n            \"Name\": \"snapshot-id\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"SnapshotOperationLogSet\": [\n            {\n                \"OperationState\": \"SUCCESS\",\n                \"StartTime\": \"2018-12-18 17:52:37\",\n                \"Operator\": \"546816713\",\n                \"SnapshotId\": \"snap-0y61iiyj\",\n                \"Operation\": \"SNAP_OPERATION_ROLLBACK\",\n                \"EndTime\": \"2018-12-18 17:52:38\"\n            },\n            {\n                \"OperationState\": \"SUCCESS\",\n                \"StartTime\": \"2018-12-18 17:51:47\",\n                \"Operator\": \"546816713\",\n                \"SnapshotId\": \"snap-0y61iiyj\",\n                \"Operation\": \"SNAP_OPERATION_ROLLBACK\",\n                \"EndTime\": \"2018-12-18 17:51:48\"\n            },\n            {\n                \"OperationState\": \"SUCCESS\",\n                \"StartTime\": \"2018-12-18 11:57:46\",\n                \"Operator\": \"\",\n                \"SnapshotId\": \"snap-0y61iiyj\",\n                \"Operation\": \"ASP_OPERATION_CREATE_SNAP\",\n                \"EndTime\": \"2018-12-18 11:57:47\"\n            }\n        ],\n        \"RequestId\": \"0dc7b07a-5f6b-46c4-b1d9-048e37d1c33c\"\n    }\n}",
-        "title": "查询快照操作日志"
       }
     ],
     "DescribeSnapshotSharePermission": [

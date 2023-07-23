@@ -8800,7 +8800,6 @@
       "document": "ModifyHostsCertificate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "站点 ID。",
           "example": "zone-xxxx",
@@ -8811,7 +8810,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本次变更的域名列表。",
           "example": "xxx.test.com",
@@ -8822,7 +8820,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "证书信息, 只需要传入 CertId 即可, 如果为空, 则使用默认证书。",
           "example": "teo-xxxxx",
@@ -8833,9 +8830,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "托管类型，取值有：\n<li>apply：托管EO；</li>\n<li>none：不托管EO；</li>不填，默认取值为apply。",
+          "document": "托管类型，取值有：\n<li>apply：托管EO；</li>\n<li>none：不托管EO；</li>不填，默认取值为none。",
           "example": "apply",
           "member": "string",
           "name": "ApplyType",

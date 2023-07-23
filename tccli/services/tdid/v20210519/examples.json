@@ -1,13 +1,5 @@
 {
   "actions": {
-    "AddLabel": [
-      {
-        "document": "DID添加标签",
-        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddLabel\n<公共请求参数>\n\n{\n    \"LabelId\": 75,\n    \"Did\": \"did:tdid:1:0x0c7eab87d4854c91cfdf0e96fddcc836dea723ee\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
-        "title": "AddLabel"
-      }
-    ],
     "CheckChain": [
       {
         "document": "",
@@ -54,14 +46,6 @@
         "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTDidByPublicKey\n<公共请求参数>\n\n{\n    \"ClusterId\": \"bcos-fmtkyt8xne\",\n    \"GroupId\": 1,\n    \"PublicKey\": \"7430488790716037455843285301209475352340487000630103610741044889217493578632422416688836099438173061252937088504002356479929639821721792771207629422355422\",\n    \"EncryptPubKey\": \"7430488790716037455843285301209475352340487000630103610741044889217493578632422416688836099438173061252937088504002356479929639821721792771207629422355422\"\n}",
         "output": "{\n    \"Response\": {\n        \"Did\": \"did:tdid:1:0x4b5edc27dd8a20ebaae6d427f3142b24fbf687ff\",\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
         "title": "CreateTDidByPublicKey"
-      }
-    ],
-    "GetAgencyTDid": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAgencyTDid\n<公共请求参数>\n\n{\n    \"ClusterId\": \"bcos-fmtkyt8xne\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Prefix\": \"did:tdid:\",\n        \"Identity\": [\n            {\n                \"AccountIdentifier\": \"0x3c4d1e80a1bb5a2558b50ca4b76b85c88bfbf472\",\n                \"ChainID\": \"15\",\n                \"Did\": \"did:tdid:1:0x3c4d1e80a1bb5a2558b50ca4b76b85c88bfbf472\"\n            }\n        ],\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
-        "title": "本机构DID详情"
       }
     ],
     "GetAuthorityIssuer": [

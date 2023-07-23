@@ -49,6 +49,13 @@
       "output": "CreateDomainBatchResponse",
       "status": "online"
     },
+    "CreateDomainRedemption": {
+      "document": "创建赎回订单。",
+      "input": "CreateDomainRedemptionRequest",
+      "name": "创建赎回订单",
+      "output": "CreateDomainRedemptionResponse",
+      "status": "online"
+    },
     "CreateIntlDomainBatch": {
       "document": "本接口 ( CreateIntlDomainBatch) 用于批量域名注册 。",
       "input": "CreateIntlDomainBatchRequest",
@@ -1890,6 +1897,35 @@
           "value_allowed_null": true,
           "visibility": 1
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDomainRedemptionRequest": {
+      "document": "CreateDomainRedemption请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名 ID",
+          "example": "domain-ewqdskla",
+          "is_base64": false,
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDomainRedemptionResponse": {
+      "document": "CreateDomainRedemption返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -14,6 +14,13 @@
       "output": "DescribeDocumentListResponse",
       "status": "online"
     },
+    "DescribeProductDictionaryList": {
+      "document": "获取产品字典列表",
+      "input": "DescribeProductDictionaryListRequest",
+      "name": "获取产品字典列表接口",
+      "output": "DescribeProductDictionaryListResponse",
+      "status": "online"
+    },
     "GetCurrentPolicy": {
       "document": "获取纠错系统当前支持的具体策略",
       "input": "GetCurrentPolicyRequest",
@@ -201,6 +208,224 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeProductDictionaryListRequest": {
+      "document": "DescribeProductDictionaryList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "限制数目。取值范围：1~100。默认值：100。\n",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "偏移量。取值是limit的整数倍。默认值 : 0。\n",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "产品字典列表，例如[2000]",
+          "example": "[2000]",
+          "member": "uint64",
+          "name": "DictIds",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "是否展示活动列表（true:展示;false:不展示）",
+          "example": "false",
+          "member": "bool",
+          "name": "IncludeActivity",
+          "required": false,
+          "type": "bool",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductDictionaryListResponse": {
+      "document": "DescribeProductDictionaryList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品字典数量",
+          "example": "100",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "产品字典列表",
+          "example": "无",
+          "member": "DictItem",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DictItem": {
+      "document": "产品字典",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "2000",
+          "member": "uint64",
+          "name": "DictId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "产品父级节点ID",
+          "example": "500",
+          "member": "uint64",
+          "name": "ParentId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "产品类型(1:产品;2:分类)",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "产品简称",
+          "example": "cvm",
+          "member": "string",
+          "name": "Slug",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "产品名称",
+          "example": "云服务器",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "产品负责人列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductOwner",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "产品开发者列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DeveloperOwner",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "产品所属FT ID",
+          "example": "100",
+          "member": "uint64",
+          "name": "FtId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "产品权重",
+          "example": "2030050000",
+          "member": "uint64",
+          "name": "Weight",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "产品介绍页链接",
+          "example": "https://cloud.tencent.com/product/cvm",
+          "member": "string",
+          "name": "IntroPageLink",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "产品介绍页最近更新时间",
+          "example": "2023-07-03T09:53:44+08:00",
+          "member": "string",
+          "name": "IntroUpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "产品介绍页关联活动列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Acts",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "out"
     },
     "DocumentItem": {
       "document": "文档信息",
