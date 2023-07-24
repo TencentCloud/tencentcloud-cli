@@ -198,6 +198,15 @@
           "name": "TokenExpiredLimitSec",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "token 授权策略，可选值为 workspace-run-only, all。默认为 all",
+          "example": "[\"workspace-run-only\"]",
+          "member": "string",
+          "name": "Policies",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

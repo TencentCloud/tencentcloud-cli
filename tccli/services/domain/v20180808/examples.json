@@ -32,6 +32,14 @@
         "title": "批量域名注册"
       }
     ],
+    "CreateDomainRedemption": [
+      {
+        "document": "赎回请求",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainRedemption\n<公共请求参数>\n\n{\n    \"DomainId\": \" domain-dsaklnkl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "赎回请求"
+      }
+    ],
     "CreatePhoneEmail": [
       {
         "document": "",

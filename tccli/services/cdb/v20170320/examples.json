@@ -424,14 +424,6 @@
         "title": "查询二进制日志"
       }
     ],
-    "DescribeCDBProxy": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCDBProxy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"ProxyGroupId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"RWInstInfo\": {\n            \"MaxDelay\": 1,\n            \"AutoAddRo\": true,\n            \"IsKickOut\": true,\n            \"FailOver\": true,\n            \"RWInstInfo\": {},\n            \"MinCount\": 1,\n            \"WeightMode\": \"xx\",\n            \"InstCount\": 1\n        },\n        \"ProxyNode\": {\n            \"ProxyNodeId\": \"xx\",\n            \"ProxyNodeMem\": 1,\n            \"ProxyNodeConnections\": 1,\n            \"ProxyNodeCpu\": 1,\n            \"ProxyStatus\": \"xx\"\n        },\n        \"ConnectionPoolInfo\": {\n            \"ConnectionPoolType\": \"xx\",\n            \"PoolConnectionTimeOut\": 0,\n            \"ConnectionPool\": true\n        },\n        \"RequestId\": \"xx\",\n        \"Address\": {\n            \"UniqVpcId\": \"xx\",\n            \"VPort\": 1,\n            \"Vip\": \"xx\",\n            \"UniqSubnet\": \"xx\",\n            \"Desc\": \"xx\"\n        },\n        \"ProxyGroup\": [\n            {\n                \"ConnectionPoolInfo\": {\n                    \"ConnectionPoolType\": \"xx\",\n                    \"PoolConnectionTimeOut\": 0,\n                    \"ConnectionPool\": false\n                },\n                \"RWInstInfo\": {\n                    \"MaxDelay\": 1,\n                    \"AutoAddRo\": true,\n                    \"IsKickOut\": true,\n                    \"FailOver\": true,\n                    \"RWInstInfo\": {},\n                    \"MinCount\": 1,\n                    \"WeightMode\": \"xx\",\n                    \"InstCount\": 1\n                },\n                \"BaseGroup\": {\n                    \"Status\": \"xx\",\n                    \"CurrentProxyVersion\": \"xx\",\n                    \"ProxyGroupId\": \"xx\",\n                    \"Zone\": \"xx\",\n                    \"Region\": \"xx\",\n                    \"NodeCount\": 1,\n                    \"SupportUpgradeProxyVersion\": \"xx\",\n                    \"OpenRW\": true\n                },\n                \"ProxyNode\": {\n                    \"ProxyNodeId\": \"xx\",\n                    \"ProxyNodeMem\": 1,\n                    \"ProxyNodeConnections\": 1,\n                    \"ProxyNodeCpu\": 1,\n                    \"ProxyStatus\": \"xx\"\n                },\n                \"Address\": {\n                    \"UniqVpcId\": \"xx\",\n                    \"VPort\": 1,\n                    \"Vip\": \"xx\",\n                    \"UniqSubnet\": \"xx\",\n                    \"Desc\": \"xx\"\n                }\n            }\n        ],\n        \"BaseGroup\": {\n            \"Status\": \"xx\",\n            \"CurrentProxyVersion\": \"xx\",\n            \"ProxyGroupId\": \"xx\",\n            \"Zone\": \"xx\",\n            \"Region\": \"xx\",\n            \"NodeCount\": 1,\n            \"SupportUpgradeProxyVersion\": \"xx\",\n            \"OpenRW\": true\n        }\n    }\n}",
-        "title": "查询数据库代理"
-      }
-    ],
     "DescribeCdbProxyInfo": [
       {
         "document": "查询代理信息",
@@ -644,14 +636,6 @@
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProjectSecurityGroups\n<公共请求参数>\n\n{\n    \"ProjectId\": \"11954\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"Groups\": [\n            {\n                \"Outbound\": [],\n                \"SecurityGroupName\": \"CDB\",\n                \"Inbound\": [],\n                \"ProjectId\": 0,\n                \"SecurityGroupId\": \"sg-xx\",\n                \"SecurityGroupRemark\": \"\",\n                \"CreateTime\": \"2017-04-13 15:00:06\"\n            }\n        ]\n    }\n}",
         "title": "查询项目安全组信息"
-      }
-    ],
-    "DescribeProxyConnectionPoolConf": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProxyConnectionPoolConf\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-test\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"PoolConf\": [\n            {\n                \"ConnectionPoolType\": \"SessionConnectionPool\",\n                \"MaxPoolConnectionTimeOut\": 600,\n                \"MinPoolConnectionTimeOut\": 1\n            }\n        ],\n        \"RequestId\": \"a1ae22d5-2633-4f09-ba59-8fe103ac64b6\"\n    }\n}",
-        "title": "查询数据库代理连接池配置"
       }
     ],
     "DescribeProxyCustomConf": [
@@ -894,22 +878,6 @@
         "title": "开启实例备份加密"
       }
     ],
-    "ModifyCDBProxyConnectionPool": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCDBProxyConnectionPool\n<公共请求参数>\n\n{\n    \"OpenConnectionPool\": true,\n    \"ConnectionPoolType\": \"SessionConnectionPool\",\n    \"PoolConnectionTimeOut\": 10,\n    \"ProxyGroupId\": \"proxy-test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"8155d27a-079a2580-19593e48-f1af5042\",\n        \"RequestId\": \"3689c0eb-a92d-77ce-0ee2-17d99f604e64\"\n    }\n}",
-        "title": "配置数据库代理连接池"
-      }
-    ],
-    "ModifyCDBProxyVipVPort": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCDBProxyVipVPort\n<公共请求参数>\n\n{\n    \"DstIp\": \"127.0.1\",\n    \"ProxyGroupId\": \"proxt-test\",\n    \"UniqVpcId\": \"vpc-test\",\n    \"UniqSubnetId\": \"sub-test\",\n    \"ReleaseDuration\": 1,\n    \"DstPort\": 1201\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3689c0eb-a92d-77ce-0ee2-17d99f604e64\"\n    }\n}",
-        "title": "修改数据库代理VIP或端口"
-      }
-    ],
     "ModifyCdbProxyAddressDesc": [
       {
         "document": "",
@@ -1082,14 +1050,6 @@
         "input": "https://cdb.tencentcloudapi.com/?Action=OpenWanService\n&InstanceId=cdb-ezq1vzem\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"b4a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
         "title": "开通实例外网访问"
-      }
-    ],
-    "QueryCDBProxy": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCDBProxy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-test\",\n    \"ProxyGroupId\": \"proxy-test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"ProxyGroup\": [\n            {\n                \"Address\": [\n                    {\n                        \"Desc\": \"\",\n                        \"UniqSubnet\": \"subnet-test\",\n                        \"UniqVpcId\": \"vpc-test\",\n                        \"VPort\": 3306,\n                        \"Vip\": \"172.16.48.49\"\n                    }\n                ],\n                \"BaseGroup\": {\n                    \"CurrentProxyVersion\": \"1.0.1\",\n                    \"NodeCount\": 2,\n                    \"OpenRW\": false,\n                    \"ProxyGroupId\": \"proxy-test\",\n                    \"Region\": \"ap-guangzhou\",\n                    \"Status\": \"online\",\n                    \"SupportUpgradeProxyVersion\": \"1.0.1\",\n                    \"Zone\": \"ap-guangzhou-6\"\n                },\n                \"ConnectionPoolInfo\": {\n                    \"ConnectionPool\": false,\n                    \"ConnectionPoolType\": \"\",\n                    \"PoolConnectionTimeOut\": 0\n                },\n                \"ProxyNode\": [\n                    {\n                        \"ProxyNodeConnections\": 2,\n                        \"ProxyNodeId\": \"proxynode-test\",\n                        \"ProxyStatus\": \"online\"\n                    },\n                    {\n                        \"ProxyNodeConnections\": 2,\n                        \"ProxyNodeId\": \"proxynode-test\",\n                        \"ProxyStatus\": \"online\"\n                    }\n                ],\n                \"RWInstInfo\": {\n                    \"AutoAddRo\": false,\n                    \"FailOver\": false,\n                    \"InstCount\": 0,\n                    \"IsKickOut\": false,\n                    \"MaxDelay\": 0,\n                    \"MinCount\": 0,\n                    \"RWInstInfo\": [],\n                    \"WeightMode\": \"\"\n                }\n            }\n        ],\n        \"RequestId\": \"733f71d8-6c3a-419e-830f-4471c5bc2791\"\n    }\n}",
-        "title": "查询代理详情"
       }
     ],
     "ReleaseIsolatedDBInstances": [

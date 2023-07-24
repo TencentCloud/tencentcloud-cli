@@ -64,9 +64,9 @@
       "status": "online"
     },
     "CreateFlowApprovers": {
-      "document": "补充签署流程本企业签署人信息\n适用场景：在通过模板或者文件发起合同时，若未指定本企业签署人信息，则流程发起后，可以调用此接口补充签署人。\n同一签署人可以补充多个员工作为候选签署人,最终签署人取决于谁先领取合同完成签署。\n\n注：目前暂时只支持补充来源于企业微信的员工作为候选签署人",
+      "document": "### 适用场景\n在通过模板或者文件发起合同时，若未指定企业签署人信息，则流程发起后，可以调用此接口补充或签签署人。\n同一签署人可以补充多个员工作为或签签署人,最终实际签署人取决于谁先领取合同完成签署。\n### 限制条件\n-  本企业(发起方企业)支持通过企业微信UserId 或者 姓名+手机号补充\n- 他方企业仅支持通过姓名+手机号补充",
       "input": "CreateFlowApproversRequest",
-      "name": "补充签署流程本企业签署人信息",
+      "name": "补充签署流程企业签署人信息",
       "output": "CreateFlowApproversResponse",
       "status": "online"
     },
@@ -799,6 +799,7 @@
           "disabled": false,
           "document": "用户信息，OpenId与UserId二选一必填一个，OpenId是第三方客户ID，userId是用户实名后的电子签生成的ID,当传入客户系统openId，传入的openId需与电子签员工userId绑定，且参数Channel必填，Channel值为INTEGRATE；当传入参数UserId，Channel无需指定。（参数参考示例）",
           "example": "无",
+          "is_base64": false,
           "member": "UserInfo",
           "name": "Operator",
           "required": true,
@@ -808,6 +809,7 @@
           "disabled": false,
           "document": "电子签系统员工UserId",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -817,10 +819,21 @@
           "disabled": false,
           "document": "客户系统OpenId",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "OpenId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "example": "无",
+          "is_base64": false,
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -834,6 +847,7 @@
           "example": "无",
           "member": "int64",
           "name": "Status",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1737,6 +1751,7 @@
           "disabled": false,
           "document": "调用方用户信息，userId 必填",
           "example": "无",
+          "is_base64": false,
           "member": "UserInfo",
           "name": "Operator",
           "required": true,
@@ -1746,6 +1761,7 @@
           "disabled": false,
           "document": "签署流程编号",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "FlowId",
           "required": true,
@@ -1755,6 +1771,7 @@
           "disabled": false,
           "document": "补充签署人信息",
           "example": "无",
+          "is_base64": false,
           "member": "FillApproverInfo",
           "name": "Approvers",
           "required": true,
@@ -1764,10 +1781,21 @@
           "disabled": false,
           "document": "企微消息中的发起人",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Initiator",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理相关应用信息，如集团主企业代子企业操作\n\n",
+          "example": "无",
+          "is_base64": false,
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3776,6 +3804,15 @@
           "name": "ExpiredTime",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5244,6 +5281,24 @@
           "name": "AuthCode",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5298,6 +5353,15 @@
           "member": "UserThreeFactor",
           "name": "UserInfo",
           "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
           "type": "object"
         }
       ],
@@ -5373,6 +5437,15 @@
           "member": "UserThreeFactor",
           "name": "UserInfo",
           "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
           "type": "object"
         }
       ],
@@ -5630,8 +5703,10 @@
           "disabled": false,
           "document": "文件Id",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "FileId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5640,8 +5715,10 @@
           "disabled": false,
           "document": "文件名",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "FileName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5652,6 +5729,7 @@
           "example": "无",
           "member": "int64",
           "name": "FileSize",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -5662,6 +5740,7 @@
           "example": "无",
           "member": "int64",
           "name": "CreatedOn",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -5696,37 +5775,57 @@
       "usage": "out"
     },
     "FillApproverInfo": {
-      "document": "补充签署人信息",
+      "document": "补充签署人信息\n- RecipientId 必须指定\n-  通过企业自定义账号ID补充签署人时，ApproverSource 和 CustomUserId 必填\n- 通过二要素（姓名/手机号）补充签署人时，ApproverName 和 ApproverMobile 必填",
       "members": [
         {
           "disabled": false,
           "document": "对应模板中的参与方ID",
-          "example": "xxxx",
+          "example": "yDwhSUUckp3lqxlpUu6Ni3SvjJPoxxxx",
+          "is_base64": false,
           "member": "string",
           "name": "RecipientId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "签署人来源\nWEWORKAPP: 企业微信",
           "example": "WEWORKAPP",
+          "is_base64": false,
           "member": "string",
           "name": "ApproverSource",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "企业自定义账号ID\nWEWORKAPP场景下指企业自有应用获取企微明文的userid",
           "example": "zhangsan",
+          "is_base64": false,
           "member": "string",
           "name": "CustomUserId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "补充签署人姓名",
+          "example": "张三",
+          "is_base64": false,
+          "member": "string",
+          "name": "ApproverName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "补充签署人手机号",
+          "example": "188xxxxxxxx",
+          "is_base64": false,
+          "member": "string",
+          "name": "ApproverMobile",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -8525,6 +8624,7 @@
           "disabled": false,
           "document": "用户信息，OpenId与UserId二选一必填一个，OpenId是第三方客户ID，userId是用户实名后的电子签生成的ID,当传入客户系统openId，传入的openId需与电子签员工userId绑定，且参数Channel必填，Channel值为INTEGRATE；当传入参数UserId，Channel无需指定(参数用法参考示例)",
           "example": "无",
+          "is_base64": false,
           "member": "UserInfo",
           "name": "Operator",
           "required": true,
@@ -8534,6 +8634,7 @@
           "disabled": false,
           "document": "电子签系统员工UserId",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -8543,10 +8644,21 @@
           "disabled": false,
           "document": "客户系统OpenId",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "OpenId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "example": "无",
+          "is_base64": false,
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -8560,6 +8672,7 @@
           "example": "无",
           "member": "int64",
           "name": "Status",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

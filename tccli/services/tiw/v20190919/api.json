@@ -189,6 +189,13 @@
       "output": "DescribeTranscodeResponse",
       "status": "online"
     },
+    "DescribeTranscodeByUrl": {
+      "document": "通过文档URL查询转码任务，返回最近的一次转码结果",
+      "input": "DescribeTranscodeByUrlRequest",
+      "name": "通过文档URL查询转码任务",
+      "output": "DescribeTranscodeByUrlResponse",
+      "status": "online"
+    },
     "DescribeTranscodeCallback": {
       "document": "查询文档转码回调地址",
       "input": "DescribeTranscodeCallbackRequest",
@@ -2476,6 +2483,72 @@
           "name": "Total",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTranscodeByUrlRequest": {
+      "document": "DescribeTranscodeByUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户的SdkAppId",
+          "example": "1400000001",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "经过URL编码后的转码文件地址。URL 编码会将字符转换为可通过因特网传输的格式，比如文档地址为http://example.com/测试.pdf，经过URL编码之后为http://example.com/%E6%B5%8B%E8%AF%95.pdf。为了提高URL解析的成功率，请对URL进行编码。\t",
+          "example": "https://path/to/document.ppt",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTranscodeByUrlResponse": {
+      "document": "DescribeTranscodeByUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转码的当前进度,取值范围为0~100",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务的当前状态\n- QUEUED: 正在排队等待转换\n- PROCESSING: 转换中\n- FINISHED: 转换完成\n- EXCEPTION: 转换异常",
+          "example": "FINISHED",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转码任务的唯一标识Id",
+          "example": "0agdnligqtgtvkm65emb",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

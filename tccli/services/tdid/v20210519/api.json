@@ -1,12 +1,5 @@
 {
   "actions": {
-    "AddLabel": {
-      "document": "下线已有内测接口，待上线正式版本的接口\n\nDID添加标签\n",
-      "input": "AddLabelRequest",
-      "name": "DID添加标签",
-      "output": "AddLabelResponse",
-      "status": "deprecated"
-    },
     "CheckChain": {
       "document": "该接口不再使用\n\n检查区块链信息",
       "input": "CheckChainRequest",
@@ -47,13 +40,6 @@
       "input": "CreateTDidByPublicKeyRequest",
       "name": "新建DID根据公钥生成Tdid",
       "output": "CreateTDidByPublicKeyResponse",
-      "status": "deprecated"
-    },
-    "GetAgencyTDid": {
-      "document": "该接口已废弃\n\n本机构DID详情",
-      "input": "GetAgencyTDidRequest",
-      "name": "本机构DID详情",
-      "output": "GetAgencyTDidResponse",
       "status": "deprecated"
     },
     "GetAuthorityIssuer": {
@@ -113,44 +99,6 @@
     "serviceShortName": "tdid"
   },
   "objects": {
-    "AddLabelRequest": {
-      "document": "AddLabel请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "标签ID",
-          "example": "1",
-          "member": "uint64",
-          "name": "LabelId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "tdid",
-          "example": "did:tdid:1:0xa75368ab6ab9cb6d01e81d22155279ee4eca3f4d",
-          "member": "string",
-          "name": "Did",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "AddLabelResponse": {
-      "document": "AddLabel返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "CheckChainRequest": {
       "document": "CheckChain请求参数结构体",
       "members": [
@@ -651,54 +599,6 @@
       ],
       "usage": "in"
     },
-    "GetAgencyTDidRequest": {
-      "document": "GetAgencyTDid请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "网络ID",
-          "example": "1",
-          "member": "string",
-          "name": "ClusterId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetAgencyTDidResponse": {
-      "document": "GetAgencyTDid返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "固定前缀",
-          "example": "did:tdid",
-          "member": "string",
-          "name": "Prefix",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "did详情",
-          "example": "无",
-          "member": "Identity",
-          "name": "Identity",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "GetAuthorityIssuerRequest": {
       "document": "GetAuthorityIssuer请求参数结构体",
       "members": [
@@ -920,67 +820,6 @@
         }
       ],
       "type": "object"
-    },
-    "Identity": {
-      "document": "did详情",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "账户标识符",
-          "example": "test",
-          "member": "string",
-          "name": "AccountIdentifier",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "链ID",
-          "example": "1",
-          "member": "string",
-          "name": "ChainID",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "完整tdid",
-          "example": "test",
-          "member": "string",
-          "name": "Did",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "群组ID",
-          "example": "1",
-          "member": "uint64",
-          "name": "GroupId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "群组名称",
-          "example": "1",
-          "member": "string",
-          "name": "GroupName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
     },
     "Proof": {
       "document": "验证凭证签名",

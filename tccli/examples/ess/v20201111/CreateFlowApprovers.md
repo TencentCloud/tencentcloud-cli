@@ -12,17 +12,23 @@ tccli ess CreateFlowApprovers --cli-unfold-argument  \
     --FlowId flow_id_xxxxx \
     --Initiator xxx \
     --Approvers.0.RecipientId RecipientId_1 \
-    --Approvers.0.ApproverSource WEWORK \
+    --Approvers.0.ApproverSource WEWORKAPP \
     --Approvers.0.CustomUserId Zhangsan \
     --Approvers.1.RecipientId RecipientId_1 \
-    --Approvers.1.ApproverSource WEWORK \
+    --Approvers.1.ApproverSource WEWORKAPP \
     --Approvers.1.CustomUserId Lisi \
     --Approvers.2.RecipientId RecipientId_2 \
-    --Approvers.2.ApproverSource WEWORK \
+    --Approvers.2.ApproverSource WEWORKAPP \
     --Approvers.2.CustomUserId Wangwu \
     --Approvers.3.RecipientId RecipientId_2 \
-    --Approvers.3.ApproverSource WEWORK \
-    --Approvers.3.CustomUserId ZhaoLiu
+    --Approvers.3.ApproverSource WEWORKAPP \
+    --Approvers.3.CustomUserId ZhaoLiu \
+    --Approvers.4.RecipientId RecipientId_3 \
+    --Approvers.4.ApproverName 典子谦 \
+    --Approvers.4.ApproverMobile 1820000xxxx \
+    --Approvers.5.RecipientId RecipientId_3 \
+    --Approvers.5.ApproverName 何规 \
+    --Approvers.5.ApproverMobile 1830000xxxx
 ```
 
 Output: 

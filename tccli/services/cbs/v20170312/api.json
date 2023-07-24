@@ -112,13 +112,6 @@
       "output": "DescribeDiskConfigQuotaResponse",
       "status": "online"
     },
-    "DescribeDiskOperationLogs": {
-      "document": "接口已废弃，切换至云审计接口。见https://tapd.woa.com/pro/prong/stories/view/1010114221880719007\n\n查询云盘操作日志功能已迁移至LookUpEvents接口（https://cloud.tencent.com/document/product/629/12359），本接口（DescribeDiskOperationLogs）即将下线，后续不再提供调用，请知悉。",
-      "input": "DescribeDiskOperationLogsRequest",
-      "name": "查询云盘操作日志列表",
-      "output": "DescribeDiskOperationLogsResponse",
-      "status": "deprecated"
-    },
     "DescribeDiskStoragePool": {
       "document": "本接口（DescribeDiskStoragePool）查询用户的云硬盘独享集群列表。\n\n* 可以根据独享集群ID(CdcId)、可用区(zone)等信息来查询和过滤云硬盘独享集群详细信息，不同的过滤条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的云硬盘独享集群列表。",
       "input": "DescribeDiskStoragePoolRequest",
@@ -139,13 +132,6 @@
       "name": "查询实例关联的云硬盘数量",
       "output": "DescribeInstancesDiskNumResponse",
       "status": "online"
-    },
-    "DescribeSnapshotOperationLogs": {
-      "document": "接口已废弃，切换至云审计接口。见https://tapd.woa.com/pro/prong/stories/view/1010114221880719007\n\n查询快照操作日志功能已迁移至LookUpEvents接口（https://cloud.tencent.com/document/product/629/12359），本接口（DescribeSnapshotOperationLogs）即将下线，后续不再提供调用，请知悉。\n",
-      "input": "DescribeSnapshotOperationLogsRequest",
-      "name": "查询快照操作日志列表",
-      "output": "DescribeSnapshotOperationLogsResponse",
-      "status": "deprecated"
     },
     "DescribeSnapshotSharePermission": {
       "document": "本接口（DescribeSnapshotSharePermission）用于查询快照的分享信息。",
@@ -1793,64 +1779,6 @@
       ],
       "type": "object"
     },
-    "DescribeDiskOperationLogsRequest": {
-      "document": "DescribeDiskOperationLogs请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "过滤条件。支持以下条件：\n<li>disk-id - Array of String - 是否必填：是 - 按云盘ID过滤，每个请求最多可指定10个云盘ID。",
-          "example": "无",
-          "member": "Filter",
-          "name": "Filters",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "要查询的操作日志的截止时间，例如：“2019-11-22 23:59:59\"",
-          "example": "无",
-          "member": "datetime",
-          "name": "EndTime",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "要查询的操作日志的起始时间，例如：“2019-11-22 00:00:00\"",
-          "example": "无",
-          "member": "datetime",
-          "name": "BeginTime",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeDiskOperationLogsResponse": {
-      "document": "DescribeDiskOperationLogs返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "云盘的操作日志列表。",
-          "example": "无",
-          "member": "DiskOperationLog",
-          "name": "DiskOperationLogSet",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeDiskStoragePoolRequest": {
       "document": "DescribeDiskStoragePool请求参数结构体",
       "members": [
@@ -2055,64 +1983,6 @@
           "example": "无",
           "member": "AttachDetail",
           "name": "AttachDetail",
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeSnapshotOperationLogsRequest": {
-      "document": "DescribeSnapshotOperationLogs请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "过滤条件。支持以下条件：\n<li>snapshot-id - Array of String - 是否必填：是 - 按快照ID过滤，每个请求最多可指定10个快照ID。",
-          "example": "无",
-          "member": "Filter",
-          "name": "Filters",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "要查询的操作日志的截止时间，例如：“2019-11-22 23:59:59\"",
-          "example": "2022-12-14",
-          "member": "date",
-          "name": "EndTime",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "要查询的操作日志的起始时间，例如：“2019-11-22 00:00:00\"",
-          "example": "2022-12-13",
-          "member": "date",
-          "name": "BeginTime",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeSnapshotOperationLogsResponse": {
-      "document": "DescribeSnapshotOperationLogs返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "快照操作日志列表。",
-          "example": "无",
-          "member": "SnapshotOperationLog",
-          "name": "SnapshotOperationLogSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3095,78 +2965,6 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "DiskOperationLog": {
-      "document": "云盘操作日志。",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "操作的状态。取值范围：\nSUCCESS :表示操作成功 \nFAILED :表示操作失败 \nPROCESSING :表示操作中。",
-          "example": "无",
-          "member": "string",
-          "name": "OperationState",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "开始时间。",
-          "example": "无",
-          "member": "string",
-          "name": "StartTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "操作者的UIN。",
-          "example": "无",
-          "member": "string",
-          "name": "Operator",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "操作类型。取值范围：\nCBS_OPERATION_ATTACH：挂载云硬盘\nCBS_OPERATION_DETACH：解挂云硬盘\nCBS_OPERATION_RENEW：续费\nCBS_OPERATION_EXPAND：扩容\nCBS_OPERATION_CREATE：创建\nCBS_OPERATION_ISOLATE：隔离\nCBS_OPERATION_MODIFY：修改云硬盘属性\nASP_OPERATION_BIND：关联定期快照策略\nASP_OPERATION_UNBIND：取消关联定期快照策略",
-          "example": "无",
-          "member": "string",
-          "name": "Operation",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "结束时间。",
-          "example": "无",
-          "member": "string",
-          "name": "EndTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "操作的云盘ID。",
-          "example": "无",
-          "member": "string",
-          "name": "DiskId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4711,78 +4509,6 @@
           "example": "\"ap-guangzhou\"",
           "member": "string",
           "name": "DestinationRegion",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "SnapshotOperationLog": {
-      "document": "快照操作日志，已废弃。",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "操作的状态。取值范围：\nSUCCESS :表示操作成功 \nFAILED :表示操作失败 \nPROCESSING :表示操作中。",
-          "example": "SUCCESS",
-          "member": "string",
-          "name": "OperationState",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "开始时间。",
-          "example": "2018-12-18 17:52:38",
-          "member": "string",
-          "name": "StartTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "操作者的UIN。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "546800003",
-          "member": "string",
-          "name": "Operator",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "操作的快照ID。",
-          "example": "snap-0y61iiyj",
-          "member": "string",
-          "name": "SnapshotId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "操作类型。取值范围：\nSNAP_OPERATION_DELETE：删除快照\nSNAP_OPERATION_ROLLBACK：回滚快照\nSNAP_OPERATION_MODIFY：修改快照属性\nSNAP_OPERATION_CREATE：创建快照\nSNAP_OPERATION_COPY：跨地域复制快照\nASP_OPERATION_CREATE_SNAP：由定期快照策略创建快照\nASP_OPERATION_DELETE_SNAP：由定期快照策略删除快照",
-          "example": "SNAP_OPERATION_ROLLBACK",
-          "member": "string",
-          "name": "Operation",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "结束时间。",
-          "example": "2018-12-18 17:52:38",
-          "member": "string",
-          "name": "EndTime",
           "required": true,
           "type": "string",
           "value_allowed_null": false
