@@ -155,11 +155,11 @@
       "status": "online"
     },
     "DescribeAutoDenyIP": {
-      "document": "描述WAF自动封禁IP详情,对齐自动封堵状态",
+      "document": "接口已废弃\n\n描述WAF自动封禁IP详情,对齐自动封堵状态",
       "input": "DescribeAutoDenyIPRequest",
       "name": "描述WAF自动封禁IP详情",
       "output": "DescribeAutoDenyIPResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeCdcResource": {
       "document": "供运营后台获取Cdc资源列表",
@@ -9530,6 +9530,7 @@
           "disabled": false,
           "document": "客户要查询的日志主题ID，每个客户都有对应的一个主题，新版本此字段填空字符串",
           "example": "\"1ae37c76-df99-4e2b-998c-20f39eba6226\"",
+          "is_base64": false,
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -9540,6 +9541,7 @@
           "disabled": false,
           "document": "要查询的日志的起始时间，Unix时间戳，单位ms",
           "example": "1625395948532",
+          "is_base64": false,
           "member": "int64",
           "name": "From",
           "required": true,
@@ -9550,6 +9552,7 @@
           "disabled": false,
           "document": "要查询的日志的结束时间，Unix时间戳，单位ms",
           "example": "1626000748532",
+          "is_base64": false,
           "member": "int64",
           "name": "To",
           "required": true,
@@ -9560,6 +9563,7 @@
           "disabled": false,
           "document": "查询语句，语句长度最大为4096",
           "example": "\"schema: http\"",
+          "is_base64": false,
           "member": "string",
           "name": "Query",
           "required": true,
@@ -9570,6 +9574,7 @@
           "disabled": false,
           "document": "单次查询返回的日志条数，最大值为100",
           "example": "100",
+          "is_base64": false,
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -9578,8 +9583,9 @@
         },
         {
           "disabled": false,
-          "document": "加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。\n新版本此字段填空填",
+          "document": "新版本此字段失效，填空字符串，翻页使用Page",
           "example": "\"Y29udGV4dC1mMTE4NWE2My1mZTBmLTQ2YTctOTQzOS0zMzFlNGU2Y2EzYTAxNjI",
+          "is_base64": false,
           "member": "string",
           "name": "Context",
           "required": false,
@@ -9590,6 +9596,7 @@
           "disabled": false,
           "document": "日志接口是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc",
           "example": "\"desc\"",
+          "is_base64": false,
           "member": "string",
           "name": "Sort",
           "required": false,
@@ -9600,6 +9607,7 @@
           "disabled": false,
           "document": "第几页，从0开始。新版本接口字段",
           "example": "1",
+          "is_base64": false,
           "member": "int64",
           "name": "Page",
           "required": false,
@@ -9614,10 +9622,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "加载后续内容的Context",
+          "document": "新接口此字段失效，默认返回空字符串",
           "example": "\"Y29udGV4dC04ZWEyOGZlNi0zOTc1LTRmMGUtYTQzNy02OWU4MWQ5NzJkODkxNj\"",
           "member": "string",
           "name": "Context",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -9628,6 +9637,7 @@
           "example": "false",
           "member": "bool",
           "name": "ListOver",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false,
           "visibility": 1
@@ -9638,6 +9648,7 @@
           "example": "false",
           "member": "bool",
           "name": "Analysis",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false,
           "visibility": 1
@@ -9648,6 +9659,7 @@
           "example": "[]",
           "member": "string",
           "name": "ColNames",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -9658,6 +9670,7 @@
           "example": "[]",
           "member": "AccessLogInfo",
           "name": "Results",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -9668,6 +9681,7 @@
           "example": "[]",
           "member": "AccessLogItems",
           "name": "AnalysisResults",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -9719,7 +9733,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的游标。第一次请求使用空字符串即可，后续请求使用上一次请求返回的最后一条记录的context的值即可。",
+          "document": "接口升级，这个字段传空字符串,翻页使用Page字段",
           "example": " ",
           "is_base64": false,
           "member": "string",
@@ -9791,7 +9805,7 @@
         },
         {
           "disabled": false,
-          "document": "翻页游标，如果没有下一页了，这个参数为空\"\"",
+          "document": "接口升级，此字段无效，默认返回空字符串",
           "example": " ",
           "member": "string",
           "name": "Context",

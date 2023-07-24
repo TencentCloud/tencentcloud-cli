@@ -7,7 +7,7 @@ Input:
 ```
 tccli aiart TextToImage --cli-unfold-argument  \
     --Prompt 女孩 \
-    --Styles 101 102
+    --Styles 101
 ```
 
 Output: 

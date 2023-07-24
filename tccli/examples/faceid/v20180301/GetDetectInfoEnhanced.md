@@ -18,6 +18,7 @@ Output:
         "Text": {
             "ErrCode": 0,
             "ErrMsg": "成功",
+            "UseIDType": 0,
             "IdCard": "440111111111111111",
             "Name": "爱新觉罗永琪",
             "OcrNation": null,
@@ -28,11 +29,12 @@ Output:
             "OcrName": "爱新觉罗永琪",
             "OcrIdCard": "440111111111111111",
             "OcrGender": null,
+            "LivenessMode": 0,
             "LiveStatus": 0,
             "LiveMsg": "成功",
             "Comparestatus": 0,
             "Comparemsg": "成功",
-            "CompareLibType": "xx",
+            "CompareLibType": "权威库",
             "Sim": "76.52",
             "Location": null,
             "Mobile": null,
@@ -43,11 +45,12 @@ Output:
                     "Seq": "3d12da91-db34-4e55-81c3-993a41d7ccb7",
                     "Idcard": "440111111111111111",
                     "Name": "爱新觉罗永琪",
-                    "CompareLibType": "xx",
+                    "CompareLibType": "权威库",
                     "Sim": "76.52",
                     "IsNeedCharge": true,
                     "Errcode": 0,
                     "Errmsg": "成功",
+                    "LivenessMode": 0,
                     "Livestatus": 0,
                     "Livemsg": "成功",
                     "Comparestatus": 0,
@@ -56,18 +59,21 @@ Output:
             ]
         },
         "IdCardData": {
-            "ProcessedBackImage": "xx",
-            "ProcessedFrontImage": "xx",
-            "OcrFront": "xx",
-            "OcrBack": "xx",
-            "Avatar": "xx"
+            "ProcessedBackImage": "base64",
+            "ProcessedFrontImage": "base64",
+            "OcrFront": "base64",
+            "OcrBack": "base64",
+            "Avatar": "base64",
+            "WarnInfos": [],
+            "BackWarnInfos": []
         },
         "IntentionVerifyData": {
-            "IntentionVerifyVideo": "xx",
+            "IntentionVerifyVideo": "base64",
             "ErrorCode": 0,
             "ErrorMessage": "成功",
-            "AsrResult": "xx",
-            "IntentionVerifyBestFrame": "xx"
+            "AsrResult": "同意",
+            "AsrResultSimilarity": "0",
+            "IntentionVerifyBestFrame": "base64"
         },
         "IntentionQuestionResult": {
             "AsrResult": [
@@ -76,27 +82,30 @@ Output:
             "ResultCode": [
                 "0"
             ],
-            "Video": "xx",
+            "Audios": [
+                "base64"
+            ],
+            "Video": "base64",
             "ScreenShot": [
-                "xx"
+                "base64"
             ],
             "FinalResultCode": "0"
         },
         "BestFrame": {
-            "BestFrame": "xx",
+            "BestFrame": "base64",
             "BestFrames": [
-                "xx"
+                "base64"
             ]
         },
         "VideoData": {
-            "LivenessVideo": "xx"
+            "LivenessVideo": "base64"
         },
         "Encryption": {
-            "Iv": "xx",
+            "Iv": "iv",
             "EncryptList": [
-                "xx"
+                "Response.Text.Name"
             ],
-            "CiphertextBlob": "xx"
+            "CiphertextBlob": "CiphertextBlob"
         },
         "RequestId": "f52bac9a-0aee-4fe6-8d34-7de4bce89473"
     }

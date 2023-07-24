@@ -78,6 +78,34 @@
     "serviceShortName": "cfg"
   },
   "objects": {
+    "ActionFilter": {
+      "document": "动作库筛选栏位",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "关键字",
+          "example": "动作名称",
+          "member": "string",
+          "name": "Keyword",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "搜索内容值",
+          "example": "[\"开机\",\"关机\"]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "CreateTaskFromTemplateRequest": {
       "document": "CreateTaskFromTemplate请求参数结构体",
       "members": [
@@ -344,6 +372,16 @@
           "required": false,
           "type": "list",
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "筛选条件",
+          "example": "None",
+          "member": "ActionFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -357,6 +395,7 @@
           "example": "无",
           "member": "TaskListItem",
           "name": "TaskList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -367,6 +406,7 @@
           "example": "10",
           "member": "int64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -513,6 +553,16 @@
           "required": false,
           "type": "list",
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数",
+          "example": "无",
+          "member": "ActionFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -526,6 +576,7 @@
           "example": "无",
           "member": "TemplateListItem",
           "name": "TemplateList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -536,6 +587,7 @@
           "example": "10",
           "member": "int64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1

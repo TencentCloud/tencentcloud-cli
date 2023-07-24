@@ -1,65 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云硬盘(cbs) 版本：2017-03-12
+## AI 绘画(aiart) 版本：2022-12-29
 
-### 第 28 次发布
+### 第 2 次发布
 
-发布时间：2023-07-24 01:11:26
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* DescribeDiskOperationLogs
-* DescribeSnapshotOperationLogs
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* DiskOperationLog
-* SnapshotOperationLog
-
-
-
-## 云数据库 MySQL(cdb) 版本：2017-03-20
-
-### 第 71 次发布
-
-发布时间：2023-07-24 01:11:59
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* DescribeCDBProxy
-* DescribeProxyConnectionPoolConf
-* ModifyCDBProxyConnectionPool
-* ModifyCDBProxyVipVPort
-* QueryCDBProxy
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* Address
-* BaseGroupInfo
-* ConnectionPoolInfo
-* PoolConf
-* ProxyGroup
-* ProxyGroups
-* ProxyNodeInfo
-* RWInfo
-* RWInfos
-* RWInstanceInfo
-
-
-
-## Cloud Studio（云端 IDE）(cloudstudio) 版本：2023-05-08
-
-### 第 3 次发布
-
-发布时间：2023-07-24 01:16:08
+发布时间：2023-07-25 01:06:06
 
 本次发布包含了以下内容：
 
@@ -67,22 +12,49 @@
 
 修改接口：
 
-* [CreateWorkspaceToken](http://document.tencentcloudapi.woa.com/document/product/1640/78592)
+* [ImageToImage](http://document.tencentcloudapi.woa.com/document/product/1728/80843)
 
-	* 新增入参：Policies
+	* 新增入参：RspImgType
 
+* [TextToImage](http://document.tencentcloudapi.woa.com/document/product/1728/80841)
 
-
-
-## Cloud Studio（云端 IDE）(cloudstudio) 版本：2021-05-24
-
+	* 新增入参：RspImgType
 
 
-## 域名注册(domain) 版本：2018-08-08
 
-### 第 16 次发布
 
-发布时间：2023-07-24 01:23:14
+## 混沌演练平台(cfg) 版本：2021-08-20
+
+### 第 3 次发布
+
+发布时间：2023-07-25 01:13:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTaskList](http://document.tencentcloudapi.woa.com/document/product/1694/79902)
+
+	* 新增入参：Filters
+
+* [DescribeTemplateList](http://document.tencentcloudapi.woa.com/document/product/1694/79896)
+
+	* 新增入参：Filters
+
+
+新增数据结构：
+
+* [ActionFilter](http://document.tencentcloudapi.woa.com/document/product/1694/79907#ActionFilter)
+
+
+
+## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 71 次发布
+
+发布时间：2023-07-25 01:14:08
 
 本次发布包含了以下内容：
 
@@ -90,15 +62,19 @@
 
 新增接口：
 
-* [CreateDomainRedemption](http://document.tencentcloudapi.woa.com/document/product/242/81366)
+* [InstanceScalingDown](http://document.tencentcloudapi.woa.com/document/product/597/81370)
+
+新增数据结构：
+
+* [ScalingDownResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#ScalingDownResp)
 
 
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
 
-### 第 11 次发布
+### 第 12 次发布
 
-发布时间：2023-07-24 01:26:00
+发布时间：2023-07-25 01:25:09
 
 本次发布包含了以下内容：
 
@@ -106,51 +82,18 @@
 
 修改接口：
 
-* [BindEmployeeUserIdWithClientOpenId](http://document.tencentcloudapi.woa.com/document/product/1668/79334)
-
-	* 新增入参：Agent
-
-* [CreateFlowApprovers](http://document.tencentcloudapi.woa.com/document/product/1668/79339)
-
-	* 新增入参：Agent
-
-* [CreateUserAutoSignEnableUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79356)
-
-	* 新增入参：Agent
-
-* [DescribeThirdPartyAuthCode](http://document.tencentcloudapi.woa.com/document/product/1668/79355)
-
-	* 新增入参：Operator, Agent
-
-* [DescribeUserAutoSignStatus](http://document.tencentcloudapi.woa.com/document/product/1668/79354)
-
-	* 新增入参：Agent
-
-* [DisableUserAutoSign](http://document.tencentcloudapi.woa.com/document/product/1668/79353)
-
-	* 新增入参：Agent
-
-* [UnbindEmployeeUserIdWithClientOpenId](http://document.tencentcloudapi.woa.com/document/product/1668/79329)
+* [ModifyApplicationCallbackInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79320)
 
 	* 新增入参：Agent
 
 
-修改数据结构：
-
-* [FillApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FillApproverInfo)
-
-	* 新增成员：ApproverName, ApproverMobile
-
-	* <font color="#dd0000">**修改成员**：</font>ApproverSource, CustomUserId
 
 
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
 
+### 第 35 次发布
 
-## 官网(portal) 版本：2023-04-13
-
-### 第 3 次发布
-
-发布时间：2023-07-24 01:36:41
+发布时间：2023-07-25 01:31:31
 
 本次发布包含了以下内容：
 
@@ -158,48 +101,46 @@
 
 新增接口：
 
-* [DescribeProductDictionaryList](http://document.tencentcloudapi.woa.com/document/product/1732/81368)
+* [DescribeDockerActivities](http://document.tencentcloudapi.woa.com/document/product/1207/81383)
+* [DescribeDockerContainerConfiguration](http://document.tencentcloudapi.woa.com/document/product/1207/81382)
+* [DescribeDockerContainerDetail](http://document.tencentcloudapi.woa.com/document/product/1207/81381)
+* [DescribeDockerContainers](http://document.tencentcloudapi.woa.com/document/product/1207/81380)
+* [ModifyDockerContainer](http://document.tencentcloudapi.woa.com/document/product/1207/81379)
+* [RemoveDockerContainers](http://document.tencentcloudapi.woa.com/document/product/1207/81378)
+* [RenameDockerContainer](http://document.tencentcloudapi.woa.com/document/product/1207/81377)
+* [RerunDockerContainer](http://document.tencentcloudapi.woa.com/document/product/1207/81376)
+* [RestartDockerContainers](http://document.tencentcloudapi.woa.com/document/product/1207/81375)
+* [RunDockerContainers](http://document.tencentcloudapi.woa.com/document/product/1207/81374)
+* [StartDockerContainers](http://document.tencentcloudapi.woa.com/document/product/1207/81373)
+* [StopDockerContainers](http://document.tencentcloudapi.woa.com/document/product/1207/81372)
+
+修改接口：
+
+* [CreateInstances](http://document.tencentcloudapi.woa.com/document/product/1207/69573)
+
+	* 新增入参：FirewallTemplateId
+
 
 新增数据结构：
 
-* [DictItem](http://document.tencentcloudapi.woa.com/document/product/1732/80923#DictItem)
+* [DockerActivity](http://document.tencentcloudapi.woa.com/document/product/1207/47576#DockerActivity)
+* [DockerContainer](http://document.tencentcloudapi.woa.com/document/product/1207/47576#DockerContainer)
 
 
 
-## 分布式身份(tdid) 版本：2021-05-19
+## Web 应用防火墙(waf) 版本：2018-01-25
 
-### 第 9 次发布
+### 第 43 次发布
 
-发布时间：2023-07-24 01:44:15
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* AddLabel
-* GetAgencyTDid
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* Identity
-
-
-
-## 互动白板(tiw) 版本：2019-09-19
-
-### 第 14 次发布
-
-发布时间：2023-07-24 01:46:36
+发布时间：2023-07-25 01:50:32
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+<font color="#dd0000">**预下线接口**：</font>
 
-* [DescribeTranscodeByUrl](http://document.tencentcloudapi.woa.com/document/product/1137/81369)
+* DescribeAutoDenyIP
 
 
 
@@ -769,6 +710,25 @@
 
 
 ## AI 绘画(aiart) 版本：2022-12-29
+
+### 第 2 次发布
+
+发布时间：2023-07-25 01:06:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ImageToImage](http://document.tencentcloudapi.woa.com/document/product/1728/80843)
+
+	* 新增入参：RspImgType
+
+* [TextToImage](http://document.tencentcloudapi.woa.com/document/product/1728/80841)
+
+	* 新增入参：RspImgType
+
 
 ### 第 1 次发布
 
@@ -11745,6 +11705,29 @@
 
 ## 混沌演练平台(cfg) 版本：2021-08-20
 
+### 第 3 次发布
+
+发布时间：2023-07-25 01:13:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTaskList](http://document.tencentcloudapi.woa.com/document/product/1694/79902)
+
+	* 新增入参：Filters
+
+* [DescribeTemplateList](http://document.tencentcloudapi.woa.com/document/product/1694/79896)
+
+	* 新增入参：Filters
+
+
+新增数据结构：
+
+* [[ActionFilter](http://document.tencentcloudapi.woa.com/document/product/1694/79907#ActionFilter)](http://document.tencentcloudapi.woa.com/document/product/1694/79907#[ActionFilter](http://document.tencentcloudapi.woa.com/document/product/1694/79907#ActionFilter))
+
 ### 第 2 次发布
 
 发布时间：2023-06-29 01:13:54
@@ -13296,6 +13279,22 @@
 
 
 ## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 71 次发布
+
+发布时间：2023-07-25 01:14:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[InstanceScalingDown](http://document.tencentcloudapi.woa.com/document/product/597/81370)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[ScalingDownResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#ScalingDownResp)](http://document.tencentcloudapi.woa.com/document/product/597/40861#[ScalingDownResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#ScalingDownResp))
 
 ### 第 70 次发布
 
@@ -27606,7 +27605,7 @@
 
 新增接口：
 
-* [[CreateDomainRedemption](http://document.tencentcloudapi.woa.com/document/product/242/81366)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateDomainRedemption](http://document.tencentcloudapi.woa.com/document/product/242/81366)
 
 ### 第 15 次发布
 
@@ -31148,6 +31147,21 @@
 
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 12 次发布
+
+发布时间：2023-07-25 01:25:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyApplicationCallbackInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79320)
+
+	* 新增入参：Agent
+
 
 ### 第 11 次发布
 
@@ -38966,6 +38980,41 @@
 
 
 ## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 35 次发布
+
+发布时间：2023-07-25 01:31:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeDockerActivities](http://document.tencentcloudapi.woa.com/document/product/1207/81383)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeDockerContainerConfiguration](http://document.tencentcloudapi.woa.com/document/product/1207/81382)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeDockerContainerDetail](http://document.tencentcloudapi.woa.com/document/product/1207/81381)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeDockerContainers](http://document.tencentcloudapi.woa.com/document/product/1207/81380)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyDockerContainer](http://document.tencentcloudapi.woa.com/document/product/1207/81379)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[RemoveDockerContainers](http://document.tencentcloudapi.woa.com/document/product/1207/81378)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[RenameDockerContainer](http://document.tencentcloudapi.woa.com/document/product/1207/81377)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[RerunDockerContainer](http://document.tencentcloudapi.woa.com/document/product/1207/81376)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[RestartDockerContainers](http://document.tencentcloudapi.woa.com/document/product/1207/81375)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[RunDockerContainers](http://document.tencentcloudapi.woa.com/document/product/1207/81374)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[StartDockerContainers](http://document.tencentcloudapi.woa.com/document/product/1207/81373)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[StopDockerContainers](http://document.tencentcloudapi.woa.com/document/product/1207/81372)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改接口：
+
+* [CreateInstances](http://document.tencentcloudapi.woa.com/document/product/1207/69573)
+
+	* 新增入参：FirewallTemplateId
+
+
+新增数据结构：
+
+* [[DockerActivity](http://document.tencentcloudapi.woa.com/document/product/1207/47576#DockerActivity)](http://document.tencentcloudapi.woa.com/document/product/1207/47576#[DockerActivity](http://document.tencentcloudapi.woa.com/document/product/1207/47576#DockerActivity))
+* [[DockerContainer](http://document.tencentcloudapi.woa.com/document/product/1207/47576#DockerContainer)](http://document.tencentcloudapi.woa.com/document/product/1207/47576#[DockerContainer](http://document.tencentcloudapi.woa.com/document/product/1207/47576#DockerContainer))
 
 ### 第 34 次发布
 
@@ -48399,11 +48448,11 @@
 
 新增接口：
 
-* [[DescribeProductDictionaryList](http://document.tencentcloudapi.woa.com/document/product/1732/81368)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeProductDictionaryList](http://document.tencentcloudapi.woa.com/document/product/1732/81368)
 
 新增数据结构：
 
-* [[DictItem](http://document.tencentcloudapi.woa.com/document/product/1732/80923#DictItem)](http://document.tencentcloudapi.woa.com/document/product/1732/80923#[DictItem](http://document.tencentcloudapi.woa.com/document/product/1732/80923#DictItem))
+* [DictItem](http://document.tencentcloudapi.woa.com/document/product/1732/80923#DictItem)
 
 ### 第 2 次发布
 
@@ -62449,7 +62498,7 @@
 
 新增接口：
 
-* [[DescribeTranscodeByUrl](http://document.tencentcloudapi.woa.com/document/product/1137/81369)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeTranscodeByUrl](http://document.tencentcloudapi.woa.com/document/product/1137/81369)
 
 ### 第 13 次发布
 
@@ -73104,6 +73153,18 @@
 
 
 ## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 43 次发布
+
+发布时间：2023-07-25 01:50:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeAutoDenyIP
 
 ### 第 42 次发布
 
