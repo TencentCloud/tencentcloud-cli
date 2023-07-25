@@ -11261,7 +11261,7 @@
           "example": "amqp-xxxxx",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11272,7 +11272,7 @@
           "example": "test",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11283,7 +11283,7 @@
           "example": "华南地区",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -11294,7 +11294,7 @@
           "example": "100000000",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -11305,7 +11305,7 @@
           "example": "备注",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -11316,9 +11316,20 @@
           "example": "无",
           "member": "VpcEndpointInfo",
           "name": "Vpcs",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "可用区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[190001]",
+          "member": "int64",
+          "name": "ZoneIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -11327,7 +11338,7 @@
           "example": "10",
           "member": "int64",
           "name": "VirtualHostNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -11338,7 +11349,7 @@
           "example": "10",
           "member": "int64",
           "name": "QueueNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -11349,7 +11360,7 @@
           "example": "2.3",
           "member": "float",
           "name": "MessagePublishRate",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false,
           "visibility": 1
@@ -11360,7 +11371,7 @@
           "example": "5",
           "member": "int64",
           "name": "MessageStackNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -11371,7 +11382,7 @@
           "example": "1666257531143",
           "member": "int64",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -11382,7 +11393,7 @@
           "example": "10",
           "member": "int64",
           "name": "ChannelNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -11393,7 +11404,7 @@
           "example": "10",
           "member": "int64",
           "name": "ConnectionNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -11404,7 +11415,7 @@
           "example": "10",
           "member": "int64",
           "name": "ConsumerNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -11415,7 +11426,7 @@
           "example": "10",
           "member": "int64",
           "name": "ExchangeNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -11426,20 +11437,20 @@
           "example": "异常信息",
           "member": "string",
           "name": "ExceptionInformation",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
           "disabled": false,
-          "document": "实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败",
           "example": "0",
           "member": "int64",
           "name": "ClusterStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
+          "value_allowed_null": false,
           "visibility": 1
         }
       ],

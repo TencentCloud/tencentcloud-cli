@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli smp DescribeProductInputType --cli-unfold-argument  \
-    --ProductCode p_ccn
+    --ProductCode p_ccn \
+    --SubProductCode 
 ```
 
 Output: 

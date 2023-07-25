@@ -56,7 +56,7 @@
     ],
     "DeleteCustomization": [
       {
-        "document": "",
+        "document": "删除",
         "input": "https://asr.tencentcloudapi.com/?Action=DeleteCustomization\n&ModelId=f3520776f31211ea9d26c81fbecfd0bd\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7cc30534-edde-4969-b281-7a30c5cbf806\"\n    }\n}",
         "title": "删除自学习模型"
@@ -106,7 +106,7 @@
     ],
     "DownloadCustomization": [
       {
-        "document": "",
+        "document": "下载",
         "input": "https://asr.tencentcloudapi.com/?Action=DownloadCustomization\n&ModelId=bc4a37d9f18511ea9a1ec81fbecfd0bd\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"864d6a32-3b1c-462d-b019-ebdd65b3a644\",\n        \"DownloadUrl\": \"https://customization-download-temp-1256237915.cos.ap-guangzhou.myqcloud.com/bc4a37d9f18511ea9a1ec81fbecfd0bd_0.dict\"\n    }\n}",
         "title": "下载自学习模型"
@@ -146,7 +146,7 @@
     ],
     "ModifyCustomization": [
       {
-        "document": "",
+        "document": "修改",
         "input": "https://asr.tencentcloudapi.com/?Action=ModifyCustomization\n&ModelId=413c479df72d11eaacd3c81fbecfd0bd\n&ModelName=修改名称\n&ModelType=16k\n&TextUrl=http://www.download.com/test.txt\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3808ad3-d8dd-4b65-96c9-7d6f1f81b6b6\"\n    }\n}",
         "title": "修改自学习模型"
@@ -154,7 +154,7 @@
     ],
     "ModifyCustomizationState": [
       {
-        "document": "",
+        "document": "修改状态",
         "input": "https://asr.tencentcloudapi.com/?Action=ModifyCustomizationState\n&ModelId=aa6f402f263f12ea856fc81fbecfd0sd\n&ToState=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ModelId\": \"aa6f402f263f12ea856fc81fbecfd0sd\",\n        \"RequestId\": \"3290cfb2-91a7-4989-91de-d1d624a77c12\"\n    }\n}",
         "title": "修改自学习模型状态"

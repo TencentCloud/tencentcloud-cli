@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli cat DescribeChartDetail --cli-unfold-argument  \
-    --City xx \
-    --Operators xx \
-    --Districts xx \
+    --City aa \
+    --Operators aa \
+    --Districts aa \
     --ProbeTime 1 \
-    --TaskID xx \
-    --TaskType xx \
-    --ChartType xx
+    --TaskID aa \
+    --TaskType aa \
+    --ChartType aa
 ```
 
 Output: 
@@ -21,39 +21,40 @@ Output:
     "Response": {
         "PieDetails": [
             {
-                "MimeType": "xx",
+                "MimeType": "aa",
                 "Index": 1,
-                "Domain": "xx",
-                "ElementUseable": 0.0,
-                "BytesReceived": 0.0,
-                "ElementNum": 0.0,
-                "Cname": "xx",
-                "ErrElementNum": 0.0,
-                "TotalTime": 0.0
+                "Domain": "aa",
+                "ElementUseable": 0,
+                "BytesReceived": 0,
+                "ElementNum": 0,
+                "Cname": "aa",
+                "ErrElementNum": 0,
+                "TotalTime": 0
             }
         ],
-        "RequestId": "xx",
+        "RequestId": "aa",
         "ChartDetails": [
             {
-                "TotalTime": 0.0,
+                "TotalTime": 0,
                 "Index": 1,
-                "SslTime": 0.0,
-                "RequestTime": 0.0,
-                "MimeType": "xx",
-                "ResponseTime": 0.0,
-                "Method": "xx",
+                "SslTime": 0,
+                "RequestTime": 0,
+                "MimeType": "aa",
+                "ResponseTime": 0,
+                "Method": "aa",
                 "TcpNum": 1,
-                "URL": "xx",
-                "DownloadTime": 0.0,
-                "BlockTime": 0.0,
-                "VeName": "xx",
-                "TcpTime": 0.0,
-                "StartTime": 0.0,
-                "TargetIP": "xx",
-                "HttpVersion": "xx",
-                "DnsTime": 0.0,
-                "DownloadSize": 0.0,
-                "MonitorTime": "xx",
+                "URL": "aa",
+                "StatMainID": 1,
+                "DownloadTime": 0,
+                "BlockTime": 0,
+                "VeName": "aa",
+                "TcpTime": 0,
+                "StartTime": 0,
+                "TargetIP": "aa",
+                "HttpVersion": "aa",
+                "DnsTime": 0,
+                "DownloadSize": 0,
+                "MonitorTime": "aa",
                 "StatusCode": 1
             }
         ]

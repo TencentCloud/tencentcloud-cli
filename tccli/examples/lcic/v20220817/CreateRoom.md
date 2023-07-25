@@ -23,6 +23,10 @@ tccli lcic CreateRoom --cli-unfold-argument  \
     --AudienceType 1 \
     --RecordLayout 1 \
     --GroupId abc \
+    --InteractionMode 1 \
+    --VideoOrientation 1 \
+    --IsGradingRequiredPostClass 1 \
+    --RoomType 1 \
     --EnableDirectControl 0
 ```
 

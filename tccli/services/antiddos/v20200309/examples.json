@@ -326,6 +326,14 @@
         "title": "获取业务流量状态码统计曲线"
       }
     ],
+    "DescribeBizMonitorTrend": [
+      {
+        "document": "请求入包速率",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBizMonitorTrend\n<公共请求参数>\n\n{\n    \"Business\": \"bgpip\",\n    \"Period\": 60,\n    \"StartTime\": \"2023-06-21 10:00:00\",\n    \"EndTime\": \"2023-06-21 10:30:00\",\n    \"Id\": \"bgpip-0000xbc\",\n    \"MetricName\": \"inpkg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataList\": [\n            1,\n            12\n        ],\n        \"MetricName\": \"inpkg\",\n        \"MaxData\": 12,\n        \"RequestId\": \"abc-as\"\n    }\n}",
+        "title": "请求入包速率"
+      }
+    ],
     "DescribeBizTrend": [
       {
         "document": "获取高防IP业务流量曲线",

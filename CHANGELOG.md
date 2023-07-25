@@ -1,3 +1,240 @@
+# Release 3.0.815.1
+
+## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+
+### 第 46 次发布
+
+发布时间：2023-07-26 01:06:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBizMonitorTrend](http://document.tencentcloudapi.woa.com/document/product/1021/81384)
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 31 次发布
+
+发布时间：2023-07-26 01:15:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteScheduledSql](http://document.tencentcloudapi.woa.com/document/product/614/81387)
+* [DescribeScheduledSqlInfo](http://document.tencentcloudapi.woa.com/document/product/614/81386)
+* [ModifyScheduledSql](http://document.tencentcloudapi.woa.com/document/product/614/81385)
+
+新增数据结构：
+
+* [ScheduledSqlTaskInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#ScheduledSqlTaskInfo)
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 27 次发布
+
+发布时间：2023-07-26 01:21:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRecordFilterList](http://document.tencentcloudapi.woa.com/document/product/1427/81388)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 13 次发布
+
+发布时间：2023-07-26 01:24:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeIntegrationMainOrganizationUser
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 10 次发布
+
+发布时间：2023-07-26 01:28:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteCloudStorageEvent](http://document.tencentcloudapi.woa.com/document/product/1131/81390)
+* [DescribeDevicePackages](http://document.tencentcloudapi.woa.com/document/product/1131/81389)
+
+修改接口：
+
+* [DescribeCloudStorageThumbnail](http://document.tencentcloudapi.woa.com/document/product/1131/75370)
+
+	* 新增出参：ExpireTime
+
+
+新增数据结构：
+
+* [PackageInfo](http://document.tencentcloudapi.woa.com/document/product/1131/75389#PackageInfo)
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 低代码互动课堂(lcic) 版本：2022-08-17
+
+### 第 7 次发布
+
+发布时间：2023-07-26 01:30:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRoom](http://document.tencentcloudapi.woa.com/document/product/1720/80652)
+
+	* 新增入参：RoomType
+
+* [DescribeRoom](http://document.tencentcloudapi.woa.com/document/product/1720/80647)
+
+	* 新增出参：RoomType
+
+* [ModifyRoom](http://document.tencentcloudapi.woa.com/document/product/1720/80640)
+
+	* 新增入参：RoomType
+
+
+修改数据结构：
+
+* [RoomInfo](http://document.tencentcloudapi.woa.com/document/product/1720/80671#RoomInfo)
+
+	* 新增成员：IsGradingRequiredPostClass, RoomType
+
+
+
+
+## 移动应用安全(ms) 版本：2018-04-08
+
+### 第 2 次发布
+
+发布时间：2023-07-26 01:33:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CancelEncryptTask](http://document.tencentcloudapi.woa.com/document/product/1617/81396)
+* [CreateEncryptInstance](http://document.tencentcloudapi.woa.com/document/product/1617/81395)
+* [CreateOrderInstance](http://document.tencentcloudapi.woa.com/document/product/1617/81394)
+* [DescribeEncryptInstances](http://document.tencentcloudapi.woa.com/document/product/1617/81393)
+* [DescribeEncryptPlan](http://document.tencentcloudapi.woa.com/document/product/1617/81392)
+* [DescribeOrderInstances](http://document.tencentcloudapi.woa.com/document/product/1617/81391)
+
+新增数据结构：
+
+* [AndroidAppInfo](http://document.tencentcloudapi.woa.com/document/product/1617/78369#AndroidAppInfo)
+* [AndroidPlan](http://document.tencentcloudapi.woa.com/document/product/1617/78369#AndroidPlan)
+* [AndroidResult](http://document.tencentcloudapi.woa.com/document/product/1617/78369#AndroidResult)
+* [AppletInfo](http://document.tencentcloudapi.woa.com/document/product/1617/78369#AppletInfo)
+* [AppletPlan](http://document.tencentcloudapi.woa.com/document/product/1617/78369#AppletPlan)
+* [AppletResult](http://document.tencentcloudapi.woa.com/document/product/1617/78369#AppletResult)
+* [EncryptResults](http://document.tencentcloudapi.woa.com/document/product/1617/78369#EncryptResults)
+* [IOSPlan](http://document.tencentcloudapi.woa.com/document/product/1617/78369#IOSPlan)
+* [IOSResult](http://document.tencentcloudapi.woa.com/document/product/1617/78369#IOSResult)
+* [Orders](http://document.tencentcloudapi.woa.com/document/product/1617/78369#Orders)
+* [SDKPlan](http://document.tencentcloudapi.woa.com/document/product/1617/78369#SDKPlan)
+* [SDKResult](http://document.tencentcloudapi.woa.com/document/product/1617/78369#SDKResult)
+
+
+
+## 服务管理平台(smp) 版本：2023-06-02
+
+### 第 4 次发布
+
+发布时间：2023-07-26 01:36:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeProductInputType](http://document.tencentcloudapi.woa.com/document/product/1736/80964)
+
+	* 新增入参：SubProductCode
+
+
+
+
+## 安全运营中心(ssa) 版本：2018-06-08
+
+### 第 15 次发布
+
+发布时间：2023-07-26 01:37:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ConcernInfo](http://document.tencentcloudapi.woa.com/document/product/664/51406#ConcernInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>IpCountry, IpProvince, Result, Confidence, IpIsp, IpInfrastructure, ThreatType, Groups, Status, Tags, VictimAssetType, VictimAssetName, DomainRegistrant, DomainRegisteredInstitution, DomainRegistrationTime, FileName, FileMd5, VirusName, FilePath, FileSize, ProcName, Pid, ProcPath, ProcUser, DefendedCount, DetectedCount
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 57 次发布
+
+发布时间：2023-07-26 01:41:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RabbitMQClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQClusterInfo)
+
+	* 新增成员：ZoneIds
+
+	* <font color="#dd0000">**修改成员**：</font>ExceptionInformation, ClusterStatus
+
+
+
+
 # Release 3.0.814.1
 
 ## AI 绘画(aiart) 版本：2022-12-29

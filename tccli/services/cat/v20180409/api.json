@@ -548,74 +548,74 @@
       "document": "DescribeChartDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询时间戳",
           "example": "1645498961000",
           "member": "uint64",
           "name": "ProbeTime",
           "required": true,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "task-rjdpau6y",
           "member": "string",
           "name": "TaskID",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务类型",
           "example": "AnalyzeTaskType_Browse",
           "member": "string",
           "name": "TaskType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询图表类型",
           "example": "waterfall：瀑布图 tcp：TCP建连图 mimetype：类型饼图 domainpie：域名饼图",
           "member": "string",
           "name": "ChartType",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运营商",
           "example": "[\"移动\",\"电信\"]",
           "member": "string",
           "name": "Operators",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地区",
           "example": "[\"广西\"]",
           "member": "string",
           "name": "Districts",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "城市",
           "example": "[\"桂林市\"]",
           "member": "string",
           "name": "City",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -629,9 +629,10 @@
           "example": "[]",
           "member": "DescribeDomainPie",
           "name": "PieDetails",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -639,9 +640,10 @@
           "example": "[]",
           "member": "DescribeChartDetail",
           "name": "ChartDetails",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

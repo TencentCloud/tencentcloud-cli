@@ -260,6 +260,16 @@
           "required": true,
           "type": "string",
           "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "云产品编码（二级）",
+          "example": "无",
+          "member": "string",
+          "name": "SubProductCode",
+          "required": false,
+          "type": "string",
+          "visibility": 2
         }
       ],
       "type": "object"
