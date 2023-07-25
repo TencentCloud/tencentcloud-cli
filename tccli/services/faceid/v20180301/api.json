@@ -2010,80 +2010,80 @@
       "document": "GetDetectInfoEnhanced请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "人脸核身流程的标识，调用DetectAuth接口时生成。",
           "example": "CE661F1A-0F1E-45BD-BE13-34C05CEA7681",
+          "is_base64": false,
           "member": "string",
           "name": "BizToken",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用于细分客户使用场景，由腾讯侧在线下对接时分配。",
           "example": "0",
+          "is_base64": false,
           "member": "string",
           "name": "RuleId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定拉取的结果信息，取值（0：全部；1：文本类；2：身份证信息；3：视频最佳截图信息）。\n如 13表示拉取文本类、视频最佳截图信息。\n默认值：0",
           "example": "1",
+          "is_base64": false,
           "member": "string",
           "name": "InfoType",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "从活体视频中截取一定张数的最佳帧（仅部分服务支持，若需使用请与慧眼小助手沟通）。默认为0，最大为10，超出10的最多只给10张。（InfoType需要包含3）",
           "example": "0",
+          "is_base64": false,
           "member": "uint64",
           "name": "BestFramesCount",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否对身份证照片进行裁边。默认为false。（InfoType需要包含2）",
           "example": "false",
+          "is_base64": false,
           "member": "bool",
           "name": "IsCutIdCardImage",
           "required": false,
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要从身份证中抠出头像。默认为false。（InfoType需要包含2）",
           "example": "false",
+          "is_base64": false,
           "member": "bool",
           "name": "IsNeedIdCardAvatar",
           "required": false,
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已弃用。",
           "example": "false",
+          "is_base64": false,
           "member": "bool",
           "name": "IsEncrypt",
           "required": false,
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要对返回中的敏感信息进行加密。仅指定加密算法Algorithm即可，其余字段传入默认值。其中敏感信息包括：Response.Text.IdCard、Response.Text.Name、Response.Text.OcrIdCard、Response.Text.OcrName",
           "example": "无",
+          "is_base64": false,
           "member": "Encryption",
           "name": "Encryption",
           "required": false,
@@ -2101,7 +2101,7 @@
           "example": "无",
           "member": "DetectInfoText",
           "name": "Text",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2111,7 +2111,7 @@
           "example": "无",
           "member": "DetectInfoIdCardData",
           "name": "IdCardData",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2121,7 +2121,7 @@
           "example": "无",
           "member": "DetectInfoBestFrame",
           "name": "BestFrame",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2131,7 +2131,7 @@
           "example": "无",
           "member": "DetectInfoVideoData",
           "name": "VideoData",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2141,17 +2141,17 @@
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "意愿核身相关信息。若未使用意愿核身功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "意愿核身朗读模式结果信息。若未使用意愿核身功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "IntentionVerifyData",
           "name": "IntentionVerifyData",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2161,7 +2161,7 @@
           "example": "无",
           "member": "IntentionQuestionResult",
           "name": "IntentionQuestionResult",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },

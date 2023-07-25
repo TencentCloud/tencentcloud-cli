@@ -586,6 +586,14 @@
         "title": "Ckafka询价"
       }
     ],
+    "InstanceScalingDown": [
+      {
+        "document": "实例缩容",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstanceScalingDown\n<公共请求参数>\n\n{\n    \"InstanceId\": \"***\",\n    \"DiskSize\": 900,\n    \"BandWidth\": 40,\n    \"Partition\": 1000,\n    \"UpgradeStrategy\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"DealNames\": [\n                \"20230703002035272950891\"\n            ]\n        },\n        \"RequestId\": \"test111111\"\n    }\n}",
+        "title": "实例缩容"
+      }
+    ],
     "ModifyAclRule": [
       {
         "document": "",

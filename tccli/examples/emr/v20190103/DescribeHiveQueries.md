@@ -29,7 +29,7 @@ Output:
                 "State": "FINISHED",
                 "User": "hadoop",
                 "StartTime": 1686064102000,
-                "Duration": 104,
+                "Duration": "104ms",
                 "EndTime": 1686064207000,
                 "Id": "hadoop_20230606150822_d1c216ea-7602-4fc6-9a20-5c0287f062ff"
             },
@@ -40,7 +40,7 @@ Output:
                 "State": "FINISHED",
                 "User": "hadoop",
                 "StartTime": 1686064093000,
-                "Duration": 8,
+                "Duration": "8ms",
                 "EndTime": 1686064102000,
                 "Id": "hadoop_20230606150813_20c9784a-564c-4b80-9505-e46392cbb152"
             }

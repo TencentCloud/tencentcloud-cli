@@ -9662,21 +9662,21 @@
           "disabled": false,
           "document": "转发规则的路径。长度限制为：1~200。",
           "example": "/xxxx",
+          "is_base64": false,
           "member": "string",
           "name": "Url",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "转发规则的域名。长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。",
           "example": "www.xxxx.com",
+          "is_base64": false,
           "member": "string",
           "name": "Domain",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -9685,8 +9685,7 @@
           "member": "int64",
           "name": "SessionExpireTime",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -9695,8 +9694,7 @@
           "member": "HealthCheck",
           "name": "HealthCheck",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -9705,28 +9703,27 @@
           "member": "CertificateInput",
           "name": "Certificate",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
           "document": "规则的请求转发方式，可选值：WRR、LEAST_CONN、IP_HASH\n分别表示按权重轮询、最小连接数、按IP哈希， 默认为 WRR。",
           "example": "WRR",
+          "is_base64": false,
           "member": "string",
           "name": "Scheduler",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/TRPC，TRPC暂未对外开放。",
+          "document": "负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/GRPC/TRPC，TRPC暂未对外开放，默认HTTP。",
           "example": "HTTP",
+          "is_base64": false,
           "member": "string",
           "name": "ForwardType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -9735,8 +9732,7 @@
           "member": "bool",
           "name": "DefaultServer",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -9745,38 +9741,37 @@
           "member": "bool",
           "name": "Http2",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
           "document": "后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组",
           "example": "NODE",
+          "is_base64": false,
           "member": "string",
           "name": "TargetType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "TRPC被调服务器路由，ForwardType为TRPC时必填。目前暂未对外开放。",
           "example": "trpcall",
+          "is_base64": false,
           "member": "string",
           "name": "TrpcCallee",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "TRPC调用服务接口，ForwardType为TRPC时必填。目前暂未对外开放",
           "example": "trpcFunc",
+          "is_base64": false,
           "member": "string",
           "name": "TrpcFunc",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -9785,18 +9780,17 @@
           "member": "bool",
           "name": "Quic",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
           "document": "转发规则的域名列表。每个域名的长度限制为：1~80。Domain和Domains只需要传一个，单域名规则传Domain，多域名规则传Domains。",
           "example": "[\"www.xxxx.com\"]",
+          "is_base64": false,
           "member": "string",
           "name": "Domains",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -9805,8 +9799,7 @@
           "member": "MultiCertInfo",
           "name": "MultiCertInfo",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         }
       ],
       "usage": "in"

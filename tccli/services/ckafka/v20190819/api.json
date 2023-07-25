@@ -476,6 +476,13 @@
       "output": "InquireCkafkaPriceResponse",
       "status": "online"
     },
+    "InstanceScalingDown": {
+      "document": "按量实例缩容",
+      "input": "InstanceScalingDownRequest",
+      "name": "按量实例缩容",
+      "output": "InstanceScalingDownResponse",
+      "status": "online"
+    },
     "ModifyAclRule": {
       "document": "修改\bAC策略，目前只支持预设规则的是否应用到新增topic这一项的修改",
       "input": "ModifyAclRuleRequest",
@@ -12019,6 +12026,84 @@
       ],
       "usage": "out"
     },
+    "InstanceScalingDownRequest": {
+      "document": "InstanceScalingDown请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "xxx",
+          "is_base64": false,
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "缩容模式  1:稳定变配 \n2.高速变配",
+          "example": "1",
+          "is_base64": false,
+          "member": "int64",
+          "name": "UpgradeStrategy",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "磁盘大小 单位 GB",
+          "example": "800",
+          "is_base64": false,
+          "member": "int64",
+          "name": "DiskSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "峰值带宽 单位 MB/s",
+          "example": "60",
+          "is_base64": false,
+          "member": "int64",
+          "name": "BandWidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分区上限",
+          "example": "60",
+          "is_base64": false,
+          "member": "int64",
+          "name": "Partition",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "InstanceScalingDownResponse": {
+      "document": "InstanceScalingDown返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "缩容应答\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "ScalingDownResp",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "JgwOperateResponse": {
       "document": "操作型结果返回值",
       "members": [
@@ -15763,6 +15848,22 @@
           "name": "SoldOut",
           "required": true,
           "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ScalingDownResp": {
+      "document": "实例缩容应答",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"131231234423\"]",
+          "member": "string",
+          "name": "DealNames",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

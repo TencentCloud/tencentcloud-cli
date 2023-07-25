@@ -210,6 +210,34 @@
       "output": "DescribeDisksReturnableResponse",
       "status": "online"
     },
+    "DescribeDockerActivities": {
+      "document": "查询实例内的Docker活动列表。",
+      "input": "DescribeDockerActivitiesRequest",
+      "name": "查询Docker活动列表",
+      "output": "DescribeDockerActivitiesResponse",
+      "status": "online"
+    },
+    "DescribeDockerContainerConfiguration": {
+      "document": "查询实例内的Docker容器配置信息",
+      "input": "DescribeDockerContainerConfigurationRequest",
+      "name": "查询Docker容器配置信息",
+      "output": "DescribeDockerContainerConfigurationResponse",
+      "status": "online"
+    },
+    "DescribeDockerContainerDetail": {
+      "document": "查询实例内的Docker容器详情",
+      "input": "DescribeDockerContainerDetailRequest",
+      "name": "查询Docker容器详情",
+      "output": "DescribeDockerContainerDetailResponse",
+      "status": "online"
+    },
+    "DescribeDockerContainers": {
+      "document": "查询实例内的容器列表。",
+      "input": "DescribeDockerContainersRequest",
+      "name": "查询容器列表",
+      "output": "DescribeDockerContainersResponse",
+      "status": "online"
+    },
     "DescribeFirewallRules": {
       "document": "本接口（DescribeFirewallRules）用于查询实例的防火墙规则。",
       "input": "DescribeFirewallRulesRequest",
@@ -441,6 +469,13 @@
       "output": "ModifyDisksRenewFlagResponse",
       "status": "online"
     },
+    "ModifyDockerContainer": {
+      "document": "修改实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询重建情况。\n请注意：本接口会重新创建并运行实例内的Docker容器。",
+      "input": "ModifyDockerContainerRequest",
+      "name": "修改实例内的Docker容器",
+      "output": "ModifyDockerContainerResponse",
+      "status": "online"
+    },
     "ModifyFirewallRuleDescription": {
       "document": "本接口（ModifyFirewallRuleDescription）用于修改单条防火墙规则描述。\n\n* FirewallVersion 用于指定要操作的防火墙的版本。传入 FirewallVersion 版本号若不等于当前防火墙的最新版本，将返回失败；若不传 FirewallVersion 则直接修改防火墙规则备注。\n\n在 FirewallRule 参数中：\n* Protocol 字段支持输入 TCP，UDP，ICMP，ALL。\n* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。\n* CidrBlock 字段允许输入符合 cidr 格式标准的任意字符串。租户之间网络隔离规则优先于防火墙中的内网规则。\n* Action 字段只允许输入 ACCEPT 或 DROP。\n* FirewallRuleDescription 字段长度不得超过 64。",
       "input": "ModifyFirewallRuleDescriptionRequest",
@@ -497,6 +532,20 @@
       "output": "RebootInstancesResponse",
       "status": "online"
     },
+    "RemoveDockerContainers": {
+      "document": "删除实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询删除情况。",
+      "input": "RemoveDockerContainersRequest",
+      "name": "删除Docker容器",
+      "output": "RemoveDockerContainersResponse",
+      "status": "online"
+    },
+    "RenameDockerContainer": {
+      "document": "重命名实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询重命名情况。",
+      "input": "RenameDockerContainerRequest",
+      "name": "重命名Docker容器",
+      "output": "RenameDockerContainerResponse",
+      "status": "online"
+    },
     "RenewDisks": {
       "document": "本接口(RenewDisks)用于续费一个或多个轻量应用服务器云硬盘。\n\n只有状态为 ATTACHED，UNATTACHED 或 SHUTDOWN 的数据盘才可以进行此操作。\n支持批量操作。每次请求批量云硬盘的上限为 50。\n本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。云硬盘操作结果可以通过调用 [DescribeDisks](https://cloud.tencent.com/document/product/1207/66093) 接口查询，如果云硬盘的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
       "input": "RenewDisksRequest",
@@ -509,6 +558,13 @@
       "input": "RenewInstancesRequest",
       "name": "续费实例",
       "output": "RenewInstancesResponse",
+      "status": "online"
+    },
+    "RerunDockerContainer": {
+      "document": "重新创建并运行实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询重建情况。",
+      "input": "RerunDockerContainerRequest",
+      "name": "重新创建并运行Docker容器",
+      "output": "RerunDockerContainerResponse",
       "status": "online"
     },
     "ResetAttachCcn": {
@@ -532,11 +588,39 @@
       "output": "ResetInstancesPasswordResponse",
       "status": "online"
     },
+    "RestartDockerContainers": {
+      "document": "重启实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询重启情况。",
+      "input": "RestartDockerContainersRequest",
+      "name": "重启Docker容器",
+      "output": "RestartDockerContainersResponse",
+      "status": "online"
+    },
+    "RunDockerContainers": {
+      "document": "创建并运行多个Docker容器，之后可以通过返回的ActivityIds调用DescribeDockerActivities接口查询创建情况。",
+      "input": "RunDockerContainersRequest",
+      "name": "创建并运行Docker容器",
+      "output": "RunDockerContainersResponse",
+      "status": "online"
+    },
+    "StartDockerContainers": {
+      "document": "启动实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询启动情况。",
+      "input": "StartDockerContainersRequest",
+      "name": "启动Docker容器",
+      "output": "StartDockerContainersResponse",
+      "status": "online"
+    },
     "StartInstances": {
       "document": "本接口（StartInstances）用于启动一个或多个实例。\n\n* 只有状态为 STOPPED 的实例才可以进行此操作。\n* 接口调用成功时，实例会进入 STARTING 状态；启动实例成功时，实例会进入 RUNNING 状态。\n* 支持批量操作。每次请求批量实例的上限为 100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
       "input": "StartInstancesRequest",
       "name": "启动实例",
       "output": "StartInstancesResponse",
+      "status": "online"
+    },
+    "StopDockerContainers": {
+      "document": "停止实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询停止情况。",
+      "input": "StopDockerContainersRequest",
+      "name": "停止Docker容器",
+      "output": "StopDockerContainersResponse",
       "status": "online"
     },
     "StopInstances": {
@@ -1675,6 +1759,7 @@
           "disabled": false,
           "document": "套餐ID。可以通过调用 [查询套餐](https://cloud.tencent.com/document/api/1207/47575) 接口获取。",
           "example": "bundle_gen_03",
+          "is_base64": false,
           "member": "string",
           "name": "BundleId",
           "required": true,
@@ -1684,6 +1769,7 @@
           "disabled": false,
           "document": "镜像ID。可以通过调用 [查询镜像信息](https://cloud.tencent.com/document/api/1207/47689) 接口获取。",
           "example": "lhbp-g0tn7djh",
+          "is_base64": false,
           "member": "string",
           "name": "BlueprintId",
           "required": true,
@@ -1693,6 +1779,7 @@
           "disabled": false,
           "document": "当前实例仅支持预付费模式，即包年包月相关参数设置，单位（月）。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。该参数必传。",
           "example": "无",
+          "is_base64": false,
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": true,
@@ -1702,6 +1789,7 @@
           "disabled": false,
           "document": "实例显示名称。",
           "example": "mylighthouse",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -1711,6 +1799,7 @@
           "disabled": false,
           "document": "购买实例数量。包年包月实例取值范围：[1，30]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "InstanceCount",
           "required": false,
@@ -1720,6 +1809,7 @@
           "disabled": false,
           "document": "可用区列表。默认为随机可用区",
           "example": "[\"ap-beijing-1\"]",
+          "is_base64": false,
           "member": "string",
           "name": "Zones",
           "required": false,
@@ -1729,6 +1819,7 @@
           "disabled": false,
           "document": "是否只预检此次请求。\ntrue：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和库存。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId.\nfalse（默认）：发送正常请求，通过检查后直接创建实例",
           "example": "false",
+          "is_base64": false,
           "member": "bool",
           "name": "DryRun",
           "required": false,
@@ -1738,6 +1829,7 @@
           "disabled": false,
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -1747,6 +1839,7 @@
           "disabled": false,
           "document": "实例登录密码信息配置。本字段目前仅支持WINDOWS实例进行密码设置。默认缺失情况下代表用户选择实例创建后设置登录密码。",
           "example": "无",
+          "is_base64": false,
           "member": "LoginConfiguration",
           "name": "LoginConfiguration",
           "required": false,
@@ -1756,6 +1849,7 @@
           "disabled": false,
           "document": "要创建的容器配置列表。",
           "example": "无",
+          "is_base64": false,
           "member": "DockerContainerConfiguration",
           "name": "Containers",
           "required": false,
@@ -1765,6 +1859,7 @@
           "disabled": false,
           "document": "是否自动使用代金券。默认不使用。",
           "example": "false",
+          "is_base64": false,
           "member": "bool",
           "name": "AutoVoucher",
           "required": false,
@@ -1782,6 +1877,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceIdSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2835,6 +2931,275 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDockerActivitiesRequest": {
+      "document": "DescribeDockerActivities请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "lhins-nwycpjl3",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "Docker活动ID列表。",
+          "example": "无",
+          "member": "string",
+          "name": "ActivityIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "活动创建时间的起始值，时间戳秒数。",
+          "example": "1553056487",
+          "member": "int64",
+          "name": "CreatedTimeBegin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "活动创建时间的结束值，时间戳秒数。",
+          "example": "1553056687",
+          "member": "int64",
+          "name": "CreatedTimeEnd",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDockerActivitiesResponse": {
+      "document": "DescribeDockerActivities返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Docker活动列表。",
+          "example": "无",
+          "member": "DockerActivity",
+          "name": "DockerActivitySet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDockerContainerConfigurationRequest": {
+      "document": "DescribeDockerContainerConfiguration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "lhins-nwycpjl3",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "容器ID。",
+          "example": "809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e553415",
+          "member": "string",
+          "name": "ContainerId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDockerContainerConfigurationResponse": {
+      "document": "DescribeDockerContainerConfiguration返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Docker容器配置信息。",
+          "example": "无",
+          "member": "DockerContainerConfiguration",
+          "name": "ContainerConfiguration",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDockerContainerDetailRequest": {
+      "document": "DescribeDockerContainerDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "lhins-nwycpjl3",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "容器ID。",
+          "example": "809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e553415",
+          "member": "string",
+          "name": "ContainerId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDockerContainerDetailResponse": {
+      "document": "DescribeDockerContainerDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Docker容器详情，json字符串base64编码。",
+          "example": "无",
+          "member": "string",
+          "name": "ContainerDetail",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDockerContainersRequest": {
+      "document": "DescribeDockerContainers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "lhins-nwycpjl3",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "容器ID列表。",
+          "example": "无",
+          "member": "string",
+          "name": "ContainerIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器列表。\n<li>container-id</li>按照【容器ID】进行过滤。\n类型：String\n必选：否\n<li>container-name</li>按照【容器名称】进行过滤。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 ContainerIds 和 Filters。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDockerContainersResponse": {
+      "document": "DescribeDockerContainers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器列表。",
+          "example": "无",
+          "member": "DockerContainer",
+          "name": "DockerContainerSet",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -4710,6 +5075,194 @@
       ],
       "usage": "out"
     },
+    "DockerActivity": {
+      "document": "Docker活动信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "活动ID。",
+          "example": "lhda-9qq8eu90",
+          "member": "string",
+          "name": "ActivityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "活动名称。",
+          "example": "RunDockerContainer",
+          "member": "string",
+          "name": "ActivityName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "活动状态。取值范围： \n<li>INIT：表示初始化，活动尚未执行</li>\n<li>OPERATING：表示活动执行中</li>\n<li>SUCCESS：表示活动执行成功</li>\n<li>FAILED：表示活动执行失败</li>",
+          "example": "INIT",
+          "member": "string",
+          "name": "ActivityState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "活动执行的命令输出，以base64编码。",
+          "example": "aGVsbG8=",
+          "member": "string",
+          "name": "ActivityCommandOutput",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "容器ID列表。",
+          "example": "无",
+          "member": "string",
+          "name": "ContainerIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。",
+          "example": "2020-04-28T03:46:09Z",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "结束时间。按照 ISO8601 标准表示，并且使用 UTC 时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-04-28T03:46:09Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DockerContainer": {
+      "document": "Docker容器信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "容器ID",
+          "example": "928f59ce31678d9c00955e655231e594945d11058517d1935c7f4ec53c6cde7c",
+          "member": "string",
+          "name": "ContainerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "容器名称",
+          "example": "Container1",
+          "member": "string",
+          "name": "ContainerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "容器镜像地址",
+          "example": "nginx",
+          "member": "string",
+          "name": "ContainerImage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "容器Command",
+          "example": "ls -l",
+          "member": "string",
+          "name": "Command",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "容器状态描述",
+          "example": "Up 23 hours",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "容器状态，和docker的容器状态保持一致，当前取值有：created, restarting, running, removing, paused, exited, or dead",
+          "example": "running",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "容器端口主机端口映射列表",
+          "example": "[{\"ContainerPort\":80,\"HostPort\":8081}]",
+          "member": "DockerContainerPublishPort",
+          "name": "PublishPortSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "容器挂载本地卷列表",
+          "example": "[{\"ContainerPath\":\"/data/nginx\",\"HostPath\":\"/data/nginx\"}]",
+          "member": "DockerContainerVolume",
+          "name": "VolumeSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。",
+          "example": "2020-04-28T03:46:09Z",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DockerContainerConfiguration": {
       "document": "Docker容器创建时的配置",
       "members": [
@@ -5432,299 +5985,272 @@
       "document": "描述了实例信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID。",
           "example": "无",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "套餐 ID。",
           "example": "无",
           "member": "string",
           "name": "BundleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "镜像 ID。",
           "example": "无",
           "member": "string",
           "name": "BlueprintId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的 CPU 核数，单位：核。",
           "example": "无",
           "member": "int64",
           "name": "CPU",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例内存容量，单位：GB 。",
           "example": "无",
           "member": "int64",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称。",
           "example": "无",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例计费模式。取值范围： \nPREPAID：表示预付费，即包年包月。",
           "example": "无",
           "member": "string",
           "name": "InstanceChargeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例系统盘信息。",
           "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例主网卡的内网 IP。 \n注意：此字段可能返回 空，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "PrivateAddresses",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例主网卡的公网 IP。 \n注意：此字段可能返回 空，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "PublicAddresses",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例带宽信息。",
           "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动续费标识。取值范围： \nNOTIFY_AND_MANUAL_RENEW：表示通知即将过期，但不自动续费  \nNOTIFY_AND_AUTO_RENEW：表示通知即将过期，而且自动续费 。",
           "example": "无",
           "member": "string",
           "name": "RenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例登录设置。",
           "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例状态。取值范围： \n<li>PENDING：表示创建中</li><li>LAUNCH_FAILED：表示创建失败</li><li>RUNNING：表示运行中</li><li>STOPPED：表示关机</li><li>STARTING：表示开机中</li><li>STOPPING：表示关机中</li><li>REBOOTING：表示重启中</li><li>SHUTDOWN：表示停止待销毁</li><li>TERMINATING：表示销毁中</li><li>DELETING：表示删除中</li><li>FREEZING：表示冻结中</li><li>ENTER_RESCUE_MODE：表示进入救援模式中</li><li>RESCUE_MODE：表示救援模式</li><li>EXIT_RESCUE_MODE：表示退出救援模式中</li>",
           "example": "无",
           "member": "string",
           "name": "InstanceState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例全局唯一 ID。",
           "example": "无",
           "member": "string",
           "name": "Uuid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的最新操作。例：StopInstances、ResetInstance。注意：此字段可能返回 空值，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "LatestOperation",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的最新操作状态。取值范围： \nSUCCESS：表示操作成功 \nOPERATING：表示操作执行中 \nFAILED：表示操作失败 \n注意：此字段可能返回 空值，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "LatestOperationState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例最新操作的唯一请求 ID。 \n注意：此字段可能返回 空值，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "LatestOperationRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "datetime_iso",
           "name": "IsolatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ 。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "datetime_iso",
           "name": "ExpiredTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作系统平台类型，如 LINUX_UNIX、WINDOWS。",
           "example": "无",
           "member": "string",
           "name": "PlatformType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作系统平台。",
           "example": "无",
           "member": "string",
           "name": "Platform",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作系统名称。",
           "example": "无",
           "member": "string",
           "name": "OsName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区。",
           "example": "无",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例绑定的标签列表。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例封禁状态。取值范围：\n<li>NORMAL实例正常。</li><li>NETWORK_RESTRICT：网络封禁。</li>",
           "example": "NETWORK_RESTRICT",
           "member": "string",
           "name": "InstanceRestrictState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6135,6 +6661,15 @@
           "name": "Password",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密钥ID列表，最多同时指定5个密钥。关联密钥后，就可以通过对应的私钥来访问实例。密钥与密码不能同时指定，同时WINDOWS操作系统不支持指定密钥。密钥ID列表可以通过[DescribeKeyPairs](https://cloud.tencent.com/document/product/1207/55540)接口获取。",
+          "example": "[\"lhkp-7f7lh1fv\"]",
+          "member": "string",
+          "name": "KeyIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -6355,6 +6890,104 @@
     "ModifyDisksRenewFlagResponse": {
       "document": "ModifyDisksRenewFlag返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDockerContainerRequest": {
+      "document": "ModifyDockerContainer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "lhins-nwycpjl3",
+          "is_base64": false,
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "容器ID。",
+          "example": "809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e553415",
+          "is_base64": false,
+          "member": "string",
+          "name": "ContainerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境变量列表",
+          "example": "无",
+          "is_base64": false,
+          "member": "ContainerEnv",
+          "name": "Envs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "容器端口主机端口映射列表",
+          "example": "无",
+          "is_base64": false,
+          "member": "DockerContainerPublishPort",
+          "name": "PublishPorts",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "容器加载本地卷列表",
+          "example": "无",
+          "is_base64": false,
+          "member": "DockerContainerVolume",
+          "name": "Volumes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "运行的命令",
+          "example": "ls -l",
+          "is_base64": false,
+          "member": "string",
+          "name": "Command",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "容器重启策略，对应docker \"--restart\"参数。\n\n枚举值:\nno: 不自动重启。默认策略。\non-failure[:max-retries]: 当容器退出码非0时重启容器。使用max-retries限制重启次数，比如on-failure:10，限制最多重启10次。\nalways: 只要容器退出就重启。\nunless-stopped: 始终重新启动容器，包括在守护进程启动时，除非容器在 Docker 守护进程停止之前进入停止状态。",
+          "example": "always",
+          "is_base64": false,
+          "member": "string",
+          "name": "RestartPolicy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDockerContainerResponse": {
+      "document": "ModifyDockerContainer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Docker活动ID。",
+          "example": "lhda-nn82v77w",
+          "member": "string",
+          "name": "DockerActivityId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6801,6 +7434,112 @@
       ],
       "usage": "out"
     },
+    "RemoveDockerContainersRequest": {
+      "document": "RemoveDockerContainers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "lhins-nwycpjl3",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "容器ID列表。",
+          "example": "[\"809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e5534",
+          "member": "string",
+          "name": "ContainerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveDockerContainersResponse": {
+      "document": "RemoveDockerContainers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Docker活动ID。",
+          "example": "lhda-nn82v77w",
+          "member": "string",
+          "name": "DockerActivityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenameDockerContainerRequest": {
+      "document": "RenameDockerContainer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "lhins-nwycpjl3",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "容器ID。",
+          "example": "809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e553415",
+          "member": "string",
+          "name": "ContainerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "容器新的名称。",
+          "example": "Container1",
+          "member": "string",
+          "name": "ContainerName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenameDockerContainerResponse": {
+      "document": "RenameDockerContainer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Docker活动ID。",
+          "example": "lhda-nn82v77w",
+          "member": "string",
+          "name": "DockerActivityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RenewDiskChargePrepaid": {
       "document": "续费云硬盘包年包月相关参数设置",
       "members": [
@@ -6950,6 +7689,64 @@
       ],
       "type": "object"
     },
+    "RerunDockerContainerRequest": {
+      "document": "RerunDockerContainer请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "lhins-nwycpjl3",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "重新创建的容器配置。",
+          "example": "无",
+          "member": "DockerContainerConfiguration",
+          "name": "ContainerConfiguration",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "容器ID。",
+          "example": "809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e553415",
+          "member": "string",
+          "name": "ContainerId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RerunDockerContainerResponse": {
+      "document": "RerunDockerContainer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Docker活动ID。",
+          "example": "lhda-nn82v77w",
+          "member": "string",
+          "name": "DockerActivityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResetAttachCcnRequest": {
       "document": "ResetAttachCcn请求参数结构体",
       "members": [
@@ -7086,6 +7883,102 @@
     "ResetInstancesPasswordResponse": {
       "document": "ResetInstancesPassword返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartDockerContainersRequest": {
+      "document": "RestartDockerContainers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "lhins-nwycpjl3",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "容器ID列表。",
+          "example": "[\"809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e5534",
+          "member": "string",
+          "name": "ContainerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartDockerContainersResponse": {
+      "document": "RestartDockerContainers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Docker活动ID。",
+          "example": "lhda-nn82v77w",
+          "member": "string",
+          "name": "DockerActivityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RunDockerContainersRequest": {
+      "document": "RunDockerContainers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "lhins-nwycpjl3",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "要创建的容器列表。",
+          "example": "无",
+          "member": "DockerContainerConfiguration",
+          "name": "Containers",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RunDockerContainersResponse": {
+      "document": "RunDockerContainers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Docker活动ID列表。",
+          "example": "无",
+          "member": "string",
+          "name": "DockerActivitySet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -7407,6 +8300,54 @@
       ],
       "usage": "out"
     },
+    "StartDockerContainersRequest": {
+      "document": "StartDockerContainers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "lhins-nwycpjl3",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "容器ID列表。",
+          "example": "[\"809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e5534",
+          "member": "string",
+          "name": "ContainerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "StartDockerContainersResponse": {
+      "document": "StartDockerContainers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Docker活动ID。",
+          "example": "lhda-nn82v77w",
+          "member": "string",
+          "name": "DockerActivityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StartInstancesRequest": {
       "document": "StartInstances请求参数结构体",
       "members": [
@@ -7426,6 +8367,54 @@
     "StartInstancesResponse": {
       "document": "StartInstances返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopDockerContainersRequest": {
+      "document": "StopDockerContainers请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "lhins-nwycpjl3",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "容器ID列表。",
+          "example": "[\"809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e5534",
+          "member": "string",
+          "name": "ContainerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "StopDockerContainersResponse": {
+      "document": "StopDockerContainers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Docker活动ID。",
+          "example": "lhda-nn82v77w",
+          "member": "string",
+          "name": "DockerActivityId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

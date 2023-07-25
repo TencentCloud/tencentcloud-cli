@@ -8,7 +8,7 @@
       "status": "online"
     },
     "TextToImage": {
-      "document": "智能文生图接口将根据输入的描述文本，智能生成与之相关的结果图。\n输入：512个字符以内的描述性文本，推荐使用中文。\n输出：对应风格及分辨率的 AI 生成图。\n可支持的风格详见 [智能文生图风格列表](https://cloud.tencent.com/document/product/1668/86249)，请将列表中的“风格编号”传入 Styles 数组，建议选择一种风格。\n\n请求频率限制为1次/秒。",
+      "document": "智能文生图接口将根据输入的描述文本，智能生成与之相关的结果图。\n输入：256个字符以内的描述性文本，推荐使用中文。\n输出：对应风格及分辨率的 AI 生成图。\n可支持的风格详见 [智能文生图风格列表](https://cloud.tencent.com/document/product/1668/86249)，请将列表中的“风格编号”传入 Styles 数组，建议选择一种风格。\n\n请求频率限制为1次/秒。",
       "input": "TextToImageRequest",
       "name": "智能文生图",
       "output": "TextToImageResponse",
@@ -45,7 +45,7 @@
         },
         {
           "disabled": false,
-          "document": "文本描述。\n用于在输入图的基础上引导生成图效果，建议详细描述画面主体、细节、场景等，文本描述越丰富，生成效果越精美。推荐使用中文。最多支持512个 utf-8 字符。\n注意：如果不输入任何文本描述，可能导致较差的效果，建议根据期望的效果输入相应的文本描述。",
+          "document": "文本描述。\n用于在输入图的基础上引导生成图效果，增加生成结果中出现描述内容的可能。\n推荐使用中文。最多支持256个 utf-8 字符。",
           "example": "无",
           "member": "string",
           "name": "Prompt",
@@ -54,7 +54,7 @@
         },
         {
           "disabled": false,
-          "document": "反向文本描述。\n用于一定程度上从反面引导模型生成的走向，减少生成结果中出现描述内容的可能，但不能完全杜绝。\n推荐使用中文。最多可传512个 utf-8 字符。",
+          "document": "反向文本描述。\n用于一定程度上从反面引导模型生成的走向，减少生成结果中出现描述内容的可能，但不能完全杜绝。\n推荐使用中文。最多可传256个 utf-8 字符。",
           "example": "无",
           "member": "string",
           "name": "NegativePrompt",
@@ -63,7 +63,7 @@
         },
         {
           "disabled": false,
-          "document": "绘画风格。\n请在  [智能图生图风格列表](https://cloud.tencent.com/document/product/1668/86250) 中选择期望的风格，传入风格编号。\n推荐使用且只使用一种风格。不传默认使用201（日系动漫风格）。\n如果想要探索风格列表之外的风格，也可以尝试在 Prompt 中输入其他的风格描述。",
+          "document": "绘画风格。\n请在  [智能图生图风格列表](https://cloud.tencent.com/document/product/1668/86250) 中选择期望的风格，传入风格编号。\n推荐使用且只使用一种风格。不传默认使用201（日系动漫风格）。",
           "example": "无",
           "member": "string",
           "name": "Styles",
@@ -99,12 +99,21 @@
         },
         {
           "disabled": false,
-          "document": "生成自由度。\nStrength 值越小，生成图和原图越接近。取值范围0~1，不传默认为0.65。",
+          "document": "生成自由度。\nStrength 值越小，生成图和原图越接近。取值范围0~1，不传默认为0.75。",
           "example": "无",
           "member": "float",
           "name": "Strength",
           "required": false,
           "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。",
+          "example": "base64",
+          "member": "string",
+          "name": "RspImgType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -114,10 +123,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回的生成图 Base64 编码。",
+          "document": "根据入参 RspImgType 填入不同，返回不同的内容。\n如果传入 base64 则返回生成图 Base64 编码。\n如果传入 url 则返回的生成图 URL , 有效期1小时，请及时保存。",
           "example": "无",
           "member": "string",
           "name": "ResultImage",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -233,7 +243,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文本描述。\n算法将根据输入的文本智能生成与之相关的图像。建议详细描述画面主体、细节、场景等，文本描述越丰富，生成效果越精美。\n不能为空，推荐使用中文。最多可传512个 utf-8 字符。",
+          "document": "文本描述。\n算法将根据输入的文本智能生成与之相关的图像。建议详细描述画面主体、细节、场景等，文本描述越丰富，生成效果越精美。\n不能为空，推荐使用中文。最多可传256个 utf-8 字符。",
           "example": "雨中, 竹林,  小路",
           "member": "string",
           "name": "Prompt",
@@ -242,7 +252,7 @@
         },
         {
           "disabled": false,
-          "document": "反向文本描述。\n用于一定程度上从反面引导模型生成的走向，减少生成结果中出现描述内容的可能，但不能完全杜绝。\n推荐使用中文。最多可传512个 utf-8 字符。",
+          "document": "反向文本描述。\n用于一定程度上从反面引导模型生成的走向，减少生成结果中出现描述内容的可能，但不能完全杜绝。\n推荐使用中文。最多可传256个 utf-8 字符。",
           "example": "无",
           "member": "string",
           "name": "NegativePrompt",
@@ -251,7 +261,7 @@
         },
         {
           "disabled": false,
-          "document": "绘画风格。\n请在 [智能文生图风格列表](https://cloud.tencent.com/document/product/1668/86249) 中选择期望的风格，传入风格编号。\n推荐使用且只使用一种风格。不传默认使用201（日系动漫风格）。\n如果想要探索风格列表之外的风格，也可以尝试在 Prompt 中输入其他的风格描述。",
+          "document": "绘画风格。\n请在 [智能文生图风格列表](https://cloud.tencent.com/document/product/1668/86249) 中选择期望的风格，传入风格编号。\n推荐使用且只使用一种风格。不传默认使用201（日系动漫风格）。",
           "example": "无",
           "member": "string",
           "name": "Styles",
@@ -284,6 +294,15 @@
           "name": "LogoParam",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。",
+          "example": "base64",
+          "member": "string",
+          "name": "RspImgType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -293,10 +312,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回的生成图 Base64 编码。",
+          "document": "根据入参 RspImgType 填入不同，返回不同的内容。\n如果传入 base64 则返回生成图 Base64 编码。\n如果传入 url 则返回的生成图 URL , 有效期1小时，请及时保存。",
           "example": "无",
           "member": "string",
           "name": "ResultImage",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
