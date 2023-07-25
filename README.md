@@ -167,7 +167,7 @@ tccli cvm DescribeRegions --secretId xx --secretKey xx --role-arn xx --role-sess
 3. TKE OIDC
 
 - 环境变量
-  配置环境变量：`TKE_REGION`, `TKE_PROVIDER_ID`, `TKE_IDENTITY_TOKEN_FILE`, `TKE_ROLE_ARN`
+  配置环境变量：`TKE_REGION`, `TKE_PROVIDER_ID`, `TKE_WEB_IDENTITY_TOKEN_FILE`, `TKE_ROLE_ARN`
 
 4. 临时密钥
 
