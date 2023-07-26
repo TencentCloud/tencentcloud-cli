@@ -1,11 +1,11 @@
 {
   "actions": {
     "CreateJob": {
-      "document": "创建训练任务",
+      "document": "没有使用\n\n创建训练任务",
       "input": "CreateJobRequest",
       "name": "创建Job",
       "output": "CreateJobResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateModel": {
       "document": "部署模型，用以对外提供服务。有两种部署模式：`无服务器模式` 和 `集群模式`。`无服务器模式` 下，模型文件被部署到无服务器云函数，即 [SCF](https://cloud.tencent.com/product/scf)，用户可以在其控制台上进一步操作。`集群模式` 下，模型文件被部署到 TI-A 的计算集群中。",

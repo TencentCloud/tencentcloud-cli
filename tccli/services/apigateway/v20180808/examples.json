@@ -580,14 +580,6 @@
         "title": "EnableApiKey"
       }
     ],
-    "GenerateApiDocument": [
-      {
-        "document": "",
-        "input": "https://apigateway.tencentcloudapi.com/?Action=GenerateApiDocument\n&ServiceId=service-ody35h5e\n&GenEnvironment=release\n&GenLanguage=Python\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"DocumentURL\": \"https://apigateway-document-sdk-xxxxx\",\n            \"SdkURL\": \"https://apigateway-document-sdk-xxxxx\"\n        },\n        \"RequestId\": \"01c56ec2-6a40-46bc-bdf6-8b273d4bec93\"\n    }\n}",
-        "title": "下载sdk和api文档"
-      }
-    ],
     "ImportOpenApi": [
       {
         "document": "",

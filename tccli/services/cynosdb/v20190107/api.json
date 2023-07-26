@@ -11068,10 +11068,10 @@
       "document": "ExportInstanceSlowQueries请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "cynosdbmysql-ins-123",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -11079,10 +11079,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事务开始最早时间",
           "example": "2022-01-01 12:00:00",
+          "is_base64": false,
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -11090,10 +11090,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事务开始最晚时间",
           "example": "2022-01-01 14:00:00",
+          "is_base64": false,
           "member": "string",
           "name": "EndTime",
           "required": false,
@@ -11101,10 +11101,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制条数",
           "example": "100",
+          "is_base64": false,
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -11112,10 +11112,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "0",
+          "is_base64": false,
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -11123,10 +11123,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名",
           "example": "root",
+          "is_base64": false,
           "member": "string",
           "name": "Username",
           "required": false,
@@ -11134,10 +11134,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端host",
           "example": "10.10.10.10",
+          "is_base64": false,
           "member": "string",
           "name": "Host",
           "required": false,
@@ -11145,10 +11145,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名",
           "example": "db1",
+          "is_base64": false,
           "member": "string",
           "name": "Database",
           "required": false,
@@ -11156,12 +11156,34 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件类型，可选值：csv, original",
           "example": "csv",
+          "is_base64": false,
           "member": "string",
           "name": "FileType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，可选值： QueryTime,LockTime,RowsExamined,RowsSent",
+          "example": "QueryTime",
+          "is_base64": false,
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "排序类型，可选值：asc,desc",
+          "example": "desc",
+          "is_base64": false,
+          "member": "string",
+          "name": "OrderByType",
           "required": false,
           "type": "string",
           "visibility": 1
@@ -11178,7 +11200,7 @@
           "example": "无",
           "member": "string",
           "name": "FileContent",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1

@@ -534,7 +534,105 @@
     },
     "ConfigContent": {
       "document": "配置内容",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "ConfigMap 配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConfigMapConfig",
+          "name": "ConfigMap",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "Secret 配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SecretConfig",
+          "name": "Secret",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "ConfigMap或Secret的原始数据",
+          "example": "无",
+          "member": "string",
+          "name": "Raw",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "ConfigMapConfig": {
+      "document": "ConfigMap 信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源类型信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TypeMeta",
+          "name": "TypeMeta",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "资源对象信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ObjectMeta",
+          "name": "ObjectMeta",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "是否不允许更新\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Immutable",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "实际数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Label",
+          "name": "Data",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "二进制数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Label",
+          "name": "BinaryData",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
       "usage": "both"
     },
     "Container": {
@@ -3179,6 +3277,38 @@
       "members": [],
       "usage": "out"
     },
+    "Label": {
+      "document": "标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
     "ListInstancesRequest": {
       "document": "ListInstances请求参数结构体",
       "members": [],
@@ -3701,6 +3831,56 @@
       ],
       "usage": "both"
     },
+    "ObjectMeta": {
+      "document": "资源对象信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "资源命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "资源标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Label",
+          "name": "Labels",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "资源注解\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Label",
+          "name": "Annotations",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
     "PVC": {
       "document": "PVC信息",
       "members": [
@@ -3943,6 +4123,78 @@
       "members": [],
       "usage": "out"
     },
+    "SecretConfig": {
+      "document": "Secret 信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源类型信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TypeMeta",
+          "name": "TypeMeta",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "资源对象信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ObjectMeta",
+          "name": "ObjectMeta",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "是否不允许更新\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Immutable",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "Secret 类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "实际数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Label",
+          "name": "Data",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "String类型数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Label",
+          "name": "StringData",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
     "Template": {
       "document": "模板，如应用模板",
       "members": [
@@ -4058,6 +4310,34 @@
         }
       ],
       "usage": "out"
+    },
+    "TypeMeta": {
+      "document": "资源版本类型信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API 版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "APIVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Kind",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
     },
     "User": {
       "document": "用户信息",

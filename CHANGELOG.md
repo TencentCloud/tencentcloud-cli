@@ -1,3 +1,286 @@
+# Release 3.0.816.1
+
+## API 网关(apigateway) 版本：2018-08-08
+
+### 第 26 次发布
+
+发布时间：2023-07-27 01:07:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* GenerateApiDocument
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* DocumentSDK
+
+
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 5 次发布
+
+发布时间：2023-07-27 01:11:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [ConfigMapConfig](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ConfigMapConfig)
+* [Label](http://document.tencentcloudapi.woa.com/document/product/1609/78009#Label)
+* [ObjectMeta](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ObjectMeta)
+* [SecretConfig](http://document.tencentcloudapi.woa.com/document/product/1609/78009#SecretConfig)
+* [TypeMeta](http://document.tencentcloudapi.woa.com/document/product/1609/78009#TypeMeta)
+
+修改数据结构：
+
+* [ConfigContent](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ConfigContent)
+
+	* 新增成员：ConfigMap, Secret, Raw
+
+
+
+
+## 文件存储(cfs) 版本：2019-07-19
+
+### 第 17 次发布
+
+发布时间：2023-07-27 01:13:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCfsFileSystems](http://document.tencentcloudapi.woa.com/document/product/582/38170)
+
+	* 新增入参：Offset, Limit
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 32 次发布
+
+发布时间：2023-07-27 01:16:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MachineGroupTypeInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#MachineGroupTypeInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>Values
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 52 次发布
+
+发布时间：2023-07-27 01:20:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ExportInstanceSlowQueries](http://document.tencentcloudapi.woa.com/document/product/1003/75096)
+
+	* 新增入参：OrderBy, OrderByType
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 14 次发布
+
+发布时间：2023-07-27 01:25:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateEmbedWebUrl](http://document.tencentcloudapi.woa.com/document/product/1668/81400)
+* [CreateOrganizationBatchSignUrl](http://document.tencentcloudapi.woa.com/document/product/1668/81399)
+* [CreateWebThemeConfig](http://document.tencentcloudapi.woa.com/document/product/1668/81398)
+
+修改接口：
+
+* [CreatePrepareFlow](http://document.tencentcloudapi.woa.com/document/product/1668/79346)
+
+	* 新增入参：Agent
+
+
+新增数据结构：
+
+* [ReviewerInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#ReviewerInfo)
+* [WebThemeConfig](http://document.tencentcloudapi.woa.com/document/product/1668/79360#WebThemeConfig)
+
+修改数据结构：
+
+* [FlowCreateApprover](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowCreateApprover)
+
+	* 新增成员：ApproverVerifyTypes, ApproverSignTypes
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 72 次发布
+
+发布时间：2023-07-27 01:26:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChannelCreateWebThemeConfig](http://document.tencentcloudapi.woa.com/document/product/1595/81401)
+
+新增数据结构：
+
+* [WebThemeConfig](http://document.tencentcloudapi.woa.com/document/product/1595/75258#WebThemeConfig)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 人脸融合(facefusion) 版本：2022-09-27
+
+### 第 2 次发布
+
+发布时间：2023-07-27 01:26:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [FuseFace](http://document.tencentcloudapi.woa.com/document/product/670/78442)
+
+	* 新增入参：FuseParam
+
+
+新增数据结构：
+
+* [FuseParam](http://document.tencentcloudapi.woa.com/document/product/670/78443#FuseParam)
+* [ImageCodecParam](http://document.tencentcloudapi.woa.com/document/product/670/78443#ImageCodecParam)
+* [MetaData](http://document.tencentcloudapi.woa.com/document/product/670/78443#MetaData)
+
+
+
+## 人脸融合(facefusion) 版本：2018-12-01
+
+### 第 2 次发布
+
+发布时间：2023-07-27 01:26:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [FaceFusion](http://document.tencentcloudapi.woa.com/document/product/670/31061)
+
+	* 新增入参：FuseParam
+
+* [FuseFace](http://document.tencentcloudapi.woa.com/document/product/670/37736)
+
+	* 新增入参：FuseParam
+
+
+新增数据结构：
+
+* [FuseParam](http://document.tencentcloudapi.woa.com/document/product/670/31062#FuseParam)
+* [ImageCodecParam](http://document.tencentcloudapi.woa.com/document/product/670/31062#ImageCodecParam)
+* [MetaData](http://document.tencentcloudapi.woa.com/document/product/670/31062#MetaData)
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 11 次发布
+
+发布时间：2023-07-27 01:30:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PackageInfo](http://document.tencentcloudapi.woa.com/document/product/1131/75389#PackageInfo)
+
+	* 新增成员：CreatedAt, UpdatedAt
+
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 低代码互动课堂(lcic) 版本：2022-08-17
+
+### 第 8 次发布
+
+发布时间：2023-07-27 01:31:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EventInfo](http://document.tencentcloudapi.woa.com/document/product/1720/80671#EventInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>Timestamp, EventType, EventData
+
+
+
+
+## 智能钛机器学习(tia) 版本：2018-02-26
+
+### 第 2 次发布
+
+发布时间：2023-07-27 01:44:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateJob
+
+
+
 # Release 3.0.815.1
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
