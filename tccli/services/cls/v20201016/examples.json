@@ -256,6 +256,14 @@
         "title": "删除机器组ip或者label"
       }
     ],
+    "DeleteScheduledSql": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteScheduledSql\n<公共请求参数>\n\n{\n    \"SrcTopicId\": \"xx\",\n    \"TaskId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "删除ScheduledSql任务"
+      }
+    ],
     "DeleteShipper": [
       {
         "document": "删除投递COS任务",
@@ -424,6 +432,14 @@
         "title": "获取分区列表"
       }
     ],
+    "DescribeScheduledSqlInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScheduledSqlInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"ScheduledSqlTaskInfos\": [\n            {\n                \"Status\": 0,\n                \"EnableFlag\": 0,\n                \"UpdateTime\": \"xx\",\n                \"Name\": \"xx\",\n                \"DstResource\": {\n                    \"TopicId\": \"xx\",\n                    \"Region\": \"xx\"\n                },\n                \"ProcessTimeWindow\": \"xx\",\n                \"ProcessPeriod\": 0,\n                \"ProcessStartTime\": \"xx\",\n                \"SrcTopicRegion\": \"xx\",\n                \"SrcTopicName\": \"xx\",\n                \"ScheduledSqlContent\": \"xx\",\n                \"SrcTopicId\": \"xx\",\n                \"ProcessDelay\": 0,\n                \"TaskId\": \"xx\",\n                \"ProcessType\": 0,\n                \"CreateTime\": \"xx\",\n                \"ProcessEndTime\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "获取ScheduledSql任务列表"
+      }
+    ],
     "DescribeShipperTasks": [
       {
         "document": "",
@@ -550,6 +566,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMachineGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"57f5808c-4a55-11eb-b378-0242ac130002\",\n    \"GroupName\": \"testgroup\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改机器组"
+      }
+    ],
+    "ModifyScheduledSql": [
+      {
+        "document": "修改ScheduledSQL任务",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyScheduledSql\n<公共请求参数>\n\n{\n    \"EnableFlag\": 1,\n    \"TaskId\": \"abc\",\n    \"DstResource\": {\n        \"TopicId\": \"abc\",\n        \"Region\": \"abc\"\n    },\n    \"ProcessTimeWindow\": \"abc\",\n    \"ProcessPeriod\": 0,\n    \"ScheduledSqlContent\": \"abc\",\n    \"SrcTopicId\": \"abc\",\n    \"ProcessDelay\": 0,\n    \"SrcTopicRegion\": \"abc\",\n    \"Name\": \"task\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abcd\"\n    }\n}",
+        "title": "修改ScheduledSQL任务"
       }
     ],
     "ModifyShipper": [

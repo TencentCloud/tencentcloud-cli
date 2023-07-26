@@ -126,6 +126,13 @@
       "output": "CreateTaskFileUrlResponse",
       "status": "online"
     },
+    "DeleteCloudStorageEvent": {
+      "document": "删除云存事件",
+      "input": "DeleteCloudStorageEventRequest",
+      "name": "删除云存事件",
+      "output": "DeleteCloudStorageEventResponse",
+      "status": "online"
+    },
     "DeleteDevice": {
       "document": "删除设备",
       "input": "DeleteDeviceRequest",
@@ -348,6 +355,13 @@
       "input": "DescribeDeviceEventHistoryRequest",
       "name": "获取设备的历史事件",
       "output": "DescribeDeviceEventHistoryResponse",
+      "status": "online"
+    },
+    "DescribeDevicePackages": {
+      "document": "根据设备信息拉取有效套餐列表",
+      "input": "DescribeDevicePackagesRequest",
+      "name": "拉取有效云存套餐列表",
+      "output": "DescribeDevicePackagesResponse",
       "status": "online"
     },
     "DescribeDeviceStatusLog": {
@@ -2747,6 +2761,78 @@
       ],
       "usage": "out"
     },
+    "DeleteCloudStorageEventRequest": {
+      "document": "DeleteCloudStorageEvent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "AQTV2839QJ",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "p2p_32731213_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件id",
+          "example": "id1_data",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间，unix时间",
+          "example": "32874",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间，unix时间",
+          "example": "234ui32",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "user",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudStorageEventResponse": {
+      "document": "DeleteCloudStorageEvent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteDeviceRequest": {
       "document": "DeleteDevice请求参数结构体",
       "members": [
@@ -4139,30 +4225,30 @@
       "document": "DescribeCloudStorageThumbnail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "H541SOP191",
+          "is_base64": false,
           "member": "string",
           "name": "ProductId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称",
           "example": "event_36502632_1",
+          "is_base64": false,
           "member": "string",
           "name": "DeviceName",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "缩略图文件名",
           "example": "/100008401725/AQTV2839QJ/sp01_32820237_7/events/1615200613.jpg",
+          "is_base64": false,
           "member": "string",
           "name": "Thumbnail",
           "required": true,
@@ -4180,8 +4266,18 @@
           "example": "https://video-cv-1258344699.cos.ap-guangzhou.myqcloud.com/%2F100",
           "member": "string",
           "name": "ThumbnailURL",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "缩略图访问地址的过期时间",
+          "example": "1690195335",
+          "member": "int64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -5023,6 +5119,84 @@
           "member": "EventHistoryItem",
           "name": "EventHistory",
           "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDevicePackagesRequest": {
+      "document": "DescribeDevicePackages请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "TQBDY6RPI9",
+          "is_base64": false,
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "cs_112114601_2",
+          "is_base64": false,
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页拉取数量",
+          "example": "20",
+          "is_base64": false,
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页拉取偏移",
+          "example": "0",
+          "is_base64": false,
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDevicePackagesResponse": {
+      "document": "DescribeDevicePackages返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "有效云存套餐数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效云存套餐列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PackageInfo",
+          "name": "Packages",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8371,6 +8545,52 @@
           "member": "int64",
           "name": "State",
           "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PackageInfo": {
+      "document": "结构体（PackageInfo）记录了设备拥有的有效套餐信息，包括云存开启状态、云存类型、云存回看时长、云存套餐过期时间",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云存开启状态，0为未开启，2为正在生效，1为已过期\n注：这里只返回状态为0的数据",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云存类型，1为全时云存，2为事件云存",
+          "example": "1",
+          "member": "uint64",
+          "name": "CSType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云存回看时长",
+          "example": "259200",
+          "member": "uint64",
+          "name": "CSShiftDuration",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云存套餐过期时间",
+          "example": "1689921739",
+          "member": "int64",
+          "name": "CSExpiredTime",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

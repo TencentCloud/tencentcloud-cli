@@ -1439,8 +1439,8 @@
     "ParseStreamingManifest": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=ParseStreamingManifest\r\n&MediaManifestContent=%23EXTM3U%0D%0A%23EXT-X-TARGETDURATION:10%0D%0A%23EXTINF:9.009%0D%0Afirst.ts%0D%0A%23EXTINF:9.009%0D%0Asecond.ts%0D%0A%23EXT-X-ENDLIST\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"MediaSegmentSet\": [\n            \"first.ts\",\n            \"second.ts\"\n        ]\n    }\n}",
+        "input": "https://vod.tencentcloudapi.com/?Action=ParseStreamingManifest\n&MediaManifestContent=#EXTM3U\\n#EXT-X-TARGETDURATION:10\\n#EXTINF:9.009,\\nfirst.ts\\n#EXTINF:9.009,\\nsecond.ts\\n#EXT-X-ENDLIST\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MediaSegmentSet\": [\n            \"first.ts\",\n            \"second.ts\"\n        ],\n        \"RequestId\": \"requestId\"\n    }\n}",
         "title": "解析索引文件"
       }
     ],
@@ -1596,7 +1596,7 @@
     ],
     "RestoreMedia": [
       {
-        "document": "",
+        "document": "使用极速模式解冻媒体文件",
         "input": "https://vod.tencentcloudapi.com/?Action=RestoreMedia\n&FileIds.0=5285485487985271487\n&RestoreDay=1\n&RestoreTier=Expedited\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\"\n    }\n}",
         "title": "使用极速模式解冻媒体文件"

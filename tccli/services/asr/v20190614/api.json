@@ -756,9 +756,9 @@
       "document": "DeleteAsrVocab请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "热词表Id",
+          "example": "xcxdsada",
           "member": "string",
           "name": "VocabId",
           "required": true,
@@ -783,7 +783,6 @@
       "document": "DeleteCustomization请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要删除的模型ID",
           "example": "无",
@@ -874,9 +873,10 @@
       "document": "DownloadAsrVocab请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "词表ID。",
+          "example": "ssdasdasd",
+          "is_base64": false,
           "member": "string",
           "name": "VocabId",
           "required": true,
@@ -891,16 +891,20 @@
         {
           "disabled": false,
           "document": "词表ID。",
+          "example": "dasdsadasd",
           "member": "string",
           "name": "VocabId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "词表权重文件形式的base64值。",
+          "example": "1",
           "member": "string",
           "name": "WordWeightStr",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -917,7 +921,6 @@
       "document": "DownloadCustomization请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "自学习模型ID",
           "example": "无",
@@ -938,7 +941,7 @@
           "example": "无",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1018,9 +1021,10 @@
       "document": "GetAsrVocab请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "热词表ID",
+          "example": "ashsdhsdshsjh",
+          "is_base64": false,
           "member": "string",
           "name": "VocabId",
           "required": true,
@@ -1035,56 +1039,70 @@
         {
           "disabled": false,
           "document": "热词表名称",
+          "example": "热词",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "热词表描述",
+          "example": "我是热词",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "热词表ID",
+          "example": "xasddasds",
           "member": "string",
           "name": "VocabId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "词权重列表",
+          "example": "1",
           "member": "HotWord",
           "name": "WordWeights",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "词表创建时间",
+          "example": "1",
           "member": "datetime_iso",
           "name": "CreateTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "词表更新时间",
+          "example": "1",
           "member": "datetime_iso",
           "name": "UpdateTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "热词表状态，1为默认状态即在识别时默认加载该热词表进行识别，0为初始状态",
+          "example": "0",
           "member": "int64",
           "name": "State",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1167,6 +1185,7 @@
           "disabled": false,
           "document": "模型id",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ModelId",
           "required": true,
@@ -1184,6 +1203,7 @@
           "example": "无",
           "member": "Model",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1200,27 +1220,29 @@
       "document": "热词的词和权重",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "热词",
+          "document": "热词\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Word",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "权重",
+          "document": "权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "Weight",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "Model": {
       "document": "自学习模型信息",
@@ -1312,7 +1334,6 @@
       "document": "ModifyCustomization请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要修改的模型ID",
           "example": "无",
@@ -1322,7 +1343,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要修改的模型名称，长度需在1-20个字符之间",
           "example": "无",
@@ -1332,7 +1352,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要修改的模型类型，为8k或者16k",
           "example": "无",
@@ -1342,7 +1361,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要修改的模型语料的下载地址，目前仅支持腾讯云cos",
           "example": "无",
@@ -1370,7 +1388,6 @@
       "document": "ModifyCustomizationState请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "自学习模型ID",
           "example": "无",
@@ -1380,7 +1397,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "想要变换的模型状态，-1代表下线，1代表上线",
           "example": "无",
@@ -1401,7 +1417,7 @@
           "example": "无",
           "member": "string",
           "name": "ModelId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1854,18 +1870,18 @@
       "document": "SetVocabState请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "热词表ID。",
+          "example": "dsadsdas",
           "member": "string",
           "name": "VocabId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "热词表状态，1：设为默认状态；0：设为非默认状态。",
+          "example": "1",
           "member": "int64",
           "name": "State",
           "required": true,
@@ -1880,8 +1896,10 @@
         {
           "disabled": false,
           "document": "热词表ID",
+          "example": "dasdasd",
           "member": "string",
           "name": "VocabId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1991,7 +2009,6 @@
       "document": "UpdateAsrVocab请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "热词表ID",
           "example": "aa6f402f263f12ea856fc81fbecfd0sd",
@@ -2001,7 +2018,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "热词表名称，长度在1-255之间",
           "example": "新的词表名称",
@@ -2011,7 +2027,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "词权重数组，包含全部的热词和对应的权重。每个热词的长度不大于10，权重为[1,10]之间整数，数组长度不大于128",
           "example": "无",
@@ -2021,7 +2036,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "词权重文件（纯文本文件）的二进制base64编码，以行分隔，每行的格式为word|weight，即以英文符号|为分割，左边为词，右边为权重，如：你好|5。\n当用户传此参数（参数长度大于0），即以此参数解析词权重，WordWeights会被忽略",
           "example": "无",
@@ -2031,7 +2045,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "热词表描述，长度在0-1000之间",
           "example": "新的词表描述",
@@ -2052,7 +2065,7 @@
           "example": "aa6f402f263f12ea856fc81fbecfd0sd",
           "member": "string",
           "name": "VocabId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

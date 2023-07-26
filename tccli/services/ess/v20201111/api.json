@@ -288,11 +288,11 @@
       "status": "online"
     },
     "DescribeIntegrationMainOrganizationUser": {
-      "document": "通过子企业影子账号查询主企业员工账号",
+      "document": "集团企业统一使用主代子进行操作，无需根据子企业账号进行转化查询，该接口需要屏蔽下线\n\n通过子企业影子账号查询主企业员工账号",
       "input": "DescribeIntegrationMainOrganizationUserRequest",
       "name": "查询集团主企业员工账号",
       "output": "DescribeIntegrationMainOrganizationUserResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeIntegrationRoles": {
       "document": "查询企业角色列表",
@@ -603,7 +603,7 @@
         },
         {
           "disabled": false,
-          "document": "客户自定义签署人标识，64位长度，保证唯一，非企微场景不使用此字段",
+          "document": "企业签署方或签标识，客户自定义，64位长度。用于发起含有或签签署人的合同。或签参与人必须有此字段。合同内不同或签参与人CustomApproverTag需要保证唯一。如果或签签署人为本方企微参与人，ApproverSource参数需要指定WEWORKAPP",
           "example": "无",
           "is_base64": false,
           "member": "string",
@@ -3575,6 +3575,7 @@
           "disabled": false,
           "document": "操作人信息",
           "example": "无",
+          "is_base64": false,
           "member": "UserInfo",
           "name": "Operator",
           "required": true,
@@ -3584,6 +3585,7 @@
           "disabled": false,
           "document": "电子印章名字",
           "example": "公司印章",
+          "is_base64": false,
           "member": "string",
           "name": "SealName",
           "required": true,
@@ -3593,6 +3595,7 @@
           "disabled": false,
           "document": "应用相关信息",
           "example": "无",
+          "is_base64": false,
           "member": "Agent",
           "name": "Agent",
           "required": false,
@@ -3600,8 +3603,19 @@
         },
         {
           "disabled": false,
-          "document": "电子印章类型，PERSONAL-个人私章,OFFICIAL-公章,SPECIAL_FINANCIAL-财务专用章,CONTRACT-合同专用章,LEGAL_REPRESENTATIVE-法定代表人章,SPECIAL_NATIONWIDE_INVOICE-发票专用章",
+          "document": "本接口支持上传图片印章及系统直接生成印章；如果要使用系统生成印章，此值传：SealGenerateSourceSystem；如果要使用图片上传请传字段 Image",
+          "example": "SealGenerateSourceSystem",
+          "is_base64": false,
+          "member": "string",
+          "name": "GenerateSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "电子印章类型，OFFICIAL-公章,CONTRACT-合同专用章",
           "example": "OFFICIAL",
+          "is_base64": false,
           "member": "string",
           "name": "SealType",
           "required": false,
@@ -3611,6 +3625,7 @@
           "disabled": false,
           "document": "电子印章图片文件名称",
           "example": "印章图片.png",
+          "is_base64": false,
           "member": "string",
           "name": "FileName",
           "required": false,
@@ -3620,6 +3635,7 @@
           "disabled": false,
           "document": "电子印章图片base64编码\n参数Image,FileToken或GenerateSource=SealGenerateSourceSystem三选一。",
           "example": "imagecontentbase64",
+          "is_base64": false,
           "member": "string",
           "name": "Image",
           "required": false,
@@ -3629,6 +3645,7 @@
           "disabled": false,
           "document": "电子印章宽度,单位px\n参数不再启用，系统会设置印章大小为标准尺寸。",
           "example": "10",
+          "is_base64": false,
           "member": "int64",
           "name": "Width",
           "required": false,
@@ -3638,6 +3655,7 @@
           "disabled": false,
           "document": "电子印章高度,单位px\n参数不再启用，系统会设置印章大小为标准尺寸。",
           "example": "20",
+          "is_base64": false,
           "member": "int64",
           "name": "Height",
           "required": false,
@@ -3647,6 +3665,7 @@
           "disabled": false,
           "document": "电子印章印章颜色(默认红色RED),RED-红色\n\n系统目前只支持红色印章创建。",
           "example": "Red",
+          "is_base64": false,
           "member": "string",
           "name": "Color",
           "required": false,
@@ -3654,8 +3673,9 @@
         },
         {
           "disabled": false,
-          "document": "电子印章生成时的横向文字。",
+          "document": "暂时不支持横向文字设置",
           "example": "横向文字",
+          "is_base64": false,
           "member": "string",
           "name": "SealHorizontalText",
           "required": false,
@@ -3663,8 +3683,9 @@
         },
         {
           "disabled": false,
-          "document": "电子印章下弦文字",
+          "document": "暂时不支持下弦文字设置",
           "example": "下弦文字",
+          "is_base64": false,
           "member": "string",
           "name": "SealChordText",
           "required": false,
@@ -3672,8 +3693,9 @@
         },
         {
           "disabled": false,
-          "document": "电子印章中心图案类型,STAR-圆形有五角星,NONE-圆形无五角星\n系统生成的印章只支持STAR",
+          "document": "系统生成的印章只支持STAR",
           "example": "Star",
+          "is_base64": false,
           "member": "string",
           "name": "SealCentralType",
           "required": false,
@@ -3683,17 +3705,9 @@
           "disabled": false,
           "document": "通过文件上传时，服务端生成的电子印章上传图片的token\n",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "FileToken",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "印章生成来源方式\n取值：\nSealGenerateSourceSystem 表示系统生成企业印章",
-          "example": "SealGenerateSourceSystem",
-          "member": "string",
-          "name": "GenerateSource",
           "required": false,
           "type": "string"
         }
@@ -3709,6 +3723,7 @@
           "example": "429b82b40900a9f870a90d45c715bad7",
           "member": "string",
           "name": "SealId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6361,7 +6376,7 @@
         },
         {
           "disabled": false,
-          "document": "客户自定义签署人标识，64位长度，保证唯一。用于发起含有或签签署人的合同。或签参与人必须有此字段。不同或签参与人CustomApproverTag需要保证唯一。如果或签签署人为本方企微参与人，ApproverSource参数需要指定WEWORKAPP",
+          "document": "企业签署方或签标识，客户自定义，64位长度。用于发起含有或签签署人的合同。或签参与人必须有此字段。合同内不同或签参与人CustomApproverTag需要保证唯一。如果或签签署人为本方企微参与人，ApproverSource参数需要指定WEWORKAPP",
           "example": "无",
           "is_base64": false,
           "member": "string",

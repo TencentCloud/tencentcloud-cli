@@ -43,7 +43,9 @@ tccli lcic ModifyRoom --cli-unfold-argument  \
     --RoomId 368760996 \
     --SdkAppId 3520371 \
     --InteractionMode 0 \
-    --VideoOrientation 0
+    --VideoOrientation 0 \
+    --IsGradingRequiredPostClass 1 \
+    --RoomType 0
 ```
 
 Output: 

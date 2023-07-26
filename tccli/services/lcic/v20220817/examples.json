@@ -99,7 +99,7 @@
     "CreateRoom": [
       {
         "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRoom\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"StartTime\": 1,\n    \"EndTime\": 1,\n    \"TeacherId\": \"abc\",\n    \"SdkAppId\": 1,\n    \"Resolution\": 1,\n    \"MaxMicNumber\": 1,\n    \"AutoMic\": 1,\n    \"TurnOffMic\": 1,\n    \"AudioQuality\": 1,\n    \"SubType\": \"abc\",\n    \"DisableRecord\": 1,\n    \"Assistants\": [\n        \"abc\"\n    ],\n    \"RTCAudienceNumber\": 1,\n    \"AudienceType\": 1,\n    \"RecordLayout\": 1,\n    \"GroupId\": \"abc\",\n    \"EnableDirectControl\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRoom\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"StartTime\": 1,\n    \"EndTime\": 1,\n    \"TeacherId\": \"abc\",\n    \"SdkAppId\": 1,\n    \"Resolution\": 1,\n    \"MaxMicNumber\": 1,\n    \"AutoMic\": 1,\n    \"TurnOffMic\": 1,\n    \"AudioQuality\": 1,\n    \"SubType\": \"abc\",\n    \"DisableRecord\": 1,\n    \"Assistants\": [\n        \"abc\"\n    ],\n    \"RTCAudienceNumber\": 1,\n    \"AudienceType\": 1,\n    \"RecordLayout\": 1,\n    \"GroupId\": \"abc\",\n    \"InteractionMode\": 1,\n    \"VideoOrientation\": 1,\n    \"IsGradingRequiredPostClass\": 1,\n    \"RoomType\": 1,\n    \"EnableDirectControl\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RoomId\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建房间"
       }
@@ -278,7 +278,7 @@
       {
         "document": "获取房间信息",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 331450358\n}",
-        "output": "{\n    \"Response\": {\n        \"Assistants\": [],\n        \"AudioQuality\": 0,\n        \"AutoMic\": 0,\n        \"DisableRecord\": 0,\n        \"EnableDirectControl\": 0,\n        \"EndTime\": 1687943391,\n        \"GroupId\": \"\",\n        \"InteractionMode\": 1,\n        \"IsGradingRequiredPostClass\": 0,\n        \"MaxMicNumber\": 2,\n        \"Name\": \"测试1\",\n        \"RecordUrl\": \"\",\n        \"RequestId\": \"a8dea9b9-5172-4c01-a53d-5a53437f7fdf\",\n        \"Resolution\": 1,\n        \"SdkAppId\": 3923193,\n        \"StartTime\": 1687943339,\n        \"Status\": 0,\n        \"SubType\": \"video\",\n        \"TeacherId\": \"2O2bjPEXxStIac3NC9kfH3mHeBC\",\n        \"VideoOrientation\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Assistants\": [],\n        \"AudioQuality\": 0,\n        \"AutoMic\": 0,\n        \"DisableRecord\": 0,\n        \"EnableDirectControl\": 0,\n        \"EndTime\": 1687943391,\n        \"GroupId\": \"\",\n        \"InteractionMode\": 1,\n        \"IsGradingRequiredPostClass\": 0,\n        \"MaxMicNumber\": 2,\n        \"Name\": \"测试1\",\n        \"RecordUrl\": \"\",\n        \"RequestId\": \"a8dea9b9-5172-4c01-a53d-5a53437f7fdf\",\n        \"Resolution\": 1,\n        \"RoomType\": 1,\n        \"SdkAppId\": 3923193,\n        \"StartTime\": 1687943339,\n        \"Status\": 0,\n        \"SubType\": \"video\",\n        \"TeacherId\": \"2O2bjPEXxStIac3NC9kfH3mHeBC\",\n        \"VideoOrientation\": 1\n    }\n}",
         "title": "示例"
       }
     ],
@@ -403,7 +403,7 @@
       },
       {
         "document": "修改类型",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 368760996,\n    \"SdkAppId\": 3520371,\n    \"InteractionMode\": 0,\n    \"VideoOrientation\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 368760996,\n    \"SdkAppId\": 3520371,\n    \"InteractionMode\": 0,\n    \"VideoOrientation\": 0,\n    \"IsGradingRequiredPostClass\": 1,\n    \"RoomType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"50034c8f-cd77-43f2-815e-afe990fb023d\"\n    }\n}",
         "title": "示例"
       }

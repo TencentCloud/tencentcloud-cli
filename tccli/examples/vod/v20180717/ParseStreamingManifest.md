@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod ParseStreamingManifest --cli-unfold-argument  \
-    --MediaManifestContent %23EXTM3U%0D%0A%23EXT-X-TARGETDURATION:10%0D%0A%23EXTINF:9.009%0D%0Afirst.ts%0D%0A%23EXTINF:9.009%0D%0Asecond.ts%0D%0A%23EXT-X-ENDLIST
+    --MediaManifestContent #EXTM3U\n#EXT-X-TARGETDURATION:10\n#EXTINF:9.009,\nfirst.ts\n#EXTINF:9.009,\nsecond.ts\n#EXT-X-ENDLIST
 ```
 
 Output: 
@@ -16,7 +16,8 @@ Output:
         "MediaSegmentSet": [
             "first.ts",
             "second.ts"
-        ]
+        ],
+        "RequestId": "requestId"
     }
 }
 ```

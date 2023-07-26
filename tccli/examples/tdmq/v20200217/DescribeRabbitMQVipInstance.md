@@ -34,6 +34,9 @@ Output:
                     "VpcEndpoint": "xx"
                 }
             ],
+            "ZoneIds": [
+                100001
+            ],
             "VirtualHostNumber": 10,
             "QueueNumber": 10,
             "MessagePublishRate": 10.1,

@@ -22778,7 +22778,7 @@
         },
         {
           "disabled": false,
-          "document": "转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。",
+          "document": "转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/266/33476)。\n<font color=red>注意：取值 0 表示原始文件。</font> ",
           "example": "10010",
           "member": "int64",
           "name": "Definition",
@@ -26088,18 +26088,20 @@
       "document": "ParseStreamingManifest请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待解析的索引文件内容。",
+          "example": "0",
+          "is_base64": false,
           "member": "string",
           "name": "MediaManifestContent",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频索引文件格式。默认 m3u8 格式。\n<li>m3u8</li>\n<li>mpd</li>",
+          "example": "m3u8",
+          "is_base64": false,
           "member": "string",
           "name": "ManifestType",
           "required": false,
@@ -26114,8 +26116,10 @@
         {
           "disabled": false,
           "document": "分片文件列表。",
+          "example": "0",
           "member": "string",
           "name": "MediaSegmentSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -31240,40 +31244,40 @@
       "document": "RestoreMedia请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "媒体文件唯一标识列表。",
+          "document": "媒体文件唯一标识列表，最大长度：100。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "FileIds",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "解冻出的临时媒体文件的可访问持续时长，单位为“天”。",
+          "document": "解冻出的临时媒体文件的可访问持续时长，必须大于0，单位为“天”。",
           "example": "无",
+          "is_base64": false,
           "member": "uint64",
           "name": "RestoreDay",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "解冻模式。当媒体文件当前的存储类型为归档存储时，有以下取值：\n<li>极速模式：Expedited，解冻任务在5分钟后完成。</li>\n<li>标准模式：Standard，解冻任务在5小时后完成 。</li>\n<li>批量模式：Bulk，，解冻任务在12小时后完成。</li>\n当媒体文件的存储类型为深度归档存储时，有以下取值：\n<li>标准模式：Standard，解冻任务在24小时后完成。</li>\n<li>批量模式：Bulk，解冻任务在48小时后完成。</li>",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "RestoreTier",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
           "example": "无",
+          "is_base64": false,
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -32239,14 +32243,16 @@
       "usage": "out"
     },
     "RoundPlayListItemInfo": {
-      "document": "加权轮播媒体文件信息",
+      "document": "轮播媒体文件信息",
       "members": [
         {
           "disabled": false,
           "document": "媒体文件标识。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "FileId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -32255,8 +32261,10 @@
           "disabled": false,
           "document": "播放的音视频类型，可选值：\n<li>Transcode：转码输出；转码输出会有多个模版，必须指定 Definition 字段</li>\n<li>Original：原始音视频。</li>\nType 对应的格式必须为 HLS 格式。",
           "example": "Transcode",
+          "is_base64": false,
           "member": "string",
           "name": "AudioVideoType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -32267,6 +32275,7 @@
           "example": "10",
           "member": "int64",
           "name": "Definition",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false

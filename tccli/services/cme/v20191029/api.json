@@ -658,22 +658,22 @@
       "document": "资源权限信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "被授权者实体。",
+          "example": "无",
           "member": "Entity",
           "name": "Authorizee",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "详细授权值。 取值有：\n<li>R：可读，可以浏览素材，但不能使用该素材（将其添加到 Project），或复制到自己的媒资库中</li>\n<li>X：可用，可以使用该素材（将其添加到 Project），但不能将其复制到自己的媒资库中，意味着被授权者无法将该资源进一步扩散给其他个人或团队。</li>\n<li>C：可复制，既可以使用该素材（将其添加到 Project），也可以将其复制到自己的媒资库中。</li>\n<li>W：可修改、删除媒资。</li>",
+          "document": "详细授权值。 取值有：\n<li>R：可读，可以浏览素材，但不能使用该素材（将其添加到 Project），或复制到自己的媒资库中。</li>\n<li>X：可用，可以使用该素材（将其添加到 Project），但不能将其复制到自己的媒资库中，意味着被授权者无法将该资源进一步扩散给其他个人或团队。</li>\n<li>C：可复制，既可以使用该素材（将其添加到 Project），也可以将其复制到自己的媒资库中。</li>\n<li>W：可修改、删除媒资。</li>",
+          "example": "无",
           "member": "string",
           "name": "PermissionSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }

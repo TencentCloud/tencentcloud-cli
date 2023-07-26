@@ -39,7 +39,7 @@ Output:
                         "Y": 34
                     }
                 },
-                "Angle": 270.2,
+                "Angle": 270,
                 "SingleInvoiceInfos": {
                     "AirTransport": null,
                     "BusInvoice": null,
@@ -76,6 +76,9 @@ Output:
                         "CompanySealContent": "深圳市游戏科技有限公司,04000,发票专用章,N",
                         "CompanySealMark": 1,
                         "Date": "2016年04月11日",
+                        "ElectronicFullMark": 0,
+                        "ElectronicFullNumber": "",
+                        "FormName": "发票联",
                         "FormType": "三",
                         "Issuer": "张三",
                         "Kind": "服务",
@@ -101,6 +104,8 @@ Output:
                         "TotalCn": "捌佰贰拾伍圆壹角伍分",
                         "TransitMark": 0,
                         "TravelTax": "",
+                        "BlockChainMark": 0,
+                        "AcquisitionMark": 0,
                         "VatInvoiceItemInfos": [
                             {
                                 "DateEnd": "",
@@ -110,7 +115,7 @@ Output:
                                 "Price": "",
                                 "Quantity": "",
                                 "Specification": "",
-                                "Tax": "",
+                                "Tax": "46.71",
                                 "TaxRate": "6%",
                                 "Total": "778.44",
                                 "Unit": "",
@@ -264,7 +269,7 @@ Output:
                 "CutImage": ""
             }
         ],
-        "RequestId": "a3a63bf5-a8b1-4563-b4d3-31c9a1c609b9",
+        "RequestId": "4f181ebb-ff56-4e66-b3b1-a45bd7ec233e",
         "TotalPDFCount": 1
     }
 }

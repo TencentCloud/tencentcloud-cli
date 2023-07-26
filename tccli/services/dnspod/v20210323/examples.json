@@ -284,6 +284,14 @@
         "title": "设置记录备注"
       }
     ],
+    "DescribeRecordFilterList": [
+      {
+        "document": "获取域名的解析记录筛选列表",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordFilterList\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.cn\",\n    \"DomainId\": 1,\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RecordCountInfo\": {\n            \"ListCount\": 1,\n            \"SubdomainCount\": 27,\n            \"TotalCount\": 27\n        },\n        \"RecordList\": [\n            {\n                \"DefaultNS\": false,\n                \"Line\": \"默认\",\n                \"LineId\": \"0\",\n                \"MX\": 1,\n                \"MonitorStatus\": \"\",\n                \"Name\": \"@\",\n                \"RecordId\": 1,\n                \"Remark\": \"示例\",\n                \"Status\": \"ENABLE\",\n                \"TTL\": 3600,\n                \"Type\": \"CNAME\",\n                \"UpdatedOn\": \"2022-03-11 14:47:49\",\n                \"Value\": \"dnspod.cn.\",\n                \"Weight\": null\n            }\n        ],\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "获取域名的解析记录筛选列表参数示例"
+      }
+    ],
     "DescribeRecordGroupList": [
       {
         "document": " ",

@@ -224,6 +224,13 @@
       "output": "DeleteMachineGroupInfoResponse",
       "status": "online"
     },
+    "DeleteScheduledSql": {
+      "document": "本接口用于删除ScheduledSql任务",
+      "input": "DeleteScheduledSqlRequest",
+      "name": "删除ScheduledSql任务",
+      "output": "DeleteScheduledSqlResponse",
+      "status": "online"
+    },
     "DeleteShipper": {
       "document": "删除投递COS任务",
       "input": "DeleteShipperRequest",
@@ -371,6 +378,13 @@
       "output": "DescribePartitionsResponse",
       "status": "online"
     },
+    "DescribeScheduledSqlInfo": {
+      "document": "本接口用于获取ScheduledSql任务列表",
+      "input": "DescribeScheduledSqlInfoRequest",
+      "name": "获取ScheduledSql任务列表",
+      "output": "DescribeScheduledSqlInfoResponse",
+      "status": "online"
+    },
     "DescribeShipperTasks": {
       "document": "获取投递任务列表",
       "input": "DescribeShipperTasksRequest",
@@ -481,6 +495,13 @@
       "input": "ModifyMachineGroupRequest",
       "name": "修改机器组",
       "output": "ModifyMachineGroupResponse",
+      "status": "online"
+    },
+    "ModifyScheduledSql": {
+      "document": "本接口用于修改ScheduledSql任务",
+      "input": "ModifyScheduledSqlRequest",
+      "name": "修改ScheduledSql任务",
+      "output": "ModifyScheduledSqlResponse",
       "status": "online"
     },
     "ModifyShipper": {
@@ -3532,6 +3553,7 @@
           "disabled": false,
           "document": "源日志主题",
           "example": "topicid-1",
+          "is_base64": false,
           "member": "string",
           "name": "SrcTopicId",
           "required": true,
@@ -3541,6 +3563,7 @@
           "disabled": false,
           "document": "任务名称",
           "example": "task1",
+          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": true,
@@ -3550,6 +3573,7 @@
           "disabled": false,
           "document": "任务启动状态.  1正常开启,  2关闭",
           "example": "1",
+          "is_base64": false,
           "member": "int64",
           "name": "EnableFlag",
           "required": true,
@@ -3557,8 +3581,9 @@
         },
         {
           "disabled": false,
-          "document": "加工任务目的topic_id以及别名",
+          "document": "定时SQL分析目标日志主题",
           "example": "{\"dst_topics\":[{\"topic_id\":\"xxx\", \"alias\":\"topic\"}]}",
+          "is_base64": false,
           "member": "ScheduledSqlResouceInfo",
           "name": "DstResource",
           "required": true,
@@ -3566,8 +3591,9 @@
         },
         {
           "disabled": false,
-          "document": "ScheduledSQL语句",
+          "document": "查询语句",
           "example": "* | select count(*)",
+          "is_base64": false,
           "member": "string",
           "name": "ScheduledSqlContent",
           "required": true,
@@ -3577,6 +3603,7 @@
           "disabled": false,
           "document": "调度开始时间,Unix时间戳，单位ms",
           "example": "1634735855733",
+          "is_base64": false,
           "member": "uint64",
           "name": "ProcessStartTime",
           "required": true,
@@ -3586,6 +3613,7 @@
           "disabled": false,
           "document": "调度类型，1:持续运行 2:指定调度结束时间",
           "example": "1",
+          "is_base64": false,
           "member": "int64",
           "name": "ProcessType",
           "required": true,
@@ -3595,6 +3623,7 @@
           "disabled": false,
           "document": "调度周期(分钟)",
           "example": "2",
+          "is_base64": false,
           "member": "int64",
           "name": "ProcessPeriod",
           "required": true,
@@ -3602,8 +3631,9 @@
         },
         {
           "disabled": false,
-          "document": "调度时间窗口",
+          "document": "单次查询的时间窗口",
           "example": "-15m@m",
+          "is_base64": false,
           "member": "string",
           "name": "ProcessTimeWindow",
           "required": true,
@@ -3613,6 +3643,7 @@
           "disabled": false,
           "document": "执行延迟(秒)",
           "example": "23",
+          "is_base64": false,
           "member": "int64",
           "name": "ProcessDelay",
           "required": true,
@@ -3622,6 +3653,7 @@
           "disabled": false,
           "document": "源topicId的地域信息",
           "example": "ap-guangzhou",
+          "is_base64": false,
           "member": "string",
           "name": "SrcTopicRegion",
           "required": true,
@@ -3631,6 +3663,7 @@
           "disabled": false,
           "document": "调度结束时间，当ProcessType=2时为必传字段, Unix时间戳，单位ms",
           "example": "1634735855733",
+          "is_base64": false,
           "member": "uint64",
           "name": "ProcessEndTime",
           "required": false,
@@ -3640,6 +3673,7 @@
           "disabled": false,
           "document": "语法规则。 默认值为0。0：Lucene语法，1：CQL语法  ",
           "example": "0",
+          "is_base64": false,
           "member": "uint64",
           "name": "SyntaxRule",
           "required": false,
@@ -3657,6 +3691,7 @@
           "example": "xxxxx",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4545,6 +4580,44 @@
     },
     "DeleteMachineGroupResponse": {
       "document": "DeleteMachineGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteScheduledSqlRequest": {
+      "document": "DeleteScheduledSql请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "源日志主题ID",
+          "example": "xxxx",
+          "member": "string",
+          "name": "SrcTopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteScheduledSqlResponse": {
+      "document": "DeleteScheduledSql返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5902,6 +5975,84 @@
           "name": "Partitions",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScheduledSqlInfoRequest": {
+      "document": "DescribeScheduledSqlInfo请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务名称",
+          "example": "xx-xx",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "任务id",
+          "example": "121212",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScheduledSqlInfoResponse": {
+      "document": "DescribeScheduledSqlInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ScheduledSQL任务列表信息",
+          "example": "无",
+          "member": "ScheduledSqlTaskInfo",
+          "name": "ScheduledSqlTaskInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务总次数",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -8988,6 +9139,134 @@
       ],
       "type": "object"
     },
+    "ModifyScheduledSqlRequest": {
+      "document": "ModifyScheduledSql请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "1212-12121",
+          "is_base64": false,
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源日志主题",
+          "example": "xxxxxxxx-0889-4ec0-accc-xxxxxxx",
+          "is_base64": false,
+          "member": "string",
+          "name": "SrcTopicId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务启动状态.   1正常开启,  2关闭",
+          "example": "1",
+          "is_base64": false,
+          "member": "int64",
+          "name": "EnableFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "定时SQL分析的目标日志主题",
+          "example": "{\"dst_topics\":[{\"topic_id\":\"xxx\", \"alias\":\"topic\"}]}",
+          "is_base64": false,
+          "member": "ScheduledSqlResouceInfo",
+          "name": "DstResource",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "查询语句",
+          "example": "* | select count(*)",
+          "is_base64": false,
+          "member": "string",
+          "name": "ScheduledSqlContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调度周期(分钟)",
+          "example": "2",
+          "is_base64": false,
+          "member": "int64",
+          "name": "ProcessPeriod",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "单次查询的时间窗口. 例子中为近15分钟",
+          "example": "@m-15m,@m",
+          "is_base64": false,
+          "member": "string",
+          "name": "ProcessTimeWindow",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "执行延迟(秒)",
+          "example": "60",
+          "is_base64": false,
+          "member": "int64",
+          "name": "ProcessDelay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "源topicId的地域信息",
+          "example": "ap-guangzhou",
+          "is_base64": false,
+          "member": "string",
+          "name": "SrcTopicRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "task1",
+          "is_base64": false,
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "语法规则。 默认值为0。 0：Lucene语法，1：CQL语法",
+          "example": "0",
+          "is_base64": false,
+          "member": "uint64",
+          "name": "SyntaxRule",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyScheduledSqlResponse": {
+      "document": "ModifyScheduledSql返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyShipperRequest": {
       "document": "ModifyShipper请求参数结构体",
       "members": [
@@ -9888,6 +10167,192 @@
         }
       ],
       "usage": "both"
+    },
+    "ScheduledSqlTaskInfo": {
+      "document": "ScheduledSql任务详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ScheduledSql任务id",
+          "example": "232332323",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ScheduledSql任务名称",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源日志主题id",
+          "example": "5237e8f4-0889-4ec0-accc-xxxxxxx",
+          "member": "string",
+          "name": "SrcTopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源日志主题名称",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "SrcTopicName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "定时SQL分析目标主题",
+          "example": "无",
+          "member": "ScheduledSqlResouceInfo",
+          "name": "DstResource",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务创建时间",
+          "example": "xx-xx",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务更新时间",
+          "example": "xx-xx",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态，1:运行 2:停止 3:异常-找不到源日志主题 4:异常-找不到目标主题\n\n5: 访问权限问题 6:内部故障 7:其他故障",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务启用状态，1开启,  2关闭",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableFlag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询语句",
+          "example": "* | select count(*)",
+          "member": "string",
+          "name": "ScheduledSqlContent",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调度开始时间",
+          "example": "xx-xx",
+          "member": "string",
+          "name": "ProcessStartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调度类型，1:持续运行 2:指定调度结束时间",
+          "example": "1",
+          "member": "int64",
+          "name": "ProcessType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调度结束时间，当process_type=2时为必传字段",
+          "example": "xx-xx",
+          "member": "string",
+          "name": "ProcessEndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调度周期(分钟)",
+          "example": "5",
+          "member": "int64",
+          "name": "ProcessPeriod",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询的时间窗口. @m-15m, @m，意为近15分钟",
+          "example": "@m-15m, @m",
+          "member": "string",
+          "name": "ProcessTimeWindow",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行延迟(秒)",
+          "example": "5",
+          "member": "int64",
+          "name": "ProcessDelay",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源topicId的地域信息",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "SrcTopicRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语法规则，0：Lucene语法，1：CQL语法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "SyntaxRule",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SearchLogRequest": {
       "document": "SearchLog请求参数结构体",

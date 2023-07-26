@@ -65,6 +65,7 @@ Output:
         "RecordUrl": "",
         "RequestId": "a8dea9b9-5172-4c01-a53d-5a53437f7fdf",
         "Resolution": 1,
+        "RoomType": 1,
         "SdkAppId": 3923193,
         "StartTime": 1687943339,
         "Status": 0,

@@ -280,6 +280,13 @@
       "output": "DescribeBizHttpStatusResponse",
       "status": "online"
     },
+    "DescribeBizMonitorTrend": {
+      "document": "获取高防IP业务监控流量曲线",
+      "input": "DescribeBizMonitorTrendRequest",
+      "name": "获取高防IP业务监控流量曲线",
+      "output": "DescribeBizMonitorTrendResponse",
+      "status": "online"
+    },
     "DescribeBizTrend": {
       "document": "获取业务流量曲线",
       "input": "DescribeBizTrendRequest",
@@ -4837,6 +4844,114 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBizMonitorTrendRequest": {
+      "document": "DescribeBizMonitorTrend请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "大禹子产品代号（bgpip表示高防IP）",
+          "example": "bgpip",
+          "is_base64": false,
+          "member": "string",
+          "name": "Business",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "统计开始时间。 例：“2020-09-22 00:00:00”",
+          "example": "2020-09-22 00:00:00",
+          "is_base64": false,
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "统计结束时间。 例：“2020-09-22 00:00:00”",
+          "example": "2020-09-22 00:00:00",
+          "is_base64": false,
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源实例ID",
+          "example": "xx",
+          "is_base64": false,
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "统计纬度，可取值intraffic outtraffic inpkg outpkg",
+          "example": "inpkg",
+          "is_base64": false,
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间粒度 60 300 3600 21600 86400",
+          "example": "60",
+          "is_base64": false,
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBizMonitorTrendResponse": {
+      "document": "DescribeBizMonitorTrend返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "曲线图各个时间点的值",
+          "example": "无",
+          "member": "float",
+          "name": "DataList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "统计纬度",
+          "example": "intraffic",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回DataList中的最大值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxData",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

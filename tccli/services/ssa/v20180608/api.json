@@ -2085,17 +2085,17 @@
           "example": "1",
           "member": "int64",
           "name": "ConcernType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "实体类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实体类型 1: 非云上IP，2: 云上IP，3: 域名，4: IP，5: 文件，6: 进程\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "EntityType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2105,7 +2105,7 @@
           "example": "\"asd\"",
           "member": "string",
           "name": "Concern",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2115,7 +2115,7 @@
           "example": "1",
           "member": "int64",
           "name": "StatisticsCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2125,7 +2125,7 @@
           "example": "\"asd\"",
           "member": "string",
           "name": "IpCountry",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2135,7 +2135,7 @@
           "example": "\"asd\"",
           "member": "string",
           "name": "IpProvince",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2145,7 +2145,7 @@
           "example": "\"asd\"",
           "member": "string",
           "name": "Result",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2155,7 +2155,7 @@
           "example": "1",
           "member": "int64",
           "name": "Confidence",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2165,7 +2165,7 @@
           "example": "\"asd\"",
           "member": "string",
           "name": "IpIsp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2175,7 +2175,7 @@
           "example": "\"asd\"",
           "member": "string",
           "name": "IpInfrastructure",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2185,7 +2185,7 @@
           "example": "无",
           "member": "string",
           "name": "ThreatType",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2195,7 +2195,7 @@
           "example": "无",
           "member": "string",
           "name": "Groups",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2205,7 +2205,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2215,7 +2215,7 @@
           "example": "无",
           "member": "string",
           "name": "Tags",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2225,7 +2225,7 @@
           "example": "无",
           "member": "string",
           "name": "VictimAssetType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2235,7 +2235,7 @@
           "example": "无",
           "member": "string",
           "name": "VictimAssetName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2245,7 +2245,7 @@
           "example": "无",
           "member": "string",
           "name": "DomainRegistrant",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2255,7 +2255,7 @@
           "example": "无",
           "member": "string",
           "name": "DomainRegisteredInstitution",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2265,7 +2265,7 @@
           "example": "无",
           "member": "string",
           "name": "DomainRegistrationTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2275,7 +2275,7 @@
           "example": "无",
           "member": "string",
           "name": "FileName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2285,7 +2285,7 @@
           "example": "无",
           "member": "string",
           "name": "FileMd5",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2295,7 +2295,7 @@
           "example": "无",
           "member": "string",
           "name": "VirusName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2305,7 +2305,7 @@
           "example": "无",
           "member": "string",
           "name": "FilePath",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2315,7 +2315,7 @@
           "example": "无",
           "member": "string",
           "name": "FileSize",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2325,7 +2325,7 @@
           "example": "无",
           "member": "string",
           "name": "ProcName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2335,7 +2335,7 @@
           "example": "无",
           "member": "string",
           "name": "Pid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2345,7 +2345,7 @@
           "example": "无",
           "member": "string",
           "name": "ProcPath",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2355,7 +2355,7 @@
           "example": "无",
           "member": "string",
           "name": "ProcUser",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2365,7 +2365,7 @@
           "example": "无",
           "member": "uint64",
           "name": "DefendedCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2375,7 +2375,7 @@
           "example": "无",
           "member": "uint64",
           "name": "DetectedCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2385,7 +2385,7 @@
           "example": "\"asd\"",
           "member": "string",
           "name": "SearchData",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2395,7 +2395,7 @@
           "example": "\"asd\"",
           "member": "string",
           "name": "IpCountryIso",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2405,7 +2405,7 @@
           "example": "\"asd\"",
           "member": "string",
           "name": "IpProvinceIso",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2415,7 +2415,7 @@
           "example": "\"asd\"",
           "member": "string",
           "name": "IpCity",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2425,7 +2425,7 @@
           "example": "\"asd\"",
           "member": "string",
           "name": "EventSubType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
