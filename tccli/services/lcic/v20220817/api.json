@@ -3549,17 +3549,17 @@
           "example": "123456",
           "member": "uint64",
           "name": "Timestamp",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "事件类型,有以下值:\nRoomStart:房间开始 RoomEnd:房间结束 MemberJoin:成员加入 MemberQuit:成员退出 RecordFinish:录制结束\nCamera0n: 摄像头打开\nCamera0ff: 摄像头关闭\nMicOn: 麦克风打开\nMicOff: 麦克风关闭\nScreenOn: 屏幕共享打开\nScreenOff: 屏幕共享关闭\nVisibleOn: 页面可见\nVisibleOff: 页面不可见",
+          "document": "事件类型,有以下值:\nRoomStart:房间开始 RoomEnd:房间结束 MemberJoin:成员加入 MemberQuit:成员退出 RecordFinish:录制结束\nCameraOn: 摄像头打开\nCameraOff: 摄像头关闭\nMicOn: 麦克风打开\nMicOff: 麦克风关闭\nScreenOn: 屏幕共享打开\nScreenOff: 屏幕共享关闭\nVisibleOn: 页面可见\nVisibleOff: 页面不可见",
           "example": "RoomStart",
           "member": "string",
           "name": "EventType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3569,7 +3569,7 @@
           "example": "{\"RoomId\":1234}",
           "member": "EventDataInfo",
           "name": "EventData",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }

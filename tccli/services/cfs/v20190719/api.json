@@ -2051,6 +2051,7 @@
           "disabled": false,
           "document": "文件系统 ID",
           "example": "cfs-12345",
+          "is_base64": false,
           "member": "string",
           "name": "FileSystemId",
           "required": false,
@@ -2060,6 +2061,7 @@
           "disabled": false,
           "document": "私有网络（VPC） ID",
           "example": "vpc-12345",
+          "is_base64": false,
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -2069,10 +2071,31 @@
           "disabled": false,
           "document": "子网 ID",
           "example": "subnet-12345",
+          "is_base64": false,
           "member": "string",
           "name": "SubnetId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Offset 分页码",
+          "example": "10",
+          "is_base64": false,
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Limit 页面大小",
+          "example": "10",
+          "is_base64": false,
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

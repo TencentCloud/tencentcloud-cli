@@ -497,13 +497,6 @@
       "output": "EnableApiKeyResponse",
       "status": "online"
     },
-    "GenerateApiDocument": {
-      "document": "接口已废弃\n\n本接口（GenerateApiDocument）用于自动生成 API 文档和 SDK，一个服务的一个环境生成一份文档和 SDK。",
-      "input": "GenerateApiDocumentRequest",
-      "name": "生成文档和 SDK",
-      "output": "GenerateApiDocumentResponse",
-      "status": "deprecated"
-    },
     "ImportOpenApi": {
       "document": "本接口（ImportOpenApi）用于将OpenAPI规范定义的API导入到API网关。 ",
       "input": "ImportOpenApiRequest",
@@ -8638,32 +8631,6 @@
       ],
       "type": "object"
     },
-    "DocumentSDK": {
-      "document": "api文档下载",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "生成的 document 会存放到 COS 中，此出参返回产生文件的下载链接。",
-          "member": "string",
-          "name": "DocumentURL",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "生成的 SDK 会存放到 COS 中，此出参返回产生 SDK 文件的下载链接。",
-          "member": "string",
-          "name": "SdkURL",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "DomainSetList": {
       "document": "服务自定义域名列表",
       "members": [
@@ -8975,64 +8942,6 @@
         }
       ],
       "usage": "in"
-    },
-    "GenerateApiDocumentRequest": {
-      "document": "GenerateApiDocument请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "待创建文档的服务唯一 ID。",
-          "example": "service-ody35h5e",
-          "member": "string",
-          "name": "ServiceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "待创建 SDK 的服务所在环境。",
-          "example": "release",
-          "member": "string",
-          "name": "GenEnvironment",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "待创建 SDK 的语言。当前只支持 Python 和 JavaScript。",
-          "example": "Python",
-          "member": "string",
-          "name": "GenLanguage",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GenerateApiDocumentResponse": {
-      "document": "GenerateApiDocument返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "api文档&sdk链接。",
-          "example": "无",
-          "member": "DocumentSDK",
-          "name": "Result",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "HealthCheckConf": {
       "document": "健康检查配置，包括TsfHealthCheckConf和TargetServicesHealthCheckConf",

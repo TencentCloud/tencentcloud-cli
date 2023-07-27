@@ -146,7 +146,7 @@
     ],
     "CreateLiveSnapshotTemplate": [
       {
-        "document": "",
+        "document": "创建 直播截图&鉴黄 模板。",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveSnapshotTemplate\n<公共请求参数>\n\n{\n    \"CosRegion\": \"beijing\",\n    \"Description\": \"testDesc\",\n    \"SnapshotInterval\": \"10\",\n    \"PornFlag\": \"0\",\n    \"CosBucket\": \"bucket\",\n    \"TemplateName\": \"testName\",\n    \"Height\": \"250\",\n    \"CosAppId\": \"123\",\n    \"Width\": \"250\"\n}",
         "output": "{\n    \"Response\": {\n        \"TemplateId\": 1000,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
@@ -1090,10 +1090,10 @@
     ],
     "ModifyLiveSnapshotTemplate": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLiveSnapshotTemplate\n<公共请求参数>\n\n{\n    \"CosRegion\": \"beijing\",\n    \"Description\": \"testDesc\",\n    \"SnapshotInterval\": \"10\",\n    \"PornFlag\": \"0\",\n    \"CosBucket\": \"bucket\",\n    \"TemplateName\": \"testName\",\n    \"Height\": \"250\",\n    \"CosAppId\": \"123\",\n    \"Width\": \"250\",\n    \"TemplateId\": \"1000\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "请求示例"
+        "document": "更新截图鉴黄模板配置。",
+        "input": "{\n  \"TemplateId\": 0,\n  \"TemplateName\": \"xx\",\n  \"Description\": \"xx\",\n  \"SnapshotInterval\": 0,\n  \"Width\": 0,\n  \"Height\": 0,\n  \"PornFlag\": 0,\n  \"CosAppId\": 0,\n  \"CosBucket\": \"xx\",\n  \"CosRegion\": \"xx\",\n  \"CosPrefix\": \"xx\",\n  \"CosFileName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "ModifyLiveSnapshotTemplate"
       }
     ],
     "ModifyLiveStreamMonitor": [

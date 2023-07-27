@@ -7950,22 +7950,26 @@
       "document": "机器组类型描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机器组类型，ip表示该机器组Values中存的是采集机器的IP地址，label表示该机器组Values中存储的是机器的标签",
+          "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器描述列表",
+          "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Values",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": false
         }

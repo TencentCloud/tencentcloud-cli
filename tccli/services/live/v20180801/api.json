@@ -3371,7 +3371,6 @@
       "document": "CreateLiveSnapshotTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模板名称。\n长度上限：255字节。\n仅支持中文、英文、数字、_、-。",
           "example": "testName",
@@ -3381,7 +3380,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cos 应用 ID。",
           "example": "123",
@@ -3391,7 +3389,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cos Bucket名称。\n注：CosBucket参数值不能包含-[appid] 部分。",
           "example": "bucket",
@@ -3401,7 +3398,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cos地区。",
           "example": "beijing",
@@ -3411,7 +3407,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述信息。\n长度上限：1024字节。\n仅支持中文、英文、数字、_、-。",
           "example": "testDesc",
@@ -3421,7 +3416,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "截图间隔，单位s，默认10s。\n范围： 2s ~ 300s。",
           "example": "10",
@@ -3431,7 +3425,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "截图宽度。默认：0（原始宽）。\n范围：0-3000 。",
           "example": "250",
@@ -3441,7 +3434,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "截图高度。默认：0（原始高）。\n范围：0-2000 。",
           "example": "250",
@@ -3451,7 +3443,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启鉴黄，0：不开启，1：开启。默认：0。",
           "example": "0",
@@ -3461,7 +3452,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cos Bucket文件夹前缀。\n如不传，实际按默认值\n/{Year}-{Month}-{Day}\n生效",
           "example": "12",
@@ -3471,7 +3461,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cos 文件名称。\n如不传，实际按默认值\n{StreamID}-screenshot-{Hour}-{Minute}-{Second}-{Width}x{Height}{Ext}\n生效",
           "example": "abc",
@@ -3492,7 +3481,6 @@
           "example": "1000",
           "member": "int64",
           "name": "TemplateId",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12839,7 +12827,6 @@
       "document": "ModifyLiveSnapshotTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模板 ID。",
           "example": "1000",
@@ -12849,7 +12836,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cos 应用 ID。\n**注：此参数现在须必选。**",
           "example": "123",
@@ -12859,7 +12845,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cos Bucket名称。\n注：CosBucket参数值不能包含-[appid] 部分。\n**注：此参数现在须必选。**",
           "example": "bucket",
@@ -12869,7 +12854,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cos 地域。\n**注：此参数现在须必选。**",
           "example": "beijing",
@@ -12879,7 +12863,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板名称。\n长度上限：255字节。",
           "example": "testName",
@@ -12889,7 +12872,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述信息。\n长度上限：1024字节。",
           "example": "testDesc",
@@ -12899,7 +12881,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "截图间隔，单位s，默认10s。\n范围： 5s ~ 300s。",
           "example": "10",
@@ -12909,7 +12890,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "截图宽度。默认：0（原始宽）。",
           "example": "250",
@@ -12919,7 +12899,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "截图高度。默认：0（原始高）。",
           "example": "250",
@@ -12929,7 +12908,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启鉴黄，默认 0 。\n0：不开启。\n1：开启。",
           "example": "0",
@@ -12939,7 +12917,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cos Bucket文件夹前缀。",
           "example": "12",
@@ -12949,7 +12926,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cos 文件名称。",
           "example": "12",
@@ -15695,7 +15671,6 @@
       "document": "截图模板信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模板 ID。",
           "example": "123",
@@ -15706,7 +15681,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板名称。",
           "example": "test",
@@ -15717,7 +15691,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "截图时间间隔，5-300秒。",
           "example": "5",
@@ -15728,7 +15701,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "截图宽度，范围：0-3000。 \n0：原始宽度并适配原始比例。",
           "example": "5",
@@ -15739,7 +15711,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "截图高度，范围：0-2000。\n0：原始高度并适配原始比例。",
           "example": "5",
@@ -15750,7 +15721,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启鉴黄，0：不开启，1：开启。",
           "example": "0",
@@ -15761,7 +15731,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cos 应用 ID。",
           "example": "123456",
@@ -15772,7 +15741,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cos Bucket名称。",
           "example": "test",
@@ -15783,7 +15751,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cos 地域。",
           "example": "ap-nanjing",
@@ -15794,7 +15761,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板描述。",
           "example": "测试模板",
@@ -15805,7 +15771,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cos Bucket文件夹前缀。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "prefix_",
@@ -15816,7 +15781,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cos 文件名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testname",

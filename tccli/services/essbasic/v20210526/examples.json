@@ -51,7 +51,7 @@
     "ChannelCreateEmbedWebUrl": [
       {
         "document": "获取创建印章的嵌入WEB链接",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateEmbedWebUrl\n<公共请求参数>\n\n{\n    \"BusinessId\": \"\",\n    \"EmbedType\": \"CREATE_SEAL\",\n    \"Agent\": {\n        \"AppId\": \"1\",\n        \"ProxyOrganizationOpenId\": \"1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"1\"\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateEmbedWebUrl\n<公共请求参数>\n\n{\n    \"BusinessId\": \"\",\n    \"EmbedType\": \"CREATE_SEAL\",\n    \"Agent\": {\n        \"AppId\": \"yDxjb***********8n\",\n        \"ProxyOrganizationOpenId\": \"testOpenId\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"testOpenId\"\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"WebUrl\": \"https://test.ess.com/seal-create?embed=1&code=testcode&channel=PROXYCHANNEL\",\n        \"RequestId\": \"2\"\n    }\n}",
         "title": "获取创建印章的嵌入WEB链接"
       }
@@ -156,6 +156,14 @@
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateUserRoles\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"abc\",\n        \"ProxyOrganizationOpenId\": \"abc\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"abc\"\n        }\n    },\n    \"UserIds\": [\n        \"abc\"\n    ],\n    \"RoleIds\": [\n        \"abc\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FailedCreateRoleData\": [],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "ChannelCreateWebThemeConfig": [
+      {
+        "document": "生成嵌入式主题",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateWebThemeConfig\n<公共请求参数>\n\n{\n    \"ThemeType\": \"ThemeType_EMBED_WEB_THEME\",\n    \"WebThemeConfig\": {\n        \"DisplaySignBrandLogo\": true,\n        \"WebEmbedThemeColor\": \"#ad352f\"\n    },\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"test\"\n        },\n        \"ProxyOrganizationOpenId\": \"test\",\n        \"AppId\": \"test\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "生成嵌入式主题"
       }
     ],
     "ChannelDeleteRoleUsers": [

@@ -512,7 +512,7 @@
       "status": "online"
     },
     "VatInvoiceOCR": {
-      "document": "本接口支持增值税专用发票、增值税普通发票、增值税电子专票、增值税电子普票、电子发票（普通发票）、电子发票（增值税专用发票）德全字段的内容检测和识别，包括发票代码、发票号码、打印发票代码、打印发票号码、开票日期、合计金额、校验码、税率、合计税额、价税合计、购买方识别号、复核、销售方识别号、开票人、密码区1、密码区2、密码区3、密码区4、发票名称、购买方名称、销售方名称、服务名称、备注、规格型号、数量、单价、金额、税额、收款人等字段，点击[立即试用](https://cloud.tencent.com/product/ocr)。\n\n默认接口请求频率限制：10次/秒。",
+      "document": "本接口支持增值税专用发票、增值税普通发票、增值税电子专票、增值税电子普票、电子发票（普通发票）、电子发票（增值税专用发票）全字段的内容检测和识别，包括发票代码、发票号码、打印发票代码、打印发票号码、开票日期、合计金额、校验码、税率、合计税额、价税合计、购买方识别号、复核、销售方识别号、开票人、密码区1、密码区2、密码区3、密码区4、发票名称、购买方名称、销售方名称、服务名称、备注、规格型号、数量、单价、金额、税额、收款人等字段，点击[立即试用](https://cloud.tencent.com/product/ocr)。\n\n默认接口请求频率限制：10次/秒。",
       "input": "VatInvoiceOCRRequest",
       "name": "增值税发票识别",
       "output": "VatInvoiceOCRResponse",
@@ -4504,6 +4504,15 @@
           "name": "Config",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认值为true，打开识别结果纠正开关。开关开启后，身份证号、出生日期、性别，三个字段会进行矫正补齐，统一结果输出；若关闭此开关，以上三个字段不会进行矫正补齐，保持原始识别结果输出，若原图出现篡改情况，这三个字段的识别结果可能会不统一。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableRecognitionRectify",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -16322,6 +16331,7 @@
           "disabled": false,
           "document": "图片/PDF的 Base64 值。\n支持的文件格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。\n支持的图片/PDF大小：所下载文件经Base64编码后不超过 7M。文件下载时间不超过 3 秒。\n支持的图片像素：需介于20-10000px之间。\n输入参数 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -16331,6 +16341,7 @@
           "disabled": false,
           "document": "图片/PDF的 Url 地址。\n支持的文件格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。\n支持的图片/PDF大小：所下载文件经 Base64 编码后不超过 7M。文件下载时间不超过 3 秒。\n支持的图片像素：需介于20-10000px之间。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
+          "is_base64": false,
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -16340,6 +16351,7 @@
           "disabled": false,
           "document": "是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。",
           "example": "无",
+          "is_base64": false,
           "member": "bool",
           "name": "IsPdf",
           "required": false,
@@ -16349,6 +16361,7 @@
           "disabled": false,
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
           "example": "无",
+          "is_base64": false,
           "member": "uint64",
           "name": "PdfPageNumber",
           "required": false,
@@ -16366,6 +16379,7 @@
           "example": "无",
           "member": "TextVatInvoice",
           "name": "VatInvoiceInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -16375,6 +16389,7 @@
           "example": "无",
           "member": "VatInvoiceItem",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -16384,6 +16399,7 @@
           "example": "0",
           "member": "int64",
           "name": "PdfPageSize",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16393,6 +16409,7 @@
           "example": "0",
           "member": "float",
           "name": "Angle",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },

@@ -56,6 +56,13 @@
       "output": "CreateDocumentResponse",
       "status": "online"
     },
+    "CreateEmbedWebUrl": {
+      "document": "本接口（CreateEmbedWebUrl）用于创建嵌入web的链接 本接口支持创建：创建印章，创建模板，修改模板，预览模板，预览合同流程的web链接 进入web连接后与当前控制台操作保持一致",
+      "input": "CreateEmbedWebUrlRequest",
+      "name": "获取其他可嵌入web页面",
+      "output": "CreateEmbedWebUrlResponse",
+      "status": "online"
+    },
     "CreateFlow": {
       "document": "通过模板创建签署流程<br/>\n适用场景：在标准制式的合同场景中，可通过提前预制好模板文件，每次调用模板文件的id，补充合同内容信息及签署信息生成电子合同。<br/>\n注：该接口是通过模板生成合同流程的前置接口，先创建一个不包含签署文件的流程。<br/>\n配合“创建电子文档”接口和“发起流程”接口使用。<br/>",
       "input": "CreateFlowRequest",
@@ -147,6 +154,13 @@
       "output": "CreateMultiFlowSignQRCodeResponse",
       "status": "online"
     },
+    "CreateOrganizationBatchSignUrl": {
+      "document": "通过此接口，创建企业批量签署链接，企业员工点击链接即可跳转控制台进行批量签署。\n如果没有UserId，Name和Mobile必填，对应的员工必须在企业下已经实名，且该员工为批量签署合同中的签署方。",
+      "input": "CreateOrganizationBatchSignUrlRequest",
+      "name": "获取企业签署合同web页面",
+      "output": "CreateOrganizationBatchSignUrlResponse",
+      "status": "online"
+    },
     "CreatePrepareFlow": {
       "document": "创建快速发起流程\n适用场景：用户通过API 合同文件及签署信息，并可通过我们返回的URL在页面完成签署控件等信息的编辑与确认，快速发起合同.\n注：该接口文件的resourceId 是通过上传文件之后获取的。",
       "input": "CreatePrepareFlowRequest",
@@ -194,6 +208,13 @@
       "input": "CreateUserAutoSignEnableUrlRequest",
       "name": "获取个人用户自动签开启链接",
       "output": "CreateUserAutoSignEnableUrlResponse",
+      "status": "online"
+    },
+    "CreateWebThemeConfig": {
+      "document": "用来创建页面主题配置",
+      "input": "CreateWebThemeConfigRequest",
+      "name": "创建页面主题配置",
+      "output": "CreateWebThemeConfigResponse",
       "status": "online"
     },
     "DeleteIntegrationDepartment": {
@@ -1754,6 +1775,84 @@
       ],
       "type": "object"
     },
+    "CreateEmbedWebUrlRequest": {
+      "document": "CreateEmbedWebUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作者信息",
+          "example": "无",
+          "is_base64": false,
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "WEB嵌入资源类型。\n<br/>CREATE_SEAL: 创建印章\n<br/>PREVIEW_SEAL_LIST：预览印章列表\n<br/>PREVIEW_SEAL_DETAIL：预览印章详情\n<br/>EXTEND_SERVICE：拓展服务\n",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "EmbedType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "WEB嵌入的业务资源ID\n<br/>PREVIEW_SEAL_DETAIL，必填，取值为印章id",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "BusinessId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理相关应用信息，如集团主企业代子企业操作",
+          "example": "无",
+          "is_base64": false,
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "抄送方信息",
+          "example": "无",
+          "is_base64": false,
+          "member": "ReviewerInfo",
+          "name": "Reviewer",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEmbedWebUrlResponse": {
+      "document": "CreateEmbedWebUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "嵌入的web链接，有效期：5分钟\nEmbedType=PREVIEW_CC_FLOW，该url为h5链接",
+          "example": "无",
+          "member": "string",
+          "name": "WebUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateFlowApproversRequest": {
       "document": "CreateFlowApprovers请求参数结构体",
       "members": [
@@ -3023,6 +3122,96 @@
       ],
       "type": "object"
     },
+    "CreateOrganizationBatchSignUrlRequest": {
+      "document": "CreateOrganizationBatchSignUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "调用方用户信息，UserId 必填，支持填入集团子公司经办人UserId。",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "指定需要进行批量签署的流程id，数量1-100，填写后用户将通过链接对这些合同进行批量签署。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "员工的UserId，该UserId对应的员工必须已经加入企业并实名，Name和Mobile为空时该字段不能为空。（优先使用UserId对应的员工）",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "员工姓名，该字段需要与Mobile组合使用，UserId为空时该字段不能为空。（UserId为空时，使用Name和Mbile对应的员工）",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "员工手机号码，该字段需要与Name组合使用，UserId为空时该字段不能为空。（UserId为空时，使用Name和Mbile对应的员工）",
+          "example": "无",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrganizationBatchSignUrlResponse": {
+      "document": "CreateOrganizationBatchSignUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量签署入口链接",
+          "example": "无",
+          "member": "string",
+          "name": "SignUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "链接过期时间戳",
+          "example": "无",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePrepareFlowRequest": {
       "document": "CreatePrepareFlow请求参数结构体",
       "members": [
@@ -3030,6 +3219,7 @@
           "disabled": false,
           "document": "调用方用户信息，userId 必填",
           "example": "无",
+          "is_base64": false,
           "member": "UserInfo",
           "name": "Operator",
           "required": true,
@@ -3039,6 +3229,7 @@
           "disabled": false,
           "document": "资源Id，通过多文件上传（UploadFiles）接口获得",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -3048,6 +3239,7 @@
           "disabled": false,
           "document": "合同名称",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "FlowName",
           "required": true,
@@ -3057,6 +3249,7 @@
           "disabled": false,
           "document": "是否顺序签署(true:无序签,false:顺序签)",
           "example": "true",
+          "is_base64": false,
           "member": "bool",
           "name": "Unordered",
           "required": false,
@@ -3066,6 +3259,7 @@
           "disabled": false,
           "document": "签署流程的签署截止时间。\n值为unix时间戳,精确到秒,不传默认为当前时间一年后",
           "example": "无",
+          "is_base64": false,
           "member": "int64",
           "name": "Deadline",
           "required": false,
@@ -3075,6 +3269,7 @@
           "disabled": false,
           "document": "用户自定义合同类型",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "UserFlowTypeId",
           "required": false,
@@ -3084,6 +3279,7 @@
           "disabled": false,
           "document": "签署流程参与者信息，最大限制50方",
           "example": "无",
+          "is_base64": false,
           "member": "FlowCreateApprover",
           "name": "Approvers",
           "required": false,
@@ -3093,10 +3289,21 @@
           "disabled": false,
           "document": "打开智能添加填写区(默认开启，打开:\"OPEN\" 关闭：\"CLOSE\")",
           "example": "OPEN",
+          "is_base64": false,
           "member": "string",
           "name": "IntelligentStatus",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填\t",
+          "example": "无",
+          "is_base64": false,
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3905,6 +4112,54 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWebThemeConfigRequest": {
+      "document": "CreateWebThemeConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作人信息",
+          "example": "无",
+          "is_base64": false,
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "主题类型\n<br/>EMBED_WEB_THEME：嵌入式主题\n<br/>目前只支持EMBED_WEB_THEME，web页面嵌入的主题风格配置",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "ThemeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题配置",
+          "example": "无",
+          "is_base64": false,
+          "member": "WebThemeConfig",
+          "name": "WebThemeConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWebThemeConfigResponse": {
+      "document": "CreateWebThemeConfig返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6458,6 +6713,24 @@
           "name": "ComponentLimitType",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "合同查看方式<br/>默认1 -实名查看 <br/>2-短信验证码查看(企业签署方暂不支持该方式)",
+          "example": "无",
+          "member": "int64",
+          "name": "ApproverVerifyTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "合同签署方式(默认1,2) <br/>1-人脸认证 <br/>2-签署密码 <br/>3-运营商三要素",
+          "example": "无",
+          "member": "uint64",
+          "name": "ApproverSignTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -7958,6 +8231,30 @@
       ],
       "usage": "out"
     },
+    "ReviewerInfo": {
+      "document": "关注方信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "姓名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "手机号",
+          "example": "无",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "SealInfo": {
       "document": "模板结构体中的印章信息",
       "members": [],
@@ -9069,6 +9366,31 @@
         }
       ],
       "type": "object"
+    },
+    "WebThemeConfig": {
+      "document": "页面主题配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否页面底部显示电子签logo\n<br/>true：允许在页面底部隐藏电子签logo\n<br/>false：不允许允许在页面底部隐藏电子签logo\n<br/>默认false，不隐藏logo",
+          "example": "true",
+          "member": "bool",
+          "name": "DisplaySignBrandLogo",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "主题颜色\n<br/>支持十六进制颜色值以及RGB格式颜色值，例如：#D54941，rgb(213, 73, 65)",
+          "example": "”“",
+          "is_base64": false,
+          "member": "string",
+          "name": "WebEmbedThemeColor",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"

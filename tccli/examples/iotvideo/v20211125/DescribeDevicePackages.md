@@ -22,7 +22,9 @@ Output:
                 "Status": 0,
                 "CSType": 1,
                 "CSShiftDuration": 1,
-                "CSExpiredTime": 0
+                "CSExpiredTime": 0,
+                "CreatedAt": 0,
+                "UpdatedAt": 0
             }
         ],
         "RequestId": "abc"

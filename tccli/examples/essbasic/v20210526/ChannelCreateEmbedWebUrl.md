@@ -8,9 +8,9 @@ Input:
 tccli essbasic ChannelCreateEmbedWebUrl --cli-unfold-argument  \
     --BusinessId  \
     --EmbedType CREATE_SEAL \
-    --Agent.AppId 1 \
-    --Agent.ProxyOrganizationOpenId 1 \
-    --Agent.ProxyOperator.OpenId 1
+    --Agent.AppId yDxjb***********8n \
+    --Agent.ProxyOrganizationOpenId testOpenId \
+    --Agent.ProxyOperator.OpenId testOpenId
 ```
 
 Output: 

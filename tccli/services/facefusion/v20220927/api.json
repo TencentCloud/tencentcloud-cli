@@ -198,82 +198,92 @@
       "document": "FuseFace请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "活动 ID，请在<a href=\"https://console.cloud.tencent.com/facefusion\" target=\"_blank\">人脸融合控制台</a>查看。",
           "example": "300029",
+          "is_base64": false,
           "member": "string",
           "name": "ProjectId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材 ID，请在<a href=\"https://console.cloud.tencent.com/facefusion\" target=\"_blank\">人脸融合控制台</a>查看。",
           "example": "qc_300029_453345_1",
+          "is_base64": false,
           "member": "string",
           "name": "ModelId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回图像方式（url 或 base64) ，二选一。url有效期为7天。",
           "example": "url",
+          "is_base64": false,
           "member": "string",
           "name": "RspImgType",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户人脸图片、素材模板图的人脸位置信息。",
           "example": "[]",
+          "is_base64": false,
           "member": "MergeInfo",
           "name": "MergeInfos",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "脸型融合比例，数值越高，融合后的脸型越像素材人物。取值范围[0,100] \n若此参数不填写，则使用人脸融合控制台中脸型参数数值。（换脸版算法暂不支持此参数调整）",
           "example": "1",
+          "is_base64": false,
           "member": "int64",
           "name": "FuseProfileDegree",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "五官融合比例，数值越高，融合后的五官越像素材人物。取值范围[0,100] \n若此参数不填写，则使用人脸融合控制台中五官参数数值。（换脸版算法暂不支持此参数调整）",
           "example": "1",
+          "is_base64": false,
           "member": "int64",
           "name": "FuseFaceDegree",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "为融合结果图添加合成标识的开关，默认为1。\n1：添加标识。\n0：不添加标识。\n其他数值：默认按1处理。\n建议您使用显著标识来提示结果图使用了人脸融合技术，是AI合成的图片。",
           "example": "1",
+          "is_base64": false,
           "member": "int64",
           "name": "LogoAdd",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标识内容设置。\n默认在融合结果图右下角添加“本图片为AI合成图片”字样，您可根据自身需要替换为其他的Logo图片。",
           "example": "{}",
+          "is_base64": false,
           "member": "LogoParam",
           "name": "LogoParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "融合参数。",
+          "example": "无",
+          "is_base64": false,
+          "member": "FuseParam",
+          "name": "FuseParam",
           "required": false,
           "type": "object"
         }
@@ -289,7 +299,7 @@
           "example": "string",
           "member": "string",
           "name": "FusedImage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -301,6 +311,36 @@
         }
       ],
       "type": "object"
+    },
+    "FuseParam": {
+      "document": "融合参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片编码参数",
+          "example": "{}",
+          "member": "ImageCodecParam",
+          "name": "ImageCodecParam",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
+    "ImageCodecParam": {
+      "document": "图片编码参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "元数据",
+          "example": "[]",
+          "member": "MetaData",
+          "name": "MetaData",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "LogoParam": {
       "document": "logo参数",
@@ -413,6 +453,32 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "MetaData": {
+      "document": "MetaData数据结构，Key/Value格式",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MetaData的Key",
+          "example": "string",
+          "member": "string",
+          "name": "MetaKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "MetaData的Value",
+          "example": "string",
+          "member": "string",
+          "name": "MetaValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"

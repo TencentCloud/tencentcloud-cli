@@ -133,6 +133,13 @@
       "output": "ChannelCreateUserRolesResponse",
       "status": "online"
     },
+    "ChannelCreateWebThemeConfig": {
+      "document": "生成页面主题配置",
+      "input": "ChannelCreateWebThemeConfigRequest",
+      "name": "生成页面主题配置",
+      "output": "ChannelCreateWebThemeConfigResponse",
+      "status": "online"
+    },
     "ChannelDeleteRoleUsers": {
       "document": "通过此接口，删除员工绑定的角色，支持以电子签userId、客户系统userId两种方式调用。",
       "input": "ChannelDeleteRoleUsersRequest",
@@ -1036,6 +1043,7 @@
           "disabled": false,
           "document": "渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。",
           "example": "无",
+          "is_base64": false,
           "member": "Agent",
           "name": "Agent",
           "required": true,
@@ -1045,6 +1053,7 @@
           "disabled": false,
           "document": "WEB嵌入资源类型。\nCREATE_SEAL: 创建印章\nCREATE_TEMPLATE：创建模板\nMODIFY_TEMPLATE：修改模板\nPREVIEW_TEMPLATE：预览模板\nPREVIEW_FLOW：预览合同文档\nPREVIEW_FLOW_DETAIL：预览合同详情\nPREVIEW_SEAL_LIST：预览印章列表\nPREVIEW_SEAL_DETAIL：预览印章详情\nEXTEND_SERVICE：扩展服务",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "EmbedType",
           "required": true,
@@ -1054,6 +1063,7 @@
           "disabled": false,
           "document": "WEB嵌入的业务资源ID\nEmbedType取值MODIFY_TEMPLATE，PREVIEW_TEMPLATE时必填，取值为模板id\nPREVIEW_FLOW，PREVIEW_FLOW_DETAIL时必填，取值为合同id\nPREVIEW_SEAL_DETAIL，必填，取值为印章id",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "BusinessId",
           "required": false,
@@ -1063,6 +1073,7 @@
           "disabled": false,
           "document": "是否隐藏控件，只有预览模板时生效",
           "example": "false",
+          "is_base64": false,
           "member": "bool",
           "name": "HiddenComponents",
           "required": false,
@@ -1072,6 +1083,7 @@
           "disabled": true,
           "document": "渠道操作者信息",
           "example": "无",
+          "is_base64": false,
           "member": "UserInfo",
           "name": "Operator",
           "required": false,
@@ -2218,6 +2230,54 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateWebThemeConfigRequest": {
+      "document": "ChannelCreateWebThemeConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。",
+          "example": "无",
+          "is_base64": false,
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "主题类型<br/>EMBED_WEB_THEME：嵌入式主题\n<br/>目前只支持EMBED_WEB_THEME，web页面嵌入的主题风格配置",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "ThemeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题配置",
+          "example": "无",
+          "is_base64": false,
+          "member": "WebThemeConfig",
+          "name": "WebThemeConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateWebThemeConfigResponse": {
+      "document": "ChannelCreateWebThemeConfig返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -7696,6 +7756,31 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "WebThemeConfig": {
+      "document": "主题配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页面底部是否显示电子签logo\n<br/>true：允许在页面底部隐藏电子签logo \n<br/>默认false，不允许允许在页面底部隐藏电子签logo",
+          "example": "truw",
+          "member": "bool",
+          "name": "DisplaySignBrandLogo",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "嵌入式主题颜色\n<br/>支持十六进制颜色值以及RGB格式颜色值，例如：#D54941，rgb(213, 73, 65)",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "WebEmbedThemeColor",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
