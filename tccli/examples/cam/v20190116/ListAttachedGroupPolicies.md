@@ -17,9 +17,9 @@ Output:
     "Response": {
         "List": [
             {
-                "OperateOwnerUin": "xx",
+                "OperateOwnerUin": "10001",
                 "PolicyName": "AdministratorAccess",
-                "Remark": "xx",
+                "Remark": "test policy remark",
                 "OperateUinType": 1,
                 "CreateMode": 1,
                 "Deactived": 1,
@@ -27,9 +27,9 @@ Output:
                 "PolicyType": "User",
                 "PolicyId": 1,
                 "DeactivedDetail": [
-                    "xx"
+                    "test"
                 ],
-                "OperateUin": "xx"
+                "OperateUin": "10001"
             }
         ],
         "RequestId": "836d7034-9854-44f0-9d4a-ee57842f8644",

@@ -1,6 +1,6 @@
 **Example 1: 更新单个镜像仓库详细信息**
 
-
+更新单个镜像仓库详细信息
 
 Input: 
 
@@ -20,10 +20,10 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "NameRepeatErr": "xx",
-        "HealthCheckErr": "xx",
-        "RegistryId": 4
+        "HealthCheckErr": "abc",
+        "NameRepeatErr": "abc",
+        "RegistryId": 0,
+        "RequestId": "abc"
     }
 }
 ```

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gaap DescribeAccessRegionsByDestRegion --cli-unfold-argument  \
-    --DestRegion SouthChina
+    --DestRegion Hongkong
 ```
 
 Output: 
@@ -15,30 +15,28 @@ Output:
     "Response": {
         "AccessRegionSet": [
             {
-                "RegionId": "eu-moscow",
-                "RegionName": "Russia",
+                "RegionId": "Chongqing",
+                "RegionName": "重庆",
                 "ConcurrentList": [
-                    1,
                     2,
-                    3,
-                    4,
                     5,
-                    6,
-                    7
+                    10,
+                    20,
+                    30
                 ],
                 "BandwidthList": [
-                    1,
-                    2,
-                    3,
-                    4,
-                    5,
-                    6,
-                    7
+                    10,
+                    20,
+                    50,
+                    100,
+                    200,
+                    500,
+                    1000
                 ],
-                "RegionArea": "NorthChina",
-                "RegionAreaName": "中国大陆-华北",
+                "RegionArea": "SouthwestChina",
+                "RegionAreaName": "重庆",
                 "IDCType": "dc",
-                "FeatureBitmap": 3
+                "FeatureBitmap": 71
             }
         ],
         "RequestId": "5c680029-66b2-4be8-9630-7bd316ce70dd",

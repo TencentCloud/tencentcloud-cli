@@ -4065,10 +4065,10 @@
       "document": "AddAssetImageRegistryRegistryDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "仓库名",
           "example": "tcr2",
+          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": true,
@@ -4076,10 +4076,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名",
           "example": "admin",
+          "is_base64": false,
           "member": "string",
           "name": "Username",
           "required": true,
@@ -4087,10 +4087,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密码",
           "example": "12321",
+          "is_base64": false,
           "member": "string",
           "name": "Password",
           "required": true,
@@ -4098,10 +4098,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仓库url",
           "example": "http://good.com.cn",
+          "is_base64": false,
           "member": "string",
           "name": "Url",
           "required": true,
@@ -4109,10 +4109,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仓库类型，列表：harbor",
           "example": "harbor",
+          "is_base64": false,
           "member": "string",
           "name": "RegistryType",
           "required": true,
@@ -4120,10 +4120,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络类型，列表：public（公网）",
           "example": "public",
+          "is_base64": false,
           "member": "string",
           "name": "NetType",
           "required": true,
@@ -4131,10 +4131,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仓库版本",
           "example": "v1.x",
+          "is_base64": false,
           "member": "string",
           "name": "RegistryVersion",
           "required": false,
@@ -4142,10 +4142,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "区域，列表：default（默认）",
           "example": "https",
+          "is_base64": false,
           "member": "string",
           "name": "RegistryRegion",
           "required": false,
@@ -4153,10 +4153,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限速",
           "example": "10",
+          "is_base64": false,
           "member": "int64",
           "name": "SpeedLimit",
           "required": false,
@@ -4164,14 +4164,25 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全模式（证书校验）：0（默认） 非安全模式（跳过证书校验）：1",
           "example": "0",
+          "is_base64": false,
           "member": "uint64",
           "name": "Insecure",
           "required": false,
           "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "联通性检测的记录ID",
+          "example": "无",
+          "is_base64": false,
+          "member": "ConnDetectConfig",
+          "name": "ConnDetectConfig",
+          "required": false,
+          "type": "list",
           "visibility": 1
         }
       ],
@@ -4186,7 +4197,7 @@
           "example": "无",
           "member": "string",
           "name": "HealthCheckErr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -4197,7 +4208,7 @@
           "example": "无",
           "member": "string",
           "name": "NameRepeatErr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -4208,7 +4219,7 @@
           "example": "无",
           "member": "int64",
           "name": "RegistryId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -8196,6 +8207,34 @@
       ],
       "type": "object"
     },
+    "ConnDetectConfig": {
+      "document": "联通性检测配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主机quuid",
+          "example": "1",
+          "is_base64": false,
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "主机uuid",
+          "example": "1",
+          "is_base64": false,
+          "member": "string",
+          "name": "Uuid",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "usage": "in"
+    },
     "ContainerInfo": {
       "document": "容器列表集合",
       "members": [
@@ -8821,44 +8860,44 @@
       "document": "CreateAssetImageRegistryScanTaskOneKey请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否扫描全部镜像",
           "example": "无",
           "member": "bool",
           "name": "All",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扫描的镜像列表",
           "example": "无",
           "member": "ImageInfo",
           "name": "Images",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扫描类型数组",
           "example": "无",
           "member": "string",
           "name": "ScanType",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扫描的镜像列表Id",
           "example": "无",
           "member": "uint64",
           "name": "Id",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -8866,6 +8905,17 @@
     "CreateAssetImageRegistryScanTaskOneKeyResponse": {
       "document": "CreateAssetImageRegistryScanTaskOneKey返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "扫描任务id",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -8879,74 +8929,74 @@
       "document": "CreateAssetImageRegistryScanTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否扫描全部镜像",
           "example": "无",
           "member": "bool",
           "name": "All",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扫描的镜像列表",
           "example": "无",
           "member": "ImageInfo",
           "name": "Images",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扫描类型数组",
           "example": "无",
           "member": "string",
           "name": "ScanType",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扫描的镜像列表",
           "example": "无",
           "member": "uint64",
           "name": "Id",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件",
           "example": "无",
           "member": "AssetFilters",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不需要扫描的镜像列表, 与Filters配合使用",
           "example": "无",
           "member": "uint64",
           "name": "ExcludeImageList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否仅扫描各repository最新版的镜像, 与Filters配合使用",
           "example": "无",
           "member": "bool",
           "name": "OnlyScanLatest",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -8954,6 +9004,17 @@
     "CreateAssetImageRegistryScanTaskResponse": {
       "document": "CreateAssetImageRegistryScanTask返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "返回的任务ID",
+          "example": "2",
+          "member": "uint64",
+          "name": "TaskID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -16148,7 +16209,6 @@
       "document": "DescribeAssetImageRegistryRegistryDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "仓库唯一id",
           "example": "sd23",
@@ -16170,7 +16230,7 @@
           "example": "tcr2",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -16181,7 +16241,7 @@
           "example": "ni",
           "member": "string",
           "name": "Username",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -16192,7 +16252,7 @@
           "example": "123213",
           "member": "string",
           "name": "Password",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -16203,7 +16263,7 @@
           "example": "http://good.com.cn",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -16214,7 +16274,7 @@
           "example": "harbor",
           "member": "string",
           "name": "RegistryType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -16225,18 +16285,18 @@
           "example": "v1.x",
           "member": "string",
           "name": "RegistryVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
           "disabled": false,
-          "document": "网络类型，列表：public（公网）",
+          "document": "网络类型，列表：public（公网）,private（私网）",
           "example": "public",
           "member": "string",
           "name": "NetType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -16247,7 +16307,7 @@
           "example": "default",
           "member": "string",
           "name": "RegistryRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -16258,7 +16318,7 @@
           "example": "10",
           "member": "uint64",
           "name": "SpeedLimit",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -16269,9 +16329,31 @@
           "example": "0",
           "member": "uint64",
           "name": "Insecure",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "联通性检测结果详情",
+          "example": "无",
+          "member": "RegistryConnDetectResult",
+          "name": "ConnDetectDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "tcr情况下instance_id",
+          "example": "1",
+          "member": "string",
+          "name": "InstanceID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false,
           "visibility": 1
         },
         {
@@ -16500,34 +16582,44 @@
       "document": "DescribeAssetImageRegistryScanStatusOneKey请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要获取进度的镜像列表",
           "example": "无",
           "member": "ImageInfo",
           "name": "Images",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否获取全部镜像",
           "example": "无",
           "member": "bool",
           "name": "All",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要获取进度的镜像列表Id",
           "example": "无",
           "member": "uint64",
           "name": "Id",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "获取进度的任务ID",
+          "example": "无",
+          "member": "uint64",
+          "name": "TaskID",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -16541,9 +16633,10 @@
           "example": "无",
           "member": "uint64",
           "name": "ImageTotal",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -16551,9 +16644,10 @@
           "example": "无",
           "member": "uint64",
           "name": "ImageScanCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -16561,9 +16655,10 @@
           "example": "无",
           "member": "ImageProgress",
           "name": "ImageStatus",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -16571,9 +16666,10 @@
           "example": "无",
           "member": "uint64",
           "name": "SuccessCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -16581,9 +16677,10 @@
           "example": "无",
           "member": "uint64",
           "name": "RiskCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -16591,9 +16688,10 @@
           "example": "无",
           "member": "uint64",
           "name": "Schedule",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -16601,9 +16699,10 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "disabled": false,
@@ -16611,9 +16710,10 @@
           "example": "无",
           "member": "uint64",
           "name": "ScanRemainTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -34043,34 +34143,44 @@
       "document": "ModifyAssetImageRegistryScanStopOneKey请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否扫描全部镜像",
           "example": "无",
           "member": "bool",
           "name": "All",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扫描的镜像列表",
           "example": "无",
           "member": "ImageInfo",
           "name": "Images",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扫描的镜像列表Id",
           "example": "无",
           "member": "uint64",
           "name": "Id",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "停止的任务ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskID",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -34091,64 +34201,74 @@
       "document": "ModifyAssetImageRegistryScanStop请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否扫描全部镜像",
           "example": "无",
           "member": "bool",
           "name": "All",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扫描的镜像列表",
           "example": "无",
           "member": "ImageInfo",
           "name": "Images",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扫描的镜像列表",
           "example": "无",
           "member": "uint64",
           "name": "Id",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件",
           "example": "无",
           "member": "AssetFilters",
           "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不要扫描的镜像列表，与Filters配合使用",
           "example": "无",
           "member": "uint64",
           "name": "ExcludeImageList",
           "required": false,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否仅扫描各repository最新版本的镜像",
           "example": "无",
           "member": "bool",
           "name": "OnlyScanLatest",
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "停止的任务ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskID",
+          "required": false,
+          "type": "int",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -37182,6 +37302,78 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RegistryConnDetectResult": {
+      "document": "镜像仓库联通性检测结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "联通性检测的主机quuid 或者 backend",
+          "example": "a-b-c",
+          "member": "string",
+          "name": "Quuid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "联通性检测的主机uuid 或者 backend",
+          "example": "a-b-c",
+          "member": "string",
+          "name": "Uuid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "检测结果状态",
+          "example": "status_connected",
+          "member": "string",
+          "name": "ConnDetectStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "检测结果信息",
+          "example": "success",
+          "member": "string",
+          "name": "ConnDetectMessage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "失败的解决方案",
+          "example": "无",
+          "member": "string",
+          "name": "Solution",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "失败原因",
+          "example": "无",
+          "member": "string",
+          "name": "FailReason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -40412,10 +40604,10 @@
       "document": "UpdateAssetImageRegistryRegistryDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "仓库名",
           "example": "tcr2",
+          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": true,
@@ -40423,10 +40615,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名",
           "example": "admin",
+          "is_base64": false,
           "member": "string",
           "name": "Username",
           "required": true,
@@ -40434,10 +40626,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密码",
           "example": "12321",
+          "is_base64": false,
           "member": "string",
           "name": "Password",
           "required": true,
@@ -40445,10 +40637,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仓库url",
           "example": "http://good.com.cn",
+          "is_base64": false,
           "member": "string",
           "name": "Url",
           "required": true,
@@ -40456,10 +40648,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仓库类型，列表：harbor",
           "example": "harbor",
+          "is_base64": false,
           "member": "string",
           "name": "RegistryType",
           "required": true,
@@ -40467,10 +40659,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络类型，列表：public（公网）",
           "example": "public",
+          "is_base64": false,
           "member": "string",
           "name": "NetType",
           "required": true,
@@ -40478,10 +40670,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仓库版本",
           "example": "v1.x",
+          "is_base64": false,
           "member": "string",
           "name": "RegistryVersion",
           "required": false,
@@ -40489,10 +40681,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "区域，列表：default（默认）",
           "example": "https",
+          "is_base64": false,
           "member": "string",
           "name": "RegistryRegion",
           "required": false,
@@ -40500,10 +40692,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限速",
           "example": "10",
+          "is_base64": false,
           "member": "int64",
           "name": "SpeedLimit",
           "required": false,
@@ -40511,14 +40703,25 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全模式（证书校验）：0（默认） 非安全模式（跳过证书校验）：1",
           "example": "0",
+          "is_base64": false,
           "member": "uint64",
           "name": "Insecure",
           "required": false,
           "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "联通性检测的配置",
+          "example": "无",
+          "is_base64": false,
+          "member": "ConnDetectConfig",
+          "name": "ConnDetectConfig",
+          "required": false,
+          "type": "list",
           "visibility": 1
         }
       ],
@@ -40533,7 +40736,7 @@
           "example": "无",
           "member": "string",
           "name": "HealthCheckErr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -40544,7 +40747,7 @@
           "example": "无",
           "member": "string",
           "name": "NameRepeatErr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -40555,7 +40758,7 @@
           "example": "无",
           "member": "int64",
           "name": "RegistryId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1

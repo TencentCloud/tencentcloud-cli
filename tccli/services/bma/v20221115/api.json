@@ -823,6 +823,7 @@
           "disabled": false,
           "document": "过滤参数",
           "example": "无",
+          "is_base64": false,
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -833,6 +834,7 @@
           "disabled": false,
           "document": "页数",
           "example": "无",
+          "is_base64": false,
           "member": "int64",
           "name": "PageSize",
           "required": false,
@@ -843,6 +845,7 @@
           "disabled": false,
           "document": "页码",
           "example": "无",
+          "is_base64": false,
           "member": "int64",
           "name": "PageNumber",
           "required": false,
@@ -861,6 +864,7 @@
           "example": "无",
           "member": "FakeURLData",
           "name": "FakeURLs",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -871,6 +875,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -1143,7 +1148,7 @@
           "example": "无",
           "member": "int64",
           "name": "FakeURLId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -1154,7 +1159,7 @@
           "example": "无",
           "member": "string",
           "name": "BrandName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1165,7 +1170,7 @@
           "example": "无",
           "member": "int64",
           "name": "Origin",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -1176,7 +1181,7 @@
           "example": "无",
           "member": "string",
           "name": "FakeURL",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1187,7 +1192,7 @@
           "example": "无",
           "member": "string",
           "name": "FakeDomain",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1198,29 +1203,29 @@
           "example": "无",
           "member": "int64",
           "name": "Heat",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
           "disabled": false,
-          "document": "协助处置状态：0-未处置 1-处置中 2-处置成功 3-处置失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "拦截处置状态：0-未处置 1-处置中 2-处置成功 3-处置失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "BlockStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
           "disabled": false,
-          "document": "协助处置状态说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "拦截处置状态说明\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "BlockNote",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1231,7 +1236,7 @@
           "example": "无",
           "member": "int64",
           "name": "OfflineStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -1242,7 +1247,7 @@
           "example": "无",
           "member": "string",
           "name": "OfflineNote",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1253,7 +1258,7 @@
           "example": "无",
           "member": "string",
           "name": "IP",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1264,7 +1269,7 @@
           "example": "无",
           "member": "string",
           "name": "IPLocation",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1275,7 +1280,7 @@
           "example": "无",
           "member": "string",
           "name": "WebCompany",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1286,7 +1291,7 @@
           "example": "无",
           "member": "string",
           "name": "WebAttribute",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1297,7 +1302,7 @@
           "example": "无",
           "member": "string",
           "name": "WebName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1308,7 +1313,7 @@
           "example": "无",
           "member": "string",
           "name": "WebICP",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1319,7 +1324,7 @@
           "example": "无",
           "member": "string",
           "name": "WebCreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1330,7 +1335,7 @@
           "example": "无",
           "member": "string",
           "name": "WebExpireTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1341,7 +1346,7 @@
           "example": "无",
           "member": "string",
           "name": "InsertTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1352,7 +1357,7 @@
           "example": "无",
           "member": "int64",
           "name": "CertificationStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -1363,7 +1368,7 @@
           "example": "无",
           "member": "string",
           "name": "Snapshot",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1374,7 +1379,18 @@
           "example": "无",
           "member": "int64",
           "name": "AccountStatus",
-          "required": false,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "审核状态：0-未审核 1-审核中 2-审核成功 3-审核失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AuditStatus",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
