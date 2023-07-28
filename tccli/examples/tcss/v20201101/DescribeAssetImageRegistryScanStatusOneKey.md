@@ -1,639 +1,71 @@
 **Example 1: 镜像仓库查询一键镜像扫描状态**
 
-
+镜像仓库查询一键镜像扫描状态
 
 Input: 
 
 ```
 tccli tcss DescribeAssetImageRegistryScanStatusOneKey --cli-unfold-argument  \
-    --All True
+    --All True \
+    --TaskID 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "15c1773a-36a9-44a8-9d1a-fdfd5fffc7e6",
-        "ImageTotal": 47,
-        "ImageScanCnt": 47,
+        "ImageTotal": 1,
+        "ImageScanCnt": 1,
         "ImageStatus": [
             {
-                "RegistryType": "ccr",
-                "ImageRepoAddress": "ccr.ccs.tencentyun.com/yunding/luping:v1",
-                "InstanceId": "",
-                "InstanceName": "",
-                "Namespace": "",
-                "ImageName": "yunding/luping",
-                "ImageTag": "v1",
-                "ScanStatus": "SCANNED",
-                "CveProgress": 99,
-                "RiskProgress": 100,
-                "VirusProgress": 100
-            },
-            {
-                "RegistryType": "ccr",
-                "ImageRepoAddress": "ccr.ccs.tencentyun.com/person_instance2/personrepo:v1",
-                "InstanceId": "",
-                "InstanceName": "",
-                "Namespace": "",
-                "ImageName": "person_instance2/personrepo",
-                "ImageTag": "v1",
-                "ScanStatus": "SCANNED",
-                "CveProgress": 99,
-                "RiskProgress": 100,
-                "VirusProgress": 100
-            },
-            {
-                "RegistryType": "ccr",
-                "ImageRepoAddress": "ccr.ccs.tencentyun.com/yunding/helo:centos",
-                "InstanceId": "",
-                "InstanceName": "",
-                "Namespace": "",
-                "ImageName": "yunding/helo",
-                "ImageTag": "centos",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "ccr",
-                "ImageRepoAddress": "ccr.ccs.tencentyun.com/yunding/helo:v1",
-                "InstanceId": "",
-                "InstanceName": "",
-                "Namespace": "",
-                "ImageName": "yunding/helo",
-                "ImageTag": "v1",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "ccr",
-                "ImageRepoAddress": "ccr.ccs.tencentyun.com/yunding/person1:v1",
-                "InstanceId": "",
-                "InstanceName": "",
-                "Namespace": "",
-                "ImageName": "yunding/person1",
-                "ImageTag": "v1",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu1/2:3.10",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu1",
-                "ImageName": "2",
-                "ImageTag": "3.10",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu1/bbbbb10:v4",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu1",
-                "ImageName": "bbbbb10",
-                "ImageTag": "v4",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu1/bbbbb5:latest",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu1",
-                "ImageName": "bbbbb5",
-                "ImageTag": "latest",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu1/bbbbb7:v4",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu1",
-                "ImageName": "bbbbb7",
-                "ImageTag": "v4",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu1/bbbbb8:v4",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu1",
-                "ImageName": "bbbbb8",
-                "ImageTag": "v4",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu1/bbbbb9:v4",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu1",
-                "ImageName": "bbbbb9",
-                "ImageTag": "v4",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu1/char-payne:v1",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu1",
-                "ImageName": "char-payne",
-                "ImageTag": "v1",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu1/mmmm1:latest",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu1",
-                "ImageName": "mmmm1",
-                "ImageTag": "latest",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu1/nnnnnn1:latest",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu1",
-                "ImageName": "nnnnnn1",
-                "ImageTag": "latest",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu1/none-sensitivity:latest",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu1",
-                "ImageName": "none-sensitivity",
-                "ImageTag": "latest",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu1/none-trojan:latest",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu1",
-                "ImageName": "none-trojan",
-                "ImageTag": "latest",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu1/odoo:latest",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu1",
-                "ImageName": "odoo",
-                "ImageTag": "latest",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu1/sensitivity:latest",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu1",
-                "ImageName": "sensitivity",
-                "ImageTag": "latest",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu1/test-sensi:latest",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu1",
-                "ImageName": "test-sensi",
-                "ImageTag": "latest",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu1/test1:v1",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu1",
-                "ImageName": "test1",
-                "ImageTag": "v1",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu1/testlong:latest",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu1",
-                "ImageName": "testlong",
-                "ImageTag": "latest",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu1/testlonzhanggadwq:latest",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu1",
-                "ImageName": "testlonzhanggadwq",
-                "ImageTag": "latest",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu1/testzhang:1.1",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu1",
-                "ImageName": "testzhang",
-                "ImageTag": "1.1",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/image_scan/cve-2016-6210_ssvid_92147:latest",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "image_scan",
-                "ImageName": "cve-2016-6210_ssvid_92147",
-                "ImageTag": "latest",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/image_scan/tcr_compliance_permitroot:latest",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "image_scan",
-                "ImageName": "tcr_compliance_permitroot",
-                "ImageTag": "latest",
-                "ScanStatus": "SCANNED",
-                "CveProgress": 99,
-                "RiskProgress": 100,
-                "VirusProgress": 100
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/image_scan/test2:v2",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "image_scan",
-                "ImageName": "test2",
-                "ImageTag": "v2",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/image_pull_block/image-with-high-vulnerability:latest",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "image_pull_block",
-                "ImageName": "image-with-high-vulnerability",
-                "ImageTag": "latest",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 99,
-                "RiskProgress": 100,
-                "VirusProgress": 100
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu/cve-2016-6210_ssvid_92147:v1",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu",
-                "ImageName": "cve-2016-6210_ssvid_92147",
-                "ImageTag": "v1",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu/danger:leak_3.6",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu",
-                "ImageName": "danger",
-                "ImageTag": "leak_3.6",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu/danger:leak_3.3",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu",
-                "ImageName": "danger",
-                "ImageTag": "leak_3.3",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu/danger:leak_3.7",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu",
-                "ImageName": "danger",
-                "ImageTag": "leak_3.7",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu/danger:leak_3.5",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu",
-                "ImageName": "danger",
-                "ImageTag": "leak_3.5",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu/danger:leak_3.4",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu",
-                "ImageName": "danger",
-                "ImageTag": "leak_3.4",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu/danger:leak_3.8",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu",
-                "ImageName": "danger",
-                "ImageTag": "leak_3.8",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu/danger:leak_3.2",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu",
-                "ImageName": "danger",
-                "ImageTag": "leak_3.2",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu/danger:leak_3.1",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu",
-                "ImageName": "danger",
-                "ImageTag": "leak_3.1",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu/danger:git",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu",
-                "ImageName": "danger",
-                "ImageTag": "git",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu/danger:root",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu",
-                "ImageName": "danger",
-                "ImageTag": "root",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu/danger:env",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu",
-                "ImageName": "danger",
-                "ImageTag": "env",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/roopingliu/virus:v1",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "roopingliu",
-                "ImageName": "virus",
-                "ImageTag": "v1",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 0,
-                "RiskProgress": 0,
-                "VirusProgress": 0
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/dehonghao/content-trust:non-trust",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "dehonghao",
-                "ImageName": "content-trust",
-                "ImageTag": "non-trust",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 99,
-                "RiskProgress": 100,
-                "VirusProgress": 100
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/dehonghao/content-trust:trust",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "dehonghao",
-                "ImageName": "content-trust",
-                "ImageTag": "trust",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 99,
-                "RiskProgress": 100,
-                "VirusProgress": 100
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/dehonghao/image-with-high-vulnerability:latest",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "dehonghao",
-                "ImageName": "image-with-high-vulnerability",
-                "ImageTag": "latest",
-                "ScanStatus": "SCANNING",
-                "CveProgress": 99,
-                "RiskProgress": 100,
-                "VirusProgress": 100
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/dehonghao/trust:test2",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "dehonghao",
-                "ImageName": "trust",
-                "ImageTag": "test2",
-                "ScanStatus": "SCANNED",
-                "CveProgress": 99,
-                "RiskProgress": 100,
-                "VirusProgress": 100
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/dehonghao/trust:test1",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "dehonghao",
-                "ImageName": "trust",
-                "ImageTag": "test1",
-                "ScanStatus": "SCANNED",
-                "CveProgress": 99,
-                "RiskProgress": 100,
-                "VirusProgress": 100
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/kofj/tcr_compliance_permitroot:v1",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "kofj",
-                "ImageName": "tcr_compliance_permitroot",
-                "ImageTag": "v1",
-                "ScanStatus": "SCANNED",
-                "CveProgress": 99,
-                "RiskProgress": 100,
-                "VirusProgress": 100
-            },
-            {
-                "RegistryType": "tcr",
-                "ImageRepoAddress": "yunding.tencentcloudcr.com/kofj/tcr_virus:v1",
-                "InstanceId": "tcr-kc979nrs",
-                "InstanceName": "yunding",
-                "Namespace": "kofj",
-                "ImageName": "tcr_virus",
-                "ImageTag": "v1",
-                "ScanStatus": "SCANNED",
-                "CveProgress": 99,
-                "RiskProgress": 100,
-                "VirusProgress": 100
+                "ImageId": "abc",
+                "RegistryType": "abc",
+                "ImageRepoAddress": "abc",
+                "InstanceId": "abc",
+                "InstanceName": "abc",
+                "Namespace": "abc",
+                "ImageName": "abc",
+                "ImageTag": "abc",
+                "ScanStatus": "abc",
+                "CveProgress": 1,
+                "RiskProgress": 1,
+                "VirusProgress": 1
             }
         ],
-        "SuccessCount": 7,
-        "RiskCount": 11,
+        "SuccessCount": 1,
+        "RiskCount": 1,
+        "Schedule": 1,
+        "Status": "abc",
+        "ScanRemainTime": 1,
+        "RequestId": "abc"
+    }
+}
+```
+
+**Example 2: 正常请求**
+
+正常请求
+
+Input: 
+
+```
+tccli tcss DescribeAssetImageRegistryScanStatusOneKey --cli-unfold-argument  \
+    --TaskID 13
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ImageScanCnt": 0,
+        "ImageStatus": [],
+        "ImageTotal": 1525,
+        "RequestId": "a8298892-31c6-4a39-84e2-ce998b5822fd",
+        "RiskCount": 0,
+        "ScanRemainTime": 0,
+        "Schedule": 0,
         "Status": "SCANNING",
-        "Schedule": 23,
-        "ScanRemainTime": 3840
+        "SuccessCount": 0
     }
 }
 ```

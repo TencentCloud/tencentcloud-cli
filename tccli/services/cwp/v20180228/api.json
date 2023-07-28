@@ -18577,7 +18577,6 @@
       "document": "DescribeGeneralStat请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "云主机类型。\n<li>CVM：表示腾讯云服务器</li>\n<li>BM:  表示黑石物理机</li>\n<li>ECM:  表示边缘计算服务器</li>\n<li>LH:  表示轻量应用服务器</li>\n<li>Other:  表示混合云机器</li>",
           "example": "CVM",
@@ -18587,7 +18586,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器所属地域。如：ap-guangzhou，ap-shanghai",
           "example": "ap-guangzhou",
@@ -18608,7 +18606,7 @@
           "example": "100",
           "member": "uint64",
           "name": "MachinesAll",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18618,7 +18616,7 @@
           "example": "3",
           "member": "uint64",
           "name": "MachinesUninstalled",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18628,7 +18626,7 @@
           "example": "2",
           "member": "uint64",
           "name": "AgentsAll",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18638,7 +18636,7 @@
           "example": "8",
           "member": "uint64",
           "name": "AgentsOnline",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18648,7 +18646,7 @@
           "example": "4",
           "member": "uint64",
           "name": "AgentsOffline",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18658,7 +18656,7 @@
           "example": "5",
           "member": "uint64",
           "name": "AgentsPro",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18668,7 +18666,7 @@
           "example": "15",
           "member": "uint64",
           "name": "AgentsBasic",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18678,7 +18676,7 @@
           "example": "27",
           "member": "uint64",
           "name": "AgentsProExpireWithInSevenDays",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18688,7 +18686,7 @@
           "example": "6",
           "member": "uint64",
           "name": "RiskMachine",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18698,7 +18696,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Shutdown",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18708,7 +18706,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Offline",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18718,7 +18716,7 @@
           "example": "1",
           "member": "uint64",
           "name": "FlagshipMachineCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -18728,7 +18726,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ProtectDays",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -18738,7 +18736,7 @@
           "example": "12",
           "member": "uint64",
           "name": "AddedOnTheFifteen",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -19205,40 +19203,40 @@
       "document": "DescribeImportMachineInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "服务器内网IP（默认）/ 服务器名称 / 服务器ID 数组 (最大 1000条)",
           "example": "[]",
+          "is_base64": false,
           "member": "string",
           "name": "MachineList",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "批量导入的数据类型：Ip、Name、Id 三选一",
           "example": "ip",
+          "is_base64": false,
           "member": "string",
           "name": "ImportType",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该参数已作废.",
           "example": "true",
+          "is_base64": false,
           "member": "bool",
           "name": "IsQueryProMachine",
           "required": false,
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件：\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship：旗舰版 | ProtectedMachines：专业版+旗舰版） | BASIC_PROPOST_GENERAL_DISCOUNT：普惠版+专业版按量计费+基础版主机 | UnFlagship：专业版预付费+专业版后付费+基础版+普惠版</li>",
           "example": "[]",
+          "is_base64": false,
           "member": "Filters",
           "name": "Filters",
           "required": false,
@@ -19256,7 +19254,7 @@
           "example": "[]",
           "member": "EffectiveMachineInfo",
           "name": "EffectiveMachineInfoList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -19266,7 +19264,7 @@
           "example": "[]",
           "member": "string",
           "name": "InvalidMachineList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -25419,7 +25417,7 @@
           "example": "test",
           "member": "string",
           "name": "MachineName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25429,7 +25427,7 @@
           "example": "1.2.3.4",
           "member": "string",
           "name": "MachinePublicIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25439,7 +25437,7 @@
           "example": "1.2.3.4",
           "member": "string",
           "name": "MachinePrivateIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25449,7 +25447,7 @@
           "example": "[]",
           "member": "MachineTag",
           "name": "MachineTag",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -25459,7 +25457,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Quuid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25469,7 +25467,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Uuid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25479,7 +25477,7 @@
           "example": "3.5",
           "member": "string",
           "name": "KernelVersion",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25489,7 +25487,7 @@
           "example": "OFFLINE",
           "member": "string",
           "name": "MachineStatus",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25499,7 +25497,7 @@
           "example": "null",
           "member": "LicenseOrder",
           "name": "LicenseOrder",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -25509,7 +25507,7 @@
           "example": "1",
           "member": "uint64",
           "name": "VulNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -25519,7 +25517,7 @@
           "example": "null",
           "member": "Tags",
           "name": "CloudTags",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -25529,7 +25527,7 @@
           "example": "ins-xxx",
           "member": "string",
           "name": "InstanceID",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -28897,168 +28895,163 @@
       "document": "授权订单列表对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "授权ID",
           "example": "1",
           "member": "uint64",
           "name": "LicenseId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权类型,0 专业版-按量计费, 1专业版-包年包月 , 2 旗舰版-包年包月",
           "example": "0",
           "member": "uint64",
           "name": "LicenseType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权状态 0 未使用,1 部分使用, 2 已用完, 3 不可用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "LicenseStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总授权数",
           "example": "0",
           "member": "uint64",
           "name": "LicenseCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已使用授权数",
           "example": "0",
           "member": "uint64",
           "name": "UsedLicenseCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单状态 1 正常 2隔离, 3销毁",
           "example": "1",
           "member": "uint64",
           "name": "OrderStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "截止日期",
           "example": "2018-02-28 00:00:00",
           "member": "string",
           "name": "Deadline",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单资源ID",
           "example": "1c007adc2f0bb9f7c052860e2d3703fa",
           "member": "string",
           "name": "ResourceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0 初始化,1 自动续费,2 不自动续费",
           "example": "0",
           "member": "uint64",
           "name": "AutoRenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "1",
           "member": "uint64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID ,默认0 ,查询绑定进度用",
           "example": "1",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买时间",
           "example": "2018-02-28 00:00:00",
           "member": "string",
           "name": "BuyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否试用订单.",
           "example": "0",
           "member": "uint64",
           "name": "SourceType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源别名",
           "example": "资源名称",
           "member": "string",
           "name": "Alias",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "平台标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "Tags",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "冻结数,当为0时 为未冻结,非0 则表示冻结授权数额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "FreezeNum",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -29490,343 +29483,312 @@
       "document": "主机列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主机名称。",
           "example": "test",
           "member": "string",
           "name": "MachineName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机系统。",
           "example": "centos",
           "member": "string",
           "name": "MachineOs",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机状态。\n<li>OFFLINE: 离线  </li>\n<li>ONLINE: 在线</li>\n<li>SHUTDOWN: 已关机</li>\n<li>UNINSTALLED: 未防护</li>",
           "example": "ONLINE",
           "member": "string",
           "name": "MachineStatus",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云镜客户端唯一Uuid，若客户端长时间不在线将返回空字符。",
           "example": "xx",
           "member": "string",
           "name": "Uuid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CVM或BM机器唯一Uuid。",
           "example": "xx",
           "member": "string",
           "name": "Quuid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "漏洞数。",
           "example": "2",
           "member": "int64",
           "name": "VulNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机IP。",
           "example": "10.0.0.2",
           "member": "string",
           "name": "MachineIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是专业版。\n<li>true： 是</li>\n<li>false：否</li>",
           "example": "false",
           "member": "bool",
           "name": "IsProVersion",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机外网IP。",
           "example": "114.11.12.13",
           "member": "string",
           "name": "MachineWanIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机状态。\n<li>POSTPAY: 表示后付费，即按量计费  </li>\n<li>PREPAY: 表示预付费，即包年包月</li>",
           "example": "PREPAY",
           "member": "string",
           "name": "PayMode",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "木马数。",
           "example": "1",
           "member": "int64",
           "name": "MalwareNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签信息",
           "example": "[]",
           "member": "MachineTag",
           "name": "Tag",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "基线风险数。",
           "example": "2",
           "member": "int64",
           "name": "BaselineNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络风险数。",
           "example": "2",
           "member": "int64",
           "name": "CyberAttackNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "风险状态。\n<li>SAFE：安全</li>\n<li>RISK：风险</li>\n<li>UNKNOWN：未知</li>",
           "example": "RISK",
           "member": "string",
           "name": "SecurityStatus",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入侵事件数",
           "example": "1",
           "member": "int64",
           "name": "InvasionNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域信息",
           "example": "{}",
           "member": "RegionInfo",
           "name": "RegionInfo",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例状态 TERMINATED_PRO_VERSION 已销毁",
           "example": "TERMINATED_PRO_VERSION",
           "member": "string",
           "name": "InstanceState",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "防篡改 授权状态 1 授权 0 未授权",
           "example": "1",
           "member": "uint64",
           "name": "LicenseStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "1",
           "member": "int64",
           "name": "ProjectId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否有资产扫描接口，0无，1有",
           "example": "1",
           "member": "uint64",
           "name": "HasAssetScan",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区",
           "example": "CVM",
           "member": "string",
           "name": "MachineType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内核版本",
           "example": "3.10.0-1127.19.1.el7.x86_64",
           "member": "string",
           "name": "KernelVersion",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 普惠版",
           "example": "BASIC_VERSION",
           "member": "string",
           "name": "ProtectType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "Tags",
           "name": "CloudTags",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "IsAddedOnTheFifteen",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机ip列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.1.1.1,2.2.2.2",
           "member": "string",
           "name": "IpList",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属网络\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
           "name": "VpcId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "附加信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MachineExtraInfo",
           "name": "MachineExtraInfo",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "无",
           "member": "string",
           "name": "InstanceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -35687,7 +35649,6 @@
       "document": "平台标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键",
           "example": "标签键",
@@ -35698,7 +35659,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "标签值",
@@ -35709,7 +35669,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "TaskStatus": {
       "document": "任务扫描状态列表",

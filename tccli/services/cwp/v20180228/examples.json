@@ -986,10 +986,10 @@
     ],
     "DescribeGeneralStat": [
       {
-        "document": "",
+        "document": "获取主机安全相关统计",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGeneralStat\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"MachinesAll\": 87,\n        \"MachinesUninstalled\": 37,\n        \"AgentsAll\": 50,\n        \"AgentsOnline\": 7,\n        \"AgentsOffline\": 43,\n        \"AgentsPro\": 12,\n        \"AgentsBasic\": 38,\n        \"AgentsProExpireWithInSevenDays\": 1,\n        \"RiskMachine\": 0,\n        \"Shutdown\": 0,\n        \"Offline\": 0,\n        \"ProtectDays\": 1,\n        \"FlagshipMachineCnt\": 1,\n        \"AddedOnTheFifteen\": 1,\n        \"RequestId\": \"cf25fc07-0e89-b71f-cb9a-c3fc030ccfd4\"\n    }\n}",
-        "title": "获取主机安全相关统计"
+        "title": "示例"
       }
     ],
     "DescribeHistoryAccounts": [
@@ -1043,8 +1043,8 @@
     "DescribeImportMachineInfo": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImportMachineInfo\n<公共请求参数>\n\n{\n    \"MachineList\": [\n        \"xx\"\n    ],\n    \"ImportType\": \"xx\",\n    \"IsQueryProMachine\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"InvalidMachineList\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\",\n        \"EffectiveMachineInfoList\": [\n            {\n                \"MachineName\": \"xx\",\n                \"MachineTag\": [\n                    {\n                        \"TagId\": 1,\n                        \"Rid\": 0,\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"MachinePublicIp\": \"xx\",\n                \"Quuid\": \"xx\",\n                \"MachinePrivateIp\": \"xx\",\n                \"LicenseOrder\": null\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImportMachineInfo\n<公共请求参数>\n\n{\n    \"MachineList\": [\n        \"0.0.0.0\"\n    ],\n    \"ImportType\": \"Ip\",\n    \"IsQueryProMachine\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"EffectiveMachineInfoList\": [\n            {\n                \"MachineName\": \"机器名称\",\n                \"MachinePublicIp\": \"0.0.0.0\",\n                \"MachinePrivateIp\": \"0.0.0.0\",\n                \"MachineTag\": null,\n                \"CloudTags\": null,\n                \"Quuid\": \"310eb617-ed1f-4dbb-a3df-xxxxxxx\",\n                \"Uuid\": \"310eb617-ed1f-4dbb-a3df-xxxxxxx\",\n                \"KernelVersion\": \"4.18.0-80.el8.x86_64\",\n                \"MachineStatus\": \"OFFLINE\",\n                \"LicenseOrder\": null,\n                \"VulNum\": 508,\n                \"InstanceID\": \"ins-xxxxxxxx\"\n            }\n        ],\n        \"InvalidMachineList\": [],\n        \"RequestId\": \"fa0c6429-2e91-498b-8dce-fc1487b7829e\"\n    }\n}",
         "title": "查询批量导入机器信息"
       }
     ],

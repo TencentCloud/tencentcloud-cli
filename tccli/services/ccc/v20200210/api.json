@@ -4382,7 +4382,6 @@
       "document": "应用购买信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID",
           "example": "1400000000",
@@ -4393,7 +4392,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用名称",
           "example": "Test",
@@ -4404,7 +4402,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "坐席购买数（还在有效期内）",
           "example": "10",
@@ -4415,7 +4412,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "坐席购买列表 （还在有效期内）",
           "example": "[]",
@@ -4426,7 +4422,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "号码购买列表",
           "example": "[]",
@@ -4435,6 +4430,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "办公电话购买数（还在有效期内）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "SipBuyNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4869,6 +4874,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "购买办公电话数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "SipNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

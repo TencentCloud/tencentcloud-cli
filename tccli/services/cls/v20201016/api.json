@@ -301,6 +301,13 @@
       "output": "DescribeCosRechargesResponse",
       "status": "online"
     },
+    "DescribeDashboards": {
+      "document": "本接口用于获取仪表盘",
+      "input": "DescribeDashboardsRequest",
+      "name": "获取仪表盘",
+      "output": "DescribeDashboardsResponse",
+      "status": "online"
+    },
     "DescribeDataTransformInfo": {
       "document": "本接口用于获取数据加工任务列表基本信息",
       "input": "DescribeDataTransformInfoRequest",
@@ -4035,6 +4042,150 @@
       ],
       "usage": "both"
     },
+    "DashboardInfo": {
+      "document": "仪表盘信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘id",
+          "example": "xxxxx--xxx",
+          "member": "string",
+          "name": "DashboardId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘名字",
+          "example": "testname",
+          "member": "string",
+          "name": "DashboardName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testdata",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建仪表盘的时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AssumerUin非空则表示创建该日志主题的服务方Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "uint64",
+          "name": "AssumerUin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "RoleName非空则表示创建该日志主题的服务方使用的角色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLB_QcsRole",
+          "member": "string",
+          "name": "RoleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "AssumerName非空则表示创建该日志主题的服务方名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "AssumerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志主题绑定的标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘所在地域： 为了兼容老的地域。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "DashboardRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改仪表盘的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-12-22 16:11:27",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘对应的topic相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DashboardTopicInfo",
+          "name": "DashboardTopicInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DashboardTopicInfo": {
+      "document": "仪表盘关联的topic信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "主题id",
+          "example": "xxxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "topic所在的地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DataTransformResouceInfo": {
       "document": "数据加工的资源信息",
       "members": [
@@ -5186,6 +5337,84 @@
           "name": "Data",
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDashboardsRequest": {
+      "document": "DescribeDashboards请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0。",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "5",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "<br><li> dashboardId\n\n按照【仪表盘id】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> dashboardName\n\n按照【仪表盘名字】进行模糊搜索过滤。\n类型：String\n\n必选：否\n\n<br><li> dashboardRegion\n\n按照【仪表盘地域】进行过滤，为了兼容老的仪表盘，通过云API创建的仪表盘没有地域属性\n类型：String\n\n必选：否\n\n<br><li> tagKey\n\n按照【标签键】进行过滤。\n\n类型：String\n\n必选：否\n\n<br><li> tag:tagKey\n\n按照【标签键值对】进行过滤。tag-key使用具体的标签键进行替换。使用请参考示例2。\n\n类型：String\n\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "按照topicId和regionId过滤。",
+          "example": "无",
+          "member": "TopicIdAndRegion",
+          "name": "TopicIdRegionFilter",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDashboardsResponse": {
+      "document": "DescribeDashboards返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘的数量",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘详细明细",
+          "example": "无",
+          "member": "DashboardInfo",
+          "name": "DashboardInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10148,23 +10377,48 @@
       "document": "ScheduledSql的资源信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "目标主题id",
           "example": "xxxxxxxx-0889-4ec0-accc-xxxxxxx",
+          "is_base64": false,
           "member": "string",
           "name": "TopicId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "topic的地域信息",
+          "document": "主题的的地域信息",
           "example": "ap-guangzhou",
+          "is_base64": false,
           "member": "string",
           "name": "Region",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题类型：0为日志主题，1为指标主题",
+          "example": "0",
+          "member": "int64",
+          "name": "BizType",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标名称",
+          "example": "pv",
+          "is_base64": false,
+          "member": "string",
+          "name": "MetricName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -10950,6 +11204,34 @@
         }
       ],
       "usage": "both"
+    },
+    "TopicIdAndRegion": {
+      "document": "仪表盘 topic与地域信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "日志主题id",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "日志主题id 所在的地域id\n地域ID - 访问链接查看详情：https://iwiki.woa.com/pages/viewpage.action?pageId=780556968#id-地域码表-一.region大区（标准地域）",
+          "example": "19",
+          "member": "uint64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "TopicInfo": {
       "document": "日志主题信息",

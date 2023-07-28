@@ -1594,6 +1594,14 @@
         "title": "查询快照策略"
       }
     ],
+    "DescribeSpecificTrafficPackageUsedDetails": [
+      {
+        "document": "查询某个流量包的用量明细。",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeSpecificTrafficPackageUsedDetails\r\n&TrafficPackageId=tfp-f7a3qh6x\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"UsedDetailSet\": [\n            {\n                \"TrafficPackageId\": \"abc\",\n                \"TrafficPackageName\": \"abc\",\n                \"TotalAmount\": {\n                    \"Value\": 1,\n                    \"FormatValue\": 0,\n                    \"FormatUnit\": \"abc\"\n                },\n                \"Deduction\": {\n                    \"Value\": 1,\n                    \"FormatValue\": 0,\n                    \"FormatUnit\": \"abc\"\n                },\n                \"RemainingAmount\": {\n                    \"Value\": 1,\n                    \"FormatValue\": 0,\n                    \"FormatUnit\": \"abc\"\n                },\n                \"Time\": \"2020-09-22 00:00:00\",\n                \"ResourceType\": \"abc\",\n                \"ResourceId\": \"abc\",\n                \"ResourceName\": \"abc\",\n                \"Deadline\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询某个流量包的用量明细"
+      }
+    ],
     "DescribeSubnetResourceDashboard": [
       {
         "document": "查看Subnet资源信息",

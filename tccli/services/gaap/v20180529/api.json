@@ -3917,30 +3917,30 @@
       "document": "DescribeAccessRegionsByDestRegion请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "源站区域：接口DescribeDestRegions返回DestRegionSet中的RegionId字段值",
           "example": "SouthChina",
+          "is_base64": false,
           "member": "string",
           "name": "DestRegion",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP版本，可取值：IPv4、IPv6，默认值IPv4",
           "example": "IPv4",
+          "is_base64": false,
           "member": "string",
           "name": "IPAddressVersion",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道套餐类型，Thunder表示标准通道组，Accelerator表示游戏加速器通道，CrossBorder表示跨境通道。",
           "example": "Thunder",
+          "is_base64": false,
           "member": "string",
           "name": "PackageType",
           "required": false,
@@ -3958,7 +3958,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3968,7 +3968,7 @@
           "example": "无",
           "member": "AccessRegionDetial",
           "name": "AccessRegionSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

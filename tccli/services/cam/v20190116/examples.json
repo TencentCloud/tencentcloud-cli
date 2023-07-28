@@ -434,7 +434,7 @@
       {
         "document": "查询用户组3349关联的策略列表",
         "input": "https://cam.tencentcloudapi.com/?Action=ListAttachedGroupPolicies\n&TargetGroupId=3349\n&Page=1\n&Rp=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"OperateOwnerUin\": \"xx\",\n                \"PolicyName\": \"AdministratorAccess\",\n                \"Remark\": \"xx\",\n                \"OperateUinType\": 1,\n                \"CreateMode\": 1,\n                \"Deactived\": 1,\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"PolicyType\": \"User\",\n                \"PolicyId\": 1,\n                \"DeactivedDetail\": [\n                    \"xx\"\n                ],\n                \"OperateUin\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"836d7034-9854-44f0-9d4a-ee57842f8644\",\n        \"TotalNum\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"OperateOwnerUin\": \"10001\",\n                \"PolicyName\": \"AdministratorAccess\",\n                \"Remark\": \"test policy remark\",\n                \"OperateUinType\": 1,\n                \"CreateMode\": 1,\n                \"Deactived\": 1,\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"PolicyType\": \"User\",\n                \"PolicyId\": 1,\n                \"DeactivedDetail\": [\n                    \"test\"\n                ],\n                \"OperateUin\": \"10001\"\n            }\n        ],\n        \"RequestId\": \"836d7034-9854-44f0-9d4a-ee57842f8644\",\n        \"TotalNum\": 1\n    }\n}",
         "title": "查询用户组关联的策略列表"
       }
     ],

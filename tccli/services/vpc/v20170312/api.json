@@ -1169,6 +1169,13 @@
       "output": "DescribeSnapshotPoliciesResponse",
       "status": "online"
     },
+    "DescribeSpecificTrafficPackageUsedDetails": {
+      "document": "本接口 (DescribeSpecificTrafficPackageUsedDetails) 用于查询指定 共享流量包 的用量明细。",
+      "input": "DescribeSpecificTrafficPackageUsedDetailsRequest",
+      "name": "查询指定共享流量包的用量明细",
+      "output": "DescribeSpecificTrafficPackageUsedDetailsResponse",
+      "status": "online"
+    },
     "DescribeSubnetResourceDashboard": {
       "document": "本接口(DescribeSubnetResourceDashboard)用于查看Subnet资源信息。",
       "input": "DescribeSubnetResourceDashboardRequest",
@@ -14324,6 +14331,114 @@
       ],
       "type": "object"
     },
+    "DescribeSpecificTrafficPackageUsedDetailsRequest": {
+      "document": "DescribeSpecificTrafficPackageUsedDetails请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "共享流量包唯一ID",
+          "example": "无",
+          "member": "string",
+          "name": "TrafficPackageId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。详细的过滤条件如下：<li> resource-id - String - 是否必填：否 - （过滤条件）按照抵扣流量资源的唯一 ID 过滤。</li><li> resource-type - String - 是否必填：否 - （过滤条件）按照资源类型过滤，资源类型包括 CVM 和 EIP </li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序条件。该参数仅支持根据抵扣量排序，传值为 deduction",
+          "example": "无",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型，仅支持0和1，0-降序，1-升序。不传默认为0",
+          "example": "无",
+          "member": "int64",
+          "name": "OrderType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间。不传默认为当前时间往前推30天",
+          "example": "无",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间。不传默认为当前时间",
+          "example": "无",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSpecificTrafficPackageUsedDetailsResponse": {
+      "document": "DescribeSpecificTrafficPackageUsedDetails返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合查询条件的共享流量包用量明细的总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "共享流量包用量明细列表",
+          "example": "无",
+          "member": "UsedDetail",
+          "name": "UsedDetailSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSubnetResourceDashboardRequest": {
       "document": "DescribeSubnetResourceDashboard请求参数结构体",
       "members": [
@@ -14807,6 +14922,7 @@
           "disabled": false,
           "document": "过滤条件。不支持同时传入参数 EndPointServiceIds and Filters。\n<li> service-id - String - （过滤条件）终端节点服务唯一ID。</li>\n<li>service-name - String - （过滤条件）终端节点实例名称。</li>\n<li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-xxx。</li>\n<li>service-type - String - （过滤条件）后端PAAS服务类型，CLB,CDB,CRS，不填默认查询类型为CLB。</li>",
           "example": "无",
+          "is_base64": false,
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -14816,6 +14932,7 @@
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "无",
+          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -14825,6 +14942,7 @@
           "disabled": false,
           "document": "单页返回数量，默认为20，最大值为100。",
           "example": "无",
+          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -14834,10 +14952,21 @@
           "disabled": false,
           "document": "终端节点服务ID。不支持同时传入参数 EndPointServiceIds and Filters。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "EndPointServiceIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<li>不支持同时传入参数 Filters 。</li> <li>列出授权给当前账号的的终端节点服务信息。可以配合EndPointServiceIds参数进行过滤，那些终端节点服务授权了该账户。</li>",
+          "example": "无",
+          "is_base64": false,
+          "member": "bool",
+          "name": "IsListAuthorizedEndPointService",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -14851,6 +14980,7 @@
           "example": "无",
           "member": "EndPointService",
           "name": "EndPointServiceSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14860,6 +14990,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -26739,6 +26870,42 @@
       ],
       "usage": "out"
     },
+    "TrafficFlow": {
+      "document": "流量描述。",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实际流量，单位为 字节",
+          "member": "uint64",
+          "name": "Value",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "格式化后的流量，单位见参数 FormatUnit\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "float",
+          "name": "FormatValue",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "格式化后流量的单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "FormatUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "TrafficPackage": {
       "document": "流量包信息描述类型",
       "members": [
@@ -27096,6 +27263,112 @@
         }
       ],
       "type": "object"
+    },
+    "UsedDetail": {
+      "document": "共享流量包用量明细",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "流量包唯一ID",
+          "member": "string",
+          "name": "TrafficPackageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "流量包名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "TrafficPackageName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "流量包总量",
+          "member": "TrafficFlow",
+          "name": "TotalAmount",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "本次抵扣",
+          "member": "TrafficFlow",
+          "name": "Deduction",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "本次抵扣后剩余量",
+          "member": "TrafficFlow",
+          "name": "RemainingAmount",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "抵扣时间",
+          "member": "datetime",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "资源类型。可能的值: CVM, LB, NAT, HAVIP, EIP",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "资源ID",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "资源名称",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "流量包到期时间",
+          "member": "datetime",
+          "name": "Deadline",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Vpc": {
       "document": "私有网络(VPC)对象。",

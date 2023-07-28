@@ -22,7 +22,8 @@ Output:
                 "ApproverMobile": "test",
                 "ApproverName": "test",
                 "ApproverType": 1,
-                "SignUrl": "https://***cn/7YIxx"
+                "SignUrl": "https://***cn/7YIxx",
+                "LongUrl": "https://quick.test.qian.tencent.cn/home?ApproverIdCardNumber=**&ApproverIdCardType=ID_CARD&ApproverMobile=MTM1Kio**%3D&ApproverName=**&ApproverType=1&Code=**&CodeType=QUICK&FlowId=***&ShowHeader=0&token=3LXFLU1HS9"
             }
         ],
         "RequestId": "s1672381196019320421"

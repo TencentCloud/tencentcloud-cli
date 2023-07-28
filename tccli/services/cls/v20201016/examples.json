@@ -344,6 +344,14 @@
         "title": "获取cos导入配置"
       }
     ],
+    "DescribeDashboards": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDashboards\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Key\": \"xx\"\n        }\n    ],\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"DashboardInfos\": [\n            {\n                \"UpdateTime\": \"xx\",\n                \"Tags\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"DashboardName\": \"xx\",\n                \"DashboardRegion\": \"xx\",\n                \"AssumerName\": \"xx\",\n                \"DashboardId\": \"xx\",\n                \"RoleName\": \"xx\",\n                \"Data\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"AssumerUin\": 1,\n                \"DashboardTopicInfos\": [\n                    {\n                        \"TopicId\": \"xx\",\n                        \"Region\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取仪表盘"
+      }
+    ],
     "DescribeDataTransformInfo": [
       {
         "document": "获取数据加工任务基本信息",

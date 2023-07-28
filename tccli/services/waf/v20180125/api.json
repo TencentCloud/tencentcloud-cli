@@ -105,6 +105,13 @@
       "output": "DescribeAccessFastAnalysisResponse",
       "status": "online"
     },
+    "DescribeAccessHistogram": {
+      "document": "本接口用于访问日志柱状趋势图",
+      "input": "DescribeAccessHistogramRequest",
+      "name": "访问日志柱状趋势图",
+      "output": "DescribeAccessHistogramResponse",
+      "status": "online"
+    },
     "DescribeAccessIndex": {
       "document": "本接口用于获取访问日志索引配置信息",
       "input": "DescribeAccessIndexRequest",
@@ -400,6 +407,32 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AccessHistogramItem": {
+      "document": "用于接口DescribeAccessHistogram 的出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间，单位ms",
+          "example": "1625387904000",
+          "member": "int64",
+          "name": "BTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志条数",
+          "example": "100",
+          "member": "int64",
+          "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2327,6 +2360,104 @@
     "DescribeAccessFastAnalysisResponse": {
       "document": "DescribeAccessFastAnalysis返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccessHistogramRequest": {
+      "document": "DescribeAccessHistogram请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "老版本查询的日志主题ID，新版本传空字符串即可",
+          "example": "\"1ae37c76-df99-4e2b-998c-20f39eba6226\"",
+          "is_base64": false,
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要查询的日志的起始时间，Unix时间戳，单位ms",
+          "example": "1625395948532",
+          "is_base64": false,
+          "member": "int64",
+          "name": "From",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "要查询的日志的结束时间，Unix时间戳，单位ms",
+          "example": "1625395948532",
+          "is_base64": false,
+          "member": "int64",
+          "name": "To",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询语句，语句长度最大为4096",
+          "example": "\"\"",
+          "is_base64": false,
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "柱状图间隔时间差，单位ms",
+          "example": "12096000",
+          "is_base64": false,
+          "member": "int64",
+          "name": "Interval",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccessHistogramResponse": {
+      "document": "DescribeAccessHistogram返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "柱状图间隔时间差，单位ms",
+          "example": "12096000",
+          "member": "int64",
+          "name": "Interval",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "满足条件的日志条数",
+          "example": "6221",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "注意：此字段可能返回 null，表示取不到有效值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "AccessHistogramItem",
+          "name": "HistogramInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
