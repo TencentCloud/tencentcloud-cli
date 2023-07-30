@@ -7,11 +7,11 @@ Input:
 
 ```
 tccli essbasic ChannelBatchCancelFlows --cli-unfold-argument  \
-    --FlowIds testx \
-    --Agent.ProxyOperator.OpenId testx \
-    --Agent.AppId testx \
-    --Agent.ProxyOrganizationOpenId testx \
-    --CancelMessage 撤销测试 \
+    --FlowIds yDwhGUUfe5g******CX8ZwTiSg8gISocy \
+    --Agent.ProxyOperator.OpenId yDR3L****eTdCt5TVx \
+    --Agent.AppId 125***319 \
+    --Agent.ProxyOrganizationOpenId 1000***8062 \
+    --CancelMessage 因为合同里边的金额填写错误 \
     --CancelMessageFormat 0
 ```
 

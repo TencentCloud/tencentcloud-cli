@@ -856,85 +856,78 @@
       "document": "告警通知模板类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "告警通知模板名称。",
           "example": "告警通知模板名称",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警模板的类型。可选值：\n<br><li> Trigger - 告警触发\n<br><li> Recovery - 告警恢复\n<br><li> All - 告警触发和告警恢复",
           "example": "All",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警通知模板接收者信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NoticeReceiver",
           "name": "NoticeReceivers",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警通知模板回调信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WebCallback",
           "name": "WebCallbacks",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警通知模板ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "notice-xxx-xxx-xx-xx",
           "member": "string",
           "name": "AlarmNoticeId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-11-07 16:30:53",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最近更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-11-07 16:30:53",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -2556,10 +2549,10 @@
       "document": "CreateAlarmNotice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "通知渠道组名称。",
           "example": "test",
+          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": true,
@@ -2567,10 +2560,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通知类型。可选值：\n<li> Trigger - 告警触发\n<li> Recovery - 告警恢复\n<li> All - 告警触发和告警恢复",
           "example": "All",
+          "is_base64": false,
           "member": "string",
           "name": "Type",
           "required": true,
@@ -2578,10 +2571,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通知接收对象。",
           "example": "无",
+          "is_base64": false,
           "member": "NoticeReceiver",
           "name": "NoticeReceivers",
           "required": false,
@@ -2589,10 +2582,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接口回调信息（包括企业微信）。",
           "example": "无",
+          "is_base64": false,
           "member": "WebCallback",
           "name": "WebCallbacks",
           "required": false,
@@ -2611,7 +2604,7 @@
           "example": "xxxx-xx-xx-xx-xxxxxxxx",
           "member": "string",
           "name": "AlarmNoticeId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -3920,7 +3913,7 @@
         {
           "disabled": false,
           "document": "源日志主题",
-          "example": "topicid-1",
+          "example": "6ef60bec-0242-43af-bb20-270359fbxxx",
           "is_base64": false,
           "member": "string",
           "name": "SrcTopicId",
@@ -3931,7 +3924,7 @@
         {
           "disabled": false,
           "document": "任务名称",
-          "example": "task1",
+          "example": "test",
           "is_base64": false,
           "member": "string",
           "name": "Name",
@@ -3941,7 +3934,7 @@
         },
         {
           "disabled": false,
-          "document": "任务启动状态.  1正常开启,  2关闭",
+          "document": "任务启动状态.  1开启,  2关闭",
           "example": "1",
           "is_base64": false,
           "member": "int64",
@@ -3953,7 +3946,7 @@
         {
           "disabled": false,
           "document": "定时SQL分析目标日志主题",
-          "example": "{\"dst_topics\":[{\"topic_id\":\"xxx\", \"alias\":\"topic\"}]}",
+          "example": "无",
           "is_base64": false,
           "member": "ScheduledSqlResouceInfo",
           "name": "DstResource",
@@ -3975,7 +3968,7 @@
         {
           "disabled": false,
           "document": "调度开始时间,Unix时间戳，单位ms",
-          "example": "1634735855733",
+          "example": "1690515360000",
           "is_base64": false,
           "member": "uint64",
           "name": "ProcessStartTime",
@@ -3985,7 +3978,7 @@
         },
         {
           "disabled": false,
-          "document": "调度类型，1:持续运行 2:指定调度结束时间",
+          "document": "调度类型，1:持续运行 2:指定时间范围",
           "example": "1",
           "is_base64": false,
           "member": "int64",
@@ -4008,7 +4001,7 @@
         {
           "disabled": false,
           "document": "单次查询的时间窗口",
-          "example": "-15m@m",
+          "example": "@m-15m,@m",
           "is_base64": false,
           "member": "string",
           "name": "ProcessTimeWindow",
@@ -4019,7 +4012,7 @@
         {
           "disabled": false,
           "document": "执行延迟(秒)",
-          "example": "23",
+          "example": "60",
           "is_base64": false,
           "member": "int64",
           "name": "ProcessDelay",
@@ -4041,7 +4034,7 @@
         {
           "disabled": false,
           "document": "调度结束时间，当ProcessType=2时为必传字段, Unix时间戳，单位ms",
-          "example": "1634735855733",
+          "example": "1690515440000",
           "is_base64": false,
           "member": "uint64",
           "name": "ProcessEndTime",
@@ -4051,7 +4044,7 @@
         },
         {
           "disabled": false,
-          "document": "语法规则。 默认值为0。0：Lucene语法，1：CQL语法  ",
+          "document": "查询语法规则。 默认值为0。0：Lucene语法，1：CQL语法  ",
           "example": "0",
           "is_base64": false,
           "member": "uint64",
@@ -4069,7 +4062,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "xxxxx",
+          "example": "6ef60bec-0242-43af-bb20-270359fxxxx",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -5228,10 +5221,10 @@
       "document": "DeleteScheduledSql请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
-          "example": "xxx",
+          "example": "6ef60bec-0242-43af-bb20-270359fb5xxx",
+          "is_base64": false,
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -5239,10 +5232,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源日志主题ID",
-          "example": "xxxx",
+          "example": "6ef60bec-0242-43af-bb20-270359fxxxx",
+          "is_base64": false,
           "member": "string",
           "name": "SrcTopicId",
           "required": true,
@@ -6820,10 +6813,10 @@
       "document": "DescribeScheduledSqlInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分页的偏移量，默认值为0。",
           "example": "0",
+          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -6831,10 +6824,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页单页限制数目，默认值为20，最大值100。",
           "example": "10",
+          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -6842,10 +6835,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务名称",
-          "example": "xx-xx",
+          "example": "task",
+          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": false,
@@ -6853,10 +6846,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务id",
-          "example": "121212",
+          "example": "6ef60bec-0242-43af-bb20-270359fb54xx",
+          "is_base64": false,
           "member": "string",
           "name": "TaskId",
           "required": false,
@@ -6875,7 +6868,7 @@
           "example": "无",
           "member": "ScheduledSqlTaskInfo",
           "name": "ScheduledSqlTaskInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -6886,7 +6879,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -9190,10 +9183,10 @@
       "document": "ModifyAlarmNotice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "通知渠道组ID。",
           "example": "notice-5b2ea996-4dae-47cc-bbad-5b12888b4c89",
+          "is_base64": false,
           "member": "string",
           "name": "AlarmNoticeId",
           "required": true,
@@ -9201,10 +9194,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通知渠道组名称。",
           "example": "test",
+          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": false,
@@ -9212,10 +9205,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通知类型。可选值：\n<li> Trigger - 告警触发\n<li> Recovery - 告警恢复\n<li> All - 告警触发和告警恢复",
           "example": "All",
+          "is_base64": false,
           "member": "string",
           "name": "Type",
           "required": false,
@@ -9223,10 +9216,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通知接收对象。",
           "example": "无",
+          "is_base64": false,
           "member": "NoticeReceiver",
           "name": "NoticeReceivers",
           "required": false,
@@ -9234,10 +9227,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接口回调信息（包括企业微信）。",
           "example": "无",
+          "is_base64": false,
           "member": "WebCallback",
           "name": "WebCallbacks",
           "required": false,
@@ -10353,7 +10346,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "1212-12121",
+          "example": "6ef60bec-0242-43af-bb20-270359fxxxx",
           "is_base64": false,
           "member": "string",
           "name": "TaskId",
@@ -10364,7 +10357,7 @@
         {
           "disabled": false,
           "document": "源日志主题",
-          "example": "xxxxxxxx-0889-4ec0-accc-xxxxxxx",
+          "example": "xxxx-0889-4ec0-accc-xxxxxxx",
           "is_base64": false,
           "member": "string",
           "name": "SrcTopicId",
@@ -10374,7 +10367,7 @@
         },
         {
           "disabled": false,
-          "document": "任务启动状态.   1正常开启,  2关闭",
+          "document": "任务启动状态.   1开启,  2关闭",
           "example": "1",
           "is_base64": false,
           "member": "int64",
@@ -10386,7 +10379,7 @@
         {
           "disabled": false,
           "document": "定时SQL分析的目标日志主题",
-          "example": "{\"dst_topics\":[{\"topic_id\":\"xxx\", \"alias\":\"topic\"}]}",
+          "example": "无",
           "is_base64": false,
           "member": "ScheduledSqlResouceInfo",
           "name": "DstResource",
@@ -10452,7 +10445,7 @@
         {
           "disabled": false,
           "document": "任务名称",
-          "example": "task1",
+          "example": "test",
           "is_base64": false,
           "member": "string",
           "name": "Name",
@@ -11539,7 +11532,7 @@
         {
           "disabled": false,
           "document": "ScheduledSql任务id",
-          "example": "232332323",
+          "example": "6ef60bec-0242-43af-bb20-270359fb5xxx",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -11550,7 +11543,7 @@
         {
           "disabled": false,
           "document": "ScheduledSql任务名称",
-          "example": "xxxx",
+          "example": "task",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -11572,7 +11565,7 @@
         {
           "disabled": false,
           "document": "源日志主题名称",
-          "example": "xxxxx",
+          "example": "test-topic",
           "member": "string",
           "name": "SrcTopicName",
           "output_required": true,
@@ -11594,7 +11587,7 @@
         {
           "disabled": false,
           "document": "任务创建时间",
-          "example": "xx-xx",
+          "example": "2023-07-28 11:36:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -11605,7 +11598,7 @@
         {
           "disabled": false,
           "document": "任务更新时间",
-          "example": "xx-xx",
+          "example": "2023-07-28 11:36:00",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
@@ -11649,7 +11642,7 @@
         {
           "disabled": false,
           "document": "调度开始时间",
-          "example": "xx-xx",
+          "example": "2023-07-28 11:36:00",
           "member": "string",
           "name": "ProcessStartTime",
           "output_required": true,
@@ -11659,7 +11652,7 @@
         },
         {
           "disabled": false,
-          "document": "调度类型，1:持续运行 2:指定调度结束时间",
+          "document": "调度类型，1:持续运行 2:指定时间范围",
           "example": "1",
           "member": "int64",
           "name": "ProcessType",
@@ -11671,7 +11664,7 @@
         {
           "disabled": false,
           "document": "调度结束时间，当process_type=2时为必传字段",
-          "example": "xx-xx",
+          "example": "2023-07-28 11:36:00",
           "member": "string",
           "name": "ProcessEndTime",
           "output_required": true,

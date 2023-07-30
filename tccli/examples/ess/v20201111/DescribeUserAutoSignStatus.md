@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ess DescribeUserAutoSignStatus --cli-unfold-argument  \
-    --Operator.UserId abc \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
     --SceneKey E_PRESCRIPTION_AUTO_SIGN \
     --UserInfo.Name 小明 \
     --UserInfo.IdCardNumber 610000000000000000 \

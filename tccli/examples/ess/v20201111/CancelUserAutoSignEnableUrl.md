@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ess CancelUserAutoSignEnableUrl --cli-unfold-argument  \
-    --Operator.UserId  \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
     --SceneKey E_PRESCRIPTION_AUTO_SIGN \
     --UserInfo.Name 小明 \
     --UserInfo.IdCardNumber 610000000000000000 \

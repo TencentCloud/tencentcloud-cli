@@ -7,25 +7,27 @@ Input:
 ```
 tccli cls CreateScheduledSql --cli-unfold-argument  \
     --EnableFlag 1 \
-    --ProcessStartTime 1 \
-    --Name abc1 \
-    --DstResource.TopicId abc \
-    --DstResource.Region abc \
-    --ProcessTimeWindow abc \
-    --ProcessPeriod 0 \
-    --ScheduledSqlContent abc \
-    --SrcTopicId abc \
+    --ProcessStartTime 1690515360000 \
+    --Name test \
+    --DstResource.TopicId 6ef60bec-0242-43af-bb20-270359fbxxxx \
+    --DstResource.Region ap-guangzhou \
+    --DstResource.BizType 1 \
+    --DstResource.MetricName pv \
+    --ProcessTimeWindow @m-15m,@m \
+    --ProcessPeriod 5 \
+    --ScheduledSqlContent * | select count(*) as pv \
+    --SrcTopicId 6ef60bec-0242-43af-bb20-270359fbxxxxx \
     --ProcessDelay 0 \
     --ProcessType 0 \
-    --SrcTopicRegion abc \
-    --ProcessEndTime 1
+    --SrcTopicRegion ap-guangzhou \
+    --ProcessEndTime 1690515440000
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TaskId": "xxxx-xx-xx-xx-xxxxxxxx",
+        "TaskId": "abdcebec-0242-43af-bb20-270359fb54a7",
         "RequestId": "6ef60bec-0242-43af-bb20-270359fb54a7"
     }
 }

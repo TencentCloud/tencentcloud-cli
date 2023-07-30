@@ -3152,14 +3152,14 @@
         },
         {
           "disabled": false,
-          "document": "观看类型。可以有如下取值：\n1 互动观看\n2 标准观看",
+          "document": "观看类型。互动观看 （默认）\t",
           "example": "1",
           "member": "uint64",
           "name": "AudienceType",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false,
-          "visibility": 2
+          "visibility": 1
         },
         {
           "disabled": false,

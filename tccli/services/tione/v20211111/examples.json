@@ -32,6 +32,22 @@
         "title": "创建示例"
       }
     ],
+    "CreateNotebook": [
+      {
+        "document": "创建Notebook",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNotebook\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"ChargeType\": \"abc\",\n    \"ResourceConf\": {\n        \"Cpu\": 1,\n        \"Memory\": 1,\n        \"Gpu\": 1,\n        \"GpuType\": \"abc\",\n        \"InstanceType\": \"abc\"\n    },\n    \"ResourceGroupId\": \"abc\",\n    \"VpcId\": \"abc\",\n    \"SubnetId\": \"abc\",\n    \"VolumeSourceType\": \"abc\",\n    \"VolumeSizeInGB\": 1,\n    \"VolumeSourceCFS\": {\n        \"Id\": \"abc\",\n        \"Path\": \"abc\"\n    },\n    \"LogEnable\": true,\n    \"LogConfig\": {\n        \"LogsetId\": \"abc\",\n        \"TopicId\": \"abc\"\n    },\n    \"RootAccess\": true,\n    \"LifecycleScriptId\": \"abc\",\n    \"DefaultCodeRepoId\": \"abc\",\n    \"AdditionalCodeRepoIds\": [\n        \"abc\"\n    ],\n    \"AutoStopping\": true,\n    \"AutomaticStopTime\": 1,\n    \"Tags\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValue\": \"abc\"\n        }\n    ],\n    \"DirectInternetAccess\": true,\n    \"DataConfigs\": [\n        {\n            \"MappingPath\": \"abc\",\n            \"DataSourceType\": \"abc\",\n            \"DataSetSource\": {\n                \"Id\": \"abc\"\n            },\n            \"COSSource\": {\n                \"Bucket\": \"abc\",\n                \"Region\": \"abc\",\n                \"Paths\": [\n                    \"abc\"\n                ]\n            },\n            \"CFSSource\": {\n                \"Id\": \"abc\",\n                \"Path\": \"abc\"\n            },\n            \"HDFSSource\": {\n                \"Id\": \"abc\",\n                \"Path\": \"abc\"\n            },\n            \"GooseFSSource\": {\n                \"Id\": \"abc\"\n            }\n        }\n    ],\n    \"ImageInfo\": {\n        \"ImageType\": \"abc\",\n        \"ImageUrl\": \"abc\",\n        \"RegistryRegion\": \"abc\",\n        \"RegistryId\": \"abc\"\n    },\n    \"ImageType\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建Notebook"
+      }
+    ],
+    "CreateNotebookImage": [
+      {
+        "document": "保存镜像示例",
+        "input": "{\n    \"Kernels\": [\n        \"pytorch_py3\"\n    ],\n    \"ImageInfo\": {\n        \"ImageType\": \"TCR\",\n        \"ImageUrl\": \"ti.com/repo/notebook:test\",\n        \"RegistryRegion\": \"ap-gaungzhou\",\n        \"RegistryId\": \"xx\"\n    },\n    \"NotebookId\": \"nb-67423423534580347\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "保存镜像示例"
+      }
+    ],
     "CreateOptimizedModel": [
       {
         "document": "",
@@ -94,6 +110,22 @@
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteModelServiceGroup\n<公共请求参数>\n\n{\n    \"ServiceGroupId\": \"ms-xxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1cb0e984-d1eb-4dc1-944d-64b7f1a4d143\"\n    }\n}",
         "title": "删除一个服务组"
+      }
+    ],
+    "DeleteNotebook": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNotebook\n<公共请求参数>\n\n{\n    \"Id\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除Notebook"
+      }
+    ],
+    "DeleteNotebookImageRecord": [
+      {
+        "document": "删除notebook镜像保存记录示例",
+        "input": "{\"RecordId\": 1}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除notebook镜像保存记录示例"
       }
     ],
     "DeleteTrainingModel": [
@@ -304,6 +336,38 @@
         "title": "查询多个服务"
       }
     ],
+    "DescribeNotebook": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotebook\n<公共请求参数>\n\n{\n    \"Id\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"NotebookDetail\": {\n            \"ChargeType\": \"xx\",\n            \"AutomaticStopTime\": 0,\n            \"EndTime\": \"xx\",\n            \"ChargeStatus\": \"xx\",\n            \"Status\": \"xx\",\n            \"UpdateTime\": \"xx\",\n            \"VpcId\": \"xx\",\n            \"Tags\": [\n                {\n                    \"TagKey\": \"xx\",\n                    \"TagValue\": \"xx\"\n                }\n            ],\n            \"Id\": \"xx\",\n            \"ResourceGroupId\": \"xx\",\n            \"SubnetId\": \"xx\",\n            \"LifecycleScriptId\": \"xx\",\n            \"RootAccess\": true,\n            \"Name\": \"xx\",\n            \"DefaultCodeRepoId\": \"xx\",\n            \"ResourceConf\": {\n                \"Gpu\": 1,\n                \"Cpu\": 1,\n                \"GpuType\": \"xx\",\n                \"InstanceType\": \"xx\",\n                \"Memory\": 1\n            },\n            \"AutoStopping\": true,\n            \"ResourceGroupName\": \"xx\",\n            \"LogEnable\": true,\n            \"BillingInfos\": [\n                \"xx\"\n            ],\n            \"InstanceTypeAlias\": \"xx\",\n            \"AdditionalCodeRepoIds\": [\n                \"xx\"\n            ],\n            \"DirectInternetAccess\": true,\n            \"CreateTime\": \"xx\",\n            \"RuntimeInSeconds\": 1,\n            \"VolumeSizeInGB\": 1,\n            \"StartTime\": \"xx\",\n            \"PodName\": \"xx\",\n            \"FailureReason\": \"xx\",\n            \"LogConfig\": {\n                \"TopicId\": \"xx\",\n                \"LogsetId\": \"xx\"\n            }\n        }\n    }\n}",
+        "title": "Notebook详情"
+      }
+    ],
+    "DescribeNotebookImageKernels": [
+      {
+        "document": "查询镜像kernel示例",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotebookImageKernels\n<公共请求参数>\n\n{\n    \"NotebookId\": \"nb-6763738683264283\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Kernels\": [\n            \"pytorch_py3\"\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询镜像kernel示例"
+      }
+    ],
+    "DescribeNotebookImageRecords": [
+      {
+        "document": "查看notebook镜像保存记录示例",
+        "input": "{\n    \"NotebookId\": \"nb-67783648436534\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"NotebookImageRecords\": [\n            {\n                \"RecordId\": \"1\",\n                \"ImageUrl\": \"ti.com/repo/test:1\",\n                \"Status\": \"sucess\",\n                \"CreateTime\": \"2022-01-01 00:00:00\",\n                \"Message\": \"保存成功\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查看notebook镜像保存记录示例"
+      }
+    ],
+    "DescribeNotebooks": [
+      {
+        "document": "Notebook列表",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotebooks\n<公共请求参数>\n\n{\n    \"OrderField\": \"string\",\n    \"TagFilters\": [\n        {\n            \"TagValues\": [\n                \"string\"\n            ],\n            \"TagKey\": \"string\"\n        }\n    ],\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Fuzzy\": true,\n            \"Values\": [\n                \"string\"\n            ],\n            \"Name\": \"string\",\n            \"Negative\": true\n        }\n    ],\n    \"Offset\": 0,\n    \"Order\": \"string\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NotebookSet\": [\n            {\n                \"Id\": \"abc\",\n                \"Name\": \"abc\",\n                \"ChargeType\": \"abc\",\n                \"ResourceConf\": {\n                    \"Cpu\": 1,\n                    \"Memory\": 1,\n                    \"Gpu\": 1,\n                    \"GpuType\": \"abc\",\n                    \"InstanceType\": \"abc\"\n                },\n                \"ResourceGroupId\": \"abc\",\n                \"VolumeSizeInGB\": 1,\n                \"BillingInfos\": [\n                    \"abc\"\n                ],\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"abc\",\n                        \"TagValue\": \"abc\"\n                    }\n                ],\n                \"CreateTime\": \"abc\",\n                \"StartTime\": \"abc\",\n                \"UpdateTime\": \"abc\",\n                \"RuntimeInSeconds\": 1,\n                \"ChargeStatus\": \"abc\",\n                \"Status\": \"abc\",\n                \"FailureReason\": \"abc\",\n                \"EndTime\": \"abc\",\n                \"PodName\": \"abc\",\n                \"InstanceTypeAlias\": \"abc\",\n                \"ResourceGroupName\": \"abc\",\n                \"AutoStopping\": true,\n                \"AutomaticStopTime\": 1,\n                \"VolumeSourceType\": \"abc\",\n                \"VolumeSourceCFS\": {\n                    \"Id\": \"abc\",\n                    \"Path\": \"abc\"\n                },\n                \"Message\": \"abc\",\n                \"UserTypes\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "Notebook列表"
+      }
+    ],
     "DescribeTrainingFrameworks": [
       {
         "document": "查询训练框架列表",
@@ -384,6 +448,22 @@
         "title": "增量修改模型服务"
       }
     ],
+    "ModifyNotebook": [
+      {
+        "document": "修改Notebook",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNotebook\n<公共请求参数>\n\n{\n    \"Id\": \"abc\",\n    \"Name\": \"abc\",\n    \"ChargeType\": \"abc\",\n    \"ResourceGroupId\": \"abc\",\n    \"ResourceConf\": {\n        \"Cpu\": 1,\n        \"Memory\": 1,\n        \"Gpu\": 1,\n        \"GpuType\": \"abc\",\n        \"InstanceType\": \"abc\"\n    },\n    \"VpcId\": \"abc\",\n    \"SubnetId\": \"abc\",\n    \"VolumeSizeInGB\": 1,\n    \"VolumeSourceType\": \"abc\",\n    \"VolumeSourceCFS\": {\n        \"Id\": \"abc\",\n        \"Path\": \"abc\"\n    },\n    \"LogEnable\": true,\n    \"LogConfig\": {\n        \"LogsetId\": \"abc\",\n        \"TopicId\": \"abc\"\n    },\n    \"LifecycleScriptId\": \"abc\",\n    \"DefaultCodeRepoId\": \"abc\",\n    \"AdditionalCodeRepoIds\": [\n        \"abc\"\n    ],\n    \"AutoStopping\": true,\n    \"AutomaticStopTime\": 0,\n    \"Tags\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValue\": \"abc\"\n        }\n    ],\n    \"DirectInternetAccess\": true,\n    \"RootAccess\": true,\n    \"DataConfigs\": [\n        {\n            \"MappingPath\": \"abc\",\n            \"DataSourceType\": \"abc\",\n            \"DataSetSource\": {\n                \"Id\": \"abc\"\n            },\n            \"COSSource\": {\n                \"Bucket\": \"abc\",\n                \"Region\": \"abc\",\n                \"Paths\": [\n                    \"abc\"\n                ]\n            },\n            \"CFSSource\": {\n                \"Id\": \"abc\",\n                \"Path\": \"abc\"\n            },\n            \"HDFSSource\": {\n                \"Id\": \"abc\",\n                \"Path\": \"abc\"\n            },\n            \"GooseFSSource\": {\n                \"Id\": \"abc\"\n            },\n            \"CFSTurboSource\": {\n                \"Id\": \"abc\",\n                \"Path\": \"abc\"\n            }\n        }\n    ],\n    \"ImageInfo\": {\n        \"ImageType\": \"abc\",\n        \"ImageUrl\": \"abc\",\n        \"RegistryRegion\": \"abc\",\n        \"RegistryId\": \"abc\"\n    },\n    \"ImageType\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改Notebook"
+      }
+    ],
+    "ModifyNotebookTags": [
+      {
+        "document": "修改Notebook标签",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNotebookTags\n<公共请求参数>\n\n{\n    \"Id\": \"abc\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValue\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改Notebook标签"
+      }
+    ],
     "ModifyServiceGroupWeights": [
       {
         "document": "",
@@ -408,6 +488,14 @@
         "title": "重启模型加速任务"
       }
     ],
+    "StartNotebook": [
+      {
+        "document": "启动Notebook",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartNotebook\n<公共请求参数>\n\n{\n    \"Id\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "启动Notebook"
+      }
+    ],
     "StartTrainingTask": [
       {
         "document": "启动训练任务",
@@ -424,12 +512,28 @@
         "title": "停止跑批任务"
       }
     ],
+    "StopCreatingImage": [
+      {
+        "document": "停止保存镜像",
+        "input": "{\"RecordId\": 1}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "停止保存镜像"
+      }
+    ],
     "StopModelAccelerateTask": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopModelAccelerateTask\n<公共请求参数>\n\n{\n    \"ModelAccTaskId\": \"acc-50rjzj2xtest\"\n}",
         "output": "{\n    \"Response\": {\n        \"ModelAccTaskId\": \"acc-50rjzj2xtest\",\n        \"RequestId\": \"ced11c16-fd5a-4f12-8a0b-17c7f0b14659\",\n        \"AsyncTaskId\": \"task-3wioaushicu8\"\n    }\n}",
         "title": "停止模型加速任务"
+      }
+    ],
+    "StopNotebook": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopNotebook\n<公共请求参数>\n\n{\n    \"Id\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "停止Notebook"
       }
     ],
     "StopTrainingTask": [

@@ -12,29 +12,32 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "xx",
+        "RequestId": "6ef60bec-0242-43af-bb20-270359fb5xxxx",
         "ScheduledSqlTaskInfos": [
             {
-                "Status": 0,
-                "EnableFlag": 0,
-                "UpdateTime": "xx",
-                "Name": "xx",
+                "Status": 1,
+                "EnableFlag": 2,
+                "UpdateTime": "2023-07-28 11:36:00",
+                "Name": "test",
                 "DstResource": {
-                    "TopicId": "xx",
-                    "Region": "xx"
+                    "TopicId": "6ef60bec-0242-43af-bb20-270359fb5xxx",
+                    "Region": "ap-guangzhou",
+                    "BizType": 1,
+                    "MetricName": "pv"
                 },
-                "ProcessTimeWindow": "xx",
-                "ProcessPeriod": 0,
-                "ProcessStartTime": "xx",
-                "SrcTopicRegion": "xx",
-                "SrcTopicName": "xx",
-                "ScheduledSqlContent": "xx",
-                "SrcTopicId": "xx",
-                "ProcessDelay": 0,
-                "TaskId": "xx",
-                "ProcessType": 0,
-                "CreateTime": "xx",
-                "ProcessEndTime": "xx"
+                "ProcessTimeWindow": "@m-15m,@m",
+                "ProcessPeriod": 5,
+                "ProcessStartTime": "2023-07-28 11:36:00",
+                "SrcTopicRegion": "ap-guangzhou",
+                "SrcTopicName": "test-topic",
+                "ScheduledSqlContent": "* | select count(*) as pv",
+                "SrcTopicId": "6ef60bec-0242-43af-bb20-270359fb5xxxx",
+                "ProcessDelay": 60,
+                "TaskId": "6ef60bec-0242-43af-bb20-270359fb5xxxx",
+                "ProcessType": 1,
+                "CreateTime": "2023-07-28 11:36:00",
+                "ProcessEndTime": "2023-07-28 11:36:00",
+                "SyntaxRule": 0
             }
         ]
     }

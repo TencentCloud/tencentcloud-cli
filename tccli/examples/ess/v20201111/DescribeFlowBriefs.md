@@ -23,7 +23,9 @@ Output:
                 "FlowType": "合同",
                 "FlowStatus": 1,
                 "CreatedOn": 1604910798,
-                "FlowMessage": ""
+                "FlowMessage": "",
+                "Deadline": 1606910798,
+                "Creator": "yDRCLUUgygq2xun5UuO4zjEwg0vjoimj"
             },
             {
                 "FlowId": "61a82f0c1******d0d807",
@@ -32,7 +34,9 @@ Output:
                 "FlowType": "合同",
                 "FlowStatus": 1,
                 "CreatedOn": 1604910797,
-                "FlowMessage": ""
+                "FlowMessage": "",
+                "Deadline": 1606910798,
+                "Creator": "yDRCLUUgygq2xun5UuO4zjEwg0vjoimj"
             }
         ]
     }
