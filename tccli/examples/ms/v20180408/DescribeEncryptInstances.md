@@ -19,6 +19,8 @@ Output:
         "EncryptResults": [
             {
                 "AndroidResult": null,
+                "IOSResult": null,
+                "SDKResult": null,
                 "AppletResult": {
                     "AppletInfo": {
                         "AppletJsUrl": "http://xxxxxxxxxxx.zip",
@@ -42,12 +44,12 @@ Output:
                 },
                 "EncryptOpType": 1,
                 "EncryptOpTypeDesc": "在线加固",
-                "IOSResult": null,
                 "OrderType": 1,
                 "OrderTypeDesc": "免费试用",
                 "PlatformDesc": "applet小程序加固",
                 "PlatformType": 4,
-                "SDKResult": null
+                "ResourceId": "xxxxxxx",
+                "OrderId": "xxxxxxxxxxxxxx"
             }
         ],
         "RequestId": "3a25bb5e-6334-449c-b4bf-bbea1e673e3a",
@@ -56,9 +58,66 @@ Output:
 }
 ```
 
-**Example 2: 查询安卓在线加固成功任务**
+**Example 2: 根据ResultId进行单记录查询**
 
-查询安卓在线加固成功任务
+根据ResultId进行单记录查询
+
+Input: 
+
+```
+tccli ms DescribeEncryptInstances --cli-unfold-argument  \
+    --ResultId 6ef4eac9-badc-40d9-9796-569741849f95
+```
+
+Output: 
+```
+{
+    "Response": {
+        "EncryptResults": [
+            {
+                "AndroidResult": null,
+                "AppletResult": {
+                    "AppletInfo": {
+                        "AppletJsUrl": "http://xxxxxxx.zip",
+                        "AppletLevel": 1,
+                        "Name": "test.zip"
+                    },
+                    "CostTime": 13,
+                    "CreatTime": "2023-06-05 18:02:50",
+                    "EncryptErrCode": 0,
+                    "EncryptErrDesc": "",
+                    "EncryptErrRef": "",
+                    "EncryptPkgUrl": "https://xxxxxxxx/test.zip",
+                    "EncryptState": 1,
+                    "EncryptStateDesc": "加固成功",
+                    "EndTime": "2023-06-05 18:03:21",
+                    "OpUin": 700000154106,
+                    "OrderId": "20230605_96ca291a-6e84-47eb-xxxxxxx",
+                    "ResourceId": "20230605_96ca291a-6e84-47eb-xxxxxxx_0",
+                    "ResultId": "6ef4eac9-badc-40d9-9796-569741849f95",
+                    "StartTime": "2023-06-05 18:02:55"
+                },
+                "EncryptOpType": 1,
+                "EncryptOpTypeDesc": "在线加固",
+                "IOSResult": null,
+                "OrderType": 1,
+                "OrderTypeDesc": "免费试用",
+                "PlatformDesc": "applet小程序加固",
+                "PlatformType": 4,
+                "SDKResult": null,
+                "ResourceId": "xxxxxxx",
+                "OrderId": "xxxxxxxxxxxxxx"
+            }
+        ],
+        "RequestId": "8019602c-b5be-4c90-932c-6e6f0e83c0bf",
+        "TotalCount": 1
+    }
+}
+```
+
+**Example 3: 查询Android在线加固成功任务**
+
+查询Android在线加固成功任务
 
 Input: 
 
@@ -124,9 +183,11 @@ Output:
                 "IOSResult": null,
                 "OrderType": 1,
                 "OrderTypeDesc": "免费试用",
-                "PlatformDesc": "android安卓加固",
+                "PlatformDesc": "android加固",
                 "PlatformType": 1,
-                "SDKResult": null
+                "SDKResult": null,
+                "ResourceId": "xxxxxxx",
+                "OrderId": "xxxxxxxxxxxxxx"
             }
         ],
         "RequestId": "f83ad565-fe48-4d45-bdb8-e84c72e67df5",
@@ -135,9 +196,9 @@ Output:
 }
 ```
 
-**Example 3: 查询安卓输出工具任务结果**
+**Example 4: 查询Android输出工具任务结果**
 
-查询安卓输出工具任务结果
+查询Android输出工具任务结果
 
 Input: 
 
@@ -197,67 +258,14 @@ Output:
                 "IOSResult": null,
                 "OrderType": 2,
                 "OrderTypeDesc": "按年收费",
-                "PlatformDesc": "android安卓加固",
+                "PlatformDesc": "android加固",
                 "PlatformType": 1,
-                "SDKResult": null
+                "SDKResult": null,
+                "ResourceId": "xxxxxxx",
+                "OrderId": "xxxxxxxxxxxxxx"
             }
         ],
         "RequestId": "59af19a2-9729-4397-a229-6ee8e8a15a1e",
-        "TotalCount": 1
-    }
-}
-```
-
-**Example 4: 根据ResultId进行单记录查询**
-
-根据ResultId进行单记录查询
-
-Input: 
-
-```
-tccli ms DescribeEncryptInstances --cli-unfold-argument  \
-    --ResultId 6ef4eac9-badc-40d9-9796-569741849f95
-```
-
-Output: 
-```
-{
-    "Response": {
-        "EncryptResults": [
-            {
-                "AndroidResult": null,
-                "AppletResult": {
-                    "AppletInfo": {
-                        "AppletJsUrl": "http://xxxxxxx.zip",
-                        "AppletLevel": 1,
-                        "Name": "test.zip"
-                    },
-                    "CostTime": 13,
-                    "CreatTime": "2023-06-05 18:02:50",
-                    "EncryptErrCode": 0,
-                    "EncryptErrDesc": "",
-                    "EncryptErrRef": "",
-                    "EncryptPkgUrl": "https://xxxxxxxx/test.zip",
-                    "EncryptState": 1,
-                    "EncryptStateDesc": "加固成功",
-                    "EndTime": "2023-06-05 18:03:21",
-                    "OpUin": 700000154106,
-                    "OrderId": "20230605_96ca291a-6e84-47eb-xxxxxxx",
-                    "ResourceId": "20230605_96ca291a-6e84-47eb-xxxxxxx_0",
-                    "ResultId": "6ef4eac9-badc-40d9-9796-569741849f95",
-                    "StartTime": "2023-06-05 18:02:55"
-                },
-                "EncryptOpType": 1,
-                "EncryptOpTypeDesc": "在线加固",
-                "IOSResult": null,
-                "OrderType": 1,
-                "OrderTypeDesc": "免费试用",
-                "PlatformDesc": "applet小程序加固",
-                "PlatformType": 4,
-                "SDKResult": null
-            }
-        ],
-        "RequestId": "8019602c-b5be-4c90-932c-6e6f0e83c0bf",
         "TotalCount": 1
     }
 }

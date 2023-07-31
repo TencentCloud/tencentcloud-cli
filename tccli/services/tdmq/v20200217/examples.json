@@ -140,6 +140,14 @@
         "title": "创建主题"
       }
     ],
+    "CreateRocketMQVipInstance": [
+      {
+        "document": "购买RocketMQ专享实例",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRocketMQVipInstance\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"Spec\": \"rocket-vip-basic-1\",\n    \"NodeCount\": 1,\n    \"StorageSize\": 0,\n    \"ZoneIds\": [\n        \"100001\"\n    ],\n    \"VpcInfo\": {\n        \"VpcId\": \"abc\",\n        \"SubnetId\": \"abc\"\n    },\n    \"TimeSpan\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"rocketmq-xxxx\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "购买RocketMQ专享实例"
+      }
+    ],
     "CreateRole": [
       {
         "document": "创建角色",

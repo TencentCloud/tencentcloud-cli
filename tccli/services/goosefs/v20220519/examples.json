@@ -8,6 +8,22 @@
         "title": "创建上传文件系统数据到存储桶任务"
       }
     ],
+    "CreateFileSystem": [
+      {
+        "document": "创建文件系统",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileSystem\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-a1b2c3d4\",\n    \"Name\": \"ai_test_fs\",\n    \"Zone\": \"ap-guangzhou-3\",\n    \"Tag\": [\n        {\n            \"Value\": \"ai_team\",\n            \"Key\": \"owner_group\"\n        },\n        {\n            \"Value\": \"test\",\n            \"Key\": \"env\"\n        }\n    ],\n    \"SubnetId\": \"subnet-m1n1g1h1\",\n    \"Type\": \"goosefsx\",\n    \"GooseFSxBuildElements\": {\n        \"Model\": \"c60\",\n        \"Capacity\": \"4608\",\n        \"MappedBucketList\": [\n            {\n                \"BucketName\": \"mybucket2-12500000\",\n                \"FileSystemPath\": \"/\"\n            },\n            {\n                \"BucketName\": \"mybucket1-12500000\",\n                \"FileSystemPath\": \"/\"\n            },\n            {\n                \"BucketName\": \"mybucket3-12500000\",\n                \"FileSystemPath\": \"/xxx\"\n            }\n        ]\n    },\n    \"Description\": \"ai team test only\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "创建文件系统"
+      }
+    ],
+    "DeleteFileSystem": [
+      {
+        "document": "删除文件系统",
+        "input": "https://goosefs.tencentcloudapi.com/?Action=DeleteFileSystem\n&FileSystemId=x_c60_r3c4fa1f\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "删除文件系统"
+      }
+    ],
     "DescribeClusterClientToken": [
       {
         "document": "",

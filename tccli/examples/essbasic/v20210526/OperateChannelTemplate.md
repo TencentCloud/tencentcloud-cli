@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli essbasic OperateChannelTemplate --cli-unfold-argument  \
-    --Agent.AppId test \
+    --Agent.AppId yD*****id \
     --TemplateId yDxlkUyKxxxxxxxxxjEvToNRI2MuTr \
     --OperateType select
 ```
@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "AppId": "16fd2f7d7axxxxxf8d501d57b5ec",
+        "AppId": "yD*****id",
         "AuthTag": "all",
         "FailMessageList": [],
         "OperateResult": "all-success",

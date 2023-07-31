@@ -328,6 +328,34 @@
       ],
       "type": "object"
     },
+    "ClazzLevel": {
+      "document": "{\n\"Clazz\": \"c1\", // java类全路径\n\"Level\": \"WARN\" // 日志级别  TRACE，DEBUG、INFO、WARN、ERROR\n}",
+      "members": [
+        {
+          "disabled": false,
+          "document": "java类全路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "org.x.x.x",
+          "member": "string",
+          "name": "Clazz",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "日志级别  TRACE，DEBUG、INFO、WARN、ERROR\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "INFO",
+          "member": "string",
+          "name": "Level",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "Cluster": {
       "document": "描述用户创建的集群信息",
       "members": [
@@ -1305,7 +1333,6 @@
       "document": "CreateJobConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作业Id",
           "example": "cql-abcdefg",
@@ -1316,7 +1343,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主类",
           "example": "com.tencent.cloud.test.WordCount",
@@ -1327,7 +1353,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主类入参",
           "example": "--conf Key=Value",
@@ -1338,7 +1363,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "example",
@@ -1349,7 +1373,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源引用数组",
           "example": "[]",
@@ -1360,7 +1383,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业默认并行度",
           "example": "2",
@@ -1371,7 +1393,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "系统参数",
           "example": "[]",
@@ -1382,7 +1403,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1: 作业配置达到上限之后，自动删除可删除的最早版本",
           "example": "1",
@@ -1393,7 +1413,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业使用的 COS 存储桶名",
           "example": "example-oceanus-1257058918",
@@ -1404,7 +1423,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否采集作业日志",
           "example": "true",
@@ -1415,7 +1433,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "JobManager规格",
           "example": "0.5",
@@ -1426,7 +1443,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TaskManager规格",
           "example": "0.5",
@@ -1437,7 +1453,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CLS日志集ID",
           "example": "xx",
@@ -1448,7 +1463,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CLS日志主题ID",
           "example": "xxx",
@@ -1459,7 +1473,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志采集类型 2：CLS；3：COS",
           "example": "2",
@@ -1470,7 +1483,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "pyflink作业运行时使用的python版本",
           "example": "Python-3.7",
@@ -1481,7 +1493,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-1327",
@@ -1492,7 +1503,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志级别",
           "example": "INFO",
@@ -1503,7 +1513,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Oceanus 平台恢复作业开关 1:开启 -1: 关闭",
           "example": "1",
@@ -1511,6 +1520,36 @@
           "name": "AutoRecover",
           "required": false,
           "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "类日志级别",
+          "example": "[]",
+          "member": "ClazzLevel",
+          "name": "ClazzLevels",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否打开专家模式",
+          "example": "false",
+          "member": "bool",
+          "name": "ExpertModeOn",
+          "required": false,
+          "type": "bool",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "专家模式的配置",
+          "example": "{}",
+          "member": "ExpertModeConfiguration",
+          "name": "ExpertModeConfiguration",
+          "required": false,
+          "type": "object",
           "visibility": 1
         }
       ],
@@ -1525,7 +1564,6 @@
           "example": "1",
           "member": "uint64",
           "name": "Version",
-          "required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -3259,6 +3297,45 @@
       ],
       "type": "object"
     },
+    "ExpertModeConfiguration": {
+      "document": "作业配置 -- 专家模式的详细配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Job graph\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{   \"Nodes\": [     {       \"Id\": 1,       \"Description\": \"This is node 1\",       \"Name\": \"Node1\",       \"Parallelism\": 2     },     {       \"Id\": 2,       \"Description\": \"This is node 2\",       \"Name\": \"Node2\",       \"Parallelism\": 3     },     {       \"Id\": 3,       \"Description\": \"This is node 3\",       \"Name\": \"Node3\",       \"Parallelism\": 4     }   ],   \"Edges\": [     {       \"Source\": 1,       \"Target\": 2     },     {       \"Source\": 2,       \"Target\": 3     }   ] }",
+          "member": "JobGraph",
+          "name": "JobGraph",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Node configuration\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "NodeConfig",
+          "name": "NodeConfig",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Slot sharing groups\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "SlotSharingGroup",
+          "name": "SlotSharingGroups",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "Filter": {
       "document": "查询作业列表时的过滤器",
       "members": [
@@ -3289,7 +3366,6 @@
       "document": "作业配置详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作业Id",
           "example": "cql-xxx",
@@ -3301,7 +3377,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主类\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hello",
@@ -3313,7 +3388,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主类入参\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "--config key=value",
@@ -3325,7 +3399,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hello",
@@ -3337,7 +3410,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业配置创建时间",
           "example": "2021-01-22 20:06:19",
@@ -3349,7 +3421,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业配置的版本号",
           "example": "1",
@@ -3361,7 +3432,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业默认并行度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -3373,7 +3443,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "系统参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -3385,7 +3454,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "引用资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -3397,7 +3465,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建者uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1132",
@@ -3409,7 +3476,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业配置上次启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-01-22 20:06:19",
@@ -3421,7 +3487,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业绑定的存储桶\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "oceanus-example",
@@ -3433,7 +3498,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否启用日志收集，0-未启用，1-已启用，2-历史集群未设置日志集，3-历史集群已开启\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -3445,7 +3509,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业的最大并行度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2048",
@@ -3457,7 +3520,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "JobManager规格\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.5",
@@ -3469,7 +3531,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TaskManager规格\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.5",
@@ -3481,7 +3542,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CLS日志集ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -3493,7 +3553,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CLS日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -3505,7 +3564,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "pyflink作业运行的python版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Python-3.7",
@@ -3517,7 +3575,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Oceanus 平台恢复作业开关 1:开启 -1: 关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -3529,7 +3586,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志级别\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "INFO",
@@ -3539,9 +3595,148 @@
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "类日志级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "ClazzLevel",
+          "name": "ClazzLevels",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否开启专家模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "ExpertModeOn",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "专家模式的配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "ExpertModeConfiguration",
+          "name": "ExpertModeConfiguration",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
+    },
+    "JobGraph": {
+      "document": "作业运行图",
+      "members": [
+        {
+          "disabled": false,
+          "document": "运行图的点集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "JobGraphNode",
+          "name": "Nodes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "运行图的边集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "JobGraphEdge",
+          "name": "Edges",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "JobGraphEdge": {
+      "document": "Flink Job 运行图的边信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "边的起始节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Source",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "边的目标节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Target",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "JobGraphNode": {
+      "document": "Flink Job 运行图的点信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "节点描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "This is a node description",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Node1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "节点并行度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Parallelism",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
     },
     "JobInstanceForSubmissionLog": {
       "document": "搜索启动日志时返回的作业实例",
@@ -4065,6 +4260,67 @@
         }
       ],
       "type": "object"
+    },
+    "NodeConfig": {
+      "document": "专家模式  计算节点的配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Node ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Node parallelism\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Parallelism",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Slot sharing group\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "group1",
+          "member": "string",
+          "name": "SlotSharingGroup",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Configuration properties\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "Property",
+          "name": "Configuration",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "节点的状态ttl配置, 多个用 ; 分割\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "StateTTL",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
     },
     "Property": {
       "document": "系统配置属性",
@@ -5088,6 +5344,95 @@
         }
       ],
       "usage": "out"
+    },
+    "SlotSharingGroup": {
+      "document": "SlotSharingGroup 描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SlotSharingGroup的名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ssgA",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "SlotSharingGroup的规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "SlotSharingGroupSpec",
+          "name": "Spec",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "SlotSharingGroup的描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ssgA",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "SlotSharingGroupSpec": {
+      "document": "SlotSharingGroup的规格描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "适用的cpu\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "float",
+          "name": "CPU",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "默认为b, 支持单位有 b, kb, mb, gb\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1gb",
+          "member": "string",
+          "name": "HeapMemory",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "默认为b, 支持单位有 b, kb, mb, gb\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1gb",
+          "member": "string",
+          "name": "OffHeapMemory",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "默认为b, 支持单位有 b, kb, mb, gb\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1gb",
+          "member": "string",
+          "name": "ManagedMemory",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
     },
     "StopJobDescription": {
       "document": "停止作业的描述信息",

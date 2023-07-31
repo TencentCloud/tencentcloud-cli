@@ -26,7 +26,7 @@ Output:
                 "OrderType": 3,
                 "OrderTypeDesc": "按次收费",
                 "PlatformType": 1,
-                "PlatformTypeDesc": "android安卓加固",
+                "PlatformTypeDesc": "android加固",
                 "ResourceId": "20230602_03702020-0a90-4f46-8f20-XXXXXXXXX_0",
                 "ResourceStatus": 1,
                 "ResourceStatusDesc": "生效中",

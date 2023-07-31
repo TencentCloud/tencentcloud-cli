@@ -2696,7 +2696,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2707,7 +2707,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2718,7 +2718,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2729,7 +2729,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2740,7 +2740,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceStatusDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2751,7 +2751,7 @@
           "example": "无",
           "member": "int64",
           "name": "InstanceCpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -2762,7 +2762,7 @@
           "example": "无",
           "member": "int64",
           "name": "InstanceMemory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -2773,7 +2773,7 @@
           "example": "无",
           "member": "int64",
           "name": "InstanceStorage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -2784,9 +2784,42 @@
           "example": "无",
           "member": "string",
           "name": "InstanceRole",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "执行开始时间(距离0点的秒数)\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10920",
+          "member": "int64",
+          "name": "MaintainStartTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "持续的时间(单位：秒)\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3600",
+          "member": "int64",
+          "name": "MaintainDuration",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "可以执行的时间，枚举值：[\"Mon\",\"Tue\",\"Wed\",\"Thu\",\"Fri\", \"Sat\", \"Sun\"]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"Mon\"\t",
+          "member": "string",
+          "name": "MaintainWeekDays",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true,
           "visibility": 1
         }
       ],
@@ -7365,10 +7398,10 @@
       "document": "DescribeAccounts请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-on5xw0ni",
+          "is_base64": false,
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -7376,10 +7409,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要过滤的账户列表",
           "example": "[admin]",
+          "is_base64": false,
           "member": "string",
           "name": "AccountNames",
           "required": false,
@@ -7387,10 +7420,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库类型，取值范围: \n<li> MYSQL </li>\n该参数已废用",
           "example": "MYSQL",
+          "is_base64": false,
           "member": "string",
           "name": "DbType",
           "required": false,
@@ -7398,10 +7431,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要过滤的账户列表",
           "example": "[0.0.0.0]",
+          "is_base64": false,
           "member": "string",
           "name": "Hosts",
           "required": false,
@@ -7409,10 +7442,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制量",
           "example": "10",
+          "is_base64": false,
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -7420,14 +7453,25 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "0",
+          "is_base64": false,
           "member": "int64",
           "name": "Offset",
           "required": false,
           "type": "int",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "模糊匹配关键字(同时匹配AccountName和AccountHost，返回并集结果，支持正则)",
+          "example": "“test\"",
+          "is_base64": false,
+          "member": "string",
+          "name": "AccountRegular",
+          "required": false,
+          "type": "string",
           "visibility": 1
         }
       ],
@@ -7442,7 +7486,7 @@
           "example": "无",
           "member": "Account",
           "name": "AccountSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -7453,7 +7497,7 @@
           "example": "5",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -8402,10 +8446,10 @@
       "document": "DescribeClusterDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群Id",
           "example": "cynosdbpg-5804k48e",
+          "is_base64": false,
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -8413,10 +8457,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否获取更多服务器信息，可选值yes no",
           "example": "yes",
+          "is_base64": false,
           "member": "string",
           "name": "GetServerInfo",
           "required": false,
@@ -8435,7 +8479,7 @@
           "example": "无",
           "member": "CynosdbClusterDetail",
           "name": "Detail",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -14192,54 +14236,68 @@
       "document": "任务信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务自增ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
           "member": "int64",
           "name": "TaskId",
+          "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "TaskType",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "TaskStatus",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID（集群ID|实例组ID|实例ID）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ObjectId",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ObjectType",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -17115,29 +17173,33 @@
       "document": "回档表信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "旧表名称",
+          "document": "旧表名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
+          "is_base64": false,
           "member": "string",
           "name": "OldTable",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "新表名称",
+          "document": "新表名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
+          "is_base64": false,
           "member": "string",
           "name": "NewTable",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "RollbackTimeRange": {
       "document": "可回档的时间范围",

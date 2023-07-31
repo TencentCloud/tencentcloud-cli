@@ -58,9 +58,9 @@
     ],
     "GetDevices": [
       {
-        "document": "",
+        "document": "获取设备基本信息列表",
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDevices\n<公共请求参数>\n\n{\n    \"PageSize\": \"10\",\n    \"PageNumber\": \"1\",\n    \"Keyword\": \"mna-xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DeviceInfos\": [\n            {\n                \"DeviceName\": \"dev\",\n                \"Remark\": \"xx\",\n                \"DeviceId\": \"mna-xxx\",\n                \"LastTime\": 1,\n                \"CreateTime\": 1\n            },\n            {\n                \"DeviceName\": \"dev1\",\n                \"Remark\": \"xx\",\n                \"DeviceId\": \"mna-xxx\",\n                \"LastTime\": 1,\n                \"CreateTime\": 1\n            }\n        ],\n        \"Length\": 10,\n        \"TotalPage\": 2,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DeviceInfos\": [\n            {\n                \"DeviceId\": \"abc\",\n                \"DeviceName\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"LastTime\": \"abc\",\n                \"Remark\": \"abc\"\n            }\n        ],\n        \"Length\": 0,\n        \"TotalPage\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取设备基本信息列表"
       }
     ],
@@ -98,8 +98,8 @@
     ],
     "UpdateDevice": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDevice\n<公共请求参数>\n\n{\n    \"DeviceName\": \"xx\",\n    \"Remark\": \"xx\",\n    \"DeviceId\": \"mna-xxx\",\n    \"UpdateNetInfo\": [\n        {\n            \"DownloadLimit\": 100,\n            \"UploadLimit\": 100,\n            \"Type\": 0,\n            \"DataEnable\": true,\n            \"NetInfoName\": \"xx\"\n        },\n        {\n            \"Type\": 0,\n            \"DataEnable\": true,\n            \"NetInfoName\": \"xx\"\n        }\n    ]\n}",
+        "document": "更新设备",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": \"abc\",\n    \"DeviceName\": \"abc\",\n    \"Remark\": \"abc\",\n    \"UpdateNetInfo\": [\n        {\n            \"Type\": 0,\n            \"DataEnable\": true,\n            \"UploadLimit\": 1,\n            \"DownloadLimit\": 1,\n            \"NetInfoName\": \"abc\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a400ac72-8f93-4340-a862-f74b56942703\"\n    }\n}",
         "title": "更新设备"
       }

@@ -1825,7 +1825,7 @@
           "example": "无",
           "member": "float",
           "name": "CreateTaskTime",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true,
           "visibility": 1
@@ -1836,7 +1836,7 @@
           "example": "无",
           "member": "float",
           "name": "ProcessTime",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true,
           "visibility": 1
@@ -1847,7 +1847,7 @@
           "example": "无",
           "member": "float",
           "name": "QueueTime",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true,
           "visibility": 1
@@ -1858,7 +1858,7 @@
           "example": "无",
           "member": "float",
           "name": "ExecutionTime",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true,
           "visibility": 1
@@ -1869,7 +1869,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsResultCacheHit",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true,
           "visibility": 1
@@ -1880,7 +1880,7 @@
           "example": "无",
           "member": "int64",
           "name": "MatchedMVBytes",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -1891,7 +1891,7 @@
           "example": "无",
           "member": "string",
           "name": "MatchedMVs",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1902,7 +1902,7 @@
           "example": "无",
           "member": "string",
           "name": "AffectedBytes",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -1913,7 +1913,7 @@
           "example": "无",
           "member": "int64",
           "name": "AffectedRows",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -1924,7 +1924,7 @@
           "example": "无",
           "member": "int64",
           "name": "ProcessedBytes",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -1935,7 +1935,7 @@
           "example": "无",
           "member": "int64",
           "name": "ProcessedRows",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1

@@ -892,6 +892,8 @@ tccli/services/tr/__init__.py
 tccli/services/tr/tr_client.py
 tccli/services/trdp/__init__.py
 tccli/services/trdp/trdp_client.py
+tccli/services/trocket/__init__.py
+tccli/services/trocket/trocket_client.py
 tccli/services/trp/__init__.py
 tccli/services/trp/trp_client.py
 tccli/services/trro/__init__.py
