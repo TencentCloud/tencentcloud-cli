@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cls DeleteScheduledSql --cli-unfold-argument  \
-    --SrcTopicId xx \
-    --TaskId xx
+    --SrcTopicId 6ef60bec-0242-43af-bb20-270359fb54xx \
+    --TaskId 6ef60bec-0242-43af-bb20-270359fbxxx
 ```
 
 Output: 

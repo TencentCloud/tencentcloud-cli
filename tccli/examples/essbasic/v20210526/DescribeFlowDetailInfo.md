@@ -16,51 +16,40 @@ Output:
 ```
 {
     "Response": {
-        "ApplicationId": "16fd2f7d7axxxxxd501d57b5ec",
+        "ApplicationId": "yDwcC******ciRHST9jtYB",
+        "FlowGroupId": "",
+        "FlowGroupName": "",
         "FlowInfo": [
             {
-                "CreateOn": 1638954201,
-                "CustomData": "{\"hello\": 123}",
-                "DeadLine": 1689688460,
+                "CcInfos": [],
+                "CreateOn": 1686120086,
+                "CustomData": "",
+                "DeadLine": 1717656086,
                 "FlowApproverInfos": [
                     {
                         "ApproveMessage": "",
-                        "ApproveName": "签署方1",
+                        "ApproveName": "张三",
                         "ApproveStatus": "PENDING",
                         "ApproveTime": 0,
                         "ApproveType": "PERSON",
-                        "Mobile": "签署方手机号码(11位数字)",
-                        "ProxyOperatorOpenId": "us-a9f05aaxxxxxe963ff3f935d7fa39",
-                        "ProxyOrganizationName": "第三方平台子客企业名称",
-                        "ProxyOrganizationOpenId": "第三方平台子客企业OpenId",
-                        "ReceiptId": "签署人信息",
-                        "SignOrder": 1
-                    },
-                    {
-                        "ApproveMessage": "",
-                        "ApproveName": "签署方2",
-                        "ApproveStatus": "PENDING",
-                        "ApproveTime": 0,
-                        "ApproveType": "ORGANIZATION",
-                        "Mobile": "签署方手机号码(11位数字)",
-                        "ProxyOperatorOpenId": "us-a9f05axxxxxf935d7fa39",
-                        "ProxyOrganizationName": "第三方平台子客企业名称",
-                        "ProxyOrganizationOpenId": "第三方平台子客企业OpenId",
-                        "ReceiptId": "签署人信息",
+                        "Mobile": "133*****75",
+                        "ProxyOperatorOpenId": "oHeIG5gF****TXeXZrb4",
+                        "ProxyOrganizationName": "",
+                        "ProxyOrganizationOpenId": "",
+                        "ReceiptId": "yDwg4UUc****QEAn6BWc39jZVY",
                         "SignOrder": 0
                     }
                 ],
-                "FlowId": "yDxjGUUgxxxxxvGKmZJeX",
+                "FlowId": "yDwg4UUc******6CLBKPEvnl",
                 "FlowMessage": "",
-                "FlowName": "示例1",
+                "FlowName": "电子合同",
                 "FlowStatus": "INIT",
-                "FlowType": "示例"
+                "FlowType": "",
+                "NeedCreateReview": false
             }
         ],
-        "ProxyOrganizationOpenId": "第三方平台子客企业OpenId",
-        "FlowGroupName": "",
-        "FlowGroupId": "",
-        "RequestId": "s16399xxxx603599"
+        "ProxyOrganizationOpenId": "t1td99d*****d28ec280dd4",
+        "RequestId": "c1f80560-****-ae0be7462559"
     }
 }
 ```

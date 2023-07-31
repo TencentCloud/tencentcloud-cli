@@ -308,13 +308,6 @@
       "output": "QrcodeOCRResponse",
       "status": "online"
     },
-    "QueryBarCode": {
-      "document": "库源服务调整，该接口在2023年6月1日将正式下线。\n\n本接口支持条形码备案信息查询，返回条形码查询结果的相关信息，包括产品名称、产品英文名称、品牌名称、规格型号、宽度、高度、深度、关键字、产品描述、厂家名称、厂家地址、企业社会信用代码13个字段信息。\n\n产品优势：直联中国物品编码中心，查询结果更加准确、可靠。",
-      "input": "QueryBarCodeRequest",
-      "name": "条码信息查询",
-      "output": "QueryBarCodeResponse",
-      "status": "deprecated"
-    },
     "QuotaInvoiceOCR": {
       "document": "本接口支持定额发票的发票号码、发票代码、金额(大小写)、发票消费类型、地区及是否有公司印章等关键字段的识别。\n\n默认接口请求频率限制：5次/秒。",
       "input": "QuotaInvoiceOCRRequest",
@@ -565,13 +558,6 @@
       "input": "VerifyBizLicenseRequest",
       "name": "营业执照识别及核验（详细版）",
       "output": "VerifyBizLicenseResponse",
-      "status": "deprecated"
-    },
-    "VerifyEnterpriseFourFactors": {
-      "document": "库源服务调整，该接口在2023年6月1日将正式下线。\n\n此接口基于企业四要素授权“姓名、证件号码、企业标识、企业全称”，验证企业信息是否一致。",
-      "input": "VerifyEnterpriseFourFactorsRequest",
-      "name": "企业四要素核验",
-      "output": "VerifyEnterpriseFourFactorsResponse",
       "status": "deprecated"
     },
     "VerifyOfdVatInvoiceOCR": {
@@ -2345,34 +2331,6 @@
         }
       ],
       "type": "object"
-    },
-    "Detail": {
-      "document": "企业四要素核验结果",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "企业四要素核验结果状态码",
-          "example": "7",
-          "member": "int64",
-          "name": "Result",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "企业四要素核验结果描述",
-          "example": "string",
-          "member": "string",
-          "name": "Desc",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
     },
     "DetectedWordCoordPoint": {
       "document": "单字在原图中的坐标，以四个顶点坐标表示，以左上角为起点，顺时针返回。",
@@ -7917,162 +7875,6 @@
       ],
       "usage": "out"
     },
-    "ProductDataRecord": {
-      "document": "商品码信息",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "产品名称",
-          "member": "string",
-          "name": "ProductName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "产品名称(英文)",
-          "member": "string",
-          "name": "EnName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "品牌名称",
-          "member": "string",
-          "name": "BrandName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "规格型号",
-          "member": "string",
-          "name": "Type",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "宽度，单位毫米",
-          "member": "string",
-          "name": "Width",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "高度，单位毫米",
-          "member": "string",
-          "name": "Height",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "深度，单位毫米",
-          "member": "string",
-          "name": "Depth",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "关键字",
-          "member": "string",
-          "name": "KeyWord",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "简短描述",
-          "member": "string",
-          "name": "Description",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "图片链接",
-          "member": "string",
-          "name": "ImageLink",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "厂家名称",
-          "member": "string",
-          "name": "ManufacturerName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "厂家地址",
-          "member": "string",
-          "name": "ManufacturerAddress",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "企业社会信用代码",
-          "member": "string",
-          "name": "FirmCode",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "表示数据查询状态\ncheckResult\t状态说明\n1\t 经查，该商品条码已在中国物品编码中心注册\n2\t经查，该厂商识别代码已在中国物品编码中心注册，但编码信息未按规定通报。\n3\t经查，该厂商识别代码已于xxxxx注销，请关注产品生产日期。\n4\t经查，该企业以及条码未经条码中心注册，属于违法使用\n-1\t经查，该商品条码被冒用\n-2\t经查，该厂商识别代码已在中国物品编码中心注册，但该产品已经下市\nS001                未找到该厂商识别代码的注册信息。\nS002\t\t该厂商识别代码已经在GS1注册，但编码信息未通报\nS003\t\t该商品条码已在GS1通报\nS004\t\t该商品条码已注销\nS005\t\t数字不正确。GS1前缀（3位国家/地区代码）用于特殊用途。\nE001\t\t完整性失败：此GTIN的长度无效。\nE002\t\t完整性失败：校验位不正确。\nE003\t\t完整性失败：字符串包含字母数字字符。\nE004\t\t数字不正确。GS1前缀（3位国家/地区代码）不存在。\nE005\t\t数字不正确。GS1前缀（3位国家/地区代码）用于特殊用途。\nE006\t\t数字不正确。尚未分配该GS1公司前缀。\nE008\t        经查，该企业厂商识别代码以及条码尚未通报",
-          "member": "string",
-          "name": "CheckResult",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "UNSPSC分类码",
-          "member": "string",
-          "name": "CategoryCode",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "PropOwnerCertOCRRequest": {
       "document": "PropOwnerCertOCR请求参数结构体",
       "members": [
@@ -8327,51 +8129,6 @@
         }
       ],
       "usage": "out"
-    },
-    "QueryBarCodeRequest": {
-      "document": "QueryBarCode请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "条形码",
-          "example": "6928804021912",
-          "member": "string",
-          "name": "BarCode",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "QueryBarCodeResponse": {
-      "document": "QueryBarCode返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "条码",
-          "example": "06941858722888",
-          "member": "string",
-          "name": "BarCode",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "条码信息数组",
-          "example": "无",
-          "member": "ProductDataRecord",
-          "name": "ProductDataRecords",
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "QuestionBlockObj": {
       "document": "数学试题识别结构化对象",
@@ -18068,78 +17825,6 @@
           "name": "RegNumResult",
           "type": "object",
           "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "VerifyEnterpriseFourFactorsRequest": {
-      "document": "VerifyEnterpriseFourFactors请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "姓名",
-          "example": "string",
-          "member": "string",
-          "name": "RealName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "证件号码（公司注册证件号）",
-          "example": "string",
-          "member": "string",
-          "name": "IdCard",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "企业全称",
-          "example": "string",
-          "member": "string",
-          "name": "EnterpriseName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "企业标识（注册号，统一社会信用代码）",
-          "example": "string",
-          "member": "string",
-          "name": "EnterpriseMark",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "VerifyEnterpriseFourFactorsResponse": {
-      "document": "VerifyEnterpriseFourFactors返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "核验一致性（1:一致，2:不一致，3:查询无记录）",
-          "example": "1",
-          "member": "int64",
-          "name": "State",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "核验结果明细，7：企业法人/负责人，6：企业股东，5：企\n业管理人员，-21：企业名称与企业标识不符，-22：姓名不一致，-23：证件号码不一致，-24：企业名称不一致，-25：企业标识不一致\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "Detail",
-          "name": "Detail",
-          "type": "object",
-          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -8,20 +8,21 @@ Input:
 ```
 tccli ess CreateBatchCancelFlowUrl --cli-unfold-argument  \
     --Operator.UserId 1956103********520fde6a \
-    --FlowIds 1 2
+    --FlowIds yDwhIUUck********Ekio7sxsMq yDwhIUUckp*******UuaXC88Rgc yDwhIUUckp*******7sySp2O5D38
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "BatchCancelFlowUrl": "url",
+        "BatchCancelFlowUrl": "https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=BATCH_REVOKE_FLOW&tokenId=yDwhIUU*****BtD1PuoS7&userId=yD******4zjEwqXwsIljA&expireOn=1690536359&login=1&verify=1",
         "FailMessages": [
+            "",
             "",
             ""
         ],
-        "UrlExpireOn": "",
-        "RequestId": "test"
+        "RequestId": "s1690449958963022285",
+        "UrlExpireOn": "2023-07-28 17:25:59"
     }
 }
 ```

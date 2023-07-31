@@ -7,20 +7,22 @@ Input:
 
 ```
 tccli essbasic ChannelCreateBatchCancelFlowUrl --cli-unfold-argument  \
-    --Agent.ProxyOrganizationOpenId test \
-    --Agent.ProxyOperator.OpenId test \
-    --Agent.AppId test \
-    --FlowIds id
+    --Agent.ProxyOrganizationOpenId 600***487 \
+    --Agent.ProxyOperator.OpenId 7f3497f0****7b0ec \
+    --Agent.AppId 130****4283 \
+    --FlowIds yDwF*****Xhgx9shH
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "BatchCancelFlowUrl": "url",
-        "FailMessages": [],
-        "UrlExpireOn": "",
-        "RequestId": "id"
+        "BatchCancelFlowUrl": "https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=BATCH_REVOKE_FLOW&tokenId=yDwhCUUck*****dKO5TA&userId=yDxHTUUgydj9*****yrY850RBN&expireOn=1690030266&login=1&verify=1",
+        "FailMessages": [
+            ""
+        ],
+        "RequestId": "e906c2a4-cb12-4f33-891e-39352d4dee3d",
+        "UrlExpireOn": "2023-07-22 20:51:06"
     }
 }
 ```

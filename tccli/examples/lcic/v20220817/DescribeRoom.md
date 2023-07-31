@@ -22,6 +22,7 @@ Output:
         "SdkAppId": 1,
         "RequestId": "test",
         "StartTime": 1,
+        "AudienceType": 1,
         "TeacherId": "test",
         "Assistants": [
             "test"
@@ -52,6 +53,7 @@ Output:
 {
     "Response": {
         "Assistants": [],
+        "AudienceType": 1,
         "AudioQuality": 0,
         "AutoMic": 0,
         "DisableRecord": 0,

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ess GetTaskResultApi --cli-unfold-argument  \
-    --Operator.UserId yDxoQUUgydjfn4yaUuO4zjEyd1h2hnnR \
-    --TaskId 20220726183047992850
+    --Operator.UserId yDxoQxxxxxxxxxxxxxxxxxx1h2hnnR \
+    --TaskId 2022xxxxxxxxxx992850
 ```
 
 Output: 

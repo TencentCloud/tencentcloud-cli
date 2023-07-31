@@ -28,6 +28,20 @@
       "output": "CreateModelServiceResponse",
       "status": "online"
     },
+    "CreateNotebook": {
+      "document": "创建Notebook",
+      "input": "CreateNotebookRequest",
+      "name": "创建Notebook",
+      "output": "CreateNotebookResponse",
+      "status": "online"
+    },
+    "CreateNotebookImage": {
+      "document": "保存镜像",
+      "input": "CreateNotebookImageRequest",
+      "name": "保存镜像",
+      "output": "CreateNotebookImageResponse",
+      "status": "online"
+    },
     "CreateOptimizedModel": {
       "document": "保存优化模型",
       "input": "CreateOptimizedModelRequest",
@@ -82,6 +96,20 @@
       "input": "DeleteModelServiceGroupRequest",
       "name": "删除模型服务组",
       "output": "DeleteModelServiceGroupResponse",
+      "status": "online"
+    },
+    "DeleteNotebook": {
+      "document": "删除Notebook",
+      "input": "DeleteNotebookRequest",
+      "name": "删除Notebook",
+      "output": "DeleteNotebookResponse",
+      "status": "online"
+    },
+    "DeleteNotebookImageRecord": {
+      "document": "删除notebook镜像保存记录",
+      "input": "DeleteNotebookImageRecordRequest",
+      "name": "删除notebook镜像保存记录",
+      "output": "DeleteNotebookImageRecordResponse",
       "status": "online"
     },
     "DeleteTrainingModel": {
@@ -266,6 +294,34 @@
       "output": "DescribeModelServicesResponse",
       "status": "online"
     },
+    "DescribeNotebook": {
+      "document": "Notebook详情",
+      "input": "DescribeNotebookRequest",
+      "name": "Notebook详情",
+      "output": "DescribeNotebookResponse",
+      "status": "online"
+    },
+    "DescribeNotebookImageKernels": {
+      "document": "查询镜像kernel",
+      "input": "DescribeNotebookImageKernelsRequest",
+      "name": "查询镜像kernel",
+      "output": "DescribeNotebookImageKernelsResponse",
+      "status": "online"
+    },
+    "DescribeNotebookImageRecords": {
+      "document": "查看notebook镜像保存记录",
+      "input": "DescribeNotebookImageRecordsRequest",
+      "name": "查看notebook镜像保存记录",
+      "output": "DescribeNotebookImageRecordsResponse",
+      "status": "online"
+    },
+    "DescribeNotebooks": {
+      "document": "Notebook列表",
+      "input": "DescribeNotebooksRequest",
+      "name": "Notebook列表",
+      "output": "DescribeNotebooksResponse",
+      "status": "online"
+    },
     "DescribeTrainingFrameworks": {
       "document": "训练框架列表",
       "input": "DescribeTrainingFrameworksRequest",
@@ -336,6 +392,20 @@
       "output": "ModifyModelServicePartialConfigResponse",
       "status": "online"
     },
+    "ModifyNotebook": {
+      "document": "修改Notebook",
+      "input": "ModifyNotebookRequest",
+      "name": "修改Notebook",
+      "output": "ModifyNotebookResponse",
+      "status": "online"
+    },
+    "ModifyNotebookTags": {
+      "document": "修改Notebook标签",
+      "input": "ModifyNotebookTagsRequest",
+      "name": "修改Notebook标签",
+      "output": "ModifyNotebookTagsResponse",
+      "status": "online"
+    },
     "ModifyServiceGroupWeights": {
       "document": "更新推理服务组流量分配",
       "input": "ModifyServiceGroupWeightsRequest",
@@ -357,6 +427,13 @@
       "output": "RestartModelAccelerateTaskResponse",
       "status": "online"
     },
+    "StartNotebook": {
+      "document": "启动Notebook",
+      "input": "StartNotebookRequest",
+      "name": "启动Notebook",
+      "output": "StartNotebookResponse",
+      "status": "online"
+    },
     "StartTrainingTask": {
       "document": "启动模型训练任务",
       "input": "StartTrainingTaskRequest",
@@ -371,11 +448,25 @@
       "output": "StopBatchTaskResponse",
       "status": "online"
     },
+    "StopCreatingImage": {
+      "document": "停止保存镜像",
+      "input": "StopCreatingImageRequest",
+      "name": "停止保存镜像",
+      "output": "StopCreatingImageResponse",
+      "status": "online"
+    },
     "StopModelAccelerateTask": {
       "document": "停止模型加速任务",
       "input": "StopModelAccelerateTaskRequest",
       "name": "停止模型加速任务",
       "output": "StopModelAccelerateTaskResponse",
+      "status": "online"
+    },
+    "StopNotebook": {
+      "document": "停止Notebook",
+      "input": "StopNotebookRequest",
+      "name": "停止Notebook",
+      "output": "StopNotebookResponse",
       "status": "online"
     },
     "StopTrainingTask": {
@@ -2155,6 +2246,276 @@
       ],
       "type": "object"
     },
+    "CreateNotebookImageRequest": {
+      "document": "CreateNotebookImage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要保存的kernel数组",
+          "example": "无",
+          "member": "string",
+          "name": "Kernels",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "镜像信息",
+          "example": "无",
+          "member": "ImageInfo",
+          "name": "ImageInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "notebook id",
+          "example": "无",
+          "member": "string",
+          "name": "NotebookId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNotebookImageResponse": {
+      "document": "CreateNotebookImage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNotebookRequest": {
+      "document": "CreateNotebook请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称。不超过60个字符，仅支持中英文、数字、下划线\"_\"、短横\"-\"，只能以中英文、数字开头",
+          "example": "a1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计算资源付费模式 ，可选值为：\nPREPAID：预付费，即包年包月\nPOSTPAID_BY_HOUR：按小时后付费",
+          "example": "a1",
+          "member": "string",
+          "name": "ChargeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计算资源配置",
+          "example": "无",
+          "member": "ResourceConf",
+          "name": "ResourceConf",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否上报日志",
+          "example": "true",
+          "member": "bool",
+          "name": "LogEnable",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否ROOT权限",
+          "example": "true",
+          "member": "bool",
+          "name": "RootAccess",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动停止",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoStopping",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否访问公网",
+          "example": "true",
+          "member": "bool",
+          "name": "DirectInternetAccess",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "资源组ID(for预付费)",
+          "example": "a1",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Vpc-Id",
+          "example": "a1",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子网Id",
+          "example": "a1",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储的类型。取值包含： \n    FREE:    预付费的免费存储\n    CLOUD_PREMIUM： 高性能云硬盘\n    CLOUD_SSD： SSD云硬盘\n    CFS:     CFS存储，包含NFS和turbo",
+          "example": "CFS",
+          "member": "string",
+          "name": "VolumeSourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储卷大小，单位GB",
+          "example": "1",
+          "member": "uint64",
+          "name": "VolumeSizeInGB",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "CFS存储的配置",
+          "example": "无",
+          "member": "CFSConfig",
+          "name": "VolumeSourceCFS",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "日志配置",
+          "example": "无",
+          "member": "LogConfig",
+          "name": "LogConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "生命周期脚本的ID",
+          "example": "a1",
+          "member": "string",
+          "name": "LifecycleScriptId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认GIT存储库的ID",
+          "example": "a1",
+          "member": "string",
+          "name": "DefaultCodeRepoId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "其他GIT存储库的ID，最多3个",
+          "example": "无",
+          "member": "string",
+          "name": "AdditionalCodeRepoIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自动停止时间，单位小时",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutomaticStopTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签配置",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据配置",
+          "example": "[]",
+          "member": "DataConfig",
+          "name": "DataConfigs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "镜像信息",
+          "example": "无",
+          "member": "ImageInfo",
+          "name": "ImageInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "镜像类型",
+          "example": "无",
+          "member": "string",
+          "name": "ImageType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNotebookResponse": {
+      "document": "CreateNotebook返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "notebook标志",
+          "example": "NB-xxxx",
+          "member": "string",
+          "name": "Id",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateOptimizedModelRequest": {
       "document": "CreateOptimizedModel请求参数结构体",
       "members": [
@@ -3764,6 +4125,61 @@
     },
     "DeleteModelServiceResponse": {
       "document": "DeleteModelService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNotebookImageRecordRequest": {
+      "document": "DeleteNotebookImageRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "记录id",
+          "example": "无",
+          "member": "string",
+          "name": "RecordId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNotebookImageRecordResponse": {
+      "document": "DeleteNotebookImageRecord返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNotebookRequest": {
+      "document": "DeleteNotebook请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "notebook id",
+          "example": "a1",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNotebookResponse": {
+      "document": "DeleteNotebook返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5496,6 +5912,242 @@
           "name": "Services",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookImageKernelsRequest": {
+      "document": "DescribeNotebookImageKernels请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "notebook id",
+          "example": "无",
+          "member": "string",
+          "name": "NotebookId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookImageKernelsResponse": {
+      "document": "DescribeNotebookImageKernels返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像kernel数组",
+          "example": "无",
+          "member": "string",
+          "name": "Kernels",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookImageRecordsRequest": {
+      "document": "DescribeNotebookImageRecords请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "notebook id",
+          "example": "无",
+          "member": "string",
+          "name": "NotebookId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "位移值",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "日志限制",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "状态筛选",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookImageRecordsResponse": {
+      "document": "DescribeNotebookImageRecords返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像保存记录",
+          "example": "无",
+          "member": "NotebookImageRecord",
+          "name": "NotebookImageRecords",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookRequest": {
+      "document": "DescribeNotebook请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "notebook id",
+          "example": "nb-12345",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebookResponse": {
+      "document": "DescribeNotebook返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "详情",
+          "example": "无",
+          "member": "NotebookDetail",
+          "name": "NotebookDetail",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebooksRequest": {
+      "document": "DescribeNotebooks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页返回的实例数，默认为10",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "输出列表的排列顺序。取值范围：ASC：升序排列 DESC：降序排列。默认为DESC",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "根据哪个字段排序，如：CreateTime、UpdateTime，默认为UpdateTime",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器，eg：[{ \"Name\": \"Id\", \"Values\": [\"nb-123456789\"] }]\n\n取值范围\nName（名称）：notebook1\nId（notebook ID）：nb-123456789\nStatus（状态）：Starting / Running / Stopped / Stopping / Failed / SubmitFailed\nChargeType（计费类型）：PREPAID（预付费）/ POSTPAID_BY_HOUR（后付费）\nChargeStatus（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ BILLING_STORAGE（存储计费中）/ARREARS_STOP（欠费停止）\nDefaultCodeRepoId（默认代码仓库ID）：cr-123456789\nAdditionalCodeRepoId（关联代码仓库ID）：cr-123456789\nLifecycleScriptId（生命周期ID）：ls-12312312311312",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签过滤器，eg：[{ \"TagKey\": \"TagKeyA\", \"TagValue\": [\"TagValueA\"] }]",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotebooksResponse": {
+      "document": "DescribeNotebooks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NotebookSetItem",
+          "name": "NotebookSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -7824,6 +8476,267 @@
       ],
       "type": "object"
     },
+    "ModifyNotebookRequest": {
+      "document": "ModifyNotebook请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "notebook id",
+          "example": "a1",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "a1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计算资源付费模式 ，可选值为：\nPREPAID：预付费，即包年包月\nPOSTPAID_BY_HOUR：按小时后付费",
+          "example": "a1",
+          "member": "string",
+          "name": "ChargeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计算资源配置",
+          "example": "无",
+          "member": "ResourceConf",
+          "name": "ResourceConf",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否上报日志",
+          "example": "true",
+          "member": "bool",
+          "name": "LogEnable",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动停止",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoStopping",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否访问公网",
+          "example": "true",
+          "member": "bool",
+          "name": "DirectInternetAccess",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否ROOT权限",
+          "example": "true",
+          "member": "bool",
+          "name": "RootAccess",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "资源组ID(for预付费)",
+          "example": "a1",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Vpc-Id",
+          "example": "a1",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子网Id",
+          "example": "a1",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储卷大小，单位GB",
+          "example": "1",
+          "member": "uint64",
+          "name": "VolumeSizeInGB",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "存储的类型。取值包含： \n    FREE:    预付费的免费存储\n    CLOUD_PREMIUM： 高性能云硬盘\n    CLOUD_SSD： SSD云硬盘\n    CFS:     CFS存储，包含NFS和turbo",
+          "example": "CFS",
+          "member": "string",
+          "name": "VolumeSourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CFS存储的配置",
+          "example": "无",
+          "member": "CFSConfig",
+          "name": "VolumeSourceCFS",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "日志配置",
+          "example": "无",
+          "member": "LogConfig",
+          "name": "LogConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "生命周期脚本的ID",
+          "example": "a1",
+          "member": "string",
+          "name": "LifecycleScriptId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认GIT存储库的ID",
+          "example": "a1",
+          "member": "string",
+          "name": "DefaultCodeRepoId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "其他GIT存储库的ID，最多3个",
+          "example": "无",
+          "member": "string",
+          "name": "AdditionalCodeRepoIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自动停止时间，单位小时",
+          "example": "1",
+          "member": "int64",
+          "name": "AutomaticStopTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签配置",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据配置",
+          "example": "[]",
+          "member": "DataConfig",
+          "name": "DataConfigs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "镜像信息",
+          "example": "无",
+          "member": "ImageInfo",
+          "name": "ImageInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "镜像类型",
+          "example": "无",
+          "member": "string",
+          "name": "ImageType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNotebookResponse": {
+      "document": "ModifyNotebook返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNotebookTagsRequest": {
+      "document": "ModifyNotebookTags请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Notebook Id",
+          "example": "nb-12345",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Notebook修改标签集合",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNotebookTagsResponse": {
+      "document": "ModifyNotebookTags返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyServiceGroupWeightsRequest": {
       "document": "ModifyServiceGroupWeights请求参数结构体",
       "members": [
@@ -7871,6 +8784,714 @@
         }
       ],
       "type": "object"
+    },
+    "NotebookDetail": {
+      "document": "类型NotebookDetail",
+      "members": [
+        {
+          "disabled": false,
+          "document": "notebook  ID",
+          "example": "a1",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "notebook 名称",
+          "example": "a2",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生命周期脚本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a3",
+          "member": "string",
+          "name": "LifecycleScriptId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Pod-Name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a4",
+          "member": "string",
+          "name": "PodName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Update-Time",
+          "example": "a5",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否访问公网",
+          "example": "true",
+          "member": "bool",
+          "name": "DirectInternetAccess",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预付费专用资源组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a9",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否自动停止",
+          "example": "无",
+          "member": "bool",
+          "name": "AutoStopping",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "其他GIT存储库，最多3个，单个\n长度不超过512字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AdditionalCodeRepoIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动停止时间，单位小时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "14",
+          "member": "int64",
+          "name": "AutomaticStopTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源配置",
+          "example": "无",
+          "member": "ResourceConf",
+          "name": "ResourceConf",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认GIT存储库，长度不超过512字符",
+          "example": "a17",
+          "member": "string",
+          "name": "DefaultCodeRepoId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "训练输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "q18",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否上报日志",
+          "example": "true",
+          "member": "bool",
+          "name": "LogEnable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogConfig",
+          "name": "LogConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VPC ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a21",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a22",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务状态",
+          "example": "a23",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "24",
+          "member": "uint64",
+          "name": "RuntimeInSeconds",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "a25",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "训练开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a26",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费状态，eg：BILLING计费中，ARREARS_STOP欠费停止，NOT_BILLING不在计费中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a27",
+          "member": "string",
+          "name": "ChargeStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否ROOT权限",
+          "example": "true",
+          "member": "bool",
+          "name": "RootAccess",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计贺金额信息，eg:2.00元/小时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BillingInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储卷大小 （单位时GB，最小10GB，必须是10G的倍数）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "uint64",
+          "name": "VolumeSizeInGB",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a31",
+          "member": "string",
+          "name": "FailureReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计算资源付费模式 (- PREPAID：预付费，即包年包月 - POSTPAID_BY_HOUR：按小时后付费)",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "ChargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后付费资源规格说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2核4G",
+          "member": "string",
+          "name": "InstanceTypeAlias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预付费资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "资源组1",
+          "member": "string",
+          "name": "ResourceGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储的类型。取值包含： \n    FREE:        预付费的免费存储\n    CLOUD_PREMIUM： 高性能云硬盘\n    CLOUD_SSD： SSD云硬盘\n    CFS:     CFS存储，包含NFS和turbo\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CFS",
+          "member": "string",
+          "name": "VolumeSourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CFS存储的配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CFSConfig",
+          "name": "VolumeSourceCFS",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "DataConfig",
+          "name": "DataConfigs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "notebook 信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源来源，eg：WeData_HDFS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DataSource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像信息",
+          "example": "无",
+          "member": "ImageInfo",
+          "name": "ImageInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "NotebookImageRecord": {
+      "document": "镜像保存记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "保存记录ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RecordId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "kernel数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"pytorch_py3\"]",
+          "member": "string",
+          "name": "Kernels",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "NotebookSetItem": {
+      "document": "Notebook列表元素",
+      "members": [
+        {
+          "disabled": false,
+          "document": "notebook ID",
+          "example": "a",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "notebook 名称",
+          "example": "a",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费模式",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "ChargeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源配置",
+          "example": "a a",
+          "member": "ResourceConf",
+          "name": "ResourceConf",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预付费资源组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储卷大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "VolumeSizeInGB",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费金额信息，eg：2.00元/小时 (for后付费)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sss",
+          "member": "string",
+          "name": "BillingInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "xxx",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "x x x",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "xxx",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "RuntimeInSeconds",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "ChargeStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "xx",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "FailureReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Pod名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a",
+          "member": "string",
+          "name": "PodName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后付费资源规格名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2核4G",
+          "member": "string",
+          "name": "InstanceTypeAlias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预付费资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "资源组1",
+          "member": "string",
+          "name": "ResourceGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否自动终止",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoStopping",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动停止时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutomaticStopTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储的类型。取值包含： \n    FREE:        预付费的免费存储\n    CLOUD_PREMIUM： 高性能云硬盘\n    CLOUD_SSD： SSD云硬盘\n    CFS:     CFS存储，包含NFS和turbo\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CFS",
+          "member": "string",
+          "name": "VolumeSourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CFS存储的配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CFSConfig",
+          "name": "VolumeSourceCFS",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "notebook 信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "notebook用户类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"AIMarket\"]",
+          "member": "string",
+          "name": "UserTypes",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "OcrLabelInfo": {
       "document": "OCR场景标签列表",
@@ -8162,6 +9783,67 @@
           "name": "Enable",
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ResourceConf": {
+      "document": "Notebook资源参数",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "cpu 处理器资源, 单位为1/1000核 (for预付费)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Cpu",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "memory 内存资源, 单位为1M (for预付费)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Memory",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "gpu Gpu卡资源，单位为1单位的GpuType，例如GpuType=T4时，1 Gpu = 1/100 T4卡，GpuType=vcuda时，1 Gpu = 1/100 vcuda-core (for预付费)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Gpu",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "GpuType 卡类型 vcuda, T4,P4,V100等 (for预付费)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "P40",
+          "member": "string",
+          "name": "GpuType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "计算规格 (for后付费)，可选值如下：\nTI.S.LARGE.POST: 4C8G \nTI.S.2XLARGE16.POST:  8C16G \nTI.S.2XLARGE32.POST:  8C32G \nTI.S.4XLARGE32.POST:  16C32G\nTI.S.4XLARGE64.POST:  16C64G\nTI.S.6XLARGE48.POST:  24C48G\nTI.S.6XLARGE96.POST:  24C96G\nTI.S.8XLARGE64.POST:  32C64G\nTI.S.8XLARGE128.POST : 32C128G\nTI.GN10.2XLARGE40.POST: 8C40G V100*1 \nTI.GN10.5XLARGE80.POST:  18C80G V100*2 \nTI.GN10.10XLARGE160.POST :  32C160G V100*4\nTI.GN10.20XLARGE320.POST :  72C320G V100*8\nTI.GN7.8XLARGE128.POST: 32C128G T4*1 \nTI.GN7.10XLARGE160.POST: 40C160G T4*2 \nTI.GN7.20XLARGE320.POST: 80C320G T4*4\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TI.S.LARGE.POST",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -9873,6 +11555,33 @@
       ],
       "usage": "both"
     },
+    "StartNotebookRequest": {
+      "document": "StartNotebook请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "notebook id",
+          "example": "a1",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartNotebookResponse": {
+      "document": "StartNotebook返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StartTrainingTaskRequest": {
       "document": "StartTrainingTask请求参数结构体",
       "members": [
@@ -9989,6 +11698,33 @@
       ],
       "type": "object"
     },
+    "StopCreatingImageRequest": {
+      "document": "StopCreatingImage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像保存记录ID",
+          "example": "无",
+          "member": "string",
+          "name": "RecordId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopCreatingImageResponse": {
+      "document": "StopCreatingImage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StopModelAccelerateTaskRequest": {
       "document": "StopModelAccelerateTask请求参数结构体",
       "members": [
@@ -10028,6 +11764,34 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopNotebookRequest": {
+      "document": "StopNotebook请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "notebook id",
+          "example": "a1",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopNotebookResponse": {
+      "document": "StopNotebook返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

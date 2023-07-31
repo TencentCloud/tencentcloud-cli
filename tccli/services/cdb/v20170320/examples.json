@@ -164,13 +164,13 @@
     ],
     "CreateDBInstance": [
       {
-        "document": "",
+        "document": "购买主实例",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstance\n<公共请求参数>\n\n{\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"marchtest\",\n            \"TagValue\": [\n                \"test1\"\n            ]\n        }\n    ],\n    \"Zone\": \"ap-guangzhou-3\",\n    \"UniqVpcId\": \"vpc-0akbol5v\",\n    \"ProjectId\": \"0\",\n    \"InstanceRole\": \"master\",\n    \"GoodsNum\": \"1\",\n    \"Period\": \"1\",\n    \"Volume\": \"25\",\n    \"EngineVersion\": \"5.6\",\n    \"UniqSubnetId\": \"subnet-fyrtjbqw\",\n    \"Memory\": \"1000\",\n    \"InstanceNodes\": \"2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"InstanceIds\": [\n            \"cdb-pn6gd5jp\"\n        ],\n        \"DealIds\": [\n            \"20171201110011\"\n        ]\n    }\n}",
         "title": "购买主实例"
       },
       {
-        "document": "",
+        "document": "购买只读实例",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstance\n<公共请求参数>\n\n{\n    \"RoGroup\": {\n        \"RoGroupMode\": \"allinone\",\n        \"RoGroupName\": \"jersey_test\",\n        \"RoMaxDelayTime\": \"5\",\n        \"MinRoInGroup\": \"1\",\n        \"RoOfflineDelay\": \"1\"\n    },\n    \"GoodsNum\": \"1\",\n    \"InstanceRole\": \"ro\",\n    \"MasterInstanceId\": \"cdb-fn3f9xpx\",\n    \"Period\": \"1\",\n    \"Volume\": \"100\",\n    \"Memory\": \"4000\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"DealIds\": [\n            \"20171205110051\"\n        ],\n        \"InstanceIds\": [\n            \"cdbro-hlpl4ik9\"\n        ]\n    }\n}",
         "title": "购买只读实例"

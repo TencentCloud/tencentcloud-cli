@@ -52,7 +52,7 @@
       {
         "document": "",
         "input": "https://ckafka.tencentcloudapi.com/?Action=CreateAcl\n&InstanceId=xxx\n&ResourceType=2\n&ResourceName=test1\n&Operation=2\n&PermissionType=2\n&Host=1.1.1.1\n&Principal=User:user1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\",\n            \"Data\": {\n                \"FlowId\": 0\n            }\n        },\n        \"RequestId\": \"b1ce770b-3623-47d3-b31b-538f8941142d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\",\n            \"Data\": {\n                \"FlowId\": 0,\n                \"RouteDTO\": {\n                    \"RouteId\": 0\n                }\n            }\n        },\n        \"RequestId\": \"b1ce770b-3623-47d3-b31b-538f8941142d\"\n    }\n}",
         "title": "添加 ACL 策略"
       }
     ],

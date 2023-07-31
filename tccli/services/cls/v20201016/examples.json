@@ -131,8 +131,8 @@
     "CreateScheduledSql": [
       {
         "document": "创建ScheduledSQL任务",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScheduledSql\n<公共请求参数>\n\n{\n    \"EnableFlag\": 1,\n    \"ProcessStartTime\": 1,\n    \"Name\": \"abc1\",\n    \"DstResource\": {\n        \"TopicId\": \"abc\",\n        \"Region\": \"abc\"\n    },\n    \"ProcessTimeWindow\": \"abc\",\n    \"ProcessPeriod\": 0,\n    \"ScheduledSqlContent\": \"abc\",\n    \"SrcTopicId\": \"abc\",\n    \"ProcessDelay\": 0,\n    \"ProcessType\": 0,\n    \"SrcTopicRegion\": \"abc\",\n    \"ProcessEndTime\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"xxxx-xx-xx-xx-xxxxxxxx\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScheduledSql\n<公共请求参数>\n\n{\n    \"EnableFlag\": 1,\n    \"ProcessStartTime\": 1690515360000,\n    \"Name\": \"test\",\n    \"DstResource\": {\n        \"TopicId\": \"6ef60bec-0242-43af-bb20-270359fbxxxx\",\n        \"Region\": \"ap-guangzhou\",\n        \"BizType\": 1,\n        \"MetricName\": \"pv\"\n    },\n    \"ProcessTimeWindow\": \"@m-15m,@m\",\n    \"ProcessPeriod\": 5,\n    \"ScheduledSqlContent\": \"* | select count(*) as pv\",\n    \"SrcTopicId\": \"6ef60bec-0242-43af-bb20-270359fbxxxxx\",\n    \"ProcessDelay\": 0,\n    \"ProcessType\": 0,\n    \"SrcTopicRegion\": \"ap-guangzhou\",\n    \"ProcessEndTime\": 1690515440000\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"abdcebec-0242-43af-bb20-270359fb54a7\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "创建ScheduledSQL任务"
       }
     ],
@@ -259,7 +259,7 @@
     "DeleteScheduledSql": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteScheduledSql\n<公共请求参数>\n\n{\n    \"SrcTopicId\": \"xx\",\n    \"TaskId\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteScheduledSql\n<公共请求参数>\n\n{\n    \"SrcTopicId\": \"6ef60bec-0242-43af-bb20-270359fb54xx\",\n    \"TaskId\": \"6ef60bec-0242-43af-bb20-270359fbxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "删除ScheduledSql任务"
       }
@@ -444,7 +444,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScheduledSqlInfo\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"ScheduledSqlTaskInfos\": [\n            {\n                \"Status\": 0,\n                \"EnableFlag\": 0,\n                \"UpdateTime\": \"xx\",\n                \"Name\": \"xx\",\n                \"DstResource\": {\n                    \"TopicId\": \"xx\",\n                    \"Region\": \"xx\"\n                },\n                \"ProcessTimeWindow\": \"xx\",\n                \"ProcessPeriod\": 0,\n                \"ProcessStartTime\": \"xx\",\n                \"SrcTopicRegion\": \"xx\",\n                \"SrcTopicName\": \"xx\",\n                \"ScheduledSqlContent\": \"xx\",\n                \"SrcTopicId\": \"xx\",\n                \"ProcessDelay\": 0,\n                \"TaskId\": \"xx\",\n                \"ProcessType\": 0,\n                \"CreateTime\": \"xx\",\n                \"ProcessEndTime\": \"xx\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb5xxxx\",\n        \"ScheduledSqlTaskInfos\": [\n            {\n                \"Status\": 1,\n                \"EnableFlag\": 2,\n                \"UpdateTime\": \"2023-07-28 11:36:00\",\n                \"Name\": \"test\",\n                \"DstResource\": {\n                    \"TopicId\": \"6ef60bec-0242-43af-bb20-270359fb5xxx\",\n                    \"Region\": \"ap-guangzhou\",\n                    \"BizType\": 1,\n                    \"MetricName\": \"pv\"\n                },\n                \"ProcessTimeWindow\": \"@m-15m,@m\",\n                \"ProcessPeriod\": 5,\n                \"ProcessStartTime\": \"2023-07-28 11:36:00\",\n                \"SrcTopicRegion\": \"ap-guangzhou\",\n                \"SrcTopicName\": \"test-topic\",\n                \"ScheduledSqlContent\": \"* | select count(*) as pv\",\n                \"SrcTopicId\": \"6ef60bec-0242-43af-bb20-270359fb5xxxx\",\n                \"ProcessDelay\": 60,\n                \"TaskId\": \"6ef60bec-0242-43af-bb20-270359fb5xxxx\",\n                \"ProcessType\": 1,\n                \"CreateTime\": \"2023-07-28 11:36:00\",\n                \"ProcessEndTime\": \"2023-07-28 11:36:00\",\n                \"SyntaxRule\": 0\n            }\n        ]\n    }\n}",
         "title": "获取ScheduledSql任务列表"
       }
     ],
@@ -579,8 +579,8 @@
     "ModifyScheduledSql": [
       {
         "document": "修改ScheduledSQL任务",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyScheduledSql\n<公共请求参数>\n\n{\n    \"EnableFlag\": 1,\n    \"TaskId\": \"abc\",\n    \"DstResource\": {\n        \"TopicId\": \"abc\",\n        \"Region\": \"abc\"\n    },\n    \"ProcessTimeWindow\": \"abc\",\n    \"ProcessPeriod\": 0,\n    \"ScheduledSqlContent\": \"abc\",\n    \"SrcTopicId\": \"abc\",\n    \"ProcessDelay\": 0,\n    \"SrcTopicRegion\": \"abc\",\n    \"Name\": \"task\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abcd\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyScheduledSql\n<公共请求参数>\n\n{\n    \"EnableFlag\": 1,\n    \"TaskId\": \"6ef60bec-0242-43af-bb20-270359fxxxxx\",\n    \"DstResource\": {\n        \"TopicId\": \"6ef60bec-0242-43af-bb20-270359fxxxxx\",\n        \"Region\": \"ap-guangzhou\",\n        \"BizType\": 1,\n        \"MetricName\": \"pv\"\n    },\n    \"ProcessTimeWindow\": \"@m-15m,@m\",\n    \"ProcessPeriod\": 5,\n    \"ScheduledSqlContent\": \"* | select count(*) as pv\",\n    \"SrcTopicId\": \"6ef60bec-0242-43af-bb20-270359fbxxxx\",\n    \"ProcessDelay\": 0,\n    \"SrcTopicRegion\": \"ap-guangzhou\",\n    \"Name\": \"task\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54ax\"\n    }\n}",
         "title": "修改ScheduledSQL任务"
       }
     ],

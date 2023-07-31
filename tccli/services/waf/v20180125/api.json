@@ -266,6 +266,13 @@
       "output": "GetAttackDownloadRecordsResponse",
       "status": "online"
     },
+    "GetAttackHistogram": {
+      "document": "生成攻击日志的产生时间柱状图",
+      "input": "GetAttackHistogramRequest",
+      "name": "攻击日志统计",
+      "output": "GetAttackHistogramResponse",
+      "status": "online"
+    },
     "ModifyAccessPeriod": {
       "document": "本接口用于修改访问日志保存期限及大字段是否存储",
       "input": "ModifyAccessPeriodRequest",
@@ -5189,6 +5196,84 @@
       ],
       "type": "object"
     },
+    "GetAttackHistogramRequest": {
+      "document": "GetAttackHistogram请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "查询的域名，所有域名使用all",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "查询起始时间",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "查询结束时间",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "Lucene语法",
+          "member": "string",
+          "name": "QueryString",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAttackHistogramResponse": {
+      "document": "GetAttackHistogram返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "统计详情",
+          "member": "LogHistogramInfo",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间段大小",
+          "member": "uint64",
+          "name": "Period",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "统计的条目数",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "HostRecord": {
       "document": "clb-waf防护域名",
       "members": [
@@ -6118,6 +6203,32 @@
         }
       ],
       "usage": "both"
+    },
+    "LogHistogramInfo": {
+      "document": "攻击日志统计详情",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "日志条数",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "时间戳",
+          "member": "int64",
+          "name": "TimeStamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ModifyAccessPeriodRequest": {
       "document": "ModifyAccessPeriod请求参数结构体",

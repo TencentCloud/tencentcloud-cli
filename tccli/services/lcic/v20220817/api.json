@@ -2815,6 +2815,16 @@
         },
         {
           "disabled": false,
+          "document": "观看类型。互动观看 （默认）\t",
+          "example": "1",
+          "member": "uint64",
+          "name": "AudienceType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清",
           "example": "1",
           "member": "uint64",

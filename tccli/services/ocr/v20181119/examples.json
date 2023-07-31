@@ -406,14 +406,6 @@
         "title": "二维码和条形码识别示例代码  [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=QrcodeOCR)"
       }
     ],
-    "QueryBarCode": [
-      {
-        "document": "查询条码信息",
-        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryBarCode\n<公共请求参数>\n\n{\n    \"BarCode\": \"6928804021912\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BarCode\": \"06928804021912\",\n        \"ProductDataRecords\": [\n            {\n                \"BrandName\": \"美汁源\",\n                \"CategoryCode\": \"\",\n                \"CheckResult\": \"1\",\n                \"Depth\": \"\",\n                \"Description\": \"\",\n                \"EnName\": \"\",\n                \"FirmCode\": \"911100006000138767\",\n                \"Height\": \"\",\n                \"ImageLink\": [\n                    \"\"\n                ],\n                \"KeyWord\": \"480ml美汁源葡萄气泡饮葡萄汁汽水 *12\",\n                \"ManufacturerAddress\": \"北京市朝阳区酒仙桥路20号楼3层301号312室\",\n                \"ManufacturerName\": \"太古中萃发展有限公司\",\n                \"ProductName\": \"480ml美汁源葡萄气泡饮葡萄汁汽水 *12\",\n                \"Type\": \"480ml*12\",\n                \"Width\": \"\"\n            }\n        ],\n        \"RequestId\": \"e2ca3708-f5cd-49de-b254-4d9beca0eef6\"\n    }\n}",
-        "title": "查询条码信息"
-      }
-    ],
     "QuotaInvoiceOCR": [
       {
         "document": "定额发票识别",
@@ -724,14 +716,6 @@
         "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyBizLicense\n<公共请求参数>\n\n{\n    \"RegNum\": \"911101085636549482\",\n    \"Name\": \"腾讯云计算（北京）有限责任公司\",\n    \"Address\": \"北京市海淀区知春路49号3层西部309\"\n}",
         "output": "{\n    \"Response\": {\n        \"AbuItem\": \"\",\n        \"Address\": \"北京市海淀区西北旺东路10号院西区9号楼4层101\",\n        \"ApprDate\": \"2023-01-17\",\n        \"AreaCode\": \"\",\n        \"CancelDate\": \"\",\n        \"CbuItem\": \"\",\n        \"City\": \"北京市\",\n        \"County\": \"海淀区\",\n        \"CreditCode\": \"911101085636549482\",\n        \"EnterpriseName\": \"腾讯云计算（北京）有限责任公司\",\n        \"EnterpriseStatus\": \"存续\",\n        \"EnterpriseType\": \"有限责任公司(法人独资)\",\n        \"ErrorCode\": 0,\n        \"EsDate\": \"2010-10-21\",\n        \"FrName\": \"谢兰芳\",\n        \"IndustryCode\": \"\",\n        \"IndustryName\": \"\",\n        \"IndustryPhyCode\": \"\",\n        \"IndustryPhyName\": \"\",\n        \"OpenFrom\": \"2010-10-21\",\n        \"OpenTo\": \"2030-10-20\",\n        \"OperateScope\": \"\",\n        \"OperateScopeAndForm\": \"利用互联网经营游戏产品运营、网络游戏虚拟货币发行、从事互联网文化产品的展览、比赛活动；经营电信业务（以增值电信业务经营许可证核定范围为准）（增值电信业务经营许可证有效期至2023年11月28日）；人力资源服务；销售第三类医疗器械；专利代理；技术开发、技术转让、技术咨询；设计、制作、代理、发布广告；基础软件服务；应用软件服务；销售自行开发的产品、医疗器械I类、II类、计算机、软件及辅助设备、通讯设备、机械设备、电子产品；货物进出口、技术进出口、代理进出口；企业管理咨询；市场调查；商标代理；著作权代理服务；移动电信、宽带网络的技术服务；代理记账。（市场主体依法自主选择经营项目，开展经营活动；代理记账以及依法须经批准的项目，经相关部门批准后依批准的内容开展经营活动；不得从事国家和本市产业政策禁止和限制类项目的经营活动。）\",\n        \"OrgCode\": \"563654948\",\n        \"Province\": \"北京\",\n        \"RegCap\": \"\",\n        \"RegCapCur\": \"\",\n        \"RegNo\": \"110108013297537\",\n        \"RegNumResult\": {\n            \"Address\": \"-1\",\n            \"Name\": \"0\",\n            \"RegNum\": \"0\"\n        },\n        \"RegOrg\": \"\",\n        \"RequestId\": \"e2aba233-f200-4234-807f-fd12b1a6649c\",\n        \"RevokeDate\": \"\",\n        \"VerifyAddress\": \"北京市海淀区知春路49号3层西部309\",\n        \"VerifyEnterpriseName\": \"腾讯云计算（北京）有限责任公司\",\n        \"VerifyRegNo\": \"911101085636549482\"\n    }\n}",
         "title": "营业执照识别及核验详细版示例代码（输入关键字段进行核验）"
-      }
-    ],
-    "VerifyEnterpriseFourFactors": [
-      {
-        "document": "企业四要素核验示例代码（输入关键字段进行核验）",
-        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyEnterpriseFourFactors\n<公共请求参数>\n\n{\n    \"IdCard\": \"610110190001010812\",\n    \"EnterpriseName\": \"大饼网络工作室\",\n    \"RealName\": \"李大饼\",\n    \"EnterpriseMark\": \"92770729JK3A9WAU7J\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Detail\": {\n            \"Desc\": \"企业法人/负责人\",\n            \"Result\": 7\n        },\n        \"RequestId\": \"9406f64f-b57d-4d53-b58a-f65e5f1f90f0\",\n        \"State\": 1\n    }\n}",
-        "title": "企业四要素核验示例代码（输入关键字段进行核验）"
       }
     ],
     "VerifyOfdVatInvoiceOCR": [

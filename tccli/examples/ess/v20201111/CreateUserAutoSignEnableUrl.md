@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ess CreateUserAutoSignEnableUrl --cli-unfold-argument  \
-    --Operator.UserId 123 \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
     --SceneKey E_PRESCRIPTION_AUTO_SIGN \
     --AutoSignConfig.UserInfo.Name 小明 \
     --AutoSignConfig.UserInfo.IdCardType ID_CARD \
@@ -14,7 +14,7 @@ tccli ess CreateUserAutoSignEnableUrl --cli-unfold-argument  \
     --AutoSignConfig.CertInfoCallback True \
     --AutoSignConfig.UserDefineSeal False \
     --AutoSignConfig.SealImgCallback False \
-    --AutoSignConfig.CallbackUrl  \
+    --AutoSignConfig.CallbackUrl http://ess.callback.com/recv \
     --AutoSignConfig.VerifyChannels  \
     --UrlType 
 ```

@@ -1,6 +1,6 @@
 **Example 1: 购买主实例**
 
-
+购买主实例
 
 Input: 
 
@@ -38,7 +38,7 @@ Output:
 
 **Example 2: 购买只读实例**
 
-
+购买只读实例
 
 Input: 
 
