@@ -384,6 +384,14 @@
         "title": "查询增量备份导入任务"
       }
     ],
+    "DescribeInstanceByOrders": [
+      {
+        "document": "根据订单号查询实例ID集合",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceByOrders\n<公共请求参数>\n\n{\n    \"DealNames\": [\n        \"202301018918716527262\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DealInstance\": [\n            {\n                \"InstanceId\": [\n                    \"mssql-8a9iajua\"\n                ],\n                \"DealName\": \"202301018918716527262\"\n            }\n        ],\n        \"RequestId\": \"5481552e-2127-11ee-92b8-525400853186\"\n    }\n}",
+        "title": "根据订单号查询实例ID集合"
+      }
+    ],
     "DescribeInstanceParamRecords": [
       {
         "document": "",

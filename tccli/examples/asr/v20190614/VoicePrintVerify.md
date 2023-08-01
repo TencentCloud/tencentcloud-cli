@@ -18,7 +18,7 @@ Output:
     "Response": {
         "Data": {
             "VoicePrintId": "abc",
-            "Score": "abc",
+            "Score": "60.0",
             "Decision": 0
         },
         "RequestId": "abc"

@@ -1,3 +1,311 @@
+# Release 3.0.820.1
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 35 次发布
+
+发布时间：2023-08-02 01:14:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeKafkaUser](http://document.tencentcloudapi.woa.com/document/product/614/81455)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 54 次发布
+
+发布时间：2023-08-02 01:19:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [OpenClusterReadOnlyInstanceGroupAccess](http://document.tencentcloudapi.woa.com/document/product/1003/81456)
+
+
+
+## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
+
+### 第 12 次发布
+
+发布时间：2023-08-02 01:20:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Device](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Device)
+
+	* 新增成员：IpPortSet
+
+* [ExternalDevice](http://document.tencentcloudapi.woa.com/document/product/1492/74806#ExternalDevice)
+
+	* 新增成员：IpPortSet
+
+* [Resource](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Resource)
+
+	* <font color="#dd0000">**修改成员**：</font>LogDeliveryArgs
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 17 次发布
+
+发布时间：2023-08-02 01:25:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreatePersonAuthCertificateImage](http://document.tencentcloudapi.woa.com/document/product/1668/81457)
+
+
+
+## 数据加速器 GooseFS(goosefs) 版本：2022-05-19
+
+### 第 5 次发布
+
+发布时间：2023-08-02 01:26:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddCrossVpcSubnetSupportForClientNode](http://document.tencentcloudapi.woa.com/document/product/1716/81471)
+* [AttachFileSystemBucket](http://document.tencentcloudapi.woa.com/document/product/1716/81464)
+* [BatchAddClientNodes](http://document.tencentcloudapi.woa.com/document/product/1716/81470)
+* [BatchDeleteClientNodes](http://document.tencentcloudapi.woa.com/document/product/1716/81469)
+* [DeleteCrossVpcSubnetSupportForClientNode](http://document.tencentcloudapi.woa.com/document/product/1716/81468)
+* [DescribeClientNodes](http://document.tencentcloudapi.woa.com/document/product/1716/81467)
+* [DescribeFileSystemBuckets](http://document.tencentcloudapi.woa.com/document/product/1716/81463)
+* [DescribeFileSystems](http://document.tencentcloudapi.woa.com/document/product/1716/81462)
+* [DetachFileSystemBucket](http://document.tencentcloudapi.woa.com/document/product/1716/81461)
+* [ExpandCapacity](http://document.tencentcloudapi.woa.com/document/product/1716/81460)
+* [ModifyDataRepositoryBandwidth](http://document.tencentcloudapi.woa.com/document/product/1716/81459)
+* [QueryCrossVpcSubnetSupportForClientNode](http://document.tencentcloudapi.woa.com/document/product/1716/81466)
+* [QueryDataRepositoryBandwidth](http://document.tencentcloudapi.woa.com/document/product/1716/81458)
+
+新增数据结构：
+
+* [ClientClusterManagerNodeInfo](http://document.tencentcloudapi.woa.com/document/product/1716/81241#ClientClusterManagerNodeInfo)
+* [ClientNodeAttribute](http://document.tencentcloudapi.woa.com/document/product/1716/81241#ClientNodeAttribute)
+* [FSAttribute](http://document.tencentcloudapi.woa.com/document/product/1716/81241#FSAttribute)
+* [GooseFSxAttribute](http://document.tencentcloudapi.woa.com/document/product/1716/81241#GooseFSxAttribute)
+* [LinuxNodeAttribute](http://document.tencentcloudapi.woa.com/document/product/1716/81241#LinuxNodeAttribute)
+* [SubnetInfo](http://document.tencentcloudapi.woa.com/document/product/1716/81241#SubnetInfo)
+
+
+
+## 移动应用安全(ms) 版本：2018-04-08
+
+### 第 3 次发布
+
+发布时间：2023-08-02 01:34:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CancelEncryptTask
+* CreateEncryptInstance
+* CreateOrderInstance
+* DescribeEncryptInstances
+* DescribeOrderInstances
+
+修改数据结构：
+
+* [AndroidResult](http://document.tencentcloudapi.woa.com/document/product/1617/78369#AndroidResult)
+
+	* <font color="#dd0000">**修改成员**：</font>ResultId, OrderId, ResourceId, OpUin, AppType, AppPkgName, BindAppPkgName, EncryptState, EncryptStateDesc, EncryptErrCode, EncryptErrDesc, EncryptErrRef, CreatTime, StartTime, EndTime, CostTime, AppUrl, AppMd5, AppName, AppVersion, AppSize, OnlineToolVersion, EncryptAppMd5, EncryptAppSize, EncryptPkgUrl, OutputToolVersion, OutputToolSize, ToolOutputTime, ToolExpireTime, OutputToolUrl, AndroidPlan
+
+* [EncryptResults](http://document.tencentcloudapi.woa.com/document/product/1617/78369#EncryptResults)
+
+	* <font color="#dd0000">**修改成员**：</font>PlatformType, PlatformDesc, OrderType, OrderTypeDesc, EncryptOpType, EncryptOpTypeDesc, ResourceId, OrderId, AndroidResult, IOSResult, SDKResult, AppletResult
+
+* [Orders](http://document.tencentcloudapi.woa.com/document/product/1617/78369#Orders)
+
+	* <font color="#dd0000">**修改成员**：</font>OrderId, PlatformType, PlatformTypeDesc, OrderType, OrderTypeDesc, AppPkgName, ResourceId, ResourceStatus, ResourceStatusDesc, TestTimes, ValidTime, ExpireTime, CreateTime, Approver, ApprovalStatus, ApprovalStatusDesc, ApprovalTime, TimesTaskTotalCount, TimesTaskSuccessCount, TimesTaskFailCount
+
+
+
+
+## NLP 服务(nlp) 版本：2019-04-08
+
+### 第 9 次发布
+
+发布时间：2023-08-02 01:34:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* AutoSummarization
+* ChatBot
+* CreateDict
+* CreateWordItems
+* DeleteDict
+* DeleteWordItems
+* DependencyParsing
+* DescribeDict
+* DescribeDicts
+* DescribeWordItems
+* GenerateCouplet
+* GeneratePoetry
+* KeywordsExtraction
+* LexicalAnalysis
+* SearchWordItems
+* SentenceEmbedding
+* SentimentAnalysis
+* SimilarWords
+* TextClassification
+* TextCorrection
+* TextCorrectionPro
+* TextSimilarity
+* TextSimilarityPro
+* UpdateDict
+* WordEmbedding
+* WordSimilarity
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* CCIToken
+* ClassificationResult
+* DictInfo
+* DpToken
+* Keyword
+* NerToken
+* PosToken
+* SearchResult
+* Similarity
+* WordItem
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 36 次发布
+
+发布时间：2023-08-02 01:36:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [K8SToleration](http://document.tencentcloudapi.woa.com/document/product/583/17244#K8SToleration)
+
+	* <font color="#dd0000">**修改成员**：</font>Key
+
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 24 次发布
+
+发布时间：2023-08-02 01:37:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeInstanceByOrders](http://document.tencentcloudapi.woa.com/document/product/238/81472)
+
+新增数据结构：
+
+* [DealInstance](http://document.tencentcloudapi.woa.com/document/product/238/19976#DealInstance)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 59 次发布
+
+发布时间：2023-08-02 01:42:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteRocketMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/81473)
+
+修改接口：
+
+* [DescribeCmqSubscriptionDetail](http://document.tencentcloudapi.woa.com/document/product/1179/55908)
+
+	* 新增入参：QueueName, QueryType
+
+	* <font color="#dd0000">**修改入参**：</font>TopicName
+
+
+修改数据结构：
+
+* [CmqSubscription](http://document.tencentcloudapi.woa.com/document/product/1179/46089#CmqSubscription)
+
+	* 新增成员：TopicName
+
+* [CmqTopic](http://document.tencentcloudapi.woa.com/document/product/1179/46089#CmqTopic)
+
+	* 新增成员：SubscriptionCount
+
+	* <font color="#dd0000">**修改成员**：</font>TopicId, TopicName, MsgRetentionSeconds, MaxMsgSize, Qps, FilterType, CreateTime, LastModifyTime, MsgCount, CreateUin, Tags, Trace, TenantId, NamespaceName, Status, BrokerType, SetType, InstanceId
+
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 35 次发布
+
+发布时间：2023-08-02 01:47:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeployGroup](http://document.tencentcloudapi.woa.com/document/product/649/36070)
+
+	* 新增入参：EnableBatchHealthCheck
+
+
+修改数据结构：
+
+* [VmGroup](http://document.tencentcloudapi.woa.com/document/product/649/36099#VmGroup)
+
+	* 新增成员：EnableBatchHealthCheck
+
+	* <font color="#dd0000">**修改成员**：</font>GroupId, GroupName, GroupStatus, PackageId, PackageName, PackageVersion, ClusterId, ClusterName, NamespaceId, NamespaceName, ApplicationId, ApplicationName, InstanceCount, RunInstanceCount, StartupParameters, CreateTime, UpdateTime, OffInstanceCount, GroupDesc, MicroserviceType, ApplicationType, GroupResourceType, UpdatedTime, DeployDesc, UpdateType, DeployBetaEnable, DeployBatch, DeployExeMode, DeployWaitTime, EnableHealthCheck, HealthCheckSettings, PackageType, StartScript, StopScript, Alias, AgentProfileList, WarmupSetting, GatewayConfig
+
+
+
+
 # Release 3.0.819.1
 
 ## 日志服务(cls) 版本：2020-10-16

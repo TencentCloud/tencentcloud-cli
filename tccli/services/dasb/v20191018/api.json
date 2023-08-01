@@ -3842,182 +3842,178 @@
       "document": "资产信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资产ID",
           "example": "1",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，对应CVM、CDB等实例ID",
           "example": "xxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产名",
           "example": "xxx",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网IP",
           "example": "1.1.1.1",
           "member": "string",
           "name": "PublicIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内网IP",
           "example": "1.1.1.1",
           "member": "string",
           "name": "PrivateIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域编码",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ApCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作系统名称",
           "example": "Centos 7",
           "member": "string",
           "name": "OsName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产类型 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer",
           "example": "1",
           "member": "uint64",
           "name": "Kind",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "管理端口",
           "example": "22",
           "member": "uint64",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属资产组列表",
           "example": "[]",
           "member": "Group",
           "name": "GroupSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产绑定的账号数",
           "example": "10",
           "member": "uint64",
           "name": "AccountCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC ID",
           "example": "vpc-xxxxxx",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID",
           "example": "subnet-a2676p0e",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "堡垒机服务信息，注意没有绑定服务时为null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Resource",
           "name": "Resource",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产所属部门\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Department",
           "name": "Department",
-          "required": true,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "数据库资产的多节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "127.0.0.1:2001",
+          "member": "string",
+          "name": "IpPortSet",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -4089,7 +4085,6 @@
       "document": "主机参数，导入外部主机时使用",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "操作系统名称，只能是Linux、Windows或MySQL",
           "example": "Linux",
@@ -4097,11 +4092,9 @@
           "name": "OsName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址",
           "example": "1.1.1.1",
@@ -4109,11 +4102,9 @@
           "name": "Ip",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "管理端口",
           "example": "22",
@@ -4121,11 +4112,9 @@
           "name": "Port",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机名，可为空",
           "example": "xx",
@@ -4133,11 +4122,9 @@
           "name": "Name",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产所属的部门ID",
           "example": "1.2.3",
@@ -4145,7 +4132,16 @@
           "name": "DepartmentId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "资产多节点：字段ip和端口",
+          "example": "127.0.0.1:2001",
+          "member": "string",
+          "name": "IpPortSet",
+          "required": false,
+          "type": "list",
           "visibility": 1
         }
       ],
@@ -5032,7 +5028,7 @@
           "example": "bh-saas-s3ed4r5e",
           "member": "string",
           "name": "ResourceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -5043,7 +5039,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ApCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -5054,7 +5050,7 @@
           "example": "sv_cds_dasb_saas_xxx",
           "member": "string",
           "name": "SvArgs",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -5065,7 +5061,7 @@
           "example": "vpc-xxxxxx",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -5076,7 +5072,7 @@
           "example": "50",
           "member": "uint64",
           "name": "Nodes",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5087,7 +5083,7 @@
           "example": "1",
           "member": "uint64",
           "name": "RenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5098,7 +5094,7 @@
           "example": "2021-02-04T15:23:52+08:00",
           "member": "datetime_iso",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -5109,7 +5105,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5120,7 +5116,7 @@
           "example": "T-Sec-堡垒机（SaaS型）",
           "member": "string",
           "name": "ResourceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -5131,7 +5127,7 @@
           "example": "1007488",
           "member": "uint64",
           "name": "Pid",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5142,7 +5138,7 @@
           "example": "2021-02-04T15:23:52+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -5153,7 +5149,7 @@
           "example": "p_cds_dasb",
           "member": "string",
           "name": "ProductCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -5164,7 +5160,7 @@
           "example": "sp_cds_dasb_bh_saas",
           "member": "string",
           "name": "SubProductCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -5175,7 +5171,7 @@
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -5186,7 +5182,7 @@
           "example": "true",
           "member": "bool",
           "name": "Expired",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false,
           "visibility": 1
@@ -5197,7 +5193,7 @@
           "example": "true",
           "member": "bool",
           "name": "Deployed",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false,
           "visibility": 1
@@ -5208,7 +5204,7 @@
           "example": "vpc1",
           "member": "string",
           "name": "VpcName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -5219,7 +5215,7 @@
           "example": "10.10.10.0/16",
           "member": "string",
           "name": "VpcCidrBlock",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -5230,7 +5226,7 @@
           "example": "subnet-xxxxxx",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -5241,7 +5237,7 @@
           "example": "subnet1",
           "member": "string",
           "name": "SubnetName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -5252,7 +5248,7 @@
           "example": "10.10.10.0/24",
           "member": "string",
           "name": "CidrBlock",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -5263,7 +5259,7 @@
           "example": "无",
           "member": "string",
           "name": "PublicIpSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -5274,7 +5270,7 @@
           "example": "无",
           "member": "string",
           "name": "PrivateIpSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -5285,7 +5281,7 @@
           "example": "无",
           "member": "string",
           "name": "ModuleSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -5296,7 +5292,7 @@
           "example": "10",
           "member": "uint64",
           "name": "UsedNodes",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5307,7 +5303,7 @@
           "example": "50",
           "member": "uint64",
           "name": "ExtendPoints",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5318,7 +5314,7 @@
           "example": "1",
           "member": "uint64",
           "name": "PackageBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5329,7 +5325,7 @@
           "example": "1",
           "member": "uint64",
           "name": "PackageNode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5340,7 +5336,7 @@
           "example": "sv_cds_dasb_saas_xxx",
           "member": "string",
           "name": "LogDeliveryArgs",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1

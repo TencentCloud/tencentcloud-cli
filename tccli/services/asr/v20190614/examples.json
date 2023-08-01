@@ -218,7 +218,7 @@
       {
         "document": "验证音频和说话人id是否一致",
         "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintVerify\n<公共请求参数>\n\n{\n    \"VoiceFormat\": 0,\n    \"SampleRate\": 0,\n    \"VoicePrintId\": \"abc\",\n    \"Data\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"VoicePrintId\": \"abc\",\n            \"Score\": \"abc\",\n            \"Decision\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"VoicePrintId\": \"abc\",\n            \"Score\": \"60.0\",\n            \"Decision\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "说话人验证"
       }
     ]
