@@ -243,30 +243,30 @@
       "document": "BankCard2EVerification请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "姓名",
           "example": "张三",
+          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "银行卡",
           "example": "6222222222222222222",
+          "is_base64": false,
           "member": "string",
           "name": "BankCard",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "敏感数据加密信息。对传入信息（姓名、银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
           "example": "无",
+          "is_base64": false,
           "member": "Encryption",
           "name": "Encryption",
           "required": false,
@@ -280,11 +280,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码\n计费结果码：\n  '0': '认证通过'\n  '-1': '认证未通过'\n '-4': '持卡人信息有误'\n  '-5': '未开通无卡支付'\n  '-6': '此卡被没收'\n  '-7': '无效卡号'\n  '-8': '此卡无对应发卡行'\n  '-9': '该卡未初始化或睡眠卡'\n  '-10': '作弊卡、吞卡'\n  '-11': '此卡已挂失'\n  '-12': '该卡已过期'\n  '-13': '受限制的卡'\n  '-14': '密码错误次数超限'\n  '-15': '发卡行不支持此交易'\n不计费结果码：\n  '-2': '姓名校验不通过'\n  '-3': '银行卡号码有误'\n  '-16': '验证中心服务繁忙'",
+          "document": "认证结果码\n计费结果码：\n  '0': '认证通过'\n  '-1': '认证未通过'\n '-4': '持卡人信息有误'\n  '-5': '未开通无卡支付'\n  '-6': '此卡被没收'\n  '-7': '无效卡号'\n  '-8': '此卡无对应发卡行'\n  '-9': '该卡未初始化或睡眠卡'\n  '-10': '作弊卡、吞卡'\n  '-11': '此卡已挂失'\n  '-12': '该卡已过期'\n  '-13': '受限制的卡'\n  '-14': '密码错误次数超限'\n  '-15': '发卡行不支持此交易'\n不计费结果码：\n  '-2': '姓名校验不通过'\n  '-3': '银行卡号码有误'\n  '-16': '验证中心服务繁忙'\n  '-17': '验证次数超限，请次日重试'\n",
           "example": "0",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -294,7 +294,7 @@
           "example": "认证通过",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -311,60 +311,60 @@
       "document": "BankCard4EVerification请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "姓名",
           "example": "张三",
+          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "银行卡",
           "example": "6222222222222222222",
+          "is_base64": false,
           "member": "string",
           "name": "BankCard",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "手机号码",
           "example": "6222222222222222222",
+          "is_base64": false,
           "member": "string",
           "name": "Phone",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开户证件号，与CertType参数的证件类型一致，如：身份证，则传入身份证号。",
           "example": "6222222222222222222",
+          "is_base64": false,
           "member": "string",
           "name": "IdCard",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "证件类型，请确认该证件为开户时使用的证件类型，未用于开户的证件信息不支持验证。\n目前默认为0：身份证，其他证件类型暂不支持。",
           "example": "0",
+          "is_base64": false,
           "member": "int64",
           "name": "CertType",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "敏感数据加密信息。对传入信息（姓名、身份证号、手机号、银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
           "example": "无",
+          "is_base64": false,
           "member": "Encryption",
           "name": "Encryption",
           "required": false,
@@ -378,11 +378,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码\n收费结果码：\n'0': '认证通过'\n'-1': '认证未通过'\n'-6': '持卡人信息有误'\n'-7': '未开通无卡支付'\n'-8': '此卡被没收'\n'-9': '无效卡号'\n'-10': '此卡无对应发卡行'\n'-11': '该卡未初始化或睡眠卡'\n'-12': '作弊卡、吞卡'\n'-13': '此卡已挂失'\n'-14': '该卡已过期'\n'-15': '受限制的卡'\n'-16': '密码错误次数超限'\n'-17': '发卡行不支持此交易'\n不收费结果码：\n'-2': '姓名校验不通过'\n'-3': '身份证号码有误'\n'-4': '银行卡号码有误'\n'-5': '手机号码不合法'\n'-18': '验证中心服务繁忙'",
+          "document": "认证结果码\n收费结果码：\n'0': '认证通过'\n'-1': '认证未通过'\n'-6': '持卡人信息有误'\n'-7': '未开通无卡支付'\n'-8': '此卡被没收'\n'-9': '无效卡号'\n'-10': '此卡无对应发卡行'\n'-11': '该卡未初始化或睡眠卡'\n'-12': '作弊卡、吞卡'\n'-13': '此卡已挂失'\n'-14': '该卡已过期'\n'-15': '受限制的卡'\n'-16': '密码错误次数超限'\n'-17': '发卡行不支持此交易'\n不收费结果码：\n'-2': '姓名校验不通过'\n'-3': '身份证号码有误'\n'-4': '银行卡号码有误'\n'-5': '手机号码不合法'\n'-18': '验证中心服务繁忙'\n'-19': '验证次数超限，请次日重试'",
           "example": "0",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -392,7 +392,7 @@
           "example": "认证通过",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -412,6 +412,7 @@
           "disabled": false,
           "document": "开户证件号，与CertType参数的证件类型一致，如：身份证，则传入身份证号。",
           "example": "440111201903211111",
+          "is_base64": false,
           "member": "string",
           "name": "IdCard",
           "required": true,
@@ -421,6 +422,7 @@
           "disabled": false,
           "document": "姓名",
           "example": "张三",
+          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": true,
@@ -430,6 +432,7 @@
           "disabled": false,
           "document": "银行卡",
           "example": "6222222222222222222",
+          "is_base64": false,
           "member": "string",
           "name": "BankCard",
           "required": true,
@@ -439,6 +442,7 @@
           "disabled": false,
           "document": "证件类型，请确认该证件为开户时使用的证件类型，未用于开户的证件信息不支持验证。\n目前默认：0 身份证，其他证件类型暂不支持。",
           "example": "0",
+          "is_base64": false,
           "member": "int64",
           "name": "CertType",
           "required": false,
@@ -448,6 +452,7 @@
           "disabled": false,
           "document": "敏感数据加密信息。对传入信息（姓名、身份证号、银行卡号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
           "example": "无",
+          "is_base64": false,
           "member": "Encryption",
           "name": "Encryption",
           "required": false,
@@ -461,7 +466,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码\n收费结果码：\n'0': '认证通过'\n'-1': '认证未通过'\n'-5': '持卡人信息有误'\n'-6': '未开通无卡支付'\n'-7': '此卡被没收'\n'-8': '无效卡号'\n'-9': '此卡无对应发卡行'\n'-10': '该卡未初始化或睡眠卡'\n'-11': '作弊卡、吞卡'\n'-12': '此卡已挂失'\n'-13': '该卡已过期'\n'-14': '受限制的卡'\n'-15': '密码错误次数超限'\n'-16': '发卡行不支持此交易'\n不收费结果码：\n'-2': '姓名校验不通过'\n'-3': '身份证号码有误'\n'-4': '银行卡号码有误'\n'-17': '验证中心服务繁忙'",
+          "document": "认证结果码\n收费结果码：\n'0': '认证通过'\n'-1': '认证未通过'\n'-5': '持卡人信息有误'\n'-6': '未开通无卡支付'\n'-7': '此卡被没收'\n'-8': '无效卡号'\n'-9': '此卡无对应发卡行'\n'-10': '该卡未初始化或睡眠卡'\n'-11': '作弊卡、吞卡'\n'-12': '此卡已挂失'\n'-13': '该卡已过期'\n'-14': '受限制的卡'\n'-15': '密码错误次数超限'\n'-16': '发卡行不支持此交易'\n不收费结果码：\n'-2': '姓名校验不通过'\n'-3': '身份证号码有误'\n'-4': '银行卡号码有误'\n'-17': '验证中心服务繁忙'\n'-18': '验证次数超限，请次日重试'",
           "example": "0",
           "member": "string",
           "name": "Result",

@@ -1,22 +1,19 @@
 **Example 1: 更新设备**
 
-
+更新设备
 
 Input: 
 
 ```
 tccli mna UpdateDevice --cli-unfold-argument  \
-    --DeviceName xx \
-    --Remark xx \
-    --DeviceId mna-xxx \
-    --UpdateNetInfo.0.DownloadLimit 100 \
-    --UpdateNetInfo.0.UploadLimit 100 \
+    --DeviceId abc \
+    --DeviceName abc \
+    --Remark abc \
     --UpdateNetInfo.0.Type 0 \
     --UpdateNetInfo.0.DataEnable True \
-    --UpdateNetInfo.0.NetInfoName xx \
-    --UpdateNetInfo.1.Type 0 \
-    --UpdateNetInfo.1.DataEnable True \
-    --UpdateNetInfo.1.NetInfoName xx
+    --UpdateNetInfo.0.UploadLimit 1 \
+    --UpdateNetInfo.0.DownloadLimit 1 \
+    --UpdateNetInfo.0.NetInfoName abc
 ```
 
 Output: 

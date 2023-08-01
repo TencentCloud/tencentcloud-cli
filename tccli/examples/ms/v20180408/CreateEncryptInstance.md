@@ -1,4 +1,31 @@
-**Example 1: 安卓免费试用在线加固**
+**Example 1: 小程序免费加固示例**
+
+小程序免费加固示例
+
+Input: 
+
+```
+tccli ms CreateEncryptInstance --cli-unfold-argument  \
+    --PlatformType 4 \
+    --OrderType 1 \
+    --EncryptOpType 1 \
+    --ResourceId xxxxxxxxxxxxxxxxxx \
+    --AppletInfo.AppletJsUrl http://xxxxxxxxxxxxxxxxxxx.zip \
+    --AppletInfo.AppletLevel 1 \
+    --AppletInfo.Name test.zip
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "6ef4eac9-badc-40d9-9796-569741849f95",
+        "ResultId": "6ef4eac9-badc-40d9-9796-569741849f95"
+    }
+}
+```
+
+**Example 2: Android免费试用在线加固**
 
 成功创建任务示例
 
@@ -33,9 +60,9 @@ Output:
 }
 ```
 
-**Example 2: 安卓按年收费加固输出工具**
+**Example 3: Android按年收费加固输出工具**
 
-安卓按年收费加固输出工具
+Android按年收费加固输出工具
 
 Input: 
 
@@ -96,33 +123,6 @@ Output:
     "Response": {
         "RequestId": "0f869fd0-0fd0-44bd-95fc-06a15b50aa61",
         "ResultId": "0f869fd0-0fd0-44bd-95fc-06a15b50aa61"
-    }
-}
-```
-
-**Example 3: 小程序免费加固示例**
-
-小程序免费加固示例
-
-Input: 
-
-```
-tccli ms CreateEncryptInstance --cli-unfold-argument  \
-    --PlatformType 4 \
-    --OrderType 1 \
-    --EncryptOpType 1 \
-    --ResourceId xxxxxxxxxxxxxxxxxx \
-    --AppletInfo.AppletJsUrl http://xxxxxxxxxxxxxxxxxxx.zip \
-    --AppletInfo.AppletLevel 1 \
-    --AppletInfo.Name test.zip
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "6ef4eac9-badc-40d9-9796-569741849f95",
-        "ResultId": "6ef4eac9-badc-40d9-9796-569741849f95"
     }
 }
 ```

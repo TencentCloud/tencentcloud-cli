@@ -324,7 +324,7 @@
       {
         "document": "根据主题ID获取采集配置详情",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigs\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"topicId\",\n            \"Values\": [\n                \"97e8a872-xxxx-4644-9d3c-603d95051458\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"Configs\": [\n            {\n                \"ConfigId\": \"02f11930-xxxx-4dca-8c9b-b6a147223945\",\n                \"Name\": \"test\",\n                \"LogFormat\": \"\",\n                \"Path\": \"/test/**/test\",\n                \"LogType\": \"minimalist_log\",\n                \"ExtractRule\": {\n                    \"TimeKey\": \"\",\n                    \"TimeFormat\": \"\",\n                    \"Delimiter\": \"\",\n                    \"LogRegex\": \"\",\n                    \"BeginRegex\": \"\",\n                    \"Keys\": null,\n                    \"FilterKeyRegex\": [],\n                    \"UnMatchUpLoadSwitch\": false,\n                    \"UnMatchLogKey\": null,\n                    \"Backtracking\": 0,\n                    \"IsGBK\": 0,\n                    \"JsonStandard\": 0,\n                    \"Protocol\": \"\",\n                    \"Address\": \"\",\n                    \"ParseProtocol\": \"\",\n                    \"MetadataType\": 0,\n                    \"PathRegex\": \"\",\n                    \"MetaTags\": []\n                },\n                \"ExcludePaths\": null,\n                \"Output\": \"97e8a872-xxxx-4644-9d3c-603d95051458\",\n                \"UpdateTime\": \"2022-09-02 14:26:49\",\n                \"CreateTime\": \"2022-09-02 14:26:49\",\n                \"UserDefineRule\": \"\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"6eff3561-xxxx-4502-b625-3eb26c4ab450\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Configs\": [\n            {\n                \"ConfigId\": \"02f11930-xxxx-4dca-8c9b-b6a147223945\",\n                \"Name\": \"test\",\n                \"LogFormat\": \"\",\n                \"Path\": \"/test/**/test\",\n                \"LogType\": \"minimalist_log\",\n                \"ExtractRule\": {\n                    \"TimeKey\": \"\",\n                    \"TimeFormat\": \"\",\n                    \"Delimiter\": \"\",\n                    \"LogRegex\": \"\",\n                    \"BeginRegex\": \"\",\n                    \"Keys\": null,\n                    \"FilterKeyRegex\": [],\n                    \"UnMatchUpLoadSwitch\": false,\n                    \"UnMatchLogKey\": null,\n                    \"Backtracking\": 0,\n                    \"IsGBK\": 0,\n                    \"JsonStandard\": 0,\n                    \"Protocol\": \"\",\n                    \"Address\": \"\",\n                    \"ParseProtocol\": \"\",\n                    \"MetadataType\": 0,\n                    \"PathRegex\": \"\",\n                    \"MetaTags\": []\n                },\n                \"ExcludePaths\": null,\n                \"Output\": \"97e8a872-xxxx-4644-9d3c-603d95051458\",\n                \"UpdateTime\": \"2022-09-02 14:26:49\",\n                \"CreateTime\": \"2022-09-02 14:26:49\",\n                \"UserDefineRule\": \"\",\n                \"AdvancedConfig\": \"\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"6eff3561-xxxx-4502-b625-3eb26c4ab450\"\n    }\n}",
         "title": "获取采集配置"
       }
     ],
@@ -374,6 +374,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIndex\n<公共请求参数>\n\n{\n    \"TopicId\": \"826f8b26-b054-4a0d-8c8e-f3d609f5e0ea\"\n}",
         "output": "{\n    \"Response\": {\n        \"TopicId\": \"826f8b26-b054-4a0d-8c8e-f3d609f5e0ea\",\n        \"Status\": true,\n        \"Rule\": {\n            \"FullText\": {\n                \"CaseSensitive\": false,\n                \"Tokenizer\": \"-=/?\"\n            },\n            \"KeyValue\": {\n                \"CaseSensitive\": false,\n                \"KeyValues\": [\n                    {\n                        \"Key\": \"age\",\n                        \"Value\": {\n                            \"Type\": \"long\",\n                            \"SqlFlag\": true\n                        }\n                    }\n                ]\n            },\n            \"Tag\": {\n                \"CaseSensitive\": false,\n                \"KeyValues\": [\n                    {\n                        \"Key\": \"__TAG__.timestamp\",\n                        \"Value\": {\n                            \"Type\": \"long\",\n                            \"SqlFlag\": true\n                        }\n                    }\n                ]\n            }\n        },\n        \"ModifyTime\": \"2021-01-13 21:00:08\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\",\n        \"IncludeInternalFields\": true,\n        \"MetadataFlag\": 1\n    }\n}",
         "title": "获取索引信息"
+      }
+    ],
+    "DescribeKafkaConsumer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKafkaConsumer\n<公共请求参数>\n\n{\n    \"FromTopicId\": \"a5ce0c9c-0690-44a5-bc79-5f2190626bd0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": true,\n        \"TopicID\": \"out-a5ce0c9c-0690-44a5-bc79-5f2190626bd0\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\",\n        \"Compression\": 1\n    }\n}",
+        "title": "获取Kakfa协议消费信息"
       }
     ],
     "DescribeKafkaRecharges": [
@@ -550,6 +558,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIndex\n<公共请求参数>\n\n{\n    \"TopicId\": \"826f8b26-b054-4a0d-8c8e-f3d609f5e0ea\",\n    \"Rule\": {\n        \"FullText\": {\n            \"CaseSensitive\": false,\n            \"Tokenizer\": \"-=/?\"\n        },\n        \"Tag\": {\n            \"CaseSensitive\": false,\n            \"KeyValues\": [\n                {\n                    \"Value\": {\n                        \"Type\": \"long\",\n                        \"SqlFlag\": true\n                    },\n                    \"Key\": \"timestamp\"\n                }\n            ]\n        },\n        \"KeyValue\": {\n            \"CaseSensitive\": false,\n            \"KeyValues\": [\n                {\n                    \"Value\": {\n                        \"Type\": \"long\",\n                        \"SqlFlag\": true\n                    },\n                    \"Key\": \"age\"\n                }\n            ]\n        }\n    },\n    \"Status\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改索引"
+      }
+    ],
+    "ModifyKafkaConsumer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyKafkaConsumer\n<公共请求参数>\n\n{\n    \"FromTopicId\": \"a5ce0c9c-0690-44a5-bc79-5f2190626bd0\",\n    \"Compression\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "修改Kafka协议消费信息"
       }
     ],
     "ModifyKafkaRecharge": [

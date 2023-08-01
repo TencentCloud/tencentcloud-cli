@@ -112,6 +112,13 @@
       "output": "CreateRocketMQTopicResponse",
       "status": "online"
     },
+    "CreateRocketMQVipInstance": {
+      "document": "创建RocketMQ专享实例",
+      "input": "CreateRocketMQVipInstanceRequest",
+      "name": "创建RocketMQ专享实例",
+      "output": "CreateRocketMQVipInstanceResponse",
+      "status": "online"
+    },
     "CreateRole": {
       "document": "创建角色",
       "input": "CreateRoleRequest",
@@ -3478,6 +3485,97 @@
     "CreateRocketMQTopicResponse": {
       "document": "CreateRocketMQTopic返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRocketMQVipInstanceRequest": {
+      "document": "CreateRocketMQVipInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例规格：\n基础型，rocket-vip-basic-1\n标准型，rocket-vip-basic-2\n高阶Ⅰ型，rocket-vip-basic-3\n高阶Ⅱ型，rocket-vip-basic-4",
+          "example": "无",
+          "member": "string",
+          "name": "Spec",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点数量，最小2，最大20",
+          "example": "无",
+          "member": "int64",
+          "name": "NodeCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "单节点存储空间，GB为单位，最低200GB",
+          "example": "无",
+          "member": "int64",
+          "name": "StorageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "节点部署的区域ID列表，如广州一区，则是100001，具体可查询腾讯云官网",
+          "example": "无",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "VPC信息",
+          "example": "无",
+          "member": "VpcInfo",
+          "name": "VpcInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "购买时长，月为单位",
+          "example": "无",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRocketMQVipInstanceResponse": {
+      "document": "CreateRocketMQVipInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -13983,6 +14081,34 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "VpcInfo": {
+      "document": "vpc信息（由UniqVpcId和UniqSubnetId组成）",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "vpc信息",
+          "example": "vpc-9dlrd5h1",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "子网信息",
+          "example": "subnet-jadmas",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

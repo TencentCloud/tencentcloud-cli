@@ -47,7 +47,8 @@ Output:
                 "Output": "97e8a872-xxxx-4644-9d3c-603d95051458",
                 "UpdateTime": "2022-09-02 14:26:49",
                 "CreateTime": "2022-09-02 14:26:49",
-                "UserDefineRule": ""
+                "UserDefineRule": "",
+                "AdvancedConfig": ""
             }
         ],
         "TotalCount": 2,

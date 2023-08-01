@@ -1,6 +1,6 @@
 **Example 1: 获取设备基本信息列表**
 
-
+获取设备基本信息列表
 
 Input: 
 
@@ -17,23 +17,16 @@ Output:
     "Response": {
         "DeviceInfos": [
             {
-                "DeviceName": "dev",
-                "Remark": "xx",
-                "DeviceId": "mna-xxx",
-                "LastTime": 1,
-                "CreateTime": 1
-            },
-            {
-                "DeviceName": "dev1",
-                "Remark": "xx",
-                "DeviceId": "mna-xxx",
-                "LastTime": 1,
-                "CreateTime": 1
+                "DeviceId": "abc",
+                "DeviceName": "abc",
+                "CreateTime": "abc",
+                "LastTime": "abc",
+                "Remark": "abc"
             }
         ],
-        "Length": 10,
-        "TotalPage": 2,
-        "RequestId": "xx"
+        "Length": 0,
+        "TotalPage": 0,
+        "RequestId": "abc"
     }
 }
 ```

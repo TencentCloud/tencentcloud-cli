@@ -94,8 +94,8 @@
   },
   "metadata": {
     "apiVersion": "2021-01-19",
-    "api_brief": "介绍如何使用API对移动业务加速进行操作，包括启动加速、停止加速、上报接口状态等",
-    "serviceNameCN": "移动网络加速",
+    "api_brief": "介绍如何使用API对多网聚合加速进行操作，包括启动加速、停止加速、上报接口状态等",
+    "serviceNameCN": "多网聚合加速",
     "serviceShortName": "mna"
   },
   "objects": {
@@ -1049,7 +1049,6 @@
       "document": "GetDevices请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "每页显示记录数，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备",
           "example": "10",
@@ -1059,7 +1058,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前查看页码，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备",
           "example": "1",
@@ -1069,7 +1067,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索设备的关键字（ID或者设备名），为空时匹配所有设备",
           "example": "\"mna-xxx\"",
@@ -1077,6 +1074,15 @@
           "name": "Keyword",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DeviceType\n不传：返回所有设备；\n1:自有设备；\n2:三方设备",
+          "example": "1",
+          "member": "int64",
+          "name": "DeviceType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1090,7 +1096,6 @@
           "example": "无",
           "member": "DeviceBaseInfo",
           "name": "DeviceInfos",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1100,7 +1105,6 @@
           "example": "20",
           "member": "int64",
           "name": "Length",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1110,7 +1114,6 @@
           "example": "2",
           "member": "int64",
           "name": "TotalPage",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1505,7 +1508,6 @@
       "document": "UpdateDevice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备id",
           "example": "\"mna-xxx\"",
@@ -1515,7 +1517,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称",
           "example": "\"dev\"",
@@ -1525,7 +1526,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备备注",
           "example": "\"xxx\"",
@@ -1535,7 +1535,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新设备网络信息",
           "example": "无",

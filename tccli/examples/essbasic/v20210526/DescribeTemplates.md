@@ -41,12 +41,13 @@ Output:
                 "CreatedOn": 1234567890,
                 "Creator": "test",
                 "ChannelTemplateName": "test",
+                "Available": 2,
                 "SignComponents": [
                     {
                         "ComponentValue": "test",
                         "FileIndex": 0,
-                        "OffsetX": 0.0,
-                        "OffsetY": 0.0,
+                        "OffsetX": 0,
+                        "OffsetY": 0,
                         "ComponentType": "test",
                         "ComponentPosX": 1241.15,
                         "ComponentPosY": 125.12,
@@ -68,6 +69,7 @@ Output:
                         "ComponentExtra": "test",
                         "ComponentPage": 1,
                         "KeywordOrder": "test",
+                        "Placeholder": "",
                         "DocumentId": "test"
                     }
                 ],
@@ -78,8 +80,8 @@ Output:
                     {
                         "ComponentValue": "test",
                         "FileIndex": 0,
-                        "OffsetX": 0.0,
-                        "OffsetY": 0.0,
+                        "OffsetX": 0,
+                        "OffsetY": 0,
                         "ComponentType": "test",
                         "ComponentPosX": 1241.15,
                         "ComponentPosY": 125.12,
@@ -101,6 +103,7 @@ Output:
                         "ComponentExtra": "test",
                         "ComponentPage": 1,
                         "KeywordOrder": "test",
+                        "Placeholder": "",
                         "DocumentId": "test"
                     }
                 ],
@@ -141,6 +144,7 @@ Output:
                 "TemplateId": "test",
                 "TemplateName": "test",
                 "Description": "test",
+                "Available": 2,
                 "Components": [
                     {
                         "ComponentId": "test",
@@ -166,6 +170,7 @@ Output:
                         "KeywordOrder": "test",
                         "KeywordPage": 0,
                         "RelativeLocation": "test",
+                        "Placeholder": "",
                         "KeywordIndexes": [
                             0
                         ]
@@ -209,6 +214,7 @@ Output:
                         "KeywordOrder": "test",
                         "KeywordPage": 0,
                         "RelativeLocation": "test",
+                        "Placeholder": "",
                         "KeywordIndexes": [
                             0
                         ]
@@ -259,6 +265,7 @@ Output:
                 "TemplateId": "test",
                 "TemplateName": "test",
                 "Description": "test",
+                "Available": 2,
                 "Components": [
                     {
                         "ComponentId": "test",
@@ -284,6 +291,7 @@ Output:
                         "KeywordOrder": "test",
                         "KeywordPage": 0,
                         "RelativeLocation": "test",
+                        "Placeholder": "",
                         "KeywordIndexes": [
                             0
                         ]
@@ -327,6 +335,7 @@ Output:
                         "KeywordOrder": "test",
                         "KeywordPage": 0,
                         "RelativeLocation": "test",
+                        "Placeholder": "",
                         "KeywordIndexes": [
                             0
                         ]

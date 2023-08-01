@@ -2123,37 +2123,41 @@
       "document": "通用混流输入参数。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "输入流名称。80字节以内，仅含字母、数字以及下划线的字符串。\n当LayoutParams.InputType=0(音视频)/4(纯音频)/5(纯视频)时，该值为需要混流的流名称。\n当LayoutParams.InputType=2(图片)/3(画布)时，该值仅用作标识输入，可用类似Canvas1、Pictrue1的名称。",
           "example": "ExampleStreamName1",
+          "is_base64": false,
           "member": "string",
           "name": "InputStreamName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输入流布局参数。",
           "example": "无",
           "member": "CommonMixLayoutParams",
           "name": "LayoutParams",
           "required": true,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输入流裁剪参数。",
           "example": "无",
           "member": "CommonMixCropParams",
           "name": "CropParams",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "抠图参数。",
+          "example": "无",
+          "member": "MixPortraitSegmentParams",
+          "name": "PortraitSegmentParams",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -3175,110 +3179,110 @@
       "document": "CreateLiveRecordTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模板名。仅支持中文、英文、数字、_、-。",
           "example": "templat",
+          "is_base64": false,
           "member": "string",
           "name": "TemplateName",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述信息。",
           "example": "test",
+          "is_base64": false,
           "member": "string",
           "name": "Description",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Flv录制参数，开启Flv录制时设置。",
           "example": "无",
+          "is_base64": false,
           "member": "RecordParam",
           "name": "FlvParam",
           "required": false,
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Hls录制参数，开启hls录制时设置。",
           "example": "无",
+          "is_base64": false,
           "member": "RecordParam",
           "name": "HlsParam",
           "required": false,
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Mp4录制参数，开启Mp4录制时设置。",
           "example": "无",
+          "is_base64": false,
           "member": "RecordParam",
           "name": "Mp4Param",
           "required": false,
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Aac录制参数，开启Aac录制时设置。",
           "example": "无",
+          "is_base64": false,
           "member": "RecordParam",
           "name": "AacParam",
           "required": false,
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "直播类型，默认 0。\n0：普通直播，\n1：慢直播。",
           "example": "12",
+          "is_base64": false,
           "member": "int64",
           "name": "IsDelayLive",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "HLS专属录制参数。",
           "example": "无",
+          "is_base64": false,
           "member": "HlsSpecialParam",
           "name": "HlsSpecialParam",
           "required": false,
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Mp3录制参数，开启Mp3录制时设置。",
           "example": "无",
+          "is_base64": false,
           "member": "RecordParam",
           "name": "Mp3Param",
           "required": false,
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "是否去除水印，类型为慢直播时此参数无效。",
+          "document": "是否去除水印，类型为慢直播时此参数无效。\n如果为false，则录制水印流或转码流；如果为true，则录制原始流。",
           "example": "false",
+          "is_base64": false,
           "member": "bool",
           "name": "RemoveWatermark",
           "required": false,
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "FLV 录制特殊参数。",
           "example": "无",
+          "is_base64": false,
           "member": "FlvSpecialParam",
           "name": "FlvSpecialParam",
           "required": false,
@@ -3296,7 +3300,7 @@
           "example": "1000",
           "member": "int64",
           "name": "TemplateId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11998,6 +12002,22 @@
         }
       ],
       "usage": "out"
+    },
+    "MixPortraitSegmentParams": {
+      "document": "混流抠图参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "抠图背景颜色，\n常用的颜色有：\n红色：0xcc0033。\n黄色：0xcc9900。\n绿色：0xcccc33。\n蓝色：0x99CCFF。\n黑色：0x000000。\n白色：0xFFFFFF。\n灰色：0x999999。",
+          "example": "0xcccc33",
+          "is_base64": false,
+          "member": "string",
+          "name": "Color",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "ModifyLiveCallbackTemplateRequest": {
       "document": "ModifyLiveCallbackTemplate请求参数结构体",

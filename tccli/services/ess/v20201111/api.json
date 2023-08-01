@@ -162,7 +162,7 @@
       "status": "online"
     },
     "CreatePrepareFlow": {
-      "document": "创建快速发起流程\n适用场景：用户通过API 合同文件及签署信息，并可通过我们返回的URL在页面完成签署控件等信息的编辑与确认，快速发起合同.\n注：该接口文件的resourceId 是通过上传文件之后获取的。",
+      "document": "创建快速发起流程\n<br/>适用场景：用户通过API 合同文件及签署信息，并可通过我们返回的URL在页面完成签署控件等信息的编辑与确认，快速发起合同.\n<br/>注：该接口文件的resourceId 是通过上传文件之后获取的。",
       "input": "CreatePrepareFlowRequest",
       "name": "获取发起合同web页面",
       "output": "CreatePrepareFlowResponse",
@@ -393,7 +393,7 @@
       "status": "online"
     },
     "UpdateIntegrationEmployees": {
-      "document": "更新员工信息(姓名，手机号，邮件、部门)，用户实名后无法更改姓名与手机号",
+      "document": "更新员工信息(姓名，手机号，邮件、部门)，用户实名后无法更改姓名与手机号。\n可进行批量操作，Employees中的userID与openID二选一必填",
       "input": "UpdateIntegrationEmployeesRequest",
       "name": "更新企业员工信息",
       "output": "UpdateIntegrationEmployeesResponse",
@@ -1178,12 +1178,13 @@
       "usage": "in"
     },
     "Component": {
-      "document": "模板控件信息",
+      "document": "模板/流程中控件信息，可以是填充控件或签署控件",
       "members": [
         {
           "disabled": false,
           "document": "如果是Component填写控件类型，则可选的字段为：\nTEXT - 普通文本控件，输入文本字符串；\nMULTI_LINE_TEXT - 多行文本控件，输入文本字符串；\nCHECK_BOX - 勾选框控件，若选中填写ComponentValue 填写 true或者 false 字符串；\nFILL_IMAGE - 图片控件，ComponentValue 填写图片的资源 ID；\nDYNAMIC_TABLE - 动态表格控件；\nATTACHMENT - 附件控件,ComponentValue 填写附件图片的资源 ID列表，以逗号分隔；\nSELECTOR - 选择器控件，ComponentValue填写选择的字符串内容；\nDATE - 日期控件；默认是格式化为xxxx年xx月xx日字符串；\nDISTRICT - 省市区行政区控件，ComponentValue填写省市区行政区字符串内容；\n\n如果是SignComponent签署控件类型，则可选的字段为\nSIGN_SEAL - 签署印章控件；\nSIGN_DATE - 签署日期控件；\nSIGN_SIGNATURE - 用户签名控件；\nSIGN_PERSONAL_SEAL - 个人签署印章控件（使用文件发起暂不支持此类型）；\nSIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight\nSIGN_OPINION - 签署意见控件，用户需要根据配置的签署意见内容，完成对意见内容的确认；\nSIGN_LEGAL_PERSON_SEAL - 企业法定代表人控件。\n\n表单域的控件不能作为印章和签名控件",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ComponentType",
           "output_required": true,
@@ -1193,7 +1194,7 @@
         },
         {
           "disabled": false,
-          "document": "控件所属文件的序号（取值为：0-N）。目前单文件的情况下，值是0",
+          "document": "控件所属文件的序号（取值为：0-N）。\n目前单文件的情况下，值是0",
           "example": "无",
           "member": "int64",
           "name": "FileIndex",
@@ -1259,8 +1260,9 @@
         },
         {
           "disabled": false,
-          "document": "查询时返回控件唯一Id。使用文件发起合同时用于GenerateMode==KEYWORD 指定关键字",
+          "document": "控件唯一ID。\n或使用文件发起合同时用于GenerateMode==KEYWORD 指定关键字",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ComponentId",
           "output_required": true,
@@ -1270,8 +1272,9 @@
         },
         {
           "disabled": false,
-          "document": "查询时返回控件名。使用文件发起合同时用于GenerateMode==FIELD 指定表单域名称",
+          "document": "控件名。\n或使用文件发起合同时用于GenerateMode==FIELD 指定表单域名称",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ComponentName",
           "output_required": true,
@@ -1281,7 +1284,7 @@
         },
         {
           "disabled": false,
-          "document": "是否必选，默认为false",
+          "document": "是否必选，默认为false-非必选",
           "example": "无",
           "member": "bool",
           "name": "ComponentRequired",
@@ -1292,8 +1295,9 @@
         },
         {
           "disabled": false,
-          "document": "控件关联的签署人ID",
+          "document": "控件关联的参与方ID，对应Recipient结构体中的RecipientId",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ComponentRecipientId",
           "output_required": true,
@@ -1305,6 +1309,7 @@
           "disabled": false,
           "document": "扩展参数：\n为JSON格式。\n\nComponentType为FILL_IMAGE时，支持以下参数：\nNotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中\nFillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放\n\nComponentType为SIGN_SIGNATURE类型可以控制签署方式\n{“ComponentTypeLimit”: [“xxx”]}\nxxx可以为：\nHANDWRITE – 手写签名\nOCR_ESIGN -- AI智能识别手写签名\nESIGN -- 个人印章类型\nSYSTEM_ESIGN -- 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）\n如：{“ComponentTypeLimit”: [“SYSTEM_ESIGN”]}\n\nComponentType为SIGN_DATE时，支持以下参数：\n1 Font：字符串类型目前只支持\"黑体\"、\"宋体\"，如果不填默认为\"黑体\"\n2 FontSize： 数字类型，范围6-72，默认值为12\n3 FontAlign： 字符串类型，可取Left/Right/Center，对应左对齐/居中/右对齐\n4 Format： 字符串类型，日期格式，必须是以下五种之一 “yyyy m d”，”yyyy年m月d日”，”yyyy/m/d”，”yyyy-m-d”，”yyyy.m.d”。\n5 Gaps:： 字符串类型，仅在Format为“yyyy m d”时起作用，格式为用逗号分开的两个整数，例如”2,2”，两个数字分别是日期格式的前后两个空隙中的空格个数\n如果extra参数为空，默认为”yyyy年m月d日”格式的居中日期\n特别地，如果extra中Format字段为空或无法被识别，则extra参数会被当作默认值处理（Font，FontSize，Gaps和FontAlign都不会起效）\n参数样例：    \"ComponentExtra\": \"{\\\"Format\\\":“yyyy m d”,\\\"FontSize\\\":12,\\\"Gaps\\\":\\\"2,2\\\", \\\"FontAlign\\\":\\\"Right\\\"}\"\n\nComponentType为SIGN_SEAL类型时，支持以下参数：\n1.PageRanges：PageRange的数组，通过PageRanges属性设置该印章在PDF所有页面上盖章（适用于标书在所有页面盖章的情况）\n参数样例：\"ComponentExtra\":\"{\\\"PageRanges\\\":[{\\\"BeginPage\\\":1,\\\"EndPage\\\":-1}]}\"",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ComponentExtra",
           "output_required": true,
@@ -1314,7 +1319,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是表单域类型，默认不false-不是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否是表单域类型，默认false-不是\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "IsFormType",
@@ -1327,6 +1332,7 @@
           "disabled": false,
           "document": "控件填充vaule，ComponentType和传入值类型对应关系：\nTEXT - 文本内容\nMULTI_LINE_TEXT - 文本内容\nCHECK_BOX - true/false\nFILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取\nSELECTOR - 选项值\nDYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo\nDATE - 默认是格式化为xxxx年xx月xx日\nSIGN_SEAL - 印章ID，于控制台查询获取\nSIGN_PAGING_SEAL - 可以指定印章ID，于控制台查询获取\n\n控件值约束说明：\n企业全称控件：\n  约束：企业名称中文字符中文括号\n  检查正则表达式：/^[\\u3400-\\u4dbf\\u4e00-\\u9fa5（）]+$/\n\n统一社会信用代码控件：\n  检查正则表达式：/^[A-Z0-9]{1,18}$/\n\n法人名称控件：\n  约束：最大50个字符，2到25个汉字或者1到50个字母\n  检查正则表达式：/^([\\u3400-\\u4dbf\\u4e00-\\u9fa5.·]{2,25}|[a-zA-Z·,\\s-]{1,50})$/\n\n签署意见控件：\n  约束：签署意见最大长度为50字符\n\n签署人手机号控件：\n  约束：国内手机号 13,14,15,16,17,18,19号段长度11位\n\n签署人身份证控件：\n  约束：合法的身份证号码检查\n\n控件名称：\n  约束：控件名称最大长度为20字符\n\n单行文本控件：\n  约束：只允许输入中文，英文，数字，中英文标点符号\n\n多行文本控件：\n  约束：只允许输入中文，英文，数字，中英文标点符号\n\n勾选框控件：\n  约束：选择填字符串true，不选填字符串false\n\n选择器控件：\n  约束：同单行文本控件约束，填写选择值中的字符串\n\n数字控件：\n  约束：请输入有效的数字(可带小数点) \n  检查正则表达式：/^(-|\\+)?\\d+(\\.\\d+)?$/\n\n日期控件：\n  约束：格式：yyyy年mm月dd日\n\n附件控件：\n  约束：JPG或PNG图片，上传数量限制，1到6个，最大6个附件\n\n图片控件：\n  约束：JPG或PNG图片，填写上传的图片资源ID\n\n邮箱控件：\n  约束：请输入有效的邮箱地址, w3c标准\n  检查正则表达式：/^([A-Za-z0-9_\\-.!#$%&])+@([A-Za-z0-9_\\-.])+\\.([A-Za-z]{2,4})$/\n  参考：https://emailregex.com/\n\n地址控件：\n  同单行文本控件约束\n\n省市区控件：\n  同单行文本控件约束\n\n性别控件：\n  同单行文本控件约束，填写选择值中的字符串\n\n学历控件：\n  同单行文本控件约束，填写选择值中的字符串",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ComponentValue",
           "output_required": true,
@@ -1338,6 +1344,7 @@
           "disabled": false,
           "document": "NORMAL 正常模式，使用坐标制定签署控件位置\nFIELD 表单域，需使用ComponentName指定表单域名称\nKEYWORD 关键字，使用ComponentId指定关键字",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "GenerateMode",
           "output_required": true,
@@ -1358,8 +1365,9 @@
         },
         {
           "disabled": false,
-          "document": "第三方应用集成平台模板控件 id 标识",
+          "document": "第三方应用集成平台模板控件 ID 标识",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ChannelComponentId",
           "output_required": true,
@@ -1391,7 +1399,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方应用集成中子客企业控件来源。0-平台指定；1-用户自定义",
+          "document": "第三方应用集成中子客企业控件来源。\n0-平台指定；\n1-用户自定义",
           "example": "无",
           "member": "uint64",
           "name": "ChannelComponentSource",
@@ -1402,8 +1410,9 @@
         },
         {
           "disabled": false,
-          "document": "指定关键字排序规则，Positive-正序，Reverse-倒序。传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。\n传入Reverse时会根据关键字在PDF文件内的反序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的最后一个关键字。",
+          "document": "指定关键字排序规则，Positive-正序，Reverse-倒序。\n传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。\n传入Reverse时会根据关键字在PDF文件内的反序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的最后一个关键字。",
           "example": "Positive\\Reverse",
+          "is_base64": false,
           "member": "string",
           "name": "KeywordOrder",
           "output_required": true,
@@ -1413,7 +1422,7 @@
         },
         {
           "disabled": false,
-          "document": "指定关键字页码，可选参数，指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来",
+          "document": "指定关键字页码。\n指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来",
           "example": "无",
           "member": "int64",
           "name": "KeywordPage",
@@ -1424,8 +1433,9 @@
         },
         {
           "disabled": false,
-          "document": "关键字位置模式，Middle-居中，Below-正下方，Right-正右方，LowerRight-右上角，UpperRight-右下角。示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方",
+          "document": "关键字位置模式，\nMiddle-居中，\nBelow-正下方，\nRight-正右方，\nLowerRight-右上角，\nUpperRight-右下角。\n示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "RelativeLocation",
           "output_required": true,
@@ -1435,7 +1445,7 @@
         },
         {
           "disabled": false,
-          "document": "关键字索引，可选参数，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。示例：[0,2]，说明使用PDF文件内第1个和第3个关键字位置。",
+          "document": "关键字索引。\n如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。\n示例：[0,2]，说明使用PDF文件内第1个和第3个关键字位置。",
           "example": "无",
           "member": "int64",
           "name": "KeywordIndexes",
@@ -1443,6 +1453,28 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否锁定控件值不允许编辑（嵌入式发起使用）\n<br/>默认false：不锁定控件值，允许在页面编辑控件值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "LockComponentValue",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否禁止移动和删除控件\n<br/>默认false，不禁止移动和删除控件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "ForbidMoveAndDelete",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1792,7 +1824,7 @@
         },
         {
           "disabled": false,
-          "document": "WEB嵌入资源类型。\n<br/>CREATE_SEAL: 创建印章\n<br/>PREVIEW_SEAL_LIST：预览印章列表\n<br/>PREVIEW_SEAL_DETAIL：预览印章详情\n<br/>EXTEND_SERVICE：拓展服务\n",
+          "document": "WEB嵌入资源类型。\n<br/>CREATE_SEAL: 创建印章\n<br/>PREVIEW_SEAL_LIST：预览印章列表\n<br/>PREVIEW_SEAL_DETAIL：预览印章详情\n<br/>EXTEND_SERVICE：拓展服务\n<br/>PREVIEW_FLOW：预览合同\n<br/>PREVIEW_FLOW_DETAIL：查看合同详情",
           "example": "无",
           "is_base64": false,
           "member": "string",
@@ -1827,6 +1859,16 @@
           "is_base64": false,
           "member": "ReviewerInfo",
           "name": "Reviewer",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "个性化参数",
+          "example": "无",
+          "is_base64": false,
+          "member": "EmbedUrlOption",
+          "name": "Option",
           "required": false,
           "type": "object"
         }
@@ -2390,6 +2432,94 @@
         }
       ],
       "type": "object"
+    },
+    "CreateFlowOption": {
+      "document": "创建合同个性化参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否允许修改发起合同时确认弹窗的合同信息（合同名称、合同类型、签署截止时间），若不允许编辑，则表单字段将被禁止输入。\n<br/>true：允许编辑（默认），<br/>false：不允许编辑<br/>默认：false：不允许编辑",
+          "example": "true",
+          "member": "bool",
+          "name": "CanEditFlow",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许编辑模版控件\n<br/>true:允许编辑模版控件信息\n<br/>false:不允许编辑模版控件信息\n<br/>默认false:不允许编辑模版控件信息",
+          "example": "true",
+          "member": "bool",
+          "name": "CanEditFormField",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "发起页面隐藏合同名称展示\n<br/>true:发起页面隐藏合同名称展示\n<br/>false:发起页面不隐藏合同名称展示\n<br/>默认false:发起页面不隐藏合同名称展示",
+          "example": "true",
+          "member": "bool",
+          "name": "HideShowFlowName",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "发起页面隐藏合同类型展示\n<br/>true:发起页面隐藏合同类型展示\n<br/>false:发起页面不隐藏合同类型展示\n<br/>默认false:发起页面不隐藏合同类型展示\n",
+          "example": "true",
+          "member": "bool",
+          "name": "HideShowFlowType",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "发起页面隐藏合同截止日期展示\n<br/>true:发起页面隐藏合同截止日期展示\n<br/>false:发起页面不隐藏合同截止日期展示\n<br/>默认false:发起页面不隐藏合同截止日期展示",
+          "example": "true",
+          "member": "bool",
+          "name": "HideShowDeadline",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "发起页面允许跳过添加签署人环节\n<br/>true:发起页面允许跳过添加签署人环节\n<br/>false:发起页面不允许跳过添加签署人环节\n<br/>默认false:发起页面不允许跳过添加签署人环节\n",
+          "example": "true",
+          "member": "bool",
+          "name": "CanSkipAddApprover",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "文件发起页面跳过文件上传步骤\n<br/>true:文件发起页面跳过文件上传步骤\n<br/>false:文件发起页面不跳过文件上传步骤\n<br/>默认false:文件发起页面不跳过文件上传步骤",
+          "example": "true",
+          "member": "bool",
+          "name": "SkipUploadFile",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "禁止编辑填写控件\n<br/>true:禁止编辑填写控件\n<br/>false:允许编辑填写控件\n<br/>默认false:允许编辑填写控件",
+          "example": "true",
+          "member": "bool",
+          "name": "ForbidEditFillComponent",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "定制化发起合同弹窗的描述信息，描述信息最长500\n",
+          "example": "“”",
+          "is_base64": false,
+          "member": "string",
+          "name": "CustomCreateFlowDescription",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "CreateFlowRemindsRequest": {
       "document": "CreateFlowReminds请求参数结构体",
@@ -3262,7 +3392,7 @@
         },
         {
           "disabled": false,
-          "document": "是否顺序签署(true:无序签,false:顺序签)",
+          "document": "是否顺序签署\ntrue:无序签\nfalse:顺序签",
           "example": "true",
           "is_base64": false,
           "member": "bool",
@@ -3272,7 +3402,7 @@
         },
         {
           "disabled": false,
-          "document": "签署流程的签署截止时间。\n值为unix时间戳,精确到秒,不传默认为当前时间一年后",
+          "document": "签署流程的签署截止时间。\n值为unix时间戳,精确到秒\n不传默认为当前时间一年后",
           "example": "无",
           "is_base64": false,
           "member": "int64",
@@ -3282,7 +3412,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义合同类型",
+          "document": "用户自定义合同类型Id\n该id为电子签企业内的合同类型id",
           "example": "无",
           "is_base64": false,
           "member": "string",
@@ -3302,11 +3432,91 @@
         },
         {
           "disabled": false,
-          "document": "打开智能添加填写区(默认开启，打开:\"OPEN\" 关闭：\"CLOSE\")",
+          "document": "打开智能添加填写区\n(默认开启，打开:\"OPEN\"\n 关闭：\"CLOSE\"",
           "example": "OPEN",
           "is_base64": false,
           "member": "string",
           "name": "IntelligentStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型，\n1：文件，\n2：模板\n不传默认为1：文件\n目前仅支持文件",
+          "example": "1",
+          "is_base64": false,
+          "member": "int64",
+          "name": "ResourceType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "发起方填写控件\n该类型控件由发起方完成填写",
+          "example": "无",
+          "is_base64": false,
+          "member": "Component",
+          "name": "Components",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "发起合同个性化参数\n用于满足创建及页面操作过程中的个性化要求\n具体定制化内容详见数据接口说明",
+          "example": "无",
+          "is_base64": false,
+          "member": "CreateFlowOption",
+          "name": "FlowOption",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启发起方签署审核\ntrue:开启发起方签署审核\nfalse:不开启发起方签署审核\n默认false:不开启发起方签署审核",
+          "example": "无",
+          "is_base64": false,
+          "member": "bool",
+          "name": "NeedSignReview",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "开启发起方发起合同审核\ntrue:开启发起方发起合同审核\nfalse:不开启发起方发起合同审核\n默认false:不开启发起方发起合同审核",
+          "example": "无",
+          "is_base64": false,
+          "member": "bool",
+          "name": "NeedCreateReview",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义参数",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "UserData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合同id,用于通过已web页面发起的合同id快速生成一个web发起合同链接",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "FlowId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合同类型名称\n该字段用于客户自定义合同类型\n建议使用时指定合同类型，便于之后合同分类以及查看",
+          "example": "\"劳动合同\"",
+          "is_base64": false,
+          "member": "string",
+          "name": "FlowType",
           "required": false,
           "type": "string"
         },
@@ -4455,29 +4665,31 @@
       "document": "集成版员工部门信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "部门id",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "DepartmentId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部门名称",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "DepartmentName",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "DescribeExtendedServiceAuthInfosRequest": {
       "document": "DescribeExtendedServiceAuthInfos请求参数结构体",
@@ -4943,7 +5155,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "调用方员工/经办人信息\nUserId 必填，在企业控制台组织架构中可以查到员工的UserId\n注：请保证对应",
+          "document": "调用方员工/经办人信息\nUserId 必填，在企业控制台组织架构中可以查到员工的UserId\n注：请保证员工有相关的角色权限",
           "example": "无",
           "is_base64": false,
           "member": "UserInfo",
@@ -5799,6 +6011,30 @@
       ],
       "type": "object"
     },
+    "EmbedUrlOption": {
+      "document": "个性化参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同详情预览，允许展示控件信息\n<br/>true：允许在合同详情页展示控件\n<br/>false：不允许在合同详情页展示控件\n<br/>默认false，合同详情页不展示控件",
+          "example": "true",
+          "member": "bool",
+          "name": "ShowFlowDetailComponent",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "模版预览，允许展示模版控件信息\n<br/>true：允许在模版预览页展示控件\n<br/>false：不允许在模版预览页展示控件\n<br/>默认false，模版预览页不展示控件",
+          "example": "true",
+          "member": "bool",
+          "name": "ShowTemplateComponent",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
+    },
     "ExtendAuthInfo": {
       "document": "授权服务信息",
       "members": [
@@ -6037,7 +6273,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件Id",
+          "document": "文件ID",
           "example": "无",
           "is_base64": false,
           "member": "string",
@@ -6072,7 +6308,7 @@
         },
         {
           "disabled": false,
-          "document": "文件上传时间，10位时间戳（精确到秒）",
+          "document": "文件上传时间，格式为Unix标准时间戳（秒）",
           "example": "无",
           "member": "int64",
           "name": "CreatedOn",
@@ -6111,7 +6347,7 @@
       "usage": "out"
     },
     "FillApproverInfo": {
-      "document": "补充签署人信息\n- RecipientId 必须指定\n-  通过企业自定义账号ID补充签署人时，ApproverSource 和 CustomUserId 必填\n- 通过二要素（姓名/手机号）补充签署人时，ApproverName 和 ApproverMobile 必填",
+      "document": "补充签署人信息\n- RecipientId 必须指定\n-  通过企业自定义账号ID补充签署人时，ApproverSource 和 CustomUserId 必填，ApproverSource取值：WEWORKAPP\n- 通过二要素（姓名/手机号）补充签署人时，ApproverName 和 ApproverMobile 必填，ApproverSource设置为空",
       "members": [
         {
           "disabled": false,
@@ -6125,7 +6361,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人来源\nWEWORKAPP: 企业微信",
+          "document": "签署人来源\nWEWORKAPP: 企业微信\n<br/>仅【企微或签】时指定WEWORKAPP",
           "example": "WEWORKAPP",
           "is_base64": false,
           "member": "string",
@@ -6135,7 +6371,7 @@
         },
         {
           "disabled": false,
-          "document": "企业自定义账号ID\nWEWORKAPP场景下指企业自有应用获取企微明文的userid",
+          "document": "企业自定义账号ID\n<br/>当ApproverSource为WEWORKAPP的企微或签场景下，必须指企业自有应用获取企微明文的userid",
           "example": "zhangsan",
           "is_base64": false,
           "member": "string",
@@ -6560,7 +6796,7 @@
         },
         {
           "disabled": false,
-          "document": "如果签署方为企业，需要填入企业全称",
+          "document": "签署人企业名称\n<br/>当approverType=1 或 approverType=3时，必须指定\n\n",
           "example": "无",
           "is_base64": false,
           "member": "string",
@@ -6570,7 +6806,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人姓名",
+          "document": "签署方经办人姓名\n<br/>在未指定签署人电子签UserId情况下，为必填参数",
           "example": "无",
           "is_base64": false,
           "member": "string",
@@ -6580,7 +6816,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人手机号码",
+          "document": "签署方经办人手机号码\n<br/>在未指定签署人电子签UserId情况下，为必填参数\n",
           "example": "无",
           "is_base64": false,
           "member": "string",
@@ -6610,7 +6846,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人在模板中的参与方ID",
+          "document": "签署方经办人在模板中的参与方ID\n<br/>模版发起合同时，该参数为必填项\n<br/>文件发起合同是，该参数无序传值\n",
           "example": "无",
           "is_base64": false,
           "member": "string",
@@ -6630,7 +6866,7 @@
         },
         {
           "disabled": false,
-          "document": "是否发送短信，sms--短信通知，none--不通知，默认为sms；发起方=签署方时不发送短信",
+          "document": "是否发送短信\n<br/>sms--短信通知\n<br/>none--不通知\n<br/>默认为sms\n<br/>发起方=签署方时不发送短信",
           "example": "无",
           "is_base64": false,
           "member": "string",
@@ -6658,7 +6894,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个。",
+          "document": "签署方经办人的电子签用户ID\n<br/>当未指定签署人姓名+手机号的情况下，该字段毕传\n",
           "example": "无",
           "is_base64": false,
           "member": "string",
@@ -6677,7 +6913,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人用户来源,企微侧用户请传入：WEWORKAPP",
+          "document": "签署人用户来源\n<br/>企微侧用户请传入：WEWORKAPP",
           "example": "无",
           "is_base64": false,
           "member": "string",
@@ -6687,7 +6923,7 @@
         },
         {
           "disabled": false,
-          "document": "企业签署方或签标识，客户自定义，64位长度。用于发起含有或签签署人的合同。或签参与人必须有此字段。合同内不同或签参与人CustomApproverTag需要保证唯一。如果或签签署人为本方企微参与人，ApproverSource参数需要指定WEWORKAPP",
+          "document": "企业签署方或签标识，客户自定义，64位长度\n<br>用于发起含有或签签署人的合同。或签参与人必须有此字段。\n<br/>合同内不同或签参与人CustomApproverTag需要保证唯一。\n<br/>如果或签签署人为本方企微参与人，ApproverSource参数需要指定WEWORKAPP",
           "example": "无",
           "is_base64": false,
           "member": "string",
@@ -6735,7 +6971,7 @@
         },
         {
           "disabled": false,
-          "document": "当前签署方进行签署操作是否需要企业内部审批，true 则为需要。为个人签署方时则由发起方企业审核。",
+          "document": "当前签署方进行签署操作是否需要企业内部审批\n<br>true 则为需要\n<br/>false,无序企业内部审批（默认）\n<br/>为个人签署方时则由发起方企业审核。",
           "example": "无",
           "member": "bool",
           "name": "ApproverNeedSignReview",
@@ -6744,7 +6980,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人签署控件",
+          "document": "签署人签署控件\n<br/>文件发起时，可通过该参数为签署人指定签署控件类型以及位置",
           "example": "无",
           "member": "Component",
           "name": "SignComponents",
@@ -6753,7 +6989,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人填写控件",
+          "document": "签署人填写控件\n<br/>文件发起时，可通过该参数为签署人指定填写控件类型以及位置",
           "example": "无",
           "member": "Component",
           "name": "Components",
@@ -7798,7 +8034,7 @@
           "example": "无",
           "member": "int64",
           "name": "VerifyResult",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7808,7 +8044,7 @@
           "example": "无",
           "member": "string",
           "name": "SignPlatform",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7818,7 +8054,7 @@
           "example": "无",
           "member": "string",
           "name": "SignerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7828,7 +8064,7 @@
           "example": "无",
           "member": "int64",
           "name": "SignTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7838,7 +8074,7 @@
           "example": "无",
           "member": "string",
           "name": "SignAlgorithm",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7848,27 +8084,27 @@
           "example": "无",
           "member": "string",
           "name": "CertSn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "证书起始时间戳，单位秒",
+          "document": "证书起始时间戳，单位毫秒",
           "example": "无",
           "member": "int64",
           "name": "CertNotBefore",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "证书过期时间戳，单位秒",
+          "document": "证书过期时间戳，单位毫秒",
           "example": "无",
           "member": "int64",
           "name": "CertNotAfter",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7878,7 +8114,7 @@
           "example": "无",
           "member": "float",
           "name": "ComponentPosX",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -7888,7 +8124,7 @@
           "example": "无",
           "member": "float",
           "name": "ComponentPosY",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -7898,7 +8134,7 @@
           "example": "无",
           "member": "float",
           "name": "ComponentWidth",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -7908,7 +8144,7 @@
           "example": "无",
           "member": "float",
           "name": "ComponentHeight",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -7918,7 +8154,7 @@
           "example": "无",
           "member": "int64",
           "name": "ComponentPage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -7926,24 +8162,28 @@
       "usage": "out"
     },
     "Recipient": {
-      "document": "签署参与者信息",
+      "document": "流程中参与方的信息结构",
       "members": [
         {
           "disabled": false,
-          "document": "签署参与者ID",
+          "document": "签署参与者ID，唯一标识",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "RecipientId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方",
+          "document": "参与者类型。\n默认为空。\nENTERPRISE-企业；\nINDIVIDUAL-个人；\nPROMOTER-发起方",
           "example": "ENTERPRISE",
+          "is_base64": false,
           "member": "string",
           "name": "RecipientType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -7952,8 +8192,10 @@
           "disabled": false,
           "document": "描述信息",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -7962,48 +8204,54 @@
           "disabled": false,
           "document": "角色名称",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "RoleName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否需要验证，默认为false",
+          "document": "是否需要验证，\n默认为false-不需要验证",
           "example": "无",
           "member": "bool",
           "name": "RequireValidation",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否需要签署，默认为true",
+          "document": "是否需要签署，\n默认为true-需要签署",
           "example": "无",
           "member": "bool",
           "name": "RequireSign",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "添加序列，0～N",
+          "document": "此参与方添加的顺序，从0～N",
           "example": "无",
           "member": "int64",
           "name": "RoutingOrder",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否需要发送，默认为true",
+          "document": "是否需要发送，\n默认为true-需要发送",
           "example": "无",
           "member": "bool",
           "name": "RequireDelivery",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -8012,8 +8260,10 @@
           "disabled": false,
           "document": "邮箱地址",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Email",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -8022,38 +8272,46 @@
           "disabled": false,
           "document": "电话号码",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Mobile",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "关联的用户ID",
+          "document": "关联的用户ID，电子签系统的用户ID",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "UserId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "发送方式。默认为EMAIL。EMAIL-邮件；MOBILE-手机短信；WECHAT-微信通知",
+          "document": "发送方式，默认为EMAIL。\nEMAIL-邮件；\nMOBILE-手机短信；\nWECHAT-微信通知",
           "example": "EMAIL",
+          "is_base64": false,
           "member": "string",
           "name": "DeliveryMethod",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "附属信息",
+          "document": "参与方的一些附属信息，json格式",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "RecipientExtra",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -8326,8 +8584,39 @@
       "usage": "in"
     },
     "SealInfo": {
-      "document": "模板结构体中的印章信息",
-      "members": [],
+      "document": "模板中指定的印章信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "印章ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SealId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "印章类型。LEGAL_PERSON_SEAL: 法定代表人章；\nORGANIZATIONSEAL：企业印章；\nOFFICIAL：企业公章；\nCONTRACT：合同专用章\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SealType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "印章名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SealName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
       "usage": "out"
     },
     "SignQrCode": {
@@ -8569,29 +8858,31 @@
       "document": "集成版企业角色信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "角色id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "RoleId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "角色名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "RoleName",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "StartFlowRequest": {
       "document": "StartFlow请求参数结构体",
@@ -8797,24 +9088,28 @@
       "usage": "out"
     },
     "TemplateInfo": {
-      "document": "企业模板的信息结构",
+      "document": "此结构体 (TemplateInfo) 用于描述模板的信息。\n\n> **模板组成** \n>\n>  一个模板通常会包含以下结构信息\n>- 模板基本信息\n>- 发起方参与信息Promoter、签署参与方 Recipients，后者会在模板发起合同时用于指定参与方\n>- 填写控件 Components\n>- 签署控件 SignComponents\n>- 生成模板的文件基础信息 FileInfos",
       "members": [
         {
           "disabled": false,
-          "document": "模板ID",
+          "document": "模板ID，模板的唯一标识",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "TemplateId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "模板名字",
+          "document": "模板名",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "TemplateName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -8823,8 +9118,10 @@
           "disabled": false,
           "document": "模板描述信息",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -8833,18 +9130,21 @@
           "disabled": false,
           "document": "模板关联的资源ID列表",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "DocumentResourceIds",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "返回的文件信息结构",
+          "document": "生成模板的文件基础信息",
           "example": "无",
           "member": "FileInfo",
           "name": "FileInfos",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -8853,118 +9153,133 @@
           "disabled": false,
           "document": "附件关联的资源ID",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "AttachmentResourceIds",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "签署顺序",
+          "document": "签署顺序\n无序 -1\n有序为序列数字 0,1,2",
           "example": "无",
           "member": "int64",
           "name": "SignOrder",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "签署参与者的信息",
+          "document": "模板中的签署参与方列表",
           "example": "无",
           "member": "Recipient",
           "name": "Recipients",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "模板信息结构",
+          "document": "模板的填充控件列表",
           "example": "无",
           "member": "Component",
           "name": "Components",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "签署区模板信息结构",
+          "document": "模板中的签署控件列表",
           "example": "无",
           "member": "Component",
           "name": "SignComponents",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "模板状态(-1:不可用；0:草稿态；1:正式态)",
+          "document": "模板状态\n-1:不可用\n0:草稿态\n1:正式态，可以正常使用",
           "example": "无",
           "member": "int64",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "模板的创建人UserId",
+          "document": "模板的创建者信息，电子签系统用户ID",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Creator",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "模板创建的时间戳，单位秒",
+          "document": "模板创建的时间戳，格式为Unix标准时间戳（秒）",
           "example": "无",
           "member": "int64",
           "name": "CreatedOn",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "发起人角色信息",
+          "document": "发起方参与信息Promoter",
           "example": "无",
           "member": "Recipient",
           "name": "Promoter",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "模板类型\n取值：\n1  静默签,\n3  普通模板",
+          "document": "模板类型：\n1  静默签,\n3  普通模板",
           "example": "无",
           "member": "int64",
           "name": "TemplateType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "模板可用状态，取值：1启用（默认），2停用",
+          "document": "模板可用状态：\n1 启用（默认）\n2 停用",
           "example": "无",
           "member": "int64",
           "name": "Available",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建模板的机构id",
+          "document": "创建模板的企业ID，电子签的机构ID",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "OrganizationId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -8973,8 +9288,10 @@
           "disabled": false,
           "document": "模板预览链接，有效时间5分钟\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "PreviewUrl",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8983,18 +9300,21 @@
           "disabled": false,
           "document": "模板版本。默认为空时，全数字字符，初始版本为yyyyMMdd001。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "TemplateVersion",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "模板是否已发布。true-已发布；false-未发布\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板是否已发布：\ntrue-已发布\nfalse-未发布\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "Published",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -9005,6 +9325,7 @@
           "example": "无",
           "member": "SealInfo",
           "name": "TemplateSeals",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -9015,6 +9336,7 @@
           "example": "无",
           "member": "SealInfo",
           "name": "Seals",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -9095,8 +9417,9 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作人信息，userId必填",
+          "document": "当前用户信息，OpenId与UserId二选一必填一个，OpenId是第三方客户ID，userId是用户实名后的电子签生成的ID,当传入客户系统openId，传入的openId需与电子签员工userId绑定，且参数Channel必填，Channel值为YUFU；",
           "example": "无",
+          "is_base64": false,
           "member": "UserInfo",
           "name": "Operator",
           "required": true,
@@ -9106,6 +9429,7 @@
           "disabled": false,
           "document": "员工信息，不超过100个。\n根据UserId或OpenId更新员工，必填一个，优先UserId。\n可更新Mobile、DisplayName、Email和Department.DepartmentId字段，其他字段暂不支持",
           "example": "无",
+          "is_base64": false,
           "member": "Staff",
           "name": "Employees",
           "required": true,
@@ -9115,6 +9439,7 @@
           "disabled": false,
           "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId需填充子企业Id",
           "example": "无",
+          "is_base64": false,
           "member": "Agent",
           "name": "Agent",
           "required": false,

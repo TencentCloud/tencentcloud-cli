@@ -1,6 +1,6 @@
 **Example 1: 查询数据库管理账号**
 
-
+查询数据库管理账号
 
 Input: 
 
@@ -13,18 +13,18 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "150918",
-        "TotalCount": 1,
         "AccountSet": [
             {
-                "UpdateTime": "2018-06-28 23:28:52",
-                "Host": "xx",
-                "CreateTime": "2018-06-28 23:28:52",
-                "Description": "默认用户asdf",
-                "MaxUserConnections": 0,
-                "AccountName": "admin"
+                "AccountName": "abc",
+                "Description": "abc",
+                "CreateTime": "2020-09-22 00:00:00",
+                "UpdateTime": "2020-09-22 00:00:00",
+                "Host": "abc",
+                "MaxUserConnections": 0
             }
-        ]
+        ],
+        "TotalCount": 0,
+        "RequestId": "abc"
     }
 }
 ```
