@@ -52,11 +52,16 @@ class BasicConfigure(BasicCommand):
                     continue
                 conf_data[mod] = {}
                 conf_data[mod]["endpoint"] = "%s.tencentcloudapi.com" % mod
+                service = mod
                 # we have to do this because as is a keyword in python
                 # as has been changed to autoscaling only in python sdk & cli
                 if mod == 'autoscaling':
                     conf_data[mod]["endpoint"] = "as.tencentcloudapi.com"
-                versions = self._cli_data.get_service_all_version_actions(mod).keys()
+                # Fix configuration `region` key name conflict with region service(Region Management System)
+                elif mod == OptionsDefine.RegionServiceName:
+                    service = OptionsDefine.RegionCommand
+                    conf_data[mod]["endpoint"] = "region.tencentcloudapi.com"
+                versions = self._cli_data.get_service_all_version_actions(service).keys()
                 version = sorted(versions)[-1]
                 conf_data[mod]["version"] = version
         for k in extra.keys():

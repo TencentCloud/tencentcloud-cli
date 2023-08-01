@@ -46,6 +46,8 @@ class CLICommand(BaseCommand):
         self._handle_warning(args)
 
         parsed_args, remaining = parser.parse_known_args(args)
+        if parsed_args.command == Options_define.RegionCommand:
+            parsed_args.command = Options_define.RegionServiceName
         return command_map[parsed_args.command](remaining, parsed_args)
 
     def _handle_warning(self, args):

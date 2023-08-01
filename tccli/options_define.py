@@ -42,5 +42,5 @@ Detail = "detail"
 ACTION_GLOBAL_OPT = [SecretId, SecretKey, Token, RoleArn, RoleSessionName, UseCVMRole, Region, Endpoint, Version, Language,
                      Filter, Profile, Timeout, Output, HttpsProxy, GenerateCliSkeleton, CliInputJson, CliUnfoldArgument, Waiter]
 
-
-
+RegionCommand = "region"
+RegionServiceName = "regionms"

@@ -2,8 +2,12 @@
 import os
 import imp
 
+import tccli.options_define as OptionsDefine
+
 
 def action_caller(service):
+    if service == OptionsDefine.RegionServiceName:
+        service = OptionsDefine.RegionCommand
     cur_path = os.path.dirname(os.path.abspath(__file__))
     fp, pathname, desc = imp.find_module(service, [cur_path])
     mod = imp.load_module("tccli.services." + service, fp, pathname, desc)
@@ -502,7 +506,7 @@ SERVICE_VERSIONS = {
     "redis": [
         "2018-04-12"
     ],
-    "region": [
+    OptionsDefine.RegionServiceName: [
         "2022-06-27"
     ],
     "rkp": [

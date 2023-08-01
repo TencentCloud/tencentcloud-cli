@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 
+import tccli.options_define as OptionsDefine
 from tccli.loaders import Loader, BASE_TYPE, CLI_BASE_TYPE
 
 
@@ -44,7 +45,7 @@ class CLIDocumentHandler(BaseDocumentHandler):
             self.doc.style.indent()
             self.doc.write(self.doc.style.spaces())
             for service in sorted(available_services):
-                self.doc.write("[%s] " % service)
+                self.doc.write("[%s] " % (service if service != OptionsDefine.RegionServiceName else OptionsDefine.RegionCommand))
             self.doc.style.dedent()
             self.doc.style.new_line()
             self.doc.style.new_line()
@@ -52,7 +53,7 @@ class CLIDocumentHandler(BaseDocumentHandler):
             self.doc.style.new_line()
         else:
             for service in sorted(available_services):
-                self.doc.doc_title_indent(service)
+                self.doc.doc_title_indent(service if service != OptionsDefine.RegionServiceName else OptionsDefine.RegionCommand)
                 version = self._cli_data.get_service_default_version(service)
                 description = self._cli_data.get_service_description(service, version)
                 if not description:

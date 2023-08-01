@@ -3,11 +3,13 @@
 
 import sys
 import argparse
+import collections
 from tccli.log import init
 import six
 from difflib import get_close_matches
 from gettext import gettext
 from tccli.error_msg import USAGE
+import tccli.options_define as OptionsDefine
 
 log = init("tccli.argparser")
 
@@ -22,7 +24,12 @@ class CustomAction(argparse.Action):
 
     @property
     def choices(self):
-        return list(self.command_map.keys())
+        cm = collections.OrderedDict()
+        for key, value in self.command_map.items():
+            if key == OptionsDefine.RegionServiceName:
+                key = OptionsDefine.RegionCommand
+            cm[key] = value
+        return list(cm.keys())
 
     @choices.setter
     def choices(self, val):

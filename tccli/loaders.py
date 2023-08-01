@@ -4,6 +4,7 @@ import os
 import six
 import copy
 import json
+import tccli.options_define as OptionsDefine
 from tccli.utils import Utils
 from tccli import __version__
 from tccli.services import SERVICE_VERSIONS
@@ -180,6 +181,8 @@ class Loader(object):
         return self.get_available_services()[service][0]
 
     def get_service_model(self, service, version):
+        if service == OptionsDefine.RegionServiceName:
+            service = OptionsDefine.RegionCommand
         services_path = self.get_services_path()
         version = "v" + version.replace('-', '')
         apis_path = os.path.join(services_path, service, version, "api.json")
