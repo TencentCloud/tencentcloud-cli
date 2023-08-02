@@ -94,6 +94,7 @@
           "disabled": false,
           "document": "待查询产品的名称，例如cvm，具体取值请查询DescribeProducts接口",
           "example": "cvm",
+          "is_base64": false,
           "member": "string",
           "name": "Product",
           "required": true,
@@ -103,6 +104,7 @@
           "disabled": false,
           "document": "不传或者0表示不查询【可选业务白名单】，1表示查询【可选业务白名单】，该参数设置了1，只有在业务白名单查不到情况下，才会查该白名单",
           "example": "1",
+          "is_base64": false,
           "member": "int64",
           "name": "Scene",
           "required": false,
@@ -120,6 +122,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -129,6 +132,7 @@
           "example": "参考输出示例",
           "member": "RegionInfo",
           "name": "RegionSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

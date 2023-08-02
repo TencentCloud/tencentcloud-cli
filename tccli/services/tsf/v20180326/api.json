@@ -10584,7 +10584,6 @@
       "document": "DeployGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "部署组ID",
           "example": "无",
@@ -10594,7 +10593,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "程序包ID",
           "example": "无",
@@ -10604,7 +10602,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署组启动参数",
           "example": "无",
@@ -10614,7 +10611,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署应用描述信息",
           "example": "无",
@@ -10624,7 +10620,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否允许强制启动",
           "example": "无",
@@ -10634,7 +10629,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启健康检查",
           "example": "无",
@@ -10644,7 +10638,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开启健康检查时，配置健康检查",
           "example": "无",
@@ -10654,7 +10647,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署方式，0表示快速更新，1表示滚动更新",
           "example": "无",
@@ -10664,7 +10656,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否启用beta批次",
           "example": "无",
@@ -10674,7 +10665,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "滚动发布每个批次参与的实例比率",
           "example": "无",
@@ -10684,7 +10674,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "滚动发布的执行方式",
           "example": "无",
@@ -10694,7 +10683,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "滚动发布每个批次的时间间隔",
           "example": "无",
@@ -10704,7 +10692,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "启动脚本 base64编码",
           "example": "无",
@@ -10714,7 +10701,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "停止脚本 base64编码",
           "example": "无",
@@ -10724,7 +10710,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否进行增量部署，默认为false，全量更新",
           "example": "无",
@@ -10734,7 +10719,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "JDK名称: konaJDK或openJDK",
           "example": "无",
@@ -10744,7 +10728,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "JDK版本: 8或11 (openJDK只支持8)",
           "example": "无",
@@ -10754,7 +10737,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署agent的类型、版本",
           "example": "无",
@@ -10764,7 +10746,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预热参数配置",
           "example": "无",
@@ -10772,6 +10753,15 @@
           "name": "WarmupSetting",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "开启分批健康检查",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableBatchHealthCheck",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -10785,7 +10775,6 @@
           "example": "无",
           "member": "TaskId",
           "name": "Result",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -25588,7 +25577,7 @@
           "example": "无",
           "member": "string",
           "name": "Path",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25598,7 +25587,7 @@
           "example": "无",
           "member": "string",
           "name": "Method",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25608,7 +25597,7 @@
           "example": "无",
           "member": "string",
           "name": "MicroserviceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -25618,7 +25607,7 @@
           "example": "无",
           "member": "string",
           "name": "MicroserviceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -25628,7 +25617,7 @@
           "example": "无",
           "member": "uint64",
           "name": "RequestCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -25638,7 +25627,7 @@
           "example": "无",
           "member": "float",
           "name": "ErrorRate",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -25648,7 +25637,7 @@
           "example": "无",
           "member": "float",
           "name": "AvgTimeConsuming",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -25658,7 +25647,7 @@
           "example": "无",
           "member": "MetricDataCurve",
           "name": "MetricDataCurves",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -25668,7 +25657,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25678,7 +25667,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25688,7 +25677,7 @@
           "example": "无",
           "member": "string",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25698,7 +25687,7 @@
           "example": "无",
           "member": "string",
           "name": "GroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25708,7 +25697,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25718,7 +25707,7 @@
           "example": "无",
           "member": "int64",
           "name": "GroupExist",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -25728,7 +25717,7 @@
           "example": "无",
           "member": "int64",
           "name": "InstanceExist",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -25738,7 +25727,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25748,7 +25737,7 @@
           "example": "无",
           "member": "string",
           "name": "MicroserviceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25758,7 +25747,7 @@
           "example": "无",
           "member": "int64",
           "name": "CpuPercent",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -25768,7 +25757,7 @@
           "example": "无",
           "member": "int64",
           "name": "HeapUsed",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -25778,7 +25767,7 @@
           "example": "无",
           "member": "string",
           "name": "DbName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25788,7 +25777,7 @@
           "example": "无",
           "member": "string",
           "name": "Script",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25798,7 +25787,7 @@
           "example": "无",
           "member": "string",
           "name": "DbType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25808,7 +25797,7 @@
           "example": "无",
           "member": "float",
           "name": "Apdex",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -25818,7 +25807,7 @@
           "example": "无",
           "member": "float",
           "name": "Qps",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -25828,7 +25817,7 @@
           "example": "无",
           "member": "int64",
           "name": "InstanceOnlineCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -25838,7 +25827,7 @@
           "example": "无",
           "member": "int64",
           "name": "InstanceTotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -25848,7 +25837,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25858,7 +25847,7 @@
           "example": "无",
           "member": "string",
           "name": "ErrorRateLevel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25868,7 +25857,7 @@
           "example": "无",
           "member": "string",
           "name": "AvgTimeConsumingLevel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25878,7 +25867,7 @@
           "example": "无",
           "member": "string",
           "name": "ApdexLevel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -28978,7 +28967,7 @@
           "example": "无",
           "member": "string",
           "name": "GroupId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -28988,7 +28977,7 @@
           "example": "无",
           "member": "string",
           "name": "GroupName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -28998,7 +28987,7 @@
           "example": "无",
           "member": "string",
           "name": "GroupStatus",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29008,7 +28997,7 @@
           "example": "无",
           "member": "string",
           "name": "PackageId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29018,7 +29007,7 @@
           "example": "无",
           "member": "string",
           "name": "PackageName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29028,7 +29017,7 @@
           "example": "无",
           "member": "string",
           "name": "PackageVersion",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29038,7 +29027,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29048,7 +29037,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29058,7 +29047,7 @@
           "example": "无",
           "member": "string",
           "name": "NamespaceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29068,7 +29057,7 @@
           "example": "无",
           "member": "string",
           "name": "NamespaceName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29078,7 +29067,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29088,7 +29077,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29098,7 +29087,7 @@
           "example": "无",
           "member": "int64",
           "name": "InstanceCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -29108,7 +29097,7 @@
           "example": "无",
           "member": "int64",
           "name": "RunInstanceCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -29118,7 +29107,7 @@
           "example": "无",
           "member": "string",
           "name": "StartupParameters",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29128,7 +29117,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29138,7 +29127,7 @@
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29148,7 +29137,7 @@
           "example": "无",
           "member": "int64",
           "name": "OffInstanceCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -29158,7 +29147,7 @@
           "example": "无",
           "member": "string",
           "name": "GroupDesc",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29168,7 +29157,7 @@
           "example": "无",
           "member": "string",
           "name": "MicroserviceType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29178,7 +29167,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29188,7 +29177,7 @@
           "example": "无",
           "member": "string",
           "name": "GroupResourceType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29198,7 +29187,7 @@
           "example": "无",
           "member": "int64",
           "name": "UpdatedTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -29208,7 +29197,7 @@
           "example": "无",
           "member": "string",
           "name": "DeployDesc",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29218,7 +29207,7 @@
           "example": "无",
           "member": "uint64",
           "name": "UpdateType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -29228,7 +29217,7 @@
           "example": "无",
           "member": "bool",
           "name": "DeployBetaEnable",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -29238,7 +29227,7 @@
           "example": "无",
           "member": "float",
           "name": "DeployBatch",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -29248,7 +29237,7 @@
           "example": "无",
           "member": "string",
           "name": "DeployExeMode",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29258,7 +29247,7 @@
           "example": "无",
           "member": "uint64",
           "name": "DeployWaitTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -29268,7 +29257,7 @@
           "example": "无",
           "member": "bool",
           "name": "EnableHealthCheck",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -29278,7 +29267,7 @@
           "example": "无",
           "member": "HealthCheckSettings",
           "name": "HealthCheckSettings",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -29288,7 +29277,7 @@
           "example": "无",
           "member": "string",
           "name": "PackageType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29298,7 +29287,7 @@
           "example": "无",
           "member": "string",
           "name": "StartScript",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29308,7 +29297,7 @@
           "example": "无",
           "member": "string",
           "name": "StopScript",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29318,7 +29307,7 @@
           "example": "备注",
           "member": "string",
           "name": "Alias",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29328,7 +29317,7 @@
           "example": "SERVICE_AGENT/OT_AGENT",
           "member": "AgentProfile",
           "name": "AgentProfileList",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -29338,7 +29327,7 @@
           "example": "无",
           "member": "WarmupSetting",
           "name": "WarmupSetting",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -29348,8 +29337,18 @@
           "example": "无",
           "member": "GatewayConfig",
           "name": "GatewayConfig",
-          "required": false,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "批次是否开启健康检查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableBatchHealthCheck",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

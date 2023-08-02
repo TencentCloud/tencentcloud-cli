@@ -392,6 +392,14 @@
         "title": "获取Kafka导入配置信息"
       }
     ],
+    "DescribeKafkaUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKafkaUser\n<公共请求参数>\n\n{\n    \"UserName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"UserName\": \"test\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "获取kafka用户信息"
+      }
+    ],
     "DescribeLogContext": [
       {
         "document": "检索上下文日志",

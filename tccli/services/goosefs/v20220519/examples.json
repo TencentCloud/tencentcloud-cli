@@ -1,11 +1,75 @@
 {
   "actions": {
+    "AddCrossVpcSubnetSupportForClientNode": [
+      {
+        "document": "为客户端节点添加跨vpc和子网访问的能力",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCrossVpcSubnetSupportForClientNode\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-r3c4fa1f\",\n    \"SubnetInfo\": {\n        \"VpcId\": \"vpc-a1b2c3d4\",\n        \"SubnetId\": \"subnet-a1b2c3d4\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "为客户端节点添加跨vpc和子网访问的能力"
+      }
+    ],
+    "AttachFileSystemBucket": [
+      {
+        "document": "为文件系统关联Bucket, 并指定数据流动的策略",
+        "input": "{\n  \"FileSystemId\": \"x_c60_r3c4fa1f\",\n  \"Bucket\": {\n    \"BucketName\": \"mybucket-125000\",\n    \"FileSystemPath\": \"mybucket-125000\",\n  \"DataRepositoryTaskAutoStrategy\": [\n    \"OndemandImport\",\n   \"PeriodImport\",\n   \"PeriodExport\"\n  ],\n  \"RuleId\": \"x-rule-1\"\n  }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "为文件系统关联Bucket"
+      }
+    ],
+    "BatchAddClientNodes": [
+      {
+        "document": "批量添加客户端节点",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchAddClientNodes\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x_c60_r3c4fa1f\",\n    \"SingleClusterFlag\": false,\n    \"ClientNodes\": [\n        {\n            \"InstanceId\": \"ins-m1r9uwdp\",\n            \"VpcId\": \"vpc-5ke3uoww\",\n            \"SubnetId\": \"subnet-ihijdp5h\",\n            \"LinuxClientNodeIp\": \"10.0.1.2\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "批量添加客户端节点"
+      }
+    ],
+    "BatchDeleteClientNodes": [
+      {
+        "document": "批量添加客户端节点",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDeleteClientNodes\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x_c60_r3c4fa1f\",\n    \"SingleClusterFlag\": false,\n    \"ClientNodes\": [\n        {\n            \"InstanceId\": \"ins-m1r9uwdp\",\n            \"VpcId\": \"vpc-5ke3uoww\",\n            \"SubnetId\": \"subnet-ihijdp5h\",\n            \"LinuxClientNodeIp\": \"10.0.1.2\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "批量删除客户端节点"
+      }
+    ],
     "CreateDataRepositoryTask": [
       {
         "document": "创建上传文件系统数据到存储桶任务",
         "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataRepositoryTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"my_test_task\",\n    \"FileSystemId\": \"x_c60_r3c4fa1f\",\n    \"Bucket\": \"mybucket-1250000\",\n    \"TaskPath\": \"aaa/bbb\",\n    \"TaskType\": \"FS_TO_BUCKET\",\n    \"RepositoryType\": \"MSP_AFM\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"c1a2b3f4\",\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
         "title": "创建上传文件系统数据到存储桶任务"
+      }
+    ],
+    "CreateFileSystem": [
+      {
+        "document": "创建文件系统",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileSystem\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-a1b2c3d4\",\n    \"Name\": \"ai_test_fs\",\n    \"Zone\": \"ap-guangzhou-3\",\n    \"Tag\": [\n        {\n            \"Value\": \"ai_team\",\n            \"Key\": \"owner_group\"\n        },\n        {\n            \"Value\": \"test\",\n            \"Key\": \"env\"\n        }\n    ],\n    \"SubnetId\": \"subnet-m1n1g1h1\",\n    \"Type\": \"goosefsx\",\n    \"GooseFSxBuildElements\": {\n        \"Model\": \"c60\",\n        \"Capacity\": \"4608\",\n        \"MappedBucketList\": [\n            {\n                \"BucketName\": \"mybucket2-12500000\",\n                \"FileSystemPath\": \"/\"\n            },\n            {\n                \"BucketName\": \"mybucket1-12500000\",\n                \"FileSystemPath\": \"/\"\n            },\n            {\n                \"BucketName\": \"mybucket3-12500000\",\n                \"FileSystemPath\": \"/xxx\"\n            }\n        ]\n    },\n    \"Description\": \"ai team test only\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "创建文件系统"
+      }
+    ],
+    "DeleteCrossVpcSubnetSupportForClientNode": [
+      {
+        "document": "为客户端节点删除跨vpc子网访问能力",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCrossVpcSubnetSupportForClientNode\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-a1b2c3d4\",\n    \"SubnetInfo\": {\n        \"VpcId\": \"vpc-a1b2c3d4\",\n        \"SubnetId\": \"subnet-a1b2c3d4\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "为客户端节点删除跨vpc子网访问能力"
+      }
+    ],
+    "DeleteFileSystem": [
+      {
+        "document": "删除文件系统",
+        "input": "https://goosefs.tencentcloudapi.com/?Action=DeleteFileSystem\n&FileSystemId=x_c60_r3c4fa1f\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "删除文件系统"
+      }
+    ],
+    "DescribeClientNodes": [
+      {
+        "document": "",
+        "input": "https://goosefs.tencentcloudapi.com/?Action=DescribeClientNodes\n&FileSystemId=x_c60_r3c4fa1f\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\",\n        \"ClientNodes\": [\n            {\n                \"Status\": \"active\",\n                \"ClientNodeIp\": \"10.0.1.2\"\n            },\n            {\n                \"Status\": \"active\",\n                \"ClientNodeIp\": \"10.0.1.3\"\n            },\n            {\n                \"Status\": \"down\",\n                \"ClientNodeIp\": \"10.0.1.4\"\n            }\n        ]\n    }\n}",
+        "title": "列出集群中所有的客户端节点"
       }
     ],
     "DescribeClusterClientToken": [
@@ -38,6 +102,62 @@
         "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataRepositoryTaskStatus\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x_c60_r3c4fa1f\",\n    \"TaskId\": \"x_task_xxf4\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 1,\n        \"FinishedFileNumber\": 1,\n        \"FinishedCapacity\": 1,\n        \"TaskId\": \"x_task_xxf4\",\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
         "title": "获取数据流通任务实时状态"
+      }
+    ],
+    "DescribeFileSystemBuckets": [
+      {
+        "document": "罗列文件系统关联的Bucket映射",
+        "input": "https://goosefs.tencentcloudapi.com/?Action=DescribeFileSystemBuckets\n&FileSystemId=x_c60_r3c4fa1f\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"BucketList\": [\n            {\n                \"BucketName\": \"mybucket-12500000\",\n                \"FileSystemPath\": \"/\",\n                \"DataRepositoryTaskAutoStrategy\": [\n                    \"AutoImportData\",\n                    \"AutoImportMeta\"\n                ],\n                \"RuleId\": \"x-rule-1\"\n            },\n            {\n                \"BucketName\": \"mytest-12500000\",\n                \"FileSystemPath\": \"/aaa\",\n                \"DataRepositoryTaskAutoStrategy\": [\n                    \"OndemandImport\",\n                    \"AutoImportMeta\",\n                    \"PeriodExport\"\n                ],\n                \"RuleId\": \"x-rule-2\"\n            }\n        ],\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "罗列文件系统关联的Bucket映射"
+      }
+    ],
+    "DescribeFileSystems": [
+      {
+        "document": "列出所有的文件系统",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileSystems\n<公共请求参数>\n\n{\n    \"Limit\": \"20\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FSAttributeList\": [\n            {\n                \"FileSystemId\": \"x_c60_r3c4fa1f\",\n                \"Name\": \"MyTestFS\",\n                \"Status\": \"alive\",\n                \"Type\": \"goosefsx\",\n                \"VpcId\": \"vpc-123\",\n                \"SubnetId\": \"subnet-123\",\n                \"Zone\": \"ap-guangzhou-3\",\n                \"Description\": \"my test fs\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"ModifyTime\": \"2020-09-22T00:00:00+00:00\",\n                \"Tag\": [\n                    {\n                        \"Value\": \"production\",\n                        \"Key\": \"env\"\n                    }\n                ],\n                \"GooseFSxAttribute\": {\n                    \"Model\": \"C60\",\n                    \"Capacity\": 4608,\n                    \"MappedBucketList\": [\n                        {\n                            \"BucketName\": \"mybucket-12500000\",\n                            \"FileSystemPath\": \"/\"\n                        }\n                    ],\n                    \"ClientManagerNodeList\": [\n                        {\n                            \"NodeInstanceId\": \"ins-a1b2c3\",\n                            \"NodeIp\": \"10.0.1.1\",\n                            \"InitialPassword\": \"a1b2c3d4\"\n                        },\n                        {\n                            \"NodeInstanceId\": \"ins-d4f5g6\",\n                            \"NodeIp\": \"10.0.1.2\",\n                            \"InitialPassword\": \"a1b2c3d4\"\n                        },\n                        {\n                            \"NodeInstanceId\": \"ins-h7i8j9\",\n                            \"NodeIp\": \"10.0.1.3\",\n                            \"InitialPassword\": \"a1b2c3d4\"\n                        }\n                    ]\n                }\n            }\n        ],\n        \"TotalCount\": 30,\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "罗列文件系统"
+      }
+    ],
+    "DetachFileSystemBucket": [
+      {
+        "document": "解绑文件系统与Bucket的映射",
+        "input": "https://goosefs.tencentcloudapi.com/?Action=DetachFileSystemBucket\n&FileSystemId=x_c60_r3c4fa1f\n&BucketName=mybucket-12500000\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "解绑文件系统与Bucket的映射"
+      }
+    ],
+    "ExpandCapacity": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExpandCapacity\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x_c60_r3c4fa1f\",\n    \"ExpandedCapacity\": 4680\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "扩展文件系统容量"
+      }
+    ],
+    "ModifyDataRepositoryBandwidth": [
+      {
+        "document": "修改数据流动带宽",
+        "input": "{\n  \"FileSystemId\": \"x_c60_123456\",\n  \"Bandwidth\": 600\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "修改数据流动带宽"
+      }
+    ],
+    "QueryCrossVpcSubnetSupportForClientNode": [
+      {
+        "document": "查询客户端的跨vpc子网访问能力",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCrossVpcSubnetSupportForClientNode\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-a1b2c3d4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\",\n        \"SubnetInfoCollection\": [\n            {\n                \"VpcId\": \"vpc-a1b2c3d4\",\n                \"SubnetId\": \"subnet-a1b2c3d4\"\n            },\n            {\n                \"VpcId\": \"vpc-h1g1d1f1\",\n                \"SubnetId\": \"subnet-h1g1d1f1\"\n            },\n            {\n                \"VpcId\": \"vpc-m1n1o1p1\",\n                \"SubnetId\": \"subnet-m1n1o1p1\"\n            }\n        ]\n    }\n}",
+        "title": "查询客户端的跨vpc子网访问能力"
+      }
+    ],
+    "QueryDataRepositoryBandwidth": [
+      {
+        "document": "查询数据流动带宽",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryDataRepositoryBandwidth\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x_c60_123456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Bandwidth\": 600,\n        \"MinBandwidth\": 0,\n        \"BandwidthStatus\": 1,\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "查询数据流动带宽"
       }
     ]
   },

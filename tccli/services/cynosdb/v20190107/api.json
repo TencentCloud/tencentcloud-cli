@@ -742,6 +742,13 @@
       "output": "OpenClusterPasswordComplexityResponse",
       "status": "online"
     },
+    "OpenClusterReadOnlyInstanceGroupAccess": {
+      "document": "开启只读实例组接入",
+      "input": "OpenClusterReadOnlyInstanceGroupAccessRequest",
+      "name": "开启只读实例组接入",
+      "output": "OpenClusterReadOnlyInstanceGroupAccessResponse",
+      "status": "online"
+    },
     "OpenReadOnlyInstanceExclusiveAccess": {
       "document": "开通只读实例独有访问接入组",
       "input": "OpenReadOnlyInstanceExclusiveAccessRequest",
@@ -13154,6 +13161,23 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenClusterReadOnlyInstanceGroupAccessRequest": {
+      "document": "OpenClusterReadOnlyInstanceGroupAccess请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "OpenClusterReadOnlyInstanceGroupAccessResponse": {
+      "document": "OpenClusterReadOnlyInstanceGroupAccess返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

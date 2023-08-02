@@ -276,6 +276,14 @@
         "title": "删除主题"
       }
     ],
+    "DeleteRocketMQVipInstance": [
+      {
+        "document": "销毁集群",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRocketMQVipInstance\n<公共请求参数>\n\n{\n    \"ClusterId\": \"rocketmq-ajknm838qzg4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"70975bd2-1f19-4103-8f65-eca79dea24d6\"\n    }\n}",
+        "title": "销毁集群"
+      }
+    ],
     "DeleteRoles": [
       {
         "document": "",

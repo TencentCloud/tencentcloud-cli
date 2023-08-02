@@ -8443,40 +8443,40 @@
       "document": "DescribeLiveXP2PDetailInfoList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "utc分钟粒度查询时间，查询某一分钟的用量数据，格式为：yyyy-mm-ddTHH:MM:00Z，参考https://cloud.tencent.com/document/product/266/11732#I，\n例如：北京时间2019-01-08 10:00:00，对应utc时间为：2019-01-08T10:00:00+08:00。\n\n支持最近六个月的查询。",
           "example": "2006-01-02T15:02:00Z",
+          "is_base64": false,
           "member": "string",
           "name": "QueryTime",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型数组，分直播live和点播vod，不传默认查全部。",
           "example": "[\"live\",\"vod\"]",
+          "is_base64": false,
           "member": "string",
           "name": "Type",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询流数组，不传默认查所有流。",
           "example": "[\"streamname\"]",
+          "is_base64": false,
           "member": "string",
           "name": "StreamNames",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询维度，不传该参数则默认查询流维度的数据，传递该参数则只查对应维度的数据，和返回值的字段相关，目前支持AppId维度查询。",
           "example": "[\"AppId\"]",
+          "is_base64": false,
           "member": "string",
           "name": "Dimension",
           "required": false,
@@ -8494,7 +8494,7 @@
           "example": "无",
           "member": "XP2PDetailInfo",
           "name": "DataInfoList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

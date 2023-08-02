@@ -13,33 +13,20 @@ Output:
     "Response": {
         "DataInfoList": [
             {
+                "CdnBytes": 0,
+                "P2pBytes": 0,
+                "StuckPeople": 0,
                 "StuckTimes": 0,
-                "StreamName": "xx",
-                "Request": 2405,
+                "OnlinePeople": 0,
+                "Request": 0,
                 "RequestSuccess": 0,
-                "AppId": "xx",
-                "CdnBytes": 386806176036,
-                "P2pBytes": 299529921749,
-                "OnlinePeople": 61854,
-                "Time": "xx",
-                "Type": "xx",
-                "StuckPeople": 1177
-            },
-            {
-                "Time": "xx",
-                "StuckTimes": 0,
-                "StreamName": "xx",
-                "Request": 885,
-                "CdnBytes": 257972842317,
-                "RequestSuccess": 0,
-                "P2pBytes": 120206082328,
-                "OnlinePeople": 35038,
-                "AppId": "xx",
-                "Type": "xx",
-                "StuckPeople": 2246
+                "Time": "abc",
+                "Type": "abc",
+                "StreamName": "abc",
+                "AppId": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

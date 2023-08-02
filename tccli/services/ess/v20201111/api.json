@@ -161,6 +161,13 @@
       "output": "CreateOrganizationBatchSignUrlResponse",
       "status": "online"
     },
+    "CreatePersonAuthCertificateImage": {
+      "document": "本接口（CreatePersonAuthCertificateImage）用于创建个人用户证书证明图片",
+      "input": "CreatePersonAuthCertificateImageRequest",
+      "name": "创建个人用户证书证明图片",
+      "output": "CreatePersonAuthCertificateImageResponse",
+      "status": "online"
+    },
     "CreatePrepareFlow": {
       "document": "创建快速发起流程\n<br/>适用场景：用户通过API 合同文件及签署信息，并可通过我们返回的URL在页面完成签署控件等信息的编辑与确认，快速发起合同.\n<br/>注：该接口文件的resourceId 是通过上传文件之后获取的。",
       "input": "CreatePrepareFlowRequest",
@@ -2583,6 +2590,7 @@
           "disabled": false,
           "document": "调用方用户信息，userId 必填。支持填入集团子公司经办人 userId代发合同。",
           "example": "无",
+          "is_base64": false,
           "member": "UserInfo",
           "name": "Operator",
           "required": true,
@@ -2592,6 +2600,7 @@
           "disabled": false,
           "document": "签署流程名称,最大长度200个字符",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "FlowName",
           "required": true,
@@ -2599,8 +2608,9 @@
         },
         {
           "disabled": false,
-          "document": "签署流程参与者信息，最大限制50方",
+          "document": "签署流程参与者信息，最大限制50方\n注意 approver中的顺序需要和模板中的顺序保持一致， 否则会导致模板中配置的信息无效。",
           "example": "无",
+          "is_base64": false,
           "member": "FlowCreateApprover",
           "name": "Approvers",
           "required": true,
@@ -2610,6 +2620,7 @@
           "disabled": false,
           "document": "签署流程的类型(如销售合同/入职合同等)，最大长度200个字符",
           "example": "劳务合同",
+          "is_base64": false,
           "member": "string",
           "name": "FlowType",
           "required": false,
@@ -2619,6 +2630,7 @@
           "disabled": false,
           "document": "客户端Token，保持接口幂等性,最大长度64个字符",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -2628,6 +2640,7 @@
           "disabled": false,
           "document": "签署流程的签署截止时间。\n值为unix时间戳,精确到秒,不传默认为当前时间一年后",
           "example": "1604912664",
+          "is_base64": false,
           "member": "int64",
           "name": "DeadLine",
           "required": false,
@@ -2637,6 +2650,7 @@
           "disabled": false,
           "document": "合同到期提醒时间戳，单位秒。设定该值后，可以提前进行到期通知，方便客户处理合同到期事务，如合同续签等。该值支持的范围是从发起时间起到往后的10年内。仅合同发起方企业的发起人可以编辑修改。",
           "example": "无",
+          "is_base64": false,
           "member": "int64",
           "name": "RemindedOn",
           "required": false,
@@ -2646,6 +2660,7 @@
           "disabled": false,
           "document": "用户自定义字段，回调的时候会进行透传，长度需要小于20480",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "UserData",
           "required": false,
@@ -2655,6 +2670,7 @@
           "disabled": false,
           "document": "签署流程描述,最大长度1000个字符",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "FlowDescription",
           "required": false,
@@ -2664,6 +2680,7 @@
           "disabled": false,
           "document": "发送类型：\ntrue：无序签\nfalse：有序签\n注：默认为false（有序签），请和模板中的配置保持一致",
           "example": "true",
+          "is_base64": false,
           "member": "bool",
           "name": "Unordered",
           "required": false,
@@ -2673,6 +2690,7 @@
           "disabled": false,
           "document": "合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始",
           "example": "合同名称:{合同名称} {发起方企业} {发起方姓名};国家:中国;发起方:{发起方企业};签署方1:  {签署方1企业};签署",
+          "is_base64": false,
           "member": "string",
           "name": "CustomShowMap",
           "required": false,
@@ -2682,6 +2700,7 @@
           "disabled": false,
           "document": "发起方企业的签署人进行签署操作是否需要企业内部审批。使用此功能需要发起方企业有参与签署。\n若设置为true，审核结果需通过接口 CreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。\n\n注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。",
           "example": "true",
+          "is_base64": false,
           "member": "bool",
           "name": "NeedSignReview",
           "required": false,
@@ -2691,6 +2710,7 @@
           "disabled": false,
           "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
           "example": "无",
+          "is_base64": false,
           "member": "Agent",
           "name": "Agent",
           "required": false,
@@ -2700,6 +2720,7 @@
           "disabled": false,
           "document": "被抄送人的信息列表。\n注: 此功能为白名单功能，若有需要，请联系电子签客服开白使用。",
           "example": "无",
+          "is_base64": false,
           "member": "CcInfo",
           "name": "CcInfos",
           "required": false,
@@ -2709,6 +2730,7 @@
           "disabled": false,
           "document": "个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN",
           "example": "E_PRESCRIPTION_AUTO_SIGN",
+          "is_base64": false,
           "member": "string",
           "name": "AutoSignScene",
           "required": false,
@@ -2718,6 +2740,7 @@
           "disabled": true,
           "document": "暂未开放",
           "example": "xxx",
+          "is_base64": false,
           "member": "string",
           "name": "RelatedFlowId",
           "required": false,
@@ -2727,6 +2750,7 @@
           "disabled": true,
           "document": "暂未开放",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
@@ -3139,6 +3163,7 @@
           "disabled": false,
           "document": "用户信息，其中UserId为必填参数",
           "example": "无",
+          "is_base64": false,
           "member": "UserInfo",
           "name": "Operator",
           "required": true,
@@ -3148,6 +3173,7 @@
           "disabled": false,
           "document": "模板ID",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -3157,6 +3183,7 @@
           "disabled": false,
           "document": "签署流程名称，最大长度不超过200字符",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "FlowName",
           "required": true,
@@ -3164,8 +3191,9 @@
         },
         {
           "disabled": false,
-          "document": "最大可发起签署流程份数，默认5份 \n发起流程数量超过此上限后二维码自动失效",
+          "document": "最大可发起签署流程份数，默认5份 \n<br/>发起流程数量超过此上限后二维码自动失效",
           "example": "无",
+          "is_base64": false,
           "member": "int64",
           "name": "MaxFlowNum",
           "required": false,
@@ -3173,8 +3201,9 @@
         },
         {
           "disabled": false,
-          "document": "签署流程有效天数 默认7天 最高设置不超过30天",
+          "document": "签署流程有效天数 \n<br/>默认7天 \n<br/>最高设置不超过30天",
           "example": "无",
+          "is_base64": false,
           "member": "int64",
           "name": "FlowEffectiveDay",
           "required": false,
@@ -3184,6 +3213,7 @@
           "disabled": false,
           "document": "二维码有效天数 默认7天 最高设置不超过90天",
           "example": "无",
+          "is_base64": false,
           "member": "int64",
           "name": "QrEffectiveDay",
           "required": false,
@@ -3191,8 +3221,9 @@
         },
         {
           "disabled": false,
-          "document": "限制二维码用户条件",
+          "document": "指定的签署人信息\n<br/>指定后，则只允许指定的签署人扫码签署",
           "example": "无",
+          "is_base64": false,
           "member": "ApproverRestriction",
           "name": "Restrictions",
           "required": false,
@@ -3200,8 +3231,9 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义字段，回调的时候会进行透传，长度需要小于20480",
+          "document": "用户自定义字段\n<br/>回调的时候会进行透传，长度需要小于20480",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "UserData",
           "required": false,
@@ -3209,8 +3241,9 @@
         },
         {
           "disabled": false,
-          "document": "回调地址,最大长度1000字符串\n回调时机：\n用户通过签署二维码发起签署流程时，企业额度不足导致失败",
+          "document": "回调地址,最大长度1000字符串\n<br/>回调时机：用户通过签署二维码发起签署流程时，企业额度不足导致失败",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
@@ -3220,6 +3253,7 @@
           "disabled": true,
           "document": "应用信息",
           "example": "无",
+          "is_base64": false,
           "member": "Agent",
           "name": "Agent",
           "required": false,
@@ -3229,6 +3263,7 @@
           "disabled": true,
           "document": "限制二维码用户条件（已弃用）",
           "example": "无",
+          "is_base64": false,
           "member": "ApproverRestriction",
           "name": "ApproverRestrictions",
           "required": false,
@@ -3246,6 +3281,7 @@
           "example": "无",
           "member": "SignQrCode",
           "name": "QrCode",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3255,6 +3291,7 @@
           "example": "无",
           "member": "SignUrl",
           "name": "SignUrls",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3346,6 +3383,74 @@
           "member": "int64",
           "name": "ExpiredTime",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePersonAuthCertificateImageRequest": {
+      "document": "CreatePersonAuthCertificateImage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作人信息",
+          "example": "无",
+          "is_base64": false,
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "个人用户名称",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "身份证件类型取值：\nID_CARD 身居民身份证\nPASSPORT 护照\nHONGKONG_AND_MACAO 港澳居民来往内地通行证\nFOREIGN_ID_CARD 外国人永久居留身份证\nHONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "IdCardType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "身份证件号码",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePersonAuthCertificateImageResponse": {
+      "document": "CreatePersonAuthCertificateImage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "个人用户证明证书的下载链接",
+          "example": "无",
+          "member": "string",
+          "name": "AuthCertUrl",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -6787,7 +6892,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参与者类型：\n0：企业\n1：个人\n3：企业静默签署\n注：类型为3（企业静默签署）时，会默认完成该签署方的签署。静默签署仅进行盖章操作，不能是手写签名。",
+          "document": "参与者类型：\n0：企业\n1：个人\n3：企业自动签署\n注：类型为3（企业自动签署）时，会自动完成该签署方的签署。\n自动签署仅进行盖章操作，不能是手写签名。\n本方企业自动签署的签署人会默认是当前的发起人\n他方企业自动签署的签署人是自动签模板的他方企业授权人",
           "example": "无",
           "member": "int64",
           "name": "ApproverType",
@@ -7290,14 +7395,16 @@
       "usage": "in"
     },
     "FormField": {
-      "document": "电子文档的控件填充信息。按照控件类型进行相应的填充。\n\n【数据表格传参说明】\n当模板的 ComponentType='DYNAMIC_TABLE'时，FormField.ComponentValue需要传递json格式的字符串参数，用于确定表头&填充数据表格（支持内容的单元格合并）\n输入示例1：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\"\n        },\n        {\n            \"content\":\"head2\"\n        },\n        {\n            \"content\":\"head3\"\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n\n输入示例2（表格表头宽度比例配置）：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head2\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head3\",\n            \"widthPercent\": 40\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n表格参数说明\n\n| 名称                | 类型    | 描述                                              |\n| ------------------- | ------- | ------------------------------------------------- |\n| headers             | Array   | 表头：不超过10列，不支持单元格合并，字数不超过100 |\n| rowCount            | Integer | 表格内容最大行数                                  |\n| cells.N.rowStart    | Integer | 单元格坐标：行起始index                           |\n| cells.N.rowEnd      | Integer | 单元格坐标：行结束index                           |\n| cells.N.columnStart | Integer | 单元格坐标：列起始index                           |\n| cells.N.columnEnd   | Integer | 单元格坐标：列结束index                           |\n| cells.N.content     | String  | 单元格内容，字数不超过100                         |\n\n表格参数headers说明\nwidthPercent Integer 表头单元格列占总表头的比例，例如1：30表示 此列占表头的30%，不填写时列宽度平均拆分；例如2：总2列，某一列填写40，剩余列可以为空，按照60计算。；例如3：总3列，某一列填写30，剩余2列可以为空，分别为(100-30)/2=35\ncontent String 表头单元格内容，字数不超过100",
+      "document": "电子文档的控件填充信息。按照控件类型进行相应的填充。\n\n当控件的 ComponentType='TEXT'时，FormField.ComponentValue填入文本内容\n```\nFormFiled输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"文本内容\"\n}\n```\n当控件的 ComponentType='MULTI_LINE_TEXT'时，FormField.ComponentValue填入文本内容，支持自动换行。\n```\nFormFiled输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"多行文本内容\"\n}\n```\n当控件的 ComponentType='CHECK_BOX'时，FormField.ComponentValue填入true或false文本\n```\nFormFiled输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"true\"\n}\n```\n当控件的 ComponentType='FILL_IMAGE'时，FormField.ComponentValue填入图片的资源ID\n```\nFormFiled输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n}\n```\n当控件的 ComponentType='ATTACHMENT'时，FormField.ComponentValue填入附件图片的资源ID列表，以逗号分隔，单个附件控件最多支持6个资源ID；\n```\nFormFiled输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxx1,yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxx2,yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxx3\"\n}\n```\n当控件的 ComponentType='SELECTOR'时，FormField.ComponentValue填入选择的选项内容；\n```\nFormFiled输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"选择的内容\"\n}\n```\n当控件的 ComponentType='DATE'时，FormField.ComponentValue填入日期内容；\n```\nFormFiled输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"2023年01月01日\"\n}\n```\n当控件的 ComponentType='DISTRICT'时，FormField.ComponentValue填入省市区内容；\n```\nFormFiled输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"广东省深圳市福田区\"\n}\n```\n【数据表格传参说明】\n当控件的 ComponentType='DYNAMIC_TABLE'时，FormField.ComponentValue需要传递json格式的字符串参数，用于确定表头&填充数据表格（支持内容的单元格合并）\n输入示例1：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\"\n        },\n        {\n            \"content\":\"head2\"\n        },\n        {\n            \"content\":\"head3\"\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n\n输入示例2（表格表头宽度比例配置）：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head2\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head3\",\n            \"widthPercent\": 40\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n表格参数说明\n\n| 名称                | 类型    | 描述                                              |\n| ------------------- | ------- | ------------------------------------------------- |\n| headers             | Array   | 表头：不超过10列，不支持单元格合并，字数不超过100 |\n| rowCount            | Integer | 表格内容最大行数                                  |\n| cells.N.rowStart    | Integer | 单元格坐标：行起始index                           |\n| cells.N.rowEnd      | Integer | 单元格坐标：行结束index                           |\n| cells.N.columnStart | Integer | 单元格坐标：列起始index                           |\n| cells.N.columnEnd   | Integer | 单元格坐标：列结束index                           |\n| cells.N.content     | String  | 单元格内容，字数不超过100                         |\n\n表格参数headers说明\nwidthPercent Integer 表头单元格列占总表头的比例，例如1：30表示 此列占表头的30%，不填写时列宽度平均拆分；例如2：总2列，某一列填写40，剩余列可以为空，按照60计算。；例如3：总3列，某一列填写30，剩余2列可以为空，分别为(100-30)/2=35\ncontent String 表头单元格内容，字数不超过100",
       "members": [
         {
           "disabled": false,
           "document": "控件填充vaule，ComponentType和传入值类型对应关系：\nTEXT - 文本内容\nMULTI_LINE_TEXT - 文本内容\nCHECK_BOX - true/false\nFILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取\nSELECTOR - 选项值\nDYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo",
           "example": "ComponentValue",
+          "is_base64": false,
           "member": "string",
           "name": "ComponentValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7306,8 +7413,10 @@
           "disabled": false,
           "document": "控件id，和ComponentName选择一项传入即可",
           "example": "componentId",
+          "is_base64": false,
           "member": "string",
           "name": "ComponentId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -7316,8 +7425,10 @@
           "disabled": false,
           "document": "控件名字，最大长度不超过30字符，和ComponentId选择一项传入即可",
           "example": "ComponentName",
+          "is_base64": false,
           "member": "string",
           "name": "ComponentName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false

@@ -127,7 +127,7 @@
       "status": "online"
     },
     "DescribeTrtcRoomUsage": {
-      "document": "查询TRTC音视频房间维度用量。\n- 单次只能查询一天数据，返回查询时间段内的汇总数据；通过多次查询可以查不同天数据。若查询跨天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 该接口只用于历史用量数据统计或核对数据使用，关键业务逻辑不能使用。\n- 默认接口请求频率限制：1次/15秒。",
+      "document": "查询TRTC音视频房间维度用量。\n- 单次只能查询一天数据，返回查询时间段内的汇总数据；通过多次查询可以查不同天数据。若查询跨天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 该接口只用于历史用量数据统计或核对数据使用，关键业务逻辑不能使用，不可用于账单核对，如需对账请使用账号/应用维度用量API：DescribeTrtcUsage。\n- 默认接口请求频率限制：1次/15秒。\n- 数据最早可查日期为2023年4月1日0点，最大可查范围近3个月。",
       "input": "DescribeTrtcRoomUsageRequest",
       "name": "查询TRTC音视频房间维度用量",
       "output": "DescribeTrtcRoomUsageResponse",
@@ -1885,6 +1885,7 @@
           "disabled": false,
           "document": "TRTC的SdkAppId，和房间所对应的SdkAppId相同。",
           "example": "1400017192",
+          "is_base64": false,
           "member": "uint64",
           "name": "SdkAppid",
           "required": true,
@@ -1894,6 +1895,7 @@
           "disabled": false,
           "document": "查询开始时间，格式为YYYY-MM-DD HH:MM，精确到分钟级。",
           "example": "2023-01-06 00:00",
+          "is_base64": false,
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -1903,6 +1905,7 @@
           "disabled": false,
           "document": "查询结束时间，格式为YYYY-MM-DD HH:MM，单次查询不超过24h。",
           "example": "2023-01-06 10:00",
+          "is_base64": false,
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -1916,10 +1919,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "房间维度用量数据，csv文件格式。",
+          "document": "房间维度用量数据，csv文件格式，单位：秒。",
           "example": "\"RoomId,Audio,SD,hd,FullHD,2K,4K\\ntest_room,1,2,3,4,5,6\\n\"",
           "member": "string",
           "name": "Data",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

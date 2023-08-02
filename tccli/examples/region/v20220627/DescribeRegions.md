@@ -166,15 +166,6 @@ Output:
                 "LocationMC": null,
                 "RegionState": "AVAILABLE",
                 "RegionNameMC": null,
-                "Region": "eu-moscow",
-                "RegionTypeMC": null,
-                "RegionName": "欧洲地区(莫斯科)"
-            },
-            {
-                "RegionIdMC": null,
-                "LocationMC": null,
-                "RegionState": "AVAILABLE",
-                "RegionNameMC": null,
                 "Region": "ap-mumbai",
                 "RegionTypeMC": null,
                 "RegionName": "亚太南部(孟买)"

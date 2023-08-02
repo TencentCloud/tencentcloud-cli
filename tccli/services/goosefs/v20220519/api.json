@@ -1,10 +1,66 @@
 {
   "actions": {
+    "AddCrossVpcSubnetSupportForClientNode": {
+      "document": "为客户端节点添加跨vpc或子网访问能力",
+      "input": "AddCrossVpcSubnetSupportForClientNodeRequest",
+      "name": "为客户端节点添加跨vpc或子网访问能力",
+      "output": "AddCrossVpcSubnetSupportForClientNodeResponse",
+      "status": "online"
+    },
+    "AttachFileSystemBucket": {
+      "document": "为文件系统关联Bucket",
+      "input": "AttachFileSystemBucketRequest",
+      "name": "为文件系统关联Bucket",
+      "output": "AttachFileSystemBucketResponse",
+      "status": "online"
+    },
+    "BatchAddClientNodes": {
+      "document": "批量添加客户端节点",
+      "input": "BatchAddClientNodesRequest",
+      "name": "批量添加客户端节点",
+      "output": "BatchAddClientNodesResponse",
+      "status": "online"
+    },
+    "BatchDeleteClientNodes": {
+      "document": "批量删除客户端节点",
+      "input": "BatchDeleteClientNodesRequest",
+      "name": "批量删除客户端节点",
+      "output": "BatchDeleteClientNodesResponse",
+      "status": "online"
+    },
     "CreateDataRepositoryTask": {
       "document": "创建数据流通任务,包括从将文件系统的数据上传到存储桶下, 以及从存储桶下载到文件系统里。",
       "input": "CreateDataRepositoryTaskRequest",
       "name": "创建数据流通任务",
       "output": "CreateDataRepositoryTaskResponse",
+      "status": "online"
+    },
+    "CreateFileSystem": {
+      "document": "创建文件系统",
+      "input": "CreateFileSystemRequest",
+      "name": "创建文件系统",
+      "output": "CreateFileSystemResponse",
+      "status": "online"
+    },
+    "DeleteCrossVpcSubnetSupportForClientNode": {
+      "document": "为客户端节点删除跨vpc子网访问能力",
+      "input": "DeleteCrossVpcSubnetSupportForClientNodeRequest",
+      "name": "为客户端节点删除跨vpc子网访问能力",
+      "output": "DeleteCrossVpcSubnetSupportForClientNodeResponse",
+      "status": "online"
+    },
+    "DeleteFileSystem": {
+      "document": "删除文件系统",
+      "input": "DeleteFileSystemRequest",
+      "name": "删除文件系统",
+      "output": "DeleteFileSystemResponse",
+      "status": "online"
+    },
+    "DescribeClientNodes": {
+      "document": "列出集群中所有的客户端节点",
+      "input": "DescribeClientNodesRequest",
+      "name": "列出集群中所有的客户端节点",
+      "output": "DescribeClientNodesResponse",
       "status": "online"
     },
     "DescribeClusterClientToken": {
@@ -34,6 +90,55 @@
       "name": "获取数据流通任务实时状态",
       "output": "DescribeDataRepositoryTaskStatusResponse",
       "status": "online"
+    },
+    "DescribeFileSystemBuckets": {
+      "document": "罗列文件系统关联的Bucket映射",
+      "input": "DescribeFileSystemBucketsRequest",
+      "name": "罗列文件系统关联的Bucket映射",
+      "output": "DescribeFileSystemBucketsResponse",
+      "status": "online"
+    },
+    "DescribeFileSystems": {
+      "document": "列出所有的文件系统",
+      "input": "DescribeFileSystemsRequest",
+      "name": "列出文件系统",
+      "output": "DescribeFileSystemsResponse",
+      "status": "online"
+    },
+    "DetachFileSystemBucket": {
+      "document": "解绑文件系统与Bucket的映射",
+      "input": "DetachFileSystemBucketRequest",
+      "name": "解绑文件系统与Bucket的映射",
+      "output": "DetachFileSystemBucketResponse",
+      "status": "online"
+    },
+    "ExpandCapacity": {
+      "document": "扩展文件系统容量",
+      "input": "ExpandCapacityRequest",
+      "name": "扩展文件系统容量",
+      "output": "ExpandCapacityResponse",
+      "status": "online"
+    },
+    "ModifyDataRepositoryBandwidth": {
+      "document": "修改数据流动带宽",
+      "input": "ModifyDataRepositoryBandwidthRequest",
+      "name": "修改数据流动带宽",
+      "output": "ModifyDataRepositoryBandwidthResponse",
+      "status": "online"
+    },
+    "QueryCrossVpcSubnetSupportForClientNode": {
+      "document": "查询客户端节点跨vpc子网访问能力",
+      "input": "QueryCrossVpcSubnetSupportForClientNodeRequest",
+      "name": "查询客户端节点跨vpc子网访问能力",
+      "output": "QueryCrossVpcSubnetSupportForClientNodeResponse",
+      "status": "online"
+    },
+    "QueryDataRepositoryBandwidth": {
+      "document": "查询数据流动带宽",
+      "input": "QueryDataRepositoryBandwidthRequest",
+      "name": "查询数据流动带宽",
+      "output": "QueryDataRepositoryBandwidthResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -43,6 +148,246 @@
     "serviceShortName": "goosefs"
   },
   "objects": {
+    "AddCrossVpcSubnetSupportForClientNodeRequest": {
+      "document": "AddCrossVpcSubnetSupportForClientNode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统ID",
+          "example": "x-c60-a1b2c3d4",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子网信息",
+          "example": "null",
+          "member": "SubnetInfo",
+          "name": "SubnetInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "AddCrossVpcSubnetSupportForClientNodeResponse": {
+      "document": "AddCrossVpcSubnetSupportForClientNode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachFileSystemBucketRequest": {
+      "document": "AttachFileSystemBucket请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "x_c60_r3c4fa1f",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关联新Bucket",
+          "example": "无",
+          "member": "MappedBucket",
+          "name": "Bucket",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachFileSystemBucketResponse": {
+      "document": "AttachFileSystemBucket返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchAddClientNodesRequest": {
+      "document": "BatchAddClientNodes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统ID",
+          "example": "x_c60_r3c4fa1f",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "添加客户端节点列表",
+          "example": "无",
+          "member": "LinuxNodeAttribute",
+          "name": "ClientNodes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否单集群默认是false\t",
+          "example": "false",
+          "member": "bool",
+          "name": "SingleClusterFlag",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchAddClientNodesResponse": {
+      "document": "BatchAddClientNodes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDeleteClientNodesRequest": {
+      "document": "BatchDeleteClientNodes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统id",
+          "example": "x_c60_r3c4fa1f\t",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "删除的客户端节点列表",
+          "example": "无",
+          "member": "LinuxNodeAttribute",
+          "name": "ClientNodes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否单集群，默认是false",
+          "example": "false",
+          "member": "bool",
+          "name": "SingleClusterFlag",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDeleteClientNodesResponse": {
+      "document": "BatchDeleteClientNodes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ClientClusterManagerNodeInfo": {
+      "document": "客户侧集群管理节点信息",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户端节点IP",
+          "example": "10.0.1.2",
+          "member": "string",
+          "name": "NodeIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "节点Instance Id",
+          "example": "ins-a1b2c3d4",
+          "member": "string",
+          "name": "NodeInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "初始密码",
+          "example": "abcedfg",
+          "member": "string",
+          "name": "InitialPassword",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ClientNodeAttribute": {
+      "document": "客户端节点属性",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户端节点IP",
+          "example": "10.0.1.2",
+          "member": "string",
+          "name": "ClientNodeIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户端节点服务状态, Active(运行中), Adding(添加中), Destroying(销毁中), Down(已停止)",
+          "example": "active",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户端节点类型，extend(扩展节点)，manager(管理节点)",
+          "example": "extend",
+          "member": "string",
+          "name": "ClientType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ClientToken": {
       "document": "查询Client Token",
       "members": [
@@ -214,6 +559,206 @@
           "member": "string",
           "name": "TaskId",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFileSystemRequest": {
+      "document": "CreateFileSystem请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "文件系统类型, 可填goosefs和goosefsx",
+          "example": "goosefsx",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "文件系统名",
+          "example": "ai_fs",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "文件系统备注描述",
+          "example": "our test fs",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "vpc网络ID",
+          "example": "vpc-a1b2c3d4",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "子网ID",
+          "example": "subnet-m1n1g1h1",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "子网所在的可用区",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "文件系统关联的tag",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tag",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "GooseFSx构建时要传递的参数",
+          "example": "无",
+          "member": "GooseFSxBuildElement",
+          "name": "GooseFSxBuildElements",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFileSystemResponse": {
+      "document": "CreateFileSystem返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCrossVpcSubnetSupportForClientNodeRequest": {
+      "document": "DeleteCrossVpcSubnetSupportForClientNode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统ID",
+          "example": "x-c60-a1b2c3d4",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子网信息",
+          "example": "无",
+          "member": "SubnetInfo",
+          "name": "SubnetInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCrossVpcSubnetSupportForClientNodeResponse": {
+      "document": "DeleteCrossVpcSubnetSupportForClientNode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFileSystemRequest": {
+      "document": "DeleteFileSystem请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "文件系统ID",
+          "example": "x_c60_r3c4fa1f",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFileSystemResponse": {
+      "document": "DeleteFileSystem返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClientNodesRequest": {
+      "document": "DescribeClientNodes请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "文件系统Id",
+          "example": "x_c60_r3c4fa1f",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClientNodesResponse": {
+      "document": "DescribeClientNodes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户端节点数组",
+          "example": "无",
+          "member": "ClientNodeAttribute",
+          "name": "ClientNodes",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -426,6 +971,619 @@
       ],
       "type": "object"
     },
+    "DescribeFileSystemBucketsRequest": {
+      "document": "DescribeFileSystemBuckets请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统ID",
+          "example": "x_c60_r3c4fa1f",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileSystemBucketsResponse": {
+      "document": "DescribeFileSystemBuckets返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "bucket列表",
+          "example": "无",
+          "member": "MappedBucket",
+          "name": "BucketList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileSystemsRequest": {
+      "document": "DescribeFileSystems请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "每页的数量",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileSystemsResponse": {
+      "document": "DescribeFileSystems返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统列表",
+          "example": "无",
+          "member": "FSAttribute",
+          "name": "FSAttributeList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总共的文件系统数量",
+          "example": "30",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachFileSystemBucketRequest": {
+      "document": "DetachFileSystemBucket请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "文件系统ID",
+          "example": "x_c60_r3c4fa1f",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "要解绑的Bucket名",
+          "example": "mybucket-1250000",
+          "member": "string",
+          "name": "BucketName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachFileSystemBucketResponse": {
+      "document": "DetachFileSystemBucket返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExpandCapacityRequest": {
+      "document": "ExpandCapacity请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "文件系统ID",
+          "example": "x_c60_r3c4fa1f",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "新增扩容的系统容量",
+          "example": "4680",
+          "member": "uint64",
+          "name": "ExpandedCapacity",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ExpandCapacityResponse": {
+      "document": "ExpandCapacity返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FSAttribute": {
+      "document": "文件系统属性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统类型, 可填goosefs和goosefsx",
+          "example": "goosefsx",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件系统ID",
+          "example": "x_c60_r3c4fa1f",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2022-01-01T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GooseFSx文件系统属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GooseFSxAttribute",
+          "name": "GooseFSxAttribute",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件系统状态 ACTIVE(运行中), CREATING(创建中), DESTROYING(销毁中), FAIL(创建失败),EXPANDING(扩容中),PROBING(容灾中)",
+          "example": "Active",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件系统名",
+          "example": "ai_fs",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件系统备注描述",
+          "example": "our test fs",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpc ID",
+          "example": "vpc-a1b2c3d4",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网ID",
+          "example": "subnet-m1n1g1h1",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网所在的可用区",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Tag数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tag",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新属性时间",
+          "example": "2022-01-01T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GooseFSxAttribute": {
+      "document": "GooseFSx文件系统的属性",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "GooseFSx的型号",
+          "example": "C60",
+          "member": "string",
+          "name": "Model",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "容量单位是GB, 比如4608(4.5TB)",
+          "example": "4608",
+          "member": "uint64",
+          "name": "Capacity",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "要关联映射的bucket列表",
+          "example": "无",
+          "member": "MappedBucket",
+          "name": "MappedBucketList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "客户侧管理节点信息",
+          "example": "无",
+          "member": "ClientClusterManagerNodeInfo",
+          "name": "ClientManagerNodeList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GooseFSxBuildElement": {
+      "document": "GooseFSx创建时候的属性",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "GooseFSx的型号",
+          "example": "C60",
+          "member": "string",
+          "name": "Model",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "容量单位是GB, 比如4608(4.5TB)",
+          "example": "4608",
+          "member": "uint64",
+          "name": "Capacity",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "要关联映射的bucket列表",
+          "example": "[{\"mybucket-125\", \"/\"}]",
+          "member": "MappedBucket",
+          "name": "MappedBucketList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "LinuxNodeAttribute": {
+      "document": "添加删除客户端节点列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cvmId",
+          "example": "ins-m1r9uwdp",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点所属vpcid",
+          "example": "vpc-5ke3uoww",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点所属子网id",
+          "example": "subnet-ihijdp5h",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "linux客户端节点地址",
+          "example": "10.0.1.2",
+          "member": "string",
+          "name": "LinuxClientNodeIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "MappedBucket": {
+      "document": "关联的对象Bucket, 并将其映射到文件系统某个路径上",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对象存储Bucket名",
+          "example": "mybucket-1250000",
+          "member": "string",
+          "name": "BucketName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "映射到的文件系统路径, 默认为/",
+          "example": "/",
+          "member": "string",
+          "name": "FileSystemPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据流动的自动策略, 包含加载与沉降。策略可以是多种的组合\n按需加载(OnDemandImport)\n自动加载元数据(AutoImportMeta)\n自动加载数据(AutoImportData)\n周期加载(PeriodImport)\n\n周期沉降(PeriodExport)\n立即沉降(ImmediateExport)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DataRepositoryTaskAutoStrategy",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定bucket的数据流动策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "x-rule-1",
+          "member": "string",
+          "name": "RuleId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则备注与描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "this rule is for picture bucket",
+          "member": "string",
+          "name": "RuleDescription",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ModifyDataRepositoryBandwidthRequest": {
+      "document": "ModifyDataRepositoryBandwidth请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统ID",
+          "example": "x_c60_r3c4fa1f",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "带宽, 单位MB/S",
+          "example": "600",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDataRepositoryBandwidthResponse": {
+      "document": "ModifyDataRepositoryBandwidth返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryCrossVpcSubnetSupportForClientNodeRequest": {
+      "document": "QueryCrossVpcSubnetSupportForClientNode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统ID",
+          "example": "x-c60-a1b2c3d4",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryCrossVpcSubnetSupportForClientNodeResponse": {
+      "document": "QueryCrossVpcSubnetSupportForClientNode返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "支持的子网信息集合",
+          "example": "无",
+          "member": "SubnetInfo",
+          "name": "SubnetInfoCollection",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryDataRepositoryBandwidthRequest": {
+      "document": "QueryDataRepositoryBandwidth请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统ID",
+          "example": "x_c60_r3c4fa1f",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryDataRepositoryBandwidthResponse": {
+      "document": "QueryDataRepositoryBandwidth返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据流动带宽, 单位MB/s",
+          "example": "600",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "带宽状态。1:待扩容;2:运行中;3:扩容中",
+          "example": "2",
+          "member": "uint64",
+          "name": "BandwidthStatus",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "能设置的最小带宽, 单位MB/s",
+          "example": "0",
+          "member": "uint64",
+          "name": "MinBandwidth",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RoleToken": {
       "document": "角色凭证",
       "members": [
@@ -451,6 +1609,60 @@
         }
       ],
       "usage": "out"
+    },
+    "SubnetInfo": {
+      "document": "vpc子网信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "vpc id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-a1b2c3d4",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-a1b2c3d4",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Tag": {
+      "document": "文件系统关联的标签",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "标签键",
+          "example": "usage",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "标签值",
+          "example": "production",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

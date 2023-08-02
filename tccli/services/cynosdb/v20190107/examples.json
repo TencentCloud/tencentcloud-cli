@@ -860,6 +860,14 @@
         "title": "用于开启集群密码复杂度"
       }
     ],
+    "OpenClusterReadOnlyInstanceGroupAccess": [
+      {
+        "document": "任何场景",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenClusterReadOnlyInstanceGroupAccess\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"qwertyuiop\"\n    }\n}",
+        "title": "ex:"
+      }
+    ],
     "OpenReadOnlyInstanceExclusiveAccess": [
       {
         "document": "任何场景",

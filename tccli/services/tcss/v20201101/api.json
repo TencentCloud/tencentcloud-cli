@@ -38411,7 +38411,7 @@
         {
           "default": "",
           "disabled": false,
-          "document": "计费核数",
+          "document": "计费核数(已废弃)",
           "example": "1",
           "member": "uint64",
           "name": "CoresCnt",

@@ -1,6 +1,6 @@
 **Example 1: 部署虚拟机部署组应用**
 
-
+部署虚拟机部署组应用
 
 Input: 
 
@@ -19,6 +19,28 @@ Output:
         "Result": {
             "TaskId": "task-xxxxxxx"
         }
+    }
+}
+```
+
+**Example 2: test**
+
+test
+
+Input: 
+
+```
+tccli tsf DeployGroup --cli-unfold-argument  \
+    --GroupId  \
+    --PkgId 
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "95953982-9aa0-4f16-9bec-ffe7d8691d66",
+        "Result": null
     }
 }
 ```

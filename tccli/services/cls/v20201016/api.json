@@ -343,6 +343,13 @@
       "output": "DescribeKafkaRechargesResponse",
       "status": "online"
     },
+    "DescribeKafkaUser": {
+      "document": "本接口用于获取kafka用户信息",
+      "input": "DescribeKafkaUserRequest",
+      "name": "获取kafka用户信息",
+      "output": "DescribeKafkaUserResponse",
+      "status": "online"
+    },
     "DescribeLogContext": {
       "document": "本接口用于搜索日志上下文附近的内容",
       "input": "DescribeLogContextRequest",
@@ -5839,6 +5846,44 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKafkaUserRequest": {
+      "document": "DescribeKafkaUser请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "kafka消费用户名",
+          "example": "test",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKafkaUserResponse": {
+      "document": "DescribeKafkaUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "kafka消费用户名",
+          "example": "test",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

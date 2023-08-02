@@ -498,10 +498,16 @@
     ],
     "DeployGroup": [
       {
-        "document": "",
+        "document": "部署虚拟机部署组应用",
         "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployGroup\n<公共请求参数>\n\n{\n    \"PkgId\": \"pkg-xxxxxxx\",\n    \"GroupId\": \"group-xxxxxxx\",\n    \"StartupParameters\": \"-Xms128m-Xmx512m-XX:MetaspaceSize=128m-XX:MaxMetaspaceSize=512m\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"48994bff-70ed-43b9-ae0e-8d3b4d6e72cd\",\n        \"Result\": {\n            \"TaskId\": \"task-xxxxxxx\"\n        }\n    }\n}",
         "title": "部署虚拟机部署组应用"
+      },
+      {
+        "document": "test",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"\",\n    \"PkgId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"95953982-9aa0-4f16-9bec-ffe7d8691d66\",\n        \"Result\": null\n    }\n}",
+        "title": "test"
       }
     ],
     "DescribeApiDetail": [
