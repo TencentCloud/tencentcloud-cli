@@ -3,7 +3,7 @@
     "CheckUser": [
       {
         "document": "检查用户",
-        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckUser\n<公共请求参数>\n\n{\n    \"User\": {\n        \"Tencent\": {}\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckUser\n<公共请求参数>\n\n{\n    \"User\": {\n        \"Tencent\": {\n            \"Name\": \"wallaceqian\"\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "检查用户"
       }
@@ -43,7 +43,7 @@
     "CreateInstance": [
       {
         "document": "创建应用实例",
-        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstance\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"Creator\": {\n        \"Tencent\": {}\n    },\n    \"Source\": \"abc\",\n    \"SourceURL\": \"abc\",\n    \"ReadOnly\": true\n}",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstance\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"Creator\": {\n        \"Tencent\": {\n            \"Name\": \"abc\"\n        }\n    },\n    \"Source\": \"abc\",\n    \"SourceURL\": \"abc\",\n    \"ReadOnly\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建应用实例"
       }

@@ -5,7 +5,7 @@
         "document": "创建工作空间",
         "input": "POST / HTTP/1.1\nHost: cloudstudio.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWorkspaceByTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"workspace-name\"\n}",
         "output": "{\n    \"Response\": {\n        \"Name\": \"workspace-name\",\n        \"SpaceKey\": \"tfyiyw\",\n        \"RequestId\": \"26881c75-375d-48ad-9a24-7270176e4fab\"\n    }\n}",
-        "title": "基于模版创建工作空间"
+        "title": "创建工作空间"
       }
     ],
     "CreateWorkspaceToken": [

@@ -528,6 +528,8 @@ tccli/services/iotvideoindustry/__init__.py
 tccli/services/iotvideoindustry/iotvideoindustry_client.py
 tccli/services/iotvideoindustry/v20201201/api.json
 tccli/services/iotvideoindustry/v20201201/examples.json
+tccli/services/iss/__init__.py
+tccli/services/iss/iss_client.py
 tccli/services/ivld/__init__.py
 tccli/services/ivld/ivld_client.py
 tccli/services/keewidb/__init__.py

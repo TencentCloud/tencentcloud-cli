@@ -7,6 +7,7 @@ Input:
 ```
 tccli camp CreateInstance --cli-unfold-argument  \
     --Name abc \
+    --Creator.Tencent.Name abc \
     --Source abc \
     --SourceURL abc \
     --ReadOnly True

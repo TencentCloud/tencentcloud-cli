@@ -16,7 +16,7 @@ Output:
 ```
 {
     "Response": {
-        "ActivedTotal": 1,
+        "ActivatedTotal": 1,
         "ExportUrl": "",
         "JoinedTotal": 11,
         "List": [

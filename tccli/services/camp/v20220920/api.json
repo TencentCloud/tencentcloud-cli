@@ -4247,7 +4247,21 @@
     },
     "TencentUser": {
       "document": "用户信息",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户英文名",
+          "example": "test",
+          "is_base64": false,
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
       "usage": "both"
     },
     "Trait": {
@@ -4348,10 +4362,11 @@
           "example": "无",
           "member": "TencentUser",
           "name": "Tencent",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true,
-          "visibility": 2
+          "visibility": 1
         }
       ],
       "usage": "both"

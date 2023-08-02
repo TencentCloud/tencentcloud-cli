@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli camp CheckUser --cli-unfold-argument ```
+tccli camp CheckUser --cli-unfold-argument  \
+    --User.Tencent.Name wallaceqian
+```
 
 Output: 
 ```

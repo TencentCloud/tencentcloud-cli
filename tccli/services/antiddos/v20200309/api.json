@@ -2872,8 +2872,9 @@
       "members": [
         {
           "disabled": false,
-          "document": "大禹子产品代号（bgp表示独享包；bgp-multip表示共享包）",
+          "document": "DDoS防护子产品代号（bgp表示独享包；bgp-multip表示共享包）",
           "example": "bgp",
+          "is_base64": false,
           "member": "string",
           "name": "Business",
           "required": true,
@@ -2884,6 +2885,7 @@
           "disabled": false,
           "document": "资源实例ID",
           "example": "bgp-000000xe",
+          "is_base64": false,
           "member": "string",
           "name": "Id",
           "required": true,
@@ -2894,6 +2896,7 @@
           "disabled": false,
           "document": "绑定到资源实例的IP数组，当资源实例为高防包(独享包)时，数组只允许填1个IP；当没有要绑定的IP时可以为空数组；但是BoundDevList和UnBoundDevList至少有一个不为空；",
           "example": "无",
+          "is_base64": false,
           "member": "BoundIpInfo",
           "name": "BoundDevList",
           "required": false,
@@ -2904,6 +2907,7 @@
           "disabled": false,
           "document": "与资源实例解绑的IP数组，当资源实例为高防包(独享包)时，数组只允许填1个IP；当没有要解绑的IP时可以为空数组；但是BoundDevList和UnBoundDevList至少有一个不为空；",
           "example": "无",
+          "is_base64": false,
           "member": "BoundIpInfo",
           "name": "UnBoundDevList",
           "required": false,
@@ -2914,6 +2918,7 @@
           "disabled": false,
           "document": "已弃用，不填",
           "example": "yes",
+          "is_base64": false,
           "member": "string",
           "name": "CopyPolicy",
           "required": false,
@@ -2924,6 +2929,7 @@
           "disabled": false,
           "document": "如果该资源实例为域名化资产则，该参数必填",
           "example": "ap-guangzhou",
+          "is_base64": false,
           "member": "string",
           "name": "FilterRegion",
           "required": false,
@@ -2942,6 +2948,7 @@
           "example": "无",
           "member": "SuccessCode",
           "name": "Success",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -3613,10 +3620,10 @@
       "document": "CreateNewL7Rules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则列表",
           "example": "无",
+          "is_base64": false,
           "member": "L7RuleEntry",
           "name": "Rules",
           "required": true,
@@ -3624,10 +3631,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "大禹子产品代号（bgpip表示高防IP）",
+          "document": "DDoS防护子产品代号（bgpip表示高防IP）",
           "example": "bgpip",
+          "is_base64": false,
           "member": "string",
           "name": "Business",
           "required": true,
@@ -3635,10 +3642,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID列表",
           "example": "[\"bgpip-000001\\r\\n\"]",
+          "is_base64": false,
           "member": "string",
           "name": "IdList",
           "required": true,
@@ -3646,10 +3653,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源IP列表",
           "example": "[\"192.168.1.1\\r\\n\"]",
+          "is_base64": false,
           "member": "string",
           "name": "VipList",
           "required": true,
@@ -3668,7 +3675,7 @@
           "example": "无",
           "member": "SuccessCode",
           "name": "Success",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -4805,10 +4812,10 @@
       "document": "DescribeBgpBizTrend请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "大禹子产品代号（bgp-multip表示高防包）",
+          "document": "DDoS防护子产品代号（bgp-multip表示高防包）",
           "example": "bgp-multip",
+          "is_base64": false,
           "member": "string",
           "name": "Business",
           "required": true,
@@ -4816,10 +4823,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计开始时间。 例：“2020-09-22 00:00:00”",
           "example": "2020-09-22 00:00:00",
+          "is_base64": false,
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -4827,10 +4834,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计结束时间。 例：“2020-09-22 00:00:00”",
           "example": "2020-09-22 00:00:00",
+          "is_base64": false,
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -4838,10 +4845,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计纬度，可取值intraffic, outtraffic, inpkg, outpkg",
           "example": "outtraffic",
+          "is_base64": false,
           "member": "string",
           "name": "MetricName",
           "required": true,
@@ -4849,10 +4856,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源实例ID",
           "example": "bgp-xxxxxxxx",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4860,10 +4867,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0表示固定时间，1表示自定义时间",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "Flag",
           "required": true,
@@ -4882,7 +4889,7 @@
           "example": "无",
           "member": "uint64",
           "name": "DataList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -4893,7 +4900,7 @@
           "example": "10",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -4904,7 +4911,7 @@
           "example": "intraffic",
           "member": "string",
           "name": "MetricName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -4915,7 +4922,7 @@
           "example": "1",
           "member": "uint64",
           "name": "MaxData",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -4933,10 +4940,10 @@
       "document": "DescribeBizHttpStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "统计方式，仅支持sum",
           "example": "sum",
+          "is_base64": false,
           "member": "string",
           "name": "Statistics",
           "required": true,
@@ -4944,10 +4951,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "大禹子产品代号（bgpip表示高防IP）",
+          "document": "DDoS防护子产品代号（bgpip表示高防IP）",
           "example": "bgpip",
+          "is_base64": false,
           "member": "string",
           "name": "Business",
           "required": true,
@@ -4955,10 +4962,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计周期，可取值60，300，1800，3600， 21600，86400，单位秒",
           "example": "300",
+          "is_base64": false,
           "member": "int64",
           "name": "Period",
           "required": true,
@@ -4966,10 +4973,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计开始时间。 如2020-02-01 12:04:12",
           "example": "2020-02-01 12:04:12",
+          "is_base64": false,
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -4977,10 +4984,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计结束时间。如2020-02-03 18:03:23",
           "example": "2020-02-03 18:03:23",
+          "is_base64": false,
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -4988,10 +4995,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源Id",
           "example": "bgpip-000000xe",
+          "is_base64": false,
           "member": "string",
           "name": "Id",
           "required": true,
@@ -4999,10 +5006,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "特定域名查询",
           "example": "www.xx.com",
+          "is_base64": false,
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -5010,10 +5017,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议及端口列表，协议可取值TCP, UDP, HTTP, HTTPS，仅统计纬度为连接数时有效",
           "example": "无",
+          "is_base64": false,
           "member": "ProtocolPort",
           "name": "ProtoInfo",
           "required": false,
@@ -5032,7 +5039,7 @@
           "example": "无",
           "member": "HttpStatusMap",
           "name": "HttpStatusMap",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -5051,7 +5058,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "大禹子产品代号（bgpip表示高防IP）",
+          "document": "DDoS防护子产品代号（bgpip表示高防IP）",
           "example": "bgpip",
           "is_base64": false,
           "member": "string",
@@ -5170,6 +5177,7 @@
           "disabled": false,
           "document": "统计方式，可取值max, min, avg, sum, 如统计纬度是流量速率或包量速率，仅可取值max",
           "example": "xx",
+          "is_base64": false,
           "member": "string",
           "name": "Statistics",
           "required": true,
@@ -5178,8 +5186,9 @@
         },
         {
           "disabled": false,
-          "document": "大禹子产品代号（bgpip表示高防IP）",
+          "document": "DDoS防护子产品代号（bgpip表示高防IP）",
           "example": "xx",
+          "is_base64": false,
           "member": "string",
           "name": "Business",
           "required": true,
@@ -5190,6 +5199,7 @@
           "disabled": false,
           "document": "统计周期，可取值60，300，1800，3600，21600，86400，单位秒",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "Period",
           "required": true,
@@ -5200,6 +5210,7 @@
           "disabled": false,
           "document": "统计开始时间。 例：“2020-09-22 00:00:00”",
           "example": "2020-09-22 00:00:00",
+          "is_base64": false,
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -5210,6 +5221,7 @@
           "disabled": false,
           "document": "统计结束时间。 例：“2020-09-22 00:00:00”",
           "example": "2020-09-22 00:00:00",
+          "is_base64": false,
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -5220,6 +5232,7 @@
           "disabled": false,
           "document": "资源实例ID",
           "example": "xx",
+          "is_base64": false,
           "member": "string",
           "name": "Id",
           "required": true,
@@ -5230,6 +5243,7 @@
           "disabled": false,
           "document": "统计纬度，可取值connum, new_conn, inactive_conn, intraffic, outtraffic, inpkg, outpkg, qps",
           "example": "xx",
+          "is_base64": false,
           "member": "string",
           "name": "MetricName",
           "required": true,
@@ -5240,6 +5254,7 @@
           "disabled": false,
           "document": "统计纬度为qps时，可选特定域名查询",
           "example": "xx",
+          "is_base64": false,
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -5250,6 +5265,7 @@
           "disabled": false,
           "document": "协议及端口列表，协议可取值TCP, UDP, HTTP, HTTPS，仅统计纬度为连接数时有效",
           "example": "无",
+          "is_base64": false,
           "member": "ProtocolPort",
           "name": "ProtoInfo",
           "required": false,
@@ -5260,6 +5276,7 @@
           "disabled": false,
           "document": "业务类型可取值domain, port\nport：端口业务\ndomain：域名业务",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "BusinessType",
           "required": false,
@@ -5278,6 +5295,7 @@
           "example": "无",
           "member": "float",
           "name": "DataList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -5288,6 +5306,7 @@
           "example": "intraffic",
           "member": "string",
           "name": "MetricName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -5298,6 +5317,7 @@
           "example": "0",
           "member": "uint64",
           "name": "MaxData",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -5363,10 +5383,10 @@
       "document": "DescribeCCLevelList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "大禹子产品代号（bgp-multip表示高防包）",
+          "document": "DDoS防护子产品代号（bgp-multip表示高防包）",
           "example": "bgp-multip",
+          "is_base64": false,
           "member": "string",
           "name": "Business",
           "required": true,
@@ -5374,10 +5394,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页起始偏移，取值为(页码-1)*一页条数",
           "example": "0",
+          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -5385,10 +5405,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一页条数",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -5396,10 +5416,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定实例Id",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -5418,7 +5438,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5429,7 +5449,7 @@
           "example": "无",
           "member": "CCLevelPolicy",
           "name": "LevelList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -5520,10 +5540,10 @@
       "document": "DescribeCCPrecisionPlyList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防IP）",
+          "document": "DDoS防护子产品代号（bgpip-multip：表示高防包；bgpip：表示高防IP）",
           "example": "bgp-multip",
+          "is_base64": false,
           "member": "string",
           "name": "Business",
           "required": true,
@@ -5531,10 +5551,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页起始偏移，取值为(页码-1)*一页条数",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -5542,10 +5562,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一页条数",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -5553,10 +5573,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定特定实例Id",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -5564,10 +5584,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址，普通高防IP要传该字段",
           "example": "1.1.1.1",
+          "is_base64": false,
           "member": "string",
           "name": "Ip",
           "required": false,
@@ -5575,10 +5595,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名，普通高防IP要传该字段",
           "example": "www.qq.com",
+          "is_base64": false,
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -5586,10 +5606,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议，普通高防IP要传该字段",
           "example": "http",
+          "is_base64": false,
           "member": "string",
           "name": "Protocol",
           "required": false,
@@ -5608,7 +5628,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5619,7 +5639,7 @@
           "example": "无",
           "member": "CCPrecisionPolicy",
           "name": "PrecisionPolicyList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -5637,10 +5657,10 @@
       "document": "DescribeCCReqLimitPolicyList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "大禹子产品代号（bgp-multip表示高防包，bgpip表示高防IP）",
+          "document": "DDoS防护子产品代号（bgp-multip表示高防包，bgpip表示高防IP）",
           "example": "bgp-multip",
+          "is_base64": false,
           "member": "string",
           "name": "Business",
           "required": true,
@@ -5648,10 +5668,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页起始偏移，取值为(页码-1)*一页条数",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -5659,10 +5679,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一页条数",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -5670,10 +5690,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定实例Id",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -5681,10 +5701,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址，普通高防IP要传该字段",
           "example": "1.1.1.1",
+          "is_base64": false,
           "member": "string",
           "name": "Ip",
           "required": false,
@@ -5692,10 +5712,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名，普通高防IP要传该字段",
           "example": "www.xx.com",
+          "is_base64": false,
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -5703,10 +5723,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议，普通高防IP要传该字段",
           "example": "http",
+          "is_base64": false,
           "member": "string",
           "name": "Protocol",
           "required": false,
@@ -5725,7 +5745,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5736,7 +5756,7 @@
           "example": "无",
           "member": "CCReqLimitPolicy",
           "name": "RequestLimitPolicyList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -5754,10 +5774,10 @@
       "document": "DescribeCCThresholdList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "大禹子产品代号（bgp-multip表示高防包）",
+          "document": "DDoS防护子产品代号（bgp-multip表示高防包）",
           "example": "bgp-multip",
+          "is_base64": false,
           "member": "string",
           "name": "Business",
           "required": true,
@@ -5765,10 +5785,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页起始偏移，取值为(页码-1)*一页条数",
           "example": "0",
+          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -5776,10 +5796,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一页条数",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -5787,10 +5807,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定实例Id",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -5809,7 +5829,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5820,7 +5840,7 @@
           "example": "无",
           "member": "CCThresholdPolicy",
           "name": "ThresholdList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -5838,10 +5858,10 @@
       "document": "DescribeCCTrend请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）",
+          "document": "DDoS防护子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）",
           "example": "bgp",
+          "is_base64": false,
           "member": "string",
           "name": "Business",
           "required": true,
@@ -5849,10 +5869,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源的IP",
           "example": "3.3.3.3",
+          "is_base64": false,
           "member": "string",
           "name": "Ip",
           "required": true,
@@ -5860,10 +5880,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]",
           "example": "3600",
+          "is_base64": false,
           "member": "int64",
           "name": "Period",
           "required": true,
@@ -5871,10 +5891,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计开始时间",
           "example": "2018-08-2715:05:10",
+          "is_base64": false,
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -5882,10 +5902,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计结束时间",
           "example": "2018-08-2716:05:10",
+          "is_base64": false,
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -5893,10 +5913,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标，取值[inqps(总请求峰值，dropqps(攻击请求峰值))，incount(请求次数), dropcount(攻击次数)]",
           "example": "inqps",
+          "is_base64": false,
           "member": "string",
           "name": "MetricName",
           "required": true,
@@ -5904,10 +5924,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名，可选",
           "example": "www.xx.com",
+          "is_base64": false,
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -5915,10 +5935,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源实例ID，当Business为basic时，此字段不用填写（因为基础防护没有资源实例）",
           "example": "bgp-00000010",
+          "is_base64": false,
           "member": "string",
           "name": "Id",
           "required": false,
@@ -5937,7 +5957,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Count",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5948,7 +5968,7 @@
           "example": "bgp",
           "member": "string",
           "name": "Business",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -5959,7 +5979,7 @@
           "example": "3.3.3.3",
           "member": "string",
           "name": "Ip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -5970,7 +5990,7 @@
           "example": "300",
           "member": "int64",
           "name": "Period",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -5981,7 +6001,7 @@
           "example": "2018-08-27 15:05:10",
           "member": "datetime",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -5992,7 +6012,7 @@
           "example": "2018-08-27 16:05:10",
           "member": "datetime",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -6003,7 +6023,7 @@
           "example": "[1234]",
           "member": "uint64",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -6014,7 +6034,7 @@
           "example": "bgp-00000010",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -6025,7 +6045,7 @@
           "example": "inqps",
           "member": "string",
           "name": "MetricName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -6043,10 +6063,10 @@
       "document": "DescribeCcBlackWhiteIpList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "大禹子产品代号（bgp-multip：表示高防包；bgpip：表示高防IP）",
+          "document": "DDoS防护子产品代号（bgp-multip：表示高防包；bgpip：表示高防IP）",
           "example": "bgp-multip",
+          "is_base64": false,
           "member": "string",
           "name": "Business",
           "required": true,
@@ -6054,10 +6074,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定特定实例Id",
           "example": "bgpip-0000011x",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6065,10 +6085,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页起始偏移，取值为(页码-1)*一页条数",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -6076,10 +6096,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一页条数",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -6087,10 +6107,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址，普通高防IP要传该字段",
           "example": "1.1.1.1",
+          "is_base64": false,
           "member": "string",
           "name": "Ip",
           "required": false,
@@ -6098,10 +6118,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名，普通高防IP要传该字段",
           "example": "www.xx.com",
+          "is_base64": false,
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -6109,10 +6129,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议，普通高防IP要传该字段",
           "example": "http",
+          "is_base64": false,
           "member": "string",
           "name": "Protocol",
           "required": false,
@@ -6120,10 +6140,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "筛选IP，需要筛选黑白名单IP时传该字段",
           "example": "1.1.1.1",
+          "is_base64": false,
           "member": "string",
           "name": "FilterIp",
           "required": false,
@@ -6131,10 +6151,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "黑白名单筛选字段，需要筛选黑白名单列表时传该字段",
           "example": "black",
+          "is_base64": false,
           "member": "string",
           "name": "FilterType",
           "required": false,
@@ -6153,7 +6173,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6164,7 +6184,7 @@
           "example": "无",
           "member": "CcBlackWhiteIpPolicy",
           "name": "CcBlackWhiteIpList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -6182,10 +6202,10 @@
       "document": "DescribeCcGeoIPBlockConfigList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "大禹子产品代号（bgpip-multip：表示高防包；bgpip：表示高防IP）",
+          "document": "DDoS防护子产品代号（bgpip-multip：表示高防包；bgpip：表示高防IP）",
           "example": "bgp-multip",
+          "is_base64": false,
           "member": "string",
           "name": "Business",
           "required": true,
@@ -6193,10 +6213,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页起始偏移，取值为(页码-1)*一页条数",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -6204,10 +6224,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一页条数",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -6215,10 +6235,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定特定实例ID",
           "example": "bgpip-0000011x",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -6226,10 +6246,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址，普通高防IP要传该字段",
           "example": "1.1.1.1",
+          "is_base64": false,
           "member": "string",
           "name": "Ip",
           "required": false,
@@ -6237,10 +6257,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名，普通高防IP要传该字段",
           "example": "www.xx.com",
+          "is_base64": false,
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -6248,10 +6268,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议，普通高防IP要传该字段",
           "example": "http",
+          "is_base64": false,
           "member": "string",
           "name": "Protocol",
           "required": false,
@@ -6270,7 +6290,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -6281,7 +6301,7 @@
           "example": "无",
           "member": "CcGeoIpPolicyNew",
           "name": "CcGeoIpPolicyList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -8166,10 +8186,10 @@
       "document": "DescribeNewL7RulesErrHealth请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "大禹子产品代号(bgpip表示高防IP)",
+          "document": "DDoS防护子产品代号(bgpip表示高防IP)",
           "example": "bgpip",
+          "is_base64": false,
           "member": "string",
           "name": "Business",
           "required": true,
@@ -8177,10 +8197,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则Id列表",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "RuleIdList",
           "required": false,
@@ -8199,7 +8219,7 @@
           "example": "无",
           "member": "KeyValue",
           "name": "ErrHealths",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -8210,7 +8230,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -8229,8 +8249,9 @@
       "members": [
         {
           "disabled": false,
-          "document": "大禹子产品代号（bgpip表示高防IP）",
+          "document": "DDoS防护子产品代号（bgpip表示高防IP）",
           "example": "bgpip",
+          "is_base64": false,
           "member": "string",
           "name": "Business",
           "required": true,
@@ -8241,6 +8262,7 @@
           "disabled": false,
           "document": "状态搜索，选填，取值[0(规则配置成功)，1(规则配置生效中)，2(规则配置失败)，3(规则删除生效中)，5(规则删除失败)，6(规则等待配置)，7(规则等待删除)，8(规则待配置证书)]",
           "example": "无",
+          "is_base64": false,
           "member": "uint64",
           "name": "StatusList",
           "required": false,
@@ -8251,6 +8273,7 @@
           "disabled": false,
           "document": "域名搜索，选填，当需要搜索域名请填写",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -8261,6 +8284,7 @@
           "disabled": false,
           "document": "IP搜索，选填，当需要搜索IP请填写",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Ip",
           "required": false,
@@ -8271,6 +8295,7 @@
           "disabled": false,
           "document": "一页条数，默认值100，最大值100，超过100最大返回100条",
           "example": "无",
+          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -8281,6 +8306,7 @@
           "disabled": false,
           "document": "页起始偏移，取值为(页码-1)*一页条数",
           "example": "无",
+          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -8291,6 +8317,7 @@
           "disabled": false,
           "document": "转发协议搜索，选填，取值[http, https, http/https]",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ProtocolList",
           "required": false,
@@ -8301,6 +8328,7 @@
           "disabled": false,
           "document": "高防IP实例的Cname",
           "example": "abcdefg",
+          "is_base64": false,
           "member": "string",
           "name": "Cname",
           "required": false,
@@ -8311,6 +8339,7 @@
           "disabled": false,
           "document": "默认为false，当为true时，将不对各个规则做策略检查，直接导出所有规则",
           "example": "无",
+          "is_base64": false,
           "member": "bool",
           "name": "Export",
           "required": false,
@@ -8329,6 +8358,7 @@
           "example": "无",
           "member": "NewL7RuleEntry",
           "name": "Rules",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -8339,6 +8369,7 @@
           "example": "无",
           "member": "L7RuleHealth",
           "name": "Healths",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -8349,6 +8380,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -8508,6 +8540,7 @@
           "disabled": false,
           "document": "统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]",
           "example": "3600",
+          "is_base64": false,
           "member": "int64",
           "name": "Period",
           "required": true,
@@ -8518,6 +8551,7 @@
           "disabled": false,
           "document": "统计开始时间",
           "example": "2018-08-2715:05:10",
+          "is_base64": false,
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -8528,6 +8562,7 @@
           "disabled": false,
           "document": "统计结束时间",
           "example": "2018-08-2716:05:10",
+          "is_base64": false,
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -8538,6 +8573,7 @@
           "disabled": false,
           "document": "指标，取值[inqps(总请求峰值，dropqps(攻击请求峰值))，incount(请求次数), dropcount(攻击次数)]",
           "example": "inqps",
+          "is_base64": false,
           "member": "string",
           "name": "MetricName",
           "required": true,
@@ -8546,8 +8582,9 @@
         },
         {
           "disabled": false,
-          "document": "大禹子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）",
+          "document": "DDoS防护子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）",
           "example": "bgp",
+          "is_base64": false,
           "member": "string",
           "name": "Business",
           "required": false,
@@ -8558,6 +8595,7 @@
           "disabled": false,
           "document": "资源的IP",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "IpList",
           "required": false,
@@ -8568,6 +8606,7 @@
           "disabled": false,
           "document": "资源实例ID",
           "example": "bgp-00000010",
+          "is_base64": false,
           "member": "string",
           "name": "Id",
           "required": false,
@@ -8586,6 +8625,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Count",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -8596,6 +8636,7 @@
           "example": "[1234]",
           "member": "uint64",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -8704,6 +8745,7 @@
           "disabled": false,
           "document": "统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]",
           "example": "3600",
+          "is_base64": false,
           "member": "int64",
           "name": "Period",
           "required": true,
@@ -8714,6 +8756,7 @@
           "disabled": false,
           "document": "统计开始时间",
           "example": "2018-08-2715:05:10",
+          "is_base64": false,
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -8724,6 +8767,7 @@
           "disabled": false,
           "document": "统计结束时间",
           "example": "2018-08-2716:05:10",
+          "is_base64": false,
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -8734,6 +8778,7 @@
           "disabled": false,
           "document": "指标，取值[bps(攻击流量带宽，pps(攻击包速率))]",
           "example": "bps",
+          "is_base64": false,
           "member": "string",
           "name": "MetricName",
           "required": true,
@@ -8742,8 +8787,9 @@
         },
         {
           "disabled": false,
-          "document": "大禹子产品代号（bgpip表示高防IP；bgp-multip表示高防包；basic表示DDoS基础防护）",
+          "document": "DDoS防护子产品代号（bgpip表示高防IP；bgp-multip表示高防包；basic表示DDoS基础防护）",
           "example": "bgp",
+          "is_base64": false,
           "member": "string",
           "name": "Business",
           "required": false,
@@ -8754,6 +8800,7 @@
           "disabled": false,
           "document": "资源实例的IP列表",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "IpList",
           "required": false,
@@ -8764,6 +8811,7 @@
           "disabled": false,
           "document": "资源实例ID",
           "example": "bgp-00000010",
+          "is_base64": false,
           "member": "string",
           "name": "Id",
           "required": false,
@@ -8782,6 +8830,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Count",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -8792,6 +8841,7 @@
           "example": "[1234]",
           "member": "uint64",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -10803,10 +10853,10 @@
       "document": "ModifyDDoSLevel请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "example": "bgpip-000000xe",
+          "is_base64": false,
           "member": "string",
           "name": "Id",
           "required": true,
@@ -10814,10 +10864,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
+          "document": "DDoS防护子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "example": "bgpip",
+          "is_base64": false,
           "member": "string",
           "name": "Business",
           "required": true,
@@ -10825,10 +10875,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "=get表示读取防护等级；=set表示修改防护等级",
           "example": "set",
+          "is_base64": false,
           "member": "string",
           "name": "Method",
           "required": true,
@@ -10836,10 +10886,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "防护等级，取值[low,middle,high]；当Method=set时必填",
           "example": "low",
+          "is_base64": false,
           "member": "string",
           "name": "DDoSLevel",
           "required": false,
@@ -10858,7 +10908,7 @@
           "example": "middle",
           "member": "string",
           "name": "DDoSLevel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -10869,7 +10919,7 @@
           "example": "bgpip-000000xe",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -10927,10 +10977,10 @@
       "document": "ModifyDDoSThreshold请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "DDoS清洗阈值，取值[0, 60, 80, 100, 150, 200, 250, 300, 400, 500, 700, 1000];\n当设置值为0时，表示采用默认值；",
           "example": "1000",
+          "is_base64": false,
           "member": "uint64",
           "name": "Threshold",
           "required": true,
@@ -10938,10 +10988,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "example": "bgpip-000000xe",
+          "is_base64": false,
           "member": "string",
           "name": "Id",
           "required": true,
@@ -10949,10 +10999,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
+          "document": "DDoS防护子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "example": "bgpip",
+          "is_base64": false,
           "member": "string",
           "name": "Business",
           "required": true,
@@ -10960,10 +11010,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置其他阈值标志位，1表示配置其他阈值",
           "example": "1",
+          "is_base64": false,
           "member": "int64",
           "name": "OtherThresholdFlag",
           "required": false,
@@ -10971,10 +11021,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SYN FLOOD流量阈值",
           "example": "1000",
+          "is_base64": false,
           "member": "uint64",
           "name": "SynFloodThreshold",
           "required": false,
@@ -10982,10 +11032,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SYN FLOOD包量阈值",
           "example": "1000",
+          "is_base64": false,
           "member": "uint64",
           "name": "SynFloodPktThreshold",
           "required": false,
@@ -10993,10 +11043,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UDP FLOOD流量阈值",
           "example": "1000",
+          "is_base64": false,
           "member": "uint64",
           "name": "UdpFloodThreshold",
           "required": false,
@@ -11004,10 +11054,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UDP FLOOD包量阈值",
           "example": "1000",
+          "is_base64": false,
           "member": "uint64",
           "name": "UdpFloodPktThreshold",
           "required": false,
@@ -11015,10 +11065,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ACK FLOOD流量阈值",
           "example": "1000",
+          "is_base64": false,
           "member": "uint64",
           "name": "AckFloodThreshold",
           "required": false,
@@ -11026,10 +11076,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ACK FLOOD包量阈值",
           "example": "1000",
+          "is_base64": false,
           "member": "uint64",
           "name": "AckFloodPktThreshold",
           "required": false,
@@ -11037,10 +11087,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SYNACK FLOOD流量阈值",
           "example": "1000",
+          "is_base64": false,
           "member": "uint64",
           "name": "SynAckFloodThreshold",
           "required": false,
@@ -11048,10 +11098,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SYNACK FLOOD包量阈值",
           "example": "1000",
+          "is_base64": false,
           "member": "uint64",
           "name": "SynAckFloodPktThreshold",
           "required": false,
@@ -11059,10 +11109,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "RST FLOOD流量阈值",
           "example": "1000",
+          "is_base64": false,
           "member": "uint64",
           "name": "RstFloodThreshold",
           "required": false,
@@ -11070,10 +11120,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "RST FLOOD包量阈值",
           "example": "1000",
+          "is_base64": false,
           "member": "uint64",
           "name": "RstFloodPktThreshold",
           "required": false,
@@ -11092,7 +11142,7 @@
           "example": "无",
           "member": "SuccessCode",
           "name": "Success",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -11148,10 +11198,10 @@
       "document": "ModifyNewDomainRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "大禹子产品代号（bgpip表示高防IP）",
+          "document": "DDoS防护子产品代号（bgpip表示高防IP）",
           "example": "bgpip",
+          "is_base64": false,
           "member": "string",
           "name": "Business",
           "required": true,
@@ -11159,10 +11209,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "example": "bgpip-000000xe",
+          "is_base64": false,
           "member": "string",
           "name": "Id",
           "required": true,
@@ -11170,10 +11220,10 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名转发规则",
           "example": "无",
+          "is_base64": false,
           "member": "NewL7RuleEntry",
           "name": "Rule",
           "required": true,
@@ -11192,7 +11242,7 @@
           "example": "无",
           "member": "SuccessCode",
           "name": "Success",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1

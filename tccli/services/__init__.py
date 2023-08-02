@@ -438,6 +438,9 @@ SERVICE_VERSIONS = {
     "iotvideoindustry": [
         "2020-12-01"
     ],
+    "iss": [
+        "2023-05-17"
+    ],
     "ivld": [
         "2021-09-03"
     ],

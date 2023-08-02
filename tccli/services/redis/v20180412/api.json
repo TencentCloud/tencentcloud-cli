@@ -225,7 +225,7 @@
       "status": "online"
     },
     "DescribeInstanceMonitorSIP": {
-      "document": "查询实例访问来源信息",
+      "document": "该接口已下线，请使用数据库智能管家 DBbrain 接口 [DescribeProxyProcessStatistics] (https://cloud.tencent.com/document/product/1130/84544) 获取实例访问来源。",
       "input": "DescribeInstanceMonitorSIPRequest",
       "name": "查询实例访问来源信息",
       "output": "DescribeInstanceMonitorSIPResponse",
@@ -3556,13 +3556,15 @@
       "document": "DescribeInstanceMonitorSIP请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例Id",
+          "example": "crs-5a4py64p",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -3573,10 +3575,13 @@
         {
           "disabled": false,
           "document": "访问来源信息",
+          "example": "crs-5a4py64p",
           "member": "SourceInfo",
           "name": "Data",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10648,34 +10653,37 @@
       "document": "访问来源信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "来源IP",
+          "document": "来源 IP 地址。",
+          "example": "无",
           "member": "string",
           "name": "Ip",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "连接数",
+          "document": "客户端连接数量。",
+          "example": "无",
           "member": "int64",
           "name": "Conn",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命令",
+          "example": "无",
           "member": "int64",
           "name": "Cmd",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         }
       ],
       "usage": "out"
