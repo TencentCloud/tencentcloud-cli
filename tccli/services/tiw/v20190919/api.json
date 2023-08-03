@@ -190,9 +190,9 @@
       "status": "online"
     },
     "DescribeTranscodeByUrl": {
-      "document": "通过文档URL查询转码任务，返回最近的一次转码结果",
+      "document": "通过文档URL查询转码任务，返回最近一次的转码任务状态",
       "input": "DescribeTranscodeByUrlRequest",
-      "name": "通过文档URL查询转码任务",
+      "name": "通过文档URL查询转码任务状态",
       "output": "DescribeTranscodeByUrlResponse",
       "status": "online"
     },
@@ -2501,6 +2501,7 @@
           "disabled": false,
           "document": "客户的SdkAppId",
           "example": "1400000001",
+          "is_base64": false,
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
@@ -2510,6 +2511,7 @@
           "disabled": false,
           "document": "经过URL编码后的转码文件地址。URL 编码会将字符转换为可通过因特网传输的格式，比如文档地址为http://example.com/测试.pdf，经过URL编码之后为http://example.com/%E6%B5%8B%E8%AF%95.pdf。为了提高URL解析的成功率，请对URL进行编码。\t",
           "example": "https://path/to/document.ppt",
+          "is_base64": false,
           "member": "string",
           "name": "Url",
           "required": true,
@@ -4994,59 +4996,53 @@
       "document": "板书文件存储cos参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "cos所在腾讯云帐号uin",
+          "document": "cos所在腾讯云账号uin",
           "example": "100006912345",
           "member": "uint64",
           "name": "Uin",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cos所在地区",
           "example": "ap-guangzhou",
+          "is_base64": false,
           "member": "string",
           "name": "Region",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cos存储桶名称",
           "example": "examplebucket-1250000000",
+          "is_base64": false,
           "member": "string",
           "name": "Bucket",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "板书文件存储根目录",
           "example": "snapshot",
+          "is_base64": false,
           "member": "string",
           "name": "TargetDir",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CDN加速域名",
           "example": "xxxx.file.qcloud.com",
+          "is_base64": false,
           "member": "string",
           "name": "Domain",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

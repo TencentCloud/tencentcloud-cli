@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli antiddos DescribeBizHttpStatus --cli-unfold-argument  \
-    --Domain xx \
-    --Statistics xx \
-    --Business xx \
-    --ProtoInfo.0.Protocol xx \
+    --Domain www.tencent.com \
+    --Statistics sum \
+    --Business bgpip \
+    --ProtoInfo.0.Protocol https \
     --ProtoInfo.0.Port 1 \
     --Period 1 \
     --StartTime 2020-09-22 00:00:00 \
     --EndTime 2020-09-22 00:00:00 \
-    --Id xx
+    --Id bgpip-00001
 ```
 
 Output: 
@@ -83,7 +83,7 @@ Output:
                 2
             ]
         },
-        "RequestId": "xx"
+        "RequestId": "asdasd-dasdasd"
     }
 }
 ```

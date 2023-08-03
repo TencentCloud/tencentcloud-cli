@@ -2383,7 +2383,7 @@
           "example": "cls-xxxxxxx",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2393,7 +2393,7 @@
           "example": "集群",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2403,7 +2403,7 @@
           "example": "示例集群",
           "member": "string",
           "name": "ClusterDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2413,7 +2413,7 @@
           "example": "1.20.6",
           "member": "string",
           "name": "ClusterVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2423,7 +2423,7 @@
           "example": "ubuntu16.04.1 LTSx86_64",
           "member": "string",
           "name": "ClusterOs",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2433,7 +2433,7 @@
           "example": "INDEPENDENT_CLUSTER",
           "member": "string",
           "name": "ClusterType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2443,7 +2443,7 @@
           "example": "无",
           "member": "ClusterNetworkSettings",
           "name": "ClusterNetworkSettings",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2453,7 +2453,7 @@
           "example": "3",
           "member": "uint64",
           "name": "ClusterNodeNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2463,7 +2463,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2473,7 +2473,7 @@
           "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2483,7 +2483,7 @@
           "example": "Running",
           "member": "string",
           "name": "ClusterStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2493,7 +2493,7 @@
           "example": "{\\\"NodeNameType\\\":\\\"lan-ip\\\",\\\"NetworkType\\\":\\\"GR\\\"}",
           "member": "string",
           "name": "Property",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2503,7 +2503,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ClusterMaterNodeNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2513,7 +2513,7 @@
           "example": "无",
           "member": "string",
           "name": "ImageId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2523,7 +2523,7 @@
           "example": "GENERAL",
           "member": "string",
           "name": "OsCustomizeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2533,7 +2533,7 @@
           "example": "docker",
           "member": "string",
           "name": "ContainerRuntime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2543,7 +2543,7 @@
           "example": "2021-06-16T07:42:57Z",
           "member": "string",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2553,7 +2553,7 @@
           "example": "false",
           "member": "bool",
           "name": "DeletionProtection",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -2563,7 +2563,7 @@
           "example": "false",
           "member": "bool",
           "name": "EnableExternalNode",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -2573,7 +2573,7 @@
           "example": "L5",
           "member": "string",
           "name": "ClusterLevel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2583,7 +2583,7 @@
           "example": "true",
           "member": "bool",
           "name": "AutoUpgradeClusterLevel",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -2593,7 +2593,7 @@
           "example": "false",
           "member": "bool",
           "name": "QGPUShareEnable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -2603,7 +2603,7 @@
           "example": "1.4.3",
           "member": "string",
           "name": "RuntimeVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2613,7 +2613,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ClusterEtcdNodeNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -4914,6 +4914,7 @@
           "disabled": false,
           "document": "集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。",
           "example": "MANAGED_CLUSTER",
+          "is_base64": false,
           "member": "string",
           "name": "ClusterType",
           "required": true,
@@ -4923,6 +4924,7 @@
           "disabled": false,
           "document": "集群容器网络配置信息",
           "example": "无",
+          "is_base64": false,
           "member": "ClusterCIDRSettings",
           "name": "ClusterCIDRSettings",
           "required": true,
@@ -4932,6 +4934,7 @@
           "disabled": false,
           "document": "CVM创建透传参数，json化字符串格式，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。总机型(包括地域)数量不超过10个，相同机型(地域)购买多台机器可以通过设置参数中RunInstances中InstanceCount来实现。",
           "example": "无",
+          "is_base64": false,
           "member": "RunInstancesForNode",
           "name": "RunInstancesForNode",
           "required": false,
@@ -4941,6 +4944,7 @@
           "disabled": false,
           "document": "集群的基本配置信息",
           "example": "无",
+          "is_base64": false,
           "member": "ClusterBasicSettings",
           "name": "ClusterBasicSettings",
           "required": false,
@@ -4950,6 +4954,7 @@
           "disabled": false,
           "document": "集群高级配置信息",
           "example": "无",
+          "is_base64": false,
           "member": "ClusterAdvancedSettings",
           "name": "ClusterAdvancedSettings",
           "required": false,
@@ -4959,6 +4964,7 @@
           "disabled": false,
           "document": "节点高级配置信息",
           "example": "无",
+          "is_base64": false,
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettings",
           "required": false,
@@ -4968,6 +4974,7 @@
           "disabled": false,
           "document": "已存在实例的配置信息。所有实例必须在同一个VPC中，最大数量不超过100，不支持添加竞价实例。",
           "example": "无",
+          "is_base64": false,
           "member": "ExistedInstancesForNode",
           "name": "ExistedInstancesForNode",
           "required": false,
@@ -4977,6 +4984,7 @@
           "disabled": false,
           "document": "CVM类型和其对应的数据盘挂载配置信息",
           "example": "无",
+          "is_base64": false,
           "member": "InstanceDataDiskMountSetting",
           "name": "InstanceDataDiskMountSettings",
           "required": false,
@@ -4986,6 +4994,7 @@
           "disabled": false,
           "document": "需要安装的扩展组件信息",
           "example": "无",
+          "is_base64": false,
           "member": "ExtensionAddon",
           "name": "ExtensionAddons",
           "required": false,

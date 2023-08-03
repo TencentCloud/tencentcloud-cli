@@ -4471,40 +4471,40 @@
       "document": "CreateRecordingRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "聚合规则名称",
           "example": "1",
+          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "聚合规则组内容，格式为 yaml",
           "example": "LS0tDQpuYW1lOiBleGFtcGxlDQpydWxlczoNCiAgLSByZWNvcmQ6IGpvYjpodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHM6c3VtDQogICAgZXhwcjogc3VtIGJ5IChqb2IpIChodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHMp",
+          "is_base64": false,
           "member": "string",
           "name": "Group",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 实例 ID",
           "example": "prom-x2323",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则状态码，取值如下：\n<li>1=RuleDeleted</li>\n<li>2=RuleEnabled</li>\n<li>3=RuleDisabled</li>\n默认状态码为 2 启用。",
           "example": "2",
+          "is_base64": false,
           "member": "int64",
           "name": "RuleState",
           "required": false,
@@ -4522,7 +4522,7 @@
           "example": "rrule-fzhp4p7c",
           "member": "string",
           "name": "RuleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18141,90 +18141,82 @@
       "document": "Prometheus 聚合规则响应结构体内信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则 ID",
           "example": "arule-xxx",
           "member": "string",
           "name": "RuleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则状态码",
           "example": "1",
           "member": "int64",
           "name": "RuleState",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组名称",
           "example": "groupname",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则内容组",
           "example": "groupname",
           "member": "string",
           "name": "Group",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则数量",
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则创建时间",
           "example": "\"\"",
           "member": "string",
           "name": "CreatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则最近更新时间",
           "example": "\"\"",
           "member": "string",
           "name": "UpdatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "examplename",
           "member": "string",
           "name": "RuleName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

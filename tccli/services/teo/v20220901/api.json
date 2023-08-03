@@ -2138,20 +2138,20 @@
       "document": "CheckCnameStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "站点ID。",
+          "document": "站点 ID。",
           "example": "zone-20hyebgyfsko",
+          "is_base64": false,
           "member": "string",
           "name": "ZoneId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "记录名称列表。",
+          "document": "加速域名列表。",
           "example": "[\"example.qq.com\"]",
+          "is_base64": false,
           "member": "string",
           "name": "RecordNames",
           "required": true,
@@ -2165,11 +2165,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名Cname状态信息列表。",
+          "document": "加速域名 CNAME 状态信息列表。",
           "example": "无",
           "member": "CnameStatus",
           "name": "CnameStatus",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

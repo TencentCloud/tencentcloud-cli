@@ -5776,11 +5776,21 @@
         {
           "disabled": false,
           "document": "压缩方式[0:NONE；2:SNAPPY；3:LZ4]",
-          "example": "1",
+          "example": "2",
           "member": "int64",
           "name": "Compression",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "kafka协议消费数据格式",
+          "example": "无",
+          "member": "KafkaConsumerContent",
+          "name": "ConsumerContent",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -9334,12 +9344,22 @@
         {
           "disabled": false,
           "document": "压缩方式[0:NONE；2:SNAPPY；3:LZ4]",
-          "example": "1",
+          "example": "2",
           "is_base64": false,
           "member": "int64",
           "name": "Compression",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "kafka协议消费数据格式",
+          "example": "无",
+          "is_base64": false,
+          "member": "KafkaConsumerContent",
+          "name": "ConsumerContent",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -10650,7 +10670,7 @@
         },
         {
           "disabled": false,
-          "document": "主题的的地域信息",
+          "document": "主题的地域信息",
           "example": "ap-guangzhou",
           "is_base64": false,
           "member": "string",

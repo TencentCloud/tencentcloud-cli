@@ -380,7 +380,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKafkaConsumer\n<公共请求参数>\n\n{\n    \"FromTopicId\": \"a5ce0c9c-0690-44a5-bc79-5f2190626bd0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Status\": true,\n        \"TopicID\": \"out-a5ce0c9c-0690-44a5-bc79-5f2190626bd0\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\",\n        \"Compression\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": true,\n        \"TopicID\": \"125407-ad2155c6-XXXX-45b5-83c9-8b42b6f59fbd\",\n        \"Compression\": 2,\n        \"ConsumerContent\": {\n            \"Format\": 1,\n            \"MetaFields\": [\n                \"__SOURCE__\",\n                \"__FILENAME__\",\n                \"__TIMESTAMP__\",\n                \"__HOSTNAME__\",\n                \"__PKGID__\"\n            ],\n            \"EnableTag\": true,\n            \"JsonType\": 1,\n            \"TagTransaction\": 1\n        },\n        \"RequestId\": \"ddfdXXX-4ef3-43fd-b1cf-4f4a0b944d26\"\n    }\n}",
         "title": "获取Kakfa协议消费信息"
       }
     ],

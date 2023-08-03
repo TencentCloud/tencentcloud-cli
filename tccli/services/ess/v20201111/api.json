@@ -267,7 +267,7 @@
       "status": "online"
     },
     "DescribeFlowBriefs": {
-      "document": "查询流程基础信息\n适用场景：可用于主动查询某个合同流程的签署状态信息。可以配合回调通知使用。\n每个企业限制日调用量限制：10W,  当当日超过此限制后再调用接口返回错误",
+      "document": "查询流程基础信息\n适用场景：可用于主动查询某个合同流程的签署状态信息。可以配合回调通知使用。\n每个企业限制日调用量限制：10W，当日超过此限制后再调用接口返回错误",
       "input": "DescribeFlowBriefsRequest",
       "name": "查询流程摘要",
       "output": "DescribeFlowBriefsResponse",
@@ -281,7 +281,7 @@
       "status": "online"
     },
     "DescribeFlowEvidenceReport": {
-      "document": "查询出证报告，返回报告 URL。",
+      "document": "查询出证报告，返回报告 URL。出证报告编号通过CreateFlowEvidenceReport接口获取。",
       "input": "DescribeFlowEvidenceReportRequest",
       "name": "查询出证报告",
       "output": "DescribeFlowEvidenceReportResponse",
@@ -778,7 +778,7 @@
         },
         {
           "disabled": false,
-          "document": "接受回调URL地址。支持http://或者https://协议\n\nPost数据到此地址后后返回httpcode200表示接受回调成功, 返回其他httpcode表示接受回调失败",
+          "document": "接受回调URL地址。支持http://或者https://协议\n\nPost数据到此地址后返回httpcode200表示接受回调成功, 返回其他httpcode表示接受回调失败",
           "example": "无",
           "is_base64": false,
           "member": "string",
@@ -806,7 +806,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要回调的时候返回印章(签名) 图片的 base64\n\nfalse-不需要(默认)\ntrue-需要(",
+          "document": "是否需要回调的时候返回印章(签名) 图片的 base64\n\nfalse-不需要(默认)\ntrue-需要",
           "example": "无",
           "member": "bool",
           "name": "SealImgCallback",
@@ -1831,7 +1831,7 @@
         },
         {
           "disabled": false,
-          "document": "WEB嵌入资源类型。\n<br/>CREATE_SEAL: 创建印章\n<br/>PREVIEW_SEAL_LIST：预览印章列表\n<br/>PREVIEW_SEAL_DETAIL：预览印章详情\n<br/>EXTEND_SERVICE：拓展服务\n<br/>PREVIEW_FLOW：预览合同\n<br/>PREVIEW_FLOW_DETAIL：查看合同详情",
+          "document": "WEB嵌入资源类型。\n<br/>CREATE_SEAL: 生成创建印章的嵌入页面\n<br/>CREATE_TEMPLATE：生成创建模板的嵌入页面\n<br/>MODIFY_TEMPLATE：生成编辑模板的嵌入页面\n<br/>PREVIEW_TEMPLATE：生成预览模板的嵌入页面\n<br/>PREVIEW_SEAL_LIST：生成预览印章列表的嵌入页面\n<br/>PREVIEW_SEAL_DETAIL：生成预览印章详情的嵌入页面\n<br/>EXTEND_SERVICE：生成拓展服务的嵌入页面\n<br/>PREVIEW_FLOW：生成预览合同的嵌入页面\n<br/>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面\n",
           "example": "无",
           "is_base64": false,
           "member": "string",
@@ -1841,7 +1841,7 @@
         },
         {
           "disabled": false,
-          "document": "WEB嵌入的业务资源ID\n<br/>PREVIEW_SEAL_DETAIL，必填，取值为印章id",
+          "document": "WEB嵌入的业务资源ID\n<br/>PREVIEW_SEAL_DETAIL，必填，取值为印章id\n<br/>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模版id\n<br/>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id",
           "example": "无",
           "is_base64": false,
           "member": "string",
@@ -2454,7 +2454,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许编辑模版控件\n<br/>true:允许编辑模版控件信息\n<br/>false:不允许编辑模版控件信息\n<br/>默认false:不允许编辑模版控件信息",
+          "document": "是否允许编辑模板控件\n<br/>true:允许编辑模板控件信息\n<br/>false:不允许编辑模板控件信息\n<br/>默认false:不允许编辑模板控件信息",
           "example": "true",
           "member": "bool",
           "name": "CanEditFormField",
@@ -5150,7 +5150,7 @@
         },
         {
           "disabled": false,
-          "document": "出证任务执行的状态, 分布表示下面的含义\n\nEvidenceStatusExecuting  出证任务在执行中\nEvidenceStatusSuccess  出证任务执行成功\nEvidenceStatusFailed  出征任务执行失败",
+          "document": "出证任务执行的状态, 分布表示下面的含义\n\nEvidenceStatusExecuting  出证任务在执行中\nEvidenceStatusSuccess  出证任务执行成功\nEvidenceStatusFailed  出证任务执行失败",
           "example": "EvidenceStatusExecuting",
           "member": "string",
           "name": "Status",
@@ -5701,6 +5701,7 @@
           "disabled": false,
           "document": "操作人信息，userId必填",
           "example": "无",
+          "is_base64": false,
           "member": "UserInfo",
           "name": "Operator",
           "required": true,
@@ -5710,6 +5711,7 @@
           "disabled": false,
           "document": "单次查询成员企业最大返回数量",
           "example": "无",
+          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -5719,6 +5721,7 @@
           "disabled": false,
           "document": "页面偏移量",
           "example": "无",
+          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -5728,6 +5731,7 @@
           "disabled": false,
           "document": "查询成员企业的企业名，模糊匹配",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": false,
@@ -5737,6 +5741,7 @@
           "disabled": false,
           "document": "成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入",
           "example": "无",
+          "is_base64": false,
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -5746,6 +5751,7 @@
           "disabled": false,
           "document": "是否导出当前成员企业数据",
           "example": "无",
+          "is_base64": false,
           "member": "bool",
           "name": "Export",
           "required": false,
@@ -5755,6 +5761,7 @@
           "disabled": false,
           "document": "成员企业id",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Id",
           "required": false,
@@ -5772,6 +5779,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5781,15 +5789,17 @@
           "example": "无",
           "member": "uint64",
           "name": "JoinedTotal",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "disabled": false,
-          "document": "已加入的企业数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": true,
+          "document": "已加入的企业数量(废弃,请使用ActivatedTotal)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "ActivedTotal",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5799,6 +5809,7 @@
           "example": "无",
           "member": "string",
           "name": "ExportUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5808,7 +5819,18 @@
           "example": "无",
           "member": "GroupOrganization",
           "name": "List",
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已加入的企业数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ActivatedTotal",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -6130,7 +6152,7 @@
         },
         {
           "disabled": false,
-          "document": "模版预览，允许展示模版控件信息\n<br/>true：允许在模版预览页展示控件\n<br/>false：不允许在模版预览页展示控件\n<br/>默认false，模版预览页不展示控件",
+          "document": "模板预览，允许展示模板控件信息\n<br/>true：允许在模板预览页展示控件\n<br/>false：不允许在模板预览页展示控件\n<br/>默认false，模板预览页不展示控件",
           "example": "true",
           "member": "bool",
           "name": "ShowTemplateComponent",
@@ -6951,7 +6973,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人在模板中的参与方ID\n<br/>模版发起合同时，该参数为必填项\n<br/>文件发起合同是，该参数无序传值\n",
+          "document": "签署方经办人在模板中的参与方ID\n<br/>模板发起合同时，该参数为必填项\n<br/>文件发起合同是，该参数无序传值\n",
           "example": "无",
           "is_base64": false,
           "member": "string",
@@ -8567,7 +8589,7 @@
         },
         {
           "disabled": false,
-          "document": "参与方在合同中的角色是按照创建合同的时候来排序的; 解除协议会将第一个参与人叫甲方, 第二个叫乙方,第三个叫丙方, 依次类推.  如果想改动参与人的角色名字, 可以设置此签署方自定义控件别名字段，最大20个字符",
+          "document": "参与方在合同中的角色是按照创建合同的时候来排序的; 解除协议会将第一个参与人叫甲方, 第二个叫乙方,第三个叫丙方，以此类推。  如果想改动参与人的角色名字, 可以设置此签署方自定义控件别名字段，最大20个字符",
           "example": "无",
           "is_base64": false,
           "member": "string",
