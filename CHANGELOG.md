@@ -1,3 +1,175 @@
+# Release 3.0.822.1
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 36 次发布
+
+发布时间：2023-08-04 01:31:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstances](http://document.tencentcloudapi.woa.com/document/product/1207/69573)
+
+	* 新增入参：AutoMountCOSBucket
+
+
+
+
+## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
+
+### 第 25 次发布
+
+发布时间：2023-08-04 01:35:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDBInstanceHAConfig](http://document.tencentcloudapi.woa.com/document/product/409/81575)
+* [ModifyDBInstanceHAConfig](http://document.tencentcloudapi.woa.com/document/product/409/81574)
+* [SwitchDBInstancePrimary](http://document.tencentcloudapi.woa.com/document/product/409/81573)
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 37 次发布
+
+发布时间：2023-08-04 01:36:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [NamespaceResourceEnvTKE](http://document.tencentcloudapi.woa.com/document/product/583/17244#NamespaceResourceEnvTKE)
+
+	* 新增成员：PodTemplatePatch
+
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 25 次发布
+
+发布时间：2023-08-04 01:37:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DBInstance](http://document.tencentcloudapi.woa.com/document/product/238/19976#DBInstance)
+
+	* <font color="#dd0000">**修改成员**：</font>Architecture, Style
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 3 次发布
+
+发布时间：2023-08-04 01:43:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [L4OfflineLog](http://document.tencentcloudapi.woa.com/document/product/1738/81211#L4OfflineLog)
+
+	* 新增成员：LogStartTime, LogEndTime
+
+* [L7OfflineLog](http://document.tencentcloudapi.woa.com/document/product/1738/81211#L7OfflineLog)
+
+	* 新增成员：LogStartTime, LogEndTime
+
+* [Resource](http://document.tencentcloudapi.woa.com/document/product/1738/81211#Resource)
+
+	* <font color="#dd0000">**修改成员**：</font>Group, ZoneNumber
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 100 次发布
+
+发布时间：2023-08-04 01:48:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [VpcOssNewService](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssNewService)
+
+	* 新增成员：UniqueCdcId, CdcFlag
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 14 次发布
+
+发布时间：2023-08-04 01:50:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BatchDeleteIntegrationTasks](http://document.tencentcloudapi.woa.com/document/product/1607/77623)
+
+	* 新增入参：DeleteKFFlag
+
+* [CommitIntegrationTask](http://document.tencentcloudapi.woa.com/document/product/1607/77609)
+
+	* 新增入参：VersionDesc, InstanceVersion
+
+* [DeleteIntegrationTask](http://document.tencentcloudapi.woa.com/document/product/1607/77599)
+
+	* 新增出参：DeleteFlag, DeleteErrInfo
+
+* [DescribeIntegrationTask](http://document.tencentcloudapi.woa.com/document/product/1607/77578)
+
+	* 新增入参：InstanceVersion
+
+	* 新增出参：AgentStatus, TaskVersion
+
+
+新增数据结构：
+
+* [AgentStatus](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AgentStatus)
+* [TaskVersionInstance](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TaskVersionInstance)
+
+修改数据结构：
+
+* [IntegrationTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#IntegrationTaskInfo)
+
+	* 新增成员：SwitchResource, ReadPhase, InstanceVersion
+
+
+
+
 # Release 3.0.821.1
 
 ## 应用管理平台(camp) 版本：2022-09-20

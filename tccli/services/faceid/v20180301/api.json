@@ -6146,103 +6146,103 @@
       "document": "核验流程详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "本次核验最终结果。0为核验通过，是同一人。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次核验最终结果，0为核验通过，是同一人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "本次核验最终结果描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次核验最终结果描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Success",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "本次核验活体结果。0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次核验活体结果，0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "LivenessErrorCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本次核验活体结果描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Success",
           "member": "string",
           "name": "LivenessErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "本次核验比对结果。0为视频流中采集的最佳人脸照片和上传的比对照片是同一人。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次核验比对结果，0为视频流中采集的最佳人脸照片和上传的比对照片是同一人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "CompareErrorCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "本次核验比对结果描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次核验比对结果描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "success",
           "member": "string",
           "name": "CompareErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本次核验时间戳(毫秒)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1634884881441",
           "member": "uint64",
           "name": "ReqTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "本次核验视频流中采集的最佳人脸照片和上传的比对照片的相似度， 范围[0.00, 100.00]，默认大于等于70时判断为同一人。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次核验视频流中采集的最佳人脸照片和上传的比对照片的相似度， 范围[0.00, 100.00]，默认大于等于70时判断为同一人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100.00",
           "member": "float",
           "name": "Similarity",
-          "required": true,
+          "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本次核验的唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3d12da91-db34-4e55-81c3-993a41d7ccb7",
           "member": "string",
           "name": "Seq",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"

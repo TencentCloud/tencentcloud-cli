@@ -2154,6 +2154,17 @@
           "required": false,
           "type": "string",
           "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "是否一键挂载默认COS桶。",
+          "example": "无",
+          "is_base64": false,
+          "member": "bool",
+          "name": "AutoMountCOSBucket",
+          "required": false,
+          "type": "bool",
+          "visibility": 2
         }
       ],
       "type": "object"
