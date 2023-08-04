@@ -231,6 +231,13 @@
       "output": "DescribeDBInstanceAttributeResponse",
       "status": "online"
     },
+    "DescribeDBInstanceHAConfig": {
+      "document": "本接口（DescribeDBInstanceHAConfig）用于查询实例HA配置信息。其中HA配置信息包括：\n<li>允许备节点切换为主节点的条件配置\n<li>半同步实例使用同步复制或异步复制的条件配置",
+      "input": "DescribeDBInstanceHAConfigRequest",
+      "name": "查询实例HA配置",
+      "output": "DescribeDBInstanceHAConfigResponse",
+      "status": "online"
+    },
     "DescribeDBInstanceParameters": {
       "document": "本接口（DescribeDBInstanceAttribute）用于查询实例的参数信息。",
       "input": "DescribeDBInstanceParametersRequest",
@@ -469,6 +476,13 @@
       "output": "ModifyDBInstanceDeploymentResponse",
       "status": "online"
     },
+    "ModifyDBInstanceHAConfig": {
+      "document": "本接口（ModifyDBInstanceHAConfig）用于修改实例HA配置信息。其中HA配置信息包括：\n<li>允许备节点切换为主节点的条件配置\n<li>半同步实例使用同步复制或异步复制的条件配置",
+      "input": "ModifyDBInstanceHAConfigRequest",
+      "name": "修改实例HA配置信息",
+      "output": "ModifyDBInstanceHAConfigResponse",
+      "status": "online"
+    },
     "ModifyDBInstanceName": {
       "document": "本接口（ModifyDBInstanceName）用于修改postgresql实例名字。",
       "input": "ModifyDBInstanceNameRequest",
@@ -586,6 +600,13 @@
       "input": "SetAutoRenewFlagRequest",
       "name": "设置自动续费",
       "output": "SetAutoRenewFlagResponse",
+      "status": "online"
+    },
+    "SwitchDBInstancePrimary": {
+      "document": "本接口（SwitchDBInstancePrimary）用于切换实例主备关系。\n<li>通过主动发起切换，可以验证业务能否正确处理实例主备切换的场景\n<li>通过使用强制切换，可以在备节点延迟不满足切换条件时，强制发起主从切换\n<li>只有主实例可以执行该操作",
+      "input": "SwitchDBInstancePrimaryRequest",
+      "name": "切换实例主备关系",
+      "output": "SwitchDBInstancePrimaryResponse",
       "status": "online"
     },
     "UpgradeDBInstance": {
@@ -4747,6 +4768,83 @@
       ],
       "type": "object"
     },
+    "DescribeDBInstanceHAConfigRequest": {
+      "document": "DescribeDBInstanceHAConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "postgres-aser1j2o",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstanceHAConfigResponse": {
+      "document": "DescribeDBInstanceHAConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主从同步方式：\n<li>Semi-sync：半同步\n<li>Async：异步",
+          "example": "Async",
+          "member": "string",
+          "name": "SyncMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高可用备机最大延迟数据量。备节点延迟数据量小于等于该值，且备节点延迟时间小于等于MaxStandbyLag时，可以切换为主节点。\n<li>单位：byte\n<li>参数范围：[1073741824, 322122547200]",
+          "example": "2000000000",
+          "member": "uint64",
+          "name": "MaxStandbyLatency",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高可用备机最大延迟时间。备节点延迟时间小于等于该值，且备节点延迟数据量小于等于MaxStandbyLatency时，可以切换为主节点。\n<li>单位：s\n<li>参数范围：[5, 10]",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxStandbyLag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步备机最大延迟数据量。备机延迟数据量小于等于该值，且该备机延迟时间小于等于MaxSyncStandbyLag时，则该备机采用同步复制；否则，采用异步复制。\n该参数值针对SyncMode设置为Semi-sync的实例有效。\n异步实例该字段返回null。\n半同步实例禁止退化为异步复制时，该字段返回null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000000",
+          "member": "uint64",
+          "name": "MaxSyncStandbyLatency",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "同步备机最大延迟时间。备机延迟时间小于等于该值，且该备机延迟数据量小于等于MaxSyncStandbyLatency时，则该备机采用同步复制；否则，采用异步复制。\n该参数值针对SyncMode设置为Semi-sync的实例有效。\n异步实例不返回该字段。\n半同步实例禁止退化为异步复制时，不返回该字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "uint64",
+          "name": "MaxSyncStandbyLag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBInstanceParametersRequest": {
       "document": "DescribeDBInstanceParameters请求参数结构体",
       "members": [
@@ -7427,6 +7525,78 @@
     },
     "ModifyDBInstanceDeploymentResponse": {
       "document": "ModifyDBInstanceDeployment返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceHAConfigRequest": {
+      "document": "ModifyDBInstanceHAConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "postgres-aser1j2o",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主从同步方式：\n<li>Semi-sync：半同步\n<li>Async：异步\n",
+          "example": "Async",
+          "member": "string",
+          "name": "SyncMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "高可用备机最大延迟数据量。备节点延迟数据量小于等于该值，且备节点延迟时间小于等于MaxStandbyLag时，可以切换为主节点。\n<li>单位：byte\n<li>参数范围：[1073741824, 322122547200]",
+          "example": "1000000000",
+          "member": "uint64",
+          "name": "MaxStandbyLatency",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "高可用备机最大延迟时间。备节点延迟时间小于等于该值，且备节点延迟数据量小于等于MaxStandbyLatency时，可以切换为主节点。\n<li>单位：s\n<li>参数范围：[5, 10]",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxStandbyLag",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "同步备机最大延迟数据量。备机延迟数据量小于等于该值，且该备机延迟时间小于等于MaxSyncStandbyLag时，则该备机采用同步复制；否则，采用异步复制。\n该参数值针对SyncMode设置为Semi-sync的实例有效。\n半同步实例禁止退化为异步复制时，不设置MaxSyncStandbyLatency、MaxSyncStandbyLag。\n半同步实例允许退化异步复制时，PostgreSQL 9版本的实例须设置MaxSyncStandbyLatency且不设置MaxSyncStandbyLag，PostgreSQL 10及以上版本的实例须设置MaxSyncStandbyLatency、MaxSyncStandbyLag。",
+          "example": "1000000",
+          "member": "uint64",
+          "name": "MaxSyncStandbyLatency",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "同步备机最大延迟时间。备机延迟时间小于等于该值，且该备机延迟数据量小于等于MaxSyncStandbyLatency时，则该备机采用同步复制；否则，采用异步复制。\n该参数值针对SyncMode设置为Semi-sync的实例有效。\n半同步实例禁止退化为异步复制时，不设置MaxSyncStandbyLatency、MaxSyncStandbyLag。\n半同步实例允许退化异步复制时，PostgreSQL 9版本的实例须设置MaxSyncStandbyLatency且不设置MaxSyncStandbyLag，PostgreSQL 10及以上版本的实例须设置MaxSyncStandbyLatency、MaxSyncStandbyLag，",
+          "example": "5",
+          "member": "uint64",
+          "name": "MaxSyncStandbyLag",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceHAConfigResponse": {
+      "document": "ModifyDBInstanceHAConfig返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10131,6 +10301,69 @@
         }
       ],
       "usage": "out"
+    },
+    "SwitchDBInstancePrimaryRequest": {
+      "document": "SwitchDBInstancePrimary请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "postgres-aser1j2o",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否强制切换。强制切换时只要备节点可访问，无论主备延迟多大都会发起切换。只有SwitchTag为0时，才可使用立即切换。\n<li>默认：false",
+          "example": "true",
+          "member": "bool",
+          "name": "Force",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "指定实例配置完成变更后的切换时间。\n<li>0：立即切换 \n<li>1：指定时间切换\n<li>2：维护时间窗口内切换\n<li>默认值：0 ",
+          "example": "1",
+          "member": "uint64",
+          "name": "SwitchTag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。",
+          "example": "01:00:00",
+          "member": "string",
+          "name": "SwitchStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。SwitchStartTime和SwitchEndTime时间窗口不能小于30分钟。",
+          "example": "01:30:00",
+          "member": "string",
+          "name": "SwitchEndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchDBInstancePrimaryResponse": {
+      "document": "SwitchDBInstancePrimary返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Tag": {
       "document": "实例绑定的标签信息，包含标签键TagKey和标签值TagValue",

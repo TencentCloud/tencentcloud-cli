@@ -22,9 +22,11 @@ Output:
                 "Area": "mainland",
                 "LogPacketName": "20220811-10-proxy-1491-11ed-9792-525400655ede",
                 "LogTime": 1660212000,
+                "LogStartTime": "2023-07-26T06:00:00+08:00",
+                "LogEndTime": "2023-07-26T07:00:00+08:00",
                 "ProxyId": "proxy-1491-11ed-9792-525400655ede",
                 "Size": 20761,
-                "Url": "https://log-down04-cn.edgeone.qcloud.com/20220811/2022081110-proxy-1491-11ed-9792-525400655ede.log.gz"
+                "Url": "https://log-down04-cn.edgeone.qcloud.com/20220811/2022081110-proxy-1491-11ed-9792-52we0655ede.log.gz"
             }
         ],
         "TotalCount": 128

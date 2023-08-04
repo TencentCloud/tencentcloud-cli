@@ -6,16 +6,18 @@ Input:
 
 ```
 tccli wedata DeleteIntegrationTask --cli-unfold-argument  \
-    --ProjectId xx \
-    --TaskId xx
+    --ProjectId 123 \
+    --TaskId 345
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "Data": true
+        "Data": true,
+        "DeleteFlag": 0,
+        "DeleteErrInfo": "abc",
+        "RequestId": "abc"
     }
 }
 ```

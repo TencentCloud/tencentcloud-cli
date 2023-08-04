@@ -1242,120 +1242,120 @@
       "document": "AdjustCdbProxyAddress请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "代理组ID",
           "example": "proxy-test",
+          "is_base64": false,
           "member": "string",
           "name": "ProxyGroupId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权重分配模式，\n系统自动分配：\"system\"， 自定义：\"custom\"",
           "example": "system",
+          "is_base64": false,
           "member": "string",
           "name": "WeightMode",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启延迟剔除，取值：\"true\" | \"false\"",
           "example": "true",
+          "is_base64": false,
           "member": "bool",
           "name": "IsKickOut",
           "required": true,
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最小保留数量，最小取值：0",
           "example": "2",
+          "is_base64": false,
           "member": "uint64",
           "name": "MinCount",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "延迟剔除阈值，最小取值：0",
           "example": "100",
+          "is_base64": false,
           "member": "uint64",
           "name": "MaxDelay",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启故障转移，取值：\"true\" | \"false\"",
           "example": "true",
+          "is_base64": false,
           "member": "bool",
           "name": "FailOver",
           "required": true,
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否自动添加RO，取值：\"true\" | \"false\"",
           "example": "true",
+          "is_base64": false,
           "member": "bool",
           "name": "AutoAddRo",
           "required": true,
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是只读，取值：\"true\" | \"false\"",
           "example": "true",
+          "is_base64": false,
           "member": "bool",
           "name": "ReadOnly",
           "required": true,
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代理组地址ID",
           "example": "proxy-test",
+          "is_base64": false,
           "member": "string",
           "name": "ProxyAddressId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启事务分离，取值：\"true\" | \"false\"",
           "example": "true",
+          "is_base64": false,
           "member": "bool",
           "name": "TransSplit",
           "required": false,
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启连接池",
           "example": "true",
+          "is_base64": false,
           "member": "bool",
           "name": "ConnectionPool",
           "required": false,
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "读写权重分配。如果 WeightMode 传的是 system ，则传入的权重不生效，由系统分配默认权重。",
           "example": "无",
+          "is_base64": false,
           "member": "ProxyAllocation",
           "name": "ProxyAllocation",
           "required": false,
@@ -1373,7 +1373,7 @@
           "example": "1312",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4416,70 +4416,70 @@
       "document": "CreateCdbProxy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "cdb-aykuksx3",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID",
           "example": "vpc-ixw3ll2d",
+          "is_base64": false,
           "member": "string",
           "name": "UniqVpcId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有子网ID",
           "example": "subnet-0z3r56vq",
+          "is_base64": false,
           "member": "string",
           "name": "UniqSubnetId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点规格配置",
           "example": "无",
+          "is_base64": false,
           "member": "ProxyNodeCustom",
           "name": "ProxyNodeCustom",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组",
           "example": "[{\"security\"}]",
+          "is_base64": false,
           "member": "string",
           "name": "SecurityGroup",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "example": "test",
+          "is_base64": false,
           "member": "string",
           "name": "Desc",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "连接池阈值",
           "example": "10",
+          "is_base64": false,
           "member": "uint64",
           "name": "ConnectionPoolLimit",
           "required": false,
@@ -4497,7 +4497,7 @@
           "example": "adasc-asdas-123",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8115,7 +8115,6 @@
       "document": "DescribeDBFeatures请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "cdb-qwerasdf",
@@ -8136,7 +8135,6 @@
           "example": "1",
           "member": "bool",
           "name": "IsSupportAudit",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -8146,7 +8144,6 @@
           "example": "无",
           "member": "bool",
           "name": "AuditNeedUpgrade",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -8156,7 +8153,6 @@
           "example": "1",
           "member": "bool",
           "name": "IsSupportEncryption",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -8166,7 +8162,6 @@
           "example": "无",
           "member": "bool",
           "name": "EncryptionNeedUpgrade",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -8176,7 +8171,6 @@
           "example": "无",
           "member": "bool",
           "name": "IsRemoteRo",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -8186,7 +8180,6 @@
           "example": "无",
           "member": "string",
           "name": "MasterRegion",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8196,7 +8189,6 @@
           "example": "1",
           "member": "bool",
           "name": "IsSupportUpdateSubVersion",
-          "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -8206,7 +8198,6 @@
           "example": "20190203",
           "member": "string",
           "name": "CurrentSubVersion",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8216,7 +8207,6 @@
           "example": "20190930",
           "member": "string",
           "name": "TargetSubVersion",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

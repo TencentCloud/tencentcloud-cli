@@ -2973,26 +2973,24 @@
       "document": "描述键值对过滤器，用于条件过滤查询。",
       "members": [
         {
-          "default": "",
-          "disabled": false,
-          "document": "一个或者多个过滤值。",
-          "example": "[\"SYSTEM_DISK\"]",
-          "member": "string",
-          "name": "Values",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
           "disabled": false,
           "document": "过滤键的名称。",
           "example": "disk-usage",
+          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "一个或者多个过滤值。",
+          "example": "[\"SYSTEM_DISK\"]",
+          "is_base64": false,
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
         }
       ],
       "usage": "in"

@@ -5061,8 +5061,10 @@
           "disabled": false,
           "document": "集群ID",
           "example": "cls-xxxx",
+          "is_base64": false,
           "member": "string",
           "name": "ClusterID",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5071,8 +5073,10 @@
           "disabled": false,
           "document": "子网ID",
           "example": "subnet-xx",
+          "is_base64": false,
           "member": "string",
           "name": "SubnetID",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5081,8 +5085,10 @@
           "disabled": false,
           "document": "命名空间",
           "example": "kube-system",
+          "is_base64": false,
           "member": "string",
           "name": "Namespace",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5091,8 +5097,10 @@
           "disabled": false,
           "document": "数据存储地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/var/lib/scf",
+          "is_base64": false,
           "member": "string",
           "name": "DataPath",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5103,6 +5111,7 @@
           "example": "Key0=a,Value0=x",
           "member": "K8SLabel",
           "name": "NodeSelector",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -5113,6 +5122,7 @@
           "example": "Key: \"key1\"   Operator: \"Exists\"",
           "member": "K8SToleration",
           "name": "Tolerations",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -5123,8 +5133,21 @@
           "example": "38002",
           "member": "uint64",
           "name": "Port",
+          "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "yaml格式的pod patch内容，例如\nmetadata:\n  labels:\n    key: value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "PodTemplatePatch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

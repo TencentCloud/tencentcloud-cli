@@ -587,7 +587,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "匹配字段，取值有：\n<li>host：请求域名；</li>\n<li>sip：客户端IP；</li>\n<li>ua：User-Agent；</li>\n<li>cookie：会话 Cookie；</li>\n<li>cgi：CGI 脚本；</li>\n<li>xff：XFF 扩展头部；</li>\n<li>url：请求 URL；</li>\n<li>accept：请求内容类型；</li>\n<li>method：请求方式；</li>\n<li>header：请求头部；</li>\n<li>app_proto：应用层协议；</li>\n<li>sip_proto：网络层协议；</li>\n<li>uabot：UA 特征规则，仅bot自定义规则可用；</li>\n<li>idcid：IDC 规则，仅bot自定义规则可用；</li>\n<li>sipbot：搜索引擎规则，仅bot自定义规则可用；</li>\n<li>portrait：画像分析，仅bot自定义规则可用；</li>\n<li>header_seq：请求头顺序，仅bot自定义规则可用。</li>",
+          "document": "匹配字段，取值有：\n<li>host：请求域名；</li>\n<li>sip：客户端IP；</li>\n<li>ua：User-Agent；</li>\n<li>cookie：会话 Cookie；</li>\n<li>cgi：CGI 脚本；</li>\n<li>xff：XFF 扩展头部；</li>\n<li>url：请求 URL；</li>\n<li>accept：请求内容类型；</li>\n<li>method：请求方式；</li>\n<li>header：请求头部；</li>\n<li>app_proto：应用层协议；</li>\n<li>sip_proto：网络层协议；</li>\n<li>uabot：UA 特征规则，仅bot自定义规则可用；</li>\n<li>idcid：IDC 规则，仅bot自定义规则可用；</li>\n<li>sipbot：搜索引擎规则，仅bot自定义规则可用；</li>\n<li>portrait：画像分析，仅bot自定义规则可用；</li>\n<li>header_seq：请求头顺序，仅bot自定义规则可用；</li>\n<li>hdr：请求正文，仅Web防护自定义规则可用。</li>",
           "example": "host",
           "member": "string",
           "name": "MatchFrom",
@@ -6199,60 +6199,60 @@
       "document": "DownloadL4Logs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间。",
           "example": "2022-05-04T03:27:00+08:00",
+          "is_base64": false,
           "member": "datetime_iso",
           "name": "StartTime",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间。",
           "example": "2022-05-10T23:59:00+08:00",
+          "is_base64": false,
           "member": "datetime_iso",
           "name": "EndTime",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "站点集合，不填默认选择全部站点。",
+          "document": "站点集合，此参数必填，不填默认查询为空。",
           "example": "[\"zone1\",\"zone2\"]",
+          "is_base64": false,
           "member": "string",
           "name": "ZoneIds",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "四层实例ID集合。",
+          "document": "四层实例 ID 集合。",
           "example": "[\"proxy-xx\"]",
+          "is_base64": false,
           "member": "string",
           "name": "ProxyIds",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "分页查询的限制数目，默认值为20，最大查询条目为1000。",
+          "document": "分页查询的限制数目，默认值为 20，最大查询条目为 1000。",
           "example": "10",
+          "is_base64": false,
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "分页的偏移量，默认值为0。",
+          "document": "分页的偏移量，默认值为 0。",
           "example": "1",
+          "is_base64": false,
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -6266,22 +6266,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "四层离线日志数据列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "L4OfflineLog",
-          "name": "Data",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
           "document": "查询结果的总条数。",
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "四层离线日志数据列表。",
+          "example": "无",
+          "member": "L4OfflineLog",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -6297,60 +6297,60 @@
       "document": "DownloadL7Logs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间。",
           "example": "2022-05-04T03:27:00+08:00",
+          "is_base64": false,
           "member": "datetime_iso",
           "name": "StartTime",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间。",
           "example": "2022-05-10T23:59:00+08:00",
+          "is_base64": false,
           "member": "datetime_iso",
           "name": "EndTime",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "站点集合，不填默认选择全部站点。",
+          "document": "站点集合，此参数必填，不填默认查询为空。",
           "example": "[\"zone1\",\"zone2\"]",
+          "is_base64": false,
           "member": "string",
           "name": "ZoneIds",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子域名集合，不填默认选择全部子域名。",
           "example": "[\"www.baidu.com\"]",
+          "is_base64": false,
           "member": "string",
           "name": "Domains",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "分页查询的限制数目，默认值为20，最大查询条目为1000。",
+          "document": "分页查询的限制数目，默认值为 20，最大查询条目为 1000。",
           "example": "10",
+          "is_base64": false,
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "分页的偏移量，默认值为0。",
+          "document": "分页的偏移量，默认值为 0。",
           "example": "0",
+          "is_base64": false,
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -6364,22 +6364,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "七层离线日志数据列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "L7OfflineLog",
-          "name": "Data",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
           "document": "查询结果的总条数。",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "七层离线日志数据列表。",
+          "example": "无",
+          "member": "L7OfflineLog",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -7449,141 +7449,169 @@
       "document": "离线日志详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "日志打包开始时间。",
-          "example": "\"\"",
-          "member": "int64",
-          "name": "LogTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "四层实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"proxy-xx\"",
+          "document": "四层代理实例 ID。",
+          "example": "sid-xs82kshs",
           "member": "string",
           "name": "ProxyId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "原始大小 单位byte。",
-          "example": "12",
-          "member": "int64",
-          "name": "Size",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "下载地址。",
-          "example": "\"\"",
-          "member": "string",
-          "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "日志数据包名。",
-          "example": "\"\"",
-          "member": "string",
-          "name": "LogPacketName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "加速区域，取值有：\n<li>mainland：中国大陆境内;</li>\n<li>overseas：全球（不含中国大陆）。</li>",
+          "document": "日志所属区域，取值有：\n<li>mainland：中国大陆境内;</li>\n<li>overseas：全球（不含中国大陆）。</li>",
           "example": "mainland",
           "member": "string",
           "name": "Area",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "离线日志数据包名。",
+          "example": "test",
+          "member": "string",
+          "name": "LogPacketName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "离线日志下载地址。",
+          "example": "https://www.tencent.com",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志打包时间，此参数已经废弃。",
+          "example": "1689237072",
+          "member": "int64",
+          "name": "LogTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志打包开始时间。",
+          "example": "2022-12-12T14:12:12Z",
+          "member": "datetime_iso",
+          "name": "LogStartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志打包结束时间。",
+          "example": "2022-12-12T14:12:12Z",
+          "member": "datetime_iso",
+          "name": "LogEndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志大小，单位为 Byte。",
+          "example": "12",
+          "member": "int64",
+          "name": "Size",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
       "usage": "out"
     },
     "L7OfflineLog": {
-      "document": "离线日志详细信息",
+      "document": "七层离线日志详细信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "日志打包开始时间。",
-          "example": "\"\"",
-          "member": "int64",
-          "name": "LogTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "子域名。",
-          "example": "\"baidu.com\"",
+          "document": "离线日志域名。",
+          "example": "baidu.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "原始大小，单位byte。",
+          "document": "日志所属区域，取值有：\n<li>mainland：中国大陆境内; </li>\n<li>overseas：全球（不含中国大陆）。</li>",
+          "example": "mainland",
+          "member": "string",
+          "name": "Area",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "离线日志数据包名。\t",
+          "example": "test",
+          "member": "string",
+          "name": "LogPacketName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "离线日志下载地址。\t",
+          "example": "http://www.tencent.com",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志打包时间，此参数已经废弃。",
+          "example": "3000",
+          "member": "int64",
+          "name": "LogTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志打包开始时间。",
+          "example": "2022-12-12T14:12:12Z",
+          "member": "datetime_iso",
+          "name": "LogStartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志打包结束时间。",
+          "example": "2022-12-12T14:12:12Z",
+          "member": "datetime_iso",
+          "name": "LogEndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志原始大小，单位 Byte。",
           "example": "12",
           "member": "int64",
           "name": "Size",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "下载地址。",
-          "example": "\"\"",
-          "member": "string",
-          "name": "Url",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "日志数据包名。",
-          "example": "\"\"",
-          "member": "string",
-          "name": "LogPacketName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "加速区域，取值有：\n<li>mainland：中国大陆境内; </li>\n<li>overseas：全球（不含中国大陆）。</li>",
-          "example": "\"mainland\"",
-          "member": "string",
-          "name": "Area",
-          "required": true,
-          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -9819,144 +9847,151 @@
       "document": "RateLimit规则",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "速率限制统计阈值，单位是次，取值范围0-4294967294。",
           "example": "1",
           "member": "int64",
           "name": "Threshold",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "速率限制统计时间，取值范围 10/20/30/40/50/60 单位是秒。",
           "example": "1",
           "member": "int64",
           "name": "Period",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则名，只能以英文字符，数字，下划线组合，且不能以下划线开头。",
           "example": "rule",
+          "is_base64": false,
           "member": "string",
           "name": "RuleName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "处置动作，取值有：\n<li>monitor：观察；</li>\n<li>drop：拦截；</li>\n<li>alg：JavaScript挑战。</li>",
+          "document": "处置动作，取值有： <li>monitor：观察；</li> <li>drop：拦截；</li> <li>alg：JavaScript挑战。</li>\t",
           "example": "drop",
+          "is_base64": false,
           "member": "string",
           "name": "Action",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "惩罚时长，0-2天。",
           "example": "11",
           "member": "int64",
           "name": "PunishTime",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "处罚时长单位，取值有：\n<li>second：秒；</li>\n<li>minutes：分钟；</li>\n<li>hour：小时。</li>",
           "example": "second",
+          "is_base64": false,
           "member": "string",
           "name": "PunishTimeUnit",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则状态，取值有：\n<li>on：生效；</li>\n<li>off：不生效。</li>默认on生效。",
           "example": "on",
+          "is_base64": false,
           "member": "string",
           "name": "RuleStatus",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则详情。",
           "example": "无",
           "member": "AclCondition",
           "name": "AclConditions",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则权重，取值范围0-100。",
           "example": "1",
           "member": "int64",
           "name": "RulePriority",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "规则id。仅出参使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则 Id。仅出参使用。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "RuleID",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤词，取值有：\n<li>sip：客户端ip。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"sip\"",
+          "is_base64": false,
           "member": "string",
           "name": "FreqFields",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
+          "is_base64": false,
           "member": "string",
           "name": "UpdateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "统计范围，字段为null时，代表source_to_eo。取值有：\n<li>source_to_eo：（响应）源站到EdgeOne。</li>\n<li>client_to_eo：（请求）客户端到EdgeOne；</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "统计范围，字段为 null 时，代表 source_to_eo。取值有：\n<li>source_to_eo：（响应）源站到EdgeOne。</li>\n<li>client_to_eo：（请求）客户端到EdgeOne；</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "source_to_eo",
+          "is_base64": false,
           "member": "string",
           "name": "FreqScope",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -9973,7 +10008,7 @@
           "example": "edgeone-2cnw94j16y39",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9983,7 +10018,7 @@
           "example": "0",
           "member": "int64",
           "name": "PayMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9993,7 +10028,7 @@
           "example": "无",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10003,7 +10038,7 @@
           "example": "无",
           "member": "datetime_iso",
           "name": "EnableTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10013,7 +10048,7 @@
           "example": "无",
           "member": "datetime_iso",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10023,7 +10058,7 @@
           "example": "normal",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10033,7 +10068,7 @@
           "example": "无",
           "member": "Sv",
           "name": "Sv",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10043,7 +10078,7 @@
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10053,7 +10088,7 @@
           "example": "edgeone-2cnw94j16y39",
           "member": "string",
           "name": "PlanId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10063,7 +10098,7 @@
           "example": "mainland",
           "member": "string",
           "name": "Area",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10073,7 +10108,7 @@
           "example": "value-added",
           "member": "string",
           "name": "Group",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10083,7 +10118,7 @@
           "example": "1",
           "member": "int64",
           "name": "ZoneNumber",
-          "required": false,
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         }
