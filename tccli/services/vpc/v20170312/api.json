@@ -2709,6 +2709,13 @@
       "output": "ModifyVpcEndPointServiceWhiteListResponse",
       "status": "online"
     },
+    "ModifyVpcPeeringConnection": {
+      "document": "本接口（ModifyVpcPeeringConnection）用于修改私有网络对等连接属性。",
+      "input": "ModifyVpcPeeringConnectionRequest",
+      "name": "修改私有网络对等连接属性",
+      "output": "ModifyVpcPeeringConnectionResponse",
+      "status": "online"
+    },
     "ModifyVpnConnectionAttribute": {
       "document": "本接口（ModifyVpnConnectionAttribute）用于修改VPN通道。",
       "input": "ModifyVpnConnectionAttributeRequest",
@@ -2756,6 +2763,13 @@
       "input": "RejectAttachCcnInstancesRequest",
       "name": "云联网拒绝关联实例",
       "output": "RejectAttachCcnInstancesResponse",
+      "status": "online"
+    },
+    "RejectVpcPeeringConnection": {
+      "document": "本接口（RejectVpcPeeringConnection）用于驳回对等连接请求。",
+      "input": "RejectVpcPeeringConnectionRequest",
+      "name": "驳回对等连接",
+      "output": "RejectVpcPeeringConnectionResponse",
       "status": "online"
     },
     "ReleaseAddresses": {
@@ -36057,6 +36071,64 @@
       ],
       "type": "object"
     },
+    "ModifyVpcPeeringConnectionRequest": {
+      "document": "ModifyVpcPeeringConnection请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对等连接ID。",
+          "example": " pcx-0npfx81k",
+          "member": "string",
+          "name": "PeeringConnectionId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "对等连接名称。",
+          "example": "test",
+          "member": "string",
+          "name": "PeeringConnectionName",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "带宽上限，单位Mbps。",
+          "example": "10",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "计费模式，日峰值POSTPAID_BY_DAY_MAX，月95 POSTPAID_BY_MONTH_95。",
+          "example": "POSTPAID_BY_DAY_MAX",
+          "member": "string",
+          "name": "ChargeType",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpcPeeringConnectionResponse": {
+      "document": "ModifyVpcPeeringConnection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyVpnConnectionAttributeRequest": {
       "document": "ModifyVpnConnectionAttribute请求参数结构体",
       "members": [
@@ -38465,6 +38537,23 @@
     },
     "RejectAttachCcnInstancesResponse": {
       "document": "RejectAttachCcnInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RejectVpcPeeringConnectionRequest": {
+      "document": "RejectVpcPeeringConnection请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "RejectVpcPeeringConnectionResponse": {
+      "document": "RejectVpcPeeringConnection返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -371,6 +371,13 @@
       "output": "DescribeCloneListResponse",
       "status": "online"
     },
+    "DescribeCpuExpandStrategy": {
+      "document": "通过该 API 可以查询实例的 CPU 弹性扩容策略",
+      "input": "DescribeCpuExpandStrategyRequest",
+      "name": "查询实例的 CPU 弹性扩容策略",
+      "output": "DescribeCpuExpandStrategyResponse",
+      "status": "online"
+    },
     "DescribeDBFeatures": {
       "document": "本接口(DescribeDBFeatures)用于查询云数据库版本属性，包括是否支持数据库加密、数据库审计等功能。",
       "input": "DescribeDBFeaturesRequest",
@@ -938,11 +945,25 @@
       "output": "StartBatchRollbackResponse",
       "status": "online"
     },
+    "StartCpuExpand": {
+      "document": "通过该API，可以开启CPU弹性扩容，包括一次性的手动扩容以及自动弹性扩容。",
+      "input": "StartCpuExpandRequest",
+      "name": "开启CPU弹性扩容",
+      "output": "StartCpuExpandResponse",
+      "status": "online"
+    },
     "StartReplication": {
       "document": "开启 RO 复制，从主实例同步数据。",
       "input": "StartReplicationRequest",
       "name": "开启复制",
       "output": "StartReplicationResponse",
+      "status": "online"
+    },
+    "StopCpuExpand": {
+      "document": "通过该API，可以关闭 CPU 弹性扩容。",
+      "input": "StopCpuExpandRequest",
+      "name": "关闭 CPU 弹性扩容",
+      "output": "StopCpuExpandResponse",
       "status": "online"
     },
     "StopDBImportJob": {
@@ -2437,6 +2458,11 @@
         }
       ],
       "usage": "both"
+    },
+    "AutoStrategy": {
+      "document": "CPU弹性扩容的自动扩容策略",
+      "members": [],
+      "usage": "in"
     },
     "BackupConfig": {
       "document": "ECDB第二个从库的配置信息，只有ECDB实例才有这个字段",
@@ -5626,7 +5652,7 @@
         },
         {
           "disabled": false,
-          "document": "设置 root 帐号密码，密码规则：8 - 64 个字符，至少包含字母、数字、字符（支持的字符：_+-&=!@#$%^*()）中的两种，购买主实例时可指定该参数，购买只读实例或者灾备实例时指定该参数无意义。",
+          "document": "设置 root 账号密码，密码规则：8 - 64 个字符，至少包含字母、数字、字符（支持的字符：_+-&=!@#$%^*()）中的两种，购买主实例时可指定该参数，购买只读实例或者灾备实例时指定该参数无意义。",
           "example": "your_password",
           "is_base64": false,
           "member": "string",
@@ -5802,7 +5828,7 @@
         },
         {
           "disabled": false,
-          "document": "告警策略id数组。云监控DescribeAlarmPolicy接口返回的OriginId。",
+          "document": "告警策略id数组。腾讯云可观测平台DescribeAlarmPolicy接口返回的OriginId。",
           "example": "[]",
           "is_base64": false,
           "member": "int64",
@@ -8558,6 +8584,64 @@
           "name": "Items",
           "type": "list",
           "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCpuExpandStrategyRequest": {
+      "document": "DescribeCpuExpandStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID 。",
+          "example": "cdb-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCpuExpandStrategyResponse": {
+      "document": "DescribeCpuExpandStrategy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略类型。可选值 auto、manual。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "auto",
+          "member": "string",
+          "name": "Type",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "手动扩容的 CPU 。Type为 manual 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "string",
+          "name": "ExpandCpu",
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "自动扩容策略。Type 为 auto 时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "略",
+          "member": "string",
+          "name": "AutoStrategy",
+          "type": "string",
+          "value_allowed_null": true,
           "visibility": 1
         },
         {
@@ -18795,6 +18879,74 @@
       ],
       "type": "object"
     },
+    "StartCpuExpandRequest": {
+      "document": "StartCpuExpand请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID 。",
+          "example": "cdb-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "扩容类型。可选值：auto：代表进行自动扩容\nmanual：代表进行手动扩容",
+          "example": "auto",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "手动扩容时，扩容的CPU核心数。Type 为 manual 时必传。",
+          "example": "4",
+          "member": "int64",
+          "name": "ExpandCpu",
+          "required": false,
+          "type": "int",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "自动扩容策略。Type 为 auto 时必传。",
+          "example": "无",
+          "member": "AutoStrategy",
+          "name": "AutoStrategy",
+          "required": false,
+          "type": "object",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "StartCpuExpandResponse": {
+      "document": "StartCpuExpand返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务 ID 。可以调用DescribeAsyncRequest 传入该 ID ，进行任务执行进度的查询",
+          "example": "xxxxxxx-xxxxxxxx",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StartReplicationRequest": {
       "document": "StartReplication请求参数结构体",
       "members": [
@@ -18824,6 +18976,44 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopCpuExpandRequest": {
+      "document": "StopCpuExpand请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID 。",
+          "example": "cdb-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "StopCpuExpandResponse": {
+      "document": "StopCpuExpand返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务 ID 。可以调用DescribeAsyncRequest 传入该 ID ，进行任务执行进度的查询",
+          "example": "xxxxxxx-xxxxxxxx",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "type": "string",
+          "value_allowed_null": false,
           "visibility": 1
         },
         {

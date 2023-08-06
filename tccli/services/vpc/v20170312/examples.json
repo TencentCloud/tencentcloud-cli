@@ -3498,6 +3498,14 @@
         "title": "修改终端节点服务白名单"
       }
     ],
+    "ModifyVpcPeeringConnection": [
+      {
+        "document": "修改对等连接",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpcPeeringConnection\n<公共请求参数>\n\n{\n    \"PeeringConnectionName\": \"测试\",\n    \"Bandwidth\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e4008f6c-4bd9-42a7-9e6f-83043db431b2\"\n    }\n}",
+        "title": "修改对等连接"
+      }
+    ],
     "ModifyVpnConnectionAttribute": [
       {
         "document": "修改VPN通道",
@@ -3558,6 +3566,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=RejectAttachCcnInstances\n&CcnId=ccn-gree226l\n&Instances.0.InstanceType=VPC\n&Instances.0.InstanceId=vpc-3dr1zrr9\n&Instances.0.InstanceRegion=ap-guangzhou\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\n    }\n}",
         "title": "云联网拒绝关联实例"
+      }
+    ],
+    "RejectVpcPeeringConnection": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RejectVpcPeeringConnection\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e4008f6c-4bd9-42a7-9e6f-83043db431b2\"\n    }\n}",
+        "title": "拒绝对等连接请求"
       }
     ],
     "ReleaseAddresses": [

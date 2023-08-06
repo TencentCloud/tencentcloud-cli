@@ -15,7 +15,14 @@ tccli iss DescribeVideoDownloadUrl --cli-unfold-argument  \
 Output: 
 ```
 {
-    "Response": {}
+    "Response": {
+        "Data": {
+            "Url": "https://somedomain/video.mp4?source=xxxxxx",
+            "ActualBeginTime": "1668996000",
+            "ActualEndTime": "1668996600"
+        },
+        "RequestId": "MTg0YzZhOWY5NmFfYjBkMDJmMWVfMF8xNw=="
+    }
 }
 ```
 
@@ -37,7 +44,14 @@ tccli iss DescribeVideoDownloadUrl --cli-unfold-argument  \
 Output: 
 ```
 {
-    "Response": {}
+    "Response": {
+        "Data": {
+            "Url": "https://somedomain/video.mp4?source=xxxxxx",
+            "ActualBeginTime": "1668996000",
+            "ActualEndTime": "1668996600"
+        },
+        "RequestId": "MTg0YzZhOWY5NmFfYjBkMDJmMWVfMF8xNw=="
+    }
 }
 ```
 
