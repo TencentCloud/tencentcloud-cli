@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli ess CreateIntegrationUserRoles --cli-unfold-argument  \
-    --Agent.ProxyOrganizationId yDwcwUUgxxxxxb2eQRA5tb3wCvJ \
-    --UserIds yDwcwUUgyg3xxxx2eQS1BsaTeVDP \
-    --RoleIds 6fad1903xxxx6921046819037 \
-    --Operator.UserId yDwnHUUxxxxMR3gQvehewF4C5
+    --Agent.ProxyOrganizationId yDwcwUUg*****b2eQRA5tb3wCvJ \
+    --UserIds yDwcwUUgyg3****2eQS1BsaTeVDP \
+    --RoleIds 6fad1903****6921046819037 \
+    --Operator.UserId yDwnHUU****MR3gQvehewF4C5
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
 {
     "Response": {
         "FailedCreateRoleData": [],
-        "RequestId": "s1679xxxxx21175"
+        "RequestId": "s1679*****21175"
     }
 }
 ```

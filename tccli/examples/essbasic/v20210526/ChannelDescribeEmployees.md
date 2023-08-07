@@ -1,6 +1,6 @@
 **Example 1: 查询员工**
 
-查询员工
+不带过滤条件查询员工
 
 Input: 
 
@@ -23,7 +23,7 @@ Output:
             {
                 "CreatedOn": 1658114069,
                 "Department": {
-                    "DepartmentId": "dp-8a801d51xxxx820e2aed8155f2",
+                    "DepartmentId": "dp-8a801d51****820e2aed8155f2",
                     "DepartmentName": "test企业"
                 },
                 "DisplayName": "test",
@@ -32,23 +32,23 @@ Output:
                 "OpenId": "",
                 "Roles": [
                     {
-                        "RoleId": "ea4ab302xxxx80dd388e6da6902",
+                        "RoleId": "ea4ab302****80dd388e6da6902",
                         "RoleName": "法人"
                     },
                     {
-                        "RoleId": "4fcbf3624xxxxdf77e30ea6c63",
+                        "RoleId": "4fcbf3624****df77e30ea6c63",
                         "RoleName": "超级管理员"
                     },
                     {
-                        "RoleId": "9b7dcf74abxxxxb57c9fecf8e9",
+                        "RoleId": "9b7dcf74ab****b57c9fecf8e9",
                         "RoleName": "业务员"
                     },
                     {
-                        "RoleId": "4dff1ceaxxxxx6fc061010b",
+                        "RoleId": "4dff1cea****6fc061010b",
                         "RoleName": "企业员工"
                     }
                 ],
-                "UserId": "yDRtvUUgygqxxxxO4zjESsMBKpnZs",
+                "UserId": "yDRtvUUgygq****O4zjESsMBKpnZs",
                 "Verified": true,
                 "VerifiedOn": 1658114065,
                 "QuiteJob": 0
@@ -56,7 +56,7 @@ Output:
         ],
         "Limit": 20,
         "Offset": 0,
-        "RequestId": "s16635xxxx97576195",
+        "RequestId": "s16635***97576195",
         "TotalCount": 1
     }
 }

@@ -1,3 +1,299 @@
+# Release 3.0.824.1
+
+## 语音识别(asr) 版本：2019-06-14
+
+### 第 16 次发布
+
+发布时间：2023-08-08 01:07:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [VoicePrintCount](http://document.tencentcloudapi.woa.com/document/product/1093/81582)
+
+新增数据结构：
+
+* [VoicePrintCountData](http://document.tencentcloudapi.woa.com/document/product/1093/37824#VoicePrintCountData)
+
+
+
+## 云呼叫中心(ccc) 版本：2020-02-10
+
+### 第 39 次发布
+
+发布时间：2023-08-08 01:11:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateAdminURL](http://document.tencentcloudapi.woa.com/document/product/679/81583)
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 37 次发布
+
+发布时间：2023-08-08 01:16:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateMachineGroup](http://document.tencentcloudapi.woa.com/document/product/614/56440)
+
+	* 新增入参：OSType
+
+
+新增数据结构：
+
+* [EventLog](http://document.tencentcloudapi.woa.com/document/product/614/56471#EventLog)
+
+修改数据结构：
+
+* [ExtractRuleInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#ExtractRuleInfo)
+
+	* 新增成员：EventLogRules
+
+* [MachineGroupInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#MachineGroupInfo)
+
+	* 新增成员：OSType
+
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 3 次发布
+
+发布时间：2023-08-08 01:18:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRiskCenterScanTask](http://document.tencentcloudapi.woa.com/document/product/1726/80809)
+
+	* 新增出参：Status, UnAuthAsset
+
+
+修改数据结构：
+
+* [AssetClusterPod](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AssetClusterPod)
+
+	* 新增成员：IsNewAsset
+
+	* <font color="#dd0000">**修改成员**：</font>AppId, Uin, Nick, Region, AssetId, AssetName, InstanceCreateTime, Namespace, Status, ClusterId, ClusterName, MachineId, MachineName, PodIp, ServiceCount, ContainerCount, PublicIp, PrivateIp, IsCore
+
+* [CVMAssetVO](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CVMAssetVO)
+
+	* 新增成员：IsNewAsset
+
+* [DBAssetVO](http://document.tencentcloudapi.woa.com/document/product/1726/80814#DBAssetVO)
+
+	* 新增成员：IsNewAsset
+
+	* <font color="#dd0000">**修改成员**：</font>AssetId, AssetName, AssetType, VpcId, VpcName, Region, Domain, AssetCreateTime, LastScanTime, ConfigurationRisk, Attack, Access, ScanTask, AppId, Uin, NickName, Port, Tag, PrivateIp, PublicIp, Status, IsCore
+
+* [DomainAssetVO](http://document.tencentcloudapi.woa.com/document/product/1726/80814#DomainAssetVO)
+
+	* 新增成员：IsNewAsset, VerifyDomain, VerifyTXTRecord, VerifyStatus
+
+* [IpAssetListVO](http://document.tencentcloudapi.woa.com/document/product/1726/80814#IpAssetListVO)
+
+	* 新增成员：IsNewAsset, VerifyStatus
+
+	* <font color="#dd0000">**修改成员**：</font>AssetId, AssetName, AssetType, Region, CFWStatus, AssetCreateTime, PublicIp, PublicIpType, VpcId, VpcName, AppId, Uin, NickName, IsCore, IsCloud, Attack, Access, Intercept, InBandwidth, OutBandwidth, InFlow, OutFlow, LastScanTime, PortRisk, VulnerabilityRisk, ConfigurationRisk, ScanTask, WeakPassword, WebContentRisk, Tag, AddressId, MemberId, RiskExposure
+
+* [SubnetAsset](http://document.tencentcloudapi.woa.com/document/product/1726/80814#SubnetAsset)
+
+	* 新增成员：IsNewAsset
+
+	* <font color="#dd0000">**修改成员**：</font>AppId, Uin, AssetId, AssetName, Region, VpcId, VpcName, Tag, Nick, CIDR, Zone, CVM, AvailableIp, CreateTime, ConfigureRisk, ScanTask, LastScanTime, IsCore
+
+* [Vpc](http://document.tencentcloudapi.woa.com/document/product/1726/80814#Vpc)
+
+	* 新增成员：IsNewAsset, IsCore
+
+	* <font color="#dd0000">**修改成员**：</font>Subnet, ConnectedVpc, AssetId, Region, CVM, Tag, DNS, AssetName, CIDR, CreateTime, AppId, Uin, Nick
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 55 次发布
+
+发布时间：2023-08-08 01:20:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CynosdbClusterDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbClusterDetail)
+
+	* <font color="#dd0000">**修改成员**：</font>ResourcePackages, RenewFlag
+
+
+
+
+## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
+
+### 第 13 次发布
+
+发布时间：2023-08-08 01:21:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDevices](http://document.tencentcloudapi.woa.com/document/product/1492/74779)
+
+	* 新增入参：ManagedAccount
+
+
+
+
+## 数据连接器(eis) 版本：2021-06-01
+
+### 第 8 次发布
+
+发布时间：2023-08-08 01:25:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ListDeployableRuntimesMC](http://document.tencentcloudapi.woa.com/document/product/1270/57965)
+
+	* 新增入参：RuntimeClass
+
+
+修改数据结构：
+
+* [AbstractRuntimeMC](http://document.tencentcloudapi.woa.com/document/product/1270/57968#AbstractRuntimeMC)
+
+	* 新增成员：MatchExtensions
+
+* [RuntimeExtensionMC](http://document.tencentcloudapi.woa.com/document/product/1270/57968#RuntimeExtensionMC)
+
+	* <font color="#dd0000">**修改成员**：</font>Size, Replica, Name, Status, CreatedAt, UpdatedAt
+
+
+
+
+## 数据连接器(eis) 版本：2020-07-15
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 19 次发布
+
+发布时间：2023-08-08 01:26:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreatePreparedPersonalEsign](http://document.tencentcloudapi.woa.com/document/product/1668/79307)
+
+	* 新增入参：Agent
+
+
+修改数据结构：
+
+* [GroupOrganization](http://document.tencentcloudapi.woa.com/document/product/1668/79360#GroupOrganization)
+
+	* <font color="#dd0000">**修改成员**：</font>Name, Alias, OrganizationId, UpdateTime, Status, IsMainOrganization, IdCardNumber, AdminInfo, License, LicenseExpireTime, JoinTime, FlowEngineEnable
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 75 次发布
+
+发布时间：2023-08-08 01:26:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelDescribeEmployees](http://document.tencentcloudapi.woa.com/document/product/1595/76386)
+
+	* <font color="#dd0000">**修改入参**：</font>Agent
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 31 次发布
+
+发布时间：2023-08-08 01:26:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ApplyWebVerificationBizTokenIntl](http://document.tencentcloudapi.woa.com/document/product/1007/81585)
+* [GetWebVerificationResultIntl](http://document.tencentcloudapi.woa.com/document/product/1007/81584)
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 15 次发布
+
+发布时间：2023-08-08 01:51:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBatchOperateTask](http://document.tencentcloudapi.woa.com/document/product/1607/81040)
+
+	* 新增入参：DatasourceIdList, DatasourceTypeList, CycleUnitList, CanSubmit
+
+
+修改数据结构：
+
+* [DescribeBatchOperateTaskDTO](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DescribeBatchOperateTaskDTO)
+
+	* 新增成员：CycleUnit, ScheduleDesc, DatasourceId, DatasourceType
+
+
+
+
 # Release 3.0.823.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

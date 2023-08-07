@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ess CreateIntegrationDepartment --cli-unfold-argument  \
-    --Operator.UserId yDwgKUUcXXXXXXXXXXXXXXXXXXQZDRuD \
+    --Operator.UserId yDwgKUUc************QZDRuD \
     --DeptName 运营部 \
-    --ParentDeptId yDwgIUUckp1gxxxxxxxxE8xOm12b9 \
+    --ParentDeptId yDwgIUUckp1g**********E8xOm12b9 \
     --DeptOpenId open_dept2 \
     --OrderNo 1
 ```
@@ -17,8 +17,8 @@ Output:
 ```
 {
     "Response": {
-        "DeptId": "yDwgIUUckp1gxxxxxxxxE8xOm1567",
-        "RequestId": "s1679xxxxx21175"
+        "DeptId": "yDwgIUUckp1g********E8xOm1567",
+        "RequestId": "s1679*****21175"
     }
 }
 ```

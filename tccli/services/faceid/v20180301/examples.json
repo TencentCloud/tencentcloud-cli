@@ -16,6 +16,14 @@
         "title": "获取Token成功"
       }
     ],
+    "ApplyWebVerificationBizTokenIntl": [
+      {
+        "document": "申请Web核验服务Token",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetWebFaceIDToken\n<公共请求参数>\n\n{\n    \"CompareImageBase64\": \"CompareImageBase64String\",\n    \"RedirectURL\": \"https://www.tencentcloud.com/products/faceid\",\n    \"Extra\": \"ExtraString\"\n}",
+        "output": "{\n    \"Response\": {\n        \"VerificationUrl\": \"https://intl.faceid.qq.com/reflect/?token=81EEF678-28EE-4759-A82E-6CBBBE6BC442\",\n        \"BizToken\": \"81EEF678-28EE-4759-A82E-6CBBBE6BC442\",\n        \"RequestId\": \"b16194cd-8f52-4e66-882a-eb6bf15c016d\"\n    }\n}",
+        "title": "申请Web核验服务Token"
+      }
+    ],
     "ApplyWebVerificationToken": [
       {
         "document": "",
@@ -276,6 +284,14 @@
         "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetWebVerificationResult\n<公共请求参数>\n\n{\n    \"BizToken\": \"EE13636D-1985-42CA-BD61-73F4C8B687E6\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"ErrorMsg\": \"Success\",\n        \"RequestId\": \"a6e62364-60d4-4eb6-8908-da3ff3d601f8\",\n        \"VerificationDetailList\": [\n            {\n                \"ErrorCode\": 0,\n                \"ErrorMsg\": \"Success\",\n                \"LivenessErrorCode\": 0,\n                \"LivenessErrorMsg\": \"Success\",\n                \"CompareErrorCode\": 0,\n                \"CompareErrorMsg\": \"Success\",\n                \"Similarity\": 100,\n                \"ReqTimestamp\": 1637291599353,\n                \"Seq\": \"7269e30e-c142-46ba-aa60-b5677bf69d24\"\n            }\n        ],\n        \"VideoBestFrameMd5\": \"30fa34052530d0ba033b956d06eb89b5\",\n        \"VideoBestFrameUrl\": \"https://xxx.cos.ap-singapore.myqcloud.com/faceid.png?q-sign-algorithm=sha1&q-ak=AKIDRPHPMw6HL4PeDO175x_vY2hjAja5nFelfAiy60n0irDQLQWYSZ0dfJ1tIrTjFOSJ&q-sign-time=1637637685;1637641285&q-key-time=1637637685;1637641285&q-header-list=host&q-url-param-list=&q-signature=bab269f6585d3f42a60d0ad4e94e229e6d3f8959&x-cos-security-token=ZR3Vx8aT4Dgb5c95F7FIMc9Pw6hC25baea5274fa45568cd34ca7c53a3867ec4aB5vbfkJ5tM3Td3p18cMurjkx1YsMN0WeEQFzoSTDpi9z0Y4UYktcEk6ewfErVQmuyX2za_xh0a1KhvWf7et0d0XHl4nHXhPTjzgUVazrdIRFhcfO0VKO12T2MoN-cN_Ltp5jasLW7PUTVRZFDvkXCxVSsvxb15W1gdX_7K8x2fORKSMjbQqAL51EB19SD4R2\",\n        \"VideoMd5\": \"30fa34052530d0ba033b956d06eb89b5\",\n        \"VideoUrl\": \"https://xxx.cos.ap-singapore.myqcloud.com/faceid.png?q-sign-algorithm=sha1&q-ak=AKIDRPHPMw6HL4PeDO175x_vY2hjAja5nFelfAiy60n0irDQLQWYSZ0dfJ1tIrTjFOSJ&q-sign-time=1637637685;1637641285&q-key-time=1637637685;1637641285&q-header-list=host&q-url-param-list=&q-signature=bab269f6585d3f42a60d0ad4e94e229e6d3f8959&x-cos-security-token=ZR3Vx8aT4Dgb5c95F7FIMc9Pw6hC25baea5274fa45568cd34ca7c53a3867ec4aB5vbfkJ5tM3Td3p18cMurjkx1YsMN0WeEQFzoSTDpi9z0Y4UYktcEk6ewfErVQmuyX2za_xh0a1KhvWf7et0d0XHl4nHXhPTjzgUVazrdIRFhcfO0VKO12T2MoN-cN_Ltp5jasLW7PUTVRZFDvkXCxVSsvxb15W1gdX_7K8x2fORKSMjbQqAL51EB19SD4R2\"\n    }\n}",
         "title": "成功结果"
+      }
+    ],
+    "GetWebVerificationResultIntl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetWebVerificationResult\n<公共请求参数>\n\n{\n    \"BizToken\": \"EE13636D-1985-42CA-BD61-73F4C8B687E6\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"ErrorMsg\": \"Success\",\n        \"RequestId\": \"a6e62364-60d4-4eb6-8908-da3ff3d601f8\",\n        \"VerificationDetailList\": [\n            {\n                \"ErrorCode\": 0,\n                \"ErrorMsg\": \"Success\",\n                \"LivenessErrorCode\": 0,\n                \"LivenessErrorMsg\": \"Success\",\n                \"CompareErrorCode\": 0,\n                \"CompareErrorMsg\": \"Success\",\n                \"Similarity\": 100,\n                \"ReqTimestamp\": 1637291599353,\n                \"Seq\": \"7269e30e-c142-46ba-aa60-b5677bf69d24\"\n            }\n        ],\n        \"BestFrameBase64\": \"BestFrameBase64string\",\n        \"VideoBase64\": \"VideoBase64string\"\n    }\n}",
+        "title": "获取Web核验服务结果信息"
       }
     ],
     "IdCardOCRVerification": [

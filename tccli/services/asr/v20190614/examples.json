@@ -190,6 +190,14 @@
         "title": "更新热词表"
       }
     ],
+    "VoicePrintCount": [
+      {
+        "document": "返回注册总数",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintDelete\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Total\": 1\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "VoicePrintDelete": [
       {
         "document": "删除保存的说话人信息",

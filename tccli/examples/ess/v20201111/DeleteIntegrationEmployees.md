@@ -17,20 +17,20 @@ Output:
         "DeleteEmployeeResult": {
             "FailedEmployeeData": [
                 {
-                    "OpenId": "SomeopenID",
+                    "OpenId": "open123",
                     "Reason": "员工不存在",
-                    "UserId": "SomeUserID"
+                    "UserId": "ywksdfisjfks***023023df"
                 }
             ],
             "SuccessEmployeeData": [
                 {
-                    "Mobile": "133XXXX1234",
-                    "UserId": "SomeUserID",
-                    "DisplayName": "SomeOne"
+                    "Mobile": "133*****1234",
+                    "UserId": "ywklsjf*****9shdfdsk",
+                    "DisplayName": "张*三"
                 }
             ]
         },
-        "RequestId": "req123"
+        "RequestId": "s1290192***20323023"
     }
 }
 ```
