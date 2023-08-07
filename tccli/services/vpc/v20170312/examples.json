@@ -8,6 +8,14 @@
         "title": "云联网接受关联实例"
       }
     ],
+    "AcceptVpcPeeringConnection": [
+      {
+        "document": "接受对等连接请求",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AcceptVpcPeeringConnection\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e4008f6c-4bd9-42a7-9e6f-83043db431b2\"\n    }\n}",
+        "title": "接受对等连接请求"
+      }
+    ],
     "AddBandwidthPackageResources": [
       {
         "document": "",
@@ -602,6 +610,14 @@
         "title": "创建终端服务白名单"
       }
     ],
+    "CreateVpcPeeringConnection": [
+      {
+        "document": "创建对等连接",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVpcPeeringConnection\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e4008f6c-4bd9-42a7-9e6f-83043db431b2\"\n    }\n}",
+        "title": "创建对等连接"
+      }
+    ],
     "CreateVpnConnection": [
       {
         "document": "创建VPN通道",
@@ -954,6 +970,14 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVpcEndPointServiceWhiteList\n<公共请求参数>\n\n{\n    \"UserUin\": [\n        \"100000059551\"\n    ],\n    \"EndPointServiceId\": \"vpcsvc-kngiybxl\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ecaa7a90-a2fd-4fa3-8bf8-7d0723c95a99\"\n    }\n}",
         "title": "删除终端节点服务白名单"
+      }
+    ],
+    "DeleteVpcPeeringConnection": [
+      {
+        "document": "删除对等连接",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVpcPeeringConnection\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e4008f6c-4bd9-42a7-9e6f-83043db431b2\"\n    }\n}",
+        "title": "删除对等连接"
       }
     ],
     "DeleteVpnConnection": [
@@ -1728,6 +1752,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeVpcLimits\n&LimitTypes.0=appid-max-vpcs\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"VpcLimitSet\": [\n            {\n                \"LimitType\": \"appid-max-vpcs\",\n                \"LimitValue\": 5\n            }\n        ],\n        \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\n    }\n}",
         "title": "获取私有网络配额"
+      }
+    ],
+    "DescribeVpcPeeringConnections": [
+      {
+        "document": "根据资源ID查询实例信息",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeVpcPeeringConnections\n&PeeringConnectionIds.0=pcx-test1234\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c9f0e94c-3e0c-4d39-8155-fcf5ba13ec96\"\n    }\n}",
+        "title": "根据资源ID查询实例信息"
       }
     ],
     "DescribeVpcPrivateIpAddresses": [
@@ -2536,6 +2568,14 @@
         "title": "修改终端节点服务白名单"
       }
     ],
+    "ModifyVpcPeeringConnection": [
+      {
+        "document": "修改对等连接",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpcPeeringConnection\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e4008f6c-4bd9-42a7-9e6f-83043db431b2\"\n    }\n}",
+        "title": "修改对等连接"
+      }
+    ],
     "ModifyVpnConnectionAttribute": [
       {
         "document": "修改VPN通道",
@@ -2596,6 +2636,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=RejectAttachCcnInstances\n&CcnId=ccn-gree226l\n&Instances.0.InstanceType=VPC\n&Instances.0.InstanceId=vpc-3dr1zrr9\n&Instances.0.InstanceRegion=ap-guangzhou\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\n    }\n}",
         "title": "云联网拒绝关联实例"
+      }
+    ],
+    "RejectVpcPeeringConnection": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RejectVpcPeeringConnection\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e4008f6c-4bd9-42a7-9e6f-83043db431b2\"\n    }\n}",
+        "title": "拒绝对等连接请求"
       }
     ],
     "ReleaseAddresses": [

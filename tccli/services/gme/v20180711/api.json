@@ -22,7 +22,7 @@
       "status": "online"
     },
     "CreateScanUser": {
-      "document": "新增自定义送检用户",
+      "document": "新增自定义送检用户。**接口使用前提**：目前 CreateScanUser 接口通过白名单开放，如需使用，需要 [提交工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1)。",
       "input": "CreateScanUserRequest",
       "name": "新增自定义送检用户",
       "output": "CreateScanUserResponse",
@@ -43,7 +43,7 @@
       "status": "online"
     },
     "DeleteScanUser": {
-      "document": "删除自定义送检用户",
+      "document": "删除自定义送检用户。**接口使用前提**：目前 DeleteScanUser 接口通过白名单开放，如需使用，需要 [提交工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1)。",
       "input": "DeleteScanUserRequest",
       "name": "删除自定义送检用户",
       "output": "DeleteScanUserResponse",
@@ -78,7 +78,7 @@
       "status": "online"
     },
     "DescribeRealtimeScanConfig": {
-      "document": "获取用户自定义送检信息",
+      "document": "获取用户自定义送检信息。**接口使用前提**：目前 DescribeRealtimeScanConfig 接口通过白名单开放，如需使用，需要 [提交工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1)。",
       "input": "DescribeRealtimeScanConfigRequest",
       "name": "获取用户自定义送检信息",
       "output": "DescribeRealtimeScanConfigResponse",
@@ -183,14 +183,14 @@
       "status": "online"
     },
     "UpdateScanRooms": {
-      "document": "更新自定义送检房间号",
+      "document": "更新自定义送检房间号。**接口使用前提**：目前 UpdateScanRooms 接口通过白名单开放，如需使用，需要 [提交工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1)。",
       "input": "UpdateScanRoomsRequest",
       "name": "更新送检房间号",
       "output": "UpdateScanRoomsResponse",
       "status": "online"
     },
     "UpdateScanUsers": {
-      "document": "更新自定义送检用户号",
+      "document": "更新自定义送检用户号。\n**接口使用前提**：目前 UpdateScanUsers 接口通过白名单开放，如需使用，需要 [提交工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1)。",
       "input": "UpdateScanUsersRequest",
       "name": "更新送检用户号",
       "output": "UpdateScanUsersResponse",
@@ -947,6 +947,7 @@
           "disabled": false,
           "document": "应用ID，登录控制台 - 服务管理创建应用得到的AppID",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "BizId",
           "required": true,
@@ -956,6 +957,7 @@
           "disabled": false,
           "document": "需要新增送检的用户号。示例：1234",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "UserId",
           "required": false,
@@ -973,6 +975,7 @@
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1192,6 +1195,7 @@
           "disabled": false,
           "document": "应用ID，登录控制台 - 服务管理创建应用得到的AppID",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "BizId",
           "required": true,
@@ -1201,6 +1205,7 @@
           "disabled": false,
           "document": "需要删除送检的用户号。示例：1234",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "UserId",
           "required": false,
@@ -1218,6 +1223,7 @@
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1519,6 +1525,7 @@
           "disabled": false,
           "document": "应用ID",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "BizId",
           "required": true,
@@ -1536,6 +1543,7 @@
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1545,6 +1553,7 @@
           "example": "1",
           "member": "uint64",
           "name": "BizId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1554,6 +1563,7 @@
           "example": "0",
           "member": "int64",
           "name": "AuditType",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1563,6 +1573,7 @@
           "example": "[\"0\"]",
           "member": "string",
           "name": "UserIdRegex",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1572,6 +1583,7 @@
           "example": "[\"0\"]",
           "member": "string",
           "name": "RoomIdRegex",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1581,6 +1593,7 @@
           "example": "\"1\"",
           "member": "string",
           "name": "UserIdString",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1590,6 +1603,7 @@
           "example": "\"1\"",
           "member": "string",
           "name": "RoomIdString",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3347,6 +3361,7 @@
           "disabled": false,
           "document": "应用ID",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "BizId",
           "required": true,
@@ -3356,6 +3371,7 @@
           "disabled": false,
           "document": "需要送检的所有房间号。多个房间号之间用\",\"分隔。示例：\"0001,0002,0003\"",
           "example": "\"1\"",
+          "is_base64": false,
           "member": "string",
           "name": "RoomIdString",
           "required": false,
@@ -3365,6 +3381,7 @@
           "disabled": false,
           "document": "符合此正则表达式规则的房间号将被送检。示例：[\"^6.*\"] 表示所有以6开头的房间号将被送检",
           "example": "[\"1\"]",
+          "is_base64": false,
           "member": "string",
           "name": "RoomIdRegex",
           "required": false,
@@ -3382,6 +3399,7 @@
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3401,6 +3419,7 @@
           "disabled": false,
           "document": "应用ID",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "BizId",
           "required": true,
@@ -3410,6 +3429,7 @@
           "disabled": false,
           "document": "需要送检的所有用户号。多个用户号之间用\",\"分隔。示例：\"0001,0002,0003\"",
           "example": "\"1\"",
+          "is_base64": false,
           "member": "string",
           "name": "UserIdString",
           "required": false,
@@ -3419,6 +3439,7 @@
           "disabled": false,
           "document": "符合此正则表达式规则的用户号将被送检。示例：[\"^6.*\"] 表示所有以6开头的用户号将被送检",
           "example": "[\"1\"]",
+          "is_base64": false,
           "member": "string",
           "name": "UserIdRegex",
           "required": false,
@@ -3436,6 +3457,7 @@
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

@@ -476,6 +476,13 @@
       "output": "DescribeTasksResponse",
       "status": "online"
     },
+    "DescribeUserRoles": {
+      "document": "列举用户角色信息",
+      "input": "DescribeUserRolesRequest",
+      "name": "列举用户角色信息",
+      "output": "DescribeUserRolesResponse",
+      "status": "online"
+    },
     "DescribeUsers": {
       "document": "获取用户列表信息",
       "input": "DescribeUsersRequest",
@@ -1816,6 +1823,36 @@
         }
       ],
       "usage": "out"
+    },
+    "CosPermission": {
+      "document": "cos权限描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cos路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cosn://***",
+          "is_base64": false,
+          "member": "string",
+          "name": "CosPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限【\"read\",\"write\"】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"read\",\"write\"]",
+          "is_base64": false,
+          "member": "string",
+          "name": "Permissions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "CreateDMSDatabaseRequest": {
       "document": "CreateDMSDatabase请求参数结构体",
@@ -7765,6 +7802,94 @@
       ],
       "type": "object"
     },
+    "DescribeUserRolesRequest": {
+      "document": "DescribeUserRoles请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列举的数量限制",
+          "example": "无",
+          "is_base64": false,
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "列举的偏移位置",
+          "example": "无",
+          "is_base64": false,
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "按照arn模糊列举",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Fuzzy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回结果按照该字段排序",
+          "example": "modify-time",
+          "is_base64": false,
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "正序或者倒序，例如：desc",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Sorting",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserRolesResponse": {
+      "document": "DescribeUserRoles返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合列举条件的总数量",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户角色信息",
+          "example": "无",
+          "member": "UserRole",
+          "name": "UserRoles",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUsersRequest": {
       "document": "DescribeUsers请求参数结构体",
       "members": [
@@ -12893,6 +13018,112 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UserRole": {
+      "document": "用户角色",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色ID",
+          "example": "无",
+          "member": "int64",
+          "name": "RoleId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户app ID",
+          "example": "无",
+          "member": "string",
+          "name": "AppId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "角色权限",
+          "example": "无",
+          "member": "string",
+          "name": "Arn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近修改时间戳",
+          "example": "无",
+          "member": "int64",
+          "name": "ModifyTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "角色描述信息",
+          "example": "无",
+          "member": "string",
+          "name": "Desc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "角色名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RoleName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建者UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Creator",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cos授权路径列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CosPermission",
+          "name": "CosPermissionList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cam策略json\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PermissionJson",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

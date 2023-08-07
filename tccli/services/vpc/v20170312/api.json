@@ -7,6 +7,13 @@
       "output": "AcceptAttachCcnInstancesResponse",
       "status": "online"
     },
+    "AcceptVpcPeeringConnection": {
+      "document": "本接口（AcceptVpcPeeringConnection）用于接受对等连接请求。",
+      "input": "AcceptVpcPeeringConnectionRequest",
+      "name": "接受对等连接",
+      "output": "AcceptVpcPeeringConnectionResponse",
+      "status": "online"
+    },
     "AddBandwidthPackageResources": {
       "document": "接口用于添加带宽包资源，包括[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)和[负载均衡](https://cloud.tencent.com/document/product/214/517)等",
       "input": "AddBandwidthPackageResourcesRequest",
@@ -448,6 +455,13 @@
       "output": "CreateVpcEndPointServiceWhiteListResponse",
       "status": "online"
     },
+    "CreateVpcPeeringConnection": {
+      "document": "本接口（CreateVpcPeeringConnection）用于创建私有网络对等连接。",
+      "input": "CreateVpcPeeringConnectionRequest",
+      "name": "创建私有网络对等连接",
+      "output": "CreateVpcPeeringConnectionResponse",
+      "status": "online"
+    },
     "CreateVpnConnection": {
       "document": "本接口（CreateVpnConnection）用于创建VPN通道。\n>?本接口为异步接口，可调用 [DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037) 接口查询任务执行结果，待任务执行成功后再进行其他操作。\n>",
       "input": "CreateVpnConnectionRequest",
@@ -719,6 +733,13 @@
       "input": "DeleteVpcEndPointServiceWhiteListRequest",
       "name": "删除终端节点服务白名单",
       "output": "DeleteVpcEndPointServiceWhiteListResponse",
+      "status": "online"
+    },
+    "DeleteVpcPeeringConnection": {
+      "document": "本接口（DeleteVpcPeeringConnection）用于删除私有网络对等连接。",
+      "input": "DeleteVpcPeeringConnectionRequest",
+      "name": "删除私有网络对等连接",
+      "output": "DeleteVpcPeeringConnectionResponse",
       "status": "online"
     },
     "DeleteVpnConnection": {
@@ -1265,6 +1286,13 @@
       "input": "DescribeVpcLimitsRequest",
       "name": "获取私有网络配额",
       "output": "DescribeVpcLimitsResponse",
+      "status": "online"
+    },
+    "DescribeVpcPeeringConnections": {
+      "document": "查询私有网络对等连接。",
+      "input": "DescribeVpcPeeringConnectionsRequest",
+      "name": "查询私有网络对等连接",
+      "output": "DescribeVpcPeeringConnectionsResponse",
       "status": "online"
     },
     "DescribeVpcPrivateIpAddresses": {
@@ -1904,6 +1932,13 @@
       "output": "ModifyVpcEndPointServiceWhiteListResponse",
       "status": "online"
     },
+    "ModifyVpcPeeringConnection": {
+      "document": "本接口（ModifyVpcPeeringConnection）用于修改私有网络对等连接属性。",
+      "input": "ModifyVpcPeeringConnectionRequest",
+      "name": "修改私有网络对等连接属性",
+      "output": "ModifyVpcPeeringConnectionResponse",
+      "status": "online"
+    },
     "ModifyVpnConnectionAttribute": {
       "document": "本接口（ModifyVpnConnectionAttribute）用于修改VPN通道。",
       "input": "ModifyVpnConnectionAttributeRequest",
@@ -1951,6 +1986,13 @@
       "input": "RejectAttachCcnInstancesRequest",
       "name": "云联网拒绝关联实例",
       "output": "RejectAttachCcnInstancesResponse",
+      "status": "online"
+    },
+    "RejectVpcPeeringConnection": {
+      "document": "本接口（RejectVpcPeeringConnection）用于驳回对等连接请求。",
+      "input": "RejectVpcPeeringConnectionRequest",
+      "name": "驳回对等连接",
+      "output": "RejectVpcPeeringConnectionResponse",
       "status": "online"
     },
     "ReleaseAddresses": {
@@ -2185,6 +2227,23 @@
     },
     "AcceptAttachCcnInstancesResponse": {
       "document": "AcceptAttachCcnInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AcceptVpcPeeringConnectionRequest": {
+      "document": "AcceptVpcPeeringConnection请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "AcceptVpcPeeringConnectionResponse": {
+      "document": "AcceptVpcPeeringConnection返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7831,6 +7890,23 @@
       ],
       "type": "object"
     },
+    "CreateVpcPeeringConnectionRequest": {
+      "document": "CreateVpcPeeringConnection请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateVpcPeeringConnectionResponse": {
+      "document": "CreateVpcPeeringConnection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateVpcRequest": {
       "document": "CreateVpc请求参数结构体",
       "members": [
@@ -10034,6 +10110,23 @@
     },
     "DeleteVpcEndPointServiceWhiteListResponse": {
       "document": "DeleteVpcEndPointServiceWhiteList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVpcPeeringConnectionRequest": {
+      "document": "DeleteVpcPeeringConnection请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeleteVpcPeeringConnectionResponse": {
+      "document": "DeleteVpcPeeringConnection返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -15245,6 +15338,78 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcPeeringConnectionsRequest": {
+      "document": "DescribeVpcPeeringConnections请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对等连接唯一ID数组。",
+          "example": "[\"pcx-test1234\"]",
+          "member": "string",
+          "name": "PeeringConnectionIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，参数不支持同时指定PeeringConnectionIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>state String - （过滤条件）对等连接状态，可选值有：PENDING，投放中；ACTIVE，使用中；EXPIRED，已过期；REJECTED，拒绝。</li>\n<li>peering-connection-name - String - （过滤条件）对等连接名称。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "请求对象个数。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，可选值有：CreatedTime，PeeringConnectionName。",
+          "example": "CreatedTime",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式：DESC，降序；ASC，升序。",
+          "example": "DESC",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcPeeringConnectionsResponse": {
+      "document": "DescribeVpcPeeringConnections返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -21700,6 +21865,23 @@
       ],
       "type": "object"
     },
+    "ModifyVpcPeeringConnectionRequest": {
+      "document": "ModifyVpcPeeringConnection请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyVpcPeeringConnectionResponse": {
+      "document": "ModifyVpcPeeringConnection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyVpnConnectionAttributeRequest": {
       "document": "ModifyVpnConnectionAttribute请求参数结构体",
       "members": [
@@ -23558,6 +23740,23 @@
     },
     "RejectAttachCcnInstancesResponse": {
       "document": "RejectAttachCcnInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RejectVpcPeeringConnectionRequest": {
+      "document": "RejectVpcPeeringConnection请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "RejectVpcPeeringConnectionResponse": {
+      "document": "RejectVpcPeeringConnection返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -1366,9 +1366,9 @@
     ],
     "ModifyClusterAttribute": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterAttribute\n<公共请求参数>\n\n{\n    \"AutoUpgradeClusterLevel\": {\n        \"IsAutoUpgrade\": true\n    },\n    \"ClusterName\": \"tke-test\",\n    \"ProjectId\": 0,\n    \"ClusterDesc\": \"测试\",\n    \"ClusterId\": \"cls-7ph3twqe\",\n    \"ClusterLevel\": \"L5\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AutoUpgradeClusterLevel\": {\n            \"IsAutoUpgrade\": true\n        },\n        \"ClusterName\": \"tke-test\",\n        \"ProjectId\": 0,\n        \"ClusterDesc\": \"测试\",\n        \"QGPUShareEnable\": true,\n        \"RequestId\": \"24564577-a642-4164-8752-4668d4ca8886\",\n        \"ClusterLevel\": \"L5\"\n    }\n}",
+        "document": "修改集群属性",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterAttribute\n<公共请求参数>\n\n{\n    \"AutoUpgradeClusterLevel\": {\n        \"IsAutoUpgrade\": true\n    },\n    \"ClusterName\": \"tke-test\",\n    \"ProjectId\": 0,\n    \"ClusterDesc\": \"测试\",\n    \"ClusterId\": \"cls-7ph3twqe\",\n    \"ClusterLevel\": \"L5\",\n    \"ClusterProperty\": {\n        \"NodeNameType\": \"lan-ip\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoUpgradeClusterLevel\": {\n            \"IsAutoUpgrade\": true\n        },\n        \"ClusterName\": \"tke-test\",\n        \"ProjectId\": 0,\n        \"ClusterDesc\": \"测试\",\n        \"QGPUShareEnable\": true,\n        \"RequestId\": \"24564577-a642-4164-8752-4668d4ca8886\",\n        \"ClusterLevel\": \"L5\",\n        \"ClusterProperty\": {\n            \"NodeNameType\": \"lan-ip\"\n        }\n    }\n}",
         "title": "修改集群属性"
       }
     ],

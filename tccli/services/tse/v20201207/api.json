@@ -3090,8 +3090,10 @@
           "disabled": false,
           "document": "服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "916462a4-8ce4-4605-a7b7-66cd51c38201",
+          "is_base64": false,
           "member": "string",
           "name": "ID",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -3100,8 +3102,10 @@
           "disabled": false,
           "document": "服务名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test-service",
+          "is_base64": false,
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3110,8 +3114,10 @@
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Methods",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -3120,8 +3126,10 @@
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Paths",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -3130,8 +3138,10 @@
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Hosts",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -3140,8 +3150,10 @@
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Protocols",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -3152,6 +3164,7 @@
           "example": "无",
           "member": "bool",
           "name": "PreserveHost",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -3162,6 +3175,7 @@
           "example": "无",
           "member": "int64",
           "name": "HttpsRedirectStatusCode",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -3172,6 +3186,7 @@
           "example": "无",
           "member": "bool",
           "name": "StripPath",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -3180,18 +3195,21 @@
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "CreatedTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "是否开启了强制HTTPS\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "ForceHttps",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -3200,8 +3218,10 @@
           "disabled": false,
           "document": "服务名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ServiceName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3210,8 +3230,10 @@
           "disabled": false,
           "document": "服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ServiceID",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3222,6 +3244,7 @@
           "example": "无",
           "member": "uint64",
           "name": "DestinationPorts",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -3232,6 +3255,7 @@
           "example": "无",
           "member": "KVMapping",
           "name": "Headers",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true

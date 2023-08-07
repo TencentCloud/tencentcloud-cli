@@ -3834,6 +3834,22 @@
       ],
       "usage": "out"
     },
+    "ClusterProperty": {
+      "document": "集群属性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点hostname命名模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hostname",
+          "member": "string",
+          "name": "NodeNameType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ClusterPublicLB": {
       "document": "弹性容器集群公网访问负载均衡信息",
       "members": [
@@ -17213,7 +17229,6 @@
       "document": "ModifyClusterAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cls-xxxxxxx",
@@ -17223,7 +17238,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群所属项目",
           "example": "0",
@@ -17233,7 +17247,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群名称",
           "example": "cls-xxxxx",
@@ -17243,7 +17256,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群描述",
           "example": "测试集群",
@@ -17253,7 +17265,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群等级",
           "example": "L5",
@@ -17263,7 +17274,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动变配集群等级",
           "example": "无",
@@ -17273,7 +17283,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启QGPU共享",
           "example": "false",
@@ -17281,6 +17290,15 @@
           "name": "QGPUShareEnable",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "集群属性",
+          "example": "无",
+          "member": "ClusterProperty",
+          "name": "ClusterProperty",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -17294,7 +17312,6 @@
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -17304,7 +17321,6 @@
           "example": "xxxxx",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17314,7 +17330,6 @@
           "example": "xxxxx",
           "member": "string",
           "name": "ClusterDesc",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17324,7 +17339,6 @@
           "example": "L5",
           "member": "string",
           "name": "ClusterLevel",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17334,7 +17348,6 @@
           "example": "无",
           "member": "AutoUpgradeClusterLevel",
           "name": "AutoUpgradeClusterLevel",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17344,8 +17357,16 @@
           "example": "false",
           "member": "bool",
           "name": "QGPUShareEnable",
-          "required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClusterProperty",
+          "name": "ClusterProperty",
+          "type": "object",
           "value_allowed_null": true
         },
         {
