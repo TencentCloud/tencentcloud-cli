@@ -1,0 +1,491 @@
+{
+  "actions": {
+    "DescribeInstanceList": {
+      "document": "获取实例列表，Filters参数使用说明如下：\n1. InstanceName, 名称模糊查询\n2. InstanceId，实例ID查询\n3. InstanceType, 实例类型查询，支持多选\n3. InstanceStatus，实例状态查询，支持多选\n\n当使用TagFilters查询时，Filters参数失效。",
+      "input": "DescribeInstanceListRequest",
+      "name": "获取实例列表",
+      "output": "DescribeInstanceListResponse",
+      "status": "online"
+    },
+    "DescribeTopicList": {
+      "document": "获取主题列表，Filter参数使用说明如下：\n\n1. TopicName，主题名称模糊搜索\n2. TopicType，主题类型查询，支持多选，可选值：Normal,Order,Transaction,DelayScheduled",
+      "input": "DescribeTopicListRequest",
+      "name": "查询主题列表",
+      "output": "DescribeTopicListResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2023-03-08",
+    "api_brief": "介绍如何使用云API 对消息队列 RocketMQ进行操作，包括消息回溯，修改主题，创建订阅关系等。",
+    "serviceNameCN": "消息队列 RocketMQ 版",
+    "serviceShortName": "trocket"
+  },
+  "objects": {
+    "DescribeInstanceListRequest": {
+      "document": "DescribeInstanceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果限制数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询条件列表",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签过滤器",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceListResponse": {
+      "document": "DescribeInstanceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例列表",
+          "example": "无",
+          "member": "InstanceItem",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicListRequest": {
+      "document": "DescribeTopicList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果限制数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询条件列表",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicListResponse": {
+      "document": "DescribeTopicList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主题列表",
+          "example": "无",
+          "member": "TopicItem",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filter": {
+      "document": "查询过滤器",
+      "members": [
+        {
+          "ValueAllowedNull": true,
+          "disabled": false,
+          "document": "过滤条件名",
+          "example": "key",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "ValueAllowedNull": true,
+          "disabled": false,
+          "document": "过滤条件的值",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "InstanceItem": {
+      "document": "实例列表页中的实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "test",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例版本",
+          "example": "5.0",
+          "member": "string",
+          "name": "Version",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型，\nEXPERIMENT，体验版\nBASIC，基础版\nPRO，专业版\nPLATINUM，铂金版",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态，\nRUNNING, 运行中\nMAINTAINING，维护中\nABNORMAL，异常\nOVERDUE，欠费\nDESTROYED，已删除\nCREATING，创建中\nMODIFYING，变配中\nCREATE_FAILURE，创建失败\nMODIFY_FAILURE，变配失败\nDELETING，删除中",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例主题数上限",
+          "example": "100",
+          "member": "int64",
+          "name": "TopicNumLimit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例消费组数量上限",
+          "example": "100",
+          "member": "int64",
+          "name": "GroupNumLimit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费模式，\nPOSTPAID，按量计费\nPREPAID，包年包月",
+          "example": "0",
+          "member": "string",
+          "name": "PayMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到期时间，秒为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000",
+          "member": "int64",
+          "name": "ExpiryTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主题数量",
+          "example": "无",
+          "member": "int64",
+          "name": "TopicNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费组数量",
+          "example": "无",
+          "member": "int64",
+          "name": "GroupNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "商品规格",
+          "example": "basic_1k",
+          "member": "string",
+          "name": "SkuCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TPS限流值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TpsLimit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "弹性TPS限流值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ScaledTpsLimit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息保留时间，小时为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MessageRetention",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "延迟消息最大时长，小时为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxMessageDelay",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Tag": {
+      "document": "标签数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TagFilter": {
+      "document": "标签过滤器",
+      "members": [
+        {
+          "ValueAllowedNull": true,
+          "disabled": false,
+          "document": "标签键名称",
+          "example": "test",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "ValueAllowedNull": true,
+          "disabled": false,
+          "document": "标签值列表",
+          "example": "无",
+          "member": "string",
+          "name": "TagValues",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "TopicItem": {
+      "document": "列表上的主题信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题名称",
+          "example": "test",
+          "member": "string",
+          "name": "Topic",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题类型",
+          "example": "无",
+          "member": "string",
+          "name": "TopicType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "队列数量",
+          "example": "3",
+          "member": "int64",
+          "name": "QueueNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

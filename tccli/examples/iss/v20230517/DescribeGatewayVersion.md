@@ -12,7 +12,12 @@ tccli iss DescribeGatewayVersion --cli-unfold-argument  \
 Output: 
 ```
 {
-    "Response": {}
+    "Response": {
+        "Data": {
+            "Services": []
+        },
+        "RequestId": "6c727d94-0025-4d36-8904-5c443d7a17e0"
+    }
 }
 ```
 

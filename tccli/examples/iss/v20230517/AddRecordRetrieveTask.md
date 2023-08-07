@@ -19,7 +19,20 @@ tccli iss AddRecordRetrieveTask --cli-unfold-argument  \
 Output: 
 ```
 {
-    "Response": {}
+    "Response": {
+        "Data": {
+            "TaskId": "1133f5f9c3**********1c3389527532",
+            "TaskName": "name",
+            "StartTime": 1687688595,
+            "EndTime": 1687692195,
+            "Mode": 1,
+            "Expiration": 3,
+            "Status": 2,
+            "Capacity": 0,
+            "Describe": ""
+        },
+        "RequestId": "fba7981b-d6a4-4177-b11d-e53a6110e4cd"
+    }
 }
 ```
 

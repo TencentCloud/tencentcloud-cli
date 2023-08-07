@@ -12,7 +12,15 @@ tccli iss DescribeDevicePreset --cli-unfold-argument  \
 Output: 
 ```
 {
-    "Response": {}
+    "Response": {
+        "Data": [
+            {
+                "Index": 1,
+                "Name": "abc"
+            }
+        ],
+        "RequestId": "31facf8f-d783-4c28-a27f-82757eb71244"
+    }
 }
 ```
 

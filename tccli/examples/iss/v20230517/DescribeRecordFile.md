@@ -15,7 +15,13 @@ tccli iss DescribeRecordFile --cli-unfold-argument  \
 Output: 
 ```
 {
-    "Response": {}
+    "Response": {
+        "Data": {
+            "List": null,
+            "Tips": 0
+        },
+        "RequestId": "fba7981b-d6a4-4177-b11d-e53a6110e4cd"
+    }
 }
 ```
 
@@ -36,7 +42,30 @@ tccli iss DescribeRecordFile --cli-unfold-argument  \
 Output: 
 ```
 {
-    "Response": {}
+    "Response": {
+        "Data": {
+            "Tips": 0,
+            "List": [
+                {
+                    "Begin": 1687651516,
+                    "End": 1687653336
+                },
+                {
+                    "Begin": 1687653336,
+                    "End": 1687655156
+                },
+                {
+                    "Begin": 1687655156,
+                    "End": 1687656976
+                },
+                {
+                    "Begin": 1687656976,
+                    "End": 1687658796
+                }
+            ]
+        },
+        "RequestId": "fba7981b-d6a4-4177-b11d-e53a6110e4cd"
+    }
 }
 ```
 

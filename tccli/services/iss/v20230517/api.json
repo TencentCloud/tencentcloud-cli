@@ -668,6 +668,42 @@
       ],
       "usage": "both"
     },
+    "AITaskResultData": {
+      "document": "AI识别结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "AI 任务 ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "在 BeginTime 和 EndTime 时间之内，有识别结果的 AI 调用次数（分页依据此数值）",
+          "example": "无",
+          "member": "uint64",
+          "name": "AIResultCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AI 任务执行结果详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AITaskResultInfo",
+          "name": "AIResults",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "AITaskResultInfo": {
       "document": "AI分析结果详情",
       "members": [
@@ -749,42 +785,6 @@
           "name": "PhoneCall",
           "required": false,
           "type": "list",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "AITaskResultResponse": {
-      "document": "AI识别结果",
-      "members": [
-        {
-          "disabled": false,
-          "document": "AI 任务 ID",
-          "example": "无",
-          "member": "string",
-          "name": "TaskId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "在 BeginTime 和 EndTime 时间之内，有识别结果的 AI 调用次数（分页依据此数值）",
-          "example": "无",
-          "member": "uint64",
-          "name": "AIResultCount",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "AI 任务执行结果详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "AITaskResultInfo",
-          "name": "AIResults",
-          "required": false,
-          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -917,7 +917,7 @@
       ],
       "type": "object"
     },
-    "AddDeviceResponse": {
+    "AddDeviceData": {
       "document": "增加设备接口返回数据",
       "members": [
         {
@@ -1103,7 +1103,7 @@
       ],
       "usage": "out"
     },
-    "AddOrgResponse": {
+    "AddOrgData": {
       "document": "增加组织接口返回数据",
       "members": [
         {
@@ -1222,7 +1222,7 @@
           "disabled": false,
           "document": "增加组织接口返回数据",
           "example": "无",
-          "member": "AddOrgResponse",
+          "member": "AddOrgData",
           "name": "Data",
           "output_required": true,
           "type": "object",
@@ -1237,73 +1237,7 @@
       ],
       "type": "object"
     },
-    "AddRecordBackupPlanRequest": {
-      "document": "AddRecordBackupPlan请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "录制模板ID（录像计划关联的模板ID，从查询录像上云模板列表接口ListRecordBackupTemplates中获取）",
-          "example": "无",
-          "is_base64": false,
-          "member": "string",
-          "name": "TemplateId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "录像计划名称（仅支持中文、英文、数字、_、-，长度不超过32个字符，计划名称全局唯一，不能为空，不能重复）",
-          "example": "无",
-          "is_base64": false,
-          "member": "string",
-          "name": "PlanName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "录像计划描述（仅支持中文、英文、数字、_、-，长度不超过128个字符）",
-          "example": "无",
-          "is_base64": false,
-          "member": "string",
-          "name": "Describe",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "生命周期（录像文件生命周期设置，管理文件冷、热存储的时间）",
-          "example": "无",
-          "is_base64": false,
-          "member": "LifeCycleData",
-          "name": "LifeCycle",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "通道及通道所属设备（添加录像的设备的通道信息，一次添加通道总数不超过5000个，包括组织目录下的通道数量）",
-          "example": "无",
-          "is_base64": false,
-          "member": "ChannelInfo",
-          "name": "Channels",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "添加组织目录下所有设备通道（Json数组，可以为空，通道总数量不超过5000个（包括Channel字段的数量））",
-          "example": "无",
-          "is_base64": false,
-          "member": "string",
-          "name": "OrganizationId",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "AddRecordBackupPlanResponse": {
+    "AddRecordBackupPlanData": {
       "document": "新增录像上云计划返回数据",
       "members": [
         {
@@ -1399,49 +1333,95 @@
       ],
       "usage": "out"
     },
-    "AddRecordBackupTemplateRequest": {
-      "document": "AddRecordBackupTemplate请求参数结构体",
+    "AddRecordBackupPlanRequest": {
+      "document": "AddRecordBackupPlan请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "模板名称（仅支持中文、英文、数字、_、-，长度不超过32个字符，模板名称全局唯一，不能为空，不能重复）",
+          "document": "录制模板ID（录像计划关联的模板ID，从查询录像上云模板列表接口ListRecordBackupTemplates中获取）",
           "example": "无",
+          "is_base64": false,
           "member": "string",
-          "name": "TemplateName",
+          "name": "TemplateId",
           "required": true,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）",
+          "document": "录像计划名称（仅支持中文、英文、数字、_、-，长度不超过32个字符，计划名称全局唯一，不能为空，不能重复）",
           "example": "无",
-          "member": "RecordTemplateTimeSections",
-          "name": "TimeSections",
+          "is_base64": false,
+          "member": "string",
+          "name": "PlanName",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "录像计划描述（仅支持中文、英文、数字、_、-，长度不超过128个字符）",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Describe",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生命周期（录像文件生命周期设置，管理文件冷、热存储的时间）",
+          "example": "无",
+          "is_base64": false,
+          "member": "LifeCycleData",
+          "name": "LifeCycle",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "通道及通道所属设备（添加录像的设备的通道信息，一次添加通道总数不超过5000个，包括组织目录下的通道数量）",
+          "example": "无",
+          "is_base64": false,
+          "member": "ChannelInfo",
+          "name": "Channels",
+          "required": false,
           "type": "list"
         },
         {
           "disabled": false,
-          "document": "录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）",
+          "document": "添加组织目录下所有设备通道（Json数组，可以为空，通道总数量不超过5000个（包括Channel字段的数量））",
           "example": "无",
-          "member": "RecordTemplateTimeSections",
-          "name": "DevTimeSections",
-          "required": true,
+          "is_base64": false,
+          "member": "string",
+          "name": "OrganizationId",
+          "required": false,
           "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "上云倍速（支持1，2，4倍速）",
-          "example": "无",
-          "member": "int64",
-          "name": "Scale",
-          "required": true,
-          "type": "int"
         }
       ],
       "type": "object"
     },
-    "AddRecordBackupTemplateResponse": {
+    "AddRecordBackupPlanResponse": {
+      "document": "AddRecordBackupPlan返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据",
+          "example": "无",
+          "member": "AddRecordBackupPlanData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddRecordBackupTemplateData": {
       "document": "新增录像上云模版返回数据",
       "members": [
         {
@@ -1516,6 +1496,70 @@
         }
       ],
       "usage": "out"
+    },
+    "AddRecordBackupTemplateRequest": {
+      "document": "AddRecordBackupTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板名称（仅支持中文、英文、数字、_、-，长度不超过32个字符，模板名称全局唯一，不能为空，不能重复）",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）",
+          "example": "无",
+          "member": "RecordTemplateTimeSections",
+          "name": "TimeSections",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）",
+          "example": "无",
+          "member": "RecordTemplateTimeSections",
+          "name": "DevTimeSections",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "上云倍速（支持1，2，4倍速）",
+          "example": "无",
+          "member": "int64",
+          "name": "Scale",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AddRecordBackupTemplateResponse": {
+      "document": "AddRecordBackupTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据",
+          "example": "无",
+          "member": "AddRecordBackupTemplateData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AddRecordPlanRequest": {
       "document": "AddRecordPlan请求参数结构体",
@@ -1600,7 +1644,7 @@
           "disabled": false,
           "document": "返回结果",
           "example": "无",
-          "member": "RecordPlanOptResponse",
+          "member": "RecordPlanOptData",
           "name": "Data",
           "output_required": true,
           "type": "object",
@@ -1615,76 +1659,7 @@
       ],
       "type": "object"
     },
-    "AddRecordRetrieveTaskRequest": {
-      "document": "AddRecordRetrieveTask请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务名称，仅支持中文、英文、数字、_、-，长度不超过32个字符，模板名称全局唯一，不能为空，不能重复",
-          "example": "无",
-          "member": "string",
-          "name": "TaskName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "取回录像的开始时间，UTC秒数，例如：1662114146，开始和结束时间段最长为一天，且不能跨天",
-          "example": "无",
-          "member": "uint64",
-          "name": "StartTime",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "取回录像的结束时间，UTC秒数，例如：1662114146，开始和结束时间段最长为一天，且不能跨天",
-          "example": "无",
-          "member": "uint64",
-          "name": "EndTime",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "取回模式， 1:极速模式，其他暂不支持",
-          "example": "无",
-          "member": "int64",
-          "name": "Mode",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "取回录像副本有效期，最小为1天，最大为365天",
-          "example": "无",
-          "member": "int64",
-          "name": "Expiration",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "设备通道，一个任务最多32个设备通道",
-          "example": "无",
-          "member": "ChannelInfo",
-          "name": "Channels",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "取回任务描述",
-          "example": "无",
-          "member": "string",
-          "name": "Describe",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "AddRecordRetrieveTaskResponse": {
+    "AddRecordRetrieveTaskData": {
       "document": "查询取回任务详情返回数据",
       "members": [
         {
@@ -1780,6 +1755,97 @@
       ],
       "usage": "out"
     },
+    "AddRecordRetrieveTaskRequest": {
+      "document": "AddRecordRetrieveTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务名称，仅支持中文、英文、数字、_、-，长度不超过32个字符，模板名称全局唯一，不能为空，不能重复",
+          "example": "无",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "取回录像的开始时间，UTC秒数，例如：1662114146，开始和结束时间段最长为一天，且不能跨天",
+          "example": "无",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "取回录像的结束时间，UTC秒数，例如：1662114146，开始和结束时间段最长为一天，且不能跨天",
+          "example": "无",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "取回模式， 1:极速模式，其他暂不支持",
+          "example": "无",
+          "member": "int64",
+          "name": "Mode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "取回录像副本有效期，最小为1天，最大为365天",
+          "example": "无",
+          "member": "int64",
+          "name": "Expiration",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备通道，一个任务最多32个设备通道",
+          "example": "无",
+          "member": "ChannelInfo",
+          "name": "Channels",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "取回任务描述",
+          "example": "无",
+          "member": "string",
+          "name": "Describe",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddRecordRetrieveTaskResponse": {
+      "document": "AddRecordRetrieveTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果",
+          "example": "无",
+          "member": "AddRecordRetrieveTaskData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AddRecordTemplateRequest": {
       "document": "AddRecordTemplate请求参数结构体",
       "members": [
@@ -1826,83 +1892,7 @@
       ],
       "type": "object"
     },
-    "AddStreamAuthRequest": {
-      "document": "AddStreamAuth请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "鉴权配置ID（uuid）",
-          "example": "无",
-          "is_base64": false,
-          "member": "string",
-          "name": "Id",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否开播放鉴权（1:开启,0:关闭）",
-          "example": "无",
-          "is_base64": false,
-          "member": "int64",
-          "name": "PullState",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "播放密钥（仅支持字母数字，长度0-10位）",
-          "example": "无",
-          "is_base64": false,
-          "member": "string",
-          "name": "PullSecret",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "播放过期时间（单位：分钟）",
-          "example": "无",
-          "is_base64": false,
-          "member": "int64",
-          "name": "PullExpired",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "是否开启推流鉴权（1:开启,0:关闭）",
-          "example": "无",
-          "is_base64": false,
-          "member": "int64",
-          "name": "PushState",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "推流密钥（仅支持字母数字，长度0-10位）",
-          "example": "无",
-          "is_base64": false,
-          "member": "string",
-          "name": "PushSecret",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "推流过期时间（单位：分钟）",
-          "example": "无",
-          "is_base64": false,
-          "member": "int64",
-          "name": "PushExpired",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "AddStreamAuthResponse": {
+    "AddStreamAuthData": {
       "document": "设置推拉流鉴权返回数据结构",
       "members": [
         {
@@ -1987,6 +1977,104 @@
         }
       ],
       "usage": "out"
+    },
+    "AddStreamAuthRequest": {
+      "document": "AddStreamAuth请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "鉴权配置ID（uuid）",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开播放鉴权（1:开启,0:关闭）",
+          "example": "无",
+          "is_base64": false,
+          "member": "int64",
+          "name": "PullState",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "播放密钥（仅支持字母数字，长度0-10位）",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "PullSecret",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "播放过期时间（单位：分钟）",
+          "example": "无",
+          "is_base64": false,
+          "member": "int64",
+          "name": "PullExpired",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启推流鉴权（1:开启,0:关闭）",
+          "example": "无",
+          "is_base64": false,
+          "member": "int64",
+          "name": "PushState",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "推流密钥（仅支持字母数字，长度0-10位）",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "PushSecret",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "推流过期时间（单位：分钟）",
+          "example": "无",
+          "is_base64": false,
+          "member": "int64",
+          "name": "PushExpired",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AddStreamAuthResponse": {
+      "document": "AddStreamAuth返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设置推拉流鉴权返回数据",
+          "example": "无",
+          "member": "AddStreamAuthData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AddUserDeviceRequest": {
       "document": "AddUserDevice请求参数结构体",
@@ -2131,7 +2219,7 @@
           "disabled": false,
           "document": "增加设备返回数据",
           "example": "无",
-          "member": "AddDeviceResponse",
+          "member": "AddDeviceData",
           "name": "Data",
           "output_required": true,
           "type": "object",
@@ -2546,6 +2634,42 @@
       ],
       "type": "object"
     },
+    "ControlDeviceStreamData": {
+      "document": "获取开流地址返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "flv 流地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Flv",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "hls 流地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Hls",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "rtmp 流地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Rtmp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ControlDeviceStreamRequest": {
       "document": "ControlDeviceStream请求参数结构体",
       "members": [
@@ -2583,40 +2707,26 @@
       "type": "object"
     },
     "ControlDeviceStreamResponse": {
-      "document": "获取开流地址返回数据",
+      "document": "ControlDeviceStream返回参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "flv 流地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回数据",
           "example": "无",
-          "member": "string",
-          "name": "Flv",
+          "member": "ControlDeviceStreamData",
+          "name": "Data",
           "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "object",
+          "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "hls 流地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
-          "name": "Hls",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "rtmp 流地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "Rtmp",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "name": "RequestId",
+          "type": "string"
         }
       ],
-      "usage": "out"
+      "type": "object"
     },
     "ControlRecordRequest": {
       "document": "ControlRecord请求参数结构体",
@@ -3145,7 +3255,7 @@
           "disabled": false,
           "document": "AI识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "AITaskResultResponse",
+          "member": "AITaskResultData",
           "name": "Data",
           "output_required": true,
           "type": "object",
@@ -3208,23 +3318,7 @@
       ],
       "type": "object"
     },
-    "DescribeDeviceChannelRequest": {
-      "document": "DescribeDeviceChannel请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "设备ID（从获取设备列表接口ListDevices中获取）",
-          "example": "无",
-          "is_base64": false,
-          "member": "string",
-          "name": "DeviceId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeDeviceChannelResponse": {
+    "DescribeDeviceChannelData": {
       "document": "查询设备通道信息返回结果",
       "members": [
         {
@@ -3330,97 +3424,30 @@
       ],
       "usage": "out"
     },
-    "DescribeDevicePresetRequest": {
-      "document": "DescribeDevicePreset请求参数结构体",
+    "DescribeDeviceChannelRequest": {
+      "document": "DescribeDeviceChannel请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "通道ID（从通道查询接口DescribeDeviceChannel中获取）",
+          "document": "设备ID（从获取设备列表接口ListDevices中获取）",
           "example": "无",
           "is_base64": false,
           "member": "string",
-          "name": "ChannelId",
+          "name": "DeviceId",
           "required": true,
           "type": "string"
         }
       ],
       "type": "object"
     },
-    "DescribeDevicePresetResponse": {
-      "document": "查询设备预置位返回数据",
+    "DescribeDeviceChannelResponse": {
+      "document": "DescribeDeviceChannel返回参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "预置位索引    只支持1-10的索引\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
-          "member": "int64",
-          "name": "Index",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "预置位名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "预置位1",
-          "member": "string",
-          "name": "Name",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "DescribeDeviceRegion": {
-      "document": "查询设备可接入集群信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "服务节点描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回结果",
           "example": "无",
-          "member": "string",
-          "name": "Label",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "服务节点 ID（对应为其他接口中所需的 ClusterId）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "Value",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "Region",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "DescribeDeviceRegionRequest": {
-      "document": "DescribeDeviceRegion请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribeDeviceRegionResponse": {
-      "document": "DescribeDeviceRegion返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "返回数据",
-          "example": "无",
-          "member": "DescribeDeviceRegion",
+          "member": "DescribeDeviceChannelData",
           "name": "Data",
           "output_required": true,
           "type": "list",
@@ -3435,7 +3462,7 @@
       ],
       "type": "object"
     },
-    "DescribeDeviceResponse": {
+    "DescribeDeviceData": {
       "document": "查询设备接口返回数据",
       "members": [
         {
@@ -3701,13 +3728,72 @@
       ],
       "usage": "out"
     },
-    "DescribeDomainRegionRequest": {
-      "document": "DescribeDomainRegion请求参数结构体",
-      "members": [],
+    "DescribeDevicePresetData": {
+      "document": "查询设备预置位返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预置位索引    只支持1-10的索引\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Index",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预置位名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "预置位1",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeDevicePresetRequest": {
+      "document": "DescribeDevicePreset请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通道ID（从通道查询接口DescribeDeviceChannel中获取）",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
-    "DescribeDomainRegionResponse": {
-      "document": "查询域名可绑定集群数据",
+    "DescribeDevicePresetResponse": {
+      "document": "DescribeDevicePreset返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据",
+          "example": "无",
+          "member": "DescribeDevicePresetData",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceRegion": {
+      "document": "查询设备可接入集群信息",
       "members": [
         {
           "disabled": false,
@@ -3742,12 +3828,34 @@
       ],
       "usage": "out"
     },
-    "DescribeDomainRequest": {
-      "document": "DescribeDomain请求参数结构体",
+    "DescribeDeviceRegionRequest": {
+      "document": "DescribeDeviceRegion请求参数结构体",
       "members": [],
       "type": "object"
     },
-    "DescribeDomainResponse": {
+    "DescribeDeviceRegionResponse": {
+      "document": "DescribeDeviceRegion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据",
+          "example": "无",
+          "member": "DescribeDeviceRegion",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainData": {
       "document": "查询域名详情数据",
       "members": [
         {
@@ -3818,6 +3926,211 @@
           "name": "AppId",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeDomainRegionData": {
+      "document": "查询域名可绑定集群数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务节点描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Label",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务节点 ID（对应为其他接口中所需的 ClusterId）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeDomainRegionRequest": {
+      "document": "DescribeDomainRegion请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDomainRegionResponse": {
+      "document": "DescribeDomainRegion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据",
+          "example": "无",
+          "member": "DescribeDomainRegionData",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainRequest": {
+      "document": "DescribeDomain请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDomainResponse": {
+      "document": "DescribeDomain返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据",
+          "example": "无",
+          "member": "DescribeDomainData",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewayData": {
+      "document": "查询网关信息返回结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关索引ID，用于网关查询，更新，删除操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GatewayId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关编码，由网关设备生成的唯一编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GwId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关名称，仅支持中文、英文、数字、_、-，长度不超过32个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关描述，仅支持中文、英文、数字、_、-，长度不超过128个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务节点id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关状态，0：离线，1:在线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GatewayVersion",
+          "name": "Version",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关下挂设备数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DeviceNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "激活时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -3957,12 +4270,7 @@
       ],
       "type": "object"
     },
-    "DescribeGatewayProtocolRequest": {
-      "document": "DescribeGatewayProtocol请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribeGatewayProtocolResponse": {
+    "DescribeGatewayProtocolData": {
       "document": "查询网关所支持的接入协议",
       "members": [
         {
@@ -3998,6 +4306,32 @@
       ],
       "usage": "out"
     },
+    "DescribeGatewayProtocolRequest": {
+      "document": "DescribeGatewayProtocol请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeGatewayProtocolResponse": {
+      "document": "DescribeGatewayProtocol返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据",
+          "example": "无",
+          "member": "DescribeGatewayProtocolData",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeGatewayRequest": {
       "document": "DescribeGateway请求参数结构体",
       "members": [
@@ -4015,120 +4349,26 @@
       "type": "object"
     },
     "DescribeGatewayResponse": {
-      "document": "查询网关信息返回结果",
+      "document": "DescribeGateway返回参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "网关索引ID，用于网关查询，更新，删除操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回数据",
           "example": "无",
+          "member": "DescribeGatewayData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
-          "name": "GatewayId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "网关编码，由网关设备生成的唯一编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "GwId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "网关名称，仅支持中文、英文、数字、_、-，长度不超过32个字符\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "Name",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "网关描述，仅支持中文、英文、数字、_、-，长度不超过128个字符\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "Description",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "服务节点id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "ClusterId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "服务节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "ClusterName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "网关状态，0：离线，1:在线\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "Status",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "网关版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "GatewayVersion",
-          "name": "Version",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "网关下挂设备数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "DeviceNum",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "激活时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "CreatedAt",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "所属地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "Region",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "name": "RequestId",
+          "type": "string"
         }
       ],
-      "usage": "out"
+      "type": "object"
     },
     "DescribeGatewayVersion": {
       "document": "查询网关服务版本信息返回数据",
@@ -4186,6 +4426,22 @@
       ],
       "usage": "out"
     },
+    "DescribeGatewayVersionData": {
+      "document": "查询网关服务版本信息返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关服务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeGatewayVersion",
+          "name": "Services",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeGatewayVersionRequest": {
       "document": "DescribeGatewayVersion请求参数结构体",
       "members": [
@@ -4203,16 +4459,108 @@
       "type": "object"
     },
     "DescribeGatewayVersionResponse": {
-      "document": "查询网关服务版本信息返回数据",
+      "document": "DescribeGatewayVersion返回参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "网关服务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回数据",
           "example": "无",
-          "member": "DescribeGatewayVersion",
-          "name": "Services",
-          "required": false,
-          "type": "list",
+          "member": "DescribeGatewayVersionData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationData": {
+      "document": "查询组织数据返回结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "组织 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组织名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组织父节点 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ParentId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组织层级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Level",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组织结构\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ParentIds",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备在线数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Online",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -4224,108 +4572,28 @@
       "type": "object"
     },
     "DescribeOrganizationResponse": {
-      "document": "查询组织数据返回结果",
+      "document": "DescribeOrganization返回参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "组织 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回数据",
           "example": "无",
+          "member": "DescribeOrganizationData",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
-          "name": "OrganizationId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "组织名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "Name",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "组织父节点 ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "ParentId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "组织层级\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "Level",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "用户id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "AppId",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "组织结构\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "ParentIds",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "Total",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "设备在线数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "Online",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "DescribeRecordBackupPlanRequest": {
-      "document": "DescribeRecordBackupPlan请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "录像上云计划ID（从查询录像上云计划列表接口ListRecordBackupPlans中获取）",
-          "example": "无",
-          "is_base64": false,
-          "member": "string",
-          "name": "PlanId",
-          "required": true,
+          "name": "RequestId",
           "type": "string"
         }
       ],
       "type": "object"
     },
-    "DescribeRecordBackupPlanResponse": {
+    "DescribeRecordBackupPlanData": {
       "document": "查询录像上云计划返回数据",
       "members": [
         {
@@ -4421,23 +4689,45 @@
       ],
       "usage": "out"
     },
-    "DescribeRecordBackupTemplateRequest": {
-      "document": "DescribeRecordBackupTemplate请求参数结构体",
+    "DescribeRecordBackupPlanRequest": {
+      "document": "DescribeRecordBackupPlan请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "模板ID（从查询录像上云模板列表接口ListRecordBackupTemplates中获取）",
+          "document": "录像上云计划ID（从查询录像上云计划列表接口ListRecordBackupPlans中获取）",
           "example": "无",
           "is_base64": false,
           "member": "string",
-          "name": "TemplateId",
+          "name": "PlanId",
           "required": true,
           "type": "string"
         }
       ],
       "type": "object"
     },
-    "DescribeRecordBackupTemplateResponse": {
+    "DescribeRecordBackupPlanResponse": {
+      "document": "DescribeRecordBackupPlan返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据",
+          "example": "无",
+          "member": "DescribeRecordBackupPlanData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordBackupTemplateData": {
       "document": "查询录像上云模版返回数据",
       "members": [
         {
@@ -4513,6 +4803,70 @@
       ],
       "usage": "out"
     },
+    "DescribeRecordBackupTemplateRequest": {
+      "document": "DescribeRecordBackupTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板ID（从查询录像上云模板列表接口ListRecordBackupTemplates中获取）",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordBackupTemplateResponse": {
+      "document": "DescribeRecordBackupTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据",
+          "example": "无",
+          "member": "DescribeRecordBackupTemplateData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordFileData": {
+      "document": "用于查询设备云端录像时间轴信息返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "提示类型，0:时间段内无归档录像，1:时间段内有归档录像",
+          "example": "无",
+          "member": "int64",
+          "name": "Tips",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存在为数组格式，不存在字段内容为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RecordTimeLine",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeRecordFileRequest": {
       "document": "DescribeRecordFile请求参数结构体",
       "members": [
@@ -4560,30 +4914,26 @@
       "type": "object"
     },
     "DescribeRecordFileResponse": {
-      "document": "用于查询设备云端录像时间轴信息返回数据",
+      "document": "DescribeRecordFile返回参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "提示类型，0:时间段内无归档录像，1:时间段内有归档录像",
+          "document": "返回结果",
           "example": "无",
-          "member": "int64",
-          "name": "Tips",
-          "required": true,
-          "type": "int",
+          "member": "DescribeRecordFileData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "存在为数组格式，不存在字段内容为空\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "RecordTimeLine",
-          "name": "List",
-          "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
         }
       ],
-      "usage": "out"
+      "type": "object"
     },
     "DescribeRecordPlanRequest": {
       "document": "DescribeRecordPlan请求参数结构体",
@@ -4681,23 +5031,7 @@
       ],
       "type": "object"
     },
-    "DescribeRecordRetrieveTaskRequest": {
-      "document": "DescribeRecordRetrieveTask请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "云录像取回任务ID",
-          "example": "无",
-          "is_base64": false,
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeRecordRetrieveTaskResponse": {
+    "DescribeRecordRetrieveTaskData": {
       "document": "查询云录像取回任务详情返回数据",
       "members": [
         {
@@ -4813,6 +5147,44 @@
       ],
       "usage": "out"
     },
+    "DescribeRecordRetrieveTaskRequest": {
+      "document": "DescribeRecordRetrieveTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云录像取回任务ID",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordRetrieveTaskResponse": {
+      "document": "DescribeRecordRetrieveTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果",
+          "example": "无",
+          "member": "DescribeRecordRetrieveTaskData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRecordTemplateRequest": {
       "document": "DescribeRecordTemplate请求参数结构体",
       "members": [
@@ -4851,12 +5223,7 @@
       ],
       "type": "object"
     },
-    "DescribeStreamAuthRequest": {
-      "document": "DescribeStreamAuth请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribeStreamAuthResponse": {
+    "DescribeStreamAuthData": {
       "document": "查询推拉流鉴权返回数据结构",
       "members": [
         {
@@ -4942,6 +5309,33 @@
       ],
       "usage": "out"
     },
+    "DescribeStreamAuthRequest": {
+      "document": "DescribeStreamAuth请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeStreamAuthResponse": {
+      "document": "DescribeStreamAuth返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果",
+          "example": "无",
+          "member": "DescribeStreamAuthData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUserDeviceRequest": {
       "document": "DescribeUserDevice请求参数结构体",
       "members": [
@@ -4965,7 +5359,7 @@
           "disabled": false,
           "document": "返回结果",
           "example": "无",
-          "member": "DescribeDeviceResponse",
+          "member": "DescribeDeviceData",
           "name": "Data",
           "output_required": true,
           "type": "object",
@@ -4979,6 +5373,42 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeVideoDownloadUrlData": {
+      "document": "获取云录像下载URL返回的数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "录像文件下载 URL\n注意：\nURL 有效期是10分钟，过期后将拒绝访问，若需再用请重新获取 \n录像文件下载采用分块传输编码，响应头Transfer-Encoding:chunked \n下载文件命名格式为{ChannelId}-{BeginTime}-{EndTime}.{FileType} ",
+          "example": " 无",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实际下载录像的开始时间\n注意：当请求中指定IsRespActualTime参数为true时，才有该字段",
+          "example": "无",
+          "member": "string",
+          "name": "ActualBeginTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实际下载录像的结束时间\n注意：当请求中指定IsRespActualTime参数为true时，才有该字段",
+          "example": "无",
+          "member": "string",
+          "name": "ActualEndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DescribeVideoDownloadUrlRequest": {
       "document": "DescribeVideoDownloadUrl请求参数结构体",
@@ -5037,40 +5467,26 @@
       "type": "object"
     },
     "DescribeVideoDownloadUrlResponse": {
-      "document": "获取云录像下载URL返回的数据",
+      "document": "DescribeVideoDownloadUrl返回参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "录像文件下载 URL\n注意：\nURL 有效期是10分钟，过期后将拒绝访问，若需再用请重新获取 \n录像文件下载采用分块传输编码，响应头Transfer-Encoding:chunked \n下载文件命名格式为{ChannelId}-{BeginTime}-{EndTime}.{FileType} ",
-          "example": " 无",
-          "member": "string",
-          "name": "Url",
-          "required": false,
-          "type": "string",
+          "document": "返回的数据结构",
+          "example": "无",
+          "member": "DescribeVideoDownloadUrlData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "实际下载录像的开始时间\n注意：当请求中指定IsRespActualTime参数为true时，才有该字段",
-          "example": "无",
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
-          "name": "ActualBeginTime",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "实际下载录像的结束时间\n注意：当请求中指定IsRespActualTime参数为true时，才有该字段",
-          "example": "无",
-          "member": "string",
-          "name": "ActualEndTime",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "name": "RequestId",
+          "type": "string"
         }
       ],
-      "usage": "out"
+      "type": "object"
     },
     "FaceMaskAIResultInfo": {
       "document": "口罩识别结果详情",
@@ -5620,6 +6036,32 @@
       ],
       "type": "object"
     },
+    "ListGatewaysData": {
+      "document": "查询网关列表返回结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GatewaysData",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ListGatewaysRequest": {
       "document": "ListGateways请求参数结构体",
       "members": [
@@ -5677,27 +6119,49 @@
       "type": "object"
     },
     "ListGatewaysResponse": {
-      "document": "查询网关列表返回结果",
+      "document": "ListGateways返回参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "网关列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回数据",
           "example": "无",
-          "member": "GatewaysData",
-          "name": "List",
-          "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "member": "ListGatewaysData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListOrganizationChannelNumbersData": {
+      "document": "组织目录下的未添加到实时上云计划中的通道数量返回数据",
+      "members": [
+        {
           "disabled": false,
-          "document": "网关数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组织下通道总数",
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组织下未添加到计划的通道总数",
+          "example": "无",
+          "member": "int64",
+          "name": "NotInPlanCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5719,27 +6183,69 @@
       "type": "object"
     },
     "ListOrganizationChannelNumbersResponse": {
-      "document": "组织目录下的未添加到实时上云计划中的通道数量返回数据",
+      "document": "ListOrganizationChannelNumbers返回参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "组织下通道总数",
+          "document": "返回结果",
+          "example": "无",
+          "member": "ListOrganizationChannelNumbersData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListOrganizationChannelsData": {
+      "document": "查询组织目录下的通道列表返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "第几页",
           "example": "无",
           "member": "int64",
-          "name": "TotalCount",
-          "required": true,
+          "name": "PageNumber",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "组织下未添加到计划的通道总数",
+          "document": "当前页的设备数量",
           "example": "无",
           "member": "int64",
-          "name": "NotInPlanCount",
-          "required": false,
+          "name": "PageSize",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次查询的设备通道总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备通道信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OrganizationChannelInfo",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5801,164 +6307,28 @@
       "type": "object"
     },
     "ListOrganizationChannelsResponse": {
-      "document": "查询组织目录下的通道列表返回数据",
+      "document": "ListOrganizationChannels返回参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "第几页",
+          "document": "返回结果",
           "example": "无",
-          "member": "int64",
-          "name": "PageNumber",
-          "required": false,
-          "type": "int",
+          "member": "ListOrganizationChannelsData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "当前页的设备数量",
-          "example": "无",
-          "member": "int64",
-          "name": "PageSize",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "本次查询的设备通道总数",
-          "example": "无",
-          "member": "int64",
-          "name": "TotalCount",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "设备通道信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "OrganizationChannelInfo",
-          "name": "List",
-          "required": false,
-          "type": "list",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "ListRecordBackupPlanDevicesRequest": {
-      "document": "ListRecordBackupPlanDevices请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "录像计划ID（从查询录像上云计划列表接口ListRecordBackupPlans中获取）",
-          "example": "无",
-          "is_base64": false,
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
-          "name": "PlanId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "按照设备名称查询（为空时，不参考该参数）",
-          "example": "无",
-          "is_base64": false,
-          "member": "string",
-          "name": "DeviceName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "按照通道名称查询（为空时，不参考该参数）",
-          "example": "无",
-          "is_base64": false,
-          "member": "string",
-          "name": "ChannelName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "按照组织名称查询（为空时，不参考该参数）",
-          "example": "无",
-          "is_base64": false,
-          "member": "string",
-          "name": "OrganizationName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "每页最大数量",
-          "example": "无",
-          "is_base64": false,
-          "member": "string",
-          "name": "PageSize",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "第几页",
-          "example": "无",
-          "is_base64": false,
-          "member": "string",
-          "name": "PageNumber",
-          "required": false,
+          "name": "RequestId",
           "type": "string"
         }
       ],
       "type": "object"
     },
-    "ListRecordBackupPlanDevicesResponse": {
-      "document": "查询录像上云计划关联通道的返回数据",
-      "members": [
-        {
-          "disabled": false,
-          "document": "第几页\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "PageNumber",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "当前页的设备数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "PageSize",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "本次查询的设备通道总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "TotalCount",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "设备通道信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "RecordPlanChannelInfo",
-          "name": "List",
-          "required": false,
-          "type": "object",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "ListRecordBackupPlanResponse": {
+    "ListRecordBackupPlanData": {
       "document": "查询录像上云计划列表返回数据",
       "members": [
         {
@@ -6054,6 +6424,140 @@
       ],
       "usage": "out"
     },
+    "ListRecordBackupPlanDevicesData": {
+      "document": "查询录像上云计划关联通道的返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前页的设备数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本次查询的设备通道总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备通道信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RecordPlanChannelInfo",
+          "name": "List",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ListRecordBackupPlanDevicesRequest": {
+      "document": "ListRecordBackupPlanDevices请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "录像计划ID（从查询录像上云计划列表接口ListRecordBackupPlans中获取）",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "PlanId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按照设备名称查询（为空时，不参考该参数）",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "DeviceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按照通道名称查询（为空时，不参考该参数）",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "ChannelName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按照组织名称查询（为空时，不参考该参数）",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "OrganizationName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页最大数量",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "PageSize",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "第几页",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "PageNumber",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListRecordBackupPlanDevicesResponse": {
+      "document": "ListRecordBackupPlanDevices返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据",
+          "example": "无",
+          "member": "ListRecordBackupPlanDevicesData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListRecordBackupPlansRequest": {
       "document": "ListRecordBackupPlans请求参数结构体",
       "members": [],
@@ -6066,7 +6570,7 @@
           "disabled": false,
           "document": "返回数据",
           "example": "无",
-          "member": "ListRecordBackupPlanResponse",
+          "member": "ListRecordBackupPlanData",
           "name": "Data",
           "output_required": true,
           "type": "list",
@@ -6081,12 +6585,7 @@
       ],
       "type": "object"
     },
-    "ListRecordBackupTemplatesRequest": {
-      "document": "ListRecordBackupTemplates请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "ListRecordBackupTemplatesResponse": {
+    "ListRecordBackupTemplatesData": {
       "document": "查询录像上云模板列表返回数据",
       "members": [
         {
@@ -6162,12 +6661,34 @@
       ],
       "usage": "out"
     },
-    "ListRecordPlanChannelsRequest": {
-      "document": "ListRecordPlanChannels请求参数结构体",
+    "ListRecordBackupTemplatesRequest": {
+      "document": "ListRecordBackupTemplates请求参数结构体",
       "members": [],
       "type": "object"
     },
-    "ListRecordPlanChannelsResponse": {
+    "ListRecordBackupTemplatesResponse": {
+      "document": "ListRecordBackupTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据",
+          "example": "无",
+          "member": "ListRecordBackupTemplatesData",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListRecordPlanChannelsData": {
       "document": "用户下所有实时上云计划中的通道id列表返回数据",
       "members": [
         {
@@ -6176,7 +6697,80 @@
           "example": "无",
           "member": "string",
           "name": "List",
-          "required": false,
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ListRecordPlanChannelsRequest": {
+      "document": "ListRecordPlanChannels请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ListRecordPlanChannelsResponse": {
+      "document": "ListRecordPlanChannels返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果",
+          "example": "无",
+          "member": "ListRecordPlanChannelsData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListRecordPlanDevicesData": {
+      "document": "云计划下的设备通道列表返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "第几页",
+          "example": "无",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前页的设备数量",
+          "example": "无",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次查询的设备通道总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备通道信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RecordPlanChannelInfo",
+          "name": "List",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -6250,50 +6844,26 @@
       "type": "object"
     },
     "ListRecordPlanDevicesResponse": {
-      "document": "云计划下的设备通道列表返回数据",
+      "document": "ListRecordPlanDevices返回参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "第几页",
+          "document": "返回结果",
           "example": "无",
-          "member": "int64",
-          "name": "PageNumber",
-          "required": false,
-          "type": "int",
+          "member": "ListRecordPlanDevicesData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "当前页的设备数量",
-          "example": "无",
-          "member": "int64",
-          "name": "PageSize",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "本次查询的设备通道总数",
-          "example": "无",
-          "member": "int64",
-          "name": "TotalCount",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "设备通道信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "RecordPlanChannelInfo",
-          "name": "List",
-          "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
         }
       ],
-      "usage": "out"
+      "type": "object"
     },
     "ListRecordPlansRequest": {
       "document": "ListRecordPlans请求参数结构体",
@@ -6624,6 +7194,22 @@
       ],
       "usage": "out"
     },
+    "PlayRecordData": {
+      "document": "本地录像播放url数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "录像播放地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://192.168.0.1:18080/live/5c46860f-****-41bd-****-a5e47cab08df@c451066b-****-46ba-****-53fc3c7c1d7c.live.flv?start=1656604800&end=1656608400&stream_type=1&resolution=6",
+          "member": "string",
+          "name": "Flv",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "PlayRecordRequest": {
       "document": "PlayRecord请求参数结构体",
       "members": [
@@ -6681,20 +7267,26 @@
       "type": "object"
     },
     "PlayRecordResponse": {
-      "document": "本地录像播放url数据结构",
+      "document": "PlayRecord返回参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "录像播放地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "http://192.168.0.1:18080/live/5c46860f-****-41bd-****-a5e47cab08df@c451066b-****-46ba-****-53fc3c7c1d7c.live.flv?start=1656604800&end=1656608400&stream_type=1&resolution=6",
+          "document": "返回结果",
+          "example": "无",
+          "member": "PlayRecordData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
-          "name": "Flv",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "name": "RequestId",
+          "type": "string"
         }
       ],
-      "usage": "out"
+      "type": "object"
     },
     "RecordPlanBaseInfo": {
       "document": "实时上云计划基础信息",
@@ -6838,7 +7430,7 @@
       ],
       "usage": "out"
     },
-    "RecordPlanOptResponse": {
+    "RecordPlanOptData": {
       "document": "实时上云计划添加和修改的返回数据",
       "members": [
         {
@@ -7425,45 +8017,7 @@
       ],
       "type": "object"
     },
-    "UpdateDeviceOrganizationRequest": {
-      "document": "UpdateDeviceOrganization请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "设备 ID 数组（从获取设备列表接口ListDevices中获取）",
-          "example": "无",
-          "is_base64": false,
-          "member": "string",
-          "name": "DeviceIds",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "组织 ID（从查询组织接口DescribeOrganization中获取）",
-          "example": "无",
-          "is_base64": false,
-          "member": "string",
-          "name": "OrganizationId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "UpdateDeviceOrganizationResponse": {
-      "document": "UpdateDeviceOrganization返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "UpdateDeviceResponse": {
+    "UpdateDeviceData": {
       "document": "修改设备接口返回数据",
       "members": [
         {
@@ -7649,6 +8203,44 @@
       ],
       "usage": "out"
     },
+    "UpdateDeviceOrganizationRequest": {
+      "document": "UpdateDeviceOrganization请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备 ID 数组（从获取设备列表接口ListDevices中获取）",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "DeviceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "组织 ID（从查询组织接口DescribeOrganization中获取）",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "OrganizationId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDeviceOrganizationResponse": {
+      "document": "UpdateDeviceOrganization返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateDeviceStatusRequest": {
       "document": "UpdateDeviceStatus请求参数结构体",
       "members": [
@@ -7687,43 +8279,7 @@
       ],
       "type": "object"
     },
-    "UpdateGatewayRequest": {
-      "document": "UpdateGateway请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "网关索引ID（从获取网关列表ListGateways接口中获取）\t",
-          "example": "无",
-          "is_base64": false,
-          "member": "string",
-          "name": "GatewayId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "仅支持中文、英文、数网关名称，字、_、-，长度不超过32个字符",
-          "example": "无",
-          "is_base64": false,
-          "member": "string",
-          "name": "Name",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "网关描述，仅支持中文、英文、数字、_、-，长度不超过128个字符",
-          "example": "无",
-          "is_base64": false,
-          "member": "string",
-          "name": "Description",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "UpdateGatewayResponse": {
+    "UpdateGatewayData": {
       "document": "修改网关信息返回结果",
       "members": [
         {
@@ -7829,7 +8385,65 @@
       ],
       "usage": "out"
     },
-    "UpdateOrgResponse": {
+    "UpdateGatewayRequest": {
+      "document": "UpdateGateway请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关索引ID（从获取网关列表ListGateways接口中获取）\t",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仅支持中文、英文、数网关名称，字、_、-，长度不超过32个字符",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关描述，仅支持中文、英文、数字、_、-，长度不超过128个字符",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateGatewayResponse": {
+      "document": "UpdateGateway返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据",
+          "example": "无",
+          "member": "UpdateGatewayData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateOrgData": {
       "document": "修改组织接口返回数据",
       "members": [
         {
@@ -7948,7 +8562,7 @@
           "disabled": false,
           "document": "返回结果",
           "example": "无",
-          "member": "UpdateOrgResponse",
+          "member": "UpdateOrgData",
           "name": "Data",
           "output_required": true,
           "type": "object",
@@ -7962,6 +8576,102 @@
         }
       ],
       "type": "object"
+    },
+    "UpdateRecordBackupPlanData": {
+      "document": "修改录像上云计划返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "录像上云计划ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlanId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "录像上云计划名称",
+          "example": "无",
+          "member": "string",
+          "name": "PlanName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "录像上云模板ID",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "录像上云计划描述",
+          "example": "无",
+          "member": "string",
+          "name": "Describe",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云文件生命周期",
+          "example": "无",
+          "member": "LifeCycleData",
+          "name": "LifeCycle",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "录像上云计划状态，1:正常使用中，0:删除中，无法使用",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通道数量",
+          "example": "无",
+          "member": "int64",
+          "name": "ChannelCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreateAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "UpdateRecordBackupPlanModify": {
       "document": "修改录像上云计划数据结构",
@@ -8065,97 +8775,99 @@
       "type": "object"
     },
     "UpdateRecordBackupPlanResponse": {
-      "document": "修改录像上云计划返回数据",
+      "document": "UpdateRecordBackupPlan返回参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "录像上云计划ID",
+          "document": "返回数据",
           "example": "无",
-          "member": "string",
-          "name": "PlanId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "录像上云计划名称",
-          "example": "无",
-          "member": "string",
-          "name": "PlanName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "录像上云模板ID",
-          "example": "无",
-          "member": "string",
-          "name": "TemplateId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "录像上云计划描述",
-          "example": "无",
-          "member": "string",
-          "name": "Describe",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "云文件生命周期",
-          "example": "无",
-          "member": "LifeCycleData",
-          "name": "LifeCycle",
+          "member": "UpdateRecordBackupPlanData",
+          "name": "Data",
           "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRecordBackupTemplateData": {
+      "document": "修改录像上云模版返回数据",
+      "members": [
+        {
           "disabled": false,
-          "document": "录像上云计划状态，1:正常使用中，0:删除中，无法使用",
+          "document": "模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "int64",
-          "name": "Status",
+          "member": "string",
+          "name": "TemplateId",
           "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "通道数量",
+          "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "int64",
-          "name": "ChannelCount",
+          "member": "string",
+          "name": "TemplateName",
           "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RecordTemplateTimeSections",
+          "name": "TimeSections",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RecordTemplateTimeSections",
+          "name": "DevTimeSections",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上云倍速（支持1，2，4倍速）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Scale",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "CreateAt",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "修改时间",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "UpdateAt",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8233,80 +8945,26 @@
       "type": "object"
     },
     "UpdateRecordBackupTemplateResponse": {
-      "document": "修改录像上云模版返回数据",
+      "document": "UpdateRecordBackupTemplate返回参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回数据",
           "example": "无",
+          "member": "UpdateRecordBackupTemplateData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
-          "name": "TemplateId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "TemplateName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "上云时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "RecordTemplateTimeSections",
-          "name": "TimeSections",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "录像时间段（按周进行设置，支持一天设置多个时间段，每个时间段不小于10分钟）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "RecordTemplateTimeSections",
-          "name": "DevTimeSections",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "上云倍速（支持1，2，4倍速）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "Scale",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "CreateAt",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "UpdateAt",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "name": "RequestId",
+          "type": "string"
         }
       ],
-      "usage": "out"
+      "type": "object"
     },
     "UpdateRecordPlanData": {
       "document": "修改实时上云录像计划的数据",
@@ -8425,7 +9083,7 @@
           "disabled": false,
           "document": "返回结果",
           "example": "无",
-          "member": "RecordPlanOptResponse",
+          "member": "RecordPlanOptData",
           "name": "Data",
           "output_required": true,
           "type": "object",
@@ -8607,7 +9265,7 @@
           "disabled": false,
           "document": "返回数据",
           "example": "无",
-          "member": "UpdateDeviceResponse",
+          "member": "UpdateDeviceData",
           "name": "Data",
           "output_required": true,
           "type": "object",

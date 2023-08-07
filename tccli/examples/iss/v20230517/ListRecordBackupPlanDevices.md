@@ -12,7 +12,15 @@ tccli iss ListRecordBackupPlanDevices --cli-unfold-argument  \
 Output: 
 ```
 {
-    "Response": {}
+    "Response": {
+        "Data": {
+            "List": null,
+            "PageNumber": 0,
+            "PageSize": 20,
+            "TotalCount": 0
+        },
+        "RequestId": "f6951e81-bde0-4e2a-9bf2-203f8416eec0"
+    }
 }
 ```
 
