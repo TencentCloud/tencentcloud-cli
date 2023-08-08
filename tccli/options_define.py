@@ -22,6 +22,7 @@ CliUnfoldArgument = "cli-unfold-argument"
 Waiter = "waiter"
 WaiterInfo = "waiter_info"
 Language = "language"
+SysParam = "_sys_param"
 
 ENV_SECRET_ID = "TENCENTCLOUD_SECRET_ID"
 ENV_SECRET_KEY = "TENCENTCLOUD_SECRET_KEY"
