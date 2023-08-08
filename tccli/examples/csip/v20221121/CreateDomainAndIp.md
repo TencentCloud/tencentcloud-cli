@@ -1,18 +1,20 @@
-**Example 1: 空示例**
+**Example 1: 示例**
 
-空示例
+示例
 
 Input: 
 
 ```
-tccli csip CreateDomainAndIp --cli-unfold-argument ```
+tccli csip CreateDomainAndIp --cli-unfold-argument  \
+    --Content abc
+```
 
 Output: 
 ```
 {
     "Response": {
         "Data": 0,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

@@ -47,7 +47,6 @@
       "document": "运行时精简信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境id",
           "example": "12",
@@ -58,7 +57,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境名称，用户输入，同一uin内唯一",
           "example": "天津-2",
@@ -69,7 +67,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境类型：0: sandbox, 1:shared, 2:private",
           "example": "2",
@@ -80,7 +77,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境所在地域，tianjin，beijiing，guangzhou等",
           "example": "tianjin",
@@ -91,7 +87,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境所在地域，tianjin，beijiing，guangzhou等（同Zone）",
           "example": "tianjin",
@@ -102,7 +97,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境应用listener地址后缀",
           "example": "ipaas.tianjin.com",
@@ -113,7 +107,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境状态",
           "example": "1",
@@ -124,7 +117,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境过期时间",
           "example": "1624354153",
@@ -135,7 +127,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境运行类型：0:运行时类型、1:api类型",
           "example": "1",
@@ -146,7 +137,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否已在当前环境发布\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -154,6 +144,16 @@
           "name": "Deployed",
           "required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "环境扩展组件是否满足应用要求：0=true, 1=false 表示该应用需要扩展组件0(cdc)以及1(java)，但是独立环境有cdc无java，不满足发布要求\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "string",
+          "name": "MatchExtensions",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -352,6 +352,15 @@
           "example": "0",
           "member": "int64",
           "name": "PlanType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "0：应用集成，1：API，2：ETL",
+          "example": "2",
+          "member": "int64",
+          "name": "RuntimeClass",
           "required": false,
           "type": "int"
         }
@@ -722,9 +731,8 @@
       "document": "运行环境扩展组件",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "扩展组件类型：0:cdc",
+          "document": "扩展组件类型：0:cdc 1:dataway-java",
           "example": "0",
           "member": "int64",
           "name": "Type",
@@ -733,68 +741,62 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署规格vcore数",
           "example": "1",
           "member": "float",
           "name": "Size",
-          "required": true,
+          "required": false,
           "type": "float",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "副本数",
           "example": "2",
           "member": "int64",
           "name": "Replica",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩展组件名称",
           "example": "cdc",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态 1:未启用 2:已启用",
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "1624354153",
           "member": "int64",
           "name": "CreatedAt",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间",
           "example": "1624354153",
           "member": "int64",
           "name": "UpdatedAt",
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         }
@@ -805,7 +807,6 @@
       "document": "运行时详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境id",
           "example": "123",
@@ -816,7 +817,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主账号uin",
           "example": "12345",
@@ -827,7 +827,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境名称，用户输入，同一uin内唯一",
           "example": "天津-测试1",
@@ -838,7 +837,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境所在地域，tianjin，beijiing，guangzhou等",
           "example": "tianjin",
@@ -849,7 +847,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境类型：0: sandbox, 1:shared, 2:private 3: trial",
           "example": "2",
@@ -860,7 +857,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运行时状态：1:running, 2:deleting, 3:creating, 4:scaling, 5:unavailable, 6:deleted, 7:errored",
           "example": "0",
@@ -871,7 +867,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境创建时间",
           "example": "1624354153",
@@ -882,7 +877,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境更新时间",
           "example": "1624354153",
@@ -893,7 +887,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境资源配置，worker总配额，0:0vCore0G, 1:1vCore2G, 2:2vCore4G, 4:4vCore8G, 8:8vCore16G, 12:12vCore24G, 16:16vCore32G, 100:unlimited",
           "example": "2",
@@ -904,7 +897,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境资源配置，worker副本数",
           "example": "3",
@@ -915,7 +907,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "正在运行的应用实例数量",
           "example": "2",
@@ -926,7 +917,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已使用cpu核数",
           "example": "0.2",
@@ -937,7 +927,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cpu核数上限",
           "example": "1",
@@ -948,7 +937,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已使用内存 MB",
           "example": "2055",
@@ -959,7 +947,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存上限 MB",
           "example": "4096",
@@ -970,7 +957,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1624354153",
@@ -981,7 +967,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "收费类型：0:缺省，1:自助下单页购买(支持续费/升配等操作)，2:代销下单页购买\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -992,7 +977,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源限制类型：0:无限制，1:有限制\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1003,7 +987,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -1014,7 +997,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩展组件列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1025,7 +1007,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境类型：0: sandbox, 1:shared, 2:private 3: trial\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -1036,9 +1017,8 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "环境运行类型：0:运行时类型、1:api类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "环境运行类型：0:运行时类型、1:api类型、2:etl环境\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "RuntimeClass",
@@ -1047,7 +1027,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已使用出带宽 Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1058,7 +1037,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "出带宽上限 Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",

@@ -14,6 +14,13 @@
       "output": "BindStaffSkillGroupListResponse",
       "status": "online"
     },
+    "CreateAdminURL": {
+      "document": "创建管理端访问链接",
+      "input": "CreateAdminURLRequest",
+      "name": "创建管理端访问链接",
+      "output": "CreateAdminURLResponse",
+      "status": "online"
+    },
     "CreateAutoCalloutTask": {
       "document": "创建自动外呼任务",
       "input": "CreateAutoCalloutTaskRequest",
@@ -868,6 +875,54 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateAdminURLRequest": {
+      "document": "CreateAdminURL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "is_base64": false,
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "管理员账号",
+          "example": "foo@tencent.com",
+          "is_base64": false,
+          "member": "string",
+          "name": "SeatUserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAdminURLResponse": {
+      "document": "CreateAdminURL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "登录链接",
+          "example": "https://tccc.qcloud.com/saas-manage/#/1400000000/home?token=6bb56a09-2787-40bc-80c5-dc6dab783eff",
+          "member": "string",
+          "name": "URL",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateAutoCalloutTaskRequest": {
       "document": "CreateAutoCalloutTask请求参数结构体",

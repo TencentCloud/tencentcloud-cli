@@ -140,6 +140,13 @@
       "output": "UpdateAsrVocabResponse",
       "status": "online"
     },
+    "VoicePrintCount": {
+      "document": "统计并返回注册的说话人id总数",
+      "input": "VoicePrintCountRequest",
+      "name": "说话人注册数量统计",
+      "output": "VoicePrintCountResponse",
+      "status": "online"
+    },
     "VoicePrintDelete": {
       "document": "本接口用于以删除已经注册的说话人信息（删除之后，原有的说话人ID和说话人音频数据都会失效）",
       "input": "VoicePrintDeleteRequest",
@@ -2189,6 +2196,49 @@
         }
       ],
       "usage": "out"
+    },
+    "VoicePrintCountData": {
+      "document": "统计返回注册数量结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VoicePrintCountRequest": {
+      "document": "VoicePrintCount请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "VoicePrintCountResponse": {
+      "document": "VoicePrintCount返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "统计数据",
+          "example": "无",
+          "member": "VoicePrintCountData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "VoicePrintDeleteRequest": {
       "document": "VoicePrintDelete请求参数结构体",

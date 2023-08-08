@@ -444,7 +444,7 @@
           "example": "无",
           "member": "int64",
           "name": "AppId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -454,7 +454,7 @@
           "example": "无",
           "member": "string",
           "name": "Uin",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -464,7 +464,7 @@
           "example": "无",
           "member": "string",
           "name": "Nick",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -474,7 +474,7 @@
           "example": "无",
           "member": "string",
           "name": "Region",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -484,7 +484,7 @@
           "example": "无",
           "member": "string",
           "name": "AssetId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -494,7 +494,7 @@
           "example": "无",
           "member": "string",
           "name": "AssetName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -504,7 +504,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceCreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -514,7 +514,7 @@
           "example": "无",
           "member": "string",
           "name": "Namespace",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -524,7 +524,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -534,7 +534,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -544,7 +544,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -554,7 +554,7 @@
           "example": "无",
           "member": "string",
           "name": "MachineId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -564,7 +564,7 @@
           "example": "无",
           "member": "string",
           "name": "MachineName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -574,7 +574,7 @@
           "example": "无",
           "member": "string",
           "name": "PodIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -584,7 +584,7 @@
           "example": "无",
           "member": "int64",
           "name": "ServiceCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -594,7 +594,7 @@
           "example": "无",
           "member": "int64",
           "name": "ContainerCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -604,7 +604,7 @@
           "example": "无",
           "member": "string",
           "name": "PublicIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -614,7 +614,7 @@
           "example": "无",
           "member": "string",
           "name": "PrivateIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -624,7 +624,17 @@
           "example": "无",
           "member": "int64",
           "name": "IsCore",
-          "required": false,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否新资产 1新\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsNewAsset",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         }
@@ -1170,8 +1180,10 @@
           "disabled": false,
           "document": "资产id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
+          "is_base64": false,
           "member": "string",
           "name": "AssetId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1180,8 +1192,10 @@
           "disabled": false,
           "document": "资产名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "AssetName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1190,8 +1204,10 @@
           "disabled": false,
           "document": "资产类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "AssetType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1200,8 +1216,10 @@
           "disabled": false,
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1212,6 +1230,7 @@
           "example": "无",
           "member": "uint64",
           "name": "CWPStatus",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1220,8 +1239,10 @@
           "disabled": false,
           "document": "资产创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "AssetCreateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1230,8 +1251,10 @@
           "disabled": false,
           "document": "公网ip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "PublicIp",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1240,8 +1263,10 @@
           "disabled": false,
           "document": "私网ip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "PrivateIp",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1250,8 +1275,10 @@
           "disabled": false,
           "document": "vpc id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "VpcId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1260,8 +1287,10 @@
           "disabled": false,
           "document": "vpc 名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "VpcName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1272,6 +1301,7 @@
           "example": "无",
           "member": "uint64",
           "name": "AppId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1280,8 +1310,10 @@
           "disabled": false,
           "document": "用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Uin",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1290,8 +1322,10 @@
           "disabled": false,
           "document": "昵称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "NickName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1300,8 +1334,10 @@
           "disabled": false,
           "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "AvailableArea",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1312,6 +1348,7 @@
           "example": "无",
           "member": "uint64",
           "name": "IsCore",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1320,8 +1357,10 @@
           "disabled": false,
           "document": "子网id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "SubnetId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1330,8 +1369,10 @@
           "disabled": false,
           "document": "子网名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "SubnetName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1340,8 +1381,10 @@
           "disabled": false,
           "document": "uuid\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceUuid",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1350,8 +1393,10 @@
           "disabled": false,
           "document": "qquid\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceQUuid",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1360,8 +1405,10 @@
           "disabled": false,
           "document": "os名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "OsName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1372,6 +1419,7 @@
           "example": "无",
           "member": "uint64",
           "name": "PartitionCount",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1380,8 +1428,10 @@
           "disabled": false,
           "document": "cpu信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "CPUInfo",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1392,6 +1442,7 @@
           "example": "无",
           "member": "uint64",
           "name": "CPUSize",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1400,8 +1451,10 @@
           "disabled": false,
           "document": "cpu负载\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "CPULoad",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1410,8 +1463,10 @@
           "disabled": false,
           "document": "内存大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "MemorySize",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1420,8 +1475,10 @@
           "disabled": false,
           "document": "内存负载\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "MemoryLoad",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1430,8 +1487,10 @@
           "disabled": false,
           "document": "硬盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "DiskSize",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1440,8 +1499,10 @@
           "disabled": false,
           "document": "硬盘负载\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "DiskLoad",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1450,8 +1511,10 @@
           "disabled": false,
           "document": "账号数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "AccountCount",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1460,8 +1523,10 @@
           "disabled": false,
           "document": "进程数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ProcessCount",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1470,8 +1535,10 @@
           "disabled": false,
           "document": "软件应用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "AppCount",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1482,6 +1549,7 @@
           "example": "无",
           "member": "uint64",
           "name": "PortCount",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1492,6 +1560,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Attack",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1502,6 +1571,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Access",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1512,6 +1582,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Intercept",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1520,8 +1591,10 @@
           "disabled": false,
           "document": "入向峰值带宽\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "InBandwidth",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1530,8 +1603,10 @@
           "disabled": false,
           "document": "出向峰值带宽\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "OutBandwidth",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1540,8 +1615,10 @@
           "disabled": false,
           "document": "入向累计流量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "InFlow",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1550,8 +1627,10 @@
           "disabled": false,
           "document": "出向累计流量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "OutFlow",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1560,8 +1639,10 @@
           "disabled": false,
           "document": "最近扫描时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "LastScanTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1572,6 +1653,7 @@
           "example": "无",
           "member": "uint64",
           "name": "NetWorkOut",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1582,6 +1664,7 @@
           "example": "无",
           "member": "uint64",
           "name": "PortRisk",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1592,6 +1675,7 @@
           "example": "无",
           "member": "uint64",
           "name": "VulnerabilityRisk",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1602,6 +1686,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ConfigurationRisk",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1612,6 +1697,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ScanTask",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1622,6 +1708,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tag",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -1630,8 +1717,10 @@
           "disabled": false,
           "document": "memberId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "MemberId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1640,8 +1729,10 @@
           "disabled": false,
           "document": "os全称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Os",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1652,6 +1743,7 @@
           "example": "无",
           "member": "int64",
           "name": "RiskExposure",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1662,6 +1754,18 @@
           "example": "无",
           "member": "int64",
           "name": "BASAgentStatus",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1新资产；0 非新资产\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsNewAsset",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1676,6 +1780,7 @@
           "disabled": false,
           "document": "-",
           "example": "-",
+          "is_base64": false,
           "member": "string",
           "name": "Content",
           "required": true,
@@ -1693,6 +1798,7 @@
           "example": "1",
           "member": "int64",
           "name": "Data",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1712,6 +1818,7 @@
           "disabled": false,
           "document": "任务名称",
           "example": "helloworld",
+          "is_base64": false,
           "member": "string",
           "name": "TaskName",
           "required": true,
@@ -1721,6 +1828,7 @@
           "disabled": false,
           "document": "0-全扫，1-指定资产扫，2-排除资产扫，3-手动填写扫；1和2则Assets字段必填，3则SelfDefiningAssets必填",
           "example": "0",
+          "is_base64": false,
           "member": "int64",
           "name": "ScanAssetType",
           "required": true,
@@ -1728,8 +1836,9 @@
         },
         {
           "disabled": false,
-          "document": "扫描项目；port/poc/weakpass/webcontent/configrisk",
+          "document": "扫描项目；port/poc/weakpass/webcontent/configrisk/exposedserver",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ScanItem",
           "required": true,
@@ -1739,6 +1848,7 @@
           "disabled": false,
           "document": "0-周期任务,1-立即扫描,2-定时扫描,3-自定义；0,2,3则ScanPlanContent必填",
           "example": "1",
+          "is_base64": false,
           "member": "int64",
           "name": "ScanPlanType",
           "required": true,
@@ -1748,6 +1858,7 @@
           "disabled": false,
           "document": "扫描资产信息列表",
           "example": "无",
+          "is_base64": false,
           "member": "TaskAssetObject",
           "name": "Assets",
           "required": false,
@@ -1757,6 +1868,7 @@
           "disabled": false,
           "document": "扫描计划详情",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ScanPlanContent",
           "required": false,
@@ -1766,6 +1878,7 @@
           "disabled": false,
           "document": "ip/域名/url数组",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "SelfDefiningAssets",
           "required": false,
@@ -1775,6 +1888,7 @@
           "disabled": false,
           "document": "高级配置",
           "example": "无",
+          "is_base64": false,
           "member": "TaskAdvanceCFG",
           "name": "TaskAdvanceCFG",
           "required": false,
@@ -1784,6 +1898,7 @@
           "disabled": false,
           "document": "体检模式，0-标准模式，1-快速模式，2-高级模式，默认标准模式",
           "example": "1",
+          "is_base64": false,
           "member": "int64",
           "name": "TaskMode",
           "required": false,
@@ -1801,7 +1916,28 @@
           "example": "无",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0,任务创建成功；小于0失败；-1为存在资产未认证",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "未认证资产列表",
+          "example": "无",
+          "member": "string",
+          "name": "UnAuthAsset",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -1822,7 +1958,7 @@
           "example": "无",
           "member": "string",
           "name": "AssetId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1832,7 +1968,7 @@
           "example": "无",
           "member": "string",
           "name": "AssetName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1842,7 +1978,7 @@
           "example": "无",
           "member": "string",
           "name": "AssetType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1852,7 +1988,7 @@
           "example": "无",
           "member": "string",
           "name": "VpcId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1862,7 +1998,7 @@
           "example": "无",
           "member": "string",
           "name": "VpcName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1872,7 +2008,7 @@
           "example": "无",
           "member": "string",
           "name": "Region",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1882,7 +2018,7 @@
           "example": "无",
           "member": "string",
           "name": "Domain",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1892,7 +2028,7 @@
           "example": "无",
           "member": "string",
           "name": "AssetCreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1902,7 +2038,7 @@
           "example": "无",
           "member": "string",
           "name": "LastScanTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1912,7 +2048,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ConfigurationRisk",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1922,7 +2058,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Attack",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1932,7 +2068,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Access",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1942,7 +2078,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ScanTask",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1952,7 +2088,7 @@
           "example": "无",
           "member": "uint64",
           "name": "AppId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1962,7 +2098,7 @@
           "example": "无",
           "member": "string",
           "name": "Uin",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1972,7 +2108,7 @@
           "example": "无",
           "member": "string",
           "name": "NickName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1982,7 +2118,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Port",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1992,7 +2128,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tag",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2002,7 +2138,7 @@
           "example": "无",
           "member": "string",
           "name": "PrivateIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2012,7 +2148,7 @@
           "example": "无",
           "member": "string",
           "name": "PublicIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2022,7 +2158,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2032,7 +2168,17 @@
           "example": "无",
           "member": "uint64",
           "name": "IsCore",
-          "required": false,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否新资产: 1新\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsNewAsset",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         }
@@ -3424,6 +3570,46 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否新资产 1新\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsNewAsset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "待确认资产的随机三级域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VerifyDomain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "待确认资产的TXT记录内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VerifyTXTRecord",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "待确认资产的认证状态，0-待认证，1-认证成功，2-认证中，3-txt认证失败，4-人工认证失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "VerifyStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3539,7 +3725,7 @@
           "example": "无",
           "member": "string",
           "name": "AssetId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3549,7 +3735,7 @@
           "example": "无",
           "member": "string",
           "name": "AssetName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3559,7 +3745,7 @@
           "example": "无",
           "member": "string",
           "name": "AssetType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3569,7 +3755,7 @@
           "example": "无",
           "member": "string",
           "name": "Region",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3579,7 +3765,7 @@
           "example": "无",
           "member": "uint64",
           "name": "CFWStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3589,7 +3775,7 @@
           "example": "无",
           "member": "string",
           "name": "AssetCreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3599,7 +3785,7 @@
           "example": "无",
           "member": "string",
           "name": "PublicIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3609,7 +3795,7 @@
           "example": "无",
           "member": "uint64",
           "name": "PublicIpType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3619,7 +3805,7 @@
           "example": "无",
           "member": "string",
           "name": "VpcId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3629,7 +3815,7 @@
           "example": "无",
           "member": "string",
           "name": "VpcName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3639,7 +3825,7 @@
           "example": "无",
           "member": "uint64",
           "name": "AppId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3649,7 +3835,7 @@
           "example": "无",
           "member": "string",
           "name": "Uin",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3659,7 +3845,7 @@
           "example": "无",
           "member": "string",
           "name": "NickName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3669,7 +3855,7 @@
           "example": "无",
           "member": "uint64",
           "name": "IsCore",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3679,7 +3865,7 @@
           "example": "无",
           "member": "uint64",
           "name": "IsCloud",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3689,7 +3875,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Attack",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3699,7 +3885,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Access",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3709,7 +3895,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Intercept",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3719,7 +3905,7 @@
           "example": "无",
           "member": "string",
           "name": "InBandwidth",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3729,7 +3915,7 @@
           "example": "无",
           "member": "string",
           "name": "OutBandwidth",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3739,7 +3925,7 @@
           "example": "无",
           "member": "string",
           "name": "InFlow",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3749,7 +3935,7 @@
           "example": "无",
           "member": "string",
           "name": "OutFlow",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3759,7 +3945,7 @@
           "example": "无",
           "member": "string",
           "name": "LastScanTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3769,7 +3955,7 @@
           "example": "无",
           "member": "uint64",
           "name": "PortRisk",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3779,7 +3965,7 @@
           "example": "无",
           "member": "uint64",
           "name": "VulnerabilityRisk",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3789,7 +3975,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ConfigurationRisk",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3799,7 +3985,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ScanTask",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3809,7 +3995,7 @@
           "example": "无",
           "member": "uint64",
           "name": "WeakPassword",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3819,7 +4005,7 @@
           "example": "无",
           "member": "uint64",
           "name": "WebContentRisk",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3829,7 +4015,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tag",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3839,7 +4025,7 @@
           "example": "无",
           "member": "string",
           "name": "AddressId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3849,7 +4035,7 @@
           "example": "无",
           "member": "string",
           "name": "MemberId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3859,7 +4045,27 @@
           "example": "无",
           "member": "int64",
           "name": "RiskExposure",
-          "required": false,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否新资产 1新\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsNewAsset",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资产认证状态，0-待认证，1-认证成功，2-认证中，3+-认证失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "VerifyStatus",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         }
@@ -4001,7 +4207,7 @@
           "example": "无",
           "member": "string",
           "name": "AppId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4011,7 +4217,7 @@
           "example": "无",
           "member": "string",
           "name": "Uin",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4021,7 +4227,7 @@
           "example": "无",
           "member": "string",
           "name": "AssetId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4031,7 +4237,7 @@
           "example": "无",
           "member": "string",
           "name": "AssetName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4041,7 +4247,7 @@
           "example": "无",
           "member": "string",
           "name": "Region",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4051,7 +4257,7 @@
           "example": "无",
           "member": "string",
           "name": "VpcId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4061,7 +4267,7 @@
           "example": "无",
           "member": "string",
           "name": "VpcName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4071,7 +4277,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tag",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4081,7 +4287,7 @@
           "example": "无",
           "member": "string",
           "name": "Nick",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4091,7 +4297,7 @@
           "example": "无",
           "member": "string",
           "name": "CIDR",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4101,7 +4307,7 @@
           "example": "无",
           "member": "string",
           "name": "Zone",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4111,7 +4317,7 @@
           "example": "无",
           "member": "int64",
           "name": "CVM",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4121,7 +4327,7 @@
           "example": "无",
           "member": "int64",
           "name": "AvailableIp",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4131,7 +4337,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4141,7 +4347,7 @@
           "example": "无",
           "member": "int64",
           "name": "ConfigureRisk",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4151,7 +4357,7 @@
           "example": "无",
           "member": "int64",
           "name": "ScanTask",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4161,7 +4367,7 @@
           "example": "无",
           "member": "string",
           "name": "LastScanTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4171,7 +4377,17 @@
           "example": "无",
           "member": "uint64",
           "name": "IsCore",
-          "required": false,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否新资产 1新\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsNewAsset",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         }
@@ -4393,7 +4609,7 @@
           "example": "-",
           "member": "uint64",
           "name": "Subnet",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4403,7 +4619,7 @@
           "example": "-",
           "member": "uint64",
           "name": "ConnectedVpc",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4413,7 +4629,7 @@
           "example": "-",
           "member": "string",
           "name": "AssetId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4423,7 +4639,7 @@
           "example": "-",
           "member": "string",
           "name": "Region",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4433,7 +4649,7 @@
           "example": "-",
           "member": "uint64",
           "name": "CVM",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4443,7 +4659,7 @@
           "example": "-",
           "member": "Tag",
           "name": "Tag",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4453,7 +4669,7 @@
           "example": "-",
           "member": "string",
           "name": "DNS",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4463,7 +4679,7 @@
           "example": "-",
           "member": "string",
           "name": "AssetName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4473,7 +4689,7 @@
           "example": "-",
           "member": "string",
           "name": "CIDR",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4483,7 +4699,7 @@
           "example": "-",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4493,7 +4709,7 @@
           "example": "无",
           "member": "string",
           "name": "AppId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4503,7 +4719,7 @@
           "example": "无",
           "member": "string",
           "name": "Uin",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4513,9 +4729,29 @@
           "example": "无",
           "member": "string",
           "name": "Nick",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否新资产 1新\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsNewAsset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否核心资产1是 2不是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsCore",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4527,31 +4763,30 @@
           "disabled": false,
           "document": "过滤的项",
           "example": "Appid",
+          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "过滤的值",
           "example": "[\"1300448058\"]",
+          "is_base64": false,
           "member": "string",
           "name": "Values",
           "required": true,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         },
         {
           "disabled": false,
-          "document": "精确匹配填 7 模糊匹配填9 ， 兼容 中台定的结构",
+          "document": "中台定义：\n1等于 2大于 3小于 4大于等于 5小于等于 6不等于 9模糊匹配 13非模糊匹配 14按位与\n精确匹配填 7 模糊匹配填9 兼容 中台定的结构\n",
           "example": "9",
           "member": "int64",
           "name": "OperatorType",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         }
       ],
       "usage": "in"

@@ -1,6 +1,6 @@
 **Example 1: 恢复实例访问**
 
-
+恢复实例访问
 
 Input: 
 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "RequestId": "128046",
-        "FlowId": "123"
+        "FlowId": 123
     }
 }
 ```

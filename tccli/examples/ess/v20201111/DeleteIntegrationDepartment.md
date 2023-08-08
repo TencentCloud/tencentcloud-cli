@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli ess DeleteIntegrationDepartment --cli-unfold-argument  \
-    --Operator.UserId yDwgKUUcXXXXXXXXXXXXXXXXXXQZDRuD \
-    --DeptId yDwgIUUckp1gxxxxxxxxE8xOm12b9 \
-    --ReceiveDeptId yDRIoUUgygzzzzzzzzzzSXSVVSJ1z
+    --Operator.UserId yDwgKUUc********QZDRuD \
+    --DeptId yDwgIUUckp1g********E8xOm12b9 \
+    --ReceiveDeptId yDRIoUUgyg********SXSVVSJ1z
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "s1679xxxxx21175"
+        "RequestId": "s1679******21175"
     }
 }
 ```

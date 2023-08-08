@@ -48,7 +48,10 @@ Output:
                 ],
                 "UserId": "yDRt******************BKpnZs",
                 "Verified": true,
-                "VerifiedOn": 1658114065
+                "VerifiedOn": 1658114065,
+                "QuiteJob": 0,
+                "ReceiveOpenId": "",
+                "ReceiveUserId": ""
             }
         ],
         "Limit": 20,
@@ -110,7 +113,10 @@ Output:
                 "UserId": "yDRt******************BKpnZs",
                 "Verified": true,
                 "VerifiedOn": 1658114065,
-                "WeworkOpenId": "fxxxxxxxf"
+                "WeworkOpenId": "fxxxxxxxf",
+                "QuiteJob": 0,
+                "ReceiveOpenId": "",
+                "ReceiveUserId": ""
             }
         ],
         "Limit": 20,

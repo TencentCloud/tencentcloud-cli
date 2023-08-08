@@ -1,16 +1,16 @@
-**Example 1: 示例**
+**Example 1: 查询角色列表**
 
-示例
+查询角色列表
 
 Input: 
 
 ```
 tccli essbasic ChannelDescribeRoles --cli-unfold-argument  \
-    --Agent.AppId abc \
-    --Agent.ProxyOrganizationOpenId abc \
-    --Agent.ProxyOperator.OpenId abc \
-    --Filters.0.Key abc \
-    --Filters.0.Values abc \
+    --Agent.AppId  jsdk812kxkdfjks***k88123123 \
+    --Agent.ProxyOrganizationOpenId test_org_openid \
+    --Agent.ProxyOperator.OpenId test_openid \
+    --Filters.0.Key  \
+    --Filters.0.Values  \
     --Offset 1 \
     --Limit abc
 ```
@@ -24,12 +24,12 @@ Output:
         "TotalCount": 1,
         "ChannelRoles": [
             {
-                "RoleId": "abc",
-                "RoleName": "abc",
+                "RoleId": "abc8jkkjds***121212",
+                "RoleName": "业务管理员",
                 "RoleStatus": 1
             }
         ],
-        "RequestId": "abc"
+        "RequestId": " s19ksdjkkds****ldsjfkdfdf"
     }
 }
 ```

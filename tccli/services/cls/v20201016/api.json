@@ -3533,6 +3533,7 @@
           "disabled": false,
           "document": "机器组名字，不能重复",
           "example": "testgroup",
+          "is_base64": false,
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -3542,6 +3543,7 @@
           "disabled": false,
           "document": "创建机器组类型，Type为ip，Values中为Ip字符串列表创建机器组，Type为label， Values中为标签字符串列表创建机器组",
           "example": "无",
+          "is_base64": false,
           "member": "MachineGroupTypeInfo",
           "name": "MachineGroupType",
           "required": true,
@@ -3551,6 +3553,7 @@
           "disabled": false,
           "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的机器组。最大支持10个标签键值对，同一个资源只能绑定到同一个标签键下。",
           "example": "无",
+          "is_base64": false,
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -3560,6 +3563,7 @@
           "disabled": false,
           "document": "是否开启机器组自动更新",
           "example": "true",
+          "is_base64": false,
           "member": "bool",
           "name": "AutoUpdate",
           "required": false,
@@ -3569,6 +3573,7 @@
           "disabled": false,
           "document": "升级开始时间，建议业务低峰期升级LogListener",
           "example": "\"12:00:00\"",
+          "is_base64": false,
           "member": "string",
           "name": "UpdateStartTime",
           "required": false,
@@ -3578,6 +3583,7 @@
           "disabled": false,
           "document": "升级结束时间，建议业务低峰期升级LogListener",
           "example": "\"13:00:00\"",
+          "is_base64": false,
           "member": "string",
           "name": "UpdateEndTime",
           "required": false,
@@ -3587,6 +3593,7 @@
           "disabled": false,
           "document": "是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费",
           "example": "true",
+          "is_base64": false,
           "member": "bool",
           "name": "ServiceLogging",
           "required": false,
@@ -3596,10 +3603,21 @@
           "disabled": false,
           "document": "机器组元数据信息列表",
           "example": "无",
+          "is_base64": false,
           "member": "MetaTagInfo",
           "name": "MetaTags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "系统类型，默认0，0：Linux，1: windows",
+          "example": "0",
+          "is_base64": false,
+          "member": "uint64",
+          "name": "OSType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3613,6 +3631,7 @@
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "GroupId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4789,7 +4808,6 @@
       "document": "DeleteMachineGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机器组ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
@@ -6209,7 +6227,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "machineGroupName\n- 按照【机器组名称】进行过滤。\n- 类型：String\n- 必选：否\n\nmachineGroupId\n- 按照【机器组ID】进行过滤。\n- 类型：String\n- 必选：否\n\ntagKey\n- 按照【标签键】进行过滤。\n- 类型：String\n- 必选：否\n\ntag:tagKey\n- 按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。\n- 类型：String\n- 必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "document": "machineGroupName\n- 按照【机器组名称】进行过滤。\n- 类型：String\n- 必选：否\n\nmachineGroupId\n- 按照【机器组ID】进行过滤。\n- 类型：String\n- 必选：否\n\nosType\n- 按照【操作系统类型】进行过滤。\n- 类型：Int\n- 必选：否\n\ntagKey\n- 按照【标签键】进行过滤。\n- 类型：String\n- 必选：否\n\ntag:tagKey\n- 按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。\n- 类型：String\n- 必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -6692,6 +6710,56 @@
       ],
       "usage": "both"
     },
+    "EventLog": {
+      "document": "Windows事件日志采集配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件通道，支持Application，Security，Setup，System，ALL\n",
+          "example": "Application",
+          "member": "string",
+          "name": "EventChannel",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间类型，1:用户自定义，2:当前时间",
+          "example": "1",
+          "member": "uint64",
+          "name": "TimeType",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间，用户选择自定义时间类型时，需要指定时间",
+          "example": "12345675",
+          "member": "uint64",
+          "name": "Timestamp",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件ID过滤列表",
+          "example": "无",
+          "member": "string",
+          "name": "EventIDs",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ExcludePathInfo": {
       "document": "黑名单path信息",
       "members": [
@@ -7075,6 +7143,17 @@
           "member": "MetaTagInfo",
           "name": "MetaTags",
           "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "windows事件日志采集",
+          "example": "无",
+          "member": "EventLog",
+          "name": "EventLogRules",
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -8362,6 +8441,16 @@
           "name": "MetaTags",
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作系统类型，0: Linux，1: windows",
+          "example": "0",
+          "member": "uint64",
+          "name": "OSType",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

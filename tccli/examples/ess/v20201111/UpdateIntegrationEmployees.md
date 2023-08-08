@@ -20,12 +20,12 @@ Output:
         "SuccessEmployeeData": [
             {
                 "DisplayName": "张三",
-                "Mobile": "187XXXX0000",
-                "UserId": "yDwgKUUcXXXXXXXXXXXXXXXXXXQZD123"
+                "Mobile": "187****0000",
+                "UserId": "yDwgKUUcX*******QZD123"
             }
         ],
         "FailedEmployeeData": [],
-        "RequestId": "abc"
+        "RequestId": "s18mds3kjkld*****fssfsdfdsf"
     }
 }
 ```

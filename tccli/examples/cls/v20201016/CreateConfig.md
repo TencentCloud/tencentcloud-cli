@@ -29,6 +29,10 @@ tccli cls CreateConfig --cli-unfold-argument  \
     --ExtractRule.PathRegex abc \
     --ExtractRule.MetaTags.0.Key abc \
     --ExtractRule.MetaTags.0.Value abc \
+    --ExtractRule.EventLogRules.0.EventChannel abc \
+    --ExtractRule.EventLogRules.0.TimeType 1 \
+    --ExtractRule.EventLogRules.0.Timestamp 1 \
+    --ExtractRule.EventLogRules.0.EventIDs abc \
     --ExcludePaths.0.Type abc \
     --ExcludePaths.0.Value abc \
     --Output abc \
