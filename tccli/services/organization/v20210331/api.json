@@ -42,6 +42,13 @@
       "output": "CreateOrganizationMemberResponse",
       "status": "online"
     },
+    "CreateOrganizationMemberAuthIdentity": {
+      "document": "添加组织成员访问授权",
+      "input": "CreateOrganizationMemberAuthIdentityRequest",
+      "name": "添加组织成员访问授权",
+      "output": "CreateOrganizationMemberAuthIdentityResponse",
+      "status": "online"
+    },
     "CreateOrganizationMemberPolicy": {
       "document": "创建组织成员访问授权策略",
       "input": "CreateOrganizationMemberPolicyRequest",
@@ -54,6 +61,13 @@
       "input": "DeleteOrganizationMembersRequest",
       "name": "批量删除企业组织成员",
       "output": "DeleteOrganizationMembersResponse",
+      "status": "online"
+    },
+    "DeleteOrganizationMembersPolicy": {
+      "document": "删除组织成员访问策略",
+      "input": "DeleteOrganizationMembersPolicyRequest",
+      "name": "删除组织成员访问策略",
+      "output": "DeleteOrganizationMembersPolicyResponse",
       "status": "online"
     },
     "DeleteOrganizationNodes": {
@@ -494,6 +508,44 @@
       ],
       "type": "object"
     },
+    "CreateOrganizationMemberAuthIdentityRequest": {
+      "document": "CreateOrganizationMemberAuthIdentity请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成员uin列表。最多10个",
+          "example": "[111111111111]",
+          "member": "uint64",
+          "name": "MemberUins",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "身份Id列表。最多5个",
+          "example": "[13]",
+          "member": "uint64",
+          "name": "IdentityIds",
+          "required": true,
+          "type": "list",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrganizationMemberAuthIdentityResponse": {
+      "document": "CreateOrganizationMemberAuthIdentity返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateOrganizationMemberPolicyRequest": {
       "document": "CreateOrganizationMemberPolicy请求参数结构体",
       "members": [
@@ -697,6 +749,34 @@
           "value_allowed_null": true,
           "visibility": 1
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOrganizationMembersPolicyRequest": {
+      "document": "DeleteOrganizationMembersPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "访问策略ID。",
+          "example": "11",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOrganizationMembersPolicyResponse": {
+      "document": "DeleteOrganizationMembersPolicy返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

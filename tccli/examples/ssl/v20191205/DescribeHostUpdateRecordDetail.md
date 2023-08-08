@@ -42,9 +42,12 @@ Output:
                         "Bucket": "abc",
                         "Port": 0,
                         "Namespace": "abc",
-                        "SecretName": "abc"
+                        "SecretName": "abc",
+                        "EnvId": "abc",
+                        "TCBType": "abc"
                     }
-                ]
+                ],
+                "TotalCount": 0
             }
         ],
         "SuccessTotalCount": 0,

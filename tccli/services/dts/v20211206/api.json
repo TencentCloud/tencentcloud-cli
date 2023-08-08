@@ -424,7 +424,6 @@
       "document": "校验任务运行详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-07-11 17:16:50",
@@ -436,7 +435,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-07-11 17:16:50",
@@ -448,7 +446,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务步骤信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1257,7 +1254,7 @@
         },
         {
           "disabled": false,
-          "document": "同步任务选项",
+          "document": "同步任务选项；该字段下的RateLimitOption暂时无法生效、如果需要修改限速、可通过ModifySyncRateLimit接口完成限速",
           "example": "无",
           "member": "Options",
           "name": "Options",
@@ -1937,7 +1934,6 @@
       "document": "数据库信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表示节点角色，针对分布式数据库，如mongodb中的mongos节点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "mongos",
@@ -1949,7 +1945,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内核版本，针对mariadb的不同内核版本等\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "mysql",
@@ -1961,7 +1956,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的IP地址，对于公网、专线、VPN、云联网、自研上云、VPC等接入方式此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "192.2.3.4",
@@ -1973,7 +1967,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的端口，对于公网、云主机自建、专线、VPN、云联网、自研上云、VPC等接入方式此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3306",
@@ -1985,7 +1978,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的用户名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "root",
@@ -1997,7 +1989,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的密码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "password",
@@ -2009,7 +2000,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CVM实例短ID，格式如：ins-olgl39y8；与云服务器控制台页面显示的实例ID相同；如果接入类型为云主机自建的方式，此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ins-olgl39y8",
@@ -2021,7 +2011,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPN网关ID，格式如：vpngw-9ghexg7q；如果接入类型为vpncloud的方式，此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpngw-9ghexg7q",
@@ -2033,7 +2022,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关ID，格式如：dcg-0rxtqqxb；如果接入类型为专线接入的方式，此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dcg-0rxtqqxb",
@@ -2045,7 +2033,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库实例ID，格式如：cdb-powiqx8q；如果接入类型为云数据库的方式，此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cdb-powiqx8q",
@@ -2057,7 +2044,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云联网ID，如：ccn-afp6kltc 注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ccn-afp6kltc",
@@ -2069,7 +2055,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID，格式如：vpc-92jblxto；如果接入类型为vpc、vpncloud、ccn、dcg的方式，此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-92jblxto",
@@ -2081,7 +2066,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络下的子网ID，格式如：subnet-3paxmkdz；如果接入类型为vpc、vpncloud、ccn、dcg的方式，此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "subnet-3paxmkdz",
@@ -2093,7 +2077,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库版本，当实例为RDS实例时才有效，格式如：5.6或者5.7，默认为5.6\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5.6",
@@ -2105,7 +2088,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例所属账号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2117,7 +2099,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "跨账号迁移时的角色,只允许[a-zA-Z0-9\\-\\_]+\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2129,7 +2110,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源所属账号 为空或self(表示本账号内资源)、other(表示其他账户资源)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "self",
@@ -2141,7 +2121,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "临时密钥Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2153,7 +2132,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "临时密钥Key\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2165,7 +2143,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "临时Token\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3294,6 +3271,7 @@
           "example": "dts-amm1jw5q",
           "member": "string",
           "name": "JobId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3304,6 +3282,7 @@
           "example": "dts-amm1jw5q",
           "member": "string",
           "name": "JobName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3314,6 +3293,7 @@
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3324,6 +3304,7 @@
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "UpdateTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3334,6 +3315,7 @@
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "StartTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3344,6 +3326,7 @@
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "EndTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3354,6 +3337,7 @@
           "example": "无",
           "member": "string",
           "name": "BriefMsg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3364,6 +3348,7 @@
           "example": "running",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3374,6 +3359,7 @@
           "example": "无",
           "member": "MigrateAction",
           "name": "Action",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -3384,6 +3370,7 @@
           "example": "无",
           "member": "MigrateDetailInfo",
           "name": "StepInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -3394,6 +3381,7 @@
           "example": "无",
           "member": "DBEndpointInfo",
           "name": "SrcInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -3404,6 +3392,7 @@
           "example": "无",
           "member": "DBEndpointInfo",
           "name": "DstInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -3414,6 +3403,7 @@
           "example": "无",
           "member": "CompareTaskInfo",
           "name": "CompareTask",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -3424,6 +3414,7 @@
           "example": "无",
           "member": "TagItem",
           "name": "Tags",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -3434,6 +3425,7 @@
           "example": "immediate",
           "member": "string",
           "name": "RunMode",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3444,6 +3436,7 @@
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "ExpectRunTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3454,6 +3447,7 @@
           "example": "无",
           "member": "MigrateOption",
           "name": "MigrateOption",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -3464,6 +3458,7 @@
           "example": "无",
           "member": "CheckStepInfo",
           "name": "CheckStepInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -3474,6 +3469,7 @@
           "example": "无",
           "member": "TradeInfo",
           "name": "TradeInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -3484,7 +3480,30 @@
           "example": "无",
           "member": "ErrorInfoItem",
           "name": "ErrorInfo",
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "全量导出可重入标识：enum::\"yes\"/\"no\"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传",
+          "example": "yes",
+          "member": "string",
+          "name": "DumperResumeCtrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务的限速信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RateLimitOption",
+          "name": "RateLimitOption",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true,
           "visibility": 1
         },
@@ -4314,6 +4333,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4325,6 +4345,7 @@
           "example": "proxy",
           "member": "string",
           "name": "Role",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4336,6 +4357,7 @@
           "example": "mariadb",
           "member": "string",
           "name": "DbKernel",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4347,6 +4369,7 @@
           "example": "cdb-wew23ed",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4358,6 +4381,7 @@
           "example": "192.168.1.12",
           "member": "string",
           "name": "Ip",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4369,6 +4393,7 @@
           "example": "3306",
           "member": "uint64",
           "name": "Port",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true,
@@ -4380,6 +4405,7 @@
           "example": "user",
           "member": "string",
           "name": "User",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4391,6 +4417,7 @@
           "example": "1234",
           "member": "string",
           "name": "Password",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4402,6 +4429,7 @@
           "example": "postgress",
           "member": "string",
           "name": "DbName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4413,6 +4441,7 @@
           "example": "vpc-23rwfdg",
           "member": "string",
           "name": "VpcId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4424,6 +4453,7 @@
           "example": "subnet-tke9sfg",
           "member": "string",
           "name": "SubnetId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4435,6 +4465,7 @@
           "example": "ins-9emwf2d",
           "member": "string",
           "name": "CvmInstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4446,6 +4477,7 @@
           "example": "dcg-9sdfksk",
           "member": "string",
           "name": "UniqDcgId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4457,6 +4489,7 @@
           "example": "vpngw-3dsfwf2",
           "member": "string",
           "name": "UniqVpnGwId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4468,6 +4501,7 @@
           "example": "ccn-afp6kltc",
           "member": "string",
           "name": "CcnId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4479,6 +4513,7 @@
           "example": "aliyun",
           "member": "string",
           "name": "Supplier",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4490,6 +4525,7 @@
           "example": "5.6",
           "member": "string",
           "name": "EngineVersion",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4501,6 +4537,7 @@
           "example": "无",
           "member": "string",
           "name": "Account",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4512,6 +4549,7 @@
           "example": "other",
           "member": "string",
           "name": "AccountMode",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4523,6 +4561,7 @@
           "example": "dts test_role",
           "member": "string",
           "name": "AccountRole",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4534,6 +4573,7 @@
           "example": "无",
           "member": "string",
           "name": "RoleExternalId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4545,6 +4585,7 @@
           "example": "无",
           "member": "string",
           "name": "TmpSecretId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4556,6 +4597,7 @@
           "example": "无",
           "member": "string",
           "name": "TmpSecretKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4567,6 +4609,7 @@
           "example": "无",
           "member": "string",
           "name": "TmpToken",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4578,6 +4621,7 @@
           "example": "UnEncrypted",
           "member": "string",
           "name": "EncryptConn",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4589,6 +4633,19 @@
           "example": "TencentVPC",
           "member": "string",
           "name": "DatabaseNetEnv",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "数据库为跨账号云联网下的实例时、表示云联网所属主账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CcnOwnerUin",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -4596,6 +4653,45 @@
         }
       ],
       "usage": "both"
+    },
+    "ErrInfo": {
+      "document": "错误信息及其解决方案",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误原因",
+          "example": "无",
+          "member": "string",
+          "name": "Reason",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "解决方案\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Solution",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "out"
     },
     "ErrorInfoItem": {
       "document": "任务错误信息",
@@ -4906,6 +5002,17 @@
           "name": "AutoRetryTimeRangeMinutes",
           "required": true,
           "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "全量导出可重入标识：enum::\"yes\"/\"no\"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yes",
+          "member": "string",
+          "name": "DumperResumeCtrl",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -5470,7 +5577,6 @@
       "document": "ModifyMigrationJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务id",
           "example": "dts-1ewjspuw",
@@ -5481,7 +5587,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运行模式，取值如：immediate(表示立即运行)、timed(表示定时运行)",
           "example": "immediate",
@@ -5492,9 +5597,8 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "迁移任务配置选项，描述任务如何执行迁移等一系列配置信息",
+          "document": "迁移任务配置选项，描述任务如何执行迁移等一系列配置信息；字段下的RateLimitOption不可配置、如果需要修改任务的限速信息、请在任务运行后通过ModifyMigrateRateLimit接口修改",
           "example": "无",
           "member": "MigrateOption",
           "name": "MigrateOption",
@@ -5503,7 +5607,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源实例信息",
           "example": "无",
@@ -5514,7 +5617,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标实例信息",
           "example": "无",
@@ -5525,7 +5627,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务名称，最大长度128",
           "example": "migrate_test",
@@ -5536,7 +5637,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "期待启动时间，当RunMode取值为timed时，此值必填，形如：\"2006-01-02 15:04:05\"",
           "example": "2022-07-11 17:20:56",
@@ -5547,7 +5647,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签信息",
           "example": "无",
@@ -5558,7 +5657,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动重试的时间段、可设置5至720分钟、0表示不重试",
           "example": "5",
@@ -5688,15 +5786,17 @@
           "disabled": false,
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "Options": {
       "document": "数据同步中的选项",
@@ -5705,8 +5805,10 @@
           "disabled": false,
           "document": "同步初始化选项，Data(全量数据初始化)、Structure(结构初始化)、Full(全量数据且结构初始化，默认)、None(仅增量)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "InitType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -5716,8 +5818,10 @@
           "disabled": false,
           "document": "同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、InitializeAfterDelete(删除并重新初始化)、ExecuteAfterIgnore(忽略并继续执行)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "DealOfExistSameTable",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -5727,8 +5831,10 @@
           "disabled": false,
           "document": "冲突处理选项，ReportError(报错，默认为该值)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ConflictHandleType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -5740,6 +5846,7 @@
           "example": "无",
           "member": "bool",
           "name": "AddAdditionalColumn",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true,
@@ -5749,8 +5856,10 @@
           "disabled": false,
           "document": "所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)， 不填（不选），PartialDDL(自定义,和DdlOptions一起起作用 )\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "OpTypes",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true,
@@ -5762,6 +5871,7 @@
           "example": "无",
           "member": "ConflictHandleOption",
           "name": "ConflictHandleOption",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true,
@@ -5773,6 +5883,7 @@
           "example": "无",
           "member": "DdlOption",
           "name": "DdlOptions",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true,
@@ -5784,8 +5895,33 @@
           "example": "无",
           "member": "KafkaOption",
           "name": "KafkaOption",
+          "output_required": true,
           "required": false,
           "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务限速信息、该字段仅用作出参、入参该字段无效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RateLimitOption",
+          "name": "RateLimitOption",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "自动重试的时间窗口设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoRetryTimeRangeMinutes",
+          "output_required": true,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -5969,6 +6105,145 @@
         }
       ],
       "usage": "out"
+    },
+    "RateLimitOption": {
+      "document": "迁移和同步任务限速的详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前生效的全量导出线程数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "int64",
+          "name": "CurrentDumpThread",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "默认的全量导出线程数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "int64",
+          "name": "DefaultDumpThread",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "当前生效的全量导出Rps\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "400000",
+          "member": "int64",
+          "name": "CurrentDumpRps",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "默认的全量导出Rps\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "400000",
+          "member": "int64",
+          "name": "DefaultDumpRps",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "当前生效的全量导入线程数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "int64",
+          "name": "CurrentLoadThread",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "默认的全量导入线程数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "int64",
+          "name": "DefaultLoadThread",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "当前生效的全量导入Rps\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "400000",
+          "member": "int64",
+          "name": "CurrentLoadRps",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "默认的全量导入Rps\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "400000",
+          "member": "int64",
+          "name": "DefaultLoadRps",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "当前生效的增量导入线程数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "32",
+          "member": "int64",
+          "name": "CurrentSinkerThread",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "默认的增量导入线程数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "32",
+          "member": "int64",
+          "name": "DefaultSinkerThread",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "enum:\"no\"/\"yes\"、no表示用户未设置过限速、yes表示设置过限速\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "no",
+          "is_base64": false,
+          "member": "string",
+          "name": "HasUserSetRateLimit",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
     },
     "RecoverMigrateJobRequest": {
       "document": "RecoverMigrateJob请求参数结构体",
@@ -6892,7 +7167,7 @@
           "example": "无",
           "member": "uint64",
           "name": "StepAll",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -6903,7 +7178,7 @@
           "example": "无",
           "member": "uint64",
           "name": "StepNow",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -6914,18 +7189,18 @@
           "example": "无",
           "member": "int64",
           "name": "Progress",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
           "disabled": false,
-          "document": "当前步骤进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "CurrentStepProgress",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -6936,7 +7211,7 @@
           "example": "无",
           "member": "int64",
           "name": "MasterSlaveDistance",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -6947,7 +7222,7 @@
           "example": "无",
           "member": "int64",
           "name": "SecondsBehindMaster",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
@@ -6958,7 +7233,7 @@
           "example": "无",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -6969,7 +7244,7 @@
           "example": "无",
           "member": "StepInfo",
           "name": "StepInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -6980,8 +7255,19 @@
           "example": "无",
           "member": "string",
           "name": "CauseOfCompareDisable",
-          "required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "任务的错误和解决方案信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrInfo",
+          "name": "ErrInfo",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true,
           "visibility": 1
         }
@@ -7158,6 +7444,28 @@
         },
         {
           "disabled": false,
+          "document": "枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster",
+          "member": "string",
+          "name": "SrcNodeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "源端信息，多节点数据库使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SyncDBEndpointInfos",
+          "name": "SrcInfos",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
           "document": "目标端地域，如：ap-guangzhou等\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -7196,6 +7504,28 @@
           "member": "Endpoint",
           "name": "DstInfo",
           "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster",
+          "member": "string",
+          "name": "DstNodeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "目标端信息，多节点数据库使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SyncDBEndpointInfos",
+          "name": "DstInfos",
+          "required": false,
           "type": "object",
           "value_allowed_null": true,
           "visibility": 1
@@ -7353,6 +7683,17 @@
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "全量导出可重入标识：enum::\"yes\"/\"no\"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yes",
+          "member": "string",
+          "name": "DumperResumeCtrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -7369,8 +7710,10 @@
           "disabled": false,
           "document": "表名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "TableName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -7380,8 +7723,10 @@
           "disabled": false,
           "document": "新表名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "NewTableName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -7391,8 +7736,10 @@
           "disabled": false,
           "document": "过滤条件\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "FilterCondition",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,
@@ -7402,8 +7749,10 @@
           "disabled": false,
           "document": "同步临时表，注意此配置与NewTableName互斥，只能使用其中一种。当配置的同步对象为表级别且TableEditMode为pt时此项有意义，针对pt-osc等工具在同步过程中产生的临时表进行同步，需要提前将可能的临时表配置在这里，否则不会同步任何临时表。示例，如要对t1进行pt-osc操作，此项配置应该为[\"\\_t1\\_new\",\"\\_t1\\_old\"]；如要对t1进行gh-ost操作，此项配置应该为[\"\\_t1\\_ghc\",\"\\_t1\\_gho\",\"\\_t1\\_del\"]，pt-osc与gh-ost产生的临时表可同时配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"_t1_old\",_t1_new\"]",
+          "is_base64": false,
           "member": "string",
           "name": "TmpTables",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true,
@@ -7413,8 +7762,10 @@
           "disabled": false,
           "document": "编辑表类型，rename(表映射)，pt(同步附加表)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "pt",
+          "is_base64": false,
           "member": "string",
           "name": "TableEditMode",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true,

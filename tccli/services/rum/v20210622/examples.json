@@ -276,6 +276,12 @@
         "input": "https://rum.tencentcloudapi.com/?Action=DescribeDataPvUrlStatistics\n&ID=1\n&StartTime=1625444040\n&EndTime=1625454840\n&Type=pagepv\n&Level=1\n&Isp=中国移动\n&Area=中国\n&NetType=2\n&Platform=2\n&Device=三星\n&VersionNum=版本\n&ExtFirst=自定义1\n&ExtSecond=自定义2\n&ExtThird=自定义3\n&IsAbroad=1\n&Browser=ie\n&Os=apple\n&Engine=ie2\n&Brand=apple\n&From=index.html\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
         "title": "获取DescribeDataPvUrlStatistics信息"
+      },
+      {
+        "document": "测试",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataPvUrlStatistics\n<公共请求参数>\n\n{\n    \"StartTime\": 1683270000,\n    \"Type\": \"ckuv\",\n    \"EndTime\": 1683356400,\n    \"ID\": 120000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"85acc203-d239-4e47-bc04-195cb09e9e83\",\n        \"Result\": \"{\\\"request_id\\\":\\\"85acc203-d239-4e47-bc04-195cb09e9e83\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"}]}\"\n    }\n}",
+        "title": "测试"
       }
     ],
     "DescribeDataReportCount": [

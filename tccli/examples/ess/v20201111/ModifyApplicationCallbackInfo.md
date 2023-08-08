@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ess ModifyApplicationCallbackInfo --cli-unfold-argument  \
-    --Operator.UserId xxx \
+    --Operator.UserId y******************g \
     --CallbackInfo.CallbackUrl https://y.qq.com/ \
-    --CallbackInfo.Token xxx222xxx \
+    --CallbackInfo.Token A******************B \
     --OperateType 2
 ```
 

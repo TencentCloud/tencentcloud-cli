@@ -1564,6 +1564,18 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSchedulerInstanceStatus\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1460947878944567296\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CountTag\": 1,\n                \"TotalNum\": 1,\n                \"RunningNum\": 1,\n                \"WaitRunningNum\": 1,\n                \"DependencyNum\": 1,\n                \"WaitEventNum\": \"abc\",\n                \"StoppingNum\": 1,\n                \"SucceedNum\": 1,\n                \"FailedNum\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "示例1"
+      },
+      {
+        "document": "1",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSchedulerInstanceStatus\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\",\n    \"TaskTypeId\": \"abc\",\n    \"ExecutionGroupId\": \"abc\",\n    \"ExecutionGroupName\": \"abc\",\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"InCharge\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72dd1900-2555-4298-89a4-680fb1c3993c\"\n    }\n}",
+        "title": "1"
+      },
+      {
+        "document": "测试",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSchedulerInstanceStatus\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1470561602745229312\",\n    \"StartTime\": \"2023-07-30 23:59:59\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dc00c9b3-faec-404b-a2da-da2653ba026b\"\n    }\n}",
+        "title": "测试"
       }
     ],
     "DescribeSchedulerRunTimeInstanceCntByStatus": [
@@ -1572,6 +1584,12 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSchedulerRunTimeInstanceCntByStatus\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"TimeUnit\": \"12h\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"TaskId\": \"1\",\n                \"TaskName\": \"taskName\",\n                \"InCharge\": \";jaydenjhu;\",\n                \"CycleUnit\": \"I\",\n                \"State\": \"RUNNING\",\n                \"RunTime\": 27220,\n                \"CurRunTime\": \"2023-01-01 12:12:12\"\n            }\n        ],\n        \"RequestId\": \"12312312\"\n    }\n}",
         "title": "示例1"
+      },
+      {
+        "document": "1",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSchedulerRunTimeInstanceCntByStatus\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"CycleUnit\": \"1\",\n    \"TimeUnit\": \"1\",\n    \"StartTime\": \"1\",\n    \"EndTime\": \"1\",\n    \"TaskType\": 1,\n    \"InCharge\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23a27e89-4bc1-4572-8efb-7a77f155d743\"\n    }\n}",
+        "title": "1"
       }
     ],
     "DescribeSchedulerTaskCntByStatus": [
@@ -1580,6 +1598,12 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScheduleTaskCntByStatus\n<公共请求参数>\n\n{\n    \"ProjectId\": \"12312\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CountTag\": 1,\n                \"TotalNum\": 1,\n                \"RunningNum\": 1,\n                \"StoppingNum\": 1,\n                \"StoppedNum\": 1,\n                \"FrozenNum\": 1,\n                \"YearNum\": 1,\n                \"MonthNum\": 1,\n                \"WeekNum\": 1,\n                \"DayNum\": 1,\n                \"HourNum\": 1,\n                \"MinuteNum\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "示例1"
+      },
+      {
+        "document": "1",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSchedulerTaskCntByStatus\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ffa95942-29bb-4bfd-b207-a23d4c265504\"\n    }\n}",
+        "title": "1"
       }
     ],
     "DescribeSchedulerTaskTypeCnt": [
@@ -1588,6 +1612,12 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSchedulerTaskTypeCnt\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1460947878944567296\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Number\": \"26\",\n                \"TaskType\": \"35\",\n                \"TypeName\": \"Shell\"\n            },\n            {\n                \"Number\": \"5\",\n                \"TaskType\": \"34\",\n                \"TypeName\": \"Hive SQL\"\n            },\n            {\n                \"Number\": \"1\",\n                \"TaskType\": \"30\",\n                \"TypeName\": \"Python\"\n            }\n        ],\n        \"RequestId\": \"5a95de10-2d07-4c4b-ad03-fcc8e1c5c1f7\"\n    }\n}",
         "title": "示例一"
+      },
+      {
+        "document": "1",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSchedulerTaskTypeCnt\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"InCharge\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"11beba5a-ce1f-4347-a64e-29e60cb9955d\"\n    }\n}",
+        "title": "1"
       }
     ],
     "DescribeSonInstances": [
@@ -1612,6 +1642,12 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStatisticInstanceStatusTrendOps\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CountList\": [\n                    1\n                ],\n                \"TimeList\": [\n                    \"abc\"\n                ],\n                \"InstanceStatus\": \"abc\",\n                \"InstanceCount\": 1,\n                \"ShowTime\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "demo"
+      },
+      {
+        "document": "1",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStatisticInstanceStatusTrendOps\n<公共请求参数>\n\n{\n    \"ProjectId\": \"\",\n    \"TaskTypeId\": \"\",\n    \"TimeType\": \"\",\n    \"TypeName\": \"\",\n    \"StartTime\": \"\",\n    \"EndTime\": \"\",\n    \"ExecutionGroupId\": \"\",\n    \"ExecutionGroupName\": \"\",\n    \"InCharge\": \"\",\n    \"AggregationUnit\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bf089177-0858-4917-aaa1-155ddb7accfc\"\n    }\n}",
+        "title": "1"
       }
     ],
     "DescribeStreamTaskLogList": [
@@ -1684,6 +1720,12 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskByCycle\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1460947878944567296\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Number\": 1,\n                \"CycleUnit\": \"D\",\n                \"ProjectId\": \"1460947878944567296\"\n            }\n        ],\n        \"RequestId\": \"f6aaa583-9ce1-4e92-a183-ea90a2a49d1d\"\n    }\n}",
         "title": "测试样例"
+      },
+      {
+        "document": "1",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskByCycle\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"InCharge\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abf5e263-d72f-422b-b38f-5c484bd1238a\"\n    }\n}",
+        "title": "1"
       }
     ],
     "DescribeTaskByCycleReport": [
@@ -1696,10 +1738,16 @@
     ],
     "DescribeTaskByStatusReport": [
       {
-        "document": "查询1460947878944567296项目12小时的任务状态趋势",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskByStatusReport\n<公共请求参数>\n\n{\n    \"Type\": \"12h\",\n    \"TaskType\": \"30\",\n    \"TypeName\": \"Python\",\n    \"ProjectId\": \"1460947878944567296\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CountGroup\": \"[17]\",\n                \"ShowTimeGroup\": \"[20130101]\",\n                \"Status\": \"F\"\n            }\n        ],\n        \"RequestId\": \"8dd77dee-9a4c-40a8-8d00-00c0b1c05c9b\"\n    }\n}",
-        "title": "样例"
+        "document": "1",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskByStatusReport\n<公共请求参数>\n\n{\n    \"Type\": \"\",\n    \"TaskType\": \"\",\n    \"TypeName\": \"\",\n    \"ProjectId\": \"\",\n    \"StartTime\": \"\",\n    \"EndTime\": \"\",\n    \"AggregationUnit\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7198e47e-2532-4f81-9bfa-790451eb1723\"\n    }\n}",
+        "title": "1"
+      },
+      {
+        "document": "2",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskByStatusReport\n<公共请求参数>\n\n{\n    \"Type\": \"\",\n    \"TaskType\": \"\",\n    \"TypeName\": \"\",\n    \"ProjectId\": \"\",\n    \"StartTime\": \"\",\n    \"EndTime\": \"\",\n    \"AggregationUnit\": \"\",\n    \"CycleUnit\": \"\",\n    \"Status\": \"\",\n    \"InCharge\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fcbfd6fb-66a2-43be-bbe3-ab579806ff0e\"\n    }\n}",
+        "title": "2"
       }
     ],
     "DescribeTaskDetail": [

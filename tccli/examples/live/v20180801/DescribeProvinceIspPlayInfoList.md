@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli live DescribeProvinceIspPlayInfoList --cli-unfold-argument  \
+    --StatType Bandwidth \
+    --EndTime 2019-02-02T00:00:00+08:00 \
+    --StartTime 2019-02-01T00:00:00+08:00 \
     --PlayDomains 5000.playdomain.com \
-    --StartTime '2019-02-01 00:00:00' \
-    --EndTime '2019-02-02 00:00:00' \
-    --Granularity 1 \
-    --StatType Bandwidth
+    --Granularity 1
 ```
 
 Output: 
@@ -19,7 +19,7 @@ Output:
     "Response": {
         "DataInfoList": [
             {
-                "Time": "2019-02-01 00:00:00",
+                "Time": "2019-02-01T00:00:00+08:00",
                 "Value": 500.0
             }
         ],

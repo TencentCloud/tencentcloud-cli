@@ -31,3 +31,50 @@ Output:
 }
 ```
 
+**Example 2: 1**
+
+1
+
+Input: 
+
+```
+tccli wedata DescribeSchedulerInstanceStatus --cli-unfold-argument  \
+    --ProjectId abc \
+    --TaskTypeId abc \
+    --ExecutionGroupId abc \
+    --ExecutionGroupName abc \
+    --StartTime abc \
+    --EndTime abc \
+    --InCharge abc
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "72dd1900-2555-4298-89a4-680fb1c3993c"
+    }
+}
+```
+
+**Example 3: 测试**
+
+测试
+
+Input: 
+
+```
+tccli wedata DescribeSchedulerInstanceStatus --cli-unfold-argument  \
+    --ProjectId 1470561602745229312 \
+    --StartTime 2023-07-30 23:59:59
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "dc00c9b3-faec-404b-a2da-da2653ba026b"
+    }
+}
+```
+

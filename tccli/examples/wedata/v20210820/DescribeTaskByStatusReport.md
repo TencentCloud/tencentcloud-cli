@@ -1,29 +1,54 @@
-**Example 1: 样例**
+**Example 1: 1**
 
-查询1460947878944567296项目12小时的任务状态趋势
+1
 
 Input: 
 
 ```
 tccli wedata DescribeTaskByStatusReport --cli-unfold-argument  \
-    --Type 12h \
-    --TaskType 30 \
-    --TypeName Python \
-    --ProjectId 1460947878944567296
+    --Type  \
+    --TaskType  \
+    --TypeName  \
+    --ProjectId  \
+    --StartTime  \
+    --EndTime  \
+    --AggregationUnit 
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Data": [
-            {
-                "CountGroup": "[17]",
-                "ShowTimeGroup": "[20130101]",
-                "Status": "F"
-            }
-        ],
-        "RequestId": "8dd77dee-9a4c-40a8-8d00-00c0b1c05c9b"
+        "RequestId": "7198e47e-2532-4f81-9bfa-790451eb1723"
+    }
+}
+```
+
+**Example 2: 2**
+
+2
+
+Input: 
+
+```
+tccli wedata DescribeTaskByStatusReport --cli-unfold-argument  \
+    --Type  \
+    --TaskType  \
+    --TypeName  \
+    --ProjectId  \
+    --StartTime  \
+    --EndTime  \
+    --AggregationUnit  \
+    --CycleUnit  \
+    --Status  \
+    --InCharge 
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "fcbfd6fb-66a2-43be-bbe3-ab579806ff0e"
     }
 }
 ```

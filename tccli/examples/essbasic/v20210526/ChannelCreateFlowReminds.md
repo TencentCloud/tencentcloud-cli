@@ -9,7 +9,7 @@ tccli essbasic ChannelCreateFlowReminds --cli-unfold-argument  \
     --Agent.ProxyOperator.OpenId 00498cc***********3aff766cac \
     --Agent.AppId id \
     --Agent.ProxyOrganizationOpenId d7c13a8***********0ee248f04 \
-    --FlowIds id
+    --FlowIds y******************************m
 ```
 
 Output: 
@@ -19,7 +19,7 @@ Output:
         "RemindFlowRecords": [
             {
                 "CanRemind": true,
-                "FlowId": "id",
+                "FlowId": "y******************************m",
                 "RemindMessage": "签署人 xxx: 此签署人已催办过；"
             }
         ],

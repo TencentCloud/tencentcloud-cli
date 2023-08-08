@@ -35,3 +35,24 @@ Output:
 }
 ```
 
+**Example 2: 1**
+
+1
+
+Input: 
+
+```
+tccli wedata DescribeSchedulerTaskTypeCnt --cli-unfold-argument  \
+    --ProjectId 1 \
+    --InCharge 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "11beba5a-ce1f-4347-a64e-29e60cb9955d"
+    }
+}
+```
+

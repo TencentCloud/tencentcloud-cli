@@ -175,6 +175,13 @@
       "output": "DescribeDomainDetailListBatchResponse",
       "status": "online"
     },
+    "DescribeDomainDigResult": {
+      "document": "获取域名的解析结果",
+      "input": "DescribeDomainDigResultRequest",
+      "name": "获取域名的解析结果",
+      "output": "DescribeDomainDigResultResponse",
+      "status": "online"
+    },
     "DescribeDomainFilterList": {
       "document": "获取域名筛选列表",
       "input": "DescribeDomainFilterListRequest",
@@ -3055,6 +3062,57 @@
           "type": "list",
           "value_allowed_null": false,
           "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainDigResultRequest": {
+      "document": "DescribeDomainDigResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要获取解析结果的域名",
+          "example": "www.dnspod.cn",
+          "is_base64": false,
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "要获取的解析记录类型。默认为 A 记录",
+          "example": "A",
+          "is_base64": false,
+          "member": "string",
+          "name": "RecordType",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainDigResultResponse": {
+      "document": "DescribeDomainDigResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "解析结果列表",
+          "example": "无",
+          "member": "string",
+          "name": "ResultList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
