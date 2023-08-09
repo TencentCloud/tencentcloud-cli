@@ -410,7 +410,8 @@ Output:
             "OfflineTime": "",
             "IsolateTime": ""
         },
-        "UpdateTime": "2022-07-11 19:53:03"
+        "UpdateTime": "2022-07-11 19:53:03",
+        "DumperResumeCtrl": "no"
     }
 }
 ```

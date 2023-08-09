@@ -728,6 +728,14 @@
         "title": "ResetCloudStorage"
       }
     ],
+    "ResetCloudStorageEvent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetCloudStorageEvent\n<公共请求参数>\n\n{\n    \"ProductId\": \"abc\",\n    \"DeviceName\": \"abc\",\n    \"UserId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "重置云存事件"
+      }
+    ],
     "RetryDeviceFirmwareTask": [
       {
         "document": "",

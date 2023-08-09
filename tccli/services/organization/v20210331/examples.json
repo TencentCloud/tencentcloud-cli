@@ -40,6 +40,14 @@
         "title": "创建组织成员"
       }
     ],
+    "CreateOrganizationMemberAuthIdentity": [
+      {
+        "document": "添加组织成员访问授权",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationMemberAuthIdentity\n<公共请求参数>\n\n{\n    \"MemberUins\": [\n        111111111111\n    ],\n    \"IdentityIds\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3840f6f4-3976-4b44-9ecc-cb0578129059\"\n    }\n}",
+        "title": "添加组织成员访问授权"
+      }
+    ],
     "CreateOrganizationMemberPolicy": [
       {
         "document": "",
@@ -54,6 +62,14 @@
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOrganizationMembers\n<公共请求参数>\n\n{\n    \"MemberUin\": [\n        10000023635\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "批量删除企业组织成员"
+      }
+    ],
+    "DeleteOrganizationMembersPolicy": [
+      {
+        "document": "删除组织成员访问策略",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOrganizationMembersPolicy\n<公共请求参数>\n\n{\n    \"PolicyId\": 123\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3840f6f4-3976-4b44-9ecc-cb0578129059\"\n    }\n}",
+        "title": "删除组织成员访问策略"
       }
     ],
     "DeleteOrganizationNodes": [

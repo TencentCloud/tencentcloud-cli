@@ -2239,7 +2239,19 @@
     },
     "AcceptVpcPeeringConnectionRequest": {
       "document": "AcceptVpcPeeringConnection请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "对等连接唯一ID。",
+          "example": " pcx-0npfx81k",
+          "is_base64": false,
+          "member": "string",
+          "name": "PeeringConnectionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "AcceptVpcPeeringConnectionResponse": {
@@ -10122,7 +10134,19 @@
     },
     "DeleteVpcPeeringConnectionRequest": {
       "document": "DeleteVpcPeeringConnection请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "对等连接唯一ID。",
+          "example": "pcx-r2kt047o",
+          "is_base64": false,
+          "member": "string",
+          "name": "PeeringConnectionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DeleteVpcPeeringConnectionResponse": {

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli live DescribeProIspPlaySumInfoList --cli-unfold-argument  \
-    --PlayDomains 5000.playdomain.com \
-    --StartTime '2019-03-01 00:00:00' \
-    --EndTime '2019-03-01 12:00:00' \
-    --StatType Province
+    --StatType Province \
+    --EndTime 2019-03-01T12:00:00+08:00 \
+    --StartTime 2019-03-01T00:00:00+08:00 \
+    --PlayDomains 5000.playdomain.com
 ```
 
 Output: 

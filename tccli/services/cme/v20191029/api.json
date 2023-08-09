@@ -5390,14 +5390,25 @@
       "document": "点播转直播输出媒体配置。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频配置。",
           "example": "无",
           "member": "MediaCastVideoSetting",
           "name": "VideoSetting",
+          "output_required": true,
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频配置是否和第一个输入源的视频配置相同，默认值：false。如果 FollowSourceInfo 的值为 true，忽略 VideoSetting 参数。",
+          "example": "无",
+          "member": "bool",
+          "name": "FollowSourceInfo",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

@@ -25,3 +25,24 @@ Output:
 }
 ```
 
+**Example 2: 1**
+
+1
+
+Input: 
+
+```
+tccli wedata DescribeTaskByCycle --cli-unfold-argument  \
+    --ProjectId 1 \
+    --InCharge 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "abf5e263-d72f-422b-b38f-5c484bd1238a"
+    }
+}
+```
+

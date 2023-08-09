@@ -316,7 +316,7 @@
       "status": "online"
     },
     "UpdateCertificateInstance": {
-      "document": "一键更新旧证书资源",
+      "document": "一键更新旧证书资源，本接口为异步接口， 调用之后DeployRecordId为0表示任务进行中， 当返回DeployRecordId大于0则表示任务创建成功。 未创建成功则会抛出异常",
       "input": "UpdateCertificateInstanceRequest",
       "name": "一键更新旧证书资源",
       "output": "UpdateCertificateInstanceResponse",
@@ -2215,7 +2215,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2225,7 +2225,7 @@
           "example": "无",
           "member": "string",
           "name": "CertId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2235,7 +2235,7 @@
           "example": "无",
           "member": "string",
           "name": "OldCertId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2245,7 +2245,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2255,7 +2255,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2265,7 +2265,7 @@
           "example": "无",
           "member": "string",
           "name": "ListenerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2275,7 +2275,7 @@
           "example": "无",
           "member": "string",
           "name": "Domains",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2285,7 +2285,7 @@
           "example": "无",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2295,7 +2295,7 @@
           "example": "无",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2305,7 +2305,7 @@
           "example": "无",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2315,7 +2315,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2325,7 +2325,7 @@
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2335,7 +2335,7 @@
           "example": "无",
           "member": "string",
           "name": "ListenerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2345,7 +2345,7 @@
           "example": "无",
           "member": "int64",
           "name": "SniSwitch",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2355,7 +2355,7 @@
           "example": "无",
           "member": "string",
           "name": "Bucket",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2365,7 +2365,7 @@
           "example": "无",
           "member": "string",
           "name": "Namespace",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2375,7 +2375,7 @@
           "example": "无",
           "member": "string",
           "name": "SecretName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2385,8 +2385,38 @@
           "example": "无",
           "member": "int64",
           "name": "Port",
-          "required": false,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TCB环境ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EnvId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部署的TCB类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TCBType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部署的TCB地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -3445,6 +3475,7 @@
           "disabled": false,
           "document": "分页偏移量，从0开始。",
           "example": "0",
+          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -3454,6 +3485,7 @@
           "disabled": false,
           "document": "每页数量，默认20。最大1000",
           "example": "11",
+          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -3463,6 +3495,7 @@
           "disabled": false,
           "document": "搜索关键词，可搜索证书 ID、备注名称、域名。例如： a8xHcaIs。",
           "example": "string",
+          "is_base64": false,
           "member": "string",
           "name": "SearchKey",
           "required": false,
@@ -3472,6 +3505,7 @@
           "disabled": false,
           "document": "证书类型：CA = 客户端证书，SVR = 服务器证书。",
           "example": "CA",
+          "is_base64": false,
           "member": "string",
           "name": "CertificateType",
           "required": false,
@@ -3481,6 +3515,7 @@
           "disabled": false,
           "document": "项目 ID。",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
@@ -3490,6 +3525,7 @@
           "disabled": false,
           "document": "按到期时间排序：DESC = 降序， ASC = 升序。",
           "example": "DESC ",
+          "is_base64": false,
           "member": "string",
           "name": "ExpirationSort",
           "required": false,
@@ -3499,6 +3535,7 @@
           "disabled": false,
           "document": "证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "CertificateStatus",
           "required": false,
@@ -3508,6 +3545,7 @@
           "disabled": false,
           "document": "是否可部署，可选值：1 = 可部署，0 =  不可部署。",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "Deployable",
           "required": false,
@@ -3517,6 +3555,7 @@
           "disabled": false,
           "document": "是否筛选上传托管的 1筛选，0不筛选",
           "example": "1",
+          "is_base64": false,
           "member": "int64",
           "name": "Upload",
           "required": false,
@@ -3526,6 +3565,7 @@
           "disabled": false,
           "document": "是否筛选可续期证书 1筛选 0不筛选",
           "example": "1",
+          "is_base64": false,
           "member": "int64",
           "name": "Renew",
           "required": false,
@@ -3535,6 +3575,7 @@
           "disabled": false,
           "document": "筛选来源， upload：上传证书， buy：腾讯云证书， 不传默认全部",
           "example": "upload",
+          "is_base64": false,
           "member": "string",
           "name": "FilterSource",
           "required": false,
@@ -3544,6 +3585,7 @@
           "disabled": false,
           "document": "是否筛选国密证书。1:筛选  0:不筛选",
           "example": "1",
+          "is_base64": false,
           "member": "int64",
           "name": "IsSM",
           "required": false,
@@ -3553,8 +3595,19 @@
           "disabled": false,
           "document": "筛选证书是否即将过期，传1是筛选，0不筛选",
           "example": "0",
+          "is_base64": false,
           "member": "uint64",
           "name": "FilterExpiring",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否可托管，可选值：1 = 可托管，0 =  不可托管。",
+          "example": "无",
+          "is_base64": false,
+          "member": "uint64",
+          "name": "Hostable",
           "required": false,
           "type": "int"
         }
@@ -3570,6 +3623,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3579,6 +3633,7 @@
           "example": "[]",
           "member": "Certificates",
           "name": "Certificates",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4222,30 +4277,30 @@
       "document": "DescribeHostDeployRecordDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "待部署的证书ID",
+          "document": "部署记录ID",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "DeployRecordId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，从0开始。",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页数量，默认10。",
           "example": "10",
+          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -4263,7 +4318,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4273,7 +4328,7 @@
           "example": "无",
           "member": "DeployRecordDetail",
           "name": "DeployRecordDetailList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4283,7 +4338,7 @@
           "example": "无",
           "member": "int64",
           "name": "SuccessTotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4293,7 +4348,7 @@
           "example": "无",
           "member": "int64",
           "name": "FailedTotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4303,7 +4358,7 @@
           "example": "无",
           "member": "int64",
           "name": "RunningTotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4756,8 +4811,9 @@
       "members": [
         {
           "disabled": false,
-          "document": "待部署的证书ID",
+          "document": "一键更新记录ID",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "DeployRecordId",
           "required": true,
@@ -4767,6 +4823,7 @@
           "disabled": false,
           "document": "每页数量，默认10。",
           "example": "10",
+          "is_base64": false,
           "member": "string",
           "name": "Limit",
           "required": false,
@@ -4776,6 +4833,7 @@
           "disabled": false,
           "document": "分页偏移量，从0开始。",
           "example": "0",
+          "is_base64": false,
           "member": "string",
           "name": "Offset",
           "required": false,
@@ -4793,6 +4851,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4802,6 +4861,7 @@
           "example": "无",
           "member": "UpdateRecordDetails",
           "name": "RecordDetailList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4811,6 +4871,7 @@
           "example": "无",
           "member": "int64",
           "name": "SuccessTotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4820,6 +4881,7 @@
           "example": "无",
           "member": "int64",
           "name": "FailedTotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4829,6 +4891,7 @@
           "example": "无",
           "member": "int64",
           "name": "RunningTotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7579,6 +7642,7 @@
           "disabled": false,
           "document": "一键更新新证书ID",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "CertificateId",
           "required": true,
@@ -7588,6 +7652,7 @@
           "disabled": false,
           "document": "一键更新原证书ID",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "OldCertificateId",
           "required": true,
@@ -7595,17 +7660,19 @@
         },
         {
           "disabled": false,
-          "document": "需要部署的资源类型",
+          "document": "需要部署的资源类型，参数值可选：clb、cdn、waf、live、ddos、teo、apigateway、vod、tke、tcb",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ResourceTypes",
           "required": true,
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "需要部署的地域列表（废弃）",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Regions",
           "required": false,
@@ -7615,6 +7682,7 @@
           "disabled": false,
           "document": "云资源需要部署的地域列表",
           "example": "无",
+          "is_base64": false,
           "member": "ResourceTypeRegions",
           "name": "ResourceTypesRegions",
           "required": false,
@@ -7632,6 +7700,7 @@
           "example": "无",
           "member": "uint64",
           "name": "DeployRecordId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7641,6 +7710,7 @@
           "example": "无",
           "member": "int64",
           "name": "DeployStatus",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7738,7 +7808,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7748,7 +7818,7 @@
           "example": "无",
           "member": "string",
           "name": "CertId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7758,7 +7828,7 @@
           "example": "无",
           "member": "string",
           "name": "OldCertId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7768,7 +7838,7 @@
           "example": "无",
           "member": "string",
           "name": "Domains",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7778,7 +7848,7 @@
           "example": "无",
           "member": "string",
           "name": "ResourceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7788,7 +7858,7 @@
           "example": "无",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7798,7 +7868,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7808,7 +7878,7 @@
           "example": "无",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7818,7 +7888,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7828,7 +7898,7 @@
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7838,7 +7908,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7848,7 +7918,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7858,7 +7928,7 @@
           "example": "无",
           "member": "string",
           "name": "ListenerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7868,7 +7938,7 @@
           "example": "无",
           "member": "string",
           "name": "ListenerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7878,7 +7948,7 @@
           "example": "无",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7888,7 +7958,7 @@
           "example": "无",
           "member": "uint64",
           "name": "SniSwitch",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7898,7 +7968,7 @@
           "example": "无",
           "member": "string",
           "name": "Bucket",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7908,7 +7978,7 @@
           "example": "无",
           "member": "int64",
           "name": "Port",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7918,7 +7988,7 @@
           "example": "无",
           "member": "string",
           "name": "Namespace",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7928,7 +7998,27 @@
           "example": "无",
           "member": "string",
           "name": "SecretName",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "环境ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EnvId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TCB部署类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TCBType",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -8072,6 +8162,7 @@
           "disabled": false,
           "document": "证书内容。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "CertificatePublicKey",
           "required": true,
@@ -8081,6 +8172,7 @@
           "disabled": false,
           "document": "私钥内容，证书类型为 SVR 时必填，为 CA 时可不填。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "CertificatePrivateKey",
           "required": false,
@@ -8090,6 +8182,7 @@
           "disabled": false,
           "document": "证书类型，默认 SVR。CA = CA证书，SVR = 服务器证书。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "CertificateType",
           "required": false,
@@ -8099,6 +8192,7 @@
           "disabled": false,
           "document": "备注名称。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Alias",
           "required": false,
@@ -8108,6 +8202,7 @@
           "disabled": false,
           "document": "项目 ID。",
           "example": "无",
+          "is_base64": false,
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
@@ -8117,6 +8212,7 @@
           "disabled": false,
           "document": "证书用途/证书来源。“CLB，CDN，WAF，LIVE，DDOS”",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "CertificateUse",
           "required": false,
@@ -8124,8 +8220,19 @@
         },
         {
           "disabled": false,
+          "document": "标签列表",
+          "example": "无",
+          "is_base64": false,
+          "member": "Tags",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "相同的证书是否允许重复上传",
           "example": "true",
+          "is_base64": false,
           "member": "bool",
           "name": "Repeatable",
           "required": false,
@@ -8143,6 +8250,7 @@
           "example": "无",
           "member": "string",
           "name": "CertificateId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8152,6 +8260,7 @@
           "example": "无",
           "member": "string",
           "name": "RepeatCertId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

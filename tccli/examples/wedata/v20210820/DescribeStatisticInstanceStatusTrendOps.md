@@ -31,3 +31,32 @@ Output:
 }
 ```
 
+**Example 2: 1**
+
+1
+
+Input: 
+
+```
+tccli wedata DescribeStatisticInstanceStatusTrendOps --cli-unfold-argument  \
+    --ProjectId  \
+    --TaskTypeId  \
+    --TimeType  \
+    --TypeName  \
+    --StartTime  \
+    --EndTime  \
+    --ExecutionGroupId  \
+    --ExecutionGroupName  \
+    --InCharge  \
+    --AggregationUnit 
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "bf089177-0858-4917-aaa1-155ddb7accfc"
+    }
+}
+```
+

@@ -34,3 +34,21 @@ Output:
 }
 ```
 
+**Example 2: 1**
+
+1
+
+Input: 
+
+```
+tccli wedata DescribeSchedulerTaskCntByStatus --cli-unfold-argument ```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "ffa95942-29bb-4bfd-b207-a23d4c265504"
+    }
+}
+```
+

@@ -16,11 +16,11 @@ Output:
     "Response": {
         "EnableState": 1,
         "LastOfflineTime": 1,
-        "Version": "xx",
+        "Version": "2021-04-08",
         "CertState": 1,
         "Online": 1,
         "FirmwareUpdateTime": 1,
-        "DeviceName": "xx",
+        "DeviceName": "Device001",
         "Tags": [
             {
                 "Tag": "Key",
@@ -29,30 +29,30 @@ Output:
                 "Value": "Key"
             },
             {
-                "Tag": "xx",
+                "Tag": "tag-a",
                 "Type": 1,
-                "Name": "xx",
-                "Value": "xx"
+                "Name": "tag-name",
+                "Value": "tag-value"
             }
         ],
         "LogLevel": 1,
         "FirstOnlineTime": 1,
-        "DeviceCert": "xx",
+        "DeviceCert": "******",
         "Imei": "Imei",
         "ClientIP": "127.0.0.1",
         "DevicePsk": "DevicePsk",
         "Isp": 1,
-        "NbiotDeviceID": "123124",
-        "LoraDevEui": "xx",
+        "NBIoTDeviceID": "123124",
+        "LoraDevEui": "your eui",
         "DeviceType": 1,
-        "RequestId": "xx",
+        "RequestId": "2abji99uojssd88",
         "LoginTime": 1,
         "ConnIP": 1,
         "LastUpdateTime": 1,
         "Labels": [
             {
-                "Value": "xx",
-                "Key": "xx"
+                "Value": "value-a",
+                "Key": "key-a"
             }
         ],
         "CreateTime": 1,

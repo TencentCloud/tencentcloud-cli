@@ -1,5 +1,12 @@
 {
   "actions": {
+    "ChatCompletion": {
+      "document": "与大模型聊天",
+      "input": "ChatCompletionRequest",
+      "name": "大模型聊天",
+      "output": "ChatCompletionResponse",
+      "status": "online"
+    },
     "CreateBatchModelAccTasks": {
       "document": "批量创建模型加速任务",
       "input": "CreateBatchModelAccTasksRequest",
@@ -1396,6 +1403,150 @@
         }
       ],
       "usage": "both"
+    },
+    "ChatCompletionRequest": {
+      "document": "ChatCompletion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "部署好的模型服务Id。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Model",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "输入对话历史。旧的对话在前，数组中最后一项应该为这次的问题。",
+          "example": "无",
+          "is_base64": false,
+          "member": "Message",
+          "name": "Messages",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "采样随机值，默认值为1.0，取值范围[0,2]。较高的值(如0.8)将使输出更加随机，而较低的值(如0.2)将使输出更加确定。建议仅修改此参数或TopP，但不建议两者都修改。",
+          "example": "无",
+          "is_base64": false,
+          "member": "float",
+          "name": "Temperature",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "核采样，默认值为1，取值范围[0,1]。指的是预先设置一个概率界限 p，然后将所有可能生成的token，根据概率大小从高到低排列，依次选取。当这些选取的token的累积概率大于或等于 p 值时停止，然后从已经选取的token中进行采样，生成下一个token。例如top_p为0.1时意味着模型只考虑累积概率为10%的token。建议仅修改此参数或Temperature，不建议两者都修改。",
+          "example": "无",
+          "is_base64": false,
+          "member": "float",
+          "name": "TopP",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "最大生成的token数目。默认为无限大。",
+          "example": "无",
+          "is_base64": false,
+          "member": "int64",
+          "name": "MaxTokens",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ChatCompletionResponse": {
+      "document": "ChatCompletion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "部署好的服务Id",
+          "example": "无",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次问答的答案。",
+          "example": "无",
+          "member": "Choice",
+          "name": "Choices",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "token统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Usage",
+          "name": "Usage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Choice": {
+      "document": "对话结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对话结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Message",
+          "name": "Message",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束理由: stop, length, content_filter, null",
+          "example": "无",
+          "member": "string",
+          "name": "FinishReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "序号",
+          "example": "无",
+          "member": "int64",
+          "name": "Index",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Container": {
       "document": "容器信息",
@@ -7284,45 +7435,49 @@
       "document": "镜像描述信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像",
           "example": "TCR",
+          "is_base64": false,
           "member": "string",
           "name": "ImageType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "镜像地址",
           "example": "ccr.ccs.tencentyun.com/ti-platform/hellotest:http-test",
+          "is_base64": false,
           "member": "string",
           "name": "ImageUrl",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TCR镜像对应的地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-beijiang",
+          "is_base64": false,
           "member": "string",
           "name": "RegistryRegion",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TCR镜像对应的实例id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "t-asfffasf",
+          "is_base64": false,
           "member": "string",
           "name": "RegistryId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7660,6 +7815,34 @@
         }
       ],
       "usage": "out"
+    },
+    "Message": {
+      "document": "对话输入内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色名。支持三个角色：system、user、assistant，其中system仅开头可出现一次，也可忽略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对话输入内容。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "MetricData": {
       "document": "指标数据",
@@ -13222,6 +13405,42 @@
           "name": "CallbackUrl",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Usage": {
+      "document": "大模型生成Token统计",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生成的token数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CompletionTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "输入的token数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "PromptTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总共token数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalTokens",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

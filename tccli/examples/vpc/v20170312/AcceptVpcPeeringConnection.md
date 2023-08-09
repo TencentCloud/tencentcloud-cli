@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli vpc AcceptVpcPeeringConnection --cli-unfold-argument ```
+tccli vpc AcceptVpcPeeringConnection --cli-unfold-argument  \
+    --PeeringConnectionId pcx-aw8hzt6c
+```
 
 Output: 
 ```

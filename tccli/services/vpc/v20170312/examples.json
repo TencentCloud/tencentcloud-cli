@@ -11,7 +11,7 @@
     "AcceptVpcPeeringConnection": [
       {
         "document": "接受对等连接请求",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AcceptVpcPeeringConnection\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AcceptVpcPeeringConnection\n<公共请求参数>\n\n{\n    \"PeeringConnectionId\": \"pcx-aw8hzt6c\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e4008f6c-4bd9-42a7-9e6f-83043db431b2\"\n    }\n}",
         "title": "接受对等连接请求"
       }
@@ -975,7 +975,7 @@
     "DeleteVpcPeeringConnection": [
       {
         "document": "删除对等连接",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVpcPeeringConnection\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVpcPeeringConnection\n<公共请求参数>\n\n{\n    \"PeeringConnectionId\": \"pcx-aw8hzt6c\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e4008f6c-4bd9-42a7-9e6f-83043db431b2\"\n    }\n}",
         "title": "删除对等连接"
       }

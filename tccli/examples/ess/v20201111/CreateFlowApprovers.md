@@ -8,9 +8,9 @@ Input:
 
 ```
 tccli ess CreateFlowApprovers --cli-unfold-argument  \
-    --Operator.UserId  \
+    --Operator.UserId y****************************m \
     --FlowId flow_id_xxxxx \
-    --Initiator xxx \
+    --Initiator y***************d \
     --Approvers.0.RecipientId RecipientId_1 \
     --Approvers.0.ApproverSource WEWORKAPP \
     --Approvers.0.CustomUserId Zhangsan \

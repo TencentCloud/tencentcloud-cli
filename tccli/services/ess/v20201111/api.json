@@ -267,7 +267,7 @@
       "status": "online"
     },
     "DescribeFlowBriefs": {
-      "document": "查询流程基础信息\n适用场景：可用于主动查询某个合同流程的签署状态信息。可以配合回调通知使用。\n每个企业限制日调用量限制：10W，当日超过此限制后再调用接口返回错误",
+      "document": "查询流程基础信息\n适用场景：可用于主动查询某个合同流程的签署状态信息。可以配合回调通知使用。\n每个企业限制日调用量限制：100W，当日超过此限制后再调用接口返回错误",
       "input": "DescribeFlowBriefsRequest",
       "name": "查询流程摘要",
       "output": "DescribeFlowBriefsResponse",
@@ -553,21 +553,21 @@
         },
         {
           "disabled": false,
-          "document": "签署人的身份证号",
-          "example": "xxx",
+          "document": "签署人的证件类型\nID_CARD 身份证\nHONGKONG_AND_MACAO 港澳居民来往内地通行证\nHONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)\nOTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）",
+          "example": "ID_CARD",
           "is_base64": false,
           "member": "string",
-          "name": "ApproverIdCardNumber",
+          "name": "ApproverIdCardType",
           "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "签署人的身份证件类型 \nID_CARD 身份证\nHONGKONG_AND_MACAO 港澳居民来往内地通行证\nHONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)",
-          "example": "ID_CARD",
+          "document": "签署人证件号（长度不超过18位）\t",
+          "example": "xxx",
           "is_base64": false,
           "member": "string",
-          "name": "ApproverIdCardType",
+          "name": "ApproverIdCardNumber",
           "required": false,
           "type": "string"
         },
@@ -1915,6 +1915,7 @@
       "document": "CreateFlowApprovers请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "调用方用户信息，userId 必填",
           "example": "无",
@@ -1925,6 +1926,7 @@
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "签署流程编号",
           "example": "无",
@@ -1935,6 +1937,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "补充签署人信息",
           "example": "无",
@@ -1945,6 +1948,7 @@
           "type": "list"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "企微消息中的发起人",
           "example": "无",
@@ -1955,6 +1959,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "代理相关应用信息，如集团主企业代子企业操作\n\n",
           "example": "无",
@@ -2542,6 +2547,7 @@
           "disabled": false,
           "document": "调用方用户信息，userId 必填",
           "example": "无",
+          "is_base64": false,
           "member": "UserInfo",
           "name": "Operator",
           "required": true,
@@ -2551,6 +2557,7 @@
           "disabled": false,
           "document": "需要执行催办的签署流程id数组，最多100个",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "FlowIds",
           "required": true,
@@ -2560,6 +2567,7 @@
           "disabled": false,
           "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
           "example": "无",
+          "is_base64": false,
           "member": "Agent",
           "name": "Agent",
           "required": false,
@@ -2792,6 +2800,7 @@
       "document": "CreateFlowSignReview请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "调用方用户信息，userId 必填",
           "example": "无",
@@ -2802,6 +2811,7 @@
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "签署流程编号",
           "example": "无",
@@ -2812,6 +2822,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "企业内部审核结果\nPASS: 通过 \nREJECT: 拒绝",
           "example": "无",
@@ -2822,6 +2833,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "审核原因 \n当ReviewType 是REJECT 时此字段必填,字符串长度不超过200",
           "example": "无",
@@ -2832,6 +2844,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
           "example": "无",
@@ -2842,6 +2855,7 @@
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "审核签署节点使用 非必填 如果填写则审核该签署节点。给个人审核时必填。",
           "example": "无",
@@ -2852,6 +2866,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "操作类型：（接口通过该字段区分操作类型）\n\nSignReview:签署审核\nCreateReview:发起审核\n\n默认：SignReview；SignReview:签署审核\n\n该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程\n若发起个人审核，则指定该字段为：SignReview",
           "example": "无",
@@ -6995,7 +7010,7 @@
         {
           "disabled": false,
           "document": "参与者类型：\n0：企业\n1：个人\n3：企业自动签署\n注：类型为3（企业自动签署）时，会自动完成该签署方的签署。\n自动签署仅进行盖章操作，不能是手写签名。\n本方企业自动签署的签署人会默认是当前的发起人\n他方企业自动签署的签署人是自动签模板的他方企业授权人",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ApproverType",
           "required": true,
@@ -7033,8 +7048,8 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人证件类型ID_CARD 身份证\nHONGKONG_AND_MACAO 港澳居民来往内地通行证\nHONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)",
-          "example": "无",
+          "document": "签署人的证件类型\nID_CARD 身份证\nHONGKONG_AND_MACAO 港澳居民来往内地通行证\nHONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)\nOTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）",
+          "example": "ID_CARD",
           "is_base64": false,
           "member": "string",
           "name": "ApproverIdCardType",
@@ -7043,7 +7058,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人证件号码",
+          "document": "签署人证件号（长度不超过18位）\t",
           "example": "无",
           "is_base64": false,
           "member": "string",

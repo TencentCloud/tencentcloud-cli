@@ -5,7 +5,14 @@
 Input: 
 
 ```
-tccli ssl UpdateCertificateInstance --cli-unfold-argument ```
+tccli ssl UpdateCertificateInstance --cli-unfold-argument  \
+    --CertificateId abc \
+    --OldCertificateId abc \
+    --ResourceTypes abc \
+    --Regions abc \
+    --ResourceTypesRegions.0.ResourceType abc \
+    --ResourceTypesRegions.0.Regions abc
+```
 
 Output: 
 ```

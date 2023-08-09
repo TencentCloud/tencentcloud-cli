@@ -16,24 +16,32 @@ Output:
         "FailedTotalCount": 1,
         "SuccessTotalCount": 1,
         "TotalCount": 1,
-        "RequestId": "xx",
+        "RequestId": "xx111",
         "RunningTotalCount": 1,
         "DeployRecordDetailList": [
             {
                 "Status": 1,
                 "Bucket": "test-1302189209",
-                "UpdateTime": "xx",
-                "CertId": "xx",
-                "Protocol": "xx",
-                "InstanceId": "xx",
-                "ErrorMsg": "xx",
-                "ListenerId": "xx",
-                "CreateTime": "xx",
-                "OldCertId": "xx",
+                "UpdateTime": "xx1",
+                "CertId": "xx1",
+                "Protocol": "xx1",
+                "InstanceId": "xx1",
+                "ErrorMsg": "xx1",
+                "ListenerId": "xx1",
+                "CreateTime": "xaax",
+                "OldCertId": "xaax",
+                "EnvId": "ssl-xx",
+                "TCBType": "HostService",
+                "Region": "ap-shanghai",
+                "SniSwitch": 1,
+                "SecretName": "asdasd",
+                "ListenerName": "asdasd",
+                "Port": "123",
+                "Namespace": "asdasd",
                 "Domains": [
-                    "xx"
+                    "xx1"
                 ],
-                "InstanceName": "xx",
+                "InstanceName": "xx2",
                 "Id": 1
             }
         ]

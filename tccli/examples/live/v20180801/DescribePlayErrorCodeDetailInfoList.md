@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli live DescribePlayErrorCodeDetailInfoList --cli-unfold-argument  \
+    --StatType 4xx \
+    --EndTime 2019-03-01T00:01:00+08:00 \
+    --StartTime 2019-03-01T00:00:00+08:00 \
     --PlayDomains 5000.playdomain.com \
-    --StartTime '2019-03-01 00:00:00' \
-    --EndTime '2019-03-01 00:01:00' \
-    --Granularity 1 \
-    --StatType 4xx
+    --Granularity 1
 ```
 
 Output: 
@@ -22,7 +22,7 @@ Output:
                 "HttpCode": "4xx",
                 "ValueList": [
                     {
-                        "Time": "2019-03-01 00:00:00",
+                        "Time": "2019-03-01T00:00:00+08:00",
                         "Numbers": 20,
                         "Percentage": 0.96
                     }

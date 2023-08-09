@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli vpc DeleteVpcPeeringConnection --cli-unfold-argument ```
+tccli vpc DeleteVpcPeeringConnection --cli-unfold-argument  \
+    --PeeringConnectionId pcx-aw8hzt6c
+```
 
 Output: 
 ```

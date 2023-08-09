@@ -83,8 +83,8 @@
     "ChannelCreateFlowReminds": [
       {
         "document": "对合同中尚未完成的用户推送催办",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateFlowReminds\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc***********3aff766cac\"\n        },\n        \"AppId\": \"id\",\n        \"ProxyOrganizationOpenId\": \"d7c13a8***********0ee248f04\"\n    },\n    \"FlowIds\": [\n        \"id\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RemindFlowRecords\": [\n            {\n                \"CanRemind\": true,\n                \"FlowId\": \"id\",\n                \"RemindMessage\": \"签署人 xxx: 此签署人已催办过；\"\n            }\n        ],\n        \"RequestId\": \"s167xxxx8x4184252\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateFlowReminds\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc***********3aff766cac\"\n        },\n        \"AppId\": \"id\",\n        \"ProxyOrganizationOpenId\": \"d7c13a8***********0ee248f04\"\n    },\n    \"FlowIds\": [\n        \"y******************************m\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RemindFlowRecords\": [\n            {\n                \"CanRemind\": true,\n                \"FlowId\": \"y******************************m\",\n                \"RemindMessage\": \"签署人 xxx: 此签署人已催办过；\"\n            }\n        ],\n        \"RequestId\": \"s167xxxx8x4184252\"\n    }\n}",
         "title": "合同催办"
       }
     ],
