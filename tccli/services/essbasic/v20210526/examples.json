@@ -24,6 +24,14 @@
         "title": "ChannelCancelMultiFlowSignQRCode"
       }
     ],
+    "ChannelCancelUserAutoSignEnableUrl": [
+      {
+        "document": "撤销自动签开通链接",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCancelUserAutoSignEnableUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"\",\n        \"ClientIp\": \"\",\n        \"CustomUserId\": \"\",\n        \"ProxyIp\": \"\",\n        \"Channel\": \"\"\n    },\n    \"SceneKey\": \"E_PRESCRIPTION_AUTO_SIGN\",\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf9c2a7bdcb32611f4d0200fef3d\",\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\"\n    },\n    \"UserInfo\": {\n        \"Name\": \"小明\",\n        \"IdCardNumber\": \"610000000000000000\",\n        \"IdCardType\": \"ID_CARD\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5beb5f54-cf3d-4c26-a4ee-a97c85196a3e\"\n    }\n}",
+        "title": "撤销自动签开通链接"
+      }
+    ],
     "ChannelCreateBatchCancelFlowUrl": [
       {
         "document": "指定需要批量撤回的签署流程Id，获取批量撤销链接\n客户指定需要撤回的签署流程Id，最多100个，超过100不处理；接口调用成功返回批量撤回合同的链接，通过链接跳转到电子签小程序完成批量撤回",
@@ -150,6 +158,14 @@
         "title": "创建印章授权"
       }
     ],
+    "ChannelCreateUserAutoSignEnableUrl": [
+      {
+        "document": "获取开通个人自动签跳转链接",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateUserAutoSignEnableUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"\",\n        \"ClientIp\": \"\",\n        \"CustomUserId\": \"\",\n        \"ProxyIp\": \"\",\n        \"Channel\": \"\"\n    },\n    \"SceneKey\": \"E_PRESCRIPTION_AUTO_SIGN\",\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf9c2a7bdcb32611f4d0200fef3d\",\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\"\n    },\n    \"AutoSignConfig\": {\n        \"UserInfo\": {\n            \"Name\": \"小明\",\n            \"IdCardType\": \"ID_CARD\",\n            \"IdCardNumber\": \"1xxxxxxxxxxxxxx0\"\n        },\n        \"CertInfoCallback\": true,\n        \"UserDefineSeal\": false,\n        \"SealImgCallback\": false,\n        \"CallbackUrl\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": \"wxa02378y4jruwye1d\",\n        \"AppOriginalId\": \"gh_da87293fsd87987\",\n        \"Path\": \"page?abc=123&def=456\",\n        \"QrCode\": \"EBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCN\",\n        \"RequestId\": \"5beb5f54-cf3d-4c26-a4ee-a97c85196a3e\",\n        \"Url\": \"https://xxx.xxx/abc123\",\n        \"UrlType\": \"\"\n    }\n}",
+        "title": "获取跳转链接"
+      }
+    ],
     "ChannelCreateUserRoles": [
       {
         "document": "绑定用户角色",
@@ -212,6 +228,22 @@
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelDescribeRoles\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \" jsdk812kxkdfjks***k88123123\",\n        \"ProxyOrganizationOpenId\": \"test_org_openid\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"test_openid\"\n        }\n    },\n    \"Filters\": [\n        {\n            \"Key\": \"\",\n            \"Values\": [\n                \"\"\n            ]\n        }\n    ],\n    \"Offset\": 1,\n    \"Limit\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"Offset\": 1,\n        \"Limit\": 1,\n        \"TotalCount\": 1,\n        \"ChannelRoles\": [\n            {\n                \"RoleId\": \"abc8jkkjds***121212\",\n                \"RoleName\": \"业务管理员\",\n                \"RoleStatus\": 1\n            }\n        ],\n        \"RequestId\": \" s19ksdjkkds****ldsjfkdfdf\"\n    }\n}",
         "title": "查询角色列表"
+      }
+    ],
+    "ChannelDescribeUserAutoSignStatus": [
+      {
+        "document": "查询个人已开通自动签",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelDescribeUserAutoSignStatus\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"\",\n        \"ClientIp\": \"\",\n        \"CustomUserId\": \"\",\n        \"ProxyIp\": \"\",\n        \"Channel\": \"\"\n    },\n    \"SceneKey\": \"E_PRESCRIPTION_AUTO_SIGN\",\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf9c2a7bdcb32611f4d0200fef3d\",\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\"\n    },\n    \"UserInfo\": {\n        \"Name\": \"小明\",\n        \"IdCardNumber\": \"610000000000000000\",\n        \"IdCardType\": \"ID_CARD\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"IsOpen\": true,\n        \"LicenseFrom\": 1684411624,\n        \"LicenseTo\": 1715947624,\n        \"RequestId\": \"5beb5f54-cf3d-4c26-a4ee-a97c85196a3e\"\n    }\n}",
+        "title": "查看个人自动签开启状态"
+      }
+    ],
+    "ChannelDisableUserAutoSign": [
+      {
+        "document": "关闭个人自动签",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelDisableUserAutoSign\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"\",\n        \"ClientIp\": \"\",\n        \"CustomUserId\": \"\",\n        \"ProxyIp\": \"\",\n        \"Channel\": \"\"\n    },\n    \"SceneKey\": \"E_PRESCRIPTION_AUTO_SIGN\",\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf9c2a7bdcb32611f4d0200fef3d\",\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\"\n    },\n    \"UserInfo\": {\n        \"Name\": \"小明\",\n        \"IdCardNumber\": \"610000000000000000\",\n        \"IdCardType\": \"ID_CARD\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5beb5f54-cf3d-4c26-a4ee-a97c85196a3e\"\n    }\n}",
+        "title": "关闭个人自动签"
       }
     ],
     "ChannelGetTaskResultApi": [

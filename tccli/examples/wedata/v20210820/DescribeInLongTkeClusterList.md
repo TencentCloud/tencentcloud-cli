@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli wedata DescribeInLongTkeClusterList --cli-unfold-argument  \
-    --Status xx \
+    --Status Running \
     --PageIndex 1 \
     --PageSize 1 \
-    --ClusterName xx \
-    --ProjectId xx \
+    --ClusterName  \
+    --ProjectId 1 \
     --HasAgent True \
-    --ClusterType xx \
+    --ClusterType  \
     --TkeRegion ap-beijing
 ```
 
@@ -24,19 +24,19 @@ Output:
         "PageSize": 1,
         "Items": [
             {
-                "Status": "xx",
-                "VpcId": "xx",
-                "TkeRegion": "xx",
-                "ClusterName": "xx",
+                "Status": "Running",
+                "VpcId": "vpc-awed345",
+                "TkeRegion": "ap-beijing",
+                "ClusterName": "cls-test",
                 "HasAgent": true,
-                "ClusterId": "xx",
-                "ClusterType": "xx",
-                "AgentId": "xx"
+                "ClusterId": "cls-0u7ofrsl",
+                "ClusterType": "INDEPENDENT_CLUSTER",
+                "AgentId": "16878689876877778"
             }
         ],
         "TotalPage": 1,
         "TotalCount": 1,
-        "RequestId": "xx"
+        "RequestId": "89add-786986"
     }
 }
 ```

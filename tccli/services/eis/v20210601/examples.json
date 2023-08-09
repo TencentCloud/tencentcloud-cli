@@ -10,9 +10,9 @@
     ],
     "GetRuntimeResourceMonitorMetricMC": [
       {
-        "document": "",
+        "document": "获取运行时资源监控详情",
         "input": "POST / HTTP/1.1\nHost: eis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRuntimeResourceMonitorMetricMC\n<公共请求参数>\n\n{\n    \"RuntimeId\": 12,\n    \"StartTime\": 1619656971,\n    \"EndTime\": 1619656971,\n    \"Interval\": 300,\n    \"MetricType\": 2,\n    \"RateType\": false\n}",
-        "output": "{\n    \"Response\": {\n        \"Values\": [\n            {\n                \"Time\": 1619656971,\n                \"Val\": 10.3\n            },\n            {\n                \"Time\": 1619656972,\n                \"Val\": 10.9\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"MetricType\": \"K8sWorkloadNetworkReceiveBytesBw\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"MetricType\": \"abc\",\n        \"Values\": [\n            {\n                \"Time\": 0,\n                \"Val\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取运行时资源监控详情"
       }
     ],
@@ -26,9 +26,9 @@
     ],
     "ListRuntimeDeployedInstancesMC": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: eis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRuntimeDeployedInstancesMC\n<公共请求参数>\n\n{\n    \"Sort\": \"xx\",\n    \"SortType\": 2,\n    \"Zone\": \"xx\",\n    \"Limit\": 20,\n    \"Offset\": 21,\n    \"RuntimeId\": 12\n}",
-        "output": "{\n    \"Response\": {\n        \"Instances\": [\n            {\n                \"Status\": 0,\n                \"ProjectType\": 0,\n                \"InstanceCreatedAt\": 1619656971,\n                \"InstanceId\": 3,\n                \"ProjectId\": 2,\n                \"UpdatedAt\": 1624354153,\n                \"GroupName\": \"xx\",\n                \"ProjectName\": \"xx\",\n                \"InstanceVersion\": 2,\n                \"GroupId\": 1,\n                \"CreatedAt\": 1624354153\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"TotalCount\": 100\n    }\n}",
+        "document": "查询应用集成环境部署的应用列表",
+        "input": "POST / HTTP/1.1\nHost: eis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRuntimeDeployedInstancesMC\n<公共请求参数>\n\n{\n    \"Sort\": \"desc\",\n    \"SortType\": 2,\n    \"Zone\": \"tianjin\",\n    \"Limit\": 20,\n    \"Offset\": 21,\n    \"RuntimeId\": 12\n}",
+        "output": "{\n    \"Response\": {\n        \"Instances\": [\n            {\n                \"Status\": 0,\n                \"ProjectType\": 0,\n                \"ProjectVersion\": \"2\",\n                \"InstanceCreatedAt\": 1619656971,\n                \"InstanceId\": 3,\n                \"ProjectId\": 2,\n                \"UpdatedAt\": 1624354153,\n                \"GroupName\": \"默认项目\",\n                \"ProjectName\": \"默认应用\",\n                \"InstanceVersion\": 2,\n                \"GroupId\": 1,\n                \"CreatedAt\": 1624354153\n            }\n        ],\n        \"RequestId\": \"123\",\n        \"TotalCount\": 100\n    }\n}",
         "title": "ListRuntimeDeployedInstances"
       }
     ],

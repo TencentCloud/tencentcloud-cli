@@ -371,6 +371,13 @@
       "output": "DescribeUsersResponse",
       "status": "online"
     },
+    "ExecutePodCommand": {
+      "document": "在指定Pod的容器中执行shell命令",
+      "input": "ExecutePodCommandRequest",
+      "name": "执行Pod命令",
+      "output": "ExecutePodCommandResponse",
+      "status": "online"
+    },
     "ListInstances": {
       "document": "拉取应用实例基础信息列表",
       "input": "ListInstancesRequest",
@@ -829,6 +836,7 @@
           "disabled": false,
           "document": "应用平台标识",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Platform",
           "required": false,
@@ -839,6 +847,7 @@
           "disabled": false,
           "document": "业务 ID",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ProjectID",
           "required": false,
@@ -849,6 +858,7 @@
           "disabled": false,
           "document": "配置名称",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ConfigName",
           "required": false,
@@ -859,6 +869,7 @@
           "disabled": false,
           "document": "配置版本",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ConfigVersion",
           "required": false,
@@ -869,6 +880,7 @@
           "disabled": false,
           "document": "配置类型",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ConfigType",
           "required": false,
@@ -879,6 +891,7 @@
           "disabled": false,
           "document": "配置内容",
           "example": "无",
+          "is_base64": false,
           "member": "ConfigContent",
           "name": "Content",
           "required": false,
@@ -889,11 +902,23 @@
           "disabled": false,
           "document": "配置描述",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Description",
           "required": false,
           "type": "string",
           "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "来源集群/Namespace信息",
+          "example": "cls-xxxxx/ns-xxxx",
+          "is_base64": false,
+          "member": "string",
+          "name": "SourceClusterNamespace",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -901,6 +926,61 @@
     "CreateConfigResponse": {
       "document": "CreateConfig返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "业务 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "配置名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "配置版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "配置类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "来源 cluser/namespace\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SourceClusterNamespace",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3218,6 +3298,142 @@
       ],
       "type": "object"
     },
+    "ExecutePodCommandRequest": {
+      "document": "ExecutePodCommand请求参数结构体",
+      "members": [
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "业务ID",
+          "example": "prj-xxxxx",
+          "is_base64": false,
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "应用ID",
+          "example": "app-xxxxx",
+          "is_base64": false,
+          "member": "string",
+          "name": "ApplicationID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "环境名称",
+          "example": "testing",
+          "is_base64": false,
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "应用实例ID",
+          "example": "tad-xxxx",
+          "is_base64": false,
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "Pod UID",
+          "example": "xxx-xxxx",
+          "is_base64": false,
+          "member": "string",
+          "name": "UID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "需要执行的命令",
+          "example": "ls",
+          "is_base64": false,
+          "member": "string",
+          "name": "Command",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "容器名称，默认第一个容器",
+          "example": "demo",
+          "is_base64": false,
+          "member": "string",
+          "name": "ContainerName",
+          "required": false,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "命令参数列表",
+          "example": "[\"-al\"]",
+          "is_base64": false,
+          "member": "string",
+          "name": "Args",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "ExecutePodCommandResponse": {
+      "document": "ExecutePodCommand返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标准输出",
+          "example": "123",
+          "member": "string",
+          "name": "Stdout",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "标准错误",
+          "example": "error: xxxxx",
+          "member": "string",
+          "name": "Stderr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Filter": {
       "document": "过滤器",
       "members": [
@@ -3439,6 +3655,7 @@
           "disabled": false,
           "document": "应用平台标识",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Platform",
           "required": false,
@@ -3449,6 +3666,7 @@
           "disabled": false,
           "document": "业务 ID",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ProjectID",
           "required": false,
@@ -3459,6 +3677,7 @@
           "disabled": false,
           "document": "配置名称",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ConfigName",
           "required": false,
@@ -3469,6 +3688,7 @@
           "disabled": false,
           "document": "配置版本",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ConfigVersion",
           "required": false,
@@ -3479,6 +3699,7 @@
           "disabled": false,
           "document": "配置类型",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ConfigType",
           "required": false,
@@ -3489,6 +3710,7 @@
           "disabled": false,
           "document": "配置内容",
           "example": "无",
+          "is_base64": false,
           "member": "ConfigContent",
           "name": "Content",
           "required": false,
@@ -3499,6 +3721,7 @@
           "disabled": false,
           "document": "配置描述",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Description",
           "required": false,

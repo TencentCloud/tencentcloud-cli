@@ -424,6 +424,14 @@
         "title": "获取子用户列表"
       }
     ],
+    "ExecutePodCommand": [
+      {
+        "document": "在pod中执行命令",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExecutePodCommand\n<公共请求参数>\n\n{\n    \"ProjectID\": \"abc\",\n    \"ApplicationID\": \"abc\",\n    \"EnvironmentName\": \"abc\",\n    \"InstanceID\": \"abc\",\n    \"UID\": \"abc\",\n    \"ContainerName\": \"abc\",\n    \"Command\": \"abc\",\n    \"Args\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Stdout\": \"abc\",\n        \"Stderr\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "ExecutePodCommand"
+      }
+    ],
     "ListInstances": [
       {
         "document": "拉取应用实例基础信息列表",

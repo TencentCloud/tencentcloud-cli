@@ -1,6 +1,6 @@
 **Example 1: 获取运行时资源监控详情**
 
-
+获取运行时资源监控详情
 
 Input: 
 
@@ -18,18 +18,14 @@ Output:
 ```
 {
     "Response": {
+        "MetricType": "abc",
         "Values": [
             {
-                "Time": 1619656971,
-                "Val": 10.3
-            },
-            {
-                "Time": 1619656972,
-                "Val": 10.9
+                "Time": 0,
+                "Val": "abc"
             }
         ],
-        "RequestId": "xx",
-        "MetricType": "K8sWorkloadNetworkReceiveBytesBw"
+        "RequestId": "abc"
     }
 }
 ```

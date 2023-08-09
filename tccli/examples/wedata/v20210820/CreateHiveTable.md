@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli wedata CreateHiveTable --cli-unfold-argument  \
-    --Database xx \
-    --ProjectId xx \
-    --Incharge xx \
-    --DatasourceId xx \
+    --Database testDB \
+    --ProjectId 1 \
+    --Incharge 1 \
+    --DatasourceId 1 \
     --Privilege 0 \
-    --DDLSql xx
+    --DDLSql create table if not exist test_table(id int)
 ```
 
 Output: 
@@ -19,7 +19,7 @@ Output:
 {
     "Response": {
         "IsSuccess": true,
-        "RequestId": "xx"
+        "RequestId": "123"
     }
 }
 ```

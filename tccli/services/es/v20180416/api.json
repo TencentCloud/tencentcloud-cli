@@ -1507,6 +1507,7 @@
           "disabled": false,
           "document": "可用区",
           "example": "ap-guangzhou-3",
+          "is_base64": false,
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -1517,6 +1518,7 @@
           "disabled": false,
           "document": "私有网络ID",
           "example": "vpc-xxxxxx",
+          "is_base64": false,
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -1527,6 +1529,7 @@
           "disabled": false,
           "document": "子网ID",
           "example": "subnet-xxxxxx",
+          "is_base64": false,
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -1537,6 +1540,7 @@
           "disabled": false,
           "document": "索引名，需以-AppId结尾",
           "example": "test-12345678",
+          "is_base64": false,
           "member": "string",
           "name": "IndexName",
           "required": true,
@@ -1547,6 +1551,7 @@
           "disabled": false,
           "document": "创建的索引元数据JSON，如mappings、settings",
           "example": "{}",
+          "is_base64": false,
           "member": "string",
           "name": "IndexMetaJson",
           "required": false,
@@ -1557,6 +1562,7 @@
           "disabled": false,
           "document": "创建索引的空间ID",
           "example": "space-xxxxxxxx",
+          "is_base64": false,
           "member": "string",
           "name": "SpaceId",
           "required": false,
@@ -1567,6 +1573,7 @@
           "disabled": false,
           "document": "创建索引的用户名",
           "example": "test",
+          "is_base64": false,
           "member": "string",
           "name": "Username",
           "required": false,
@@ -1577,6 +1584,7 @@
           "disabled": false,
           "document": "创建索引的密码",
           "example": "test",
+          "is_base64": false,
           "member": "string",
           "name": "Password",
           "required": false,
@@ -1587,6 +1595,7 @@
           "disabled": false,
           "document": "创建数据接入",
           "example": "无",
+          "is_base64": false,
           "member": "ServerlessDi",
           "name": "ServerlessDi",
           "required": false,
@@ -1597,6 +1606,7 @@
           "disabled": false,
           "document": "是否自行添加白名单ip",
           "example": "0",
+          "is_base64": false,
           "member": "uint64",
           "name": "AutoGetIp",
           "required": false,
@@ -1607,6 +1617,7 @@
           "disabled": false,
           "document": "标签信息",
           "example": "无",
+          "is_base64": false,
           "member": "TagInfo",
           "name": "TagList",
           "required": false,
@@ -1617,11 +1628,23 @@
           "disabled": false,
           "document": "kibana公网白名单",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "KibanaWhiteIpList",
           "required": false,
           "type": "list",
           "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "内部产品类型",
+          "example": "0",
+          "is_base64": false,
+          "member": "uint64",
+          "name": "InnerProductType",
+          "required": false,
+          "type": "int",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -1635,6 +1658,7 @@
           "example": "index-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -1645,6 +1669,7 @@
           "example": "123",
           "member": "string",
           "name": "DealName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
@@ -3679,7 +3704,6 @@
       "document": "数据接入cvm数据源信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "vpc id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-xxxx",
@@ -3691,7 +3715,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "采集路径列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[/test, /tmp]",
@@ -3703,7 +3726,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cvm实例信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3715,7 +3737,6 @@
           "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
           "document": "采集器id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "coll-xxxxxxxx",

@@ -1,3 +1,217 @@
+# Release 3.0.826.1
+
+## 商业智能分析 BI(bi) 版本：2022-01-05
+
+### 第 2 次发布
+
+发布时间：2023-08-10 01:08:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EmbedTokenInfo](http://document.tencentcloudapi.woa.com/document/product/1707/80324#EmbedTokenInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>Id, BIToken, ProjectId, CreatedUser, CreatedAt, UpdatedUser, UpdatedAt, PageId, ExtraParam
+
+
+
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 7 次发布
+
+发布时间：2023-08-10 01:10:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ExecutePodCommand](http://document.tencentcloudapi.woa.com/document/product/1609/81607)
+
+修改接口：
+
+* [CreateConfig](http://document.tencentcloudapi.woa.com/document/product/1609/78005)
+
+	* 新增入参：SourceClusterNamespace
+
+	* 新增出参：ProjectID, ConfigName, ConfigVersion, ConfigType, SourceClusterNamespace
+
+
+
+
+## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 72 次发布
+
+发布时间：2023-08-10 01:13:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RenewCkafkaInstance](http://document.tencentcloudapi.woa.com/document/product/597/77473)
+
+	* 新增出参：Result, RequestId
+
+	* <font color="#dd0000">**删除出参**：</font>BigDealId, DealName
+
+
+新增数据结构：
+
+* [RenewCkafkaInstanceResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#RenewCkafkaInstanceResp)
+
+修改数据结构：
+
+* [EsParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#EsParam)
+
+	* 新增成员：RecordMappingMode
+
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 54 次发布
+
+发布时间：2023-08-10 01:17:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [SyncImages](http://document.tencentcloudapi.woa.com/document/product/213/15711)
+
+	* <font color="#dd0000">**修改出参**：</font>ImageSet
+
+
+
+
+## 数据连接器(eis) 版本：2021-06-01
+
+### 第 9 次发布
+
+发布时间：2023-08-10 01:23:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetRuntimeResourceMonitorMetricMC](http://document.tencentcloudapi.woa.com/document/product/1270/57966)
+
+	* 新增入参：AggregationType
+
+* [ListRuntimeDeployedInstancesMC](http://document.tencentcloudapi.woa.com/document/product/1270/57964)
+
+	* 新增入参：RuntimeClass
+
+
+
+
+## 数据连接器(eis) 版本：2020-07-15
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 34 次发布
+
+发布时间：2023-08-10 01:24:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateServerlessInstance](http://document.tencentcloudapi.woa.com/document/product/845/77395)
+
+	* 新增入参：InnerProductType
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 76 次发布
+
+发布时间：2023-08-10 01:24:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChannelCancelUserAutoSignEnableUrl](http://document.tencentcloudapi.woa.com/document/product/1595/81611)
+* [ChannelCreateUserAutoSignEnableUrl](http://document.tencentcloudapi.woa.com/document/product/1595/81610)
+* [ChannelDescribeUserAutoSignStatus](http://document.tencentcloudapi.woa.com/document/product/1595/81609)
+* [ChannelDisableUserAutoSign](http://document.tencentcloudapi.woa.com/document/product/1595/81608)
+
+新增数据结构：
+
+* [AutoSignConfig](http://document.tencentcloudapi.woa.com/document/product/1595/75258#AutoSignConfig)
+* [UserThreeFactor](http://document.tencentcloudapi.woa.com/document/product/1595/75258#UserThreeFactor)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 集团账号管理(organization) 版本：2021-03-31
+
+### 第 25 次发布
+
+发布时间：2023-08-10 01:35:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteOrganizationMemberAuthIdentity](http://document.tencentcloudapi.woa.com/document/product/850/81612)
+
+
+
+## 集团账号管理(organization) 版本：2018-12-25
+
+
+
+## 音速达直播音乐版权引擎(yinsuda) 版本：2022-05-27
+
+### 第 2 次发布
+
+发布时间：2023-08-10 01:52:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TRTCJoinRoomInput](http://document.tencentcloudapi.woa.com/document/product/1717/80557#TRTCJoinRoomInput)
+
+	* 新增成员：RoomIdType
+
+
+
+
 # Release 3.0.825.1
 
 ## 多媒体创作引擎(cme) 版本：2019-10-29

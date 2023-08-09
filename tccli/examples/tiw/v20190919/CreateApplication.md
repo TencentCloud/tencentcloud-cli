@@ -8,8 +8,8 @@ Input:
 tccli tiw CreateApplication --cli-unfold-argument  \
     --SdkAppId 1400000001 \
     --AppName ForTest \
-    --SKey xxxx \
-    --TinyId xxxx
+    --SKey Azu23oixeru90kic11cMw \
+    --TinyId 1401234005243
 ```
 
 Output: 

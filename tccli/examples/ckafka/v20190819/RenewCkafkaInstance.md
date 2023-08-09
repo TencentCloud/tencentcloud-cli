@@ -13,7 +13,13 @@ tccli ckafka RenewCkafkaInstance --cli-unfold-argument  \
 Output: 
 ```
 {
-    "Response": {}
+    "Response": {
+        "Result": {
+            "BigDealId": "2023020103xxxx",
+            "DealName": "2023020103xxxx"
+        },
+        "RequestId": "xx-xx-xx"
+    }
 }
 ```
 

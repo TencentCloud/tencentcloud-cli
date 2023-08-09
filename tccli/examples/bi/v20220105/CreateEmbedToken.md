@@ -1,6 +1,6 @@
 **Example 1: 报表嵌出创建Token接口示例-强鉴权**
 
-
+报表嵌出创建Token接口示例
 
 Input: 
 

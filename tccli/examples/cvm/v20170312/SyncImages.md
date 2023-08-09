@@ -14,6 +14,12 @@ Output:
 ```
 {
     "Response": {
+        "ImageSet": [
+            {
+                "ImageId": "img-o3ycss2p",
+                "Region": "ap-guangzhou"
+            }
+        ],
         "RequestId": "71e69b56-32be-4412-ab45-49eded6a87be"
     }
 }

@@ -857,7 +857,7 @@
     "DescribeInstanceLastLog": {
       "document": "日志获取详情页面",
       "input": "DescribeInstanceLastLogRequest",
-      "name": "日志获取详情页面",
+      "name": "获取日志详情页面",
       "output": "DescribeInstanceLastLogResponse",
       "status": "online"
     },
@@ -8118,10 +8118,11 @@
       "document": "CreateHiveTable请求参数结构体",
       "members": [
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "数据源id",
           "example": "123",
+          "is_base64": false,
           "member": "string",
           "name": "DatasourceId",
           "required": true,
@@ -8129,10 +8130,11 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "数据库",
           "example": "123",
+          "is_base64": false,
           "member": "string",
           "name": "Database",
           "required": true,
@@ -8140,10 +8142,11 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
-          "document": "建hive表ddl",
+          "document": "base64转码之后的建表语句",
           "example": "123",
+          "is_base64": false,
           "member": "string",
           "name": "DDLSql",
           "required": true,
@@ -8151,10 +8154,11 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "表权限 ，默认为0:项目共享;1:仅个人与管理员",
           "example": "0",
+          "is_base64": false,
           "member": "int64",
           "name": "Privilege",
           "required": true,
@@ -8162,10 +8166,11 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "项目Id",
           "example": "1",
+          "is_base64": false,
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -8173,10 +8178,11 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "责任人",
           "example": "123",
+          "is_base64": false,
           "member": "string",
           "name": "Incharge",
           "required": false,
@@ -8195,7 +8201,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsSuccess",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false,
           "visibility": 1
@@ -16112,10 +16118,11 @@
       "document": "DescribeInLongTkeClusterList请求参数结构体",
       "members": [
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "WeData项目ID",
           "example": "xxx",
+          "is_base64": false,
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -16123,10 +16130,11 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "TKE集群地域",
           "example": "xxx",
+          "is_base64": false,
           "member": "string",
           "name": "TkeRegion",
           "required": true,
@@ -16134,10 +16142,11 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "集群名称。\n多个名称用逗号连接。",
           "example": "TradeCode21",
+          "is_base64": false,
           "member": "string",
           "name": "ClusterName",
           "required": false,
@@ -16145,10 +16154,11 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
-          "document": "TKE集群状态 (Running 运行中 Creating 创建中 Idling 闲置中 Abnormal 异常 Failed 异常 Deleting 删除中 Scaling 规模调整中 Upgrading 升级中 Isolated 欠费隔离中 NodeUpgrading 节点升级中 Recovering 唤醒中 Activating 激活中 MasterScaling Master扩缩容中 Waiting 等待注册 ClusterLevelUpgrading 调整规格中 ResourceIsolate 隔离中 ResourceIsolated 已隔离 ResourceReverse 冲正中 Trading 集群开通中 ResourceReversal 集群冲正 ClusterLevelTrading 集群变配交易中)\n多个状态用逗号连接。",
+          "document": "TKE集群状态 (Running 运行中 Creating 创建中 Idling 闲置中 Abnormal 异常 Failed 失败 Deleting 删除中 Scaling 规模调整中 Upgrading 升级中 Isolated 欠费隔离中 NodeUpgrading 节点升级中 Recovering 唤醒中 Activating 激活中 MasterScaling Master扩缩容中 Waiting 等待注册 ClusterLevelUpgrading 调整规格中 ResourceIsolate 隔离中 ResourceIsolated 已隔离 ResourceReverse 冲正中 Trading 集群开通中 ResourceReversal 集群冲正 ClusterLevelTrading 集群变配交易中)\n多个状态用逗号连接。",
           "example": "Running",
+          "is_base64": false,
           "member": "string",
           "name": "Status",
           "required": false,
@@ -16156,10 +16166,11 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "是否安装Agent，true: 是，false: 否",
           "example": "true",
+          "is_base64": false,
           "member": "bool",
           "name": "HasAgent",
           "required": false,
@@ -16167,10 +16178,11 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。\n多个集群用逗号连接。",
           "example": "INDEPENDENT_CLUSTER",
+          "is_base64": false,
           "member": "string",
           "name": "ClusterType",
           "required": false,
@@ -16178,10 +16190,11 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "分页页码，从1开始，默认：1",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "PageIndex",
           "required": false,
@@ -16189,10 +16202,11 @@
           "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "分页每页记录数，默认10",
           "example": "10",
+          "is_base64": false,
           "member": "uint64",
           "name": "PageSize",
           "required": false,
@@ -16211,7 +16225,7 @@
           "example": "无",
           "member": "InLongTkeDetail",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
@@ -16222,7 +16236,7 @@
           "example": "1",
           "member": "uint64",
           "name": "PageIndex",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -16233,7 +16247,7 @@
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -16244,7 +16258,7 @@
           "example": "100",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -16255,7 +16269,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalPage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false,
           "visibility": 1
@@ -16389,24 +16403,28 @@
       "document": "DescribeInstanceLastLog请求参数结构体",
       "members": [
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "任务id",
           "example": "20210602165654425",
+          "is_base64": false,
           "member": "string",
           "name": "TaskId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "数据时间",
           "example": "2021-06-02+00:00:00",
+          "is_base64": false,
           "member": "string",
           "name": "CurRunDate",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -16420,9 +16438,10 @@
           "example": "无",
           "member": "string",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -16437,9 +16456,11 @@
       "document": "DescribeInstanceList请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "项目/工作空间id",
           "example": "1",
+          "is_base64": false,
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -16447,9 +16468,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "页码",
           "example": "1",
+          "is_base64": false,
           "member": "int64",
           "name": "PageIndex",
           "required": true,
@@ -16457,9 +16480,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
-          "document": "页大小",
+          "document": "一页展示的条数",
           "example": "10",
+          "is_base64": false,
           "member": "int64",
           "name": "PageSize",
           "required": true,
@@ -16467,9 +16492,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "周期列表（如天，一次性），可选",
           "example": "[]",
+          "is_base64": false,
           "member": "string",
           "name": "CycleList",
           "required": true,
@@ -16477,9 +16504,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "责任人",
           "example": "[]",
+          "is_base64": false,
           "member": "string",
           "name": "OwnerList",
           "required": true,
@@ -16487,9 +16516,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "跟之前保持一致",
           "example": "__ALL__",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceType",
           "required": true,
@@ -16497,9 +16528,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "排序顺序（asc，desc）",
           "example": "desc",
+          "is_base64": false,
           "member": "string",
           "name": "Sort",
           "required": true,
@@ -16507,9 +16540,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "排序列（costTime 运行耗时，startTime 开始时间，state 实例状态，curRunDate 数据时间）",
           "example": "startTime",
+          "is_base64": false,
           "member": "string",
           "name": "SortCol",
           "required": true,
@@ -16517,9 +16552,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
-          "document": "类型列表（如35 shell任务），可选",
+          "document": "类型列表（如python任务类型：30\npyspark任务类型：31\nhivesql任务类型：34\nshell任务类型：35\nsparksql任务类型：36 jdbcsql任务类型：21 dlc任务类型：32），可选",
           "example": "[27]",
+          "is_base64": false,
           "member": "int64",
           "name": "TaskTypeList",
           "required": true,
@@ -16527,9 +16564,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "状态列表（如成功 2，正在执行 1），可选",
           "example": "[]",
+          "is_base64": false,
           "member": "int64",
           "name": "StateList",
           "required": true,
@@ -16537,9 +16576,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "任务名称",
           "example": "123",
+          "is_base64": false,
           "member": "string",
           "name": "Keyword",
           "required": false,
@@ -16558,6 +16599,7 @@
           "example": "无",
           "member": "string",
           "name": "Data",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -16568,6 +16610,7 @@
           "example": "无",
           "member": "InstanceList",
           "name": "InstanceList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true,
           "visibility": 1
@@ -16578,6 +16621,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true,
           "visibility": 1
