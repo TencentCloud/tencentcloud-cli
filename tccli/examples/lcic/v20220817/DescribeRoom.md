@@ -75,7 +75,8 @@ Output:
         "SubType": "video",
         "TeacherId": "2O2bjPEXxStIac3NC9kfH3mHeBC",
         "TurnOffMic": 0,
-        "VideoOrientation": 1
+        "VideoOrientation": 1,
+        "VideoDuration": 0
     }
 }
 ```

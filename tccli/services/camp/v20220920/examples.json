@@ -107,7 +107,7 @@
     "DeleteInstance": [
       {
         "document": "删除应用实例",
-        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInstance\n<公共请求参数>\n\n{\n    \"ProjectID\": \"abc\",\n    \"InstanceID\": \"abc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInstance\n<公共请求参数>\n\n{\n    \"ProjectID\": \"abc\",\n    \"EnvironmentName\": \"abc\",\n    \"ApplicationID\": \"abc\",\n    \"InstanceID\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "删除应用实例"
       }
@@ -148,7 +148,7 @@
       {
         "document": "拉取配置聚合信息",
         "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAggregatedConfigs\n<公共请求参数>\n\n{\n    \"Platform\": \"abc\",\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ],\n            \"Query\": \"abc\"\n        }\n    ],\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"AggregatedConfigs\": [\n            {\n                \"ProjectID\": \"abc\",\n                \"ConfigName\": \"abc\",\n                \"ConfigType\": \"abc\",\n                \"VersionCount\": 0\n            }\n        ],\n        \"TotalCount\": 1,\n        \"Filters\": [\n            {}\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AggregatedConfigs\": [\n            {\n                \"ProjectID\": \"abc\",\n                \"ConfigName\": \"abc\",\n                \"ConfigType\": \"abc\",\n                \"VersionCount\": 0\n            }\n        ],\n        \"TotalCount\": 1,\n        \"Filters\": [\n            {\n                \"Name\": \"abc\",\n                \"Values\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "DescribeAggregatedConfigs"
       }
     ],

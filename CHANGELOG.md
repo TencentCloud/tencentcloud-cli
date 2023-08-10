@@ -1,3 +1,166 @@
+# Release 3.0.827.1
+
+## 访问管理(cam) 版本：2019-01-16
+
+### 第 23 次发布
+
+发布时间：2023-08-11 01:09:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateMessageReceiver](http://document.tencentcloudapi.woa.com/document/product/598/81613)
+
+
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 8 次发布
+
+发布时间：2023-08-11 01:10:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteInstance](http://document.tencentcloudapi.woa.com/document/product/1609/77995)
+
+	* 新增入参：EnvironmentName, ApplicationID
+
+
+修改数据结构：
+
+* [FilterValues](http://document.tencentcloudapi.woa.com/document/product/1609/78009#FilterValues)
+
+	* 新增成员：Name, Values
+
+
+
+
+## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 73 次发布
+
+发布时间：2023-08-11 01:13:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceAttributesResponse](http://document.tencentcloudapi.woa.com/document/product/597/40861#InstanceAttributesResponse)
+
+	* 新增成员：InstanceChargeType
+
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 55 次发布
+
+发布时间：2023-08-11 01:18:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeLaunchTemplates](http://document.tencentcloudapi.woa.com/document/product/213/66322)
+
+	* 新增入参：VagueName
+
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 4 次发布
+
+发布时间：2023-08-11 01:29:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [QueryPartnerCredit](http://document.tencentcloudapi.woa.com/document/product/1724/80747)
+
+	* 新增出参：CustomerTotalCredit, CustomerRemainingCredit
+
+
+
+
+## 低代码互动课堂(lcic) 版本：2022-08-17
+
+### 第 10 次发布
+
+发布时间：2023-08-11 01:32:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRoom](http://document.tencentcloudapi.woa.com/document/product/1720/80647)
+
+	* 新增出参：VideoDuration
+
+
+
+
+## 云数据仓库(tchousex) 版本：2023-04-11
+
+### 第 2 次发布
+
+发布时间：2023-08-11 01:40:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeInstanceVip](http://document.tencentcloudapi.woa.com/document/product/1741/81615)
+
+新增数据结构：
+
+* [VipInfo](http://document.tencentcloudapi.woa.com/document/product/1741/81616#VipInfo)
+
+
+
+## 微服务引擎 TSE(tse) 版本：2020-12-07
+
+### 第 30 次发布
+
+发布时间：2023-08-11 01:47:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [KongRoutePreview](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongRoutePreview)
+
+	* <font color="#dd0000">**修改成员**：</font>Headers
+
+
+
+
 # Release 3.0.826.1
 
 ## 商业智能分析 BI(bi) 版本：2022-01-05

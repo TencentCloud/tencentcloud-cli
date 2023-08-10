@@ -5705,8 +5705,9 @@
       "document": "DescribeCmqSubscriptionDetail请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
-          "document": "主题名字，在单个地域同一帐号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线（-）。",
+          "document": "主题名字，在单个地域同一账号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线（-）。",
           "example": "Conn",
           "is_base64": false,
           "member": "string",
@@ -5716,6 +5717,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "分页时本页获取主题列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0",
           "example": "0",
@@ -5727,6 +5729,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "分页时本页获取主题的个数，如果不传递该参数，则该参数默认为20，最大值为50。",
           "example": "0",
@@ -5738,6 +5741,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "根据SubscriptionName进行模糊搜索",
           "example": "无",
@@ -5749,6 +5753,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "队列名称，订阅绑定的endpoint",
           "example": "无",
@@ -5760,6 +5765,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "查询类型。取值：（1）topic；（2）queue。\n默认值是topic。如果 queryType 是 topic，则查询主题下的订阅列表；如果 queryType 是 queue，则查询队列绑定的订阅列表。",
           "example": "topic",

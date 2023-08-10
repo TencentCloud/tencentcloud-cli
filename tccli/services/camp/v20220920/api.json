@@ -1525,9 +1525,11 @@
       "document": "DeleteInstance请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "业务 ID",
           "example": "prj-xxxx",
+          "is_base64": false,
           "member": "string",
           "name": "ProjectID",
           "required": true,
@@ -1535,14 +1537,40 @@
           "visibility": 2
         },
         {
+          "Reference": [],
+          "disabled": false,
+          "document": "环境信息",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "应用实例ID",
+          "example": "app-xxxxxx",
+          "is_base64": false,
+          "member": "string",
+          "name": "ApplicationID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "Reference": [],
           "disabled": false,
           "document": "实例ID",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceID",
           "required": true,
           "type": "string",
-          "visibility": 1
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -3490,7 +3518,30 @@
     },
     "FilterValues": {
       "document": "过滤器可选值",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤器名称",
+          "example": "Name",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "过滤器可选值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"test\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
       "usage": "out"
     },
     "Label": {

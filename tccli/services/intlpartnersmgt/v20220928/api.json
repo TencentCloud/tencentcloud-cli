@@ -2553,7 +2553,7 @@
           "example": "1",
           "member": "float",
           "name": "AllocatedCredit",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false,
           "visibility": 1
@@ -2564,7 +2564,7 @@
           "example": "1",
           "member": "float",
           "name": "TotalCredit",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false,
           "visibility": 1
@@ -2575,7 +2575,29 @@
           "example": "1",
           "member": "float",
           "name": "RemainingCredit",
-          "required": true,
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "子客已分配额度",
+          "example": "10",
+          "member": "float",
+          "name": "CustomerTotalCredit",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "子客剩余额度",
+          "example": "0.5",
+          "member": "float",
+          "name": "CustomerRemainingCredit",
+          "output_required": false,
           "type": "float",
           "value_allowed_null": false,
           "visibility": 1

@@ -7,6 +7,8 @@ Input:
 ```
 tccli camp DeleteInstance --cli-unfold-argument  \
     --ProjectID abc \
+    --EnvironmentName abc \
+    --ApplicationID abc \
     --InstanceID abc
 ```
 
