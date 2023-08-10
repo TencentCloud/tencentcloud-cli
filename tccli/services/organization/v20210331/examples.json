@@ -56,6 +56,14 @@
         "title": "创建组织成员访问授权策略"
       }
     ],
+    "DeleteOrganizationMemberAuthIdentity": [
+      {
+        "document": "删除组织成员访问授权",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOrganizationMemberAuthIdentity\n<公共请求参数>\n\n{\n    \"MemberUin\": 11111111111,\n    \"IdentityId\": 11\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bebe4b80-bca5-45fe-a460-455045879f89\"\n    }\n}",
+        "title": "删除组织成员访问授权"
+      }
+    ],
     "DeleteOrganizationMembers": [
       {
         "document": "",

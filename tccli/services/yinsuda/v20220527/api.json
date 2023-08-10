@@ -2623,48 +2623,64 @@
       "document": "TRTC推流进房信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "签名。",
           "example": "xxxxxxx",
+          "is_base64": false,
           "member": "string",
           "name": "Sign",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房间号。",
           "example": "1234",
+          "is_base64": false,
           "member": "string",
           "name": "RoomId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "推流应用ID。",
           "example": "140000001",
+          "is_base64": false,
           "member": "string",
           "name": "SdkAppId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户唯一标识。",
           "example": "tom",
+          "is_base64": false,
           "member": "string",
           "name": "UserId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TRTC房间号的类型：\n\nInteger：数字类型\nString：字符串类型\n默认为：Integer 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Integer",
+          "is_base64": false,
+          "member": "string",
+          "name": "RoomIdType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

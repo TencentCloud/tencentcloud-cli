@@ -113,9 +113,9 @@
       "status": "online"
     },
     "CreateScheduledSql": {
-      "document": "本接口用于创建ScheduledSql任务",
+      "document": "本接口用于创建定时SQL分析任务",
       "input": "CreateScheduledSqlRequest",
-      "name": "创建ScheduledSql任务",
+      "name": "创建定时SQL分析任务",
       "output": "CreateScheduledSqlResponse",
       "status": "online"
     },
@@ -225,9 +225,9 @@
       "status": "online"
     },
     "DeleteScheduledSql": {
-      "document": "本接口用于删除ScheduledSql任务",
+      "document": "本接口用于删除定时SQL分析任务",
       "input": "DeleteScheduledSqlRequest",
-      "name": "删除ScheduledSql任务",
+      "name": "删除定时SQL分析任务",
       "output": "DeleteScheduledSqlResponse",
       "status": "online"
     },
@@ -400,9 +400,9 @@
       "status": "online"
     },
     "DescribeScheduledSqlInfo": {
-      "document": "本接口用于获取ScheduledSql任务列表",
+      "document": "本接口用于获取定时SQL分析任务列表",
       "input": "DescribeScheduledSqlInfoRequest",
-      "name": "获取ScheduledSql任务列表",
+      "name": "获取定时SQL分析任务列表",
       "output": "DescribeScheduledSqlInfoResponse",
       "status": "online"
     },
@@ -526,9 +526,9 @@
       "status": "online"
     },
     "ModifyScheduledSql": {
-      "document": "本接口用于修改ScheduledSql任务",
+      "document": "本接口用于修改定时SQL分析任务",
       "input": "ModifyScheduledSqlRequest",
-      "name": "修改ScheduledSql任务",
+      "name": "修改定时SQL分析任务",
       "output": "ModifyScheduledSqlResponse",
       "status": "online"
     },
@@ -3648,6 +3648,7 @@
       "document": "CreateScheduledSql请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "源日志主题",
           "example": "6ef60bec-0242-43af-bb20-270359fbxxx",
@@ -3658,6 +3659,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "任务名称",
           "example": "test",
@@ -3668,6 +3670,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "任务启动状态.  1开启,  2关闭",
           "example": "1",
@@ -3678,6 +3681,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "定时SQL分析目标日志主题",
           "example": "无",
@@ -3688,6 +3692,7 @@
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "查询语句",
           "example": "* | select count(*)",
@@ -3698,6 +3703,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "调度开始时间,Unix时间戳，单位ms",
           "example": "1690515360000",
@@ -3708,6 +3714,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "调度类型，1:持续运行 2:指定时间范围",
           "example": "1",
@@ -3718,6 +3725,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "调度周期(分钟)",
           "example": "2",
@@ -3728,6 +3736,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "单次查询的时间窗口",
           "example": "@m-15m,@m",
@@ -3738,6 +3747,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "执行延迟(秒)",
           "example": "60",
@@ -3748,6 +3758,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "源topicId的地域信息",
           "example": "ap-guangzhou",
@@ -3758,6 +3769,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "调度结束时间，当ProcessType=2时为必传字段, Unix时间戳，单位ms",
           "example": "1690515440000",
@@ -3768,6 +3780,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "查询语法规则。 默认值为0。0：Lucene语法，1：CQL语法  ",
           "example": "0",
@@ -4835,6 +4848,7 @@
       "document": "DeleteScheduledSql请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "任务ID",
           "example": "6ef60bec-0242-43af-bb20-270359fb5xxx",
@@ -4845,6 +4859,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "源日志主题ID",
           "example": "6ef60bec-0242-43af-bb20-270359fxxxx",
@@ -6415,6 +6430,7 @@
       "document": "DescribeScheduledSqlInfo请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "分页的偏移量，默认值为0。",
           "example": "0",
@@ -6425,6 +6441,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "分页单页限制数目，默认值为20，最大值100。",
           "example": "10",
@@ -6435,6 +6452,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "任务名称",
           "example": "task",
@@ -6445,6 +6463,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "任务id",
           "example": "6ef60bec-0242-43af-bb20-270359fb54xx",
@@ -9742,6 +9761,7 @@
       "document": "ModifyScheduledSql请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "任务ID",
           "example": "6ef60bec-0242-43af-bb20-270359fxxxx",
@@ -9752,6 +9772,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "源日志主题",
           "example": "xxxx-0889-4ec0-accc-xxxxxxx",
@@ -9762,6 +9783,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "任务启动状态.   1开启,  2关闭",
           "example": "1",
@@ -9772,6 +9794,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "定时SQL分析的目标日志主题",
           "example": "无",
@@ -9782,6 +9805,7 @@
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "查询语句",
           "example": "* | select count(*)",
@@ -9792,6 +9816,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "调度周期(分钟)",
           "example": "2",
@@ -9802,6 +9827,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "单次查询的时间窗口. 例子中为近15分钟",
           "example": "@m-15m,@m",
@@ -9812,6 +9838,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "执行延迟(秒)",
           "example": "60",
@@ -9822,6 +9849,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "源topicId的地域信息",
           "example": "ap-guangzhou",
@@ -9832,6 +9860,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "任务名称",
           "example": "test",
@@ -9842,6 +9871,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "语法规则。 默认值为0。 0：Lucene语法，1：CQL语法",
           "example": "0",

@@ -21,6 +21,13 @@
       "output": "ChannelCancelMultiFlowSignQRCodeResponse",
       "status": "online"
     },
+    "ChannelCancelUserAutoSignEnableUrl": {
+      "document": "此接口（ChannelCancelUserAutoSignEnableUrl）用来撤销发送给个人用户的自动签开通链接，撤销后对应的个人用户开通链接失效。若个人用户已经完成开通，将无法撤销。（处方单场景专用，使用此接口请与客户经理确认）",
+      "input": "ChannelCancelUserAutoSignEnableUrlRequest",
+      "name": "撤销自动签开通链接",
+      "output": "ChannelCancelUserAutoSignEnableUrlResponse",
+      "status": "online"
+    },
     "ChannelCreateBatchCancelFlowUrl": {
       "document": "指定需要批量撤销的签署流程Id，获取批量撤销链接 - 不建议使用此接口，可使用ChannelBatchCancelFlows\n客户指定需要撤销的签署流程Id，最多100个，超过100不处理；\n接口调用成功返回批量撤销合同的链接，通过链接跳转到电子签小程序完成批量撤销;\n\n可以撤回：未全部签署完成\n 不可以撤回：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n注意:\n能撤回合同的只能是合同的发起人或者发起企业的超管、法人",
       "input": "ChannelCreateBatchCancelFlowUrlRequest",
@@ -126,6 +133,13 @@
       "output": "ChannelCreateSealPolicyResponse",
       "status": "online"
     },
+    "ChannelCreateUserAutoSignEnableUrl": {
+      "document": "企业方可以通过此接口获取个人用户开启自动签的跳转链接",
+      "input": "ChannelCreateUserAutoSignEnableUrlRequest",
+      "name": "获取个人用户自动签开启链接",
+      "output": "ChannelCreateUserAutoSignEnableUrlResponse",
+      "status": "online"
+    },
     "ChannelCreateUserRoles": {
       "document": "通过此接口，绑定员工角色，支持以电子签userId、客户系统userId两种方式调用。",
       "input": "ChannelCreateUserRolesRequest",
@@ -180,6 +194,20 @@
       "input": "ChannelDescribeRolesRequest",
       "name": "查询角色列表",
       "output": "ChannelDescribeRolesResponse",
+      "status": "online"
+    },
+    "ChannelDescribeUserAutoSignStatus": {
+      "document": "企业方可以通过此接口查询个人用户自动签开启状态",
+      "input": "ChannelDescribeUserAutoSignStatusRequest",
+      "name": "查询个人用户开通自动签状态",
+      "output": "ChannelDescribeUserAutoSignStatusResponse",
+      "status": "online"
+    },
+    "ChannelDisableUserAutoSign": {
+      "document": "企业方可以通过此接口关闭个人的自动签功能",
+      "input": "ChannelDisableUserAutoSignRequest",
+      "name": "关闭个人自动签功能",
+      "output": "ChannelDisableUserAutoSignResponse",
       "status": "online"
     },
     "ChannelGetTaskResultApi": {
@@ -490,6 +518,78 @@
         }
       ],
       "usage": "out"
+    },
+    "AutoSignConfig": {
+      "document": "自动签开启、签署相关配置",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "自动签开通个人用户的三要素",
+          "example": "无",
+          "member": "UserThreeFactor",
+          "name": "UserInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "是否回调证书信息",
+          "example": "无",
+          "member": "bool",
+          "name": "CertInfoCallback",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "是否支持用户自定义签名印章",
+          "example": "无",
+          "member": "bool",
+          "name": "UserDefineSeal",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "是否需要回调的时候返回印章(签名) 图片的 base64",
+          "example": "无",
+          "member": "bool",
+          "name": "SealImgCallback",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "回调链接，如果渠道已经配置了，可以不传",
+          "example": "无",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "开通时候的验证方式，取值：WEIXINAPP（微信人脸识别），INSIGHT（慧眼人脸认别），TELECOM（运营商三要素验证）。如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。如果是 H5 开通链接，支持传 INSIGHT / TELECOM。默认值 WEIXINAPP / INSIGHT。",
+          "example": "无",
+          "member": "string",
+          "name": "VerifyChannels",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "BaseFlowInfo": {
       "document": "基础流程信息",
@@ -833,6 +933,60 @@
       ],
       "type": "object"
     },
+    "ChannelCancelUserAutoSignEnableUrlRequest": {
+      "document": "ChannelCancelUserAutoSignEnableUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "渠道应用相关信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "自动签场景: E_PRESCRIPTION_AUTO_SIGN 电子处方",
+          "example": "无",
+          "member": "string",
+          "name": "SceneKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定撤销链接的用户信息，包含姓名、证件类型、证件号码。",
+          "example": "无",
+          "member": "UserThreeFactor",
+          "name": "UserInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCancelUserAutoSignEnableUrlResponse": {
+      "document": "ChannelCancelUserAutoSignEnableUrl返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ChannelCreateBatchCancelFlowUrlRequest": {
       "document": "ChannelCreateBatchCancelFlowUrl请求参数结构体",
       "members": [
@@ -1129,6 +1283,7 @@
       "document": "ChannelCreateFlowByFiles请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 均必填。",
           "example": "无",
@@ -1139,6 +1294,7 @@
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "签署流程名称，长度不超过200个字符",
           "example": "\"xxx\"",
@@ -1149,76 +1305,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "签署流程签约方列表，最多不超过50个参与方",
-          "example": "无",
-          "is_base64": false,
-          "member": "FlowApproverInfo",
-          "name": "FlowApprovers",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "签署文件资源Id列表，目前仅支持单个文件",
-          "example": "[\"xxx\"]",
-          "is_base64": false,
-          "member": "string",
-          "name": "FileIds",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "签署文件中的发起方的填写控件，需要在发起的时候进行填充",
-          "example": "无",
-          "is_base64": false,
-          "member": "Component",
-          "name": "Components",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "签署流程截止时间，十位数时间戳，最大值为33162419560，即3020年",
-          "example": "3",
-          "is_base64": false,
-          "member": "int64",
-          "name": "Deadline",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "签署流程回调地址，长度不超过255个字符",
-          "example": "\"xxx\"",
-          "is_base64": false,
-          "member": "string",
-          "name": "CallbackUrl",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署。有序签署时以传入FlowApprovers数组的顺序作为签署顺序",
-          "example": "false",
-          "is_base64": false,
-          "member": "bool",
-          "name": "Unordered",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "签署流程的类型，长度不超过255个字符",
-          "example": "\"xxx\"",
-          "is_base64": false,
-          "member": "string",
-          "name": "FlowType",
-          "required": false,
-          "type": "string"
-        },
-        {
+          "Reference": [],
           "disabled": false,
           "document": "签署流程的描述，长度不超过1000个字符",
           "example": "\"xxx\"",
@@ -1229,6 +1316,84 @@
           "type": "string"
         },
         {
+          "Reference": [],
+          "disabled": false,
+          "document": "签署流程签约方列表，最多不超过50个参与方",
+          "example": "无",
+          "is_base64": false,
+          "member": "FlowApproverInfo",
+          "name": "FlowApprovers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "签署文件资源Id列表，目前仅支持单个文件",
+          "example": "[\"xxx\"]",
+          "is_base64": false,
+          "member": "string",
+          "name": "FileIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "签署文件中的发起方的填写控件，需要在发起的时候进行填充",
+          "example": "无",
+          "is_base64": false,
+          "member": "Component",
+          "name": "Components",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "签署流程的签署截止时间。\n值为unix时间戳,精确到秒,不传默认为当前时间一年后\n不能早于当前时间",
+          "example": "1691574041",
+          "is_base64": false,
+          "member": "int64",
+          "name": "Deadline",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "签署流程回调地址，长度不超过255个字符\n如果不传递回调地址， 则默认是配置应用号时候使用的回调地址",
+          "example": "\"xxx\"",
+          "is_base64": false,
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "合同签署顺序类型\ntrue - 无序签,\nfalse - 顺序签，\n默认为false，即有序签署。\n有序签署时以传入FlowApprovers数组的顺序作为签署顺序",
+          "example": "false",
+          "is_base64": false,
+          "member": "bool",
+          "name": "Unordered",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "签署流程的类型，长度不超过255个字符",
+          "example": "\"xxx\"",
+          "is_base64": false,
+          "member": "string",
+          "name": "FlowType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "Reference": [],
           "disabled": false,
           "document": "合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始",
           "example": "合同名称:{合同名称} {发起方企业} {发起方姓名};国家:中国;发起方:{发起方企业};签署方1:  {签署方1企业};签署",
@@ -1239,6 +1404,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "业务信息，最大长度1000个字符。",
           "example": "\"xxx\"",
@@ -1249,6 +1415,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "发起方企业的签署人进行签署操作是否需要企业内部审批。 若设置为true,审核结果需通过接口 ChannelCreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。  注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。",
           "example": "无",
@@ -1259,6 +1426,7 @@
           "type": "bool"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "签署人校验方式\nVerifyCheck: 人脸识别（默认）\nMobileCheck：手机号验证\n参数说明：可选人脸识别或手机号验证两种方式，若选择后者，未实名个人签署方在签署合同时，无需经过实名认证和意愿确认两次人脸识别，该能力仅适用于个人签署方。",
           "example": "无",
@@ -1269,8 +1437,9 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
-          "document": "标识是否允许发起后添加控件。0为不允许1为允许。如果为1，创建的时候不能有签署控件，只能创建后添加。注意发起后添加控件功能不支持添加骑缝章和签批控件",
+          "document": "标识是否允许发起后添加控件。\n0为不允许\n1为允许。\n如果为1，创建的时候不能有签署控件，只能创建后添加。注意发起后添加控件功能不支持添加骑缝章和签批控件",
           "example": "0",
           "is_base64": false,
           "member": "int64",
@@ -1279,6 +1448,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "被抄送人信息列表",
           "example": "无",
@@ -1289,8 +1459,9 @@
           "type": "list"
         },
         {
+          "Reference": [],
           "disabled": false,
-          "document": "给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知",
+          "document": "给关注人发送短信通知的类型，\n0-合同发起时通知 \n1-签署完成后通知",
           "example": "无",
           "is_base64": false,
           "member": "int64",
@@ -1299,6 +1470,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN",
           "example": "E_PRESCRIPTION_AUTO_SIGN",
@@ -1309,6 +1481,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": true,
           "document": "操作者的信息，不用传",
           "example": "无",
@@ -2216,6 +2389,156 @@
       ],
       "type": "object"
     },
+    "ChannelCreateUserAutoSignEnableUrlRequest": {
+      "document": "ChannelCreateUserAutoSignEnableUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "渠道应用相关信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "自动签场景:\nE_PRESCRIPTION_AUTO_SIGN 电子处方",
+          "example": "无",
+          "member": "string",
+          "name": "SceneKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "自动签开通，签署相关配置",
+          "example": "无",
+          "member": "AutoSignConfig",
+          "name": "AutoSignConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "链接类型，空-默认小程序端链接，H5SIGN-h5端链接",
+          "example": "无",
+          "member": "string",
+          "name": "UrlType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通知类型，默认不填为不通知开通方，填写 SMS 为短信通知。",
+          "example": "无",
+          "member": "string",
+          "name": "NotifyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "若上方填写为 SMS，则此处为手机号",
+          "example": "无",
+          "member": "string",
+          "name": "NotifyAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "链接的过期时间，格式为Unix时间戳，不能早于当前时间，且最大为30天。如果不传，默认有效期为7天。",
+          "example": "无",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateUserAutoSignEnableUrlResponse": {
+      "document": "ChannelCreateUserAutoSignEnableUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "跳转短链",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "小程序AppId",
+          "example": "无",
+          "member": "string",
+          "name": "AppId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "小程序 原始 Id",
+          "example": "无",
+          "member": "string",
+          "name": "AppOriginalId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跳转路径",
+          "example": "无",
+          "member": "string",
+          "name": "Path",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "base64格式跳转二维码",
+          "example": "无",
+          "member": "string",
+          "name": "QrCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "链接类型，空-默认小程序端链接，H5SIGN-h5端链接",
+          "example": "无",
+          "member": "string",
+          "name": "UrlType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ChannelCreateUserRolesRequest": {
       "document": "ChannelCreateUserRoles请求参数结构体",
       "members": [
@@ -2841,6 +3164,144 @@
           "type": "list",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelDescribeUserAutoSignStatusRequest": {
+      "document": "ChannelDescribeUserAutoSignStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "渠道应用相关信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "自动签场景:\nE_PRESCRIPTION_AUTO_SIGN 电子处方",
+          "example": "无",
+          "member": "string",
+          "name": "SceneKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询开启状态的用户信息",
+          "example": "无",
+          "member": "UserThreeFactor",
+          "name": "UserInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelDescribeUserAutoSignStatusResponse": {
+      "document": "ChannelDescribeUserAutoSignStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开通",
+          "example": "true",
+          "member": "bool",
+          "name": "IsOpen",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动签许可生效时间。当且仅当已开通自动签时有值。",
+          "example": "1684411624",
+          "member": "int64",
+          "name": "LicenseFrom",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动签许可到期时间。当且仅当已开通自动签时有值。",
+          "example": "1715947624",
+          "member": "int64",
+          "name": "LicenseTo",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelDisableUserAutoSignRequest": {
+      "document": "ChannelDisableUserAutoSign请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "渠道应用相关信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "自动签场景:\nE_PRESCRIPTION_AUTO_SIGN 电子处方",
+          "example": "无",
+          "member": "string",
+          "name": "SceneKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关闭自动签的个人的三要素",
+          "example": "无",
+          "member": "UserThreeFactor",
+          "name": "UserInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelDisableUserAutoSignResponse": {
+      "document": "ChannelDisableUserAutoSign返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -7913,6 +8374,45 @@
           "member": "string",
           "name": "ProxyIp",
           "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "UserThreeFactor": {
+      "document": "用户的三要素：姓名，证件号，证件类型",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "姓名",
+          "example": "小明",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "证件类型: \nID_CARD 身份证\nHONGKONG_AND_MACAO 港澳居民来往内地通行证\nHONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)",
+          "example": "ID_CARD",
+          "member": "string",
+          "name": "IdCardType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "证件号，如果有 X 请大写",
+          "example": "610*************1X",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         }

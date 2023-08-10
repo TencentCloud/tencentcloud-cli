@@ -322,10 +322,22 @@
     ],
     "DescribeAuditLogs": [
       {
-        "document": "查询审计日志成功",
+        "document": "",
         "input": "https://cdb.tencentcloudapi.com/?Action=DescribeAuditLogs\n&InstanceId=cdb-qwer1234\n&StartTime=2023-06-18 00:00:00\n&EndTime=2023-06-19 00:00:00\n&Limit=100\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"AffectRows\": 1,\n                \"CheckRows\": 0,\n                \"CpuTime\": 375.786,\n                \"DBName\": \"wyang\",\n                \"ErrCode\": 0,\n                \"ExecTime\": 1503,\n                \"Host\": \"100.122.76.176\",\n                \"IoWaitTime\": 7,\n                \"LockWaitTime\": 1140,\n                \"NsTime\": 104188594,\n                \"PolicyName\": \"sys_default\",\n                \"SentRows\": 0,\n                \"Sql\": \"INSERT INTO `test_db` values('张三',0)\",\n                \"SqlType\": \"INSERT\",\n                \"ThreadId\": 162,\n                \"Timestamp\": \"2023-06-07 17:50:05.104\",\n                \"TrxLivingTime\": 1475,\n                \"User\": \"root\"\n            }\n        ],\n        \"RequestId\": \"b3951c71-1da4-4b8f-9de5-ad71ab1e2917-0\"\n    }\n}",
         "title": "查询数据库审计日志"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditLogs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-0ei6rgrp\",\n    \"StartTime\": \"2023-08-01 00:00:00\",\n    \"EndTime\": \"2023-08-07 00:00:00\",\n    \"Limit\": 20,\n    \"LogFilter\": [\n        {\n            \"Type\": \"sql\",\n            \"Compare\": \"WINC\",\n            \"Value\": [\n                \"select\"\n            ]\n        },\n        {\n            \"Type\": \"sql\",\n            \"Compare\": \"WINC\",\n            \"Value\": [\n                \"test_db\"\n            ]\n        },\n        {\n            \"Type\": \"host\",\n            \"Compare\": \"NEQ\",\n            \"Value\": [\n                \"10.0.0.1\",\n                \"100.0.0.1\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": null,\n        \"RequestId\": \"90d90456-2a5b-4015-81b8-9e2fca52012b\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "查询xx时间范围内，sql中包含select和test_db，并且来源IP不等于10.0.0.1和100.0.0.1的记录"
+      },
+      {
+        "document": "sql样例：select * from test_db limit 1;\nsql  INC selec 能搜索到;\nsql  WINC selec 搜索不到样例;",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditLogs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-0ei6rgrp\",\n    \"StartTime\": \"2023-08-01 00:00:00\",\n    \"EndTime\": \"2023-08-07 00:00:00\",\n    \"Limit\": 20,\n    \"LogFilter\": [\n        {\n            \"Type\": \"sql\",\n            \"Compare\": \"INC\",\n            \"Value\": [\n                \"selec\",\n                \"up\"\n            ]\n        },\n        {\n            \"Type\": \"host\",\n            \"Compare\": \"INC\",\n            \"Value\": [\n                \"10.0.\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": null,\n        \"RequestId\": \"90d90456-2a5b-4015-81b8-9e2fca52012b\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "查询xx时间范围内，sql中包含selec或者upda，并且来源IP包含10.0.的记录"
       }
     ],
     "DescribeAuditPolicies": [

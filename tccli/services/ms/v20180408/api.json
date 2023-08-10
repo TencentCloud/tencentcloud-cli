@@ -1,11 +1,11 @@
 {
   "actions": {
     "CancelEncryptTask": {
-      "document": "上错服务器了\n\n该接口供渠道合作应用加固使用，接口调用有白名单用户限制，取消渠道合作加固中的任务。",
+      "document": "该接口供渠道合作应用加固使用，接口调用有白名单用户限制，取消渠道合作加固中的任务。",
       "input": "CancelEncryptTaskRequest",
       "name": "取消渠道合作加固任务",
       "output": "CancelEncryptTaskResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "CreateBindInstance": {
       "document": "将应用和资源进行绑定。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",
@@ -22,18 +22,18 @@
       "status": "online"
     },
     "CreateEncryptInstance": {
-      "document": "上错服务器了\n\n该接口供渠道合作应用加固使用，接口调用有白名单用户限制，用于创建加固任务。",
+      "document": "该接口供渠道合作应用加固使用，接口调用有白名单用户限制，用于创建加固任务。",
       "input": "CreateEncryptInstanceRequest",
       "name": "创建渠道合作应用加固任务",
       "output": "CreateEncryptInstanceResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "CreateOrderInstance": {
-      "document": "上错服务器了\n\n该接口供渠道合作应用加固使用，接口调用有白名单用户限制。\n订单类型有：免费试用、按年收费、按次收费。\n应用加固支持的平台类型有：android加固 、ios源码混淆 、sdk加固、applet小程序加固",
+      "document": "该接口供渠道合作应用加固使用，接口调用有白名单用户限制。\n订单类型有：免费试用、按年收费、按次收费。\n应用加固支持的平台类型有：android加固 、ios源码混淆 、sdk加固、applet小程序加固",
       "input": "CreateOrderInstanceRequest",
       "name": "创建渠道合作应用加固订单",
       "output": "CreateOrderInstanceResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "CreateResourceInstances": {
       "document": "用户可以使用该接口自建资源，只支持白名单用户",
@@ -71,11 +71,11 @@
       "status": "online"
     },
     "DescribeEncryptInstances": {
-      "document": "上错服务器了\n\n该接口供渠道合作应用加固使用，接口调用有白名单用户限制，用于查询加固任务，入参中的条件过滤字段均为精准匹配。支持功能点：1. 多任务分页查询  2.根据任务Id唯一值查询单记录",
+      "document": "该接口供渠道合作应用加固使用，接口调用有白名单用户限制，用于查询加固任务，入参中的条件过滤字段均为精准匹配。支持功能点：1. 多任务分页查询  2.根据任务Id唯一值查询单记录",
       "input": "DescribeEncryptInstancesRequest",
       "name": "查询渠道合作加固任务",
       "output": "DescribeEncryptInstancesResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "DescribeEncryptPlan": {
       "document": "该接口供渠道合作应用加固使用，接口调用有白名单用户限制。入参中的条件过滤字段均为精准匹配。",
@@ -85,11 +85,11 @@
       "status": "online"
     },
     "DescribeOrderInstances": {
-      "document": "上错服务器了\n\n该接口供渠道合作应用加固使用，接口调用有白名单用户限制。 接口返回的结果为：创建订单后，订单审批状态信息，以及与订单关联的资源状态等信息，入参中的条件过滤字段均为精准匹配。\n接口功能点：\n1.支持多订单分页查询；\n2.支持唯一订单号精准匹配查询；\n3.支持唯一资源号精准匹配查询；",
+      "document": "该接口供渠道合作应用加固使用，接口调用有白名单用户限制。 接口返回的结果为：创建订单后，订单审批状态信息，以及与订单关联的资源状态等信息，入参中的条件过滤字段均为精准匹配。\n接口功能点：\n1.支持多订单分页查询；\n2.支持唯一订单号精准匹配查询；\n3.支持唯一资源号精准匹配查询；",
       "input": "DescribeOrderInstancesRequest",
       "name": "查询渠道合作应用加固订单信息",
       "output": "DescribeOrderInstancesResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "DescribeResourceInstances": {
       "document": "获取某个用户的所有资源信息。（注意：根据国家互联网用户实名制相关要求，使用该产品前，需先完成实名认证。）",

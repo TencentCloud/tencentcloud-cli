@@ -8,7 +8,7 @@ Input:
 tccli tiw ModifyWhiteboardApplicationConfig --cli-unfold-argument  \
     --Configs.0.AdminUserId abcde \
     --Configs.0.BucketPrefix doc \
-    --Configs.0.ResultDomain xxx \
+    --Configs.0.ResultDomain result.sample.com \
     --Configs.0.AdminUserSig abcde \
     --Configs.0.Callback http://www.example.com/callback \
     --Configs.0.BucketName test-120000001 \

@@ -11,7 +11,7 @@
     "CreateApplication": [
       {
         "document": "创建白板应用",
-        "input": "https://tiw.tencentcloudapi.com/?Action=CreateApplication\n&SdkAppId=1400000001\n&AppName=ForTest\n&SKey=xxxx\n&TinyId=xxxx\n&<公共请求参数>",
+        "input": "https://tiw.tencentcloudapi.com/?Action=CreateApplication\n&SdkAppId=1400000001\n&AppName=ForTest\n&SKey=Azu23oixeru90kic11cMw\n&TinyId=1401234005243\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"AppId\": 1200000001,\n        \"SdkAppId\": 1400000001,\n        \"AppName\": \"ForTest\"\n    }\n}",
         "title": "创建白板应用"
       }
@@ -385,7 +385,7 @@
     "ModifyWhiteboardApplicationConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWhiteboardApplicationConfig\n<公共请求参数>\n\n{\n    \"Configs\": [\n        {\n            \"AdminUserId\": \"abcde\",\n            \"BucketPrefix\": \"doc\",\n            \"ResultDomain\": \"xxx\",\n            \"AdminUserSig\": \"abcde\",\n            \"Callback\": \"http://www.example.com/callback\",\n            \"BucketName\": \"test-120000001\",\n            \"SdkAppId\": 1400000001,\n            \"TaskType\": \"recording\",\n            \"BucketLocation\": \"ap-guangzhou\",\n            \"CallbackKey\": \"abcde\"\n        }\n    ],\n    \"SdkAppId\": 1400000001\n}",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWhiteboardApplicationConfig\n<公共请求参数>\n\n{\n    \"Configs\": [\n        {\n            \"AdminUserId\": \"abcde\",\n            \"BucketPrefix\": \"doc\",\n            \"ResultDomain\": \"result.sample.com\",\n            \"AdminUserSig\": \"abcde\",\n            \"Callback\": \"http://www.example.com/callback\",\n            \"BucketName\": \"test-120000001\",\n            \"SdkAppId\": 1400000001,\n            \"TaskType\": \"recording\",\n            \"BucketLocation\": \"ap-guangzhou\",\n            \"CallbackKey\": \"abcde\"\n        }\n    ],\n    \"SdkAppId\": 1400000001\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
         "title": "修改白板应用任务相关配置"
       }

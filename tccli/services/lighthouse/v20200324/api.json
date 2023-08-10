@@ -1447,36 +1447,44 @@
       "document": "CreateBlueprint请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "镜像名称。最大长度60。",
           "example": "test-blueprint",
+          "is_base64": false,
           "member": "string",
           "name": "BlueprintName",
           "required": true,
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "镜像描述。最大长度60。",
           "example": "test-blueprint",
+          "is_base64": false,
           "member": "string",
           "name": "Description",
           "required": false,
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "需要制作镜像的实例ID。",
           "example": "lhins-aaaabbbb",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": false,
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "是否执行强制关机以制作镜像。\n取值范围：\nTrue：表示关机之后制作镜像\nFalse：表示开机状态制作镜像\n默认取值：True\n开机状态制作镜像，可能导致部分数据未备份，影响数据安全。",
           "example": "True",
+          "is_base64": false,
           "member": "bool",
           "name": "ForcePowerOff",
           "required": false,
@@ -1494,6 +1502,7 @@
           "example": "lhbp-xkeh87da",
           "member": "string",
           "name": "BlueprintId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1555,81 +1564,99 @@
       "document": "CreateDisks请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "可用区。可通过[DescribeZones](https://cloud.tencent.com/document/product/1207/57513)返回值中的Zone获取。",
           "example": "ap-hongkong-2",
+          "is_base64": false,
           "member": "string",
           "name": "Zone",
           "required": true,
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "云硬盘大小, 单位: GB。",
           "example": "20",
+          "is_base64": false,
           "member": "int64",
           "name": "DiskSize",
           "required": true,
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "云硬盘介质类型。取值: \"CLOUD_PREMIUM\"(高性能云盘), \"CLOUD_SSD\"(SSD云硬盘)。",
           "example": "CLOUD_SSD",
+          "is_base64": false,
           "member": "string",
           "name": "DiskType",
           "required": true,
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "云硬盘包年包月相关参数设置。",
           "example": "无",
+          "is_base64": false,
           "member": "DiskChargePrepaid",
           "name": "DiskChargePrepaid",
           "required": true,
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "云硬盘名称。最大长度60。",
           "example": "test",
+          "is_base64": false,
           "member": "string",
           "name": "DiskName",
           "required": false,
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "云硬盘个数。取值范围: [1, 30]。默认值: 1。",
           "example": "1",
+          "is_base64": false,
           "member": "int64",
           "name": "DiskCount",
           "required": false,
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "指定云硬盘备份点配额，不传时默认为不带备份点配额。目前只支持不带或设置1个云硬盘备份点配额。",
           "example": "1",
+          "is_base64": false,
           "member": "int64",
           "name": "DiskBackupQuota",
           "required": false,
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "是否自动使用代金券。默认不使用。",
           "example": "false",
+          "is_base64": false,
           "member": "bool",
           "name": "AutoVoucher",
           "required": false,
           "type": "bool"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "自动挂载并初始化数据盘。",
           "example": "无",
+          "is_base64": false,
           "member": "AutoMountConfiguration",
           "name": "AutoMountConfiguration",
           "required": false,
@@ -1647,6 +1674,7 @@
           "example": "无",
           "member": "string",
           "name": "DiskIdSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1756,6 +1784,7 @@
       "document": "CreateInstances请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "套餐ID。可以通过调用 [查询套餐](https://cloud.tencent.com/document/api/1207/47575) 接口获取。",
           "example": "bundle_gen_03",
@@ -1766,6 +1795,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "镜像ID。可以通过调用 [查询镜像信息](https://cloud.tencent.com/document/api/1207/47689) 接口获取。",
           "example": "lhbp-g0tn7djh",
@@ -1776,6 +1806,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "当前实例仅支持预付费模式，即包年包月相关参数设置，单位（月）。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。该参数必传。",
           "example": "无",
@@ -1786,6 +1817,7 @@
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "实例显示名称。",
           "example": "mylighthouse",
@@ -1796,6 +1828,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "购买实例数量。包年包月实例取值范围：[1，30]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量",
           "example": "1",
@@ -1806,6 +1839,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "可用区列表。默认为随机可用区",
           "example": "[\"ap-beijing-1\"]",
@@ -1816,6 +1850,7 @@
           "type": "list"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "是否只预检此次请求。\ntrue：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和库存。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId.\nfalse（默认）：发送正常请求，通过检查后直接创建实例",
           "example": "false",
@@ -1826,6 +1861,7 @@
           "type": "bool"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
           "example": "无",
@@ -1836,6 +1872,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "实例登录密码信息配置。本字段目前仅支持WINDOWS实例进行密码设置。默认缺失情况下代表用户选择实例创建后设置登录密码。",
           "example": "无",
@@ -1846,6 +1883,7 @@
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "要创建的容器配置列表。",
           "example": "无",
@@ -1856,6 +1894,7 @@
           "type": "list"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "是否自动使用代金券。默认不使用。",
           "example": "false",
@@ -7130,27 +7169,33 @@
       "document": "ModifyInstancesBundle请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求批量实例的上限为15。",
           "example": "[“lhins-123456”]",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceIds",
           "required": true,
           "type": "list"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "待变更的套餐Id。可通过[DescribeBundles](https://cloud.tencent.com/document/api/1207/47575)接口返回值中的BundleId获取。",
           "example": "“bundle_ent_01”",
+          "is_base64": false,
           "member": "string",
           "name": "BundleId",
           "required": true,
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "是否自动抵扣代金券。取值范围：\ntrue：表示自动抵扣代金券\nfalse：表示不自动抵扣代金券\n默认取值：false。",
           "example": "false",
+          "is_base64": false,
           "member": "bool",
           "name": "AutoVoucher",
           "required": false,
@@ -7590,27 +7635,33 @@
       "document": "RenewDisks请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "云硬盘ID列表。一个或多个待操作的云硬盘ID。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值中的DiskId获取。每次请求续费数据盘数量总计上限为50。",
           "example": "[“lhdisk-xxxxxx”]",
+          "is_base64": false,
           "member": "string",
           "name": "DiskIds",
           "required": true,
           "type": "list"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "续费云硬盘包年包月相关参数设置。",
           "example": "无",
+          "is_base64": false,
           "member": "RenewDiskChargePrepaid",
           "name": "RenewDiskChargePrepaid",
           "required": true,
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "是否自动使用代金券。默认不使用。",
           "example": "true",
+          "is_base64": false,
           "member": "bool",
           "name": "AutoVoucher",
           "required": false,
@@ -7635,40 +7686,44 @@
       "document": "RenewInstances请求参数结构体",
       "members": [
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "实例ID列表。一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。每次请求批量实例的上限为100。",
           "example": "[\"lhins-7ofik5q9\"]",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceIds",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
           "example": "无",
+          "is_base64": false,
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": true,
           "type": "object"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "是否续费弹性数据盘。取值范围：\nTRUE：表示续费实例同时续费其挂载的数据盘\nFALSE：表示续费实例同时不再续费其挂载的数据盘\n默认取值：TRUE。",
           "example": "true",
+          "is_base64": false,
           "member": "bool",
           "name": "RenewDataDisk",
           "required": false,
           "type": "bool"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "是否自动抵扣代金券。取值范围：\nTRUE：表示自动抵扣代金券\nFALSE：表示不自动抵扣代金券\n默认取值：FALSE。",
           "example": "false",
+          "is_base64": false,
           "member": "bool",
           "name": "AutoVoucher",
           "required": false,

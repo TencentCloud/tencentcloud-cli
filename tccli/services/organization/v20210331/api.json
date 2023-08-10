@@ -49,6 +49,13 @@
       "output": "CreateOrganizationMemberPolicyResponse",
       "status": "online"
     },
+    "DeleteOrganizationMemberAuthIdentity": {
+      "document": "删除组织成员访问授权",
+      "input": "DeleteOrganizationMemberAuthIdentityRequest",
+      "name": "删除组织成员访问授权",
+      "output": "DeleteOrganizationMemberAuthIdentityResponse",
+      "status": "online"
+    },
     "DeleteOrganizationMembers": {
       "document": "批量删除企业组织成员",
       "input": "DeleteOrganizationMembersRequest",
@@ -664,6 +671,42 @@
           "type": "int",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOrganizationMemberAuthIdentityRequest": {
+      "document": "DeleteOrganizationMemberAuthIdentity请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成员uin。",
+          "example": "111111111111",
+          "member": "uint64",
+          "name": "MemberUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "身份Id。",
+          "example": "13",
+          "member": "uint64",
+          "name": "IdentityId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOrganizationMemberAuthIdentityResponse": {
+      "document": "DeleteOrganizationMemberAuthIdentity返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

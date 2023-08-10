@@ -11,7 +11,7 @@
   "metadata": {
     "apiVersion": "2023-02-15",
     "api_brief": "查询用户资源列表、进行续费、变配等api",
-    "serviceNameCN": "文旅客情平台",
+    "serviceNameCN": "文旅客情大数据",
     "serviceShortName": "tourism"
   },
   "objects": {

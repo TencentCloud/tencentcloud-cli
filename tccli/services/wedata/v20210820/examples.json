@@ -307,8 +307,8 @@
     "CreateHiveTable": [
       {
         "document": "建hive表",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHiveTable\n<公共请求参数>\n\n{\n    \"Database\": \"xx\",\n    \"ProjectId\": \"xx\",\n    \"Incharge\": \"xx\",\n    \"DatasourceId\": \"xx\",\n    \"Privilege\": 0,\n    \"DDLSql\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"IsSuccess\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHiveTable\n<公共请求参数>\n\n{\n    \"Database\": \"testDB\",\n    \"ProjectId\": \"1\",\n    \"Incharge\": \"1\",\n    \"DatasourceId\": \"1\",\n    \"Privilege\": 0,\n    \"DDLSql\": \"create table if not exist test_table(id int)\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IsSuccess\": true,\n        \"RequestId\": \"123\"\n    }\n}",
         "title": "CreateHiveTable"
       }
     ],
@@ -985,8 +985,8 @@
     "DescribeInLongTkeClusterList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInLongTkeClusterList\n<公共请求参数>\n\n{\n    \"Status\": \"xx\",\n    \"PageIndex\": 1,\n    \"PageSize\": 1,\n    \"ClusterName\": \"xx\",\n    \"ProjectId\": \"xx\",\n    \"HasAgent\": true,\n    \"ClusterType\": \"xx\",\n    \"TkeRegion\": \"ap-beijing\"\n}",
-        "output": "{\n    \"Response\": {\n        \"PageIndex\": 1,\n        \"PageSize\": 1,\n        \"Items\": [\n            {\n                \"Status\": \"xx\",\n                \"VpcId\": \"xx\",\n                \"TkeRegion\": \"xx\",\n                \"ClusterName\": \"xx\",\n                \"HasAgent\": true,\n                \"ClusterId\": \"xx\",\n                \"ClusterType\": \"xx\",\n                \"AgentId\": \"xx\"\n            }\n        ],\n        \"TotalPage\": 1,\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInLongTkeClusterList\n<公共请求参数>\n\n{\n    \"Status\": \"Running\",\n    \"PageIndex\": 1,\n    \"PageSize\": 1,\n    \"ClusterName\": \"\",\n    \"ProjectId\": \"1\",\n    \"HasAgent\": true,\n    \"ClusterType\": \"\",\n    \"TkeRegion\": \"ap-beijing\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PageIndex\": 1,\n        \"PageSize\": 1,\n        \"Items\": [\n            {\n                \"Status\": \"Running\",\n                \"VpcId\": \"vpc-awed345\",\n                \"TkeRegion\": \"ap-beijing\",\n                \"ClusterName\": \"cls-test\",\n                \"HasAgent\": true,\n                \"ClusterId\": \"cls-0u7ofrsl\",\n                \"ClusterType\": \"INDEPENDENT_CLUSTER\",\n                \"AgentId\": \"16878689876877778\"\n            }\n        ],\n        \"TotalPage\": 1,\n        \"TotalCount\": 1,\n        \"RequestId\": \"89add-786986\"\n    }\n}",
         "title": "获取TKE集群列表"
       }
     ],
@@ -1009,8 +1009,8 @@
     "DescribeInstanceLastLog": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceLastLog\n<公共请求参数>\n\n{\n    \"TaskId\": \"xx\",\n    \"CurRunDate\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": \"XX\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceLastLog\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\",\n    \"CurRunDate\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "日志获取详情页面"
       }
     ],

@@ -614,45 +614,55 @@
       "document": "CreateApplication请求参数结构体",
       "members": [
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "应用SdkAppId",
+          "example": "1400000001",
+          "is_base64": false,
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "App名字",
+          "example": "ForTest",
+          "is_base64": false,
           "member": "string",
           "name": "AppName",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "创建IM应用需要的SKey",
+          "example": "Azu23oixeru90kic11cMw",
+          "is_base64": false,
           "member": "string",
           "name": "SKey",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "创建IM应用需要的TinyId",
+          "example": "1401234005243",
+          "is_base64": false,
           "member": "string",
           "name": "TinyId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "需要绑定的标签列表",
+          "example": "无",
+          "is_base64": false,
           "member": "Tag",
           "name": "TagList",
           "required": false,
@@ -667,24 +677,30 @@
         {
           "disabled": false,
           "document": "客户的AppId",
+          "example": "1200000001",
           "member": "int64",
           "name": "AppId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "App名字",
+          "example": "ForTest",
           "member": "string",
           "name": "AppName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "应用SdkAppId",
+          "example": "1400000001",
           "member": "int64",
           "name": "SdkAppId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3814,20 +3830,22 @@
       "document": "ModifyWhiteboardApplicationConfig请求参数结构体",
       "members": [
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "客户的SdkAppId",
           "example": "1400000001",
+          "is_base64": false,
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "白板应用任务相关配置",
           "example": "无",
+          "is_base64": false,
           "member": "WhiteboardApplicationConfig",
           "name": "Configs",
           "required": true,

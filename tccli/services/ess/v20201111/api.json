@@ -9130,45 +9130,55 @@
       "document": "StartFlow请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "调用方用户信息，userId 必填。支持填入集团子公司经办人 userId代发合同。",
           "example": "无",
+          "is_base64": false,
           "member": "UserInfo",
           "name": "Operator",
           "required": true,
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "签署流程编号，由CreateFlow接口返回",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "FlowId",
           "required": true,
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "客户端Token，保持接口幂等性,最大长度64个字符",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ClientToken",
           "required": false,
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
           "example": "无",
+          "is_base64": false,
           "member": "Agent",
           "name": "Agent",
           "required": false,
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": false,
-          "document": "给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知",
+          "document": "给关注人发送短信通知的类型，\n\n0-合同发起时通知 \n\n1-签署完成后通知",
           "example": "无",
+          "is_base64": false,
           "member": "int64",
           "name": "CcNotifyType",
           "required": false,
@@ -9182,10 +9192,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回描述，START-发起成功， REVIEW-提交审核成功，EXECUTING-已提交发起任务",
+          "document": "发起成功之后返回状态，\n\nSTART-发起成功， \n\nREVIEW-提交审核成功，\n\nEXECUTING-已提交发起任务",
           "example": "无",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
