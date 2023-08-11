@@ -32,18 +32,18 @@ Output:
                 "OsVersion": "CentOS 6.9 32位",
                 "ImageCreateTime": "2019-07-22 20:48:14",
                 "ImageSize": 50,
-                "ImageSource": "xx",
+                "ImageSource": "CREATE_IMAGE",
                 "SrcImage": {
-                    "ImageDescription": "xx",
-                    "InstanceId": "xx",
-                    "Region": "xx",
-                    "RegionID": 0,
-                    "ImageId": "xx",
-                    "ImageName": "xx",
-                    "RegionName": "xx",
-                    "InstanceName": "xx",
-                    "ImageType": "xx",
-                    "ImageOsName": "xx"
+                    "ImageDescription": "CentOS 6.9 32位",
+                    "InstanceId": "ein-gwht9ek2",
+                    "Region": "ap-chongqing-ecm2",
+                    "RegionID": 1084,
+                    "ImageId": "img-cho4vg0s",
+                    "ImageName": "test",
+                    "RegionName": "重庆二区",
+                    "InstanceName": "",
+                    "ImageType": "PRIVATE_IMAGE",
+                    "ImageOsName": "CentOS 6.9 32位"
                 }
             },
             {
@@ -60,18 +60,18 @@ Output:
                 "OsVersion": "CentOS 7.4 裸金属 64位",
                 "ImageCreateTime": "2019-07-22 20:48:14",
                 "ImageSize": 50,
-                "ImageSource": "xx",
+                "ImageSource": "EXTERNAL_IMPORT",
                 "SrcImage": {
-                    "ImageDescription": "xx",
-                    "InstanceId": "xx",
-                    "Region": "xx",
+                    "ImageDescription": "",
+                    "InstanceId": "",
+                    "Region": "",
                     "RegionID": 0,
-                    "ImageId": "xx",
-                    "ImageName": "xx",
-                    "RegionName": "xx",
-                    "InstanceName": "xx",
-                    "ImageType": "xx",
-                    "ImageOsName": "xx"
+                    "ImageId": "",
+                    "ImageName": "CentOS 7.4 64位",
+                    "RegionName": "",
+                    "InstanceName": "",
+                    "ImageType": "",
+                    "ImageOsName": "CentOS 7.4 64位"
                 }
             }
         ],

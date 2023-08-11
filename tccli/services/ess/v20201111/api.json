@@ -505,7 +505,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参与者类型：\n0：企业\n1：个人\n3：企业静默签署\n注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。",
+          "document": "参与者类型：\n0：企业\n1：个人\n3：企业静默签署\n注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。\n7: 个人自动签署，适用于个人自动签场景。\n注: 个人自动签场景为白名单功能, 使用前请联系对接的客户经理沟通。",
           "example": "无",
           "member": "int64",
           "name": "ApproverType",
@@ -534,7 +534,7 @@
         },
         {
           "disabled": false,
-          "document": "如果签署方是企业签署方，则为企业名",
+          "document": "如果签署方是企业签署方(approverType = 1 或者 approverType = 3)，\n\n则企业名称必填",
           "example": "无",
           "is_base64": false,
           "member": "string",
@@ -611,7 +611,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人userId，传此字段则不用传姓名、手机号",
+          "document": "签署人userId，仅支持本企业的员工userid， 可在控制台组织管理处获得\n\n若传此字段 则以userid的信息为主，会覆盖传递过来的签署人基本信息， 包括姓名，手机号，证件类型等信息",
           "example": "无",
           "is_base64": false,
           "member": "string",
@@ -621,7 +621,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人用户来源，企微侧用户请传入：WEWORKAPP",
+          "document": "签署人用户来源，此参数仅针对企微用户开放\n\n企微侧用户请传入：WEWORKAPP",
           "example": "无",
           "is_base64": false,
           "member": "string",
@@ -7009,7 +7009,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参与者类型：\n0：企业\n1：个人\n3：企业自动签署\n注：类型为3（企业自动签署）时，会自动完成该签署方的签署。\n自动签署仅进行盖章操作，不能是手写签名。\n本方企业自动签署的签署人会默认是当前的发起人\n他方企业自动签署的签署人是自动签模板的他方企业授权人",
+          "document": "参与者类型：\n0：企业\n1：个人\n3：企业自动签署\n注：类型为3（企业自动签署）时，会自动完成该签署方的签署。\n自动签署仅进行盖章操作，不能是手写签名。\n本方企业自动签署的签署人会默认是当前的发起人\n他方企业自动签署的签署人是自动签模板的他方企业授权人\n7: 个人自动签署，适用于个人自动签场景。\n注: 个人自动签场景为白名单功能, 使用前请联系对接的客户经理沟通。",
           "example": "1",
           "member": "int64",
           "name": "ApproverType",
@@ -7116,7 +7116,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的电子签用户ID\n<br/>当未指定签署人姓名+手机号的情况下，该字段毕传\n",
+          "document": "签署人userId，仅支持本企业的员工userid， 可在控制台组织管理处获得\n\n若传此字段 则以userid的信息为主，会覆盖传递过来的签署人基本信息， 包括姓名，手机号，证件类型等信息",
           "example": "无",
           "is_base64": false,
           "member": "string",
@@ -7135,7 +7135,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人用户来源\n<br/>企微侧用户请传入：WEWORKAPP",
+          "document": "签署人用户来源，此参数仅针对企微用户开放\n\n企微侧用户请传入：WEWORKAPP",
           "example": "无",
           "is_base64": false,
           "member": "string",
@@ -7202,7 +7202,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人签署控件\n<br/>文件发起时，可通过该参数为签署人指定签署控件类型以及位置",
+          "document": "签署人签署控件， 此参数仅针对文件发起（CreateFlowByFiles）生效\n<br/>文件发起时，可通过该参数为签署人指定签署控件类型以及位置",
           "example": "无",
           "member": "Component",
           "name": "SignComponents",
@@ -7211,7 +7211,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人填写控件\n<br/>文件发起时，可通过该参数为签署人指定填写控件类型以及位置",
+          "document": "签署人填写控件 此参数仅针对文件发起（CreateFlowByFiles）生效\n<br/>文件发起时，可通过该参数为签署人指定填写控件类型以及位置",
           "example": "无",
           "member": "Component",
           "name": "Components",
@@ -7231,7 +7231,7 @@
         {
           "disabled": false,
           "document": "合同查看方式<br/>默认1 -实名查看 <br/>2-短信验证码查看(企业签署方暂不支持该方式)",
-          "example": "无",
+          "example": "[1,2]",
           "member": "int64",
           "name": "ApproverVerifyTypes",
           "required": false,
@@ -7240,7 +7240,7 @@
         {
           "disabled": false,
           "document": "合同签署方式(默认1,2) <br/>1-人脸认证 <br/>2-签署密码 <br/>3-运营商三要素",
-          "example": "无",
+          "example": "[1,2]",
           "member": "uint64",
           "name": "ApproverSignTypes",
           "required": false,

@@ -1327,6 +1327,7 @@
       "document": "CreateRoom请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "房间名称。",
           "example": "房间名称",
@@ -1337,6 +1338,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "预定的房间开始时间，unix时间戳（秒）。",
           "example": "1659600138",
@@ -1347,6 +1349,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "预定的房间结束时间，unix时间戳（秒）。",
           "example": "1659600138",
@@ -1357,6 +1360,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "低代码互动课堂的SdkAppId。",
           "example": "123467",
@@ -1367,6 +1371,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清",
           "example": "1",
@@ -1377,6 +1382,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "最大连麦人数（不包括老师）。取值范围[0, 16]",
           "example": "1",
@@ -1387,6 +1393,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频",
           "example": "videodoc",
@@ -1397,6 +1404,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "老师ID。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有老师权限。",
           "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
@@ -1407,6 +1415,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "进入课堂时是否自动连麦。可以有以下取值：\n0 不自动连麦（需要手动申请上麦，默认值）\n1 自动连麦",
           "example": "1",
@@ -1417,6 +1426,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "释放音视频权限后是否自动取消连麦。可以有以下取值：\n0 自动取消连麦（默认值）\n1 保持连麦状态",
           "example": "1",
@@ -1427,6 +1437,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "声音音质。可以有以下取值：\n0：流畅模式（默认值），占用更小的带宽、拥有更好的降噪效果，适用于1对1、小班教学、多人音视频会议等场景。\n1：高音质模式，适合需要高保真传输音乐的场景，但降噪效果会被削弱，适用于音乐教学场景。",
           "example": "1",
@@ -1437,6 +1448,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "上课后是否禁止自动录制。可以有以下取值：\n0 不禁止录制（自动开启录制，默认值）\n1 禁止录制\n注：如果该配置取值为0，录制将从上课后开始，课堂结束后停止。",
           "example": "1",
@@ -1447,6 +1459,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "助教Id列表。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有助教权限。",
           "example": "无",
@@ -1457,6 +1470,7 @@
           "type": "list"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "rtc人数。",
           "example": "0",
@@ -1467,6 +1481,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "观看类型。互动观看 （默认）",
           "example": "0",
@@ -1477,8 +1492,9 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
-          "document": "录制布局。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744",
+          "document": "录制模板。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744",
           "example": "1",
           "is_base64": false,
           "member": "uint64",
@@ -1487,6 +1503,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "房间绑定的群组ID,非空时限制组成员进入",
           "example": "abc",
@@ -1497,6 +1514,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "是否允许老师/助教直接控制学生的摄像头/麦克风。可以有以下取值：\n0 不允许直接控制（需同意，默认值）\n1 允许直接控制（无需同意）",
           "example": "0",
@@ -1507,6 +1525,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "开启专注模式。\n0 收看全部角色音视频(默认)\n1 只看老师和助教",
           "example": "0",
@@ -1517,6 +1536,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型",
           "example": "0",
@@ -1527,6 +1547,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "开启课后评分。 0：不开启(默认)  1：开启",
           "example": "0",
@@ -1537,6 +1558,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)",
           "example": "0",
@@ -2969,6 +2991,16 @@
           "example": "0",
           "member": "int64",
           "name": "RoomType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "录制时长",
+          "example": "0",
+          "member": "uint64",
+          "name": "VideoDuration",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

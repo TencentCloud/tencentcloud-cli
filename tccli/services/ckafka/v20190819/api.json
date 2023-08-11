@@ -9518,6 +9518,7 @@
           "disabled": false,
           "document": "实例资源",
           "example": "xxx",
+          "is_base64": false,
           "member": "string",
           "name": "Resource",
           "required": true,
@@ -9536,6 +9537,7 @@
           "disabled": false,
           "document": "Es用户名",
           "example": "xxx",
+          "is_base64": false,
           "member": "string",
           "name": "UserName",
           "required": false,
@@ -9545,6 +9547,7 @@
           "disabled": false,
           "document": "Es密码",
           "example": "xxx",
+          "is_base64": false,
           "member": "string",
           "name": "Password",
           "required": false,
@@ -9563,6 +9566,7 @@
           "disabled": false,
           "document": "实例vip",
           "example": "xxx",
+          "is_base64": false,
           "member": "string",
           "name": "ServiceVip",
           "required": false,
@@ -9572,6 +9576,7 @@
           "disabled": false,
           "document": "实例的vpcId",
           "example": "xxx",
+          "is_base64": false,
           "member": "string",
           "name": "UniqVpcId",
           "required": false,
@@ -9590,6 +9595,7 @@
           "disabled": false,
           "document": "Es自定义index名称",
           "example": "xxx",
+          "is_base64": false,
           "member": "string",
           "name": "Index",
           "required": false,
@@ -9599,6 +9605,7 @@
           "disabled": false,
           "document": "Es自定义日期后缀",
           "example": "yyyy-MM-dd",
+          "is_base64": false,
           "member": "string",
           "name": "DateFormat",
           "required": false,
@@ -9608,6 +9615,7 @@
           "disabled": false,
           "document": "非json格式数据的自定义key",
           "example": "xxx",
+          "is_base64": false,
           "member": "string",
           "name": "ContentKey",
           "required": false,
@@ -9626,6 +9634,7 @@
           "disabled": false,
           "document": "转储到Es中的文档ID取值字段名",
           "example": "$.payload.name",
+          "is_base64": false,
           "member": "string",
           "name": "DocumentIdField",
           "required": false,
@@ -9635,6 +9644,7 @@
           "disabled": false,
           "document": "Es自定义index名称的类型，STRING，JSONPATH，默认为STRING",
           "example": "JSONPATH",
+          "is_base64": false,
           "member": "string",
           "name": "IndexType",
           "required": false,
@@ -9653,6 +9663,7 @@
           "disabled": false,
           "document": "转储到ES的消息为Database的binlog时，如果需要同步数据库操作，即增删改的操作到ES时填写数据库表主键",
           "example": "xxx",
+          "is_base64": false,
           "member": "string",
           "name": "DatabasePrimaryKey",
           "required": false,
@@ -9680,8 +9691,19 @@
           "disabled": false,
           "document": "消息要映射为 es 索引中 @timestamp 的字段，如果当前配置为空，则使用消息的时间戳进行映射",
           "example": "create_timestamp",
+          "is_base64": false,
           "member": "string",
           "name": "DateField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用来区分当前索引映射，属于新建索引还是存量索引。\"EXIST_MAPPING\"：从存量索引中选择；\"NEW_MAPPING\"：新建索引",
+          "example": "EXIST_MAPPING",
+          "is_base64": false,
+          "member": "string",
+          "name": "RecordMappingMode",
           "required": false,
           "type": "string"
         }
@@ -11551,6 +11573,16 @@
           "name": "DynamicDiskConfig",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例计费类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PREPAID | POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -15280,7 +15312,7 @@
       ],
       "type": "object"
     },
-    "RenewCkafkaInstanceResponse": {
+    "RenewCkafkaInstanceResp": {
       "document": "RenewCkafkaInstance接口出参bigDealIds",
       "members": [
         {
@@ -15289,7 +15321,7 @@
           "example": "xxx",
           "member": "string",
           "name": "BigDealId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -15299,12 +15331,33 @@
           "example": "xxx",
           "member": "string",
           "name": "DealName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
       ],
       "usage": "out"
+    },
+    "RenewCkafkaInstanceResponse": {
+      "document": "RenewCkafkaInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值",
+          "example": "无",
+          "member": "RenewCkafkaInstanceResp",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ReplaceParam": {
       "document": "数据处理——Value处理参数——替换参数",

@@ -3257,7 +3257,7 @@
           "name": "Headers",
           "output_required": true,
           "required": false,
-          "type": "object",
+          "type": "list",
           "value_allowed_null": true
         }
       ],

@@ -64,6 +64,14 @@
         "title": "创建用户组"
       }
     ],
+    "CreateMessageReceiver": [
+      {
+        "document": "创建消息接收人",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMessageReceiver\n<公共请求参数>\n\n{\n    \"Name\": \"用户\",\n    \"Remark\": \"添加消息接收人\",\n    \"CountryCode\": \"86\",\n    \"PhoneNumber\": \"132****4539\",\n    \"Email\": \"57****@qq.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f709ad6e-991f-49bb-aaaa-c354e434343434\"\n    }\n}",
+        "title": "创建消息接收人"
+      }
+    ],
     "CreateOIDCConfig": [
       {
         "document": "",
