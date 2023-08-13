@@ -1,5 +1,12 @@
 {
   "actions": {
+    "ActivateCluster": {
+      "document": "本接口（ActivateCluster）用于恢复集群",
+      "input": "ActivateClusterRequest",
+      "name": "恢复集群",
+      "output": "ActivateClusterResponse",
+      "status": "online"
+    },
     "ActivateInstance": {
       "document": "本接口(ActivateInstance)用于恢复已隔离的实例访问。",
       "input": "ActivateInstanceRequest",
@@ -1141,6 +1148,44 @@
         }
       ],
       "usage": "in"
+    },
+    "ActivateClusterRequest": {
+      "document": "ActivateCluster请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbpg-bzxxrmtq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ActivateClusterResponse": {
+      "document": "ActivateCluster返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务流ID",
+          "example": "123",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ActivateInstanceRequest": {
       "document": "ActivateInstance请求参数结构体",

@@ -8,7 +8,10 @@ Input:
 tccli camp CreateComponent --cli-unfold-argument  \
     --ApplicationID app-xxxx \
     --ProjectID prj-xxxx \
-    --InstanceID ins-xxxx
+    --InstanceID ins-xxxx \
+    --Component.Name test \
+    --Component.Type k8s-objects \
+    --Component.Properties.K8sObjects {}
 ```
 
 Output: 

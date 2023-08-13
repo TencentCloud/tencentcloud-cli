@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli camp ValidateCreateComponent --cli-unfold-argument  \
-    --ProjectID prj-xxxx
+    --ProjectID prj-xxxx \
+    --Component.Name test
 ```
 
 Output: 

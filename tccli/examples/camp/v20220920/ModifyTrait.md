@@ -9,7 +9,9 @@ tccli camp ModifyTrait --cli-unfold-argument  \
     --ApplicationID app-sb5z5mmj \
     --ProjectID prj-d2bd4gfn \
     --InstanceID ins-xxxx \
-    --ComponentName app
+    --ComponentName app \
+    --Trait.Name app-v1 \
+    --Trait.Type polaris
 ```
 
 Output: 

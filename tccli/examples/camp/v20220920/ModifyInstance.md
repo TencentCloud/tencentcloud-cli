@@ -7,6 +7,14 @@ Input:
 ```
 tccli camp ModifyInstance --cli-unfold-argument  \
     --InstanceID abc \
+    --Policies.0.Name abc \
+    --Policies.0.Type abc \
+    --Policies.0.Properties.Placement.Type abc \
+    --Policies.0.Properties.Placement.Region abc \
+    --Policies.0.Properties.Placement.Zones.0.Zone abc \
+    --Policies.0.Properties.Placement.Zones.0.Weight 0 \
+    --Policies.0.Properties.Placement.Components abc \
+    --Policies.0.Properties.Placement.Strategy abc \
     --ReadOnly True
 ```
 

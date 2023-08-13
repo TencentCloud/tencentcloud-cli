@@ -22,7 +22,32 @@ Output:
 {
     "Response": {
         "Policies": [
-            {}
+            {
+                "Name": "abc",
+                "Type": "abc",
+                "Properties": {
+                    "Placement": {
+                        "Type": "abc",
+                        "Region": "abc",
+                        "Zones": [
+                            {
+                                "Zone": "abc",
+                                "Weight": 0
+                            }
+                        ],
+                        "Components": [
+                            "abc"
+                        ],
+                        "Strategy": "abc",
+                        "Selector": [
+                            {
+                                "Key": "abc",
+                                "Value": "abc"
+                            }
+                        ]
+                    }
+                }
+            }
         ],
         "TotalCount": 1,
         "RequestId": "abc"

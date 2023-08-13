@@ -3127,9 +3127,11 @@
       "document": "DescribeDomainFilterList请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "根据域名分组类型获取域名。可取值为 ALL，MINE，SHARE，RECENT。\nALL：全部\nMINE：我的域名\nSHARE：共享给我的域名\nRECENT：最近操作过的域名",
           "example": "ALL",
+          "is_base64": false,
           "member": "string",
           "name": "Type",
           "required": true,
@@ -3137,9 +3139,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "记录开始的偏移, 第一条记录为 0, 依次类推。默认值为 0。",
           "example": "0",
+          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -3147,9 +3151,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "要获取的域名数量, 比如获取 20 个, 则为 20。默认值为 5000。如果账户中的域名数量超过了 5000, 将会强制分页并且只返回前 5000 条, 这时需要通过 Offset 和 Limit 参数去获取其它域名。",
           "example": "20",
+          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -3157,9 +3163,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "根据域名分组 id 获取域名，可通过 DescribeDomain 或 DescribeDomainList 接口 GroupId 字段获取。",
           "example": "[1]",
+          "is_base64": false,
           "member": "int64",
           "name": "GroupId",
           "required": false,
@@ -3167,9 +3175,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "根据关键字获取域名。",
           "example": "qq",
+          "is_base64": false,
           "member": "string",
           "name": "Keyword",
           "required": false,
@@ -3177,9 +3187,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "排序字段。可取值为 NAME，STATUS，RECORDS，GRADE，UPDATED_ON。\nNAME：域名名称\nSTATUS：域名状态\nRECORDS：记录数量\nGRADE：套餐等级\nUPDATED_ON：更新时间",
           "example": "NAME",
+          "is_base64": false,
           "member": "string",
           "name": "SortField",
           "required": false,
@@ -3187,9 +3199,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "排序类型，升序：ASC，降序：DESC。",
           "example": "ASC",
+          "is_base64": false,
           "member": "string",
           "name": "SortType",
           "required": false,
@@ -3197,9 +3211,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "根据域名状态获取域名。可取值为 ENABLE，LOCK，PAUSE，SPAM。\nENABLE：正常\nLOCK：锁定\nPAUSE：暂停\nSPAM：封禁",
           "example": "[\"ENABLE\"]",
+          "is_base64": false,
           "member": "string",
           "name": "Status",
           "required": false,
@@ -3207,9 +3223,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "根据套餐获取域名，可通过 DescribeDomain 或 DescribeDomainList 接口 Grade 字段获取。",
           "example": "[\"DP_FREE\"]",
+          "is_base64": false,
           "member": "string",
           "name": "Package",
           "required": false,
@@ -3217,9 +3235,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "根据备注信息获取域名。",
           "example": "备注",
+          "is_base64": false,
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -3227,9 +3247,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "要获取域名的更新时间起始时间点，如 '2021-05-01 03:00:00'。",
           "example": "2021-05-01 03:00:00",
+          "is_base64": false,
           "member": "string",
           "name": "UpdatedAtBegin",
           "required": false,
@@ -3237,9 +3259,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "要获取域名的更新时间终止时间点，如 '2021-05-10 20:00:00'。",
           "example": "2021-05-10 20:00:00",
+          "is_base64": false,
           "member": "string",
           "name": "UpdatedAtEnd",
           "required": false,
@@ -3247,9 +3271,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "要获取域名的记录数查询区间起点。",
           "example": "10",
+          "is_base64": false,
           "member": "uint64",
           "name": "RecordCountBegin",
           "required": false,
@@ -3257,9 +3283,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "要获取域名的记录数查询区间终点。",
           "example": "100",
+          "is_base64": false,
           "member": "uint64",
           "name": "RecordCountEnd",
           "required": false,
@@ -3267,9 +3295,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "项目ID",
           "example": "-1",
+          "is_base64": false,
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -3277,9 +3307,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "标签过滤",
           "example": "无",
+          "is_base64": false,
           "member": "TagItemFilter",
           "name": "Tags",
           "required": false,
@@ -3542,9 +3574,11 @@
       "document": "DescribeDomainPreview请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "域名",
           "example": "dnspod.cn",
+          "is_base64": false,
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -3552,9 +3586,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
           "example": "61",
+          "is_base64": false,
           "member": "uint64",
           "name": "DomainId",
           "required": false,
@@ -3573,6 +3609,7 @@
           "example": "无",
           "member": "PreviewDetail",
           "name": "Domain",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -3638,9 +3675,11 @@
       "document": "DescribeDomain请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "域名",
           "example": "dnspod.cn",
+          "is_base64": false,
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -3648,9 +3687,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
           "example": "61",
+          "is_base64": false,
           "member": "uint64",
           "name": "DomainId",
           "required": false,
@@ -3669,6 +3710,7 @@
           "example": "无",
           "member": "DomainInfo",
           "name": "DomainInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -4016,9 +4058,11 @@
       "document": "DescribeRecordFilterList请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "要获取的解析记录所属的域名。",
           "example": "shenjianing.com",
+          "is_base64": false,
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -4026,9 +4070,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "要获取的解析记录所属的域名 Id，如果传了 DomainId，系统将会忽略 Domain 参数。 可以通过接口 DescribeDomainList 查到所有的 Domain 以及 DomainId。",
           "example": "81345824",
+          "is_base64": false,
           "member": "uint64",
           "name": "DomainId",
           "required": false,
@@ -4036,9 +4082,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "根据解析记录的主机头获取解析记录。默认模糊匹配。可以通过设置 IsExactSubdomain 参数为 true 进行精确查找。",
           "example": "www",
+          "is_base64": false,
           "member": "string",
           "name": "SubDomain",
           "required": false,
@@ -4046,9 +4094,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "获取某些类型的解析记录，如 A，CNAME，NS，AAAA，显性URL，隐性URL，CAA，SPF等。",
           "example": "[\"A\"]",
+          "is_base64": false,
           "member": "string",
           "name": "RecordType",
           "required": false,
@@ -4056,9 +4106,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "获取某些线路ID的解析记录。可以通过接口 DescribeRecordLineList 查看当前域名允许的线路信息。",
           "example": "[\"0\"]",
+          "is_base64": false,
           "member": "string",
           "name": "RecordLine",
           "required": false,
@@ -4066,9 +4118,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "获取某些分组下的解析记录时，传这个分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。",
           "example": "[23]",
+          "is_base64": false,
           "member": "uint64",
           "name": "GroupId",
           "required": false,
@@ -4076,9 +4130,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "通过关键字搜索解析记录，当前支持搜索主机头和记录值",
           "example": "book",
+          "is_base64": false,
           "member": "string",
           "name": "Keyword",
           "required": false,
@@ -4086,9 +4142,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "排序字段，支持 NAME，LINE，TYPE，VALUE，WEIGHT，MX，TTL，UPDATED_ON 几个字段。\nNAME：解析记录的主机头\nLINE：解析记录线路\nTYPE：解析记录类型\nVALUE：解析记录值\nWEIGHT：权重\nMX：MX 优先级\nTTL：解析记录缓存时间\nUPDATED_ON：解析记录更新时间\n",
           "example": "NAME",
+          "is_base64": false,
           "member": "string",
           "name": "SortField",
           "required": false,
@@ -4096,9 +4154,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "排序方式，升序：ASC，降序：DESC。默认值为ASC。",
           "example": "ASC",
+          "is_base64": false,
           "member": "string",
           "name": "SortType",
           "required": false,
@@ -4106,9 +4166,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "偏移量，默认值为0。",
           "example": "0",
+          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -4116,9 +4178,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "限制数量，当前Limit最大支持3000。默认值为100。",
           "example": "100",
+          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -4126,9 +4190,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "根据解析记录的值获取解析记录",
           "example": "1.1.1.1",
+          "is_base64": false,
           "member": "string",
           "name": "RecordValue",
           "required": false,
@@ -4136,9 +4202,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "根据解析记录的状态获取解析记录。可取值为 ENABLE，DISABLE。\nENABLE：正常 \nDISABLE：暂停 ",
           "example": "[\"ENABLE\"]",
+          "is_base64": false,
           "member": "string",
           "name": "RecordStatus",
           "required": false,
@@ -4146,9 +4214,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "要获取解析记录权重查询区间起点。",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "WeightBegin",
           "required": false,
@@ -4156,9 +4226,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "要获取解析记录权重查询区间终点。",
           "example": "100",
+          "is_base64": false,
           "member": "uint64",
           "name": "WeightEnd",
           "required": false,
@@ -4166,9 +4238,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "要获取解析记录 MX 优先级查询区间起点。",
           "example": "1",
+          "is_base64": false,
           "member": "uint64",
           "name": "MXBegin",
           "required": false,
@@ -4176,9 +4250,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "要获取解析记录 MX 优先级查询区间终点。",
           "example": "10",
+          "is_base64": false,
           "member": "uint64",
           "name": "MXEnd",
           "required": false,
@@ -4186,9 +4262,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "要获取解析记录 TTL 查询区间起点。",
           "example": "60",
+          "is_base64": false,
           "member": "uint64",
           "name": "TTLBegin",
           "required": false,
@@ -4196,9 +4274,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "要获取解析记录 TTL 查询区间终点。",
           "example": "600",
+          "is_base64": false,
           "member": "uint64",
           "name": "TTLEnd",
           "required": false,
@@ -4206,9 +4286,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "要获取解析记录更新时间查询区间起点。",
           "example": "2023-01-16 00:00:00",
+          "is_base64": false,
           "member": "string",
           "name": "UpdatedAtBegin",
           "required": false,
@@ -4216,9 +4298,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "要获取解析记录更新时间查询区间终点。",
           "example": "2023-01-17 00:00:00",
+          "is_base64": false,
           "member": "string",
           "name": "UpdatedAtEnd",
           "required": false,
@@ -4226,9 +4310,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "根据解析记录的备注获取解析记录。",
           "example": "解析记录备注",
+          "is_base64": false,
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -4236,9 +4322,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "是否根据 Subdomain 参数进行精确查找。",
           "example": "false",
+          "is_base64": false,
           "member": "bool",
           "name": "IsExactSubDomain",
           "required": false,
@@ -4246,9 +4334,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "项目ID",
           "example": "-1",
+          "is_base64": false,
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -4267,6 +4357,7 @@
           "example": "无",
           "member": "RecordCountInfo",
           "name": "RecordCountInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false,
           "visibility": 1
@@ -4277,6 +4368,7 @@
           "example": "无",
           "member": "RecordListItem",
           "name": "RecordList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1

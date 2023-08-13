@@ -1762,6 +1762,22 @@
         "title": "运行时反弹shell白名单列表"
       }
     ],
+    "DescribeRiskDnsEventDetail": [
+      {
+        "document": "查询恶意请求事件详情",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRiskDnsEventDetail\n<公共请求参数>\n\n{\n    \"EventID\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EventID\": 1,\n        \"EventType\": \"abc\",\n        \"EventCount\": 1,\n        \"FoundTime\": \"abc\",\n        \"LatestFoundTime\": \"abc\",\n        \"ContainerID\": \"abc\",\n        \"ContainerName\": \"abc\",\n        \"ContainerNetStatus\": \"abc\",\n        \"ContainerStatus\": \"abc\",\n        \"ContainerNetSubStatus\": \"abc\",\n        \"ContainerIsolateOperationSrc\": \"abc\",\n        \"ImageID\": \"abc\",\n        \"ImageName\": \"abc\",\n        \"HostName\": \"abc\",\n        \"HostIP\": \"abc\",\n        \"PublicIP\": \"abc\",\n        \"PodName\": \"abc\",\n        \"Description\": \"abc\",\n        \"Solution\": \"abc\",\n        \"Reference\": [\n            \"abc\"\n        ],\n        \"Address\": \"abc\",\n        \"City\": \"abc\",\n        \"MatchRuleType\": \"abc\",\n        \"FeatureLabel\": \"abc\",\n        \"ProcessAuthority\": \"abc\",\n        \"ProcessMd5\": \"abc\",\n        \"ProcessStartUser\": \"abc\",\n        \"ProcessUserGroup\": \"abc\",\n        \"ProcessPath\": \"abc\",\n        \"ProcessTree\": \"abc\",\n        \"ProcessParam\": \"abc\",\n        \"ParentProcessStartUser\": \"abc\",\n        \"ParentProcessUserGroup\": \"abc\",\n        \"ParentProcessPath\": \"abc\",\n        \"ParentProcessParam\": \"abc\",\n        \"AncestorProcessStartUser\": \"abc\",\n        \"AncestorProcessUserGroup\": \"abc\",\n        \"AncestorProcessPath\": \"abc\",\n        \"AncestorProcessParam\": \"abc\",\n        \"HostID\": \"abc\",\n        \"EventStatus\": \"abc\",\n        \"OperationTime\": \"abc\",\n        \"Remark\": \"abc\",\n        \"NodeType\": \"abc\",\n        \"NodeName\": \"abc\",\n        \"NodeSubNetID\": \"abc\",\n        \"NodeSubNetName\": \"abc\",\n        \"NodeSubNetCIDR\": \"abc\",\n        \"ClusterID\": \"abc\",\n        \"PodIP\": \"abc\",\n        \"PodStatus\": \"abc\",\n        \"NodeUniqueID\": \"abc\",\n        \"NodeID\": \"abc\",\n        \"ClusterName\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询恶意请求事件详情"
+      }
+    ],
+    "DescribeRiskDnsList": [
+      {
+        "document": "查询恶意请求事件列表",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRiskDnsList\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"EventID\": 1,\n                \"EventType\": \"abc\",\n                \"Address\": \"abc\",\n                \"ContainerID\": \"abc\",\n                \"ContainerName\": \"abc\",\n                \"ContainerNetStatus\": \"abc\",\n                \"ContainerStatus\": \"abc\",\n                \"ContainerNetSubStatus\": \"abc\",\n                \"ContainerIsolateOperationSrc\": \"abc\",\n                \"ImageID\": \"abc\",\n                \"ImageName\": \"abc\",\n                \"FoundTime\": \"abc\",\n                \"LatestFoundTime\": \"abc\",\n                \"EventStatus\": \"abc\",\n                \"EventCount\": 0,\n                \"Description\": \"abc\",\n                \"Solution\": \"abc\",\n                \"City\": \"abc\",\n                \"HostName\": \"abc\",\n                \"HostID\": \"abc\",\n                \"HostIP\": \"abc\",\n                \"PublicIP\": \"abc\",\n                \"NodeType\": \"SUPER\",\n                \"NodeName\": \"abc\",\n                \"ClusterID\": \"abc\",\n                \"PodIP\": \"abc\",\n                \"PodName\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询恶意请求事件列表"
+      }
+    ],
     "DescribeRiskList": [
       {
         "document": "",

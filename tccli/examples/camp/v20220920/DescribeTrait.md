@@ -19,7 +19,13 @@ Output:
 ```
 {
     "Response": {
-        "Trait": {},
+        "Trait": {
+            "Name": "app-v1",
+            "Type": "polaris",
+            "Properties": {
+                "Polaris": {}
+            }
+        },
         "RequestId": "bitliu-rid-xxxxx"
     }
 }

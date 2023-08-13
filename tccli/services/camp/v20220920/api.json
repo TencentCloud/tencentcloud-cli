@@ -506,6 +506,486 @@
       ],
       "usage": "both"
     },
+    "AutoBatchUpdate": {
+      "document": "自动分批更新策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "本批次升级允许升级失败的Pod个数或比例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10%",
+          "is_base64": false,
+          "member": "string",
+          "name": "MaxFailed",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "详细配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AutoBatchUpdateDetail",
+          "name": "Details",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "AutoBatchUpdateDetail": {
+      "document": "自动分批更新详细配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群标签选择\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Label",
+          "name": "ClusterLabelSelector",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "需要升级的Pod数量或比例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "90%",
+          "member": "string",
+          "name": "PodNumToUpdate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "批次间升级的间隔时间，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "600",
+          "member": "uint64",
+          "name": "BatchInterval",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "BatchUpdate": {
+      "document": "批次升级",
+      "members": [
+        {
+          "disabled": false,
+          "document": "本批次升级允许升级失败的Pod数量或比例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10%",
+          "is_base64": false,
+          "member": "string",
+          "name": "MaxFailed",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "本批次需要升级的Pod (每个Pod的格式: 集群名/pod名或者pod ip)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "PodsToUpdate",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "Behavior": {
+      "document": "扩缩容详细策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "扩容详细策略\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HPAScalingRules",
+          "name": "ScaleUp",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "缩容详细策略\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HPAScalingRules",
+          "name": "ScaleDown",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "CBSVolumeSource": {
+      "document": "CBS 存储结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CBS 存储类型",
+          "example": "ssd",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "PVC 容量，单位是 Gi\t",
+          "example": "无",
+          "member": "uint64",
+          "name": "Storage",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "CLS": {
+      "document": "CLS",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "TopicID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "CLSDetail": {
+      "document": "CLS Detail",
+      "members": [
+        {
+          "disabled": false,
+          "document": "采集配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLSInput",
+          "name": "Input",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "输出配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLSOutput",
+          "name": "Output",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "CLSInput": {
+      "document": "CLS Input",
+      "members": [
+        {
+          "disabled": false,
+          "document": "容器名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "nginx",
+          "member": "string",
+          "name": "Container",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文件模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "access.log",
+          "member": "string",
+          "name": "FilePattern",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "日志路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/var/log/nginx",
+          "member": "string",
+          "name": "LogPath",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否标准输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Stdout",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "日志类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "提取规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExtractRule",
+          "name": "ExtractRule",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "CLSOutput": {
+      "document": "CLS output",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cls\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLS",
+          "name": "CLS",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "CLSTrait": {
+      "document": "CLS 类型 Trait",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "MainUIN",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "日志采集规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLSDetail",
+          "name": "Details",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "CampConfiguration": {
+      "document": "CAMP 配置中心",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "支持以下枚举值：ConfigMap, Secret",
+          "is_base64": false,
+          "member": "string",
+          "name": "DataType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "配置名称\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "config-demo",
+          "is_base64": false,
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "配置版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v0.1.0",
+          "is_base64": false,
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "使用形式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "支持以下枚举值：Volume, ENV",
+          "is_base64": false,
+          "member": "string",
+          "name": "UsageType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "挂载到的容器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "container",
+          "is_base64": false,
+          "member": "string",
+          "name": "ContainerName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "挂载路径，使用 volume 挂载时需要，环境变量形式不需要\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/data",
+          "is_base64": false,
+          "member": "string",
+          "name": "MountPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "按key挂载时需要填写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyToPath",
+          "name": "Items",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "配置 Keys\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EnvKeyVar",
+          "name": "Keys",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Volume 名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "VolumeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "CampConfigurationTrait": {
+      "document": "Camp 配置中心类型 Trait",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引用配置中心的配置\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CampConfiguration",
+          "name": "Objects",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "CheckUserRequest": {
       "document": "CheckUser请求参数结构体",
       "members": [
@@ -534,9 +1014,161 @@
       ],
       "type": "object"
     },
+    "ClusterLabelSelector": {
+      "document": "集群标签选择器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签选择器，用于选择具有相应标签的集群",
+          "example": "无",
+          "member": "Label",
+          "name": "MatchLabels",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "发布批次，值越小发布顺序越靠前",
+          "example": "2",
+          "member": "uint64",
+          "name": "ReleaseOrder",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
     "Component": {
       "document": "组件信息",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "组件名称",
+          "example": "test",
+          "is_base64": false,
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "组件类型，可选值为k8s-objects（创建时必填，不可修改）",
+          "example": "k8s-objects",
+          "is_base64": false,
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "组件配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ComponentProperties",
+          "name": "Properties",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "运维操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Trait",
+          "name": "Traits",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "ComponentProperties": {
+      "document": "组件 Properties",
+      "members": [
+        {
+          "disabled": false,
+          "document": "K8S Objects 对象",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "K8sObjects",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Statefulsetplus 对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "StatefulSetPlus",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "Statefulest 对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "StatefulSet",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "Deployment 对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Deployment",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "Tapp 对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "TAPP",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
       "usage": "both"
     },
     "ConfigContent": {
@@ -702,6 +1334,38 @@
         }
       ],
       "usage": "out"
+    },
+    "ContainerMount": {
+      "document": "容器数据挂载点",
+      "members": [
+        {
+          "disabled": false,
+          "document": "容器名称",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "挂载路径",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "MountPath",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
     },
     "CreateApplicationRequest": {
       "document": "CreateApplication请求参数结构体",
@@ -1042,9 +1706,47 @@
       "document": "CreateInstance请求参数结构体",
       "members": [
         {
+          "Reference": [],
+          "disabled": false,
+          "document": "业务 ID",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "应用 ID",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "ApplicationID",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "环境名称",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "Reference": [],
           "disabled": false,
           "document": "实例名称",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1052,19 +1754,47 @@
           "visibility": 1
         },
         {
+          "Reference": [],
+          "disabled": false,
+          "document": "组件信息",
+          "example": "无",
+          "is_base64": false,
+          "member": "Component",
+          "name": "Components",
+          "required": true,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "策略信息",
+          "example": "无",
+          "is_base64": false,
+          "member": "Policy",
+          "name": "Policies",
+          "required": true,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "Reference": [],
           "disabled": false,
           "document": "创建者",
           "example": "无",
+          "is_base64": false,
           "member": "User",
           "name": "Creator",
           "required": false,
           "type": "object",
-          "visibility": 1
+          "visibility": 2
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "创建来源",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Source",
           "required": false,
@@ -1072,9 +1802,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "来源平台URL",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "SourceURL",
           "required": false,
@@ -1082,9 +1814,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "只读模式",
           "example": "无",
+          "is_base64": false,
           "member": "bool",
           "name": "ReadOnly",
           "required": false,
@@ -1092,9 +1826,11 @@
           "visibility": 2
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "模块信息",
           "example": "无",
+          "is_base64": false,
           "member": "Module",
           "name": "Modules",
           "required": false,
@@ -1107,6 +1843,17 @@
     "CreateInstanceResponse": {
       "document": "CreateInstance返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1349,6 +2096,62 @@
         }
       ],
       "type": "object"
+    },
+    "Custom": {
+      "document": "自定义权重",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "ClusterID",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "Pod 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "PodName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Weight",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "指定端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "uint64",
+          "name": "Port",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
     },
     "DeleteApplicationRequest": {
       "document": "DeleteApplication请求参数结构体",
@@ -3326,6 +4129,77 @@
       ],
       "type": "object"
     },
+    "DescribedObject": {
+      "document": "Metric 对应的对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Kind",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "API 版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "APIVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "EnvKeyVar": {
+      "document": "配置环境变量 KV",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境变量 name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "环境变量 key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "ExecutePodCommandRequest": {
       "document": "ExecutePodCommand请求参数结构体",
       "members": [
@@ -3462,6 +4336,168 @@
       ],
       "type": "object"
     },
+    "ExtractRule": {
+      "document": "日志提取规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间字段的key名字，time_key和time_format必须成对出现\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TimeKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "时间字段的格式，参考c语言的strftime函数对于时间的格式说明输出参数\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TimeFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "分隔符类型日志的分隔符，只有log_type为delimiter_log时有效\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Delimiter",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "整条日志匹配规则，只有log_type为fullregex_log时有效\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogRegex",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "行首匹配规则，只有log_type为multiline_log或fullregex_log时有效\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BeginningRegex",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "取的每个字段的key名字，为空的key代表丢弃这个字段，只有log_type为delimiter_log时有效，json_log的日志使用json本身的key 注意：此字段可能返回 null，表示取不到有效值。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Keys",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "需要过滤的字段。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FilterKeys",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "需要过滤的值。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FilterRegex",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "解析失败日志是否上传，true表示上传，false表示不上传\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UnMatchUpload",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "失败日志的key， 配合 unMatchUpload 使用\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UnMatchedKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "增量采集模式下的回溯数据量，默认-1（全量采集）\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Backtracking",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否为Gbk编码. 0: 否, 1: 是\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IsGBK",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否为标准json. 0: 否, 1: 是\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "JsonStandard",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "Filter": {
       "document": "过滤器",
       "members": [
@@ -3544,6 +4580,257 @@
       ],
       "usage": "out"
     },
+    "HPAScalingPolicy": {
+      "document": "Policy 选择策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "扩缩容速率策略\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "扩缩容速率时间窗口允许变化的副本数\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Value",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "扩缩容速率时间窗口\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "PeriodSeconds",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "HPAScalingRules": {
+      "document": "HPA 规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "扩缩容稳定窗口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "StabilizationWindowSeconds",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "Policy选择\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SelectPolicy",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "缩容详细策略\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HPAScalingPolicy",
+          "name": "Policies",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "HPATrait": {
+      "document": "HPA 类型 Trait",
+      "members": [
+        {
+          "disabled": false,
+          "document": "最小副本数\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MinReplicas",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "最大副本数\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxReplicas",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "容忍度\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Tolerance",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "hpa计算周期\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ReSyncPeriod",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "扩缩容详细策略\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Behavior",
+          "name": "Behavior",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "metrics 定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MetricSpec",
+          "name": "Metrics",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "二次扩容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "OverloadScale",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "IsolationPod": {
+      "document": "要隔离的Pod",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群iD\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "IsolationTrait": {
+      "document": "隔离",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要隔离的Pods",
+          "example": "无",
+          "member": "IsolationPod",
+          "name": "Pods",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "KeyToPath": {
+      "document": "配置 Key、Path 信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置中的 key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "相对路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "文件的权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0000 到 0777 之间的八进制值或 0 到 511 之间的十进制值",
+          "member": "int64",
+          "name": "Mode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "Label": {
       "document": "标签",
       "members": [
@@ -3592,6 +4879,217 @@
         }
       ],
       "type": "object"
+    },
+    "MetricIdentifier": {
+      "document": "Metric 定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Metric 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "Metric 筛选规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Label",
+          "name": "Selector",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "MetricSource": {
+      "document": "Metric 来源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "metric触发扩缩容的目标值\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MetricTarget",
+          "name": "Target",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "metric的定义(名字以及selector)\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MetricIdentifier",
+          "name": "Metric",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "resource name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "container名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Container",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "metric 对应的对象\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribedObject",
+          "name": "DescribedObject",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "MetricSpec": {
+      "document": "Metric 定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "metric的类型\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "object类型的metrics配置\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MetricSource",
+          "name": "Object",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "pod类型的metrics配置\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MetricSource",
+          "name": "Pods",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "resource类型的metrics配置\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MetricSource",
+          "name": "Resource",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "容器resource类型的metrics配置\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MetricSource",
+          "name": "ContainerResource",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "external类型的metrics配置\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MetricSource",
+          "name": "External",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "MetricTarget": {
+      "document": "Metric Target 定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "metric触发扩缩容的目标值\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "所有pod总使用量值\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "pod平均使用量值\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AverageValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "pod平均使用率值\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AverageUtilization",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
     },
     "ModifyApplicationRequest": {
       "document": "ModifyApplication请求参数结构体",
@@ -4183,6 +5681,112 @@
       ],
       "usage": "out"
     },
+    "PlacementPolicy": {
+      "document": "Placement 类型策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "部署类型\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "部署目标地区\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "部署目标可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ZoneWeight",
+          "name": "Zones",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "最小可用区数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MinZones",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "最大可用区数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxZones",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "部署目标关联的 component\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Components",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "部署策略\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Strategy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "调度筛选\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Label",
+          "name": "Selector",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
     "Pod": {
       "document": "k8s Pod",
       "members": [
@@ -4348,9 +5952,277 @@
       "members": [],
       "usage": "out"
     },
+    "PolarisConfig": {
+      "document": "北极星服务发现 Config",
+      "members": [
+        {
+          "disabled": false,
+          "document": "北极星 trait 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "北极星命名空间\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Production",
+          "is_base64": false,
+          "member": "string",
+          "name": "PolarisNamespace",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "北极星服务名字\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-svc-bj",
+          "is_base64": false,
+          "member": "string",
+          "name": "PolarisName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "北极星认证token\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "db74e1f403e0446ea6cf3852d4a736aa",
+          "is_base64": false,
+          "member": "string",
+          "name": "Token",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "默认权重\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "Weight",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "定义路由的端口信息，与service的Port数据结构一致\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PolarisPort",
+          "name": "Ports",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "北极星同步模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "SyncMode",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "北极星接入站点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "SiteZone",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "TTL 时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TTL",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "元数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Label",
+          "name": "InstanceLabel",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "selector\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Label",
+          "name": "Selector",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "自定义权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Custom",
+          "name": "CustomWeight",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "PolarisPort": {
+      "document": "端口信息，定义路由的端口信息，与 service 的 Port 数据结构一致",
+      "members": [
+        {
+          "disabled": false,
+          "document": "如果一个可以不填，一般是 prtocal-port,比如 tcp-80\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tcp-80",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "暴露的端口号，与北极星上想要暴露的要一致\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "协议类型, 北极星一般默认写TCP即可，没有实际作用\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "PolarisTrait": {
+      "document": "PolarisTraits",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Polaris Trait 数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PolarisConfig",
+          "name": "Objects",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
     "Policy": {
       "document": "部署策略",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "策略类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "策略配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PolicyProperties",
+          "name": "Properties",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "PolicyProperties": {
+      "document": "PolicyProperties",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Placement 类型 Policy\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PlacementPolicy",
+          "name": "Placement",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
       "usage": "both"
     },
     "RainbowMetaConfig": {
@@ -4396,6 +6268,66 @@
       "document": "地域信息",
       "members": [],
       "usage": "out"
+    },
+    "ReplicasTrait": {
+      "document": "部署策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要部署的副本数",
+          "example": "无",
+          "member": "int64",
+          "name": "Replicas",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "RollingUpdate": {
+      "document": "滚动升级",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通过集群名称选择需要发布的集群",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Clusters",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "通过label筛选需要发布的集群并确定发布顺序",
+          "example": "无",
+          "member": "ClusterLabelSelector",
+          "name": "ClusterLabelSelectors",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "表明多少个Pod不升级",
+          "example": "无",
+          "member": "int64",
+          "name": "Partition",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
     },
     "SecretConfig": {
       "document": "Secret 信息",
@@ -4465,6 +6397,145 @@
           "type": "list",
           "value_allowed_null": true,
           "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "ServicePort": {
+      "document": "Service 端口转发配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "端口名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "协议类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Port",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "service 对外暴露的端口号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Protocol",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "容器监听的端口号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TargetPort",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "ServiceTrait": {
+      "document": "Service 类型 Trait",
+      "members": [
+        {
+          "disabled": false,
+          "document": "service 类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "定义路由的端口信息，与service的Port数据结构一致\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServicePort",
+          "name": "Ports",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "service clusterIP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "ClusterIP",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "非直连的 LoadBalancer Service 和 Nodeport 类型的 Service 需关注，支持 Local 和 Cluster\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "ExternalTrafficPolicy",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "非直连的 LoadBalancer Service 和 Nodeport 类型的 Service 需关注，支持 ClientIP 和 None\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "SessionAffinity",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -4540,7 +6611,46 @@
     },
     "Trait": {
       "document": "运维操作",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "Trait类型，可选类型：polaris，applicationUpdateStrategy，deploy",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "Trait名称 Deprecated",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "Trait 配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TraitProperties",
+          "name": "Properties",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
       "usage": "both"
     },
     "TraitOnComponent": {
@@ -4567,6 +6677,132 @@
           "type": "list",
           "value_allowed_null": true,
           "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "TraitProperties": {
+      "document": "运维操作 Properties",
+      "members": [
+        {
+          "disabled": false,
+          "document": "升级策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UpdateStrategyTrait",
+          "name": "UpdateStrategy",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "北极星策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PolarisTrait",
+          "name": "Polaris",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "副本数策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ReplicasTrait",
+          "name": "Replicas",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "HPA 策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HPATrait",
+          "name": "HPA",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "CLS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLSTrait",
+          "name": "CLS",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "智研日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ZhiyanLogTrait",
+          "name": "ZhiyanLog",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "Service\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceTrait",
+          "name": "Service",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "隔离\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IsolationTrait",
+          "name": "Isolation",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "配置中心\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CampConfigurationTrait",
+          "name": "CampConfiguration",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "存储卷\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VolumeTrait",
+          "name": "Volume",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "both"
@@ -4621,6 +6857,111 @@
           "name": "Kind",
           "required": false,
           "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
+    },
+    "UpdateStrategyTrait": {
+      "document": "更新策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "定义更新策略，可选值为滚动更新：RollingUpdate, 手动分批更新：BatchUpdate,\n自动分批更新：AutoBatchUpdate",
+          "example": "RollingUpdate",
+          "is_base64": false,
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "更新过程中最大不可用Pod数量或比例(适用于Deployment/STSP)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "is_base64": false,
+          "member": "string",
+          "name": "MaxUnavailable",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "和期望Ready的副本数比，超过期望副本数最大数量或比例(适用于Deployment/STSP)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "is_base64": false,
+          "member": "string",
+          "name": "MaxSurge",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "原地升级flag(仅适用于STSP)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "InPlaceUpdateFlag",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "自动分批更新配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AutoBatchUpdate",
+          "name": "AutoBatchUpdate",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "滚动更新的详细配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RollingUpdate",
+          "name": "RollingUpdate",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "分批更新的详细配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BatchUpdate",
+          "name": "BatchUpdate",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "暂停组件更新\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Pause",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true,
           "visibility": 2
         }
@@ -4702,6 +7043,223 @@
         }
       ],
       "type": "object"
+    },
+    "VolumeRaw": {
+      "document": "存储卷数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储卷名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "存储卷类型",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "容器挂载点",
+          "example": "无",
+          "member": "ContainerMount",
+          "name": "Containers",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "CBS 存储卷\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CBSVolumeSource",
+          "name": "CBS",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "VolumeTrait": {
+      "document": "Volume 配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Volume 配置列表",
+          "example": "无",
+          "member": "VolumeRaw",
+          "name": "Objects",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "ZhiyanLogConfig": {
+      "document": "智研日志配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定标准输出和和标准错误输出，all（全部）,stdout（标准输出）,stderr（错误输出）\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "all",
+          "member": "string",
+          "name": "Stream",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "type设置为采集容器内文件container需配置，采集日志文件所在的Empdir Volume\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Volume",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "日志文件路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Paths",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "ZhiyanLogObject": {
+      "document": "智研日志",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "nginx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "日志汇接入的 topic，可在日志汇->接入管理->配置中查看\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "日志采集类型，目前支持的类型有：采集容器内文件 container、采集容器标准输出 console\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "console",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "日志配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ZhiyanLogConfig",
+          "name": "Config",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "采集容器名称，用于区分 Pod 内多容器的场景，_all 为全部采集\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "_all",
+          "member": "string",
+          "name": "Container",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "ZhiyanLogTrait": {
+      "document": "智研日志",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智研日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ZhiyanLogObject",
+          "name": "Objects",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "ZoneWeight": {
+      "document": "Zone Weight",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Weight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 2
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

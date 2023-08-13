@@ -1,3 +1,201 @@
+# Release 3.0.828.1
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 9 次发布
+
+发布时间：2023-08-14 01:10:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/1609/78003)
+
+	* 新增入参：ProjectID, ApplicationID, EnvironmentName, Components, Policies
+
+	* 新增出参：InstanceID
+
+
+新增数据结构：
+
+* [AutoBatchUpdate](http://document.tencentcloudapi.woa.com/document/product/1609/78009#AutoBatchUpdate)
+* [AutoBatchUpdateDetail](http://document.tencentcloudapi.woa.com/document/product/1609/78009#AutoBatchUpdateDetail)
+* [BatchUpdate](http://document.tencentcloudapi.woa.com/document/product/1609/78009#BatchUpdate)
+* [Behavior](http://document.tencentcloudapi.woa.com/document/product/1609/78009#Behavior)
+* [CBSVolumeSource](http://document.tencentcloudapi.woa.com/document/product/1609/78009#CBSVolumeSource)
+* [CLS](http://document.tencentcloudapi.woa.com/document/product/1609/78009#CLS)
+* [CLSDetail](http://document.tencentcloudapi.woa.com/document/product/1609/78009#CLSDetail)
+* [CLSInput](http://document.tencentcloudapi.woa.com/document/product/1609/78009#CLSInput)
+* [CLSOutput](http://document.tencentcloudapi.woa.com/document/product/1609/78009#CLSOutput)
+* [CLSTrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#CLSTrait)
+* [CampConfiguration](http://document.tencentcloudapi.woa.com/document/product/1609/78009#CampConfiguration)
+* [CampConfigurationTrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#CampConfigurationTrait)
+* [ClusterLabelSelector](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ClusterLabelSelector)
+* [ComponentProperties](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ComponentProperties)
+* [ContainerMount](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ContainerMount)
+* [Custom](http://document.tencentcloudapi.woa.com/document/product/1609/78009#Custom)
+* [DescribedObject](http://document.tencentcloudapi.woa.com/document/product/1609/78009#DescribedObject)
+* [EnvKeyVar](http://document.tencentcloudapi.woa.com/document/product/1609/78009#EnvKeyVar)
+* [ExtractRule](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ExtractRule)
+* [HPAScalingPolicy](http://document.tencentcloudapi.woa.com/document/product/1609/78009#HPAScalingPolicy)
+* [HPAScalingRules](http://document.tencentcloudapi.woa.com/document/product/1609/78009#HPAScalingRules)
+* [HPATrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#HPATrait)
+* [IsolationPod](http://document.tencentcloudapi.woa.com/document/product/1609/78009#IsolationPod)
+* [IsolationTrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#IsolationTrait)
+* [KeyToPath](http://document.tencentcloudapi.woa.com/document/product/1609/78009#KeyToPath)
+* [MetricIdentifier](http://document.tencentcloudapi.woa.com/document/product/1609/78009#MetricIdentifier)
+* [MetricSource](http://document.tencentcloudapi.woa.com/document/product/1609/78009#MetricSource)
+* [MetricSpec](http://document.tencentcloudapi.woa.com/document/product/1609/78009#MetricSpec)
+* [MetricTarget](http://document.tencentcloudapi.woa.com/document/product/1609/78009#MetricTarget)
+* [PlacementPolicy](http://document.tencentcloudapi.woa.com/document/product/1609/78009#PlacementPolicy)
+* [PolarisConfig](http://document.tencentcloudapi.woa.com/document/product/1609/78009#PolarisConfig)
+* [PolarisPort](http://document.tencentcloudapi.woa.com/document/product/1609/78009#PolarisPort)
+* [PolarisTrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#PolarisTrait)
+* [PolicyProperties](http://document.tencentcloudapi.woa.com/document/product/1609/78009#PolicyProperties)
+* [ReplicasTrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ReplicasTrait)
+* [RollingUpdate](http://document.tencentcloudapi.woa.com/document/product/1609/78009#RollingUpdate)
+* [ServicePort](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ServicePort)
+* [ServiceTrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ServiceTrait)
+* [TraitProperties](http://document.tencentcloudapi.woa.com/document/product/1609/78009#TraitProperties)
+* [UpdateStrategyTrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#UpdateStrategyTrait)
+* [VolumeRaw](http://document.tencentcloudapi.woa.com/document/product/1609/78009#VolumeRaw)
+* [VolumeTrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#VolumeTrait)
+* [ZhiyanLogConfig](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ZhiyanLogConfig)
+* [ZhiyanLogObject](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ZhiyanLogObject)
+* [ZhiyanLogTrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ZhiyanLogTrait)
+* [ZoneWeight](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ZoneWeight)
+
+修改数据结构：
+
+* [Component](http://document.tencentcloudapi.woa.com/document/product/1609/78009#Component)
+
+	* 新增成员：Name, Type, Properties, Traits
+
+* [Policy](http://document.tencentcloudapi.woa.com/document/product/1609/78009#Policy)
+
+	* 新增成员：Name, Type, Properties
+
+* [Trait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#Trait)
+
+	* 新增成员：Type, Name, Properties
+
+
+
+
+## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 74 次发布
+
+发布时间：2023-08-14 01:13:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ClickHouseParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#ClickHouseParam)
+
+	* 新增成员：BatchSize, ConsumerFetchMinBytes, ConsumerFetchMaxWaitMs
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 38 次发布
+
+发布时间：2023-08-14 01:15:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SearchLogErrors](http://document.tencentcloudapi.woa.com/document/product/614/56471#SearchLogErrors)
+
+	* <font color="#dd0000">**修改成员**：</font>ErrorCodeStr
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 56 次发布
+
+发布时间：2023-08-14 01:19:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ActivateCluster](http://document.tencentcloudapi.woa.com/document/product/1003/81618)
+
+
+
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 39 次发布
+
+发布时间：2023-08-14 01:21:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeLogFileRetentionPeriod](http://document.tencentcloudapi.woa.com/document/product/557/81619)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 77 次发布
+
+发布时间：2023-08-14 01:25:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChannelCreatePreparedPersonalEsign](http://document.tencentcloudapi.woa.com/document/product/1595/81620)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 4 次发布
+
+发布时间：2023-08-14 01:40:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRiskDnsEventDetail](http://document.tencentcloudapi.woa.com/document/product/1662/81622)
+* [DescribeRiskDnsList](http://document.tencentcloudapi.woa.com/document/product/1662/81621)
+
+新增数据结构：
+
+* [RiskDnsEventInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#RiskDnsEventInfo)
+
+
+
 # Release 3.0.827.1
 
 ## 访问管理(cam) 版本：2019-01-16

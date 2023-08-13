@@ -25,7 +25,81 @@ Output:
             {
                 "ComponentName": "abc",
                 "Trait": [
-                    {}
+                    {
+                        "Name": "abc",
+                        "Type": "abc",
+                        "Properties": {
+                            "UpdateStrategy": {
+                                "Type": "abc",
+                                "MaxUnavailable": 0,
+                                "MaxSurge": 0,
+                                "RollingUpdate": {
+                                    "Clusters": [
+                                        "abc"
+                                    ],
+                                    "ClusterLabelSelectors": [
+                                        {
+                                            "MatchLabels": [
+                                                {
+                                                    "Key": "abc",
+                                                    "Value": "abc"
+                                                }
+                                            ],
+                                            "ReleaseOrder": 1
+                                        }
+                                    ],
+                                    "Partition": 0
+                                },
+                                "BatchUpdate": {
+                                    "MaxFailed": 0,
+                                    "PodsToUpdate": [
+                                        "abc"
+                                    ]
+                                },
+                                "Pause": true
+                            },
+                            "Polaris": {
+                                "Objects": [
+                                    {
+                                        "Name": "abc",
+                                        "PolarisNamespace": "abc",
+                                        "PolarisName": "abc",
+                                        "Token": "abc",
+                                        "CustomWeight": [
+                                            "abc"
+                                        ],
+                                        "Weight": 0,
+                                        "Ports": [
+                                            {
+                                                "Name": "abc",
+                                                "Port": 0,
+                                                "Protocol": "abc"
+                                            }
+                                        ],
+                                        "SyncMode": "abc",
+                                        "SiteZone": "abc",
+                                        "TTL": "abc",
+                                        "InstanceLabel": [
+                                            {
+                                                "Key": "abc",
+                                                "Value": "abc"
+                                            }
+                                        ],
+                                        "Selector": [
+                                            {
+                                                "Key": "abc",
+                                                "Value": "abc"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "Replicas": {
+                                "Replicas": 0
+                            },
+                            "HPA": "abc"
+                        }
+                    }
                 ]
             }
         ],

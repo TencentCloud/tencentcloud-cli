@@ -16,103 +16,54 @@ Output:
 {
     "Response": {
         "DomainCountInfo": {
-            "AllTotal": 41,
-            "DomainTotal": 41,
-            "ErrorTotal": 34,
-            "GroupTotal": 0,
-            "LockTotal": 0,
-            "MineTotal": 34,
+            "DomainTotal": 1,
+            "AllTotal": 1,
+            "MineTotal": 1,
+            "ShareTotal": 1,
+            "VipTotal": 1,
             "PauseTotal": 1,
-            "ShareOutTotal": 3,
-            "ShareTotal": 7,
-            "SpamTotal": 0,
-            "VipExpire": 0,
-            "VipTotal": 3
+            "ErrorTotal": 1,
+            "LockTotal": 1,
+            "SpamTotal": 1,
+            "VipExpire": 1,
+            "ShareOutTotal": 1,
+            "GroupTotal": 1
         },
         "DomainList": [
             {
-                "CNAMESpeedup": "DISABLE",
-                "CreatedOn": "2023-01-29 16:59:00",
-                "DNSStatus": "DNSERROR",
-                "DomainId": 12620610,
-                "EffectiveDNS": [
-                    "v4u4f.dnspod.net",
-                    "h9w2s.dnspod.net"
-                ],
-                "Grade": "DP_FREE",
-                "GradeLevel": 2,
-                "GradeTitle": "免费版",
+                "DomainId": 1,
+                "Name": "abc",
+                "Status": "abc",
+                "TTL": 1,
+                "CNAMESpeedup": "abc",
+                "DNSStatus": "abc",
+                "Grade": "abc",
                 "GroupId": 1,
-                "IsVip": "NO",
-                "Name": "dnspod.com",
-                "Owner": "qcloud_uin_1000000xxxx@qcloud.com",
-                "Punycode": "dnspod.com",
-                "RecordCount": 0,
-                "Remark": "",
-                "SearchEnginePush": "NO",
-                "Status": "ENABLE",
-                "TTL": 600,
-                "UpdatedOn": "2023-01-29 16:59:00",
-                "VipAutoRenew": "NO",
-                "VipEndAt": "0000-00-00 00:00:00",
-                "VipStartAt": "0000-00-00 00:00:00"
-            },
-            {
-                "CNAMESpeedup": "DISABLE",
-                "CreatedOn": "2023-01-29 11:53:20",
-                "DNSStatus": "DNSERROR",
-                "DomainId": 12620607,
+                "SearchEnginePush": "abc",
+                "Remark": "abc",
+                "Punycode": "abc",
                 "EffectiveDNS": [
-                    "v4u4f.dnspod.net",
-                    "h9w2s.dnspod.net"
+                    "abc"
                 ],
-                "Grade": "DP_FREE",
-                "GradeLevel": 2,
-                "GradeTitle": "免费版",
-                "GroupId": 1,
-                "IsVip": "NO",
-                "Name": "dnspod1111.com",
-                "Owner": "qcloud_uin_1000000xxxx@qcloud.com",
-                "Punycode": "dnspod1111.com",
-                "RecordCount": 0,
-                "Remark": "",
-                "SearchEnginePush": "NO",
-                "Status": "ENABLE",
-                "TTL": 600,
-                "UpdatedOn": "2023-01-29 11:53:20",
-                "VipAutoRenew": "NO",
-                "VipEndAt": "0000-00-00 00:00:00",
-                "VipStartAt": "0000-00-00 00:00:00"
-            },
-            {
-                "CNAMESpeedup": "DISABLE",
-                "CreatedOn": "2022-12-16 14:48:49",
-                "DNSStatus": "DNSERROR",
-                "DomainId": 12620584,
-                "EffectiveDNS": [
-                    "v4u4f.dnspod.net",
-                    "h9w2s.dnspod.net"
-                ],
-                "Grade": "DP_FREE",
-                "GradeLevel": 2,
-                "GradeTitle": "免费版",
-                "GroupId": 1,
-                "IsVip": "NO",
-                "Name": "dnspod22222.com",
-                "Owner": "qcloud_uin_1000000xxxx@qcloud.com",
-                "Punycode": "dnspod22222.com",
-                "RecordCount": 0,
-                "Remark": "",
-                "SearchEnginePush": "NO",
-                "Status": "ENABLE",
-                "TTL": 600,
-                "UpdatedOn": "2022-12-16 14:48:49",
-                "VipAutoRenew": "NO",
-                "VipEndAt": "0000-00-00 00:00:00",
-                "VipStartAt": "0000-00-00 00:00:00"
+                "GradeLevel": 1,
+                "GradeTitle": "abc",
+                "IsVip": "abc",
+                "VipStartAt": "2020-09-22 00:00:00",
+                "VipEndAt": "2020-09-22 00:00:00",
+                "VipAutoRenew": "abc",
+                "RecordCount": 1,
+                "CreatedOn": "2020-09-22 00:00:00",
+                "UpdatedOn": "2020-09-22 00:00:00",
+                "Owner": "abc",
+                "TagList": [
+                    {
+                        "TagKey": "abc",
+                        "TagValue": "abc"
+                    }
+                ]
             }
         ],
-        "RequestId": "c1e2fbcf-fbf4-4cc8-a59a-dddedcc8a59e"
+        "RequestId": "abc"
     }
 }
 ```

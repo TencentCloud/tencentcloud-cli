@@ -17,7 +17,32 @@ Output:
 ```
 {
     "Response": {
-        "Policy": {},
+        "Policy": {
+            "Name": "abc",
+            "Type": "abc",
+            "Properties": {
+                "Placement": {
+                    "Type": "abc",
+                    "Region": "abc",
+                    "Zones": [
+                        {
+                            "Zone": "abc",
+                            "Weight": 0
+                        }
+                    ],
+                    "Components": [
+                        "abc"
+                    ],
+                    "Strategy": "abc",
+                    "Selector": [
+                        {
+                            "Key": "abc",
+                            "Value": "abc"
+                        }
+                    ]
+                }
+            }
+        },
         "RequestId": "abc"
     }
 }
