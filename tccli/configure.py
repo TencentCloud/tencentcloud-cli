@@ -42,8 +42,20 @@ class BasicConfigure(BasicCommand):
         if is_exist:
             conf_data = Utils.load_json_msg(config_path)
 
+        if OptionsDefine.SysParam not in conf_data:
+            conf_data[OptionsDefine.SysParam] = {}
+
+        for _sys_param in self.config_list:
+            if _sys_param in conf_data and not isinstance(conf_data[_sys_param], dict):
+                conf_data[OptionsDefine.SysParam][_sys_param] = conf_data[_sys_param]
+                conf_data.pop(_sys_param)
+
         for k in input_data.keys():
-            conf_data[k] = input_data[k]
+            if k in self.config_list and not isinstance(input_data[k], dict):
+                conf_data[OptionsDefine.SysParam][k] = input_data[k]
+            else:
+                conf_data[k] = input_data[k]
+
         if profile_name.endswith(".configure"):
             for mod in self._cli_data.get_available_services().keys():
                 # we have to check autoscaling because we did it wrong in 3.0.30.1
@@ -131,8 +143,8 @@ class ConfigureListCommand(BasicConfigure):
         if is_exit:
             config = Utils.load_json_msg(config_path)
             for c in self.config_list:
-                if c in config and config[c]:
-                    self._stream.write("%s = %s\n" % (c, config[c]))
+                if c in config[OptionsDefine.SysParam] and config[OptionsDefine.SysParam][c]:
+                    self._stream.write("%s = %s\n" % (c, config[OptionsDefine.SysParam][c]))
 
             modlist = sorted(config.keys())
             for c in modlist:
@@ -263,8 +275,8 @@ class ConfigureGetCommand(BasicConfigure):
             cred = Utils.load_json_msg(cred_path)
 
         for varname in varname_list:
-            if varname in conf.keys() and conf[varname]:
-                value = conf[varname]
+            if varname in conf[OptionsDefine.SysParam] and conf[OptionsDefine.SysParam][varname]:
+                value = conf[OptionsDefine.SysParam][varname]
             elif varname in cred.keys() and cred[varname]:
                 value = cred[varname]
             else:
@@ -481,7 +493,3 @@ class ConfigureDocumentHandler(object):
         self.available_subcommand()
         self.available_config()
         self.example()
-
-
-
-
