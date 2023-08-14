@@ -113,9 +113,9 @@
       "status": "online"
     },
     "FaceMotionDetection": {
-      "document": "本接口用于对点头或唇动动作检测，您可以通过传入视频Base64编码或视频Url进行检测，检测视频中人员是否有此动作。",
+      "document": "本接口用于识别人脸面部动作，当前仅支持点头和唇动动作识别，您可以通过传入视频Base64编码或视频Url进行检测，检测视频中人员是否存在相应动作。",
       "input": "FaceMotionDetectionRequest",
-      "name": "点头或唇动检测",
+      "name": "面部动作检测",
       "output": "FaceMotionDetectionResponse",
       "status": "online"
     },
@@ -2879,9 +2879,11 @@
       "document": "FaceMotionDetection请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "用于面部动作检测的视频，视频的BASE64值。视频时长建议在1s-2s，\nBASE64编码后的大小不超过1.5M，支持mp4、avi、flv等格式。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "VideoBase64",
           "required": false,
@@ -2889,9 +2891,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "用于面部动作检测的视频Url 地址。视频时长建议在1s-2s，视频下载后经Base64编码不超过 1.5M，视频下载耗时不超过2s，支持mp4、avi、flv等格式。\n\n视频的 VideoUrl、VideoBase64 必须提供一个，如果都提供，只使用 VideoBase64。\n\n建议视频存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议视频存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "VideoUrl",
           "required": false,
@@ -2899,9 +2903,11 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
-          "document": "需要检测的动作类型，参数取值为：\n\n1：唇动\n\n2：点头\n\n（说明：若视频中有多张人脸，目前仅支持对最大脸检测面部动作）",
+          "document": "需要检测的动作类型，参数取值为：\n1：唇动\n2：点头\n（说明：若视频中有多张人脸，目前仅支持对最大脸检测面部动作）",
           "example": "1",
+          "is_base64": false,
           "member": "int64",
           "name": "ActionType",
           "required": false,
@@ -2920,6 +2926,7 @@
           "example": "0",
           "member": "string",
           "name": "Result",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1
@@ -2930,26 +2937,29 @@
           "example": "无",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true,
           "visibility": 1
         },
         {
           "disabled": false,
-          "document": "是否检测到指定动作，参数取值为：\n\nfalse：否\n\ntrue：是",
+          "document": "是否检测到指定动作，参数取值为：\nfalse：否\ntrue：是",
           "example": "无",
           "member": "bool",
           "name": "ActionFlag",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false,
           "visibility": 1
         },
         {
           "disabled": false,
-          "document": "面部动作检测最佳帧，照片为BASE64编码后的值，jpg格式。\n\n说明：当前仅支持唇动检测返回最佳帧。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "面部动作检测最佳帧，照片为BASE64编码后的值，jpg格式。\n说明：当前仅支持唇动检测返回最佳帧。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "BestFrameBase64",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false,
           "visibility": 1

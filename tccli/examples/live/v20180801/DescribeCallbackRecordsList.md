@@ -19,11 +19,11 @@ Output:
     "Response": {
         "DataInfoList": [
             {
-                "EventTime": "abc",
+                "EventTime": "2020-10-12T00:00:00+08:00",
                 "EventType": 1,
                 "Request": "abc",
                 "Response": "abc",
-                "ResponseTime": "abc",
+                "ResponseTime": "2020-10-12T00:00:00+08:00",
                 "ResultCode": 1,
                 "StreamId": "abc"
             }

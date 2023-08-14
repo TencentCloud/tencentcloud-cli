@@ -71,7 +71,7 @@ Output:
                 },
                 "FraudPkg": {
                     "ResourceIds": "",
-                    "Status": "",
+                    "Status": 1,
                     "Region": 0,
                     "BeginTime": "",
                     "EndTime": "",
@@ -122,7 +122,7 @@ Output:
                 },
                 "FraudPkg": {
                     "ResourceIds": "",
-                    "Status": "",
+                    "Status": 0,
                     "Region": 0,
                     "BeginTime": "",
                     "EndTime": "",
@@ -173,7 +173,7 @@ Output:
                 },
                 "FraudPkg": {
                     "ResourceIds": "",
-                    "Status": "",
+                    "Status": 1,
                     "Region": 0,
                     "BeginTime": "",
                     "EndTime": "",
@@ -224,7 +224,7 @@ Output:
                 },
                 "FraudPkg": {
                     "ResourceIds": "",
-                    "Status": "",
+                    "Status": 1,
                     "Region": 0,
                     "BeginTime": "",
                     "EndTime": "",
@@ -275,7 +275,7 @@ Output:
                 },
                 "FraudPkg": {
                     "ResourceIds": "",
-                    "Status": "",
+                    "Status": 0,
                     "Region": 0,
                     "BeginTime": "",
                     "EndTime": "",
@@ -326,7 +326,7 @@ Output:
                 },
                 "FraudPkg": {
                     "ResourceIds": "",
-                    "Status": "",
+                    "Status": 0,
                     "Region": 0,
                     "BeginTime": "",
                     "EndTime": "",
@@ -377,7 +377,7 @@ Output:
                 },
                 "FraudPkg": {
                     "ResourceIds": "",
-                    "Status": "",
+                    "Status": 0,
                     "Region": 0,
                     "BeginTime": "",
                     "EndTime": "",
@@ -428,7 +428,7 @@ Output:
                 },
                 "FraudPkg": {
                     "ResourceIds": "",
-                    "Status": "",
+                    "Status": 1,
                     "Region": 0,
                     "BeginTime": "",
                     "EndTime": "",
@@ -479,7 +479,7 @@ Output:
                 },
                 "FraudPkg": {
                     "ResourceIds": "",
-                    "Status": "",
+                    "Status": 0,
                     "Region": 0,
                     "BeginTime": "",
                     "EndTime": "",
@@ -530,7 +530,7 @@ Output:
                 },
                 "FraudPkg": {
                     "ResourceIds": "",
-                    "Status": "",
+                    "Status": 0,
                     "Region": 0,
                     "BeginTime": "",
                     "EndTime": "",

@@ -47,6 +47,9 @@ Output:
                 "TagValue": "abc"
             }
         ],
+        "ClusterID": "abc",
+        "ClusterName": "abc",
+        "ClusterAccessedStatus": "abc",
         "RequestId": "abc"
     }
 }

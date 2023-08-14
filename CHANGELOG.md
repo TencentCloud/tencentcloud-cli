@@ -1,3 +1,254 @@
+# Release 3.0.829.1
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 30 次发布
+
+发布时间：2023-08-15 01:13:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DescAcItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#DescAcItem)
+
+	* 新增成员：Scope, InternetBorderUuid
+
+	* <font color="#dd0000">**修改成员**：</font>Direction, InstanceName, InternalUuid, Status, BetaList
+
+* [NatInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#NatInstanceInfo)
+
+	* 新增成员：EngineVersion, UpdateEnable
+
+	* <font color="#dd0000">**修改成员**：</font>RuleUsed, RuleMax
+
+* [VpcDnsInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcDnsInfo)
+
+	* 新增成员：ProtectedStatus, SupportDNSFW
+
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 44 次发布
+
+发布时间：2023-08-15 01:14:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyLoadBalancersProject](http://document.tencentcloudapi.woa.com/document/product/214/81623)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 20 次发布
+
+发布时间：2023-08-15 01:25:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [GroupOrganization](http://document.tencentcloudapi.woa.com/document/product/1668/79360#GroupOrganization)
+
+	* 新增成员：WorkflowNumber
+
+
+
+
+## 云开发低码(lowcode) 版本：2021-01-08
+
+### 第 7 次发布
+
+发布时间：2023-08-15 01:33:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDataSourceDetail](http://document.tencentcloudapi.woa.com/document/product/1599/75493)
+
+	* 新增入参：GroupId
+
+
+
+
+## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 26 次发布
+
+发布时间：2023-08-15 01:41:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DuplicateImage](http://document.tencentcloudapi.woa.com/document/product/1141/81624)
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 5 次发布
+
+发布时间：2023-08-15 01:41:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateClusterCheckTask](http://document.tencentcloudapi.woa.com/document/product/1662/78808)
+
+	* 新增出参：NewTaskID
+
+* [DescribeAssetHostDetail](http://document.tencentcloudapi.woa.com/document/product/1662/78894)
+
+	* 新增出参：ClusterID, ClusterName, ClusterAccessedStatus
+
+* [DescribeClusterSummary](http://document.tencentcloudapi.woa.com/document/product/1662/78801)
+
+	* 新增出参：TkeClusterCount, UserCreateTencentClusterCount, UserCreateHybridClusterCount
+
+* [DescribeRefreshTask](http://document.tencentcloudapi.woa.com/document/product/1662/78800)
+
+	* 新增入参：NewTaskID
+
+* [DescribeUnfinishRefreshTask](http://document.tencentcloudapi.woa.com/document/product/1662/78797)
+
+	* 新增出参：NewTaskID
+
+
+修改数据结构：
+
+* [AffectedNodeItem](http://document.tencentcloudapi.woa.com/document/product/1662/79121#AffectedNodeItem)
+
+	* <font color="#dd0000">**修改成员**：</font>NodeName
+
+* [ClusterInfoItem](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ClusterInfoItem)
+
+	* 新增成员：AccessedStatus, AccessedSubStatus, NodeCount, OffLineNodeCount, UnInstallAgentNodeCount
+
+* [HostInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#HostInfo)
+
+	* 新增成员：ClusterName, ClusterAccessedStatus
+
+	* <font color="#dd0000">**修改成员**：</font>ClusterID
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 4 次发布
+
+发布时间：2023-08-15 01:44:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyApplicationProxyRule](http://document.tencentcloudapi.woa.com/document/product/1738/81186)
+
+	* 新增入参：RuleTag
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 30 次发布
+
+发布时间：2023-08-15 01:45:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [SendChatMessage](http://document.tencentcloudapi.woa.com/document/product/851/81625)
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## T-Sec-安心平台(RP)(trp) 版本：2021-05-15
+
+### 第 5 次发布
+
+发布时间：2023-08-15 01:47:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCodePacks](http://document.tencentcloudapi.woa.com/document/product/1685/79655)
+
+	* 新增入参：ResType, ResId
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 46 次发布
+
+发布时间：2023-08-15 01:51:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddSpartaProtection](http://document.tencentcloudapi.woa.com/document/product/627/72689)
+
+	* 新增入参：XFFReset
+
+* [ModifySpartaProtection](http://document.tencentcloudapi.woa.com/document/product/627/78124)
+
+	* 新增入参：XFFReset
+
+
+修改数据结构：
+
+* [DomainsPartInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#DomainsPartInfo)
+
+	* 新增成员：XFFReset
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#InstanceInfo)
+
+	* 新增成员：IsAPISecurityTrial
+
+
+
+
 # Release 3.0.828.1
 
 ## 应用管理平台(camp) 版本：2022-09-20

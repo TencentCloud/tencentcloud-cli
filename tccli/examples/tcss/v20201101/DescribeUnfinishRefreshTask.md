@@ -11,9 +11,10 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "e7e5ce68-b074-4fb7-8354-f2b87260063e",
-        "TaskId": 0,
-        "TaskStatus": "Task_NoExist"
+        "TaskId": 1,
+        "TaskStatus": "abc",
+        "NewTaskID": "abc",
+        "RequestId": "abc"
     }
 }
 ```

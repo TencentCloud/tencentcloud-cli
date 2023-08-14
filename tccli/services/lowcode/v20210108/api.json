@@ -392,184 +392,232 @@
       "document": "CreateDataSourceDetail请求参数结构体",
       "members": [
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "数据源名称",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Title",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "数据源标识",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "数据源类型，database-自建数据源；cloud-integration-自定义数据源",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "环境 id",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "EnvId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "数据源描述",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "数据源字段配置",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Schema",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "自定义方法集",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Methods",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "数据源版本",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "DataSourceVersion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "schema 版本",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "SchemaVersion",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "创建人",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Creator",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "是否异步调用 0 同步 1 异步",
           "example": "无",
+          "is_base64": false,
           "member": "int64",
           "name": "AsyncCall",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "模板类型 0 无模板 1 外部数据源模板",
           "example": "无",
+          "is_base64": false,
           "member": "int64",
           "name": "TemplateType",
           "required": false,
-          "type": "int"
+          "type": "int",
+          "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "外部数据源模板code",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "TemplateCode",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "外部数据源授权id",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "TicketId",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "数据源属性配置",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Configuration",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "绑定应用id",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "BindAppCode",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "子类型 ：database 标准模型 custom-database 自定义模型 system 系统模型 connector 连接器 custom-connector 自定义连接器",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "SubType",
           "required": false,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "授权账号信息。非oauth外部数据源传SecretId、SecretKey授权",
           "example": "无",
+          "is_base64": false,
           "member": "TicketCredentialInfo",
           "name": "CredentialInfo",
           "required": false,
-          "type": "object"
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "模型分组",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -583,9 +631,10 @@
           "example": "无",
           "member": "DataSourceDetail",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
