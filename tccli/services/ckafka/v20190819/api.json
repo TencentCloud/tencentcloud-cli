@@ -1786,172 +1786,215 @@
       "document": "ClickHouse类型入参",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "ClickHouse的集群",
+          "document": "ClickHouse的集群\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
+          "is_base64": false,
           "member": "string",
           "name": "Cluster",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "ClickHouse的数据库名",
+          "document": "ClickHouse的数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
+          "is_base64": false,
           "member": "string",
           "name": "Database",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "ClickHouse的数据表名",
+          "document": "ClickHouse的数据表名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
+          "is_base64": false,
           "member": "string",
           "name": "Table",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "ClickHouse的schema",
+          "document": "ClickHouse的schema\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"ColumnName\":\"x\",\"JsonKey\":\"x\",\"Type\":\"String\",\"AllowNull\":f}]",
           "member": "ClickHouseSchema",
           "name": "Schema",
+          "output_required": false,
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例资源",
+          "document": "实例资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
+          "is_base64": false,
           "member": "string",
           "name": "Resource",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "ClickHouse的连接ip",
+          "document": "ClickHouse的连接ip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
+          "is_base64": false,
           "member": "string",
           "name": "Ip",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "ClickHouse的连接port",
+          "document": "ClickHouse的连接port\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "Port",
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "ClickHouse的用户名",
+          "document": "ClickHouse的用户名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
+          "is_base64": false,
           "member": "string",
           "name": "UserName",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "ClickHouse的密码",
+          "document": "ClickHouse的密码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
+          "is_base64": false,
           "member": "string",
           "name": "Password",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例vip",
+          "document": "实例vip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
+          "is_base64": false,
           "member": "string",
           "name": "ServiceVip",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "实例的vpcId",
+          "document": "实例的vpcId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
+          "is_base64": false,
           "member": "string",
           "name": "UniqVpcId",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "是否为自建集群",
+          "document": "是否为自建集群\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "SelfBuilt",
+          "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "ClickHouse是否抛弃解析失败的消息，默认为true",
+          "document": "ClickHouse是否抛弃解析失败的消息，默认为true\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "DropInvalidMessage",
+          "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "ClickHouse 类型，emr-clickhouse : \"emr\";cdw-clickhouse : \"cdwch\";自建 : \"\"",
+          "document": "ClickHouse 类型，emr-clickhouse : \"emr\";cdw-clickhouse : \"cdwch\";自建 : \"\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "emr",
+          "is_base64": false,
           "member": "string",
           "name": "Type",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效",
+          "document": "当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "DropCls",
           "name": "DropCls",
+          "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "每批次投递到 ClickHouse 表消息数量，默认为 1000 条。\n提高该参数值，有利于减少往  ClickHouse 投递的次数，但在错误消息过多及网络不稳定等极端情况下时，可能导致频繁重试影响效率。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "BatchSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "每次从 topic 中拉取消息大小，默认为 1MB，即至少要从 topic 中批量拉取 1MB 消息，才进行数据投递到 ClickHouse 操作。\n提高该参数值，有利于减少往  ClickHouse 投递的次数，但在错误消息过多及网络不稳定等极端情况下时，可能导致频繁重试影响效率。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000",
+          "member": "int64",
+          "name": "ConsumerFetchMinBytes",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "每次从 topic 拉取消息最大等待时间，当超过当前最大等待时间时，即使没有拉取到 ConsumerFetchMinBytes 大小，也将进行 ClickHouse 投递操作。\n提高该参数值，有利于减少往  ClickHouse 投递的次数，但在错误消息过多及网络不稳定等极端情况下时，可能导致频繁重试影响效率。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30000",
+          "member": "int64",
+          "name": "ConsumerFetchMaxWaitMs",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "ClickHouseSchema": {
       "document": "ClickHouse的Schema",

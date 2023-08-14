@@ -288,6 +288,14 @@
         "title": "查询任务流程执行状态"
       }
     ],
+    "DescribeLogFileRetentionPeriod": [
+      {
+        "document": "",
+        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeLogFileRetentionPeriod\n&InstanceId=dcdbt-ak4b3m9l\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Days\": 30,\n        \"InstanceId\": \"dcdbt-ak4b3m9l\",\n        \"RequestId\": \"a6e96bd9-ec89-4c02-9738-d33e783a4bae\"\n    }\n}",
+        "title": "查看备份日志备份天数"
+      }
+    ],
     "DescribeOrders": [
       {
         "document": "",

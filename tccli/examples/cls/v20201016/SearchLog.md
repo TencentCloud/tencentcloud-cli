@@ -43,7 +43,8 @@ Output:
         "AnalysisResults": [],
         "AnalysisRecords": null,
         "RequestId": "79f593e5-1374-4463-xxxx-c49d0b3c5290",
-        "SamplingRate": 0
+        "SamplingRate": 0,
+        "Topics": null
     }
 }
 ```

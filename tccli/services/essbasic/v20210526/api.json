@@ -119,6 +119,13 @@
       "output": "ChannelCreatePrepareFlowResponse",
       "status": "online"
     },
+    "ChannelCreatePreparedPersonalEsign": {
+      "document": "本接口（ChannelCreatePreparedPersonalEsign）用于创建导入个人印章",
+      "input": "ChannelCreatePreparedPersonalEsignRequest",
+      "name": "创建导入个人印章",
+      "output": "ChannelCreatePreparedPersonalEsignResponse",
+      "status": "online"
+    },
     "ChannelCreateReleaseFlow": {
       "document": "发起解除协议，主要应用场景为：基于一份已经签署的合同，进行解除操作。\n合同发起人必须在电子签已经进行实名。",
       "input": "ChannelCreateReleaseFlowRequest",
@@ -2199,6 +2206,114 @@
           "member": "string",
           "name": "PreviewFlowUrl",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreatePreparedPersonalEsignRequest": {
+      "document": "ChannelCreatePreparedPersonalEsign请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 必填。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "个人用户名称",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "身份证件号码",
+          "example": "无",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "印章图片的base64",
+          "example": "无",
+          "member": "string",
+          "name": "SealImage",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "印章名称",
+          "example": "无",
+          "member": "string",
+          "name": "SealName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作者信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "身份证件类型",
+          "example": "无",
+          "member": "string",
+          "name": "IdCardType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "手机号码；当需要开通自动签时，该参数必传",
+          "example": "无",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开通自动签，该功能需联系运营工作人员开通后使用",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableAutoSign",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreatePreparedPersonalEsignResponse": {
+      "document": "ChannelCreatePreparedPersonalEsign返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导入的印章 ID",
+          "example": "无",
+          "member": "string",
+          "name": "SealId",
           "type": "string",
           "value_allowed_null": false
         },

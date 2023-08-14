@@ -252,6 +252,13 @@
       "output": "DescribeFlowResponse",
       "status": "online"
     },
+    "DescribeLogFileRetentionPeriod": {
+      "document": "本接口(DescribeLogFileRetentionPeriod)用于查看数据库备份日志的备份天数的设置情况。",
+      "input": "DescribeLogFileRetentionPeriodRequest",
+      "name": "查看备份日志备份天数",
+      "output": "DescribeLogFileRetentionPeriodResponse",
+      "status": "online"
+    },
     "DescribeOrders": {
       "document": "本接口（DescribeOrders）用于查询分布式数据库订单信息。传入订单ID来查询订单关联的分布式数据库实例，和对应的任务流程ID。",
       "input": "DescribeOrdersRequest",
@@ -5849,6 +5856,54 @@
           "example": "无",
           "member": "int64",
           "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogFileRetentionPeriodRequest": {
+      "document": "DescribeLogFileRetentionPeriod请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "实例 ID，形如：tdsql-ow728lmc。",
+          "example": "dcdbt-ak4b3m9l",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogFileRetentionPeriodResponse": {
+      "document": "DescribeLogFileRetentionPeriod返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID，形如：tdsql-ow728lmc。",
+          "example": "dcdbt-ak4b3m9l",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志备份天数",
+          "example": "30",
+          "member": "uint64",
+          "name": "Days",
           "required": true,
           "type": "int",
           "value_allowed_null": false

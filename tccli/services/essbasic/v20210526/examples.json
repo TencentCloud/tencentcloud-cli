@@ -136,6 +136,14 @@
         "title": "创建预发起合同链接"
       }
     ],
+    "ChannelCreatePreparedPersonalEsign": [
+      {
+        "document": "通过准备好的个人印章图片创建印章",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreatePreparedPersonalEsign\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"abc\",\n        \"Channel\": \"abc\",\n        \"CustomUserId\": \"abc\",\n        \"ClientIp\": \"abc\",\n        \"ProxyIp\": \"abc\"\n    },\n    \"Agent\": {\n        \"AppId\": \"abc\",\n        \"ProxyOrganizationOpenId\": \"abc\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"abc\",\n            \"Channel\": \"abc\",\n            \"CustomUserId\": \"abc\",\n            \"ClientIp\": \"abc\",\n            \"ProxyIp\": \"abc\"\n        },\n        \"ProxyAppId\": \"abc\",\n        \"ProxyOrganizationId\": \"abc\"\n    },\n    \"UserName\": \"印章归属个人姓名\",\n    \"IdCardType\": \"\",\n    \"IdCardNumber\": \"身份证件号码\",\n    \"SealImage\": \"印章图片Base64\",\n    \"SealName\": \"我的印章名称\",\n    \"Mobile\": \"135*111\",\n    \"EnableAutoSign\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"SealId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "通过准备好的个人印章图片创建印章"
+      }
+    ],
     "ChannelCreateReleaseFlow": [
       {
         "document": "1. 使用原流程的签署人\n2. 包含了详细的解除内容",
