@@ -27,6 +27,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InternalError",
+            "Message": "域名已经存在，请勿重复添加"
+        },
         "RequestId": "4f284280-a493-4932-95f4-3d87e7320b3e"
     }
 }

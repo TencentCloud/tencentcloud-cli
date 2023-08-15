@@ -40,7 +40,7 @@
       {
         "document": "当设备响应时间过长时，设备返回情况如样例所示。",
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CallDeviceActionSync\n<公共请求参数>\n\n{\n    \"DeviceName\": \"light1\",\n    \"InputParams\": \"{\\\"brightness\\\":3}\",\n    \"ActionId\": \"actid\",\n    \"ProductId\": \"TOIDHQ3AOQ\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b1de7dcf-5029-4d70-b6b5-d1ad0f785552\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.Timeout\",\n            \"Message\": \"调用超时\"\n        },\n        \"RequestId\": \"b1de7dcf-5029-4d70-b6b5-d1ad0f785552\"\n    }\n}",
         "title": "同步调用设备行为，设备超时"
       }
     ],

@@ -62,6 +62,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "ResourceNotFound",
+            "Message": "Code:1001, Msg:Invalid parameter (itemid)"
+        },
         "RequestId": "s1575025791424544000"
     }
 }

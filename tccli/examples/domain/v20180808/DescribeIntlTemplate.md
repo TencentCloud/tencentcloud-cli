@@ -100,6 +100,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InternalError.DescribeTemplateErr",
+            "Message": "获取信息模板详情失败"
+        },
         "RequestId": "2f36ac98-07f4-4fef-9124-aed4820f5d39"
     }
 }

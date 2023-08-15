@@ -13,7 +13,11 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "d5fc71eb-451a-40f2-933f-2732c8990d7f"
+        "RequestId": "d5fc71eb-451a-40f2-933f-2732c8990d7f",
+        "Error": {
+            "Message": "domain not exits",
+            "Code": "FailedOperation"
+        }
     }
 }
 ```

@@ -18,6 +18,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.ParameterValueError",
+            "Message": "参数字段或者值有误。"
+        },
         "RequestId": "b68b7c3a-410d-4af1-b63c-97450683b09b"
     }
 }

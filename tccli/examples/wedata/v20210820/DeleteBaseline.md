@@ -14,6 +14,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InternalError",
+            "Message": "An internal error has occurred. Retry your request, but if the problem persists, contact us."
+        },
         "RequestId": "132a023b-390e-4073-8ab4-314ef1ec5c1b"
     }
 }

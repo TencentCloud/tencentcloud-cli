@@ -44,6 +44,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InternalError",
+            "Message": "An internal error has occurred. Retry your request, but if the problem persists, contact us."
+        },
         "RequestId": "188b3e3b-90a4-4e53-a01f-16046dda13f6"
     }
 }
@@ -67,6 +71,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InternalError",
+            "Message": "An internal error has occurred. Retry your request, but if the problem persists, contact us."
+        },
         "RequestId": "1d510800-9cd8-41ee-84e0-04bbd8cecc81"
     }
 }
@@ -90,6 +98,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InternalError",
+            "Message": "An internal error has occurred. Retry your request, but if the problem persists, contact us."
+        },
         "RequestId": "1d287884-1214-4b75-b4e8-383ee8e57918"
     }
 }

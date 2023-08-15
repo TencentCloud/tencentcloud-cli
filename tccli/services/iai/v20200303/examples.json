@@ -42,7 +42,7 @@
       {
         "document": "",
         "input": "https://iai.tencentcloudapi.com/?Action=CopyPerson\r\n&PersonId=1001\r\n&GroupIds.0=TencentShenZhenEmployee\r\n&GroupIds.1=ZhuYuanDormitoryNo1\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ecfa566-68a9-4eb5-a6da-95ba9be26947\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.GroupPersonMapExist\",\n            \"Message\": \"组中已包含对应的人员Id。\"\n        },\n        \"RequestId\": \"8ecfa566-68a9-4eb5-a6da-95ba9be26947\"\n    }\n}",
         "title": "错误示例"
       }
     ],
@@ -56,7 +56,7 @@
       {
         "document": "一个人最多拥有5张脸",
         "input": "https://iai.tencentcloudapi.com/?Action=CreateFace\n&PersonId=1001\n&Urls.0=http://test.image.myqcloud.com/testB.jpg\n&Urls.1=http://test.image.myqcloud.com/testC.jpg\n&Urls.2=http://test.image.myqcloud.com/testD.jpg\n&Urls.3=http://test.image.myqcloud.com/testE.jpg\n&Urls.4=http://test.image.myqcloud.com/testF.jpg\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"44506f79-2191-49bc-997b-748a566d781c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.UploadFaceNumExceed\",\n            \"Message\": \"一次最多上传四张人脸。\"\n        },\n        \"RequestId\": \"44506f79-2191-49bc-997b-748a566d781c\"\n    }\n}",
         "title": "错误示例"
       }
     ],
@@ -76,13 +76,13 @@
       {
         "document": "人员库ID不可重复",
         "input": "https://iai.tencentcloudapi.com/?Action=CreateGroup\n&GroupName=腾讯深圳员工库\n&GroupId=TencentShenZhenEmployee\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"76ec6e41-37d6-4ab9-abef-48ef0c6ab175\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.GroupIdAlreadyExist\",\n            \"Message\": \"人员库ID已经存在。人员库ID不可重复。\"\n        },\n        \"RequestId\": \"76ec6e41-37d6-4ab9-abef-48ef0c6ab175\"\n    }\n}",
         "title": "错误示例"
       },
       {
         "document": "人员库ID不支持中文",
         "input": "https://iai.tencentcloudapi.com/?Action=CreateGroup\n&GroupName=腾讯深圳员工库\n&GroupId=腾讯深圳员工库\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8125dda4-2905-4e02-88bd-79a93a660ad2\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.GroupIdIllegal\",\n            \"Message\": \"人员库ID包含非法字符。人员库ID只支持英文、数字、-%@#&_。\"\n        },\n        \"RequestId\": \"8125dda4-2905-4e02-88bd-79a93a660ad2\"\n    }\n}",
         "title": "错误示例-2"
       }
     ],
@@ -102,13 +102,13 @@
       {
         "document": "人员ID不可重复",
         "input": "https://iai.tencentcloudapi.com/?Action=CreatePerson\n&GroupId=ZhuYuanDormitoryNo1\n&PersonName=Cheng\n&PersonId=1001\n&Gender=2\n&Url=http://test.image.myqcloud.com/testD.jpg\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"76dedef7-af27-4a20-9064-c5ef3133926d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.PersonIdAlreadyExist\",\n            \"Message\": \"人员ID已经存在。人员ID不可重复。\"\n        },\n        \"RequestId\": \"76dedef7-af27-4a20-9064-c5ef3133926d\"\n    }\n}",
         "title": "错误示例"
       },
       {
         "document": "人员库ID不存在",
         "input": "https://iai.tencentcloudapi.com/?Action=CreatePerson\n&GroupId=ShenZhenCitizen\n&PersonName=Siccy\n&PersonId=3001\n&Gender=2\n&Url=http://test.image.myqcloud.com/testC.jpg\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfa512fc-fd07-4bf1-a292-cb497b620857\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.GroupIdNotExist\",\n            \"Message\": \"人员库ID不存在。\"\n        },\n        \"RequestId\": \"dfa512fc-fd07-4bf1-a292-cb497b620857\"\n    }\n}",
         "title": "错误示例-2"
       }
     ],
@@ -122,7 +122,7 @@
       {
         "document": "人员ID不存在",
         "input": "https://iai.tencentcloudapi.com/?Action=DeleteFace\r\n&PersonId=5001\r\n&FaceIds.0=2875186538564559728\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e2b603e5-51d0-4a8a-8319-2df026ae7518\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.ErrorPersonNotExisted\",\n            \"Message\": \"个体不存在。\"\n        },\n        \"RequestId\": \"e2b603e5-51d0-4a8a-8319-2df026ae7518\"\n    }\n}",
         "title": "错误示例"
       }
     ],
@@ -136,7 +136,7 @@
       {
         "document": "人员库ID不存在",
         "input": "https://iai.tencentcloudapi.com/?Action=DeleteGroup\n&GroupId=ZhuYuanDormitory\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"878b225f-d3a4-4aa0-a849-3df415ac61a9\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.GroupIdNotExist\",\n            \"Message\": \"人员库ID不存在。\"\n        },\n        \"RequestId\": \"878b225f-d3a4-4aa0-a849-3df415ac61a9\"\n    }\n}",
         "title": "错误示例"
       }
     ],
@@ -150,7 +150,7 @@
       {
         "document": "人员ID不存在",
         "input": "https://iai.tencentcloudapi.com/?Action=DeletePerson\r\n&PersonId=3001\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4b9c1bdc-86eb-413f-8c74-15bcf4466cd5\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.ErrorPersonNotExisted\",\n            \"Message\": \"个体不存在。\"\n        },\n        \"RequestId\": \"4b9c1bdc-86eb-413f-8c74-15bcf4466cd5\"\n    }\n}",
         "title": "错误示例"
       }
     ],
@@ -164,7 +164,7 @@
       {
         "document": "人员库中不包含指定人员",
         "input": "https://iai.tencentcloudapi.com/?Action=DeletePersonFromGroup\r\n&PersonId=3001\r\n&GroupId=ZhuYuanDormitoryNo1\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b9d9641d-3de2-4a6f-a728-36a3b66e7bd0\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.GroupPersonMapNotExist\",\n            \"Message\": \"组中不包含对应的人员Id。\"\n        },\n        \"RequestId\": \"b9d9641d-3de2-4a6f-a728-36a3b66e7bd0\"\n    }\n}",
         "title": "错误示例"
       }
     ],
@@ -224,7 +224,7 @@
       {
         "document": "返回数量不能大于1000",
         "input": "https://iai.tencentcloudapi.com/?Action=GetGroupList\n&Offset=0\n&Limit=1001\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6bb57de-773b-45e4-9e1c-c30ef48eba85\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.LimitExceed\",\n            \"Message\": \"返回数量不在合法范围内。\"\n        },\n        \"RequestId\": \"a6bb57de-773b-45e4-9e1c-c30ef48eba85\"\n    }\n}",
         "title": "错误示例-2"
       }
     ],
@@ -238,7 +238,7 @@
       {
         "document": "人员ID不存在",
         "input": "https://iai.tencentcloudapi.com/?Action=GetPersonBaseInfo\r\n&PersonId=1002\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"98b4a0bc-802b-4764-9701-bc0c6c544395\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.PersonIdNotExist\",\n            \"Message\": \"人员ID不存在。\"\n        },\n        \"RequestId\": \"98b4a0bc-802b-4764-9701-bc0c6c544395\"\n    }\n}",
         "title": "错误示例"
       }
     ],
@@ -258,7 +258,7 @@
       {
         "document": "人员ID不存在",
         "input": "https://iai.tencentcloudapi.com/?Action=GetPersonGroupInfo\r\n&PersonId=1002\r\n&Offset=0\r\n&Limit=10\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"98330f25-eb2e-432a-a30c-3830774210c1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.PersonIdNotExist\",\n            \"Message\": \"人员ID不存在。\"\n        },\n        \"RequestId\": \"98330f25-eb2e-432a-a30c-3830774210c1\"\n    }\n}",
         "title": "错误示例"
       }
     ],
@@ -278,7 +278,7 @@
       {
         "document": "",
         "input": "https://iai.tencentcloudapi.com/?Action=GetPersonList\r\n&GroupId=ZhuYuanDormitory\r\n&Offset=0\r\n&Limit=10\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7c0cd81-d621-465f-8fd6-86a6b49e67be\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.GroupIdNotExist\",\n            \"Message\": \"人员库ID不存在。\"\n        },\n        \"RequestId\": \"b7c0cd81-d621-465f-8fd6-86a6b49e67be\"\n    }\n}",
         "title": "错误示例"
       }
     ],
@@ -292,7 +292,7 @@
       {
         "document": "人员库ID不存在",
         "input": "https://iai.tencentcloudapi.com/?Action=GetPersonListNum\n&GroupId=Tencent\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2865a458-4db1-46bd-ae52-b7507c9f4e62\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.GroupIdNotExist\",\n            \"Message\": \"人员库ID不存在。\"\n        },\n        \"RequestId\": \"2865a458-4db1-46bd-ae52-b7507c9f4e62\"\n    }\n}",
         "title": "错误示例"
       }
     ],
@@ -340,13 +340,13 @@
       {
         "document": "",
         "input": "https://iai.tencentcloudapi.com/?Action=ModifyGroup\r\n&GroupId=TencentShenZhenEmployee\r\n&GroupExDescriptionInfos.0.GroupExDescriptionIndex=0\r\n&GroupExDescriptionInfos.0.GroupExDescription=部门\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4b483679-3f08-4a7c-b827-4a6332dc030f\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.DuplicatedGroupDescription\",\n            \"Message\": \"同一人员库中自定义描述字段不可重复。\"\n        },\n        \"RequestId\": \"4b483679-3f08-4a7c-b827-4a6332dc030f\"\n    }\n}",
         "title": "错误示例"
       },
       {
         "document": "人员库名称不可重复",
         "input": "https://iai.tencentcloudapi.com/?Action=ModifyGroup\r\n&GroupId=TencentShenZhenEmployee\r\n&GroupName=某某大学竹园1号宿舍楼\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dcce170-30cf-4078-9b3c-309362fbad21\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.GroupNameAlreadyExist\",\n            \"Message\": \"人员库名称已经存在。人员库名称不可重复。\"\n        },\n        \"RequestId\": \"2dcce170-30cf-4078-9b3c-309362fbad21\"\n    }\n}",
         "title": "错误示例-2"
       }
     ],
@@ -380,7 +380,7 @@
       {
         "document": "下标不合法",
         "input": "https://iai.tencentcloudapi.com/?Action=ModifyPersonGroupInfo\r\n&GroupId=TencentShenZhenEmployee\r\n&PersonId=1001\r\n&PersonExDescriptionInfos.0.PersonExDescriptionIndex=-1\r\n&PersonExDescriptionInfos.0.PersonExDescription=人工智能实验室\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f944657d-6260-4a2e-a4d8-9c1845f39e56\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter\",\n            \"Message\": \"The value type of parameter `PersonExDescriptionInfos.0.PersonExDescriptionIndex` is not valid.\"\n        },\n        \"RequestId\": \"f944657d-6260-4a2e-a4d8-9c1845f39e56\"\n    }\n}",
         "title": "错误示例"
       }
     ],
@@ -402,13 +402,13 @@
       {
         "document": "MaxFaceNum不能大于10",
         "input": "https://iai.tencentcloudapi.com/?Action=SearchFaces\n&Url=http://test.image.myqcloud.com/testA.jpg\n&MaxFaceNum=11\n&GroupIds.0=TencentShenZhenEmployee\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f04ba2f3-532c-4207-9caa-6e818ded7fb9\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.SearchFacesExceed\",\n            \"Message\": \"检索人脸个数超过限制。\"\n        },\n        \"RequestId\": \"f04ba2f3-532c-4207-9caa-6e818ded7fb9\"\n    }\n}",
         "title": "错误示例"
       },
       {
         "document": "图片URL错误",
         "input": "https://iai.tencentcloudapi.com/?Action=SearchFaces\n&Url=http://test.image.myqcloud.com/testA\n&GroupIds.0=TencentShenZhenEmployee\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"527ecffe-4c6a-47c9-8217-4dd2e3f018da\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.ImageDownloadError\",\n            \"Message\": \"图片下载错误。\"\n        },\n        \"RequestId\": \"527ecffe-4c6a-47c9-8217-4dd2e3f018da\"\n    }\n}",
         "title": "错误示例-2"
       }
     ],
@@ -430,7 +430,7 @@
       {
         "document": "图片URL错误",
         "input": "https://iai.tencentcloudapi.com/?Action=SearchPersons\n&Url=http://test.image.myqcloud.com/testA\n&GroupIds.0=TencentShenZhenEmployee\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"527ecffe-4c6a-47c9-8217-4dd2e3f018da\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.ImageDownloadError\",\n            \"Message\": \"图片下载错误。\"\n        },\n        \"RequestId\": \"527ecffe-4c6a-47c9-8217-4dd2e3f018da\"\n    }\n}",
         "title": "错误示例"
       }
     ],
@@ -444,7 +444,7 @@
       {
         "document": "",
         "input": "https://iai.tencentcloudapi.com/?Action=SearchPersonsReturnsByGroup\r\n&Url=http://test.image.myqcloud.com/testB.jpg\r\n&MaxFaceNum=1\r\n&MinFaceSize=40\r\n&MaxPersonNumPerGroup=5\r\n&GroupIds.0=TencentShenZhenEmployee\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"527ecffe-4c6a-47c9-8217-4dd2e3f018da\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.ImageDownloadError\",\n            \"Message\": \"图片下载错误。\"\n        },\n        \"RequestId\": \"527ecffe-4c6a-47c9-8217-4dd2e3f018da\"\n    }\n}",
         "title": "错误示例"
       }
     ],
@@ -458,7 +458,7 @@
       {
         "document": "当人员库存在一些无法升级的人脸时，返回FailedOperation.GroupLostFaces错误，并返回一个Url查看具体的PersonId和FaceId，需要删除这些Person或Face，或者重新创建，才可以升级成功。\n文件格式：\n[{\n            person_id: 丢失的人员ID,\n            face_id: 丢失的人脸ID,\n            type: 1    // 丢图类型，1. 未知原因，暂无其它类别\n}]",
         "input": "https://iai.tencentcloudapi.com/?Action=UpgradeGroupFaceModelVersion\n&GroupId=1002\n&FaceModelVersion=3.0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3ad7ccb4-29b5-46b4-adcd-69fd6728d530\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.GroupLostFaces\",\n            \"Message\": \"人员库中人脸图片丢失，详情可参见https://iaiface-upgradegroup-failedface-1254418846.cos.ap-guangzhou.myqcloud.com/1253657503/1002.json\"\n        },\n        \"RequestId\": \"3ad7ccb4-29b5-46b4-adcd-69fd6728d530\"\n    }\n}",
         "title": "升级失败"
       }
     ],

@@ -82,7 +82,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMedia\n<公共请求参数>\n\n{\n    \"MediaId\": \"media-a1b2c3d4\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d608fa8-66a3-4a25-94ce-1b904d4807f3\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d608fa8-66a3-4a25-94ce-1b904d4807f3\",\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.MediaNotFound\",\n            \"Message\": \"媒资不存在\"\n        }\n    }\n}",
         "title": "删除媒资文件失败-媒资文件不存在"
       }
     ],

@@ -26,19 +26,19 @@
       {
         "document": "456",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDeleteOpsTasks\n<公共请求参数>\n\n{\n    \"TaskIdList\": [\n        \"123\"\n    ],\n    \"DeleteMode\": true,\n    \"EnableNotify\": true,\n    \"ProjectId\": \"123\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"188b3e3b-90a4-4e53-a01f-16046dda13f6\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError\",\n            \"Message\": \"An internal error has occurred. Retry your request, but if the problem persists, contact us.\"\n        },\n        \"RequestId\": \"188b3e3b-90a4-4e53-a01f-16046dda13f6\"\n    }\n}",
         "title": "123"
       },
       {
         "document": "hi",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDeleteOpsTasks\n<公共请求参数>\n\n{\n    \"TaskIdList\": [\n        \"2\"\n    ],\n    \"DeleteMode\": true,\n    \"EnableNotify\": true,\n    \"ProjectId\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1d510800-9cd8-41ee-84e0-04bbd8cecc81\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError\",\n            \"Message\": \"An internal error has occurred. Retry your request, but if the problem persists, contact us.\"\n        },\n        \"RequestId\": \"1d510800-9cd8-41ee-84e0-04bbd8cecc81\"\n    }\n}",
         "title": "hello"
       },
       {
         "document": "失败实例",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDeleteOpsTasks\n<公共请求参数>\n\n{\n    \"TaskIdList\": [\n        \"abc\"\n    ],\n    \"DeleteMode\": true,\n    \"EnableNotify\": true,\n    \"ProjectId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1d287884-1214-4b75-b4e8-383ee8e57918\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError\",\n            \"Message\": \"An internal error has occurred. Retry your request, but if the problem persists, contact us.\"\n        },\n        \"RequestId\": \"1d287884-1214-4b75-b4e8-383ee8e57918\"\n    }\n}",
         "title": "失败实例"
       }
     ],
@@ -52,7 +52,7 @@
       {
         "document": "错误示例",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDeleteTasksDs\n<公共请求参数>\n\n{\n    \"TaskIdList\": [\n        \"abc\"\n    ],\n    \"DeleteMode\": true,\n    \"OperateInform\": true,\n    \"ProjectId\": \"abc\",\n    \"DeleteScript\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eb055faf-49d0-452b-9a5b-202343791bcc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"AuthFailure.SignatureFailure\",\n            \"Message\": \"The provided credentials could not be validated. Please check your signature is correct.\"\n        },\n        \"RequestId\": \"eb055faf-49d0-452b-9a5b-202343791bcc\"\n    }\n}",
         "title": "错误示例"
       }
     ],
@@ -428,7 +428,7 @@
       {
         "document": "1",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBaseline\n<公共请求参数>\n\n{\n    \"BaselineId\": \"123\",\n    \"ProjectId\": \"1212\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"132a023b-390e-4073-8ab4-314ef1ec5c1b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError\",\n            \"Message\": \"An internal error has occurred. Retry your request, but if the problem persists, contact us.\"\n        },\n        \"RequestId\": \"132a023b-390e-4073-8ab4-314ef1ec5c1b\"\n    }\n}",
         "title": "1"
       }
     ],
@@ -682,7 +682,7 @@
       {
         "document": "查询失败",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBatchOperateTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1470547050521227264\",\n    \"StatusList\": [],\n    \"OwnerNameList\": [],\n    \"WorkflowIdList\": [],\n    \"TaskNameFilter\": \"\",\n    \"TaskTypeList\": [],\n    \"FordIdList\": [],\n    \"TaskIdFilter\": \"\",\n    \"OwnerNameFilter\": \"\",\n    \"Page\": \"1\",\n    \"Size\": \"20\",\n    \"SortItem\": \"\",\n    \"SortType\": \"\",\n    \"DataEngineList\": []\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2be30f31-ec77-4f92-abd1-0f5b9113fb0e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation\",\n            \"Message\": \"Connect to 9.164.239.24:54220 [/9.164.239.24] failed: Connection refused (Connection refused) executing POST http://data-source/cloud/datasource/v1/DescribeDataSourceWithoutInfo\"\n        },\n        \"RequestId\": \"2be30f31-ec77-4f92-abd1-0f5b9113fb0e\"\n    }\n}",
         "title": "查询失败"
       }
     ],
@@ -1568,13 +1568,13 @@
       {
         "document": "1",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSchedulerInstanceStatus\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\",\n    \"TaskTypeId\": \"abc\",\n    \"ExecutionGroupId\": \"abc\",\n    \"ExecutionGroupName\": \"abc\",\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"InCharge\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72dd1900-2555-4298-89a4-680fb1c3993c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"UnauthorizedOperation\",\n            \"Message\": \"未授权操作\"\n        },\n        \"RequestId\": \"72dd1900-2555-4298-89a4-680fb1c3993c\"\n    }\n}",
         "title": "1"
       },
       {
         "document": "测试",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSchedulerInstanceStatus\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1470561602745229312\",\n    \"StartTime\": \"2023-07-30 23:59:59\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dc00c9b3-faec-404b-a2da-da2653ba026b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"AuthFailure.SignatureFailure\",\n            \"Message\": \"The provided credentials could not be validated. Please check your signature is correct.\"\n        },\n        \"RequestId\": \"dc00c9b3-faec-404b-a2da-da2653ba026b\"\n    }\n}",
         "title": "测试"
       }
     ],
@@ -1588,7 +1588,7 @@
       {
         "document": "1",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSchedulerRunTimeInstanceCntByStatus\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"CycleUnit\": \"1\",\n    \"TimeUnit\": \"1\",\n    \"StartTime\": \"1\",\n    \"EndTime\": \"1\",\n    \"TaskType\": 1,\n    \"InCharge\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23a27e89-4bc1-4572-8efb-7a77f155d743\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"UnauthorizedOperation\",\n            \"Message\": \"未授权操作\"\n        },\n        \"RequestId\": \"23a27e89-4bc1-4572-8efb-7a77f155d743\"\n    }\n}",
         "title": "1"
       }
     ],
@@ -1602,7 +1602,7 @@
       {
         "document": "1",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSchedulerTaskCntByStatus\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ffa95942-29bb-4bfd-b207-a23d4c265504\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"AuthFailure.SignatureFailure\",\n            \"Message\": \"The provided credentials could not be validated. Please check your signature is correct.\"\n        },\n        \"RequestId\": \"ffa95942-29bb-4bfd-b207-a23d4c265504\"\n    }\n}",
         "title": "1"
       }
     ],
@@ -1616,7 +1616,7 @@
       {
         "document": "1",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSchedulerTaskTypeCnt\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"InCharge\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"11beba5a-ce1f-4347-a64e-29e60cb9955d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"UnknownParameter\",\n            \"Message\": \"The parameter `InCharge` is not recognized.\"\n        },\n        \"RequestId\": \"11beba5a-ce1f-4347-a64e-29e60cb9955d\"\n    }\n}",
         "title": "1"
       }
     ],
@@ -1646,7 +1646,7 @@
       {
         "document": "1",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStatisticInstanceStatusTrendOps\n<公共请求参数>\n\n{\n    \"ProjectId\": \"\",\n    \"TaskTypeId\": \"\",\n    \"TimeType\": \"\",\n    \"TypeName\": \"\",\n    \"StartTime\": \"\",\n    \"EndTime\": \"\",\n    \"ExecutionGroupId\": \"\",\n    \"ExecutionGroupName\": \"\",\n    \"InCharge\": \"\",\n    \"AggregationUnit\": \"\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bf089177-0858-4917-aaa1-155ddb7accfc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError\",\n            \"Message\": \"An internal error has occurred. Retry your request, but if the problem persists, contact us.\"\n        },\n        \"RequestId\": \"bf089177-0858-4917-aaa1-155ddb7accfc\"\n    }\n}",
         "title": "1"
       }
     ],
@@ -1724,7 +1724,7 @@
       {
         "document": "1",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskByCycle\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"InCharge\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abf5e263-d72f-422b-b38f-5c484bd1238a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"UnknownParameter\",\n            \"Message\": \"The parameter `InCharge` is not recognized.\"\n        },\n        \"RequestId\": \"abf5e263-d72f-422b-b38f-5c484bd1238a\"\n    }\n}",
         "title": "1"
       }
     ],
@@ -1740,13 +1740,13 @@
       {
         "document": "1",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskByStatusReport\n<公共请求参数>\n\n{\n    \"Type\": \"\",\n    \"TaskType\": \"\",\n    \"TypeName\": \"\",\n    \"ProjectId\": \"\",\n    \"StartTime\": \"\",\n    \"EndTime\": \"\",\n    \"AggregationUnit\": \"\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7198e47e-2532-4f81-9bfa-790451eb1723\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"UnknownParameter\",\n            \"Message\": \"The parameter `AggregationUnit` is not recognized.\"\n        },\n        \"RequestId\": \"7198e47e-2532-4f81-9bfa-790451eb1723\"\n    }\n}",
         "title": "1"
       },
       {
         "document": "2",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskByStatusReport\n<公共请求参数>\n\n{\n    \"Type\": \"\",\n    \"TaskType\": \"\",\n    \"TypeName\": \"\",\n    \"ProjectId\": \"\",\n    \"StartTime\": \"\",\n    \"EndTime\": \"\",\n    \"AggregationUnit\": \"\",\n    \"CycleUnit\": \"\",\n    \"Status\": \"\",\n    \"InCharge\": \"\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fcbfd6fb-66a2-43be-bbe3-ab579806ff0e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError\",\n            \"Message\": \"An internal error has occurred. Retry your request, but if the problem persists, contact us.\"\n        },\n        \"RequestId\": \"fcbfd6fb-66a2-43be-bbe3-ab579806ff0e\"\n    }\n}",
         "title": "2"
       }
     ],

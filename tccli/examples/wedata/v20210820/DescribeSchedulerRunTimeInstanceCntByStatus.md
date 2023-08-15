@@ -51,6 +51,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "UnauthorizedOperation",
+            "Message": "未授权操作"
+        },
         "RequestId": "23a27e89-4bc1-4572-8efb-7a77f155d743"
     }
 }

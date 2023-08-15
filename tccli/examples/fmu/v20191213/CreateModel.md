@@ -36,6 +36,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.LutImageInvalid",
+            "Message": "图片不合法，必须是512*512的PNG图片。"
+        },
         "RequestId": "615c23aa-8877-4a10-b01b-50a3d346050f"
     }
 }

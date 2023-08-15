@@ -77,6 +77,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "FailedOperation.Timeout",
+            "Message": "调用超时"
+        },
         "RequestId": "b1de7dcf-5029-4d70-b6b5-d1ad0f785552"
     }
 }

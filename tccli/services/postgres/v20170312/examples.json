@@ -628,7 +628,7 @@
       {
         "document": "修改实例名称失败。",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceName\n<公共请求参数>\n\n{\n    \"InstanceName\": \"testModifyInstanceName\",\n    \"DBInstanceId\": \"postgres-6ougo465\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61f510-aa33-454c-9ec2-dq2a368c39ab\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61f510-aa33-454c-9ec2-dq2a368c39ab\",\n        \"Error\": {\n            \"Message\": \"Failed to get instance\",\n            \"Code\": \"InternalError.DBError\"\n        }\n    }\n}",
         "title": "修改实例postgres-6ougo465名字，修改失败"
       }
     ],
@@ -752,7 +752,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetAccountPassword\n<公共请求参数>\n\n{\n    \"UserName\": \"test\",\n    \"Password\": \"1234qwer()\",\n    \"DBInstanceId\": \"postgres-lnp6j6172\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"Error\": {\n            \"Message\": \"admin unmatch|oss return failed, code:3, message:admin unmatch\",\n            \"Code\": \"FailedOperation.OssOperationFailed\"\n        }\n    }\n}",
         "title": "重置postgres-lnp6j6172的账户密码，失败"
       },
       {

@@ -80,6 +80,7 @@ Output:
                     "InstanceMemory": 0,
                     "InstanceStorage": 0,
                     "InstanceRole": "abc",
+                    "ServerlessStatus": "abc",
                     "MaintainStartTime": 0,
                     "MaintainDuration": 0,
                     "MaintainWeekDays": [

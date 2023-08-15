@@ -16,6 +16,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.InvalidPageSize",
+            "Message": "无效的分页大小"
+        },
         "RequestId": "f334da88-758f-43de-a0ae-f736c9c905ff"
     }
 }

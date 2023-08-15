@@ -74,7 +74,7 @@
       {
         "document": "请求参数不正确导致返回错误",
         "input": "https://partners.tencentcloudapi.com/?Action=DescribeAgentClients\n&Offset=0\n&Limit=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"Error\": {\n            \"Code\": \"InvalidParameter\",\n            \"Message\": \"Limit:0 is not int!\"\n        }\n    }\n}",
         "title": "失败示例"
       }
     ],

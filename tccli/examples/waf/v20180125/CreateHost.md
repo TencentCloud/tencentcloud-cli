@@ -14,11 +14,11 @@ tccli waf CreateHost --cli-unfold-argument  \
     --Host.LoadBalancerSet.0.Protocol 1 \
     --Host.LoadBalancerSet.0.Zone 1 \
     --Host.LoadBalancerSet.0.Region gz \
-    --Host.LoadBalancerSet.0.LoadBalancerId 1 \
+    --Host.LoadBalancerSet.0.LoadBalancerName 1 \
     --Host.LoadBalancerSet.0.ListenerId 1 \
     --Host.LoadBalancerSet.0.Vip 1 \
     --Host.LoadBalancerSet.0.ListenerName 1 \
-    --Host.LoadBalancerSet.0.LoadBalancerName 1 \
+    --Host.LoadBalancerSet.0.LoadBalancerId 1 \
     --Host.LoadBalancerSet.0.Vport 1 \
     --Host.Level 1 \
     --Host.MainDomain snv.vom \
@@ -35,7 +35,11 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "97720395-7456-4a21-bcd9-1f32a7deaa90"
+        "RequestId": "97720395-7456-4a21-bcd9-1f32a7deaa90",
+        "Error": {
+            "Code": "ResourceInUse",
+            "Message": "DomainExisted"
+        }
     }
 }
 ```

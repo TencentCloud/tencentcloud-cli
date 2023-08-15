@@ -264,7 +264,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntlTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"template-1000q\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2f36ac98-07f4-4fef-9124-aed4820f5d39\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError.DescribeTemplateErr\",\n            \"Message\": \"获取信息模板详情失败\"\n        },\n        \"RequestId\": \"2f36ac98-07f4-4fef-9124-aed4820f5d39\"\n    }\n}",
         "title": "获取信息模板详情-错误"
       }
     ],

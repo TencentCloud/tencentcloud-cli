@@ -110,6 +110,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "FailedOperation.NoObjectDetected",
+            "Message": "未检测到目标。"
+        },
         "RequestId": "ad418ac5-fbfd-4bd7-8f4a-35ab085e27dd"
     }
 }

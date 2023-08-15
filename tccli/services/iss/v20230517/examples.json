@@ -4,7 +4,7 @@
       {
         "document": "包含无效的通道ID",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAITask\n<公共请求参数>\n\n{\n    \"Name\": \"ai-task\",\n    \"Desc\": \"测试\",\n    \"ChannelList\": [\n        \"**********************\"\n    ],\n    \"CallbackUrl\": \"http://*******\",\n    \"Templates\": [\n        {\n            \"Tag\": \"AI\",\n            \"AIConfig\": {\n                \"DetectType\": \"Pet\",\n                \"TimeInterval\": 10,\n                \"OperTimeSlot\": [\n                    {\n                        \"Start\": \"10:00:00\",\n                        \"End\": \"20:00:00\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d380c0bc-2be1-4620-bf39-9d4d4f512060\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.ContainInvalidChannelId\",\n            \"Message\": \"包含无效的通道ID\"\n        },\n        \"RequestId\": \"d380c0bc-2be1-4620-bf39-9d4d4f512060\"\n    }\n}",
         "title": "失败示例"
       },
       {
@@ -24,13 +24,13 @@
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddOrganization\n<公共请求参数>\n\n{\n    \"Name\": \"云api3-6\",\n    \"ParentId\": \"***\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"df1d71c3-2389-4f04-9db8-36108be0c915\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound\",\n            \"Message\": \"该资源不存在\"\n        },\n        \"RequestId\": \"df1d71c3-2389-4f04-9db8-36108be0c915\"\n    }\n}",
         "title": "父组织不存在错误"
       },
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddOrganization\n<公共请求参数>\n\n{\n    \"Name\": \"云api3-5\",\n    \"ParentId\": \"***\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4847e307-e6ac-47b1-b6f8-bea39a66c8a9\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.OrgNameRepeat\",\n            \"Message\": \"组织名称不能重复\"\n        },\n        \"RequestId\": \"4847e307-e6ac-47b1-b6f8-bea39a66c8a9\"\n    }\n}",
         "title": "组织名称重复错误"
       }
     ],
@@ -92,13 +92,13 @@
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUserDevice\n<公共请求参数>\n\n{\n    \"Name\": \"rtmp10086\",\n    \"AccessProtocol\": 1,\n    \"Type\": 2,\n    \"OrganizationId\": \"10092\",\n    \"ClusterId\": \"********-60ad-*****-ac7e-d******dd0790\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d4a82b07-08a2-47ba-8f22-04ce429a0dcd\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.InvalidDeviceType\",\n            \"Message\": \"无效的设备类型\"\n        },\n        \"RequestId\": \"d4a82b07-08a2-47ba-8f22-04ce429a0dcd\"\n    }\n}",
         "title": "无效的设备类型"
       },
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUserDevice\n<公共请求参数>\n\n{\n    \"Name\": \"rtmp10086\",\n    \"AccessProtocol\": 1,\n    \"Type\": 2,\n    \"OrganizationId\": \"10092\",\n    \"ClusterId\": \"12345678-abcd-efgh-ijkl-1234567890abcd\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1647459e-2715-4adb-a074-0c3d4df7d6a4\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue\",\n            \"Message\": \"无效的参数\"\n        },\n        \"RequestId\": \"1647459e-2715-4adb-a074-0c3d4df7d6a4\"\n    }\n}",
         "title": "设备类型错误"
       }
     ],
@@ -112,7 +112,7 @@
       {
         "document": "域名存在",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckDomain\n<公共请求参数>\n\n{\n    \"PlayDomain\": \"testdomain.cn\",\n    \"InternalDomain\": \"****************************.play-ivc.ap-shanghai.tencentivc.cn\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9e9b6808-0941-41e9-95eb-5a9a827ca4de\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.DomainRepeat\",\n            \"Message\": \"该域名已存在\"\n        },\n        \"RequestId\": \"9e9b6808-0941-41e9-95eb-5a9a827ca4de\"\n    }\n}",
         "title": "错误"
       }
     ],
@@ -166,7 +166,7 @@
       {
         "document": "AI任务不存在",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAITask\n<公共请求参数>\n\n{\n    \"TaskId\": \"at**********************1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3eb1421c-36cf-420d-8f4b-cce8f68168af\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.AITaskNotExisted\",\n            \"Message\": \"AI任务不存在\"\n        },\n        \"RequestId\": \"3eb1421c-36cf-420d-8f4b-cce8f68168af\"\n    }\n}",
         "title": "失败示例"
       },
       {
@@ -202,7 +202,7 @@
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOrganization\n<公共请求参数>\n\n{\n    \"OrganizationId\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4798f503-9cdb-418f-ad69-2d5632cff6b3\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound\",\n            \"Message\": \"该资源不存在\"\n        },\n        \"RequestId\": \"4798f503-9cdb-418f-ad69-2d5632cff6b3\"\n    }\n}",
         "title": "组织不存在错误"
       }
     ],
@@ -256,7 +256,7 @@
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": \"12345678-abcd-efgh-ijkl-1234567890abcd\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8f530b9c-dae9-49e7-b30a-403c9a9a2437\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound\",\n            \"Message\": \"该资源不存在\"\n        },\n        \"RequestId\": \"8f530b9c-dae9-49e7-b30a-403c9a9a2437\"\n    }\n}",
         "title": "设备不存在"
       }
     ],
@@ -264,7 +264,7 @@
       {
         "document": "AI任务不存在",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAITask\n<公共请求参数>\n\n{\n    \"TaskId\": \"at**********************1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"da8025b4-81ee-45ac-b834-b7c0b1665c88\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.AITaskNotExisted\",\n            \"Message\": \"AI任务不存在\"\n        },\n        \"RequestId\": \"da8025b4-81ee-45ac-b834-b7c0b1665c88\"\n    }\n}",
         "title": "失败示例"
       },
       {
@@ -278,7 +278,7 @@
       {
         "document": "AI任务不存在",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAITaskResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"at**********************1\",\n    \"ChannelId\": \"**********************\",\n    \"DetectType\": \"Pet\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1bd31583-6bd4-486c-8ae3-1844cf4e6d1e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.AITaskNotExisted\",\n            \"Message\": \"AI任务不存在\"\n        },\n        \"RequestId\": \"1bd31583-6bd4-486c-8ae3-1844cf4e6d1e\"\n    }\n}",
         "title": "失败示例"
       },
       {
@@ -306,7 +306,7 @@
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceChannel\n<公共请求参数>\n\n{\n    \"DeviceId\": \"12345678-abcd-efgh-ijkl-1234567890abcd\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"30b56ca7-1de0-4d1e-ac87-2dcc2fbd08e5\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound\",\n            \"Message\": \"该资源不存在\"\n        },\n        \"RequestId\": \"30b56ca7-1de0-4d1e-ac87-2dcc2fbd08e5\"\n    }\n}",
         "title": "设备不存在"
       }
     ],
@@ -468,13 +468,13 @@
       {
         "document": "无效的设备Id",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": \"aaa\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"97694623-ae7d-435c-aff7-f5a051fe9474\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.InvalidDeviceId\",\n            \"Message\": \"无效的设备Id\"\n        },\n        \"RequestId\": \"97694623-ae7d-435c-aff7-f5a051fe9474\"\n    }\n}",
         "title": "无效的设备Id"
       },
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": \"66666666-53e4-4a79-a16e-8504f8366a531\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c3c7c853-e5cf-4829-87f8-375b0623d750\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.InvalidDeviceId\",\n            \"Message\": \"无效的设备Id\"\n        },\n        \"RequestId\": \"c3c7c853-e5cf-4829-87f8-375b0623d750\"\n    }\n}",
         "title": "无效的设备Id错误"
       }
     ],
@@ -496,7 +496,7 @@
       {
         "document": "无效的分页大小",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAITasks\n<公共请求参数>\n\n{\n    \"IsContainChannelList\": true,\n    \"IsContainTemplate\": true,\n    \"PageNumber\": 1,\n    \"PageSize\": 201\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f334da88-758f-43de-a0ae-f736c9c905ff\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.InvalidPageSize\",\n            \"Message\": \"无效的分页大小\"\n        },\n        \"RequestId\": \"f334da88-758f-43de-a0ae-f736c9c905ff\"\n    }\n}",
         "title": "失败示例"
       },
       {
@@ -510,7 +510,7 @@
       {
         "document": "无效的设备接入协议",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListDevices\n<公共请求参数>\n\n{\n    \"OrganizationId\": \"191\",\n    \"AccessProtocol\": 4\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cb4884f8-f00e-4e2f-a867-49a4d805960f\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.InvalidAccessProtocol\",\n            \"Message\": \"无效的设备接入协议\"\n        },\n        \"RequestId\": \"cb4884f8-f00e-4e2f-a867-49a4d805960f\"\n    }\n}",
         "title": "失败示例"
       },
       {
@@ -680,7 +680,7 @@
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefreshDeviceChannel\n<公共请求参数>\n\n{\n    \"DeviceId\": \"12345678-abcd-efgh-ijkl-1234567890abcd\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2b064fb2-a7b9-477a-a114-e3dcdeb2a132\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceUnavailable.DevNoRegister\",\n            \"Message\": \"设备未注册\"\n        },\n        \"RequestId\": \"2b064fb2-a7b9-477a-a114-e3dcdeb2a132\"\n    }\n}",
         "title": "设备未注册"
       }
     ],
@@ -688,7 +688,7 @@
       {
         "document": "AI任务不存在",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAITask\n<公共请求参数>\n\n{\n    \"TaskId\": \"at**********************1\",\n    \"Desc\": \"111\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7954b883-9141-4635-b116-4be839cfd810\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.AITaskNotExisted\",\n            \"Message\": \"AI任务不存在\"\n        },\n        \"RequestId\": \"7954b883-9141-4635-b116-4be839cfd810\"\n    }\n}",
         "title": "失败示例"
       },
       {
@@ -702,7 +702,7 @@
       {
         "document": "AI任务不存在",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAITaskStatus\n<公共请求参数>\n\n{\n    \"TaskId\": \"at**********************1\",\n    \"Status\": \"on\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"52909083-c1eb-4103-a49e-f6d7d078b70b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.AITaskNotExisted\",\n            \"Message\": \"AI任务不存在\"\n        },\n        \"RequestId\": \"52909083-c1eb-4103-a49e-f6d7d078b70b\"\n    }\n}",
         "title": "失败示例"
       },
       {
@@ -740,7 +740,7 @@
       {
         "document": "资源不存在",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateOrganization\n<公共请求参数>\n\n{\n    \"OrganizationId\": \"2000\",\n    \"Name\": \"二级目录3\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0cb4f4cc-7968-49f2-82a0-10a3390971c6\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound\",\n            \"Message\": \"该资源不存在\"\n        },\n        \"RequestId\": \"0cb4f4cc-7968-49f2-82a0-10a3390971c6\"\n    }\n}",
         "title": "失败"
       },
       {
@@ -822,7 +822,7 @@
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUserDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": \"12345678-abcd-efgh-ijkl-1234567890abcd\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"26085616-997b-4c4f-b0f5-e487a7956a32\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound\",\n            \"Message\": \"该资源不存在\"\n        },\n        \"RequestId\": \"26085616-997b-4c4f-b0f5-e487a7956a32\"\n    }\n}",
         "title": "设备不存在"
       }
     ],

@@ -14,6 +14,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "ResourceNotFound",
+            "Message": "该资源不存在"
+        },
         "RequestId": "0cb4f4cc-7968-49f2-82a0-10a3390971c6"
     }
 }

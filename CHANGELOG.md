@@ -1,3 +1,218 @@
+# Release 3.0.830.1
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 10 次发布
+
+发布时间：2023-08-16 01:10:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateVolumeSnapshot](http://document.tencentcloudapi.woa.com/document/product/1609/81629)
+* [DeleteVolumeSnapshot](http://document.tencentcloudapi.woa.com/document/product/1609/81628)
+* [DescribeVolumeSnapshot](http://document.tencentcloudapi.woa.com/document/product/1609/81627)
+* [DescribeVolumeSnapshots](http://document.tencentcloudapi.woa.com/document/product/1609/81626)
+
+修改接口：
+
+* [CreateApplication](http://document.tencentcloudapi.woa.com/document/product/1609/78007)
+
+	* 新增入参：ZhiYan, CMDBAdmins
+
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/1609/78003)
+
+	* 新增入参：CMDBAdmins
+
+* [ModifyApplication](http://document.tencentcloudapi.woa.com/document/product/1609/77954)
+
+	* 新增入参：ProjectID, ApplicationID, Platform, DisplayName, Description, ZhiYan, CMDBAdmins
+
+* [ModifyInstance](http://document.tencentcloudapi.woa.com/document/product/1609/77950)
+
+	* 新增入参：ProjectID, EnvironmentName, ApplicationID, Platform, ZhiYan, CMDBAdmins
+
+
+新增数据结构：
+
+* [VolumeSnapshot](http://document.tencentcloudapi.woa.com/document/product/1609/78009#VolumeSnapshot)
+* [VolumeSnapshotContent](http://document.tencentcloudapi.woa.com/document/product/1609/78009#VolumeSnapshotContent)
+* [ZhiYanObject](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ZhiYanObject)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 57 次发布
+
+发布时间：2023-08-16 01:19:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeResourcePackageDetail](http://document.tencentcloudapi.woa.com/document/product/1003/77878)
+
+	* 新增入参：InstanceIds
+
+
+修改数据结构：
+
+* [BindInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BindInstanceInfo)
+
+	* 新增成员：ExtendIds
+
+	* <font color="#dd0000">**修改成员**：</font>InstanceId, InstanceRegion, InstanceType
+
+* [ClusterInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ClusterInstanceDetail)
+
+	* 新增成员：ServerlessStatus
+
+* [InstanceInitInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#InstanceInitInfo)
+
+	* 新增成员：MinRoCount, MaxRoCount, MinRoCpu, MaxRoCpu
+
+
+
+
+## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
+
+### 第 14 次发布
+
+发布时间：2023-08-16 01:20:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAcl](http://document.tencentcloudapi.woa.com/document/product/1492/74801)
+
+	* 新增入参：AllowAccessCredential
+
+* [DescribeUsers](http://document.tencentcloudapi.woa.com/document/product/1492/74794)
+
+	* 新增入参：Filters
+
+* [ModifyAcl](http://document.tencentcloudapi.woa.com/document/product/1492/74798)
+
+	* 新增入参：AllowAccessCredential
+
+
+新增数据结构：
+
+* [ACTemplate](http://document.tencentcloudapi.woa.com/document/product/1492/74806#ACTemplate)
+* [DepartmentManagerUser](http://document.tencentcloudapi.woa.com/document/product/1492/74806#DepartmentManagerUser)
+
+修改数据结构：
+
+* [Acl](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Acl)
+
+	* 新增成员：AllowAccessCredential, ACTemplateSet
+
+* [Department](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Department)
+
+	* 新增成员：ManagerUsers
+
+* [User](http://document.tencentcloudapi.woa.com/document/product/1492/74806#User)
+
+	* 新增成员：ActiveStatus, LockStatus, Status
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 27 次发布
+
+发布时间：2023-08-16 01:24:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyResourcesTags](http://document.tencentcloudapi.woa.com/document/product/589/81630)
+
+新增数据结构：
+
+* [ModifyResourceTags](http://document.tencentcloudapi.woa.com/document/product/589/33981#ModifyResourceTags)
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 32 次发布
+
+发布时间：2023-08-16 01:25:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ApplySdkVerificationToken](http://document.tencentcloudapi.woa.com/document/product/1007/76415)
+
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 34 次发布
+
+发布时间：2023-08-16 01:39:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ReplaceCertificate](http://document.tencentcloudapi.woa.com/document/product/400/41667)
+
+	* 新增入参：CertCSREncryptAlgo, CertCSRKeyParameter
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 5 次发布
+
+发布时间：2023-08-16 01:43:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateApplicationProxyRule](http://document.tencentcloudapi.woa.com/document/product/1738/81191)
+
+	* 新增入参：RuleTag
+
+
+修改数据结构：
+
+* [ApplicationProxyRule](http://document.tencentcloudapi.woa.com/document/product/1738/81211#ApplicationProxyRule)
+
+	* 新增成员：RuleTag
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
 # Release 3.0.829.1
 
 ## 云防火墙(cfw) 版本：2019-09-04

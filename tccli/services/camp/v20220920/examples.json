@@ -72,6 +72,14 @@
         "title": "创建 Trait"
       }
     ],
+    "CreateVolumeSnapshot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVolumeSnapshot\n<公共请求参数>\n\n{\n    \"ProjectID\": \"abc\",\n    \"EnvironmentName\": \"abc\",\n    \"ClusterID\": \"cls-mg7ol3cm\",\n    \"Name\": \"fox-snap-3\",\n    \"PersistentVolumeClaimName\": \"ngx2-test-ngx2-0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建卷快照"
+      }
+    ],
     "DeleteApplication": [
       {
         "document": "删除指定环境下某一应用",
@@ -142,6 +150,14 @@
         "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTrait\n<公共请求参数>\n\n{\n    \"ProjectID\": \"abc\",\n    \"EnvironmentName\": \"abc\",\n    \"ApplicationID\": \"abc\",\n    \"InstanceID\": \"abc\",\n    \"ComponentName\": \"abc\",\n    \"TraitName\": \"abc\",\n    \"TraitType\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "删除 Trait"
+      }
+    ],
+    "DeleteVolumeSnapshot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVolumeSnapshot\n<公共请求参数>\n\n{\n    \"ProjectID\": \"abc\",\n    \"EnvironmentName\": \"abc\",\n    \"ClusterID\": \"abc\",\n    \"Name\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除卷快照"
       }
     ],
     "DescribeAggregatedConfigs": [
@@ -424,6 +440,22 @@
         "title": "获取子用户列表"
       }
     ],
+    "DescribeVolumeSnapshot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVolumeSnapshot\n<公共请求参数>\n\n{\n    \"ProjectID\": \"abc\",\n    \"EnvironmentName\": \"abc\",\n    \"ClusterID\": \"abc\",\n    \"Name\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"VolumeSnapshot\": {\n            \"Name\": \"fox-snap-3\",\n            \"PersistentVolumeClaimName\": \"ngx2-test-ngx2-0\",\n            \"ReadyToUse\": true,\n            \"VolumeSnapshotContent\": {\n                \"Name\": \"snapcontent-bde9b448-b145-4448-94c3-3b0a02d06814\",\n                \"SnapshotHandle\": \"snap-khu03bjz\",\n                \"RestoreSize\": 10737418240,\n                \"ReadyToUse\": true\n            }\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取卷快照详情"
+      }
+    ],
+    "DescribeVolumeSnapshots": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVolumeSnapshots\n<公共请求参数>\n\n{\n    \"ProjectID\": \"abc\",\n    \"EnvironmentName\": \"abc\",\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ],\n            \"Op\": \"abc\",\n            \"Query\": \"abc\"\n        }\n    ],\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"VolumeSnapshots\": [\n            {\n                \"Name\": \"vs-1\",\n                \"ClusterID\": \"cls-mg7ol3cm\",\n                \"PersistentVolumeClaimName\": \"pvc-1\",\n                \"ReadyToUse\": false,\n                \"BoundVolumeSnapshotContentName\": \"content-1\",\n                \"VolumeSnapshotContent\": {\n                    \"Name\": \"content-1\",\n                    \"ReadyToUse\": true,\n                    \"SnapshotHandle\": \"snap-abc\",\n                    \"RestoreSize\": 222\n                }\n            },\n            {\n                \"Name\": \"vs-2\",\n                \"ClusterID\": \"cls-mg7ol3cm\",\n                \"PersistentVolumeClaimName\": \"pvc-2\",\n                \"ReadyToUse\": false,\n                \"BoundVolumeSnapshotContentName\": \"\",\n                \"VolumeSnapshotContent\": null\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取卷快照列表"
+      }
+    ],
     "ExecutePodCommand": [
       {
         "document": "在pod中执行命令",
@@ -443,7 +475,7 @@
     "ModifyApplication": [
       {
         "document": "修改应用",
-        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplication\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplication\n<公共请求参数>\n\n{\n    \"ProjectID\": \"prj-xxxxx\",\n    \"ApplicationID\": \"app-xxxx\",\n    \"DisplayName\": \"xxxx application\",\n    \"Description\": \"xxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"67580ea3-66a3-4826-a589-6fa567ed544e\"\n    }\n}",
         "title": "修改应用"
       }
@@ -475,7 +507,7 @@
     "ModifyInstance": [
       {
         "document": "修改实例",
-        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstance\n<公共请求参数>\n\n{\n    \"InstanceID\": \"abc\",\n    \"Policies\": [\n        {\n            \"Name\": \"abc\",\n            \"Type\": \"abc\",\n            \"Properties\": {\n                \"Placement\": {\n                    \"Type\": \"abc\",\n                    \"Region\": \"abc\",\n                    \"Zones\": [\n                        {\n                            \"Zone\": \"abc\",\n                            \"Weight\": 0\n                        }\n                    ],\n                    \"Components\": [\n                        \"abc\"\n                    ],\n                    \"Strategy\": \"abc\"\n                }\n            }\n        }\n    ],\n    \"ReadOnly\": true\n}",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstance\n<公共请求参数>\n\n{\n    \"Platform\": \"abc\",\n    \"ProjectID\": \"abc\",\n    \"EnvironmentName\": \"abc\",\n    \"ApplicationID\": \"abc\",\n    \"InstanceID\": \"abc\",\n    \"Policies\": [\n        {\n            \"Name\": \"abc\",\n            \"Type\": \"abc\",\n            \"Properties\": {\n                \"Placement\": {\n                    \"Type\": \"abc\",\n                    \"Region\": \"abc\",\n                    \"Zones\": [\n                        {\n                            \"Zone\": \"abc\",\n                            \"Weight\": 0\n                        }\n                    ],\n                    \"Components\": [\n                        \"abc\"\n                    ],\n                    \"Strategy\": \"abc\"\n                }\n            }\n        }\n    ],\n    \"ReadOnly\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "修改实例"
       }

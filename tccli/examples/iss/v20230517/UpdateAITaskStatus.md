@@ -14,6 +14,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "ResourceNotFound.AITaskNotExisted",
+            "Message": "AI任务不存在"
+        },
         "RequestId": "52909083-c1eb-4103-a49e-f6d7d078b70b"
     }
 }

@@ -46,6 +46,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "FailedOperation.WhiteboardPush",
+            "Message": "code: 40006, msg: 2021-01-13 22:34:42, TRTC onError, code: -70003, msg: The UserSig in use is illegal. Please regenerate UserSig through official API. (FYI: https://cloud.tencent.com/document/product/269/32688 )\n"
+        },
         "RequestId": "d290f1ee-6c54-4b01-90e6-d701748f0851"
     }
 }

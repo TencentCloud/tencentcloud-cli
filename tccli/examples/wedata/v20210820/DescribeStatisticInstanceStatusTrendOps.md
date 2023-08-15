@@ -55,6 +55,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InternalError",
+            "Message": "An internal error has occurred. Retry your request, but if the problem persists, contact us."
+        },
         "RequestId": "bf089177-0858-4917-aaa1-155ddb7accfc"
     }
 }

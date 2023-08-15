@@ -668,7 +668,7 @@
       {
         "document": "异常返回",
         "input": "https://cdn.tencentcloudapi.com/?Action=VerifyDomainRecord\n&Domain=www.qq.com\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2424\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"UnauthorizedOperation.CdnTxtRecordValueNotMatch\",\n            \"Message\": \"cdn txt record value not match(txt record value not match)\"\n        },\n        \"RequestId\": \"2424\"\n    }\n}",
         "title": "验证解析记录"
       }
     ]

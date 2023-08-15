@@ -2336,44 +2336,52 @@
       "document": "AttachPlugin请求参数结构体",
       "members": [
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "绑定的API网关插件ID。",
           "example": "plugin-2nuhovb7",
+          "is_base64": false,
           "member": "string",
           "name": "PluginId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "要操作的服务ID。",
           "example": "service-jzo37opy",
+          "is_base64": false,
           "member": "string",
           "name": "ServiceId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "要操作API的环境。",
           "example": "release",
+          "is_base64": false,
           "member": "string",
           "name": "EnvironmentName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "visibility": 1
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "要绑定的API列表。",
           "example": "['api-buz84890','api-9nb6hd46']",
+          "is_base64": false,
           "member": "string",
           "name": "ApiIds",
           "required": true,
-          "type": "list"
+          "type": "list",
+          "visibility": 1
         }
       ],
       "type": "object"
@@ -2387,9 +2395,10 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": false,
+          "visibility": 1
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3497,6 +3506,7 @@
       "document": "CreateApi请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "API 所在的服务唯一 ID。",
           "example": "service-ody35h5e",
@@ -3508,8 +3518,9 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
-          "document": "API 的后端服务类型。支持HTTP、MOCK、TSF、SCF、WEBSOCKET、TARGET（内测）。",
+          "document": "API 的后端服务类型。支持HTTP、MOCK、TSF、SCF、EB、TARGET、VPC、UPSTREAM、GRPC、COS、WEBSOCKET。",
           "example": "MOCK",
           "is_base64": false,
           "member": "string",
@@ -3519,6 +3530,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "API 的后端服务超时时间，单位是秒。",
           "example": "15",
@@ -3530,6 +3542,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "API 的前端请求协议，支持HTTP和WEBSOCKET。",
           "example": "HTTP",
@@ -3541,6 +3554,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "请求的前端配置。",
           "example": "无",
@@ -3552,6 +3566,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "用户自定义的 API 名称。",
           "example": "name",
@@ -3563,6 +3578,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "用户自定义的 API 接口描述。",
           "example": "desc",
@@ -3574,6 +3590,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "API 类型，支持NORMAL（普通API）和TSF（微服务API），默认为NORMAL。",
           "example": "NORMAL",
@@ -3585,6 +3602,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "API 鉴权类型。支持SECRET（密钥对鉴权）、NONE（免鉴权）、OAUTH、APP（应用认证）。默认为NONE。",
           "example": "NONE",
@@ -3596,6 +3614,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "是否开启跨域。",
           "example": "false",
@@ -3607,6 +3626,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "常量参数。",
           "example": "无",
@@ -3618,6 +3638,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "前端请求参数。",
           "example": "无",
@@ -3629,6 +3650,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "当AuthType 为 OAUTH时，该字段有效， NORMAL：业务api OAUTH：授权API。",
           "example": "NORMAL",
@@ -3640,6 +3662,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "API 的后端 Mock 返回信息。如果 ServiceType 是 Mock，则此参数必传。",
           "example": "mock",
@@ -3651,6 +3674,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "API绑定微服务列表。",
           "example": "无",
@@ -3662,6 +3686,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "微服务的负载均衡配置。",
           "example": "无",
@@ -3673,6 +3698,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "微服务的健康检查配置。",
           "example": "无",
@@ -3684,6 +3710,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "target类型后端资源信息。（内测阶段）",
           "example": "无",
@@ -3695,6 +3722,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "target类型负载均衡配置。（内测阶段）",
           "example": "0",
@@ -3706,6 +3734,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "target健康检查配置。（内测阶段）",
           "example": "无",
@@ -3717,6 +3746,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "scf 函数名称。当后端类型是SCF时生效。",
           "example": "xxx",
@@ -3728,6 +3758,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "scf websocket注册函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。",
           "example": "xxx",
@@ -3739,6 +3770,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "scf websocket清理函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。",
           "example": "xxx",
@@ -3750,6 +3782,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "scf websocket传输函数。当前端类型是WEBSOCKET且后端类型是SCF时生效。",
           "example": "xxx",
@@ -3761,6 +3794,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "scf 函数命名空间。当后端类型是SCF时生效。",
           "example": "xxx",
@@ -3772,6 +3806,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "scf函数版本。当后端类型是SCF时生效。",
           "example": "xxx",
@@ -3783,6 +3818,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "scf websocket注册函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。",
           "example": "xxx",
@@ -3794,6 +3830,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "scf websocket传输函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。",
           "example": "xxx",
@@ -3805,6 +3842,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "scf websocket传输函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。",
           "example": "xxx",
@@ -3816,6 +3854,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "scf websocket传输函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。",
           "example": "xxx",
@@ -3827,6 +3866,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "scf websocket清理函数命名空间。当前端类型是WEBSOCKET且后端类型是SCF时生效。",
           "example": "xxx",
@@ -3838,6 +3878,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "scf websocket清理函数版本。当前端类型是WEBSOCKET且后端类型是SCF时生效。",
           "example": "xxx",
@@ -3849,6 +3890,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "是否开启响应集成。当后端类型是SCF时生效。",
           "example": "false",
@@ -3860,6 +3902,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "开始调试后计费。（云市场预留字段）",
           "example": "false",
@@ -3871,6 +3914,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "是否删除自定义响应配置错误码，如果不传或者传 False，不删除，当传 True 时，则删除此 API 所有自定义响应配置错误码。",
           "example": "false",
@@ -3882,6 +3926,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "返回类型。",
           "example": "html",
@@ -3893,6 +3938,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "自定义响应配置成功响应示例。",
           "example": "xxx",
@@ -3904,6 +3950,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "自定义响应配置失败响应示例。",
           "example": "xxx",
@@ -3915,6 +3962,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "API 的后端服务配置。",
           "example": "无",
@@ -3926,6 +3974,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "关联的授权API 唯一 ID，当AuthType为OAUTH且ApiBusinessType为NORMAL时生效。标示业务API绑定的oauth2.0授权API唯一ID。",
           "example": "api-xxx",
@@ -3937,6 +3986,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "API的后端服务参数。",
           "example": "无",
@@ -3948,6 +3998,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "oauth配置。当AuthType是OAUTH时生效。",
           "example": "无",
@@ -3959,6 +4010,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "用户自定义错误码配置。",
           "example": "无",
@@ -3970,6 +4022,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "tsf serverless 命名空间ID。（内测中）",
           "example": "xxx",
@@ -3981,6 +4034,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "用户类型。",
           "example": "xxx",
@@ -3992,6 +4046,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "是否打开Base64编码，只有后端是scf时才会生效。",
           "example": "false",
@@ -4003,6 +4058,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "事件总线ID。",
           "example": "eb-xsae3sdf",
@@ -4014,6 +4070,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "scf函数类型。当后端类型是SCF时生效。支持事件触发(EVENT)，http直通云函数(HTTP)。",
           "example": "EVENT",
@@ -4025,6 +4082,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "EIAM应用类型。",
           "example": "Client",
@@ -4036,6 +4094,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "EIAM应用认证类型，支持仅认证（AuthenticationOnly）、认证和鉴权（Authorization）。",
           "example": "Authorization",
@@ -4047,6 +4106,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "EIAM应用Token 有效时间，单位为秒，默认为7200秒。",
           "example": "7200",
@@ -4058,6 +4118,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "EIAM应用ID。",
           "example": "无",
@@ -4069,6 +4130,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "资源的Owner",
           "example": "无",

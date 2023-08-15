@@ -19,6 +19,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.GroupIdNotExist",
+            "Message": "人体库ID不存在。"
+        },
         "RequestId": "1a5de4e8-02a0-4b4e-8c9a-e66e6f26d12a"
     }
 }

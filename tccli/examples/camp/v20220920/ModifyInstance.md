@@ -6,6 +6,10 @@ Input:
 
 ```
 tccli camp ModifyInstance --cli-unfold-argument  \
+    --Platform abc \
+    --ProjectID abc \
+    --EnvironmentName abc \
+    --ApplicationID abc \
     --InstanceID abc \
     --Policies.0.Name abc \
     --Policies.0.Type abc \

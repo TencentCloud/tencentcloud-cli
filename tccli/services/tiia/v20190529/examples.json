@@ -48,7 +48,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteImages\n<公共请求参数>\n\n{\n    \"GroupId\": \"\",\n    \"EntityId\": \"1\",\n    \"PicName\": \"test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cac925c7-c939-4eb6-8db5-d642f7385c30\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter.InvalidParameter\",\n            \"Message\": \"参数不合法。\"\n        },\n        \"RequestId\": \"cac925c7-c939-4eb6-8db5-d642f7385c30\"\n    }\n}",
         "title": "调用失败示例"
       }
     ],
@@ -78,7 +78,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectChefDress\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://123.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e576\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.DownLoadError\",\n            \"Message\": \"下载失败\"\n        },\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e576\"\n    }\n}",
         "title": "厨师穿戴识别请求失败"
       }
     ],
@@ -94,7 +94,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectEnvelope\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ad418ac5-fbfd-4bd7-8f4a-35ab085e27dd\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.DownloadError \",\n            \"Message\": \"文件下载错误。\"\n        },\n        \"RequestId\": \"ad418ac5-fbfd-4bd7-8f4a-35ab085e27dd\"\n    }\n}",
         "title": "调用失败示例"
       },
       {
@@ -114,7 +114,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectLabel\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://123.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e576\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.DownLoadError\",\n            \"Message\": \"下载失败\"\n        },\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e576\"\n    }\n}",
         "title": "图像标签检测请求失败"
       }
     ],
@@ -122,7 +122,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectLabelBeta\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://123.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e576\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.DownLoadError\",\n            \"Message\": \"下载失败\"\n        },\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e576\"\n    }\n}",
         "title": "图像标签检测请求失败"
       },
       {
@@ -136,7 +136,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectLabelPro\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://123.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e576\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.DownLoadError\",\n            \"Message\": \"下载失败\"\n        },\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e576\"\n    }\n}",
         "title": "图像标签检测请求失败"
       },
       {
@@ -164,13 +164,13 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectPet\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ad418ac5-fbfd-4bd7-8f4a-35ab085e27dd\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.NoObjectDetected\",\n            \"Message\": \"未检测到目标。\"\n        },\n        \"RequestId\": \"ad418ac5-fbfd-4bd7-8f4a-35ab085e27dd\"\n    }\n}",
         "title": "图片中未识别出宠物"
       },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectPet\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e576\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.DownLoadError\",\n            \"Message\": \"下载失败\"\n        },\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e576\"\n    }\n}",
         "title": "识别失败"
       }
     ],
@@ -200,7 +200,7 @@
       {
         "document": "安全属性识别请求失败",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectSecurity\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://123.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e516\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.DownLoadError\",\n            \"Message\": \"下载失败\"\n        },\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e516\"\n    }\n}",
         "title": "安全属性识别请求失败"
       }
     ],
@@ -214,13 +214,13 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnhanceImage\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://123.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"97c5502b-ecfd-498a-84f2-28de25a3c71c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.DownLoadError\",\n            \"Message\": \"下载失败\"\n        },\n        \"RequestId\": \"97c5502b-ecfd-498a-84f2-28de25a3c71c\"\n    }\n}",
         "title": "图像清晰度增强下载失败"
       },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnhanceImage\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://big.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1c397c8-5caf-44ce-975e-bf5e7c8242ef\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"LimitExceeded.TooLargeFileError\",\n            \"Message\": \"文件太大\"\n        },\n        \"RequestId\": \"a1c397c8-5caf-44ce-975e-bf5e7c8242ef\"\n    }\n}",
         "title": "文件过大"
       }
     ],
@@ -242,7 +242,7 @@
       {
         "document": "输入图片URL，未检测到车辆信息。",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeCarPro\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"http://www.test.com/a.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ad418ac5-fbfd-4bd7-8f4a-35ab085e27dd\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.NoObjectDetected\",\n            \"Message\": \"未检测到目标。\"\n        },\n        \"RequestId\": \"ad418ac5-fbfd-4bd7-8f4a-35ab085e27dd\"\n    }\n}",
         "title": "调用失败示例"
       }
     ],
@@ -264,7 +264,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateImage\n<公共请求参数>\n\n{\n    \"GroupId\": \"\",\n    \"EntityId\": \"1\",\n    \"PicName\": \"test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cac925c7-c939-4eb6-8db5-d64123385c30\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter.InvalidParameter\",\n            \"Message\": \"参数不合法。\"\n        },\n        \"RequestId\": \"cac925c7-c939-4eb6-8db5-d64123385c30\"\n    }\n}",
         "title": "更新图片接口调用失败示例"
       }
     ]

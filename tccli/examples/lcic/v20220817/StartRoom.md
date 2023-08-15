@@ -13,6 +13,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "ResourceNotFound.Room",
+            "Message": "The room does not exist."
+        },
         "RequestId": "0479a5ea-0b81-4d94-845d-f57b23e52e4e"
     }
 }

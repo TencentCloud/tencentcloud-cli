@@ -67,6 +67,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue",
+            "Message": "Param is illegal: `101`"
+        },
         "RequestId": "5a8b1de4-04f5-48eb-9be6-93491ebee6e1"
     }
 }

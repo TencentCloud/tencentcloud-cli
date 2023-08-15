@@ -12,7 +12,7 @@
       {
         "document": "",
         "input": "https://ft.tencentcloudapi.com/?Action=ChangeAgePic\n&Image=xxxxx\n&AgeInfos.0.Age=10\n&AgeInfos.0.FaceRect.X=10\n&AgeInfos.0.FaceRect.Y=10\n&AgeInfos.0.FaceRect.Width=20\n&AgeInfos.0.FaceRect.Height=20\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b68b7c3a-410d-4af1-b63c-97450683b09b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.ParameterValueError\",\n            \"Message\": \"参数字段或者值有误。\"\n        },\n        \"RequestId\": \"b68b7c3a-410d-4af1-b63c-97450683b09b\"\n    }\n}",
         "title": "调用返回失败"
       },
       {
@@ -26,7 +26,7 @@
       {
         "document": "",
         "input": "https://ft.tencentcloudapi.com/?Action=FaceCartoonPic\n&Image=xxxxx\n&Url=xxxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b68b7c3a-410d-4af1-b63c-97450683b09b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.ParameterValueError\",\n            \"Message\": \"参数字段或者值有误。\"\n        },\n        \"RequestId\": \"b68b7c3a-410d-4af1-b63c-97450683b09b\"\n    }\n}",
         "title": "调用返回失败"
       },
       {
@@ -56,7 +56,7 @@
       {
         "document": "",
         "input": "https://ft.tencentcloudapi.com/?Action=SwapGenderPic\n&Image=xxxxx\n&GenderInfos.0.Gender=1\n&GenderInfos.0.FaceRect.X=10\n&GenderInfos.0.FaceRect.Y=10\n&GenderInfos.0.FaceRect.Width=20\n&GenderInfos.0.FaceRect.Height=20\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b68b7c3a-410d-4af1-b63c-97450683b09b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.ParameterValueError\",\n            \"Message\": \"参数字段或者值有误。\"\n        },\n        \"RequestId\": \"b68b7c3a-410d-4af1-b63c-97450683b09b\"\n    }\n}",
         "title": "调用返回失败"
       },
       {

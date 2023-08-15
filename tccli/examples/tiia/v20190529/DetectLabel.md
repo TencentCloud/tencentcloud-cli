@@ -132,6 +132,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "FailedOperation.DownLoadError",
+            "Message": "下载失败"
+        },
         "RequestId": "a169390a-6ff3-4c42-ad25-a7858c35e576"
     }
 }

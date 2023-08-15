@@ -5,7 +5,12 @@
 Input: 
 
 ```
-tccli camp ModifyApplication --cli-unfold-argument ```
+tccli camp ModifyApplication --cli-unfold-argument  \
+    --ProjectID prj-xxxxx \
+    --ApplicationID app-xxxx \
+    --DisplayName xxxx application \
+    --Description xxxxx
+```
 
 Output: 
 ```

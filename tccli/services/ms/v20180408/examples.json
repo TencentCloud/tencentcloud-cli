@@ -4,7 +4,7 @@
       {
         "document": "加固任务不存在",
         "input": "POST / HTTP/1.1\nHost: ms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelEncryptTask\n<公共请求参数>\n\n{\n    \"ResultId\": \"a002b9e7-e01\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9379a8bd-f165-44db-a346-a3199fab2ae3\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.ResultIdNotFound\",\n            \"Message\": \"ResultId不存在。\"\n        },\n        \"RequestId\": \"9379a8bd-f165-44db-a346-a3199fab2ae3\"\n    }\n}",
         "title": "取消加固任务失败示例"
       }
     ],

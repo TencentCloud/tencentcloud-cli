@@ -15,6 +15,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.LimitExceed",
+            "Message": "返回数量不在合法范围内。"
+        },
         "RequestId": "c803e3eb-25b4-48d9-b4df-b74c570d110b"
     }
 }

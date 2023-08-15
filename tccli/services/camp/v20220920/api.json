@@ -63,6 +63,13 @@
       "output": "CreateTraitResponse",
       "status": "online"
     },
+    "CreateVolumeSnapshot": {
+      "document": "创建卷快照",
+      "input": "CreateVolumeSnapshotRequest",
+      "name": "创建卷快照",
+      "output": "CreateVolumeSnapshotResponse",
+      "status": "online"
+    },
     "DeleteApplication": {
       "document": "删除应用",
       "input": "DeleteApplicationRequest",
@@ -124,6 +131,13 @@
       "input": "DeleteTraitRequest",
       "name": "删除运维操作",
       "output": "DeleteTraitResponse",
+      "status": "online"
+    },
+    "DeleteVolumeSnapshot": {
+      "document": "删除卷快照",
+      "input": "DeleteVolumeSnapshotRequest",
+      "name": "删除卷快照",
+      "output": "DeleteVolumeSnapshotResponse",
       "status": "online"
     },
     "DescribeAggregatedConfigs": {
@@ -369,6 +383,20 @@
       "input": "DescribeUsersRequest",
       "name": "获取用户列表",
       "output": "DescribeUsersResponse",
+      "status": "online"
+    },
+    "DescribeVolumeSnapshot": {
+      "document": "获取卷快照详情",
+      "input": "DescribeVolumeSnapshotRequest",
+      "name": "获取卷快照详情",
+      "output": "DescribeVolumeSnapshotResponse",
+      "status": "online"
+    },
+    "DescribeVolumeSnapshots": {
+      "document": "获取卷快照列表",
+      "input": "DescribeVolumeSnapshotsRequest",
+      "name": "获取卷快照列表",
+      "output": "DescribeVolumeSnapshotsResponse",
       "status": "online"
     },
     "ExecutePodCommand": {
@@ -1374,16 +1402,18 @@
           "disabled": false,
           "document": "创建者",
           "example": "无",
+          "is_base64": false,
           "member": "User",
           "name": "Creator",
           "required": false,
           "type": "object",
-          "visibility": 1
+          "visibility": 2
         },
         {
           "disabled": false,
           "document": "创建来源",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Source",
           "required": false,
@@ -1394,6 +1424,7 @@
           "disabled": false,
           "document": "创建来源平台URL",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "SourceURL",
           "required": false,
@@ -1404,8 +1435,31 @@
           "disabled": false,
           "document": "模块信息",
           "example": "无",
+          "is_base64": false,
           "member": "Module",
           "name": "Modules",
+          "required": false,
+          "type": "list",
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "智研属性",
+          "example": "无",
+          "is_base64": false,
+          "member": "ZhiYanObject",
+          "name": "ZhiYan",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "CMDBAdmins",
+          "example": "无",
+          "is_base64": false,
+          "member": "User",
+          "name": "CMDBAdmins",
           "required": false,
           "type": "list",
           "visibility": 2
@@ -1836,6 +1890,18 @@
           "required": false,
           "type": "list",
           "visibility": 2
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "CMDB 管理员",
+          "example": "无",
+          "is_base64": false,
+          "member": "User",
+          "name": "CMDBAdmins",
+          "required": false,
+          "type": "list",
+          "visibility": 2
         }
       ],
       "type": "object"
@@ -2087,6 +2153,79 @@
     },
     "CreateTraitResponse": {
       "document": "CreateTrait返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVolumeSnapshotRequest": {
+      "document": "CreateVolumeSnapshot请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务 ID",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "环境名称",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "ClusterID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "卷快照名称",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "PVC名称",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "PersistentVolumeClaimName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVolumeSnapshotResponse": {
+      "document": "CreateVolumeSnapshot返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2591,6 +2730,68 @@
     },
     "DeleteTraitResponse": {
       "document": "DeleteTrait返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVolumeSnapshotRequest": {
+      "document": "DeleteVolumeSnapshot请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务 ID",
+          "example": "prj-xxxx",
+          "is_base64": false,
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "环境信息",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "ClusterID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "卷快照名称",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVolumeSnapshotResponse": {
+      "document": "DeleteVolumeSnapshot返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4129,6 +4330,190 @@
       ],
       "type": "object"
     },
+    "DescribeVolumeSnapshotRequest": {
+      "document": "DescribeVolumeSnapshot请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务 ID",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "ClusterID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "环境名称",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "卷快照名称",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVolumeSnapshotResponse": {
+      "document": "DescribeVolumeSnapshot返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "卷快照",
+          "example": "无",
+          "member": "VolumeSnapshot",
+          "name": "VolumeSnapshot",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVolumeSnapshotsRequest": {
+      "document": "DescribeVolumeSnapshots请求参数结构体",
+      "members": [
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "业务ID",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "环境名称",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "过滤器列表，支持的过滤器名称：ApplicationID，ProjectID，DisplayName",
+          "example": "无",
+          "is_base64": false,
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "列表长度，最大值50",
+          "example": "10",
+          "is_base64": false,
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "列表偏移",
+          "example": "10",
+          "is_base64": false,
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVolumeSnapshotsResponse": {
+      "document": "DescribeVolumeSnapshots返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "卷快照列表",
+          "example": "无",
+          "member": "VolumeSnapshot",
+          "name": "VolumeSnapshots",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "卷快照总数",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "可选过滤器名称及可选值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilterValues",
+          "name": "Filters",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribedObject": {
       "document": "Metric 对应的对象",
       "members": [
@@ -5096,10 +5481,88 @@
       "members": [
         {
           "disabled": false,
+          "document": "业务 ID",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "应用 ID",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "ApplicationID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "应用平台标识",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "应用名称",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "DisplayName",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "应用描述",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
           "document": "模块信息",
           "example": "无",
+          "is_base64": false,
           "member": "Module",
           "name": "Modules",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "智研属性",
+          "example": "无",
+          "is_base64": false,
+          "member": "ZhiYanObject",
+          "name": "ZhiYan",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "CMDBAdmins",
+          "example": "无",
+          "is_base64": false,
+          "member": "User",
+          "name": "CMDBAdmins",
           "required": false,
           "type": "list",
           "visibility": 2
@@ -5314,8 +5777,42 @@
       "members": [
         {
           "disabled": false,
+          "document": "业务 ID",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "环境名称",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "应用 ID",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "ApplicationID",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
           "document": "实例ID",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceID",
           "required": true,
@@ -5324,8 +5821,20 @@
         },
         {
           "disabled": false,
+          "document": "应用平台标识",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
           "document": "策略信息",
           "example": "无",
+          "is_base64": false,
           "member": "Policy",
           "name": "Policies",
           "required": false,
@@ -5336,6 +5845,7 @@
           "disabled": false,
           "document": "只读",
           "example": "无",
+          "is_base64": false,
           "member": "bool",
           "name": "ReadOnly",
           "required": false,
@@ -5346,8 +5856,31 @@
           "disabled": false,
           "document": "模块信息",
           "example": "无",
+          "is_base64": false,
           "member": "Module",
           "name": "Modules",
+          "required": false,
+          "type": "list",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "智研属性",
+          "example": "无",
+          "is_base64": false,
+          "member": "ZhiYanObject",
+          "name": "ZhiYan",
+          "required": false,
+          "type": "object",
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "CMDB 管理员",
+          "example": "无",
+          "is_base64": false,
+          "member": "User",
+          "name": "CMDBAdmins",
           "required": false,
           "type": "list",
           "visibility": 2
@@ -7098,6 +7631,156 @@
       ],
       "usage": "both"
     },
+    "VolumeSnapshot": {
+      "document": "卷快照",
+      "members": [
+        {
+          "disabled": false,
+          "document": "卷快照名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "ClusterID",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "PVC名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "PersistentVolumeClaimName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否可用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "ReadyToUse",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "绑定的卷快照内容名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "BoundVolumeSnapshotContentName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreationTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "卷快照内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VolumeSnapshotContent",
+          "name": "VolumeSnapshotContent",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "VolumeSnapshotContent": {
+      "document": "卷快照内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "卷快照内容名称",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "底层快照句柄\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "SnapshotHandle",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "存储大小，单位字节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RestoreSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "是否可用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "ReadyToUse",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true,
+          "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
     "VolumeTrait": {
       "document": "Volume 配置",
       "members": [
@@ -7112,6 +7795,51 @@
           "type": "list",
           "value_allowed_null": false,
           "visibility": 1
+        }
+      ],
+      "usage": "both"
+    },
+    "ZhiYanObject": {
+      "document": "智研对象相关属性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对象ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
+        },
+        {
+          "disabled": false,
+          "document": "链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "URL",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 2
         }
       ],
       "usage": "both"
