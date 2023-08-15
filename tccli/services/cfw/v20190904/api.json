@@ -2594,7 +2594,7 @@
           "example": "无",
           "member": "string",
           "name": "SourceContent",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2604,7 +2604,7 @@
           "example": "无",
           "member": "string",
           "name": "TargetContent",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2614,7 +2614,7 @@
           "example": "无",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2624,7 +2624,7 @@
           "example": "无",
           "member": "string",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2634,7 +2634,7 @@
           "example": "accept",
           "member": "string",
           "name": "RuleAction",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2644,7 +2644,7 @@
           "example": "无",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2654,7 +2654,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Count",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2664,7 +2664,7 @@
           "example": "1",
           "member": "uint64",
           "name": "OrderIndex",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2674,7 +2674,7 @@
           "example": "ip",
           "member": "string",
           "name": "SourceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2684,7 +2684,7 @@
           "example": "ip",
           "member": "string",
           "name": "TargetType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2694,7 +2694,7 @@
           "example": "8888",
           "member": "uint64",
           "name": "Uuid",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2704,7 +2704,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Invalid",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2714,7 +2714,7 @@
           "example": "0",
           "member": "uint64",
           "name": "IsRegion",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2724,7 +2724,7 @@
           "example": "0",
           "member": "uint64",
           "name": "CountryCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2734,7 +2734,7 @@
           "example": "0",
           "member": "uint64",
           "name": "CityCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2744,7 +2744,7 @@
           "example": "无",
           "member": "string",
           "name": "CountryName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2754,7 +2754,7 @@
           "example": "无",
           "member": "string",
           "name": "CityName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2764,7 +2764,7 @@
           "example": "无",
           "member": "string",
           "name": "CloudCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2774,7 +2774,7 @@
           "example": "0",
           "member": "uint64",
           "name": "IsCloud",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2784,7 +2784,7 @@
           "example": "true",
           "member": "string",
           "name": "Enable",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2794,7 +2794,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Direction",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2804,7 +2804,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2814,7 +2814,7 @@
           "example": "123456789",
           "member": "int64",
           "name": "InternalUuid",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2824,7 +2824,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2834,8 +2834,28 @@
           "example": "无",
           "member": "BetaInfoByACL",
           "name": "BetaList",
-          "required": false,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生效范围：serial，串行；side，旁路；all，全局\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "all",
+          "member": "string",
+          "name": "Scope",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "互联网边界防火墙使用的内部规则id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "互联网边界Uuid",
+          "member": "string",
+          "name": "InternetBorderUuid",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -7084,7 +7104,7 @@
           "example": "cfwnat-4fb07125",
           "member": "string",
           "name": "NatinsId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7094,7 +7114,7 @@
           "example": "实例1",
           "member": "string",
           "name": "NatinsName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7104,7 +7124,7 @@
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7114,7 +7134,7 @@
           "example": "0",
           "member": "int64",
           "name": "FwMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7124,7 +7144,7 @@
           "example": "20",
           "member": "int64",
           "name": "BandWidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7134,7 +7154,7 @@
           "example": "200",
           "member": "int64",
           "name": "InFlowMax",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7144,7 +7164,7 @@
           "example": "231",
           "member": "uint64",
           "name": "OutFlowMax",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7154,7 +7174,7 @@
           "example": "广州",
           "member": "string",
           "name": "RegionZh",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7164,7 +7184,7 @@
           "example": "[\"106.55.4.81\"]",
           "member": "string",
           "name": "EipAddress",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7174,7 +7194,7 @@
           "example": "[\"10.255.1.20\"]",
           "member": "string",
           "name": "VpcIp",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7184,7 +7204,7 @@
           "example": "[\"subnet-0fl56e31\"]",
           "member": "string",
           "name": "Subnets",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7194,7 +7214,7 @@
           "example": "0",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7204,7 +7224,7 @@
           "example": "华南地区",
           "member": "string",
           "name": "RegionDetail",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7214,7 +7234,7 @@
           "example": "广州六区",
           "member": "string",
           "name": "ZoneZh",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7224,7 +7244,7 @@
           "example": "广州七区",
           "member": "string",
           "name": "ZoneZhBak",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7234,7 +7254,7 @@
           "example": "100",
           "member": "uint64",
           "name": "RuleUsed",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7244,7 +7264,27 @@
           "example": "5000",
           "member": "uint64",
           "name": "RuleMax",
-          "required": false,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例引擎版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfw_3.7.0.888",
+          "member": "string",
+          "name": "EngineVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎是否可升级：0，不可升级；1，可升级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "UpdateEnable",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         }
@@ -9144,7 +9184,6 @@
       "document": "nat防火墙 vpc dns 开关信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "vpc id",
           "example": "vpc-ilbrv877",
@@ -9155,7 +9194,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "vpc 名称",
           "example": "yw",
@@ -9166,7 +9204,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "nat 防火墙模式 0：新增模式， 1: 接入模式",
           "example": "0",
@@ -9177,7 +9214,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "vpc ipv4网段范围 CIDR（Classless Inter-Domain Routing，无类域间路由选择）",
           "example": "10.115.0.0/16",
@@ -9188,7 +9224,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "外网弹性ip，防火墙 dns解析地址",
           "example": "1.1.1.1",
@@ -9199,7 +9234,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "nat网关id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "nat-2irqlrfj",
@@ -9210,7 +9244,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "nat网关名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1111",
@@ -9221,7 +9254,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0：开关关闭 ， 1: 开关打开",
           "example": "1",
@@ -9230,6 +9262,26 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0：未防护， 1: 已防护，2：忽略此字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProtectedStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持DNS FW，0-不支持、1-支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "SupportDNSFW",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

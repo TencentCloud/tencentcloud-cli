@@ -38,7 +38,9 @@ Output:
                         "TagValue": "abc"
                     }
                 ],
-                "ClusterID": "abc"
+                "ClusterID": "abc",
+                "ClusterName": "abc",
+                "ClusterAccessedStatus": "abc"
             }
         ],
         "TotalCount": 1,

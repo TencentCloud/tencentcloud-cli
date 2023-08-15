@@ -2781,54 +2781,74 @@
       "document": "DescribeCodePacks请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "每页数量",
           "example": "7999",
+          "is_base64": false,
           "member": "uint64",
           "name": "PageSize",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页数",
           "example": "7999",
+          "is_base64": false,
           "member": "uint64",
           "name": "PageNumber",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询关键字",
           "example": "安心",
+          "is_base64": false,
           "member": "string",
           "name": "Keyword",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企业ID",
           "example": "10000",
+          "is_base64": false,
           "member": "uint64",
           "name": "CorpId",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否有流水码 0:无 1:有",
           "example": "number",
+          "is_base64": false,
           "member": "uint64",
           "name": "SerialType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型 batch:批次, order_in 入库, order_out: 出入",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "ResType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源ID ResType是 batch 时对应是批次ID, 是 order_in, order_out时，则是订单ID",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "ResId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2842,7 +2862,7 @@
           "example": "[]",
           "member": "CodePack",
           "name": "CodePacks",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2852,7 +2872,7 @@
           "example": "131",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5195,66 +5215,77 @@
       "members": [
         {
           "disabled": false,
-          "document": "启用头",
+          "document": "启用头\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "HeadEnabled",
+          "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "标题",
+          "document": "标题\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "标题",
+          "is_base64": false,
           "member": "string",
           "name": "HeadTitle",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "标识符",
+          "document": "标识符\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "product",
+          "is_base64": false,
           "member": "string",
           "name": "Key",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "小程序AppId",
+          "document": "小程序AppId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AppId",
+          "is_base64": false,
           "member": "string",
           "name": "AppId",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "小程序AppPath",
+          "document": "小程序AppPath\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AppPath",
+          "is_base64": false,
           "member": "string",
           "name": "AppPath",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "小程序名称AppName",
+          "document": "小程序名称AppName\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AppName",
+          "is_base64": false,
           "member": "string",
           "name": "AppName",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "Product": {
       "document": "商品信息",

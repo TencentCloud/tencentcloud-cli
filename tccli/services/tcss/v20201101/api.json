@@ -4766,8 +4766,10 @@
           "disabled": false,
           "document": "集群ID",
           "example": "\"cls-0zmsjvko\"",
+          "is_base64": false,
           "member": "string",
           "name": "ClusterId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4776,8 +4778,10 @@
           "disabled": false,
           "document": "集群名字",
           "example": "tke_test",
+          "is_base64": false,
           "member": "string",
           "name": "ClusterName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4786,8 +4790,10 @@
           "disabled": false,
           "document": "实例id",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4796,8 +4802,10 @@
           "disabled": false,
           "document": "内网ip地址",
           "example": "\"10.1.1.22\"",
+          "is_base64": false,
           "member": "string",
           "name": "PrivateIpAddresses",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4806,8 +4814,10 @@
           "disabled": false,
           "document": "节点的角色，Master、Work等",
           "example": "Master",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceRole",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4816,8 +4826,10 @@
           "disabled": false,
           "document": "k8s版本",
           "example": "\"1.18.4\"",
+          "is_base64": false,
           "member": "string",
           "name": "ClusterVersion",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4826,8 +4838,10 @@
           "disabled": false,
           "document": "运行时组件,docker或者containerd",
           "example": "\"docker\"",
+          "is_base64": false,
           "member": "string",
           "name": "ContainerRuntime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4836,8 +4850,10 @@
           "disabled": false,
           "document": "区域",
           "example": "\"ap-guangzhou\"",
+          "is_base64": false,
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4846,8 +4862,10 @@
           "disabled": false,
           "document": "检查结果的验证信息",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "VerifyInfo",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4856,86 +4874,94 @@
           "disabled": false,
           "document": "节点名称",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "NodeName",
-          "required": false,
+          "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "AffectedWorkloadItem": {
       "document": "集群安全检查受影响的工作负载Item",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群Id",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ClusterId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群名字",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ClusterName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作负载名称",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "WorkloadName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作负载类型",
           "example": "DaemonSet",
+          "is_base64": false,
           "member": "string",
           "name": "WorkloadType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "区域",
           "example": "ap-guangzhou",
+          "is_base64": false,
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测结果的验证信息",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "VerifyInfo",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "AssetClusterListItem": {
       "document": "集群列表Item",
@@ -5959,224 +5985,254 @@
       "document": "集群资产返回的结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id",
           "example": "cls-jvrv0kf2",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群名字",
           "example": "tke_test",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群版本",
           "example": "1.8.8",
           "member": "string",
           "name": "ClusterVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群操作系统",
           "example": "ubuntu18.04.1x86_64",
           "member": "string",
           "name": "ClusterOs",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群类型",
           "example": "MANAGED_CLUSTER",
           "member": "string",
           "name": "ClusterType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群节点数",
           "example": "2",
           "member": "uint64",
           "name": "ClusterNodeNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群区域",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监控组件的状态，为Defender_Uninstall、Defender_Normal、Defender_Error、Defender_Installing",
           "example": "Defender_Uninstall",
           "member": "string",
           "name": "DefenderStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群状态",
           "example": "Running",
           "member": "string",
           "name": "ClusterStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群的检测模式，为Cluster_Normal或者Cluster_Actived.",
           "example": "Cluster_Normal",
           "member": "string",
           "name": "ClusterCheckMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否自动定期检测",
           "example": "false",
           "member": "bool",
           "name": "ClusterAutoCheck",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "防护容器部署失败原因，为UserDaemonSetNotReady时,和UnreadyNodeNum转成\"N个节点防御容器为就绪\"，其他错误直接展示",
           "example": "NodeNotReady",
           "member": "string",
           "name": "DefenderErrorReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "防御容器没有ready状态的节点数量",
           "example": "2",
           "member": "uint64",
           "name": "UnreadyNodeNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "严重风险检查项的数量",
           "example": "3",
           "member": "int64",
           "name": "SeriousRiskCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高风险检查项的数量",
           "example": "4",
           "member": "int64",
           "name": "HighRiskCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "中风险检查项的数量",
           "example": "3",
           "member": "int64",
           "name": "MiddleRiskCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "提示风险检查项的数量",
           "example": "2",
           "member": "int64",
           "name": "HintRiskCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查失败原因",
           "example": "No_Result",
           "member": "string",
           "name": "CheckFailReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查状态,为Task_Running, NoRisk, HasRisk, Uncheck, Task_Error",
           "example": "Checking",
           "member": "string",
           "name": "CheckStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务创建时间,检查时间",
           "example": "无",
           "member": "string",
           "name": "TaskCreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccessedStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接入失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccessedSubStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "NodeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "离线节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "OffLineNodeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "未安装agent节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "UnInstallAgentNodeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9078,10 +9134,11 @@
       "document": "CreateClusterCheckTask请求参数结构体",
       "members": [
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "指定要扫描的集群信息",
           "example": "无",
+          "is_base64": false,
           "member": "ClusterCheckTaskItem",
           "name": "ClusterCheckTaskList",
           "required": true,
@@ -9099,7 +9156,7 @@
           "example": "123456",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9109,9 +9166,19 @@
           "example": "\"Succ\"",
           "member": "string",
           "name": "CreateResult",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回创建的集群新任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NewTaskID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -14132,6 +14199,7 @@
           "disabled": false,
           "document": "主机id",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "HostId",
           "required": true,
@@ -14149,6 +14217,7 @@
           "example": "无",
           "member": "string",
           "name": "UUID",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14158,6 +14227,7 @@
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14167,6 +14237,7 @@
           "example": "无",
           "member": "string",
           "name": "HostName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14176,6 +14247,7 @@
           "example": "无",
           "member": "string",
           "name": "Group",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14185,6 +14257,7 @@
           "example": "无",
           "member": "string",
           "name": "HostIP",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14194,6 +14267,7 @@
           "example": "无",
           "member": "string",
           "name": "OsName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14203,6 +14277,7 @@
           "example": "无",
           "member": "string",
           "name": "AgentVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14212,6 +14287,7 @@
           "example": "无",
           "member": "string",
           "name": "KernelVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14221,6 +14297,7 @@
           "example": "无",
           "member": "string",
           "name": "DockerVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14230,6 +14307,7 @@
           "example": "无",
           "member": "string",
           "name": "DockerAPIVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14239,6 +14317,7 @@
           "example": "无",
           "member": "string",
           "name": "DockerGoVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14248,6 +14327,7 @@
           "example": "无",
           "member": "string",
           "name": "DockerFileSystemDriver",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14257,6 +14337,7 @@
           "example": "无",
           "member": "string",
           "name": "DockerRootDir",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14266,6 +14347,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ImageCnt",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14275,6 +14357,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ContainerCnt",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14284,6 +14367,7 @@
           "example": "无",
           "member": "string",
           "name": "K8sMasterIP",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14293,6 +14377,7 @@
           "example": "无",
           "member": "string",
           "name": "K8sVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14302,6 +14387,7 @@
           "example": "无",
           "member": "string",
           "name": "KubeProxyVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14311,6 +14397,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14320,6 +14407,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsContainerd",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -14329,6 +14417,7 @@
           "example": "无",
           "member": "string",
           "name": "MachineType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14338,6 +14427,7 @@
           "example": "无",
           "member": "string",
           "name": "PublicIp",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14347,6 +14437,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceID",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14356,6 +14447,7 @@
           "example": "无",
           "member": "int64",
           "name": "RegionID",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14365,6 +14457,7 @@
           "example": "无",
           "member": "ProjectInfo",
           "name": "Project",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -14374,7 +14467,38 @@
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群接入状态",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterAccessedStatus",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -14393,6 +14517,7 @@
           "disabled": false,
           "document": "需要返回的数量，默认为10，最大值为100",
           "example": "无",
+          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -14402,6 +14527,7 @@
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "无",
+          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -14411,6 +14537,7 @@
           "disabled": false,
           "document": "过滤条件。\n<li>Status - String - 是否必填：否 - agent状态筛选，\"ALL\":\"全部\"(或不传该字段),\"UNINSTALL\"：\"未安装\",\"OFFLINE\"：\"离线\", \"ONLINE\"：\"防护中\"</li>\n<li>HostName - String - 是否必填：否 - 主机名筛选</li>\n<li>Group- String - 是否必填：否 - 主机群组搜索</li>\n<li>HostIP- string - 是否必填：否 - 主机ip搜索</li>\n<li>HostID- string - 是否必填：否 - 主机id搜索</li>\n<li>DockerVersion- string - 是否必填：否 - docker版本搜索</li>\n<li>MachineType- string - 是否必填：否 - 主机来源MachineType搜索，\"ALL\":\"全部\"(或不传该字段),主机来源：[\"CVM\", \"ECM\", \"LH\", \"BM\"]  中的之一为腾讯云服务器；[\"Other\"]之一非腾讯云服务器；</li>\n<li>DockerStatus- string - 是否必填：否 - docker安装状态，\"ALL\":\"全部\"(或不传该字段),\"INSTALL\":\"已安装\",\"UNINSTALL\":\"未安装\"</li>\n<li>ProjectID- string - 是否必填：否 - 所属项目id搜索</li>\n<li>Tag:xxx(tag:key)- string- 是否必填：否 - 标签键值搜索 示例Filters\":[{\"Name\":\"tag:tke-kind\",\"Values\":[\"service\"]}]</li>",
           "example": "无",
+          "is_base64": false,
           "member": "AssetFilters",
           "name": "Filters",
           "required": false,
@@ -14420,6 +14547,7 @@
           "disabled": false,
           "document": "排序字段",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "By",
           "required": false,
@@ -14429,6 +14557,7 @@
           "disabled": false,
           "document": "排序方式 asc,desc",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Order",
           "required": false,
@@ -14446,6 +14575,7 @@
           "example": "无",
           "member": "HostInfo",
           "name": "List",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14455,6 +14585,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18212,6 +18343,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18221,6 +18353,7 @@
           "example": "3",
           "member": "uint64",
           "name": "RiskClusterCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18230,6 +18363,7 @@
           "example": "2",
           "member": "uint64",
           "name": "UncheckClusterCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18239,6 +18373,7 @@
           "example": "5",
           "member": "uint64",
           "name": "ManagedClusterCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18248,6 +18383,7 @@
           "example": "3",
           "member": "uint64",
           "name": "IndependentClusterCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18257,6 +18393,7 @@
           "example": "3",
           "member": "uint64",
           "name": "NoRiskClusterCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18266,6 +18403,7 @@
           "example": "3",
           "member": "uint64",
           "name": "CheckedClusterCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18275,6 +18413,7 @@
           "example": "2",
           "member": "uint64",
           "name": "AutoCheckClusterCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18284,6 +18423,7 @@
           "example": "2",
           "member": "uint64",
           "name": "ManualCheckClusterCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18293,6 +18433,7 @@
           "example": "1",
           "member": "uint64",
           "name": "FailedClusterCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18302,6 +18443,7 @@
           "example": "3",
           "member": "uint64",
           "name": "NotImportedClusterCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18311,8 +18453,39 @@
           "example": "无",
           "member": "uint64",
           "name": "ServerlessClusterCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TKE集群数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TkeClusterCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户自建腾讯云集群数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "UserCreateTencentClusterCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户自建集群混合云数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "UserCreateHybridClusterCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -22796,14 +22969,24 @@
       "document": "DescribeRefreshTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "123456",
+          "is_base64": false,
           "member": "uint64",
           "name": "TaskId",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "新任务ID",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "NewTaskID",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -22817,7 +23000,7 @@
           "example": "Task_NoExist",
           "member": "string",
           "name": "TaskStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -25624,7 +25807,7 @@
           "example": "123456",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -25634,9 +25817,19 @@
           "example": "Task_New",
           "member": "string",
           "name": "TaskStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "新任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NewTaskID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -25651,50 +25844,55 @@
       "document": "DescribeUserCluster请求参数结构体",
       "members": [
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "偏移量",
           "example": "0",
+          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "每次查询的最大记录数量",
           "example": "20",
+          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "Name - String\nName 可取值：ClusterName,ClusterId,ClusterType,Region,ClusterCheckMode,ClusterAutoCheck",
           "example": "无",
+          "is_base64": false,
           "member": "ComplianceFilters",
           "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "排序字段",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "By",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "排序方式 asc,desc",
           "example": "asc",
+          "is_base64": false,
           "member": "string",
           "name": "Order",
           "required": false,
@@ -25712,7 +25910,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -25722,7 +25920,7 @@
           "example": "无",
           "member": "ClusterInfoItem",
           "name": "ClusterInfoList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -30254,7 +30452,7 @@
           "example": "无",
           "member": "string",
           "name": "HostID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -30264,7 +30462,7 @@
           "example": "无",
           "member": "string",
           "name": "HostIP",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -30274,7 +30472,7 @@
           "example": "无",
           "member": "string",
           "name": "HostName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -30284,7 +30482,7 @@
           "example": "无",
           "member": "string",
           "name": "Group",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -30294,7 +30492,7 @@
           "example": "无",
           "member": "string",
           "name": "DockerVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -30304,7 +30502,7 @@
           "example": "无",
           "member": "string",
           "name": "DockerFileSystemDriver",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -30314,7 +30512,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ImageCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -30324,7 +30522,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ContainerCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -30334,7 +30532,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -30344,7 +30542,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsContainerd",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -30354,7 +30552,7 @@
           "example": "无",
           "member": "string",
           "name": "MachineType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -30364,7 +30562,7 @@
           "example": "无",
           "member": "string",
           "name": "PublicIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -30374,7 +30572,7 @@
           "example": "无",
           "member": "string",
           "name": "Uuid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -30384,7 +30582,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -30394,7 +30592,7 @@
           "example": "无",
           "member": "int64",
           "name": "RegionID",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -30404,7 +30602,7 @@
           "example": "无",
           "member": "ProjectInfo",
           "name": "Project",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -30414,7 +30612,7 @@
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -30424,7 +30622,27 @@
           "example": "无",
           "member": "string",
           "name": "ClusterID",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群接入状态",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterAccessedStatus",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

@@ -434,6 +434,13 @@
       "output": "RestartModelAccelerateTaskResponse",
       "status": "online"
     },
+    "SendChatMessage": {
+      "document": "LLM模型的对话请求发送接口",
+      "input": "SendChatMessageRequest",
+      "name": "LLM模型对话请求",
+      "output": "SendChatMessageResponse",
+      "status": "online"
+    },
     "StartNotebook": {
       "document": "启动Notebook",
       "input": "StartNotebookRequest",
@@ -10638,6 +10645,99 @@
         }
       ],
       "usage": "out"
+    },
+    "SendChatMessageRequest": {
+      "document": "SendChatMessage请求参数结构体",
+      "members": [
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "会话id，标识一组对话的唯一id，id变更则重置会话",
+          "example": "6e85ab47-e2df-d139-3823-de3d3aa51cf2",
+          "is_base64": false,
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "问题描述",
+          "example": "你好，请介绍一下自己",
+          "is_base64": false,
+          "member": "string",
+          "name": "Question",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "会话模型版本，不同的会话模型调用到不同的模型后台。\n注: 多行业多场景大模型填写 tj_llm_clm-v1",
+          "example": "tj_llm_clm-v1",
+          "is_base64": false,
+          "member": "string",
+          "name": "ModelVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "使用模式(仅部分模型支持)。General 通用问答；WithSearchPlugin 搜索增强问答",
+          "example": "General",
+          "is_base64": false,
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "搜索来源。仅当Mode未WithSearchPlugin时生效。Preset 预置文稿库；Custom 自定义。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "SearchSource",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendChatMessageResponse": {
+      "document": "SendChatMessage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "答案",
+          "example": "无",
+          "member": "string",
+          "name": "Answer",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话id,返回请求的会话id",
+          "example": "6e85ab47-e2df-d139-3823-de3d3aa51cf2",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Service": {
       "document": "描述在线服务",

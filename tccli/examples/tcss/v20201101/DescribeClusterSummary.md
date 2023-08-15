@@ -11,19 +11,22 @@ Output:
 ```
 {
     "Response": {
-        "NoRiskClusterCount": 1,
-        "ManagedClusterCount": 1,
-        "AutoCheckClusterCount": 1,
-        "UncheckClusterCount": 1,
-        "IndependentClusterCount": 1,
         "TotalCount": 1,
-        "CheckedClusterCount": 1,
-        "RequestId": "fb31a6a7-4cdc-4984-9a3e-df780a7d7bf4",
-        "FailedClusterCount": 1,
-        "ManualCheckClusterCount": 1,
         "RiskClusterCount": 1,
+        "UncheckClusterCount": 1,
+        "ManagedClusterCount": 1,
+        "IndependentClusterCount": 1,
+        "NoRiskClusterCount": 1,
+        "CheckedClusterCount": 1,
+        "AutoCheckClusterCount": 1,
+        "ManualCheckClusterCount": 1,
+        "FailedClusterCount": 1,
         "NotImportedClusterCount": 1,
-        "ServerlessClusterCount": 3
+        "ServerlessClusterCount": 1,
+        "TkeClusterCount": 1,
+        "UserCreateTencentClusterCount": 1,
+        "UserCreateHybridClusterCount": 1,
+        "RequestId": "abc"
     }
 }
 ```

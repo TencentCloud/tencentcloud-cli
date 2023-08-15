@@ -1718,72 +1718,72 @@
       "document": "回调事件信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "事件时间",
+          "document": "事件时间。\n数据时间点，接口返回支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见ISO日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。\n接口返回的时间格式和查询请求传入的时间格式一致。",
+          "example": "无",
           "member": "string",
           "name": "EventTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件类型",
+          "example": "无",
           "member": "uint64",
           "name": "EventType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回调请求",
+          "example": "无",
           "member": "string",
           "name": "Request",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回调响应",
+          "example": "无",
           "member": "string",
           "name": "Response",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户接口响应时间",
+          "example": "无",
           "member": "string",
           "name": "ResponseTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回调结果",
+          "example": "无",
           "member": "uint64",
           "name": "ResultCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流名称",
+          "example": "无",
           "member": "string",
           "name": "StreamId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4419,11 +4419,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据时间点，接口返回支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。\n接口返回的时间格式和查询请求传入的时间格式一致。",
+          "document": "数据时间点，接口返回支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见ISO日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。\n接口返回的时间格式和查询请求传入的时间格式一致。",
           "example": "2019-01-08T10:00:00Z",
           "member": "string",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4433,7 +4433,7 @@
           "example": "1.0",
           "member": "float",
           "name": "Bandwidth",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -4443,7 +4443,7 @@
           "example": "1.0",
           "member": "float",
           "name": "Flux",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -4453,7 +4453,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Request",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4463,7 +4463,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Online",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -5559,6 +5559,7 @@
       "document": "DescribeCallbackRecordsList请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "起始时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。",
           "example": "2020-10-12T00:00:00+08:00",
@@ -5569,6 +5570,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "结束时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。\n\n查询的起始和结束时间跨度不支持超过1天。仅支持查询最近14天的数据。",
           "example": "2020-10-12T00:00:00+08:00",
@@ -5579,6 +5581,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "流名称，精确匹配。",
           "example": "test",
@@ -5589,6 +5592,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "页码。",
           "example": "1",
@@ -5599,6 +5603,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "每页条数。",
           "example": "10",
@@ -5609,6 +5614,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "事件类型。\n0: \"断流\",\n1: \"推流\",\n100: \"录制\"\n200: \"截图回调\"。",
           "example": "1",
@@ -5619,6 +5625,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "回调结果。\n0为成功，其他为失败。",
           "example": "0",

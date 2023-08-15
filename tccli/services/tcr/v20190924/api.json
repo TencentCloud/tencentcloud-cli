@@ -630,6 +630,13 @@
       "output": "DownloadHelmChartResponse",
       "status": "online"
     },
+    "DuplicateImage": {
+      "document": "用于在企业版镜像仓库中复制镜像版本",
+      "input": "DuplicateImageRequest",
+      "name": "复制企业版仓库镜像版本",
+      "output": "DuplicateImageResponse",
+      "status": "online"
+    },
     "DuplicateImagePersonal": {
       "document": "用于在个人版镜像仓库中复制镜像版本",
       "input": "DuplicateImagePersonalRequest",
@@ -6460,6 +6467,104 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DuplicateImageRequest": {
+      "document": "DuplicateImage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "tcr-e8pg46c6",
+          "is_base64": false,
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源命名空间名称",
+          "example": "develop",
+          "is_base64": false,
+          "member": "string",
+          "name": "SourceNamespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源镜像仓库名称",
+          "example": "app",
+          "is_base64": false,
+          "member": "string",
+          "name": "SourceRepo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源镜像tag或digest值，目前仅支持tag",
+          "example": "v1.0",
+          "is_base64": false,
+          "member": "string",
+          "name": "SourceReference",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标镜像版本",
+          "example": "v1.0",
+          "is_base64": false,
+          "member": "string",
+          "name": "DestinationTag",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标命名空间，不填默认与源一致",
+          "example": "release",
+          "is_base64": false,
+          "member": "string",
+          "name": "DestinationNamespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标镜像仓库，不填默认与源一致",
+          "example": "app",
+          "is_base64": false,
+          "member": "string",
+          "name": "DestinationRepo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否覆盖",
+          "example": "true",
+          "is_base64": false,
+          "member": "bool",
+          "name": "Override",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DuplicateImageResponse": {
+      "document": "DuplicateImage返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

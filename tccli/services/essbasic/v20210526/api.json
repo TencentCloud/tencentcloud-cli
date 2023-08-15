@@ -2330,72 +2330,88 @@
       "document": "ChannelCreateReleaseFlow请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。",
           "example": "无",
+          "is_base64": false,
           "member": "Agent",
           "name": "Agent",
           "required": true,
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "待解除的流程编号（即原流程的编号）",
           "example": "xxx",
+          "is_base64": false,
           "member": "string",
           "name": "NeedRelievedFlowId",
           "required": true,
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "解除协议内容",
           "example": "无",
+          "is_base64": false,
           "member": "RelieveInfo",
           "name": "ReliveInfo",
           "required": true,
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "非必须，解除协议的本企业签署人列表，默认使用原流程的签署人列表；当解除协议的签署人与原流程的签署人不能相同时（例如原流程签署人离职了），需要指定本企业的其他签署人来替换原流程中的原签署人，注意需要指明ApproverNumber来代表需要替换哪一个签署人，解除协议的签署人数量不能多于原流程的签署人数量",
           "example": "无",
+          "is_base64": false,
           "member": "ReleasedApprover",
           "name": "ReleasedApprovers",
           "required": false,
           "type": "list"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "签署完回调url，最大长度1000个字符",
           "example": "https://qq.com",
+          "is_base64": false,
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": true,
           "document": "暂未开放",
           "example": "无",
+          "is_base64": false,
           "member": "OrganizationInfo",
           "name": "Organization",
           "required": false,
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": true,
           "document": "暂未开放",
           "example": "无",
+          "is_base64": false,
           "member": "UserInfo",
           "name": "Operator",
           "required": false,
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "签署流程的签署截止时间。 值为unix时间戳,精确到秒,不传默认为当前时间七天后",
           "example": "1604912664",
+          "is_base64": false,
           "member": "int64",
           "name": "Deadline",
           "required": false,

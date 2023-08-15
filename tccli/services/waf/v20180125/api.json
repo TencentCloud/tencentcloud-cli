@@ -1062,334 +1062,344 @@
       "document": "AddSpartaProtection请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要防御的域名",
           "example": "test1.qcloud.com",
+          "is_base64": false,
           "member": "string",
           "name": "Domain",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "证书类型，0表示没有证书，CertType=1表示自有证书,2 为托管证书",
           "example": "0",
+          "is_base64": false,
           "member": "int64",
           "name": "CertType",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表示是否开启了CDN代理，1：有部署CDN，0：未部署CDN",
           "example": "0",
+          "is_base64": false,
           "member": "int64",
           "name": "IsCdn",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回源类型，0表示通过IP回源,1 表示通过域名回源",
           "example": "0",
+          "is_base64": false,
           "member": "int64",
           "name": "UpstreamType",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启WebSocket支持，1表示开启，0不开启",
           "example": "0",
+          "is_base64": false,
           "member": "int64",
           "name": "IsWebsocket",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "负载均衡策略，0表示轮徇，1表示IP hash",
+          "document": "负载均衡策略，0表示轮询，1表示IP hash",
           "example": "0",
+          "is_base64": false,
           "member": "string",
           "name": "LoadBalance",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "CertType=1时，需要填次参数，表示证书内容",
+          "document": "值为1时，需要填次参数，表示证书内容",
           "example": "sldfjsl",
+          "is_base64": false,
           "member": "string",
           "name": "Cert",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CertType=1时，需要填次参数，表示证书的私钥",
           "example": "jskljflks",
+          "is_base64": false,
           "member": "string",
           "name": "PrivateKey",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CertType=2时，需要填次参数，表示证书的ID",
           "example": "23424",
+          "is_base64": false,
           "member": "string",
           "name": "SSLId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Waf的资源ID",
           "example": "slkdfjsldk",
+          "is_base64": false,
           "member": "string",
           "name": "ResourceId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "HTTPS回源协议，填http或者https",
           "example": "https",
+          "is_base64": false,
           "member": "string",
           "name": "UpstreamScheme",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "HTTPS回源端口,仅UpstreamScheme为http时需要填当前字段",
           "example": "80",
+          "is_base64": false,
           "member": "string",
           "name": "HttpsUpstreamPort",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启灰度，0表示不开启灰度",
           "example": "0",
+          "is_base64": false,
           "member": "int64",
           "name": "IsGray",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "灰度的地区",
           "example": "[\"gz\",\"bj\"]",
+          "is_base64": false,
           "member": "string",
           "name": "GrayAreas",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UpstreamType=1时，填次字段表示回源域名",
           "example": "www.qq.com",
+          "is_base64": false,
           "member": "string",
           "name": "UpstreamDomain",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UpstreamType=0时，填次字段表示回源IP",
           "example": "[\"1.1.1.1\\n\"]",
+          "is_base64": false,
           "member": "string",
           "name": "SrcList",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启HTTP2,开启HTTP2需要HTTPS支持",
           "example": "0",
+          "is_base64": false,
           "member": "int64",
           "name": "IsHttp2",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表示是否强制跳转到HTTPS，1强制跳转Https，0不强制跳转",
           "example": "1",
+          "is_base64": false,
           "member": "int64",
           "name": "HttpsRewrite",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务有多端口需要设置此字段",
           "example": "无",
+          "is_base64": false,
           "member": "PortItem",
           "name": "Ports",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF，cdn-waf表示CDN上的Web防护能力",
           "example": "clb-waf",
+          "is_base64": false,
           "member": "string",
           "name": "Edition",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启长连接，仅IP回源时可以用填次参数，域名回源时这个参数无效",
           "example": "1",
+          "is_base64": false,
           "member": "string",
           "name": "IsKeepAlive",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例id，上线之后带上此字段",
           "example": "waf-sldfjsl",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceID",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "anycast IP类型开关： 0 普通IP 1 Anycast IP",
           "example": "0",
+          "is_base64": false,
           "member": "int64",
           "name": "Anycast",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "src权重",
           "example": "[1.1.1]",
+          "is_base64": false,
           "member": "int64",
           "name": "Weights",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启主动健康检测，1表示开启，0表示不开启",
           "example": "1",
+          "is_base64": false,
           "member": "int64",
           "name": "ActiveCheck",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TLS版本信息",
           "example": "1",
+          "is_base64": false,
           "member": "int64",
           "name": "TLSVersion",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加密套件信息",
           "example": "[1，1]",
+          "is_base64": false,
           "member": "int64",
           "name": "Ciphers",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0:不支持选择：默认模版  1:通用型模版 2:安全型模版 3:自定义模版",
           "example": "0",
+          "is_base64": false,
           "member": "int64",
           "name": "CipherTemplate",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "300s",
           "example": "300",
+          "is_base64": false,
           "member": "int64",
           "name": "ProxyReadTimeout",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "300s",
           "example": "300",
+          "is_base64": false,
           "member": "int64",
           "name": "ProxySendTimeout",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0:关闭SNI；1:开启SNI，SNI=源请求host；2:开启SNI，SNI=修改为源站host；3：开启SNI，自定义host，SNI=SniHost；",
           "example": "2",
+          "is_base64": false,
           "member": "int64",
           "name": "SniType",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SniType=3时，需要填此参数，表示自定义的host；",
           "example": "test.com",
+          "is_base64": false,
           "member": "string",
           "name": "SniHost",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "is_cdn=3时，需要填此参数，表示自定义header",
           "example": "[\"x-real-ip\"]",
+          "is_base64": false,
           "member": "string",
           "name": "IpHeaders",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "0:关闭xff重置；1:开启xff重置",
+          "example": "0",
+          "is_base64": false,
+          "member": "int64",
+          "name": "XFFReset",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3262,7 +3272,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "偏移",
+          "document": "偏移量",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -3299,6 +3309,7 @@
           "example": "2",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3308,6 +3319,7 @@
           "example": "无",
           "member": "InstanceInfo",
           "name": "Instances",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4411,68 +4423,70 @@
       "document": "clb-waf 域名扩展套餐",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "资源ID",
+          "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "waf",
+          "is_base64": false,
           "member": "string",
           "name": "ResourceIds",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "过期时间",
+          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "年月日",
+          "is_base64": false,
           "member": "string",
           "name": "ValidTime",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "是否自动续费，1：自动续费，0：不自动续费",
+          "document": "是否自动续费，1：自动续费，0：不自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "RenewFlag",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "套餐购买个数",
+          "document": "套餐购买个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "Count",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "套餐购买地域，clb-waf暂时没有用到",
+          "document": "套餐购买地域，clb-waf暂时没有用到\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "gz",
+          "is_base64": false,
           "member": "string",
           "name": "Region",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "DomainsPartInfo": {
       "document": "saas域名详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启httpRewrite",
           "example": "1",
@@ -4483,7 +4497,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "https回源端口",
           "example": "1",
@@ -4494,7 +4507,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是cdn",
           "example": "1",
@@ -4505,7 +4517,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启gray",
           "example": "1",
@@ -4516,7 +4527,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是http2",
           "example": "1",
@@ -4527,7 +4537,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启websocket",
           "example": "1",
@@ -4538,7 +4547,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡",
           "example": "1",
@@ -4549,7 +4557,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "防御模式",
           "example": "1",
@@ -4560,7 +4567,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私钥",
           "example": "1",
@@ -4571,7 +4577,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ssl id",
           "example": "1",
@@ -4582,7 +4587,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回源域名",
           "example": "1",
@@ -4593,7 +4597,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回源类型",
           "example": "1",
@@ -4604,7 +4607,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回源ip",
           "example": "[\"0\",\"1\"]",
@@ -4615,7 +4617,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务端口配置",
           "example": "11",
@@ -4626,7 +4627,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "证书类型",
           "example": "1",
@@ -4637,7 +4637,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回源方式",
           "example": "1",
@@ -4648,7 +4647,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志包",
           "example": "1",
@@ -4659,7 +4657,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一级cname",
           "example": "1",
@@ -4670,7 +4667,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否长连接",
           "example": "1",
@@ -4681,7 +4677,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启主动健康检测，1表示开启，0表示不开启\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -4692,7 +4687,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TLS版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -4703,7 +4697,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加密套件信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[1,2]",
@@ -4714,7 +4707,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模版\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -4725,7 +4717,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "300s\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "300",
@@ -4736,7 +4727,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "300s\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "300",
@@ -4747,7 +4737,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0:关闭SNI；1:开启SNI，SNI=源请求host；2:开启SNI，SNI=修改为源站host；3：开启SNI，自定义host，SNI=SniHost；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -4758,7 +4747,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SniType=3时，需要填此参数，表示自定义的host；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test.com",
@@ -4769,7 +4757,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4780,7 +4767,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IsCdn=3时，表示自定义header\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"x-real-ip\"]",
@@ -4788,6 +4774,16 @@
           "name": "IpHeaders",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0:关闭xff重置；1:开启xff重置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "XFFReset",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -5467,8 +5463,10 @@
           "disabled": false,
           "document": "id",
           "example": "waf",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5477,8 +5475,10 @@
           "disabled": false,
           "document": "Name",
           "example": "waf",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5487,8 +5487,10 @@
           "disabled": false,
           "document": "资源id",
           "example": "waf",
+          "is_base64": false,
           "member": "string",
           "name": "ResourceIds",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5497,8 +5499,10 @@
           "disabled": false,
           "document": "地域",
           "example": "gz",
+          "is_base64": false,
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5509,6 +5513,7 @@
           "example": "1",
           "member": "uint64",
           "name": "PayMode",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5519,6 +5524,7 @@
           "example": "1",
           "member": "uint64",
           "name": "RenewFlag",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5529,6 +5535,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Mode",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5539,6 +5546,7 @@
           "example": "2",
           "member": "uint64",
           "name": "Level",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5547,8 +5555,10 @@
           "disabled": false,
           "document": "过期时间",
           "example": "年月日",
+          "is_base64": false,
           "member": "string",
           "name": "ValidTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5557,8 +5567,10 @@
           "disabled": false,
           "document": "开始时间",
           "example": "年月日",
+          "is_base64": false,
           "member": "string",
           "name": "BeginTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5569,6 +5581,7 @@
           "example": "4",
           "member": "uint64",
           "name": "DomainCount",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5579,6 +5592,7 @@
           "example": "5",
           "member": "uint64",
           "name": "SubDomainLimit",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5589,6 +5603,7 @@
           "example": "4",
           "member": "uint64",
           "name": "MainDomainCount",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5599,6 +5614,7 @@
           "example": "5",
           "member": "uint64",
           "name": "MainDomainLimit",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5609,6 +5625,7 @@
           "example": "111",
           "member": "uint64",
           "name": "MaxQPS",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5619,6 +5636,7 @@
           "example": "11",
           "member": "QPSPackageNew",
           "name": "QPS",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": false
@@ -5629,6 +5647,7 @@
           "example": "11",
           "member": "DomainPackageNew",
           "name": "DomainPkg",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": false
@@ -5639,6 +5658,7 @@
           "example": "11",
           "member": "uint64",
           "name": "AppId",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5647,8 +5667,10 @@
           "disabled": false,
           "document": "clb或saas",
           "example": "clb",
+          "is_base64": false,
           "member": "string",
           "name": "Edition",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5659,6 +5681,7 @@
           "example": "无",
           "member": "FraudPkg",
           "name": "FraudPkg",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -5669,6 +5692,7 @@
           "example": "无",
           "member": "BotPkg",
           "name": "BotPkg",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -5679,6 +5703,7 @@
           "example": "无",
           "member": "BotQPS",
           "name": "BotQPS",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -5689,6 +5714,7 @@
           "example": "10000",
           "member": "uint64",
           "name": "ElasticBilling",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5699,16 +5725,18 @@
           "example": "0",
           "member": "int64",
           "name": "AttackLogPost",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "带宽峰值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "带宽峰值，单位为B/s(字节每秒)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "111",
           "member": "uint64",
           "name": "MaxBandwidth",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5719,6 +5747,7 @@
           "example": "1",
           "member": "uint64",
           "name": "APISecurity",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -5729,6 +5758,7 @@
           "example": "10000",
           "member": "uint64",
           "name": "QpsStandard",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5739,6 +5769,7 @@
           "example": "500",
           "member": "uint64",
           "name": "BandwidthStandard",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5749,6 +5780,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5759,6 +5791,18 @@
           "example": "30000",
           "member": "uint64",
           "name": "SandboxQps",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否api 安全试用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsAPISecurityTrial",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -6541,7 +6585,6 @@
       "document": "ModifySpartaProtection请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "www.test.com",
@@ -6551,7 +6594,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名ID",
           "example": "s2dfd342dfd34423sdfs",
@@ -6561,7 +6603,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "证书类型，0表示没有证书，CertType=1表示自有证书,2 为托管证书",
           "example": "0",
@@ -6571,7 +6612,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CertType=1时，需要填次参数，表示证书内容",
           "example": "sdfdfdf",
@@ -6581,7 +6621,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CertType=1时，需要填次参数，表示证书的私钥",
           "example": "sdfsdfs",
@@ -6591,7 +6630,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CertType=2时，需要填次参数，表示证书的ID",
           "example": "3434",
@@ -6601,7 +6639,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表示是否开启了CDN代理",
           "example": "0",
@@ -6611,7 +6648,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "HTTPS回源协议",
           "example": "https",
@@ -6621,7 +6657,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "HTTPS回源端口,仅UpstreamScheme为http时需要填当前字段",
           "example": "\"80,443\"",
@@ -6631,7 +6666,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表示是否强制跳转到HTTPS，1表示开启，0表示不开启",
           "example": "1",
@@ -6641,7 +6675,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回源类型，0表示通过IP回源,1 表示通过域名回源",
           "example": "0",
@@ -6651,7 +6684,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UpstreamType=1时，填次字段表示回源域名",
           "example": "www.qq.com",
@@ -6661,7 +6693,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UpstreamType=0时，填次字段表示回源ip",
           "example": "[\"1.1.1.1\\n\"]",
@@ -6671,7 +6702,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启HTTP2，1表示开启，0表示不开启http2。开启HTTP2需要HTTPS支持",
           "example": "0",
@@ -6681,7 +6711,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启WebSocket， 1：开启WebSocket，0：不开启WebSocket",
           "example": "0",
@@ -6691,7 +6720,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡策略，0表示轮徇，1表示IP hash",
           "example": "0",
@@ -6701,7 +6729,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否灰度",
           "example": "0",
@@ -6711,7 +6738,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "WAF版本",
           "example": "sparta-waf",
@@ -6721,7 +6747,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "端口信息",
           "example": "无",
@@ -6731,7 +6756,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "长短连接标志，仅IP回源时有效",
           "example": "1",
@@ -6741,7 +6765,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例id",
           "example": "waf-sdjfksl",
@@ -6751,7 +6774,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为Anycast ip类型：1 Anycast 0 普通ip",
           "example": "0",
@@ -6761,7 +6783,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "src的权重",
           "example": "[1.1.1]",
@@ -6771,7 +6792,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启源站的主动健康检测，1表示开启，0表示不开启",
           "example": "0",
@@ -6781,7 +6801,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TLS版本信息",
           "example": "0",
@@ -6791,7 +6810,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加密套件信息",
           "example": "[0,1]",
@@ -6801,9 +6819,8 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "0:不支持选择：默认模版  1:通用型模版 2:安全型模版 3:自定义模版",
+          "document": "0:不支持选择：默认模板  1:通用型模板 2:安全型模板 3:自定义模板",
           "example": "0",
           "member": "int64",
           "name": "CipherTemplate",
@@ -6811,7 +6828,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "300s",
           "example": "300",
@@ -6821,7 +6837,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "300s",
           "example": "300",
@@ -6831,7 +6846,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0:关闭SNI；1:开启SNI，SNI=源请求host；2:开启SNI，SNI=修改为源站host；3：开启SNI，自定义host，SNI=SniHost；",
           "example": "1",
@@ -6841,7 +6855,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SniType=3时，需要填此参数，表示自定义的host；",
           "example": "test.com",
@@ -6851,7 +6864,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IsCdn=3时，需要填此参数，表示自定义header",
           "example": "[\"x-real-ip\"]",
@@ -6859,6 +6871,15 @@
           "name": "IpHeaders",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "0:关闭xff重置；1:开启xff重置",
+          "example": "0",
+          "member": "int64",
+          "name": "XFFReset",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7392,66 +7413,76 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源ID",
+          "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "waf_000q6ntyb",
+          "is_base64": false,
           "member": "string",
           "name": "ResourceIds",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "过期时间",
+          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "年月日",
+          "is_base64": false,
           "member": "string",
           "name": "ValidTime",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "是否自动续费，1：自动续费，0：不自动续费",
+          "document": "是否自动续费，1：自动续费，0：不自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "RenewFlag",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "套餐购买个数",
+          "document": "套餐购买个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Count",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "套餐购买地域，clb-waf暂时没有用到",
+          "document": "套餐购买地域，clb-waf暂时没有用到\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "gz",
+          "is_base64": false,
           "member": "string",
           "name": "Region",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "计费项",
+          "document": "计费项\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sv_wsm_waf_scene_bot_qpsep_clb",
+          "is_base64": false,
           "member": "string",
           "name": "BillingItem",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "ResponseCode": {
       "document": "响应体的返回码",

@@ -732,6 +732,14 @@
         "title": "下载Helm Chart"
       }
     ],
+    "DuplicateImage": [
+      {
+        "document": "复制企业版仓库镜像版本",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DuplicateImage\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-e8pg46c6\",\n    \"SourceNamespace\": \"develop\",\n    \"SourceRepo\": \"app\",\n    \"SourceReference\": \"stg\",\n    \"DestinationNamespace\": \"release\",\n    \"DestinationRepo\": \"app\",\n    \"DestinationTag\": \"prd\",\n    \"Override\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eee33f6d-9271-4894-aaf6-14642d5a88da\"\n    }\n}",
+        "title": "复制企业版仓库镜像版本"
+      }
+    ],
     "DuplicateImagePersonal": [
       {
         "document": "",

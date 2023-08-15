@@ -620,6 +620,14 @@
         "title": "共享型实例升级为性能容量型"
       }
     ],
+    "ModifyLoadBalancersProject": [
+      {
+        "document": "",
+        "input": "https://clb.tencentcloudapi.com/?Action=ModifyLoadBalancersProject\n&LoadBalancerIds.0=lb-1234abcd\n&LoadBalancerIds.1=lb-5678wwqq\n&ProjectId=1122\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"83129908-a282-4f9f-8ab-131a3025ba11\"\n    }\n}",
+        "title": "修改负载均衡所属项目"
+      }
+    ],
     "ModifyRule": [
       {
         "document": "修改一条转发规则的健康检查参数及转发策略。",

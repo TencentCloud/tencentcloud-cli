@@ -1974,7 +1974,7 @@
         {
           "disabled": false,
           "document": "每次从 topic 中拉取消息大小，默认为 1MB，即至少要从 topic 中批量拉取 1MB 消息，才进行数据投递到 ClickHouse 操作。\n提高该参数值，有利于减少往  ClickHouse 投递的次数，但在错误消息过多及网络不稳定等极端情况下时，可能导致频繁重试影响效率。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "100000",
+          "example": "1000000",
           "member": "int64",
           "name": "ConsumerFetchMinBytes",
           "output_required": false,
@@ -15108,106 +15108,113 @@
       "document": "record 与数据库表的映射关系",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "消息的 key 名称",
+          "document": "消息的 key 名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "key1",
+          "is_base64": false,
           "member": "string",
           "name": "JsonKey",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "消息类型",
+          "document": "消息类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Integer",
+          "is_base64": false,
           "member": "string",
           "name": "Type",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "消息是否允许为空",
+          "document": "消息是否允许为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "AllowNull",
+          "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "对应映射列名称",
+          "document": "对应映射列名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testColumn",
+          "is_base64": false,
           "member": "string",
           "name": "ColumnName",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "数据库表额外字段",
+          "document": "数据库表额外字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AUTO_INCREMENT COMMENT 'ID'",
+          "is_base64": false,
           "member": "string",
           "name": "ExtraInfo",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "当前列大小",
+          "document": "当前列大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "32",
+          "is_base64": false,
           "member": "string",
           "name": "ColumnSize",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "当前列精度",
+          "document": "当前列精度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
+          "is_base64": false,
           "member": "string",
           "name": "DecimalDigits",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "是否为自增列",
+          "document": "是否为自增列\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "AutoIncrement",
+          "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "数据库表默认参数",
+          "document": "数据库表默认参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
+          "is_base64": false,
           "member": "string",
           "name": "DefaultValue",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "RegexReplaceParam": {
       "document": "数据处理——Value处理参数——正则替换参数",

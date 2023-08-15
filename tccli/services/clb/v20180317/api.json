@@ -448,6 +448,13 @@
       "output": "ModifyLoadBalancerSlaResponse",
       "status": "online"
     },
+    "ModifyLoadBalancersProject": {
+      "document": "修改一个或多个负载均衡实例所属项目。",
+      "input": "ModifyLoadBalancersProjectRequest",
+      "name": "修改负载均衡所属项目",
+      "output": "ModifyLoadBalancersProjectResponse",
+      "status": "online"
+    },
     "ModifyRule": {
       "document": "ModifyRule 接口用来修改负载均衡七层监听器下的转发规则的各项属性，包括转发路径、健康检查属性、转发策略等。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。",
       "input": "ModifyRuleRequest",
@@ -8768,6 +8775,44 @@
     },
     "ModifyLoadBalancerSlaResponse": {
       "document": "ModifyLoadBalancerSla返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLoadBalancersProjectRequest": {
+      "document": "ModifyLoadBalancersProject请求参数结构体",
+      "members": [
+        {
+          "default": "",
+          "disabled": false,
+          "document": "一个或多个待操作的负载均衡实例ID。",
+          "example": "[\"lb-1234abcd\\r\\n\",\"lb-5678wwqq\\r\\n\"]",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "default": "",
+          "disabled": false,
+          "document": "项目ID。",
+          "example": "1122",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLoadBalancersProjectResponse": {
+      "document": "ModifyLoadBalancersProject返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
