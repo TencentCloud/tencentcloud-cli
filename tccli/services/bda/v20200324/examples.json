@@ -4,7 +4,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"testG3\",\n    \"GroupId\": \"testG3\",\n    \"Tag\": \"TestG3T3\",\n    \"BodyModelVersion\": \"2.0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e1d5929c-5d72-4b2a-b354-2767056a6929\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.BodyModelVersionIllegal\",\n            \"Message\": \"算法模型版本不合法。\"\n        },\n        \"RequestId\": \"e1d5929c-5d72-4b2a-b354-2767056a6929\"\n    }\n}",
         "title": "调用失败示例"
       },
       {
@@ -40,7 +40,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTrace\n<公共请求参数>\n\n{\n    \"PersonId\": \"3333333333333\",\n    \"Trace\": {\n        \"Urls\": [\n            \"http://i2.sinaimg.cn/ty/nba/2015-07-05/U10236P6T12D7648505F44DT20150705114547.jpg\"\n        ],\n        \"BodyRects\": [\n            {\n                \"X\": 1,\n                \"Y\": 2,\n                \"Width\": 3,\n                \"Height\": 4\n            }\n        ]\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81ee3a85-1273-4d39-b7b2-2dea15859039\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.PersonIdNotExist\",\n            \"Message\": \"人员ID不存在。\"\n        },\n        \"RequestId\": \"81ee3a85-1273-4d39-b7b2-2dea15859039\"\n    }\n}",
         "title": "调用失败示例"
       },
       {
@@ -54,7 +54,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"1231231\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cb24cce3-beb9-4f8b-9f61-e79fb075a9a4\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.GroupIdNotExist\",\n            \"Message\": \"人体库ID不存在。\"\n        },\n        \"RequestId\": \"cb24cce3-beb9-4f8b-9f61-e79fb075a9a4\"\n    }\n}",
         "title": "调用失败示例"
       },
       {
@@ -68,7 +68,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePerson\n<公共请求参数>\n\n{\n    \"PersonId\": \"123131231\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"27304486-69f3-47fd-b8ce-b7436ec8486b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.PersonIdNotExist\",\n            \"Message\": \"人员ID不存在。\"\n        },\n        \"RequestId\": \"27304486-69f3-47fd-b8ce-b7436ec8486b\"\n    }\n}",
         "title": "调用失败示例"
       },
       {
@@ -90,7 +90,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectBody\n<公共请求参数>\n\n{\n    \"Url\": \"IamNotUrl\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b5f77c78-efaf-42d1-b0ac-419cc70b4994\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.UrlIllegal\",\n            \"Message\": \"URL格式不合法。\"\n        },\n        \"RequestId\": \"b5f77c78-efaf-42d1-b0ac-419cc70b4994\"\n    }\n}",
         "title": "调用失败示例"
       },
       {
@@ -104,7 +104,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectBodyJoints\n<公共请求参数>\n\n{\n    \"Url\": \"IamNotUrl\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b5f77c78-efaf-42d1-b0ac-419cc70b4994\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.UrlIllegal\",\n            \"Message\": \"URL格式不合法。\"\n        },\n        \"RequestId\": \"b5f77c78-efaf-42d1-b0ac-419cc70b4994\"\n    }\n}",
         "title": "调用失败示例"
       },
       {
@@ -126,7 +126,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetPersonList\n<公共请求参数>\n\n{\n    \"GroupId\": \"testG10\",\n    \"Offset\": 0,\n    \"Limit\": 1001\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c803e3eb-25b4-48d9-b4df-b74c570d110b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.LimitExceed\",\n            \"Message\": \"返回数量不在合法范围内。\"\n        },\n        \"RequestId\": \"c803e3eb-25b4-48d9-b4df-b74c570d110b\"\n    }\n}",
         "title": "调用失败示例"
       },
       {
@@ -140,7 +140,7 @@
       {
         "document": "",
         "input": "https://bda.tencentcloudapi.com/?Action=GetSummaryInfo\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"78ec7830-a1c7-42be-bd65-6d0fa25f6fab\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter\",\n            \"Message\": \"\"\n        },\n        \"RequestId\": \"78ec7830-a1c7-42be-bd65-6d0fa25f6fab\"\n    }\n}",
         "title": "调用失败示例"
       },
       {
@@ -154,7 +154,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"12312312\",\n    \"GroupName\": \"testG3M3\",\n    \"Tag\": \"testG3M3\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3661682c-414a-48d0-86fd-939d504bab70\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.GroupIdNotExist\",\n            \"Message\": \"人体库ID不存在。\"\n        },\n        \"RequestId\": \"3661682c-414a-48d0-86fd-939d504bab70\"\n    }\n}",
         "title": "调用失败示例"
       },
       {
@@ -168,7 +168,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPersonInfo\n<公共请求参数>\n\n{\n    \"PersonId\": \"12313123\",\n    \"PersonName\": \"testG10P1M1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5844914d-b2e1-4afc-9970-8d1cdd6a7138\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.PersonIdNotExist\",\n            \"Message\": \"人员ID不存在。\"\n        },\n        \"RequestId\": \"5844914d-b2e1-4afc-9970-8d1cdd6a7138\"\n    }\n}",
         "title": "调用失败示例"
       },
       {
@@ -182,7 +182,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchTrace\n<公共请求参数>\n\n{\n    \"GroupId\": \"12311111111\",\n    \"Trace\": {\n        \"Urls\": [\n            \"http://i2.sinaimg.cn/ty/nba/2015-07-05/U10236P6T12D7648505F44DT20150705114547.jpg\"\n        ],\n        \"BodyRects\": [\n            {\n                \"X\": 260,\n                \"Y\": 1,\n                \"Width\": 272,\n                \"Height\": 365\n            }\n        ]\n    },\n    \"MaxPersonNum\": 2\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a5de4e8-02a0-4b4e-8c9a-e66e6f26d12a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.GroupIdNotExist\",\n            \"Message\": \"人体库ID不存在。\"\n        },\n        \"RequestId\": \"1a5de4e8-02a0-4b4e-8c9a-e66e6f26d12a\"\n    }\n}",
         "title": "调用失败示例"
       },
       {
@@ -196,7 +196,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SegmentCustomizedPortraitPic\n<公共请求参数>\n\n{\n    \"Url\": \"IamNotAUrl\",\n    \"SegmentationOptions\": {\n        \"Background\": false\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"46ed6f32-549f-4377-8116-2d55e4574528\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.UrlIllegal\",\n            \"Message\": \"URL格式不合法。\"\n        },\n        \"RequestId\": \"46ed6f32-549f-4377-8116-2d55e4574528\"\n    }\n}",
         "title": "调用失败示例"
       },
       {
@@ -210,7 +210,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: bda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SegmentPortraitPic\n<公共请求参数>\n\n{\n    \"Url\": \"IamNotAUrl\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"46ed6f32-549f-4377-8116-2d55e4574528\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.UrlIllegal\",\n            \"Message\": \"URL格式不合法。\"\n        },\n        \"RequestId\": \"46ed6f32-549f-4377-8116-2d55e4574528\"\n    }\n}",
         "title": "调用失败示例"
       },
       {

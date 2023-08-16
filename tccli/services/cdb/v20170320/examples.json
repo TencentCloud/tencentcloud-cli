@@ -700,7 +700,7 @@
     ],
     "DescribeRollbackRangeTime": [
       {
-        "document": "",
+        "document": "查询可回档时间",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRollbackRangeTime\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"cdb-bdf7h3j1\",\n        \"cdb-fix44sxh\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 2,\n        \"Items\": [\n            {\n                \"InstanceId\": \"cdb-fix44sxh\",\n                \"Message\": \"ok\",\n                \"Code\": 0,\n                \"Times\": [\n                    {\n                        \"Begin\": \"2017-08-21 02:06:20\",\n                        \"End\": \"2017-08-25 17:52:05\"\n                    }\n                ]\n            },\n            {\n                \"InstanceId\": \"cdb-bdf7h3j1\",\n                \"Message\": \"ok\",\n                \"Code\": 0,\n                \"Times\": [\n                    {\n                        \"Begin\": \"2017-08-21 02:06:00\",\n                        \"End\": \"2017-08-25 17:52:05\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "title": "查询可回档时间"

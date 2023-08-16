@@ -21,6 +21,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.ContainInvalidChannelId",
+            "Message": "包含无效的通道ID"
+        },
         "RequestId": "d380c0bc-2be1-4620-bf39-9d4d4f512060"
     }
 }

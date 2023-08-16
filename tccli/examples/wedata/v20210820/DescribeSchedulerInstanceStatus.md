@@ -52,6 +52,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "UnauthorizedOperation",
+            "Message": "未授权操作"
+        },
         "RequestId": "72dd1900-2555-4298-89a4-680fb1c3993c"
     }
 }
@@ -73,6 +77,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "AuthFailure.SignatureFailure",
+            "Message": "The provided credentials could not be validated. Please check your signature is correct."
+        },
         "RequestId": "dc00c9b3-faec-404b-a2da-da2653ba026b"
     }
 }

@@ -318,7 +318,7 @@
       {
         "document": "房间ID存在示例",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EndRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 1111\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"19faa0a4-c1c8-40fe-afdb-6cb67f1b3196\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.Room\",\n            \"Message\": \"The room does not exist.\"\n        },\n        \"RequestId\": \"19faa0a4-c1c8-40fe-afdb-6cb67f1b3196\"\n    }\n}",
         "title": "结束房间"
       }
     ],
@@ -444,7 +444,7 @@
       {
         "document": "房间不存在示例",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 11111\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0479a5ea-0b81-4d94-845d-f57b23e52e4e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.Room\",\n            \"Message\": \"The room does not exist.\"\n        },\n        \"RequestId\": \"0479a5ea-0b81-4d94-845d-f57b23e52e4e\"\n    }\n}",
         "title": "开始房间"
       }
     ],

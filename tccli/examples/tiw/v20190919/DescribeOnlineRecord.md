@@ -98,6 +98,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "FailedOperation.Record",
+            "Message": "code: 40004, msg: 2019-09-23 10:31:47, im login failed with code 6206, desc serSig expired\n"
+        },
         "RequestId": "d290f1ee-6c54-4b01-90e6-d701748f0851"
     }
 }

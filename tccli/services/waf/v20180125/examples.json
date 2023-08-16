@@ -28,7 +28,7 @@
       {
         "document": "重复添加的场景",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSpartaProtection\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloud.com\",\n    \"LoadBalance\": \"0\",\n    \"Edition\": \"clb-waf\",\n    \"UpstreamType\": \"0\",\n    \"CertType\": \"0\",\n    \"Ports\": [\n        {\n            \"NginxServerId\": \"0\",\n            \"Protocol\": \"http\",\n            \"Port\": \"80\",\n            \"UpstreamPort\": \"80\",\n            \"UpstreamProtocol\": \"http\"\n        }\n    ],\n    \"SrcList\": [\n        \"1.1.1.1\"\n    ],\n    \"IsCdn\": \"0\",\n    \"IsWebsocket\": \"0\",\n    \"IsGray\": \"0\",\n    \"IsHttp2\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4f284280-a493-4932-95f4-3d87e7320b3e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError\",\n            \"Message\": \"域名已经存在，请勿重复添加\"\n        },\n        \"RequestId\": \"4f284280-a493-4932-95f4-3d87e7320b3e\"\n    }\n}",
         "title": "重复添加的场景"
       },
       {
@@ -61,8 +61,8 @@
     "CreateHost": [
       {
         "document": "",
-        "input": "https://waf.tencentcloudapi.com/?Action=CreateHost\n&InstanceID=aabbcc\n&Host.Status=1\n&Host.Engine=1\n&Host.Domain=1\n&Host.DomainId=1\n&Host.LoadBalancerSet.0.Protocol=1\n&Host.LoadBalancerSet.0.Zone=1\n&Host.LoadBalancerSet.0.Region=gz\n&Host.LoadBalancerSet.0.LoadBalancerId=1\n&Host.LoadBalancerSet.0.ListenerId=1\n&Host.LoadBalancerSet.0.Vip=1\n&Host.LoadBalancerSet.0.ListenerName=1\n&Host.LoadBalancerSet.0.LoadBalancerName=1\n&Host.LoadBalancerSet.0.Vport=1\n&Host.Level=1\n&Host.MainDomain=snv.vom\n&Host.Region=cd\n&Host.FlowMode=1\n&Host.State=1\n&Host.ClsStatus=1\n&Host.IsCdn=1\n&Host.Mode=1\n&Host.Edition=clb-waf\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"97720395-7456-4a21-bcd9-1f32a7deaa90\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHost\n<公共请求参数>\n\n{\n    \"InstanceID\": \"aabbcc\",\n    \"Host\": {\n        \"Status\": \"1\",\n        \"Engine\": \"1\",\n        \"Domain\": \"1\",\n        \"DomainId\": \"1\",\n        \"LoadBalancerSet\": [\n            {\n                \"Protocol\": \"1\",\n                \"Zone\": \"1\",\n                \"Region\": \"gz\",\n                \"LoadBalancerName\": \"1\",\n                \"ListenerId\": \"1\",\n                \"Vip\": \"1\",\n                \"ListenerName\": \"1\",\n                \"LoadBalancerId\": \"1\",\n                \"Vport\": \"1\"\n            }\n        ],\n        \"Level\": \"1\",\n        \"MainDomain\": \"snv.vom\",\n        \"Region\": \"cd\",\n        \"FlowMode\": \"1\",\n        \"State\": \"1\",\n        \"ClsStatus\": \"1\",\n        \"IsCdn\": \"1\",\n        \"Mode\": \"1\",\n        \"Edition\": \"clb-waf\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"97720395-7456-4a21-bcd9-1f32a7deaa90\",\n        \"Error\": {\n            \"Code\": \"ResourceInUse\",\n            \"Message\": \"DomainExisted\"\n        }\n    }\n}",
         "title": "添加域名"
       }
     ],

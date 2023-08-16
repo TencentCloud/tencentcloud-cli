@@ -2156,11 +2156,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "绑定的实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定的集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cynosdbmysql-test",
           "member": "string",
           "name": "InstanceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2170,7 +2170,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "InstanceRegion",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2180,8 +2180,18 @@
           "example": "cynosdb-serverless",
           "member": "string",
           "name": "InstanceType",
-          "required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定集群下的实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[cynosdbmysql-ins-test]",
+          "member": "string",
+          "name": "ExtendIds",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -2536,6 +2546,16 @@
           "name": "MaintainWeekDays",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "serverless实例子状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ServerlessStatus",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -9307,8 +9327,8 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "[cynosdb-ins-test]",
+          "document": "集群ID",
+          "example": "[cynosdb-test]",
           "member": "string",
           "name": "ClusterIds",
           "required": false,
@@ -9349,6 +9369,15 @@
           "name": "Limit",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例D",
+          "example": "[cynosdb-ins-test]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -9358,10 +9387,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "总使用明细数",
+          "document": "资源包抵扣总数",
           "example": "10",
           "member": "int64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9371,6 +9401,7 @@
           "example": "无",
           "member": "PackageDetail",
           "name": "Detail",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10640,6 +10671,42 @@
           "name": "InstanceCount",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Serverless实例个数最小值，范围[1,15]",
+          "example": "1",
+          "member": "int64",
+          "name": "MinRoCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Serverless实例个数最大值，范围[1,15]",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxRoCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Serverless实例最小规格",
+          "example": "0.5",
+          "member": "float",
+          "name": "MinRoCpu",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "Serverless实例最大规格",
+          "example": "1",
+          "member": "float",
+          "name": "MaxRoCpu",
+          "required": false,
+          "type": "float"
         }
       ],
       "usage": "in"

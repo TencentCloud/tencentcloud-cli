@@ -202,7 +202,7 @@
       {
         "document": "请求异常的入参和出参",
         "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountBalance\n<公共请求参数>\n\n{\n    \"AccountType\": 2\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"43348837-a756-4939-92b6-77c333c1b96e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"43348837-a756-4939-92b6-77c333c1b96e\",\n        \"Error\": {\n            \"Code\": \"ResourceNotFound\",\n            \"Message\": \"账号不存在\"\n        }\n    }\n}",
         "title": "DescribeAccountBalance异常请求"
       }
     ],

@@ -16,6 +16,10 @@ Output:
 {
     "Response": {
         "RequestId": "20190117150912",
+        "Error": {
+            "Code": "",
+            "Message": ""
+        },
         "DialogStatus": "COMPLETE",
         "BotName": "订票机器人",
         "IntentName": "Intent_book_tickets",

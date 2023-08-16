@@ -57,6 +57,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "FailedOperation.FuseDetectNoFace",
+            "Message": "未检测到人脸."
+        },
         "RequestId": "8ae581fd-c25f-4a63-83b3-d9fcd97230c8"
     }
 }

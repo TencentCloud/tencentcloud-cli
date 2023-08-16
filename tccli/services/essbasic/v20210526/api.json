@@ -330,7 +330,7 @@
       "status": "online"
     },
     "OperateChannelTemplate": {
-      "document": "此接口（OperateChannelTemplate）用于针对第三方应用平台模板库中的模板对子客企业可见性的查询和设置。\n\n> **使用场景**\n>\n>  1：查询 OperateType=SELECT\n> - 查询第三方应用平台模板库的可见性以及授权的子客列表。\n>\n>  2：修改部分子客授权 OperateType=UPDATE\n> - 对子客企业进行模板库中模板可见性的进行修改操作。\n>- 当模板未发布时，可以修改可见性AuthTag（part/all），当模板发布后，不可做此修改\n> - 若模板已发布且可见性AuthTag是part，可以通过ProxyOrganizationOpenIds增加子客的授权范围。如果是自动领取的模板，增加授权范围后会自动下发。\n>\n>  3：取消部分子客授权 OperateType=DELETE\n> - 对子客企业进行模板库中模板可见性的进行删除操作。\n> - 主要对于手动领取的模板，去除授权后子客在在模板库中看不到，就无法再领取了。但是已经领取过成为自有模板的不会同步删除。\n> - 对于自动领取的模板，由于已经下发，更改授权不会影响。\n> - 如果要同步删除子客自有模板库中的模板，请使用OperateType=UPDATE+Available参数处理。",
+      "document": "此接口（OperateChannelTemplate）用于针对第三方应用平台模板库中的模板对子客企业可见性的查询和设置。\n\n> **使用场景**\n>\n>  1：查询 OperateType=SELECT\n> - 查询第三方应用平台模板库的可见性以及授权的子客列表。\n>\n>  2：修改部分子客授权 OperateType=UPDATE\n> - 对子客企业进行模板库中模板可见性的进行修改操作。\n>- 当模板未发布时，可以修改可见性AuthTag（part/all），当模板发布后，不可做此修改\n> - 若模板已发布且可见性AuthTag是part，可以通过ProxyOrganizationOpenIds增加子客的授权范围。如果是自动领取的模板，增加授权范围后会自动下发。\n>\n>  3：取消部分子客授权 OperateType=DELETE\n> - 对子客企业进行模板库中模板可见性的进行删除操作。\n> - 主要对于手动领取的模板，去除授权后子客在模板库中看不到，就无法再领取了。但是已经领取过成为自有模板的不会同步删除。\n> - 对于自动领取的模板，由于已经下发，更改授权不会影响。\n> - 如果要同步删除子客自有模板库中的模板，请使用OperateType=UPDATE+Available参数处理。",
       "input": "OperateChannelTemplateRequest",
       "name": "操作第三方应用平台企业模板",
       "output": "OperateChannelTemplateResponse",
@@ -6667,6 +6667,7 @@
       "document": "OperateChannelTemplate请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "应用相关信息。 \n此接口Agent.AppId必填。",
           "example": "无",
@@ -6677,6 +6678,7 @@
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "操作类型，\n查询:\"SELECT\"，\n删除:\"DELETE\"，\n更新:\"UPDATE\"",
           "example": "无",
@@ -6687,6 +6689,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "第三方应用平台模板库模板唯一标识",
           "example": "无",
@@ -6697,6 +6700,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "合作企业方第三方机构唯一标识数据.\n支持多个， 用\",\"进行分隔",
           "example": "无",
@@ -6707,6 +6711,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "模板可见性, \n全部可见-\"all\",\n 部分可见-\"part\"",
           "example": "无",
@@ -6717,6 +6722,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "当OperateType=UPDATE时，可以通过设置此字段对模板启停用状态进行操作。\n若此字段值为0，则不会修改模板Available，\n1为启用模板，\n2为停用模板。\n启用后模板可以正常领取。停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。如果Available更新失败，会直接返回错误。",
           "example": "无",
@@ -6727,6 +6733,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": true,
           "document": "暂未开放",
           "example": "无",

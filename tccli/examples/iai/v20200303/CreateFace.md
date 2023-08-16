@@ -54,6 +54,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.UploadFaceNumExceed",
+            "Message": "一次最多上传四张人脸。"
+        },
         "RequestId": "44506f79-2191-49bc-997b-748a566d781c"
     }
 }

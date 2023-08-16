@@ -69,6 +69,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "FailedOperation",
+            "Message": "Connect to 9.164.239.24:54220 [/9.164.239.24] failed: Connection refused (Connection refused) executing POST http://data-source/cloud/datasource/v1/DescribeDataSourceWithoutInfo"
+        },
         "RequestId": "2be30f31-ec77-4f92-abd1-0f5b9113fb0e"
     }
 }

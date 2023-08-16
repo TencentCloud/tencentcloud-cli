@@ -2,7 +2,7 @@
   "actions": {
     "AttachPlugin": [
       {
-        "document": "",
+        "document": "连接插件",
         "input": "https://apigateway.tencentcloudapi.com/?Action=AttachPlugin\n&ServiceId=Service-3fasdgrg\n&PluginId=Plugin-3datbg1f\n&EnvironmentName=release\n&ApiIds.0=api-gesv1rfa\n&ApiIds.1=api-9ads3g\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"bb85842c-c0d2-4543-8f4d-396a193babe8\"\n    }\n}",
         "title": "AttachPlugin"
@@ -392,7 +392,7 @@
       {
         "document": "下面的示例提示参数错误",
         "input": "https://apigateway.tencentcloudapi.com/?Action=DescribeLogSearch\n&StartTime=2019-10-10 00:00:00\n&EndTime=2019-10-10 23:59:59\n&ServiceId=service-8xipv0ua\n&Limit=101\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5a8b1de4-04f5-48eb-9be6-93491ebee6e1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue\",\n            \"Message\": \"Param is illegal: `101`\"\n        },\n        \"RequestId\": \"5a8b1de4-04f5-48eb-9be6-93491ebee6e1\"\n    }\n}",
         "title": "请求失败"
       }
     ],

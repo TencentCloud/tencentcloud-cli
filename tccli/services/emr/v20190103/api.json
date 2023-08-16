@@ -168,6 +168,13 @@
       "output": "ModifyResourceSchedulerResponse",
       "status": "online"
     },
+    "ModifyResourcesTags": {
+      "document": "强制修改标签",
+      "input": "ModifyResourcesTagsRequest",
+      "name": "强制修改标签",
+      "output": "ModifyResourcesTagsResponse",
+      "status": "online"
+    },
     "RunJobFlow": {
       "document": "创建流程作业",
       "input": "RunJobFlowRequest",
@@ -5715,6 +5722,159 @@
     "ModifyResourceSchedulerResponse": {
       "document": "ModifyResourceScheduler返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourceTags": {
+      "document": "强制修改标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id 或者 cvm id",
+          "example": "emr-xxxx",
+          "is_base64": false,
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源6段式表达式",
+          "example": "qcs::emr:ap-guangzhou:...",
+          "is_base64": false,
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源前缀",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "ResourcePrefix",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ap-beijing",
+          "example": "地域",
+          "is_base64": false,
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "emr",
+          "example": "服务类型",
+          "is_base64": false,
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "删除的标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "DeleteTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "添加的标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "AddTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "修改的标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "ModifyTags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyResourcesTagsRequest": {
+      "document": "ModifyResourcesTags请求参数结构体",
+      "members": [
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "标签类型，取值Cluster或者Node",
+          "example": "cluster",
+          "is_base64": false,
+          "member": "string",
+          "name": "ModifyType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "标签信息",
+          "example": "无",
+          "is_base64": false,
+          "member": "ModifyResourceTags",
+          "name": "ModifyResourceTagsInfoList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourcesTagsResponse": {
+      "document": "ModifyResourcesTags返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成功的资源id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"emr-xxx\"]",
+          "member": "string",
+          "name": "SuccessList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "失败的资源id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"emr-xxx\"]",
+          "member": "string",
+          "name": "FailList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部分成功的资源id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"emr-xxx\"]",
+          "member": "string",
+          "name": "PartSuccessList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

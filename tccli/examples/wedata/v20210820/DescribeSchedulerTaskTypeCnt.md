@@ -51,6 +51,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "UnknownParameter",
+            "Message": "The parameter `InCharge` is not recognized."
+        },
         "RequestId": "11beba5a-ce1f-4347-a64e-29e60cb9955d"
     }
 }

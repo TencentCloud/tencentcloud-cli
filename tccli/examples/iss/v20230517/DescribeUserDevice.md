@@ -61,6 +61,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.InvalidDeviceId",
+            "Message": "无效的设备Id"
+        },
         "RequestId": "97694623-ae7d-435c-aff7-f5a051fe9474"
     }
 }
@@ -81,6 +85,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.InvalidDeviceId",
+            "Message": "无效的设备Id"
+        },
         "RequestId": "c3c7c853-e5cf-4829-87f8-375b0623d750"
     }
 }

@@ -554,7 +554,7 @@
       {
         "document": "发起批量转账，参数错误的情况",
         "input": "https://cpdp.tencentcloudapi.com/?Action=CreateTransferBatch\n&MerchantId=129284394\n&MerchantAppId=wxf636efh567hg4356\n&MerchantBatchNo=plfk2020042013\n&BatchName=2019年1月深圳分部报销单\n&BatchRemark=转账说明\n&TotalAmount=50000\n&TotalNum=1\n&TransferDetails.0.MerchantDetailNo=x23zy545Bd5436\n&TransferDetails.0.TransferAmount=20000\n&TransferDetails.0.TransferRemark=2020年4月报销\n&TransferDetails.0.OpenId=o-MYE42l80oelYMDE34nYD456Xoy\n&TransferDetails.0.UserName=张三\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"41f4cac5-8a76-47ea-ae6e-913855f0df5c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"41f4cac5-8a76-47ea-ae6e-913855f0df5c\",\n        \"Error\": {\n            \"Code\": \"InvalidParameter\",\n            \"Message\": \"批次金额必须等于明细金额和\"\n        }\n    }\n}",
         "title": "发起批量转账错误返回示例"
       }
     ],
@@ -752,7 +752,7 @@
       {
         "document": "1",
         "input": "POST / HTTP/1.1\nHost: cpdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: MigrateOrderRefund\n<公共请求参数>\n\n{\n    \"MerchantId\": \"1\",\n    \"PayAmt\": 1,\n    \"PayChannel\": \"1\",\n    \"PayOrderId\": \"1\",\n    \"RefundOrderId\": \"1\",\n    \"RefundAmt\": 11,\n    \"ThirdChannelOrderId\": \"1\",\n    \"Profile\": \"1\",\n    \"RefundReason\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c239925d-3202-48dc-9664-22a27e1fd79a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError\",\n            \"Message\": \"An internal error has occurred. Retry your request, but if the problem persists, contact us.\"\n        },\n        \"RequestId\": \"c239925d-3202-48dc-9664-22a27e1fd79a\"\n    }\n}",
         "title": "1"
       }
     ],
@@ -1206,7 +1206,7 @@
       {
         "document": "",
         "input": "https://cpdp.tencentcloudapi.com/?Action=QueryMemberTransaction\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&MrchCode=1234&FunctionFlag=9&OutSubAcctNo= 1234000000021018&OutMemberCode= YAPI100015&OutSubAcctName=demo&InSubAcctNo= 1234000000021028&InMemberCode= YAPI100016&InSubAcctName=demo&TranAmt=10&TranFee=0&TranType=01&Ccy=RMB&OrderNo=O2019120667",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5db16324-2c31-4848-adde-d45ea658fbbb\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5db16324-2c31-4848-adde-d45ea658fbbb\",\n        \"Error\": {\n            \"Message\": \"[ERR130] 无此交易调用权限\",\n            \"CnsmrSeqNo\": \"\",\n            \"Code\": \"FailedOperation.BackendError\"\n        }\n    }\n}",
         "title": "会员间交易-不验证"
       }
     ],
@@ -1604,7 +1604,7 @@
       {
         "document": "",
         "input": "https://cpdp.tencentcloudapi.com/?Action=RechargeByThirdPay\r\n&<公共请求参数>\r\n&MidasSecretId=1587005497659\r\n&MidasSignature=111\r\n&MidasAppId=unibank10001\r\n&RequestType=MemberRechargeThirdPayReq\r\n&OrderId=2020042180081\r\n&PlatformShortNumber=F08872\r\n&AcquiringChannelType=04\r\n&BankAccountNumber=15000093978307\r\n&PayChannelSubId=1\r\n&PayChannel=bank_pingan\r\n&MerchantCode=4087\r\n&TransSequenceNumber=F088722004270543493495\r\n&TransNetMemberCode=xxx\r\n&BankSubAccountNumber=xx\r\n&TransFee=xxx\r\n&ThirdPayChannel=0001\r\n&ThirdPayChannelMerchantCode=xx\r\n&ThirdPayChannelOrderId=xxxx\r\n&CurrencyAmount=1\r\n&CurrencyUnit=1\r\n&CurrencyType=RMB\r\n&MidasEnvironment=dev",
-        "output": "{\n    \"Response\": {\n        \"RequestType\": \"MemberRechargeThirdPayAns\",\n        \"RequestId\": \"67257811-59c6-4f19-acf3-51b388a2f9f5\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.PABankError\",\n            \"Message\": \"E90006:%E6%97%A0%E5%8C%B9%E9%85%8D%E7%9A%84%E4%BC%9A%E5%91%98%E5%AD%90%E8%B4%A6%E6%88%B7%E6%88%96%E4%BC%9A%E5%91%98%E5%AD%90%E8%B4%A6%E6%88%B7%E5%B7%B2%E5%A4%B1%E6%95%88\"\n        },\n        \"RequestType\": \"MemberRechargeThirdPayAns\",\n        \"RequestId\": \"67257811-59c6-4f19-acf3-51b388a2f9f5\"\n    }\n}",
         "title": "处理失败示例"
       }
     ],

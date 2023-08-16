@@ -1719,7 +1719,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件时间。\n数据时间点，接口返回支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见ISO日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。\n接口返回的时间格式和查询请求传入的时间格式一致。",
+          "document": "事件时间。\n接口返回支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)\n2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。\n接口返回的时间格式和查询请求传入的时间格式一致。",
           "example": "无",
           "member": "string",
           "name": "EventTime",
@@ -1759,7 +1759,7 @@
         },
         {
           "disabled": false,
-          "document": "客户接口响应时间",
+          "document": "客户接口响应时间。\n接口返回支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)\n2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。\n接口返回的时间格式和查询请求传入的时间格式一致。",
           "example": "无",
           "member": "string",
           "name": "ResponseTime",
@@ -5561,7 +5561,7 @@
         {
           "Reference": [],
           "disabled": false,
-          "document": "起始时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。",
+          "document": "起始时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。",
           "example": "2020-10-12T00:00:00+08:00",
           "is_base64": false,
           "member": "string",
@@ -5572,7 +5572,7 @@
         {
           "Reference": [],
           "disabled": false,
-          "document": "结束时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。\n\n查询的起始和结束时间跨度不支持超过1天。仅支持查询最近14天的数据。",
+          "document": "结束时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。\n\n查询的起始和结束时间跨度不支持超过1天。仅支持查询最近14天的数据。",
           "example": "2020-10-12T00:00:00+08:00",
           "is_base64": false,
           "member": "string",

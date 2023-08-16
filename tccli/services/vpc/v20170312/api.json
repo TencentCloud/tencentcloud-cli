@@ -13878,54 +13878,66 @@
       "document": "DescribeSecurityGroups请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "安全组实例ID，例如：sg-33ocnj9n。每次请求的实例的上限为100。参数不支持同时指定SecurityGroupIds和Filters。",
           "example": "[\"sg-33ocnj9n\"]",
+          "is_base64": false,
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
           "type": "list"
         },
         {
+          "Reference": [],
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定SecurityGroupIds和Filters。\n<li>security-group-id - String - （过滤条件）安全组ID。</li>\n<li>project-id - Integer - （过滤条件）项目ID。</li>\n<li>security-group-name - String - （过滤条件）安全组名称。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。使用请参考示例2。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例3。</li>",
+          "document": "过滤条件，参数不支持同时指定SecurityGroupIds和Filters。\n<li>security-group-id - String - （过滤条件）安全组ID。</li>\n<li>project-id - Integer - （过滤条件）项目ID。</li>\n<li>security-group-name - String - （过滤条件）安全组名称。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 其中 tag-key 请使用具体的标签键进行替换。</li>",
           "example": "[{\"Name\": \"security-group-id\", \"Values\": [\"sg-33ocnj9n\"]}]",
+          "is_base64": false,
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
+          "is_base64": false,
           "member": "string",
           "name": "Offset",
           "required": false,
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
+          "is_base64": false,
           "member": "string",
           "name": "Limit",
           "required": false,
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "排序字段。支持：`CreatedTime` `UpdateTime`。注意：该字段没有默认值。",
           "example": "UpdateTime",
+          "is_base64": false,
           "member": "string",
           "name": "OrderField",
           "required": false,
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "排序方法。升序：`ASC`，倒序：`DESC`。默认值：`ASC`",
           "example": "DESC",
+          "is_base64": false,
           "member": "string",
           "name": "OrderDirection",
           "required": false,

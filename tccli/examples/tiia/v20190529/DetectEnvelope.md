@@ -13,6 +13,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "FailedOperation.DownloadError ",
+            "Message": "文件下载错误。"
+        },
         "RequestId": "ad418ac5-fbfd-4bd7-8f4a-35ab085e27dd"
     }
 }

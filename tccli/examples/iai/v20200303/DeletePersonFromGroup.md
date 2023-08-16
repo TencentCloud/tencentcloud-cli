@@ -35,6 +35,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "FailedOperation.GroupPersonMapNotExist",
+            "Message": "组中不包含对应的人员Id。"
+        },
         "RequestId": "b9d9641d-3de2-4a6f-a728-36a3b66e7bd0"
     }
 }

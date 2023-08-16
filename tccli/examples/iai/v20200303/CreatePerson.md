@@ -97,6 +97,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.PersonIdAlreadyExist",
+            "Message": "人员ID已经存在。人员ID不可重复。"
+        },
         "RequestId": "76dedef7-af27-4a20-9064-c5ef3133926d"
     }
 }
@@ -121,6 +125,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.GroupIdNotExist",
+            "Message": "人员库ID不存在。"
+        },
         "RequestId": "dfa512fc-fd07-4bf1-a292-cb497b620857"
     }
 }

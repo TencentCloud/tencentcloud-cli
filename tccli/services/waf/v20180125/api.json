@@ -1898,20 +1898,22 @@
       "document": "CreateHost请求参数结构体",
       "members": [
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "防护域名配置信息",
           "example": "无",
+          "is_base64": false,
           "member": "HostRecord",
           "name": "Host",
           "required": true,
           "type": "object"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "实例id",
           "example": "aaaa",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceID",
           "required": false,
@@ -1929,7 +1931,7 @@
           "example": "无",
           "member": "string",
           "name": "DomainId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -682,7 +682,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableGlobalDomain\n<公共请求参数>\n\n{\n    \"DomainId\": \"test.com\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d5fc71eb-451a-40f2-933f-2732c8990d7f\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d5fc71eb-451a-40f2-933f-2732c8990d7f\",\n        \"Error\": {\n            \"Message\": \"domain not exits\",\n            \"Code\": \"FailedOperation\"\n        }\n    }\n}",
         "title": "暂停指定域名的解析"
       }
     ],

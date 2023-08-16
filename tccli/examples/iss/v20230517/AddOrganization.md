@@ -45,6 +45,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "ResourceNotFound",
+            "Message": "该资源不存在"
+        },
         "RequestId": "df1d71c3-2389-4f04-9db8-36108be0c915"
     }
 }
@@ -66,6 +70,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.OrgNameRepeat",
+            "Message": "组织名称不能重复"
+        },
         "RequestId": "4847e307-e6ac-47b1-b6f8-bea39a66c8a9"
     }
 }

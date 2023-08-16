@@ -18,7 +18,7 @@
       {
         "document": "",
         "input": "https://facefusion.tencentcloudapi.com/?Action=FaceFusion\n&ProjectId=100646\n&ModelId=qc_100646_154021_9\n&RspImgType=url\n&Image=base64_string\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ae581fd-c25f-4a63-83b3-d9fcd97230c8\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.FuseDetectNoFace\",\n            \"Message\": \"未检测到人脸.\"\n        },\n        \"RequestId\": \"8ae581fd-c25f-4a63-83b3-d9fcd97230c8\"\n    }\n}",
         "title": "调用返回失败"
       }
     ],

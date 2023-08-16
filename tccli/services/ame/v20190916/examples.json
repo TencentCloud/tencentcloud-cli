@@ -160,7 +160,7 @@
       {
         "document": "在Error为ResourceNotFound时，Message中包含Code信息为版权方的错误码，具体含义如下：\n101 无结果\n102 内容无权限获取\n103 内容因版权原因下架\n104 内容仅支持下载，不可在线播放\n105 内容需要付费获取\n106 部分资源内容状态不同\n1001 输入参数错误\n1004 第三方API错误\n1005 支付错误\n1006 非支持支付模式\n1007 系统错误\n1008 其他系统错误\n1009 Token过期\n1205 用户账户不存在\n5023 超过当日下载最大量\n5024 超过当月下载最大量\n5000-5999 其他功能错误定义",
         "input": "https://ame.tencentcloudapi.com/?Action=DescribeMusic\n&ItemId=xxxx\n&IdentityId=xx\n&SubItemType=MP3-64K-FTD-P\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1575025791424544000\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound\",\n            \"Message\": \"Code:1001, Msg:Invalid parameter (itemid)\"\n        },\n        \"RequestId\": \"s1575025791424544000\"\n    }\n}",
         "title": "获取曲库包歌曲播放信息-版权方错误示例"
       }
     ],

@@ -32,6 +32,12 @@ Output:
                             "Name": "abc",
                             "Managers": [
                                 "abc"
+                            ],
+                            "ManagerUsers": [
+                                {
+                                    "ManagerId": "abc",
+                                    "ManagerName": "abc"
+                                }
                             ]
                         },
                         "Count": 1
@@ -82,6 +88,12 @@ Output:
                     "Name": "abc",
                     "Managers": [
                         "abc"
+                    ],
+                    "ManagerUsers": [
+                        {
+                            "ManagerId": "abc",
+                            "ManagerName": "abc"
+                        }
                     ]
                 },
                 "IpPortSet": [
@@ -131,6 +143,12 @@ Output:
                             "Name": "abc",
                             "Managers": [
                                 "abc"
+                            ],
+                            "ManagerUsers": [
+                                {
+                                    "ManagerId": "abc",
+                                    "ManagerName": "abc"
+                                }
                             ]
                         },
                         "Count": 1
@@ -181,6 +199,12 @@ Output:
                     "Name": "abc",
                     "Managers": [
                         "abc"
+                    ],
+                    "ManagerUsers": [
+                        {
+                            "ManagerId": "abc",
+                            "ManagerName": "abc"
+                        }
                     ]
                 },
                 "IpPortSet": [

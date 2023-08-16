@@ -37,6 +37,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InvalidParameter.InvalidParameter",
+            "Message": "参数不合法。"
+        },
         "RequestId": "cac925c7-c939-4eb6-8db5-d642f7385c30"
     }
 }

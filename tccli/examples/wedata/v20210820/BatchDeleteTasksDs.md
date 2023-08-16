@@ -46,6 +46,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "AuthFailure.SignatureFailure",
+            "Message": "The provided credentials could not be validated. Please check your signature is correct."
+        },
         "RequestId": "eb055faf-49d0-452b-9a5b-202343791bcc"
     }
 }

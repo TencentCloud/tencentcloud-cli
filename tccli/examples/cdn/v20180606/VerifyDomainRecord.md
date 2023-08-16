@@ -34,6 +34,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "UnauthorizedOperation.CdnTxtRecordValueNotMatch",
+            "Message": "cdn txt record value not match(txt record value not match)"
+        },
         "RequestId": "2424"
     }
 }

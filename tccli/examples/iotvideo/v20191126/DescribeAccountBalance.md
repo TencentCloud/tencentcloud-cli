@@ -37,7 +37,11 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "43348837-a756-4939-92b6-77c333c1b96e"
+        "RequestId": "43348837-a756-4939-92b6-77c333c1b96e",
+        "Error": {
+            "Code": "ResourceNotFound",
+            "Message": "账号不存在"
+        }
     }
 }
 ```

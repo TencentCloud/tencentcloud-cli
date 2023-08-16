@@ -36,6 +36,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.DomainRepeat",
+            "Message": "该域名已存在"
+        },
         "RequestId": "9e9b6808-0941-41e9-95eb-5a9a827ca4de"
     }
 }

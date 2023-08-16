@@ -33,6 +33,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "ResourceUnavailable.DevNoRegister",
+            "Message": "设备未注册"
+        },
         "RequestId": "2b064fb2-a7b9-477a-a114-e3dcdeb2a132"
     }
 }

@@ -51,7 +51,11 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03",
+        "Error": {
+            "Code": "InvalidParameter",
+            "Message": "Limit:0 is not int!"
+        }
     }
 }
 ```

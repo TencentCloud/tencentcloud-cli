@@ -365,304 +365,333 @@
     "serviceShortName": "dasb"
   },
   "objects": {
+    "ACTemplate": {
+      "document": "权限控制模版对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模版id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "temp-xxxx",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模版名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "模版A",
+          "member": "string",
+          "name": "TemplateName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模版描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "这是一个描述信息",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Acl": {
       "document": "访问权限",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "访问权限ID",
           "example": "1",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "访问权限名称",
           "example": "xx",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启磁盘映射",
           "example": "true",
           "member": "bool",
           "name": "AllowDiskRedirect",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启剪贴板文件上行",
           "example": "true",
           "member": "bool",
           "name": "AllowClipFileUp",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启剪贴板文件下行",
           "example": "true",
           "member": "bool",
           "name": "AllowClipFileDown",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启剪贴板文本（目前含图片）上行",
           "example": "true",
           "member": "bool",
           "name": "AllowClipTextUp",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启剪贴板文本（目前含图片）下行",
           "example": "true",
           "member": "bool",
           "name": "AllowClipTextDown",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启文件传输上传",
           "example": "true",
           "member": "bool",
           "name": "AllowFileUp",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件传输上传大小限制（预留参数，暂未启用）",
           "example": "0",
           "member": "uint64",
           "name": "MaxFileUpSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启文件传输下载",
           "example": "true",
           "member": "bool",
           "name": "AllowFileDown",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件传输下载大小限制（预留参数，暂未启用）",
           "example": "0",
           "member": "uint64",
           "name": "MaxFileDownSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否允许任意账号登录",
           "example": "true",
           "member": "bool",
           "name": "AllowAnyAccount",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联的用户列表",
           "example": "[]",
           "member": "User",
           "name": "UserSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联的用户组列表",
           "example": "[]",
           "member": "Group",
           "name": "UserGroupSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联的资产列表",
           "example": "[]",
           "member": "Device",
           "name": "DeviceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联的资产组列表",
           "example": "[]",
           "member": "Group",
           "name": "DeviceGroupSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联的账号列表",
           "example": "[]",
           "member": "string",
           "name": "AccountSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联的高危命令模板列表",
           "example": "[]",
           "member": "CmdTemplate",
           "name": "CmdTemplateSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启 RDP 磁盘映射文件上传",
           "example": "true",
           "member": "bool",
           "name": "AllowDiskFileUp",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启 RDP 磁盘映射文件下载",
           "example": "true",
           "member": "bool",
           "name": "AllowDiskFileDown",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启 rz sz 文件上传",
           "example": "true",
           "member": "bool",
           "name": "AllowShellFileUp",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启 rz sz 文件下载",
           "example": "true",
           "member": "bool",
           "name": "AllowShellFileDown",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启 SFTP 文件删除",
           "example": "true",
           "member": "bool",
           "name": "AllowFileDel",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "访问权限生效时间，如:\"2021-09-22T00:00:00+00:00\"\n生效、失效时间不填则访问权限长期有效",
           "example": "2021-02-04T15:23:52+08:00",
           "member": "datetime_iso",
           "name": "ValidateFrom",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "访问权限失效时间，如:\"2021-09-23T00:00:00+00:00\"\n生效、失效时间不填则访问权限长期有效",
           "example": "2021-02-04T15:23:52+08:00",
           "member": "datetime_iso",
           "name": "ValidateTo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期",
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属部门的信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Department",
           "name": "Department",
-          "required": true,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否允许使用访问串，默认允许\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AllowAccessCredential",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联的数据库高危命令列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ACTemplate",
+          "name": "ACTemplateSet",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -1465,6 +1494,15 @@
           "name": "DepartmentId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许使用访问串，默认允许",
+          "example": "true",
+          "member": "bool",
+          "name": "AllowAccessCredential",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2137,9 +2175,45 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "管理员用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DepartmentManagerUser",
+          "name": "ManagerUsers",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
+    },
+    "DepartmentManagerUser": {
+      "document": "部门管理员信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "管理员Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ManagerId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "管理员姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user",
+          "member": "string",
+          "name": "ManagerName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DeployResourceRequest": {
       "document": "DeployResource请求参数结构体",
@@ -3590,6 +3664,15 @@
           "name": "DepartmentId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "参数过滤数组\n",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4336,6 +4419,15 @@
           "name": "DepartmentId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许使用访问串",
+          "example": "true",
+          "member": "bool",
+          "name": "AllowAccessCredential",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -6829,6 +6921,39 @@
           "member": "string",
           "name": "DepartmentId",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "激活状态 0 - 未激活 1 - 激活\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ActiveStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "锁定状态 0 - 未锁定 1 - 锁定\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "LockStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态 与Filter中一致\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true

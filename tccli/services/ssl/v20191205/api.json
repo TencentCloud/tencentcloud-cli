@@ -6150,18 +6150,22 @@
       "document": "ModifyCertificateProject请求参数结构体",
       "members": [
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "需要修改所属项目的证书 ID 集合，最多100个证书。",
+          "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "CertificateIdList",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "项目 ID。",
+          "example": "无",
+          "is_base64": false,
           "member": "uint64",
           "name": "ProjectId",
           "required": true,
@@ -6176,16 +6180,20 @@
         {
           "disabled": false,
           "document": "修改所属项目成功的证书集合。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "SuccessCertificates",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "修改所属项目失败的证书集合。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "FailCertificates",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6621,56 +6629,90 @@
       "document": "ReplaceCertificate请求参数结构体",
       "members": [
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "证书 ID。",
+          "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "CertificateId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "验证类型：DNS_AUTO = 自动DNS验证（仅支持在腾讯云解析且解析状态正常的域名使用该验证类型），DNS = 手动DNS验证，FILE = 文件验证。",
+          "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ValidType",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "类型，默认 Original。可选项：Original = 原证书 CSR，Upload = 手动上传，Online = 在线生成。",
+          "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "CsrType",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "CSR 内容。",
+          "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "CsrContent",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "KEY 密码。",
+          "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "CsrkeyPassword",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "重颁发原因。",
+          "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Reason",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "CSR加密方式，可选：RSA、ECC、SM2\n（CsrType为Online才可选）， 默认为RSA",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "CertCSREncryptAlgo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "CSR加密参数，CsrEncryptAlgo为RSA时， 可选2048、4096等默认为2048；CsrEncryptAlgo为ECC时，可选prime256v1，secp384r1等，默认为prime256v1; ",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "CertCSRKeyParameter",
           "required": false,
           "type": "string"
         }
@@ -6683,8 +6725,10 @@
         {
           "disabled": false,
           "document": "证书 ID。",
+          "example": "无",
           "member": "string",
           "name": "CertificateId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

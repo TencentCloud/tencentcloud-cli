@@ -33,7 +33,11 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "4d608fa8-66a3-4a25-94ce-1b904d4807f3"
+        "RequestId": "4d608fa8-66a3-4a25-94ce-1b904d4807f3",
+        "Error": {
+            "Code": "ResourceNotFound.MediaNotFound",
+            "Message": "媒资不存在"
+        }
     }
 }
 ```

@@ -24,7 +24,9 @@ Output:
                 "SecurityGroupDesc": "test-group-desc",
                 "ProjectId": "0",
                 "IsDefault": true,
-                "CreatedTime": "2017-04-18 21:02:30"
+                "CreatedTime": "2017-04-18 21:02:30",
+                "UpdateTime": "",
+                "TagSet": []
             }
         ],
         "TotalCount": 1,
@@ -57,6 +59,7 @@ Output:
                 "ProjectId": "0",
                 "IsDefault": false,
                 "CreatedTime": "2019-07-23 12:32:24",
+                "UpdateTime": "",
                 "TagSet": [
                     {
                         "Key": "中文标签键",

@@ -10634,30 +10634,33 @@
       "document": "DescribeRollbackRangeTime请求参数结构体",
       "members": [
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "实例 ID 列表，单个实例 ID 的格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "[\"cdb-fix44sxh\\r\\n\",\"cdb-bdf7h3j1\\r\\n\"]",
+          "is_base64": false,
           "member": "string",
           "name": "InstanceIds",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
-          "document": "克隆实例与源实例是否在同一可用区，是:\"false\"，否:\"true\"",
+          "document": "克隆实例与源实例是否在异地可用区，是:\"true\"，否:\"false\"",
           "example": "false",
+          "is_base64": false,
           "member": "string",
           "name": "IsRemoteZone",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "克隆实例与源实例不在同一地域时需填写克隆实例所在地域，例：\"ap-guangzhou\"",
           "example": "ap-guangzhou",
+          "is_base64": false,
           "member": "string",
           "name": "BackupRegion",
           "required": false,
@@ -10675,7 +10678,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10685,7 +10688,7 @@
           "example": "无",
           "member": "InstanceRollbackRangeTime",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -18485,6 +18488,7 @@
           "example": "d2baf2fb-cbae62df-7dd0d736-9cbd3e31",
           "member": "string",
           "name": "AsyncRequestId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

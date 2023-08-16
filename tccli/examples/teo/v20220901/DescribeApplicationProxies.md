@@ -20,8 +20,8 @@ Output:
                 "HostId": "",
                 "ProxyType": "instance",
                 "Area": "mainland",
-                "SessionPersistTime": 1,
                 "AccelerateType": 1,
+                "SessionPersistTime": 100,
                 "PlatType": "domain",
                 "ProxyId": "proxy-34c74aa7-9a9f-11ec-bcb0-52540015711d",
                 "ProxyName": "zone-f835533b8998f",
@@ -36,11 +36,14 @@ Output:
                         "Port": [
                             "80"
                         ],
+                        "OriginPort": "8080",
+                        "SessionPersistTime": 100,
                         "Proto": "TCP",
                         "Status": "online",
                         "ForwardClientIp": "off",
                         "SessionPersist": true,
-                        "RuleId": "rule-34c74ab8-9a9f-11ec-bcb0-52540015711d"
+                        "RuleId": "rule-34c74ab8-9a9f-11ec-bcb0-52540015711d",
+                        "RuleTag": "rule-for-cgi"
                     },
                     {
                         "OriginType": "custom",
@@ -54,9 +57,15 @@ Output:
                         "Status": "online",
                         "ForwardClientIp": "off",
                         "SessionPersist": true,
-                        "RuleId": "rule-4bc1d3d6-9aa0-11ec-bcb0-52540015711d"
+                        "OriginPort": "8080",
+                        "SessionPersistTime": 100,
+                        "RuleId": "rule-4bc1d3d6-9aa0-11ec-bcb0-52540015711d",
+                        "RuleTag": "rule-for-logic"
                     }
                 ],
+                "AccelerateMainland": {
+                    "Switch": "off"
+                },
                 "ScheduleValue": [],
                 "SecurityType": 1,
                 "Ipv6": {

@@ -11,6 +11,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InvalidParameter",
+            "Message": ""
+        },
         "RequestId": "78ec7830-a1c7-42be-bd65-6d0fa25f6fab"
     }
 }

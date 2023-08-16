@@ -14,6 +14,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.InvalidAccessProtocol",
+            "Message": "无效的设备接入协议"
+        },
         "RequestId": "cb4884f8-f00e-4e2f-a867-49a4d805960f"
     }
 }

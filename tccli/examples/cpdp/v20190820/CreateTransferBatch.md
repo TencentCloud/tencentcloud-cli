@@ -57,7 +57,11 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "41f4cac5-8a76-47ea-ae6e-913855f0df5c"
+        "RequestId": "41f4cac5-8a76-47ea-ae6e-913855f0df5c",
+        "Error": {
+            "Code": "InvalidParameter",
+            "Message": "批次金额必须等于明细金额和"
+        }
     }
 }
 ```
