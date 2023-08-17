@@ -2170,52 +2170,68 @@
       "document": "CreateCloudStorage请求参数结构体",
       "members": [
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "产品ID",
           "example": "H541SOP191",
+          "is_base64": false,
           "member": "string",
           "name": "ProductId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "设备名称",
           "example": "event_36502632_1",
+          "is_base64": false,
           "member": "string",
           "name": "DeviceName",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "云存套餐ID：\nyc1m3d ： 全时3天存储月套餐。\nyc1m7d ： 全时7天存储月套餐。\nyc1m30d ：全时30天存储月套餐。\nyc1y3d ：全时3天存储年套餐。\nyc1y7d ：全时7天存储年套餐。\nyc1y30d ：全时30天存储年套餐。\nye1m3d ：事件3天存储月套餐。\nye1m7d ：事件7天存储月套餐。\nye1m30d ：事件30天存储月套餐 。\nye1y3d ：事件3天存储年套餐。\nye1y7d ：事件7天存储年套餐。\nye1y30d ：事件30天存储年套餐。\nyc1w7d : 全时7天存储周套餐。\nye1w7d : 事件7天存储周套餐。\nlye1m3d：低功耗事件3天月套餐。\nlye1m7d：低功耗事件7天月套餐。\nlye1m30d：低功耗事件30天月套餐。\nlye1y3d：低功耗事件3天年套餐。\nlye1y7d：低功耗事件7天年套餐。\nlye1y30d：低功耗事件30天年套餐。",
           "example": "yc1m3d",
+          "is_base64": false,
           "member": "string",
           "name": "PackageId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "如果当前设备已开启云存套餐，Override=1会使用新套餐覆盖原有套餐。不传此参数则默认为0。",
           "example": "0",
+          "is_base64": false,
           "member": "uint64",
           "name": "Override",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "套餐列表顺序：PackageQueue=front会立即使用新购买的套餐，新购套餐结束后，列表中下一个未过期的套餐继续生效；PackageQueue=end会等设备当前所有已购买套餐过期后才会生效新购套餐。与Override参数不能同时使用。",
           "example": "front",
+          "is_base64": false,
           "member": "string",
           "name": "PackageQueue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "订单id",
+          "example": "slfie21321",
+          "is_base64": false,
+          "member": "string",
+          "name": "OrderId",
           "required": false,
           "type": "string"
         }
@@ -8619,6 +8635,26 @@
           "name": "UpdatedAt",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "套餐id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"sdfds\"",
+          "member": "string",
+          "name": "PackageId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订单id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"sdfsdf\"",
+          "member": "string",
+          "name": "OrderId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

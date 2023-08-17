@@ -6,14 +6,15 @@ Input:
 
 ```
 tccli ssa DescribeSocAlertList --cli-unfold-argument  \
-    --Filter.0.FilterKey xx \
+    --Filter.0.FilterKey abc \
     --Filter.0.FilterOperatorType 0 \
-    --Filter.0.FilterValue xx \
+    --Filter.0.FilterValue abc \
+    --Sorter.0.SortKey abc \
+    --Sorter.0.SortType 0 \
+    --PageSize 0 \
     --PageIndex 0 \
     --Scenes 0 \
-    --PageSize 0 \
-    --Sorter.0.SortType 0 \
-    --Sorter.0.SortKey xx
+    --ExportFlag True
 ```
 
 Output: 
@@ -24,46 +25,98 @@ Output:
             "Total": 0,
             "AlertList": [
                 {
-                    "AlertId": "xx",
-                    "VictimAssetSub": "xx",
-                    "Source": "xx",
+                    "AlertTime": "abc",
+                    "AlertId": "abc",
+                    "AssetId": "abc",
+                    "AssetPrivateIp": [
+                        "abc"
+                    ],
+                    "AlertName": "abc",
+                    "Level": 0,
+                    "Type": "abc",
+                    "Source": "abc",
+                    "AttackChain": "abc",
+                    "AttackId": "abc",
                     "Concerns": [
                         {
-                            "StatisticsCount": 0,
                             "ConcernType": 0,
                             "EntityType": 0,
-                            "Concern": "xx"
+                            "Concern": "abc",
+                            "StatisticsCount": 0,
+                            "IpCountry": "abc",
+                            "IpProvince": "abc",
+                            "Result": "abc",
+                            "Confidence": 0,
+                            "IpIsp": "abc",
+                            "IpInfrastructure": "abc",
+                            "ThreatType": [
+                                "abc"
+                            ],
+                            "Groups": [
+                                "abc"
+                            ],
+                            "Status": "abc",
+                            "Tags": [
+                                "abc"
+                            ],
+                            "VictimAssetType": "abc",
+                            "VictimAssetName": "abc",
+                            "DomainRegistrant": "abc",
+                            "DomainRegisteredInstitution": "abc",
+                            "DomainRegistrationTime": "abc",
+                            "FileName": "abc",
+                            "FileMd5": "abc",
+                            "VirusName": "abc",
+                            "FilePath": "abc",
+                            "FileSize": "abc",
+                            "ProcName": "abc",
+                            "Pid": "abc",
+                            "ProcPath": "abc",
+                            "ProcUser": "abc",
+                            "DefendedCount": 1,
+                            "DetectedCount": 1,
+                            "SearchData": "abc",
+                            "IpCountryIso": "abc",
+                            "IpProvinceIso": "abc",
+                            "IpCity": "abc",
+                            "EventSubType": "abc"
                         }
                     ],
-                    "EventStatus": 0,
-                    "AlertName": "xx",
-                    "VictimAssetType": "xx",
-                    "AssetName": "xx",
-                    "Type": "xx",
-                    "ConcernVictimCount": 0,
-                    "Status": 0,
-                    "SubType": "xx",
-                    "AssetId": "xx",
-                    "AssetPrivateIp": [
-                        "xx"
-                    ],
-                    "EventId": "xx",
-                    "Level": 0,
-                    "AttackTactic": "xx",
-                    "AlertTime": "xx",
                     "Action": 0,
-                    "ConcernMaliciousCount": 0,
-                    "AssetPublicIp": [
-                        "xx"
-                    ],
-                    "AttackId": "xx",
-                    "AttackName": "xx",
                     "AttackResult": 0,
-                    "AttackChain": "xx"
+                    "EventStatus": 0,
+                    "EventId": "abc",
+                    "Status": 0,
+                    "AssetName": "abc",
+                    "ConcernMaliciousCount": 0,
+                    "ConcernVictimCount": 0,
+                    "VictimAssetType": "abc",
+                    "SubType": "abc",
+                    "AttackName": "abc",
+                    "AssetPublicIp": [
+                        "abc"
+                    ],
+                    "AttackTactic": "abc",
+                    "VictimAssetSub": "abc",
+                    "VictimAssetVpc": "abc",
+                    "Timestamp": "abc",
+                    "AssetGroupName": [
+                        "abc"
+                    ],
+                    "AssetProjectName": "abc",
+                    "VictimAssetContent": [
+                        "abc"
+                    ],
+                    "WrongReportStatus": 0,
+                    "WrongReportConditionId": 0
                 }
-            ]
+            ],
+            "Aggregations": {
+                "Name": "abc",
+                "Value": "abc"
+            }
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

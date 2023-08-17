@@ -1052,114 +1052,136 @@
       "document": "DetectAuth请求参数结构体",
       "members": [
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请添加[腾讯云人脸核身小助手](https://cloud.tencent.com/document/product/1007/56130)进行咨询。",
           "example": "0",
+          "is_base64": false,
           "member": "string",
           "name": "RuleId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "本接口不需要传递此参数。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "TerminalType",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "身份标识（未使用OCR服务时，必须传入）。\n规则：a-zA-Z0-9组合。最长长度32位。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "IdCard",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "姓名。（未使用OCR服务时，必须传入）最长长度32位。中文请使用UTF-8编码。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "认证结束后重定向的回调链接地址。最长长度1024位。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "RedirectUrl",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "透传字段，在获取验证结果时返回。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "Extra",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "用于人脸比对的照片，图片的Base64值；\nBase64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ImageBase64",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
           "example": "无",
+          "is_base64": false,
           "member": "Encryption",
           "name": "Encryption",
           "required": false,
           "type": "object"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "意愿核身（朗读模式）使用的文案，若未使用意愿核身（朗读模式），则该字段无需传入。默认为空，最长可接受120的字符串长度。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "IntentionVerifyText",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
-          "document": "意愿核身（问答模式）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持一个播报文本+回答文本。",
+          "document": "意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持1轮问答。",
           "example": "无",
+          "is_base64": false,
           "member": "IntentionQuestion",
           "name": "IntentionQuestions",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "RuleId相关配置",
           "example": "无",
+          "is_base64": false,
           "member": "RuleIdConfig",
           "name": "Config",
           "required": false,
           "type": "object"
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。当前仅支持一个提示文本。",
+          "example": "无",
+          "is_base64": false,
+          "member": "IntentionActionConfig",
+          "name": "IntentionActions",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1173,7 +1195,7 @@
           "example": "无",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1183,7 +1205,7 @@
           "example": "CE661F1A-0F1E-45BD-BE13-34C05CEA7681",
           "member": "string",
           "name": "BizToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1763,6 +1785,7 @@
           "default": "",
           "disabled": false,
           "document": "活体视频的base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "LivenessVideo",
           "required": true,
@@ -1983,6 +2006,7 @@
           "default": "",
           "disabled": false,
           "document": "默认不需要使用",
+          "example": "",
           "member": "string",
           "name": "ActionType",
           "required": false,
@@ -1997,6 +2021,7 @@
         {
           "disabled": false,
           "document": "动作顺序(2,1 or 1,2) 。1代表张嘴，2代表闭眼。",
+          "example": "",
           "member": "string",
           "name": "ActionSequence",
           "type": "string",
@@ -2015,6 +2040,7 @@
       "document": "GetDetectInfoEnhanced请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "人脸核身流程的标识，调用DetectAuth接口时生成。",
           "example": "CE661F1A-0F1E-45BD-BE13-34C05CEA7681",
@@ -2025,6 +2051,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "用于细分客户使用场景，由腾讯侧在线下对接时分配。",
           "example": "0",
@@ -2035,6 +2062,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "指定拉取的结果信息，取值（0：全部；1：文本类；2：身份证信息；3：视频最佳截图信息）。\n如 13表示拉取文本类、视频最佳截图信息。\n默认值：0",
           "example": "1",
@@ -2045,6 +2073,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "从活体视频中截取一定张数的最佳帧（仅部分服务支持，若需使用请与慧眼小助手沟通）。默认为0，最大为10，超出10的最多只给10张。（InfoType需要包含3）",
           "example": "0",
@@ -2055,6 +2084,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "是否对身份证照片进行裁边。默认为false。（InfoType需要包含2）",
           "example": "false",
@@ -2065,6 +2095,7 @@
           "type": "bool"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "是否需要从身份证中抠出头像。默认为false。（InfoType需要包含2）",
           "example": "false",
@@ -2075,6 +2106,7 @@
           "type": "bool"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "已弃用。",
           "example": "false",
@@ -2085,6 +2117,7 @@
           "type": "bool"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "是否需要对返回中的敏感信息进行加密。仅指定加密算法Algorithm即可，其余字段传入默认值。其中敏感信息包括：Response.Text.IdCard、Response.Text.Name、Response.Text.OcrIdCard、Response.Text.OcrName",
           "example": "无",
@@ -2166,6 +2199,16 @@
           "example": "无",
           "member": "IntentionQuestionResult",
           "name": "IntentionQuestionResult",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "意愿核身点头确认模式的结果信息，若未使用该意愿核身功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IntentionActionResult",
+          "name": "IntentionActionResult",
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
@@ -3185,30 +3228,106 @@
       ],
       "type": "object"
     },
+    "IntentionActionConfig": {
+      "document": "意愿核身（点头确认模式）配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "点头确认模式下，系统语音播报使用的问题文本，问题最大长度为150个字符。",
+          "example": "请问您本次业务是本人自愿办理吗？如是，请点头确认。",
+          "is_base64": false,
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "IntentionActionResult": {
+      "document": "意愿核身点头确认模式结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "意愿核身错误码：\n0: \"成功\"       \n-1: \"参数错误\"    \n-2: \"系统异常\"    \n-101: \"请保持人脸在框内\"    \n-102: \"检测到多张人脸\"   \n-103: \"人脸检测失败\"   \n-104: \"人脸检测不完整\"   \n-105: \"请勿遮挡眼睛\"    \n-106: \"请勿遮挡嘴巴\"     \n-107: \"请勿遮挡鼻子\"     \n-201: \"人脸比对相似度低\"    \n-202: \"人脸比对失败\"    \n-301: \"意愿核验不通过\"   \n-800: \"前端不兼容错误\"    \n-801: \"用户未授权摄像头和麦克风权限\"   \n-802: \"获取视频流失败\"   \n-803: \"用户主动关闭链接/异常断开链接\"   \n-998: \"系统数据异常\"   \n-999: \"系统未知错误，请联系人工核实\"   \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "FinalResultDetailCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "意愿核身错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成功",
+          "member": "string",
+          "name": "FinalResultMessage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "意愿核身结果详细数据，与每段点头确认过程一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IntentionActionResultDetail",
+          "name": "Details",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "IntentionActionResultDetail": {
+      "document": "意愿核身点头确认模式结果详细数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频base64编码（其中包含全程提示文本和点头音频，mp4格式）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "VideoBase64String",
+          "member": "string",
+          "name": "Video",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "屏幕截图base64编码列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ScreenShotBase64String",
+          "member": "string",
+          "name": "ScreenShot",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "IntentionQuestion": {
       "document": "意愿核身过程中播报的问题文本、用户回答的标准文本。",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "系统播报的问题文本，问题最大长度为150个字符。",
-          "example": "无",
+          "document": "当选择语音问答模式时，系统自动播报的问题文本，最大长度为150个字符。",
+          "example": "请问您本次业务是本人自愿办理吗？如是，请回复“我同意”。",
+          "is_base64": false,
           "member": "string",
           "name": "Question",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "用户答案的标准文本列表，用于识别用户回答的语音与标准文本是否一致。列表长度最大为50，单个答案长度限制10个字符。",
-          "example": "确认 我确认",
+          "document": "当选择语音问答模式时，用于判断用户回答是否通过的标准答案列表，传入后可自动判断用户回答文本是否在标准文本列表中。列表长度最大为50，单个答案长度限制10个字符。",
+          "example": "“同意”，“我同意”，“确认”，“我确认”",
+          "is_base64": false,
           "member": "string",
           "name": "Answers",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -3664,6 +3783,7 @@
           "default": "",
           "disabled": false,
           "document": "用于活体检测的视频，视频的BASE64值；\nBASE64编码后的大小不超过8M，支持mp4、avi、flv格式。",
+          "example": "",
           "member": "string",
           "name": "VideoBase64",
           "required": true,
@@ -3673,6 +3793,7 @@
           "default": "",
           "disabled": false,
           "document": "活体检测类型，取值：LIP/ACTION/SILENT。\nLIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。",
+          "example": "",
           "member": "string",
           "name": "LivenessType",
           "required": true,
@@ -3682,6 +3803,7 @@
           "default": "",
           "disabled": false,
           "document": "数字模式传参：数字验证码(1234)，需先调用接口获取数字验证码；\n动作模式传参：传动作顺序(2,1 or 1,2)，需先调用接口获取动作顺序；\n静默模式传参：不需要传递此参数。",
+          "example": "",
           "member": "string",
           "name": "ValidateData",
           "required": false,
@@ -3691,6 +3813,7 @@
           "default": "",
           "disabled": false,
           "document": "额外配置，传入JSON字符串。\n{\n\"BestFrameNum\": 2  //需要返回多张最佳截图，取值范围1-10\n}",
+          "example": "",
           "member": "string",
           "name": "Optional",
           "required": false,
@@ -3705,6 +3828,7 @@
         {
           "disabled": false,
           "document": "验证通过后的视频最佳截图照片，照片为BASE64编码后的值，jpg格式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "BestFrameBase64",
           "type": "string",
@@ -3713,6 +3837,7 @@
         {
           "disabled": false,
           "document": "业务错误码，成功情况返回Success, 错误情况请参考下方错误码 列表中FailedOperation部分",
+          "example": "",
           "member": "string",
           "name": "Result",
           "type": "string",
@@ -3721,6 +3846,7 @@
         {
           "disabled": false,
           "document": "业务结果描述。",
+          "example": "",
           "member": "string",
           "name": "Description",
           "type": "string",
@@ -3729,6 +3855,7 @@
         {
           "disabled": false,
           "document": "最佳最佳截图列表，仅在配置了返回多张最佳截图时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "BestFrameList",
           "type": "list",
@@ -4587,8 +4714,16 @@
           "member": "bool",
           "name": "IntentionRecognition",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "意愿核身类型，默认为0：\n0：问答模式，DetectAuth接口需要传入IntentionQuestions字段；\n1：点头模式，DetectAuth接口需要传入IntentionActions字段；",
+          "example": "0",
+          "member": "int64",
+          "name": "IntentionType",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"

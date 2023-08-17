@@ -183,7 +183,7 @@
       "status": "online"
     },
     "DescribeBillingSpecsPrice": {
-      "document": "本接口(DescribeBillingSpecsPrice)用于查询计费项价格。",
+      "document": "本接口(DescribeBillingSpecsPrice)用于查询按量计费计费项价格。",
       "input": "DescribeBillingSpecsPriceRequest",
       "name": "查询计费项价格",
       "output": "DescribeBillingSpecsPriceResponse",
@@ -4830,9 +4830,11 @@
       "document": "DescribeBillingSpecsPrice请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "询价参数，支持批量询价",
           "example": "无",
+          "is_base64": false,
           "member": "SpecUnit",
           "name": "SpecsParam",
           "required": true,
@@ -4850,6 +4852,7 @@
           "example": "无",
           "member": "SpecPrice",
           "name": "SpecsPrice",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

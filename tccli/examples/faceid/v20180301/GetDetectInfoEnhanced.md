@@ -29,6 +29,7 @@ Output:
             "OcrName": "爱新觉罗永琪",
             "OcrIdCard": "440111111111111111",
             "OcrGender": null,
+            "IdInfoFrom": "abc",
             "LivenessMode": 0,
             "LiveStatus": 0,
             "LiveMsg": "成功",
@@ -39,6 +40,12 @@ Output:
             "Location": null,
             "Mobile": null,
             "Extra": "",
+            "NFCRequestIds": [
+                "abc"
+            ],
+            "NFCBillingCounts": 0,
+            "PassNo": "abc",
+            "VisaNum": "abc",
             "LivenessDetail": [
                 {
                     "ReqTime": "1577179388135",
@@ -75,7 +82,21 @@ Output:
             "AsrResultSimilarity": "0",
             "IntentionVerifyBestFrame": "base64"
         },
+        "IntentionActionResult": {
+            "FinalResultDetailCode": 0,
+            "FinalResultMessage": "abc",
+            "Details": [
+                {
+                    "Video": "abc",
+                    "ScreenShot": [
+                        "abc"
+                    ]
+                }
+            ]
+        },
         "IntentionQuestionResult": {
+            "FinalResultDetailCode": 0,
+            "FinalResultMessage": "abc",
             "AsrResult": [
                 "同意"
             ],

@@ -199,6 +199,30 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ce5e66e0-aab5-4d31-9b98-c52caf0fdfae\",\n        \"TimeStamp\": 1544607650,\n        \"UserAppid\": 1251006373,\n        \"UserUin\": 20548499\n    }\n}",
         "title": "获取用户基础信息"
       }
+    ],
+    "RequestLocalTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrderInstances\n<公共请求参数>\n\n{\n    \"ClientId\": \"20230602_03702020-0a90-4f46-8f20-XXXXXXXXX\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Sid\": \"abc\",\n        \"SrcFileMd5\": \"abc\",\n        \"SrcFileSize\": 0,\n        \"SrcFileUrl\": \"abc\",\n        \"SrcFileType\": \"abc\",\n        \"SrcFileVersion\": \"abc\",\n        \"EncryptParam\": \"abc\",\n        \"EncryptState\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "请求任务接口"
+      }
+    ],
+    "UpdateClientState": [
+      {
+        "document": "client上报",
+        "input": "POST / HTTP/1.1\nHost: ms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEncryptInstances\n<公共请求参数>\n\n{\n    \"ClientId\": \"abc\",\n    \"Ip\": \"abc\",\n    \"Internal\": 0,\n    \"ServerVersion\": \"abc\",\n    \"Hostname\": \"abc\",\n    \"Os\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultCode\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "client上报"
+      }
+    ],
+    "UpdateLocalTaskResult": [
+      {
+        "document": "结果上报",
+        "input": "POST / HTTP/1.1\nHost: ms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEncryptInstances\n<公共请求参数>\n\n{\n    \"Sid\": \"abc\",\n    \"ResultCode\": 0,\n    \"SubCode\": 0,\n    \"ErrMsg\": \"abc\",\n    \"Result\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultCode\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "结果上报"
+      }
     ]
   },
   "version": "1.0"

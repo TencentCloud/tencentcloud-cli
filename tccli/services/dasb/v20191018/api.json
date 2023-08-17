@@ -2578,6 +2578,7 @@
         {
           "disabled": false,
           "document": "基础镜像ID",
+          "example": "",
           "member": "string",
           "name": "BaseImageId",
           "type": "string",
@@ -2586,6 +2587,7 @@
         {
           "disabled": false,
           "document": "AI镜像ID",
+          "example": "",
           "member": "string",
           "name": "AiImageId",
           "type": "string",

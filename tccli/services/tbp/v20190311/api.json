@@ -43,6 +43,7 @@
           "default": "",
           "disabled": false,
           "document": "机器人名称",
+          "example": "",
           "member": "string",
           "name": "BotName",
           "required": true,
@@ -52,6 +53,7 @@
           "default": "",
           "disabled": false,
           "document": "机器人中文名称",
+          "example": "",
           "member": "string",
           "name": "BotCnName",
           "required": false,
@@ -66,6 +68,7 @@
         {
           "disabled": false,
           "document": "任务ID",
+          "example": "",
           "member": "string",
           "name": "TaskRequestId",
           "type": "string",
@@ -74,6 +77,7 @@
         {
           "disabled": false,
           "document": "任务信息",
+          "example": "",
           "member": "string",
           "name": "Msg",
           "type": "string",
@@ -131,6 +135,7 @@
           "default": "",
           "disabled": false,
           "document": "机器人标识",
+          "example": "",
           "member": "string",
           "name": "BotId",
           "required": true,
@@ -140,6 +145,7 @@
           "default": "",
           "disabled": false,
           "document": "子账户id，每个终端对应一个",
+          "example": "",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -149,6 +155,7 @@
           "default": "''",
           "disabled": false,
           "document": "机器人版本号。BotVersion/BotEnv二选一：二者均填，仅BotVersion有效；二者均不填，默认BotEnv=dev",
+          "example": "",
           "member": "string",
           "name": "BotVersion",
           "required": false,
@@ -158,6 +165,7 @@
           "default": "''",
           "disabled": false,
           "document": "机器人环境{dev:测试;release:线上}。BotVersion/BotEnv二选一：二者均填，仅BotVersion有效；二者均不填，默认BotEnv=dev",
+          "example": "",
           "member": "string",
           "name": "BotEnv",
           "required": false,
@@ -172,6 +180,7 @@
         {
           "disabled": false,
           "document": "当前会话状态。取值:\"start\"/\"continue\"/\"complete\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "DialogStatus",
           "type": "string",
@@ -180,6 +189,7 @@
         {
           "disabled": false,
           "document": "匹配到的机器人名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "BotName",
           "type": "string",
@@ -188,6 +198,7 @@
         {
           "disabled": false,
           "document": "匹配到的意图名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "IntentName",
           "type": "string",
@@ -196,6 +207,7 @@
         {
           "disabled": false,
           "document": "机器人回答",
+          "example": "",
           "member": "string",
           "name": "ResponseText",
           "type": "string",
@@ -204,6 +216,7 @@
         {
           "disabled": false,
           "document": "语义解析的槽位结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "SlotInfo",
           "name": "SlotInfoList",
           "type": "list",
@@ -212,6 +225,7 @@
         {
           "disabled": false,
           "document": "透传字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "SessionAttributes",
           "type": "string",
@@ -220,6 +234,7 @@
         {
           "disabled": false,
           "document": "用户说法。该说法是用户原生说法或ASR识别结果，未经过语义优化\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "Question",
           "type": "string",
@@ -228,6 +243,7 @@
         {
           "disabled": false,
           "document": "tts合成pcm音频存储链接。仅当请求参数NeedTts=true时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "WaveUrl",
           "type": "string",
@@ -236,6 +252,7 @@
         {
           "disabled": false,
           "document": "tts合成的pcm音频。二进制数组经过base64编码(暂时不返回)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "WaveData",
           "type": "string",
@@ -273,6 +290,7 @@
           "default": "",
           "disabled": false,
           "document": "槽位名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "SlotName",
           "required": true,
@@ -283,6 +301,7 @@
           "default": "",
           "disabled": false,
           "document": "槽位值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "SlotValue",
           "required": true,
@@ -443,6 +462,7 @@
           "default": "",
           "disabled": false,
           "document": "机器人标识，用于定义抽象机器人。",
+          "example": "",
           "member": "string",
           "name": "BotId",
           "required": true,
@@ -452,6 +472,7 @@
           "default": "",
           "disabled": false,
           "document": "终端标识，每个终端(或线程)对应一个，区分并发多用户。",
+          "example": "",
           "member": "string",
           "name": "TerminalId",
           "required": true,
@@ -461,6 +482,7 @@
           "default": "",
           "disabled": false,
           "document": "机器人版本，取值\"dev\"或\"release\"，{调试版本：dev；线上版本：release}。",
+          "example": "",
           "member": "string",
           "name": "BotEnv",
           "required": false,
@@ -475,6 +497,7 @@
         {
           "disabled": false,
           "document": "当前会话状态，取值：\"START\"/\"COUTINUE\"/\"COMPLETE\"。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "DialogStatus",
           "type": "string",
@@ -483,6 +506,7 @@
         {
           "disabled": false,
           "document": "匹配到的机器人名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "BotName",
           "type": "string",
@@ -491,6 +515,7 @@
         {
           "disabled": false,
           "document": "匹配到的意图名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "IntentName",
           "type": "string",
@@ -499,6 +524,7 @@
         {
           "disabled": false,
           "document": "槽位信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "SlotInfo",
           "name": "SlotInfoList",
           "type": "list",
@@ -507,6 +533,7 @@
         {
           "disabled": false,
           "document": "原始的用户说法。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "InputText",
           "type": "string",
@@ -515,6 +542,7 @@
         {
           "disabled": false,
           "document": "透传字段，由用户自定义的WebService服务返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "SessionAttributes",
           "type": "string",
@@ -523,6 +551,7 @@
         {
           "disabled": false,
           "document": "机器人对话的应答文本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "ResponseText",
           "type": "string",

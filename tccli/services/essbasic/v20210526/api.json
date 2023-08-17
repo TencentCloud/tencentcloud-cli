@@ -120,9 +120,9 @@
       "status": "online"
     },
     "ChannelCreatePreparedPersonalEsign": {
-      "document": "本接口（ChannelCreatePreparedPersonalEsign）用于创建导入个人印章",
+      "document": "本接口（ChannelCreatePreparedPersonalEsign）用于创建导入个人印章（处方单场景专用，使用此接口请与客户经理确认）。",
       "input": "ChannelCreatePreparedPersonalEsignRequest",
-      "name": "创建导入个人印章",
+      "name": "创建导入处方单个人印章",
       "output": "ChannelCreatePreparedPersonalEsignResponse",
       "status": "online"
     },
@@ -2232,7 +2232,7 @@
         },
         {
           "disabled": false,
-          "document": "个人用户名称",
+          "document": "个人用户姓名",
           "example": "无",
           "member": "string",
           "name": "UserName",
@@ -2250,19 +2250,19 @@
         },
         {
           "disabled": false,
-          "document": "印章图片的base64",
+          "document": "印章名称",
           "example": "无",
           "member": "string",
-          "name": "SealImage",
+          "name": "SealName",
           "required": true,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "印章名称",
+          "document": "印章图片的base64，最大不超过 8M",
           "example": "无",
           "member": "string",
-          "name": "SealName",
+          "name": "SealImage",
           "required": true,
           "type": "string"
         },
@@ -2283,6 +2283,15 @@
           "name": "IdCardType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启印章图片压缩处理，默认不开启，如需开启请设置为 true。当印章超过 2M 时建议开启，开启后图片的 hash 将发生变化。",
+          "example": "无",
+          "member": "bool",
+          "name": "SealImageCompress",
+          "required": false,
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -4450,6 +4459,7 @@
       "document": "CreateFlowsByTemplates请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 均必填。",
           "example": "无",
@@ -4460,8 +4470,9 @@
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": false,
-          "document": "多个合同（签署流程）信息，最多支持20个",
+          "document": "要创建的合同信息列表，最多支持一次创建20个合同",
           "example": "无",
           "is_base64": false,
           "member": "FlowInfo",
@@ -4470,6 +4481,7 @@
           "type": "list"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "是否为预览模式；默认为false，即非预览模式，此时发起合同并返回FlowIds；若为预览模式，不会发起合同，会返回PreviewUrls；\n预览链接有效期300秒；\n同时，如果预览的文件中指定了动态表格控件，需要进行异步合成；此时此接口返回的是合成前的文档预览链接，而合成完成后的文档预览链接会通过：回调通知的方式、或使用返回的TaskInfo中的TaskId通过ChannelGetTaskResultApi接口查询；",
           "example": "false",
@@ -4480,6 +4492,7 @@
           "type": "bool"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,",
           "example": "0",
@@ -4490,6 +4503,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": true,
           "document": "操作者的信息，不用传",
           "example": "无",
@@ -4517,7 +4531,7 @@
         },
         {
           "disabled": false,
-          "document": "业务信息，限制1024字符",
+          "document": "第三方应用平台的业务信息, 与创建合同的FlowInfos数组中的CustomerData一一对应",
           "example": "[\"\",\"\"]",
           "member": "string",
           "name": "CustomerData",
@@ -8293,6 +8307,7 @@
           "default": "",
           "disabled": false,
           "document": "Base64编码后的文件内容",
+          "example": "",
           "member": "string",
           "name": "FileBody",
           "required": true,
@@ -8303,6 +8318,7 @@
           "default": "",
           "disabled": false,
           "document": "文件名",
+          "example": "",
           "member": "string",
           "name": "FileName",
           "required": false,

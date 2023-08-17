@@ -21665,62 +21665,72 @@
       "document": "DescribeTableLineage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询方向，INPUT,OUTPUT,BOTH枚举值",
           "example": "BOTH",
+          "is_base64": false,
           "member": "string",
           "name": "Direction",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表信息",
           "example": "无",
+          "is_base64": false,
           "member": "TableLineageInfo",
           "name": "Data",
           "required": true,
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单次查询入度,默认 1",
           "example": "1",
+          "is_base64": false,
           "member": "int64",
           "name": "InputDepth",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单次查询出度,默认 1",
           "example": "1",
+          "is_base64": false,
           "member": "int64",
           "name": "OutputDepth",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "额外参数（传递调用方信息）",
           "example": "无",
+          "is_base64": false,
           "member": "LineageParamRecord",
           "name": "ExtParams",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否过滤临时表,默认true",
           "example": "true",
+          "is_base64": false,
           "member": "bool",
           "name": "IgnoreTemp",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否递归查询二级节点数目，默认为true",
+          "example": "true",
+          "is_base64": false,
+          "member": "bool",
+          "name": "RecursiveSecond",
           "required": false,
           "type": "bool"
         }
@@ -21736,7 +21746,7 @@
           "example": "无",
           "member": "TableLineageInfo",
           "name": "TableLineage",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
