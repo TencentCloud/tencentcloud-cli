@@ -1,3 +1,198 @@
+# Release 3.0.831.1
+
+## 批量计算(batch) 版本：2017-03-12
+
+### 第 11 次发布
+
+发布时间：2023-08-17 01:13:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Application](http://document.tencentcloudapi.woa.com/document/product/599/15912#Application)
+
+	* <font color="#dd0000">**修改成员**：</font>Command
+
+
+
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 24 次发布
+
+发布时间：2023-08-17 01:14:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CallbackAsyncOperateResp](http://document.tencentcloudapi.woa.com/document/product/555/81632)
+* [SetRenewFlagInner](http://document.tencentcloudapi.woa.com/document/product/555/81631)
+
+新增数据结构：
+
+* [FactoryResourceResponseEntity](http://document.tencentcloudapi.woa.com/document/product/555/19183#FactoryResourceResponseEntity)
+* [ResourceOperateReq](http://document.tencentcloudapi.woa.com/document/product/555/19183#ResourceOperateReq)
+* [ResourceOperateRsp](http://document.tencentcloudapi.woa.com/document/product/555/19183#ResourceOperateRsp)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 78 次发布
+
+发布时间：2023-08-17 02:09:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreatePreparedPersonalEsign](http://document.tencentcloudapi.woa.com/document/product/1595/81620)
+
+	* 新增入参：SealImageCompress
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 33 次发布
+
+发布时间：2023-08-17 02:10:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DetectAuth](http://document.tencentcloudapi.woa.com/document/product/1007/31816)
+
+	* 新增入参：IntentionActions
+
+* [GetDetectInfoEnhanced](http://document.tencentcloudapi.woa.com/document/product/1007/41957)
+
+	* 新增出参：IntentionActionResult
+
+
+新增数据结构：
+
+* [IntentionActionConfig](http://document.tencentcloudapi.woa.com/document/product/1007/41958#IntentionActionConfig)
+* [IntentionActionResult](http://document.tencentcloudapi.woa.com/document/product/1007/41958#IntentionActionResult)
+* [IntentionActionResultDetail](http://document.tencentcloudapi.woa.com/document/product/1007/41958#IntentionActionResultDetail)
+
+修改数据结构：
+
+* [RuleIdConfig](http://document.tencentcloudapi.woa.com/document/product/1007/41958#RuleIdConfig)
+
+	* 新增成员：IntentionType
+
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 13 次发布
+
+发布时间：2023-08-17 02:22:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCloudStorage](http://document.tencentcloudapi.woa.com/document/product/1131/75376)
+
+	* 新增入参：OrderId
+
+
+修改数据结构：
+
+* [PackageInfo](http://document.tencentcloudapi.woa.com/document/product/1131/75389#PackageInfo)
+
+	* 新增成员：PackageId, OrderId
+
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 移动应用安全(ms) 版本：2018-04-08
+
+### 第 4 次发布
+
+发布时间：2023-08-17 02:39:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [RequestLocalTask](http://document.tencentcloudapi.woa.com/document/product/1617/81636)
+* [UpdateClientState](http://document.tencentcloudapi.woa.com/document/product/1617/81635)
+* [UpdateLocalTaskResult](http://document.tencentcloudapi.woa.com/document/product/1617/81634)
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 29 次发布
+
+发布时间：2023-08-17 02:39:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateCHDFSAccessGroup](http://document.tencentcloudapi.woa.com/document/product/849/81638)
+* [DescribeCHDFSAccessGroups](http://document.tencentcloudapi.woa.com/document/product/849/81637)
+
+新增数据结构：
+
+* [CHDFSAccessGroup](http://document.tencentcloudapi.woa.com/document/product/849/52010#CHDFSAccessGroup)
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 17 次发布
+
+发布时间：2023-08-17 03:37:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTableLineage](http://document.tencentcloudapi.woa.com/document/product/1607/81110)
+
+	* 新增入参：RecursiveSecond
+
+
+
+
 # Release 3.0.830.1
 
 ## 应用管理平台(camp) 版本：2022-09-20

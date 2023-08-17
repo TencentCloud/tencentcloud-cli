@@ -3319,6 +3319,7 @@
         {
           "disabled": false,
           "document": "用户快照总大小",
+          "example": "",
           "member": "float",
           "name": "TotalSize",
           "type": "float",
@@ -3327,6 +3328,7 @@
         {
           "disabled": false,
           "document": "用户快照总大小（用于计费）",
+          "example": "",
           "member": "float",
           "name": "RealTradeSize",
           "type": "float",
@@ -3335,6 +3337,7 @@
         {
           "disabled": false,
           "document": "快照免费额度",
+          "example": "",
           "member": "float",
           "name": "FreeQuota",
           "type": "float",
@@ -3343,6 +3346,7 @@
         {
           "disabled": false,
           "document": "快照总个数",
+          "example": "",
           "member": "int64",
           "name": "TotalNums",
           "type": "int",

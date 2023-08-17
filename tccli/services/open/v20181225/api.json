@@ -36,6 +36,7 @@
           "default": "",
           "disabled": false,
           "document": "auth code",
+          "example": "",
           "member": "string",
           "name": "UserAuthCode",
           "required": true,
@@ -45,6 +46,7 @@
           "default": "",
           "disabled": false,
           "document": "第三方access token",
+          "example": "",
           "member": "string",
           "name": "OpenAccessToken",
           "required": false,
@@ -59,6 +61,7 @@
         {
           "disabled": false,
           "document": "app id",
+          "example": "",
           "member": "string",
           "name": "AppId",
           "type": "string",
@@ -67,6 +70,7 @@
         {
           "disabled": false,
           "document": "第三方openId",
+          "example": "",
           "member": "string",
           "name": "UserOpenId",
           "type": "string",
@@ -75,6 +79,7 @@
         {
           "disabled": false,
           "document": "第三方unionId",
+          "example": "",
           "member": "string",
           "name": "UserUnionId",
           "type": "string",
@@ -83,6 +88,7 @@
         {
           "disabled": false,
           "document": "第三方access token",
+          "example": "",
           "member": "string",
           "name": "UserAccessToken",
           "type": "string",
@@ -91,6 +97,7 @@
         {
           "disabled": false,
           "document": "过期时间",
+          "example": "",
           "member": "int64",
           "name": "ExpiresAt",
           "type": "int",
@@ -99,6 +106,7 @@
         {
           "disabled": false,
           "document": "refresh token",
+          "example": "",
           "member": "string",
           "name": "UserRefreshToken",
           "type": "string",
@@ -107,6 +115,7 @@
         {
           "disabled": false,
           "document": "授权范围",
+          "example": "",
           "member": "string",
           "name": "Scope",
           "type": "string",
@@ -132,6 +141,7 @@
         {
           "disabled": false,
           "document": "昵称",
+          "example": "",
           "member": "string",
           "name": "Nickname",
           "type": "string",
@@ -140,6 +150,7 @@
         {
           "disabled": false,
           "document": "是否认证",
+          "example": "",
           "member": "int64",
           "name": "IsAuth",
           "type": "int",
@@ -148,6 +159,7 @@
         {
           "disabled": false,
           "document": "用户类型",
+          "example": "",
           "member": "int64",
           "name": "UserType",
           "type": "int",
@@ -173,6 +185,7 @@
         {
           "disabled": false,
           "document": "主账号uin",
+          "example": "",
           "member": "uint64",
           "name": "OwnerUin",
           "type": "int",
@@ -181,6 +194,7 @@
         {
           "disabled": false,
           "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "Mail",
           "type": "string",
@@ -189,6 +203,7 @@
         {
           "disabled": false,
           "document": "邮箱状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "int64",
           "name": "MailStatus",
           "type": "int",
@@ -197,6 +212,7 @@
         {
           "disabled": false,
           "document": "主账号名",
+          "example": "",
           "member": "string",
           "name": "OwnerName",
           "type": "string",

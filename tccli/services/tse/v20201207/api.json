@@ -713,29 +713,32 @@
       "document": "云原生API网关节点配置。",
       "members": [
         {
-          "default": "",
           "disabled": false,
-          "document": "节点配置, 1c2g|2c4g|4c8g|8c16g。",
+          "document": "节点配置, 1c2g|2c4g|4c8g|8c16g。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1c2g",
+          "is_base64": false,
           "member": "string",
           "name": "Specification",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true,
+          "visibility": 1
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "节点数量，2-9。",
+          "document": "节点数量，2-9。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "Number",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "CloudNativeAPIGatewayRateLimitDetail": {
       "document": "云原生网关Tse 限流插件配置",
@@ -3900,6 +3903,7 @@
           "default": "",
           "disabled": false,
           "document": "过滤参数名",
+          "example": "",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -3910,6 +3914,7 @@
           "default": "",
           "disabled": false,
           "document": "过滤参数值",
+          "example": "",
           "member": "string",
           "name": "Values",
           "required": true,

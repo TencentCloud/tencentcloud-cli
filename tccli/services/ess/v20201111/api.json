@@ -4316,6 +4316,7 @@
       "document": "CreateSchemeUrl请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "调用方用户信息，userId 必填",
           "example": "无",
@@ -4327,6 +4328,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "企业名称",
           "example": "测试企业",
@@ -4338,6 +4340,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "姓名,最大长度50个字符",
           "example": "张三三",
@@ -4349,6 +4352,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "手机号，大陆手机号11位",
           "example": "13788888888",
@@ -4360,6 +4364,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "要跳转的链接类型\n\n- HTTP：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  (默认)\n- APP： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型\n",
           "example": "HTTP",
@@ -4371,6 +4376,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "签署流程编号 (PathType=1时必传)",
           "example": "dajshd8732h2k3u42938d92",
@@ -4382,6 +4388,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "合同组ID ",
           "example": "无",
@@ -4393,6 +4400,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "要跳转到的页面类型 \n\n- 0: 不传, 主页 (默认)\n- 1: 小程序合同详情 \n- 2: 小程序合同列表页 \n",
           "example": "1",
@@ -4404,6 +4412,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "是否自动回跳\ntrue：是，\nfalse：否。\n该参数只针对\"APP\" 类型的签署链接有效",
           "example": "false",
@@ -4415,6 +4424,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
           "example": "无",
@@ -4426,6 +4436,7 @@
           "visibility": 1
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "生成的签署链接在签署过程隐藏的按钮列表, 可以设置隐藏的按钮列表如下\n\n- 0:合同签署页面更多操作按钮\n- 1:合同签署页面更多操作的拒绝签署按钮\n- 2:合同签署页面更多操作的转他人处理按钮\n- 3:签署成功页的查看详情按钮",
           "example": "无",
@@ -4444,7 +4455,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "小程序链接地址，有效期5分钟",
+          "document": "小程序链接地址，有效期30天",
           "example": "weixin://dl/business/?t= *TICKET*",
           "member": "string",
           "name": "SchemeUrl",
@@ -7308,6 +7319,7 @@
           "default": "",
           "disabled": false,
           "document": "查询过滤条件的Key",
+          "example": "",
           "member": "string",
           "name": "Key",
           "required": true,
@@ -7318,6 +7330,7 @@
           "default": "",
           "disabled": false,
           "document": "查询过滤条件的Value列表",
+          "example": "",
           "member": "string",
           "name": "Values",
           "required": true,

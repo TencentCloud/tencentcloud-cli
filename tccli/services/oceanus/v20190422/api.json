@@ -14,6 +14,13 @@
       "output": "CopyJobsResponse",
       "status": "online"
     },
+    "CreateCHDFSAccessGroup": {
+      "document": "创建集群CHDFS权限组",
+      "input": "CreateCHDFSAccessGroupRequest",
+      "name": "创建集群CHDFS权限组",
+      "output": "CreateCHDFSAccessGroupResponse",
+      "status": "online"
+    },
     "CreateFolder": {
       "document": "作业列表页面新建文件夹请求",
       "input": "CreateFolderRequest",
@@ -75,6 +82,13 @@
       "input": "DeleteTableConfigRequest",
       "name": "删除作业表配置",
       "output": "DeleteTableConfigResponse",
+      "status": "online"
+    },
+    "DescribeCHDFSAccessGroups": {
+      "document": "查询集群CHDFS权限组",
+      "input": "DescribeCHDFSAccessGroupsRequest",
+      "name": "查询集群CHDFS权限组",
+      "output": "DescribeCHDFSAccessGroupsResponse",
       "status": "online"
     },
     "DescribeClusters": {
@@ -204,6 +218,7 @@
           "default": "",
           "disabled": false,
           "document": "私有网络 ID",
+          "example": "",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -214,6 +229,7 @@
           "default": "",
           "disabled": false,
           "document": "子网 ID",
+          "example": "",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -224,11 +240,40 @@
           "default": "",
           "disabled": false,
           "document": "云联网 ID，如 ccn-rahigzjd",
+          "example": "",
           "member": "string",
           "name": "CcnId",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CHDFSAccessGroup": {
+      "document": "CHDFS权限组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CHDFS权限组唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ag-xxx",
+          "member": "string",
+          "name": "AccessGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
+        },
+        {
+          "disabled": false,
+          "document": "CHDFS权限组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccessGroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true,
+          "visibility": 1
         }
       ],
       "usage": "out"
@@ -1256,6 +1301,48 @@
       ],
       "type": "object"
     },
+    "CreateCHDFSAccessGroupRequest": {
+      "document": "CreateCHDFSAccessGroup请求参数结构体",
+      "members": [
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "集群唯一标识",
+          "example": "cluster-xxx",
+          "is_base64": false,
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "空间唯一标识",
+          "example": "space-xxx",
+          "is_base64": false,
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": true,
+          "type": "string",
+          "visibility": 2
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCHDFSAccessGroupResponse": {
+      "document": "CreateCHDFSAccessGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateFolderRequest": {
       "document": "CreateFolder请求参数结构体",
       "members": [
@@ -2064,6 +2151,59 @@
     "DeleteTableConfigResponse": {
       "document": "DeleteTableConfig返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCHDFSAccessGroupsRequest": {
+      "document": "DescribeCHDFSAccessGroups请求参数结构体",
+      "members": [
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "集群唯一标识",
+          "example": "cluster-xxx",
+          "is_base64": false,
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        },
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "空间唯一标识",
+          "example": "space-xxx",
+          "is_base64": false,
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": true,
+          "type": "string",
+          "visibility": 1
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCHDFSAccessGroupsResponse": {
+      "document": "DescribeCHDFSAccessGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CHDFS权限组列表",
+          "example": "无",
+          "member": "CHDFSAccessGroup",
+          "name": "CHDFSAccessGroups",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false,
+          "visibility": 2
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3343,6 +3483,7 @@
           "default": "",
           "disabled": false,
           "document": "要过滤的字段",
+          "example": "",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -3353,6 +3494,7 @@
           "default": "",
           "disabled": false,
           "document": "字段的过滤值",
+          "example": "",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -3745,6 +3887,7 @@
           "default": "",
           "disabled": false,
           "document": "实例的Id, 按照启动的时间顺序，从1开始",
+          "example": "",
           "member": "int64",
           "name": "RunningOrderId",
           "required": true,
@@ -3755,6 +3898,7 @@
           "default": "",
           "disabled": false,
           "document": "作业实例的启动时间",
+          "example": "",
           "member": "string",
           "name": "JobInstanceStartTime",
           "required": true,
@@ -3765,6 +3909,7 @@
           "default": "",
           "disabled": false,
           "document": "作业实例启动的时间（毫秒）",
+          "example": "",
           "member": "int64",
           "name": "StartingMillis",
           "required": true,
@@ -4805,6 +4950,7 @@
           "default": "",
           "disabled": false,
           "document": "资源ID",
+          "example": "",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -4815,6 +4961,7 @@
           "default": "",
           "disabled": false,
           "document": "资源版本ID，-1表示使用最新版本",
+          "example": "",
           "member": "int64",
           "name": "Version",
           "required": true,
@@ -4825,6 +4972,7 @@
           "default": "",
           "disabled": false,
           "document": "引用资源类型，例如主资源设置为1，代表main class所在的jar包",
+          "example": "",
           "member": "int64",
           "name": "Type",
           "required": true,
@@ -4841,6 +4989,7 @@
           "default": "",
           "disabled": false,
           "document": "资源id",
+          "example": "",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -4851,6 +5000,7 @@
           "default": "",
           "disabled": false,
           "document": "资源版本，-1表示使用最新版本",
+          "example": "",
           "member": "int64",
           "name": "Version",
           "required": true,
@@ -4861,6 +5011,7 @@
           "default": "",
           "disabled": false,
           "document": "资源名称",
+          "example": "",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -4871,6 +5022,7 @@
           "default": "",
           "disabled": false,
           "document": "1: 主资源",
+          "example": "",
           "member": "int64",
           "name": "Type",
           "required": true,
@@ -4881,6 +5033,7 @@
           "default": "",
           "disabled": false,
           "document": "1: 系统内置资源",
+          "example": "",
           "member": "int64",
           "name": "SystemProvide",
           "required": true,
@@ -4897,6 +5050,7 @@
           "default": "",
           "disabled": false,
           "document": "Job id",
+          "example": "",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -4907,6 +5061,7 @@
           "default": "",
           "disabled": false,
           "document": "Job配置版本",
+          "example": "",
           "member": "int64",
           "name": "JobConfigVersion",
           "required": true,
@@ -4917,6 +5072,7 @@
           "default": "",
           "disabled": false,
           "document": "资源版本",
+          "example": "",
           "member": "int64",
           "name": "ResourceVersion",
           "required": true,
@@ -5579,6 +5735,7 @@
           "default": "",
           "disabled": false,
           "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "TagKey",
           "required": false,
@@ -5589,6 +5746,7 @@
           "default": "",
           "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "TagValue",
           "required": false,

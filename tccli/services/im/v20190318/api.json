@@ -33,6 +33,7 @@
         {
           "disabled": false,
           "document": "表示 appid 对应的 SdkAppid 的数据",
+          "example": "",
           "member": "int64",
           "name": "SdkAppids",
           "type": "list",
