@@ -96,7 +96,6 @@
       "document": "CreateAudioDeposit请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "存证名称(长度最大30)",
           "example": "无",
           "member": "string",
@@ -105,7 +104,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "对应数据Base64文件名称",
           "example": "无",
           "member": "string",
@@ -114,7 +112,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件hash",
           "example": "无",
           "member": "string",
@@ -123,7 +120,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "业务ID 透传 长度最大不超过64",
           "example": "无",
           "member": "string",
@@ -132,7 +128,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "数据Base64编码，大小不超过5M",
           "example": "无",
           "member": "string",
@@ -141,7 +136,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "资源访问链接 与fileContent必须二选一",
           "example": "无",
           "member": "string",
@@ -150,7 +144,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0",
           "example": "0,1,2",
           "member": "uint64",
@@ -159,7 +152,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "存证描述",
           "example": "无",
           "member": "string",
@@ -204,7 +196,6 @@
       "document": "CreateDataDeposit请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "业务数据明文(json格式字符串)，最大256kb",
           "example": "无",
           "member": "string",
@@ -213,7 +204,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "存证名称(长度最大30)",
           "example": "无",
           "member": "string",
@@ -222,7 +212,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "数据hash",
           "example": "无",
           "member": "string",
@@ -231,7 +220,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "业务ID 透传 长度最大不超过64",
           "example": "无",
           "member": "string",
@@ -240,7 +228,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0",
           "example": "0,1,2",
           "member": "uint64",
@@ -249,7 +236,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "存证描述",
           "example": "无",
           "member": "string",
@@ -294,7 +280,6 @@
       "document": "CreateDocDeposit请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "存证名称(长度最大30)",
           "example": "无",
           "member": "string",
@@ -303,7 +288,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "对应数据Base64文件名称",
           "example": "无",
           "member": "string",
@@ -312,7 +296,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件hash",
           "example": "无",
           "member": "string",
@@ -321,7 +304,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "业务ID 透传 长度最大不超过64",
           "example": "无",
           "member": "string",
@@ -330,7 +312,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "数据Base64编码，大小不超过5M",
           "example": "无",
           "member": "string",
@@ -339,7 +320,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "资源访问链接 与fileContent必须二选一",
           "example": "无",
           "member": "string",
@@ -348,7 +328,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0",
           "example": "0,1,2",
           "member": "uint64",
@@ -357,7 +336,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "存证描述",
           "example": "无",
           "member": "string",
@@ -402,7 +380,6 @@
       "document": "CreateHashDepositNoCert请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "数据hash",
           "example": "无",
           "member": "string",
@@ -411,7 +388,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "该字段为透传字段，方便调用方做业务处理， 长度最大不超过64",
           "example": "无",
           "member": "string",
@@ -420,7 +396,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0",
           "example": "0,1,2",
           "member": "uint64",
@@ -429,7 +404,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "业务扩展信息",
           "example": "无",
           "member": "string",
@@ -501,7 +475,6 @@
       "document": "CreateHashDepositNoSeal请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "数据hash",
           "example": "无",
           "member": "string",
@@ -510,7 +483,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "该字段为透传字段，方便调用方做业务处理， 长度最大不超过64",
           "example": "无",
           "member": "string",
@@ -519,7 +491,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0",
           "example": "0,1,2",
           "member": "uint64",
@@ -528,7 +499,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "业务扩展信息",
           "example": "无",
           "member": "string",
@@ -600,7 +570,6 @@
       "document": "CreateHashDeposit请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "存证名称(长度最大30)",
           "example": "无",
           "member": "string",
@@ -609,7 +578,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "数据hash",
           "example": "无",
           "member": "string",
@@ -618,7 +586,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "该字段为透传字段，方便调用方做业务处理， 长度最大不超过64",
           "example": "无",
           "member": "string",
@@ -627,7 +594,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0",
           "example": "0,1,2",
           "member": "uint64",
@@ -636,7 +602,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "存证描述",
           "example": "无",
           "member": "string",
@@ -681,7 +646,6 @@
       "document": "CreateImageDeposit请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "存证名称(长度最大30)",
           "example": "无",
           "member": "string",
@@ -690,7 +654,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "对应数据Base64文件名称 test.png",
           "example": "无",
           "member": "string",
@@ -699,7 +662,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件hash",
           "example": "无",
           "member": "string",
@@ -708,7 +670,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "业务ID 透传 长度最大不超过64",
           "example": "无",
           "member": "string",
@@ -717,7 +678,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "数据Base64编码，大小不超过5M",
           "example": "无",
           "member": "string",
@@ -726,7 +686,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "资源访问链接 与fileContent必须二选一",
           "example": "无",
           "member": "string",
@@ -735,7 +694,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0",
           "example": "0,1,2",
           "member": "uint64",
@@ -744,7 +702,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "存证描述",
           "example": "无",
           "member": "string",
@@ -789,7 +746,6 @@
       "document": "CreateVideoDeposit请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "存证名称(长度最大30)",
           "example": "无",
           "member": "string",
@@ -798,7 +754,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "对应数据Base64文件名称",
           "example": "无",
           "member": "string",
@@ -807,7 +762,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件hash",
           "example": "无",
           "member": "string",
@@ -816,7 +770,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "业务ID 透传 长度最大不超过64",
           "example": "无",
           "member": "string",
@@ -825,7 +778,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "数据Base64编码，大小不超过5M",
           "example": "无",
           "member": "string",
@@ -834,7 +786,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "资源访问链接 与fileContent必须二选一",
           "example": "无",
           "member": "string",
@@ -843,7 +794,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0",
           "example": "0,1,2",
           "member": "uint64",
@@ -852,7 +802,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "存证描述",
           "example": "无",
           "member": "string",
@@ -897,7 +846,6 @@
       "document": "CreateWebpageDeposit请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "存证名称(长度最大30)",
           "example": "无",
           "member": "string",
@@ -906,7 +854,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "网页链接",
           "example": "无",
           "member": "string",
@@ -915,7 +862,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "业务ID 透传 长度最大不超过64",
           "example": "无",
           "member": "string",
@@ -924,7 +870,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "算法类型 0 SM3, 1 SHA256, 2 SHA384 默认0",
           "example": "0,1,2",
           "member": "uint64",
@@ -933,7 +878,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "存证描述",
           "example": "无",
           "member": "string",
@@ -978,7 +922,6 @@
       "document": "GetDepositCert请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "存证编码",
           "example": "无",
           "member": "string",
@@ -1023,7 +966,6 @@
       "document": "GetDepositFile请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "存证编码",
           "example": "无",
           "member": "string",
@@ -1068,7 +1010,6 @@
       "document": "GetDepositInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "存证编码",
           "example": "无",
           "member": "string",

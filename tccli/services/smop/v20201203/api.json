@@ -25,8 +25,7 @@
           "member": "string",
           "name": "AccountId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -35,8 +34,7 @@
           "member": "string",
           "name": "DeviceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -45,8 +43,7 @@
           "member": "string",
           "name": "OrderId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -55,8 +52,7 @@
           "member": "string",
           "name": "Code",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -65,8 +61,7 @@
           "member": "int64",
           "name": "Async",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -75,8 +70,7 @@
           "member": "int64",
           "name": "ProductId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -85,8 +79,7 @@
           "member": "string",
           "name": "NotifyURL",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -101,8 +94,7 @@
           "member": "string",
           "name": "OrderId",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -111,8 +103,7 @@
           "member": "int64",
           "name": "Code",
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -121,8 +112,7 @@
           "member": "string",
           "name": "Message",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -131,8 +121,7 @@
           "member": "TaskEventData",
           "name": "Data",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -154,8 +143,7 @@
           "name": "Code",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -165,8 +153,7 @@
           "name": "Message",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -176,8 +163,7 @@
           "name": "TaskId",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -187,8 +173,7 @@
           "name": "TaskOrderId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -198,8 +183,7 @@
           "name": "TaskCode",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -209,8 +193,7 @@
           "name": "TaskCoinNumber",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -220,8 +203,7 @@
           "name": "TaskType",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -231,8 +213,7 @@
           "name": "TotalCoin",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -242,8 +223,7 @@
           "name": "Attach",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -253,8 +233,7 @@
           "name": "DoneTimes",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -264,8 +243,7 @@
           "name": "TotalTimes",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -275,8 +253,7 @@
           "name": "TaskName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -286,8 +263,7 @@
           "name": "GrowScore",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

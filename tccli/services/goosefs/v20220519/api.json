@@ -158,8 +158,7 @@
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -168,8 +167,7 @@
           "member": "SubnetInfo",
           "name": "SubnetInfo",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -196,8 +194,7 @@
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -206,8 +203,7 @@
           "member": "MappedBucket",
           "name": "Bucket",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -234,8 +230,7 @@
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -244,8 +239,7 @@
           "member": "LinuxNodeAttribute",
           "name": "ClientNodes",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -254,8 +248,7 @@
           "member": "bool",
           "name": "SingleClusterFlag",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -282,8 +275,7 @@
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -292,8 +284,7 @@
           "member": "LinuxNodeAttribute",
           "name": "ClientNodes",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -302,8 +293,7 @@
           "member": "bool",
           "name": "SingleClusterFlag",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -324,7 +314,6 @@
       "document": "客户侧集群管理节点信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "客户端节点IP",
           "example": "10.0.1.2",
@@ -332,11 +321,9 @@
           "name": "NodeIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点Instance Id",
           "example": "ins-a1b2c3d4",
@@ -344,11 +331,9 @@
           "name": "NodeInstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "初始密码",
           "example": "abcedfg",
@@ -356,8 +341,7 @@
           "name": "InitialPassword",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -366,7 +350,6 @@
       "document": "客户端节点属性",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "客户端节点IP",
           "example": "10.0.1.2",
@@ -374,11 +357,9 @@
           "name": "ClientNodeIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端节点服务状态, Active(运行中), Adding(添加中), Destroying(销毁中), Down(已停止)",
           "example": "active",
@@ -386,11 +367,9 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端节点类型，extend(扩展节点)，manager(管理节点)",
           "example": "extend",
@@ -398,8 +377,7 @@
           "name": "ClientType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -415,8 +393,7 @@
           "name": "NodeIp",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -426,8 +403,7 @@
           "name": "LocalDirectory",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -437,8 +413,7 @@
           "name": "GooseFSDirectory",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -448,8 +423,7 @@
           "name": "Token",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -465,8 +439,7 @@
           "name": "ClusterId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -476,8 +449,7 @@
           "name": "RoleName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -487,8 +459,7 @@
           "name": "Description",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -498,8 +469,7 @@
           "name": "DirectoryList",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -514,8 +484,7 @@
           "member": "string",
           "name": "TaskType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -524,8 +493,7 @@
           "member": "string",
           "name": "Bucket",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -534,8 +502,7 @@
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -544,8 +511,7 @@
           "member": "string",
           "name": "TaskPath",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -554,8 +520,7 @@
           "member": "string",
           "name": "TaskName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -564,8 +529,7 @@
           "member": "string",
           "name": "RepositoryType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -574,8 +538,7 @@
           "member": "string",
           "name": "TextLocation",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -590,8 +553,7 @@
           "member": "string",
           "name": "TaskId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -606,92 +568,76 @@
       "document": "CreateFileSystem请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统类型, 可填goosefs和goosefsx",
           "example": "goosefsx",
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统名",
           "example": "ai_fs",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统备注描述",
           "example": "our test fs",
           "member": "string",
           "name": "Description",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "vpc网络ID",
           "example": "vpc-a1b2c3d4",
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID",
           "example": "subnet-m1n1g1h1",
           "member": "string",
           "name": "SubnetId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网所在的可用区",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统关联的tag",
           "example": "无",
           "member": "Tag",
           "name": "Tag",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "GooseFSx构建时要传递的参数",
           "example": "无",
           "member": "GooseFSxBuildElement",
           "name": "GooseFSxBuildElements",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -718,8 +664,7 @@
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -728,8 +673,7 @@
           "member": "SubnetInfo",
           "name": "SubnetInfo",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -750,15 +694,13 @@
       "document": "DeleteFileSystem请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID",
           "example": "x_c60_r3c4fa1f",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -779,15 +721,13 @@
       "document": "DescribeClientNodes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统Id",
           "example": "x_c60_r3c4fa1f",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -803,8 +743,7 @@
           "name": "ClientNodes",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -825,8 +764,7 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -842,8 +780,7 @@
           "name": "ClientTokens",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -864,8 +801,7 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -874,8 +810,7 @@
           "member": "string",
           "name": "RoleName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -891,8 +826,7 @@
           "name": "RoleTokens",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -913,8 +847,7 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -923,8 +856,7 @@
           "member": "string",
           "name": "RoleName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -940,8 +872,7 @@
           "name": "ClusterRoles",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -962,8 +893,7 @@
           "member": "string",
           "name": "TaskId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -972,8 +902,7 @@
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -988,8 +917,7 @@
           "member": "string",
           "name": "TaskId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -998,8 +926,7 @@
           "member": "int64",
           "name": "Status",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1008,8 +935,7 @@
           "member": "uint64",
           "name": "FinishedFileNumber",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1018,8 +944,7 @@
           "member": "uint64",
           "name": "FinishedCapacity",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1040,8 +965,7 @@
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1056,8 +980,7 @@
           "member": "MappedBucket",
           "name": "BucketList",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1072,26 +995,22 @@
       "document": "DescribeFileSystems请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页的数量",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1107,8 +1026,7 @@
           "name": "FSAttributeList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1118,8 +1036,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1134,26 +1051,22 @@
       "document": "DetachFileSystemBucket请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID",
           "example": "x_c60_r3c4fa1f",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要解绑的Bucket名",
           "example": "mybucket-1250000",
           "member": "string",
           "name": "BucketName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1174,26 +1087,22 @@
       "document": "ExpandCapacity请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID",
           "example": "x_c60_r3c4fa1f",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新增扩容的系统容量",
           "example": "4680",
           "member": "uint64",
           "name": "ExpandedCapacity",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1221,8 +1130,7 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1232,8 +1140,7 @@
           "name": "FileSystemId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1243,8 +1150,7 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1254,8 +1160,7 @@
           "name": "GooseFSxAttribute",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1265,8 +1170,7 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1276,8 +1180,7 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1287,8 +1190,7 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1298,8 +1200,7 @@
           "name": "VpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1309,8 +1210,7 @@
           "name": "SubnetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1320,8 +1220,7 @@
           "name": "Zone",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1331,8 +1230,7 @@
           "name": "Tag",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1342,8 +1240,7 @@
           "name": "ModifyTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1352,7 +1249,6 @@
       "document": "GooseFSx文件系统的属性",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "GooseFSx的型号",
           "example": "C60",
@@ -1360,11 +1256,9 @@
           "name": "Model",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "容量单位是GB, 比如4608(4.5TB)",
           "example": "4608",
@@ -1372,11 +1266,9 @@
           "name": "Capacity",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要关联映射的bucket列表",
           "example": "无",
@@ -1384,11 +1276,9 @@
           "name": "MappedBucketList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户侧管理节点信息",
           "example": "无",
@@ -1396,8 +1286,7 @@
           "name": "ClientManagerNodeList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1406,7 +1295,6 @@
       "document": "GooseFSx创建时候的属性",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "GooseFSx的型号",
           "example": "C60",
@@ -1414,11 +1302,9 @@
           "name": "Model",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "容量单位是GB, 比如4608(4.5TB)",
           "example": "4608",
@@ -1426,11 +1312,9 @@
           "name": "Capacity",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要关联映射的bucket列表",
           "example": "[{\"mybucket-125\", \"/\"}]",
@@ -1438,8 +1322,7 @@
           "name": "MappedBucketList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -1455,8 +1338,7 @@
           "name": "InstanceId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1466,8 +1348,7 @@
           "name": "VpcId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1477,8 +1358,7 @@
           "name": "SubnetId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1488,8 +1368,7 @@
           "name": "LinuxClientNodeIp",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -1505,8 +1384,7 @@
           "name": "BucketName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1516,8 +1394,7 @@
           "name": "FileSystemPath",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1527,8 +1404,7 @@
           "name": "DataRepositoryTaskAutoStrategy",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1538,8 +1414,7 @@
           "name": "RuleId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1549,8 +1424,7 @@
           "name": "RuleDescription",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1565,8 +1439,7 @@
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1575,8 +1448,7 @@
           "member": "uint64",
           "name": "Bandwidth",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1603,8 +1475,7 @@
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1619,8 +1490,7 @@
           "member": "SubnetInfo",
           "name": "SubnetInfoCollection",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1641,8 +1511,7 @@
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1657,8 +1526,7 @@
           "member": "uint64",
           "name": "Bandwidth",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1667,8 +1535,7 @@
           "member": "uint64",
           "name": "BandwidthStatus",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1677,8 +1544,7 @@
           "member": "uint64",
           "name": "MinBandwidth",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1700,8 +1566,7 @@
           "name": "RoleName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1711,8 +1576,7 @@
           "name": "Token",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1728,8 +1592,7 @@
           "name": "VpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1739,8 +1602,7 @@
           "name": "SubnetId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1749,7 +1611,6 @@
       "document": "文件系统关联的标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键",
           "example": "usage",
@@ -1757,11 +1618,9 @@
           "name": "Key",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "production",
@@ -1769,8 +1628,7 @@
           "name": "Value",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

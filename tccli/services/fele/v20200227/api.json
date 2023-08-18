@@ -25,8 +25,7 @@
           "member": "string",
           "name": "ResourceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -35,8 +34,7 @@
           "member": "FeleRequestInfo",
           "name": "RequestData",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -45,8 +43,7 @@
           "member": "RequestEncryptionInfo",
           "name": "RequestEncryptionData",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -61,8 +58,7 @@
           "member": "FeleResponseInfo",
           "name": "ResponseData",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -71,8 +67,7 @@
           "member": "string",
           "name": "OldResponseData",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -94,8 +89,7 @@
           "name": "Scene",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -105,8 +99,7 @@
           "name": "PhoneNumber",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -116,8 +109,7 @@
           "name": "Imei",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -127,8 +119,7 @@
           "name": "Imsi",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -138,8 +129,7 @@
           "name": "IP",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -149,8 +139,7 @@
           "name": "Addr",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -160,8 +149,7 @@
           "name": "CardNo",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -171,8 +159,7 @@
           "name": "IdNum",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -182,8 +169,7 @@
           "name": "Name",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -193,8 +179,7 @@
           "name": "Wechat",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -204,8 +189,7 @@
           "name": "QQ",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -215,8 +199,7 @@
           "name": "Email",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -226,8 +209,7 @@
           "name": "SubScene",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -237,8 +219,7 @@
           "name": "ModelVersion",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -248,8 +229,7 @@
           "name": "FederatedModelId",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -259,8 +239,7 @@
           "name": "FederatedModelIds",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -270,8 +249,7 @@
           "name": "SubAppid",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -281,8 +259,7 @@
           "name": "CustomerUin",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -292,8 +269,7 @@
           "name": "CustomerAppid",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -303,8 +279,7 @@
           "name": "CustomerSubUin",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -314,8 +289,7 @@
           "name": "Authorization",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -325,8 +299,7 @@
           "name": "ExtensionId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -336,8 +309,7 @@
           "name": "ExtensionIn",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -347,8 +319,7 @@
           "name": "USCI",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -358,8 +329,7 @@
           "name": "OldResponseType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -369,8 +339,7 @@
           "name": "PhoneCryptoType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -380,8 +349,7 @@
           "name": "IdCryptoType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -391,8 +359,7 @@
           "name": "NameCryptoType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -401,7 +368,6 @@
       "document": "联邦学习风险查询结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "风险分,取值范围[0,100],分数越高风险越高",
           "example": "0",
@@ -412,7 +378,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "风险标签,多个标签以竖线分隔",
           "example": "0",
@@ -423,7 +388,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "补充信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -434,7 +398,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联邦学习单模型分\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -445,7 +408,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联邦学习多模型分的json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -456,7 +418,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联邦学习Host端特征树的json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -467,7 +428,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "拓展字段，非必然出现，和 ExtensionIn 对应\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -491,8 +451,7 @@
           "name": "EncryptionType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -502,8 +461,7 @@
           "name": "EncryptionContent",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"

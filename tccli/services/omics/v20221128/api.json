@@ -110,8 +110,7 @@
           "name": "Zone",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -121,8 +120,7 @@
           "name": "InstanceType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -138,8 +136,7 @@
           "name": "Zone",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -149,8 +146,7 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -165,8 +161,7 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -175,8 +170,7 @@
           "member": "EnvironmentConfig",
           "name": "Config",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -185,8 +179,7 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -201,8 +194,7 @@
           "member": "string",
           "name": "EnvironmentId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -211,8 +203,7 @@
           "member": "string",
           "name": "WorkflowUuid",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -234,8 +225,7 @@
           "name": "Zone",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -250,8 +240,7 @@
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -266,8 +255,7 @@
           "member": "string",
           "name": "WorkflowUuid",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -293,8 +281,7 @@
           "member": "EnvironmentStatistic",
           "name": "Statistics",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -315,8 +302,7 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -325,8 +311,7 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -335,8 +320,7 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -351,8 +335,7 @@
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -361,8 +344,7 @@
           "member": "Environment",
           "name": "Environments",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -383,8 +365,7 @@
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -393,8 +374,7 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -403,8 +383,7 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -413,8 +392,7 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -429,8 +407,7 @@
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -439,8 +416,7 @@
           "member": "RunGroup",
           "name": "RunGroups",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -461,8 +437,7 @@
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -471,8 +446,7 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -481,8 +455,7 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -491,8 +464,7 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -507,8 +479,7 @@
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -517,8 +488,7 @@
           "member": "Run",
           "name": "Runs",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -539,8 +509,7 @@
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -549,8 +518,7 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -559,8 +527,7 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -569,8 +536,7 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -585,8 +551,7 @@
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -595,8 +560,7 @@
           "member": "Table",
           "name": "Tables",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -617,8 +581,7 @@
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -627,8 +590,7 @@
           "member": "string",
           "name": "TableId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -637,8 +599,7 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -647,8 +608,7 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -657,8 +617,7 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -673,8 +632,7 @@
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -683,8 +641,7 @@
           "member": "TableRow",
           "name": "Rows",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -706,8 +663,7 @@
           "name": "EnvironmentId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -717,8 +673,7 @@
           "name": "Name",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -728,8 +683,7 @@
           "name": "Description",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -739,8 +693,7 @@
           "name": "Region",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -750,8 +703,7 @@
           "name": "Type",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -761,8 +713,7 @@
           "name": "Status",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -772,8 +723,7 @@
           "name": "Available",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -783,8 +733,7 @@
           "name": "Message",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -794,8 +743,7 @@
           "name": "ResourceIds",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -805,8 +753,7 @@
           "name": "LastWorkflowUuid",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -816,8 +763,7 @@
           "name": "CreationTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -833,8 +779,7 @@
           "name": "VPCOption",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -844,8 +789,7 @@
           "name": "ClusterOption",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -855,8 +799,7 @@
           "name": "DatabaseOption",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -866,8 +809,7 @@
           "name": "StorageOption",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -877,8 +819,7 @@
           "name": "CVMOption",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -894,8 +835,7 @@
           "name": "Region",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -905,8 +845,7 @@
           "name": "TotalCount",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -922,8 +861,7 @@
           "name": "SubmitTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -933,8 +871,7 @@
           "name": "StartTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -944,8 +881,7 @@
           "name": "EndTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -961,8 +897,7 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -972,8 +907,7 @@
           "name": "Values",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -988,8 +922,7 @@
           "member": "string",
           "name": "RunUuid",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -998,8 +931,7 @@
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1008,8 +940,7 @@
           "member": "string",
           "name": "Path",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1024,8 +955,7 @@
           "member": "RunMetadata",
           "name": "Calls",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1046,8 +976,7 @@
           "member": "string",
           "name": "RunUuid",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1056,8 +985,7 @@
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1072,8 +1000,7 @@
           "member": "RunMetadata",
           "name": "Metadata",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1094,8 +1021,7 @@
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1104,8 +1030,7 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1114,8 +1039,7 @@
           "member": "string",
           "name": "CosUri",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1124,8 +1048,7 @@
           "member": "string",
           "name": "DataType",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1134,8 +1057,7 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1150,8 +1072,7 @@
           "member": "string",
           "name": "TableId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1173,8 +1094,7 @@
           "name": "VPCId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1184,8 +1104,7 @@
           "name": "SubnetId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1195,8 +1114,7 @@
           "name": "SecurityGroupId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1206,8 +1124,7 @@
           "name": "TDSQLCId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1217,8 +1134,7 @@
           "name": "CFSId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1228,8 +1144,7 @@
           "name": "CFSStorageType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1239,8 +1154,7 @@
           "name": "CVMId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1250,8 +1164,7 @@
           "name": "EKSId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1266,8 +1179,7 @@
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1276,8 +1188,7 @@
           "member": "string",
           "name": "RunUuids",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1305,8 +1216,7 @@
           "name": "RunUuid",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1316,8 +1226,7 @@
           "name": "ProjectId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1327,8 +1236,7 @@
           "name": "ApplicationId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1338,8 +1246,7 @@
           "name": "RunGroupId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1349,8 +1256,7 @@
           "name": "EnvironmentId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1360,8 +1266,7 @@
           "name": "UserDefinedId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1371,8 +1276,7 @@
           "name": "TableId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1382,8 +1286,7 @@
           "name": "TableRowUuid",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1393,8 +1296,7 @@
           "name": "Status",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1404,8 +1306,7 @@
           "name": "Input",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1415,8 +1316,7 @@
           "name": "Option",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1426,8 +1326,7 @@
           "name": "ExecutionTime",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1437,8 +1336,7 @@
           "name": "ErrorMessage",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1448,8 +1346,7 @@
           "name": "CreateTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1459,8 +1356,7 @@
           "name": "UpdateTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1475,8 +1371,7 @@
           "member": "string",
           "name": "ApplicationId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1485,8 +1380,7 @@
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1495,8 +1389,7 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1505,8 +1398,7 @@
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1515,8 +1407,7 @@
           "member": "string",
           "name": "InputBase64",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1525,8 +1416,7 @@
           "member": "uint64",
           "name": "CacheClearDelay",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1535,8 +1425,7 @@
           "member": "RunOption",
           "name": "Option",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -1545,8 +1434,7 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1555,8 +1443,7 @@
           "member": "string",
           "name": "TableId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1565,8 +1452,7 @@
           "member": "string",
           "name": "TableRowUuids",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1575,8 +1461,7 @@
           "member": "string",
           "name": "ApplicationVersionId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1592,8 +1477,7 @@
           "name": "RunGroupId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1615,8 +1499,7 @@
           "name": "RunGroupId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1626,8 +1509,7 @@
           "name": "ProjectId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1637,8 +1519,7 @@
           "name": "ProjectName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1648,8 +1529,7 @@
           "name": "ApplicationId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1659,8 +1539,7 @@
           "name": "ApplicationName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1670,8 +1549,7 @@
           "name": "ApplicationType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1681,8 +1559,7 @@
           "name": "EnvironmentId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1692,8 +1569,7 @@
           "name": "EnvironmentName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1703,8 +1579,7 @@
           "name": "TableId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1714,8 +1589,7 @@
           "name": "Name",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1725,8 +1599,7 @@
           "name": "Description",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1736,8 +1609,7 @@
           "name": "Status",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1747,8 +1619,7 @@
           "name": "Input",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1758,8 +1629,7 @@
           "name": "Option",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1769,8 +1639,7 @@
           "name": "TotalRun",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1780,8 +1649,7 @@
           "name": "RunStatusCounts",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1791,8 +1659,7 @@
           "name": "ExecutionTime",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1802,8 +1669,7 @@
           "name": "ErrorMessage",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1813,8 +1679,7 @@
           "name": "CreateTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1824,8 +1689,7 @@
           "name": "UpdateTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1841,8 +1705,7 @@
           "name": "RunType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1852,8 +1715,7 @@
           "name": "RunId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1863,8 +1725,7 @@
           "name": "ParentId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1874,8 +1735,7 @@
           "name": "JobId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1885,8 +1745,7 @@
           "name": "CallName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1896,8 +1755,7 @@
           "name": "ScatterIndex",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1907,8 +1765,7 @@
           "name": "Input",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1918,8 +1775,7 @@
           "name": "Output",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1929,8 +1785,7 @@
           "name": "Status",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1940,8 +1795,7 @@
           "name": "ErrorMessage",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1951,8 +1805,7 @@
           "name": "StartTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1962,8 +1815,7 @@
           "name": "SubmitTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1973,8 +1825,7 @@
           "name": "EndTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1984,8 +1835,7 @@
           "name": "Command",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1995,8 +1845,7 @@
           "name": "Runtime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2006,8 +1855,7 @@
           "name": "Preprocess",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2017,8 +1865,7 @@
           "name": "PostProcess",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2028,8 +1875,7 @@
           "name": "CallCached",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2039,8 +1885,7 @@
           "name": "Stdout",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2050,8 +1895,7 @@
           "name": "Stderr",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2067,8 +1911,7 @@
           "name": "FailureMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2078,8 +1921,7 @@
           "name": "UseCallCache",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2089,8 +1931,7 @@
           "name": "UseErrorOnHold",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2100,8 +1941,7 @@
           "name": "FinalWorkflowOutputsDir",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2111,8 +1951,7 @@
           "name": "UseRelativeOutputPaths",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2128,8 +1967,7 @@
           "name": "Status",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2139,8 +1977,7 @@
           "name": "Count",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2156,8 +1993,7 @@
           "name": "StorageType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2167,8 +2003,7 @@
           "name": "Zone",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2178,8 +2013,7 @@
           "name": "Capacity",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -2195,8 +2029,7 @@
           "name": "TableId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2206,8 +2039,7 @@
           "name": "ProjectId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2217,8 +2049,7 @@
           "name": "Name",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2228,8 +2059,7 @@
           "name": "Description",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2239,8 +2069,7 @@
           "name": "Columns",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2250,8 +2079,7 @@
           "name": "CreateTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2261,8 +2089,7 @@
           "name": "Creator",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2278,8 +2105,7 @@
           "name": "Header",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2289,8 +2115,7 @@
           "name": "DataType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2306,8 +2131,7 @@
           "name": "TableRowUuid",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2317,8 +2141,7 @@
           "name": "Content",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2334,8 +2157,7 @@
           "name": "SubnetZone",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2345,8 +2167,7 @@
           "name": "VPCCIDRBlock",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2356,8 +2177,7 @@
           "name": "SubnetCIDRBlock",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"

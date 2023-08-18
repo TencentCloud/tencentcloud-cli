@@ -264,7 +264,6 @@
       "document": "Apollo 环境配置参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境名称",
           "example": "prod",
@@ -272,11 +271,9 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境内引擎的节点规格 ID\n-1C2G\n-2C4G\n兼容原spec-xxxxxx形式的规格ID",
           "example": "1C2G",
@@ -284,11 +281,9 @@
           "name": "EngineResourceSpec",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境内引擎的节点数量",
           "example": "3",
@@ -296,11 +291,9 @@
           "name": "EngineNodeNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置存储空间大小，以GB为单位",
           "example": "50",
@@ -308,11 +301,9 @@
           "name": "StorageCapacity",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC ID。在 VPC 的子网内分配一个 IP 作为 ConfigServer 的访问地址",
           "example": "vpc-xxxxxx",
@@ -320,11 +311,9 @@
           "name": "VpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网 ID。在 VPC 的子网内分配一个 IP 作为 ConfigServer 的访问地址",
           "example": "subnet-xxxxxx",
@@ -332,11 +321,9 @@
           "name": "SubnetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境描述",
           "example": "test",
@@ -344,8 +331,7 @@
           "name": "EnvDesc",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -354,7 +340,6 @@
       "document": "服务治理引擎绑定的kubernetes信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "绑定的kubernetes集群ID",
           "example": "cls-xxxxxx",
@@ -365,7 +350,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定的kubernetes的集群类型，分tke和eks两种\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "eks",
@@ -376,7 +360,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务同步模式，all为全量同步，demand为按需同步\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demand",
@@ -400,8 +383,7 @@
           "name": "CanaryRuleList",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -411,8 +393,7 @@
           "name": "TotalCount",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -429,8 +410,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -441,8 +421,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -453,8 +432,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -465,8 +443,7 @@
           "output_required": true,
           "required": false,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -482,8 +459,7 @@
           "name": "Priority",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -493,8 +469,7 @@
           "name": "Enabled",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -504,8 +479,7 @@
           "name": "ConditionList",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -515,8 +489,7 @@
           "name": "BalancedServiceList",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -526,8 +499,7 @@
           "name": "ServiceId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -537,8 +509,7 @@
           "name": "ServiceName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -554,8 +525,7 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -565,8 +535,7 @@
           "name": "Key",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -576,8 +545,7 @@
           "name": "Operator",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -587,8 +555,7 @@
           "name": "Value",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -598,8 +565,7 @@
           "name": "Delimiter",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -609,8 +575,7 @@
           "name": "GlobalConfigId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -620,8 +585,7 @@
           "name": "GlobalConfigName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -637,8 +601,7 @@
           "name": "NodeId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -648,8 +611,7 @@
           "name": "NodeIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -659,8 +621,7 @@
           "name": "ZoneId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -670,8 +631,7 @@
           "name": "Zone",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -681,8 +641,7 @@
           "name": "GroupId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -692,8 +651,7 @@
           "name": "GroupName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -703,8 +661,7 @@
           "name": "Status",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -716,14 +673,12 @@
           "disabled": false,
           "document": "节点配置, 1c2g|2c4g|4c8g|8c16g。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1c2g",
-          "is_base64": false,
           "member": "string",
           "name": "Specification",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -734,8 +689,7 @@
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -751,8 +705,7 @@
           "name": "Enabled",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -762,8 +715,7 @@
           "name": "QpsThresholds",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -773,8 +725,7 @@
           "name": "LimitBy",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -784,8 +735,7 @@
           "name": "ResponseType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -795,8 +745,7 @@
           "name": "HideClientHeaders",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -806,8 +755,7 @@
           "name": "IsDelay",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -817,8 +765,7 @@
           "name": "Path",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -828,8 +775,7 @@
           "name": "Header",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -839,8 +785,7 @@
           "name": "ExternalRedis",
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -850,8 +795,7 @@
           "name": "Policy",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -861,8 +805,7 @@
           "name": "RateLimitResponse",
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -872,8 +815,7 @@
           "name": "RateLimitResponseUrl",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -883,8 +825,7 @@
           "name": "LineUpTime",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -900,8 +841,7 @@
           "name": "StrategyId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -911,8 +851,7 @@
           "name": "StrategyName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -922,8 +861,7 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -933,8 +871,7 @@
           "name": "ModifyTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -944,8 +881,7 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -955,8 +891,7 @@
           "name": "Config",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -966,8 +901,7 @@
           "name": "GatewayId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -977,8 +911,7 @@
           "name": "CronConfig",
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -988,8 +921,7 @@
           "name": "MaxReplicas",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1005,8 +937,7 @@
           "name": "MaxReplicas",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1016,8 +947,7 @@
           "name": "Metrics",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1027,8 +957,7 @@
           "name": "Enabled",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1038,8 +967,7 @@
           "name": "CreateTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1049,8 +977,7 @@
           "name": "ModifyTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1060,8 +987,7 @@
           "name": "StrategyId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1071,8 +997,7 @@
           "name": "AutoScalerId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1081,7 +1006,6 @@
       "document": "弹性伸缩配置指标",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指标类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Resource",
@@ -1089,11 +1013,9 @@
           "name": "Type",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cpu",
@@ -1101,11 +1023,9 @@
           "name": "ResourceName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标目标类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Utilization",
@@ -1113,11 +1033,9 @@
           "name": "TargetType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标目标值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "80",
@@ -1125,8 +1043,7 @@
           "name": "TargetValue",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1142,8 +1059,7 @@
           "name": "Enabled",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1153,8 +1069,7 @@
           "name": "Params",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1164,8 +1079,7 @@
           "name": "CreateTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1175,8 +1089,7 @@
           "name": "ModifyTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1186,8 +1099,7 @@
           "name": "StrategyId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1203,8 +1115,7 @@
           "name": "Period",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1214,8 +1125,7 @@
           "name": "StartAt",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1225,8 +1135,7 @@
           "name": "TargetReplicas",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1241,8 +1150,7 @@
           "member": "string",
           "name": "GatewayId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1251,8 +1159,7 @@
           "member": "string",
           "name": "ServiceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1261,8 +1168,7 @@
           "member": "CloudNativeAPIGatewayCanaryRule",
           "name": "CanaryRule",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1289,8 +1195,7 @@
           "member": "string",
           "name": "GatewayId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1299,8 +1204,7 @@
           "member": "string",
           "name": "Id",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1309,8 +1213,7 @@
           "member": "CloudNativeAPIGatewayRateLimitDetail",
           "name": "LimitDetail",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1337,8 +1240,7 @@
           "member": "string",
           "name": "GatewayId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1347,8 +1249,7 @@
           "member": "string",
           "name": "ServiceID",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1357,8 +1258,7 @@
           "member": "string",
           "name": "RouteName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1367,8 +1267,7 @@
           "member": "string",
           "name": "Methods",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1377,8 +1276,7 @@
           "member": "string",
           "name": "Hosts",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1387,8 +1285,7 @@
           "member": "string",
           "name": "Paths",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1397,8 +1294,7 @@
           "member": "string",
           "name": "Protocols",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1407,8 +1303,7 @@
           "member": "bool",
           "name": "PreserveHost",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -1417,8 +1312,7 @@
           "member": "int64",
           "name": "HttpsRedirectStatusCode",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1427,8 +1321,7 @@
           "member": "bool",
           "name": "StripPath",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": true,
@@ -1437,8 +1330,7 @@
           "member": "bool",
           "name": "ForceHttps",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -1447,8 +1339,7 @@
           "member": "uint64",
           "name": "DestinationPorts",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1457,8 +1348,7 @@
           "member": "KVMapping",
           "name": "Headers",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1485,8 +1375,7 @@
           "member": "string",
           "name": "GatewayId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1495,8 +1384,7 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1505,8 +1393,7 @@
           "member": "CloudNativeAPIGatewayRateLimitDetail",
           "name": "LimitDetail",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1533,8 +1420,7 @@
           "member": "string",
           "name": "GatewayId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1543,8 +1429,7 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1553,8 +1438,7 @@
           "member": "string",
           "name": "Protocol",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1563,8 +1447,7 @@
           "member": "string",
           "name": "Path",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1573,8 +1456,7 @@
           "member": "int64",
           "name": "Timeout",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1583,8 +1465,7 @@
           "member": "int64",
           "name": "Retries",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1593,8 +1474,7 @@
           "member": "string",
           "name": "UpstreamType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1603,8 +1483,7 @@
           "member": "KongUpstreamInfo",
           "name": "UpstreamInfo",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1631,8 +1510,7 @@
           "member": "string",
           "name": "EngineType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1641,8 +1519,7 @@
           "member": "string",
           "name": "EngineVersion",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1651,8 +1528,7 @@
           "member": "string",
           "name": "EngineProductVersion",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1661,8 +1537,7 @@
           "member": "string",
           "name": "EngineRegion",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1671,8 +1546,7 @@
           "member": "string",
           "name": "EngineName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1681,8 +1555,7 @@
           "member": "int64",
           "name": "TradeType",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1691,8 +1564,7 @@
           "member": "string",
           "name": "EngineResourceSpec",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1701,8 +1573,7 @@
           "member": "int64",
           "name": "EngineNodeNum",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1711,8 +1582,7 @@
           "member": "string",
           "name": "VpcId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1721,8 +1591,7 @@
           "member": "string",
           "name": "SubnetId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1731,8 +1600,7 @@
           "member": "ApolloEnvParam",
           "name": "ApolloEnvParams",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1741,8 +1609,7 @@
           "member": "InstanceTagInfo",
           "name": "EngineTags",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1751,8 +1618,7 @@
           "member": "EngineAdmin",
           "name": "EngineAdmin",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -1761,8 +1627,7 @@
           "member": "int64",
           "name": "PrepaidPeriod",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1771,8 +1636,7 @@
           "member": "int64",
           "name": "PrepaidRenewFlag",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1781,8 +1645,7 @@
           "member": "EngineRegionInfo",
           "name": "EngineRegionInfos",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1797,8 +1660,7 @@
           "member": "string",
           "name": "TaskId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1807,8 +1669,7 @@
           "member": "string",
           "name": "InstanceId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1829,8 +1690,7 @@
           "member": "string",
           "name": "GatewayId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1839,8 +1699,7 @@
           "member": "string",
           "name": "ServiceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1849,8 +1708,7 @@
           "member": "int64",
           "name": "Priority",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1877,8 +1735,7 @@
           "member": "string",
           "name": "GatewayId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1887,8 +1744,7 @@
           "member": "string",
           "name": "Id",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1915,8 +1771,7 @@
           "member": "string",
           "name": "GatewayId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1925,8 +1780,7 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1953,8 +1807,7 @@
           "member": "string",
           "name": "GatewayId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1963,8 +1816,7 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1991,8 +1843,7 @@
           "member": "string",
           "name": "GatewayId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2001,8 +1852,7 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2023,15 +1873,13 @@
       "document": "DeleteEngine请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "引擎实例 ID",
           "example": "ins-12345678",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2047,8 +1895,7 @@
           "name": "TaskId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2069,8 +1916,7 @@
           "member": "string",
           "name": "GatewayId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2079,8 +1925,7 @@
           "member": "string",
           "name": "ServiceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2089,8 +1934,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2099,8 +1943,7 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2115,8 +1958,7 @@
           "member": "CloudAPIGatewayCanaryRuleList",
           "name": "Result",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2131,48 +1973,40 @@
       "document": "DescribeCloudNativeAPIGatewayNodes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "云原生API网关实例ID。",
           "example": "gateway-xxxxxx",
           "member": "string",
           "name": "GatewayId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例分组id",
           "example": "group-xxx2345s",
           "member": "string",
           "name": "GroupId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "翻页获取多少个",
           "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "翻页从第几个开始获取",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2188,8 +2022,7 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2204,7 +2037,6 @@
       "document": "获取网关节点信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "获取云原生API网关节点列表响应结果。",
           "example": "1",
@@ -2212,11 +2044,9 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云原生API网关节点列表。",
           "example": "无",
@@ -2224,8 +2054,7 @@
           "name": "NodeList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2240,8 +2069,7 @@
           "member": "string",
           "name": "GatewayId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2257,8 +2085,7 @@
           "name": "Result",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2279,8 +2106,7 @@
           "member": "string",
           "name": "GatewayId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2289,8 +2115,7 @@
           "member": "string",
           "name": "Id",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2306,8 +2131,7 @@
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2328,8 +2152,7 @@
           "member": "string",
           "name": "GatewayId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2338,8 +2161,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2348,8 +2170,7 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2358,8 +2179,7 @@
           "member": "string",
           "name": "ServiceName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2368,8 +2188,7 @@
           "member": "string",
           "name": "RouteName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2378,8 +2197,7 @@
           "member": "ListFilter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2394,8 +2212,7 @@
           "member": "KongServiceRouteList",
           "name": "Result",
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2416,8 +2233,7 @@
           "member": "string",
           "name": "GatewayId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2426,8 +2242,7 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2443,8 +2258,7 @@
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2465,8 +2279,7 @@
           "member": "string",
           "name": "GatewayId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2475,8 +2288,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2485,8 +2297,7 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2495,8 +2306,7 @@
           "member": "ListFilter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2512,8 +2322,7 @@
           "name": "Result",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2528,15 +2337,13 @@
       "document": "DescribeCredential请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户凭证",
           "example": "10000",
           "member": "string",
           "name": "TenancyKey",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2552,8 +2359,7 @@
           "name": "SecretKey",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2563,8 +2369,7 @@
           "name": "SecretID",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2574,8 +2379,7 @@
           "name": "Token",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2585,8 +2389,7 @@
           "name": "ExpiredTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2607,8 +2410,7 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2617,8 +2419,7 @@
           "member": "string",
           "name": "EngineRegion",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2633,8 +2434,7 @@
           "member": "string",
           "name": "ClientIntranetAddress",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2643,8 +2443,7 @@
           "member": "string",
           "name": "ConsoleIntranetAddress",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2653,8 +2452,7 @@
           "member": "EnvAddressInfo",
           "name": "EnvAddressInfos",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2663,8 +2461,7 @@
           "member": "string",
           "name": "ReportIntranetAddress",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2673,8 +2470,7 @@
           "member": "PolarisLimiterAddress",
           "name": "LimiterAddressInfos",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2683,8 +2479,7 @@
           "member": "bool",
           "name": "EnableClientIntranet",
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2706,8 +2501,7 @@
           "name": "GatewayId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2717,8 +2511,7 @@
           "name": "GatewayInstancePortList",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2727,7 +2520,6 @@
       "document": "实例地域信息描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "引擎部署地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
@@ -2735,11 +2527,9 @@
           "name": "EngineRegion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "引擎在该地域的副本数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -2747,11 +2537,9 @@
           "name": "Replica",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "引擎在该地域的规格id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "spec-xxx",
@@ -2759,11 +2547,9 @@
           "name": "SpecId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内网的网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2771,11 +2557,9 @@
           "name": "IntranetVpcInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开公网\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -2783,8 +2567,7 @@
           "name": "EnableClientInternet",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2793,7 +2576,6 @@
       "document": "DescribeNacosReplicas请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "引擎实例ID",
           "example": "ins-12345678",
@@ -2803,7 +2585,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "副本列表Limit",
           "example": "1",
@@ -2813,7 +2594,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "副本列表Offset",
           "example": "1",
@@ -2861,7 +2641,6 @@
       "document": "DescribeNacosServerInterfaces请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例id",
           "example": "ins-df344df5",
@@ -2871,7 +2650,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回的列表个数",
           "example": "20",
@@ -2881,7 +2659,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回的列表起始偏移量",
           "example": "1",
@@ -2929,48 +2706,40 @@
       "document": "DescribeNativeGatewayServerGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "云原生API网关实例ID。",
           "example": "gateway-test1234",
           "member": "string",
           "name": "GatewayId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "翻页从第几个开始获取",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "翻页获取多少个",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤参数",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2986,8 +2755,7 @@
           "name": "Result",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3008,8 +2776,7 @@
           "member": "string",
           "name": "GatewayId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3018,8 +2785,7 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3035,8 +2801,7 @@
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3057,8 +2822,7 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3067,8 +2831,7 @@
           "member": "string",
           "name": "Start",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3077,8 +2840,7 @@
           "member": "string",
           "name": "End",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3087,8 +2849,7 @@
           "member": "string",
           "name": "Step",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3097,8 +2858,7 @@
           "member": "string",
           "name": "Query",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3113,8 +2873,7 @@
           "member": "string",
           "name": "Data",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3129,59 +2888,49 @@
       "document": "DescribeSREInstanceAccessAddress请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "注册引擎实例Id",
           "example": "sre-12345678",
           "member": "string",
           "name": "InstanceId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC ID",
           "example": "vpc-xxxxxxxx",
           "member": "string",
           "name": "VpcId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID",
           "example": "subnet-xxxxx",
           "member": "string",
           "name": "SubnetId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "引擎其他组件名称（pushgateway、polaris-limiter）",
           "example": "pushgateway",
           "member": "string",
           "name": "Workload",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署地域",
           "example": "ap-beijing",
           "member": "string",
           "name": "EngineRegion",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3197,8 +2946,7 @@
           "name": "IntranetAddress",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3208,8 +2956,7 @@
           "name": "InternetAddress",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3219,8 +2966,7 @@
           "name": "EnvAddressInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3230,8 +2976,7 @@
           "name": "ConsoleInternetAddress",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3241,8 +2986,7 @@
           "name": "ConsoleIntranetAddress",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3252,8 +2996,7 @@
           "name": "InternetBandWidth",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3263,8 +3006,7 @@
           "name": "ConsoleInternetBandWidth",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3274,8 +3016,7 @@
           "name": "LimiterAddressInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3290,59 +3031,49 @@
       "document": "DescribeSREInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "请求过滤参数",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "翻页单页查询限制数量[0,1000], 默认值0",
           "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "翻页单页偏移量，默认值0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询类型",
           "example": "config",
           "member": "string",
           "name": "QueryType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "调用方来源",
           "example": "无",
           "member": "string",
           "name": "QuerySource",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3358,8 +3089,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3369,8 +3099,7 @@
           "name": "Content",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3385,7 +3114,6 @@
       "document": "DescribeZookeeperReplicas请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "注册引擎实例ID",
           "example": "ers-12345678",
@@ -3395,7 +3123,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "副本列表Limit",
           "example": "1",
@@ -3405,7 +3132,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "副本列表Offset",
           "example": "1",
@@ -3453,37 +3179,31 @@
       "document": "DescribeZookeeperServerInterfaces请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例id",
           "example": "ins-df344df5",
           "member": "string",
           "name": "InstanceId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回的列表个数",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回的列表起始偏移量",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3499,8 +3219,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3510,8 +3229,7 @@
           "name": "Content",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3526,7 +3244,6 @@
       "document": "引擎的初始管理帐号",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "控制台初始用户名",
           "example": "nacos",
@@ -3534,11 +3251,9 @@
           "name": "Name",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "控制台初始密码",
           "example": "xxxxxx",
@@ -3546,11 +3261,9 @@
           "name": "Password",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "引擎接口的管理员 Token",
           "example": "xxxxxx",
@@ -3558,8 +3271,7 @@
           "name": "Token",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3575,8 +3287,7 @@
           "name": "EngineRegion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3586,8 +3297,7 @@
           "name": "Replica",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3597,8 +3307,7 @@
           "name": "VpcInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -3614,8 +3323,7 @@
           "name": "EnvName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3625,8 +3333,7 @@
           "name": "EnableConfigInternet",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3636,8 +3343,7 @@
           "name": "ConfigInternetServiceIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3647,8 +3353,7 @@
           "name": "ConfigIntranetAddress",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3658,8 +3363,7 @@
           "name": "EnableConfigIntranet",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3669,8 +3373,7 @@
           "name": "InternetBandWidth",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3686,8 +3389,7 @@
           "name": "EnvName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3697,8 +3399,7 @@
           "name": "VpcInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3708,8 +3409,7 @@
           "name": "StorageCapacity",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3719,8 +3419,7 @@
           "name": "Status",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3730,8 +3429,7 @@
           "name": "AdminServiceIp",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3741,8 +3439,7 @@
           "name": "ConfigServiceIp",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3752,8 +3449,7 @@
           "name": "EnableConfigInternet",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3763,8 +3459,7 @@
           "name": "ConfigInternetServiceIp",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3774,8 +3469,7 @@
           "name": "SpecId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3785,8 +3479,7 @@
           "name": "EnvReplica",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3796,8 +3489,7 @@
           "name": "RunningCount",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3807,8 +3499,7 @@
           "name": "AliasEnvName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3818,8 +3509,7 @@
           "name": "EnvDesc",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3829,8 +3519,7 @@
           "name": "ClientBandWidth",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3840,8 +3529,7 @@
           "name": "EnableConfigIntranet",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -3857,8 +3545,7 @@
           "name": "RedisHost",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3868,8 +3555,7 @@
           "name": "RedisPassword",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3879,8 +3565,7 @@
           "name": "RedisPort",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3890,8 +3575,7 @@
           "name": "RedisTimeout",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -3900,7 +3584,6 @@
       "document": "查询过滤通用对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "过滤参数名",
           "example": "",
@@ -3911,7 +3594,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤参数值",
           "example": "",
@@ -3935,8 +3617,7 @@
           "name": "Scheme",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3946,8 +3627,7 @@
           "name": "PortList",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3956,7 +3636,6 @@
       "document": "引擎实例的标签信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键",
           "example": "key",
@@ -3964,11 +3643,9 @@
           "name": "TagKey",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "value",
@@ -3976,8 +3653,7 @@
           "name": "TagValue",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3993,8 +3669,7 @@
           "name": "Key",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4004,8 +3679,7 @@
           "name": "Value",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -4014,7 +3688,6 @@
       "document": "键值对",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "键",
           "example": "type",
@@ -4025,7 +3698,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "值",
           "example": "dev",
@@ -4045,79 +3717,67 @@
           "disabled": false,
           "document": "服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "916462a4-8ce4-4605-a7b7-66cd51c38201",
-          "is_base64": false,
           "member": "string",
           "name": "ID",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "服务名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test-service",
-          "is_base64": false,
           "member": "string",
           "name": "Name",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Methods",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Paths",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Hosts",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Protocols",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4128,8 +3788,7 @@
           "output_required": true,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4140,8 +3799,7 @@
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4152,21 +3810,18 @@
           "output_required": true,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "CreatedTime",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": true,
@@ -4177,34 +3832,29 @@
           "output_required": true,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "服务名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "ServiceName",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "ServiceID",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4215,8 +3865,7 @@
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4227,8 +3876,7 @@
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -4244,8 +3892,7 @@
           "name": "ID",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4255,8 +3902,7 @@
           "name": "Name",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4266,8 +3912,7 @@
           "name": "Protocol",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4277,8 +3922,7 @@
           "name": "Path",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4288,8 +3932,7 @@
           "name": "Timeout",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4299,8 +3942,7 @@
           "name": "Retries",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4310,8 +3952,7 @@
           "name": "Tags",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4321,8 +3962,7 @@
           "name": "UpstreamInfo",
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4332,8 +3972,7 @@
           "name": "UpstreamType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4343,8 +3982,7 @@
           "name": "Editable",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4354,8 +3992,7 @@
           "name": "CreatedTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -4371,8 +4008,7 @@
           "name": "ID",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4382,8 +4018,7 @@
           "name": "Name",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4393,8 +4028,7 @@
           "name": "Tags",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4404,8 +4038,7 @@
           "name": "UpstreamInfo",
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4415,8 +4048,7 @@
           "name": "UpstreamType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4426,8 +4058,7 @@
           "name": "CreatedTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4437,8 +4068,7 @@
           "name": "Editable",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -4454,8 +4084,7 @@
           "name": "RouteList",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4465,8 +4094,7 @@
           "name": "TotalCount",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -4483,8 +4111,7 @@
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4495,8 +4122,7 @@
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -4512,8 +4138,7 @@
           "name": "Host",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4523,8 +4148,7 @@
           "name": "Port",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4534,8 +4158,7 @@
           "name": "Weight",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4545,8 +4168,7 @@
           "name": "Health",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4556,8 +4178,7 @@
           "name": "CreatedTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4567,8 +4188,7 @@
           "name": "Source",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -4583,8 +4203,7 @@
           "member": "string",
           "name": "Host",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4593,8 +4212,7 @@
           "member": "int64",
           "name": "Port",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4603,8 +4221,7 @@
           "member": "string",
           "name": "SourceID",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4613,8 +4230,7 @@
           "member": "string",
           "name": "Namespace",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4623,8 +4239,7 @@
           "member": "string",
           "name": "ServiceName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4633,8 +4248,7 @@
           "member": "KongTarget",
           "name": "Targets",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -4643,8 +4257,7 @@
           "member": "string",
           "name": "SourceType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4653,8 +4266,7 @@
           "member": "string",
           "name": "ScfType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4663,8 +4275,7 @@
           "member": "string",
           "name": "ScfNamespace",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4673,8 +4284,7 @@
           "member": "string",
           "name": "ScfLambdaName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4683,8 +4293,7 @@
           "member": "string",
           "name": "ScfLambdaQualifier",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4693,8 +4302,7 @@
           "member": "int64",
           "name": "SlowStart",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4703,8 +4311,7 @@
           "member": "string",
           "name": "Algorithm",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4713,8 +4320,7 @@
           "member": "string",
           "name": "AutoScalingGroupID",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4723,8 +4329,7 @@
           "member": "uint64",
           "name": "AutoScalingCvmPort",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4733,8 +4338,7 @@
           "member": "string",
           "name": "AutoScalingTatCmdStatus",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4743,8 +4347,7 @@
           "member": "string",
           "name": "AutoScalingHookStatus",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4753,8 +4356,7 @@
           "member": "string",
           "name": "SourceName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4763,8 +4365,7 @@
           "member": "string",
           "name": "RealSourceType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -4780,8 +4381,7 @@
           "name": "Key",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4791,8 +4391,7 @@
           "name": "Value",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -4807,8 +4406,7 @@
           "member": "string",
           "name": "GatewayId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4817,8 +4415,7 @@
           "member": "string",
           "name": "ServiceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4827,8 +4424,7 @@
           "member": "int64",
           "name": "Priority",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4837,8 +4433,7 @@
           "member": "CloudNativeAPIGatewayCanaryRule",
           "name": "CanaryRule",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4865,8 +4460,7 @@
           "member": "string",
           "name": "GatewayId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4875,8 +4469,7 @@
           "member": "string",
           "name": "Id",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4885,8 +4478,7 @@
           "member": "CloudNativeAPIGatewayRateLimitDetail",
           "name": "LimitDetail",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4913,8 +4505,7 @@
           "member": "string",
           "name": "GatewayId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4923,8 +4514,7 @@
           "member": "string",
           "name": "ServiceID",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4933,8 +4523,7 @@
           "member": "string",
           "name": "RouteID",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4943,8 +4532,7 @@
           "member": "string",
           "name": "RouteName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4953,8 +4541,7 @@
           "member": "string",
           "name": "Methods",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -4963,8 +4550,7 @@
           "member": "string",
           "name": "Hosts",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -4973,8 +4559,7 @@
           "member": "string",
           "name": "Paths",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -4983,8 +4568,7 @@
           "member": "string",
           "name": "Protocols",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -4993,8 +4577,7 @@
           "member": "bool",
           "name": "PreserveHost",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -5003,8 +4586,7 @@
           "member": "int64",
           "name": "HttpsRedirectStatusCode",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5013,8 +4595,7 @@
           "member": "bool",
           "name": "StripPath",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": true,
@@ -5023,8 +4604,7 @@
           "member": "bool",
           "name": "ForceHttps",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -5033,8 +4613,7 @@
           "member": "uint64",
           "name": "DestinationPorts",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -5043,8 +4622,7 @@
           "member": "KVMapping",
           "name": "Headers",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5071,8 +4649,7 @@
           "member": "string",
           "name": "GatewayId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5081,8 +4658,7 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5091,8 +4667,7 @@
           "member": "CloudNativeAPIGatewayRateLimitDetail",
           "name": "LimitDetail",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5119,8 +4694,7 @@
           "member": "string",
           "name": "GatewayId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5129,8 +4703,7 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5139,8 +4712,7 @@
           "member": "string",
           "name": "Protocol",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5149,8 +4721,7 @@
           "member": "string",
           "name": "Path",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5159,8 +4730,7 @@
           "member": "int64",
           "name": "Timeout",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5169,8 +4739,7 @@
           "member": "int64",
           "name": "Retries",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5179,8 +4748,7 @@
           "member": "string",
           "name": "UpstreamType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5189,8 +4757,7 @@
           "member": "KongUpstreamInfo",
           "name": "UpstreamInfo",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -5199,8 +4766,7 @@
           "member": "string",
           "name": "ID",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5228,8 +4794,7 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5239,8 +4804,7 @@
           "name": "Role",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5250,8 +4814,7 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5261,8 +4824,7 @@
           "name": "SubnetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5272,8 +4834,7 @@
           "name": "Zone",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5283,8 +4844,7 @@
           "name": "ZoneId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5294,8 +4854,7 @@
           "name": "VpcId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5304,7 +4863,6 @@
       "document": "nacos服务端接口列表，用于云监控",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "接口名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "GET:/nacos/v1/config",
@@ -5321,7 +4879,6 @@
       "document": "云原生网关分组信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "云原生网关分组唯一id",
           "example": "group-xxaaa",
@@ -5329,11 +4886,9 @@
           "name": "GroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组名",
           "example": "prod",
@@ -5341,11 +4896,9 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述信息",
           "example": "现网",
@@ -5353,11 +4906,9 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点规格、节点数信息",
           "example": "无",
@@ -5365,11 +4916,9 @@
           "name": "NodeConfig",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关分组状态。",
           "example": "Running",
@@ -5377,11 +4926,9 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2021-09-09 11:52:30",
@@ -5389,11 +4936,9 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是默认分组。\n0：否。\n1：是。",
           "example": "1",
@@ -5401,11 +4946,9 @@
           "name": "IsFirstGroup",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联策略信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5413,11 +4956,9 @@
           "name": "BindingStrategy",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关实例 id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "gateway-xxxx1234",
@@ -5425,11 +4966,9 @@
           "name": "GatewayId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "带宽\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
@@ -5437,11 +4976,9 @@
           "name": "InternetMaxBandwidthOut",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-09-09 11:52:30",
@@ -5449,11 +4986,9 @@
           "name": "ModifyTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "subnet-xxxx1234",
@@ -5461,8 +4996,7 @@
           "name": "SubnetIds",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5471,7 +5005,6 @@
       "document": "网关分组列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "总数",
           "example": "20",
@@ -5479,11 +5012,9 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组信息数组。",
           "example": "无",
@@ -5491,8 +5022,7 @@
           "name": "GatewayGroupList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5501,7 +5031,6 @@
       "document": "查询Limiter的接入地址",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPC接入IP列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "127.0.0.1",
@@ -5509,8 +5038,7 @@
           "name": "IntranetAddress",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5526,8 +5054,7 @@
           "name": "Unit",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5537,8 +5064,7 @@
           "name": "Max",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5554,8 +5080,7 @@
           "name": "Body",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5565,8 +5090,7 @@
           "name": "Headers",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5576,8 +5100,7 @@
           "name": "HttpStatus",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5593,8 +5116,7 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5604,8 +5126,7 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5615,8 +5136,7 @@
           "name": "Edition",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5626,8 +5146,7 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5637,8 +5156,7 @@
           "name": "SpecId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5648,8 +5166,7 @@
           "name": "Replica",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5659,8 +5176,7 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5670,8 +5186,7 @@
           "name": "VpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5681,8 +5196,7 @@
           "name": "SubnetIds",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5692,8 +5206,7 @@
           "name": "EnableStorage",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5703,8 +5216,7 @@
           "name": "StorageType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5714,8 +5226,7 @@
           "name": "StorageCapacity",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5725,8 +5236,7 @@
           "name": "Paymode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5736,8 +5246,7 @@
           "name": "EKSClusterID",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5747,8 +5256,7 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5758,8 +5266,7 @@
           "name": "EnvInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5769,8 +5276,7 @@
           "name": "EngineRegion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5780,8 +5286,7 @@
           "name": "EnableInternet",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5791,8 +5296,7 @@
           "name": "VpcInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5802,8 +5306,7 @@
           "name": "ServiceGovernanceInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5813,8 +5316,7 @@
           "name": "Tags",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5824,8 +5326,7 @@
           "name": "EnableConsoleInternet",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5835,8 +5336,7 @@
           "name": "EnableConsoleIntranet",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5846,8 +5346,7 @@
           "name": "ConfigInfoVisible",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5857,8 +5356,7 @@
           "name": "ConsoleDefaultPwd",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5868,8 +5366,7 @@
           "name": "TradeType",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5879,8 +5376,7 @@
           "name": "AutoRenewFlag",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5890,8 +5386,7 @@
           "name": "CurDeadline",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5901,8 +5396,7 @@
           "name": "IsolateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5912,8 +5406,7 @@
           "name": "RegionInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5923,8 +5416,7 @@
           "name": "EKSType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5934,8 +5426,7 @@
           "name": "FeatureVersion",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5945,8 +5436,7 @@
           "name": "EnableClientIntranet",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5955,7 +5445,6 @@
       "document": "服务治理相关的信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "引擎所在的地域",
           "example": "ap-beijing",
@@ -5963,11 +5452,9 @@
           "name": "EngineRegion",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务治理引擎绑定的kubernetes集群信息",
           "example": "无",
@@ -5975,11 +5462,9 @@
           "name": "BoundK8SInfos",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务治理引擎绑定的网络信息",
           "example": "无",
@@ -5987,11 +5472,9 @@
           "name": "VpcInfos",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前实例鉴权是否开启",
           "example": "true",
@@ -5999,11 +5482,9 @@
           "name": "AuthOpen",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该实例支持的功能，鉴权就是 Auth",
           "example": "[\"Auth\"]",
@@ -6011,11 +5492,9 @@
           "name": "Features",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主账户名默认为 polaris，该值为主账户的默认密码",
           "example": "主账户密码",
@@ -6023,11 +5502,9 @@
           "name": "MainPassword",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务治理pushgateway引擎绑定的网络信息",
           "example": "无",
@@ -6035,11 +5512,9 @@
           "name": "PgwVpcInfos",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务治理限流server引擎绑定的网络信息",
           "example": "无",
@@ -6047,8 +5522,7 @@
           "name": "LimiterVpcInfos",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6057,37 +5531,31 @@
       "document": "UpdateEngineInternetAccess请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "引擎ID",
           "example": "ins-389a8c12",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "引擎类型",
           "example": "eureka",
           "member": "string",
           "name": "EngineType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启客户端公网访问，true开 false关",
           "example": "true",
           "member": "bool",
           "name": "EnableClientInternetAccess",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -6115,8 +5583,7 @@
           "name": "VpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6126,8 +5593,7 @@
           "name": "SubnetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6137,8 +5603,7 @@
           "name": "IntranetAddress",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -6154,8 +5619,7 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6165,8 +5629,7 @@
           "name": "Role",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6176,8 +5639,7 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6187,8 +5649,7 @@
           "name": "SubnetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6198,8 +5659,7 @@
           "name": "Zone",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6209,8 +5669,7 @@
           "name": "ZoneId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6220,8 +5679,7 @@
           "name": "AliasName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6231,8 +5689,7 @@
           "name": "VpcId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6241,7 +5698,6 @@
       "document": "Zookeeper服务端接口列表，用于云监控",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "接口名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "getChildren",
@@ -6249,8 +5705,7 @@
           "name": "Interface",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

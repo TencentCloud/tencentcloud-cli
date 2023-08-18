@@ -131,7 +131,6 @@
       "document": "点位包含铺位信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "点位ID",
           "example": "",
@@ -142,7 +141,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点位名称",
           "example": "",
@@ -153,7 +151,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "铺位编码",
           "example": "",
@@ -170,7 +167,6 @@
       "document": "摄像头配置信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集团编码",
           "example": "",
@@ -181,7 +177,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "广场ID",
           "example": "",
@@ -192,7 +187,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "楼层ID",
           "example": "",
@@ -203,7 +197,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "摄像头ID",
           "example": "",
@@ -214,7 +207,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "摄像头IP",
           "example": "",
@@ -225,7 +217,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "摄像头Mac",
           "example": "",
@@ -236,7 +227,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "摄像头类型:\n1: 码流机\n2: AI相机",
           "example": "",
@@ -247,7 +237,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "摄像头功能:\n1: 人脸\n2: 人体",
           "example": "",
@@ -258,7 +247,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "摄像头是否启用:\n0: 下线\n1: 启用",
           "example": "",
@@ -269,7 +257,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点位ID",
           "example": "",
@@ -280,7 +267,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点位类型:\n1: 场门\n3: 层门\n5: 特殊区域\n7: 门店\n8: 补位\n10: 开放式门店\n11: 品类区\n12: 公共区",
           "example": "",
@@ -291,7 +277,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置",
           "example": "",
@@ -302,7 +287,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "宽",
           "example": "",
@@ -313,7 +297,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高",
           "example": "",
@@ -330,7 +313,6 @@
       "document": "用于场内上报当前相机的状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "相机ID",
           "example": "",
@@ -341,7 +323,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "相机状态:\n10: 初始化\n11: 未知状态\n12: 网络异常\n13: 未授权\n14: 相机App异常\n15: 相机取流异常\n16: 状态正常",
           "example": "",
@@ -358,7 +339,6 @@
       "document": "摄像头包含简单的点位信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "摄像头ID",
           "example": "",
@@ -369,7 +349,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "摄像头名称",
           "example": "",
@@ -380,7 +359,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "摄像头功能:\n1: 人脸\n2: 人体",
           "example": "",
@@ -391,7 +369,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "摄像头IP",
           "example": "",
@@ -402,7 +379,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "摄像头状态:\n0: 异常 (不再使用)\n1: 正常 (不再使用)\n10: 初始化\n11: 未知状态 (因服务内部错误产生)\n12: 网络异常\n13: 未授权\n14: 相机App异常\n15: 相机取流异常\n16: 正常",
           "example": "",
@@ -413,7 +389,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点位列表",
           "example": "",
@@ -424,7 +399,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "像素:\n130W(1280*960)\n200W(1920*1080)\n400W(2560*1440)",
           "example": "",
@@ -435,7 +409,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "相机Rtsp地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -452,7 +425,6 @@
       "document": "摄像头配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "摄像头厂商:\nH: 海康\nD: 大华\nY: 英飞拓\nL: 联纵",
           "example": "",
@@ -463,7 +435,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "rtsp 地址",
           "example": "",
@@ -474,7 +445,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "摄像头帧率",
           "example": "",
@@ -485,7 +455,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "解码帧率",
           "example": "",
@@ -496,7 +465,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否做客流计算:\n0: 否\n1: 是",
           "example": "",
@@ -507,7 +475,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否打开人脸曝光:\n0: 关闭\n1: 开启",
           "example": "",
@@ -518,7 +485,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "门线标注",
           "example": "",
@@ -529,7 +495,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "店门标注",
           "example": "",
@@ -540,7 +505,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测区标注",
           "example": "",
@@ -551,7 +515,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点位列表（品类区）",
           "example": "",
@@ -568,7 +531,6 @@
       "document": "告警信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集团编码",
           "example": "",
@@ -579,7 +541,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "广场ID",
           "example": "",
@@ -590,7 +551,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "相机ID",
           "example": "",
@@ -601,7 +561,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳,ms,默认为告警请求到达时间",
           "example": "",
@@ -612,7 +571,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片base64编码",
           "example": "",
@@ -623,7 +581,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "移动告警",
           "example": "",
@@ -634,7 +591,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "遮挡告警",
           "example": "",
@@ -651,7 +607,6 @@
       "document": "遮挡告警",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否遮挡",
           "example": "",
@@ -662,7 +617,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否移动置信度",
           "example": "",
@@ -679,7 +633,6 @@
       "document": "移动告警",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否移动",
           "example": "",
@@ -690,7 +643,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否移动置信度",
           "example": "",
@@ -707,7 +659,6 @@
       "document": "CreateCameraAlerts请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "告警信息列表",
           "example": "",
@@ -735,7 +686,6 @@
       "document": "CreateCameraState请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集团编码",
           "example": "",
@@ -745,7 +695,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "广场ID",
           "example": "",
@@ -755,7 +704,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场内所有相机的状态值",
           "example": "",
@@ -783,7 +731,6 @@
       "document": "CreateCapture请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "原始抓拍报文",
           "example": "",
@@ -820,7 +767,6 @@
       "document": "CreateMultiBizAlert请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集团编码",
           "example": "",
@@ -830,7 +776,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "广场ID",
           "example": "",
@@ -840,7 +785,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点位ID",
           "example": "",
@@ -850,7 +794,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "摄像头ID",
           "example": "",
@@ -860,7 +803,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳，毫秒",
           "example": "",
@@ -870,7 +812,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态: \n1: 侵占\n2: 消失\n3: 即侵占又消失",
           "example": "",
@@ -880,7 +821,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片base64字符串",
           "example": "",
@@ -890,7 +830,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警列表",
           "example": "",
@@ -918,7 +857,6 @@
       "document": "CreateProgramState请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集团编码",
           "example": "",
@@ -928,7 +866,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "进程监控信息列表",
           "example": "",
@@ -938,7 +875,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商场ID",
           "example": "",
@@ -966,7 +902,6 @@
       "document": "CreateServerState请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集团编码",
           "example": "",
@@ -976,7 +911,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务器监控信息列表",
           "example": "",
@@ -986,7 +920,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商场ID",
           "example": "",
@@ -996,7 +929,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务器监控信息上报时间戳，单位毫秒",
           "example": "",
@@ -1024,7 +956,6 @@
       "document": "DeleteMultiBizAlert请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集团编码",
           "example": "",
@@ -1034,7 +965,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "广场ID",
           "example": "",
@@ -1044,7 +974,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点位ID",
           "example": "",
@@ -1054,7 +983,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "摄像头ID",
           "example": "",
@@ -1064,7 +992,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消警动作:\n1: 误报\n2: 正报合规\n3: 正报不合规，整改完成",
           "example": "",
@@ -1074,7 +1001,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片base64字符串",
           "example": "",
@@ -1102,7 +1028,6 @@
       "document": "DeleteTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集团编码",
           "example": "",
@@ -1112,7 +1037,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "广场ID",
           "example": "",
@@ -1122,7 +1046,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "",
@@ -1150,7 +1073,6 @@
       "document": "DescribeCameras请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集团编码",
           "example": "",
@@ -1160,7 +1082,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "广场ID",
           "example": "",
@@ -1197,7 +1118,6 @@
       "document": "DescribeConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "会话ID",
           "example": "",
@@ -1207,7 +1127,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "摄像头签名",
           "example": "",
@@ -1217,7 +1136,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "摄像头app id",
           "example": "",
@@ -1227,7 +1145,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "摄像头时间戳，毫秒",
           "example": "",
@@ -1237,7 +1154,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "MAC地址，字母大写",
           "example": "",
@@ -1247,7 +1163,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集团编码",
           "example": "",
@@ -1257,7 +1172,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "广场ID",
           "example": "",
@@ -1312,7 +1226,6 @@
       "document": "DescribeImage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集团编码",
           "example": "",
@@ -1322,7 +1235,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "广场ID",
           "example": "",
@@ -1332,7 +1244,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "摄像头ID",
           "example": "",
@@ -1369,7 +1280,6 @@
       "document": "DescribeMultiBizBaseImage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集团编码",
           "example": "",
@@ -1379,7 +1289,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "广场ID",
           "example": "",
@@ -1389,7 +1298,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "摄像头ID",
           "example": "",
@@ -1399,7 +1307,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点位ID",
           "example": "",
@@ -1436,7 +1343,6 @@
       "document": "DescribeTasks请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集团编码",
           "example": "",
@@ -1446,7 +1352,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "广场ID",
           "example": "",
@@ -1456,7 +1361,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务类型:\n1: 底图拉取",
           "example": "",
@@ -1493,7 +1397,6 @@
       "document": "DescribeZones请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集团编码",
           "example": "",
@@ -1503,7 +1406,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "广场ID",
           "example": "",
@@ -1540,7 +1442,6 @@
       "document": "硬盘监控信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "硬盘名字",
           "example": "",
@@ -1551,7 +1452,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "硬盘使用率",
           "example": "",
@@ -1568,7 +1468,6 @@
       "document": "ModifyMultiBizConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集团编码",
           "example": "",
@@ -1578,7 +1477,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "广场ID",
           "example": "",
@@ -1588,7 +1486,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点位ID",
           "example": "",
@@ -1598,7 +1495,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "摄像头ID",
           "example": "",
@@ -1608,7 +1504,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监控区域",
           "example": "",
@@ -1636,7 +1531,6 @@
       "document": "多经点位告警",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "编号",
           "example": "",
@@ -1647,7 +1541,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监控区域",
           "example": "",
@@ -1658,7 +1551,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警列表",
           "example": "",
@@ -1675,7 +1567,6 @@
       "document": "多经点位告警信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "告警类型：\n0: 无变化\n1: 侵占\n2: 消失",
           "example": "",
@@ -1686,7 +1577,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警侵占或消失面积",
           "example": "",
@@ -1697,7 +1587,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警侵占或消失坐标",
           "example": "",
@@ -1708,7 +1597,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警侵占或消失轮廓",
           "example": "",
@@ -1725,7 +1613,6 @@
       "document": "点",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "X坐标",
           "example": "",
@@ -1736,7 +1623,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Y坐标",
           "example": "",
@@ -1753,7 +1639,6 @@
       "document": "多边形",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标注列表",
           "example": "",
@@ -1770,7 +1655,6 @@
       "document": "进程状态监控项",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "服务器IP",
           "example": "",
@@ -1781,7 +1665,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "进程名字",
           "example": "",
@@ -1792,7 +1675,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "在线个数",
           "example": "",
@@ -1803,7 +1685,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "离线个数",
           "example": "",
@@ -1814,7 +1695,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上报状态:\n1: 正常上报\n2: 异常上报\n注：此处异常上报是指本次上报由于场内服务内部原因导致上报数据不可信等。此时离线个数重置为1，在线个数重置为0",
           "example": "",
@@ -1831,7 +1711,6 @@
       "document": "ReportServiceRegister请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集团编码",
           "example": "",
@@ -1841,7 +1720,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "广场ID",
           "example": "",
@@ -1851,7 +1729,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务上报当前的服务能力信息",
           "example": "",
@@ -1861,7 +1738,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务内网Ip",
           "example": "",
@@ -1871,7 +1747,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上报服务所在服务器的唯一ID",
           "example": "",
@@ -1881,7 +1756,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上报时间戳, 单位毫秒",
           "example": "",
@@ -1909,7 +1783,6 @@
       "document": "SearchImage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集团编码",
           "example": "",
@@ -1919,7 +1792,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "广场ID",
           "example": "",
@@ -1929,7 +1801,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片base64字符串",
           "example": "",
@@ -1939,7 +1810,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳，毫秒",
           "example": "",
@@ -1985,7 +1855,6 @@
       "document": "以图搜图检索结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片base64数据",
           "example": "",
@@ -1996,7 +1865,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "身份ID",
           "example": "",
@@ -2007,7 +1875,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "相似度",
           "example": "",
@@ -2024,7 +1891,6 @@
       "document": "服务器监控状态上报项",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "服务器状态\n1: 在线\n2: 离线\n3: 重启",
           "example": "",
@@ -2035,7 +1901,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务器IP",
           "example": "",
@@ -2046,7 +1911,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "硬盘监控信息列表",
           "example": "",
@@ -2063,7 +1927,6 @@
       "document": "用于服务注册时表示当前服务的具体信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "当前服务的回调地址",
           "example": "",
@@ -2074,7 +1937,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前服务类型:\n1: 多经服务\n2: 相机误报警确认\n3: 底图更新",
           "example": "",
@@ -2091,7 +1953,6 @@
       "document": "任务信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "",
@@ -2102,7 +1963,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集团编码",
           "example": "",
@@ -2113,7 +1973,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "广场ID",
           "example": "",
@@ -2124,7 +1983,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务内容",
           "example": "",
@@ -2135,7 +1993,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务类型:\n1: 底图拉取",
           "example": "",
@@ -2152,7 +2009,6 @@
       "document": "任务内容",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "摄像头ID",
           "example": "",
@@ -2163,7 +2019,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "rtsp 地址",
           "example": "",
@@ -2174,7 +2029,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片上传地址",
           "example": "",
@@ -2191,7 +2045,6 @@
       "document": "点位包含店门标注",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "点位ID",
           "example": "",
@@ -2202,7 +2055,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "店门标注",
           "example": "",
@@ -2219,7 +2071,6 @@
       "document": "点位包含绑定、调试信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "点位ID",
           "example": "",
@@ -2230,7 +2081,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点位名称",
           "example": "",
@@ -2241,7 +2091,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点位类型:\n1: 场门\n3: 层门\n5: 特殊区域\n7: 门店\n8: 补位\n10: 开放式门店\n11: 品类区\n12: 公共区",
           "example": "",
@@ -2252,7 +2101,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "铺位编码",
           "example": "",
@@ -2263,7 +2111,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "楼层名称",
           "example": "",
@@ -2274,7 +2121,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "楼层ID",
           "example": "",
@@ -2285,7 +2131,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定数",
           "example": "",
@@ -2296,7 +2141,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "调试数",
           "example": "",
@@ -2307,7 +2151,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下发状态:\n1: 不可下发\n2: 可下发\n3: 已下发",
           "example": "",

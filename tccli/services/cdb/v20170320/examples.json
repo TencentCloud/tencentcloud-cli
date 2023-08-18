@@ -364,14 +364,6 @@
         "title": "查询云数据库备份配置信息"
       }
     ],
-    "DescribeBackupDatabases": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupDatabases\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-c1nl9rpv\",\n    \"StartTime\": \"2017-07-12 10:29:20\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": \"2\",\n        \"Items\": [\n            {\n                \"DatabaseName\": \"mysql\"\n            },\n            {\n                \"DatabaseName\": \"test\"\n            }\n        ]\n    }\n}",
-        "title": "查询备份数据库列表"
-      }
-    ],
     "DescribeBackupDecryptionKey": [
       {
         "document": "查询备份文件解密密钥",

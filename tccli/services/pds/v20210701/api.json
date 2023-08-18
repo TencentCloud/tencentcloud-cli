@@ -26,7 +26,6 @@
       "document": "DescribeNewUserAcquisition请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户信息",
           "example": "无",
@@ -64,7 +63,6 @@
       "document": "DescribeStockEstimation请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户信息",
           "example": "无",
@@ -102,7 +100,6 @@
       "document": "信誉分，1-5从低到高",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "信誉分，1-5从低到高",
           "example": "1",
@@ -119,7 +116,6 @@
       "document": "用户信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户的手机号",
           "example": "13800138000",
@@ -130,7 +126,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户的微信OpenID",
           "example": "oOpAR5aURf7wgM_WLPtzSeixpozs",
@@ -141,7 +136,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户移动设备的客户端IP",
           "example": "192.168.0.1",
@@ -152,7 +146,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户WiFi的BSSID",
           "example": "FF:FF:FF:FF:FF:FF",
@@ -163,7 +156,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户Android设备的IMEI",
           "example": "861144041825914",
@@ -174,7 +166,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户Android设备的OAID",
           "example": "a919ac7f-7fcc-42ee-97e3-755a4f22a017",
@@ -185,7 +176,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户iOS设备的IDFA",
           "example": "04D3E988-6A31-4AFC-883A-5547F78EC644",

@@ -19,7 +19,6 @@
       "document": "ReportBusinessData请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "接入标识",
           "example": "无",
@@ -29,7 +28,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上报数据",
           "example": "[{\"Id\":14038,\"Name\":\"测试01\",\"Desc\":\"测试描述\",\"Status\":1}]",
@@ -39,7 +37,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上报总条数（对账使用，离线数据接入方式时，必填）",
           "example": "123",

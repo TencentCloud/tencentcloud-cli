@@ -21,6 +21,15 @@ Output:
                 "CreateTime": "vpcsvc-kngiybxl"
             }
         ],
+        "VpcEndPointServiceUserSet": [
+            {
+                "Owner": 1254277469,
+                "UserUin": "100016184089",
+                "Description": "描述信息",
+                "EndPointServiceId": "",
+                "CreateTime": "vpcsvc-kngiybxl"
+            }
+        ],
         "RequestId": "7e6f5074-e4a2-4bb6-9cac-d2357a00896f"
     }
 }

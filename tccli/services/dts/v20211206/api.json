@@ -334,7 +334,6 @@
       "document": "检查步骤",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "步骤编号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -342,11 +341,9 @@
           "name": "StepNo",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "步骤Id， 如：ConnectDBCheck、VersionCheck、SrcPrivilegeCheck等，具体校验项和源目标实例相关\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SrcPrivilegeCheck",
@@ -354,11 +351,9 @@
           "name": "StepId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "步骤名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "源实例权限检查",
@@ -366,11 +361,9 @@
           "name": "StepName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "此检查步骤的结果，pass(校验通过)、failed(校验失败)、notStarted(校验还未开始进行)、blocked(检验阻塞)、warning(校验有告警，但仍通过)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "pass",
@@ -378,11 +371,9 @@
           "name": "StepStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "此检查步骤的错误消息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -390,11 +381,9 @@
           "name": "StepMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每个检查步骤里的具体检查项\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -402,11 +391,9 @@
           "name": "DetailCheckItems",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否已跳过\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -414,8 +401,7 @@
           "name": "HasSkipped",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -431,8 +417,7 @@
           "name": "StartAt",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -442,8 +427,7 @@
           "name": "EndAt",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -453,8 +437,7 @@
           "name": "Progress",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -463,7 +446,6 @@
       "document": "一致性校验摘要信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "校验配置参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -471,11 +453,9 @@
           "name": "Options",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一致性校验对比对象\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -483,11 +463,9 @@
           "name": "Objects",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对比结论: same,different\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -495,11 +473,9 @@
           "name": "Conclusion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务状态: success,failed\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -507,11 +483,9 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总的表数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -519,11 +493,9 @@
           "name": "TotalTables",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已校验的表数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -531,11 +503,9 @@
           "name": "CheckedTables",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不一致的表数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -543,11 +513,9 @@
           "name": "DifferentTables",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "跳过校验的表数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -555,11 +523,9 @@
           "name": "SkippedTables",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预估表总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -567,11 +533,9 @@
           "name": "NearlyTableCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不一致的数据行数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -579,11 +543,9 @@
           "name": "DifferentRows",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源库行数，当对比类型为**行数对比**时此项有意义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -591,11 +553,9 @@
           "name": "SrcSampleRows",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标库行数，当对比类型为**行数对比**时此项有意义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -603,11 +563,9 @@
           "name": "DstSampleRows",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -615,11 +573,9 @@
           "name": "StartedAt",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -627,8 +583,7 @@
           "name": "FinishedAt",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -637,7 +592,6 @@
       "document": "一致性校验详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据不一致的表详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -645,11 +599,9 @@
           "name": "Difference",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "跳过校验的表详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -657,8 +609,7 @@
           "name": "Skipped",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -667,7 +618,6 @@
       "document": "一致性对比对象配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "对象模式 整实例-all,部分对象-partial\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "all",
@@ -675,11 +625,9 @@
           "name": "ObjectMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对象列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -687,11 +635,9 @@
           "name": "ObjectItems",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高级对象类型，如account(账号),index(索引),shardkey(片建，后面可能会调整),schema(库表结构)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "account",
@@ -699,8 +645,7 @@
           "name": "AdvancedObjects",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -716,8 +661,7 @@
           "name": "DbName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -727,8 +671,7 @@
           "name": "DbMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -738,8 +681,7 @@
           "name": "SchemaName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -749,8 +691,7 @@
           "name": "TableMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -760,8 +701,7 @@
           "name": "Tables",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -771,8 +711,7 @@
           "name": "ViewMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -782,8 +721,7 @@
           "name": "Views",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -792,7 +730,6 @@
       "document": "一致性校验选项",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "对比类型：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dataCheck",
@@ -800,11 +737,9 @@
           "name": "Method",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "抽样比例;范围0,100\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
@@ -812,11 +747,9 @@
           "name": "SampleRate",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "线程数，取值1-5，默认为1\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -824,8 +757,7 @@
           "name": "ThreadCount",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -841,8 +773,7 @@
           "name": "TableName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -851,7 +782,6 @@
       "document": "数据一致性校验结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "一致性校验任务Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dts-amm1jw5q-cmp-bmuum7jk",
@@ -859,11 +789,9 @@
           "name": "CompareTaskId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一致性校验结果，包括：unstart(未启动)、running(校验中)、canceled(已终止)、failed(校验任务失败)、inconsistent(不一致)、consistent(一致)、notexist(不存在校验任务)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "consistent",
@@ -871,8 +799,7 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -881,7 +808,6 @@
       "document": "一致性校验对象信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dts-e7ukka6g",
@@ -889,11 +815,9 @@
           "name": "JobId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对比任务 Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dts-e7ukka6g-cmp-c7tnusmo",
@@ -901,11 +825,9 @@
           "name": "CompareTaskId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对比任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -913,11 +835,9 @@
           "name": "TaskName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对比任务状态, 可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "success",
@@ -925,11 +845,9 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对比任务配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -937,11 +855,9 @@
           "name": "Config",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对比任务校验详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -949,11 +865,9 @@
           "name": "CheckProcess",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对比任务运行详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -961,11 +875,9 @@
           "name": "CompareProcess",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对比结果, 可能的值：same - 一致；different - 不一致；skipAll - 跳过\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "same",
@@ -973,11 +885,9 @@
           "name": "Conclusion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-07-11 17:26:40",
@@ -985,11 +895,9 @@
           "name": "CreatedAt",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-07-11 17:26:40",
@@ -997,11 +905,9 @@
           "name": "StartedAt",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对比结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-07-11 17:26:40",
@@ -1009,11 +915,9 @@
           "name": "FinishedAt",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dataCheck",
@@ -1021,11 +925,9 @@
           "name": "Method",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对比配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1033,11 +935,9 @@
           "name": "Options",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一致性校验提示信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1045,8 +945,7 @@
           "name": "Message",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1055,7 +954,6 @@
       "document": "用于一致性校验的视图配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视图名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "view1",
@@ -1063,8 +961,7 @@
           "name": "ViewName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1073,26 +970,22 @@
       "document": "CompleteMigrateJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据迁移任务ID",
           "example": "dts-1kl0iy0v",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "完成任务的方式,仅支持旧版MySQL迁移任务。waitForSync-等待主从差距为0才停止,immediately-立即完成，不会等待主从差距一致。默认为waitForSync",
           "example": "waitForSync",
           "member": "string",
           "name": "CompleteMode",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1119,8 +1012,7 @@
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1129,8 +1021,7 @@
           "member": "string",
           "name": "SrcAccessType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1139,8 +1030,7 @@
           "member": "string",
           "name": "DstAccessType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1149,8 +1039,7 @@
           "member": "Objects",
           "name": "Objects",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -1159,8 +1048,7 @@
           "member": "string",
           "name": "JobName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1169,8 +1057,7 @@
           "member": "string",
           "name": "JobMode",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1179,8 +1066,7 @@
           "member": "string",
           "name": "RunMode",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1189,8 +1075,7 @@
           "member": "string",
           "name": "ExpectRunTime",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1199,8 +1084,7 @@
           "member": "Endpoint",
           "name": "SrcInfo",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -1209,8 +1093,7 @@
           "member": "SyncDBEndpointInfos",
           "name": "SrcInfos",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -1219,8 +1102,7 @@
           "member": "string",
           "name": "SrcNodeType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1229,8 +1111,7 @@
           "member": "Endpoint",
           "name": "DstInfo",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -1239,8 +1120,7 @@
           "member": "SyncDBEndpointInfos",
           "name": "DstInfos",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -1249,8 +1129,7 @@
           "member": "string",
           "name": "DstNodeType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1259,8 +1138,7 @@
           "member": "Options",
           "name": "Options",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -1269,8 +1147,7 @@
           "member": "int64",
           "name": "AutoRetryTimeRangeMinutes",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1291,7 +1168,6 @@
       "document": "冲突处理里的详细描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "条件覆盖的列\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1302,7 +1178,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "条件覆盖操作\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1313,7 +1188,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "条件覆盖优先级处理\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1330,7 +1204,6 @@
       "document": "数据一致性校验选项， 默认为不开启一致性校验",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "一致性检测类型: full(全量检测迁移对象)、noCheck(不检测)、notConfigured(未配置)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "noCheck",
@@ -1338,8 +1211,7 @@
           "name": "Mode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1354,8 +1226,7 @@
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1382,8 +1253,7 @@
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1404,15 +1274,13 @@
       "document": "CreateCheckSyncJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "同步任务id",
           "example": "无",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1433,59 +1301,49 @@
       "document": "CreateCompareTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务 Id",
           "example": "dts-p1sposne",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据对比任务名称，若为空则默认给CompareTaskId相同值",
           "example": "compare_test",
           "member": "string",
           "name": "TaskName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据对比对象模式，sameAsMigrate(全部迁移对象， 默认为此项配置)，custom(自定义模式)",
           "example": "sameAsMigrate",
           "member": "string",
           "name": "ObjectMode",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一致性对比对象配置",
           "example": "无",
           "member": "CompareObject",
           "name": "Objects",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一致性校验选项",
           "example": "无",
           "member": "CompareOptions",
           "name": "Options",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1501,8 +1359,7 @@
           "name": "CompareTaskId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1517,15 +1374,13 @@
       "document": "CreateMigrateCheckJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据迁移任务ID",
           "example": "dts-1kl0iy0v",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1552,8 +1407,7 @@
           "member": "string",
           "name": "SrcDatabaseType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1562,8 +1416,7 @@
           "member": "string",
           "name": "DstDatabaseType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1572,8 +1425,7 @@
           "member": "string",
           "name": "SrcRegion",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1582,8 +1434,7 @@
           "member": "string",
           "name": "DstRegion",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1592,8 +1443,7 @@
           "member": "string",
           "name": "InstanceClass",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1602,8 +1452,7 @@
           "member": "uint64",
           "name": "Count",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1612,8 +1461,7 @@
           "member": "string",
           "name": "JobName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1622,8 +1470,7 @@
           "member": "TagItem",
           "name": "Tags",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1632,8 +1479,7 @@
           "member": "string",
           "name": "DTSVersion",
           "required": false,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1648,8 +1494,7 @@
           "member": "string",
           "name": "JobIds",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1670,8 +1515,7 @@
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1698,8 +1542,7 @@
           "member": "string",
           "name": "PayMode",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1708,8 +1551,7 @@
           "member": "string",
           "name": "SrcDatabaseType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1718,8 +1560,7 @@
           "member": "string",
           "name": "SrcRegion",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1728,8 +1569,7 @@
           "member": "string",
           "name": "DstDatabaseType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1738,8 +1578,7 @@
           "member": "string",
           "name": "DstRegion",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1748,8 +1587,7 @@
           "member": "string",
           "name": "Specification",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1758,8 +1596,7 @@
           "member": "TagItem",
           "name": "Tags",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1768,8 +1605,7 @@
           "member": "uint64",
           "name": "Count",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1778,8 +1614,7 @@
           "member": "uint64",
           "name": "AutoRenew",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1788,8 +1623,7 @@
           "member": "string",
           "name": "InstanceClass",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1798,8 +1632,7 @@
           "member": "string",
           "name": "JobName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1808,8 +1641,7 @@
           "member": "string",
           "name": "ExistedJobId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1824,8 +1656,7 @@
           "member": "string",
           "name": "JobIds",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1847,8 +1678,7 @@
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1858,8 +1688,7 @@
           "name": "AccessType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1869,8 +1698,7 @@
           "name": "DatabaseType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1880,8 +1708,7 @@
           "name": "NodeType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1891,8 +1718,7 @@
           "name": "Info",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1902,8 +1728,7 @@
           "name": "Supplier",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1913,8 +1738,7 @@
           "name": "ExtraAttr",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1924,8 +1748,7 @@
           "name": "DatabaseNetEnv",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1941,8 +1764,7 @@
           "name": "Role",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1952,8 +1774,7 @@
           "name": "DbKernel",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1963,8 +1784,7 @@
           "name": "Host",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1974,8 +1794,7 @@
           "name": "Port",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1985,8 +1804,7 @@
           "name": "User",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1996,8 +1814,7 @@
           "name": "Password",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2007,8 +1824,7 @@
           "name": "CvmInstanceId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2018,8 +1834,7 @@
           "name": "UniqVpnGwId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2029,8 +1844,7 @@
           "name": "UniqDcgId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2040,8 +1854,7 @@
           "name": "InstanceId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2051,8 +1864,7 @@
           "name": "CcnGwId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2062,8 +1874,7 @@
           "name": "VpcId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2073,8 +1884,7 @@
           "name": "SubnetId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2084,8 +1894,7 @@
           "name": "EngineVersion",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2095,8 +1904,7 @@
           "name": "Account",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2106,8 +1914,7 @@
           "name": "AccountRole",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2117,8 +1924,7 @@
           "name": "AccountMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2128,8 +1934,7 @@
           "name": "TmpSecretId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2139,8 +1944,7 @@
           "name": "TmpSecretKey",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2150,8 +1954,7 @@
           "name": "TmpToken",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2160,7 +1963,6 @@
       "document": "迁移对象信息，在配置库表视图等对象信息时大小写敏感",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要迁移或同步的库名，当ObjectMode为partial时，此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "db1",
@@ -2168,11 +1970,9 @@
           "name": "DbName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移或同步后的库名，默认与源库相同\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "db1_new",
@@ -2180,11 +1980,9 @@
           "name": "NewDbName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移或同步的 schema\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "schema1",
@@ -2192,11 +1990,9 @@
           "name": "SchemaName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移或同步后的 schema name\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "schema1_new",
@@ -2204,11 +2000,9 @@
           "name": "NewSchemaName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DB选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当ObjectMode为partial时，此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "all",
@@ -2216,11 +2010,9 @@
           "name": "DBMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "schema选择模式: all(为当前对象下的所有对象)，partial(部分对象)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "all",
@@ -2228,11 +2020,9 @@
           "name": "SchemaMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表选择模式: all(为当前对象下的所有对象)，partial(部分对象)，当DBMode为partial时此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "all",
@@ -2240,11 +2030,9 @@
           "name": "TableMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表图对象集合，当 TableMode 为 partial 时，此项需要填写\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2252,11 +2040,9 @@
           "name": "Tables",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "all",
@@ -2264,11 +2050,9 @@
           "name": "ViewMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视图对象集合，当 ViewMode 为 partial 时， 此项需要填写\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2276,11 +2060,9 @@
           "name": "Views",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "postgresql独有参数，角色选择模式: all 为当前对象下的所有角色对象,partial 为部分角色对象\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "all",
@@ -2288,11 +2070,9 @@
           "name": "RoleMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "postgresql独有参数，当 RoleMode 为 partial 时， 此项需要填写\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2300,11 +2080,9 @@
           "name": "Roles",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "选择要同步的模式，partial为部分，all为整选\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "all",
@@ -2312,11 +2090,9 @@
           "name": "FunctionMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "选择要同步的模式，partial为部分，all为整选\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "all",
@@ -2324,11 +2100,9 @@
           "name": "TriggerMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "选择要同步的模式，partial为部分，all为整选\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "all",
@@ -2336,11 +2110,9 @@
           "name": "EventMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "选择要同步的模式，partial为部分，all为整选\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "all",
@@ -2348,11 +2120,9 @@
           "name": "ProcedureMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "FunctionMode取值为partial时需要填写\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"function_name\"]",
@@ -2360,11 +2130,9 @@
           "name": "Functions",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ProcedureMode取值为partial时需要填写\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"procedure_name\"]",
@@ -2372,11 +2140,9 @@
           "name": "Procedures",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EventMode取值为partial时需要填写\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"event_name\"]",
@@ -2384,11 +2150,9 @@
           "name": "Events",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TriggerMode取值为partial时需要填写\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"trigger_name\"]",
@@ -2396,8 +2160,7 @@
           "name": "Triggers",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2413,8 +2176,7 @@
           "name": "DbName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2424,8 +2186,7 @@
           "name": "NewDbName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2435,8 +2196,7 @@
           "name": "DbMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2446,8 +2206,7 @@
           "name": "SchemaName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2457,8 +2216,7 @@
           "name": "NewSchemaName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2468,8 +2226,7 @@
           "name": "TableMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2479,8 +2236,7 @@
           "name": "Tables",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2490,8 +2246,7 @@
           "name": "ViewMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2501,8 +2256,7 @@
           "name": "Views",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2512,8 +2266,7 @@
           "name": "FunctionMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2523,8 +2276,7 @@
           "name": "Functions",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2534,8 +2286,7 @@
           "name": "ProcedureMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2545,8 +2296,7 @@
           "name": "Procedures",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2556,8 +2306,7 @@
           "name": "TriggerMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2567,8 +2316,7 @@
           "name": "Triggers",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2578,8 +2326,7 @@
           "name": "EventMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2589,8 +2336,7 @@
           "name": "Events",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2599,7 +2345,6 @@
       "document": "迁移对象选项，需要告知迁移服务迁移哪些库表对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移对象类型 all(全实例)，partial(部分对象)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "partial",
@@ -2607,11 +2352,9 @@
           "name": "ObjectMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移对象，当 ObjectMode 为 partial 时，不为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2619,11 +2362,9 @@
           "name": "Databases",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高级对象类型，如trigger、function、procedure、event\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"trigger\"]",
@@ -2631,8 +2372,7 @@
           "name": "AdvancedObjects",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2641,7 +2381,6 @@
       "document": "数据同步中的ddl同步处理",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "ddl类型，如Database,Table,View,Index等\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2649,11 +2388,9 @@
           "name": "DdlObject",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ddl具体值，对于Database可取值[Create,Drop,Alter]<br>对于Table可取值[Create,Drop,Alter,Truncate,Rename]<br/>对于View可取值[Create,Drop]<br/>对于Index可取值[Create,Drop]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2661,8 +2398,7 @@
           "name": "DdlValue",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2671,26 +2407,22 @@
       "document": "DeleteCompareTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务 Id",
           "example": "无",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9",
           "example": "无",
           "member": "string",
           "name": "CompareTaskId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2717,8 +2449,7 @@
           "member": "string",
           "name": "JobId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2733,8 +2464,7 @@
           "member": "string",
           "name": "Status",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2743,8 +2473,7 @@
           "member": "uint64",
           "name": "StepCount",
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2753,8 +2482,7 @@
           "member": "uint64",
           "name": "StepCur",
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2763,8 +2491,7 @@
           "member": "uint64",
           "name": "Progress",
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2773,8 +2500,7 @@
           "member": "StepInfo",
           "name": "StepInfos",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2789,114 +2515,94 @@
       "document": "DescribeCompareReport请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务 Id",
           "example": "dts-amm1jw5q",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "校验任务 Id",
           "example": "dts-amm1jw5q-cmp-bmuum7jk",
           "member": "string",
           "name": "CompareTaskId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "校验不一致结果的 limit",
           "example": "10",
           "member": "uint64",
           "name": "DifferenceLimit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不一致的 Offset",
           "example": "0",
           "member": "uint64",
           "name": "DifferenceOffset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索条件，不一致的库名",
           "example": "db1",
           "member": "string",
           "name": "DifferenceDB",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索条件，不一致的表名",
           "example": "t1",
           "member": "string",
           "name": "DifferenceTable",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "未校验的 Limit",
           "example": "10",
           "member": "uint64",
           "name": "SkippedLimit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "未校验的 Offset",
           "example": "0",
           "member": "uint64",
           "name": "SkippedOffset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索条件，未校验的库名",
           "example": "db1",
           "member": "string",
           "name": "SkippedDB",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索条件，未校验的表名",
           "example": "t1",
           "member": "string",
           "name": "SkippedTable",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2912,8 +2618,7 @@
           "name": "Abstract",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2923,8 +2628,7 @@
           "name": "Detail",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2945,8 +2649,7 @@
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2955,8 +2658,7 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2965,8 +2667,7 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2975,8 +2676,7 @@
           "member": "string",
           "name": "CompareTaskId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2985,8 +2685,7 @@
           "member": "string",
           "name": "Status",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3001,8 +2700,7 @@
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3011,8 +2709,7 @@
           "member": "CompareTaskItem",
           "name": "Items",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3027,114 +2724,94 @@
       "document": "DescribeMigrateDBInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库类型，如mysql",
           "example": "mysql",
           "member": "string",
           "name": "DatabaseType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例作为迁移的源还是目标,src(表示源)，dst(表示目标)",
           "example": "dst",
           "member": "string",
           "name": "MigrateRole",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云数据库实例ID",
           "example": "无",
           "member": "string",
           "name": "InstanceId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云数据库名称",
           "example": "无",
           "member": "string",
           "name": "InstanceName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量限制",
           "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源所属账号 为空值或self(表示本账号内资源)、other(表示其他账户资源)",
           "example": "self",
           "member": "string",
           "name": "AccountMode",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "临时密钥Id，若为跨账号资源此项必填",
           "example": "无",
           "member": "string",
           "name": "TmpSecretId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "临时密钥Key，若为跨账号资源此项必填",
           "example": "无",
           "member": "string",
           "name": "TmpSecretKey",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "临时密钥Token，若为跨账号资源此项必填",
           "example": "无",
           "member": "string",
           "name": "TmpToken",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3150,8 +2827,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3161,8 +2837,7 @@
           "name": "Instances",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3177,15 +2852,13 @@
       "document": "DescribeMigrationCheckJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务id",
           "example": "dts-1ewjspuw",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3201,8 +2874,7 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3212,8 +2884,7 @@
           "name": "BriefMsg",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3223,8 +2894,7 @@
           "name": "StepInfo",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3234,8 +2904,7 @@
           "name": "CheckFlag",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3256,8 +2925,7 @@
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3273,8 +2941,7 @@
           "name": "JobId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3284,8 +2951,7 @@
           "name": "JobName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3295,8 +2961,7 @@
           "name": "CreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3306,8 +2971,7 @@
           "name": "UpdateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3317,8 +2981,7 @@
           "name": "StartTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3328,8 +2991,7 @@
           "name": "EndTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3339,8 +3001,7 @@
           "name": "BriefMsg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3350,8 +3011,7 @@
           "name": "Status",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3361,8 +3021,7 @@
           "name": "Action",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3372,8 +3031,7 @@
           "name": "StepInfo",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3383,8 +3041,7 @@
           "name": "SrcInfo",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3394,8 +3051,7 @@
           "name": "DstInfo",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3405,8 +3061,7 @@
           "name": "CompareTask",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3416,8 +3071,7 @@
           "name": "Tags",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3427,8 +3081,7 @@
           "name": "RunMode",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3438,8 +3091,7 @@
           "name": "ExpectRunTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3449,8 +3101,7 @@
           "name": "MigrateOption",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3460,8 +3111,7 @@
           "name": "CheckStepInfo",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3471,8 +3121,7 @@
           "name": "TradeInfo",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3482,8 +3131,7 @@
           "name": "ErrorInfo",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3493,8 +3141,7 @@
           "name": "DumperResumeCtrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3504,8 +3151,7 @@
           "name": "RateLimitOption",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3520,180 +3166,148 @@
       "document": "DescribeMigrationJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据迁移任务ID，如：dts-amm1jw5q",
           "example": "dts-amm1jw5q",
           "member": "string",
           "name": "JobId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据迁移任务名称",
           "example": "dts-amm1jw5q",
           "member": "string",
           "name": "JobName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据迁移任务状态，可取值包括：created(创建完成)、checking(校验中)、checkPass(校验通过)、checkNotPass(校验不通过)、readyRun(准备运行)、running(任务运行中)、readyComplete(准备完成)、success(任务成功)、failed(任务失败)、stopping(中止中)、completing(完成中)",
           "example": "[\"running\"]",
           "member": "string",
           "name": "Status",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源实例ID，格式如：cdb-c1nl9rpv",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "SrcInstanceId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源实例地域，如：ap-guangzhou",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "SrcRegion",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源实例数据库类型，如：sqlserver,mysql,mongodb,redis,tendis,keewidb,clickhouse,cynosdbmysql,percona,tdsqlpercona,mariadb,tdsqlmysql,postgresql",
           "example": "[\"mysql\"]",
           "member": "string",
           "name": "SrcDatabaseType",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源实例接入类型，值包括：extranet(外网)、vpncloud(云vpn接入的实例)、dcg(专线接入的实例)、ccn(云联网接入的实例)、cdb(云上cdb实例)、cvm(cvm自建实例)",
           "example": "[\"cdb\"]",
           "member": "string",
           "name": "SrcAccessType",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标实例ID，格式如：cdb-c1nl9rpv",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "DstInstanceId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标实例地域，如：ap-guangzhou",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "DstRegion",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标源实例数据库类型，如：sqlserver,mysql,mongodb,redis,tendis,keewidb,clickhouse,cynosdbmysql,percona,tdsqlpercona,mariadb,tdsqlmysql,postgresql",
           "example": "[\"mysql\"]",
           "member": "string",
           "name": "DstDatabaseType",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标实例接入类型，值包括：extranet(外网)、vpncloud(云vpn接入的实例)、dcg(专线接入的实例)、ccn(云联网接入的实例)、cdb(云上cdb实例)、cvm(cvm自建实例)",
           "example": "[\"cdb\"]",
           "member": "string",
           "name": "DstAccessType",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务运行模式，值包括：immediate(立即运行)，timed(定时运行)",
           "example": "immediate",
           "member": "string",
           "name": "RunMode",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式，可能取值为asc、desc，默认按照创建时间倒序",
           "example": "desc",
           "member": "string",
           "name": "OrderSeq",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回实例数量，默认20，有效区间[1,100]",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签过滤",
           "example": "无",
           "member": "TagFilter",
           "name": "TagFilters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3709,8 +3323,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3720,8 +3333,7 @@
           "name": "JobList",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3742,8 +3354,7 @@
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3758,8 +3369,7 @@
           "member": "string",
           "name": "Status",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3768,8 +3378,7 @@
           "member": "uint64",
           "name": "StepCount",
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3778,8 +3387,7 @@
           "member": "uint64",
           "name": "StepCur",
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3788,8 +3396,7 @@
           "member": "uint64",
           "name": "Progress",
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3798,8 +3405,7 @@
           "member": "StepInfo",
           "name": "StepInfos",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3820,8 +3426,7 @@
           "member": "string",
           "name": "JobId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3830,8 +3435,7 @@
           "member": "string",
           "name": "JobName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3840,8 +3444,7 @@
           "member": "string",
           "name": "Order",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3850,8 +3453,7 @@
           "member": "string",
           "name": "OrderSeq",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3860,8 +3462,7 @@
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3870,8 +3471,7 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3880,8 +3480,7 @@
           "member": "string",
           "name": "Status",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -3890,8 +3489,7 @@
           "member": "string",
           "name": "RunMode",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3900,8 +3498,7 @@
           "member": "string",
           "name": "JobType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3910,8 +3507,7 @@
           "member": "string",
           "name": "PayMode",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3920,8 +3516,7 @@
           "member": "TagFilter",
           "name": "TagFilters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3936,8 +3531,7 @@
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3946,8 +3540,7 @@
           "member": "SyncJobInfo",
           "name": "JobList",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3962,15 +3555,13 @@
       "document": "DestroyMigrateJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务id",
           "example": "dts-j7bt5sid",
           "member": "string",
           "name": "JobId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3991,15 +3582,13 @@
       "document": "DestroySyncJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "同步任务id",
           "example": "sync-werwfs23",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4020,7 +3609,6 @@
       "document": "每个检查步骤里的具体检查项",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "检查项的名称，如：源实例权限检查\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "源实例权限检查",
@@ -4028,11 +3616,9 @@
           "name": "CheckItemName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项详细内容\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4040,11 +3626,9 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "pass(通过)，failed(失败), warning(校验有警告，但仍通过)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "pass",
@@ -4052,11 +3636,9 @@
           "name": "CheckResult",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4064,11 +3646,9 @@
           "name": "FailureReason",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "解决方案\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4076,11 +3656,9 @@
           "name": "Solution",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运行报错日志\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4088,11 +3666,9 @@
           "name": "ErrorLog",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "详细帮助的文档链接\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4100,11 +3676,9 @@
           "name": "HelpDoc",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "跳过风险文案\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4112,8 +3686,7 @@
           "name": "SkipInfo",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4122,7 +3695,6 @@
       "document": "数据不一致的表详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据不一致的表数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -4130,11 +3702,9 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "校验不一致的表详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4142,8 +3712,7 @@
           "name": "Items",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4152,7 +3721,6 @@
       "document": "校验不一致的表详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4160,11 +3728,9 @@
           "name": "Db",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4172,11 +3738,9 @@
           "name": "Table",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分块号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4184,11 +3748,9 @@
           "name": "Chunk",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源库数值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4196,11 +3758,9 @@
           "name": "SrcItem",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标库数值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4208,11 +3768,9 @@
           "name": "DstItem",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "索引名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4220,11 +3778,9 @@
           "name": "IndexName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "索引下边界\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4232,11 +3788,9 @@
           "name": "LowerBoundary",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "索引上边界\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4244,11 +3798,9 @@
           "name": "UpperBoundary",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对比消耗时间,单位为 ms\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4256,11 +3808,9 @@
           "name": "CostTime",
           "required": true,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4268,8 +3818,7 @@
           "name": "FinishedAt",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4285,8 +3834,7 @@
           "name": "OpTypes",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4296,8 +3844,7 @@
           "name": "DdlOptions",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4307,8 +3854,7 @@
           "name": "ConflictHandleType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4318,8 +3864,7 @@
           "name": "ConflictHandleOption",
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -4336,8 +3881,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4348,8 +3892,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4360,8 +3903,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4372,8 +3914,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4384,8 +3925,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4396,8 +3936,7 @@
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4408,8 +3947,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4420,8 +3958,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4432,8 +3969,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4444,8 +3980,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4456,8 +3991,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4468,8 +4002,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4480,8 +4013,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4492,8 +4024,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4504,8 +4035,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4516,8 +4046,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4528,8 +4057,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4540,8 +4068,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4552,8 +4079,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4564,8 +4090,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4576,8 +4101,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4588,8 +4112,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4600,8 +4123,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4612,8 +4134,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4624,8 +4145,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4636,8 +4156,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4648,8 +4167,7 @@
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -4665,8 +4183,7 @@
           "name": "Reason",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4676,8 +4193,7 @@
           "name": "Message",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4687,8 +4203,7 @@
           "name": "Solution",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4697,7 +4212,6 @@
       "document": "任务错误信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ResourceNotFound",
@@ -4705,11 +4219,9 @@
           "name": "Code",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "解决方案\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4717,11 +4229,9 @@
           "name": "Solution",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误日志信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4729,11 +4239,9 @@
           "name": "ErrorLog",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文档提示\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4741,8 +4249,7 @@
           "name": "HelpDoc",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4751,15 +4258,13 @@
       "document": "IsolateMigrateJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务id",
           "example": "dts-amm1jw5q",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4786,8 +4291,7 @@
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4815,8 +4319,7 @@
           "name": "JobId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4826,8 +4329,7 @@
           "name": "JobName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4837,8 +4339,7 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4848,8 +4349,7 @@
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4859,8 +4359,7 @@
           "name": "StartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4870,8 +4369,7 @@
           "name": "EndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4881,8 +4379,7 @@
           "name": "BriefMsg",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4892,8 +4389,7 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4903,8 +4399,7 @@
           "name": "RunMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4914,8 +4409,7 @@
           "name": "ExpectRunTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4925,8 +4419,7 @@
           "name": "Action",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4936,8 +4429,7 @@
           "name": "StepInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4947,8 +4439,7 @@
           "name": "SrcInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4958,8 +4449,7 @@
           "name": "DstInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4969,8 +4459,7 @@
           "name": "CompareTask",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4980,8 +4469,7 @@
           "name": "TradeInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4991,8 +4479,7 @@
           "name": "Tags",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5002,8 +4489,7 @@
           "name": "AutoRetryTimeRangeMinutes",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5013,8 +4499,7 @@
           "name": "DumperResumeCtrl",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5030,8 +4515,7 @@
           "name": "DataType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5041,8 +4525,7 @@
           "name": "TopicType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5052,8 +4535,7 @@
           "name": "DDLTopicName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5063,8 +4545,7 @@
           "name": "TopicRules",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5073,7 +4554,6 @@
       "document": "存放配置时的额外信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "选项key\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AuthMechanism",
@@ -5081,11 +4561,9 @@
           "name": "Key",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "选项value\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SCRAM-SHA-1",
@@ -5093,8 +4571,7 @@
           "name": "Value",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5103,7 +4580,6 @@
       "document": "任务操作信息，包含迁移任务的所有操作列表，及迁移任务在当前状态下允许的操作列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务的所有操作列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"view\",\"modify\",\"check\",\"start\",\"configure\",\"stop\",\"complete\",\"",
@@ -5111,11 +4587,9 @@
           "name": "AllAction",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务在当前状态下允许的操作列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"view\",\"modify\",\"configure\",\"view\",\"isolate\",\"resize\"]",
@@ -5123,8 +4597,7 @@
           "name": "AllowedAction",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5140,8 +4613,7 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5151,8 +4623,7 @@
           "name": "InstanceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5162,8 +4633,7 @@
           "name": "Vip",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5173,8 +4643,7 @@
           "name": "Vport",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5184,8 +4653,7 @@
           "name": "Usable",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5195,8 +4663,7 @@
           "name": "Hint",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5205,7 +4672,6 @@
       "document": "迁移执行过程信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "总步骤数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
@@ -5213,11 +4679,9 @@
           "name": "StepAll",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前步骤\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
@@ -5225,11 +4689,9 @@
           "name": "StepNow",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主从差距，MB；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -5237,11 +4699,9 @@
           "name": "MasterSlaveDistance",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主从差距，秒；只在任务正常，迁移或者同步的最后一步（追Binlog的阶段才有校），如果是非法值，返回-1\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -5249,11 +4709,9 @@
           "name": "SecondsBehindMaster",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "步骤信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -5261,8 +4719,7 @@
           "name": "StepInfo",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5279,21 +4736,18 @@
           "output_required": true,
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "迁移类型，full(全量迁移)，structure(结构迁移)，fullAndIncrement(全量加增量迁移)， 默认为fullAndIncrement\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "fullAndIncrement",
-          "is_base64": false,
           "member": "string",
           "name": "MigrateType",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5304,8 +4758,7 @@
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5316,8 +4769,7 @@
           "output_required": true,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5328,8 +4780,7 @@
           "output_required": true,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5340,8 +4791,7 @@
           "output_required": true,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5352,8 +4802,7 @@
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5362,37 +4811,31 @@
       "document": "ModifyCompareTaskName请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务 Id",
           "example": "dts-8yv4w2i1",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9",
           "example": "dts-8yv4w2i1-cmp-37skmii9",
           "member": "string",
           "name": "CompareTaskId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一致性校验任务名称",
           "example": "cmp_test",
           "member": "string",
           "name": "TaskName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5413,70 +4856,58 @@
       "document": "ModifyCompareTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务 Id",
           "example": "无",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9",
           "example": "无",
           "member": "string",
           "name": "CompareTaskId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务名称",
           "example": "无",
           "member": "string",
           "name": "TaskName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据对比对象模式，sameAsMigrate(全部迁移对象， 默认为此项配置)、custom(自定义)，注意自定义对比对象必须是迁移对象的子集",
           "example": "无",
           "member": "string",
           "name": "ObjectMode",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对比对象，若CompareObjectMode取值为custom，则此项必填",
           "example": "无",
           "member": "CompareObject",
           "name": "Objects",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一致性校验选项",
           "example": "无",
           "member": "CompareOptions",
           "name": "Options",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5497,26 +4928,22 @@
       "document": "ModifyMigrateJobSpec请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务id",
           "example": "dts-j7bt5sid",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新实例规格大小，包括：micro、small、medium、large、xlarge、2xlarge",
           "example": "xlarge",
           "member": "string",
           "name": "NewInstanceClass",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5537,26 +4964,22 @@
       "document": "ModifyMigrateName请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务id",
           "example": "dts-7itt1j4w",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后的迁移任务名",
           "example": "userDefine",
           "member": "string",
           "name": "JobName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5583,8 +5006,7 @@
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5593,8 +5015,7 @@
           "member": "string",
           "name": "RunMode",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5603,8 +5024,7 @@
           "member": "MigrateOption",
           "name": "MigrateOption",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -5613,8 +5033,7 @@
           "member": "DBEndpointInfo",
           "name": "SrcInfo",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -5623,8 +5042,7 @@
           "member": "DBEndpointInfo",
           "name": "DstInfo",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -5633,8 +5051,7 @@
           "member": "string",
           "name": "JobName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5643,8 +5060,7 @@
           "member": "string",
           "name": "ExpectRunTime",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5653,8 +5069,7 @@
           "member": "TagItem",
           "name": "Tags",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -5663,8 +5078,7 @@
           "member": "int64",
           "name": "AutoRetryTimeRangeMinutes",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5691,8 +5105,7 @@
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5701,8 +5114,7 @@
           "member": "Objects",
           "name": "DynamicObjects",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -5711,8 +5123,7 @@
           "member": "DynamicOptions",
           "name": "DynamicOptions",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5740,8 +5151,7 @@
           "name": "Mode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5751,8 +5161,7 @@
           "name": "Databases",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5762,8 +5171,7 @@
           "name": "AdvancedObjects",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5773,8 +5181,7 @@
           "name": "OnlineDDL",
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5786,14 +5193,12 @@
           "disabled": false,
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Status",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5805,40 +5210,34 @@
           "disabled": false,
           "document": "同步初始化选项，Data(全量数据初始化)、Structure(结构初始化)、Full(全量数据且结构初始化，默认)、None(仅增量)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "InitType",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、InitializeAfterDelete(删除并重新初始化)、ExecuteAfterIgnore(忽略并继续执行)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "DealOfExistSameTable",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "冲突处理选项，ReportError(报错，默认为该值)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "ConflictHandleType",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5849,21 +5248,18 @@
           "output_required": true,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)， 不填（不选），PartialDDL(自定义,和DdlOptions一起起作用 )\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "OpTypes",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5874,8 +5270,7 @@
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5886,8 +5281,7 @@
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5898,8 +5292,7 @@
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5910,8 +5303,7 @@
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5922,8 +5314,7 @@
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5932,15 +5323,13 @@
       "document": "PauseMigrateJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据迁移任务ID",
           "example": "dts-xxxxxxxx",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5961,15 +5350,13 @@
       "document": "PauseSyncJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "同步任务id",
           "example": "sync-xxxxxx",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5990,7 +5377,6 @@
       "document": "任务步骤信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "步骤的状态， 包括：notStarted(未开始)、running(运行中)、success(成功)、failed(失败)等\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "success",
@@ -5998,11 +5384,9 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "进度信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -6010,11 +5394,9 @@
           "name": "Percent",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总的步骤数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
@@ -6022,11 +5404,9 @@
           "name": "StepAll",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前进行的步骤\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
@@ -6034,11 +5414,9 @@
           "name": "StepNow",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前步骤输出提示信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6046,11 +5424,9 @@
           "name": "Message",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "步骤信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6058,8 +5434,7 @@
           "name": "Steps",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6068,7 +5443,6 @@
       "document": "错误信息及告警信息对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "提示信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6076,11 +5450,9 @@
           "name": "Message",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "解决方案\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6088,11 +5460,9 @@
           "name": "Solution",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文档提示\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6100,8 +5470,7 @@
           "name": "HelpDoc",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6118,8 +5487,7 @@
           "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6130,8 +5498,7 @@
           "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6142,8 +5509,7 @@
           "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6154,8 +5520,7 @@
           "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6166,8 +5531,7 @@
           "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6178,8 +5542,7 @@
           "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6190,8 +5553,7 @@
           "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6202,8 +5564,7 @@
           "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6214,8 +5575,7 @@
           "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6226,21 +5586,18 @@
           "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "enum:\"no\"/\"yes\"、no表示用户未设置过限速、yes表示设置过限速\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "no",
-          "is_base64": false,
           "member": "string",
           "name": "HasUserSetRateLimit",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -6249,15 +5606,13 @@
       "document": "RecoverMigrateJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务id",
           "example": "dts-7o16y2qy",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6278,15 +5633,13 @@
       "document": "RecoverSyncJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "同步实例id（即标识一个同步作业），形如sync-werwfs23",
           "example": "sync-werwfs23",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6307,26 +5660,22 @@
       "document": "ResizeSyncJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "同步任务id",
           "example": "sync-werwfs23",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务规格",
           "example": "small",
           "member": "string",
           "name": "NewInstanceClass",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6353,8 +5702,7 @@
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -6363,8 +5711,7 @@
           "member": "string",
           "name": "ResumeOption",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6385,15 +5732,13 @@
       "document": "ResumeSyncJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "同步任务id",
           "example": "无",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6414,7 +5759,6 @@
       "document": "角色对象，postgresql独有参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "角色名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6422,11 +5766,9 @@
           "name": "RoleName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移后的角色名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6434,8 +5776,7 @@
           "name": "NewRoleName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -6450,8 +5791,7 @@
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -6460,8 +5800,7 @@
           "member": "string",
           "name": "StepIds",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -6470,8 +5809,7 @@
           "member": "string",
           "name": "ForeignKeyFlag",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6486,8 +5824,7 @@
           "member": "string",
           "name": "Message",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6502,26 +5839,22 @@
       "document": "SkipSyncCheckItem请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务id，如：sync-4ddgid2",
           "example": "sync-4ddgid2",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要跳过校验项的步骤id，需要通过`DescribeCheckSyncJobResult`接口返回StepInfos[i].StepId字段获取，例如：[\"OptimizeCheck\"]",
           "example": "[\"OptimizeCheck\"]",
           "member": "string",
           "name": "StepIds",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6542,7 +5875,6 @@
       "document": "跳过校验的表详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "跳过的表数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6550,11 +5882,9 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "跳过校验的表详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6562,8 +5892,7 @@
           "name": "Items",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6572,7 +5901,6 @@
       "document": "跳过校验的表详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "db1",
@@ -6580,11 +5908,9 @@
           "name": "Db",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "t1",
@@ -6592,11 +5918,9 @@
           "name": "Table",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "未发起检查的原因\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6604,8 +5928,7 @@
           "name": "Reason",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6614,26 +5937,22 @@
       "document": "StartCompare请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务 Id",
           "example": "dts-8yv4w2i1",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9",
           "example": "dts-8yv4w2i1-cmp-37skmii9",
           "member": "string",
           "name": "CompareTaskId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6654,15 +5973,13 @@
       "document": "StartMigrateJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据迁移任务ID",
           "example": "dts-1kl0iy0v",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6689,8 +6006,7 @@
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6711,15 +6027,13 @@
       "document": "StartSyncJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "同步任务id",
           "example": "sync-werwfs23",
           "member": "string",
           "name": "JobId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6740,7 +6054,6 @@
       "document": "步骤信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "步骤序列\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6748,11 +6061,9 @@
           "name": "StepNo",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "步骤展现名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "源库导出",
@@ -6760,11 +6071,9 @@
           "name": "StepName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "步骤英文标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dumper",
@@ -6772,11 +6081,9 @@
           "name": "StepId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "步骤状态:success(成功)、failed(失败)、running(执行中)、notStarted(未执行)、默认为notStarted\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "running",
@@ -6784,11 +6091,9 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前步骤开始的时间，格式为\"yyyy-mm-dd hh:mm:ss\"，该字段不存在或者为空是无意义 注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-07-11 17:22:43",
@@ -6796,11 +6101,9 @@
           "name": "StartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "步骤错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6808,11 +6111,9 @@
           "name": "StepMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行进度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -6820,11 +6121,9 @@
           "name": "Percent",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -6832,11 +6131,9 @@
           "name": "Errors",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警提示\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -6844,8 +6141,7 @@
           "name": "Warnings",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6861,8 +6157,7 @@
           "name": "StepNo",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6872,8 +6167,7 @@
           "name": "StepName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6883,8 +6177,7 @@
           "name": "StepId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6894,8 +6187,7 @@
           "name": "Status",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6905,8 +6197,7 @@
           "name": "StartTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6916,8 +6207,7 @@
           "name": "Errors",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6927,8 +6217,7 @@
           "name": "Warnings",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6938,8 +6227,7 @@
           "name": "Progress",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -6948,7 +6236,6 @@
       "document": "当前步骤错误信息或者警告信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6956,11 +6243,9 @@
           "name": "Code",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6968,11 +6253,9 @@
           "name": "Message",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "解决方式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6980,11 +6263,9 @@
           "name": "Solution",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "帮助文档\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6992,11 +6273,9 @@
           "name": "HelpDoc",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前步骤跳过信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7004,8 +6283,7 @@
           "name": "SkipInfo",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -7014,26 +6292,22 @@
       "document": "StopCompare请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务 Id",
           "example": "dts-amm1jw5q",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9",
           "example": "dts-8yv4w2i1-cmp-37skmii9",
           "member": "string",
           "name": "CompareTaskId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7054,15 +6328,13 @@
       "document": "StopMigrateJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据迁移任务ID",
           "example": "dts-1kl0iy0v",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7083,15 +6355,13 @@
       "document": "StopSyncJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "同步任务id",
           "example": "无",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7119,8 +6389,7 @@
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7130,8 +6399,7 @@
           "name": "AccessType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7141,8 +6409,7 @@
           "name": "DatabaseType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7152,8 +6419,7 @@
           "name": "Info",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -7169,8 +6435,7 @@
           "name": "StepAll",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7180,8 +6445,7 @@
           "name": "StepNow",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7191,8 +6455,7 @@
           "name": "Progress",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7202,8 +6465,7 @@
           "name": "CurrentStepProgress",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7213,8 +6475,7 @@
           "name": "MasterSlaveDistance",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7224,8 +6485,7 @@
           "name": "SecondsBehindMaster",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7235,8 +6495,7 @@
           "name": "Message",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7246,8 +6505,7 @@
           "name": "StepInfos",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7257,8 +6515,7 @@
           "name": "CauseOfCompareDisable",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7268,8 +6525,7 @@
           "name": "ErrInfo",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7285,8 +6541,7 @@
           "name": "JobId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7296,8 +6551,7 @@
           "name": "JobName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7307,8 +6561,7 @@
           "name": "PayMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7318,8 +6571,7 @@
           "name": "RunMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7329,8 +6581,7 @@
           "name": "ExpectRunTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7340,8 +6591,7 @@
           "name": "AllActions",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7351,8 +6601,7 @@
           "name": "Actions",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7362,8 +6611,7 @@
           "name": "Options",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7373,8 +6621,7 @@
           "name": "Objects",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7384,8 +6631,7 @@
           "name": "Specification",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7395,8 +6641,7 @@
           "name": "ExpireTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7406,8 +6651,7 @@
           "name": "SrcRegion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7417,8 +6661,7 @@
           "name": "SrcDatabaseType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7428,8 +6671,7 @@
           "name": "SrcAccessType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7439,8 +6681,7 @@
           "name": "SrcInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7450,8 +6691,7 @@
           "name": "SrcNodeType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7461,8 +6701,7 @@
           "name": "SrcInfos",
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7472,8 +6711,7 @@
           "name": "DstRegion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7483,8 +6721,7 @@
           "name": "DstDatabaseType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7494,8 +6731,7 @@
           "name": "DstAccessType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7505,8 +6741,7 @@
           "name": "DstInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7516,8 +6751,7 @@
           "name": "DstNodeType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7527,8 +6761,7 @@
           "name": "DstInfos",
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7538,8 +6771,7 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7549,8 +6781,7 @@
           "name": "StartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7560,8 +6791,7 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7571,8 +6801,7 @@
           "name": "EndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7582,8 +6811,7 @@
           "name": "Tags",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7593,8 +6821,7 @@
           "name": "Detail",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7604,8 +6831,7 @@
           "name": "TradeStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7615,8 +6841,7 @@
           "name": "JobMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7626,8 +6851,7 @@
           "name": "InstanceClass",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7637,8 +6861,7 @@
           "name": "AutoRenew",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7648,8 +6871,7 @@
           "name": "OfflineTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7659,8 +6881,7 @@
           "name": "TradeInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7670,8 +6891,7 @@
           "name": "ShowConflictAlertTab",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7681,8 +6901,7 @@
           "name": "AutoRetryTimeRangeMinutes",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7692,8 +6911,7 @@
           "name": "DumperResumeCtrl",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7710,66 +6928,56 @@
           "disabled": false,
           "document": "表名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "TableName",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "新表名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "NewTableName",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "过滤条件\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "FilterCondition",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "同步临时表，注意此配置与NewTableName互斥，只能使用其中一种。当配置的同步对象为表级别且TableEditMode为pt时此项有意义，针对pt-osc等工具在同步过程中产生的临时表进行同步，需要提前将可能的临时表配置在这里，否则不会同步任何临时表。示例，如要对t1进行pt-osc操作，此项配置应该为[\"\\_t1\\_new\",\"\\_t1\\_old\"]；如要对t1进行gh-ost操作，此项配置应该为[\"\\_t1\\_ghc\",\"\\_t1\\_gho\",\"\\_t1\\_del\"]，pt-osc与gh-ost产生的临时表可同时配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"_t1_old\",_t1_new\"]",
-          "is_base64": false,
           "member": "string",
           "name": "TmpTables",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "编辑表类型，rename(表映射)，pt(同步附加表)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "pt",
-          "is_base64": false,
           "member": "string",
           "name": "TableEditMode",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -7785,8 +6993,7 @@
           "name": "TableName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7796,8 +7003,7 @@
           "name": "NewTableName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7807,8 +7013,7 @@
           "name": "TmpTables",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7818,8 +7023,7 @@
           "name": "TableEditMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -7828,7 +7032,6 @@
       "document": "标签过滤",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键值",
           "example": "key",
@@ -7839,7 +7042,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "[value1, value2]",
@@ -7856,7 +7058,6 @@
       "document": "标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7867,7 +7068,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7891,8 +7091,7 @@
           "name": "TopicName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7902,8 +7101,7 @@
           "name": "PartitionType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7913,8 +7111,7 @@
           "name": "DbMatchMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7924,8 +7121,7 @@
           "name": "DbName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7935,8 +7131,7 @@
           "name": "TableMatchMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7946,8 +7141,7 @@
           "name": "TableName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -7956,7 +7150,6 @@
       "document": "计费状态信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "交易订单号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20220711715001047929481",
@@ -7964,11 +7157,9 @@
           "name": "DealName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上一次交易订单号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7976,11 +7167,9 @@
           "name": "LastDealName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例规格，包括：micro、small、medium、large、xlarge、2xlarge等\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xlarge",
@@ -7988,11 +7177,9 @@
           "name": "InstanceClass",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计费任务状态， normal(计费或待计费)、resizing(变配中)、reversing(冲正中，比较短暂的状态)、isolating(隔离中，比较短暂的状态)、isolated(已隔离)、offlining(下线中)、offlined(已下线)、notBilled(未计费)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "normal",
@@ -8000,11 +7187,9 @@
           "name": "TradeStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "到期时间，格式为\"yyyy-mm-dd hh:mm:ss\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8012,11 +7197,9 @@
           "name": "ExpireTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下线时间，格式为\"yyyy-mm-dd hh:mm:ss\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8024,11 +7207,9 @@
           "name": "OfflineTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "隔离时间，格式为\"yyyy-mm-dd hh:mm:ss\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8036,11 +7217,9 @@
           "name": "IsolateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下线原因\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8048,11 +7227,9 @@
           "name": "OfflineReason",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "隔离原因\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8060,11 +7237,9 @@
           "name": "IsolateReason",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费类型，包括：postpay(后付费)、prepay(预付费)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "postpay",
@@ -8072,11 +7247,9 @@
           "name": "PayType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务计费类型，包括：billing(计费)、notBilling(不计费)、 promotions(促销活动中)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "billing",
@@ -8084,8 +7257,7 @@
           "name": "BillingType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8101,8 +7273,7 @@
           "name": "ViewName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -8112,8 +7283,7 @@
           "name": "NewViewName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -8122,7 +7292,6 @@
       "document": "视图对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视图名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "t1_view",
@@ -8130,11 +7299,9 @@
           "name": "ViewName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移后的视图名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "t1_view_new",
@@ -8142,8 +7309,7 @@
           "name": "NewViewName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

@@ -40,7 +40,6 @@
       "document": "CreateFastLiveCourse请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "老师id（接入方通讯录中的老师id）",
           "example": "2007051",
@@ -50,7 +49,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "课程学习可见范围属性，0：公开 1：班级内\t2：组织内 3：授权列表内",
           "example": "0",
@@ -60,7 +58,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "课程名",
           "example": "测试课程",
@@ -70,7 +67,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开放平台分配给第三方的千帆id",
           "example": "tn-c65190017f394836863e83ca429b500c",
@@ -118,7 +114,6 @@
       "document": "DescribeFastReplayDownloads请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频id",
           "example": "10002",
@@ -128,7 +123,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开放平台分配给第三方的千帆id",
           "example": "tn-c65190017f394836863e83ca429b500c",
@@ -166,7 +160,6 @@
       "document": "DescribeFastReplays请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "直播间id",
           "example": "1000030510",
@@ -176,7 +169,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页序号，第一页序号为1",
           "example": "1",
@@ -186,7 +178,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页大小，最大分页50",
           "example": "50",
@@ -196,7 +187,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开放平台分配给第三方的千帆id",
           "example": "tn-c65190017f394836863e83ca429b500c",
@@ -244,7 +234,6 @@
       "document": "ModifyFastLiveCourse请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "直播间id",
           "example": "1000030510",
@@ -254,7 +243,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "课程学习可见范围属性，0：公开 1：班级内\t2：组织内 3：授权列表内",
           "example": "0",
@@ -264,7 +252,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "课程名",
           "example": "测试课程",
@@ -274,7 +261,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开放平台分配给第三方的千帆id",
           "example": "tn-c65190017f394836863e83ca429b500c",
@@ -302,7 +288,6 @@
       "document": "直播回放",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频名字",
           "example": "第一课",
@@ -313,7 +298,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频id",
           "example": "1002",
@@ -324,7 +308,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回放时长，单位秒",
           "example": "3600",
@@ -335,7 +318,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务id",
           "example": "1",

@@ -296,6 +296,14 @@
         "title": "拉取云存事件列表"
       }
     ],
+    "DescribeCloudStorageOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageOrder\n<公共请求参数>\n\n{\n    \"OrderId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"StartTime\": 1,\n        \"ExpireTime\": 1,\n        \"PackageId\": \"abc\",\n        \"Status\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询云服务详情示例"
+      }
+    ],
     "DescribeCloudStoragePackageConsumeDetails": [
       {
         "document": "",

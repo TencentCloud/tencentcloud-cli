@@ -33,7 +33,6 @@
       "document": "GetUserAccessToken请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "auth code",
           "example": "",
@@ -43,7 +42,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "第三方access token",
           "example": "",

@@ -75,7 +75,6 @@
       "document": "AuthTestTid请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备端SDK填入测试TID参数后生成的加密数据串",
           "member": "string",
@@ -110,7 +109,6 @@
       "document": "BurnTidNotify请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "订单编号",
           "member": "string",
@@ -119,7 +117,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TID编号",
           "member": "string",
@@ -154,7 +151,6 @@
       "document": "DeliverTidNotify请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "订单编号",
           "member": "string",
@@ -163,7 +159,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TID编号",
           "member": "string",
@@ -214,7 +209,6 @@
       "document": "DeliverTids请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "订单ID",
           "member": "string",
@@ -223,7 +217,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数量，1~100",
           "member": "uint64",
@@ -266,7 +259,6 @@
       "document": "DescribeAvailableLibCount请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "订单编号",
           "member": "string",
@@ -342,7 +334,6 @@
       "document": "DownloadTids请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "订单编号",
           "member": "string",
@@ -351,7 +342,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下载数量：1~10",
           "member": "uint64",
@@ -386,7 +376,6 @@
       "document": "系统生成的TID和密钥信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TID号码",
           "member": "string",
@@ -396,7 +385,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公钥",
           "member": "string",
@@ -406,7 +394,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私钥",
           "member": "string",
@@ -416,7 +403,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "共享密钥",
           "member": "string",
@@ -426,7 +412,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "软加固白盒密钥下载地址",
           "member": "string",
@@ -436,7 +421,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "软加固设备标识码",
           "member": "string",
@@ -452,7 +436,6 @@
       "document": "UploadDeviceUniqueCode请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "硬件唯一标识码",
           "member": "string",
@@ -461,7 +444,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "硬件标识码绑定的申请编号",
           "member": "string",
@@ -520,7 +502,6 @@
       "document": "VerifyChipBurnInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "验证数据",
           "member": "string",

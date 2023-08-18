@@ -138,7 +138,6 @@
       "document": "AddAttrGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "名称",
           "example": "无",
@@ -176,7 +175,6 @@
       "document": "用户属性名以及条件名",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标志",
           "example": "无",
@@ -187,7 +185,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -204,7 +201,6 @@
       "document": "用户属性",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "属性选项，1任意属性，2部门名称，3账户名称，4手机号，5邮箱，6企业微信标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -215,7 +211,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "条件选项，1任意条件，2等于，3不等于，4包含关键字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -226,7 +221,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关键字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -243,7 +237,6 @@
       "document": "合规配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "周期性检查开关，1关，2开\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -254,7 +247,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "周期性检查时间，分钟\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -265,7 +257,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "{min:分钟|hour:小时|day:天|week:周}\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hour",
@@ -276,7 +267,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "{1:不是自定义2:是自定义}\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -287,7 +277,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "未合规时客户端修复提醒开关，1关，2开\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -304,7 +293,6 @@
       "document": "合规IOA参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IOA版本号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2.4.2",
@@ -321,7 +309,6 @@
       "document": "补丁信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "补丁号",
           "example": "KB2028551",
@@ -332,7 +319,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "补丁简介",
           "example": "无",
@@ -343,7 +329,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "补丁发布时间",
           "example": "无",
@@ -360,7 +345,6 @@
       "document": "合规检查选项",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "{ioa|os|av|kb}",
           "example": "ioa",
@@ -371,7 +355,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查开关，1关，2开\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -382,7 +365,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查风险等级，2低，3中，4高\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -393,7 +375,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项子数目\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -410,7 +391,6 @@
       "document": "操作系统版本信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "操作系统版本号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6.1.7600",
@@ -421,7 +401,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "系统名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Windows 7",
@@ -438,7 +417,6 @@
       "document": "DeleteAttrGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户属性组ID",
           "example": "无",
@@ -503,7 +481,6 @@
       "document": "DescribeAttrUserList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户组ID",
           "example": "无",
@@ -541,7 +518,6 @@
       "document": "DescribeComplianceKbList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Windows/macOS/Linux",
           "example": "Windows",
@@ -551,7 +527,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "1",
@@ -561,7 +536,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "10",
@@ -609,7 +583,6 @@
       "document": "DescribeComplianceOptionList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "{Windows|macOS|Linux}",
           "example": "Windows",
@@ -647,7 +620,6 @@
       "document": "DescribeComplianceOriginIoaList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Windows/macOS/Linux",
           "example": "Windows",
@@ -685,7 +657,6 @@
       "document": "DescribeComplianceOriginKbList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "{Windows|macOS|Linux}",
           "example": "Windows",
@@ -695,7 +666,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "1",
@@ -705,7 +675,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "10",
@@ -715,7 +684,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "补丁号",
           "example": "无",
@@ -763,7 +731,6 @@
       "document": "DescribeComplianceOs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Windows/macOS/Linux",
           "example": "Windows",
@@ -801,7 +768,6 @@
       "document": "DescribeCompliance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "{Windows|macOS|Linux}",
           "example": "Windows",
@@ -839,7 +805,6 @@
       "document": "DescribeDepartmentDirectUsers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "部门ID",
           "example": "无",
@@ -904,7 +869,6 @@
       "document": "ModifyAttrGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "属性组ID",
           "example": "无",
@@ -914,7 +878,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "属性组I名称",
           "example": "无",
@@ -942,7 +905,6 @@
       "document": "ModifyComplianceAv请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Windows/macOS/Linux",
           "example": "Windows",
@@ -952,7 +914,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "杀软程序名称",
           "example": "无",
@@ -962,7 +923,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "杀软最低版本，或任意版本",
           "example": "无",
@@ -972,7 +932,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "病毒库最低版本，或任意版本",
           "example": "无",
@@ -982,7 +941,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开关，1关，2开",
           "example": "1",
@@ -1010,7 +968,6 @@
       "document": "ModifyComplianceKb请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Windows/macOS/Linux",
           "example": "Windows",
@@ -1020,7 +977,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要改动的kb号列表",
           "example": "无",
@@ -1048,7 +1004,6 @@
       "document": "ModifyComplianceOption请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "{Windows|macOS|Linux}",
           "example": "Windows",
@@ -1058,7 +1013,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "{ioa|os|av|kb}",
           "example": "ioa",
@@ -1068,7 +1022,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查开关，1关，2开",
           "example": "1",
@@ -1078,7 +1031,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查风险等级，2低，3中，4高",
           "example": "1",
@@ -1106,7 +1058,6 @@
       "document": "ModifyCompliance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "{Windows|macOS|Linux}",
           "example": "Windows",
@@ -1116,7 +1067,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "周期性检查开关，1关，2开",
           "example": "1",
@@ -1126,7 +1076,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "周期性检查时间，分钟",
           "example": "无",
@@ -1136,7 +1085,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "{min|hour|day|week}",
           "example": "hour",
@@ -1146,7 +1094,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "{1:不是自定义2:是自定义}",
           "example": "1",
@@ -1156,7 +1103,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "未合规时客户端修复提醒开关，1关，2开",
           "example": "1",
@@ -1201,7 +1147,6 @@
       "document": "定单信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1212,7 +1157,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1223,7 +1167,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1240,7 +1183,6 @@
       "document": "用户信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户ID",
           "example": "无",
@@ -1251,7 +1193,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1262,7 +1203,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部门ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",

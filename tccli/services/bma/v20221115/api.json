@@ -96,8 +96,7 @@
           "name": "CompanyId",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -107,8 +106,7 @@
           "name": "CompanyName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -118,8 +116,7 @@
           "name": "BrandName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -129,8 +126,7 @@
           "name": "Phone",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -140,8 +136,7 @@
           "name": "License",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -151,8 +146,7 @@
           "name": "LicenseStatus",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -162,8 +156,7 @@
           "name": "LicenseNote",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -173,8 +166,7 @@
           "name": "Authorization",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -184,8 +176,7 @@
           "name": "AuthorizationStatus",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -195,8 +186,7 @@
           "name": "AuthorizationNote",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -206,8 +196,7 @@
           "name": "Trademarks",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -217,8 +206,7 @@
           "name": "InsertTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -228,8 +216,7 @@
           "name": "Services",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -239,8 +226,7 @@
           "name": "Uin",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -255,8 +241,7 @@
           "member": "string",
           "name": "BrandName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -265,8 +250,7 @@
           "member": "string",
           "name": "CompanyName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -275,8 +259,7 @@
           "member": "string",
           "name": "BrandLogo",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -285,8 +268,7 @@
           "member": "string",
           "name": "Phone",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -295,8 +277,7 @@
           "member": "string",
           "name": "License",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -305,8 +286,7 @@
           "member": "string",
           "name": "Authorization",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -315,8 +295,7 @@
           "member": "string",
           "name": "TrademarkNames",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -325,8 +304,7 @@
           "member": "string",
           "name": "Trademarks",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -335,8 +313,7 @@
           "member": "string",
           "name": "IsTransfers",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -345,8 +322,7 @@
           "member": "string",
           "name": "Transfers",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -355,8 +331,7 @@
           "member": "string",
           "name": "ProtectURLs",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -365,8 +340,7 @@
           "member": "string",
           "name": "ProtectAPPs",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -375,8 +349,7 @@
           "member": "string",
           "name": "ProtectOfficialAccounts",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -385,8 +358,7 @@
           "member": "string",
           "name": "ProtectMiniPrograms",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -395,8 +367,7 @@
           "member": "int64",
           "name": "APISource",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -411,8 +382,7 @@
           "member": "int64",
           "name": "CompanyId",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -433,8 +403,7 @@
           "member": "string",
           "name": "FakeAPPs",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -461,8 +430,7 @@
           "member": "int64",
           "name": "CompanyId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -471,8 +439,7 @@
           "member": "string",
           "name": "FakeAPPName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -481,8 +448,7 @@
           "member": "string",
           "name": "APPChan",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -491,8 +457,7 @@
           "member": "string",
           "name": "FakeAPPPackageName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -501,8 +466,7 @@
           "member": "string",
           "name": "FakeAPPCert",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -511,8 +475,7 @@
           "member": "string",
           "name": "FakeAPPSize",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -521,8 +484,7 @@
           "member": "string",
           "name": "FakeAPPSnapshots",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -531,8 +493,7 @@
           "member": "string",
           "name": "Note",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -559,8 +520,7 @@
           "member": "int64",
           "name": "CompanyId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -569,8 +529,7 @@
           "member": "string",
           "name": "FakeURL",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -579,8 +538,7 @@
           "member": "string",
           "name": "FakeURLSnapshots",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -589,8 +547,7 @@
           "member": "string",
           "name": "Note",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -617,8 +574,7 @@
           "member": "string",
           "name": "FakeURLs",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -645,8 +601,7 @@
           "member": "int64",
           "name": "CompanyId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -655,8 +610,7 @@
           "member": "int64",
           "name": "WhiteListType",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -665,8 +619,7 @@
           "member": "string",
           "name": "WhiteLists",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -693,8 +646,7 @@
           "member": "int64",
           "name": "WhiteListId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -726,8 +678,7 @@
           "member": "BrandData",
           "name": "Brands",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -736,8 +687,7 @@
           "member": "int64",
           "name": "NoticeStatus",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -758,8 +708,7 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -768,8 +717,7 @@
           "member": "int64",
           "name": "PageSize",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -778,8 +726,7 @@
           "member": "int64",
           "name": "PageNumber",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -794,8 +741,7 @@
           "member": "FakeAPPData",
           "name": "FakeAPPList",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -804,8 +750,7 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -823,34 +768,28 @@
           "disabled": false,
           "document": "过滤参数",
           "example": "无",
-          "is_base64": false,
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "页数",
           "example": "无",
-          "is_base64": false,
           "member": "int64",
           "name": "PageSize",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "页码",
           "example": "无",
-          "is_base64": false,
           "member": "int64",
           "name": "PageNumber",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -866,8 +805,7 @@
           "name": "FakeURLs",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -877,8 +815,7 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -899,8 +836,7 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -909,8 +845,7 @@
           "member": "int64",
           "name": "PageSize",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -919,8 +854,7 @@
           "member": "int64",
           "name": "PageNumber",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -935,8 +869,7 @@
           "member": "WhiteListData",
           "name": "WhiteLists",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -945,8 +878,7 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -968,8 +900,7 @@
           "name": "FakeAPPId",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -979,8 +910,7 @@
           "name": "BrandName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -990,8 +920,7 @@
           "name": "Origin",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1001,8 +930,7 @@
           "name": "FakeAPPName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1012,8 +940,7 @@
           "name": "FakeAPPPackageName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1023,8 +950,7 @@
           "name": "FakeAPPCert",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1034,8 +960,7 @@
           "name": "FakeAPPSize",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1045,8 +970,7 @@
           "name": "Heat",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1056,8 +980,7 @@
           "name": "BlockStatus",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1067,8 +990,7 @@
           "name": "BlockNote",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1078,8 +1000,7 @@
           "name": "OfflineStatus",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1089,8 +1010,7 @@
           "name": "OfflineNote",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1100,8 +1020,7 @@
           "name": "DownloadWay",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1111,8 +1030,7 @@
           "name": "InsertTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1122,8 +1040,7 @@
           "name": "DownloadCosURL",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1133,8 +1050,7 @@
           "name": "CertificationStatus",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1150,8 +1066,7 @@
           "name": "FakeURLId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1161,8 +1076,7 @@
           "name": "BrandName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1172,8 +1086,7 @@
           "name": "Origin",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1183,8 +1096,7 @@
           "name": "FakeURL",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1194,8 +1106,7 @@
           "name": "FakeDomain",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1205,8 +1116,7 @@
           "name": "Heat",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1216,8 +1126,7 @@
           "name": "BlockStatus",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1227,8 +1136,7 @@
           "name": "BlockNote",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1238,8 +1146,7 @@
           "name": "OfflineStatus",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1249,8 +1156,7 @@
           "name": "OfflineNote",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1260,8 +1166,7 @@
           "name": "IP",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1271,8 +1176,7 @@
           "name": "IPLocation",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1282,8 +1186,7 @@
           "name": "WebCompany",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1293,8 +1196,7 @@
           "name": "WebAttribute",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1304,8 +1206,7 @@
           "name": "WebName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1315,8 +1216,7 @@
           "name": "WebICP",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1326,8 +1226,7 @@
           "name": "WebCreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1337,8 +1236,7 @@
           "name": "WebExpireTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1348,8 +1246,7 @@
           "name": "InsertTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1359,8 +1256,7 @@
           "name": "CertificationStatus",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1370,8 +1266,7 @@
           "name": "Snapshot",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1381,8 +1276,7 @@
           "name": "AccountStatus",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1392,8 +1286,7 @@
           "name": "AuditStatus",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1409,8 +1302,7 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1420,8 +1312,7 @@
           "name": "Value",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -1437,8 +1328,7 @@
           "name": "ProtectURLCount",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1448,8 +1338,7 @@
           "name": "ProtectURLExpireTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1459,8 +1348,7 @@
           "name": "ProtectAPPCount",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1470,8 +1358,7 @@
           "name": "ProtectAPPExpireTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1481,8 +1368,7 @@
           "name": "ProtectOfficialAccountCount",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1492,8 +1378,7 @@
           "name": "ProtectOfficialAccountExpireTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1503,8 +1388,7 @@
           "name": "ProtectMiniProgramCount",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1514,8 +1398,7 @@
           "name": "ProtectMiniProgramExpireTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1525,8 +1408,7 @@
           "name": "OfflineCount",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1542,8 +1424,7 @@
           "name": "Trademark",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1553,8 +1434,7 @@
           "name": "TrademarkStatus",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1564,8 +1444,7 @@
           "name": "TrademarkNote",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1575,8 +1454,7 @@
           "name": "TrademarkId",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1586,8 +1464,7 @@
           "name": "Transfer",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1597,8 +1474,7 @@
           "name": "TransferStatus",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1608,8 +1484,7 @@
           "name": "TransferNote",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1619,8 +1494,7 @@
           "name": "TrademarkName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1636,8 +1510,7 @@
           "name": "WhiteListId",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1647,8 +1520,7 @@
           "name": "CompanyId",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1658,8 +1530,7 @@
           "name": "BrandName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1669,8 +1540,7 @@
           "name": "AssetsType",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1680,8 +1550,7 @@
           "name": "WhiteList",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1691,8 +1560,7 @@
           "name": "InsertTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

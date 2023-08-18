@@ -208,7 +208,6 @@
       "document": "年龄语音识别子任务",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据唯一ID",
           "example": "abcd",
@@ -219,7 +218,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据文件的url，为 urlencode 编码,音频文件格式支持的类型：.wav、.m4a、.amr、.mp3、.aac、.wma、.ogg",
           "example": "https://xxx.com/yy.wav",
@@ -236,7 +234,6 @@
       "document": "年龄语音任务结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据唯一ID",
           "example": "abcd",
@@ -247,7 +244,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据文件的url",
           "example": "https://xxx.com/yyy.wav",
@@ -258,7 +254,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务状态，0: 已创建，1:运行中，2:正常结束，3:异常结束，4:运行超时",
           "example": "2",
@@ -269,7 +264,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务结果：0: 成年，1:未成年，100:未知",
           "example": "1",
@@ -286,7 +280,6 @@
       "document": "应用用量统计数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实时语音统计数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"MainLandPcu\":0,\"MainLandDuration\":0,\"OverseaPcu\":0,\"OverseaDur",
@@ -294,11 +287,9 @@
           "name": "RealtimeSpeechStatisticsItem",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "语音消息统计数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"Dau\":1018}",
@@ -306,11 +297,9 @@
           "name": "VoiceMessageStatisticsItem",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "语音过滤统计数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"Duration\" : 18000}",
@@ -318,11 +307,9 @@
           "name": "VoiceFilterStatisticsItem",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计时间",
           "example": "2022-10-01",
@@ -330,11 +317,9 @@
           "name": "Date",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录音转文本用量统计数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"Data\":0}",
@@ -342,11 +327,9 @@
           "name": "AudioTextStatisticsItem",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流式转文本用量数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"Data\":0}",
@@ -354,11 +337,9 @@
           "name": "StreamTextStatisticsItem",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "海外转文本用量数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"Data\":0}",
@@ -366,11 +347,9 @@
           "name": "OverseaTextStatisticsItem",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实时语音转文本用量数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"Data\":0}",
@@ -378,8 +357,7 @@
           "name": "RealtimeTextStatisticsItem",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -388,7 +366,6 @@
       "document": "应用统计数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID",
           "example": "",
@@ -399,7 +376,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Dau统计项数目",
           "example": "",
@@ -410,7 +386,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "大陆地区Dau统计数据，单位人",
           "example": "",
@@ -421,7 +396,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "海外地区Dau统计数据，单位人",
           "example": "",
@@ -432,7 +406,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "大陆和海外地区Dau统计数据汇总，单位人",
           "example": "",
@@ -443,7 +416,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实时语音时长统计项数目",
           "example": "",
@@ -454,7 +426,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "大陆地区实时语音时长统计数据，单位分钟",
           "example": "",
@@ -465,7 +436,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "海外地区实时语音时长统计数据，单位分钟",
           "example": "",
@@ -476,7 +446,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "大陆和海外地区实时语音时长统计数据汇总，单位分钟",
           "example": "",
@@ -487,7 +456,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Pcu统计项数目",
           "example": "",
@@ -498,7 +466,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "大陆地区Pcu统计数据，单位人",
           "example": "",
@@ -509,7 +476,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "海外地区Pcu统计数据，单位人",
           "example": "",
@@ -520,7 +486,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "大陆和海外地区Pcu统计数据汇总，单位人",
           "example": "",
@@ -537,7 +502,6 @@
       "document": "获取应用列表返回",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "服务开关状态",
           "example": "[]",
@@ -545,11 +509,9 @@
           "name": "ServiceConf",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID(AppID)",
           "example": "1",
@@ -557,11 +519,9 @@
           "name": "BizId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用名称",
           "example": "xx",
@@ -569,11 +529,9 @@
           "name": "AppName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID，默认为0",
           "example": "1",
@@ -581,11 +539,9 @@
           "name": "ProjectId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用状态，返回0表示正常，1表示关闭，2表示欠费停服，3表示欠费回收",
           "example": "1",
@@ -593,11 +549,9 @@
           "name": "AppStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间，Unix时间戳格式",
           "example": "1",
@@ -605,11 +559,9 @@
           "name": "CreateTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用类型，无需关注此数值",
           "example": "1",
@@ -617,8 +569,7 @@
           "name": "AppType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -634,8 +585,7 @@
           "name": "Status",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -644,7 +594,6 @@
       "document": "录音转文本用量统计数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "统计值，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.23",
@@ -652,8 +601,7 @@
           "name": "Data",
           "required": true,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -668,8 +616,7 @@
           "member": "int64",
           "name": "BizId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -678,8 +625,7 @@
           "member": "AgeDetectTask",
           "name": "Tasks",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -688,8 +634,7 @@
           "member": "string",
           "name": "Callback",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -704,8 +649,7 @@
           "member": "string",
           "name": "TaskId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -726,8 +670,7 @@
           "member": "string",
           "name": "AppName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -736,8 +679,7 @@
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -746,8 +688,7 @@
           "member": "string",
           "name": "EngineList",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -756,8 +697,7 @@
           "member": "string",
           "name": "RegionList",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -766,8 +706,7 @@
           "member": "RealtimeSpeechConf",
           "name": "RealtimeSpeechConf",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -776,8 +715,7 @@
           "member": "VoiceMessageConf",
           "name": "VoiceMessageConf",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -786,8 +724,7 @@
           "member": "VoiceFilterConf",
           "name": "VoiceFilterConf",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -796,8 +733,7 @@
           "member": "AsrConf",
           "name": "AsrConf",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -806,8 +742,7 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -823,8 +758,7 @@
           "name": "BizId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -834,8 +768,7 @@
           "name": "AppName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -845,8 +778,7 @@
           "name": "ProjectId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -856,8 +788,7 @@
           "name": "SecretKey",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -867,8 +798,7 @@
           "name": "CreateTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -878,8 +808,7 @@
           "name": "RealtimeSpeechConf",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -889,8 +818,7 @@
           "name": "VoiceMessageConf",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -900,8 +828,7 @@
           "name": "VoiceFilterConf",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -911,8 +838,7 @@
           "name": "AsrConf",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -927,8 +853,7 @@
           "member": "CreateAppResp",
           "name": "Data",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -949,8 +874,7 @@
           "member": "int64",
           "name": "BizId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -959,8 +883,7 @@
           "member": "string",
           "name": "TextUrl",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -969,8 +892,7 @@
           "member": "string",
           "name": "ModelName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -985,8 +907,7 @@
           "member": "string",
           "name": "ModelId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1004,23 +925,19 @@
           "disabled": false,
           "document": "应用ID，登录控制台 - 服务管理创建应用得到的AppID",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "BizId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "需要新增送检的用户号。示例：1234",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "UserId",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1036,8 +953,7 @@
           "name": "ErrorCode",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1059,8 +975,7 @@
           "name": "BizId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1070,8 +985,7 @@
           "name": "ModelId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1081,8 +995,7 @@
           "name": "ModelState",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1092,8 +1005,7 @@
           "name": "ModelName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1103,8 +1015,7 @@
           "name": "TextUrl",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1114,8 +1025,7 @@
           "name": "UpdateTime",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1130,8 +1040,7 @@
           "member": "string",
           "name": "ModelId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1140,8 +1049,7 @@
           "member": "int64",
           "name": "BizId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1156,8 +1064,7 @@
           "member": "int64",
           "name": "ErrorCode",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1172,7 +1079,6 @@
       "document": "剔除房间操作结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "错误码，0-剔除成功 其他-剔除失败",
           "example": "",
@@ -1183,7 +1089,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误描述",
           "example": "",
@@ -1206,8 +1111,7 @@
           "member": "string",
           "name": "RoomId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1216,8 +1120,7 @@
           "member": "uint64",
           "name": "DeleteType",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1226,8 +1129,7 @@
           "member": "uint64",
           "name": "BizId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1236,8 +1138,7 @@
           "member": "string",
           "name": "Uids",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1252,8 +1153,7 @@
           "member": "DeleteResult",
           "name": "DeleteResult",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1271,23 +1171,19 @@
           "disabled": false,
           "document": "应用ID，登录控制台 - 服务管理创建应用得到的AppID",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "BizId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "需要删除送检的用户号。示例：1234",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "UserId",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1303,8 +1199,7 @@
           "name": "ErrorCode",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1325,8 +1220,7 @@
           "member": "int64",
           "name": "BizId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1335,8 +1229,7 @@
           "member": "string",
           "name": "TaskId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1351,8 +1244,7 @@
           "member": "string",
           "name": "TaskId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1361,8 +1253,7 @@
           "member": "AgeDetectTaskResult",
           "name": "Results",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1383,8 +1274,7 @@
           "member": "uint64",
           "name": "BizId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1393,8 +1283,7 @@
           "member": "date",
           "name": "StartDate",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1403,8 +1292,7 @@
           "member": "date",
           "name": "EndDate",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1413,8 +1301,7 @@
           "member": "string",
           "name": "Services",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1423,7 +1310,6 @@
       "document": "获取应用用量统计数据输出参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用用量统计数据",
           "example": "[]",
@@ -1446,8 +1332,7 @@
           "member": "DescribeAppStatisticsResp",
           "name": "Data",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1462,7 +1347,6 @@
       "document": "DescribeApplicationData请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID",
           "example": "140000001",
@@ -1472,7 +1356,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据开始时间，格式为 年-月-日，如: 2018-07-13",
           "example": "2018-07-13",
@@ -1482,7 +1365,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据结束时间，格式为 年-月-日，如: 2018-07-13",
           "example": "2018-08-13",
@@ -1526,8 +1408,7 @@
           "member": "int64",
           "name": "ProjectId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1536,8 +1417,7 @@
           "member": "uint64",
           "name": "PageNo",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1546,8 +1426,7 @@
           "member": "uint64",
           "name": "PageSize",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1556,8 +1435,7 @@
           "member": "string",
           "name": "SearchText",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1566,8 +1444,7 @@
           "member": "Tag",
           "name": "TagSet",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1576,8 +1453,7 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1592,8 +1468,7 @@
           "member": "ApplicationList",
           "name": "ApplicationList",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1602,8 +1477,7 @@
           "member": "uint64",
           "name": "Total",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1621,12 +1495,10 @@
           "disabled": false,
           "document": "应用ID",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "BizId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1642,8 +1514,7 @@
           "name": "ErrorCode",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1653,8 +1524,7 @@
           "name": "BizId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1664,8 +1534,7 @@
           "name": "AuditType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1675,8 +1544,7 @@
           "name": "UserIdRegex",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1686,8 +1554,7 @@
           "name": "RoomIdRegex",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1697,8 +1564,7 @@
           "name": "UserIdString",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1708,8 +1574,7 @@
           "name": "RoomIdString",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1724,26 +1589,22 @@
       "document": "DescribeRecordInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "进行中的任务taskid（StartRecord接口返回）。",
           "example": "446192236330927912",
           "member": "uint64",
           "name": "TaskId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID。",
           "example": "3400352518",
           "member": "uint64",
           "name": "BizId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1759,8 +1620,7 @@
           "name": "RecordInfo",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1770,8 +1630,7 @@
           "name": "RecordMode",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1781,8 +1640,7 @@
           "name": "RoomId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1803,8 +1661,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1813,8 +1670,7 @@
           "member": "uint64",
           "name": "RoomIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1823,8 +1679,7 @@
           "member": "string",
           "name": "StrRoomIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1839,8 +1694,7 @@
           "member": "uint64",
           "name": "Result",
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1849,8 +1703,7 @@
           "member": "RoomUser",
           "name": "RoomUsers",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1865,7 +1718,6 @@
       "document": "语音检测结果返回",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "业务返回码",
           "example": "0",
@@ -1873,11 +1725,9 @@
           "name": "Code",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据唯一 ID",
           "example": "1234",
@@ -1885,11 +1735,9 @@
           "name": "DataId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测完成的时间戳",
           "example": "1234",
@@ -1897,11 +1745,9 @@
           "name": "ScanFinishTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否违规",
           "example": "false",
@@ -1909,11 +1755,9 @@
           "name": "HitFlag",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为流",
           "example": "false",
@@ -1921,11 +1765,9 @@
           "name": "Live",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "业务返回描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -1933,11 +1775,9 @@
           "name": "Msg",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测结果，Code 为 0 时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -1945,11 +1785,9 @@
           "name": "ScanPiece",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "提交检测的时间戳",
           "example": "1234",
@@ -1957,11 +1795,9 @@
           "name": "ScanStartTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "语音检测场景，对应请求时的 Scene",
           "example": "[\"default\"]",
@@ -1969,11 +1805,9 @@
           "name": "Scenes",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "语音检测任务 ID，由后台分配",
           "example": "abcdefgh",
@@ -1981,11 +1815,9 @@
           "name": "TaskId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件或接流地址",
           "example": "http://xx.mp3",
@@ -1993,11 +1825,9 @@
           "name": "Url",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测任务执行结果状态，分别为：\n<li>Start: 任务开始</li>\n<li>Success: 成功结束</li>\n<li>Error: 异常</li>",
           "example": "Success",
@@ -2005,11 +1835,9 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "提交检测的应用 ID",
           "example": "140011111",
@@ -2017,8 +1845,7 @@
           "name": "BizId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2030,34 +1857,28 @@
           "disabled": false,
           "document": "应用 ID，登录[控制台](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID",
           "example": "1400000000",
-          "is_base64": false,
           "member": "uint64",
           "name": "BizId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "查询的任务 ID 列表，任务 ID 列表最多支持 100 个。",
           "example": "[\"xxx\\r\\n\"]",
-          "is_base64": false,
           "member": "string",
           "name": "TaskIdList",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "任务返回结果数量，默认10，上限500。大文件任务忽略此参数，返回全量结果",
           "example": "20",
-          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2073,8 +1894,7 @@
           "name": "Data",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2089,26 +1909,22 @@
       "document": "DescribeTaskInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID。",
           "example": "3400352518",
           "member": "uint64",
           "name": "BizId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房间ID。",
           "example": "9832",
           "member": "string",
           "name": "RoomId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2124,8 +1940,7 @@
           "name": "TaskId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2135,8 +1950,7 @@
           "name": "RecordMode",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2146,8 +1960,7 @@
           "name": "SubscribeRecordUserIds",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2168,8 +1981,7 @@
           "member": "int64",
           "name": "BizId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2178,8 +1990,7 @@
           "member": "int64",
           "name": "RoomId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2188,8 +1999,7 @@
           "member": "int64",
           "name": "UserId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2198,8 +2008,7 @@
           "member": "string",
           "name": "UserIdStr",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2208,8 +2017,7 @@
           "member": "string",
           "name": "RoomIdStr",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2224,8 +2032,7 @@
           "member": "InOutTimeInfo",
           "name": "InOutList",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2234,8 +2041,7 @@
           "member": "int64",
           "name": "Duration",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2250,7 +2056,6 @@
       "document": "查找过滤",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要过滤的字段名, 比如\"AppName\"",
           "example": "",
@@ -2261,7 +2066,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "多个关键字",
           "example": "",
@@ -2284,8 +2088,7 @@
           "member": "int64",
           "name": "BizId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2300,8 +2103,7 @@
           "member": "CustomizationConfigs",
           "name": "CustomizationConfigs",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2323,8 +2125,7 @@
           "name": "StartTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2334,8 +2135,7 @@
           "name": "EndTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2344,7 +2144,6 @@
       "document": "ModifyAppStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID，创建应用后由后台生成并返回。",
           "example": "140000001",
@@ -2354,7 +2153,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用状态，取值：open/close",
           "example": "close",
@@ -2370,7 +2168,6 @@
       "document": "ModifyAppStatus接口输出参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "GME应用ID",
           "example": "123456",
@@ -2381,7 +2178,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用状态，取值：open/close",
           "example": "open",
@@ -2426,8 +2222,7 @@
           "member": "int64",
           "name": "BizId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2436,8 +2231,7 @@
           "member": "string",
           "name": "TextUrl",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2446,8 +2240,7 @@
           "member": "string",
           "name": "ModelId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2462,8 +2255,7 @@
           "member": "int64",
           "name": "ErrorCode",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2472,8 +2264,7 @@
           "member": "string",
           "name": "ModelId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2494,8 +2285,7 @@
           "member": "string",
           "name": "ModelId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2504,8 +2294,7 @@
           "member": "int64",
           "name": "ToState",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2514,8 +2303,7 @@
           "member": "int64",
           "name": "BizId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2530,8 +2318,7 @@
           "member": "string",
           "name": "ModelId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2540,8 +2327,7 @@
           "member": "int64",
           "name": "ErrorCode",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2556,48 +2342,40 @@
       "document": "ModifyRecordInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "进行中的任务taskid（StartRecord接口返回）。",
           "example": "446192236330927912",
           "member": "uint64",
           "name": "TaskId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制类型：1代表单流 2代表混流 3代表单流和混流。",
           "example": "1",
           "member": "uint64",
           "name": "RecordMode",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID。",
           "example": "3400352518",
           "member": "uint64",
           "name": "BizId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定订阅流白名单或者黑名单。",
           "example": "无",
           "member": "SubscribeRecordUserIds",
           "name": "SubscribeRecordUserIds",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2624,8 +2402,7 @@
           "member": "int64",
           "name": "BizId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2634,8 +2411,7 @@
           "member": "string",
           "name": "RoomId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2644,8 +2420,7 @@
           "member": "UserMicStatus",
           "name": "Users",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2660,8 +2435,7 @@
           "member": "int64",
           "name": "Result",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2670,8 +2444,7 @@
           "member": "string",
           "name": "ErrMsg",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2686,7 +2459,6 @@
       "document": "海外转文本用量数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "统计值，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.23",
@@ -2694,8 +2466,7 @@
           "name": "Data",
           "required": true,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2704,7 +2475,6 @@
       "document": "实时语音用量统计数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大陆地区DAU",
           "example": "",
@@ -2715,7 +2485,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "大陆地区PCU",
           "example": "",
@@ -2726,7 +2495,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "大陆地区总使用时长，单位为min",
           "example": "",
@@ -2737,7 +2505,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "海外地区DAU",
           "example": "",
@@ -2748,7 +2515,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "海外地区PCU",
           "example": "",
@@ -2759,7 +2525,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "海外地区总使用时长，单位为min",
           "example": "",
@@ -2783,8 +2548,7 @@
           "name": "Status",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2794,8 +2558,7 @@
           "name": "Quality",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2804,7 +2567,6 @@
       "document": "实时语音转文本用量数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "统计值，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.23",
@@ -2812,8 +2574,7 @@
           "name": "Data",
           "required": true,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2829,8 +2590,7 @@
           "name": "UserId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2840,8 +2600,7 @@
           "name": "FileName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2851,8 +2610,7 @@
           "name": "RecordBeginTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2862,8 +2620,7 @@
           "name": "RecordStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2879,8 +2636,7 @@
           "name": "RoomId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2890,8 +2646,7 @@
           "name": "Uins",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2901,8 +2656,7 @@
           "name": "StrRoomId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2912,8 +2666,7 @@
           "name": "StrUins",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2922,7 +2675,6 @@
       "document": "语音检测详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "违规场景，参照<a href=\"https://cloud.tencent.com/document/product/607/37622#Label_Value\">Label</a>定义",
           "example": "",
@@ -2933,7 +2685,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该场景下概率[0.00,100.00],分值越大违规概率越高",
           "example": "",
@@ -2944,7 +2695,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "违规关键字",
           "example": "",
@@ -2955,7 +2705,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关键字在音频的开始时间，从0开始的偏移量，单位为毫秒",
           "example": "",
@@ -2966,7 +2715,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关键字在音频的结束时间，从0开始的偏移量,，单位为毫秒",
           "example": "",
@@ -2983,7 +2731,6 @@
       "document": "语音检测结果，Code 为 0 时返回",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "流检测时返回，音频转存地址，保留30min\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -2991,11 +2738,9 @@
           "name": "DumpUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否违规",
           "example": "false",
@@ -3003,11 +2748,9 @@
           "name": "HitFlag",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "违规主要类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "normal",
@@ -3015,11 +2758,9 @@
           "name": "MainType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "语音检测详情",
           "example": "无",
@@ -3027,11 +2768,9 @@
           "name": "ScanDetail",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "gme实时语音房间ID，透传任务传入时的RoomId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12345",
@@ -3039,11 +2778,9 @@
           "name": "RoomId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "gme实时语音用户ID，透传任务传入时的OpenId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12345",
@@ -3051,11 +2788,9 @@
           "name": "OpenId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -3063,11 +2798,9 @@
           "name": "Info",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流检测时分片在流中的偏移时间，单位毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -3075,11 +2808,9 @@
           "name": "Offset",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流检测时分片时长\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -3087,11 +2818,9 @@
           "name": "Duration",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分片开始检测时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -3099,8 +2828,7 @@
           "name": "PieceStartTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3112,67 +2840,55 @@
           "disabled": false,
           "document": "应用ID，登录[控制台 - 服务管理](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID",
           "example": "1400000000",
-          "is_base64": false,
           "member": "uint64",
           "name": "BizId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "语音检测场景，参数值目前要求为 default。 预留场景设置： 谩骂、色情、广告、违禁等场景，<a href=\"#Label_Value\">具体取值见上述 Label 说明。</a>",
           "example": "[\"default\\n\"]",
-          "is_base64": false,
           "member": "string",
           "name": "Scenes",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "是否为直播流。值为 false 时表示普通语音文件检测；为 true 时表示语音流检测。",
           "example": "false",
-          "is_base64": false,
           "member": "bool",
           "name": "Live",
           "required": true,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
           "document": "语音检测任务列表，列表最多支持100个检测任务。结构体中包含：\n<li>DataId：数据的唯一ID</li>\n<li>Url：数据文件的url，为 urlencode 编码，流式则为拉流地址</li>",
           "example": "无",
-          "is_base64": false,
           "member": "Task",
           "name": "Tasks",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "异步检测结果回调地址，具体见上述<a href=\"#Callback_Declare\">回调相关说明</a>。（说明：该字段为空时，必须通过接口(查询语音检测结果)获取检测结果）。",
           "example": "https://0.0.0.0/user_callback",
-          "is_base64": false,
           "member": "string",
           "name": "Callback",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "语种，不传默认中文",
           "example": "jp",
-          "is_base64": false,
           "member": "string",
           "name": "Lang",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3188,8 +2904,7 @@
           "name": "Data",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3204,7 +2919,6 @@
       "document": "语音检测返回结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据ID",
           "example": "",
@@ -3215,7 +2929,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "",
@@ -3244,8 +2957,7 @@
           "name": "RealTimeSpeech",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3255,8 +2967,7 @@
           "name": "VoiceMessage",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3266,8 +2977,7 @@
           "name": "Porn",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3277,8 +2987,7 @@
           "name": "Live",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3288,8 +2997,7 @@
           "name": "RealTimeAsr",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3299,8 +3007,7 @@
           "name": "TextTranslate",
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3309,48 +3016,40 @@
       "document": "StartRecord请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID。",
           "example": "3400352518",
           "member": "uint64",
           "name": "BizId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房间ID。",
           "example": "1987",
           "member": "string",
           "name": "RoomId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制类型：1代表单流 2代表混流 3代表单流和混流。",
           "example": "1",
           "member": "uint64",
           "name": "RecordMode",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定订阅流白名单或者黑名单（不传默认订阅房间内所有音频流）。",
           "example": "无",
           "member": "SubscribeRecordUserIds",
           "name": "SubscribeRecordUserIds",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3366,8 +3065,7 @@
           "name": "TaskId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3382,7 +3080,6 @@
       "document": "用量数据单元",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "日期，格式为年-月-日，如2018-07-13",
           "example": "",
@@ -3393,7 +3090,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计值",
           "example": "",
@@ -3410,7 +3106,6 @@
       "document": "服务开关状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "服务开关状态， 0-正常，1-关闭",
           "example": "",
@@ -3427,26 +3122,22 @@
       "document": "StopRecord请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID。",
           "example": "446192236330927912",
           "member": "uint64",
           "name": "TaskId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID。",
           "example": "3400352518",
           "member": "uint64",
           "name": "BizId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3467,7 +3158,6 @@
       "document": "流式转文本用量数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "统计值，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.23",
@@ -3475,8 +3165,7 @@
           "name": "Data",
           "required": true,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3485,7 +3174,6 @@
       "document": "指定订阅流白名单或者黑名单。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "订阅音频流黑名单，指定不订阅哪几个UserId的音频流，例如[\"1\", \"2\", \"3\"], 代表不订阅UserId 1，2，3的音频流。默认不填订阅房间内所有音频流，订阅列表用户数不超过20。\n注意：只能同时设置UnSubscribeAudioUserIds、SubscribeAudioUserIds 其中1个参数",
           "example": "无",
@@ -3493,11 +3181,9 @@
           "name": "UnSubscribeUserIds",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅音频流白名单，指定订阅哪几个UserId的音频流，例如[\"1\", \"2\", \"3\"], 代表订阅UserId 1，2，3的音频流。默认不填订阅房间内所有音频流，订阅列表用户数不超过20。\n注意：只能同时设置UnSubscribeAudioUserIds、SubscribeAudioUserIds 其中1个参数。",
           "example": "无",
@@ -3505,8 +3191,7 @@
           "name": "SubscribeUserIds",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -3515,7 +3200,6 @@
       "document": "标签列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -3526,7 +3210,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -3543,7 +3226,6 @@
       "document": "语音检测任务列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据的唯一ID",
           "example": "",
@@ -3554,7 +3236,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据文件的url，为 urlencode 编码，流式则为拉流地址",
           "example": "",
@@ -3565,7 +3246,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "gme实时语音房间ID，通过gme实时语音进行语音分析时输入",
           "example": "",
@@ -3576,7 +3256,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "gme实时语音用户ID，通过gme实时语音进行语音分析时输入",
           "example": "",
@@ -3593,40 +3272,31 @@
       "document": "UpdateScanRooms请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "应用ID",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "BizId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "需要送检的所有房间号。多个房间号之间用\",\"分隔。示例：\"0001,0002,0003\"",
           "example": "\"1\"",
-          "is_base64": false,
           "member": "string",
           "name": "RoomIdString",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "符合此正则表达式规则的房间号将被送检。示例：^6.*（表示所有以6开头的房间号将被送检）",
           "example": "[\"1\"]",
-          "is_base64": false,
           "member": "string",
           "name": "RoomIdRegex",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3642,8 +3312,7 @@
           "name": "ErrorCode",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3661,34 +3330,28 @@
           "disabled": false,
           "document": "应用ID",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "BizId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "需要送检的所有用户号。多个用户号之间用\",\"分隔。示例：\"0001,0002,0003\"",
           "example": "\"1\"",
-          "is_base64": false,
           "member": "string",
           "name": "UserIdString",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "符合此正则表达式规则的用户号将被送检。示例：[\"^6.*\"] 表示所有以6开头的用户号将被送检",
           "example": "[\"1\"]",
-          "is_base64": false,
           "member": "string",
           "name": "UserIdRegex",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3704,8 +3367,7 @@
           "name": "ErrorCode",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3720,7 +3382,6 @@
       "document": "用户麦克风状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "开麦状态。1表示关闭麦克风，2表示打开麦克风。",
           "example": "1",
@@ -3728,11 +3389,9 @@
           "name": "EnableMic",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端用于标识用户的Openid。（Uid、StrUid必须填一个，优先处理StrUid。）",
           "example": "9798",
@@ -3740,11 +3399,9 @@
           "name": "Uid",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端用于标识字符串型用户的Openid。（Uid、StrUid必须填一个，优先处理StrUid。）",
           "example": "jelly",
@@ -3752,8 +3409,7 @@
           "name": "StrUid",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -3769,8 +3425,7 @@
           "name": "Status",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3780,8 +3435,7 @@
           "name": "SceneInfos",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -3790,7 +3444,6 @@
       "document": "语音过滤用量统计数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "语音过滤总时长，单位为min",
           "example": "100",
@@ -3798,8 +3451,7 @@
           "name": "Duration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3808,7 +3460,6 @@
       "document": "离线语音服务配置数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "离线语音服务开关，取值：open/close",
           "example": "",
@@ -3819,7 +3470,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "离线语音支持语种，取值： all-全部，cnen-中英文。默认为中英文",
           "example": "",
@@ -3836,7 +3486,6 @@
       "document": "语音消息用量统计信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "离线语音DAU",
           "example": "",

@@ -47,7 +47,6 @@
       "document": "终端骚扰保护请求内容",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "电话号码",
           "example": "",
@@ -64,7 +63,6 @@
       "document": "终端骚扰保护",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标记类型\n 0: 无标记\n 50:骚扰电话\n 51:房产中介\n 52:保险理财\n 53:广告推销\n 54:诈骗电话\n 55:快递电话\n 56:出租车专车",
           "example": "",
@@ -75,7 +73,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标记次数",
           "example": "",
@@ -92,7 +89,6 @@
       "document": "CreateSmpnEpa请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "企业号码认证请求内容",
           "example": "",
@@ -102,7 +98,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用于计费的资源ID",
           "example": "",
@@ -139,7 +134,6 @@
       "document": "DescribeSmpnChp请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "客户用于计费的资源Id",
           "example": "",
@@ -149,7 +143,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "终端骚扰保护请求",
           "example": "",
@@ -186,7 +179,6 @@
       "document": "DescribeSmpnFnr请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "虚假号码识别请求内容",
           "example": "",
@@ -196,7 +188,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用于计费的资源ID",
           "example": "",
@@ -233,7 +224,6 @@
       "document": "DescribeSmpnMhm请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "号码营销监控请求内容",
           "example": "",
@@ -243,7 +233,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用于计费的资源ID",
           "example": "",
@@ -280,7 +269,6 @@
       "document": "DescribeSmpnMrl请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "恶意标记等级请求内容",
           "example": "",
@@ -290,7 +278,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用于计费的资源ID",
           "example": "",
@@ -327,7 +314,6 @@
       "document": "企业号码认证请求",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "电话号码",
           "example": "",
@@ -338,7 +324,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "黄页名称",
           "example": "",
@@ -355,7 +340,6 @@
       "document": "企业号码认证回应",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "0成功 其他失败",
           "example": "",
@@ -372,7 +356,6 @@
       "document": "虚假号码识别请求",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "电话号码",
           "example": "",
@@ -389,7 +372,6 @@
       "document": "虚假号码识别回应",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "虚假号码描述",
           "example": "",
@@ -406,7 +388,6 @@
       "document": "号码营销监控请求",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "电话号码",
           "example": "",
@@ -423,7 +404,6 @@
       "document": "号码营销监控回应",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标记类型\n 0: 无标记\n 50:骚扰电话\n 51:房产中介\n 52:保险理财\n 53:广告推销\n 54:诈骗电话\n 55:快递电话\n 56:出租车专车",
           "example": "",
@@ -434,7 +414,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标记次数",
           "example": "",
@@ -451,7 +430,6 @@
       "document": "号码恶意标记等级请求",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "电话号码",
           "example": "",
@@ -468,7 +446,6 @@
       "document": "号码恶意标记等级",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "骚扰电话恶意标记等级",
           "example": "",
@@ -479,7 +456,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房产中介恶意标记等级",
           "example": "",
@@ -490,7 +466,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "保险理财恶意标记等级",
           "example": "",
@@ -501,7 +476,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "广告推销恶意标记等级",
           "example": "",
@@ -512,7 +486,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "诈骗电话恶意标记等级",
           "example": "",

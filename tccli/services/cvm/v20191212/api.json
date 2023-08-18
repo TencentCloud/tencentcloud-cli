@@ -25,8 +25,7 @@
           "member": "int64",
           "name": "Limit",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -35,8 +34,7 @@
           "member": "int64",
           "name": "Offset",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -45,8 +43,7 @@
           "member": "string",
           "name": "Product",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -55,8 +52,7 @@
           "member": "int64",
           "name": "TaskStatus",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -65,8 +61,7 @@
           "member": "int64",
           "name": "TaskTypeIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -75,8 +70,7 @@
           "member": "string",
           "name": "TaskIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -85,8 +79,7 @@
           "member": "string",
           "name": "InstanceIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -95,8 +88,7 @@
           "member": "string",
           "name": "Aliases",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -105,8 +97,7 @@
           "member": "datetime",
           "name": "StartDate",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -115,8 +106,7 @@
           "member": "datetime",
           "name": "EndDate",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -125,8 +115,7 @@
           "member": "string",
           "name": "OrderField",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -135,8 +124,7 @@
           "member": "int64",
           "name": "Order",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -151,8 +139,7 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -161,8 +148,7 @@
           "member": "RepairTaskInfoSet",
           "name": "RepairTaskInfoSet",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -177,7 +163,6 @@
       "document": "DescribeTaskInfo 返回任务列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "repair-pygkh5q7",
@@ -185,11 +170,9 @@
           "name": "TaskId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ins-rewhxuo7",
@@ -197,11 +180,9 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机别名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -209,11 +190,9 @@
           "name": "Alias",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "故障类型id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "102",
@@ -221,11 +200,9 @@
           "name": "TaskTypeId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务状态id\nTaskStatus（任务状态ID）与状态中文名的对应关系如下：\n1：未授权\n2：已授权\n3：已处理\n4：已预约\n5：已取消\n6：已避免\n注意：此字段可能返回 null，表示取不到有\n效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -233,11 +210,9 @@
           "name": "TaskStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2018-07-16 10:42:29",
@@ -245,11 +220,9 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2018-07-16 12:42:29",
@@ -257,11 +230,9 @@
           "name": "AuthTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2018-07-16 13:42:29",
@@ -269,11 +240,9 @@
           "name": "EndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Test",
@@ -281,11 +250,9 @@
           "name": "TaskDetail",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机状态 id\nDeviceStatus（主机状态 ID）与状态中文名的\n对应关系如下：\n1：故障中\n2：处理中\n3：正常\n4：已预约\n5：已取消\n6：已避免\n注意：此字段可能返回 null，表示取不到有\n效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -293,11 +260,9 @@
           "name": "DeviceStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机操作状态 id\nOperateStatus（主机操作状态 ID）与状态中文名的\n对应关系如下：\n1：未授权\n2：已授权\n3：已处理\n4：已预约\n5：已取消\n6：已避免\n注意：此字段可能返回 null，表示取不到有\n效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -305,11 +270,9 @@
           "name": "OperateStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-beijing-bls-1",
@@ -317,11 +280,9 @@
           "name": "Zone",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-beijing",
@@ -329,11 +290,9 @@
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属网络\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-34cxlz7z",
@@ -341,11 +300,9 @@
           "name": "VpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所在子网\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "subnet-1so5ae8m",
@@ -353,11 +310,9 @@
           "name": "SubnetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sub1",
@@ -365,11 +320,9 @@
           "name": "SubnetName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -377,11 +330,9 @@
           "name": "VpcName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网ip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.10.1.9",
@@ -389,11 +340,9 @@
           "name": "WanIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内网IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.100.230.9",
@@ -401,11 +350,9 @@
           "name": "LanIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "故障类中文名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "实例运行异常",
@@ -413,11 +360,9 @@
           "name": "TaskTypeName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "故障类型，取值：unconfirmed (不明确故障)；confirmed(明确故障)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10001",
@@ -425,11 +370,9 @@
           "name": "TaskSubType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务授权类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AuthorizeRepair",
@@ -437,11 +380,9 @@
           "name": "AuthType",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源类别：\nCVM\nCDH\nCPM1.0\nCPM2.0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CVM",
@@ -449,11 +390,9 @@
           "name": "Product",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权渠道字段展示，取值列表为：\n0.Waiting_auth 待授权\n1.Customer_auth 客户操作授权\n2.System_mandatory_auth 系统默认授权\n3.Pre_policy_auth 预置策略授权\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Customer_auth",
@@ -461,8 +400,7 @@
           "name": "AuthSource",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

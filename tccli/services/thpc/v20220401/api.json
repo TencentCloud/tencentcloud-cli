@@ -124,26 +124,22 @@
       "document": "AddClusterStorageOption请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID。",
           "example": "hpc-5lyv94lq",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群存储选项。",
           "example": "无",
           "member": "StorageOption",
           "name": "StorageOption",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -170,8 +166,7 @@
           "member": "Placement",
           "name": "Placement",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -180,8 +175,7 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -190,8 +184,7 @@
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -200,8 +193,7 @@
           "member": "int64",
           "name": "Count",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -210,8 +202,7 @@
           "member": "string",
           "name": "ImageId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -220,8 +211,7 @@
           "member": "string",
           "name": "InstanceChargeType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -230,8 +220,7 @@
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -240,8 +229,7 @@
           "member": "string",
           "name": "InstanceType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -250,8 +238,7 @@
           "member": "SystemDisk",
           "name": "SystemDisk",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -260,8 +247,7 @@
           "member": "DataDisk",
           "name": "DataDisks",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -270,8 +256,7 @@
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -280,8 +265,7 @@
           "member": "string",
           "name": "InstanceName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -290,8 +274,7 @@
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -300,8 +283,7 @@
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -310,8 +292,7 @@
           "member": "string",
           "name": "ClientToken",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -320,8 +301,7 @@
           "member": "string",
           "name": "QueueName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -330,8 +310,7 @@
           "member": "string",
           "name": "NodeRole",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -340,8 +319,7 @@
           "member": "bool",
           "name": "DryRun",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -350,8 +328,7 @@
           "member": "string",
           "name": "NodeType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -378,8 +355,7 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -388,8 +364,7 @@
           "member": "string",
           "name": "QueueName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -410,7 +385,6 @@
       "document": "BindAutoScalingGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID。",
           "example": "hpc-5lyv94lq",
@@ -420,7 +394,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "弹性伸缩启动配置ID。",
           "example": "asc-jhf9c1gi",
@@ -430,7 +403,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "弹性伸缩组ID。",
           "example": "asg-aesc6pcq",
@@ -440,7 +412,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "队列名称。",
           "example": "all.q",
@@ -450,7 +421,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务连续等待时间，队列的任务处于连续等待的时间。单位秒。默认值120。",
           "example": "120",
@@ -460,7 +430,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点连续空闲（未运行作业）时间，一个节点连续处于空闲状态时间。单位秒。默认值300。",
           "example": "300",
@@ -470,7 +439,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启自动扩容，默认值true。",
           "example": "无",
@@ -480,7 +448,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启自动缩容，默认值true。",
           "example": "无",
@@ -490,7 +457,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否只预检此次请求。\ntrue：发送检查请求，不会绑定弹性伸缩组。检查项包括是否填写了必需参数，请求格式，业务限制。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId。\nfalse（默认）：发送正常请求，通过检查后直接绑定弹性伸缩组。",
           "example": "无",
@@ -518,7 +484,6 @@
       "document": "描述CFS文件系统版本和挂载信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统本地挂载路径。",
           "example": "/data/",
@@ -526,11 +491,9 @@
           "name": "LocalPath",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统远程挂载ip及路径。",
           "example": "172.0.0.1:/",
@@ -538,11 +501,9 @@
           "name": "RemotePath",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统协议类型，默认值NFS 3.0。\n<li>NFS 3.0。\n<li>NFS 4.0。\n<li>TURBO。",
           "example": "NFS 3.0",
@@ -550,11 +511,9 @@
           "name": "Protocol",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统存储类型，默认值SD；其中 SD 为通用标准型标准型存储， HP为通用性能型存储， TB为turbo标准型， TP 为turbo性能型。",
           "example": "SD",
@@ -562,8 +521,7 @@
           "name": "StorageType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -572,7 +530,6 @@
       "document": "CFS存储选项概览信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统本地挂载路径。",
           "example": "/data/",
@@ -580,11 +537,9 @@
           "name": "LocalPath",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统远程挂载ip及路径。",
           "example": "172.0.0.1:/",
@@ -592,11 +547,9 @@
           "name": "RemotePath",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统协议类型。\n<li>NFS 3.0。\n<li>NFS 4.0。\n<li>TURBO。",
           "example": "NFS 3.0",
@@ -604,11 +557,9 @@
           "name": "Protocol",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统存储类型，默认值SD；其中 SD 为通用标准型标准型存储， HP为通用性能型存储， TB为turbo标准型， TP 为turbo性能型。",
           "example": "SD",
@@ -616,8 +567,7 @@
           "name": "StorageType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -633,8 +583,7 @@
           "name": "ClusterId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -644,8 +593,7 @@
           "name": "ActivityId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -655,8 +603,7 @@
           "name": "ActivityType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -666,8 +613,7 @@
           "name": "ActivityStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -677,8 +623,7 @@
           "name": "ActivityStatusCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -688,8 +633,7 @@
           "name": "ResultDetail",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -699,8 +643,7 @@
           "name": "Cause",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -710,8 +653,7 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -721,8 +663,7 @@
           "name": "RelatedNodeActivitySet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -732,8 +673,7 @@
           "name": "StartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -743,8 +683,7 @@
           "name": "EndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -753,7 +692,6 @@
       "document": "集群概览信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID。",
           "example": "hpc-2mv1i3d8",
@@ -761,11 +699,9 @@
           "name": "ClusterId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群状态。取值范围：<br><li>PENDING：创建中<br><li>INITING：初始化中<br><li>INIT_FAILED：初始化失败<br><li>RUNNING：运行中<br><li>TERMINATING：销毁中",
           "example": "RUNNING",
@@ -773,11 +709,9 @@
           "name": "ClusterStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群名称。",
           "example": "无",
@@ -785,11 +719,9 @@
           "name": "ClusterName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群位置信息。",
           "example": "无",
@@ -797,11 +729,9 @@
           "name": "Placement",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群创建时间。",
           "example": "无",
@@ -809,11 +739,9 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群调度器。",
           "example": "SGE",
@@ -821,11 +749,9 @@
           "name": "SchedulerType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计算节点数量。",
           "example": "1",
@@ -833,11 +759,9 @@
           "name": "ComputeNodeCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计算节点概览。",
           "example": "无",
@@ -845,11 +769,9 @@
           "name": "ComputeNodeSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "管控节点数量。",
           "example": "1",
@@ -857,11 +779,9 @@
           "name": "ManagerNodeCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "管控节点概览。",
           "example": "无",
@@ -869,11 +789,9 @@
           "name": "ManagerNodeSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "登录节点概览。",
           "example": "无",
@@ -881,11 +799,9 @@
           "name": "LoginNodeSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "登录节点数量。",
           "example": "1",
@@ -893,11 +809,9 @@
           "name": "LoginNodeCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群所属私有网络ID。",
           "example": "vpc-r9fr2jzy",
@@ -905,8 +819,7 @@
           "name": "VpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -915,7 +828,6 @@
       "document": "计算节点信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。",
           "example": "POSTPAID_BY_HOUR",
@@ -923,11 +835,9 @@
           "name": "InstanceChargeType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。",
           "example": "无",
@@ -935,11 +845,9 @@
           "name": "InstanceChargePrepaid",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点机型。不同实例机型指定了不同的资源规格。\n<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。",
           "example": "S2.SMALL2",
@@ -947,11 +855,9 @@
           "name": "InstanceType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
           "example": "无",
@@ -959,11 +865,9 @@
           "name": "SystemDisk",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。",
           "example": "无",
@@ -971,11 +875,9 @@
           "name": "DataDisks",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。",
           "example": "无",
@@ -983,11 +885,9 @@
           "name": "InternetAccessible",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点显示名称。<br><li>\n不指定节点显示名称则默认显示‘未命名’。\n最多支持60个字符。",
           "example": "未命名",
@@ -995,8 +895,7 @@
           "name": "InstanceName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -1005,7 +904,6 @@
       "document": "计算节点概览。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "计算节点ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ins-jfhc307q",
@@ -1028,8 +926,7 @@
           "member": "Placement",
           "name": "Placement",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -1038,8 +935,7 @@
           "member": "ManagerNode",
           "name": "ManagerNode",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -1048,8 +944,7 @@
           "member": "int64",
           "name": "ManagerNodeCount",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1058,8 +953,7 @@
           "member": "ComputeNode",
           "name": "ComputeNode",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -1068,8 +962,7 @@
           "member": "int64",
           "name": "ComputeNodeCount",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1078,8 +971,7 @@
           "member": "string",
           "name": "SchedulerType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1088,8 +980,7 @@
           "member": "string",
           "name": "ImageId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1098,8 +989,7 @@
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -1108,8 +998,7 @@
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -1118,8 +1007,7 @@
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1128,8 +1016,7 @@
           "member": "string",
           "name": "ClientToken",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1138,8 +1025,7 @@
           "member": "bool",
           "name": "DryRun",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -1148,8 +1034,7 @@
           "member": "string",
           "name": "AccountType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1158,8 +1043,7 @@
           "member": "string",
           "name": "ClusterName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1168,8 +1052,7 @@
           "member": "StorageOption",
           "name": "StorageOption",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -1178,8 +1061,7 @@
           "member": "LoginNode",
           "name": "LoginNode",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -1188,8 +1070,7 @@
           "member": "int64",
           "name": "LoginNodeCount",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1198,8 +1079,7 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1208,8 +1088,7 @@
           "member": "string",
           "name": "AutoScalingType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1224,8 +1103,7 @@
           "member": "string",
           "name": "ClusterId",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1240,7 +1118,6 @@
       "document": "描述了数据盘的信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[存储概述](https://cloud.tencent.com/document/product/213/4952)。默认值为0，表示不购买数据盘。更多限制详见产品文档。",
           "example": "0",
@@ -1251,7 +1128,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br><li>LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><li>CLOUD_HSSD：增强型SSD云硬盘<br><li>CLOUD_TSSD：极速型SSD云硬盘<br><br>默认取值：LOCAL_BASIC。",
           "example": "LOCAL_BASIC",
@@ -1268,7 +1144,6 @@
       "document": "DeleteCluster请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID。",
           "example": "hpc-5lyv94lq",
@@ -1296,26 +1171,22 @@
       "document": "DeleteClusterStorageOption请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID。",
           "example": "hpc-5lyv94lq",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本地挂载路径。",
           "example": "/data/",
           "member": "string",
           "name": "LocalPath",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1336,7 +1207,6 @@
       "document": "DeleteNodes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID。",
           "example": "hpc-5lyv94lq",
@@ -1346,7 +1216,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点ID。",
           "example": "无",
@@ -1380,8 +1249,7 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1390,8 +1258,7 @@
           "member": "string",
           "name": "QueueName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1418,8 +1285,7 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1434,8 +1300,7 @@
           "member": "string",
           "name": "ClusterId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1444,8 +1309,7 @@
           "member": "int64",
           "name": "ExpansionBusyTime",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1454,8 +1318,7 @@
           "member": "int64",
           "name": "ShrinkIdleTime",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1464,8 +1327,7 @@
           "member": "QueueConfigOverview",
           "name": "QueueConfigs",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1486,8 +1348,7 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1496,8 +1357,7 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1506,8 +1366,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1522,8 +1381,7 @@
           "member": "ClusterActivity",
           "name": "ClusterActivitySet",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1532,8 +1390,7 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1554,8 +1411,7 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1570,8 +1426,7 @@
           "member": "StorageOptionOverview",
           "name": "StorageOption",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1592,8 +1447,7 @@
           "member": "string",
           "name": "ClusterIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1602,8 +1456,7 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1612,8 +1465,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1628,8 +1480,7 @@
           "member": "ClusterOverview",
           "name": "ClusterSet",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1638,8 +1489,7 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1660,8 +1510,7 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1670,8 +1519,7 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1680,8 +1528,7 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1690,8 +1537,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1706,8 +1552,7 @@
           "member": "NodeOverview",
           "name": "NodeSet",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1716,8 +1561,7 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1738,8 +1582,7 @@
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1748,8 +1591,7 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1758,8 +1600,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1774,8 +1615,7 @@
           "member": "QueueOverview",
           "name": "QueueSet",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1784,8 +1624,7 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1800,7 +1639,6 @@
       "document": "弹性扩容节点配置信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "扩容实例所在的位置。",
           "example": "无",
@@ -1808,11 +1646,9 @@
           "name": "Placement",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。",
           "example": "POSTPAID_BY_HOUR",
@@ -1820,11 +1656,9 @@
           "name": "InstanceChargeType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。",
           "example": "无",
@@ -1832,11 +1666,9 @@
           "name": "InstanceChargePrepaid",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点机型。不同实例机型指定了不同的资源规格。\n<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。",
           "example": "S2.SMALL2",
@@ -1844,11 +1676,9 @@
           "name": "InstanceType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络相关信息配置。",
           "example": "无",
@@ -1856,8 +1686,7 @@
           "name": "VirtualPrivateCloud",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -1873,8 +1702,7 @@
           "name": "InstanceType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1884,8 +1712,7 @@
           "name": "Placement",
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1895,8 +1722,7 @@
           "name": "InstanceChargeType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1906,8 +1732,7 @@
           "name": "InstanceChargePrepaid",
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1917,8 +1742,7 @@
           "name": "VirtualPrivateCloud",
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1928,8 +1752,7 @@
           "name": "ImageId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1939,8 +1762,7 @@
           "name": "InternetAccessible",
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1950,8 +1772,7 @@
           "name": "SystemDisk",
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1961,8 +1782,7 @@
           "name": "DataDisks",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1978,8 +1798,7 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1989,8 +1808,7 @@
           "name": "Values",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -1999,7 +1817,6 @@
       "document": "描述GooseFS挂载信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统本地挂载路径。",
           "example": "/data",
@@ -2007,11 +1824,9 @@
           "name": "LocalPath",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统远程挂载路径。",
           "example": "/data/goosefs-fuse",
@@ -2019,11 +1834,9 @@
           "name": "RemotePath",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统master的ip和端口。",
           "example": "无",
@@ -2031,8 +1844,7 @@
           "name": "Masters",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -2041,7 +1853,6 @@
       "document": "GooseFS存储选项概览信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统本地挂载路径。",
           "example": "/data/",
@@ -2049,11 +1860,9 @@
           "name": "LocalPath",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统远程挂载路径。",
           "example": "/data/goosefs-fuse/",
@@ -2061,11 +1870,9 @@
           "name": "RemotePath",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统master的ip和端口。",
           "example": "无",
@@ -2073,8 +1880,7 @@
           "name": "Masters",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2083,7 +1889,6 @@
       "document": "描述了实例的计费模式",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36, 48, 60。",
           "example": "1",
@@ -2094,7 +1899,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动续费标识。取值范围：\nNOTIFY_AND_AUTO_RENEW：通知过期且自动续费\nNOTIFY_AND_MANUAL_RENEW：通知过期不自动续费\nDISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费\n\n默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。",
           "example": "NOTIFY_AND_AUTO_RENEW",
@@ -2111,7 +1915,6 @@
       "document": "描述了实例的公网可访问性，声明了实例的公网使用计费模式，最大带宽等",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网络计费类型。取值范围：\nBANDWIDTH_PREPAID：预付费按带宽结算\nTRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费\nBANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费\nBANDWIDTH_PACKAGE：带宽包用户\n默认取值：非带宽包用户默认与子机付费类型保持一致。",
           "example": "TRAFFIC_POSTPAID_BY_HOUR",
@@ -2122,7 +1925,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网出带宽上限，单位：Mbps。默认值：0Mbps。不同机型带宽上限范围不一致，具体限制详见购买网络带宽。",
           "example": "0",
@@ -2139,7 +1941,6 @@
       "document": "登录节点信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br>默认值：POSTPAID_BY_HOUR。",
           "example": "POSTPAID_BY_HOUR",
@@ -2150,7 +1951,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。",
           "example": "无",
@@ -2161,7 +1961,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点机型。不同实例机型指定了不同的资源规格。\n<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。",
           "example": "S2.SMALL2",
@@ -2172,7 +1971,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
           "example": "无",
@@ -2183,7 +1981,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。",
           "example": "无",
@@ -2194,7 +1991,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。",
           "example": "无",
@@ -2205,7 +2001,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点显示名称。<br><li>\n不指定节点显示名称则默认显示‘未命名’。\n最多支持60个字符。",
           "example": "未命名",
@@ -2222,7 +2017,6 @@
       "document": "登录节点概览。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "登录节点ID。",
           "example": "ins-jfhc307q",
@@ -2239,7 +2033,6 @@
       "document": "描述了实例登录相关配置与信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：<br><li>Linux实例密码必须8到30位，至少包括两项[a-z]，[A-Z]、[0-9] 和 [( ) \\` ~ ! @ # $ % ^ & *  - + = | { } [ ] : ; ' , . ? / ]中的特殊符号。<br><li>Windows实例密码必须12到30位，至少包括三项[a-z]，[A-Z]，[0-9] 和 [( ) \\` ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ' , . ? /]中的特殊符号。<br><br>若不指定该参数，则由系统随机生成密码，并通过站内信方式通知到用户。",
           "example": "无",
@@ -2256,7 +2049,6 @@
       "document": "管控节点信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br>默认值：POSTPAID_BY_HOUR。",
           "example": "POSTPAID_BY_HOUR",
@@ -2267,7 +2059,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。",
           "example": "无",
@@ -2278,7 +2069,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点机型。不同实例机型指定了不同的资源规格。\n<br><li>对于付费模式为PREPAID或POSTPAID\\_BY\\_HOUR的实例创建，具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。",
           "example": "S2.SMALL2",
@@ -2289,7 +2079,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
           "example": "无",
@@ -2300,7 +2089,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。",
           "example": "无",
@@ -2311,7 +2099,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。",
           "example": "无",
@@ -2322,7 +2109,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点显示名称。<br><li>\n不指定节点显示名称则默认显示‘未命名’。\n</li><li>购买多个节点，如果指定模式串`{R:x}`，表示生成数字[`[x, x+n-1]`，其中`n`表示购买节点的数量，例如`server_{R:3}`，购买1个时，节点显示名称为`server_3`；购买2个时，节点显示名称分别为`server_3`，`server_4`。支持指定多个模式串`{R:x}`。\n购买多个节点，如果不指定模式串，则在节点显示名称添加后缀`1、2...n`，其中`n`表示购买节点的数量，例如`server_`，购买2个时，节点显示名称分别为`server_1`，`server_2`。</li><li>\n最多支持60个字符（包含模式串）。",
           "example": "未命名",
@@ -2339,7 +2125,6 @@
       "document": "管控节点概览。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "管控节点ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ins-jfhc307q",
@@ -2356,7 +2141,6 @@
       "document": "节点活动信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "节点活动所在的实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2364,11 +2148,9 @@
           "name": "NodeInstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点活动状态。取值范围：<br><li>RUNNING：运行中<br><li>SUCCESSFUL：活动成功<br><li>FAILED：活动失败",
           "example": "无",
@@ -2376,11 +2158,9 @@
           "name": "NodeActivityStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点活动状态码。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2388,11 +2168,9 @@
           "name": "NodeActivityStatusCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点活动状态原因。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2400,8 +2178,7 @@
           "name": "NodeActivityStatusReason",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2417,8 +2194,7 @@
           "name": "InstanceId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2428,8 +2204,7 @@
           "name": "Zone",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2439,8 +2214,7 @@
           "name": "NodeState",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2450,8 +2224,7 @@
           "name": "ImageId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2461,8 +2234,7 @@
           "name": "QueueName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2472,8 +2244,7 @@
           "name": "NodeRole",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2483,8 +2254,7 @@
           "name": "NodeType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2493,7 +2263,6 @@
       "document": "描述了实例的抽象位置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例所属的可用区名称。该参数可以通过调用  [DescribeZones](https://cloud.tencent.com/document/product/213/15707) 的返回值中的Zone字段来获取。",
           "example": "无",
@@ -2510,7 +2279,6 @@
       "document": "扩容队列配置。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "队列名称。",
           "example": "compute",
@@ -2518,11 +2286,9 @@
           "name": "QueueName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "队列中弹性节点数量最小值。取值范围0～200。",
           "example": "0",
@@ -2530,11 +2296,9 @@
           "name": "MinSize",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "队列中弹性节点数量最大值。取值范围0～200。",
           "example": "10",
@@ -2542,11 +2306,9 @@
           "name": "MaxSize",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启自动扩容。",
           "example": "无",
@@ -2554,11 +2316,9 @@
           "name": "EnableAutoExpansion",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启自动缩容。",
           "example": "无",
@@ -2566,11 +2326,9 @@
           "name": "EnableAutoShrink",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜和特定自定义镜像。",
           "example": "ins-jfhc307q",
@@ -2578,11 +2336,9 @@
           "name": "ImageId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
           "example": "无",
@@ -2590,11 +2346,9 @@
           "name": "SystemDisk",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。",
           "example": "无",
@@ -2602,11 +2356,9 @@
           "name": "DataDisks",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。",
           "example": "无",
@@ -2614,11 +2366,9 @@
           "name": "InternetAccessible",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩容节点配置信息。",
           "example": "无",
@@ -2626,8 +2376,7 @@
           "name": "ExpansionNodeConfigs",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -2643,8 +2392,7 @@
           "name": "QueueName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2654,8 +2402,7 @@
           "name": "MinSize",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2665,8 +2412,7 @@
           "name": "MaxSize",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2676,8 +2422,7 @@
           "name": "EnableAutoExpansion",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2687,8 +2432,7 @@
           "name": "EnableAutoShrink",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2698,8 +2442,7 @@
           "name": "ExpansionNodeConfigs",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2715,8 +2458,7 @@
           "name": "QueueName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2725,59 +2467,49 @@
       "document": "SetAutoScalingConfiguration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID。",
           "example": "hpc-5lyv94lq",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务连续等待时间，队列的任务处于连续等待的时间。单位秒。默认值120。",
           "example": "120",
           "member": "int64",
           "name": "ExpansionBusyTime",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点连续空闲（未运行作业）时间，一个节点连续处于空闲状态时间。单位秒。默认值300。",
           "example": "300",
           "member": "int64",
           "name": "ShrinkIdleTime",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩容队列配置列表。",
           "example": "无",
           "member": "QueueConfig",
           "name": "QueueConfigs",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否只预检此次请求。\ntrue：发送检查请求，不会绑定弹性伸缩组。检查项包括是否填写了必需参数，请求格式，业务限制。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId。\nfalse（默认）：发送正常请求，通过检查后直接绑定弹性伸缩组。",
           "example": "无",
           "member": "bool",
           "name": "DryRun",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2805,8 +2537,7 @@
           "name": "CFSOptions",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2816,8 +2547,7 @@
           "name": "GooseFSOptions",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -2833,8 +2563,7 @@
           "name": "CFSOptions",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2844,8 +2573,7 @@
           "name": "GooseFSOptions",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2854,7 +2582,6 @@
       "document": "描述了操作系统所在块设备即系统盘的信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "系统盘类型。系统盘类型限制详见存储概述。取值范围：\nLOCAL_BASIC：本地硬盘\nLOCAL_SSD：本地SSD硬盘\nCLOUD_BASIC：普通云硬盘\nCLOUD_SSD：SSD云硬盘\nCLOUD_PREMIUM：高性能云硬盘\n\n默认取值：当前有库存的硬盘类型。",
           "example": "CLOUD_BASIC",
@@ -2865,7 +2592,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "系统盘大小，单位：GB。默认值为 50",
           "example": "50",
@@ -2882,7 +2608,6 @@
       "document": "标签键值对。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键",
           "example": "无",
@@ -2893,7 +2618,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "无",
@@ -2910,7 +2634,6 @@
       "document": "描述了VPC相关信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID，形如`vpc-xxx`。有效的VpcId可通过登录[控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)查询；也可以调用接口 [DescribeVpcEx](/document/api/215/1372) ，从接口返回中的`unVpcId`字段获取。若在创建子机时VpcId与SubnetId同时传入`DEFAULT`，则强制使用默认vpc网络。",
           "example": "无",
@@ -2921,7 +2644,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络子网ID，形如`subnet-xxx`。有效的私有网络子网ID可通过登录[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口  [DescribeSubnets](/document/api/215/15784) ，从接口返回中的`unSubnetId`字段获取。若在创建子机时SubnetId与VpcId同时传入`DEFAULT`，则强制使用默认vpc网络。",
           "example": "无",

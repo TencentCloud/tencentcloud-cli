@@ -26,7 +26,6 @@
       "document": "bpaas申请入参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "审批流中表单唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "name",
@@ -34,11 +33,9 @@
           "name": "Key",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表单value\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "['v1','v2']",
@@ -46,11 +43,9 @@
           "name": "Value",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表单参数描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "测试",
@@ -58,8 +53,7 @@
           "name": "Name",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -68,7 +62,6 @@
       "document": "审批意见",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "方式 1:输入文字反馈  2:预设选项",
           "example": "1",
@@ -79,7 +72,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审批意见\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -96,7 +88,6 @@
       "document": "审批人",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户uin",
           "example": "1111111",
@@ -104,11 +95,9 @@
           "name": "Uin",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户类型 (1:用户  2:用户组)",
           "example": "1",
@@ -116,11 +105,9 @@
           "name": "Type",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aa",
@@ -128,11 +115,9 @@
           "name": "Desc",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aa",
@@ -140,11 +125,9 @@
           "name": "Nick",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动态获取Scf\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -152,8 +135,7 @@
           "name": "Scf",
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -168,8 +150,7 @@
           "member": "uint64",
           "name": "ApproveId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -184,8 +165,7 @@
           "member": "uint64",
           "name": "ApplyUin",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -194,8 +174,7 @@
           "member": "uint64",
           "name": "ApplyOwnUin",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -204,8 +183,7 @@
           "member": "string",
           "name": "ApplyUinNick",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -214,8 +192,7 @@
           "member": "uint64",
           "name": "BpaasId",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -224,8 +201,7 @@
           "member": "string",
           "name": "BpaasName",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -234,8 +210,7 @@
           "member": "ApplyParam",
           "name": "ApplicationParams",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -244,8 +219,7 @@
           "member": "string",
           "name": "Reason",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -254,8 +228,7 @@
           "member": "string",
           "name": "CreateTime",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -264,8 +237,7 @@
           "member": "uint64",
           "name": "Status",
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -274,8 +246,7 @@
           "member": "StatusNode",
           "name": "Nodes",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -284,8 +255,7 @@
           "member": "string",
           "name": "ApprovingNodeId",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -294,8 +264,7 @@
           "member": "string",
           "name": "ModifyTime",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -310,37 +279,31 @@
       "document": "OutApproveBpaasApplication请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "状态  1:通过  2:拒绝",
           "example": "1",
           "member": "uint64",
           "name": "Status",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审批单id",
           "example": "1",
           "member": "uint64",
           "name": "ApproveId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审批意见",
           "example": "''",
           "member": "string",
           "name": "Msg",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -361,7 +324,6 @@
       "document": "云函数SCF",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Scf函数地域id",
           "example": "1",
@@ -372,7 +334,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Scf函数地域",
           "example": "ap-guangzhou",
@@ -383,7 +344,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Scf函数名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -394,7 +354,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Scf函数入参\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -411,7 +370,6 @@
       "document": "Scf函数入参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数Key",
           "example": "name",
@@ -422,7 +380,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数类型 1用户输入 2预设参数 3表单参数",
           "example": "1",
@@ -433,7 +390,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数值",
           "example": "[]",
@@ -444,7 +400,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "姓名",
@@ -468,8 +423,7 @@
           "name": "NodeId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -479,8 +433,7 @@
           "name": "NodeName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -490,8 +443,7 @@
           "name": "NodeType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -501,8 +453,7 @@
           "name": "NextNode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -512,8 +463,7 @@
           "name": "Opinion",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -523,8 +473,7 @@
           "name": "ScfName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -534,8 +483,7 @@
           "name": "SubStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -545,8 +493,7 @@
           "name": "ApprovedUin",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -556,8 +503,7 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -567,8 +513,7 @@
           "name": "Msg",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -578,8 +523,7 @@
           "name": "Users",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -589,8 +533,7 @@
           "name": "IsApprove",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -600,8 +543,7 @@
           "name": "ApproveId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -611,8 +553,7 @@
           "name": "ApproveMethod",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -622,8 +563,7 @@
           "name": "ApproveType",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -633,8 +573,7 @@
           "name": "CallMethod",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -644,8 +583,7 @@
           "name": "DataHubId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -655,8 +593,7 @@
           "name": "TaskName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -666,8 +603,7 @@
           "name": "CKafkaRegion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -677,8 +613,7 @@
           "name": "ExternalUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -688,8 +623,7 @@
           "name": "ParallelNodes",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -699,8 +633,7 @@
           "name": "RejectedCloudFunctionMsg",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -710,8 +643,7 @@
           "name": "PrevNode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

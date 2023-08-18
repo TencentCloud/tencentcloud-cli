@@ -54,7 +54,6 @@
       "document": "人脸变年龄信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "变化到的人脸年龄 [10,80]。",
           "example": "",
@@ -65,7 +64,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框位置。若不输入则选择 Image 或 Url 中面积最大的人脸。  \n您可以通过 [人脸检测与分析](https://cloud.tencent.com/document/api/867/32800)  接口获取人脸框位置信息。",
           "example": "",
@@ -82,7 +80,6 @@
       "document": "CancelFaceMorphJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "人像渐变任务Job id",
           "example": "",
@@ -110,7 +107,6 @@
       "document": "ChangeAgePic请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "人脸变老变年轻信息。 \n您可以输入最多3个 AgeInfo 来实现给一张图中的最多3张人脸变老变年轻。",
           "example": "",
@@ -120,7 +116,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "",
@@ -130,7 +125,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url ，对应图片 base64 编码后大小不可超过5M。 \n图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的 Url 可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "",
@@ -140,7 +134,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回图像方式（base64 或 url ) ，二选一。url有效期为1天。",
           "example": "",
@@ -186,7 +179,6 @@
       "document": "FaceCartoonPic请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "xxxxx",
@@ -196,7 +188,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url ，对应图片 base64 编码后大小不可超过5M。\n图片的 Url、Image必须提供一个，如果都提供，只使用 Url。\n图片存储于腾讯云的 Url 可保障更高下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "xxxxx",
@@ -206,7 +197,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回图像方式（base64 或 url ) ，二选一。url有效期为1天。",
           "example": "无",
@@ -216,7 +206,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关闭全图动漫化，传入true（不分大小写）即关闭全图动漫化。",
           "example": "无",
@@ -264,7 +253,6 @@
       "document": "人像渐变返回结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "人像渐变输出的url\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -275,7 +263,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人像渐变输出的结果MD5，用于校验\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -286,7 +273,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人像渐变输出的结果封面图base64字符串\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -303,7 +289,6 @@
       "document": "人脸框信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框左上角纵坐标。",
           "example": "1",
@@ -314,7 +299,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框左上角横坐标。",
           "example": "1",
@@ -325,7 +309,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框宽度。",
           "example": "1",
@@ -336,7 +319,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框高度。",
           "example": "1",
@@ -353,7 +335,6 @@
       "document": "人脸转换性别信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "选择转换方向，0：男变女，1：女变男。",
           "example": "",
@@ -364,7 +345,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框位置。若不输入则选择 Image 或 Url 中面积最大的人脸。  \n您可以通过 [人脸检测与分析](https://cloud.tencent.com/document/api/867/32800)  接口获取人脸框位置信息。",
           "example": "",
@@ -381,7 +361,6 @@
       "document": "渐变参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片的展示时长，即单张图片静止不变的时间。GIF默认每张图片0.7s，视频默认每张图片0.5s。最大取值1s。",
           "example": "",
@@ -392,7 +371,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人像渐变的最长时间，即单张图片使用渐变特效的时间。 GIF默认值为0.5s，视频默值认为1s。最大取值1s。",
           "example": "",
@@ -409,7 +387,6 @@
       "document": "MorphFace请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。 \njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。 \n人员人脸总数量至少2张，不可超过5张。 \n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "无",
@@ -419,7 +396,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。 \nUrl、Image必须提供一个，如果都提供，只使用 Url。图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。 \n人员人脸总数量不可超过5张。 \n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。",
           "example": "[\"http:\\/\\/test.image.myqcloud.com\\/testA.jpg\\n\",\"http:\\/\\/test.image.myqcloud.com\\/testA.jpg\\n\"]",
@@ -429,7 +405,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸渐变参数。可调整每张图片的展示时长、人像渐变的最长时间",
           "example": "无",
@@ -439,7 +414,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频帧率，取值[1,25]。默认10",
           "example": "10",
@@ -449,7 +423,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频类型，取值0。目前仅支持MP4格式，默认为MP4格式",
           "example": "0",
@@ -459,7 +432,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频宽度，取值[128,1280]。默认值720",
           "example": "无",
@@ -469,7 +441,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频高度，取值[128,1280]。默认值1280",
           "example": "无",
@@ -517,7 +488,6 @@
       "document": "QueryFaceMorphJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "人像渐变任务Job id",
           "example": "Iyjz4Rj3OCt5Az9a",
@@ -575,7 +545,6 @@
       "document": "SwapGenderPic请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "人脸转化性别信息。 \n您可以输入最多3个 GenderInfo 来实现给一张图中的最多3张人脸转换性别。",
           "example": "",
@@ -585,7 +554,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "",
@@ -595,7 +563,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url ，对应图片 base64 编码后大小不可超过5M。 \n图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的 Url 可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "",
@@ -605,7 +572,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回图像方式（base64 或 url ) ，二选一。url有效期为1天。",
           "example": "",

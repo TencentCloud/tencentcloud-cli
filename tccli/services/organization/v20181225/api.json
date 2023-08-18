@@ -152,7 +152,6 @@
       "document": "AcceptOrganizationInvitation请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "邀请ID",
           "member": "uint64",
           "name": "Id",
@@ -178,7 +177,6 @@
       "document": "AddOrganizationNode请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "父组织单元ID",
           "member": "uint64",
           "name": "ParentNodeId",
@@ -186,7 +184,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "组织单元名字",
           "member": "string",
           "name": "Name",
@@ -219,7 +216,6 @@
       "document": "CancelOrganizationInvitation请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "邀请ID",
           "member": "uint64",
           "name": "Id",
@@ -245,7 +241,6 @@
       "document": "CreateOrganization请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "组织类型（目前固定为1）",
           "member": "uint64",
           "name": "OrgType",
@@ -299,7 +294,6 @@
       "document": "DeleteOrganizationMemberFromNode请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "被删除成员UIN",
           "member": "uint64",
           "name": "MemberUin",
@@ -307,7 +301,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "组织单元ID",
           "member": "uint64",
           "name": "NodeId",
@@ -333,7 +326,6 @@
       "document": "DeleteOrganizationMembers请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "被删除成员的UIN列表",
           "example": "[\"1\\r\\n\"]",
           "member": "uint64",
@@ -360,7 +352,6 @@
       "document": "DeleteOrganizationNodes请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "组织单元ID列表",
           "member": "uint64",
           "name": "NodeIds",
@@ -403,7 +394,6 @@
       "document": "DenyOrganizationInvitation请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "邀请ID",
           "member": "uint64",
           "name": "Id",
@@ -429,7 +419,6 @@
       "document": "GetOrganizationMember请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "组织成员UIN",
           "member": "uint64",
           "name": "MemberUin",
@@ -563,7 +552,6 @@
       "document": "ListOrganizationInvitations请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "是否被邀请。1：被邀请，0：发出的邀请",
           "member": "uint64",
           "name": "Invited",
@@ -571,7 +559,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量",
           "member": "uint64",
           "name": "Offset",
@@ -579,7 +566,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "限制数目",
           "member": "uint64",
           "name": "Limit",
@@ -619,7 +605,6 @@
       "document": "ListOrganizationMembers请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "偏移量",
           "member": "uint64",
           "name": "Offset",
@@ -627,7 +612,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "限制数目",
           "member": "uint64",
           "name": "Limit",
@@ -667,7 +651,6 @@
       "document": "ListOrganizationNodeMembers请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "企业组织单元ID",
           "member": "uint64",
           "name": "NodeId",
@@ -675,7 +658,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量",
           "member": "uint64",
           "name": "Offset",
@@ -683,7 +665,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "限制数目",
           "member": "uint64",
           "name": "Limit",
@@ -749,7 +730,6 @@
       "document": "MoveOrganizationMembersToNode请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "组织单元ID",
           "member": "uint64",
           "name": "NodeId",
@@ -757,7 +737,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "成员UIN列表",
           "member": "uint64",
           "name": "Uins",
@@ -783,7 +762,6 @@
       "document": "企业组织邀请",
       "members": [
         {
-          "default": "",
           "document": "邀请ID",
           "member": "uint64",
           "name": "Id",
@@ -792,7 +770,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "被邀请UIN",
           "member": "uint64",
           "name": "Uin",
@@ -801,7 +778,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建者UIN",
           "member": "uint64",
           "name": "HostUin",
@@ -810,7 +786,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建者名称",
           "member": "string",
           "name": "HostName",
@@ -819,7 +794,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建者邮箱",
           "member": "string",
           "name": "HostMail",
@@ -828,7 +802,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "邀请状态。-1：已过期，0：正常，1：已接受，2：已失效，3：已取消",
           "member": "uint64",
           "name": "Status",
@@ -837,7 +810,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "名称",
           "member": "string",
           "name": "Name",
@@ -846,7 +818,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "备注",
           "member": "string",
           "name": "Remark",
@@ -855,7 +826,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "企业组织类型",
           "member": "uint64",
           "name": "OrgType",
@@ -864,7 +834,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "邀请时间",
           "member": "datetime",
           "name": "InviteTime",
@@ -873,7 +842,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "过期时间",
           "member": "datetime",
           "name": "ExpireTime",
@@ -888,7 +856,6 @@
       "document": "企业组织成员",
       "members": [
         {
-          "default": "",
           "document": "UIN",
           "member": "uint64",
           "name": "Uin",
@@ -897,7 +864,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "名称",
           "member": "string",
           "name": "Name",
@@ -906,7 +872,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "备注",
           "member": "string",
           "name": "Remark",
@@ -915,7 +880,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "加入时间",
           "member": "datetime",
           "name": "JoinTime",
@@ -930,7 +894,6 @@
       "document": "企业组织单元",
       "members": [
         {
-          "default": "",
           "document": "组织单元ID",
           "member": "uint64",
           "name": "NodeId",
@@ -939,7 +902,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "名称",
           "member": "string",
           "name": "Name",
@@ -948,7 +910,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "父单元ID",
           "member": "uint64",
           "name": "ParentNodeId",
@@ -957,7 +918,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "成员数量",
           "member": "uint64",
           "name": "MemberCount",
@@ -972,7 +932,6 @@
       "document": "QuitOrganization请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "企业组织ID",
           "member": "uint64",
           "name": "OrgId",
@@ -998,7 +957,6 @@
       "document": "SendOrganizationInvitation请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "被邀请账户UIN",
           "example": "100005229292",
           "member": "uint64",
@@ -1007,7 +965,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "名称",
           "example": "testAccount",
           "member": "string",
@@ -1016,7 +973,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "备注",
           "example": "test",
           "member": "string",
@@ -1043,7 +999,6 @@
       "document": "UpdateOrganizationMember请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "成员UIN",
           "member": "uint64",
           "name": "MemberUin",
@@ -1051,7 +1006,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "名称",
           "member": "string",
           "name": "Name",
@@ -1059,7 +1013,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "备注",
           "member": "string",
           "name": "Remark",
@@ -1085,7 +1038,6 @@
       "document": "UpdateOrganizationNode请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "企业组织单元ID",
           "member": "uint64",
           "name": "NodeId",
@@ -1093,7 +1045,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "名称",
           "member": "string",
           "name": "Name",
@@ -1101,7 +1052,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "父单元ID",
           "member": "uint64",
           "name": "ParentNodeId",

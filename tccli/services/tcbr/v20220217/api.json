@@ -82,7 +82,6 @@
       "document": "BuildPacks信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "基础镜像",
           "example": "无",
@@ -93,7 +92,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "启动命令",
           "example": "无",
@@ -104,7 +102,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "语言",
           "example": "java",
@@ -115,7 +112,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上传文件名",
           "example": "无",
@@ -132,7 +128,6 @@
       "document": "cls日志信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "cls所属地域",
           "example": "ap-shanghai",
@@ -143,7 +138,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cls日志集ID",
           "example": "xxx-yyy-zzz-***",
@@ -154,7 +148,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cls日志主题ID",
           "example": "xxx-yyy-zzz-***",
@@ -165,7 +158,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2021-01-01T00:00:00+08:00",
@@ -188,8 +180,7 @@
           "member": "string",
           "name": "PackageType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -198,8 +189,7 @@
           "member": "string",
           "name": "Alias",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -208,8 +198,7 @@
           "member": "string",
           "name": "FreeQuota",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -218,8 +207,7 @@
           "member": "string",
           "name": "Flag",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -228,8 +216,7 @@
           "member": "string",
           "name": "VpcId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -238,8 +225,7 @@
           "member": "string",
           "name": "SubNetIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -248,8 +234,7 @@
           "member": "string",
           "name": "ReqKey",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -258,8 +243,7 @@
           "member": "string",
           "name": "Source",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -268,8 +252,7 @@
           "member": "string",
           "name": "Channel",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -278,8 +261,7 @@
           "member": "string",
           "name": "EnvId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -294,8 +276,7 @@
           "member": "string",
           "name": "EnvId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -304,8 +285,7 @@
           "member": "string",
           "name": "TranId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -320,7 +300,6 @@
       "document": "CreateCloudRunServer请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境Id",
           "example": "env-example",
@@ -330,7 +309,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务名",
           "example": "serverName",
@@ -340,7 +318,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署信息",
           "example": "无",
@@ -350,7 +327,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务配置信息",
           "example": "无",
@@ -388,7 +364,6 @@
       "document": "数据库资源信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库唯一标识",
           "example": "oc80v5zp",
@@ -399,7 +374,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态。包含以下取值：\n<li>INITIALIZING：资源初始化中</li>\n<li>RUNNING：运行中，可正常使用的状态</li>\n<li>UNUSABLE：禁用，不可用</li>\n<li>OVERDUE：资源过期</li>",
           "example": "INITIALIZING",
@@ -410,7 +384,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属地域。\n当前支持ap-shanghai",
           "example": "ap-shanghai",
@@ -427,7 +400,6 @@
       "document": "部署参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "部署类型：package/image/repository/pipeline/jar/war",
           "example": "package",
@@ -435,11 +407,9 @@
           "name": "DeployType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署类型为image时传入",
           "example": "无",
@@ -447,11 +417,9 @@
           "name": "ImageUrl",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署类型为package时传入",
           "example": "无",
@@ -459,11 +427,9 @@
           "name": "PackageName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署类型为package时传入",
           "example": "无",
@@ -471,11 +437,9 @@
           "name": "PackageVersion",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署备注",
           "example": "无",
@@ -483,11 +447,9 @@
           "name": "DeployRemark",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代码仓库信息",
           "example": "无",
@@ -495,11 +457,9 @@
           "name": "RepoInfo",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无Dockerfile时填写",
           "example": "无",
@@ -507,11 +467,9 @@
           "name": "BuildPacks",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发布类型 GRAY | FULL",
           "example": "无",
@@ -519,8 +477,7 @@
           "name": "ReleaseType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -529,7 +486,6 @@
       "document": "DescribeCloudRunEnvs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境ID，如果传了这个参数则只返回该环境的相关信息",
           "example": "prod-6gvwy9lua50e9504",
@@ -539,7 +495,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定Channels字段为可见渠道列表或不可见渠道列表\n如只想获取渠道A的环境 就填写IsVisible= true,Channels = [\"A\"], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = [\"A\"]",
           "example": "false",
@@ -549,7 +504,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "渠道列表，代表可见或不可见渠道由IsVisible参数指定",
           "example": "[ide,qc_console]",
@@ -587,26 +541,22 @@
       "document": "DescribeCloudRunServerDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境Id",
           "example": "env-example",
           "member": "string",
           "name": "EnvId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务名",
           "example": "serverName",
           "member": "string",
           "name": "ServerName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -622,8 +572,7 @@
           "name": "BaseInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -633,8 +582,7 @@
           "name": "ServerConfig",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -644,8 +592,7 @@
           "name": "OnlineVersionInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -660,37 +607,31 @@
       "document": "DescribeCloudRunServers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境Id",
           "example": "env-example",
           "member": "string",
           "name": "EnvId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认为9， 最大为30\n不传或传0时 取默认9\n大于30时取30",
           "example": "15",
           "member": "int64",
           "name": "PageSize",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不传或传0时 会默认为1",
           "example": "1",
           "member": "int64",
           "name": "PageNum",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -706,8 +647,7 @@
           "name": "ServerList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -717,8 +657,7 @@
           "name": "Total",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -733,15 +672,13 @@
       "document": "DescribeEnvBaseInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境 Id",
           "example": "test-1gbtbgkjf8f48e2c",
           "member": "string",
           "name": "EnvId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -757,8 +694,7 @@
           "name": "EnvBaseInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -773,48 +709,40 @@
       "document": "DescribeServerManageTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境Id",
           "example": "test-1gbtbgkjf8f48e2c",
           "member": "string",
           "name": "EnvId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务名",
           "example": "server",
           "member": "string",
           "name": "ServerName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务Id",
           "example": "1111",
           "member": "int64",
           "name": "TaskId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作标识",
           "example": "无",
           "member": "string",
           "name": "OperatorRemark",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -830,8 +758,7 @@
           "name": "IsExist",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -841,8 +768,7 @@
           "name": "Task",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -857,7 +783,6 @@
       "document": "环境基础信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境Id",
           "example": "test-1gbtbgkjf8f48e2c",
@@ -865,11 +790,9 @@
           "name": "EnvId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "套餐类型：Trial ｜ Standard ｜ Professional ｜ Enterprise",
           "example": "Standard",
@@ -877,11 +800,9 @@
           "name": "PackageType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC Id",
           "example": "vpc-5k6fot41",
@@ -889,11 +810,9 @@
           "name": "VpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境创建时间",
           "example": "2022-05-27 15:00:00",
@@ -901,11 +820,9 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境别名",
           "example": "test",
@@ -913,11 +830,9 @@
           "name": "Alias",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境状态",
           "example": "normal",
@@ -925,11 +840,9 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境地域",
           "example": "ap-shanghai",
@@ -937,11 +850,9 @@
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境类型 tcbr ｜ run",
           "example": "tcbr",
@@ -949,11 +860,9 @@
           "name": "EnvType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网id",
           "example": "subnet-4l06atqr  cloud_run_cluster_pod_subnet3",
@@ -961,8 +870,7 @@
           "name": "SubnetIds",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -971,7 +879,6 @@
       "document": "环境信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "账户下该环境唯一标识",
           "example": "prod-6gvwy9lua50e9504",
@@ -982,7 +889,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境来源。包含以下取值：\n<li>miniapp：微信小程序</li>\n<li>qcloud ：腾讯云</li>",
           "example": "qcloud",
@@ -993,7 +899,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符",
           "example": "tcb",
@@ -1004,7 +909,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2021-04-26T12:00:00+08:00",
@@ -1015,7 +919,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后修改时间",
           "example": "2021-04-26T12:00:00+08:00",
@@ -1026,7 +929,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境状态。包含以下取值：\n<li>NORMAL：正常可用</li>\n<li>UNAVAILABLE：服务不可用，可能是尚未初始化或者初始化过程中</li>",
           "example": "NORMAL",
@@ -1037,7 +939,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否到期自动降为免费版\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -1048,7 +949,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境渠道\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "qc_console",
@@ -1059,7 +959,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支付方式。包含以下取值：\n<li> prepayment：预付费</li>\n<li> postpaid：后付费</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "postpaid",
@@ -1070,7 +969,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为默认环境\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -1081,7 +979,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境所属地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-shanghai",
@@ -1092,7 +989,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境类型：baas, run, hosting, weda,tcbr\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "baas",
@@ -1103,7 +999,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库列表",
           "example": "[]",
@@ -1114,7 +1009,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储列表",
           "example": "[]",
@@ -1125,7 +1019,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数列表",
           "example": "[]",
@@ -1136,7 +1029,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云日志服务列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -1147,7 +1039,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "静态资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -1158,7 +1049,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -1169,7 +1059,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义日志服务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -1180,7 +1069,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "tcb产品套餐ID，参考DescribePackages接口的返回值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "basic1",
@@ -1191,7 +1079,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "套餐中文名称，参考DescribePackages接口的返回值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "基础版1",
@@ -1208,7 +1095,6 @@
       "document": "函数的信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间",
           "example": "tcb",
@@ -1219,7 +1105,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属地域。\n当前支持ap-shanghai",
           "example": "ap-shanghai",
@@ -1236,7 +1121,6 @@
       "document": "扩缩容入参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "扩缩容类型",
           "example": "cpu, mem, cpu/mem",
@@ -1247,7 +1131,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩缩容阈值",
           "example": "60",
@@ -1264,7 +1147,6 @@
       "document": "云日志服务相关信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "log名",
           "example": "tcbr-pre-01",
@@ -1275,7 +1157,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "log-id",
           "example": "qp3g3ca",
@@ -1286,7 +1167,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "topic名",
           "example": "topic01",
@@ -1297,7 +1177,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "topic-id",
           "example": "oc80v5zp",
@@ -1308,7 +1187,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cls日志所属地域",
           "example": "ap-shanghai",
@@ -1325,7 +1203,6 @@
       "document": "通用Key Value",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "键值对Key",
           "example": "key",
@@ -1333,11 +1210,9 @@
           "name": "Key",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "键值对Value",
           "example": "value",
@@ -1345,8 +1220,7 @@
           "name": "Value",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1355,7 +1229,6 @@
       "document": "在线版本信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "版本名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test-001",
@@ -1363,11 +1236,9 @@
           "name": "VersionName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "镜像url\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -1375,11 +1246,9 @@
           "name": "ImageUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
@@ -1387,8 +1256,7 @@
           "name": "FlowRatio",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1397,59 +1265,49 @@
       "document": "OperateServerManage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境Id",
           "example": "test-1gbtbgkjf8f48e2c",
           "member": "string",
           "name": "EnvId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务名",
           "example": "test",
           "member": "string",
           "name": "ServerName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任报Id",
           "example": "1111",
           "member": "int64",
           "name": "TaskId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作类型:cancel | go_back | done",
           "example": "cancel",
           "member": "string",
           "name": "OperateType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作标识",
           "example": "无",
           "member": "string",
           "name": "OperatorRemark",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1470,81 +1328,67 @@
       "document": "ReleaseGray请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境Id",
           "example": "test-1gbtbgkjf8f48e2c",
           "member": "string",
           "name": "EnvId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务名",
           "example": "test",
           "member": "string",
           "name": "ServerName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "灰度类型",
           "example": "gray",
           "member": "string",
           "name": "GrayType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量类型",
           "example": "HEADERS",
           "member": "string",
           "name": "TrafficType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量策略",
           "example": "无",
           "member": "VersionFlowInfo",
           "name": "VersionFlowItems",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作标识",
           "example": "无",
           "member": "string",
           "name": "OperatorRemark",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量比例",
           "example": "100",
           "member": "int64",
           "name": "GrayFlowRatio",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1565,7 +1409,6 @@
       "document": "代码仓库信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "git source",
           "example": "github",
@@ -1573,11 +1416,9 @@
           "name": "Source",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仓库名",
           "example": "xxx/xxxx",
@@ -1585,11 +1426,9 @@
           "name": "Repo",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分支名",
           "example": "master",
@@ -1597,8 +1436,7 @@
           "name": "Branch",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1607,7 +1445,6 @@
       "document": "服务基础配置信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境 Id",
           "example": "test-1gbtbgkjf8f48e2c",
@@ -1615,11 +1452,9 @@
           "name": "EnvId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务名",
           "example": "test",
@@ -1627,11 +1462,9 @@
           "name": "ServerName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启公网访问",
           "example": "[\"PUBLIC\", \"OA\", \"MINIAPP\", \"VPC\", \"\"]",
@@ -1639,11 +1472,9 @@
           "name": "OpenAccessTypes",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cpu 规格",
           "example": "0.25",
@@ -1651,11 +1482,9 @@
           "name": "Cpu",
           "required": true,
           "type": "float",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Mem 规格",
           "example": "0.25",
@@ -1663,11 +1492,9 @@
           "name": "Mem",
           "required": true,
           "type": "float",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最小副本数",
           "example": "1",
@@ -1675,11 +1502,9 @@
           "name": "MinNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大副本数",
           "example": "2",
@@ -1687,11 +1512,9 @@
           "name": "MaxNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩缩容配置",
           "example": "cpu, mem, cpu/mem",
@@ -1699,11 +1522,9 @@
           "name": "PolicyDetails",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志采集路径",
           "example": "stdout",
@@ -1711,11 +1532,9 @@
           "name": "CustomLogs",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境变量",
           "example": "{\"MYSQL_USERNAME\":\"root\"}",
@@ -1723,11 +1542,9 @@
           "name": "EnvParams",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "延迟检测时间",
           "example": "2",
@@ -1735,11 +1552,9 @@
           "name": "InitialDelaySeconds",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "\"2022-03-10 19:44:07\"",
@@ -1747,11 +1562,9 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务端口",
           "example": "8080",
@@ -1759,11 +1572,9 @@
           "name": "Port",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否有Dockerfile",
           "example": "true",
@@ -1771,11 +1582,9 @@
           "name": "HasDockerfile",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Dockerfile 文件名",
           "example": "\"Dickerfile\"",
@@ -1783,11 +1592,9 @@
           "name": "Dockerfile",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "构建目录",
           "example": "src/",
@@ -1795,11 +1602,9 @@
           "name": "BuildDir",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志类型: none | default | custom",
           "example": "none",
@@ -1807,11 +1612,9 @@
           "name": "LogType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cls setId",
           "example": "无",
@@ -1819,11 +1622,9 @@
           "name": "LogSetId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cls 主题id",
           "example": "无",
@@ -1831,11 +1632,9 @@
           "name": "LogTopicId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "解析类型：json ｜ line",
           "example": "json",
@@ -1843,8 +1642,7 @@
           "name": "LogParseType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1853,7 +1651,6 @@
       "document": "服务基本信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "服务名",
           "example": "serverName",
@@ -1861,11 +1658,9 @@
           "name": "ServerName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认服务域名",
           "example": "http://xxx.xxx.xxx",
@@ -1873,11 +1668,9 @@
           "name": "DefaultDomainName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义域名",
           "example": "http://xxx.xxx.xxx",
@@ -1885,11 +1678,9 @@
           "name": "CustomDomainName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务状态：running/deploying/deploy_failed",
           "example": "runnig",
@@ -1897,11 +1688,9 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
           "example": "2022-03-09 14:00:00",
@@ -1909,11 +1698,9 @@
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网访问类型",
           "example": "[\"OA\",\"MINIAPP\",\"VPC\"]",
@@ -1921,11 +1708,9 @@
           "name": "AccessTypes",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "展示自定义域名",
           "example": "[\"http://xxx.xxx.xxx\",\"http://xxx.xxx.xxx\"]",
@@ -1933,8 +1718,7 @@
           "name": "CustomDomainNames",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1943,7 +1727,6 @@
       "document": "服务管理任务信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务Id",
           "example": "1111",
@@ -1951,11 +1734,9 @@
           "name": "Id",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境Id",
           "example": "test-1gbtbgkjf8f48e2c",
@@ -1963,11 +1744,9 @@
           "name": "EnvId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务名",
           "example": "test",
@@ -1975,11 +1754,9 @@
           "name": "ServerName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2022-05-27 15:00:00",
@@ -1987,11 +1764,9 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "变更类型",
           "example": "CONFIG",
@@ -1999,11 +1774,9 @@
           "name": "ChangeType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发布类型",
           "example": "GRAY",
@@ -2011,11 +1784,9 @@
           "name": "ReleaseType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署类型",
           "example": "package",
@@ -2023,11 +1794,9 @@
           "name": "DeployType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上一个版本名",
           "example": "test-001",
@@ -2035,11 +1804,9 @@
           "name": "PreVersionName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本名",
           "example": "test-002",
@@ -2047,11 +1814,9 @@
           "name": "VersionName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流水线Id",
           "example": "111",
@@ -2059,11 +1824,9 @@
           "name": "PipelineId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流水线任务Id",
           "example": "12121",
@@ -2071,11 +1834,9 @@
           "name": "PipelineTaskId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发布单Id",
           "example": "1212",
@@ -2083,11 +1844,9 @@
           "name": "ReleaseId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态",
           "example": "finished",
@@ -2095,11 +1854,9 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "步骤信息",
           "example": "无",
@@ -2107,11 +1864,9 @@
           "name": "Steps",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "失败原因",
           "example": "无",
@@ -2119,11 +1874,9 @@
           "name": "FailReason",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作标识",
           "example": "无",
@@ -2131,8 +1884,7 @@
           "name": "OperatorRemark",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2141,7 +1893,6 @@
       "document": "静态CDN资源信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "静态CDN域名",
           "example": "test-5gak4uz5bd3d7978-1257473911.tcloudbaseapp.com",
@@ -2152,7 +1903,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "静态CDN默认文件夹，当前为根目录",
           "example": "/test",
@@ -2163,7 +1913,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源状态(process/online/offline/init)",
           "example": "online",
@@ -2174,7 +1923,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cos所属区域",
           "example": "ap-shanghai",
@@ -2185,7 +1933,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "bucket信息",
           "example": "tcb-123456",
@@ -2202,7 +1949,6 @@
       "document": "StorageInfo 资源信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源所属地域。\n当前支持ap-shanghai",
           "example": "ap-shanghai",
@@ -2213,7 +1959,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "桶名，存储资源的唯一标识",
           "example": "tcb-123456",
@@ -2224,7 +1969,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cdn 域名",
           "example": "tcb-123456.file.mycloud.com",
@@ -2235,7 +1979,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源所属用户的腾讯云appId",
           "example": "1301106610",
@@ -2252,7 +1995,6 @@
       "document": "标签键值对",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键",
           "example": "key",
@@ -2263,7 +2005,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "value",
@@ -2280,7 +2021,6 @@
       "document": "任务步骤信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "步骤名",
           "example": "无",
@@ -2288,11 +2028,9 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "未启动：\"todo\"\n运行中：\"running\"\n失败：\"failed\"\n成功结束：\"finished\"",
           "example": "failed",
@@ -2300,11 +2038,9 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间",
           "example": "2022-05-27 15:00:00",
@@ -2312,11 +2048,9 @@
           "name": "StartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "example": "2022-05-27 15:00:00",
@@ -2324,11 +2058,9 @@
           "name": "EndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消耗时间：秒",
           "example": "10",
@@ -2336,11 +2068,9 @@
           "name": "CostTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "失败原因",
           "example": "无",
@@ -2348,8 +2078,7 @@
           "name": "FailReason",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2358,7 +2087,6 @@
       "document": "UpdateCloudRunServer请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境Id",
           "example": "env-example",
@@ -2368,7 +2096,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务名",
           "example": "serverName",
@@ -2378,7 +2105,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署信息",
           "example": "无",
@@ -2388,7 +2114,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务配置信息",
           "example": "无",
@@ -2436,7 +2161,6 @@
       "document": "版本流量信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "版本名",
           "example": "server-001",
@@ -2444,11 +2168,9 @@
           "name": "VersionName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否默认版本",
           "example": "false",
@@ -2456,11 +2178,9 @@
           "name": "IsDefaultPriority",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量比例",
           "example": "10",
@@ -2468,11 +2188,9 @@
           "name": "FlowRatio",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "测试KV值",
           "example": "无",
@@ -2480,11 +2198,9 @@
           "name": "UrlParam",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权重",
           "example": "100",
@@ -2492,8 +2208,7 @@
           "name": "Priority",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"

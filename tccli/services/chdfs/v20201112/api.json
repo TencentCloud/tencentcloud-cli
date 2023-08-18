@@ -215,7 +215,6 @@
       "document": "权限组",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "权限组ID",
           "example": "",
@@ -226,7 +225,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限组名称",
           "example": "",
@@ -237,7 +235,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限组描述",
           "example": "",
@@ -248,7 +245,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -259,7 +255,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC网络类型（1：CVM；2：黑石1.0）",
           "example": "",
@@ -270,7 +265,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC网络ID",
           "example": "",
@@ -287,7 +281,6 @@
       "document": "权限规则",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "权限规则ID",
           "example": "",
@@ -298,7 +291,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限规则地址（网段或IP）",
           "example": "",
@@ -309,7 +301,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限规则访问模式（1：只读；2：读写）",
           "example": "",
@@ -320,7 +311,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "优先级（取值范围1~100，值越小优先级越高）",
           "example": "",
@@ -331,7 +321,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -348,7 +337,6 @@
       "document": "AssociateAccessGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "挂载点ID",
           "example": "f4mnvilzmdd-Tx5f",
@@ -358,7 +346,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限组ID列表",
           "example": "[\"ag-fmfpk1hk\\n\",\"ag-avgx2dox\\n\"]",
@@ -392,8 +379,7 @@
           "member": "string",
           "name": "AccessGroupName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -402,8 +388,7 @@
           "member": "uint64",
           "name": "VpcType",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -412,8 +397,7 @@
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -422,8 +406,7 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -438,8 +421,7 @@
           "member": "AccessGroup",
           "name": "AccessGroup",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -454,26 +436,22 @@
       "document": "CreateAccessRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "多个权限规则，上限为10",
           "example": "无",
           "member": "AccessRule",
           "name": "AccessRules",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限组ID",
           "example": "ag-jwmfdcul",
           "member": "string",
           "name": "AccessGroupId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -489,8 +467,7 @@
           "name": "AccessRules",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -511,8 +488,7 @@
           "member": "string",
           "name": "FileSystemName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -521,8 +497,7 @@
           "member": "uint64",
           "name": "CapacityQuota",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -531,8 +506,7 @@
           "member": "bool",
           "name": "PosixAcl",
           "required": true,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -541,8 +515,7 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -551,8 +524,7 @@
           "member": "string",
           "name": "SuperUsers",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -561,8 +533,7 @@
           "member": "string",
           "name": "RootInodeUser",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -571,8 +542,7 @@
           "member": "string",
           "name": "RootInodeGroup",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -581,8 +551,7 @@
           "member": "bool",
           "name": "EnableRanger",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -591,8 +560,7 @@
           "member": "string",
           "name": "RangerServiceAddresses",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -601,8 +569,7 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -617,8 +584,7 @@
           "member": "FileSystem",
           "name": "FileSystem",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -633,26 +599,22 @@
       "document": "CreateLifeCycleRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID",
           "example": "f4mhaqkciq0",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "多个生命周期规则，上限为10",
           "example": "无",
           "member": "LifeCycleRule",
           "name": "LifeCycleRules",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -673,7 +635,6 @@
       "document": "CreateMountPoint请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "挂载点名称",
           "example": "test",
@@ -683,7 +644,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID",
           "example": "f4mnvilzmdd",
@@ -693,7 +653,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "挂载点状态（1：打开；2：关闭）",
           "example": "1",
@@ -731,7 +690,6 @@
       "document": "CreateRestoreTasks请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID",
           "example": "f4mhaqkciq0",
@@ -741,7 +699,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "多个回热任务，上限为10",
           "example": "无",
@@ -769,7 +726,6 @@
       "document": "DeleteAccessGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "权限组ID",
           "example": "ag-f8xoises",
@@ -797,7 +753,6 @@
       "document": "DeleteAccessRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "多个权限规则ID，上限为10",
           "example": "[13001, 13002]",
@@ -825,7 +780,6 @@
       "document": "DeleteFileSystem请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID",
           "example": "f4mhaqkciq0",
@@ -853,7 +807,6 @@
       "document": "DeleteLifeCycleRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "多个生命周期规则ID，上限为10",
           "example": "[1, 2]",
@@ -881,7 +834,6 @@
       "document": "DeleteMountPoint请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "挂载点ID",
           "example": "f4mnvilzmdd-fj7A",
@@ -909,7 +861,6 @@
       "document": "DescribeAccessGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "权限组ID",
           "example": "ag-f8xoises",
@@ -947,7 +898,6 @@
       "document": "DescribeAccessGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPC网络ID\n备注：入参只能指定VpcId和OwnerUin的其中一个",
           "example": "vpc-967aipkx",
@@ -957,7 +907,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源所属者Uin",
           "example": "100000",
@@ -995,7 +944,6 @@
       "document": "DescribeAccessRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "权限组ID",
           "example": "ag-jwmfdcul",
@@ -1033,15 +981,13 @@
       "document": "DescribeFileSystem请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID",
           "example": "f4mhaqkciq0",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1057,8 +1003,7 @@
           "name": "FileSystem",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1068,8 +1013,7 @@
           "name": "CapacityUsed",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1079,8 +1023,7 @@
           "name": "ArchiveCapacityUsed",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1090,8 +1033,7 @@
           "name": "StandardCapacityUsed",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1101,8 +1043,7 @@
           "name": "DegradeCapacityUsed",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1112,8 +1053,7 @@
           "name": "DeepArchiveCapacityUsed",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1123,8 +1063,7 @@
           "name": "IntelligentCapacityUsed",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1172,8 +1111,7 @@
           "member": "string",
           "name": "FileSystemId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1188,8 +1126,7 @@
           "member": "LifeCycleRule",
           "name": "LifeCycleRules",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1204,7 +1141,6 @@
       "document": "DescribeMountPoint请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "挂载点ID",
           "example": "f4mnvilzmdd-Tx5f",
@@ -1242,7 +1178,6 @@
       "document": "DescribeMountPoints请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID\n备注：入参只能指定AccessGroupId、FileSystemId和OwnerUin的其中一个",
           "example": "f4mhaqkciq0",
@@ -1252,7 +1187,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限组ID",
           "example": "ag-fmfpk1hk",
@@ -1262,7 +1196,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源所属者Uin",
           "example": "100000",
@@ -1300,7 +1233,6 @@
       "document": "DescribeResourceTags请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID",
           "example": "f4mhaqkciq0",
@@ -1338,7 +1270,6 @@
       "document": "DescribeRestoreTasks请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID",
           "example": "f4mhaqkciq0",
@@ -1376,7 +1307,6 @@
       "document": "DisassociateAccessGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "挂载点ID",
           "example": "f4mnvilzmdd-Tx5f",
@@ -1386,7 +1316,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限组ID列表",
           "example": "[\"ag-fmfpk1hk\\n\",\"ag-avgx2dox\\n\"]",
@@ -1414,7 +1343,6 @@
       "document": "文件系统",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源所属用户AppId",
           "example": "1000000",
@@ -1425,7 +1353,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统名称",
           "example": "test",
@@ -1436,7 +1363,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统描述",
           "example": "test",
@@ -1447,7 +1373,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域",
           "example": "ap-guangzhou",
@@ -1458,7 +1383,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID",
           "example": "f4mhaqkciq0",
@@ -1469,7 +1393,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "1629099694",
@@ -1480,7 +1403,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统块大小（byte）",
           "example": "4194304",
@@ -1491,7 +1413,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统容量（byte）",
           "example": "1073741824",
@@ -1502,7 +1423,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统状态（1：创建中；2：创建成功；3：创建失败）",
           "example": "2",
@@ -1513,7 +1433,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "超级用户名列表",
           "example": "[\"hadoop\"]",
@@ -1524,7 +1443,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "POSIX权限控制",
           "example": "true",
@@ -1535,7 +1453,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否打开Ranger地址校验\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -1546,7 +1463,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Ranger地址列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"127.0.0.1:8080\"]",
@@ -1570,8 +1486,7 @@
           "name": "LifeCycleRuleId",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1581,8 +1496,7 @@
           "name": "LifeCycleRuleName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1592,8 +1506,7 @@
           "name": "Path",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1603,8 +1516,7 @@
           "name": "Transitions",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1614,8 +1526,7 @@
           "name": "Status",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1625,8 +1536,7 @@
           "name": "CreateTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1636,8 +1546,7 @@
           "name": "Summary",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1647,8 +1556,7 @@
           "name": "LastSummaryTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1657,7 +1565,6 @@
       "document": "ModifyAccessGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "权限组ID",
           "example": "ag-f8xoises",
@@ -1667,7 +1574,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限组名称",
           "example": "test",
@@ -1677,7 +1583,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限组描述",
           "example": "test",
@@ -1705,7 +1610,6 @@
       "document": "ModifyAccessRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "多个权限规则，上限为10",
           "example": "无",
@@ -1733,7 +1637,6 @@
       "document": "ModifyFileSystem请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID",
           "example": "f4mhaqkciq0",
@@ -1743,7 +1646,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统名称",
           "example": "test",
@@ -1753,7 +1655,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统描述",
           "example": "test",
@@ -1763,7 +1664,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍\n注意：修改的文件系统容量不能小于当前使用量",
           "example": "1073741824",
@@ -1773,7 +1673,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "超级用户名列表，可以为空数组",
           "example": "[\"hadoop\"]",
@@ -1783,7 +1682,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否校验POSIX ACL",
           "example": "true",
@@ -1793,7 +1691,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否打开Ranger地址校验",
           "example": "false",
@@ -1803,7 +1700,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Ranger地址列表，可以为空数组",
           "example": "[\"127.0.0.1:8080\"]",
@@ -1831,7 +1727,6 @@
       "document": "ModifyLifeCycleRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "多个生命周期规则，上限为10",
           "example": "无",
@@ -1859,7 +1754,6 @@
       "document": "ModifyMountPoint请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "挂载点ID",
           "example": "f4mnvilzmdd-Tx5f",
@@ -1869,7 +1763,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "挂载点名称",
           "example": "test",
@@ -1879,7 +1772,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "挂载点状态",
           "example": "2",
@@ -1907,7 +1799,6 @@
       "document": "ModifyResourceTags请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID",
           "example": "f1mhaqkciq0",
@@ -1917,7 +1808,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "多个资源标签，可以为空数组",
           "example": "无",
@@ -1945,7 +1835,6 @@
       "document": "挂载点",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "挂载点ID",
           "example": "",
@@ -1956,7 +1845,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "挂载点名称",
           "example": "",
@@ -1967,7 +1855,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID",
           "example": "",
@@ -1978,7 +1865,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "挂载点状态（1：打开；2：关闭）",
           "example": "",
@@ -1989,7 +1875,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -2000,7 +1885,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定的权限组ID列表",
           "example": "",
@@ -2017,7 +1901,6 @@
       "document": "回热任务",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "回热任务ID",
           "example": "1",
@@ -2028,7 +1911,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回热任务文件路径",
           "example": "/test/file0",
@@ -2039,7 +1921,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回热任务类型（1：标准；2：极速；3：批量，暂时仅支持极速）",
           "example": "1",
@@ -2050,7 +1931,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定恢复出的临时副本的有效时长（单位天）",
           "example": "7",
@@ -2061,7 +1941,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回热任务状态（1：绑定文件中；2：绑定文件完成；3：文件回热中；4：文件回热完成）",
           "example": "1",
@@ -2072,7 +1951,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2019-07-30T16:24:38+08:00",
@@ -2096,8 +1974,7 @@
           "name": "CapacityUsed",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2107,8 +1984,7 @@
           "name": "StandardCapacityUsed",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2118,8 +1994,7 @@
           "name": "DegradeCapacityUsed",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2129,8 +2004,7 @@
           "name": "ArchiveCapacityUsed",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2140,8 +2014,7 @@
           "name": "DeepArchiveCapacityUsed",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2151,8 +2024,7 @@
           "name": "IntelligentCapacityUsed",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2161,7 +2033,6 @@
       "document": "资源标签。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键",
           "example": "",
@@ -2172,7 +2043,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "",
@@ -2189,7 +2059,6 @@
       "document": "生命周期规则转换属性",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "触发时间（单位天）",
           "example": "7",
@@ -2197,11 +2066,9 @@
           "name": "Days",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转换类型（1：归档；2：删除；3：低频；4：深度归档；5：智能分层）",
           "example": "1",
@@ -2209,8 +2076,7 @@
           "name": "Type",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

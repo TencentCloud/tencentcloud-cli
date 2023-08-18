@@ -208,7 +208,6 @@
       "document": "AddBatch请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "批次名称",
           "example": "官网企业认证",
@@ -218,7 +217,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "线索下发方标识",
           "example": "dianshi",
@@ -228,7 +226,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "线索下发方原始信息",
           "example": "官网企业认证",
@@ -266,7 +263,6 @@
       "document": "AuditActivity请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "活动ID",
           "example": "1",
@@ -276,7 +272,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动状态",
           "example": "1",
@@ -286,7 +281,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "登录态token",
           "example": "1",
@@ -296,7 +290,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审核备注",
           "example": "1",
@@ -306,7 +299,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境变量，dev请求到开发环境，默认当前环境",
           "example": "dev",
@@ -316,7 +308,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "组织机构类型",
           "example": "1",
@@ -354,7 +345,6 @@
       "document": "CreateLabelsToCustomer请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "客户标签唯一标识",
           "example": "GUOQI",
@@ -364,7 +354,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一级行业id，-1：全部行业",
           "example": "1",
@@ -374,7 +363,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户cid，上限200个",
           "example": "[\"507eafdb04d5579c5b06d37cc9784ff5\\n\"]",
@@ -384,7 +372,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "打标类型，1：后台打标，2：前台打标",
           "example": "1",
@@ -394,7 +381,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "二级行业id，默认全行业，-1：全部行业",
           "example": "2",
@@ -404,7 +390,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境变量，dev开发环境，idc线上环境，不传默认是idc",
           "example": "dev",
@@ -442,7 +427,6 @@
       "document": "CreateLead请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "一级来源标签id",
           "example": "1",
@@ -452,7 +436,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "二级来源标签id",
           "example": "1",
@@ -462,7 +445,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩展字段格式为[[\"Key\":\"province\", \"KeyName\":\"省份\", \"KeyValue\":\"广东省\" ]]",
           "example": "1",
@@ -472,7 +454,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "申请的批次id",
           "example": "1",
@@ -482,7 +463,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "线索来源方标识",
           "example": "1",
@@ -492,7 +472,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "线索来源方唯一id",
           "example": "1",
@@ -502,7 +481,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0非属任何模块1saas电销2渠道经理",
           "example": "1",
@@ -512,7 +490,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "线索贡献人",
           "example": "1",
@@ -522,7 +499,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "qq号",
           "example": "1",
@@ -532,7 +508,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "手机号",
           "example": "1",
@@ -542,7 +517,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户名称",
           "example": "1",
@@ -552,7 +526,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "邮箱",
           "example": "1",
@@ -562,7 +535,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "qss参数",
           "example": "1",
@@ -572,7 +544,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联系人姓名",
           "example": "1",
@@ -582,7 +553,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联系人职位",
           "example": "1",
@@ -592,7 +562,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联系人微信",
           "example": "1",
@@ -602,7 +571,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UIN",
           "example": "1",
@@ -612,7 +580,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "意向度",
           "example": "1",
@@ -622,7 +589,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费类型",
           "example": "1",
@@ -686,7 +652,6 @@
       "document": "DeleteBatch请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "批次ID",
           "example": "1",
@@ -724,7 +689,6 @@
       "document": "DeleteMarkCustomerLabel请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "客户cid",
           "example": "507eafdb04d5579c5b06d37cc9784ff5",
@@ -734,7 +698,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户标签唯一标识",
           "example": "GUOQI",
@@ -744,7 +707,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一级行业id，-1：全部",
           "example": "1",
@@ -754,7 +716,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "二级行业id，-1：全部",
           "example": "2",
@@ -764,7 +725,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境变量，dev开发环境，idc线上环境，不传默认是idc",
           "example": "dev",
@@ -802,7 +762,6 @@
       "document": "DescribeCompanyInfoByKeyword请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "企业名称",
           "example": "拼多多",
@@ -812,7 +771,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页数，默认10",
           "example": "1",
@@ -850,7 +808,6 @@
       "document": "DescribeCorpCustomerList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "父级cid，要获取下级所有客户时，传列表里的对应的 cid 即可",
           "example": "",
@@ -860,7 +817,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户cid",
           "example": "",
@@ -870,7 +826,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集团客户名称，筛选出客户所在根节点的所有节点",
           "example": "",
@@ -880,7 +835,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码",
           "example": "",
@@ -890,7 +844,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页数，默认一页20",
           "example": "",
@@ -900,7 +853,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否格式化成树级结构，0：否，1：是，默认是",
           "example": "",
@@ -937,59 +889,49 @@
       "document": "DescribeCorpCustomer请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要搜索的关键字",
           "example": "无",
           "member": "string",
           "name": "Keyword",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页页码，默认为1",
           "example": "1",
           "member": "uint64",
           "name": "Page",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页大小，1 到100之间，默认为20",
           "example": "20",
           "member": "uint64",
           "name": "PageSize",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户cid",
           "example": "无",
           "member": "string",
           "name": "Cids",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否获取国内+国际地域的数据，0-否，1-是，默认为0",
           "example": "1",
           "member": "uint64",
           "name": "GetAllAreaData",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1005,8 +947,7 @@
           "name": "JsonString",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1021,147 +962,121 @@
       "document": "DescribeCustomerProtections请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "区域id",
           "example": "1",
           "member": "int64",
           "name": "AreaId",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "销售中心",
           "example": "政务民生拓展中心",
           "member": "string",
           "name": "SaleCenter",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "销售组名",
           "example": "广东拓展四组",
           "member": "string",
           "name": "SalesGroupName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户名（默认模糊查询）",
           "example": "经营测试账号39",
           "member": "string",
           "name": "CustomerName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户查询类型，like模糊，equal精确",
           "example": "like",
           "member": "string",
           "name": "SearchType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户简称",
           "example": "经营测试账号",
           "member": "string",
           "name": "CustomerShortName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "行业id",
           "example": "6",
           "member": "int64",
           "name": "IndustryId",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主销售名",
           "example": "serenatian",
           "member": "string",
           "name": "BusinessManager",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建人",
           "example": "serenatian",
           "member": "string",
           "name": "AddUser",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户cid",
           "example": "156ab9d0d3ddfcd62cda069d6a559d2c",
           "member": "string",
           "name": "Cid",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码，默认1",
           "example": "1",
           "member": "int64",
           "name": "Page",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页条数，默认20条",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "保护池类型",
           "example": "[1]",
           "member": "int64",
           "name": "ProtectionType",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1177,8 +1092,7 @@
           "name": "JsonString",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1193,48 +1107,40 @@
       "document": "DescribeGoodsProductList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "当前页，默认1",
           "example": "1",
           "member": "int64",
           "name": "Page",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页显示条数，默认50",
           "example": "50",
           "member": "int64",
           "name": "PageSize",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索参数，单次最多搜索100条",
           "example": "无",
           "member": "GoodsParams",
           "name": "SearchArray",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数为0时：取维表 dc100796 下所有收入聚合下的产品；\n参数为1时：取维表 dc100510 配置的产品，并且此时search_array 字段无效。",
           "example": "1",
           "member": "int64",
           "name": "NeedDimension",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1250,8 +1156,7 @@
           "name": "AllCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1261,8 +1166,7 @@
           "name": "Infos",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1277,7 +1181,6 @@
       "document": "DescribeHuman请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大区 （南区，北区，西区，东区）",
           "example": "南区",
@@ -1287,7 +1190,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "中文姓名",
           "example": "张三",
@@ -1297,7 +1199,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "手机号码",
           "example": "18512341234",
@@ -1307,7 +1208,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企业微信账号",
           "example": "v_vxyhe",
@@ -1317,7 +1217,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "区技p账号",
           "example": "p_qzqxiao",
@@ -1327,7 +1226,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码",
           "example": "1",
@@ -1337,7 +1235,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页面条目",
           "example": "10",
@@ -1375,7 +1272,6 @@
       "document": "DescribeMarkCustomerLabelList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "当Id为空时，该参数必填",
           "example": "",
@@ -1385,7 +1281,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当Cid为空时，该参数必填",
           "example": "",
@@ -1395,7 +1290,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户标签唯一标识",
           "example": "",
@@ -1405,7 +1299,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一级行业id，当二级行业id存在时，该必填",
           "example": "",
@@ -1415,7 +1308,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "二级行业id",
           "example": "",
@@ -1452,7 +1344,6 @@
       "document": "DescribeOrganizationInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机构uin",
           "example": "",
@@ -1462,7 +1353,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境变量，dev请求到开发环境，默认当前环境",
           "example": "",
@@ -1551,7 +1441,6 @@
       "document": "DescribeProjectInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目编码",
           "example": "barry_risk_001",
@@ -1615,7 +1504,6 @@
       "document": "DescribeQflowProject请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "ltc立项编号",
           "example": "",
@@ -1625,7 +1513,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ltc立项名称",
           "example": "",
@@ -1635,7 +1522,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户CID",
           "example": "",
@@ -1645,7 +1531,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户UIN",
           "example": "",
@@ -1655,7 +1540,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户名称",
           "example": "",
@@ -1665,7 +1549,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "承接公司名称",
           "example": "",
@@ -1675,7 +1558,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "QQ群",
           "example": "",
@@ -1712,7 +1594,6 @@
       "document": "DescribeQflowToAndon请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "ltc立项编号",
           "example": "2018091401522",
@@ -1722,7 +1603,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ltc立项名称",
           "example": "无",
@@ -1732,7 +1612,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户CID",
           "example": "无",
@@ -1742,7 +1621,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户UIN",
           "example": "无",
@@ -1752,7 +1630,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户名称",
           "example": "无",
@@ -1762,7 +1639,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "承接公司名称",
           "example": "无",
@@ -1772,7 +1648,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务大类",
           "example": "无",
@@ -1782,7 +1657,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务子类",
           "example": "无",
@@ -1792,7 +1666,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品简称",
           "example": "无",
@@ -1802,7 +1675,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "承接公司id   华南-1；西南-2；华北-3；华东-4",
           "example": "无",
@@ -1812,7 +1684,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "区域spmo",
           "example": "无",
@@ -1822,7 +1693,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "区技spmo",
           "example": "无",
@@ -1832,7 +1702,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "QQ群",
           "example": "无",
@@ -1842,7 +1711,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单号",
           "example": "无",
@@ -1852,7 +1720,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务名",
           "example": "无",
@@ -1862,7 +1729,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码",
           "example": "无",
@@ -1872,7 +1738,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页数",
           "example": "无",
@@ -1882,7 +1747,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "局点id ,多个以;分号分割",
           "example": "无",
@@ -1920,7 +1784,6 @@
       "document": "DescribeQueryGroupCustomersList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "客户cid",
           "example": "无",
@@ -1930,7 +1793,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集体id",
           "example": "无",
@@ -1940,7 +1802,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码，默认1",
           "example": "无",
@@ -1950,7 +1811,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页数，默认20",
           "example": "无",
@@ -1988,7 +1848,6 @@
       "document": "TCC扩展字段",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "扩展字段key",
           "example": "",
@@ -1999,7 +1858,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩展字段Name",
           "example": "",
@@ -2010,7 +1868,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩展字段Value",
           "example": "",
@@ -2027,7 +1884,6 @@
       "document": "GetBatchList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "批次名称",
           "example": "官网企业认证",
@@ -2037,7 +1893,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "线索下发方标识",
           "example": "dianshi",
@@ -2047,7 +1902,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "线索下发方原始信息",
           "example": "官网企业认证",
@@ -2057,7 +1911,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前页码",
           "example": "1",
@@ -2067,7 +1920,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页大小（页码和分页大小不填，则拉取全部数据）",
           "example": "15",
@@ -2111,8 +1963,7 @@
           "member": "string",
           "name": "Codes",
           "required": true,
-          "type": "list",
-          "visibility": 2
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2128,8 +1979,7 @@
           "name": "NodeInfoList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2151,8 +2001,7 @@
           "name": "Code",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2162,8 +2011,7 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2173,8 +2021,7 @@
           "name": "IsCertificated",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2184,8 +2031,7 @@
           "name": "GoodsId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2195,8 +2041,7 @@
           "name": "GoodsVersion",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2206,8 +2051,7 @@
           "name": "CloudType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2217,8 +2061,7 @@
           "name": "PropertyType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2228,8 +2071,7 @@
           "name": "PropertyId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2239,8 +2081,7 @@
           "name": "ProductCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2250,8 +2091,7 @@
           "name": "SubProductCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2261,8 +2101,7 @@
           "name": "BillingItemCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2272,8 +2111,7 @@
           "name": "SubBillingItemCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2283,8 +2121,7 @@
           "name": "ProductName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2294,8 +2131,7 @@
           "name": "SubProductName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2305,8 +2141,7 @@
           "name": "BillingItemName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2316,8 +2151,7 @@
           "name": "SubBillingItemName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2327,8 +2161,7 @@
           "name": "ProductEnName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2338,8 +2171,7 @@
           "name": "SubProductEnName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2349,8 +2181,7 @@
           "name": "BillingItemEnName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2360,8 +2191,7 @@
           "name": "SubBillingItemEnName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2371,8 +2201,7 @@
           "name": "ShortName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2382,8 +2211,7 @@
           "name": "GoodsLabel",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2393,8 +2221,7 @@
           "name": "IsTmp",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2404,8 +2231,7 @@
           "name": "Cid",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2415,8 +2241,7 @@
           "name": "Brief",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2426,8 +2251,7 @@
           "name": "GoodsProperty",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2437,8 +2261,7 @@
           "name": "GoodsType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2448,8 +2271,7 @@
           "name": "IndustryTreeCd",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2459,8 +2281,7 @@
           "name": "FinanceAssessLabel",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2470,8 +2291,7 @@
           "name": "AssessmentLabel",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2481,8 +2301,7 @@
           "name": "ProductIncome",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2492,8 +2311,7 @@
           "name": "SalesIncome",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2503,8 +2321,7 @@
           "name": "SelfResearchInCalculation",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2514,8 +2331,7 @@
           "name": "ChannelType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2525,8 +2341,7 @@
           "name": "FeatureId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2536,8 +2351,7 @@
           "name": "DepartmentId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2547,8 +2361,7 @@
           "name": "IncomeDepartmentId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2558,8 +2371,7 @@
           "name": "IncomeFeatureId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2569,8 +2381,7 @@
           "name": "SettGroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2580,8 +2391,7 @@
           "name": "SettGroupName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2591,8 +2401,7 @@
           "name": "ChannelId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2602,8 +2411,7 @@
           "name": "Channel",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2613,8 +2421,7 @@
           "name": "DeliveryTeam",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2624,8 +2431,7 @@
           "name": "IncomeGroupIdOne",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2635,8 +2441,7 @@
           "name": "IncomeGroupIdTwo",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2646,8 +2451,7 @@
           "name": "CostAggIdOne",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2657,8 +2461,7 @@
           "name": "CostAggIdTwo",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2668,8 +2471,7 @@
           "name": "CostAggIdThree",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2679,8 +2481,7 @@
           "name": "CostAggIdFour",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2690,8 +2491,7 @@
           "name": "SaleModes",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2701,8 +2501,7 @@
           "name": "ProductManagerOne",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2712,8 +2511,7 @@
           "name": "ProductManagerTwo",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2723,8 +2521,7 @@
           "name": "ProductOperationManager",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2734,8 +2531,7 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2745,8 +2541,7 @@
           "name": "TmpStep",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2756,8 +2551,7 @@
           "name": "IsLastVersion",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2767,8 +2561,7 @@
           "name": "SubscriptionType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2778,8 +2571,7 @@
           "name": "Price",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2789,8 +2581,7 @@
           "name": "BillOfMaterialList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2800,8 +2591,7 @@
           "name": "DimensionGoodsProperty",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2811,8 +2601,7 @@
           "name": "DimensionGoodsType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2821,7 +2610,6 @@
       "document": "线下产品/临时产品 BOM清单信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "30008",
@@ -2829,11 +2617,9 @@
           "name": "GoodsId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品版本",
           "example": "3",
@@ -2841,11 +2627,9 @@
           "name": "GoodsVersion",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "售卖模式",
           "example": "one_time_mode",
@@ -2853,11 +2637,9 @@
           "name": "SaleMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名称",
           "example": "24408one_time_mode1",
@@ -2865,11 +2647,9 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "remark",
@@ -2877,11 +2657,9 @@
           "name": "Remark",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物料信息",
           "example": " {                                 \"id\": 103111,                ",
@@ -2889,8 +2667,7 @@
           "name": "MaterialList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2899,7 +2676,6 @@
       "document": "云启基地产品列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "客户uin",
           "example": "",
@@ -2910,7 +2686,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户名称",
           "example": "",
@@ -2921,7 +2696,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "金额",
           "example": "",
@@ -2932,7 +2706,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品名称",
           "example": "",
@@ -2943,7 +2716,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "评论",
           "example": "",
@@ -2960,7 +2732,6 @@
       "document": "线下产品/临时产品 物料基本信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "物料ID",
           "example": "8300978",
@@ -2968,11 +2739,9 @@
           "name": "MaterialId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物料版本",
           "example": "3",
@@ -2980,11 +2749,9 @@
           "name": "MaterialVersion",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物料数量",
           "example": "2",
@@ -2992,8 +2759,7 @@
           "name": "MaterialNum",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3002,7 +2768,6 @@
       "document": "线下产品/临时产品入参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "1001",
@@ -3010,11 +2775,9 @@
           "name": "GoodsId",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品版本",
           "example": "2",
@@ -3022,8 +2785,7 @@
           "name": "GoodsVersion",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -3032,7 +2794,6 @@
       "document": "线下产品/临时产品 价格信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "30008",
@@ -3040,11 +2801,9 @@
           "name": "GoodsId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品版本",
           "example": "3",
@@ -3052,11 +2811,9 @@
           "name": "GoodsVersion",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "售卖模式",
           "example": "one_time_mode",
@@ -3064,11 +2821,9 @@
           "name": "SaleMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "定价模式",
           "example": "ratio",
@@ -3076,11 +2831,9 @@
           "name": "PriceMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "定价比例",
           "example": "25.0",
@@ -3088,11 +2841,9 @@
           "name": "PriceRatio",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联产品ID",
           "example": "30765",
@@ -3100,11 +2851,9 @@
           "name": "RelationGoodsId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "刊例价",
           "example": "1000000000.000000",
@@ -3112,11 +2861,9 @@
           "name": "PublishedPrice",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Discount价格",
           "example": "700000000.000000",
@@ -3124,11 +2871,9 @@
           "name": "DiscountPrice",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DiscountLow价格",
           "example": "600000000.000000",
@@ -3136,11 +2881,9 @@
           "name": "DiscountLowPrice",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "LeaderLow价格",
           "example": "800000000.000000",
@@ -3148,11 +2891,9 @@
           "name": "LeaderLowPrice",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间",
           "example": "2019-10-31",
@@ -3160,11 +2901,9 @@
           "name": "BeginTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "example": "2020-10-31",
@@ -3172,11 +2911,9 @@
           "name": "EndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品单位",
           "example": "节点",
@@ -3184,11 +2921,9 @@
           "name": "GoodNumUnit",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时长单位",
           "example": "p",
@@ -3196,11 +2931,9 @@
           "name": "TimeUnit",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Leader折扣线",
           "example": "1.00",
@@ -3208,11 +2941,9 @@
           "name": "LeaderDiscount",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Director折扣线",
           "example": "1.00",
@@ -3220,11 +2951,9 @@
           "name": "DirectorDiscount",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Gm折扣线",
           "example": "1.00",
@@ -3232,11 +2961,9 @@
           "name": "GmDiscount",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Control折扣线",
           "example": "1.00",
@@ -3244,11 +2971,9 @@
           "name": "ControlDiscount",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "remark",
@@ -3256,11 +2981,9 @@
           "name": "Remark",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "成本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "40000000",
@@ -3268,11 +2991,9 @@
           "name": "Cost",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "税率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6",
@@ -3280,11 +3001,9 @@
           "name": "TaxRate",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "利润率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
@@ -3292,8 +3011,7 @@
           "name": "ProfitRate",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3302,7 +3020,6 @@
       "document": "ImportOfflineProduct请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "组织uin",
           "example": "",
@@ -3312,7 +3029,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品列表",
           "example": "",
@@ -3322,7 +3038,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "登录态token",
           "example": "",
@@ -3332,7 +3047,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境变量，dev请求到开发环境，默认当前环境",
           "example": "",
@@ -3393,8 +3107,7 @@
           "name": "Code",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3404,8 +3117,7 @@
           "name": "CenterIds",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3415,8 +3127,7 @@
           "name": "DepartmentIds",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3426,8 +3137,7 @@
           "name": "Level",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3437,8 +3147,7 @@
           "name": "Managers",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3448,8 +3157,7 @@
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3459,8 +3167,7 @@
           "name": "Status",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3470,8 +3177,7 @@
           "name": "Version",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3480,7 +3186,6 @@
       "document": "SendOutsideEmailAndSms请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "客户cid",
           "example": "",
@@ -3490,7 +3195,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "销售易上的用户类型",
           "example": "",
@@ -3500,7 +3204,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户名称",
           "example": "",
@@ -3510,7 +3213,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "在经营维表维护的模板id",
           "example": "",
@@ -3520,7 +3222,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "短信模板参数",
           "example": "",
@@ -3530,7 +3231,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "邮件模板参数",
           "example": "",
@@ -3567,7 +3267,6 @@
       "document": "UpdateBatch请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "批次ID",
           "example": "1",
@@ -3577,7 +3276,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "批次名称",
           "example": "官网企业认证",
@@ -3587,7 +3285,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "线索下发方原始信息",
           "example": "test",

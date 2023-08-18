@@ -33,26 +33,22 @@
       "document": "CheckAppidExist请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "业务的appid",
           "example": "xxx",
           "member": "string",
           "name": "SDKAppid",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "sub product code",
           "example": "xxx",
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -68,8 +64,7 @@
           "name": "Exist",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -79,8 +74,7 @@
           "name": "HasError",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -90,8 +84,7 @@
           "name": "Msg",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -106,7 +99,6 @@
       "document": "购买详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "按照四层接入的产品需要传入产品标签,例如:p_cvm\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -114,11 +106,9 @@
           "name": "ProductCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "四层定义的子产品标签,例如:sp_cvm_s1\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -126,11 +116,9 @@
           "name": "SubProductCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -138,11 +126,9 @@
           "name": "Type",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -150,8 +136,7 @@
           "name": "GoodsNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -160,15 +145,13 @@
       "document": "QueryResourceInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源id",
           "example": "无",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -184,8 +167,7 @@
           "name": "Resource",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -200,37 +182,31 @@
       "document": "QueryResource请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "0: sdk 1:material",
           "example": "无",
           "member": "int64",
           "name": "Type",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页起始页",
           "example": "无",
           "member": "int64",
           "name": "PageNumber",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页大小",
           "example": "无",
           "member": "int64",
           "name": "PageSize",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -246,8 +222,7 @@
           "name": "Resources",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -257,8 +232,7 @@
           "name": "Total",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -273,7 +247,6 @@
       "document": "资源信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源拥有者\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -281,11 +254,9 @@
           "name": "UIN",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云平台应用ID，一般来说与uin存在一一对应的关系\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -293,11 +264,9 @@
           "name": "AppId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源id，会展示到通知内容\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -305,11 +274,9 @@
           "name": "ResourceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "区域ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -317,11 +284,9 @@
           "name": "ZoneId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源状态，1正常，2隔离，3销毁(如果资源已经删除或销毁，不需要返回)，4冻结/封禁\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -329,11 +294,9 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源隔离时间，未隔离传\"0000-00-00 00:00:00\"，资源由隔离变回正常传\"0000-00-00 00:00:00\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -341,11 +304,9 @@
           "name": "IsolatedTimestamp",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源创建时间，用于更新新购订单的资源开始时间，按时长退费时的资源结束时间取自订单的资源结束时间，\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -353,11 +314,9 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0后付费 1预付费 2预留实例\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -365,11 +324,9 @@
           "name": "PayMode",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源名称，账单中资源别名，生命周期通知中的资源名称，不返回则通知中展示为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -377,11 +334,9 @@
           "name": "Alias",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -389,11 +344,9 @@
           "name": "GoodsDetail",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预付费必填 ，自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费，用户开通了预付费不停服特权也会进行自动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -401,11 +354,9 @@
           "name": "RenewFlag",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（仅预付费）资源到期时间，无到期概念传\"0000-00-00 00:00:00\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -413,11 +364,9 @@
           "name": "ExpireTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -425,11 +374,9 @@
           "name": "Region",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "sdk appid\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -437,11 +384,9 @@
           "name": "SdkAppId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -449,11 +394,9 @@
           "name": "AppName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的package名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -461,11 +404,9 @@
           "name": "PackageName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源链接\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -473,11 +414,9 @@
           "name": "URL",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的entry\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -485,11 +424,9 @@
           "name": "Entry",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0：sdk 1：素材\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -497,11 +434,9 @@
           "name": "InstType",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "license的秘钥\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -509,8 +444,7 @@
           "name": "Key",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

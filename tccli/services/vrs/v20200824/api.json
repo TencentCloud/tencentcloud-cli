@@ -60,8 +60,7 @@
           "member": "string",
           "name": "TaskId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -76,8 +75,7 @@
           "member": "CancelVRSTaskRsp",
           "name": "Data",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -103,8 +101,7 @@
           "member": "string",
           "name": "SessionId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -113,8 +110,7 @@
           "member": "string",
           "name": "VoiceName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -123,8 +119,7 @@
           "member": "int64",
           "name": "SampleRate",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -133,8 +128,7 @@
           "member": "int64",
           "name": "VoiceGender",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -143,8 +137,7 @@
           "member": "int64",
           "name": "VoiceLanguage",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -153,8 +146,7 @@
           "member": "string",
           "name": "Codec",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -163,8 +155,7 @@
           "member": "string",
           "name": "AudioIdList",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -173,8 +164,7 @@
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -183,8 +173,7 @@
           "member": "int64",
           "name": "ModelType",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -200,8 +189,7 @@
           "name": "TaskId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -217,8 +205,7 @@
           "name": "Data",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -239,8 +226,7 @@
           "member": "string",
           "name": "TaskId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -256,8 +242,7 @@
           "name": "TaskId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -267,8 +252,7 @@
           "name": "Status",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -278,8 +262,7 @@
           "name": "StatusStr",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -289,8 +272,7 @@
           "name": "VoiceType",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -300,8 +282,7 @@
           "name": "ErrorMsg",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -316,8 +297,7 @@
           "member": "DescribeVRSTaskStatusRespData",
           "name": "Data",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -338,8 +318,7 @@
           "member": "string",
           "name": "TextId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -348,8 +327,7 @@
           "member": "string",
           "name": "AudioData",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -358,8 +336,7 @@
           "member": "string",
           "name": "Codec",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -368,8 +345,7 @@
           "member": "int64",
           "name": "TypeId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -378,8 +354,7 @@
           "member": "int64",
           "name": "SampleRate",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -395,8 +370,7 @@
           "name": "Data",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -418,8 +392,7 @@
           "name": "AudioId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -429,8 +402,7 @@
           "name": "DetectionCode",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -440,8 +412,7 @@
           "name": "DetectionMsg",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -451,8 +422,7 @@
           "name": "DetectionTip",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -467,8 +437,7 @@
           "member": "string",
           "name": "TaskId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -483,8 +452,7 @@
           "member": "DownloadVRSModelRsp",
           "name": "Data",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -506,8 +474,7 @@
           "name": "Model",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -517,8 +484,7 @@
           "name": "VoiceName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -528,8 +494,7 @@
           "name": "VoiceGender",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -539,8 +504,7 @@
           "name": "VoiceLanguage",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -550,8 +514,7 @@
           "name": "TaskId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -566,8 +529,7 @@
           "member": "bool",
           "name": "GetTextAudioDemo",
           "required": false,
-          "type": "bool",
-          "visibility": 2
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -582,8 +544,7 @@
           "member": "TrainingTexts",
           "name": "Data",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -605,8 +566,7 @@
           "name": "TextId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -616,8 +576,7 @@
           "name": "Text",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -633,8 +592,7 @@
           "name": "TrainingTextList",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -650,8 +608,7 @@
           "name": "PronAccuracy",
           "required": false,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -661,8 +618,7 @@
           "name": "PronFluency",
           "required": false,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -672,8 +628,7 @@
           "name": "Tag",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -683,8 +638,7 @@
           "name": "Word",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

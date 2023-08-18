@@ -173,26 +173,22 @@
       "document": "AssessQuality请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果。 \n• 长宽比：长边：短边<5。\n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
           "example": "https://test.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片经过Base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要Base64编码，并且要去掉编码头部。**",
           "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -208,8 +204,7 @@
           "name": "LongImage",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -219,8 +214,7 @@
           "name": "BlackAndWhite",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -230,8 +224,7 @@
           "name": "SmallImage",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -241,8 +234,7 @@
           "name": "BigImage",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -252,8 +244,7 @@
           "name": "PureImage",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -263,8 +254,7 @@
           "name": "ClarityScore",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -274,8 +264,7 @@
           "name": "AestheticScore",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -290,7 +279,6 @@
       "document": "属性",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "属性",
           "example": "\"\"",
@@ -298,11 +286,9 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "属性详情",
           "example": "\"\"",
@@ -310,8 +296,7 @@
           "name": "Details",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -320,7 +305,6 @@
       "document": "属性检测到的人体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "人体框。当不开启人体检测时，内部参数默认为0。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -328,11 +312,9 @@
           "name": "Rect",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人体检测置信度。取值0-1之间，当不开启人体检测开关时默认为0。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -340,11 +322,9 @@
           "name": "DetectConfidence",
           "required": true,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "属性信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -352,8 +332,7 @@
           "name": "Attributes",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -362,7 +341,6 @@
       "document": "属性列表。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "属性值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -370,11 +348,9 @@
           "name": "Label",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "置信度，取值0-1之间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -382,11 +358,9 @@
           "name": "Confidence",
           "required": true,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "属性名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -394,8 +368,7 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -404,7 +377,6 @@
       "document": "图像主体区域。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图像主体区域。",
           "example": "{x:1,y:2,weight:1,height:2}",
@@ -412,11 +384,9 @@
           "name": "Rect",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "置信度。",
           "example": "1",
@@ -424,11 +394,9 @@
           "name": "Score",
           "required": true,
           "type": "float",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主体区域类目ID",
           "example": "2",
@@ -436,8 +404,7 @@
           "name": "CategoryId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -446,7 +413,6 @@
       "document": "车牌信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "车牌信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -454,11 +420,9 @@
           "name": "Plate",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车牌颜色。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -466,11 +430,9 @@
           "name": "Color",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车牌类型，包含：0普通蓝牌，1双层黄牌，2单层黄牌，3新能源车牌，4使馆车牌，5领馆车牌，6澳门车牌，7香港车牌，8警用车牌，9教练车牌，10武警车牌，11军用车牌   -2遮挡污损模糊车牌/异常   其他无牌\n注意：\n此字段可能返回 null，表示取不到有效值。\n此字段结果遮挡污损模糊车牌/异常：包含PlateStatus参数的“遮挡污损模糊车牌”，针对车牌异常，建议参考此字段，更全面\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -478,11 +440,9 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车牌在图片中的坐标信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -490,11 +450,9 @@
           "name": "PlateLocation",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "判断车牌是否遮挡：“遮挡污损模糊车牌”和\"正常车牌\"。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -502,11 +460,9 @@
           "name": "PlateStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车牌遮挡的置信度，0-100。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -514,11 +470,9 @@
           "name": "PlateStatusConfidence",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车牌角度。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -526,8 +480,7 @@
           "name": "PlateAngle",
           "required": true,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -536,7 +489,6 @@
       "document": "车辆属性识别的结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "车系",
           "example": "无",
@@ -544,11 +496,9 @@
           "name": "Serial",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车辆品牌",
           "example": "无",
@@ -556,11 +506,9 @@
           "name": "Brand",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车辆类型",
           "example": "无",
@@ -568,11 +516,9 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车辆颜色",
           "example": "无",
@@ -580,11 +526,9 @@
           "name": "Color",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车系置信度，0-100",
           "example": "无",
@@ -592,11 +536,9 @@
           "name": "Confidence",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "年份，没识别出年份的时候返回0",
           "example": "无",
@@ -604,11 +546,9 @@
           "name": "Year",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车辆在图片中的坐标信息",
           "example": "无",
@@ -616,11 +556,9 @@
           "name": "CarLocation",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车牌信息，仅车辆识别（增强版）支持\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -628,11 +566,9 @@
           "name": "PlateContent",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车牌信息置信度，0-100，仅车辆识别（增强版）支持\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -640,11 +576,9 @@
           "name": "PlateConfidence",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车辆类型置信度，0-100，仅车辆识别（增强版）支持\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -652,11 +586,9 @@
           "name": "TypeConfidence",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车辆颜色置信度，0-100，仅车辆识别（增强版）支持\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -664,11 +596,9 @@
           "name": "ColorConfidence",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车辆朝向，仅车辆识别（增强版）支持\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -676,11 +606,9 @@
           "name": "Orientation",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车辆朝向置信度，0-100，仅车辆识别（增强版）支持\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -688,8 +616,7 @@
           "name": "OrientationConfidence",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -698,7 +625,6 @@
       "document": "整张图颜色信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "RGB颜色值（16进制），例如：291A18。",
           "example": "\"\"",
@@ -706,11 +632,9 @@
           "name": "Color",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前颜色标签所占比例。",
           "example": "23.1",
@@ -718,11 +642,9 @@
           "name": "Percentage",
           "required": true,
           "type": "float",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "颜色标签。蜜柚色，米驼色等。",
           "example": "蜜柚色",
@@ -730,8 +652,7 @@
           "name": "Label",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -740,7 +661,6 @@
       "document": "汽车坐标信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "横坐标x",
           "example": "",
@@ -751,7 +671,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "纵坐标y",
           "example": "",
@@ -774,8 +693,7 @@
           "member": "string",
           "name": "GroupId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -784,8 +702,7 @@
           "member": "string",
           "name": "GroupName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -794,8 +711,7 @@
           "member": "uint64",
           "name": "MaxCapacity",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -804,8 +720,7 @@
           "member": "string",
           "name": "Brief",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -814,8 +729,7 @@
           "member": "uint64",
           "name": "MaxQps",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -824,8 +738,7 @@
           "member": "uint64",
           "name": "GroupType",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -846,114 +759,94 @@
       "document": "CreateImage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图库ID。",
           "example": "test_group",
           "member": "string",
           "name": "GroupId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物品ID，最多支持64个字符。 \n一个物品ID可以包含多张图片，若EntityId已存在，则对其追加图片。同一个EntityId，最大支持10张图。",
           "example": "test_entity",
           "member": "string",
           "name": "EntityId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片名称，最多支持64个字符， \nPicName唯一确定一张图片，具有唯一性。",
           "example": "name",
           "member": "string",
           "name": "PicName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。  \nImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl。\n图片限制：\n• 图片格式：支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。\n• 图片大小：对应图片 base64 编码后大小不可超过5M。图片分辨率不超过4096\\*4096。\n• 如果在商品图像搜索中开启主体识别，分辨率不超过2000\\*2000，图片长宽比小于10。\n建议：\n• 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的Url速度和稳定性可能受一定影响。",
           "example": "test.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片自定义备注内容，最多支持4096个字符，查询时原样带回。",
           "example": "content",
           "member": "string",
           "name": "CustomContent",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。 \n图片限制：\n• 图片格式：支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。\n• 图片大小：base64 编码后大小不可超过5M。图片分辨率不超过4096\\*4096。\n• 如果在商品图像搜索中开启主体识别，分辨率不超过2000\\*2000，图片长宽比小于10。",
           "example": "base64",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片自定义标签，最多不超过10个，格式为JSON。",
           "example": "{}",
           "member": "string",
           "name": "Tags",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要启用主体识别，默认为**TRUE**。\n• 为**TRUE**时，启用主体识别，返回主体信息。若没有指定**ImageRect**，自动提取最大面积主体创建图片并进行主体识别。主体识别结果可在**Response**中获取。\n• 为**FALSE**时，不启用主体识别，不返回主体信息。若没有指定**ImageRect**，以整张图创建图片。\n**<font color=#1E90FF>注意：仅服务类型为商品图像搜索时才生效。</font>**",
           "example": "true",
           "member": "bool",
           "name": "EnableDetect",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图像类目ID。\n若设置类目ID，提取以下类目的主体创建图片。\n类目取值说明：\n0：上衣。\n1：裙装。\n2：下装。\n3：包。\n4：鞋。\n5：配饰。\n**<font color=#1E90FF>注意：仅服务类型为商品图像搜索时才生效。</font>**",
           "example": "1",
           "member": "int64",
           "name": "CategoryId",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图像主体区域。\n若设置主体区域，提取指定的区域创建图片。",
           "example": "{x:1,y:2,weight:1.height:2}",
           "member": "Rect",
           "name": "ImageRect",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -969,8 +862,7 @@
           "name": "Object",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -985,48 +877,40 @@
       "document": "CropImage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要裁剪区域的宽度，与Height共同组成所需裁剪的图片宽高比例。\n输入数字请大于0、小于图片宽度的像素值。",
           "example": "1100",
           "member": "int64",
           "name": "Width",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要裁剪区域的高度，与Width共同组成所需裁剪的图片宽高比例。\n输入数字请大于0、小于图片高度的像素值。\n宽高比例（Width : Height）会简化为最简分数，即如果Width输入10、Height输入20，会简化为1：2。\nWidth : Height建议取值在[1, 2.5]之间，超过这个范围可能会影响效果。",
           "example": "880",
           "member": "int64",
           "name": "Height",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果。\n• 长宽比：长边：短边<5。 \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
           "example": "https://test.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片经过Base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n注意：图片需要Base64编码，并且要去掉编码头部。",
           "example": "xxxxx",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1042,8 +926,7 @@
           "name": "X",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1053,8 +936,7 @@
           "name": "Y",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1064,8 +946,7 @@
           "name": "Width",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1075,8 +956,7 @@
           "name": "Height",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1086,8 +966,7 @@
           "name": "OriginalWidth",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1097,8 +976,7 @@
           "name": "OriginalHeight",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1108,8 +986,7 @@
           "name": "CropResult",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1124,37 +1001,31 @@
       "document": "DeleteImages请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图库名称。",
           "example": "GroupId",
           "member": "string",
           "name": "GroupId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物品ID。",
           "example": "EntityId",
           "member": "string",
           "name": "EntityId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片名称，如果不指定本参数，则删除EntityId下所有的图片；否则删除指定的图。",
           "example": "PicName",
           "member": "string",
           "name": "PicName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1181,8 +1052,7 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1191,8 +1061,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1201,8 +1070,7 @@
           "member": "string",
           "name": "GroupId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1217,8 +1085,7 @@
           "member": "GroupInfo",
           "name": "Groups",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1233,37 +1100,31 @@
       "document": "DescribeImages请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图库名称。",
           "example": "test_group",
           "member": "string",
           "name": "GroupId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物品ID。",
           "example": "test_entity",
           "member": "string",
           "name": "EntityId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片名称。",
           "example": "pic_name",
           "member": "string",
           "name": "PicName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1279,8 +1140,7 @@
           "name": "GroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1290,8 +1150,7 @@
           "name": "EntityId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1301,8 +1160,7 @@
           "name": "ImageInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1317,48 +1175,40 @@
       "document": "DetectChefDress请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url 。\nImageUrl和ImageBase64必须提供一个，同时存在时优先使用ImageUrl字段。\n图片限制：\n• 图片格式：支持PNG、JPG、JPEG、不支持 GIF 图片。\n• 图片大小：对应图片 base64 编码后大小不可超过5M。图片分辨率不超过 3840 x 2160pixel。\n建议：\n• 接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
           "example": "\"\"",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片经过base64编码的内容。与ImageUrl同时存在时优先使用ImageUrl字段。\n注意：图片需要base64编码，并且要去掉编码头部。\n支持的图片格式：PNG、JPG、JPEG、暂不支持GIF格式。\n支持的图片大小：所下载图片经Base64编码后不超过5M。",
           "example": "\"\"",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人体检测模型开关，“true”为开启，“false”为关闭\n默认为开启，开启后可先对图片中的人体进行检测之后再进行属性识别",
           "example": "true",
           "member": "bool",
           "name": "EnableDetect",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人体优选开关，“true”为开启，“false”为关闭\n开启后自动对检测质量低的人体进行优选过滤，有助于提高属性识别的准确率。\n默认为开启，仅在人体检测开关开启时可配置，人体检测模型关闭时人体优选也关闭\n人体优选开启时，检测到的人体分辨率不超过1920*1080 pixel",
           "example": "true",
           "member": "bool",
           "name": "EnablePreferred",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1374,8 +1224,7 @@
           "name": "Bodies",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1390,26 +1239,22 @@
       "document": "DetectDisgust请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
           "example": "https://test.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
           "example": "xxxxx",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1425,8 +1270,7 @@
           "name": "Confidence",
           "required": true,
           "type": "float",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1436,8 +1280,7 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1452,26 +1295,22 @@
       "document": "DetectEnvelope请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片的URL地址。图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n图片大小的限制为4M，图片像素的限制为4k。",
           "example": "https://test.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片经过base64编码的内容。与ImageUrl同时存在时优先使用ImageUrl字段。 \n图片大小的限制为4M，图片像素的限制为4k。\n**注意：图片需要base64编码，并且要去掉编码头部。",
           "example": "1234",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1487,8 +1326,7 @@
           "name": "FirstTags",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1498,8 +1336,7 @@
           "name": "SecondTags",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1514,37 +1351,31 @@
       "document": "DetectLabelBeta请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
           "example": "https://123.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
           "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本次调用支持的识别场景，可选值如下：\nWEB，针对网络图片优化;\nCAMERA，针对手机摄像头拍摄图片优化;\nALBUM，针对手机相册、网盘产品优化;\nNEWS，针对新闻、资讯、广电等行业优化；\nNONECAM，非实拍图；\nLOCATION，主体位置识别；\n如果不传此参数，则默认为WEB。\n\n支持多场景（Scenes）一起检测。例如，使用 Scenes=[\"WEB\", \"CAMERA\"]，即对一张图片使用两个模型同时检测，输出两套识别结果。",
           "example": "无",
           "member": "string",
           "name": "Scenes",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1560,8 +1391,7 @@
           "name": "Labels",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1571,8 +1401,7 @@
           "name": "CameraLabels",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1582,8 +1411,7 @@
           "name": "AlbumLabels",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1593,8 +1421,7 @@
           "name": "NewsLabels",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1604,8 +1431,7 @@
           "name": "NoneCamLabels",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1615,8 +1441,7 @@
           "name": "LocationLabels",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1631,7 +1456,6 @@
       "document": "图像标签检测结果。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片中的物体名称。",
           "example": "string",
@@ -1642,7 +1466,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "算法对于Name的置信度，0-100之间，值越高，表示对于Name越确定。",
           "example": "1",
@@ -1653,7 +1476,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签的一级分类",
           "example": "string",
@@ -1664,7 +1486,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签的二级分类",
           "example": "string",
@@ -1681,26 +1502,22 @@
       "document": "DetectLabelPro请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片 URL 地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG、BMP。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边:短边<5； \n• 接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
           "example": "https://test.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片 Base64 编码数据。\n与ImageUrl同时存在时优先使用ImageUrl字段。\n图片限制：\n• 图片格式：PNG、JPG、JPEG、BMP。 \n• 图片大小：经Base64编码后不超过4M。\n**<font color=#1E90FF>注意：图片需要Base64编码，并且要去掉编码头部。</font>**",
           "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1716,8 +1533,7 @@
           "name": "Labels",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1732,37 +1548,31 @@
       "document": "DetectLabel请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片 Base64 编码数据。\n与ImageUrl同时存在时优先使用ImageUrl字段。\n图片限制：\n• 图片格式：PNG、JPG、JPEG、BMP。 \n• 图片大小：经Base64编码后不超过4M。\n**<font color=#1E90FF>注意：图片需要Base64编码，并且要去掉编码头部。</font>**",
           "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片 URL 地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG、BMP。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边:短边<5； \n• 接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
           "example": "https://test.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本次调用支持的识别场景，可选值如下：\n• WEB，针对网络图片优化;\n• CAMERA，针对手机摄像头拍摄图片优化;\n• ALBUM，针对手机相册、网盘产品优化;\n• NEWS，针对新闻、资讯、广电等行业优化；\n如果不传此参数，则默认为WEB。\n\n支持多场景（Scenes）一起检测。例如，使用 Scenes=[\"WEB\", \"CAMERA\"]，即对一张图片使用两个模型同时检测，输出两套识别结果。",
           "example": "[\"WEB\",\"CAMERA\",\"ALBUM\"]",
           "member": "string",
           "name": "Scenes",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1778,8 +1588,7 @@
           "name": "Labels",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1789,8 +1598,7 @@
           "name": "CameraLabels",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1800,8 +1608,7 @@
           "name": "AlbumLabels",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1811,8 +1618,7 @@
           "name": "NewsLabels",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1833,8 +1639,7 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1843,8 +1648,7 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1859,8 +1663,7 @@
           "member": "float",
           "name": "Confidence",
           "type": "float",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1869,8 +1672,7 @@
           "member": "string",
           "name": "Type",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1885,26 +1687,22 @@
       "document": "DetectPet请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片的URL地址。图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n图片大小的限制为4M，图片像素的限制为4k。",
           "example": "https://test.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片经过base64编码的内容。与ImageUrl同时存在时优先使用ImageUrl字段。 \n图片大小的限制为4M，图片像素的限制为4k。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
           "example": "\"\"",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1920,8 +1718,7 @@
           "name": "Pets",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1936,37 +1733,31 @@
       "document": "DetectProductBeta请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片限制：内测版仅支持jpg、jpeg，图片大小不超过1M，分辨率在25万到100万之间。 \n建议先对图片进行压缩，以便提升处理速度。",
           "example": "https://test.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片经过base64编码的内容。最大不超过1M，分辨率在25万到100万之间。 \n与ImageUrl同时存在时优先使用ImageUrl字段。",
           "example": "base64",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要百科信息 1：是，0: 否，默认是0",
           "example": "1",
           "member": "int64",
           "name": "NeedLemma",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1982,8 +1773,7 @@
           "name": "RegionDetected",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1993,8 +1783,7 @@
           "name": "ProductInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2004,8 +1793,7 @@
           "name": "ProductInfoList",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2020,26 +1808,22 @@
       "document": "DetectProduct请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
           "example": "xxxxx",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
           "example": "xxxxx",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2055,8 +1839,7 @@
           "name": "Products",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2077,8 +1860,7 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2087,8 +1869,7 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2097,8 +1878,7 @@
           "member": "bool",
           "name": "EnableDetect",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -2107,8 +1887,7 @@
           "member": "bool",
           "name": "EnablePreferred",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2123,8 +1902,7 @@
           "member": "AttributesForBody",
           "name": "Bodies",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2139,26 +1917,22 @@
       "document": "EnhanceImage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，最大不超过250万像素，否则影响识别效果。 \n• 长宽比：长边：短边<5。 \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
           "example": "https://test.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。图片经过Base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n注意：图片需要Base64编码，并且要去掉编码头部。",
           "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2174,8 +1948,7 @@
           "name": "EnhancedImage",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2190,7 +1963,6 @@
       "document": "图库信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图库Id。",
           "example": "test_group",
@@ -2198,11 +1970,9 @@
           "name": "GroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图库名称。",
           "example": "name",
@@ -2210,11 +1980,9 @@
           "name": "GroupName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图库简介。",
           "example": "xxxxx",
@@ -2222,11 +1990,9 @@
           "name": "Brief",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图库容量。",
           "example": "xxxxx",
@@ -2234,11 +2000,9 @@
           "name": "MaxCapacity",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该库的访问限频 。",
           "example": "xxxxx",
@@ -2246,11 +2010,9 @@
           "name": "MaxQps",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图库类型，对应不同服务类型，默认为1。建议手动调整为4～6，1～3为历史版本，不推荐。\n参数值：\n4：在自建图库中搜索相同原图，可支持裁剪、翻转、调色、加水印后的图片搜索，适用于图片版权保护、原图查询等场景。\n5：在自建图库中搜索相同或相似的商品图片，适用于商品分类、检索、推荐等电商场景。\n6：在自建图片库中搜索与输入图片高度相似的图片，适用于相似图案、logo、纹理等图像元素的搜索。",
           "example": "xxxxx",
@@ -2258,11 +2020,9 @@
           "name": "GroupType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图库图片数量。",
           "example": "123",
@@ -2270,11 +2030,9 @@
           "name": "PicCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图库创建时间。",
           "example": "123",
@@ -2282,11 +2040,9 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图库更新时间。",
           "example": "123",
@@ -2294,8 +2050,7 @@
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2304,7 +2059,6 @@
       "document": "图片信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片名称。",
           "example": "entityId",
@@ -2315,7 +2069,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户自定义的内容。",
           "example": "content",
@@ -2326,7 +2079,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片自定义标签，JSON格式。",
           "example": "{}",
@@ -2337,7 +2089,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片名称。",
           "example": "name",
@@ -2348,7 +2099,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "相似度。",
           "example": "10",
@@ -2365,7 +2115,6 @@
       "document": "图像主体区域坐标",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "左上角横坐标。",
           "example": "",
@@ -2376,7 +2125,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "左上角纵坐标。",
           "example": "",
@@ -2387,7 +2135,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "宽度。",
           "example": "",
@@ -2398,7 +2145,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高度。",
           "example": "",
@@ -2415,7 +2161,6 @@
       "document": "图片标签。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签内容。",
           "example": "xxx",
@@ -2426,7 +2171,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "置信度范围在0-100之间。值越高，表示目标为相应结果的可能性越高。",
           "example": "99",
@@ -2443,7 +2187,6 @@
       "document": "百科词条信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "词条\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "string",
@@ -2454,7 +2197,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "词条描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "string",
@@ -2465,7 +2207,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "string",
@@ -2482,7 +2223,6 @@
       "document": "检测到的主体在图片中的矩形框位置（四个顶点坐标）",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "位置矩形框的左上角横坐标",
           "example": "",
@@ -2493,7 +2233,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "位置矩形框的左上角纵坐标",
           "example": "",
@@ -2504,7 +2243,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "位置矩形框的右下角横坐标",
           "example": "",
@@ -2515,7 +2253,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "位置矩形框的右下角纵坐标",
           "example": "",
@@ -2532,7 +2269,6 @@
       "document": "图像的主体信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图像主体区域。",
           "example": "{}",
@@ -2540,11 +2276,9 @@
           "name": "Box",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主体类别ID。",
           "example": "2",
@@ -2552,11 +2286,9 @@
           "name": "CategoryId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "整张图颜色信息。",
           "example": "{}",
@@ -2564,11 +2296,9 @@
           "name": "Colors",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "属性信息。",
           "example": "{}",
@@ -2576,11 +2306,9 @@
           "name": "Attributes",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图像的所有主体区域，置信度，以及主体区域类别ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
@@ -2588,8 +2316,7 @@
           "name": "AllBox",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2598,7 +2325,6 @@
       "document": "宠物具体信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的宠物类型（猫或者狗，暂不支持识别猫狗品种）。",
           "example": "cat",
@@ -2606,11 +2332,9 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别服务给识别目标打出的置信度，范围在0-100之间。值越高，表示目标为相应结果的可能性越高。",
           "example": "99",
@@ -2618,11 +2342,9 @@
           "name": "Score",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别目标在图片中的坐标。",
           "example": "无",
@@ -2630,8 +2352,7 @@
           "name": "Location",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2640,7 +2361,6 @@
       "document": "检测到的单个商品结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片中商品的三级分类识别结果，选取所有三级分类中的置信度最大者",
           "example": "",
@@ -2651,7 +2371,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "三级商品分类对应的一级分类和二级分类，两级之间用“-”（中划线）隔开，例如商品名称是“硬盘”，那么Parents输出为“电脑、办公-电脑配件”",
           "example": "",
@@ -2662,7 +2381,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "算法对于Name的置信度，0-100之间，值越高，表示对于Name越确定",
           "example": "",
@@ -2673,7 +2391,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商品坐标X轴的最小值",
           "example": "",
@@ -2684,7 +2401,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商品坐标Y轴的最小值",
           "example": "",
@@ -2695,7 +2411,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商品坐标X轴的最大值",
           "example": "",
@@ -2706,7 +2421,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商品坐标Y轴的最大值",
           "example": "",
@@ -2723,7 +2437,6 @@
       "document": "图像识别出的商品的详细信息。 \n当图像中检测到多个物品时，会对显著性最高的物品进行识别。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "1表示找到同款商品，以下字段为同款商品信息； \n0表示未找到同款商品， 具体商品信息为空（参考价格、名称、品牌等），仅提供商品类目和参考图片（商品库中找到的最相似图片，供参考）。  \n是否找到同款的判断依据为Score分值，分值越大则同款的可能性越大。",
           "example": "1",
@@ -2734,7 +2447,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本商品在图片中的坐标，表示为矩形框的四个顶点坐标。",
           "example": "{}",
@@ -2745,7 +2457,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商品名称",
           "example": "string",
@@ -2756,7 +2467,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商品品牌",
           "example": "string",
@@ -2767,7 +2477,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参考价格，综合多个信息源，仅供参考。",
           "example": "string",
@@ -2778,7 +2487,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别结果的商品类目。 \n包含：鞋、图书音像、箱包、美妆个护、服饰、家电数码、玩具乐器、食品饮料、珠宝、家居家装、药品、酒水、绿植园艺、其他商品、非商品等。 \n当类别为“非商品”时，除Location、Score和本字段之外的商品信息为空。",
           "example": "string",
@@ -2789,7 +2497,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输入图片中的主体物品和输出结果的相似度。分值越大，输出结果与输入图片是同款的可能性越高。",
           "example": "1",
@@ -2800,7 +2507,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索到的商品配图URL。",
           "example": "string",
@@ -2811,7 +2517,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "百科词条列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -2834,8 +2539,7 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2844,8 +2548,7 @@
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2860,8 +2563,7 @@
           "member": "Coord",
           "name": "CarCoords",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2870,8 +2572,7 @@
           "member": "CarTagItem",
           "name": "CarTags",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2886,26 +2587,22 @@
       "document": "RecognizeCar请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
           "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**\n支持的图片格式：PNG、JPG、JPEG、BMP，暂不支持GIF格式。支持的图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。",
           "example": "xxxxx",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2921,8 +2618,7 @@
           "name": "CarCoords",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2932,8 +2628,7 @@
           "name": "CarTags",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2948,7 +2643,6 @@
       "document": "具体坐标，可用来判断边界",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "x轴坐标",
           "example": "0",
@@ -2959,7 +2653,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "y轴坐标",
           "example": "0",
@@ -2970,7 +2663,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "(x,y)坐标距离长度",
           "example": "0",
@@ -2981,7 +2673,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "(x,y)坐标距离高度",
           "example": "0",
@@ -2998,7 +2689,6 @@
       "document": "检测到的图片中的商品位置和品类预测。 \n当图片中存在多个商品时，输出多组坐标，按照__显著性__排序（综合考虑面积、是否在中心、检测算法置信度）。 \n最多可以输出__3组__检测结果。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "商品的品类预测结果。 \n包含：鞋、图书音像、箱包、美妆个护、服饰、家电数码、玩具乐器、食品饮料、珠宝、家居家装、药品、酒水、绿植园艺、其他商品、非商品等。",
           "example": "",
@@ -3009,7 +2699,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商品品类预测的置信度",
           "example": "",
@@ -3020,7 +2709,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测到的主体在图片中的坐标，表示为矩形框的四个顶点坐标",
           "example": "",
@@ -3037,114 +2725,94 @@
       "document": "SearchImage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图库名称。",
           "example": "test_group",
           "member": "string",
           "name": "GroupId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url 。\nImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl。\n图片限制：\n• 图片格式：支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。\n• 图片大小：对应图片 base64 编码后大小不可超过5M。图片分辨率不超过4096\\*4096。\n• 如果在商品图像搜索中开启主体识别，分辨率不超过2000\\*2000，图片长宽比小于10。\n建议：\n• 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的Url速度和稳定性可能受一定影响。",
           "example": "test.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片 base64 数据。\nImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl。\n图片限制：\n• 图片格式：支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。\n• 图片大小：base64 编码后大小不可超过5M。图片分辨率不超过4096\\*4096。\n• 如果在商品图像搜索中开启主体识别，分辨率不超过2000\\*2000，图片长宽比小于10。",
           "example": "base64",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回结果的数量，默认值为10，最大值为100。\n按照相似度分数由高到低排序。\n**<font color=#1E90FF>服务类型为图案花纹搜索时Limit = 1，最多只能返回1个结果。</font>**",
           "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回结果的起始序号，默认值为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "匹配阈值。\n只有图片相似度分数超过匹配阈值的结果才会返回。\n当MatchThreshold为0（默认值）时，各服务类型将按照以下默认的匹配阈值进行结果过滤：\n• 通用图像搜索1.0版：50。\n• 商品图像搜索2.0升级版：45。\n• 商品图像搜索1.0版：28。\n• 图案花纹搜索1.0版：56。\n建议：\n可以手动调整MatchThreshold值来控制输出结果的范围。如果发现无检索结果，可能是因为图片相似度较低导致检索结果被匹配阈值过滤，建议调整为较低的阈值后再次尝试检索。",
           "example": "1",
           "member": "int64",
           "name": "MatchThreshold",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签过滤条件。\n针对创建图片时提交的Tags信息进行条件过滤。支持>、>=、 <、 <=、=，!=，多个条件之间支持AND和OR进行连接。",
           "example": "value > 1",
           "member": "string",
           "name": "Filter",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图像主体区域。\n若设置主体区域，提取指定的区域进行检索。",
           "example": "无",
           "member": "ImageRect",
           "name": "ImageRect",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要启用主体识别，默认为**TRUE** 。\n• 为**TRUE**时，启用主体识别，返回主体信息。若没有指定**ImageRect**，自动提取最大面积主体进行检索并进行主体识别。主体识别结果可在**Response中**获取。\n• 为**FALSE**时，不启用主体识别，不返回主体信息。若没有指定**ImageRect**，以整张图检索图片。\n**<font color=#1E90FF>注意：仅服务类型为商品图像搜索时才生效。</font>**",
           "example": "true",
           "member": "bool",
           "name": "EnableDetect",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图像类目ID。\n若设置类目ID，提取以下类目的主体进行检索。\n类目取值说明：\n0：上衣。\n1：裙装。\n2：下装。\n3：包。\n4：鞋。\n5：配饰。\n**<font color=#1E90FF>注意：仅服务类型为商品图像搜索时才生效。</font>**",
           "example": "1",
           "member": "int64",
           "name": "CategoryId",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3160,8 +2828,7 @@
           "name": "Count",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3171,8 +2838,7 @@
           "name": "ImageInfos",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3182,8 +2848,7 @@
           "name": "Object",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3198,48 +2863,40 @@
       "document": "UpdateImage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图库ID。",
           "example": "xxxxx",
           "member": "string",
           "name": "GroupId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物品ID，最多支持64个字符。",
           "example": "xxxxx",
           "member": "string",
           "name": "EntityId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片名称，最多支持64个字符。",
           "example": "xxxxx",
           "member": "string",
           "name": "PicName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新的自定义标签，最多不超过10个，格式为JSON。",
           "example": "{}",
           "member": "string",
           "name": "Tags",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"

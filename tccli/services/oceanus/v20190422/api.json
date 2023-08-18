@@ -215,7 +215,6 @@
       "document": "云联网描述信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络 ID",
           "example": "",
@@ -226,7 +225,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网 ID",
           "example": "",
@@ -237,7 +235,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云联网 ID，如 ccn-rahigzjd",
           "example": "",
@@ -261,8 +258,7 @@
           "name": "AccessGroupId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -272,8 +268,7 @@
           "name": "AccessGroupName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -282,59 +277,49 @@
       "document": "CheckSavepoint请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作业 id",
           "example": "cql-52xkpymp",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照资源 id",
           "example": "svp-52xkpymp",
           "member": "string",
           "name": "SerialId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint",
           "example": "1",
           "member": "int64",
           "name": "RecordType",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照路径，目前只支持 cos 路径",
           "example": "cosn://xxx/xxx",
           "member": "string",
           "name": "SavepointPath",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 id",
           "example": "space-1327",
           "member": "string",
           "name": "WorkSpaceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -350,8 +335,7 @@
           "name": "SerialId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -361,8 +345,7 @@
           "name": "SavepointStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -384,8 +367,7 @@
           "name": "Clazz",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -395,8 +377,7 @@
           "name": "Level",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -412,8 +393,7 @@
           "name": "ClusterId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -423,8 +403,7 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -434,8 +413,7 @@
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -445,8 +423,7 @@
           "name": "AppId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -456,8 +433,7 @@
           "name": "OwnerUin",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -467,8 +443,7 @@
           "name": "CreatorUin",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -478,8 +453,7 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -489,8 +463,7 @@
           "name": "Remark",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -500,8 +473,7 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -511,8 +483,7 @@
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -522,8 +493,7 @@
           "name": "CuNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -533,8 +503,7 @@
           "name": "CuMem",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -544,8 +513,7 @@
           "name": "Zone",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -555,8 +523,7 @@
           "name": "StatusDesc",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -566,8 +533,7 @@
           "name": "CCNs",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -577,8 +543,7 @@
           "name": "NetEnvironmentType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -588,8 +553,7 @@
           "name": "FreeCuNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -599,8 +563,7 @@
           "name": "Tags",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -610,8 +573,7 @@
           "name": "IsolatedTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -621,8 +583,7 @@
           "name": "ExpireTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -632,8 +593,7 @@
           "name": "SecondsUntilExpiry",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -643,8 +603,7 @@
           "name": "AutoRenewFlag",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -654,8 +613,7 @@
           "name": "DefaultCOSBucket",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -665,8 +623,7 @@
           "name": "CLSLogSet",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -676,8 +633,7 @@
           "name": "CLSTopicId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -687,8 +643,7 @@
           "name": "CLSLogName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -698,8 +653,7 @@
           "name": "CLSTopicName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -709,8 +663,7 @@
           "name": "Version",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -720,8 +673,7 @@
           "name": "FreeCu",
           "required": true,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -731,8 +683,7 @@
           "name": "DefaultLogCollectConf",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -742,8 +693,7 @@
           "name": "CustomizedDNSEnabled",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -753,8 +703,7 @@
           "name": "Correlations",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -764,8 +713,7 @@
           "name": "RunningCu",
           "required": true,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -775,8 +723,7 @@
           "name": "PayMode",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -786,8 +733,7 @@
           "name": "IsNeedManageNode",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -797,8 +743,7 @@
           "name": "ClusterSessions",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -814,8 +759,7 @@
           "name": "ClusterId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -825,8 +769,7 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -836,8 +779,7 @@
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -847,8 +789,7 @@
           "name": "Zone",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -858,8 +799,7 @@
           "name": "AppId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -869,8 +809,7 @@
           "name": "OwnerUin",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -880,8 +819,7 @@
           "name": "CreatorUin",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -891,8 +829,7 @@
           "name": "CuNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -902,8 +839,7 @@
           "name": "CuMem",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -913,8 +849,7 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -924,8 +859,7 @@
           "name": "StatusDesc",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -935,8 +869,7 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -946,8 +879,7 @@
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -957,8 +889,7 @@
           "name": "Remark",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -968,8 +899,7 @@
           "name": "NetEnvironmentType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -979,8 +909,7 @@
           "name": "FreeCuNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -990,8 +919,7 @@
           "name": "FreeCu",
           "required": true,
           "type": "float",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1001,8 +929,7 @@
           "name": "RunningCu",
           "required": false,
           "type": "float",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1012,8 +939,7 @@
           "name": "PayMode",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1027,7 +953,6 @@
       "document": "集群的版本相关信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群的Flink版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Flink-1.11",
@@ -1038,7 +963,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群支持的Flink版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"Flink-1.13\", \"\"Flink-1.11\"]",
@@ -1062,8 +986,7 @@
           "name": "SourceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1073,8 +996,7 @@
           "name": "TargetClusterId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1084,8 +1006,7 @@
           "name": "SourceName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1095,8 +1016,7 @@
           "name": "TargetName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1106,8 +1026,7 @@
           "name": "TargetFolderId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1117,8 +1036,7 @@
           "name": "JobType",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -1134,8 +1052,7 @@
           "name": "JobId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1145,8 +1062,7 @@
           "name": "JobName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1156,8 +1072,7 @@
           "name": "TargetJobName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1167,8 +1082,7 @@
           "name": "TargetJobId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1178,8 +1092,7 @@
           "name": "Message",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1189,8 +1102,7 @@
           "name": "Result",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1200,8 +1112,7 @@
           "name": "ClusterName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1211,8 +1122,7 @@
           "name": "ClusterId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1222,8 +1132,7 @@
           "name": "JobType",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1232,26 +1141,22 @@
       "document": "CopyJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "复制明细列表",
           "example": "无",
           "member": "CopyJobItem",
           "name": "JobItems",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "无",
           "member": "string",
           "name": "WorkSpaceId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1267,8 +1172,7 @@
           "name": "SuccessCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1278,8 +1182,7 @@
           "name": "FailCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1289,8 +1192,7 @@
           "name": "CopyJobsResults",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1305,28 +1207,22 @@
       "document": "CreateCHDFSAccessGroup请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "集群唯一标识",
           "example": "cluster-xxx",
-          "is_base64": false,
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "空间唯一标识",
           "example": "space-xxx",
-          "is_base64": false,
           "member": "string",
           "name": "WorkSpaceId",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1347,48 +1243,40 @@
       "document": "CreateFolder请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "新建文件夹名",
           "example": "joylyu-test",
           "member": "string",
           "name": "FolderName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新建文件夹的父目录ID",
           "example": "folder-xxxxxxxx",
           "member": "string",
           "name": "ParentId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件夹类型，0是任务文件夹，1是依赖文件夹",
           "example": "0",
           "member": "int64",
           "name": "FolderType",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-xxx",
           "member": "string",
           "name": "WorkSpaceId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1404,8 +1292,7 @@
           "name": "FolderId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1426,8 +1313,7 @@
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1436,8 +1322,7 @@
           "member": "string",
           "name": "EntrypointClass",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1446,8 +1331,7 @@
           "member": "string",
           "name": "ProgramArgs",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1456,8 +1340,7 @@
           "member": "string",
           "name": "Remark",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1466,8 +1349,7 @@
           "member": "ResourceRef",
           "name": "ResourceRefs",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1476,8 +1358,7 @@
           "member": "uint64",
           "name": "DefaultParallelism",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1486,8 +1367,7 @@
           "member": "Property",
           "name": "Properties",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1496,8 +1376,7 @@
           "member": "int64",
           "name": "AutoDelete",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1506,8 +1385,7 @@
           "member": "string",
           "name": "COSBucket",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1516,8 +1394,7 @@
           "member": "bool",
           "name": "LogCollect",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -1526,8 +1403,7 @@
           "member": "float",
           "name": "JobManagerSpec",
           "required": false,
-          "type": "float",
-          "visibility": 1
+          "type": "float"
         },
         {
           "disabled": false,
@@ -1536,8 +1412,7 @@
           "member": "float",
           "name": "TaskManagerSpec",
           "required": false,
-          "type": "float",
-          "visibility": 1
+          "type": "float"
         },
         {
           "disabled": false,
@@ -1546,8 +1421,7 @@
           "member": "string",
           "name": "ClsLogsetId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1556,8 +1430,7 @@
           "member": "string",
           "name": "ClsTopicId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1566,8 +1439,7 @@
           "member": "int64",
           "name": "LogCollectType",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1576,8 +1448,7 @@
           "member": "string",
           "name": "PythonVersion",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1586,8 +1457,7 @@
           "member": "string",
           "name": "WorkSpaceId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1596,8 +1466,7 @@
           "member": "string",
           "name": "LogLevel",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1606,8 +1475,7 @@
           "member": "int64",
           "name": "AutoRecover",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1616,8 +1484,7 @@
           "member": "ClazzLevel",
           "name": "ClazzLevels",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1626,8 +1493,7 @@
           "member": "bool",
           "name": "ExpertModeOn",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -1636,8 +1502,7 @@
           "member": "ExpertModeConfiguration",
           "name": "ExpertModeConfiguration",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1652,8 +1517,7 @@
           "member": "uint64",
           "name": "Version",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1674,8 +1538,7 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1684,8 +1547,7 @@
           "member": "int64",
           "name": "JobType",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1694,8 +1556,7 @@
           "member": "int64",
           "name": "ClusterType",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1704,8 +1565,7 @@
           "member": "string",
           "name": "ClusterId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1714,8 +1574,7 @@
           "member": "uint64",
           "name": "CuMem",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1724,8 +1583,7 @@
           "member": "string",
           "name": "Remark",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1734,8 +1592,7 @@
           "member": "string",
           "name": "FolderId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1744,8 +1601,7 @@
           "member": "string",
           "name": "FlinkVersion",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1754,8 +1610,7 @@
           "member": "string",
           "name": "WorkSpaceId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1764,8 +1619,7 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1780,8 +1634,7 @@
           "member": "string",
           "name": "JobId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1796,7 +1649,6 @@
       "document": "CreateResourceConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "example": "resource-xxx",
@@ -1806,7 +1658,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "位置信息",
           "example": "[]",
@@ -1816,7 +1667,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源描述信息",
           "example": "xxx",
@@ -1826,7 +1676,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1： 资源版本达到上限，自动删除最早可删除的版本",
           "example": "0",
@@ -1836,7 +1685,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-xxx",
@@ -1874,7 +1722,6 @@
       "document": "CreateResource请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源位置",
           "example": "[]",
@@ -1884,7 +1731,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源类型。目前只支持 JAR，取值为 1",
           "example": "1",
@@ -1894,7 +1740,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源描述",
           "example": "v1",
@@ -1904,7 +1749,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源名称",
           "example": "1",
@@ -1914,7 +1758,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源版本描述",
           "example": "1",
@@ -1924,7 +1767,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目录ID",
           "example": "folder-xxxx",
@@ -1934,7 +1776,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-1237",
@@ -1982,7 +1823,6 @@
       "document": "DeleteJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作业Id列表",
           "example": "[]",
@@ -1992,7 +1832,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间Id",
           "example": "space-1327",
@@ -2020,7 +1859,6 @@
       "document": "DeleteResourceConfigs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "example": "resource-xxx",
@@ -2030,7 +1868,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源版本数组",
           "example": "1",
@@ -2040,7 +1877,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-xxx",
@@ -2068,7 +1904,6 @@
       "document": "DeleteResources请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待删除资源ID列表",
           "example": "resource-xxx",
@@ -2078,7 +1913,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-xxx",
@@ -2106,7 +1940,6 @@
       "document": "DeleteTableConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作业ID",
           "example": "cql-xxx",
@@ -2116,7 +1949,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "调试作业ID",
           "example": "123",
@@ -2126,7 +1958,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表名",
           "example": "a",
@@ -2136,7 +1967,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-xxx",
@@ -2164,28 +1994,22 @@
       "document": "DescribeCHDFSAccessGroups请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "集群唯一标识",
           "example": "cluster-xxx",
-          "is_base64": false,
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "空间唯一标识",
           "example": "space-xxx",
-          "is_base64": false,
           "member": "string",
           "name": "WorkSpaceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2201,8 +2025,7 @@
           "name": "CHDFSAccessGroups",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2217,70 +2040,58 @@
       "document": "DescribeClusters请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "按照一个或者多个集群 ID 查询，每次请求的集群上限为 100",
           "example": "cluster-xxxx",
           "member": "string",
           "name": "ClusterIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认 0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求的集群数量，默认 20，最大值 100",
           "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群信息结果排序规则，1 按时间降序，2 按照时间升序，3  按照状态排序",
           "example": "1",
           "member": "int64",
           "name": "OrderType",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤规则",
           "example": "[]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-1327",
           "member": "string",
           "name": "WorkSpaceId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2296,8 +2107,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2307,8 +2117,7 @@
           "name": "ClusterSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2323,7 +2132,6 @@
       "document": "DescribeJobConfigs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作业Id",
           "example": "cql-xxxx",
@@ -2333,7 +2141,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业配置版本",
           "example": "[]",
@@ -2343,7 +2150,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认0",
           "example": "0",
@@ -2353,7 +2159,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页大小，默认20，最大100",
           "example": "20",
@@ -2363,7 +2168,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件",
           "example": "[]",
@@ -2373,7 +2177,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "true 表示只展示草稿",
           "example": "false",
@@ -2383,7 +2186,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-xxx",
@@ -2431,48 +2233,40 @@
       "document": "DescribeJobSavepoint请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作业 SerialId",
           "example": "cql-asdf5678",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数，单页总数",
           "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数，偏移量",
           "example": "1",
           "member": "int64",
           "name": "Offset",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-xxx",
           "member": "string",
           "name": "WorkSpaceId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2488,8 +2282,7 @@
           "name": "TotalNumber",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2499,8 +2292,7 @@
           "name": "Savepoint",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2510,8 +2302,7 @@
           "name": "RunningSavepoint",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2521,8 +2312,7 @@
           "name": "RunningTotalNumber",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2537,7 +2327,6 @@
       "document": "DescribeJobSubmissionLog请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作业ID，例如：cql-6v1jkxrn",
           "example": "cql-ebgioapf",
@@ -2547,7 +2336,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始时间，unix时间戳，毫秒级，例如：1611754219108",
           "example": "1585749042",
@@ -2557,7 +2345,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间，unix时间戳，毫秒级，例如：1611754219108",
           "example": "1585749042",
@@ -2567,7 +2354,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业运行的实例ID, 例如：1,2,3。默认为0，表示未选中任何实例，搜索该时间段内最近的一个实例的日志",
           "example": "0",
@@ -2577,7 +2363,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志搜索的关键词，默认为空",
           "example": "无",
@@ -2587,7 +2372,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志搜索的游标，可透传上次返回的值，默认为空",
           "example": "无",
@@ -2597,7 +2381,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳排序规则，asc - 升序，desc - 降序。默认为升序",
           "example": "asc",
@@ -2607,7 +2390,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索的日志条数上限值，最大为100",
           "example": "100",
@@ -2695,7 +2477,6 @@
       "document": "DescribeJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "按照一个或者多个作业ID查询。作业ID形如：cql-11112222，每次请求的作业上限为100。参数不支持同时指定JobIds和Filters。",
           "example": "[]",
@@ -2705,7 +2486,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，支持的 Filter.Name 为：作业名 Name、作业状态 Status、所属集群 ClusterId、作业id JobId、集群名称 ClusterName。 每次请求的 Filters 个数的上限为 5，Filter.Values 的个数上限为 5。参数不支持同时指定 JobIds 和 Filters。",
           "example": "无",
@@ -2715,7 +2495,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
           "example": "0",
@@ -2725,7 +2504,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页大小，默认为20，最大值为100",
           "example": "20",
@@ -2735,7 +2513,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-1327",
@@ -2783,7 +2560,6 @@
       "document": "DescribeResourceConfigs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "example": "resource-xxx",
@@ -2793,7 +2569,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，仅当设置 Limit 时该参数有效",
           "example": "0",
@@ -2803,7 +2578,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回值大小，不填则返回全量数据",
           "example": "20",
@@ -2813,7 +2587,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源配置Versions集合",
           "example": "1",
@@ -2823,7 +2596,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业配置版本",
           "example": "无",
@@ -2833,7 +2605,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业ID",
           "example": "无",
@@ -2843,7 +2614,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-xxx",
@@ -2891,7 +2661,6 @@
       "document": "DescribeResourceRelatedJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "example": "resource-xxx",
@@ -2901,7 +2670,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认0;   1： 按照作业版本创建时间降序",
           "example": "0",
@@ -2911,7 +2679,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
           "example": "0",
@@ -2921,7 +2688,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页大小，默认为20，最大值为100",
           "example": "20",
@@ -2931,7 +2697,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源版本号",
           "example": "1",
@@ -2941,7 +2706,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-xxx",
@@ -2989,7 +2753,6 @@
       "document": "DescribeResources请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要查询的资源ID数组，数量不超过100个。如果填写了该参数则忽略Filters参数。",
           "example": "[\"resource-8udfak5k\",\"resource-8udfak5j\"]",
@@ -2999,7 +2762,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，仅当设置 Limit 参数时有效",
           "example": "0",
@@ -3009,7 +2771,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "条数限制。如果不填，默认返回 20 条",
           "example": "20",
@@ -3019,7 +2780,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "<li><strong>ResourceName</strong></li>\n<p style=\"padding-left: 30px;\">按照资源名字过滤，支持模糊过滤。传入的过滤名字不超过5个</p><p style=\"padding-left: 30px;\">类型: String</p><p style=\"padding-left: 30px;\">必选: 否</p>",
           "example": "[]",
@@ -3029,7 +2789,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-xxx",
@@ -3077,7 +2836,6 @@
       "document": "DescribeSystemResources请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要查询的资源ID数组",
           "example": "[]",
@@ -3087,7 +2845,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，仅当设置 Limit 参数时有效",
           "example": "0",
@@ -3097,7 +2854,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "条数限制，默认返回 20 条",
           "example": "20",
@@ -3107,7 +2863,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询资源配置列表， 如果不填写，返回该 ResourceIds.N 下所有作业配置列表",
           "example": "[]",
@@ -3117,7 +2872,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cluster-xxxx",
@@ -3127,7 +2881,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询对应Flink版本的内置connector",
           "example": "Flink-1.11",
@@ -3175,7 +2928,6 @@
       "document": "DescribeTreeJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 Serialid",
           "example": "space-1327",
@@ -3209,8 +2961,7 @@
           "member": "string",
           "name": "WorkSpaceId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3225,8 +2976,7 @@
           "member": "string",
           "name": "ParentId",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3235,8 +2985,7 @@
           "member": "string",
           "name": "Id",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3245,8 +2994,7 @@
           "member": "string",
           "name": "Name",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3255,8 +3003,7 @@
           "member": "TreeResourceItem",
           "name": "Items",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3265,8 +3012,7 @@
           "member": "DescribeTreeResourcesRsp",
           "name": "Children",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3275,8 +3021,7 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3298,8 +3043,7 @@
           "name": "ParentId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3309,8 +3053,7 @@
           "name": "Id",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3320,8 +3063,7 @@
           "name": "Name",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3331,8 +3073,7 @@
           "name": "Items",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3342,8 +3083,7 @@
           "name": "Children",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3353,8 +3093,7 @@
           "name": "TotalCount",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3369,8 +3108,7 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3379,8 +3117,7 @@
           "member": "int64",
           "name": "OrderType",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3389,8 +3126,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3399,8 +3135,7 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3415,8 +3150,7 @@
           "member": "WorkSpaceSetItem",
           "name": "WorkSpaceSetItem",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3425,8 +3159,7 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3448,8 +3181,7 @@
           "name": "JobGraph",
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3459,8 +3191,7 @@
           "name": "NodeConfig",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3470,8 +3201,7 @@
           "name": "SlotSharingGroups",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -3480,7 +3210,6 @@
       "document": "查询作业列表时的过滤器",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要过滤的字段",
           "example": "",
@@ -3491,7 +3220,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段的过滤值",
           "example": "",
@@ -3515,8 +3243,7 @@
           "name": "JobId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3526,8 +3253,7 @@
           "name": "EntrypointClass",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3537,8 +3263,7 @@
           "name": "ProgramArgs",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3548,8 +3273,7 @@
           "name": "Remark",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3559,8 +3283,7 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3570,8 +3293,7 @@
           "name": "Version",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3581,8 +3303,7 @@
           "name": "DefaultParallelism",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3592,8 +3313,7 @@
           "name": "Properties",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3603,8 +3323,7 @@
           "name": "ResourceRefDetails",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3614,8 +3333,7 @@
           "name": "CreatorUin",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3625,8 +3343,7 @@
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3636,8 +3353,7 @@
           "name": "COSBucket",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3647,8 +3363,7 @@
           "name": "LogCollect",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3658,8 +3373,7 @@
           "name": "MaxParallelism",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3669,8 +3383,7 @@
           "name": "JobManagerSpec",
           "required": true,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3680,8 +3393,7 @@
           "name": "TaskManagerSpec",
           "required": true,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3691,8 +3403,7 @@
           "name": "ClsLogsetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3702,8 +3413,7 @@
           "name": "ClsTopicId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3713,8 +3423,7 @@
           "name": "PythonVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3724,8 +3433,7 @@
           "name": "AutoRecover",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3735,8 +3443,7 @@
           "name": "LogLevel",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3746,8 +3453,7 @@
           "name": "ClazzLevels",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3757,8 +3463,7 @@
           "name": "ExpertModeOn",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3768,8 +3473,7 @@
           "name": "ExpertModeConfiguration",
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3785,8 +3489,7 @@
           "name": "Nodes",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3796,8 +3499,7 @@
           "name": "Edges",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -3813,8 +3515,7 @@
           "name": "Source",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3824,8 +3525,7 @@
           "name": "Target",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -3841,8 +3541,7 @@
           "name": "Id",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3852,8 +3551,7 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3863,8 +3561,7 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3874,8 +3571,7 @@
           "name": "Parallelism",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -3884,7 +3580,6 @@
       "document": "搜索启动日志时返回的作业实例",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例的Id, 按照启动的时间顺序，从1开始",
           "example": "",
@@ -3895,7 +3590,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业实例的启动时间",
           "example": "",
@@ -3906,7 +3600,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业实例启动的时间（毫秒）",
           "example": "",
@@ -3930,8 +3623,7 @@
           "name": "JobId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3941,8 +3633,7 @@
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3952,8 +3643,7 @@
           "name": "Zone",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3963,8 +3653,7 @@
           "name": "AppId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3974,8 +3663,7 @@
           "name": "OwnerUin",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3985,8 +3673,7 @@
           "name": "CreatorUin",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3996,8 +3683,7 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4007,8 +3693,7 @@
           "name": "JobType",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4018,8 +3703,7 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4029,8 +3713,7 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4040,8 +3723,7 @@
           "name": "StartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4051,8 +3733,7 @@
           "name": "StopTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4062,8 +3743,7 @@
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4073,8 +3753,7 @@
           "name": "TotalRunMillis",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4084,8 +3763,7 @@
           "name": "Remark",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4095,8 +3773,7 @@
           "name": "LastOpResult",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4106,8 +3783,7 @@
           "name": "ClusterName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4117,8 +3793,7 @@
           "name": "LatestJobConfigVersion",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4128,8 +3803,7 @@
           "name": "PublishedJobConfigVersion",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4139,8 +3813,7 @@
           "name": "RunningCuNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4150,8 +3823,7 @@
           "name": "CuMem",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4161,8 +3833,7 @@
           "name": "StatusDesc",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4172,8 +3843,7 @@
           "name": "CurrentRunMillis",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4183,8 +3853,7 @@
           "name": "ClusterId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4194,8 +3863,7 @@
           "name": "WebUIUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4205,8 +3873,7 @@
           "name": "SchedulerType",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4216,8 +3883,7 @@
           "name": "ClusterStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4227,8 +3893,7 @@
           "name": "RunningCu",
           "required": true,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4238,8 +3903,7 @@
           "name": "FlinkVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4249,8 +3913,7 @@
           "name": "WorkSpaceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4260,8 +3923,7 @@
           "name": "WorkSpaceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4271,8 +3933,7 @@
           "name": "Tags",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4281,7 +3942,6 @@
       "document": "日志查询的每行日志信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "日志内容\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abc",
@@ -4292,7 +3952,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "毫秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611816200076",
@@ -4303,7 +3962,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志组Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2014BF16012637D-6",
@@ -4314,7 +3972,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志Id，在日志组范围里唯一",
           "example": "131072",
@@ -4325,7 +3982,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志所属的容器名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "flink-job-manager",
@@ -4342,7 +3998,6 @@
       "document": "ModifyJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作业Id",
           "example": "cql-6iaginqp",
@@ -4352,7 +4007,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业名称，支持长度小于50的中文/英文/数字/”-”/”_”/”.”，不能重名",
           "example": "test",
@@ -4362,7 +4016,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "example": "测试",
@@ -4372,7 +4025,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "拖拽文件需传入此参数",
           "example": "folder-xxxxxxxx",
@@ -4382,7 +4034,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-1237",
@@ -4417,8 +4068,7 @@
           "name": "Id",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4428,8 +4078,7 @@
           "name": "Parallelism",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4439,8 +4088,7 @@
           "name": "SlotSharingGroup",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4450,8 +4098,7 @@
           "name": "Configuration",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4461,8 +4108,7 @@
           "name": "StateTTL",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -4478,8 +4124,7 @@
           "name": "Key",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4489,8 +4134,7 @@
           "name": "Value",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4506,8 +4150,7 @@
           "name": "JobStatus",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4517,8 +4160,7 @@
           "name": "Count",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4534,8 +4176,7 @@
           "name": "ResourceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4545,8 +4186,7 @@
           "name": "ResourceType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4556,8 +4196,7 @@
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4567,8 +4206,7 @@
           "name": "AppId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4578,8 +4216,7 @@
           "name": "OwnerUin",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4589,8 +4226,7 @@
           "name": "CreatorUin",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4600,8 +4236,7 @@
           "name": "ResourceLoc",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4611,8 +4246,7 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4622,8 +4256,7 @@
           "name": "Version",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4633,8 +4266,7 @@
           "name": "Remark",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4644,8 +4276,7 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4655,8 +4286,7 @@
           "name": "RefJobCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4666,8 +4296,7 @@
           "name": "RefJobStatusCountSet",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4683,8 +4312,7 @@
           "name": "ResourceId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4694,8 +4322,7 @@
           "name": "Name",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4705,8 +4332,7 @@
           "name": "ResourceType",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4716,8 +4342,7 @@
           "name": "ResourceLoc",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4727,8 +4352,7 @@
           "name": "Region",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4738,8 +4362,7 @@
           "name": "AppId",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4749,8 +4372,7 @@
           "name": "OwnerUin",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4760,8 +4382,7 @@
           "name": "CreatorUin",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4771,8 +4392,7 @@
           "name": "CreateTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4782,8 +4402,7 @@
           "name": "UpdateTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4793,8 +4412,7 @@
           "name": "LatestResourceConfigVersion",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4804,8 +4422,7 @@
           "name": "Remark",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4815,8 +4432,7 @@
           "name": "VersionCount",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4826,8 +4442,7 @@
           "name": "RefJobCount",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4837,8 +4452,7 @@
           "name": "IsJobRun",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4848,8 +4462,7 @@
           "name": "FileName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4859,8 +4472,7 @@
           "name": "WorkSpaceId",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4870,8 +4482,7 @@
           "name": "RefJobStatusCountSet",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4887,8 +4498,7 @@
           "name": "StorageType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4898,8 +4508,7 @@
           "name": "Param",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4908,7 +4517,6 @@
       "document": "资源参数描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源bucket",
           "example": "scs-online-1257058945",
@@ -4919,7 +4527,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源路径",
           "example": "251008563/100000006047/flink-cos-fs-hadoop-oceanus-1-20210304112",
@@ -4930,7 +4537,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源所在地域，如果不填，则使用Resource的Region\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-chengdu",
@@ -4947,7 +4553,6 @@
       "document": "资源引用参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "example": "",
@@ -4958,7 +4563,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源版本ID，-1表示使用最新版本",
           "example": "",
@@ -4969,7 +4573,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "引用资源类型，例如主资源设置为1，代表main class所在的jar包",
           "example": "",
@@ -4986,7 +4589,6 @@
       "document": "JobConfig引用资源信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源id",
           "example": "",
@@ -4997,7 +4599,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源版本，-1表示使用最新版本",
           "example": "",
@@ -5008,7 +4609,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源名称",
           "example": "",
@@ -5019,7 +4619,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1: 主资源",
           "example": "",
@@ -5030,7 +4629,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1: 系统内置资源",
           "example": "",
@@ -5047,7 +4645,6 @@
       "document": "资源被Job 引用信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Job id",
           "example": "",
@@ -5058,7 +4655,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Job配置版本",
           "example": "",
@@ -5069,7 +4665,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源版本",
           "example": "",
@@ -5093,8 +4688,7 @@
           "name": "AppId",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5104,8 +4698,7 @@
           "name": "WorkSpaceSerialId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5115,8 +4708,7 @@
           "name": "OwnerUin",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5126,8 +4718,7 @@
           "name": "CreatorUin",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5137,8 +4728,7 @@
           "name": "AuthSubAccountUin",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5148,8 +4738,7 @@
           "name": "Permission",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5159,8 +4748,7 @@
           "name": "CreateTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5170,8 +4758,7 @@
           "name": "UpdateTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5181,8 +4768,7 @@
           "name": "Status",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5192,8 +4778,7 @@
           "name": "Id",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5203,8 +4788,7 @@
           "name": "WorkSpaceId",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5214,8 +4798,7 @@
           "name": "RoleName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5231,8 +4814,7 @@
           "name": "JobId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5242,8 +4824,7 @@
           "name": "RunType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5253,8 +4834,7 @@
           "name": "StartMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5264,8 +4844,7 @@
           "name": "JobConfigVersion",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5275,8 +4854,7 @@
           "name": "SavepointPath",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5286,8 +4864,7 @@
           "name": "SavepointId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5297,8 +4874,7 @@
           "name": "UseOldSystemConnector",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -5307,7 +4883,6 @@
       "document": "RunJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "批量启动作业的描述信息",
           "example": "无",
@@ -5317,7 +4892,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-1237",
@@ -5352,8 +4926,7 @@
           "name": "Id",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5363,8 +4936,7 @@
           "name": "VersionId",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5374,8 +4946,7 @@
           "name": "Status",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5385,8 +4956,7 @@
           "name": "CreateTime",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5396,8 +4966,7 @@
           "name": "UpdateTime",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5407,8 +4976,7 @@
           "name": "Path",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5418,8 +4986,7 @@
           "name": "Size",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5429,8 +4996,7 @@
           "name": "RecordType",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5440,8 +5006,7 @@
           "name": "JobRuntimeId",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5451,8 +5016,7 @@
           "name": "Description",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5462,8 +5026,7 @@
           "name": "Timeout",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5473,8 +5036,7 @@
           "name": "SerialId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5484,8 +5046,7 @@
           "name": "TimeConsuming",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5495,8 +5056,7 @@
           "name": "PathStatus",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5512,8 +5072,7 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5523,8 +5082,7 @@
           "name": "Spec",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5534,8 +5092,7 @@
           "name": "Description",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5551,8 +5108,7 @@
           "name": "CPU",
           "required": true,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5562,8 +5118,7 @@
           "name": "HeapMemory",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5573,8 +5128,7 @@
           "name": "OffHeapMemory",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5584,8 +5138,7 @@
           "name": "ManagedMemory",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5594,7 +5147,6 @@
       "document": "停止作业的描述信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作业Id",
           "example": "1",
@@ -5605,7 +5157,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "停止类型，1 停止 2 暂停",
           "example": "1",
@@ -5622,7 +5173,6 @@
       "document": "StopJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "批量停止作业的描述信息",
           "example": "无",
@@ -5632,7 +5182,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-1237",
@@ -5660,7 +5209,6 @@
       "document": "系统资源返回值",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "example": "resource-9ds0xim0",
@@ -5671,7 +5219,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源名称",
           "example": "SampleProgram",
@@ -5682,7 +5229,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源类型。1 表示 JAR 包，目前只支持该值。",
           "example": "1",
@@ -5693,7 +5239,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源备注",
           "example": "我的测试程序包",
@@ -5704,7 +5249,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源所属地域",
           "example": "ap-guangzhou",
@@ -5715,7 +5259,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源的最新版本",
           "example": "2",
@@ -5732,7 +5275,6 @@
       "document": "标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5743,7 +5285,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5767,8 +5308,7 @@
           "name": "ResourceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5778,8 +5318,7 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5789,8 +5328,7 @@
           "name": "ResourceType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5800,8 +5338,7 @@
           "name": "Remark",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5811,8 +5348,7 @@
           "name": "FileName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5822,8 +5358,7 @@
           "name": "FolderId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5833,8 +5368,7 @@
           "name": "RefJobStatusCountSet",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5843,37 +5377,31 @@
       "document": "TriggerJobSavepoint请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作业 SerialId",
           "example": "cql-12345",
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "example": "Description",
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-1327",
           "member": "string",
           "name": "WorkSpaceId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5889,8 +5417,7 @@
           "name": "SavepointTrigger",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5900,8 +5427,7 @@
           "name": "ErrorMsg",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5911,8 +5437,7 @@
           "name": "FinalSavepointPath",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5922,8 +5447,7 @@
           "name": "SavepointId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5945,8 +5469,7 @@
           "name": "ClusterGroupId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5956,8 +5479,7 @@
           "name": "ClusterGroupSerialId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5967,8 +5489,7 @@
           "name": "ClusterName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5978,8 +5499,7 @@
           "name": "WorkSpaceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5989,8 +5509,7 @@
           "name": "WorkSpaceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6000,8 +5519,7 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6011,8 +5529,7 @@
           "name": "ProjectId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6022,8 +5539,7 @@
           "name": "ProjectIdStr",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6039,8 +5555,7 @@
           "name": "SerialId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6050,8 +5565,7 @@
           "name": "AppId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6061,8 +5575,7 @@
           "name": "OwnerUin",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6072,8 +5585,7 @@
           "name": "CreatorUin",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6083,8 +5595,7 @@
           "name": "WorkSpaceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6094,8 +5605,7 @@
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6105,8 +5615,7 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6116,8 +5625,7 @@
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6127,8 +5635,7 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6138,8 +5645,7 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6149,8 +5655,7 @@
           "name": "ClusterGroupSetItem",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6160,8 +5665,7 @@
           "name": "RoleAuth",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6171,8 +5675,7 @@
           "name": "RoleAuthCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6182,8 +5685,7 @@
           "name": "WorkSpaceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6193,8 +5695,7 @@
           "name": "JobsCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6204,8 +5705,7 @@
           "name": "ProjectId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6215,8 +5715,7 @@
           "name": "ProjectIdStr",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

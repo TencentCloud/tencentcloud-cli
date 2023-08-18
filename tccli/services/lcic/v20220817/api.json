@@ -403,8 +403,7 @@
           "member": "string",
           "name": "GroupId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -413,8 +412,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -423,8 +421,7 @@
           "member": "string",
           "name": "MemberIds",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -452,8 +449,7 @@
           "name": "Name",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -463,8 +459,7 @@
           "name": "Answer",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -474,8 +469,7 @@
           "name": "CostTime",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -485,8 +479,7 @@
           "name": "UserId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -496,8 +489,7 @@
           "name": "IsCorrect",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -513,8 +505,7 @@
           "name": "Answer",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -524,8 +515,7 @@
           "name": "Count",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -541,8 +531,7 @@
           "name": "ApplicationId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -552,8 +541,7 @@
           "name": "AppName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -563,8 +551,7 @@
           "name": "Introduce",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -574,8 +561,7 @@
           "name": "State",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -585,8 +571,7 @@
           "name": "Tags",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -596,8 +581,7 @@
           "name": "PostPaid",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -607,8 +591,7 @@
           "name": "AppVersion",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -618,8 +601,7 @@
           "name": "CreatedAt",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -629,8 +611,7 @@
           "name": "Callback",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -640,8 +621,7 @@
           "name": "CallbackKey",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -657,8 +637,7 @@
           "name": "Scene",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -668,8 +647,7 @@
           "name": "LogoUrl",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -679,8 +657,7 @@
           "name": "HomeUrl",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -690,8 +667,7 @@
           "name": "JsUrl",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -701,8 +677,7 @@
           "name": "CssUrl",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -718,8 +693,7 @@
           "name": "Url",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -734,8 +708,7 @@
           "member": "string",
           "name": "GroupIds",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -744,8 +717,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -754,8 +726,7 @@
           "member": "string",
           "name": "MemberIds",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -782,8 +753,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -792,8 +762,7 @@
           "member": "GroupBaseInfo",
           "name": "GroupBaseInfos",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -802,8 +771,7 @@
           "member": "string",
           "name": "MemberIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -818,8 +786,7 @@
           "member": "string",
           "name": "GroupIds",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -840,8 +807,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -850,8 +816,7 @@
           "member": "RoomInfo",
           "name": "RoomInfos",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -866,8 +831,7 @@
           "member": "uint64",
           "name": "RoomIds",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -888,8 +852,7 @@
           "member": "string",
           "name": "GroupIds",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -898,8 +861,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -908,8 +870,7 @@
           "member": "string",
           "name": "MemberIds",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -936,8 +897,7 @@
           "member": "int64",
           "name": "RoomIds",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -946,8 +906,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -962,8 +921,7 @@
           "member": "int64",
           "name": "RoomIds",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -984,8 +942,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -994,8 +951,7 @@
           "member": "int64",
           "name": "Page",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1004,8 +960,7 @@
           "member": "int64",
           "name": "Limit",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1014,8 +969,7 @@
           "member": "uint64",
           "name": "Permission",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1024,8 +978,7 @@
           "member": "string",
           "name": "Owner",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1034,8 +987,7 @@
           "member": "string",
           "name": "Keyword",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1044,8 +996,7 @@
           "member": "string",
           "name": "DocumentId",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1060,8 +1011,7 @@
           "member": "int64",
           "name": "Total",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1070,8 +1020,7 @@
           "member": "DocumentInfo",
           "name": "Documents",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1092,8 +1041,7 @@
           "member": "BatchUserRequest",
           "name": "Users",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1108,8 +1056,7 @@
           "member": "BatchUserInfo",
           "name": "Users",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1131,8 +1078,7 @@
           "name": "SdkAppId",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1142,8 +1088,7 @@
           "name": "UserId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1153,8 +1098,7 @@
           "name": "OriginId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1170,8 +1114,7 @@
           "name": "SdkAppId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1181,8 +1124,7 @@
           "name": "Name",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1192,8 +1134,7 @@
           "name": "OriginId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1203,8 +1144,7 @@
           "name": "Avatar",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -1225,8 +1165,7 @@
           "name": "Isolate",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1241,37 +1180,31 @@
       "document": "BindDocumentToRoom请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "房间ID。",
           "example": "1234657",
           "member": "uint64",
           "name": "RoomId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文档ID。",
           "example": "abc",
           "member": "string",
           "name": "DocumentId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定类型。后台可透传到客户端，默认为0。客户端可以根据这个字段实现业务逻辑。",
           "example": "0",
           "member": "uint64",
           "name": "BindType",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1292,92 +1225,76 @@
       "document": "CreateDocument请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "低代码互动课堂的SdkAppId。",
           "example": "123467",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文档地址。",
           "example": "无",
           "member": "string",
           "name": "DocumentUrl",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文档名称。",
           "example": "abc",
           "member": "string",
           "name": "DocumentName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文档所有者的Id",
           "example": "abc",
           "member": "string",
           "name": "Owner",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转码类型，可以有如下取值：\n0 无需转码（默认）\n1 需要转码的文档，ppt，pptx，pdf，doc，docx\n2 需要转码的视频，mp4，3pg，mpeg，avi，flv，wmv，rm，h264等\n2 需要转码的音频，mp3，wav，wma，aac，flac，opus",
           "example": "1",
           "member": "uint64",
           "name": "TranscodeType",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限，可以有如下取值：\n0 私有文档（默认）\n1 公共文档",
           "example": "1",
           "member": "uint64",
           "name": "Permission",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文档后缀名。",
           "example": "doc",
           "member": "string",
           "name": "DocumentType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文档大小，单位 字节",
           "example": "123",
           "member": "uint64",
           "name": "DocumentSize",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1393,8 +1310,7 @@
           "name": "DocumentId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1415,8 +1331,7 @@
           "member": "string",
           "name": "GroupName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1425,8 +1340,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1435,8 +1349,7 @@
           "member": "string",
           "name": "TeacherId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1445,8 +1358,7 @@
           "member": "string",
           "name": "MemberIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1461,8 +1373,7 @@
           "member": "string",
           "name": "GroupId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1483,8 +1394,7 @@
           "member": "string",
           "name": "GroupName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1493,8 +1403,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1503,8 +1412,7 @@
           "member": "string",
           "name": "SubGroupIds",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1513,8 +1421,7 @@
           "member": "string",
           "name": "TeacherId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1529,8 +1436,7 @@
           "member": "string",
           "name": "GroupId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1545,268 +1451,202 @@
       "document": "CreateRoom请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "房间名称。",
           "example": "房间名称",
-          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "预定的房间开始时间，unix时间戳（秒）。",
           "example": "1659600138",
-          "is_base64": false,
           "member": "uint64",
           "name": "StartTime",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "预定的房间结束时间，unix时间戳（秒）。",
           "example": "1659600138",
-          "is_base64": false,
           "member": "uint64",
           "name": "EndTime",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "低代码互动课堂的SdkAppId。",
           "example": "123467",
-          "is_base64": false,
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "Resolution",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "最大连麦人数（不包括老师）。取值范围[0, 16]",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "MaxMicNumber",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频",
           "example": "videodoc",
-          "is_base64": false,
           "member": "string",
           "name": "SubType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "老师ID。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有老师权限。",
           "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
-          "is_base64": false,
           "member": "string",
           "name": "TeacherId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "进入课堂时是否自动连麦。可以有以下取值：\n0 不自动连麦（需要手动申请上麦，默认值）\n1 自动连麦",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "AutoMic",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "释放音视频权限后是否自动取消连麦。可以有以下取值：\n0 自动取消连麦（默认值）\n1 保持连麦状态",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "TurnOffMic",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "声音音质。可以有以下取值：\n0：流畅模式（默认值），占用更小的带宽、拥有更好的降噪效果，适用于1对1、小班教学、多人音视频会议等场景。\n1：高音质模式，适合需要高保真传输音乐的场景，但降噪效果会被削弱，适用于音乐教学场景。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "AudioQuality",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "上课后是否禁止自动录制。可以有以下取值：\n0 不禁止录制（自动开启录制，默认值）\n1 禁止录制\n注：如果该配置取值为0，录制将从上课后开始，课堂结束后停止。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "DisableRecord",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "助教Id列表。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有助教权限。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Assistants",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "rtc人数。",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "RTCAudienceNumber",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "观看类型。互动观看 （默认）",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "AudienceType",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "录制模板。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "RecordLayout",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "房间绑定的群组ID,非空时限制组成员进入",
           "example": "abc",
-          "is_base64": false,
           "member": "string",
           "name": "GroupId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "是否允许老师/助教直接控制学生的摄像头/麦克风。可以有以下取值：\n0 不允许直接控制（需同意，默认值）\n1 允许直接控制（无需同意）",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "EnableDirectControl",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "开启专注模式。\n0 收看全部角色音视频(默认)\n1 只看老师和助教",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "InteractionMode",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "VideoOrientation",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "开启课后评分。 0：不开启(默认)  1：开启",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "IsGradingRequiredPostClass",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "RoomType",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1822,8 +1662,7 @@
           "name": "RoomId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1844,8 +1683,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1854,8 +1692,7 @@
           "member": "string",
           "name": "Users",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1876,26 +1713,22 @@
       "document": "DeleteAppCustomContent请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID。",
           "example": "1234657",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定需要删除的已设置的scene场景自定义元素，如果为空则删除应用下已设置的所有自定义元素。",
           "example": "无",
           "member": "string",
           "name": "Scenes",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1916,15 +1749,13 @@
       "document": "DeleteDocument请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文档ID。",
           "example": "xx",
           "member": "string",
           "name": "DocumentId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1951,8 +1782,7 @@
           "member": "string",
           "name": "GroupId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1961,8 +1791,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1971,8 +1800,7 @@
           "member": "string",
           "name": "MemberIds",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1999,8 +1827,7 @@
           "member": "string",
           "name": "GroupIds",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -2009,8 +1836,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2037,8 +1863,7 @@
           "member": "int64",
           "name": "RoomId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2047,8 +1872,7 @@
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2069,15 +1893,13 @@
       "document": "DeleteRoom请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "房间ID。",
           "example": "3123456789",
           "member": "uint64",
           "name": "RoomId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2104,8 +1926,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2114,8 +1935,7 @@
           "member": "string",
           "name": "Users",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2142,8 +1962,7 @@
           "member": "string",
           "name": "QuestionId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2152,8 +1971,7 @@
           "member": "int64",
           "name": "Page",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2162,8 +1980,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2178,8 +1995,7 @@
           "member": "uint64",
           "name": "Total",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2188,8 +2004,7 @@
           "member": "AnswerInfo",
           "name": "AnswerInfo",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2210,8 +2025,7 @@
           "member": "string",
           "name": "ApplicationId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2220,8 +2034,7 @@
           "member": "string",
           "name": "DeveloperId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2236,8 +2049,7 @@
           "member": "string",
           "name": "SdkAppId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2246,8 +2058,7 @@
           "member": "AppConfig",
           "name": "AppConfig",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2256,8 +2067,7 @@
           "member": "SceneItem",
           "name": "SceneConfig",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2278,8 +2088,7 @@
           "member": "uint64",
           "name": "RoomId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2288,8 +2097,7 @@
           "member": "uint64",
           "name": "Page",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2298,8 +2106,7 @@
           "member": "uint64",
           "name": "Limit",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2314,8 +2121,7 @@
           "member": "uint64",
           "name": "Total",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2324,8 +2130,7 @@
           "member": "MemberRecord",
           "name": "MemberRecords",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2351,8 +2156,7 @@
           "member": "string",
           "name": "DeveloperId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2373,8 +2177,7 @@
           "member": "string",
           "name": "DocumentId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2390,8 +2193,7 @@
           "name": "DocumentId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2401,8 +2203,7 @@
           "name": "DocumentUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2412,8 +2213,7 @@
           "name": "DocumentName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2423,8 +2223,7 @@
           "name": "Owner",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2434,8 +2233,7 @@
           "name": "SdkAppId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2445,8 +2243,7 @@
           "name": "Permission",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2456,8 +2253,7 @@
           "name": "TranscodeResult",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2467,8 +2263,7 @@
           "name": "TranscodeType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2478,8 +2273,7 @@
           "name": "TranscodeProgress",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2489,8 +2283,7 @@
           "name": "TranscodeState",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2500,8 +2293,7 @@
           "name": "TranscodeInfo",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2511,8 +2303,7 @@
           "name": "DocumentType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2522,8 +2313,7 @@
           "name": "DocumentSize",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2533,8 +2323,7 @@
           "name": "UpdateTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2544,8 +2333,7 @@
           "name": "Pages",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2555,8 +2343,7 @@
           "name": "Preview",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2577,8 +2364,7 @@
           "member": "uint64",
           "name": "RoomId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2587,8 +2373,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2597,8 +2382,7 @@
           "member": "int64",
           "name": "Page",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2607,8 +2391,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2617,8 +2400,7 @@
           "member": "uint64",
           "name": "Permission",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -2627,8 +2409,7 @@
           "member": "string",
           "name": "Owner",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2643,8 +2424,7 @@
           "member": "DocumentInfo",
           "name": "Documents",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2653,8 +2433,7 @@
           "member": "uint64",
           "name": "Total",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2675,8 +2454,7 @@
           "member": "uint64",
           "name": "SchoolId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2685,8 +2463,7 @@
           "member": "int64",
           "name": "Page",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2695,8 +2472,7 @@
           "member": "int64",
           "name": "Limit",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2705,8 +2481,7 @@
           "member": "uint64",
           "name": "Permission",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -2715,8 +2490,7 @@
           "member": "string",
           "name": "Owner",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2725,8 +2499,7 @@
           "member": "string",
           "name": "Keyword",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2735,8 +2508,7 @@
           "member": "string",
           "name": "DocumentId",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2752,8 +2524,7 @@
           "name": "Total",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2763,8 +2534,7 @@
           "name": "Documents",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2785,8 +2555,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2795,8 +2564,7 @@
           "member": "uint64",
           "name": "Page",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2805,8 +2573,7 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2815,8 +2582,7 @@
           "member": "string",
           "name": "TeacherId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2825,8 +2591,7 @@
           "member": "string",
           "name": "MemberId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2841,8 +2606,7 @@
           "member": "uint64",
           "name": "Total",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2851,8 +2615,7 @@
           "member": "GroupInfo",
           "name": "GroupInfos",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2873,8 +2636,7 @@
           "member": "string",
           "name": "GroupId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2883,8 +2645,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2893,8 +2654,7 @@
           "member": "uint64",
           "name": "Page",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2903,8 +2663,7 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2919,8 +2678,7 @@
           "member": "uint64",
           "name": "Total",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2929,8 +2687,7 @@
           "member": "string",
           "name": "MemberIds",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2951,8 +2708,7 @@
           "member": "string",
           "name": "GroupId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2961,8 +2717,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2977,8 +2732,7 @@
           "member": "string",
           "name": "GroupId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2987,8 +2741,7 @@
           "member": "string",
           "name": "GroupName",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2997,8 +2750,7 @@
           "member": "string",
           "name": "TeacherId",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3007,8 +2759,7 @@
           "member": "uint64",
           "name": "GroupType",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3017,8 +2768,7 @@
           "member": "string",
           "name": "SubGroupIds",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3039,8 +2789,7 @@
           "member": "uint64",
           "name": "RoomId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3049,8 +2798,7 @@
           "member": "int64",
           "name": "Page",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3059,8 +2807,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3075,8 +2822,7 @@
           "member": "uint64",
           "name": "Total",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3085,8 +2831,7 @@
           "member": "QuestionInfo",
           "name": "QuestionInfo",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3104,12 +2849,10 @@
           "disabled": false,
           "document": "房间Id。",
           "example": "301234567",
-          "is_base64": false,
           "member": "uint64",
           "name": "RoomId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3125,8 +2868,7 @@
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3136,8 +2878,7 @@
           "name": "StartTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3147,8 +2888,7 @@
           "name": "EndTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3158,8 +2898,7 @@
           "name": "TeacherId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3169,8 +2908,7 @@
           "name": "SdkAppId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3180,8 +2918,7 @@
           "name": "AudienceType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3191,8 +2928,7 @@
           "name": "Resolution",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3202,8 +2938,7 @@
           "name": "MaxMicNumber",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3213,8 +2948,7 @@
           "name": "AutoMic",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3224,8 +2958,7 @@
           "name": "TurnOffMic",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3235,8 +2968,7 @@
           "name": "AudioQuality",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3246,8 +2978,7 @@
           "name": "SubType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3257,8 +2988,7 @@
           "name": "DisableRecord",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3268,8 +2998,7 @@
           "name": "Assistants",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3279,8 +3008,7 @@
           "name": "RecordUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3290,8 +3018,7 @@
           "name": "Status",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3301,8 +3028,7 @@
           "name": "GroupId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3312,8 +3038,7 @@
           "name": "EnableDirectControl",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3323,8 +3048,7 @@
           "name": "InteractionMode",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3334,8 +3058,7 @@
           "name": "VideoOrientation",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3345,8 +3068,7 @@
           "name": "IsGradingRequiredPostClass",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3356,8 +3078,7 @@
           "name": "RoomType",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3367,8 +3088,7 @@
           "name": "VideoDuration",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3389,8 +3109,7 @@
           "member": "uint64",
           "name": "RoomId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3399,8 +3118,7 @@
           "member": "uint64",
           "name": "Page",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3409,8 +3127,7 @@
           "member": "uint64",
           "name": "Limit",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3425,8 +3142,7 @@
           "member": "uint64",
           "name": "PeakMemberNumber",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3435,8 +3151,7 @@
           "member": "uint64",
           "name": "MemberNumber",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3445,8 +3160,7 @@
           "member": "uint64",
           "name": "Total",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3455,8 +3169,7 @@
           "member": "MemberRecord",
           "name": "MemberRecords",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3465,8 +3178,7 @@
           "member": "uint64",
           "name": "RealStartTime",
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3475,8 +3187,7 @@
           "member": "uint64",
           "name": "RealEndTime",
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3485,8 +3196,7 @@
           "member": "uint64",
           "name": "MessageCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3495,8 +3205,7 @@
           "member": "uint64",
           "name": "MicCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3517,8 +3226,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3527,8 +3235,7 @@
           "member": "int64",
           "name": "Page",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3537,8 +3244,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3553,8 +3259,7 @@
           "member": "uint64",
           "name": "Total",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3563,8 +3268,7 @@
           "member": "UserInfo",
           "name": "Users",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3585,8 +3289,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3595,8 +3298,7 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3605,8 +3307,7 @@
           "member": "uint64",
           "name": "Page",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3621,8 +3322,7 @@
           "member": "uint64",
           "name": "Total",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3631,8 +3331,7 @@
           "member": "uint64",
           "name": "Page",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3641,8 +3340,7 @@
           "member": "uint64",
           "name": "Limit",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3651,8 +3349,7 @@
           "member": "string",
           "name": "UserIds",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3667,15 +3364,13 @@
       "document": "DescribeUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户Id。",
           "example": "abc",
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3691,8 +3386,7 @@
           "name": "SdkAppId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3702,8 +3396,7 @@
           "name": "UserId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3713,8 +3406,7 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3724,8 +3416,7 @@
           "name": "Avatar",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3747,8 +3438,7 @@
           "name": "DocumentId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3758,8 +3448,7 @@
           "name": "DocumentUrl",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3769,8 +3458,7 @@
           "name": "DocumentName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3780,8 +3468,7 @@
           "name": "Owner",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3791,8 +3478,7 @@
           "name": "SdkAppId",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3802,8 +3488,7 @@
           "name": "Permission",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3813,8 +3498,7 @@
           "name": "TranscodeResult",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3824,8 +3508,7 @@
           "name": "TranscodeType",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3835,8 +3518,7 @@
           "name": "TranscodeProgress",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3846,8 +3528,7 @@
           "name": "TranscodeState",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3857,8 +3538,7 @@
           "name": "TranscodeInfo",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3868,8 +3548,7 @@
           "name": "DocumentType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3879,8 +3558,7 @@
           "name": "DocumentSize",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3890,8 +3568,7 @@
           "name": "UpdateTime",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3901,8 +3578,7 @@
           "name": "Pages",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3912,8 +3588,7 @@
           "name": "Width",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3923,8 +3598,7 @@
           "name": "Height",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3934,8 +3608,7 @@
           "name": "Cover",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3950,8 +3623,7 @@
           "member": "uint64",
           "name": "RoomId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3979,8 +3651,7 @@
           "name": "RoomId",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3990,8 +3661,7 @@
           "name": "UserId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4007,8 +3677,7 @@
           "name": "Timestamp",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4018,8 +3687,7 @@
           "name": "EventType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4029,8 +3697,7 @@
           "name": "EventData",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4042,56 +3709,46 @@
           "disabled": false,
           "document": "房间Id。",
           "example": "301234567",
-          "is_base64": false,
           "member": "uint64",
           "name": "RoomId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "应用Id。",
           "example": "12345",
-          "is_base64": false,
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "起始页，1开始。keyword为空时有效。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "Page",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "每页个数。keyword为空时有效。一次性最多200条。",
           "example": "10",
-          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "搜索事件类型。有以下事件类型:\nRoomStart:房间开始\nRoomEnd:房间结束\nMemberJoin:成员加入\nMemberQuit:成员退出\nRecordFinish:录制结束\nCameraOn: 摄像头打开\nCameraOff: 摄像头关闭\nMicOn: 麦克风打开\nMicOff: 麦克风关闭\nScreenOn: 屏幕共享打开\nScreenOff: 屏幕共享关闭\nVisibleOn: 页面可见\nVisibleOff: 页面不可见",
           "example": "RoomStart",
-          "is_base64": false,
           "member": "string",
           "name": "Keyword",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4107,8 +3764,7 @@
           "name": "Total",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4118,8 +3774,7 @@
           "name": "Events",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4140,8 +3795,7 @@
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4150,8 +3804,7 @@
           "member": "uint64",
           "name": "RoomId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4160,8 +3813,7 @@
           "member": "int64",
           "name": "Seq",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4170,8 +3822,7 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4186,8 +3837,7 @@
           "member": "MessageList",
           "name": "Messages",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4208,8 +3858,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4218,8 +3867,7 @@
           "member": "uint64",
           "name": "StartTime",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4228,8 +3876,7 @@
           "member": "uint64",
           "name": "EndTime",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4238,8 +3885,7 @@
           "member": "uint64",
           "name": "Page",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4248,8 +3894,7 @@
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4258,8 +3903,7 @@
           "member": "uint64",
           "name": "Status",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4275,8 +3919,7 @@
           "name": "Total",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4286,8 +3929,7 @@
           "name": "Rooms",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4308,8 +3950,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4324,8 +3965,7 @@
           "member": "WatermarkConfig",
           "name": "TeacherLogo",
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4334,8 +3974,7 @@
           "member": "WatermarkConfig",
           "name": "BoardLogo",
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4344,8 +3983,7 @@
           "member": "BackgroundPictureConfig",
           "name": "BackgroundPicture",
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4354,8 +3992,7 @@
           "member": "TextMarkConfig",
           "name": "Text",
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4377,8 +4014,7 @@
           "name": "GroupName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4388,8 +4024,7 @@
           "name": "TeacherId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -4405,8 +4040,7 @@
           "name": "GroupId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4416,8 +4050,7 @@
           "name": "GroupName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4427,8 +4060,7 @@
           "name": "TeacherId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4438,8 +4070,7 @@
           "name": "GroupType",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4449,8 +4080,7 @@
           "name": "SubGroupIds",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4465,8 +4095,7 @@
           "member": "uint64",
           "name": "RoomId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4475,8 +4104,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4485,8 +4113,7 @@
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4495,8 +4122,7 @@
           "member": "uint64",
           "name": "KickType",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4505,8 +4131,7 @@
           "member": "uint64",
           "name": "Duration",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4527,26 +4152,22 @@
       "document": "LoginOriginId请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "低代码互动课堂的SdkAppId。",
           "example": "1234657",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户在客户系统的Id，需要在同一应用下唯一。",
           "example": "userid",
           "member": "string",
           "name": "OriginId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4562,8 +4183,7 @@
           "name": "UserId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4573,8 +4193,7 @@
           "name": "Token",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4589,15 +4208,13 @@
       "document": "LoginUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "注册获取的用户id。",
           "example": "abc",
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4613,8 +4230,7 @@
           "name": "UserId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4624,8 +4240,7 @@
           "name": "Token",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4647,8 +4262,7 @@
           "name": "UserId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4658,8 +4272,7 @@
           "name": "UserName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4669,8 +4282,7 @@
           "name": "PresentTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4680,8 +4292,7 @@
           "name": "Camera",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4691,8 +4302,7 @@
           "name": "Mic",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4702,8 +4312,7 @@
           "name": "Silence",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4713,8 +4322,7 @@
           "name": "AnswerQuestions",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4724,8 +4332,7 @@
           "name": "HandUps",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4735,8 +4342,7 @@
           "name": "FirstJoinTimestamp",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4746,8 +4352,7 @@
           "name": "LastQuitTimestamp",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4757,8 +4362,7 @@
           "name": "Rewords",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4768,8 +4372,7 @@
           "name": "IPAddress",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4779,8 +4382,7 @@
           "name": "Location",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4790,8 +4392,7 @@
           "name": "Device",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4801,8 +4402,7 @@
           "name": "PerMemberMicCount",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4812,8 +4412,7 @@
           "name": "PerMemberMessageCount",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4823,8 +4422,7 @@
           "name": "Role",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4834,8 +4432,7 @@
           "name": "GroupId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4845,8 +4442,7 @@
           "name": "SubGroupId",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4856,8 +4452,7 @@
           "name": "Stage",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4867,8 +4462,7 @@
           "name": "CurrentState",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4884,8 +4478,7 @@
           "name": "MessageType",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4895,8 +4488,7 @@
           "name": "TextMessage",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4906,8 +4498,7 @@
           "name": "ImageMessage",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4923,8 +4514,7 @@
           "name": "Timestamp",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4934,8 +4524,7 @@
           "name": "FromAccount",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4945,8 +4534,7 @@
           "name": "Seq",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4956,8 +4544,7 @@
           "name": "MessageBody",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4972,8 +4559,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4982,8 +4568,7 @@
           "member": "string",
           "name": "Callback",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4992,8 +4577,7 @@
           "member": "string",
           "name": "CallbackKey",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5020,8 +4604,7 @@
           "member": "string",
           "name": "GroupId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5030,8 +4613,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5040,8 +4622,7 @@
           "member": "string",
           "name": "TeacherId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5050,8 +4631,7 @@
           "member": "string",
           "name": "GroupName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5075,243 +4655,199 @@
           "disabled": false,
           "document": "房间ID。",
           "example": "312345678",
-          "is_base64": false,
           "member": "uint64",
           "name": "RoomId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "低代码互动课堂的SdkAppId",
           "example": "123467",
-          "is_base64": false,
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "预定的房间开始时间，unix时间戳（秒）。直播开始后不允许修改。",
           "example": "1659600138",
-          "is_base64": false,
           "member": "uint64",
           "name": "StartTime",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "预定的房间结束时间，unix时间戳（秒）。直播开始后不允许修改。",
           "example": "1659600138",
-          "is_base64": false,
           "member": "uint64",
           "name": "EndTime",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "老师ID。直播开始后不允许修改。",
           "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
-          "is_base64": false,
           "member": "string",
           "name": "TeacherId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "房间名称。",
           "example": "房间名称",
-          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "观看类型。可以有如下取值：\n1 互动观看\n2 标准观看\n直播开始后不允许修改。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "AudienceType",
           "required": false,
-          "type": "int",
-          "visibility": 2
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清\n直播开始后不允许修改。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "Resolution",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "最大连麦人数（不包括老师）。取值范围[0, 17)\n直播开始后不允许修改。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "MaxMicNumber",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "进入房间时是否自动连麦。可以有以下取值：\n0 不自动连麦（默认值）\n1 自动连麦\n直播开始后不允许修改。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "AutoMic",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "释放音视频权限后是否自动取消连麦。可以有以下取值：\n0 自动取消连麦（默认值）\n1 保持连麦状态\n直播开始后不允许修改。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "TurnOffMic",
           "required": false,
-          "type": "int",
-          "visibility": 2
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "高音质模式。可以有以下取值：\n0 不开启高音质（默认值）\n1 开启高音质\n直播开始后不允许修改。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "AudioQuality",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频\n直播开始后不允许修改。",
           "example": "video",
-          "is_base64": false,
           "member": "string",
           "name": "SubType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "禁止录制。可以有以下取值：\n0 不禁止录制（默认值）\n1 禁止录制\n直播开始后不允许修改。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "DisableRecord",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "助教Id列表。直播开始后不允许修改。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Assistants",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "rtc人数。直播开始后不允许修改。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "RTCAudienceNumber",
           "required": false,
-          "type": "int",
-          "visibility": 2
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "房间绑定的群组ID。直播开始后不允许修改。",
           "example": "abc",
-          "is_base64": false,
           "member": "string",
           "name": "GroupId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "打开学生麦克风/摄像头的授权开关。直播开始后不允许修改。",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "EnableDirectControl",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "开启专注模式。\n0 收看全部角色音视频(默认)\n1 只看老师和助教",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "InteractionMode",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "VideoOrientation",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "开启课后评分。 0：不开启(默认)  1：开启",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "IsGradingRequiredPostClass",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "RoomType",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5338,8 +4874,7 @@
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5348,8 +4883,7 @@
           "member": "string",
           "name": "Nickname",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5358,8 +4892,7 @@
           "member": "string",
           "name": "Avatar",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5387,8 +4920,7 @@
           "name": "QuestionId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5398,8 +4930,7 @@
           "name": "QuestionContent",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5409,8 +4940,7 @@
           "name": "Duration",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5420,8 +4950,7 @@
           "name": "CorrectAnswer",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5431,8 +4960,7 @@
           "name": "AnswerStats",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5441,48 +4969,40 @@
       "document": "RegisterUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "低代码互动课堂的SdkAppId。",
           "example": "123467",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名称。",
           "example": "nickname",
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户在客户系统的Id，需要在同一应用下唯一。",
           "example": "id12345",
           "member": "string",
           "name": "OriginId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户头像。",
           "example": "abc",
           "member": "string",
           "name": "Avatar",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5498,8 +5018,7 @@
           "name": "UserId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5509,8 +5028,7 @@
           "name": "Token",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5528,12 +5046,10 @@
           "disabled": false,
           "document": "房间名称。",
           "example": "房间名称",
-          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5542,8 +5058,7 @@
           "member": "uint64",
           "name": "StartTime",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5552,8 +5067,7 @@
           "member": "uint64",
           "name": "EndTime",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5562,8 +5076,7 @@
           "member": "uint64",
           "name": "Resolution",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5572,30 +5085,25 @@
           "member": "uint64",
           "name": "MaxMicNumber",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "房间子类型，可以有以下取值： videodoc 文档+视频 video 纯视频",
           "example": "videodoc",
-          "is_base64": false,
           "member": "string",
           "name": "SubType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "老师ID。通过[注册用户]接口获取的UserId。",
           "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
-          "is_base64": false,
           "member": "string",
           "name": "TeacherId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5604,8 +5112,7 @@
           "member": "uint64",
           "name": "AutoMic",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5614,8 +5121,7 @@
           "member": "uint64",
           "name": "TurnOffMic",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5624,8 +5130,7 @@
           "member": "uint64",
           "name": "AudioQuality",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5634,19 +5139,16 @@
           "member": "uint64",
           "name": "DisableRecord",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "助教Id列表。通过[注册用户]接口获取的UserId。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Assistants",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -5655,8 +5157,7 @@
           "member": "uint64",
           "name": "RTCAudienceNumber",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5665,8 +5166,7 @@
           "member": "uint64",
           "name": "AudienceType",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5675,19 +5175,16 @@
           "member": "uint64",
           "name": "RecordLayout",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "房间绑定的群组ID",
           "example": "xfdfgdf",
-          "is_base64": false,
           "member": "string",
           "name": "GroupId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5696,8 +5193,7 @@
           "member": "uint64",
           "name": "EnableDirectControl",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5706,8 +5202,7 @@
           "member": "int64",
           "name": "InteractionMode",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5716,8 +5211,7 @@
           "member": "int64",
           "name": "VideoOrientation",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5726,8 +5220,7 @@
           "member": "int64",
           "name": "IsGradingRequiredPostClass",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5736,8 +5229,7 @@
           "member": "int64",
           "name": "RoomType",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -5753,8 +5245,7 @@
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5764,8 +5255,7 @@
           "name": "RoomId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5775,8 +5265,7 @@
           "name": "Status",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5786,8 +5275,7 @@
           "name": "StartTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5797,8 +5285,7 @@
           "name": "EndTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5808,8 +5295,7 @@
           "name": "RealStartTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5819,8 +5305,7 @@
           "name": "RealEndTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5830,8 +5315,7 @@
           "name": "Resolution",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5841,8 +5325,7 @@
           "name": "MaxRTCMember",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5852,8 +5335,7 @@
           "name": "ReplayUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5863,8 +5345,7 @@
           "name": "RecordUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5874,8 +5355,7 @@
           "name": "MaxMicNumber",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5885,8 +5365,7 @@
           "name": "EnableDirectControl",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5896,8 +5375,7 @@
           "name": "InteractionMode",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5907,8 +5385,7 @@
           "name": "VideoOrientation",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5918,8 +5395,7 @@
           "name": "IsGradingRequiredPostClass",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5929,8 +5405,7 @@
           "name": "RoomType",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5946,8 +5421,7 @@
           "name": "Scene",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5957,8 +5431,7 @@
           "name": "LogoUrl",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5968,8 +5441,7 @@
           "name": "HomeUrl",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5979,8 +5451,7 @@
           "name": "JSUrl",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5990,8 +5461,7 @@
           "name": "CSSUrl",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6006,8 +5476,7 @@
           "member": "AppCustomContent",
           "name": "CustomContent",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -6016,8 +5485,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6044,8 +5512,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -6054,8 +5521,7 @@
           "member": "string",
           "name": "TeacherUrl",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -6064,8 +5530,7 @@
           "member": "string",
           "name": "BoardUrl",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -6074,8 +5539,7 @@
           "member": "string",
           "name": "VideoUrl",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -6084,8 +5548,7 @@
           "member": "float",
           "name": "BoardW",
           "required": false,
-          "type": "float",
-          "visibility": 1
+          "type": "float"
         },
         {
           "disabled": false,
@@ -6094,8 +5557,7 @@
           "member": "float",
           "name": "BoardH",
           "required": false,
-          "type": "float",
-          "visibility": 1
+          "type": "float"
         },
         {
           "disabled": false,
@@ -6104,8 +5566,7 @@
           "member": "float",
           "name": "BoardX",
           "required": false,
-          "type": "float",
-          "visibility": 1
+          "type": "float"
         },
         {
           "disabled": false,
@@ -6114,8 +5575,7 @@
           "member": "float",
           "name": "BoardY",
           "required": false,
-          "type": "float",
-          "visibility": 1
+          "type": "float"
         },
         {
           "disabled": false,
@@ -6124,8 +5584,7 @@
           "member": "float",
           "name": "TeacherW",
           "required": false,
-          "type": "float",
-          "visibility": 1
+          "type": "float"
         },
         {
           "disabled": false,
@@ -6134,8 +5593,7 @@
           "member": "float",
           "name": "TeacherH",
           "required": false,
-          "type": "float",
-          "visibility": 1
+          "type": "float"
         },
         {
           "disabled": false,
@@ -6144,8 +5602,7 @@
           "member": "float",
           "name": "TeacherX",
           "required": false,
-          "type": "float",
-          "visibility": 1
+          "type": "float"
         },
         {
           "disabled": false,
@@ -6154,8 +5611,7 @@
           "member": "float",
           "name": "TeacherY",
           "required": false,
-          "type": "float",
-          "visibility": 1
+          "type": "float"
         },
         {
           "disabled": false,
@@ -6164,8 +5620,7 @@
           "member": "string",
           "name": "Text",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -6174,8 +5629,7 @@
           "member": "string",
           "name": "TextColor",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6202,8 +5656,7 @@
           "member": "uint64",
           "name": "RoomId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6236,8 +5689,7 @@
           "name": "Text",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6247,8 +5699,7 @@
           "name": "Color",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6257,26 +5708,22 @@
       "document": "UnbindDocumentFromRoom请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "房间ID。",
           "example": "1234657",
           "member": "uint64",
           "name": "RoomId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文档ID。",
           "example": "abc",
           "member": "string",
           "name": "DocumentId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6304,8 +5751,7 @@
           "name": "SdkAppId",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6315,8 +5761,7 @@
           "name": "UserId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6326,8 +5771,7 @@
           "name": "Name",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6337,8 +5781,7 @@
           "name": "Avatar",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6354,8 +5797,7 @@
           "name": "Url",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6365,8 +5807,7 @@
           "name": "Width",
           "required": false,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6376,8 +5817,7 @@
           "name": "Height",
           "required": false,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6387,8 +5827,7 @@
           "name": "LocationX",
           "required": false,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6398,8 +5837,7 @@
           "name": "LocationY",
           "required": false,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

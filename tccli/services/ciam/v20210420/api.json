@@ -19,7 +19,6 @@
       "document": "ListUserGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户目录ID",
           "example": "xxx",
@@ -29,7 +28,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询页数",
           "example": "0",
@@ -39,7 +37,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页的数量",
           "example": "10",
@@ -49,7 +46,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询条件（可以是用户组id，用户组名称）",
           "example": "xxx",
@@ -107,7 +103,6 @@
       "document": "分页对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "每页数量",
           "example": "10",
@@ -118,7 +113,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前页码",
           "example": "1",
@@ -135,7 +129,6 @@
       "document": "用户组",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户组ID",
           "example": "xxx",
@@ -146,7 +139,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户组名称",
           "example": "xxx",
@@ -157,7 +149,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户组描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "XXX",
@@ -168,7 +159,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户目录ID",
           "example": "xxx",
@@ -179,7 +169,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "租户ID",
           "example": "xxx",

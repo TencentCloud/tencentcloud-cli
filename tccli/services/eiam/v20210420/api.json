@@ -306,7 +306,6 @@
       "document": "查询账号组信息列表。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "账号组ID。",
           "example": "无",
@@ -317,7 +316,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号组名。",
           "example": "无",
@@ -328,7 +326,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注。",
           "example": "无",
@@ -339,7 +336,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。",
           "example": "无",
@@ -356,7 +352,6 @@
       "document": "账号组查询参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "关键字",
           "example": "比赛一组",
@@ -373,7 +368,6 @@
       "document": "AddAccountToAccountGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "账号组ID",
           "example": "无",
@@ -383,7 +377,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加入账号组的账号ID列表。",
           "example": "无",
@@ -411,7 +404,6 @@
       "document": "AddUserToUserGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "加入用户组的用户ID列表。",
           "example": "id",
@@ -421,7 +413,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户组ID，是用户组的全局唯一标识。",
           "example": "id",
@@ -459,7 +450,6 @@
       "document": "查询账号信息列表。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "账号ID。",
           "example": "无",
@@ -470,7 +460,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -481,7 +470,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -492,7 +480,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -503,7 +490,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -520,7 +506,6 @@
       "document": "账号查询参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "关键字",
           "example": "张三",
@@ -537,7 +522,6 @@
       "document": "应用信息列表。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户在被授权应用下对应的账号列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -548,7 +532,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID，是应用的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "id",
@@ -559,7 +542,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "展示用户所在的用户组、机构节点拥有该应用的访问权限的ID信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -570,7 +552,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -581,7 +562,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -598,7 +578,6 @@
       "document": "应用属性搜索条件。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用匹配搜索关键字，匹配范围包括：应用名称、应用ID。",
           "example": "无",
@@ -609,7 +588,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用类型。ApplicationType的取值范围有：OAUTH2、JWT、CAS、SAML2、FORM、OIDC、APIGW。",
           "example": "无",
@@ -626,7 +604,6 @@
       "document": "应用信息列表。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID，是应用的全局唯一标识。",
           "example": "无",
@@ -637,7 +614,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用展示名称，长度限制：64个字符。 默认与应用名字相同。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -648,7 +624,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用创建时间，符合 ISO8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -659,7 +634,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上次更新时间，符合 ISO8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -670,7 +644,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用状态。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -681,7 +654,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用图标。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -692,7 +664,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -703,7 +674,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端id。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -720,7 +690,6 @@
       "document": "返回的授权关系信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用唯一ID。",
           "example": "无",
@@ -731,7 +700,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用名称。",
           "example": "无",
@@ -742,7 +710,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型名称。",
           "example": "无",
@@ -753,7 +720,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型唯一ID。",
           "example": "无",
@@ -764,7 +730,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上次更新时间，符合 ISO8601 标准。",
           "example": "无",
@@ -775,7 +740,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权类型唯一ID。",
           "example": "无",
@@ -792,7 +756,6 @@
       "document": "用户属性搜索条件。\n",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "名称匹配搜索，当查询类型为用户时，匹配范围包括：用户名称、应用名称；当查询类型为用户组时，匹配范围包括：用户组名称、应用名称；当查询类型为组织机构时，匹配范围包括：组织机构名称、应用名称。",
           "example": "无",
@@ -809,7 +772,6 @@
       "document": "授权资源详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "授权关系的唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6747d37a-616b-4b2f-9b7e-f4c922eb2932",
@@ -820,7 +782,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源授权类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "API",
@@ -831,7 +792,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权的资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "api1",
@@ -842,7 +802,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "用户API",
@@ -859,7 +818,6 @@
       "document": "返回符合条件的用户数据列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "8580d166-2a25-45eb-beff-3085f5464deb",
@@ -870,7 +828,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "resourceGroup",
@@ -881,7 +838,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "service-888:*",
@@ -892,7 +848,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "继承关系\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -903,7 +858,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用账户\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -914,7 +868,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "用户菜单",
@@ -931,7 +884,6 @@
       "document": "CreateAccountGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID。",
           "example": "无",
@@ -941,7 +893,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号组名。",
           "example": "无",
@@ -951,7 +902,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述。",
           "example": "无",
@@ -989,7 +939,6 @@
       "document": "CreateAppAccount请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID",
           "example": "无",
@@ -999,7 +948,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号名称",
           "example": "无",
@@ -1009,7 +957,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号密码",
           "example": "无",
@@ -1019,7 +966,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "example": "无",
@@ -1057,7 +1003,6 @@
       "document": "CreateOrgNode请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机构节点名称，长度限制：64个字符。",
           "example": "无",
@@ -1067,7 +1012,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "父机构节点ID，如果为空则默认创建在机构根节点下。",
           "example": "无",
@@ -1077,7 +1021,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机构节点描述。",
           "example": "无",
@@ -1087,7 +1030,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机构代码。如果为空，则默认生成机构代码。如果为非空，则校验机构代码的唯一性。",
           "example": "无",
@@ -1125,7 +1067,6 @@
       "document": "CreateUserGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户组昵称，长度限制：64个字符。 DisplayName是唯一的。",
           "example": "无",
@@ -1135,7 +1076,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户组备注，长度限制：512个字符。",
           "example": "无",
@@ -1173,7 +1113,6 @@
       "document": "CreateUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户名，长度限制：64个字符。",
           "example": "无",
@@ -1183,7 +1122,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户密码， 需要符合密码策略的配置。",
           "example": "无",
@@ -1193,7 +1131,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "昵称，长度限制：64个字符。 默认与用户名相同。",
           "example": "无",
@@ -1203,7 +1140,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户备注，长度限制：512个字符。",
           "example": "无",
@@ -1213,7 +1149,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属用户组ID列表。",
           "example": "无",
@@ -1223,7 +1158,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户手机号。例如：+86-1xxxxxxxxxx。",
           "example": "无",
@@ -1233,7 +1167,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属的主组织机构唯一ID。如果为空，默认为在根节点下创建用户。",
           "example": "无",
@@ -1243,7 +1176,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户过期时间，遵循 ISO 8601 标准。",
           "example": "无",
@@ -1253,7 +1185,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户邮箱。",
           "example": "无",
@@ -1263,7 +1194,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密码是否需要重置，为空默认为false不需要重置密码。",
           "example": "无",
@@ -1273,7 +1203,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属的次要组织机构ID列表。",
           "example": "无",
@@ -1311,7 +1240,6 @@
       "document": "DeleteAccountGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "账号组ID数组。",
           "example": "无",
@@ -1339,7 +1267,6 @@
       "document": "DeleteAppAccount请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "账号ID数组。",
           "example": "无",
@@ -1367,7 +1294,6 @@
       "document": "DeleteOrgNode请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机构节点ID，是机构节点的全局唯一标识。",
           "example": "无",
@@ -1395,7 +1321,6 @@
       "document": "DeleteUserGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户组ID，是用户组的全局唯一标识。",
           "example": "id",
@@ -1423,7 +1348,6 @@
       "document": "DeleteUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户名，长度限制：32个字符。 Username 和 UserId 需选择一个作为搜索条件；如两个条件同时使用则默认使用Username作为搜索条件。",
           "example": "无",
@@ -1433,7 +1357,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户 id。 Username 和 UserId 需选择一个作为搜索条件；如两个条件同时使用则默认使用Username作为搜索条件。",
           "example": "id",
@@ -1461,7 +1384,6 @@
       "document": "DeleteUsers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "被删除用户的ID列表。DeleteIdList 和 DeleteNameList 需至少一个不为空；都不为空时优先使用 DeleteNameList。",
           "example": "无",
@@ -1471,7 +1393,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被删除用户的名称列表。DeleteIdList 和 DeleteNameList 需至少一个不为空；都不为空时优先使用 DeleteNameList。",
           "example": "无",
@@ -1509,7 +1430,6 @@
       "document": "DescribeAccountGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID。",
           "example": "无",
@@ -1519,7 +1439,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询条件，支持多搜索条件组合、多数据范围匹配的搜索。同时支持查询信息内容全匹配、部分匹配、范围匹配等多种查询方式，具体查询方式为：双引号（“”）表示全匹配、以星号（*）结尾表示字段部分匹配。如果该字段为空，则默认查全量表。",
           "example": "无",
@@ -1529,7 +1448,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为 0。",
           "example": "无",
@@ -1539,7 +1457,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。",
           "example": "无",
@@ -1597,7 +1514,6 @@
       "document": "DescribeAppAccount请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID。",
           "example": "无",
@@ -1607,7 +1523,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询条件，支持多搜索条件组合、多数据范围匹配的搜索。同时支持查询信息内容全匹配、部分匹配、范围匹配等多种查询方式，具体查询方式为：双引号（“”）表示全匹配、以星号（*）结尾表示字段部分匹配。如果该字段为空，则默认查全量表。",
           "example": "无",
@@ -1617,7 +1532,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为 0。",
           "example": "无",
@@ -1627,7 +1541,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。",
           "example": "无",
@@ -1685,7 +1598,6 @@
       "document": "DescribeApplication请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用id，是应用的全局唯一标识，与ClientId参数不能同时为空。",
           "example": "无",
@@ -1695,7 +1607,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端id，与ApplicationId参数不能同时为空。",
           "example": "无",
@@ -1873,7 +1784,6 @@
       "document": "DescribeOrgNode请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机构节点ID，是机构节点全局唯一标识，长度限制：64个字符。如果为空默认读取机构根节点信息。",
           "example": "无",
@@ -1883,7 +1793,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否读取其子节点信息。当其为空或false时，默认仅读取当前机构节点信息。当其为true时，读取本机构节点以及其第一层子节点信息。",
           "example": "无",
@@ -2001,7 +1910,6 @@
       "document": "DescribeOrgResourcesAuthorization请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID",
           "example": "无",
@@ -2011,7 +1919,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机构ID",
           "example": "无",
@@ -2099,7 +2006,6 @@
       "document": "DescribePublicKey请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID，是应用的全局唯一标识。",
           "example": "id",
@@ -2157,7 +2063,6 @@
       "document": "DescribeUserGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户组ID，是用户组的全局唯一标识。",
           "example": "id",
@@ -2173,7 +2078,6 @@
       "document": "DescribeUserGroupResourcesAuthorization请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID",
           "example": "无",
@@ -2183,7 +2087,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户组ID",
           "example": "无",
@@ -2293,7 +2196,6 @@
       "document": "DescribeUserInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户名，长度限制：64个字符。 Username 和 UserId 需至少一个不为空；都不为空时优先使用 Username。",
           "example": "无",
@@ -2303,7 +2205,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户 id，长度限制：64个字符。 Username 和 UserId 需至少一个不为空；都不为空时优先使用 Username。",
           "example": "id",
@@ -2481,7 +2382,6 @@
       "document": "DescribeUserResourcesAuthorization请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID。",
           "example": "无",
@@ -2491,7 +2391,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户ID。UserName 和 UserId 需至少一个不为空；都不为空时优先使用 UserName。",
           "example": "无",
@@ -2501,7 +2400,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名。UserName 和 UserId 需至少一个不为空；都不为空时优先使用 UserName。",
           "example": "zhangsan",
@@ -2511,7 +2409,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询范围是否包括用户关联的用户组、组织机构的应用访问权限。默认为不查询 ，传false表示不查询该范围，传true查询该范围。",
           "example": "true",
@@ -2589,7 +2486,6 @@
       "document": "DescribeUserThirdPartyAccountInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户名。 Username 和 UserId 需至少一个不为空；都不为空时优先使用 Username。",
           "example": "无",
@@ -2599,7 +2495,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户 ID。 Username 和 UserId 需至少一个不为空；都不为空时优先使用 Username。",
           "example": "无",
@@ -2657,7 +2552,6 @@
       "document": "应用信息列表。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户所在的用户组ID列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "id",
@@ -2668,7 +2562,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户所在的机构节点ID列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "id",
@@ -2685,7 +2578,6 @@
       "document": "账号关联的用户信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户ID，是用户全局唯一标识，长度限制：64个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2696,7 +2588,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2713,7 +2604,6 @@
       "document": "ListAccountInAccountGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "账号组ID。",
           "example": "无",
@@ -2723,7 +2613,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询条件，支持多搜索条件组合、多数据范围匹配的搜索。",
           "example": "无",
@@ -2733,7 +2622,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为 0。",
           "example": "无",
@@ -2743,7 +2631,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。",
           "example": "无",
@@ -2801,7 +2688,6 @@
       "document": "ListApplicationAuthorizations请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询类型，包含用户（User）、用户组（UserGroup）、组织机构（OrgNode）。",
           "example": "无",
@@ -2811,7 +2697,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询条件，支持多搜索条件组合、多数据范围匹配的搜索。同时支持查询信息内容全匹配、部分匹配、范围匹配等多种查询方式，具体查询方式为：双引号（\"\"）表示全匹配、以星号（* ) 结尾表示字段部分匹配。如果该字段为空，则默认查全量表。",
           "example": "无",
@@ -2821,7 +2706,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序条件集合。可排序的属性支持：上次修改时间（lastModifiedDate）。如果该字段为空，则默认按照应用名称正向排序。",
           "example": "无",
@@ -2831,7 +2715,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量。Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询。",
           "example": "无",
@@ -2841,7 +2724,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页读取数量。Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询。",
           "example": "无",
@@ -2889,7 +2771,6 @@
       "document": "ListApplications请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模糊匹配搜索条件，支持多搜索条件组合、多数据范围匹配的搜索。同时支持查询信息内容全匹配、部分匹配、范围匹配等多种查询方式，具体查询方式为：双引号（\"\"）表示全匹配、以星号（* ) 结尾表示字段部分匹配。模糊匹配搜索功能与精准匹配查询不会同时生效，如果SearchCondition与ApplicationIdList均不为空，则默认以ApplicationIdList进行精准查询。如果SearchCondition字段与ApplicationIdList字段均为空，则默认返回全部的应用信息。",
           "example": "无",
@@ -2899,7 +2780,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序条件集合。可排序的属性支持：应用名字（DisplayName）、创建时间（CreatedDate）、上次修改时间（LastModifiedDate）。如果该字段为空，则默认按照应用名字正向排序。",
           "example": "无",
@@ -2909,7 +2789,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序条件集合。可排序的属性支持：应用名字（DisplayName）、创建时间（CreatedDate）、上次修改时间（LastModifiedDate）。如果该字段为空，则默认按照应用名字正向排序。",
           "example": "无",
@@ -2919,7 +2798,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页读取数量。Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询。",
           "example": "无",
@@ -2929,7 +2807,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID列表，通过应用ID列表精准匹配对应的应用信息。模糊匹配搜索功能与精准匹配查询不会同时生效，如果SearchCondition与ApplicationIdList均不为空，则默认以ApplicationIdList进行精准查询。如果SearchCondition字段与ApplicationIdList字段均为空，则默认返回全部的应用信息。",
           "example": "无",
@@ -2977,7 +2854,6 @@
       "document": "ListAuthorizedApplicationsToOrgNode请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机构节点 Id 。",
           "example": "id",
@@ -3015,7 +2891,6 @@
       "document": "ListAuthorizedApplicationsToUserGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户组 Id 。",
           "example": "id",
@@ -3053,7 +2928,6 @@
       "document": "ListAuthorizedApplicationsToUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户 ID。",
           "example": "id",
@@ -3063,7 +2937,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询范围是否包括用户关联的用户组、组织机构的应用访问权限。默认为不查询 。传false表示不查询该范围，传true表示应用查询该范围。",
           "example": "无",
@@ -3101,7 +2974,6 @@
       "document": "ListUserGroupsOfUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户ID，是用户的全局唯一标识。",
           "example": "id",
@@ -3111,7 +2983,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模糊查询条件，支持匹配用户组名称（DisplayName）。如果该字段为空，则默认展示该用户所有的用户组。",
           "example": "无",
@@ -3121,7 +2992,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序条件集合。可排序的属性支持：用户组名称（DisplayName）、用户组ID（UserGroupId）、创建时间（CreatedDate）。如果该字段为空，则默认按照用户组名称正向排序。",
           "example": "无",
@@ -3131,7 +3001,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，默认为0。Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询，即只返回最多50个用户组。",
           "example": "无",
@@ -3141,7 +3010,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页读取数量，默认为50，最大值为100。 Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询，即只返回最多50个用户组。",
           "example": "无",
@@ -3209,7 +3077,6 @@
       "document": "ListUserGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询条件，支持多搜索条件组合、多数据范围匹配的搜索。同时支持查询信息内容全匹配、部分匹配、范围匹配等多种查询方式，具体查询方式为：双引号（\"\"）表示全匹配、以星号（* ) 结尾表示字段部分匹配。如果该字段为空，则默认查全量表。",
           "example": "无",
@@ -3219,7 +3086,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序条件集合。可排序的属性支持：用户组名称（DisplayName）、用户组ID（UserGroupId）、上次更新时间（LastModifiedDate）。如果该字段为空，则默认按照用户组名称正向排序。",
           "example": "无",
@@ -3229,7 +3095,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量。Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询。",
           "example": "无",
@@ -3239,7 +3104,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页读取数量。Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询。",
           "example": "无",
@@ -3287,7 +3151,6 @@
       "document": "ListUsersInOrgNode请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机构节点ID，是机构节点全局唯一标识，长度限制：64个字符。如果为空默认读取机构根节点下用户信息。",
           "example": "id",
@@ -3297,7 +3160,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否读取其子节点信息。当其为空或false时，默认仅读取当前机构节点信息。当其为true时，读取本机构节点以及其第一层子节点信息。",
           "example": "无",
@@ -3307,7 +3169,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户属性搜索条件，可查询条件包括：用户名、手机号码，邮箱、用户锁定状态、用户冻结状态、创建时间、上次修改时间，支持多种属性组合作为查询条件。同时支持查询信息内容全匹配、部分匹配、范围匹配等多种查询方式，具体查询方式为：双引号（“”）表示全匹配、以星号（*）结尾表示字段部分匹配、中括号以逗号分隔（[Min，Max]）表示闭区间查询、大括号以逗号分隔（{Min，Max}）表示开区间查询，中括号与大括号可以配合使用（例如：{Min，Max]表示最小值开区间，最大值闭区间查询）。范围匹配支持使用星号（例如{20,*]表示查询范围为大于20的所有数据）。范围查询同时支持时间段查询，支持的属性包括创建时间 （CreationTime）、上次修改时间（LastUpdateTime），查询的时间格式遵循 ISO 8601 标准，例如：2021-01-13T09:44:07.182+0000。",
           "example": "无",
@@ -3317,7 +3178,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序条件集合。可排序的属性支持：用户名字（UserName）、手机号（Phone）、邮箱（Email）、用户状态（Status）、创建时间 （CreatedDate）、上次更新时间（LastModifiedDate）。如果不指定，则默认按照用户昵称（DisplayName）正向排序。",
           "example": "无",
@@ -3327,7 +3187,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，默认为0。Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询，即只返回最多50个用户。",
           "example": "无",
@@ -3337,7 +3196,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页读取数量，默认为50，最大值为100。 Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询，即只返回最多50个用户。",
           "example": "无",
@@ -3425,7 +3283,6 @@
       "document": "展示机构下用户的属性搜索条件。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户名，长度限制：64个字符。",
           "example": "无",
@@ -3436,7 +3293,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户手机号。",
           "example": "无",
@@ -3447,7 +3303,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户邮箱。",
           "example": "无",
@@ -3458,7 +3313,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户状态，取值 NORMAL （正常）、FREEZE （已冻结）、LOCKED （已锁定）或 NOT_ENABLED （未启用）。",
           "example": "无",
@@ -3469,7 +3323,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户创建时间，遵循 ISO 8601 标准。",
           "example": "无",
@@ -3480,7 +3333,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户上次更新时间。",
           "example": "无",
@@ -3491,7 +3343,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名称匹配搜索，匹配范围包括：用户名称、用户手机号。",
           "example": "无",
@@ -3508,7 +3359,6 @@
       "document": "ListUsersInUserGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户组ID，是用户组的全局唯一标识。",
           "example": "id",
@@ -3518,7 +3368,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户属性搜索条件，可查询条件包括：用户名、手机号码，邮箱、用户锁定状态、用户冻结状态、创建时间、上次修改时间，支持多种属性组合作为查询条件。同时支持查询信息内容全匹配、部分匹配、范围匹配等多种查询方式，具体查询方式为：双引号（“”）表示全匹配、以星号（）结尾表示字段部分匹配、中括号以逗号分隔（[Min，Max]）表示闭区间查询、大括号以逗号分隔（{Min，Max}）表示开区间查询，中括号与大括号可以配合使用（例如：{Min，Max]表示最小值开区间，最大值闭区间查询）。范围匹配支持使用星号（例如{20,]表示查询范围为大于20的所有数据）。范围查询同时支持时间段查询，支持的属性包括创建时间 （CreationTime）、上次修改时间（LastUpdateTime），查询的时间格式遵循 ISO 8601 标准，例如：2021-01-13T09:44:07.182+0000。",
           "example": "无",
@@ -3528,7 +3377,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序条件集合。可排序的属性支持：用户名字（UserName）、用户昵称（DisplayName）、手机号（Phone）、邮箱（Email）、用户状态（Status）、创建时间 （CreatedDate）、上次更新时间（LastModifiedDate）。如果不指定，则默认按照用户昵称（DisplayName）正向排序。",
           "example": "无",
@@ -3538,7 +3386,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，默认为0。Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询，即只返回最多50个用户。",
           "example": "无",
@@ -3548,7 +3395,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页读取数量，默认为50，最大值为100。 Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询，即只返回最多50个用户。",
           "example": "无",
@@ -3606,7 +3452,6 @@
       "document": "ListUsers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户属性搜索条件，可查询条件包括：用户名、手机号码，邮箱、用户锁定状态、用户冻结状态、创建时间、上次修改时间，支持多种属性组合作为查询条件。同时支持查询信息内容全匹配、部分匹配、范围匹配等多种查询方式，具体查询方式为：双引号（“”）表示全匹配、以星号（*）结尾表示字段部分匹配、中括号以逗号分隔（[Min，Max]）表示闭区间查询、大括号以逗号分隔（{Min，Max}）表示开区间查询，中括号与大括号可以配合使用（例如：{Min，Max]表示最小值开区间，最大值闭区间查询）。范围匹配支持使用星号（例如{20,*]表示查询范围为大于20的所有数据）。范围查询同时支持时间段查询，支持的属性包括创建时间 （CreationTime）、上次修改时间（LastUpdateTime），查询的时间格式遵循 ISO 8601 标准，例如：2021-01-13T09:44:07.182+0000。",
           "example": "无",
@@ -3616,7 +3461,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定期望返回的用户属性，默认返回所有用户内置属性。内置用户属性包括：用户UUID（UserId）、用户昵称（DisplayName）、用户名字（UserName）、手机号（Phone）、邮箱（Email）、用户状态（Status）、用户组（SubjectGroups）机构路径（OrgPath）、备注（Description）、创建时间 （CreationTime）、上次修改时间（LastUpdateTime）、上次登录时间（LastLoginTime）。",
           "example": "无",
@@ -3626,7 +3470,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序条件集合。可排序的属性支持：用户名字（UserName）、用户昵称（DisplayName）、手机号（Phone）、邮箱（Email）、用户状态（Status）、创建时间 （CreationTime）、上次修改时间（LastUpdateTime）、上次登录时间（LastLoginTime）。如果不指定，则默认按照用户昵称（DisplayName）正向排序。",
           "example": "无",
@@ -3636,7 +3479,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，默认为0。Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询，即只返回最多1000个用户。",
           "example": "无",
@@ -3646,7 +3488,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页读取数量，默认为50，最大值为100。 Offset 和 Limit 两个字段需配合使用，即其中一个指定了，另一个必须指定。 如果不指定以上参数，则表示不进行分页查询，即只返回最多1000个用户。",
           "example": "无",
@@ -3656,7 +3497,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否查看搜索结果的总数，默认该选项为false不查看。",
           "example": "无",
@@ -3704,7 +3544,6 @@
       "document": "ModifyAccountGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "账号组ID。",
           "example": "无",
@@ -3714,7 +3553,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号组名。未传入该参数时，表示不进行修改。",
           "example": "无",
@@ -3724,7 +3562,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述，未传入该参数时，表示不进行修改。",
           "example": "无",
@@ -3752,7 +3589,6 @@
       "document": "ModifyAppAccount请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "账号ID。",
           "example": "无",
@@ -3762,7 +3598,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号名称。未传入该参数时，表示不进行修改。",
           "example": "无",
@@ -3772,7 +3607,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号密码。未传入该参数时，表示不进行修改。",
           "example": "无",
@@ -3782,7 +3616,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述，未传入该参数时，表示不进行修改。",
           "example": "无",
@@ -3810,7 +3643,6 @@
       "document": "ModifyApplication请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID，是应用的全局唯一标识。",
           "example": "id",
@@ -3820,7 +3652,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全级别。",
           "example": "无",
@@ -3830,7 +3661,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用展示名称，长度限制：32个字符。 默认与应用名字相同。",
           "example": "无",
@@ -3840,7 +3670,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用状态，true表示启用，false表示禁用。",
           "example": "无",
@@ -3850,7 +3679,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用图标图片访问地址。",
           "example": "无",
@@ -3860,7 +3688,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述。长度不超过128。",
           "example": "无",
@@ -3888,7 +3715,6 @@
       "document": "ModifyUserInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户名，长度限制：32个字符。 Username 和 UserId 需选择一个作为搜索条件；如两个条件同时使用则默认使用Username作为搜索条件。",
           "example": "无",
@@ -3898,7 +3724,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "昵称，长度限制：64个字符。 默认与用户名相同。",
           "example": "无",
@@ -3908,7 +3733,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户备注，长度限制：512个字符。",
           "example": "无",
@@ -3918,7 +3742,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属用户组ID列表。",
           "example": "无",
@@ -3928,7 +3751,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户 id。 Username 和 UserId 需选择一个作为搜索条件；如两个条件同时使用则默认使用Username作为搜索条件。",
           "example": "id",
@@ -3938,7 +3760,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户手机号。",
           "example": "无",
@@ -3948,7 +3769,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户过期时间，遵循 ISO 8601 标准。",
           "example": "无",
@@ -3958,7 +3778,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户密码， 需要符合密码策略的配置。",
           "example": "无",
@@ -3968,7 +3787,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户邮箱。",
           "example": "无",
@@ -3978,7 +3796,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密码是否需要重置，为空默认为false不需要重置密码。",
           "example": "无",
@@ -3988,7 +3805,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属的主组织机构唯一ID。如果为空，默认为在根节点下创建用户。",
           "example": "无",
@@ -3998,7 +3814,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属的次要组织机构ID列表。",
           "example": "无",
@@ -4026,7 +3841,6 @@
       "document": "当前机构节点下的子节点列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机构节点展示名称，长度限制：64个字符。 默认与机构名相同。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "id",
@@ -4037,7 +3851,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机构节点最后修改时间，符合 ISO8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "id",
@@ -4048,7 +3861,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户自定义可选填的机构节点对外ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "id",
@@ -4059,7 +3871,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前机构节点的父节点ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "id",
@@ -4070,7 +3881,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机构节点ID，是机构节点的全局唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "id",
@@ -4081,7 +3891,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据来源。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "id",
@@ -4092,7 +3901,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机构节点创建时间，符合 ISO8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "id",
@@ -4103,7 +3911,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机构节点描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4120,7 +3927,6 @@
       "document": "机构子节点下的用户信息列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机构ID，是机构节点全局唯一标识，长度限制：64个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "id",
@@ -4131,7 +3937,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4142,7 +3947,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前机构节点下的用户总数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4153,7 +3957,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "组织机构ID路径。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4164,7 +3967,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "组织机构名称路径。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4181,7 +3983,6 @@
       "document": "RemoveAccountFromAccountGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "账号组ID",
           "example": "无",
@@ -4191,7 +3992,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要移除账号ID列表。",
           "example": "无",
@@ -4219,7 +4019,6 @@
       "document": "RemoveUserFromUserGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要加入用户组的用户ID列表。",
           "example": "id",
@@ -4229,7 +4028,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户组ID，是用户组的全局唯一标识。",
           "example": "id",
@@ -4257,7 +4055,6 @@
       "document": "排序条件。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "排序属性。",
           "example": "无",
@@ -4268,7 +4065,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序顺序，ASC为正向排序，DESC为反向排序。",
           "example": "无",
@@ -4285,7 +4081,6 @@
       "document": "三方账号信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "第三方账号代码。\"2\"代表企业微信。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4296,7 +4091,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号对应的用户名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4313,7 +4107,6 @@
       "document": "UpdateOrgNode请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机构节点ID，是机构节点的全局唯一标识。",
           "example": "id",
@@ -4323,7 +4116,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机构节点名称，长度限制：64个字符。",
           "example": "无",
@@ -4333,7 +4125,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机构节点描述。",
           "example": "无",
@@ -4343,7 +4134,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机构代码。如果非空则校验此ID的唯一性。",
           "example": "id",
@@ -4371,7 +4161,6 @@
       "document": "返回的用户组列表。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "昵称，长度限制：64个字符。 默认与用户名相同。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4382,7 +4171,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户组ID，是用户组全局唯一标识，长度限制：64个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "id",
@@ -4393,7 +4181,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户组备注。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4404,7 +4191,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4421,7 +4207,6 @@
       "document": "用户组属性搜索条件。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "名称匹配搜索，匹配范围包括：用户组名称、用户组ID。",
           "example": "无",
@@ -4438,7 +4223,6 @@
       "document": "返回的用户组列表。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户组ID。",
           "example": "无",
@@ -4449,7 +4233,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户组名称。",
           "example": "无",
@@ -4460,7 +4243,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上次更新时间，符合 ISO8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4477,7 +4259,6 @@
       "document": "获取用户所在的用户组列表功能中用户组属性搜索条件。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "名称匹配搜索，匹配范围包括：用户组名称。",
           "example": "无",
@@ -4494,7 +4275,6 @@
       "document": "用户信息列表。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户ID，是用户全局唯一标识，长度限制：64个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "id",
@@ -4505,7 +4285,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "昵称，长度限制：64个字符。 默认与用户名相同。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4516,7 +4295,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4527,7 +4305,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户手机号。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4538,7 +4315,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "邮箱地址。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4549,7 +4325,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户状态。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4560,7 +4335,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据来源。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4577,7 +4351,6 @@
       "document": "用户信息列表。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户名，长度限制：32个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4588,7 +4361,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户状态。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4599,7 +4371,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "昵称，长度限制：64个字符。 默认与用户名相同。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4610,7 +4381,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户备注，长度限制：512个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4621,7 +4391,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户上次更新时间，遵循 ISO 8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4632,7 +4401,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户创建时间，遵循 ISO 8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4643,7 +4411,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属主组织机构的路径ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4654,7 +4421,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "带国家号的用户手机号，例如+86-00000000000。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4665,7 +4431,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属用户组ID列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4676,7 +4441,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户邮箱。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4687,7 +4451,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户上次登录时间，遵循 ISO 8601 标准。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4698,7 +4461,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户ID，是用户全局唯一标识，长度限制：64个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4715,7 +4477,6 @@
       "document": "用户属性搜索条件。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户名，长度限制：64个字符。",
           "example": "无",
@@ -4726,7 +4487,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户手机号。",
           "example": "无",
@@ -4737,7 +4497,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户邮箱。",
           "example": "无",
@@ -4748,7 +4507,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户状态，取值 NORMAL （正常）、FREEZE （已冻结）、LOCKED （已锁定）或 NOT_ENABLED （未启用）。",
           "example": "无",
@@ -4759,7 +4517,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户创建时间，遵循 ISO 8601 标准。",
           "example": "无",
@@ -4770,7 +4527,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户上次更新时间区间。",
           "example": "无",
@@ -4781,7 +4537,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名称匹配搜索，匹配范围包括：用户名称、用户ID。",
           "example": "无",

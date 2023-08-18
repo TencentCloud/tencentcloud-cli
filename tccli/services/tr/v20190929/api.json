@@ -19,7 +19,6 @@
       "document": "ModifyMail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "邮寄信息ID",
           "example": "",
@@ -29,7 +28,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "收件人",
           "example": "",
@@ -39,7 +37,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联系电话",
           "example": "",
@@ -49,7 +46,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "省份",
           "example": "",
@@ -59,7 +55,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联系地址",
           "example": "",

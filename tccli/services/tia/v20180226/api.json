@@ -82,7 +82,6 @@
       "document": "CreateJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务名称",
           "example": "",
@@ -92,7 +91,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运行任务的集群，详见 [使用集群](https://cloud.tencent.com/document/product/851/17317)",
           "example": "",
@@ -102,7 +100,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运行任务的环境，详见 [运行环境](https://cloud.tencent.com/document/product/851/17320)",
           "example": "",
@@ -112,7 +109,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "挂载的路径，支持 NFS，[CFS](https://cloud.tencent.com/product/cfs) 和 [COS](https://cloud.tencent.com/product/cos)，其中 COS 只在 [TI-A 定制环境](https://cloud.tencent.com/document/product/851/17320#ti-a-.E5.AE.9A.E5.88.B6.E7.8E.AF.E5.A2.83) 中支持",
           "example": "",
@@ -122,7 +118,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务启动命令",
           "example": "",
@@ -132,7 +127,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务启动参数",
           "example": "",
@@ -142,7 +136,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运行任务的配置信息，详见 [训练规模](https://cloud.tencent.com/document/product/851/17319)",
           "example": "",
@@ -152,7 +145,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Master 机器类型，ScaleTier 取值为 `CUSTOM` 时必填，详见 [训练规模](https://cloud.tencent.com/document/product/851/17319)",
           "example": "",
@@ -162,7 +154,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Worker 机器类型，ScaleTier 取值为 `CUSTOM` 时必填，详见 [训练规模](https://cloud.tencent.com/document/product/851/17319)",
           "example": "",
@@ -172,7 +163,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Parameter server 机器类型，ScaleTier 取值为 `CUSTOM` 时必填,详见 [训练规模](https://cloud.tencent.com/document/product/851/17319)",
           "example": "",
@@ -182,7 +172,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Worker 机器数量，ScaleTier 取值为 `CUSTOM` 时必填,详见 [训练规模](https://cloud.tencent.com/document/product/851/17319)",
           "example": "",
@@ -192,7 +181,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Parameter server 机器数量，ScaleTier 取值为 `CUSTOM` 时必填,详见 [训练规模](https://cloud.tencent.com/document/product/851/17319)",
           "example": "",
@@ -202,7 +190,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "启动 debug 模式，默认为 false",
           "example": "",
@@ -212,7 +199,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运行任务的其他配置信息",
           "example": "",
@@ -249,7 +235,6 @@
       "document": "CreateModel请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模型名称",
           "example": "",
@@ -259,7 +244,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要部署的模型文件路径名",
           "example": "",
@@ -269,7 +253,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关于模型的描述",
           "example": "",
@@ -279,7 +262,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署目标集群的名称，`集群模式` 必填",
           "example": "",
@@ -289,7 +271,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运行环境镜像的标签，详见 [Serving 环境](https://cloud.tencent.com/document/product/851/17320#serving-.E7.8E.AF.E5.A2.83)",
           "example": "",
@@ -299,7 +280,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要部署的模型副本数目，`集群模式` 选填",
           "example": "",
@@ -309,7 +289,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "暴露外网或内网，默认暴露外网，`集群模式` 选填",
           "example": "",
@@ -319,7 +298,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署模式，取值 `serverless` 即为 `无服务器模式`，否则为 `集群模式` 下服务的运行规模，形如 `2U4G1P`，详见 [自定义的训练规模](https://cloud.tencent.com/document/product/851/17319#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.9A.84.E8.AE.AD.E7.BB.83.E8.A7.84.E6.A8.A1)",
           "example": "",
@@ -329,7 +307,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "`无服务器模式` 可选的其他配置信息，详见 [利用无服务器函数部署](https://cloud.tencent.com/document/product/851/17049#.E5.88.A9.E7.94.A8.E6.97.A0.E6.9C.8D.E5.8A.A1.E5.99.A8.E5.87.BD.E6.95.B0.E9.83.A8.E7.BD.B2)",
           "example": "",
@@ -366,7 +343,6 @@
       "document": "DeleteJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务名称",
           "example": "",
@@ -376,7 +352,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运行任务的集群",
           "example": "",
@@ -404,7 +379,6 @@
       "document": "DeleteModel请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要删除的模型名称",
           "example": "",
@@ -414,7 +388,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要删除的模型所在的集群名称，`集群模式` 必填",
           "example": "",
@@ -424,7 +397,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模型类型，取值 `serverless` 即为 `无服务器模式`，否则为 `集群模式`",
           "example": "",
@@ -452,7 +424,6 @@
       "document": "DescribeJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务名称",
           "example": "",
@@ -462,7 +433,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运行任务的集群",
           "example": "",
@@ -499,7 +469,6 @@
       "document": "DescribeModel请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模型名称",
           "example": "",
@@ -509,7 +478,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模型所在集群名称，`集群模式` 必填",
           "example": "",
@@ -519,7 +487,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模型类型，取值 `serverless` 即为 `无服务器模式`，否则为 `集群模式`",
           "example": "",
@@ -556,7 +523,6 @@
       "document": "InstallAgent请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群名称",
           "example": "",
@@ -566,7 +532,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Agent版本, 用于私有集群的agent安装，默认为“private-training”",
           "example": "",
@@ -576,7 +541,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否允许更新Agent",
           "example": "",
@@ -613,7 +577,6 @@
       "document": "训练任务信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务名称",
           "example": "",
@@ -624,7 +587,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务创建时间，格式为：2006-01-02 15:04:05.999999999 -0700 MST",
           "example": "",
@@ -635,7 +597,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务开始时间，格式为：2006-01-02 15:04:05.999999999 -0700 MST",
           "example": "",
@@ -646,7 +607,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务结束时间，格式为：2006-01-02 15:04:05.999999999 -0700 MST",
           "example": "",
@@ -657,7 +617,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务状态，可能的状态为Created（已创建），Running（运行中），Succeeded（运行完成：成功），Failed（运行完成：失败）",
           "example": "",
@@ -668,7 +627,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务状态信息",
           "example": "",
@@ -679,7 +637,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运行任务的配置信息",
           "example": "",
@@ -690,7 +647,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（ScaleTier为Custom时）master机器类型",
           "example": "",
@@ -701,7 +657,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（ScaleTier为Custom时）worker机器类型",
           "example": "",
@@ -712,7 +667,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（ScaleTier为Custom时）parameter server机器类型",
           "example": "",
@@ -723,7 +677,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（ScaleTier为Custom时）worker机器数量",
           "example": "",
@@ -734,7 +687,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（ScaleTier为Custom时）parameter server机器数量",
           "example": "",
@@ -745,7 +697,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "挂载的路径",
           "example": "",
@@ -756,7 +707,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务启动命令",
           "example": "",
@@ -767,7 +717,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务启动参数",
           "example": "",
@@ -778,7 +727,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运行任务的集群",
           "example": "",
@@ -789,7 +737,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运行任务的环境",
           "example": "",
@@ -800,7 +747,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务删除时间，格式为：2006-01-02 15:04:05.999999999 -0700 MST",
           "example": "",
@@ -811,7 +757,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建任务的AppId",
           "example": "",
@@ -822,7 +767,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建任务的Uin",
           "example": "",
@@ -833,7 +777,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建任务的Debug模式",
           "example": "",
@@ -844,7 +787,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Runtime的额外配置信息",
           "example": "",
@@ -855,7 +797,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务Id",
           "example": "",
@@ -872,7 +813,6 @@
       "document": "ListJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "运行任务的集群",
           "example": "",
@@ -882,7 +822,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数，返回数量",
           "example": "",
@@ -892,7 +831,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数，起始位置",
           "example": "",
@@ -929,7 +867,6 @@
       "document": "ListModels请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "部署模型的集群， `集群模式` 必填",
           "example": "",
@@ -939,7 +876,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数，返回数量上限",
           "example": "",
@@ -949,7 +885,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数，分页起始位置",
           "example": "",
@@ -959,7 +894,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署类型，取值 `serverless` 即为 `无服务器模式`，否则为 `集群模式`。",
           "example": "",
@@ -996,7 +930,6 @@
       "document": "日志",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "容器名",
           "example": "",
@@ -1007,7 +940,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志内容",
           "example": "",
@@ -1018,7 +950,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "空间名",
           "example": "",
@@ -1029,7 +960,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Pod Id",
           "example": "",
@@ -1040,7 +970,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Pod名",
           "example": "",
@@ -1051,7 +980,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志日期，格式为“2018-07-02T09:10:04.916553368Z”",
           "example": "",
@@ -1068,7 +996,6 @@
       "document": "用于描述模型的详细情况\n        \"Model\": {\n            \"Name\": \"test-model\",\n            \"Description\": \"test-model\",\n            \"Cluster\": \"ap-beijing\",\n            \"Model\": \"cos://test-1255502019.cos.ap-shanghai.myqcloud.com/example:/data/mnist\",\n            \"RuntimeVersion\": \"tiaserv-1.6.0-cpu\",\n            \"CreateTime\": \"2018-04-26 15:59:25 +0800 CST\",\n            \"State\": \"Running\",\n            \"ServingUrl\": \"140.143.51.230\",\n            \"Message\": \"Deployment does not have minimum availability.\",\n            \"AppId\": 1255502019,\n            \"ServType\": \"1U2G0P\"\n        },",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模型名称",
           "example": "",
@@ -1079,7 +1006,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模型描述",
           "example": "",
@@ -1090,7 +1016,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群名称",
           "example": "",
@@ -1101,7 +1026,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模型地址",
           "example": "",
@@ -1112,7 +1036,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运行环境编号",
           "example": "",
@@ -1123,7 +1046,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模型创建时间",
           "example": "",
@@ -1134,7 +1056,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模型运行状态",
           "example": "",
@@ -1145,7 +1066,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "提供服务的url",
           "example": "",
@@ -1156,7 +1076,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "相关消息",
           "example": "",
@@ -1167,7 +1086,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "编号",
           "example": "",
@@ -1178,7 +1096,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机型",
           "example": "",
@@ -1189,7 +1106,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模型暴露方式",
           "example": "",
@@ -1200,7 +1116,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署副本数量",
           "example": "",
@@ -1211,7 +1126,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模型Id",
           "example": "",
@@ -1222,7 +1136,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建任务的Uin",
           "example": "",
@@ -1233,7 +1146,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模型删除时间，格式为：2006-01-02 15:04:05.999999999 -0700 MST",
           "example": "",
@@ -1250,7 +1162,6 @@
       "document": "QueryLogs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务的名称",
           "example": "",
@@ -1260,7 +1171,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务所在集群的名称",
           "example": "",
@@ -1270,7 +1180,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询日志的开始时间，格式：2019-01-01 00:00:00",
           "example": "",
@@ -1280,7 +1189,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询日志的结束时间，格式：2019-01-01 00:00:00",
           "example": "",
@@ -1290,7 +1198,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单次要返回的日志条数上限",
           "example": "",
@@ -1300,7 +1207,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加载更多日志时使用，透传上次返回的 Context 值，获取后续的日志内容；使用 Context 翻页最多能获取 10000 条日志",
           "example": "",

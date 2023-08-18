@@ -61,7 +61,6 @@
       "document": "备份空间数据，一条数据代表一个实例的备份使用情况",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID",
           "example": "tdpg-mdi2stas",
@@ -69,11 +68,9 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称",
           "example": "啊啊啊",
@@ -81,11 +78,9 @@
           "name": "InstanceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "引擎类型",
           "example": "TbaseV2",
@@ -93,11 +88,9 @@
           "name": "EngineType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份总大小",
           "example": "123.04 GB",
@@ -105,11 +98,9 @@
           "name": "BackupTotalSize",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据备份总大小",
           "example": "123.04 GB",
@@ -117,11 +108,9 @@
           "name": "BaseBackupSize",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据备份数量",
           "example": "1",
@@ -129,11 +118,9 @@
           "name": "BaseBackupCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志备份总大小",
           "example": "123.04 GB",
@@ -141,11 +128,9 @@
           "name": "WALBackupSize",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志备份数量",
           "example": "1",
@@ -153,11 +138,9 @@
           "name": "WALBackupCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "手动备份总大小",
           "example": "123.04 GB",
@@ -165,11 +148,9 @@
           "name": "ManualBackupSize",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "手动备份数量",
           "example": "1",
@@ -177,11 +158,9 @@
           "name": "ManualBackupCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动备份总大小",
           "example": "123.04 GB",
@@ -189,11 +168,9 @@
           "name": "AutoBackupSize",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动备份数量",
           "example": "1",
@@ -201,11 +178,9 @@
           "name": "AutoBackupCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例状态",
           "example": "online",
@@ -213,8 +188,7 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -223,7 +197,6 @@
       "document": "数据备份",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID",
           "example": "\"tdpg-xxxx\"",
@@ -231,11 +204,9 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称",
           "example": "\"张三的实例\"",
@@ -243,11 +214,9 @@
           "name": "InstanceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份任务 ID，实例内唯一",
           "example": "3",
@@ -255,11 +224,9 @@
           "name": "BackupId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份路径",
           "example": "\"backup/tdpg-7a2l33zq/bkp_cluster_2022_08_22\"",
@@ -267,11 +234,9 @@
           "name": "FileDir",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份开始时间",
           "example": "\"2022-08-22 18:51:13.532994\"",
@@ -279,11 +244,9 @@
           "name": "StartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份结束时间",
           "example": "\"2022-08-22 18:51:13.532994\"",
@@ -291,11 +254,9 @@
           "name": "EndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件大小",
           "example": "\"235.99 GB\"",
@@ -303,11 +264,9 @@
           "name": "FileSize",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份类型， Manual/Auto",
           "example": "Manual",
@@ -315,11 +274,9 @@
           "name": "BackupStrategy",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份方式, physical/logical",
           "example": "physical",
@@ -327,11 +284,9 @@
           "name": "BackupType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份方法, full/increment",
           "example": "full",
@@ -339,8 +294,7 @@
           "name": "BackupPattern",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -349,7 +303,6 @@
       "document": "查询实例列表过滤器。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要过滤的字段，enum：InstanceName，Vip，InstanceId。",
           "example": "",
@@ -360,7 +313,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤字段值。",
           "example": "",
@@ -377,158 +329,130 @@
       "document": "CreateInstanceHour请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "可用区英文编码",
           "example": "xx",
           "member": "string",
           "name": "Zone",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买数量",
           "example": "0",
           "member": "int64",
           "name": "GoodsNum",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络类型",
           "example": "xx",
           "member": "string",
           "name": "NetType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID",
           "example": "xx",
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID",
           "example": "xx",
           "member": "string",
           "name": "SubnetId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "引擎版本",
           "example": "xx",
           "member": "string",
           "name": "EngineVersion",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字符集",
           "example": "xx",
           "member": "string",
           "name": "Charset",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "超级账号的密码",
           "example": "xx",
           "member": "string",
           "name": "AdminPassword",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要绑定的安全组",
           "example": "[\"xx\"]",
           "member": "string",
           "name": "SecurityGroupIdList",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CN节点信息",
           "example": "无",
           "member": "NodeInfo",
           "name": "CnNode",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DN节点信息",
           "example": "无",
           "member": "NodeInfo",
           "name": "DnNode",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名字，可以为空",
           "example": "xx",
           "member": "string",
           "name": "InstanceName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回档实例必传参数",
           "example": "无",
           "member": "RecoveryInfo",
           "name": "Recovery",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -544,8 +468,7 @@
           "name": "BillId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -555,8 +478,7 @@
           "name": "InstanceIds",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -566,8 +488,7 @@
           "name": "TaskId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -582,7 +503,6 @@
       "document": "DescribeAvailableRecoveryTime请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "xx",
@@ -650,37 +570,31 @@
       "document": "DescribeBackupSpace请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例Id列表，可为空，为空表示获取该用户下所有实例",
           "example": "tdpg-mdi2stas",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "total_capacity,base_capacity,xlog_capacity,manual_backup_capacity,auto_backup_capacity， 数据排序方式, 允许为空，为空默认 total_capacity",
           "example": "total_capacity",
           "member": "string",
           "name": "OrderBy",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ASC,DESC，排序方式。默认以DESC方式排序",
           "example": "DESC",
           "member": "string",
           "name": "OrderByType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -696,8 +610,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -707,8 +620,7 @@
           "name": "BackupSpaces",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -723,103 +635,85 @@
       "document": "DescribeBaseBackups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID",
           "example": "tdpg-mdi2stas",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份开始时间，可为空，为空表示不过滤备份开始时间",
           "example": "2020-03-16 19:09:17",
           "member": "string",
           "name": "StartTime",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份结束时间，可为空，为空表示不过滤备份结束时间",
           "example": "2020-03-19 17:08:46",
           "member": "string",
           "name": "EndTime",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份类型， Manual/Auto，可为空，为空表示不过滤备份类型",
           "example": "Manual",
           "member": "string",
           "name": "BackupStrategy",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份方式， physical/logical，可为空，为空表示不过滤备份方式",
           "example": "physical",
           "member": "string",
           "name": "BackupType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码, 最小值 1",
           "example": "1",
           "member": "int64",
           "name": "PageNumber",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页数量，默认为20",
           "example": "20",
           "member": "int64",
           "name": "PageSize",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据排序方式, start_time,end_time,file_size, 允许为空，为空默认 start_time",
           "example": "start_time",
           "member": "string",
           "name": "OrderBy",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式。ASC,DESC, 默认以DESC方式排序",
           "example": "DESC",
           "member": "string",
           "name": "OrderByType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -835,8 +729,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -846,8 +739,7 @@
           "name": "BaseBackups",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -862,59 +754,49 @@
       "document": "DescribeDBTables请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称",
           "example": "dbname",
           "member": "string",
           "name": "DBName",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库下的schema名称，数组",
           "example": "['schema_name','schema1']",
           "member": "string",
           "name": "Schemas",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "tdpg-xxxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页数量，默认为500，最大值为1000",
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码，最小为1，默认为1",
           "example": "1",
           "member": "uint64",
           "name": "PageNumber",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -930,8 +812,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -941,8 +822,7 @@
           "name": "Items",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -957,37 +837,31 @@
       "document": "DescribeUserTasks请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，目前支持StartTime、EndTime、InstanceIds、TaskType、Status、TaskIds",
           "example": "无",
           "member": "ConditionFilter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页大小",
           "example": "0",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1003,8 +877,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1014,8 +887,7 @@
           "name": "TaskList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1030,125 +902,103 @@
       "document": "ModifyInstanceHour请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "example": "tdpg-tabskgwdya",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "区域ID",
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CN或者DN 节点规格代码",
           "example": "dev.1",
           "member": "string",
           "name": "SpecCode",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点类型，0-GTM,1-CN,2-DN,3-FN",
           "example": "1",
           "member": "int64",
           "name": "NodeType",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "变配后的新配置总节点组数",
           "example": "3",
           "member": "int64",
           "name": "SetCount",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "变配后单个节点磁盘总大小，单位GB",
           "example": "100",
           "member": "int64",
           "name": "Storage",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作类型，1增加节点，2减少节点（暂不支持），3提升节点配置，4.增加备机，5.减少备机",
           "example": "3",
           "member": "int64",
           "name": "ModifyType",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "变配后的新配置节点总个数",
           "example": "6",
           "member": "int64",
           "name": "NodeCount",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "降配时必传ModifyMode=down",
           "example": "down",
           "member": "string",
           "name": "ModifyMode",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "必传参数，空间回收开始时间",
           "example": "06:00:00",
           "member": "string",
           "name": "SpaceRecycleStartTime",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "必传参数，空间回收结束时间",
           "example": "08:00:00",
           "member": "string",
           "name": "SpaceRecycleEndTime",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1164,8 +1014,7 @@
           "name": "BillId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1180,7 +1029,6 @@
       "document": "用于创建实例时的节点信息入参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "节点总个数，要创建实例的某类型节点的总个数（节点组数与每组节点个数的乘积）",
           "example": "",
@@ -1191,7 +1039,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点总组数",
           "example": "",
@@ -1202,7 +1049,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单节点磁盘大小",
           "example": "",
@@ -1213,7 +1059,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点规格代码",
           "example": "",
@@ -1224,7 +1069,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设置节点的复制类型，目前只有dn设置，可选参数为sync（同步），async（异步），sync2async（异步可退化），默认值为sync2async",
           "example": "",
@@ -1241,7 +1085,6 @@
       "document": "创建回档实例的必传参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "回档时间，会在[获取回档时间](https://tcloud-dev.oa.com/document/product/1125/48427?!preview&!document=1)接口中返回，需选择回档时间范围中的某一个时刻点",
           "example": "2021-11-03 10:11:55",
@@ -1252,7 +1095,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要回档的实例ID",
           "example": "tdpg-tabskgw",
@@ -1263,7 +1105,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回档时间点，会在[获取回档时间](https://tcloud-dev.oa.com/document/product/1125/67007?!preview&!document=1)接口中返回",
           "example": "2021-11-03 10:12:55",
@@ -1274,7 +1115,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回档任务ID",
           "example": "0",
@@ -1291,7 +1131,6 @@
       "document": "schema下的表名",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库下的schema名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "schema1",
@@ -1299,11 +1138,9 @@
           "name": "SchemaName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库下的schema下的表名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "['table1','table2']",
@@ -1311,8 +1148,7 @@
           "name": "TableNames",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1321,7 +1157,6 @@
       "document": "用来表示标签信息，包括标签键和标签值",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "tag键",
           "example": "tagKey",
@@ -1332,7 +1167,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "tag值",
           "example": "tagValue",
@@ -1349,7 +1183,6 @@
       "document": "查询任务列表和详情出参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "",
@@ -1360,7 +1193,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户AppId",
           "example": "",
@@ -1371,7 +1203,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程状态， initial 已提交,未执行，running  正在运行中，success 执行成功，failed 执行失败，undoed 执行回滚成功，undoing 执行回滚中",
           "example": "",
@@ -1382,7 +1213,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程类型，create 创建 ,modify 变配, isolate 隔离, activeIsolate 恢复,destroy 销毁\nexpand 扩容, offline 下线, init 初始化, restart 重启, retreat 回档, backup 备份,modifyParams 修改参数,\nmodifyInstanceNodeSyncType 修改参数, setBackupRules 设置备份规则",
           "example": "",
@@ -1393,7 +1223,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程创建时间",
           "example": "",
@@ -1404,7 +1233,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程结束时间",
           "example": "",
@@ -1415,7 +1243,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "",
@@ -1426,7 +1253,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称",
           "example": "",
@@ -1437,7 +1263,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务错误信息",
           "example": "",
@@ -1448,7 +1273,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务进度",
           "example": "",

@@ -229,7 +229,6 @@
       "document": "AddAccountBindForSaaS请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "SaaS账号唯一ID。",
           "example": "132****1234",
@@ -239,7 +238,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "平台。coding：coding；腾讯会议：meeting。",
           "example": "co**ng",
@@ -267,7 +265,6 @@
       "document": "AddWhitelistUin请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "白名单键",
           "example": "whiteKey",
@@ -277,7 +274,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "白名单值,最多1000个",
           "example": "[\"123456\\n\"]",
@@ -322,37 +318,31 @@
       "document": "BindAccountForTCB请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要绑定的云账号uin",
           "example": "123",
           "member": "int64",
           "name": "BindUin",
           "required": true,
-          "type": "int",
-          "visibility": 2
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号类型。目前支持：wx_open，la，wx_biz",
           "example": "wx_open",
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号相关数据",
           "example": "无",
           "member": "TCBRegisterData",
           "name": "AccountData",
           "required": true,
-          "type": "object",
-          "visibility": 2
+          "type": "object"
         }
       ],
       "type": "object"
@@ -373,7 +363,6 @@
       "document": "CheckAccountExists请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "账号名",
           "example": "",
@@ -383,7 +372,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号类型。手机：phone；邮箱：mail；微信： wechat；QQ： qq；公众号：wechatMp",
           "example": "",
@@ -393,7 +381,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号平台。coding：coding",
           "example": "",
@@ -430,26 +417,22 @@
       "document": "DeleteWhitelistUin请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "白名单键",
           "example": "whiteKey",
           "member": "string",
           "name": "WhiteListKey",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "白名单值,最多1000个",
           "example": "[\"123456\\n\"]",
           "member": "string",
           "name": "WhiteListValue",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -482,8 +465,7 @@
           "name": "AccountOwnerUin",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -493,8 +475,7 @@
           "name": "AccountType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -504,8 +485,7 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -515,8 +495,7 @@
           "name": "Mobile",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -526,8 +505,7 @@
           "name": "CountryCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -537,8 +515,7 @@
           "name": "Idcard",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -553,37 +530,31 @@
       "document": "DescribeIpByUin请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待查询Uin，最多50个",
           "example": "[1224555,14234234]",
           "member": "int64",
           "name": "AccountIdList",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制个数,最多100个",
           "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -599,8 +570,7 @@
           "name": "List",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -610,8 +580,7 @@
           "name": "Total",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -803,26 +772,22 @@
       "document": "DescribeTCBBinding请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "公众号username",
           "example": "无",
           "member": "string",
           "name": "Username",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TCB账号类型(wx_open, la, wx_biz)",
           "example": "无",
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         }
       ],
       "type": "object"
@@ -838,8 +803,7 @@
           "name": "UsernameBoundUin",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -849,8 +813,7 @@
           "name": "BindType",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -860,8 +823,7 @@
           "name": "UinBoundUsername",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1046,7 +1008,6 @@
       "document": "人脸参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1057,7 +1018,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Id标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1068,7 +1028,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Token\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1085,7 +1044,6 @@
       "document": "人脸备选验证详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "能否校验",
           "example": "",
@@ -1096,7 +1054,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸相关数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1113,15 +1070,13 @@
       "document": "GetAppIdByUin请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待查询的uin",
           "example": "123",
           "member": "uint64",
           "name": "OpUin",
           "required": true,
-          "type": "int",
-          "visibility": 2
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1137,8 +1092,7 @@
           "name": "AppId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1153,15 +1107,13 @@
       "document": "GetAreaByUin请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待查询的账号uin",
           "example": "123",
           "member": "uint64",
           "name": "OpUin",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1177,8 +1129,7 @@
           "name": "Area",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1188,8 +1139,7 @@
           "name": "CountryName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1199,8 +1149,7 @@
           "name": "CountryCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1215,7 +1164,6 @@
       "document": "GetAuthNonSensitiveInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "认证账户UIN",
           "example": "",
@@ -1293,8 +1241,7 @@
           "member": "string",
           "name": "ClientUA",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1303,8 +1250,7 @@
           "member": "string",
           "name": "Interface",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1313,8 +1259,7 @@
           "member": "string",
           "name": "Skey",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1323,8 +1268,7 @@
           "member": "string",
           "name": "ClientIP",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1333,8 +1277,7 @@
           "member": "uint64",
           "name": "OwnerUin",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1350,8 +1293,7 @@
           "name": "FaceId",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1361,8 +1303,7 @@
           "name": "Phone",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1372,8 +1313,7 @@
           "name": "Wechat",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1383,8 +1323,7 @@
           "name": "Token",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": true,
@@ -1394,8 +1333,7 @@
           "name": "Stoken",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1405,8 +1343,7 @@
           "name": "Mail",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1416,8 +1353,7 @@
           "name": "SoftToken",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1432,37 +1368,31 @@
       "document": "GetMediaPlatformAccessToken请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "微信公众号username",
           "example": "gh_7180000000",
           "member": "string",
           "name": "Username",
           "required": false,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "微信公众号appid",
           "example": "wx5c07f2xxxxxx",
           "member": "string",
           "name": "AppID",
           "required": false,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否刷新access_token。0：不刷新，1：刷新",
           "example": "0",
           "member": "int64",
           "name": "Refresh",
           "required": false,
-          "type": "int",
-          "visibility": 2
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1478,8 +1408,7 @@
           "name": "AppID",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1489,8 +1418,7 @@
           "name": "Username",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1500,8 +1428,7 @@
           "name": "AccessToken",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1511,8 +1438,7 @@
           "name": "FuncScope",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1527,15 +1453,13 @@
       "document": "GetSiteProperties请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "账号uin",
           "example": "123",
           "member": "int64",
           "name": "OpUin",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1551,8 +1475,7 @@
           "name": "IsIntlAccount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1567,7 +1490,6 @@
       "document": "GetTradeConfigList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "语言版本",
           "example": "",
@@ -1604,15 +1526,13 @@
       "document": "GetUinByAppId请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "账号appid",
           "example": "123",
           "member": "int64",
           "name": "Appid",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1628,8 +1548,7 @@
           "name": "Uin",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1639,8 +1558,7 @@
           "name": "Appid",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1650,8 +1568,7 @@
           "name": "AddTimestamp",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1666,7 +1583,6 @@
       "document": " 所查询Uin的IP信息列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址",
           "example": "127.0.0.1",
@@ -1674,11 +1590,9 @@
           "name": "IP",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间",
           "example": "2022-12-12 12:00:00",
@@ -1686,11 +1600,9 @@
           "name": "Time",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP类型",
           "example": "login/register",
@@ -1698,11 +1610,9 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户uin",
           "example": "12344555",
@@ -1710,8 +1620,7 @@
           "name": "Uin",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1720,48 +1629,40 @@
       "document": "LoginViaTCB请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "微信小程序tmp_code",
           "example": "无",
           "member": "string",
           "name": "TmpCode",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要返回sts token",
           "example": "1",
           "member": "int64",
           "name": "RequireStsToken",
           "required": false,
-          "type": "int",
-          "visibility": 2
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "sts token是否使用v3版本",
           "example": "1",
           "member": "int64",
           "name": "UseV3Token",
           "required": false,
-          "type": "int",
-          "visibility": 2
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户IP。如果需要返回 sts token，该参数必填",
           "example": "无",
           "member": "string",
           "name": "UserIP",
           "required": false,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1777,8 +1678,7 @@
           "name": "Token",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1788,8 +1688,7 @@
           "name": "SecretId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1799,8 +1698,7 @@
           "name": "SecretKey",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1810,8 +1708,7 @@
           "name": "SecretExpire",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1826,7 +1723,6 @@
       "document": "邮箱备选验证详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "能否校验",
           "example": "",
@@ -1843,7 +1739,6 @@
       "document": "ModifyTrade请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "一级行业",
           "example": "",
@@ -1853,7 +1748,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "二级行业",
           "example": "",
@@ -1888,8 +1782,7 @@
           "name": "PhoneNumber",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1899,8 +1792,7 @@
           "name": "CountryCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1910,8 +1802,7 @@
           "name": "Mail",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1920,7 +1811,6 @@
       "document": "电话备选验证详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "能否校验",
           "example": "",
@@ -1931,7 +1821,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电话相关数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1948,26 +1837,22 @@
       "document": "RegisterAccountForTCB请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "账号类型。目前支持：la, wx_open, wx_biz",
           "example": "la",
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号注册信息",
           "example": "无",
           "member": "TCBRegisterData",
           "name": "RegisterData",
           "required": true,
-          "type": "object",
-          "visibility": 2
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1983,8 +1868,7 @@
           "name": "Uin",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1994,8 +1878,7 @@
           "name": "IsBind",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2010,7 +1893,6 @@
       "document": "RegisterCloudForSaaS请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "客户端浏览器UA。",
           "example": "chrome",
@@ -2020,7 +1902,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端IP。",
           "example": "1.1.1.1",
@@ -2030,7 +1911,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属国家简称。 参考http://tapd.oa.com/QCloud_2015/markdown_wikis/show/#1210103951000762171",
           "example": "CN",
@@ -2040,7 +1920,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所有国家区号。",
           "example": "86",
@@ -2050,7 +1929,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "注册类型。手机：phone；邮件：email；微信：wechat；QQ：qq。",
           "example": "phone",
@@ -2060,7 +1938,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "语言，中文：zh；英文：en。",
           "example": "zh",
@@ -2070,7 +1947,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域，1中国版，2国际版。",
           "example": "1",
@@ -2080,7 +1956,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "注册来源，接入时统一分配。",
           "example": "co****g",
@@ -2090,7 +1965,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接入级别，接入时协定，1代表level1，依次类推。具体级别参考：http://tapd.oa.com/QCloud_2015/markdown_wikis/show/#1210103951001599427",
           "example": "3",
@@ -2100,7 +1974,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全手机，发送敏感短信信息。",
           "example": "132****9791",
@@ -2110,7 +1983,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "手机验证码。",
           "example": "42***43",
@@ -2120,7 +1992,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全邮箱，发送敏感邮件信息。",
           "example": "test@qq.com",
@@ -2130,7 +2001,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "邮箱验证码。",
           "example": "343423",
@@ -2140,7 +2010,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户密码，手机和邮箱注册用户必填。",
           "example": "1234***abcd",
@@ -2150,7 +2019,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "微信和QQ用户必填，扫码调用登录接口返回的。",
           "example": "dfdf",
@@ -2160,7 +2028,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名，不填默认为注册账号名。接入级别为level2时，验证用户名的合法性。",
           "example": "adf",
@@ -2170,7 +2037,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "行业名称。SaaS注册，此字段传空，要求和TradeOne，TradeTwo一起传递。",
           "example": "finance",
@@ -2180,7 +2046,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "行业一级分类。可选参数参考接口：https://tcloud-dev.oa.com/document/product/1023/31684?!preview&!document=1",
           "example": "finance",
@@ -2190,7 +2055,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "行业二级分类，可选参数参考接口：https://tcloud-dev.oa.com/document/product/1023/31684?!preview&!document=1",
           "example": "finance",
@@ -2248,48 +2112,40 @@
       "document": "SaveBasicAuthForSaaS请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "账号类型。0：个人，1：企业",
           "example": "1",
           "member": "int64",
           "name": "AccountType",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号名称（个人姓名或者企业名称）",
           "example": "张三",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接入时申请的Platform",
           "example": "meeting",
           "member": "string",
           "name": "Platform",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "证件号码。证件类型身份证：身份账号号。 证件类型公司营业执照：统一身份信用代码。",
           "example": "91xxxxxxxxxx504XW",
           "member": "string",
           "name": "Idcard",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2310,7 +2166,6 @@
       "document": "SendEmailVerifyCode请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "邮箱号",
           "example": "",
@@ -2320,7 +2175,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户ip",
           "example": "",
@@ -2330,7 +2184,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发送语言，中文：zh；英文： en",
           "example": "",
@@ -2340,7 +2193,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "滑动验证码AppId",
           "example": "",
@@ -2350,7 +2202,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "滑动验证码客户端验证回调的票据",
           "example": "",
@@ -2360,7 +2211,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "滑动验证码客户端验证回调的随机串",
           "example": "",
@@ -2388,7 +2238,6 @@
       "document": "SendSmsVerifyCode请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "所在国家电话区号",
           "example": "86",
@@ -2398,7 +2247,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "手机号码",
           "example": "13211111111",
@@ -2408,7 +2256,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发送语言，中文：zh；英文： en",
           "example": "zh",
@@ -2418,7 +2265,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户ip",
           "example": "192.168.1.1",
@@ -2428,7 +2274,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "滑动验证码AppId",
           "example": "121",
@@ -2438,7 +2283,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "滑动验证码客户端验证回调的票据",
           "example": "12",
@@ -2448,7 +2292,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "滑动验证码客户端验证回调的随机串",
           "example": "12",
@@ -2458,7 +2301,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "没有特需要求默认不传。",
           "example": "12",
@@ -2486,7 +2328,6 @@
       "document": "软token参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2497,7 +2338,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联合Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2514,7 +2354,6 @@
       "document": "软Token备选验证详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "能否校验",
           "example": "",
@@ -2525,7 +2364,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "软token相关数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2542,7 +2380,6 @@
       "document": "tcb实名认证信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实名认证身份ID。个人实名为身份号码，企业实名为企业社会信用代码",
           "example": "无",
@@ -2550,11 +2387,9 @@
           "name": "ID",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实名认证名称",
           "example": "无",
@@ -2562,11 +2397,9 @@
           "name": "PrincipalName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实名认证类型。0：个人实名，1：企业实名",
           "example": "0",
@@ -2574,8 +2407,7 @@
           "name": "Type",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -2584,7 +2416,6 @@
       "document": "tcb注册云账号的用户信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "微信公众号username",
           "example": "无",
@@ -2592,11 +2423,9 @@
           "name": "Username",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "微信公账号appid",
           "example": "无",
@@ -2604,11 +2433,9 @@
           "name": "AppID",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "昵称",
           "example": "无",
@@ -2616,11 +2443,9 @@
           "name": "Nickname",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实名认证信息",
           "example": "无",
@@ -2628,11 +2453,9 @@
           "name": "AuthInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "邮箱地址",
           "example": "无",
@@ -2640,11 +2463,9 @@
           "name": "Email",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "手机号码",
           "example": "无",
@@ -2652,11 +2473,9 @@
           "name": "Phone",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "国家代码",
           "example": "86",
@@ -2664,8 +2483,7 @@
           "name": "CountryCode",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -2674,7 +2492,6 @@
       "document": "Token参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "token sn\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2691,7 +2508,6 @@
       "document": "Token备选验证详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "能否校验",
           "example": "",
@@ -2702,7 +2518,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Token相关数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2719,7 +2534,6 @@
       "document": "一级行业节点",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "一级行业信息",
           "example": "",
@@ -2730,7 +2544,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "行业名称",
           "example": "",
@@ -2741,7 +2554,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否展示",
           "example": "",
@@ -2752,7 +2564,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "二级行业列表",
           "example": "",
@@ -2769,7 +2580,6 @@
       "document": "二级行业结点",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "行业名称",
           "example": "",
@@ -2780,7 +2590,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Display属性",
           "example": "",
@@ -2791,7 +2600,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "二级行业信息",
           "example": "",
@@ -2802,7 +2610,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "行业信息",
           "example": "",
@@ -2819,15 +2626,13 @@
       "document": "UnbindTCBAccount请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TCB账号类型，目前只支持wx_open",
           "example": "wx_open",
           "member": "string",
           "name": "Type",
           "required": false,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2843,8 +2648,7 @@
           "name": "Account",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2859,7 +2663,6 @@
       "document": "UpdatePhoneByAuthCodeForSaaS请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "老手机号区号。",
           "example": "86",
@@ -2869,7 +2672,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "老手机号。",
           "example": "123",
@@ -2879,7 +2681,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新手机号区号。",
           "example": "86",
@@ -2889,7 +2690,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新手机号。",
           "example": "456",
@@ -2899,7 +2699,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "校验Code。",
           "example": "adf",
@@ -2909,7 +2708,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新手机号验证码。",
           "example": "1232",
@@ -2919,7 +2717,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "平台。",
           "example": "test",
@@ -2954,8 +2751,7 @@
           "name": "Tmpcode",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2965,8 +2761,7 @@
           "name": "NickName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2976,8 +2771,7 @@
           "name": "HasOpenId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2987,8 +2781,7 @@
           "name": "Nickname",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2997,7 +2790,6 @@
       "document": "微信备选验证详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "能否校验",
           "example": "",
@@ -3008,7 +2800,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "微信相关数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",

@@ -32,8 +32,7 @@
           "member": "string",
           "name": "ActivityId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -42,8 +41,7 @@
           "member": "string",
           "name": "MaterialId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -52,8 +50,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -62,8 +59,7 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -78,8 +74,7 @@
           "member": "PublicMaterialInfos",
           "name": "MaterialInfos",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -88,8 +83,7 @@
           "member": "int64",
           "name": "Count",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -104,7 +98,6 @@
       "document": "人脸信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框的横坐标",
           "example": "1",
@@ -112,11 +105,9 @@
           "name": "X",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框的纵坐标",
           "example": "1",
@@ -124,11 +115,9 @@
           "name": "Y",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框的宽度",
           "example": "1",
@@ -136,11 +125,9 @@
           "name": "Width",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框的高度",
           "example": "1",
@@ -148,8 +135,7 @@
           "name": "Height",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -158,7 +144,6 @@
       "document": "人脸框信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框左上角横坐标。",
           "example": "1",
@@ -166,11 +151,9 @@
           "name": "X",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框左上角纵坐标。",
           "example": "1",
@@ -178,11 +161,9 @@
           "name": "Y",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框宽度。",
           "example": "1",
@@ -190,11 +171,9 @@
           "name": "Width",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框高度。",
           "example": "1",
@@ -202,8 +181,7 @@
           "name": "Height",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -215,100 +193,82 @@
           "disabled": false,
           "document": "活动 ID，请在<a href=\"https://console.cloud.tencent.com/facefusion\" target=\"_blank\">人脸融合控制台</a>查看。",
           "example": "300029",
-          "is_base64": false,
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "素材 ID，请在<a href=\"https://console.cloud.tencent.com/facefusion\" target=\"_blank\">人脸融合控制台</a>查看。",
           "example": "qc_300029_453345_1",
-          "is_base64": false,
           "member": "string",
           "name": "ModelId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "返回图像方式（url 或 base64) ，二选一。url有效期为7天。",
           "example": "url",
-          "is_base64": false,
           "member": "string",
           "name": "RspImgType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "用户人脸图片、素材模板图的人脸位置信息。",
           "example": "[]",
-          "is_base64": false,
           "member": "MergeInfo",
           "name": "MergeInfos",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "脸型融合比例，数值越高，融合后的脸型越像素材人物。取值范围[0,100] \n若此参数不填写，则使用人脸融合控制台中脸型参数数值。（换脸版算法暂不支持此参数调整）",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "FuseProfileDegree",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "五官融合比例，数值越高，融合后的五官越像素材人物。取值范围[0,100] \n若此参数不填写，则使用人脸融合控制台中五官参数数值。（换脸版算法暂不支持此参数调整）",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "FuseFaceDegree",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "为融合结果图添加合成标识的开关，默认为1。\n1：添加标识。\n0：不添加标识。\n其他数值：默认按1处理。\n建议您使用显著标识来提示结果图使用了人脸融合技术，是AI合成的图片。",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "LogoAdd",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "标识内容设置。\n默认在融合结果图右下角添加“本图片为AI合成图片”字样，您可根据自身需要替换为其他的Logo图片。",
           "example": "{}",
-          "is_base64": false,
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
           "document": "融合参数。",
           "example": "无",
-          "is_base64": false,
           "member": "FuseParam",
           "name": "FuseParam",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -324,8 +284,7 @@
           "name": "FusedImage",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -346,8 +305,7 @@
           "member": "ImageCodecParam",
           "name": "ImageCodecParam",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -362,8 +320,7 @@
           "member": "MetaData",
           "name": "MetaData",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -372,7 +329,6 @@
       "document": "logo参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标识图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配",
           "example": "{}",
@@ -380,11 +336,9 @@
           "name": "LogoRect",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标识图片Url地址",
           "example": "string",
@@ -392,11 +346,9 @@
           "name": "LogoUrl",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标识图片base64",
           "example": "string",
@@ -404,8 +356,7 @@
           "name": "LogoImage",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -421,8 +372,7 @@
           "name": "FaceId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -432,8 +382,7 @@
           "name": "FaceInfo",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -442,7 +391,6 @@
       "document": "人脸图片和待被融合的素材模板图的人脸位置信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "输入图片base64",
           "example": "string",
@@ -450,11 +398,9 @@
           "name": "Image",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输入图片url",
           "example": "string",
@@ -462,11 +408,9 @@
           "name": "Url",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上传的图片人脸位置信息（人脸框）",
           "example": "{}",
@@ -474,11 +418,9 @@
           "name": "InputImageFaceRect",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "控制台上传的素材人脸ID，不填默认取最大人脸",
           "example": "string",
@@ -486,8 +428,7 @@
           "name": "TemplateFaceID",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -503,8 +444,7 @@
           "name": "MetaKey",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -514,8 +454,7 @@
           "name": "MetaValue",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -531,8 +470,7 @@
           "name": "MaterialId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -542,8 +480,7 @@
           "name": "MaterialStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -553,8 +490,7 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -564,8 +500,7 @@
           "name": "UpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -575,8 +510,7 @@
           "name": "MaterialFaceList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -586,8 +520,7 @@
           "name": "MaterialName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -597,8 +530,7 @@
           "name": "AuditResult",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

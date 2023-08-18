@@ -19,7 +19,6 @@
       "document": "业务返回体封装",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "调试信息",
           "example": "perfdebug/debug_d0b84269-4d89-4ee7-a32b-aa352afafcd7",
@@ -27,11 +26,9 @@
           "name": "Message",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "业务状态码",
           "example": "0",
@@ -39,11 +36,9 @@
           "name": "Code",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回值",
           "example": "text",
@@ -51,8 +46,7 @@
           "name": "Values",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -61,37 +55,31 @@
       "document": "GetPerformanceDispatch请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "业务请求参数",
           "example": "无",
           "member": "string",
           "name": "PerformanceParams",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接口命令字",
           "example": "getPressureSources",
           "member": "string",
           "name": "Command",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "abc",
           "member": "string",
           "name": "ProjectId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -107,8 +95,7 @@
           "name": "Data",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -22,34 +22,28 @@
           "disabled": false,
           "document": "事件的发生日期",
           "example": "2023-06-22",
-          "is_base64": false,
           "member": "date",
           "name": "EventDate",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "1. 不指定产品列表时将查询所有产品。\n2. 产品ID示例：cvm、lb、cdb、cdn、crs",
           "example": "[\"cvm\",\"clb\"]",
-          "is_base64": false,
           "member": "string",
           "name": "ProductIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "1. 不指定地域列表时将查询所有地域。\n2. 查询非区域性产品事件时，地域ID指定为：non-regional\n3. 其他地域ID取值请参考：https://cloud.tencent.com/document/api/213/15692",
           "example": "[\"ap-guangzhou\",\"ap-shanghai\"]",
-          "is_base64": false,
           "member": "string",
           "name": "RegionIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -65,8 +59,7 @@
           "name": "Data",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -88,8 +81,7 @@
           "name": "ProductId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -99,8 +91,7 @@
           "name": "ProductName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -110,8 +101,7 @@
           "name": "RegionId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -121,8 +111,7 @@
           "name": "RegionName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -132,8 +121,7 @@
           "name": "StartTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -143,8 +131,7 @@
           "name": "EndTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -154,8 +141,7 @@
           "name": "CurrentStatus",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -171,8 +157,7 @@
           "name": "EventList",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

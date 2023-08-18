@@ -19,7 +19,6 @@
       "document": "ResetAuthUserPassword请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "userid(用户唯一标识)",
           "example": "",
@@ -29,7 +28,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户密码",
           "example": "",

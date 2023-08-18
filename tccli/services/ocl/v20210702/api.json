@@ -26,7 +26,6 @@
       "document": "用量消耗记录",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机构id",
           "example": "2221234",
@@ -37,7 +36,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "课堂id，云课堂订单号",
           "example": "100",
@@ -48,7 +46,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "课堂名称",
           "example": "k8s分享",
@@ -59,7 +56,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "课堂类型 1、1v1     2、1vn   3、直播课    4、转码     5、存储",
           "example": "1",
@@ -70,7 +66,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "used  消费量（单位对齐  课时 分钟   转码 分钟  存储 mb）",
           "example": "100.00",
@@ -81,7 +76,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "清晰度/计费项 1：1v1-320   2:1v1-640  3:1v1-720  4:1vn-320  5:1vn-640                                  \t\t     6:1vn-720   7:直播课540   8 直播课720   9 直播课1080 10：转码 11：存储",
           "example": "1",
@@ -92,7 +86,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费类型 1、课时费 2、转码  3存储",
           "example": "1",
@@ -103,7 +96,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1:预付费  2:后付费  3：转码 4:存储",
           "example": "1",
@@ -114,7 +106,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间",
           "example": "2021-04-20 08:08:08",
@@ -125,7 +116,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "K+0000+课堂ID",
           "example": "K0000102301225",
@@ -142,7 +132,6 @@
       "document": "DescribeConsumptionRecord请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机构id、企业id",
           "example": "2221234",
@@ -152,7 +141,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费类型  ：1:预付费  2:后付费  3：转码 4:存储",
           "example": "1",
@@ -162,7 +150,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询范围：开始时间",
           "example": "2020-09-22",
@@ -172,7 +159,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询范围：结束时间",
           "example": "2020-09-22",
@@ -182,7 +168,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码 默认0",
           "example": "0",
@@ -192,7 +177,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页显示条数  默认10",
           "example": "10",
@@ -240,7 +224,6 @@
       "document": "DescribeOrg请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "手机号码",
           "example": "13688888888",
@@ -278,7 +261,6 @@
       "document": "云课堂 机构列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机构名称",
           "example": "转码",

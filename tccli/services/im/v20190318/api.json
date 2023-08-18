@@ -52,7 +52,6 @@
       "document": "tpns应用信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "tpns应用id",
           "example": "1234",
@@ -63,7 +62,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "secret key",
           "example": "abc",
@@ -74,7 +72,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "15 - android, 16 - ios, 17 - mac",
           "example": "15",
@@ -85,7 +82,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "access key",
           "example": "ccc",
@@ -96,7 +92,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地址",
           "example": "https://api.tpns.tencent.com",
@@ -113,7 +108,6 @@
       "document": "tpns信息更新结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "0成功，非0失败",
           "example": "0",
@@ -124,7 +118,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息",
           "example": "ok",
@@ -135,7 +128,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "tpns应用id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -146,7 +138,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "secret key\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abc",
@@ -157,7 +148,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "15 - android, 16 - ios, 17 - mac\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "15",
@@ -168,7 +158,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "access key\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aaa",
@@ -179,7 +168,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://api.tpns.tencent.com",
@@ -196,7 +184,6 @@
       "document": "UpdateTPNSInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "im应用id",
           "example": "1400001001",
@@ -206,7 +193,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "tpns应用信息列表",
           "example": "无",

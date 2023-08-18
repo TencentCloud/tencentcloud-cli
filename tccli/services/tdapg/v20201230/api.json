@@ -19,7 +19,6 @@
       "document": "查询实例列表过滤器。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "过滤字段值。",
           "example": "",
@@ -30,7 +29,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要过滤的字段，enum：InstanceName，Vip，InstanceId。",
           "example": "",
@@ -47,37 +45,31 @@
       "document": "DescribeUserTasks请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "页大小",
           "example": "0",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，目前支持StartTime、EndTime、InstanceIds、TaskType、Status、TaskIds",
           "example": "无",
           "member": "ConditionFilter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -93,8 +85,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -104,8 +95,7 @@
           "name": "TaskList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -120,7 +110,6 @@
       "document": "查询任务列表和详情出参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "流程状态， initial 已提交,未执行，running  正在运行中，success 执行成功，failed 执行失败，undoed 执行回滚成功，undoing 执行回滚中",
           "example": "",
@@ -131,7 +120,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "",
@@ -142,7 +130,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户AppId",
           "example": "",
@@ -153,7 +140,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程创建时间",
           "example": "",
@@ -164,7 +150,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程类型，create 创建 ,modify 变配, isolate 隔离, activeIsolate 恢复,destroy 销毁\nexpand 扩容, offline 下线, init 初始化, restart 重启, retreat 回档, backup 备份,modifyParams 修改参数,\nmodifyInstanceNodeSyncType 修改参数, setBackupRules 设置备份规则",
           "example": "",
@@ -175,7 +160,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务进度",
           "example": "",
@@ -186,7 +170,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程结束时间",
           "example": "",
@@ -197,7 +180,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称",
           "example": "",
@@ -208,7 +190,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "",
@@ -219,7 +200,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务错误信息",
           "example": "",

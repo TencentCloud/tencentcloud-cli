@@ -78,89 +78,73 @@
           "disabled": false,
           "document": "工作空间名称",
           "example": "workspace-name",
-          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "工作空间描述",
           "example": "this is a worksapce",
-          "is_base64": false,
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "工作空间规格。Standard: 2C4G, Calculation: 4C8G, Profession: 8C16G. 默认是 Standard。",
           "example": "Standard",
-          "is_base64": false,
           "member": "string",
           "name": "Specs",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "工作空间基础镜像名称, 默认会使用 All In One 镜像",
           "example": "cloudstudio-devops-docker.pkg.coding.net/artifacts/workspace/go-1.20:2023-04-25.0943",
-          "is_base64": false,
           "member": "string",
           "name": "Image",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "Git 仓库. 工作空间启动时会自动克隆该仓库",
           "example": "{         \"url\": \"https://github.com/koajs/koa.git\",         \"branch\": \"v0.0.1\"     }",
-          "is_base64": false,
           "member": "GitRepository",
           "name": "Repository",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
           "document": "环境变量. 会被注入到工作空间中",
           "example": "[{\"name\": \"test\", \"value\": \"test\"}]",
-          "is_base64": false,
           "member": "Env",
           "name": "Envs",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "预装插件. 工作空间启动时, 会自动安装这些插件 ",
           "example": "[\"cloudstudio.tencent-cloud-toolkit@1.3.0\"]",
-          "is_base64": false,
           "member": "string",
           "name": "Extensions",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令. ",
           "example": "{         \"init\": [             {                 \"name\": \"init\",                 \"command\": \"echo init\"             }         ],         \"start\": [             {                 \"name\": \"start\",                 \"command\": \"echo start\"             }         ],         \"destroy\": [             {                 \"name\": \"shutdown\",                 \"command\": \"echo shutdown\"             }         ]     }",
-          "is_base64": false,
           "member": "LifeCycle",
           "name": "Lifecycle",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -175,8 +159,7 @@
           "member": "string",
           "name": "SpaceKey",
           "output_required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -186,8 +169,7 @@
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -208,8 +190,7 @@
           "member": "string",
           "name": "SpaceKey",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -218,8 +199,7 @@
           "member": "uint64",
           "name": "TokenExpiredLimitSec",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -228,8 +208,7 @@
           "member": "string",
           "name": "Policies",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -244,8 +223,7 @@
           "member": "string",
           "name": "Token",
           "output_required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -254,8 +232,7 @@
           "member": "string",
           "name": "ExpiredTime",
           "output_required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -276,8 +253,7 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -292,8 +268,7 @@
           "member": "string",
           "name": "Data",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -319,8 +294,7 @@
           "member": "Image",
           "name": "Images",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -341,8 +315,7 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -357,8 +330,7 @@
           "member": "WorkspaceStatusInfo",
           "name": "Data",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -380,8 +352,7 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -391,8 +362,7 @@
           "name": "Value",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -401,26 +371,22 @@
       "document": "Git 仓库",
       "members": [
         {
-          "ValueAllowedNull": true,
           "disabled": false,
           "document": "Git 仓库地址",
           "example": "https://github.com/koajs/koa.git",
           "member": "string",
           "name": "Url",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "ValueAllowedNull": true,
           "disabled": false,
           "document": "Git 仓库分支名或 Tag 名",
           "example": "main",
           "member": "string",
           "name": "Branch",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -436,8 +402,7 @@
           "name": "Name",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -447,8 +412,7 @@
           "name": "Repository",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -458,8 +422,7 @@
           "name": "Tags",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -475,8 +438,7 @@
           "name": "Init",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -486,8 +448,7 @@
           "name": "Start",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -497,8 +458,7 @@
           "name": "Destroy",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -514,8 +474,7 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -525,8 +484,7 @@
           "name": "Command",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -541,8 +499,7 @@
           "member": "string",
           "name": "SpaceKey",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -551,8 +508,7 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -561,8 +517,7 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -571,8 +526,7 @@
           "member": "string",
           "name": "Specs",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -581,8 +535,7 @@
           "member": "Env",
           "name": "Envs",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -591,8 +544,7 @@
           "member": "string",
           "name": "Extensions",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -601,8 +553,7 @@
           "member": "LifeCycle",
           "name": "Lifecycle",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -629,8 +580,7 @@
           "member": "string",
           "name": "SpaceKey",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -657,8 +607,7 @@
           "member": "string",
           "name": "SpaceKey",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -685,8 +634,7 @@
           "member": "string",
           "name": "SpaceKey",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -714,8 +662,7 @@
           "name": "Id",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -725,8 +672,7 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -736,8 +682,7 @@
           "name": "SpaceKey",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -747,8 +692,7 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -758,8 +702,7 @@
           "name": "Cpu",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -769,8 +712,7 @@
           "name": "Memory",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -780,8 +722,7 @@
           "name": "Icon",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -791,8 +732,7 @@
           "name": "StatusReason",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -802,8 +742,7 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -813,8 +752,7 @@
           "name": "WorkspaceType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -824,8 +762,7 @@
           "name": "VersionControlUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -835,8 +772,7 @@
           "name": "VersionControlRef",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -846,8 +782,7 @@
           "name": "LastOpsDate",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -857,8 +792,7 @@
           "name": "CreateDate",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

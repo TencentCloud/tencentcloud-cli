@@ -61,7 +61,6 @@
       "document": "DeregisterMigrationTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "",
@@ -89,7 +88,6 @@
       "document": "DescribeMigrationTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID，例如msp-jitoh33n",
           "example": "",
@@ -126,7 +124,6 @@
       "document": "迁移目的信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移目的地域",
           "example": "",
@@ -137,7 +134,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移目的Ip",
           "example": "",
@@ -148,7 +144,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移目的端口",
           "example": "",
@@ -159,7 +154,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移目的实例Id",
           "example": "",
@@ -176,7 +170,6 @@
       "document": "ListMigrationProject请求参数结构体",
       "members": [
         {
-          "default": "0",
           "disabled": false,
           "document": "记录起始数，默认值为0",
           "example": "",
@@ -186,7 +179,6 @@
           "type": "int"
         },
         {
-          "default": "500",
           "disabled": false,
           "document": "返回条数，默认值为500",
           "example": "",
@@ -232,7 +224,6 @@
       "document": "ListMigrationTask请求参数结构体",
       "members": [
         {
-          "default": "0",
           "disabled": false,
           "document": "记录起始数，默认值为0",
           "example": "",
@@ -242,7 +233,6 @@
           "type": "int"
         },
         {
-          "default": "10",
           "disabled": false,
           "document": "记录条数，默认值为10",
           "example": "",
@@ -252,7 +242,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID，默认值为空",
           "example": "",
@@ -298,7 +287,6 @@
       "document": "ModifyMigrationTaskBelongToProject请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID，例如msp-jitoh33n",
           "example": "",
@@ -308,7 +296,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID，例如10005",
           "example": "",
@@ -336,7 +323,6 @@
       "document": "ModifyMigrationTaskStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务状态，取值为unstart，migrating，finish，fail之一，分别代表该迁移任务状态为迁移未开始，迁移中，迁移完成，迁移失败",
           "example": "",
@@ -346,7 +332,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID，例如msp-jitoh33n",
           "example": "",
@@ -374,7 +359,6 @@
       "document": "列表类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "",
@@ -385,7 +369,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目名称",
           "example": "",
@@ -402,7 +385,6 @@
       "document": "RegisterMigrationTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务类型，取值database（数据库迁移）、file（文件迁移）、host（主机迁移）",
           "example": "",
@@ -412,7 +394,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务名称",
           "example": "",
@@ -422,7 +403,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务提供商名称",
           "example": "",
@@ -432,7 +412,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务创建时间",
           "example": "",
@@ -442,7 +421,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务更新时间",
           "example": "",
@@ -452,7 +430,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移类别，如数据库迁移中mysql:mysql代表从mysql迁移到mysql，文件迁移中oss:cos代表从阿里云oss迁移到腾讯云cos",
           "example": "",
@@ -462,7 +439,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务源信息",
           "example": "",
@@ -472,7 +448,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务目的信息",
           "example": "",
@@ -482,7 +457,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源实例接入类型，数据库迁移时填写值为：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)",
           "example": "",
@@ -492,7 +466,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源实例数据库类型，数据库迁移时填写，取值为mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb 之一",
           "example": "",
@@ -502,7 +475,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标实例接入类型，数据库迁移时填写值为：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)",
           "example": "",
@@ -512,7 +484,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标实例数据库类型,数据库迁移时填写，取值为mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb 之一",
           "example": "",
@@ -549,7 +520,6 @@
       "document": "迁移源信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移源地域",
           "example": "",
@@ -560,7 +530,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移源Ip",
           "example": "",
@@ -571,7 +540,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移源端口",
           "example": "",
@@ -582,7 +550,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移源实例Id",
           "example": "",
@@ -599,7 +566,6 @@
       "document": "迁移任务类别",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务Id",
           "example": "",
@@ -610,7 +576,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务名称",
           "example": "",
@@ -621,7 +586,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移类型",
           "example": "",
@@ -632,7 +596,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移状态",
           "example": "",
@@ -643,7 +606,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目Id",
           "example": "",
@@ -654,7 +616,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目名称",
           "example": "",
@@ -665,7 +626,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移源信息",
           "example": "",
@@ -676,7 +636,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移时间信息",
           "example": "",
@@ -687,7 +646,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态更新时间",
           "example": "",
@@ -698,7 +656,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移目的信息",
           "example": "",
@@ -715,7 +672,6 @@
       "document": "迁移详情列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移状态",
           "example": "",
@@ -726,7 +682,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移进度",
           "example": "",
@@ -737,7 +692,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移日期",
           "example": "",
@@ -754,7 +708,6 @@
       "document": "时间对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -765,7 +718,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "example": "",

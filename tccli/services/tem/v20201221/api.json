@@ -131,7 +131,6 @@
       "document": "Cos token",
       "members": [
         {
-          "default": "",
           "document": "唯一请求 ID",
           "member": "string",
           "name": "RequestId",
@@ -140,7 +139,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "存储桶桶名",
           "member": "string",
           "name": "Bucket",
@@ -149,7 +147,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "存储桶所在区域",
           "member": "string",
           "name": "Region",
@@ -158,7 +155,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "临时密钥的SecretId",
           "member": "string",
           "name": "TmpSecretId",
@@ -167,7 +163,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "临时密钥的SecretKey",
           "member": "string",
           "name": "TmpSecretKey",
@@ -176,7 +171,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "临时密钥的 sessionToken",
           "member": "string",
           "name": "SessionToken",
@@ -185,7 +179,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "临时密钥获取的开始时间",
           "member": "string",
           "name": "StartTime",
@@ -194,7 +187,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "临时密钥的 expiredTime",
           "member": "string",
           "name": "ExpiredTime",
@@ -203,7 +195,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "包完整路径",
           "member": "string",
           "name": "FullPath",
@@ -218,7 +209,6 @@
       "document": "CreateCosToken请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务ID",
           "example": "1",
           "member": "string",
@@ -227,7 +217,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "服务版本ID",
           "example": "1",
           "member": "string",
@@ -236,7 +225,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "包名",
           "example": "1",
           "member": "string",
@@ -245,7 +233,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "optType 1上传  2查询",
           "example": "1",
           "member": "int64",
@@ -254,7 +241,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "来源 channel",
           "example": "0",
           "member": "int64",
@@ -290,7 +276,6 @@
       "document": "CreateCosTokenV2请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务ID",
           "example": "1",
           "member": "string",
@@ -299,7 +284,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "包名",
           "example": "1",
           "member": "string",
@@ -308,7 +292,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "optType 1上传  2查询",
           "example": "1",
           "member": "int64",
@@ -317,7 +300,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "来源 channel",
           "example": "0",
           "member": "int64",
@@ -326,7 +308,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "充当deployVersion入参",
           "example": "sss",
           "member": "string",
@@ -362,7 +343,6 @@
       "document": "CreateNamespace请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "命名空间名称",
           "example": "namespace-a",
           "member": "string",
@@ -371,7 +351,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "私有网络名称",
           "example": "vpc-1n5javez",
           "member": "string",
@@ -380,7 +359,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "子网列表",
           "example": "{",
           "member": "string",
@@ -389,7 +367,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "命名空间描述",
           "example": "命名空间名",
           "member": "string",
@@ -398,7 +375,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "K8s version",
           "example": "1.16.9",
           "member": "string",
@@ -407,7 +383,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "来源渠道",
           "example": "0",
           "member": "int64",
@@ -416,7 +391,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否开启tsw服务",
           "example": "true",
           "member": "bool",
@@ -452,7 +426,6 @@
       "document": "CreateResource请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "命名空间 Id",
           "example": "env-xxx",
           "member": "string",
@@ -461,7 +434,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "资源类型，目前支持文件系统：CFS；日志服务：CLS；注册中心：TSE_SRE",
           "example": "CLS",
           "member": "string",
@@ -470,7 +442,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "资源 Id",
           "example": "cls-xxx",
           "member": "string",
@@ -479,7 +450,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "来源渠道",
           "example": "0",
           "member": "int64",
@@ -515,7 +485,6 @@
       "document": "CreateServiceV2请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务名",
           "example": "service-a",
           "member": "string",
@@ -524,7 +493,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "描述",
           "example": "服务a",
           "member": "string",
@@ -533,7 +501,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否使用默认镜像服务 1-是，0-否",
           "example": "0",
           "member": "int64",
@@ -542,7 +509,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "如果是绑定仓库，绑定的仓库类型，0-个人版，1-企业版",
           "example": "0",
           "member": "int64",
@@ -551,7 +517,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "企业版镜像服务的实例id",
           "example": "tr-123",
           "member": "string",
@@ -560,7 +525,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "绑定镜像服务器地址",
           "example": "tcr.tencent.com",
           "member": "string",
@@ -569,7 +533,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "绑定镜像仓库名",
           "example": "tem-test/repo_te",
           "member": "string",
@@ -578,7 +541,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "来源渠道",
           "example": "0",
           "member": "int64",
@@ -587,7 +549,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "服务所在子网",
           "example": "['s1', 's2']",
           "member": "string",
@@ -596,7 +557,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "编程语言 \n- JAVA\n- OTHER",
           "example": "1",
           "member": "string",
@@ -605,7 +565,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "部署方式 \n- IMAGE\n- JAR\n- WAR",
           "example": "1",
           "member": "string",
@@ -641,7 +600,6 @@
       "document": "DeleteIngress请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "tem NamespaceId",
           "example": "env-xxx",
           "member": "string",
@@ -650,7 +608,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "eks namespace 名",
           "example": "default",
           "member": "string",
@@ -659,7 +616,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "ingress 规则名",
           "example": "xxxxx",
           "member": "string",
@@ -668,7 +624,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "来源渠道",
           "example": "0",
           "member": "int64",
@@ -704,7 +659,6 @@
       "document": "DeployServiceV2请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务ID",
           "example": "1",
           "member": "string",
@@ -713,7 +667,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "容器端口",
           "example": "1",
           "member": "uint64",
@@ -722,7 +675,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "初始化 pod 数",
           "example": "1",
           "member": "uint64",
@@ -731,7 +683,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "cpu规格",
           "example": "1",
           "member": "float",
@@ -740,7 +691,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "内存规格",
           "example": "1",
           "member": "float",
@@ -749,7 +699,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "环境ID",
           "example": "1",
           "member": "string",
@@ -758,7 +707,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "镜像仓库",
           "example": "1",
           "member": "string",
@@ -767,7 +715,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "版本描述信息",
           "example": "1",
           "member": "string",
@@ -776,7 +723,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "启动参数",
           "example": "1",
           "member": "string",
@@ -785,7 +731,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "弹性伸缩配置，不传默认不启用弹性伸缩配置",
           "example": "1",
           "member": "EsInfo",
@@ -794,7 +739,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "环境变量配置",
           "example": "1",
           "member": "Pair",
@@ -803,7 +747,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "日志配置",
           "example": "1",
           "member": "string",
@@ -812,7 +755,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "数据卷配置",
           "example": "1",
           "member": "StorageConf",
@@ -821,7 +763,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "数据卷挂载配置",
           "example": "1",
           "member": "StorageMountConf",
@@ -830,7 +771,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "部署类型。\n- JAR：通过 jar 包部署\n- WAR：通过 war 包部署\n- IMAGE：通过镜像部署",
           "example": "1",
           "member": "string",
@@ -839,7 +779,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "部署类型为 IMAGE 时，该参数表示镜像 tag。\n部署类型为 JAR/WAR 时，该参数表示包版本号。",
           "example": "1",
           "member": "string",
@@ -848,7 +787,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "包名。使用 JAR 包或者 WAR 包部署的时候必填。",
           "example": "1",
           "member": "string",
@@ -857,7 +795,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "JDK 版本。\n- KONA：使用 kona jdk。\n- OPEN：使用 open jdk。",
           "example": "1",
           "member": "string",
@@ -866,7 +803,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "安全组ID s",
           "example": "1",
           "member": "string",
@@ -875,7 +811,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "日志输出配置",
           "example": "1",
           "member": "LogOutputConf",
@@ -884,7 +819,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "来源渠道",
           "example": "0",
           "member": "int64",
@@ -893,7 +827,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "版本描述",
           "example": "1",
           "member": "string",
@@ -902,7 +835,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "镜像命令",
           "example": "cd",
           "member": "string",
@@ -911,7 +843,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "镜像命令参数",
           "example": "/home",
           "member": "string",
@@ -920,7 +851,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "服务端口映射",
           "example": "1",
           "member": "PortMapping",
@@ -929,7 +859,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "是否添加默认注册中心配置",
           "example": "true",
           "member": "bool",
@@ -938,7 +867,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "挂载配置信息",
           "example": "[]",
           "member": "MountedSettingConf",
@@ -947,7 +875,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "eks 访问设置",
           "example": "1",
           "member": "EksService",
@@ -956,7 +883,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "要回滚到的历史版本id",
           "example": "version-123",
           "member": "string",
@@ -965,7 +891,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "启动后执行的脚本",
           "example": "xxxxx",
           "member": "string",
@@ -974,7 +899,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "停止前执行的脚本",
           "example": "xxxx",
           "member": "string",
@@ -983,7 +907,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "分批发布策略配置",
           "example": "{}",
           "member": "DeployStrategyConf",
@@ -992,7 +915,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "存活探针配置",
           "example": "null",
           "member": "HealthCheckConfig",
@@ -1001,7 +923,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "就绪探针配置",
           "example": "null",
           "member": "HealthCheckConfig",
@@ -1037,7 +958,6 @@
       "document": "分批发布策略配置",
       "members": [
         {
-          "default": "",
           "document": "总分批数",
           "example": "10",
           "member": "int64",
@@ -1047,7 +967,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "beta分批实例数",
           "example": "5",
           "member": "int64",
@@ -1057,7 +976,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "分批策略：0-全自动，1-全手动，beta分批一定是手动的，这里的策略指定的是剩余批次",
           "example": "1",
           "member": "int64",
@@ -1067,7 +985,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "每批暂停间隔",
           "example": "200",
           "member": "int64",
@@ -1083,7 +1000,6 @@
       "document": "DescribeIngress请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "tem namespaceId",
           "example": "env-xxx",
           "member": "string",
@@ -1092,7 +1008,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "eks namespace 名",
           "example": "default",
           "member": "string",
@@ -1101,7 +1016,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "ingress 规则名",
           "example": "xxxx",
           "member": "string",
@@ -1110,7 +1024,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "来源渠道",
           "example": "0",
           "member": "int64",
@@ -1146,7 +1059,6 @@
       "document": "DescribeIngresses请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "namespace id",
           "example": "111",
           "member": "string",
@@ -1155,7 +1067,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "namespace",
           "example": "default",
           "member": "string",
@@ -1164,7 +1075,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "来源渠道",
           "example": "0",
           "member": "int64",
@@ -1173,7 +1083,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "ingress 规则名列表",
           "example": "[\"aa\"]",
           "member": "string",
@@ -1209,7 +1118,6 @@
       "document": "DescribeNamespaces请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "分页limit",
           "example": "10",
           "member": "int64",
@@ -1218,7 +1126,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页下标",
           "example": "1",
           "member": "int64",
@@ -1227,7 +1134,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "来源source",
           "example": "0",
           "member": "int64",
@@ -1263,7 +1169,6 @@
       "document": "DescribeRelatedIngresses请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境 id",
           "example": "111",
           "member": "string",
@@ -1272,7 +1177,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "EKS namespace",
           "example": "default",
           "member": "string",
@@ -1281,7 +1185,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "来源渠道",
           "example": "0",
           "member": "int64",
@@ -1290,7 +1193,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "服务 ID",
           "example": "svc-xxxx",
           "member": "string",
@@ -1326,7 +1228,6 @@
       "document": "版本pod列表",
       "members": [
         {
-          "default": "",
           "document": "分页下标",
           "example": "1",
           "member": "int64",
@@ -1336,7 +1237,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "单页条数",
           "example": "11",
           "member": "int64",
@@ -1346,7 +1246,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "总数",
           "example": "111",
           "member": "int64",
@@ -1356,7 +1255,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "请求id",
           "example": "ssss",
           "member": "string",
@@ -1366,7 +1264,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "条目",
           "example": "{name:key}",
           "member": "RunVersionPod",
@@ -1382,7 +1279,6 @@
       "document": "DescribeServiceRunPodListV2请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境id",
           "example": "namespace-a",
           "member": "string",
@@ -1391,7 +1287,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "服务名id",
           "example": "service-a",
           "member": "string",
@@ -1400,7 +1295,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "单页条数，默认值20",
           "example": "10",
           "member": "int64",
@@ -1409,7 +1303,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页下标，默认值0",
           "example": "1",
           "member": "int64",
@@ -1418,7 +1311,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "实例状态 \n- Running \n- Pending \n- Error",
           "example": "Running",
           "member": "string",
@@ -1427,7 +1319,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例名字",
           "example": "pod-a",
           "member": "string",
@@ -1436,7 +1327,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "来源渠道",
           "example": "0",
           "member": "int64",
@@ -1472,7 +1362,6 @@
       "document": "eks service info",
       "members": [
         {
-          "default": "",
           "document": "service name",
           "example": "xxx",
           "member": "string",
@@ -1482,7 +1371,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "可用端口",
           "example": "[1,2]",
           "member": "int64",
@@ -1492,7 +1380,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "yaml 内容",
           "example": "1",
           "member": "string",
@@ -1502,7 +1389,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "服务名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
@@ -1512,7 +1398,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "版本名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxx",
           "member": "string",
@@ -1522,7 +1407,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "内网ip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -1532,7 +1416,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "外网ip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -1542,7 +1425,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "访问类型，可选值：\n- EXTERNAL（公网访问）\n- VPC（vpc内访问）\n- CLUSTER（集群内访问）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -1552,7 +1434,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "子网ID，只在类型为vpc访问时才有值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -1562,7 +1443,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "负载均衡ID，只在外网访问和vpc内访问才有值，默认自动创建\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -1572,7 +1452,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "端口映射\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "PortMapping",
@@ -1588,7 +1467,6 @@
       "document": "弹性伸缩配置",
       "members": [
         {
-          "default": "",
           "document": "最小实例数",
           "example": "1",
           "member": "int64",
@@ -1598,7 +1476,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "最大实例数",
           "example": "5",
           "member": "int64",
@@ -1608,7 +1485,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "弹性策略,1:cpu，2:内存",
           "example": "1",
           "member": "int64",
@@ -1618,7 +1494,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "弹性扩缩容条件值",
           "example": "50",
           "member": "uint64",
@@ -1628,7 +1503,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "版本Id",
           "example": "version-test",
           "member": "string",
@@ -1644,7 +1518,6 @@
       "document": "GenerateDownloadUrl请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务ID",
           "example": "1",
           "member": "string",
@@ -1653,7 +1526,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "包名",
           "example": "1",
           "member": "string",
@@ -1662,7 +1534,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "需要下载的包版本",
           "example": "asss",
           "member": "string",
@@ -1671,7 +1542,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "来源 channel",
           "example": "0",
           "member": "int64",
@@ -1707,7 +1577,6 @@
       "document": "健康检查配置",
       "members": [
         {
-          "default": "",
           "document": "支持的健康检查类型，如 HttpGet，TcpSocket，Exec",
           "example": "HttpGet",
           "member": "string",
@@ -1717,7 +1586,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "仅当健康检查类型为 HttpGet 时有效，表示协议类型，如 HTTP，HTTPS",
           "example": "HTTP",
           "member": "string",
@@ -1727,7 +1595,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "仅当健康检查类型为 HttpGet 时有效，表示请求路径",
           "example": "/xxx",
           "member": "string",
@@ -1737,7 +1604,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "仅当健康检查类型为 Exec 时有效，表示执行的脚本内容",
           "example": "xxxx",
           "member": "string",
@@ -1747,7 +1613,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "仅当健康检查类型为 HttpGet\\TcpSocket 时有效，表示请求路径",
           "example": "80",
           "member": "int64",
@@ -1757,7 +1622,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "检查延迟开始时间，单位为秒，默认为 0",
           "example": "0",
           "member": "int64",
@@ -1767,7 +1631,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "超时时间，单位为秒，默认为 1",
           "example": "1",
           "member": "int64",
@@ -1777,7 +1640,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "间隔时间，单位为秒，默认为 10",
           "example": "10",
           "member": "int64",
@@ -1793,7 +1655,6 @@
       "document": "Ingress 配置",
       "members": [
         {
-          "default": "",
           "document": "tem namespaceId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "env-xxx",
           "member": "string",
@@ -1803,7 +1664,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "eks namespace",
           "example": "default",
           "member": "string",
@@ -1813,7 +1673,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "ip version",
           "example": "IPV4",
           "member": "string",
@@ -1823,7 +1682,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "ingress name",
           "example": "ingress name",
           "member": "string",
@@ -1833,7 +1691,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "rules 配置",
           "example": "rules 配置",
           "member": "IngressRule",
@@ -1843,7 +1700,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "clb ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "clb-xxx",
           "member": "string",
@@ -1853,7 +1709,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "tls 配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tls 配置",
           "member": "IngressTls",
@@ -1863,7 +1718,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "eks clusterId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cls-xxx",
           "member": "string",
@@ -1873,7 +1727,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "clb ip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.10.10.10",
           "member": "string",
@@ -1883,7 +1736,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2010-11-11 22:21:11",
           "member": "string",
@@ -1893,7 +1745,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否混合 https，默认 false，可选值 true 代表有 https 协议监听",
           "example": "false",
           "member": "bool",
@@ -1909,7 +1760,6 @@
       "document": "ingress rule 配置",
       "members": [
         {
-          "default": "",
           "document": "ingress rule value",
           "example": "ingress rule value",
           "member": "IngressRuleValue",
@@ -1919,7 +1769,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "host 地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx.com",
           "member": "string",
@@ -1929,7 +1778,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "协议，选项为 http， https，默认为 http",
           "example": "protocol",
           "member": "string",
@@ -1945,7 +1793,6 @@
       "document": "Ingress 规则 backend 配置",
       "members": [
         {
-          "default": "",
           "document": "eks service 名",
           "example": "serviceA",
           "member": "string",
@@ -1955,7 +1802,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "eks service 端口",
           "example": "8080",
           "member": "int64",
@@ -1971,7 +1817,6 @@
       "document": "Ingress Rule Path 配置",
       "members": [
         {
-          "default": "",
           "document": "path 信息",
           "example": "/xxx",
           "member": "string",
@@ -1981,7 +1826,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "backend 配置",
           "example": "{\"ServiceName\": \"serviceA\", \"ServicePort\": 8080}}",
           "member": "IngressRuleBackend",
@@ -1997,7 +1841,6 @@
       "document": "Ingress Rule Value 配置",
       "members": [
         {
-          "default": "",
           "document": "rule 整体配置",
           "example": "rulePaths 数组",
           "member": "IngressRulePath",
@@ -2013,7 +1856,6 @@
       "document": "ingress tls 配置",
       "members": [
         {
-          "default": "",
           "document": "host 数组, 空数组表示全部域名的默认证书",
           "example": "[\"xx.com\", \"yyy.com\"]",
           "member": "string",
@@ -2023,7 +1865,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "secret name，如使用证书，则填空字符串",
           "example": "secret",
           "member": "string",
@@ -2033,7 +1874,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "SSL Certificate Id",
           "example": "CertificateId",
           "member": "string",
@@ -2049,7 +1889,6 @@
       "document": "日志输出配置",
       "members": [
         {
-          "default": "",
           "document": "日志消费端类型",
           "example": "cls、kafka",
           "member": "string",
@@ -2059,7 +1898,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "cls日志集",
           "example": "1",
           "member": "string",
@@ -2069,7 +1907,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "cls日志主题",
           "example": "1",
           "member": "string",
@@ -2079,7 +1916,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "cls日志集id",
           "example": "1",
           "member": "string",
@@ -2089,7 +1925,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "cls日志名称",
           "example": "1",
           "member": "string",
@@ -2105,7 +1940,6 @@
       "document": "ModifyIngress请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "Ingress 规则配置",
           "example": "无",
           "member": "IngressInfo",
@@ -2114,7 +1948,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "来源渠道",
           "example": "0",
           "member": "int64",
@@ -2150,7 +1983,6 @@
       "document": "ModifyNamespace请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境id",
           "example": "namespace-36pm4p8r",
           "member": "string",
@@ -2159,7 +1991,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "命名空间名称",
           "example": "namespace-a",
           "member": "string",
@@ -2168,7 +1999,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "命名空间描述",
           "example": "命名空间",
           "member": "string",
@@ -2177,7 +2007,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "私有网络名称",
           "example": "vpc-1n5javez",
           "member": "string",
@@ -2186,7 +2015,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "子网网络",
           "example": "subnet-m48cb76m",
           "member": "string",
@@ -2195,7 +2023,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "来源渠道",
           "example": "0",
           "member": "int64",
@@ -2231,7 +2058,6 @@
       "document": "ModifyServiceInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务ID",
           "example": "service-a",
           "member": "string",
@@ -2240,7 +2066,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "描述",
           "example": "服务a",
           "member": "string",
@@ -2249,7 +2074,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "来源渠道",
           "example": "0",
           "member": "int64",
@@ -2285,7 +2109,6 @@
       "document": "挂载配置信息",
       "members": [
         {
-          "default": "",
           "document": "配置名称",
           "example": "1",
           "member": "string",
@@ -2295,7 +2118,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "挂载路径",
           "example": "1",
           "member": "string",
@@ -2305,7 +2127,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "配置内容",
           "example": "[]",
           "member": "Pair",
@@ -2321,7 +2142,6 @@
       "document": "命名空间分页",
       "members": [
         {
-          "default": "",
           "document": "分页内容",
           "member": "TemNamespaceInfo",
           "name": "Records",
@@ -2330,7 +2150,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "总数",
           "member": "int64",
           "name": "Total",
@@ -2339,7 +2158,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "条目数",
           "member": "int64",
           "name": "Size",
@@ -2348,7 +2166,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "页数",
           "member": "int64",
           "name": "Pages",
@@ -2363,7 +2180,6 @@
       "document": "键值对",
       "members": [
         {
-          "default": "",
           "document": "建",
           "member": "string",
           "name": "Key",
@@ -2372,7 +2188,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "值",
           "member": "string",
           "name": "Value",
@@ -2387,7 +2202,6 @@
       "document": "服务端口映射",
       "members": [
         {
-          "default": "",
           "document": "端口",
           "example": "1",
           "member": "int64",
@@ -2397,7 +2211,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "映射端口",
           "example": "1",
           "member": "int64",
@@ -2407,7 +2220,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "协议栈 TCP/UDP",
           "example": "1",
           "member": "string",
@@ -2423,7 +2235,6 @@
       "document": "RestartServiceRunPod请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "环境id",
           "example": "namespace-a",
           "member": "string",
@@ -2432,7 +2243,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "服务名id",
           "example": "service-a",
           "member": "string",
@@ -2441,7 +2251,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "名字",
           "example": "pod-a",
           "member": "string",
@@ -2450,7 +2259,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "单页条数",
           "example": "10",
           "member": "int64",
@@ -2459,7 +2267,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页下标",
           "example": "1",
           "member": "int64",
@@ -2468,7 +2275,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "pod状态",
           "example": "Running",
           "member": "string",
@@ -2477,7 +2283,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "来源渠道",
           "example": "0",
           "member": "int64",
@@ -2513,7 +2318,6 @@
       "document": "版本pod",
       "members": [
         {
-          "default": "",
           "document": "shell地址",
           "example": "sss",
           "member": "string",
@@ -2523,7 +2327,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "pod的id",
           "example": "aaa",
           "member": "string",
@@ -2533,7 +2336,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "状态",
           "example": "Running",
           "member": "string",
@@ -2543,7 +2345,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "2010-11-11 22:21:11",
           "member": "string",
@@ -2553,7 +2354,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例的ip",
           "example": "127.0.0.1",
           "member": "string",
@@ -2563,7 +2363,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -2573,7 +2372,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "部署版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -2583,7 +2381,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "重启次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2599,7 +2396,6 @@
       "document": "存储卷配置",
       "members": [
         {
-          "default": "",
           "document": "存储卷名称",
           "example": "1",
           "member": "string",
@@ -2609,7 +2405,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "存储卷路径",
           "example": "1",
           "member": "string",
@@ -2619,7 +2414,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "存储卷IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -2635,7 +2429,6 @@
       "document": "数据卷挂载信息",
       "members": [
         {
-          "default": "",
           "document": "数据卷名",
           "member": "string",
           "name": "VolumeName",
@@ -2644,7 +2437,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "数据卷绑定路径",
           "member": "string",
           "name": "MountPath",
@@ -2659,7 +2451,6 @@
       "document": "命名空间对象",
       "members": [
         {
-          "default": "",
           "document": "命名空间id",
           "example": "1",
           "member": "string",
@@ -2669,7 +2460,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "渠道",
           "example": "1",
           "member": "string",
@@ -2679,7 +2469,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "命名空间名称",
           "example": "1",
           "member": "string",
@@ -2689,7 +2478,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "区域名称",
           "example": "1",
           "member": "string",
@@ -2699,7 +2487,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "命名空间描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -2709,7 +2496,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "状态,1:已销毁;0:正常",
           "example": "1",
           "member": "int64",
@@ -2719,7 +2505,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "vpc网络",
           "example": "1",
           "member": "string",
@@ -2729,7 +2514,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "1",
           "member": "string",
@@ -2739,7 +2523,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "修改时间",
           "example": "1",
           "member": "string",
@@ -2749,7 +2532,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "修改人",
           "example": "1",
           "member": "string",
@@ -2759,7 +2541,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建人",
           "example": "1",
           "member": "string",
@@ -2769,7 +2550,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "服务数",
           "example": "1",
           "member": "int64",
@@ -2779,7 +2559,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "运行实例数",
           "example": "1",
           "member": "int64",
@@ -2789,7 +2568,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "子网络",
           "example": "1",
           "member": "string",
@@ -2799,7 +2577,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "tcb环境状态",
           "example": "1",
           "member": "string",
@@ -2809,7 +2586,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "eks cluster status",
           "example": "1",
           "member": "string",
@@ -2819,7 +2595,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否开启tsw",
           "example": "true",
           "member": "bool",

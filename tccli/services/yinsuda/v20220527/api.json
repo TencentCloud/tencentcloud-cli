@@ -131,7 +131,6 @@
       "document": "AME 曲库歌曲基础信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲 Id。",
           "example": "\"\"",
@@ -139,11 +138,9 @@
           "name": "MusicId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲名称。",
           "example": "\"\"",
@@ -151,11 +148,9 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌手列表。",
           "example": "\"\"",
@@ -163,8 +158,7 @@
           "name": "SingerSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -173,70 +167,58 @@
       "document": "ApplyChorus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用名称。",
           "example": "无",
           "member": "string",
           "name": "AppName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户标识。",
           "example": "无",
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房间号。",
           "example": "无",
           "member": "string",
           "name": "RoomId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲 Id。",
           "example": "无",
           "member": "string",
           "name": "MusicId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大合唱人数，默认值为 8，最大值为 20。",
           "example": "无",
           "member": "uint64",
           "name": "MaxChorusNum",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "合唱用户标识列表。",
           "example": "无",
           "member": "string",
           "name": "ChorusUserIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -252,8 +234,7 @@
           "name": "ChorusToken",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -274,8 +255,7 @@
           "member": "string",
           "name": "AppName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -284,8 +264,7 @@
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -294,8 +273,7 @@
           "member": "string",
           "name": "MusicIds",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -304,8 +282,7 @@
           "member": "string",
           "name": "PlayScene",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -314,8 +291,7 @@
           "member": "string",
           "name": "GuestUserId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -324,8 +300,7 @@
           "member": "string",
           "name": "RoomId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -340,8 +315,7 @@
           "member": "KTVMusicDetailInfo",
           "name": "KTVMusicDetailInfoSet",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -350,8 +324,7 @@
           "member": "string",
           "name": "NotExistMusicIdSet",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -366,7 +339,6 @@
       "document": "副歌片段信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间，单位：毫秒。",
           "example": "无",
@@ -374,11 +346,9 @@
           "name": "StartTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间，单位：毫秒。",
           "example": "无",
@@ -386,8 +356,7 @@
           "name": "EndTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -396,59 +365,49 @@
       "document": "CreateKTVRobot请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用名称。",
           "example": "ktv",
           "member": "string",
           "name": "AppName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户标识。",
           "example": "10001",
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "RTC厂商类型，取值有：\n<li>TRTC</li>",
           "example": "TRTC",
           "member": "string",
           "name": "RTCSystem",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "进房参数。",
           "example": "无",
           "member": "JoinRoomInput",
           "name": "JoinRoomInput",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建机器人时初始化参数。",
           "example": "无",
           "member": "SyncRobotCommand",
           "name": "SyncRobotCommands",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -464,8 +423,7 @@
           "name": "RobotId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -480,37 +438,31 @@
       "document": "DescribeKTVMatchMusics请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用名称。",
           "example": "无",
           "member": "string",
           "name": "AppName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户标识。",
           "example": "无",
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "匹配规则列表。",
           "example": "无",
           "member": "KTVMatchRule",
           "name": "Rules",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -526,8 +478,7 @@
           "name": "MatchMusicSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -537,8 +488,7 @@
           "name": "NotMatchRuleSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -559,8 +509,7 @@
           "member": "string",
           "name": "AppName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -569,8 +518,7 @@
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -579,8 +527,7 @@
           "member": "string",
           "name": "MusicId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -589,8 +536,7 @@
           "member": "string",
           "name": "PlayScene",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -599,8 +545,7 @@
           "member": "string",
           "name": "RoomId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -615,8 +560,7 @@
           "member": "int64",
           "name": "Status",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -625,8 +569,7 @@
           "member": "string",
           "name": "Url",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -635,8 +578,7 @@
           "member": "string",
           "name": "ExtName",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -645,8 +587,7 @@
           "member": "int64",
           "name": "SegmentBegin",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -655,8 +596,7 @@
           "member": "int64",
           "name": "SegmentEnd",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -665,8 +605,7 @@
           "member": "int64",
           "name": "FileSize",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -675,8 +614,7 @@
           "member": "KTVOtherSegments",
           "name": "OtherSegments",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -697,8 +635,7 @@
           "member": "string",
           "name": "AppName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -707,8 +644,7 @@
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -717,8 +653,7 @@
           "member": "string",
           "name": "TagId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -727,8 +662,7 @@
           "member": "string",
           "name": "ScrollToken",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -737,8 +671,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -747,8 +680,7 @@
           "member": "string",
           "name": "RightFilters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -757,8 +689,7 @@
           "member": "string",
           "name": "MaterialFilters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -773,8 +704,7 @@
           "member": "KTVMusicBaseInfo",
           "name": "KTVMusicInfoSet",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -783,8 +713,7 @@
           "member": "string",
           "name": "ScrollToken",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -805,8 +734,7 @@
           "member": "string",
           "name": "AppName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -815,8 +743,7 @@
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -825,8 +752,7 @@
           "member": "string",
           "name": "PlaylistId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -835,8 +761,7 @@
           "member": "string",
           "name": "ScrollToken",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -845,8 +770,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -855,8 +779,7 @@
           "member": "string",
           "name": "RightFilters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -865,8 +788,7 @@
           "member": "string",
           "name": "PlayScene",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -875,8 +797,7 @@
           "member": "string",
           "name": "MaterialFilters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -891,8 +812,7 @@
           "member": "KTVMusicBaseInfo",
           "name": "KTVMusicInfoSet",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -901,8 +821,7 @@
           "member": "string",
           "name": "ScrollToken",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -917,59 +836,49 @@
       "document": "DescribeKTVPlaylists请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用名称。",
           "example": "无",
           "member": "string",
           "name": "AppName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户标识。",
           "example": "无",
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型列表，取值有：\n<li>OfficialRec：官方推荐；</li>\n<li>Customize：自定义。</li>\n默认值为 OfficialRec。",
           "example": "无",
           "member": "string",
           "name": "Types",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。",
           "example": "无",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回的记录条数，默认值：20，最大值：50。",
           "example": "无",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -985,8 +894,7 @@
           "name": "PlaylistBaseInfoSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -996,8 +904,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1012,81 +919,67 @@
       "document": "DescribeKTVRobots请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用名称。",
           "example": "ktv",
           "member": "string",
           "name": "AppName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户标识。",
           "example": "10001",
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器人Id列表。",
           "example": "无",
           "member": "string",
           "name": "RobotIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器人状态，取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>Destroy：销毁</li>",
           "example": "无",
           "member": "string",
           "name": "Statuses",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "匹配创建时间在此时间段内的机器人。\n<li>包含所指定的头尾时间点。</li>",
           "example": "无",
           "member": "TimeRange",
           "name": "CreateTime",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回的起始偏移量，默认值：10。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1102,8 +995,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1113,8 +1005,7 @@
           "name": "KTVRobotInfoSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1129,37 +1020,31 @@
       "document": "DescribeKTVSuggestions请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用名称。",
           "example": "无",
           "member": "string",
           "name": "AppName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户标识。",
           "example": "无",
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索词。",
           "example": "无",
           "member": "string",
           "name": "KeyWord",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1175,8 +1060,7 @@
           "name": "KTVSuggestionInfoSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1191,26 +1075,22 @@
       "document": "DescribeKTVTags请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用名称。",
           "example": "无",
           "member": "string",
           "name": "AppName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户标识。",
           "example": "无",
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1226,8 +1106,7 @@
           "name": "TagGroupInfoSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1248,8 +1127,7 @@
           "member": "string",
           "name": "AppName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1258,8 +1136,7 @@
           "member": "datetime_iso",
           "name": "StartTime",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1268,8 +1145,7 @@
           "member": "datetime_iso",
           "name": "EndTime",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1278,8 +1154,7 @@
           "member": "string",
           "name": "TradeSerialNos",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1288,8 +1163,7 @@
           "member": "string",
           "name": "UserIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1298,8 +1172,7 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1308,8 +1181,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1324,8 +1196,7 @@
           "member": "LiveVipTradeInfo",
           "name": "LiveVipTradeInfoSet",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1334,8 +1205,7 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1356,8 +1226,7 @@
           "member": "string",
           "name": "AppName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1366,8 +1235,7 @@
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1382,8 +1250,7 @@
           "member": "UserInfo",
           "name": "UserInfo",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1398,37 +1265,31 @@
       "document": "DestroyKTVRobot请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用名称。",
           "example": "ktv",
           "member": "string",
           "name": "AppName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户标识。",
           "example": "10001",
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器人Id。",
           "example": "xxxxxx",
           "member": "string",
           "name": "RobotId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1449,7 +1310,6 @@
       "document": "直播进房输入参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TRTC进房参数",
           "example": "无",
@@ -1457,8 +1317,7 @@
           "name": "TRTCJoinRoomInput",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1467,7 +1326,6 @@
       "document": "节拍信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "节拍类型，取值有：\n<li>Slow：慢；</li>\n<li>Middle：中等；</li>\n<li>Fast：快；</li>\n<li>Unknown：未知。</li>",
           "example": "无",
@@ -1475,11 +1333,9 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "BPM 值。",
           "example": "无",
@@ -1487,8 +1343,7 @@
           "name": "Value",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1497,7 +1352,6 @@
       "document": "匹配歌曲信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "匹配到的歌曲基础信息。",
           "example": "\"\"",
@@ -1505,11 +1359,9 @@
           "name": "KTVMusicBaseInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命中规则。",
           "example": "\"\"",
@@ -1517,11 +1369,9 @@
           "name": "MatchRule",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "AME 歌曲基础信息，仅在使用音速达歌曲 Id 匹配 AME 曲库时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -1529,8 +1379,7 @@
           "name": "AMEMusicBaseInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1539,7 +1388,6 @@
       "document": "歌曲匹配规则。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "AME 曲库 Id。",
           "example": "\"\"",
@@ -1547,11 +1395,9 @@
           "name": "AMEMusicId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲匹配信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -1559,11 +1405,9 @@
           "name": "MusicInfo",
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音速达歌曲 Id，用于匹配 AME 曲库歌曲。",
           "example": "\"\"",
@@ -1571,8 +1415,7 @@
           "name": "MusicIdToMatchAME",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1581,7 +1424,6 @@
       "document": "歌曲信息匹配。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲名称。",
           "example": "\"\"",
@@ -1589,11 +1431,9 @@
           "name": "MusicName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌手列表。",
           "example": "\"\"",
@@ -1601,8 +1441,7 @@
           "name": "SingerSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1611,7 +1450,6 @@
       "document": "歌曲基础信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲Id。",
           "example": "无",
@@ -1619,11 +1457,9 @@
           "name": "MusicId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲名称。",
           "example": "无",
@@ -1631,11 +1467,9 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌手名称。",
           "example": "无",
@@ -1643,11 +1477,9 @@
           "name": "SingerSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放时长。",
           "example": "无",
@@ -1655,11 +1487,9 @@
           "name": "Duration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌手图片链接。",
           "example": "无",
@@ -1667,11 +1497,9 @@
           "name": "SingerImageUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专辑信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1679,11 +1507,9 @@
           "name": "AlbumInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权益列表，取值有：\n<li>Play：可播；</li>\n<li>Sing：可唱。</li>",
           "example": "无",
@@ -1691,11 +1517,9 @@
           "name": "RightSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "推荐类型，取值有：\n<li>Featured：精选；</li>\n<li>Other：其他。</li>",
           "example": "无",
@@ -1703,8 +1527,7 @@
           "name": "RecommendType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1713,7 +1536,6 @@
       "document": "歌曲详细信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲基础信息。",
           "example": "无",
@@ -1721,11 +1543,9 @@
           "name": "KTVMusicBaseInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放凭证。",
           "example": "无",
@@ -1733,11 +1553,9 @@
           "name": "PlayToken",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌词下载链接。",
           "example": "无",
@@ -1745,11 +1563,9 @@
           "name": "LyricsUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音高数据下载链接。",
           "example": "无",
@@ -1757,11 +1573,9 @@
           "name": "MidiUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "副歌片段信息。",
           "example": "无",
@@ -1769,11 +1583,9 @@
           "name": "ChorusClipSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "前奏间隔。",
           "example": "0",
@@ -1781,11 +1593,9 @@
           "name": "PreludeInterval",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲流派列表。",
           "example": "无",
@@ -1793,11 +1603,9 @@
           "name": "GenreSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节拍信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1805,8 +1613,7 @@
           "name": "BPMInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1822,8 +1629,7 @@
           "name": "SegmentBegin",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1833,8 +1639,7 @@
           "name": "SegmentEnd",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1843,7 +1648,6 @@
       "document": "歌单基础信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌单Id。",
           "example": "无",
@@ -1851,11 +1655,9 @@
           "name": "PlaylistId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌单标题。",
           "example": "无",
@@ -1863,8 +1665,7 @@
           "name": "Title",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1873,7 +1674,6 @@
       "document": "机器人信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机器人Id。",
           "example": "xxxxx",
@@ -1881,11 +1681,9 @@
           "name": "RobotId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态，取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>Destroy：销毁</li>",
           "example": "Play",
@@ -1893,11 +1691,9 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放列表。",
           "example": "无",
@@ -1905,11 +1701,9 @@
           "name": "Playlists",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前歌单索引位置。",
           "example": "1",
@@ -1917,11 +1711,9 @@
           "name": "CurIndex",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放进度，单位：毫秒。",
           "example": "120000",
@@ -1929,11 +1721,9 @@
           "name": "Position",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频参数。",
           "example": "无",
@@ -1941,11 +1731,9 @@
           "name": "SetAudioParamInput",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "进房信息。",
           "example": "无",
@@ -1953,11 +1741,9 @@
           "name": "JoinRoomInput",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "RTC厂商类型，取值有：\n<li>TRTC</li>",
           "example": "TRTC",
@@ -1965,11 +1751,9 @@
           "name": "RTCSystem",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放模式，PlayMode取值有：\n<li>RepeatPlaylist：列表循环</li>\n<li>Order：顺序播放</li>\n<li>RepeatSingle：单曲循环</li>\n<li>Shuffle：随机播放</li>",
           "example": "无",
@@ -1977,8 +1761,7 @@
           "name": "SetPlayModeInput",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1987,7 +1770,6 @@
       "document": "联想词信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "联想词。",
           "example": "无",
@@ -1995,8 +1777,7 @@
           "name": "Suggestion",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2005,7 +1786,6 @@
       "document": "标签分组信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分组 Id。",
           "example": "无",
@@ -2013,11 +1793,9 @@
           "name": "GroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组名。",
           "example": "无",
@@ -2025,11 +1803,9 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签列表。",
           "example": "无",
@@ -2037,8 +1813,7 @@
           "name": "TagInfoSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2047,7 +1822,6 @@
       "document": "标签信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签 Id。",
           "example": "无",
@@ -2055,11 +1829,9 @@
           "name": "TagId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签名称。",
           "example": "无",
@@ -2067,8 +1839,7 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2084,8 +1855,7 @@
           "name": "TradeSerialNo",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2095,8 +1865,7 @@
           "name": "AppName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2106,8 +1875,7 @@
           "name": "UserId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2117,8 +1885,7 @@
           "name": "RoomId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2128,8 +1895,7 @@
           "name": "VipDays",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2139,8 +1905,7 @@
           "name": "Status",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2150,8 +1915,7 @@
           "name": "CreateTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2167,8 +1931,7 @@
           "name": "RoomId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2178,8 +1941,7 @@
           "name": "LiveVipEndTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2189,8 +1951,7 @@
           "name": "LiveVipStatus",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2199,7 +1960,6 @@
       "document": "歌曲专辑封面信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "尺寸规格，取值有：\n<li>Mini：150 x 150 尺寸；</li>\n<li>Small：240 x 240 尺寸；</li>\n<li>Medium：480 x 480 尺寸。</li>",
           "example": "无",
@@ -2207,11 +1967,9 @@
           "name": "Dimension",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下载链接。",
           "example": "无",
@@ -2219,8 +1977,7 @@
           "name": "Url",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2229,7 +1986,6 @@
       "document": "歌曲专辑信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专辑名称。",
           "example": "无",
@@ -2237,11 +1993,9 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "封面列表。",
           "example": "无",
@@ -2249,8 +2003,7 @@
           "name": "CoverInfoSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2259,7 +2012,6 @@
       "document": "播放指令输入参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲位置索引。",
           "example": "2",
@@ -2267,8 +2019,7 @@
           "name": "Index",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -2283,8 +2034,7 @@
           "member": "string",
           "name": "AppName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2293,8 +2043,7 @@
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2303,8 +2052,7 @@
           "member": "string",
           "name": "TradeSerialNo",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2313,8 +2061,7 @@
           "member": "string",
           "name": "RoomId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2323,8 +2070,7 @@
           "member": "int64",
           "name": "VipDays",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2333,8 +2079,7 @@
           "member": "string",
           "name": "GiveType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2343,8 +2088,7 @@
           "member": "string",
           "name": "PlayScene",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2359,8 +2103,7 @@
           "member": "LiveVipUserInfo",
           "name": "LiveVipUserInfo",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2381,8 +2124,7 @@
           "member": "string",
           "name": "AppName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2391,8 +2133,7 @@
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2401,8 +2142,7 @@
           "member": "string",
           "name": "KeyWord",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2411,8 +2151,7 @@
           "member": "string",
           "name": "ScrollToken",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2421,8 +2160,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2431,8 +2169,7 @@
           "member": "string",
           "name": "RightFilters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -2441,8 +2178,7 @@
           "member": "string",
           "name": "PlayScene",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2451,8 +2187,7 @@
           "member": "string",
           "name": "MaterialFilters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2467,8 +2202,7 @@
           "member": "KTVMusicBaseInfo",
           "name": "KTVMusicInfoSet",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2477,8 +2211,7 @@
           "member": "string",
           "name": "ScrollToken",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2493,7 +2226,6 @@
       "document": "调整播放进度指令参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "播放位置，单位：毫秒。",
           "example": "120",
@@ -2501,8 +2233,7 @@
           "name": "Position",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -2511,7 +2242,6 @@
       "document": "发送自定义信息指令参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "自定义消息，json格式字符串。",
           "example": "{\"field\":\"value\"}",
@@ -2519,11 +2249,9 @@
           "name": "Message",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息重复次数，默认为 1。",
           "example": "2",
@@ -2531,8 +2259,7 @@
           "name": "Repeat",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -2541,7 +2268,6 @@
       "document": "音频参数信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "音频类型，取值有：\n<li>Original：原唱</li>\n<li>Accompaniment：伴奏</li>",
           "example": "Original",
@@ -2549,8 +2275,7 @@
           "name": "Type",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -2559,7 +2284,6 @@
       "document": "设置销毁模式",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "销毁模式，取值有：\n<li>Auto：房间没人时自动销毁</li>\n<li>Expire：房间没人时过期自动销毁</li>\n<li>Never：不自动销毁，需手动销毁</li>默认为：Auto。",
           "example": "Auto",
@@ -2567,11 +2291,9 @@
           "name": "DestroyMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期销毁时间，单位：秒，当DestroyMode取Expire时必填。",
           "example": "120",
@@ -2579,8 +2301,7 @@
           "name": "DestroyExpireTime",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -2589,7 +2310,6 @@
       "document": "设置播放模式",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "播放模式，取值有：\n<li>RepeatPlaylist：列表循环</li>\n<li>Order：顺序播放</li>\n<li>RepeatSingle：单曲循环</li>\n<li>Shuffle：随机播放</li>",
           "example": "RepeatPlaylist",
@@ -2597,8 +2317,7 @@
           "name": "PlayMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -2607,7 +2326,6 @@
       "document": "设置播放列表指令参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "变更类型，取值有：\n<li>Add：添加</li>\n<li>Delete：删除</li>\n<li>ClearList：清空歌曲列表</li>\n<li>Move：移动歌曲</li>",
           "example": "Add",
@@ -2615,11 +2333,9 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌单索引位置，\n当 Type 取 Add 时，-1表示添加在列表最后位置，大于-1表示要添加的位置；\n当 Type 取 Delete 时，表示待删除歌曲的位置；\n当 Type 取 Move 时，表示待调整歌曲的位置。",
           "example": "1",
@@ -2627,11 +2343,9 @@
           "name": "Index",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当 Type 取 Move 时，必填，表示移动歌曲的目标位置。",
           "example": "2",
@@ -2639,11 +2353,9 @@
           "name": "ChangedIndex",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲 ID 列表，当 Type 取 Add 时，必填。",
           "example": "xxxxx",
@@ -2651,8 +2363,7 @@
           "name": "MusicIds",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -2661,48 +2372,40 @@
       "document": "SyncKTVRobotCommand请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用名称。",
           "example": "ktv",
           "member": "string",
           "name": "AppName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户标识。",
           "example": "100001",
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器人Id。",
           "example": "xxxxx",
           "member": "string",
           "name": "RobotId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指令及指令参数数组。",
           "example": "无",
           "member": "SyncRobotCommand",
           "name": "SyncRobotCommands",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2723,7 +2426,6 @@
       "document": "KTV 机器人初始化参数，在创建后自动完成相关初始化工作。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "可同时传入多个指令，顺序执行。取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>SwitchPrevious：上一首</li>\n<li>SwitchNext：下一首</li>\n<li>SetPlayMode：设置播放模式</li>\n<li>Seek：调整播放进度</li>\n<li>SetPlaylist：歌单变更</li>\n<li>SetAudioParam：音频参数变更</li>\n<li>SendMessage：发送自定义消息</li>\n<li>SetDestroyMode：设置销毁模式</li>",
           "example": "无",
@@ -2731,11 +2433,9 @@
           "name": "Command",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放参数。",
           "example": "无",
@@ -2743,11 +2443,9 @@
           "name": "PlayCommandInput",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放列表变更信息，当Command取SetPlaylist时，必填。",
           "example": "无",
@@ -2755,11 +2453,9 @@
           "name": "SetPlaylistCommandInput",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放进度，当Command取Seek时，必填。",
           "example": "无",
@@ -2767,11 +2463,9 @@
           "name": "SeekCommandInput",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频参数，当Command取SetAudioParam时，必填。",
           "example": "无",
@@ -2779,11 +2473,9 @@
           "name": "SetAudioParamCommandInput",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义消息，当Command取SendMessage时，必填。",
           "example": "无",
@@ -2791,11 +2483,9 @@
           "name": "SendMessageCommandInput",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放模式，当Command取SetPlayMode时，必填。",
           "example": "无",
@@ -2803,11 +2493,9 @@
           "name": "SetPlayModeCommandInput",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "销毁模式，当Command取SetDestroyMode时，必填。",
           "example": "无",
@@ -2815,8 +2503,7 @@
           "name": "SetDestroyModeCommandInput",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -2828,66 +2515,56 @@
           "disabled": false,
           "document": "签名。",
           "example": "xxxxxxx",
-          "is_base64": false,
           "member": "string",
           "name": "Sign",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "房间号。",
           "example": "1234",
-          "is_base64": false,
           "member": "string",
           "name": "RoomId",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "推流应用ID。",
           "example": "140000001",
-          "is_base64": false,
           "member": "string",
           "name": "SdkAppId",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户唯一标识。",
           "example": "tom",
-          "is_base64": false,
           "member": "string",
           "name": "UserId",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "TRTC房间号的类型：\n\nInteger：数字类型\nString：字符串类型\n默认为：Integer 。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Integer",
-          "is_base64": false,
           "member": "string",
           "name": "RoomIdType",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2896,7 +2573,6 @@
       "document": "时间范围",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "<li>大于等于此时间（起始时间）。</li>\n<li>格式按照 ISO 8601标准表示，详见 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\" target=\"_blank\">ISO 日期格式说明</a>。</li>",
           "example": "2020-12-10T07:25:52Z",
@@ -2904,11 +2580,9 @@
           "name": "Before",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "<li>小于此时间（结束时间）。</li>\n<li>格式按照 ISO 8601标准表示，详见 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\" target=\"_blank\">ISO 日期格式说明</a>。</li>",
           "example": "2020-12-10T07:25:52Z",
@@ -2916,8 +2590,7 @@
           "name": "After",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -2933,8 +2606,7 @@
           "name": "AppName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2944,8 +2616,7 @@
           "name": "UserId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2955,8 +2626,7 @@
           "name": "LiveVipUserInfo",
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2966,8 +2636,7 @@
           "name": "UserType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -75,7 +75,6 @@
       "document": "活动非敏感信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "活动ID，活动唯一标识",
           "example": "10000",
@@ -86,7 +85,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动名称",
           "example": "测试活动",
@@ -97,7 +95,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动开始时间",
           "example": "2020-01-01 00:00:00",
@@ -108,7 +105,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动结束时间",
           "example": "2021-01-01 00:00:00",
@@ -119,7 +115,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动页面URL",
           "example": "https://cloud.tencent.com/act/season",
@@ -130,7 +125,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动状态 0-开启 1-关闭 3-已过期",
           "example": "1",
@@ -153,8 +147,7 @@
           "member": "int64",
           "name": "ActivityID",
           "required": true,
-          "type": "int",
-          "visibility": 2
+          "type": "int"
         },
         {
           "disabled": false,
@@ -163,8 +156,7 @@
           "member": "string",
           "name": "WhitelistUin",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -173,8 +165,7 @@
           "member": "string",
           "name": "WhitelistKey",
           "required": false,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         }
       ],
       "type": "object"
@@ -195,37 +186,31 @@
       "document": "CancelActivityGoodsQuotaDeduction请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户uin",
           "example": "100013140416",
           "member": "string",
           "name": "DealUin",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流水号列表",
           "example": "无",
           "member": "uint64",
           "name": "ActiveFlowList",
           "required": true,
-          "type": "list",
-          "visibility": 2
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下单结果，下单失败信息",
           "example": "无",
           "member": "string",
           "name": "DealResult",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         }
       ],
       "type": "object"
@@ -252,8 +237,7 @@
           "member": "string",
           "name": "CheckUin",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -262,8 +246,7 @@
           "member": "string",
           "name": "OAAccountId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -278,8 +261,7 @@
           "member": "bool",
           "name": "Result",
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -294,37 +276,31 @@
       "document": "ConfirmActivityGoodsQuotaDeduction请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户uin",
           "example": "100013140416",
           "member": "string",
           "name": "DealUin",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流水号列表",
           "example": "无",
           "member": "uint64",
           "name": "ActiveFlowList",
           "required": true,
-          "type": "list",
-          "visibility": 2
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下单结果，大订单号和子订单号",
           "example": "{\"big_deal_no\": \"\", \"deal_names\": []}",
           "member": "string",
           "name": "DealResult",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         }
       ],
       "type": "object"
@@ -345,7 +321,6 @@
       "document": "预扣减配额商品参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "商品ID",
           "example": "12345",
@@ -353,11 +328,9 @@
           "name": "GoodsID",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商品数量",
           "example": "1",
@@ -365,11 +338,9 @@
           "name": "GoodsNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商品下单参数",
           "example": "{}",
@@ -377,8 +348,7 @@
           "name": "GoodsDealParam",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -393,8 +363,7 @@
           "member": "string",
           "name": "PageURL",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         }
       ],
       "type": "object"
@@ -409,8 +378,7 @@
           "member": "ActivityNonSensitiveInfo",
           "name": "ActivityNonSensitiveInfo",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -425,7 +393,6 @@
       "document": "DescribeActivityNonSensitiveInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "活动ID，活动唯一标识",
           "example": "10000",
@@ -463,7 +430,6 @@
       "document": "DescribeCvmRenewInstanceDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "商品ID",
           "example": "",
@@ -500,7 +466,6 @@
       "document": "CVM续费，拉取CVM的详情信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "AddTimeStamp\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -511,7 +476,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Alias\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -522,7 +486,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "AppId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -533,7 +496,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ApplicationRole\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -544,7 +506,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "AutoRenewFlag\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -555,7 +516,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Bandwidth\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -566,7 +526,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "BillId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -577,7 +536,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cpu\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -588,7 +546,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CustomId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -599,7 +556,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CvmPayMode\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -610,7 +566,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Deadline\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -621,7 +576,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DeviceAssetId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -632,7 +586,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DeviceClass\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -643,7 +596,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DeviceClassFlag\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -654,7 +606,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DeviceId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -665,7 +616,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DeviceImageId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -676,7 +626,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DeviceLanIp\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -687,7 +636,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DeviceWanIp\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -698,7 +646,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Disk\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -709,7 +656,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DiskType\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -720,7 +666,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ErrorCode\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -731,7 +676,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ErrorKey\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -742,7 +686,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Fpga\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -753,7 +696,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Gpu\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -764,7 +706,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "HypervisorUpdateFlag\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -775,7 +716,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IdcName\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -786,7 +726,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IsSafeIsolated\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -797,7 +736,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IsVpcGateway\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -808,7 +746,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IsolateTime\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -819,7 +756,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IspName\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -830,7 +766,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ItemId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -841,7 +776,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "LastOperation\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -852,7 +786,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "LatestOperation\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -863,7 +796,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "LatestOperationState\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -874,7 +806,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "LocalEthDev\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -885,7 +816,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Mem\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -896,7 +826,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NetworkPayMode\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -907,7 +836,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "OsName\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -918,7 +846,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ProjectId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -929,7 +856,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "RecycleFlag\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -940,7 +866,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "RegionId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -951,7 +876,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "RootSize\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -962,7 +886,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "RootType\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -973,7 +896,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Runflag\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -984,7 +906,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SafeIsolatedInfo\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -995,7 +916,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "State\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1006,7 +926,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Status\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1017,7 +936,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SubnetId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1028,7 +946,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SwapSize\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1039,7 +956,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TmpDeviceId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1050,7 +966,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UHostId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1061,7 +976,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UInstanceId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1072,7 +986,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UpdateTimestamp\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1083,7 +996,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Uuid\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1094,7 +1006,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VpcId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1105,7 +1016,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ZoneId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1116,7 +1026,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ZoneName\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1133,7 +1042,6 @@
       "document": "产品介绍页资源位数据同步结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源位链接",
           "example": "https://cloud.tencent.com/act/pro/jensen-test-0119-1?from=16702",
@@ -1141,11 +1049,9 @@
           "name": "Url",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "同步结果，ok成功，error失败",
           "example": "ok",
@@ -1153,8 +1059,7 @@
           "name": "Result",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1163,7 +1068,6 @@
       "document": "产品介绍页资源位数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "野鹤产品编码",
           "example": "cvm",
@@ -1171,11 +1075,9 @@
           "name": "CloudProductCode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "野鹤产品名称",
           "example": "云服务器",
@@ -1183,11 +1085,9 @@
           "name": "CloudProductName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品介绍页链接",
           "example": "https://cloud.tencent.com/product/cvm",
@@ -1195,11 +1095,9 @@
           "name": "ProductIntroPageUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源位链接",
           "example": "https://cloud.tencent.com/act/pro/overseas?from=16702",
@@ -1207,11 +1105,9 @@
           "name": "ResourceUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属模块",
           "example": "banner",
@@ -1219,11 +1115,9 @@
           "name": "Module",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源位标题",
           "example": "云服务器全球购",
@@ -1231,11 +1125,9 @@
           "name": "Title",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负责人，多个用英文逗号,隔开",
           "example": "xxx,xxx",
@@ -1243,11 +1135,9 @@
           "name": "OwnerList",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发布状态，0待配置，1已发布",
           "example": "1",
@@ -1255,11 +1145,9 @@
           "name": "ReleaseStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发布时间",
           "example": "yyyy-MM-dd HH:mm:ss",
@@ -1267,11 +1155,9 @@
           "name": "ReleaseTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作人",
           "example": "xxx",
@@ -1279,8 +1165,7 @@
           "name": "Operator",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -1289,15 +1174,13 @@
       "document": "SyncProductIntroPageData请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源位数据",
           "example": "无",
           "member": "ProductIntroPageResourceData",
           "name": "DataList",
           "required": true,
-          "type": "list",
-          "visibility": 2
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1313,8 +1196,7 @@
           "name": "List",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1329,37 +1211,31 @@
       "document": "TryDeductActivityGoodsQuota请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户uin",
           "example": "100013140416",
           "member": "string",
           "name": "DealUin",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商品参数列表",
           "example": "无",
           "member": "DeductQuotaGoodsParam",
           "name": "GoodsParamList",
           "required": true,
-          "type": "list",
-          "visibility": 2
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "幂等ID，防止短时间重复请求",
           "example": "de1e08f3-2512-40ef-a080-3f59c81f64f3",
           "member": "string",
           "name": "TradeID",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1375,8 +1251,7 @@
           "name": "ActiveFlowList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -70,6 +70,13 @@
       "output": "SentenceCorrectionResponse",
       "status": "online"
     },
+    "TestingTextGeneration": {
+      "document": "基于腾讯大模型能力，用户可以通过传入不同的参数控制生成内容的类型，并通过自然语言给模型以内容生成的指令，可以满足多种场景的文本生成需求，包括但不限于文章写作、营销文案、视频脚本、电商文案、纪要整理等（注意：当前接口为内测体验专用接口，非正式服务接口，内测期结束接口会下线或停服，届时请接入正式服务接口）",
+      "input": "TestingTextGenerationRequest",
+      "name": "文案创作（内测版）",
+      "output": "TestingTextGenerationResponse",
+      "status": "online"
+    },
     "TextEmbellish": {
       "document": "运用先进的自然语言处理技术，对原始文本进行优化润色，提升文本的通顺性、表达力和语言质量。",
       "input": "TextEmbellishRequest",
@@ -102,8 +109,7 @@
           "member": "string",
           "name": "Text",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -118,8 +124,7 @@
           "member": "float",
           "name": "Positive",
           "type": "float",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -128,8 +133,7 @@
           "member": "float",
           "name": "Neutral",
           "type": "float",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -138,8 +142,7 @@
           "member": "float",
           "name": "Negative",
           "type": "float",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -148,8 +151,7 @@
           "member": "string",
           "name": "Sentiment",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -171,8 +173,7 @@
           "name": "Word",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -182,8 +183,7 @@
           "name": "BeginOffset",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -193,8 +193,7 @@
           "name": "Length",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -204,8 +203,7 @@
           "name": "Pos",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -221,8 +219,7 @@
           "name": "Id",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -232,8 +229,7 @@
           "name": "Label",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -243,8 +239,7 @@
           "name": "Name",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -254,8 +249,7 @@
           "name": "Score",
           "required": false,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -270,8 +264,7 @@
           "member": "string",
           "name": "Title",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -280,8 +273,7 @@
           "member": "string",
           "name": "Content",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -297,8 +289,7 @@
           "name": "FirstClassification",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -308,8 +299,7 @@
           "name": "SecondClassification",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -319,8 +309,7 @@
           "name": "ThirdClassification",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -341,8 +330,7 @@
           "member": "string",
           "name": "Text",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -351,8 +339,7 @@
           "member": "int64",
           "name": "TargetType",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -367,8 +354,7 @@
           "member": "string",
           "name": "TopScroll",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -377,8 +363,7 @@
           "member": "string",
           "name": "Content",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -387,8 +372,7 @@
           "member": "string",
           "name": "RandomCause",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -409,8 +393,7 @@
           "member": "string",
           "name": "Text",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -419,8 +402,7 @@
           "member": "int64",
           "name": "PoetryType",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -429,8 +411,7 @@
           "member": "int64",
           "name": "Genre",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -445,8 +426,7 @@
           "member": "string",
           "name": "Title",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -455,8 +435,7 @@
           "member": "string",
           "name": "Content",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -478,8 +457,7 @@
           "name": "Word",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -489,8 +467,7 @@
           "name": "BeginOffset",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -500,8 +477,7 @@
           "name": "Length",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -511,8 +487,7 @@
           "name": "Pos",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -528,8 +503,7 @@
           "name": "Order",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -539,8 +513,7 @@
           "name": "BeginOffset",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -550,8 +523,7 @@
           "name": "Len",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -561,8 +533,7 @@
           "name": "Word",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -572,8 +543,7 @@
           "name": "CorrectWord",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -583,8 +553,7 @@
           "name": "CorrectionType",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -594,8 +563,7 @@
           "name": "Confidence",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -605,8 +573,7 @@
           "name": "DescriptionZh",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -616,8 +583,7 @@
           "name": "DescriptionEn",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -633,8 +599,7 @@
           "name": "Text",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -644,8 +609,7 @@
           "name": "EmbellishType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -661,8 +625,7 @@
           "name": "Word",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -672,8 +635,7 @@
           "name": "BeginOffset",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -683,8 +645,7 @@
           "name": "Length",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -694,8 +655,7 @@
           "name": "Type",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -705,8 +665,7 @@
           "name": "Name",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -718,12 +677,10 @@
           "disabled": false,
           "document": "待分析的句子对数组。句子对应不超过1对，仅支持中文文本，原句子与目标句子均应不超过500字符。",
           "example": "无",
-          "is_base64": false,
           "member": "SentencePair",
           "name": "SentencePairList",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -739,8 +696,7 @@
           "name": "ScoreList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -761,8 +717,7 @@
           "member": "string",
           "name": "SourceWord",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -771,8 +726,7 @@
           "member": "string",
           "name": "TargetWord",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -787,8 +741,7 @@
           "member": "float",
           "name": "Similarity",
           "type": "float",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -809,8 +762,7 @@
           "member": "string",
           "name": "WordList",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -819,8 +771,7 @@
           "member": "int64",
           "name": "Number",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -829,8 +780,7 @@
           "member": "string",
           "name": "Domain",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -845,8 +795,7 @@
           "member": "KeywordSentence",
           "name": "KeywordSentenceList",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -868,8 +817,7 @@
           "name": "TargetText",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -884,8 +832,7 @@
           "member": "string",
           "name": "Text",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -901,8 +848,7 @@
           "name": "NormalText",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -912,8 +858,7 @@
           "name": "BasicParticiples",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -923,8 +868,7 @@
           "name": "CompoundParticiples",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -934,8 +878,7 @@
           "name": "Entities",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -956,8 +899,7 @@
           "member": "string",
           "name": "Text",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -966,8 +908,7 @@
           "member": "int64",
           "name": "Number",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -982,8 +923,7 @@
           "member": "string",
           "name": "WordList",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1004,8 +944,7 @@
           "member": "string",
           "name": "TextList",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1021,8 +960,7 @@
           "name": "CorrectionList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1044,8 +982,7 @@
           "name": "SourceText",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1055,11 +992,159 @@
           "name": "TargetText",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
+    },
+    "TestingTextGenerationRequest": {
+      "document": "TestingTextGeneration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话内容,按对话时间从旧到新在数组中排列。",
+          "example": "无",
+          "member": "TextGenerationMessage",
+          "name": "Messages",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模型名称，当前固定为TestingModel",
+          "example": "无",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "会话id。",
+          "example": "无",
+          "member": "string",
+          "name": "QueryId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "超参数temperature, 该参数用于控制生成文本中重复内容。取值区间为[0.0, 2.0], 非必要不建议使用, 不合理的取值会影响效果。默认为1.0。",
+          "example": "无",
+          "member": "float",
+          "name": "Temperature",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "超参数top_p, 该参数用于控制生成文本的多样性。较小的\"top_p\"值会限制模型的选择范围，使生成的文本更加一致和确定性。较大的\"top_p\"值会扩大选择范围，使生成的文本更加多样化和随机。取值区间为[0.0, 1.0], 非必要不建议使用, 不合理的取值会影响效果。默认值为1.0。",
+          "example": "无",
+          "member": "float",
+          "name": "TopP",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "超参数top_k,该参数用于控制生成文本的多样性和可控性，较小的\"top_k\"值会限制模型的选择范围，使生成的文本更加一致和确定性。较大的\"top_k\"值会扩大选择范围，使生成的文本更加多样化和随机。取值区间为[1, 100]，默认值 40。",
+          "example": "无",
+          "member": "float",
+          "name": "TopK",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "重复惩罚项,该参数用于用于控制生成文本中重复内容。建议范围[1.0, 1.05]非必要不建议使用, 不合理的取值会影响效果。默认为1。",
+          "example": "无",
+          "member": "float",
+          "name": "RepetitionPenalty",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "输出结果最大tokens数量。取值区间为(0, 1024]。默认值为768。",
+          "example": "无",
+          "member": "int64",
+          "name": "OutputSeqLen",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "输入文本的最大 tokens 数量。取值区间为(0, 1024]。默认值为256。",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxInputSeqLen",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "TestingTextGenerationResponse": {
+      "document": "TestingTextGeneration返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结果",
+          "example": "无",
+          "member": "TextGenerationChoices",
+          "name": "Choices",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "unix时间戳的字符串",
+          "example": "无",
+          "member": "int64",
+          "name": "Created",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话id",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型名",
+          "example": "无",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "token数量",
+          "example": "无",
+          "member": "TextGenerationUsage",
+          "name": "Usage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "TextEmbellishRequest": {
       "document": "TextEmbellish请求参数结构体",
@@ -1071,8 +1156,7 @@
           "member": "string",
           "name": "Text",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1081,8 +1165,7 @@
           "member": "string",
           "name": "SourceLang",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1091,8 +1174,7 @@
           "member": "int64",
           "name": "Number",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1101,8 +1183,7 @@
           "member": "string",
           "name": "Style",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1117,8 +1198,7 @@
           "member": "Embellish",
           "name": "EmbellishList",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1128,6 +1208,86 @@
         }
       ],
       "type": "object"
+    },
+    "TextGenerationChoices": {
+      "document": "TextGenerationChoices",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TextGenerationMessage",
+          "name": "Message",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TextGenerationMessage": {
+      "document": "TextGenerationMessage",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色支持 system, user, assistant。默认为user。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息的内容。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TextGenerationUsage": {
+      "document": "TextGenerationUsage",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入tokens数量",
+          "example": "无",
+          "member": "int64",
+          "name": "PromptTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出tokens数量",
+          "example": "无",
+          "member": "int64",
+          "name": "CompletionTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总token数量",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TextWritingRequest": {
       "document": "TextWriting请求参数结构体",
@@ -1139,8 +1299,7 @@
           "member": "string",
           "name": "Text",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1149,8 +1308,7 @@
           "member": "string",
           "name": "SourceLang",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1159,8 +1317,7 @@
           "member": "int64",
           "name": "Number",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1169,8 +1326,7 @@
           "member": "string",
           "name": "Domain",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1179,8 +1335,7 @@
           "member": "string",
           "name": "Style",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1195,8 +1350,7 @@
           "member": "Writing",
           "name": "WritingList",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1218,8 +1372,7 @@
           "name": "TargetText",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1229,8 +1382,7 @@
           "name": "PrefixText",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

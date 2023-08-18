@@ -19,7 +19,6 @@
       "document": "BatchPubMessage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据源Id",
           "example": "fc565e33-e9a4-4380-a32d-4a93ea1de07b",
@@ -29,7 +28,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息",
           "example": "无",
@@ -57,7 +55,6 @@
       "document": "消息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "消息Id",
           "example": "fc565e33-e9a4-4380-a32d-4a93ea1de07b",
@@ -68,7 +65,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息内容，json字符串",
           "example": " \"{\\\"test\\\":\\\"1111\\\"}\"",

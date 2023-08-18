@@ -82,7 +82,6 @@
       "document": "API密钥数据列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "密钥ID",
           "example": "",
@@ -93,7 +92,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间(时间戳)",
           "example": "",
@@ -104,7 +102,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态(2:有效, 3:禁用, 4:已删除)",
           "example": "",
@@ -127,8 +124,7 @@
           "member": "string",
           "name": "RoleArn",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -137,8 +133,7 @@
           "member": "string",
           "name": "RoleSessionName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -147,8 +142,7 @@
           "member": "uint64",
           "name": "DurationSeconds",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -157,8 +151,7 @@
           "member": "string",
           "name": "Policy",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -167,8 +160,7 @@
           "member": "string",
           "name": "ExternalId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -177,8 +169,7 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -187,8 +178,7 @@
           "member": "string",
           "name": "SourceIdentity",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -203,8 +193,7 @@
           "member": "Credentials",
           "name": "Credentials",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -213,8 +202,7 @@
           "member": "int64",
           "name": "ExpiredTime",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -223,8 +211,7 @@
           "member": "string",
           "name": "Expiration",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -245,8 +232,7 @@
           "member": "string",
           "name": "SAMLAssertion",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -255,8 +241,7 @@
           "member": "string",
           "name": "PrincipalArn",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -265,8 +250,7 @@
           "member": "string",
           "name": "RoleArn",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -275,8 +259,7 @@
           "member": "string",
           "name": "RoleSessionName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -285,8 +268,7 @@
           "member": "uint64",
           "name": "DurationSeconds",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -301,8 +283,7 @@
           "member": "Credentials",
           "name": "Credentials",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -311,8 +292,7 @@
           "member": "uint64",
           "name": "ExpiredTime",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -321,8 +301,7 @@
           "member": "string",
           "name": "Expiration",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -343,8 +322,7 @@
           "member": "string",
           "name": "ProviderId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -353,8 +331,7 @@
           "member": "string",
           "name": "WebIdentityToken",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -363,8 +340,7 @@
           "member": "string",
           "name": "RoleArn",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -373,8 +349,7 @@
           "member": "string",
           "name": "RoleSessionName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -383,8 +358,7 @@
           "member": "int64",
           "name": "DurationSeconds",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -399,8 +373,7 @@
           "member": "uint64",
           "name": "ExpiredTime",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -409,8 +382,7 @@
           "member": "string",
           "name": "Expiration",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -419,8 +391,7 @@
           "member": "Credentials",
           "name": "Credentials",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -435,7 +406,6 @@
       "document": "临时证书",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "token。token长度和绑定的策略有关，最长不超过4096字节。",
           "example": "",
@@ -446,7 +416,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "临时证书密钥ID。最长不超过1024字节。",
           "example": "",
@@ -457,7 +426,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "临时证书密钥Key。最长不超过1024字节。",
           "example": "",
@@ -485,8 +453,7 @@
           "member": "string",
           "name": "Arn",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -495,8 +462,7 @@
           "member": "string",
           "name": "AccountId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -505,8 +471,7 @@
           "member": "string",
           "name": "UserId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -515,8 +480,7 @@
           "member": "string",
           "name": "PrincipalId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -525,8 +489,7 @@
           "member": "string",
           "name": "Type",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -547,8 +510,7 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -557,8 +519,7 @@
           "member": "string",
           "name": "Policy",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -567,8 +528,7 @@
           "member": "uint64",
           "name": "DurationSeconds",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -583,8 +543,7 @@
           "member": "Credentials",
           "name": "Credentials",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -593,8 +552,7 @@
           "member": "uint64",
           "name": "ExpiredTime",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -603,8 +561,7 @@
           "member": "string",
           "name": "Expiration",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -625,8 +582,7 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -635,8 +591,7 @@
           "member": "string",
           "name": "Policy",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -645,8 +600,7 @@
           "member": "uint64",
           "name": "DurationSeconds",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -661,8 +615,7 @@
           "member": "Credentials",
           "name": "Credentials",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -671,8 +624,7 @@
           "member": "uint64",
           "name": "ExpiredTime",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -681,8 +633,7 @@
           "member": "string",
           "name": "Expiration",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -697,7 +648,6 @@
       "document": "GetSaaSAccessToken请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "SaaS登录Token",
           "example": "Didfer***",
@@ -707,7 +657,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "平台",
           "example": "coding",
@@ -717,7 +666,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Token关联的Uin",
           "example": "30000***129",
@@ -727,7 +675,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Token关联的OwnerUin",
           "example": "30000***123",
@@ -737,7 +684,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端IP",
           "example": "1.1.1.1",
@@ -747,7 +693,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端UA",
           "example": "chrome",
@@ -757,7 +702,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定临时证书的有效期，单位：秒，默认 7200 秒，最长可设定有效期为 43200 秒",
           "example": "7200",
@@ -767,7 +711,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要申请权限的产品名。",
           "example": "cam",
@@ -777,7 +720,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要申请权限的接口名列表。",
           "example": "无",
@@ -835,70 +777,58 @@
       "document": "GetServiceTokenForInternal请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要操作的用户ownerUin。",
           "example": "10000000001",
           "member": "uint64",
           "name": "TargetOwnerUin",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要操作的用户的Uin。",
           "example": "100000000001",
           "member": "uint64",
           "name": "TargetUin",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "申请的接口权限，单次最多10个。\n接口需要属于TargetProduct。",
           "example": "无",
           "member": "string",
           "name": "TargetAction",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要申请的接口所属产品。\n未传此参数，默认取接入时的产品名。",
           "example": "cam",
           "member": "string",
           "name": "TargetProduct",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "临时密钥有效期，单位秒。默认1800秒，最长7200秒。",
           "example": "1800",
           "member": "uint64",
           "name": "DurationSeconds",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "临时密钥Token或CamContext中q-token。",
           "example": "aabc",
           "member": "string",
           "name": "CamContextToken",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -914,8 +844,7 @@
           "name": "Credentials",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -925,8 +854,7 @@
           "name": "ExpiredTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -936,8 +864,7 @@
           "name": "Expiration",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -952,7 +879,6 @@
       "document": "GetThirdPartyFederationToken请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "访问Token",
           "example": "",
@@ -962,7 +888,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "有效期",
           "example": "",
@@ -972,7 +897,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该参数已废除(传0即可)",
           "example": "",
@@ -1018,7 +942,6 @@
       "document": "QueryApiKey请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待查询的账号(不填默认查当前账号)",
           "example": "",
@@ -1055,7 +978,6 @@
       "document": "标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键，最长128个字符，区分大小写。",
           "example": "department",
@@ -1063,11 +985,9 @@
           "name": "Key",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值，最长256个字符，区分大小写。",
           "example": "engineering",
@@ -1075,8 +995,7 @@
           "name": "Value",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"

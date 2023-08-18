@@ -278,37 +278,31 @@
       "document": "AssociateSecurityGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库引擎名称：keewidb。",
           "example": "keewidb",
           "member": "string",
           "name": "Product",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要绑定的安全组 ID，类似sg-efil7***。",
           "example": "sg-ajr1jzgj",
           "member": "string",
           "name": "SecurityGroupId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，格式如：kee-c1nl9***，支持指定多个实例。",
           "example": "[\"kee-eb2w7dto\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -329,7 +323,6 @@
       "document": "实例的备份信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "备份开始时间。",
           "example": "\"2022-03-24 11:52:20\"",
@@ -337,11 +330,9 @@
           "name": "StartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份 ID。",
           "example": "\"999b6b89c60-f01a-11eb-9d37-7d65897b5c22\"",
@@ -349,11 +340,9 @@
           "name": "BackupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份类型。<ul><li>1：手动备份，指根据业务运维排障需求，立即执行备份任务的操作。</li> <li>0：自动备份，指根据自动备份策略定时自动发起的备份任务。</li></ul>",
           "example": "\"1\"",
@@ -361,11 +350,9 @@
           "name": "BackupType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份的备注信息.",
           "example": "\"\"",
@@ -373,11 +360,9 @@
           "name": "Remark",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份状态。  <ul><li>1：备份任务被其它流程锁定。</li><li>2：备份正常，没有被任何流程锁定。</li> <li>-1：备份已过期。</li><li>3：备份正在被导出。</li> <li>4：备份导出成功。</li></ul>",
           "example": "2",
@@ -385,11 +370,9 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份是否被锁定。<ul><li>0：未被锁定。</li><li>1：已被锁定。</li></ul>",
           "example": "0",
@@ -397,8 +380,7 @@
           "name": "Locked",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -407,7 +389,6 @@
       "document": "实例增量备份信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "备份开始时间。",
           "example": "\"2022-03-24 11:52:20\"",
@@ -415,11 +396,9 @@
           "name": "StartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份结束时间。",
           "example": "\"2022-03-24 12:52:20\"",
@@ -427,11 +406,9 @@
           "name": "EndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份 ID。",
           "example": "\"999b6b89c60\"",
@@ -439,11 +416,9 @@
           "name": "BackupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件名。",
           "example": "\"test\"",
@@ -451,11 +426,9 @@
           "name": "Filename",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件大小，单位：Byte。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "106924",
@@ -463,8 +436,7 @@
           "name": "FileSize",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -473,26 +445,22 @@
       "document": "ChangeInstanceMaster请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "副本节点 ID。",
           "example": "edcfcc21cef97eabbbeeb52067de8eddffc85772",
           "member": "string",
           "name": "NodeId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -508,8 +476,7 @@
           "name": "TaskId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -524,15 +491,13 @@
       "document": "CleanUpInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -548,8 +513,7 @@
           "name": "TaskId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -564,26 +528,22 @@
       "document": "ClearInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，如：kee-6ubhg****。",
           "example": "kee-6ubhgouj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例访问密码。\n实例为免密访问，则无需设置该参数。",
           "example": "zy456987",
           "member": "string",
           "name": "Password",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -599,8 +559,7 @@
           "name": "TaskId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -615,37 +574,31 @@
       "document": "CreateBackupManually请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待操作的实例 ID，可通过 DescribeInstance接口返回值中的 InstanceId 获取。",
           "example": "kee-7iw94215",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本次备份的备注信息。",
           "example": "xxx",
           "member": "string",
           "name": "Remark",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件保存天数。0代表指定默认保留时间",
           "example": "7",
           "member": "int64",
           "name": "StorageDays",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -661,8 +614,7 @@
           "name": "TaskId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -683,8 +635,7 @@
           "member": "uint64",
           "name": "TypeId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -693,8 +644,7 @@
           "member": "string",
           "name": "UniqVpcId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -703,8 +653,7 @@
           "member": "string",
           "name": "UniqSubnetId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -713,8 +662,7 @@
           "member": "int64",
           "name": "BillingMode",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -723,8 +671,7 @@
           "member": "uint64",
           "name": "GoodsNum",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -733,8 +680,7 @@
           "member": "uint64",
           "name": "Period",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -743,8 +689,7 @@
           "member": "int64",
           "name": "ShardNum",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -753,8 +698,7 @@
           "member": "int64",
           "name": "ReplicasNum",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -763,8 +707,7 @@
           "member": "int64",
           "name": "MachineMemory",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -773,8 +716,7 @@
           "member": "uint64",
           "name": "ZoneId",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -783,8 +725,7 @@
           "member": "string",
           "name": "ZoneName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -793,8 +734,7 @@
           "member": "string",
           "name": "InstanceName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -803,8 +743,7 @@
           "member": "bool",
           "name": "NoAuth",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -813,8 +752,7 @@
           "member": "string",
           "name": "Password",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -823,8 +761,7 @@
           "member": "uint64",
           "name": "VPort",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -833,8 +770,7 @@
           "member": "uint64",
           "name": "AutoRenew",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -843,8 +779,7 @@
           "member": "string",
           "name": "SecurityGroupIdList",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -853,8 +788,7 @@
           "member": "ResourceTag",
           "name": "ResourceTags",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -863,8 +797,7 @@
           "member": "int64",
           "name": "MemSize",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -873,8 +806,7 @@
           "member": "int64",
           "name": "DiskSize",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -883,8 +815,7 @@
           "member": "int64",
           "name": "MachineCpu",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -893,8 +824,7 @@
           "member": "int64",
           "name": "ProjectId",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -903,8 +833,7 @@
           "member": "string",
           "name": "Compression",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -919,8 +848,7 @@
           "member": "string",
           "name": "DealId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -929,8 +857,7 @@
           "member": "string",
           "name": "InstanceIds",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -945,15 +872,13 @@
       "document": "DescribeAutoBackupConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID。",
           "example": "kee-rzx9zsz1",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -969,8 +894,7 @@
           "name": "WeekDays",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -980,8 +904,7 @@
           "name": "TimePeriod",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -991,8 +914,7 @@
           "name": "BackupStorageDays",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1002,8 +924,7 @@
           "name": "BinlogStorageDays",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1024,8 +945,7 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1040,8 +960,7 @@
           "member": "int64",
           "name": "InNetLimit",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1050,8 +969,7 @@
           "member": "int64",
           "name": "OutNetLimit",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1060,8 +978,7 @@
           "member": "int64",
           "name": "ClientLimit",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1076,26 +993,22 @@
       "document": "DescribeDBSecurityGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库引擎名称：keewidb。",
           "example": "keewidb",
           "member": "string",
           "name": "Product",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，格式如：kee-c1nl9***。",
           "example": "kee-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1111,8 +1024,7 @@
           "name": "Groups",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1122,8 +1034,7 @@
           "name": "VIP",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1133,8 +1044,7 @@
           "name": "VPort",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1149,70 +1059,58 @@
       "document": "DescribeInstanceBackups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待操作的实例ID，可通过 DescribeInstance 接口返回值中的 InstanceId 获取。",
           "example": "kee-7iw94215",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页输出的备份列表大小，即每页输出的备份文件的数量，默认值20，取值范围为[1,100]。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份列表分页偏移量，取Limit整数倍。\n计算公式为offset=limit*(页码-1)。例如 limit=10，第1页offset就为0，第2页offset就为10，依次类推。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询备份文件的开始时间，格式如：2017-02-08 16:46:34。查询实例在 [BeginTime, EndTime] 时间段内的备份列表。",
           "example": "2022-02-08 16:46:34",
           "member": "string",
           "name": "BeginTime",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询备份文件的结束时间，格式如：2017-02-08 19:09:26。查询实例在 [beginTime, endTime] 时间段内的备份列表。",
           "example": "2022-02-08 20:46:34",
           "member": "string",
           "name": "EndTime",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份任务状态。<ul><li>1：备份在流程中。</li><li>2：备份正常。</li><li>3：备份转RDB文件处理中。</li><li>4：已完成RDB转换。</li><li>-1：备份已过期。</li><li>-2：备份已删除。</li></ul>",
           "example": "2",
           "member": "int64",
           "name": "Status",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1228,8 +1126,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1239,8 +1136,7 @@
           "name": "BackupSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1250,8 +1146,7 @@
           "name": "BackupRecord",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1266,59 +1161,49 @@
       "document": "DescribeInstanceBinlogs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID。",
           "example": "kee-1jg409h5",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页输出备份列表大小，默认大小20。",
           "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，取Limit整数倍。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间，格式如：2017-02-08 16:46:34。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表。",
           "example": "2022-02-08 16:46:34",
           "member": "string",
           "name": "BeginTime",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间，格式如：2017-02-08 19:09:26。查询实例在 [beginTime, endTime] 时间段内开始备份的备份列表。",
           "example": "2022-02-08 20:46:34",
           "member": "string",
           "name": "EndTime",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1334,8 +1219,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1345,8 +1229,7 @@
           "name": "BackupSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1367,8 +1250,7 @@
           "member": "string",
           "name": "DealIds",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1383,8 +1265,7 @@
           "member": "TradeDealDetail",
           "name": "DealDetails",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1399,37 +1280,31 @@
       "document": "DescribeInstanceNodeInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页输出的节点信息大小。默认为 20。",
           "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1445,8 +1320,7 @@
           "name": "ProxyCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1456,8 +1330,7 @@
           "name": "Proxy",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1467,8 +1340,7 @@
           "name": "RedisCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1478,8 +1350,7 @@
           "name": "Redis",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1489,8 +1360,7 @@
           "name": "TendisCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1500,8 +1370,7 @@
           "name": "Tendis",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1511,8 +1380,7 @@
           "name": "KeeWiDBCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1522,8 +1390,7 @@
           "name": "KeeWiDB",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1538,37 +1405,31 @@
       "document": "DescribeInstanceParamRecords请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页输出的参数列表大小。默认为 20，最多输出100条。",
           "example": "100",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1584,8 +1445,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1595,8 +1455,7 @@
           "name": "InstanceParamHistory",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1611,15 +1470,13 @@
       "document": "DescribeInstanceParams请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1635,8 +1492,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1646,8 +1502,7 @@
           "name": "InstanceEnumParam",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1657,8 +1512,7 @@
           "name": "InstanceIntegerParam",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1668,8 +1522,7 @@
           "name": "InstanceTextParam",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1679,8 +1532,7 @@
           "name": "InstanceMultiParam",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1695,15 +1547,13 @@
       "document": "DescribeInstanceReplicas请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1719,8 +1569,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1730,8 +1579,7 @@
           "name": "ReplicaGroups",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1746,235 +1594,193 @@
       "document": "DescribeInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "每页输出的实例列表的大小，即每页输出的实例数量，默认值20，取值范围为[1,1000]。",
           "example": "100",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，取Limit整数倍。\n计算公式为offset=limit*(页码-1)。例如 limit=10，第1页offset就为0，第2页offset就为10，依次类推。",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
           "name": "InstanceId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序依据。枚举范围如下所示。 <ul><li>projectId：实例按照项目ID排序。</li><li>createtime：实例按照创建时间排序。</li><li>instancename：实例按照实例名称排序。</li><li>type：实例按照类型排序。</li><li>curDeadline：实例按照到期时间排序。</li></ul>",
           "example": "createtime",
           "member": "string",
           "name": "OrderBy",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式。<ul><li>1：倒序。默认为倒序。</li><li>0：顺序。</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "OrderType",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID数组。数组下标从0开始，如果不传则默认选择基础网络，如：47525",
           "example": "无",
           "member": "string",
           "name": "VpcIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID数组，数组下标从0开始，如：56854",
           "example": "无",
           "member": "string",
           "name": "SubnetIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID 组成的数组，数组下标从0开始",
           "example": "无",
           "member": "int64",
           "name": "ProjectIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查找关键字，可输入实例的ID或者实例名称。",
           "example": "无",
           "member": "string",
           "name": "SearchKey",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称。",
           "example": "无",
           "member": "string",
           "name": "InstanceName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：vpc-sad23jfdfk",
           "example": "无",
           "member": "string",
           "name": "UniqVpcIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID数组，数组下标从0开始，如：subnet-fdj24n34j2",
           "example": "无",
           "member": "string",
           "name": "UniqSubnetIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul>",
           "example": "无",
           "member": "int64",
           "name": "Status",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</ul>",
           "example": "无",
           "member": "int64",
           "name": "AutoRenew",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计费模式。<ul><li>postpaid：按量计费。</li><li>prepaid：包年包月。</li></ul>",
           "example": "无",
           "member": "string",
           "name": "BillingMode",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例类型。<ul><li>13：标准版。</li><li>14：集群版。</li></ul>",
           "example": "无",
           "member": "int64",
           "name": "Type",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索关键词：支持实例 ID、实例名称、私有网络IP地址。",
           "example": "无",
           "member": "string",
           "name": "SearchKeys",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内部参数，用户可忽略。",
           "example": "无",
           "member": "int64",
           "name": "TypeList",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内部参数，用户可忽略。",
           "example": "无",
           "member": "string",
           "name": "MonitorVersion",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。",
           "example": "无",
           "member": "InstanceTagInfo",
           "name": "InstanceTags",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据标签的 Key 筛选资源，该参数不配置或者数组设置为空值，则不根据标签Key进行过滤。",
           "example": "无",
           "member": "string",
           "name": "TagKeys",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1990,8 +1796,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2001,8 +1806,7 @@
           "name": "InstanceSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2017,15 +1821,13 @@
       "document": "DescribeMaintenanceWindow请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，如：kee-6ubhg***。",
           "example": "kee-6ubhgouj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2041,8 +1843,7 @@
           "name": "StartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2052,8 +1853,7 @@
           "name": "EndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2095,59 +1895,49 @@
       "document": "DescribeProjectSecurityGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库引擎名称。该产品固定为 keewidb。",
           "example": "keewidb",
           "member": "string",
           "name": "Product",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目 ID。\n登录 [账号中心](https://console.cloud.tencent.com/developer)，在<b>项目管理</b>中可获取项目 ID。",
           "example": "11954",
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页安全组的数量限制。默认为 20，最多输出100条。",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索关键词，支持根据安全组 ID 或者安全组名称搜索。",
           "example": "无",
           "member": "string",
           "name": "SearchKey",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2163,8 +1953,7 @@
           "name": "Groups",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2174,8 +1963,7 @@
           "name": "Total",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2190,70 +1978,58 @@
       "document": "DescribeProxySlowLog请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，如：kee-6ubhgouj",
           "example": "kee-6ubhgouj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间。",
           "example": "2022-02-23 11:06:01",
           "member": "string",
           "name": "BeginTime",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间。",
           "example": "2022-02-23 11:06:01",
           "member": "string",
           "name": "EndTime",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "慢查询平均执行时间阈值。<ul><li>单位：毫秒。</li><li>取值范围：10、20、30、40、50。</li></ul>",
           "example": "100",
           "member": "int64",
           "name": "MinQueryTime",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每个页面大小，即每个页面输出慢日志的数量。取值范围为：10、20、30、40、50，默认为 20。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页面偏移量，取Limit整数倍，计算公式：offset=limit*(页码-1)。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2269,8 +2045,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2280,8 +2055,7 @@
           "name": "InstanceProxySlowLogDetail",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2296,15 +2070,13 @@
       "document": "DescribeTaskInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务 ID。",
           "example": "155684",
           "member": "uint64",
           "name": "TaskId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2320,8 +2092,7 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2331,8 +2102,7 @@
           "name": "StartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2342,8 +2112,7 @@
           "name": "TaskType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2353,8 +2122,7 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2364,8 +2132,7 @@
           "name": "TaskMessage",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2380,103 +2147,85 @@
       "document": "DescribeTaskList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
           "name": "InstanceId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称。",
           "example": "实例1",
           "member": "string",
           "name": "InstanceName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页输出的任务列表大小。默认为 20，最多输出100条。",
           "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Offset：分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID。",
           "example": "无",
           "member": "int64",
           "name": "ProjectIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务类型。可设置为：FLOW_CREATE、FLOW_SETPWD、FLOW_CLOSE等。",
           "example": "无",
           "member": "string",
           "name": "TaskTypes",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始时间。",
           "example": "2021-12-30 00:00:00",
           "member": "string",
           "name": "BeginTime",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "终止时间。",
           "example": "2021-12-30 00:00:00",
           "member": "string",
           "name": "EndTime",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务状态。",
           "example": "[0.1.2]",
           "member": "int64",
           "name": "TaskStatus",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2492,8 +2241,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2503,8 +2251,7 @@
           "name": "Tasks",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2519,70 +2266,58 @@
       "document": "DescribeTendisSlowLog请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间。",
           "example": "2022-02-23 11:06:01",
           "member": "string",
           "name": "BeginTime",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间。",
           "example": "2022-02-23 11:06:01",
           "member": "string",
           "name": "EndTime",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "慢查询平均执行时间阈值。<ul><li>单位：毫秒。</li><li>取值范围：10、20、30、40、50。</li></ul>",
           "example": "10",
           "member": "int64",
           "name": "MinQueryTime",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每个页面大小，即每个页面输出慢日志的数量。取值范围为：10、20、30、40、50。默认为 20。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页面偏移量，取Limit整数倍，计算公式：offset=limit*(页码-1)。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2598,8 +2333,7 @@
           "name": "TendisSlowLogDetail",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2609,8 +2343,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2625,15 +2358,13 @@
       "document": "DestroyPostpaidInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID。",
           "example": "kee-7djvzcnx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2649,8 +2380,7 @@
           "name": "TaskId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2665,15 +2395,13 @@
       "document": "DestroyPrepaidInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID。",
           "example": "kee-7djvzcnx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2689,8 +2417,7 @@
           "name": "DealId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2705,37 +2432,31 @@
       "document": "DisassociateSecurityGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库引擎名称：keewidb。",
           "example": "keewidb",
           "member": "string",
           "name": "Product",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要绑定的安全组 ID，类似sg-efil****。",
           "example": "sg-ajr1jzgj",
           "member": "string",
           "name": "SecurityGroupId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，格式如：kee-c1nl****，支持指定多个实例。",
           "example": "[\"kee-eb2w7dto\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2756,7 +2477,6 @@
       "document": "安全组入站规则",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "策略，ACCEPT或者DROP。",
           "example": "无",
@@ -2764,11 +2484,9 @@
           "name": "Action",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地址组id代表的地址集合。",
           "example": "无",
@@ -2776,11 +2494,9 @@
           "name": "AddressModule",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "来源Ip或Ip段，例如192.168.0.0/16。",
           "example": "无",
@@ -2788,11 +2504,9 @@
           "name": "CidrIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述。",
           "example": "无",
@@ -2800,11 +2514,9 @@
           "name": "Desc",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络协议，支持udp、tcp等。",
           "example": "无",
@@ -2812,11 +2524,9 @@
           "name": "IpProtocol",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "端口。",
           "example": "无",
@@ -2824,11 +2534,9 @@
           "name": "PortRange",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务组id代表的协议和端口集合。",
           "example": "无",
@@ -2836,11 +2544,9 @@
           "name": "ServiceModule",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组id代表的地址集合。",
           "example": "无",
@@ -2848,8 +2554,7 @@
           "name": "Id",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2858,7 +2563,6 @@
       "document": "实例枚举类型参数描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数名",
           "example": "无",
@@ -2869,7 +2573,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数类型：enum",
           "example": "无",
@@ -2880,7 +2583,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后是否需要重启：true，false",
           "example": "无",
@@ -2891,7 +2593,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数默认值",
           "example": "无",
@@ -2902,7 +2603,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前运行参数值",
           "example": "无",
@@ -2913,7 +2613,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数说明",
           "example": "无",
@@ -2924,7 +2623,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数可取值",
           "example": "无",
@@ -2935,7 +2633,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数状态, 1: 修改中， 2：修改完成",
           "example": "无",
@@ -2959,8 +2656,7 @@
           "name": "InstanceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2970,8 +2666,7 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2981,8 +2676,7 @@
           "name": "Appid",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2992,8 +2686,7 @@
           "name": "ProjectId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3003,8 +2696,7 @@
           "name": "RegionId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3014,8 +2706,7 @@
           "name": "ZoneId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3025,8 +2716,7 @@
           "name": "VpcId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3036,8 +2726,7 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3047,8 +2736,7 @@
           "name": "SubnetId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3058,8 +2746,7 @@
           "name": "WanIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3069,8 +2756,7 @@
           "name": "Port",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3080,8 +2766,7 @@
           "name": "Createtime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3091,8 +2776,7 @@
           "name": "Size",
           "required": true,
           "type": "float",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3102,8 +2786,7 @@
           "name": "Type",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3113,8 +2796,7 @@
           "name": "AutoRenewFlag",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3124,8 +2806,7 @@
           "name": "DeadlineTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3135,8 +2816,7 @@
           "name": "Engine",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3146,8 +2826,7 @@
           "name": "ProductType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3157,8 +2836,7 @@
           "name": "UniqVpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3168,8 +2846,7 @@
           "name": "UniqSubnetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3179,8 +2856,7 @@
           "name": "BillingMode",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3190,8 +2866,7 @@
           "name": "InstanceTitle",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3201,8 +2876,7 @@
           "name": "OfflineTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3212,8 +2886,7 @@
           "name": "SubStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3223,8 +2896,7 @@
           "name": "Tags",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3234,8 +2906,7 @@
           "name": "RedisShardSize",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3245,8 +2916,7 @@
           "name": "RedisShardNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3256,8 +2926,7 @@
           "name": "RedisReplicasNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3267,8 +2936,7 @@
           "name": "PriceId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3278,8 +2946,7 @@
           "name": "CloseTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3289,8 +2956,7 @@
           "name": "SlaveReadWeight",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3300,8 +2966,7 @@
           "name": "InstanceTags",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3311,8 +2976,7 @@
           "name": "ProjectName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3322,8 +2986,7 @@
           "name": "NoAuth",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3333,8 +2996,7 @@
           "name": "ClientLimit",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3344,8 +3006,7 @@
           "name": "DtsStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3355,8 +3016,7 @@
           "name": "NetLimit",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3366,8 +3026,7 @@
           "name": "PasswordFree",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3377,8 +3036,7 @@
           "name": "ReadOnly",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3388,8 +3046,7 @@
           "name": "Vip6",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3399,8 +3056,7 @@
           "name": "RemainBandwidthDuration",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3410,8 +3066,7 @@
           "name": "DiskSize",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3421,8 +3076,7 @@
           "name": "MonitorVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3432,8 +3086,7 @@
           "name": "ClientLimitMin",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3443,8 +3096,7 @@
           "name": "ClientLimitMax",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3454,8 +3106,7 @@
           "name": "NodeSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3465,8 +3116,7 @@
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3476,8 +3126,7 @@
           "name": "MachineMemory",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3487,8 +3136,7 @@
           "name": "DiskShardSize",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3498,8 +3146,7 @@
           "name": "DiskShardNum",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3509,8 +3156,7 @@
           "name": "DiskReplicasNum",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3519,7 +3165,6 @@
       "document": "实例整型参数描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数名",
           "example": "无",
@@ -3530,7 +3175,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数类型：integer",
           "example": "无",
@@ -3541,7 +3185,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后是否需要重启：true，false",
           "example": "无",
@@ -3552,7 +3195,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数默认值",
           "example": "无",
@@ -3563,7 +3205,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前运行参数值",
           "example": "无",
@@ -3574,7 +3215,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数说明",
           "example": "无",
@@ -3585,7 +3225,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数最小值",
           "example": "无",
@@ -3596,7 +3235,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数最大值",
           "example": "无",
@@ -3607,7 +3245,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数状态, 1: 修改中， 2：修改完成",
           "example": "无",
@@ -3618,7 +3255,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3635,7 +3271,6 @@
       "document": "实例多选项类型参数描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数名",
           "example": "无",
@@ -3646,7 +3281,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数类型：multi",
           "example": "无",
@@ -3657,7 +3291,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后是否需要重启：true，false",
           "example": "无",
@@ -3668,7 +3301,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数默认值",
           "example": "无",
@@ -3679,7 +3311,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前运行参数值",
           "example": "无",
@@ -3690,7 +3321,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数说明",
           "example": "无",
@@ -3701,7 +3331,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数说明",
           "example": "无",
@@ -3712,7 +3341,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数状态, 1: 修改中， 2：修改完成",
           "example": "无",
@@ -3729,7 +3357,6 @@
       "document": "实例节点信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "节点ID",
           "example": "edcfcc21cef97eabbbeeb52067de8eddffc85772",
@@ -3740,7 +3367,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点角色",
           "example": "master",
@@ -3757,7 +3383,6 @@
       "document": "实例参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设置参数的名字",
           "example": "无",
@@ -3768,7 +3393,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设置参数的值",
           "example": "无",
@@ -3785,7 +3409,6 @@
       "document": "实例参数修改历史",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数名称",
           "example": "无",
@@ -3796,7 +3419,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改前值",
           "example": "无",
@@ -3807,7 +3429,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后值",
           "example": "无",
@@ -3818,7 +3439,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态：1-参数配置修改中；2-参数配置修改成功；3-参数配置修改失败",
           "example": "无",
@@ -3829,7 +3449,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间",
           "example": "无",
@@ -3846,7 +3465,6 @@
       "document": "代理慢查询详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "慢查询耗时",
           "example": "无",
@@ -3857,7 +3475,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端地址",
           "example": "无",
@@ -3868,7 +3485,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命令",
           "example": "无",
@@ -3879,7 +3495,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "详细命令行信息",
           "example": "无",
@@ -3890,7 +3505,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行时间",
           "example": "无",
@@ -3907,7 +3521,6 @@
       "document": "实例标签信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键",
           "example": "key1",
@@ -3918,7 +3531,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "value1",
@@ -3935,7 +3547,6 @@
       "document": "实例字符型参数描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数名",
           "example": "无",
@@ -3946,7 +3557,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数类型：text",
           "example": "无",
@@ -3957,7 +3567,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后是否需要重启：true，false",
           "example": "无",
@@ -3968,7 +3577,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数默认值",
           "example": "无",
@@ -3979,7 +3587,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前运行参数值",
           "example": "无",
@@ -3990,7 +3597,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数说明",
           "example": "无",
@@ -4001,7 +3607,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数可取值",
           "example": "无",
@@ -4012,7 +3617,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数状态, 1: 修改中， 2：修改完成",
           "example": "无",
@@ -4029,7 +3633,6 @@
       "document": "KeeWiDB节点的运行信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "节点的序列ID。",
           "example": "b69eda124a34c1b713e81f7cb947161b06214328",
@@ -4037,11 +3640,9 @@
           "name": "NodeId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点的状态。",
           "example": "Normal",
@@ -4049,11 +3650,9 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点角色。",
           "example": "master",
@@ -4061,8 +3660,7 @@
           "name": "Role",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4071,37 +3669,31 @@
       "document": "ModifyAutoBackupConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID。",
           "example": "kee-7iw94215",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份周期。可设置为 Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday，该参数暂不支持修改、",
           "example": "[\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\"]",
           "member": "string",
           "name": "WeekDays",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份任务执行时间段。\n可设置的格式为一个整点到下一个整点。例如：00:00-01:00、01:00-02:00、21:00-22:00、23:00-00:00等。",
           "example": "01:00-02:00",
           "member": "string",
           "name": "TimePeriod",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4117,8 +3709,7 @@
           "name": "BackupStorageDays",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4128,8 +3719,7 @@
           "name": "BinlogStorageDays",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4139,8 +3729,7 @@
           "name": "TimePeriod",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4150,8 +3739,7 @@
           "name": "WeekDays",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4166,37 +3754,31 @@
       "document": "ModifyConnectionConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单分片附加带宽，取值范围[0,512]，单位：MB。\n<ul><li>开启副本只读时，实例总带宽  = 单分片附加带宽 * 分片数 + 标准带宽 * 分片数 * Max ([只读副本数量, 1])，标准架构的分片数 = 1。</li><li>没有开启副本只读时，实例总带宽 = 单分片附加带宽 * 分片数 + 标准带宽 * 分片数，标准架构的分片数 = 1。</li></ul>",
           "example": "5",
           "member": "int64",
           "name": "Bandwidth",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单分片的总连接数。\n<ul>默认为10000，整个实例的最大连接数为单个分片的最大连接数 x 分片数量。标准架构分片数量为1。\n<li>关闭副本只读：每个分片的最大连接数的取值范围为[10000,40000]。</li><li>开启副本只读：每个分片的最大连接数的取值范围为 [10000,10000 x (副本数 + 3)]。</li></ul>",
           "example": "20000",
           "member": "int64",
           "name": "ClientLimit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4212,8 +3794,7 @@
           "name": "TaskId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4228,37 +3809,31 @@
       "document": "ModifyDBInstanceSecurityGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库引擎名称：keewidb。",
           "example": "keewidb",
           "member": "string",
           "name": "Product",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要修改的安全组ID列表，一个或者多个安全组 ID 组成的数组。",
           "example": "[\"sg-ajr1jzgj\\n\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，格式如：kee-c1nl****。",
           "example": "kee-eb2w7dto",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4279,26 +3854,22 @@
       "document": "ModifyInstanceParams请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例修改的参数列表。",
           "example": "无",
           "member": "InstanceParam",
           "name": "InstanceParams",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4314,8 +3885,7 @@
           "name": "Changed",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4325,8 +3895,7 @@
           "name": "TaskId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4341,59 +3910,49 @@
       "document": "ModifyInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "修改实例操作。<ul><li>rename：表示实例重命名。</li><li>modifyProject：修改实例所属项目。</li><li>modifyAutoRenew：修改实例续费模式。</li></ul>",
           "example": "rename",
           "member": "string",
           "name": "Operation",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID 数组。",
           "example": "[\"kee-r3nqjq3n\",\"kee-9bvd9b8v\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的新名称。",
           "example": "[\"newname1\",\"newname2\"]",
           "member": "string",
           "name": "InstanceNames",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例新的项目 ID。",
           "example": "10035",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "包年包月计费的续费模式。<b>InstanceIds</b>数组和<b>AutoRenews</b>数组中的修改值对应。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</ul>",
           "example": "[1,0]",
           "member": "int64",
           "name": "AutoRenews",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4414,37 +3973,31 @@
       "document": "ModifyMaintenanceWindow请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "维护时间窗起始时间，如：03:00。",
           "example": "03:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "维护时间窗结束时间，如：06:00。",
           "example": "06:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4460,8 +4013,7 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4476,70 +4028,58 @@
       "document": "ModifyNetworkConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，如：kee-6ubh****。",
           "example": "kee-6ubhgouj",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作类型。<ul><li>changeVip：修改实例私有网络。</li><li>changeVpc：修改实例私有网络所属子网。</li><li>changeBaseToVpc：基础网络转为私有网络。</li></ul>",
           "example": "changeVip",
           "member": "string",
           "name": "Operation",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后的 VIP 地址。\n当参数<b>Operation</b>为<b>changeVip</b>时，需设置实例修改后的 VIP 地址。该参数不配置，则自动分配。",
           "example": "10.1.1.2",
           "member": "string",
           "name": "Vip",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后的私有网络 ID。\n当参数<b>Operation</b>为<b>changeVip</b>或者为<b>changeBaseToVpc</b>时，务必设置实例修改后的私有网络 ID。",
           "example": "vpc-hu6khgap",
           "member": "string",
           "name": "VpcId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后的所属子网 ID。\n当参数<b>Operation</b>为<b>changeVpc</b>或者为<b>changeBaseToVpc</b>时，务必设置实例修改后的子网 ID。",
           "example": "subnet-6mt7lir6",
           "member": "string",
           "name": "SubnetId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原 VIP 保留时长。\n单位：天。取值范围：0、1、2、3、7、15。",
           "example": "7",
           "member": "int64",
           "name": "Recycle",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4555,8 +4095,7 @@
           "name": "Status",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4566,8 +4105,7 @@
           "name": "SubnetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4577,8 +4115,7 @@
           "name": "VpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4588,8 +4125,7 @@
           "name": "Vip",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4604,7 +4140,6 @@
       "document": "描述实例的主节点或者副本节点信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "节点类型，0 为主节点，1 为副本节点",
           "example": "1",
@@ -4615,7 +4150,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主节点或者副本节点的ID，创建时不需要传递此参数。",
           "example": "1",
@@ -4626,7 +4160,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主节点或者副本节点的可用区ID",
           "example": "100001",
@@ -4637,7 +4170,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主节点或者副本节点的可用区名称",
           "example": "ap-guangzhou-1",
@@ -4654,7 +4186,6 @@
       "document": "安全组出站规则",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "策略，ACCEPT或者DROP。",
           "example": "无",
@@ -4665,7 +4196,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地址组id代表的地址集合。",
           "example": "无",
@@ -4676,7 +4206,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "来源Ip或Ip段，例如192.168.0.0/16。",
           "example": "无",
@@ -4687,7 +4216,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述。",
           "example": "无",
@@ -4698,7 +4226,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络协议，支持udp、tcp等。",
           "example": "无",
@@ -4709,7 +4236,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "端口。",
           "example": "无",
@@ -4720,7 +4246,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务组id代表的协议和端口集合。",
           "example": "无",
@@ -4731,7 +4256,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组id代表的地址集合。",
           "example": "无",
@@ -4748,7 +4272,6 @@
       "document": "产品规格信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品类型，13-KeewiDB标准架构，14-KeewiDB集群架构",
           "example": "14",
@@ -4759,7 +4282,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "KeewiDB标准架构，KeewiDB集群架构",
           "example": "KeewiDB集群架构",
@@ -4770,7 +4292,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买时的最小数量",
           "example": "1",
@@ -4781,7 +4302,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买时的最大数量",
           "example": "5",
@@ -4792,7 +4312,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品是否售罄",
           "example": "false",
@@ -4803,7 +4322,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品引擎，keewidb",
           "example": "keewidb",
@@ -4814,7 +4332,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "兼容版本，Redis-2.8，Redis-3.2，Redis-4.0",
           "example": "Redis-4.0",
@@ -4825,7 +4342,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "副本数量",
           "example": "[\"1\"]",
@@ -4836,7 +4352,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支持的计费模式，1-包年包月，0-按量计费",
           "example": "\"1\"",
@@ -4853,7 +4368,6 @@
       "document": "Proxy节点信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4870,7 +4384,6 @@
       "document": "Redis节点信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "节点ID",
           "example": "edcfcc21cef97eabbbeeb52067de8eddffc85772",
@@ -4881,7 +4394,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点角色",
           "example": "master",
@@ -4892,7 +4404,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分片ID",
           "example": "1",
@@ -4903,7 +4414,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区ID",
           "example": "100002",
@@ -4920,7 +4430,6 @@
       "document": "地域售卖信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域ID",
           "example": "ap-guangzhou",
@@ -4931,7 +4440,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域名称",
           "example": "广州",
@@ -4942,7 +4450,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域简称",
           "example": "GZ",
@@ -4953,7 +4460,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域所在大区名称",
           "example": "华南地区",
@@ -4964,7 +4470,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区信息",
           "example": "[]",
@@ -4987,8 +4492,7 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4997,8 +4501,7 @@
           "member": "uint64",
           "name": "Period",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5013,8 +4516,7 @@
           "member": "string",
           "name": "DealId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5029,7 +4531,6 @@
       "document": "实例副本组信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "节点 ID。",
           "example": "无",
@@ -5037,11 +4538,9 @@
           "name": "GroupId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点组的名称，主节点为空。",
           "example": "无",
@@ -5049,11 +4548,9 @@
           "name": "GroupName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点的可用区ID，比如ap-guangzhou-1。",
           "example": "无",
@@ -5061,11 +4558,9 @@
           "name": "ZoneId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点组角色。<ul><li>master：为主节点。</li><li>replica：为副本节点。</li></ul>",
           "example": "无",
@@ -5073,11 +4568,9 @@
           "name": "Role",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点组节点列表。",
           "example": "无",
@@ -5085,8 +4578,7 @@
           "name": "KeeWiDBNodes",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5095,37 +4587,31 @@
       "document": "ResetPassword请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID。",
           "example": "kee-5a4py64p",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设置新密码。<ul><li>当参数<b>NoAuth</b>设置为<b>true</b>，切换为免密实例时，可不设置该参数。</li><li>密码复杂度要求：<ul><li>长度8 - 30位, 推荐使用12位以上的密码。</li><li>不能以\"/\"开头。</li>\n<li>至少包含以下两项：<ul><li>小写字母a - z</li><li>大写字母A - Z</li><li>数字0 - 9</li><li>()~!@#$%^&*-+=_|{}[]:;<>,.?/</li></ul></li></ul></li></ul>",
           "example": "zy456987",
           "member": "string",
           "name": "Password",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标识实例是否切换免密认证。<ul><li>false：由免密码认证方式切换为密码认证实例。默认为false。</li><li>true：由密码认证方式切换为免密码认证的方式。</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "NoAuth",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -5141,8 +4627,7 @@
           "name": "TaskId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5157,7 +4642,6 @@
       "document": "实例绑定标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签 Key。",
           "example": "key1",
@@ -5165,11 +4649,9 @@
           "name": "TagKey",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签 Value。",
           "example": "value1",
@@ -5177,8 +4659,7 @@
           "name": "TagValue",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5187,7 +4668,6 @@
       "document": "安全组规则",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间，时间格式：yyyy-mm-dd hh:mm:ss。",
           "example": "无",
@@ -5195,11 +4675,9 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID。",
           "example": "无",
@@ -5207,11 +4685,9 @@
           "name": "ProjectId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组ID。",
           "example": "无",
@@ -5219,11 +4695,9 @@
           "name": "SecurityGroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组名称。",
           "example": "无",
@@ -5231,11 +4705,9 @@
           "name": "SecurityGroupName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组备注。",
           "example": "无",
@@ -5243,11 +4715,9 @@
           "name": "SecurityGroupRemark",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "出站规则。",
           "example": "无",
@@ -5255,11 +4725,9 @@
           "name": "Outbound",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入站规则。",
           "example": "无",
@@ -5267,8 +4735,7 @@
           "name": "Inbound",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5277,15 +4744,13 @@
       "document": "StartUpInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID。",
           "example": "kee-7djvzcnx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5313,8 +4778,7 @@
           "name": "TaskId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5324,8 +4788,7 @@
           "name": "StartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5335,8 +4798,7 @@
           "name": "TaskType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5346,8 +4808,7 @@
           "name": "InstanceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5357,8 +4818,7 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5368,8 +4828,7 @@
           "name": "ProjectId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5379,8 +4838,7 @@
           "name": "Progress",
           "required": true,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5390,8 +4848,7 @@
           "name": "EndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5401,8 +4858,7 @@
           "name": "Result",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5412,8 +4868,7 @@
           "name": "OperatorUin",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5422,7 +4877,6 @@
       "document": "实例慢查询详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "执行时间",
           "example": "无",
@@ -5433,7 +4887,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "慢查询耗时（毫秒）",
           "example": "无",
@@ -5444,7 +4897,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命令",
           "example": "无",
@@ -5455,7 +4907,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "详细命令行信息",
           "example": "无",
@@ -5466,7 +4917,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点ID",
           "example": "无",
@@ -5490,8 +4940,7 @@
           "name": "DealId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5501,8 +4950,7 @@
           "name": "DealName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5512,8 +4960,7 @@
           "name": "ZoneId",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5523,8 +4970,7 @@
           "name": "GoodsNum",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5534,8 +4980,7 @@
           "name": "Creater",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5545,8 +4990,7 @@
           "name": "CreatTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5556,8 +5000,7 @@
           "name": "OverdueTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5567,8 +5010,7 @@
           "name": "EndTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5578,8 +5020,7 @@
           "name": "Status",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5589,8 +5030,7 @@
           "name": "Description",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5600,8 +5040,7 @@
           "name": "Price",
           "required": false,
           "type": "float",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5611,8 +5050,7 @@
           "name": "InstanceIds",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5627,8 +5065,7 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5637,8 +5074,7 @@
           "member": "int64",
           "name": "MemSize",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5647,8 +5083,7 @@
           "member": "int64",
           "name": "MachineCpu",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5657,8 +5092,7 @@
           "member": "int64",
           "name": "MachineMemory",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5667,8 +5101,7 @@
           "member": "int64",
           "name": "ShardNum",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5677,8 +5110,7 @@
           "member": "int64",
           "name": "DiskSize",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5693,8 +5125,7 @@
           "member": "string",
           "name": "DealId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5709,7 +5140,6 @@
       "document": "可用区内产品售卖信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "可用区ID",
           "example": "ap-guangzhou-3",
@@ -5720,7 +5150,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区名称",
           "example": "广州三区",
@@ -5731,7 +5160,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区是否售罄",
           "example": "false",
@@ -5742,7 +5170,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为默认可用区",
           "example": "false",
@@ -5753,7 +5180,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络类型：basenet -- 基础网络；vpcnet -- VPC网络",
           "example": "[\"vpcnet\"]",
@@ -5764,7 +5190,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品规格等信息",
           "example": "[]",
@@ -5775,7 +5200,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Int类型可用区ID",
           "example": "100003",

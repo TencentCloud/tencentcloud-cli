@@ -187,7 +187,6 @@
       "document": "CreateProductSecret请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "凭据名称，同一region内不可重复，最长128字节，使用字母、数字或者 - _ 的组合，第一个字符必须为字母或者数字。",
           "example": "test_name",
@@ -197,7 +196,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户账号名前缀，由用户自行指定，长度限定在8个字符以内，\n可选字符集包括：\n数字字符：[0, 9]，\n小写字符：[a, z]，\n大写字符：[A, Z]，\n特殊字符(全英文符号)：下划线(_)，\n前缀必须以大写或小写字母开头。",
           "example": "test_prefix",
@@ -207,7 +205,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "凭据所绑定的云产品名称，如Mysql，可以通过DescribeSupportedProducts接口获取所支持的云产品名称。",
           "example": "Mysql",
@@ -217,7 +214,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云产品实例ID。",
           "example": "cdb-xxxxxxxx",
@@ -227,7 +223,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号的域名，IP形式，支持填入%。",
           "example": "[\"%\",\"192.168.0.%\"]",
@@ -237,7 +232,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "将凭据与云产品实例绑定时，需要授予的权限列表。",
           "example": "无",
@@ -247,7 +241,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述信息，用于详细描述用途等，最大支持2048字节。",
           "example": "无",
@@ -257,7 +250,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定对凭据进行加密的KMS CMK。\n如果为空则表示使用Secrets Manager为您默认创建的CMK进行加密。\n您也可以指定在同region 下自行创建的KMS CMK进行加密。",
           "example": "无",
@@ -267,7 +259,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签列表。",
           "example": "无",
@@ -277,7 +268,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户自定义的开始轮转时间，格式：2006-01-02 15:04:05。\n当EnableRotation为True时，此参数必填。",
           "example": "2006-01-02 15:04:05",
@@ -287,7 +277,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启轮转\nTrue -- 开启\nFalse -- 不开启\n如果不指定，默认为False。",
           "example": "True",
@@ -297,7 +286,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "轮转周期，以天为单位，默认为1天。",
           "example": "1",
@@ -365,7 +353,6 @@
       "document": "CreateSSHKeyPairSecret请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "凭据名称，同一region内不可重复，最长128字节，使用字母、数字或者 - _ 的组合，第一个字符必须为字母或者数字。",
           "example": "无",
@@ -375,7 +362,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密钥对创建后所属的项目ID。",
           "example": "无",
@@ -385,7 +371,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述信息，用于详细描述用途等，最大支持2048字节。",
           "example": "无",
@@ -395,7 +380,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定对凭据进行加密的KMS CMK。\n如果为空则表示使用Secrets Manager为您默认创建的CMK进行加密。\n您也可以指定在同region 下自行创建的KMS CMK进行加密。",
           "example": "无",
@@ -405,7 +389,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签列表。",
           "example": "无",
@@ -415,7 +398,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户自定义输入的SSH密钥对的名称，可由数字，字母和下划线组成，只能以数字和字母开头，长度不超过25个字符。",
           "example": "无",
@@ -499,8 +481,7 @@
           "member": "string",
           "name": "SecretName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -509,8 +490,7 @@
           "member": "string",
           "name": "VersionId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -519,8 +499,7 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -529,8 +508,7 @@
           "member": "string",
           "name": "KmsKeyId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -539,8 +517,7 @@
           "member": "uint64",
           "name": "SecretType",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -549,8 +526,7 @@
           "member": "string",
           "name": "SecretBinary",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -559,8 +535,7 @@
           "member": "string",
           "name": "SecretString",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -569,8 +544,7 @@
           "member": "string",
           "name": "AdditionalConfig",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -579,8 +553,7 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -595,8 +568,7 @@
           "member": "string",
           "name": "SecretName",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -605,8 +577,7 @@
           "member": "string",
           "name": "VersionId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -615,8 +586,7 @@
           "member": "uint64",
           "name": "TagCode",
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -625,8 +595,7 @@
           "member": "string",
           "name": "TagMsg",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -641,7 +610,6 @@
       "document": "DeleteSecret请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指定需要删除的凭据名称。",
           "example": "testName",
@@ -651,7 +619,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定计划删除日期，单位（天），0（默认）表示立即删除， 1-30 表示预留的天数，超出该日期之后彻底删除。\n当凭据类型为SSH密钥对凭据时，此字段只能取值只能为0。",
           "example": "1",
@@ -661,7 +628,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当凭据类型为SSH密钥对凭据时，此字段有效，取值：\nTrue -- 表示不仅仅清理此凭据中存储的SSH密钥信息，还会将SSH密钥对从CVM侧进行清理。注意，如果SSH密钥此时绑定了CVM实例，那么会清理失败。\nFalse --  表示仅仅清理此凭据中存储的SSH密钥信息，不在CVM进侧进行清理。",
           "example": "False",
@@ -709,7 +675,6 @@
       "document": "DeleteSecretVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指定凭据名称。",
           "example": "test",
@@ -719,7 +684,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定该名称下需要删除的凭据的版本号。",
           "example": "v1.0",
@@ -767,7 +731,6 @@
       "document": "DescribeAsyncRequestInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "异步任务ID号。",
           "example": "1",
@@ -815,7 +778,6 @@
       "document": "DescribeRotationDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指定需要获取凭据轮转详细信息的凭据名称。",
           "example": "无",
@@ -883,7 +845,6 @@
       "document": "DescribeRotationHistory请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指定需要获取凭据轮转历史的凭据名称。",
           "example": "无",
@@ -937,8 +898,7 @@
           "member": "string",
           "name": "SecretName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -953,8 +913,7 @@
           "member": "string",
           "name": "SecretName",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -963,8 +922,7 @@
           "member": "string",
           "name": "Description",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -973,8 +931,7 @@
           "member": "string",
           "name": "KmsKeyId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -983,8 +940,7 @@
           "member": "uint64",
           "name": "CreateUin",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -993,8 +949,7 @@
           "member": "string",
           "name": "Status",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1003,8 +958,7 @@
           "member": "uint64",
           "name": "DeleteTime",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1013,8 +967,7 @@
           "member": "uint64",
           "name": "CreateTime",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1023,8 +976,7 @@
           "member": "int64",
           "name": "SecretType",
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1033,8 +985,7 @@
           "member": "string",
           "name": "ProductName",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1043,8 +994,7 @@
           "member": "string",
           "name": "ResourceID",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1053,8 +1003,7 @@
           "member": "bool",
           "name": "RotationStatus",
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1063,8 +1012,7 @@
           "member": "int64",
           "name": "RotationFrequency",
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1073,8 +1021,7 @@
           "member": "string",
           "name": "ResourceName",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1083,8 +1030,7 @@
           "member": "int64",
           "name": "ProjectID",
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1093,8 +1039,7 @@
           "member": "string",
           "name": "AssociatedInstanceIDs",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1103,8 +1048,7 @@
           "member": "uint64",
           "name": "TargetUin",
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1113,8 +1057,7 @@
           "member": "string",
           "name": "AdditionalConfig",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1166,7 +1109,6 @@
       "document": "DisableSecret请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指定停用的凭据名称。",
           "example": "test",
@@ -1204,7 +1146,6 @@
       "document": "EnableSecret请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指定启用凭据的名称。",
           "example": "test",
@@ -1269,7 +1210,6 @@
       "document": "GetSSHKeyPairValue请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "凭据名称，此凭据只能为SSH密钥对凭据类型。",
           "example": "无",
@@ -1279,7 +1219,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密钥对ID，是云服务器中密钥对的唯一标识。",
           "example": "无",
@@ -1367,7 +1306,6 @@
       "document": "GetSecretValueInternal请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指定凭据的名称。",
           "example": "test_secret",
@@ -1377,7 +1315,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定对应凭据的版本号。\n对于云产品凭据如Mysql凭据，通过指定凭据名称和历史版本号来获取历史轮转凭据的明文信息，如果要获取当前正在使用的凭据版本的明文，需要将版本号指定为：SSM_Current。",
           "example": "v1.0",
@@ -1387,7 +1324,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求来源客户端信息。",
           "example": "无",
@@ -1465,26 +1401,22 @@
       "document": "GetSecretValue请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指定凭据的名称。",
           "example": "test_secret",
           "member": "string",
           "name": "SecretName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定对应凭据的版本号。\n对于云产品凭据如Mysql凭据，通过指定凭据名称和历史版本号来获取历史轮转凭据的明文信息，如果要获取当前正在使用的凭据版本的明文，需要将版本号指定为：SSM_Current。",
           "example": "v1.0",
           "member": "string",
           "name": "VersionId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1500,8 +1432,7 @@
           "name": "SecretName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1511,8 +1442,7 @@
           "name": "VersionId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1522,8 +1452,7 @@
           "name": "SecretBinary",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1533,8 +1462,7 @@
           "name": "SecretString",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1596,7 +1524,6 @@
       "document": "ListSecretVersionIds请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "凭据名称。",
           "example": "test",
@@ -1644,7 +1571,6 @@
       "document": "ListSecrets请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询列表的起始位置，以0开始，不设置默认为0。",
           "example": "0",
@@ -1654,7 +1580,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单次查询返回的最大数量，0或不设置则使用默认值 20。",
           "example": "2",
@@ -1664,7 +1589,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据创建时间的排序方式，0或者不设置则使用降序排序， 1 表示升序排序。",
           "example": "0",
@@ -1674,7 +1598,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据凭据状态进行过滤。\n默认为0表示查询全部。\n1 --  表示查询Enabled 凭据列表。\n2 --  表示查询Disabled 凭据列表。\n3 --  表示查询PendingDelete 凭据列表。\n4 --  表示PendingCreate。\n5 --  表示CreateFailed。\n其中状态PendingCreate和CreateFailed只有在SecretType为云产品凭据时生效",
           "example": "0",
@@ -1684,7 +1607,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据凭据名称进行过滤，为空表示不过滤。",
           "example": "testName",
@@ -1694,7 +1616,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签过滤条件。",
           "example": "无",
@@ -1704,7 +1625,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0  -- 表示用户自定义凭据，默认为0。\n1  -- 表示用户云产品凭据。\n2 -- 表示SSH密钥对凭据。\n3 -- 表示云API密钥对凭据。",
           "example": "1",
@@ -1714,7 +1634,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "此参数仅在SecretType参数值为1时生效，\n当SecretType值为1时：\n如果ProductName值为空，则表示查询所有类型的云产品凭据\n如果ProductName值为Mysql，则表示查询Mysql数据库凭据\n如果ProductName值为Tdsql-mysql，则表示查询Tdsql（Mysql版本）的凭据",
           "example": "Mysql",
@@ -1762,7 +1681,6 @@
       "document": "凭据关联产品时被赋予的权限",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "权限名称，当前可选：\nGlobalPrivileges\nDatabasePrivileges\nTablePrivileges\nColumnPrivileges\n\n当权限为DatabasePrivileges时，必须通过参数Database指定数据库名；\n\n当权限为TablePrivileges时，必须通过参数Database和TableName指定数据库名以及数据库中的表名；\n\n当权限为ColumnPrivileges时，必须通过参数Database、TableName和CoulmnName指定数据库、数据库中的表名以及表中的列名。",
           "example": "GlobalPrivileges",
@@ -1773,7 +1691,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限列表。\n对于Mysql产品来说，可选权限值为：\n\n1. GlobalPrivileges 中权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"PROCESS\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"SHOW DATABASES\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。\n注意，不传该参数表示清除该权限。\n\n2. DatabasePrivileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE TEMPORARY TABLES\",\"LOCK TABLES\",\"EXECUTE\",\"CREATE VIEW\",\"SHOW VIEW\",\"CREATE ROUTINE\",\"ALTER ROUTINE\",\"EVENT\",\"TRIGGER\"。\n注意，不传该参数表示清除该权限。\n\n3. TablePrivileges 权限的可选值为：权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\", \"DROP\",\"REFERENCES\",\"INDEX\",\"ALTER\",\"CREATE VIEW\",\"SHOW VIEW\", \"TRIGGER\"。\n注意，不传该参数表示清除该权限。\n\n4. ColumnPrivileges 权限的可选值为：\"SELECT\",\"INSERT\",\"UPDATE\",\"REFERENCES\"。\n注意，不传该参数表示清除该权限。",
           "example": "无",
@@ -1784,7 +1701,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仅当PrivilegeName为DatabasePrivileges时这个值才有效。",
           "example": "无",
@@ -1795,7 +1711,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仅当PrivilegeName为TablePrivileges时这个值才有效，并且此时需要填充Database显式指明所在的数据库实例。",
           "example": "无",
@@ -1806,7 +1721,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仅当PrivilegeName为ColumnPrivileges时这个值才生效，并且此时必须填充：\nDatabase - 显式指明所在的数据库实例。\nTableName - 显式指明所在表",
           "example": "无",
@@ -1823,7 +1737,6 @@
       "document": "PutSecretValue请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指定需要增加版本的凭据名称。",
           "example": "test",
@@ -1833,7 +1746,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定新增加的版本号，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。",
           "example": "v2.0",
@@ -1843,7 +1755,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "二进制凭据信息，使用base64编码。\nSecretBinary 和 SecretString 必须且只能设置一个。",
           "example": "test",
@@ -1853,7 +1764,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本类型凭据信息明文（不需要进行base64编码），SecretBinary 和 SecretString 必须且只能设置一个。",
           "example": "test v2",
@@ -1901,7 +1811,6 @@
       "document": "RestoreSecret请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指定需要恢复的凭据名称。",
           "example": "test",
@@ -1939,7 +1848,6 @@
       "document": "RotateProductSecret请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要轮转的凭据名。",
           "example": "无",
@@ -1984,8 +1892,7 @@
           "name": "SecretName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1995,8 +1902,7 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2006,8 +1912,7 @@
           "name": "KmsKeyId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2017,8 +1922,7 @@
           "name": "CreateUin",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2028,8 +1932,7 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2039,8 +1942,7 @@
           "name": "DeleteTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2050,8 +1952,7 @@
           "name": "CreateTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2061,8 +1962,7 @@
           "name": "KmsKeyType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2072,8 +1972,7 @@
           "name": "RotationStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2083,8 +1982,7 @@
           "name": "NextRotationTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2094,8 +1992,7 @@
           "name": "SecretType",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2105,8 +2002,7 @@
           "name": "ProductName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2116,8 +2012,7 @@
           "name": "ResourceName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2127,8 +2022,7 @@
           "name": "ProjectID",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2138,8 +2032,7 @@
           "name": "AssociatedInstanceIDs",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2149,8 +2042,7 @@
           "name": "TargetUin",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2160,8 +2052,7 @@
           "name": "RotationFrequency",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2171,8 +2062,7 @@
           "name": "ResourceID",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2182,8 +2072,7 @@
           "name": "RotationBeginTime",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2192,7 +2081,6 @@
       "document": "标签键和标签值",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键",
           "example": "",
@@ -2203,7 +2091,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "",
@@ -2220,7 +2107,6 @@
       "document": "标签过滤器",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键",
           "example": "",
@@ -2231,7 +2117,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "",
@@ -2248,7 +2133,6 @@
       "document": "UpdateDescription请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指定需要更新描述信息的凭据名。",
           "example": "test",
@@ -2258,7 +2142,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新的描述信息，最大长度2048个字节。",
           "example": "new desc",
@@ -2296,7 +2179,6 @@
       "document": "UpdateRotationStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "云产品凭据名称。",
           "example": "无",
@@ -2306,7 +2188,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启轮转。\ntrue -- 开启轮转；\nfalse -- 禁止轮转。",
           "example": "True",
@@ -2316,7 +2197,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "轮转周期，以天为单位，最小为30天，最大为365天。",
           "example": "30",
@@ -2326,7 +2206,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户设置的期望开始轮转时间，格式为：2006-01-02 15:04:05。\n当EnableRotation为true时，如果不填RotationBeginTime，则默认填充为当前时间。",
           "example": "2006-01-02 15:04:05",
@@ -2354,7 +2233,6 @@
       "document": "UpdateSecret请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指定需要更新凭据内容的名称。",
           "example": "test",
@@ -2364,7 +2242,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定需要更新凭据内容的版本号。",
           "example": "v1.0",
@@ -2374,7 +2251,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新的凭据内容为二进制的场景使用该字段，并使用base64进行编码。\nSecretBinary 和 SecretString 只能一个不为空。",
           "example": "test",
@@ -2384,7 +2260,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新的凭据内容为文本的场景使用该字段，不需要base64编码SecretBinary 和 SecretString 只能一个不为空。",
           "example": "new value",
@@ -2432,7 +2307,6 @@
       "document": "凭据版本号列表信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "版本号。",
           "example": "",
@@ -2443,7 +2317,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间，unix时间戳。",
           "example": "",

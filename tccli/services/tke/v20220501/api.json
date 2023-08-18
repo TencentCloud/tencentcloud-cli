@@ -26,114 +26,94 @@
       "document": "单集群巡检任务结果",
       "members": [
         {
-          "default": "",
           "document": "任务ID",
           "example": "无",
           "member": "string",
           "name": "TaskID",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "TaskType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "任务名称",
           "example": "job-xxx",
           "member": "string",
           "name": "JobName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "巡检编排",
           "example": "basic",
           "member": "string",
           "name": "Orchestration",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "waiting, executing, finished",
           "example": "巡检状态",
           "member": "string",
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-16T07:42:57Z",
           "member": "string",
           "name": "EndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-16T07:42:57Z",
           "member": "string",
           "name": "ExecuteTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间",
           "example": "2021-06-16T07:42:57Z",
           "member": "string",
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "集群概览",
           "example": "无",
           "member": "ClusterInspectionTaskOverview",
           "name": "Cluster",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "巡检建议\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Suggest",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -142,70 +122,58 @@
       "document": "巡检集群概况",
       "members": [
         {
-          "default": "",
           "document": "节点数量",
           "example": "0",
           "member": "uint64",
           "name": "Nodes",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "Pod数量",
           "example": "0",
           "member": "uint64",
           "name": "Pods",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "CPU核数",
           "example": "0",
           "member": "uint64",
           "name": "CPUCores",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "内存GB数",
           "example": "0",
           "member": "uint64",
           "name": "MemoryGB",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "Workload数量",
           "example": "0",
           "member": "uint64",
           "name": "Workloads",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "命名空间数量",
           "example": "0",
           "member": "uint64",
           "name": "Namespaces",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -214,24 +182,20 @@
       "document": "CreateInstantInspectJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群id, 根据集群id初始化任务，如果不为空，则忽略下面的MatchLables字段",
           "example": "cls-xxx",
           "member": "string",
           "name": "ClusterId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "document": "集群label",
           "example": "无",
           "member": "Label",
           "name": "MatchLabels",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -246,8 +210,7 @@
           "name": "JobName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -262,14 +225,12 @@
       "document": "DescribeInstantInspectTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集群巡检任务名称，在调用CreateInstantInspectJob接口后获得",
           "example": "job-test123",
           "member": "string",
           "name": "JobName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -284,8 +245,7 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "巡检任务结果\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -294,8 +254,7 @@
           "name": "Data",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -310,26 +269,22 @@
       "document": "k8s中标签，一般以数组的方式存在",
       "members": [
         {
-          "default": "",
           "document": "map表中的Name",
           "example": "k8s-app",
           "member": "string",
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "map表中的Value",
           "example": "billing",
           "member": "string",
           "name": "Value",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

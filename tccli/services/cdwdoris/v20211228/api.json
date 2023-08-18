@@ -26,7 +26,6 @@
       "document": "集群内节点的规格磁盘规格描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "节点磁盘类型，例如“CLOUD_SSD”\\\"CLOUD_PREMIUM\"",
           "example": "xx",
@@ -37,7 +36,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘容量，单位G",
           "example": "xx",
@@ -48,7 +46,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘总数",
           "example": "xx",
@@ -59,7 +56,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "example": "xx",
@@ -76,7 +72,6 @@
       "document": "DescribeInstanceNodes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群实例ID",
           "example": "cdwch-12345678",
@@ -86,7 +81,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群角色类型，默认为 \"data\"数据节点",
           "example": "DATA",
@@ -96,7 +90,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数，第一页为0，第二页为10",
           "example": "0",
@@ -106,7 +99,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数，分页步长，默认为10",
           "example": "100",
@@ -116,7 +108,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "展现策略，All时显示所有",
           "example": "All",
@@ -164,7 +155,6 @@
       "document": "DescribeInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "搜索的集群id名称",
           "example": "cdwch-xxxx",
@@ -174,7 +164,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索的集群name",
           "example": "-",
@@ -184,7 +173,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数，第一页为0，第二页为10",
           "example": "0",
@@ -194,7 +182,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数，分页步长，默认为10",
           "example": "20",
@@ -204,7 +191,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索标签列表",
           "example": "无",
@@ -252,7 +238,6 @@
       "document": "实例描述信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群实例ID, \"cdw-xxxx\" 字符串类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cdwch-xxxxxxxx",
@@ -263,7 +248,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "clickhouse集群",
@@ -274,7 +258,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态,\nInit 创建中; Serving 运行中； \nDeleted已销毁；Deleting 销毁中；\nModify 集群变更中；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Running",
@@ -285,7 +268,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20.7.2.30",
@@ -296,7 +278,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域, ap-guangzhou\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
@@ -307,7 +288,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区， ap-guangzhou-3\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou-3",
@@ -318,7 +298,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-xxxxxx",
@@ -329,7 +308,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "subnet-xxxxx",
@@ -340,7 +318,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费类型，\"hour\", \"prepay\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hour",
@@ -351,7 +328,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-01-01 11:11:11",
@@ -362,7 +338,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-02-01 11:11:11",
@@ -373,7 +348,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据节点描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -384,7 +358,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "zookeeper节点描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -395,7 +368,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高可用，“true\" \"false\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -406,7 +378,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "访问地址，例如 \"10.0.0.1:9000\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"10.0.0.1:9000\"",
@@ -417,7 +388,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录ID，数值型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -428,7 +398,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "regionId, 表示地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -439,7 +408,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区说明，例如 \"广州二区\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "广州三区",
@@ -450,7 +418,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误流程说明信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -461,7 +428,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态描述，例如“运行中”等\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "运行中",
@@ -472,7 +438,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动续费标记\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -483,7 +448,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -494,7 +458,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监控信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "prom-aaaaa",
@@ -505,7 +468,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开通日志\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -516,7 +478,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -527,7 +488,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志集ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -538,7 +498,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否支持xml配置管理\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -549,7 +508,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "区域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "广州",
@@ -560,7 +518,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "弹性网卡地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "127.0.0.1",
@@ -571,7 +528,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "冷热分层系数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
@@ -582,7 +538,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "external/local/yunti\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "yunti",
@@ -599,7 +554,6 @@
       "document": "实例节点描述信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址",
           "example": "10.0.0.1",
@@ -610,7 +564,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机型，如 S1",
           "example": "SCH1",
@@ -621,7 +574,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cpu核数",
           "example": "2",
@@ -632,7 +584,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存大小",
           "example": "4",
@@ -643,7 +594,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘类型",
           "example": "CLOUD_HSSD",
@@ -654,7 +604,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘大小",
           "example": "100",
@@ -665,7 +614,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属clickhouse cluster名称",
           "example": "default_cluster",
@@ -682,7 +630,6 @@
       "document": "节点角色描述信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机型，如 S1",
           "example": "xx",
@@ -693,7 +640,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点数目",
           "example": "1",
@@ -704,7 +650,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cpu核数，单位个",
           "example": "2",
@@ -715,7 +660,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存大小，单位G",
           "example": "4",
@@ -726,7 +670,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘大小，单位G",
           "example": "xx",
@@ -737,7 +680,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘类型",
           "example": "xx",
@@ -748,7 +690,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘描述",
           "example": "xx",
@@ -759,7 +700,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "挂载云盘信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -776,7 +716,6 @@
       "document": "列表页搜索的标记列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签的键",
           "example": "标签一",
@@ -787,7 +726,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签的值",
           "example": "标签值一",
@@ -798,7 +736,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1表示只输入标签的键，没有输入值；0表示输入键时且输入值",
           "example": "1",
@@ -815,7 +752,6 @@
       "document": "标签描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签的键",
           "example": "标签一",
@@ -826,7 +762,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签的值",
           "example": "内容一",

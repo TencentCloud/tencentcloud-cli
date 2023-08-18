@@ -530,7 +530,6 @@
       "document": "别名对象",
       "members": [
         {
-          "default": "",
           "document": "别名的唯一标识符",
           "member": "string",
           "name": "AliasId",
@@ -539,7 +538,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "别名的全局唯一资源标识符",
           "member": "string",
           "name": "AliasArn",
@@ -548,7 +546,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "名字，长度不小于1字符不超过1024字符",
           "member": "string",
           "name": "Name",
@@ -557,7 +554,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "别名的可读说明，长度不小于1字符不超过1024字符\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Description",
@@ -566,7 +562,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "别名的路由配置",
           "member": "RoutingStrategy",
           "name": "RoutingStrategy",
@@ -575,7 +570,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
           "member": "string",
           "name": "CreationTime",
@@ -584,7 +578,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "上次修改此数据对象的时间",
           "member": "string",
           "name": "LastUpdatedTime",
@@ -593,7 +586,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签列表，最大长度50组\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "Tag",
           "name": "Tags",
@@ -608,7 +600,6 @@
       "document": "生成包信息",
       "members": [
         {
-          "default": "",
           "document": "生成包ID",
           "member": "string",
           "name": "AssetId",
@@ -617,7 +608,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "生成包名字，最小长度为1，最大长度为64",
           "member": "string",
           "name": "AssetName",
@@ -626,7 +616,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "生成包版本，最小长度为1，最大长度为64",
           "member": "string",
           "name": "AssetVersion",
@@ -635,7 +624,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "生成包可运行的操作系统，暂时只支持CentOS7.16",
           "member": "string",
           "name": "OperateSystem",
@@ -644,7 +632,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "生成包状态，0代表上传中，1代表上传失败，2代表上传成功",
           "member": "int64",
           "name": "Stauts",
@@ -653,7 +640,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "生成包大小",
           "member": "string",
           "name": "Size",
@@ -662,7 +648,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "生成包创建时间",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -671,7 +656,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "生成包绑定的Fleet个数，最小值为0",
           "member": "int64",
           "name": "BindFleetNum",
@@ -680,7 +664,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "生成包的全局唯一资源标识符",
           "member": "string",
           "name": "AssetArn",
@@ -689,7 +672,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "生成包支持的操作系统镜像id",
           "member": "string",
           "name": "ImageId",
@@ -698,7 +680,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "生成包支持的操作系统类型",
           "member": "string",
           "name": "OsType",
@@ -707,7 +688,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "生成包资源类型，ASSET 或者 IMAGE；ASSET 代表是原有生成包类型，IMAGE 为扩充使用镜像类型",
           "member": "string",
           "name": "ResourceType",
@@ -716,7 +696,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "镜像资源共享类型，当 ResourceType 为 IMAGE 时该字段有意义，SHARED 表示共享、SHARED_IMAGE 表示未共享；ResourceType 为 ASSET 时这里返回 UNKNOWN_SHARED 用于占位",
           "member": "string",
           "name": "SharingStatus",
@@ -725,7 +704,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签列表，最大长度50组\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "Tag",
           "name": "Tags",
@@ -740,7 +718,6 @@
       "document": "上传Asset的临时证书",
       "members": [
         {
-          "default": "",
           "document": "临时证书密钥ID",
           "member": "string",
           "name": "TmpSecretId",
@@ -749,7 +726,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "临时证书密钥Key",
           "member": "string",
           "name": "TmpSecretKey",
@@ -758,7 +734,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "临时证书Token",
           "member": "string",
           "name": "Token",
@@ -773,7 +748,6 @@
       "document": "生成包支持操作系统详细信息",
       "members": [
         {
-          "default": "",
           "document": "生成包操作系统的镜像Id",
           "member": "string",
           "name": "ImageId",
@@ -782,7 +756,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "生成包操作系统的类型",
           "member": "string",
           "name": "OsType",
@@ -791,7 +764,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "生成包操作系统的位数",
           "member": "int64",
           "name": "OsBit",
@@ -800,7 +772,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "生成包操作系统的版本",
           "member": "string",
           "name": "OsVersion",
@@ -815,7 +786,6 @@
       "document": "AttachCcnInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队 Id",
           "member": "string",
           "name": "FleetId",
@@ -823,7 +793,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "云联网账号 Uin",
           "member": "string",
           "name": "AccountId",
@@ -831,7 +800,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "云联网 Id",
           "member": "string",
           "name": "CcnId",
@@ -857,7 +825,6 @@
       "document": "云联网相关信息",
       "members": [
         {
-          "default": "",
           "document": "云联网所属账号",
           "example": "13734*",
           "member": "string",
@@ -867,7 +834,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云联网id",
           "example": "ccn-f0jyb*",
           "member": "string",
@@ -883,7 +849,6 @@
       "document": "云联网实例信息",
       "members": [
         {
-          "default": "",
           "document": "云联网账号 Uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "AccountId",
@@ -892,7 +857,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云联网 Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "CcnId",
@@ -901,7 +865,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云联网关联时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "CreateTime",
@@ -910,7 +873,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云联网实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "InstanceName",
@@ -919,7 +881,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云联网状态：申请中、已连接、已过期、已拒绝、已删除、失败的、关联中、解关联中、解关联失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "State",
@@ -934,7 +895,6 @@
       "document": "CopyFleet请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队 Id",
           "example": "fleet-qp3g3caa-2m6pzf4g",
           "member": "string",
@@ -943,7 +903,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "复制数量，最小值1，最大值为剩余配额，可以根据[获取用户配额](https://cloud.tencent.com/document/product/1165/48732)接口获取。",
           "example": "2",
           "member": "int64",
@@ -952,7 +911,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "生成包 Id",
           "example": "asset-qrdiw1a9",
           "member": "string",
@@ -961,7 +919,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "描述，最小长度0，最大长度100",
           "example": "Human description",
           "member": "string",
@@ -970,7 +927,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "网络配置",
           "example": "无",
           "member": "InboundPermission",
@@ -979,7 +935,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "服务器类型，参数根据[获取服务器实例类型列表](https://cloud.tencent.com/document/product/1165/48732)接口获取。",
           "example": "S5.LARGE8",
           "member": "string",
@@ -988,7 +943,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "服务器舰队类型，目前只支持ON_DEMAND类型",
           "example": "ON_DEMAND",
           "member": "string",
@@ -997,7 +951,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "服务器舰队名称，最小长度1，最大长度50",
           "example": "testfleet",
           "member": "string",
@@ -1006,7 +959,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "保护策略：不保护NoProtection、完全保护FullProtection、时限保护TimeLimitProtection",
           "example": "NoProtection",
           "member": "string",
@@ -1015,7 +967,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "资源创建限制策略",
           "example": "无",
           "member": "ResourceCreationLimitPolicy",
@@ -1024,7 +975,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "进程配置",
           "example": "无",
           "member": "RuntimeConfiguration",
@@ -1033,7 +983,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "时限保护超时时间，默认60分钟，最小值5，最大值1440；当NewGameSessionProtectionPolicy为TimeLimitProtection时参数有效",
           "example": "61",
           "member": "int64",
@@ -1042,7 +991,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否选择扩缩容：SCALING_SELECTED 或者 SCALING_UNSELECTED；默认是 SCALING_UNSELECTED",
           "example": "SCALING_SELECTED",
           "member": "string",
@@ -1051,7 +999,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否选择云联网：CCN_SELECTED_BEFORE_CREATE（创建前关联）， CCN_SELECTED_AFTER_CREATE（创建后关联）或者 CCN_UNSELECTED（不关联）；默认是 CCN_UNSELECTED",
           "example": "CCN_UNSELECTED",
           "member": "string",
@@ -1060,7 +1007,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "标签列表，最大长度50组",
           "example": "无",
           "member": "Tag",
@@ -1069,7 +1015,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "系统盘，储存类型为 SSD 云硬盘（CLOUD_SSD）时，100-500GB；储存类型为高性能云硬盘（CLOUD_PREMIUM）时，50-500GB；容量以1为单位",
           "example": "无",
           "member": "DiskInfo",
@@ -1078,7 +1023,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "数据盘，储存类型为 SSD 云硬盘（CLOUD_SSD）时，100-32000GB；储存类型为高性能云硬盘（CLOUD_PREMIUM）时，10-32000GB；容量以10为单位",
           "example": "无",
           "member": "DiskInfo",
@@ -1087,7 +1031,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "是否选择复制定时器策略：TIMER_SELECTED 或者 TIMER_UNSELECTED；默认是 TIMER_UNSELECTED",
           "example": "TIMER_UNSELECTED",
           "member": "string",
@@ -1096,7 +1039,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "云联网信息，包含对应的账号信息及所属id",
           "example": "无",
           "member": "CcnInfo",
@@ -1105,7 +1047,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "fleet公网出带宽最大值，默认100Mbps，范围1-200Mbps",
           "example": "无",
           "member": "int64",
@@ -1150,7 +1091,6 @@
       "document": "CreateAlias请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "名字，长度不小于1字符不超过1024字符",
           "member": "string",
           "name": "Name",
@@ -1158,7 +1098,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "别名的路由配置",
           "member": "RoutingStrategy",
           "name": "RoutingStrategy",
@@ -1166,7 +1105,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "别名的可读说明，长度不小于1字符不超过1024字符",
           "member": "string",
           "name": "Description",
@@ -1174,7 +1112,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "标签列表，最大长度50组",
           "member": "Tag",
           "name": "Tags",
@@ -1207,7 +1144,6 @@
       "document": "CreateAsset请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "生成包的ZIP包名，例如：server.zip",
           "example": "GseLinuxServer.zip",
           "member": "string",
@@ -1216,7 +1152,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "生成包名字，最小长度为1，最大长度为64",
           "example": "asset-demo",
           "member": "string",
@@ -1225,7 +1160,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "生成包版本，最小长度为1，最大长度为64",
           "example": "1.0",
           "member": "string",
@@ -1234,7 +1168,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "生成包所在地域，详见产品支持的 [地域列表](https://cloud.tencent.com/document/api/1165/42053#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)",
           "example": "ap-shanghai",
           "member": "string",
@@ -1243,7 +1176,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "生成包可运行的操作系统，若传入参数为CentOS7.16则不需要传入ImageId字段，否则，需要传入Imageid字段（该方式是为了兼容之前的版本，后续建议使用ImageId来替代该字段）。这里可通过[DescribeAssetSystems](https://cloud.tencent.com/document/product/1165/49191)接口获取asset支持的操作系统进行传入（使用AssetSupportSys的OsVersion字段）",
           "example": "CentOS7.16",
           "member": "string",
@@ -1252,7 +1184,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "生成包支持的操作系统镜像id，若传入OperateSystem字段的值是CentOS7.16，则不需要传入该值；如果不是，则需要通过[DescribeAssetSystems](https://cloud.tencent.com/document/product/1165/49191)接口获取asset支持的操作系统ImageId进行传入",
           "example": "img-9qabwvbn",
           "member": "string",
@@ -1261,7 +1192,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "标签列表，最大长度50组",
           "example": "无",
           "member": "Tag",
@@ -1306,7 +1236,6 @@
       "document": "CreateAssetWithImage请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "生成包名字，最小长度为1，最大长度为64",
           "member": "string",
           "name": "AssetName",
@@ -1314,7 +1243,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "生成包版本，最小长度为1，最大长度为64",
           "member": "string",
           "name": "AssetVersion",
@@ -1322,7 +1250,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "生成包所在地域，详见产品支持的 [地域列表](https://cloud.tencent.com/document/api/1165/42053#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)",
           "member": "string",
           "name": "AssetRegion",
@@ -1330,7 +1257,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "生成包支持的操作系统镜像id",
           "member": "string",
           "name": "ImageId",
@@ -1338,7 +1264,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作系统镜像包大小，比如：40GB，支持单位 KB、MB、GB",
           "member": "string",
           "name": "ImageSize",
@@ -1346,7 +1271,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作系统镜像包名称，最小长度为1，最大长度为64",
           "member": "string",
           "name": "ImageOs",
@@ -1354,7 +1278,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作系统镜像包类型，CentOS 或者 Windows",
           "member": "string",
           "name": "OsType",
@@ -1362,7 +1285,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作系统镜像包类型，当前只支持 SHARED_IMAGE",
           "member": "string",
           "name": "ImageType",
@@ -1370,7 +1292,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作系统镜像包位数，32 或者 64",
           "member": "uint64",
           "name": "OsBit",
@@ -1410,7 +1331,6 @@
       "document": "CreateFleet请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "生成包 Id",
           "example": "asset-eugdyx0g",
           "member": "string",
@@ -1419,7 +1339,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "描述，最小长度0，最大长度100",
           "example": "Humandecription",
           "member": "string",
@@ -1428,7 +1347,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "网络配置",
           "example": "无",
           "member": "InboundPermission",
@@ -1437,7 +1355,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "服务器类型，参数根据[获取服务器实例类型列表](https://cloud.tencent.com/document/product/1165/48732)接口获取。",
           "example": "S5.LARGE8",
           "member": "string",
@@ -1446,7 +1363,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "服务器舰队类型，目前只支持ON_DEMAND类型",
           "example": "ON_DEMAND",
           "member": "string",
@@ -1455,7 +1371,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "服务器舰队名称，最小长度1，最大长度50",
           "example": "testfleet",
           "member": "string",
@@ -1464,7 +1379,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "保护策略：不保护NoProtection、完全保护FullProtection、时限保护TimeLimitProtection",
           "example": "FullProtection",
           "member": "string",
@@ -1473,7 +1387,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "VPC 网络 Id，对等连接已不再使用",
           "example": "null",
           "member": "string",
@@ -1482,7 +1395,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "资源创建限制策略",
           "example": "无",
           "member": "ResourceCreationLimitPolicy",
@@ -1491,7 +1403,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "进程配置",
           "example": "无",
           "member": "RuntimeConfiguration",
@@ -1500,7 +1411,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "VPC 子网，对等连接已不再使用",
           "example": "null",
           "member": "string",
@@ -1509,7 +1419,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "时限保护超时时间，默认60分钟，最小值5，最大值1440；当NewGameSessionProtectionPolicy为TimeLimitProtection时参数有效",
           "example": "5",
           "member": "int64",
@@ -1518,7 +1427,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "标签列表，最大长度50组",
           "example": "无",
           "member": "Tag",
@@ -1527,7 +1435,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "系统盘，储存类型为 SSD 云硬盘（CLOUD_SSD）时，100-500GB；储存类型为高性能云硬盘（CLOUD_PREMIUM）时，50-500GB；容量以1为单位",
           "example": "无",
           "member": "DiskInfo",
@@ -1536,7 +1443,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "数据盘，储存类型为 SSD 云硬盘（CLOUD_SSD）时，100-32000GB；储存类型为高性能云硬盘（CLOUD_PREMIUM）时，10-32000GB；容量以10为单位",
           "example": "无",
           "member": "DiskInfo",
@@ -1545,7 +1451,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "云联网信息，包含对应的账号信息及所属id",
           "example": "无",
           "member": "CcnInfo",
@@ -1554,7 +1459,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "fleet公网出带宽最大值，默认100Mbps，范围1-200Mbps",
           "example": "无",
           "member": "int64",
@@ -1590,7 +1494,6 @@
       "document": "CreateGameServerSessionQueue请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "游戏服务器会话队列名称，长度1~128",
           "example": "test",
           "member": "string",
@@ -1599,7 +1502,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "目的服务器舰队（可为别名）列表",
           "example": "无",
           "member": "GameServerSessionQueueDestination",
@@ -1608,7 +1510,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "延迟策略集合",
           "example": "无",
           "member": "PlayerLatencyPolicy",
@@ -1617,7 +1518,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "超时时间（单位秒，默认值为600秒）",
           "example": "无",
           "member": "uint64",
@@ -1626,7 +1526,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "标签列表，最大长度50组",
           "example": "无",
           "member": "Tag",
@@ -1662,7 +1561,6 @@
       "document": "CreateGameServerSession请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "最大玩家数量，最小值不小于0",
           "member": "uint64",
           "name": "MaximumPlayerSessionCount",
@@ -1670,7 +1568,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "别名ID。每个请求需要指定别名ID 或者舰队 ID，如果两个同时指定时，优先选择舰队 ID",
           "member": "string",
           "name": "AliasId",
@@ -1678,7 +1575,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "创建者ID，最大长度不超过1024个ASCII字符",
           "member": "string",
           "name": "CreatorId",
@@ -1686,7 +1582,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "舰队ID。每个请求需要指定别名ID 或者舰队 ID，如果两个同时指定时，优先选择舰队 ID",
           "member": "string",
           "name": "FleetId",
@@ -1694,7 +1589,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "游戏属性，最大长度不超过16组",
           "member": "GameProperty",
           "name": "GameProperties",
@@ -1702,7 +1596,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "游戏服务器会话属性详情，最大长度不超过4096个ASCII字符",
           "member": "string",
           "name": "GameServerSessionData",
@@ -1710,7 +1603,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "游戏服务器会话自定义ID，最大长度不超过4096个ASCII字符",
           "member": "string",
           "name": "GameServerSessionId",
@@ -1718,7 +1610,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "幂等token，最大长度不超过48个ASCII字符",
           "member": "string",
           "name": "IdempotencyToken",
@@ -1726,7 +1617,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "游戏服务器会话名称，最大长度不超过1024个ASCII字符",
           "member": "string",
           "name": "Name",
@@ -1759,7 +1649,6 @@
       "document": "访问实例所需要的凭据",
       "members": [
         {
-          "default": "",
           "document": "ssh私钥",
           "member": "string",
           "name": "Secret",
@@ -1768,7 +1657,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用户名",
           "member": "string",
           "name": "UserName",
@@ -1783,7 +1671,6 @@
       "document": "DeleteAlias请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "要删除的别名ID",
           "member": "string",
           "name": "AliasId",
@@ -1809,7 +1696,6 @@
       "document": "DeleteAsset请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "生成包ID",
           "member": "string",
           "name": "AssetId",
@@ -1835,7 +1721,6 @@
       "document": "DeleteFleet请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队 Id",
           "member": "string",
           "name": "FleetId",
@@ -1861,7 +1746,6 @@
       "document": "DeleteGameServerSessionQueue请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "游戏服务器会话队列名字，长度1~128",
           "member": "string",
           "name": "Name",
@@ -1887,7 +1771,6 @@
       "document": "DeleteScalingPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队ID",
           "member": "string",
           "name": "FleetId",
@@ -1895,7 +1778,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "扩缩容策略名称，最小长度为0，最大长度为1024",
           "member": "string",
           "name": "Name",
@@ -1921,7 +1803,6 @@
       "document": "DeleteTimerScalingPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "定时器ID, 进行encode",
           "example": "timerId-oc80v5zp",
           "member": "string",
@@ -1930,7 +1811,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "扩缩容配置服务器舰队ID",
           "example": "fleet-qp3g3caa-mg4w88ho",
           "member": "string",
@@ -1939,7 +1819,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "定时器名称",
           "example": "testDay",
           "member": "string",
@@ -1966,7 +1845,6 @@
       "document": "DescribeAlias请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "要检索的队列别名的唯一标识符",
           "member": "string",
           "name": "AliasId",
@@ -1999,7 +1877,6 @@
       "document": "DescribeAsset请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "生成包ID",
           "member": "string",
           "name": "AssetId",
@@ -2032,7 +1909,6 @@
       "document": "DescribeAssetSystems请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "生成包支持的操作系统类型",
           "member": "string",
           "name": "OsType",
@@ -2040,7 +1916,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "生成包支持的操作系统位数",
           "member": "int64",
           "name": "OsBit",
@@ -2073,7 +1948,6 @@
       "document": "DescribeAssets请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "生成包支持的可部署 [地域列表](https://cloud.tencent.com/document/api/1165/42053#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)",
           "member": "string",
           "name": "AssetRegion",
@@ -2081,7 +1955,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "偏移，代表页数，与asset实际数量相关",
           "member": "int64",
           "name": "Offset",
@@ -2089,7 +1962,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "前端界面每页显示的最大条数，不超过100",
           "member": "int64",
           "name": "Limit",
@@ -2097,7 +1969,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "搜索条件，支持包ID或包名字过滤，该字段会逐步废弃，建议使用 Filters 字段",
           "member": "string",
           "name": "Filter",
@@ -2105,7 +1976,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "资源过滤字段，可以按照资源名称、资源ID和标签进行过滤- 资源名称过滤    - Key: 固定字符串 \"resource:name\"    - Values: 资源名称数组（生成包当前仅支持单个名称的过滤）- 资源ID过滤    - Key: 固定字符串 \"resource:resourceId\"    - Values: 生成包ID数组（生成包当前仅支持单个生成包ID的过滤）- 标签过滤    - 通过标签键过滤        - Key: 固定字符串 \"tag:key\"        - Values 不传    - 通过标签键值过滤        - Key: 固定字符串 \"tag:key-value\"        - Values: 标签键值对数组，例如 [\"key1:value1\", \"key1:value2\", \"key2:value2\"]",
           "member": "Filter",
           "name": "Filters",
@@ -2145,7 +2015,6 @@
       "document": "DescribeCcnInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队 Id",
           "example": "fleet-qp3g3caa-ax4fq2wi",
           "member": "string",
@@ -2190,7 +2059,6 @@
       "document": "DescribeFleetAttributes请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队 Ids",
           "example": "[\"fleet-qp3g3caa-nkeekxw6\"]",
           "member": "string",
@@ -2199,7 +2067,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "结果返回最大数量，默认值20，最大值100",
           "example": "1",
           "member": "uint64",
@@ -2208,7 +2075,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回结果偏移，最小值0",
           "example": "0",
           "member": "uint64",
@@ -2253,7 +2119,6 @@
       "document": "DescribeFleetCapacity请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队ID列表",
           "example": "[\"fleet-qp3g3caa-ay03mhdm\\n\"]",
           "member": "string",
@@ -2262,7 +2127,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "结果返回最大数量，最大值 100",
           "example": "10",
           "member": "uint64",
@@ -2271,7 +2135,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回结果偏移，最小值 0",
           "example": "0",
           "member": "uint64",
@@ -2316,7 +2179,6 @@
       "document": "DescribeFleetEvents请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队 Id",
           "example": "fleet-pro4extc-kej8s8z4",
           "member": "string",
@@ -2325,7 +2187,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "分页时返回服务器舰队事件的数量，默认为20，最大值为100",
           "example": "10",
           "member": "uint64",
@@ -2334,7 +2195,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页时的数据偏移量，默认为0",
           "example": "0",
           "member": "uint64",
@@ -2343,7 +2203,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "事件代码",
           "example": "FLEET_STATE_ACTIVE",
           "member": "string",
@@ -2352,7 +2211,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "发生事件的开始时间",
           "example": "2021-04-10T10:56:38+08:00",
           "member": "datetime_iso",
@@ -2361,7 +2219,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "发生事件的结束时间",
           "example": "2021-04-12T10:56:38+08:00",
           "member": "datetime_iso",
@@ -2406,7 +2263,6 @@
       "document": "DescribeFleetPortSettings请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队 Id",
           "member": "string",
           "name": "FleetId",
@@ -2439,7 +2295,6 @@
       "document": "DescribeFleetRelatedResources请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队 Id",
           "example": "fleet-qp3g3caa-nkeekxw6",
           "member": "string",
@@ -2475,7 +2330,6 @@
       "document": "DescribeFleetStatisticDetails请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队ID",
           "example": "fleet-qp3g3caa-nkeekxw6",
           "member": "string",
@@ -2484,7 +2338,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询开始时间，时间格式：YYYY-MM-DD hh:mm:ss",
           "example": "2020-09-22 00:00:00",
           "member": "datetime",
@@ -2493,7 +2346,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询结束时间，时间格式：YYYY-MM-DD hh:mm:ss",
           "example": "2020-09-22 00:00:00",
           "member": "datetime",
@@ -2502,7 +2354,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结果返回最大数量，最小值0，最大值100",
           "example": "10",
           "member": "uint64",
@@ -2511,7 +2362,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回结果偏移，最小值0",
           "example": "0",
           "member": "uint64",
@@ -2565,7 +2415,6 @@
       "document": "DescribeFleetStatisticFlows请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队ID",
           "example": "fleet-qp3g3caa-nkeekxw6",
           "member": "string",
@@ -2574,7 +2423,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询开始时间，时间格式：YYYY-MM-DD hh:mm:ss",
           "example": "2020-09-22 00:00:00",
           "member": "datetime",
@@ -2583,7 +2431,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询结束时间，时间格式：YYYY-MM-DD hh:mm:ss",
           "example": "2020-09-22 00:00:00",
           "member": "datetime",
@@ -2592,7 +2439,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结果返回最大数量，最小值0，最大值100",
           "example": "10",
           "member": "uint64",
@@ -2601,7 +2447,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回结果偏移，最小值0",
           "example": "0",
           "member": "uint64",
@@ -2664,7 +2509,6 @@
       "document": "DescribeFleetStatisticSummary请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队ID",
           "example": "fleet-qp3g3caa-nkeekxw6",
           "member": "string",
@@ -2673,7 +2517,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询开始时间，时间格式: YYYY-MM-DD hh:mm:ss",
           "example": "2020-09-22 00:00:00",
           "member": "datetime",
@@ -2682,7 +2525,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询结束时间，时间格式: YYYY-MM-DD hh:mm:ss",
           "example": "2020-09-22 00:00:00",
           "member": "datetime",
@@ -2727,7 +2569,6 @@
       "document": "DescribeFleetUtilization请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队 Ids",
           "example": "[\"fleet-qp3g3caa-nkeekxw6\\n\"]",
           "member": "string",
@@ -2772,7 +2613,6 @@
       "document": "DescribeGameServerSessionDetails请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "别名ID",
           "member": "string",
           "name": "AliasId",
@@ -2780,7 +2620,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "舰队ID",
           "member": "string",
           "name": "FleetId",
@@ -2788,7 +2627,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "游戏服务器会话ID，最小长度不小于1个ASCII字符，最大长度不超过48个ASCII字符",
           "member": "string",
           "name": "GameServerSessionId",
@@ -2796,7 +2634,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "单次查询记录数上限",
           "member": "uint64",
           "name": "Limit",
@@ -2804,7 +2641,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "页偏移，用于查询下一页，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符",
           "member": "string",
           "name": "NextToken",
@@ -2812,7 +2648,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "游戏服务器会话状态(ACTIVE,ACTIVATING,TERMINATED,TERMINATING,ERROR)",
           "member": "string",
           "name": "StatusFilter",
@@ -2852,7 +2687,6 @@
       "document": "DescribeGameServerSessionPlacement请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "游戏服务器会话放置的唯一标识符",
           "member": "string",
           "name": "PlacementId",
@@ -2885,7 +2719,6 @@
       "document": "DescribeGameServerSessionQueues请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "游戏服务器会话队列名称数组，单个名字长度1~128",
           "member": "string",
           "name": "Names",
@@ -2893,7 +2726,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "结果返回最大数量，最小值0，最大值100",
           "member": "uint64",
           "name": "Limit",
@@ -2901,7 +2733,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回结果偏移，最小值0",
           "member": "uint64",
           "name": "Offset",
@@ -2909,7 +2740,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "资源过滤字段，可以按照资源名称、资源ID和标签进行过滤- 资源名称过滤    - Key: 固定字符串 \"resource:name\"    - Values: 资源名称数组（游戏服务器会话队列支持多个名称的过滤）- 标签过滤    - 通过标签键过滤        - Key: 固定字符串 \"tag:key\"        - Values 不传    - 通过标签键值过滤        - Key: 固定字符串 \"tag:key-value\"        - Values: 标签键值对数组，例如 [\"key1:value1\", \"key1:value2\", \"key2:value2\"]",
           "member": "Filter",
           "name": "Filters",
@@ -2949,7 +2779,6 @@
       "document": "DescribeGameServerSessions请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "别名ID",
           "member": "string",
           "name": "AliasId",
@@ -2957,7 +2786,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "舰队ID",
           "member": "string",
           "name": "FleetId",
@@ -2965,7 +2793,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "游戏服务器会话ID，最小长度不小于1个ASCII字符，最大长度不超过48个ASCII字符",
           "member": "string",
           "name": "GameServerSessionId",
@@ -2973,7 +2800,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "单次查询记录数上限",
           "member": "uint64",
           "name": "Limit",
@@ -2981,7 +2807,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "页偏移，用于查询下一页，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符",
           "member": "string",
           "name": "NextToken",
@@ -2989,7 +2814,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "游戏服务器会话状态(ACTIVE,ACTIVATING,TERMINATED,TERMINATING,ERROR)",
           "member": "string",
           "name": "StatusFilter",
@@ -3084,7 +2908,6 @@
       "document": "DescribeInstancesExtend请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队ID",
           "example": "fleet-qp3g3caa-mg4w88ho",
           "member": "string",
@@ -3093,7 +2916,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "返回结果偏移，最小值0",
           "example": "0",
           "member": "int64",
@@ -3102,7 +2924,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "结果返回最大数量，最小值0，最大值100",
           "example": "10",
           "member": "int64",
@@ -3111,7 +2932,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "CVM实例公网IP",
           "example": "0.0.0.0",
           "member": "string",
@@ -3156,7 +2976,6 @@
       "document": "DescribeInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队ID",
           "example": "fleet-qp3g3caa-mg4w88ho",
           "member": "string",
@@ -3165,7 +2984,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "CVM实例ID",
           "example": "ins-a8205ykp",
           "member": "string",
@@ -3174,7 +2992,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结果返回最大数量，最小值0，最大值100",
           "example": "0",
           "member": "uint64",
@@ -3183,7 +3000,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回结果偏移，最小值0",
           "example": "10",
           "member": "uint64",
@@ -3192,7 +3008,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "CVM实例公网IP",
           "example": "0.0.0.0",
           "member": "string",
@@ -3237,7 +3052,6 @@
       "document": "DescribePlayerSessions请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "游戏服务器会话ID，最小长度不小于1个ASCII字符，最大长度不超过48个ASCII字符",
           "member": "string",
           "name": "GameServerSessionId",
@@ -3245,7 +3059,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "单次查询记录数上限",
           "member": "uint64",
           "name": "Limit",
@@ -3253,7 +3066,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "页偏移，用于查询下一页，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符",
           "member": "string",
           "name": "NextToken",
@@ -3261,7 +3073,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "玩家ID，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符",
           "member": "string",
           "name": "PlayerId",
@@ -3269,7 +3080,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "玩家会话ID，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符",
           "member": "string",
           "name": "PlayerSessionId",
@@ -3277,7 +3087,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "玩家会话状态（RESERVED,ACTIVE,COMPLETED,TIMEDOUT）",
           "member": "string",
           "name": "PlayerSessionStatusFilter",
@@ -3317,7 +3126,6 @@
       "document": "DescribeRuntimeConfiguration请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队 Id",
           "member": "string",
           "name": "FleetId",
@@ -3350,7 +3158,6 @@
       "document": "DescribeScalingPolicies请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队ID",
           "member": "string",
           "name": "FleetId",
@@ -3358,7 +3165,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "状态过滤条件，取值：ACTIVE表示活跃",
           "member": "string",
           "name": "StatusFilter",
@@ -3366,7 +3172,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "返回结果偏移，最小值0",
           "member": "uint64",
           "name": "Offset",
@@ -3374,7 +3179,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "结果返回最大数量，最小值0，最大值100",
           "member": "uint64",
           "name": "Limit",
@@ -3414,7 +3218,6 @@
       "document": "DescribeTimerScalingPolicies请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "扩缩容配置服务器舰队ID",
           "example": "fleet-qp3g3caa-mg4w88ho",
           "member": "string",
@@ -3423,7 +3226,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "定时器名称",
           "example": "timer01",
           "member": "string",
@@ -3432,7 +3234,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "定时器开始时间",
           "example": "2021-01-14T14:04:29.496Z",
           "member": "string",
@@ -3441,7 +3242,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "定时器结束时间",
           "example": "2021-01-15T14:09:29.496Z",
           "member": "string",
@@ -3450,7 +3250,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "分页偏移量",
           "example": "0",
           "member": "int64",
@@ -3459,7 +3258,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "页大小",
           "example": "10",
           "member": "int64",
@@ -3504,7 +3302,6 @@
       "document": "DescribeUserQuota请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "资源类型",
           "member": "uint64",
           "name": "ResourceType",
@@ -3568,7 +3365,6 @@
       "document": "玩家游戏会话信息",
       "members": [
         {
-          "default": "",
           "document": "与玩家会话关联的唯一玩家标识",
           "member": "string",
           "name": "PlayerId",
@@ -3577,7 +3373,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "开发人员定义的玩家数据",
           "member": "string",
           "name": "PlayerData",
@@ -3592,7 +3387,6 @@
       "document": "DetachCcnInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队 Id",
           "member": "string",
           "name": "FleetId",
@@ -3618,7 +3412,6 @@
       "document": "磁盘存储信息",
       "members": [
         {
-          "default": "",
           "document": "磁盘类型，支持：高性能云硬盘（CLOUD_PREMIUM）、SSD云硬盘（CLOUD_SSD）",
           "example": "CLOUD_PREMIUM",
           "member": "string",
@@ -3628,7 +3421,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "系统盘：可选硬盘容量，50-500GB，数字以1为单位，数据盘：可选硬盘容量：10-32000GB，数字以10为单位；当磁盘类型为SSD云硬盘（CLOUD_SSD）最小大小为 100GB",
           "example": "300",
           "member": "uint64",
@@ -3644,7 +3436,6 @@
       "document": "EndGameServerSessionAndProcess请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "游戏服务器会话ID，如果传入游戏服务器会话ID，结束对应进程以及游戏服务器会话和玩家会话。",
           "example": "qcs::gse:ap-shanghai:uin/1112222:gameserversession/fleet-qp3ga-p",
           "member": "string",
@@ -3653,7 +3444,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "CVM的公网IP地址，需同时传入IpAddress和Port，结束IpAddress和Port对应的进程以及游戏服务器会话（如果存在）和玩家会话（如果存在），单独传入IpAddress不生效。",
           "example": "0.0.0.0",
           "member": "string",
@@ -3662,7 +3452,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "端口号，取值范围1025-60000，需同时传入IpAddress和Port，结束IpAddress和Port对应的进程以及游戏服务器会话（如果存在）和玩家会话（如果存在），单独传入Port不生效。",
           "example": "8888",
           "member": "int64",
@@ -3689,7 +3478,6 @@
       "document": "事件对象",
       "members": [
         {
-          "default": "",
           "document": "事件代码，支持以下的事件代码\n\n- FLEET_CREATED \n- FLEET_STATE_DOWNLOADING \n- FLEET_BINARY_DOWNLOAD_FAILED \n- FLEET_CREATION_EXTRACTING_BUILD\n- FLEET_CREATION_VALIDATING_RUNTIME_CONFIG\n- FLEET_STATE_VALIDATING\n- FLEET_STATE_BUILDING \n- FLEET_STATE_ACTIVATING\n- FLEET_STATE_ACTIVE\n- FLEET_SCALING_EVENT\n- FLEET_STATE_ERROR\n- FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND\n- FLEET_ACTIVATION_FAILED_NO_INSTANCES\n- FLEET_VPC_PEERING_SUCCEEDED\n- FLEET_VPC_PEERING_FAILED\n- FLEET_VPC_PEERING_DELETE\n- FLEET_INITIALIZATION_FAILED\n- FLEET_DELETED\n- FLEET_STATE_DELETING\n- FLEET_ACTIVATION_FAILED\n- GAME_SESSION_ACTIVATION_TIMEOUT",
           "member": "string",
           "name": "EventCode",
@@ -3698,7 +3486,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "事件的唯一标识 ID",
           "member": "string",
           "name": "EventId",
@@ -3707,7 +3494,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "事件的发生时间，UTC 时间格式",
           "member": "string",
           "name": "EventTime",
@@ -3716,7 +3502,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "事件的消息\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Message",
@@ -3725,7 +3510,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "事件相关的日志存储路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "PreSignedLogUrl",
@@ -3734,7 +3518,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "事件对应的资源对象唯一标识 ID，例如服务器舰队 ID",
           "member": "string",
           "name": "ResourceId",
@@ -3749,7 +3532,6 @@
       "document": "实例类型限额配置额外信息",
       "members": [
         {
-          "default": "",
           "document": "实例类型，例如S5.LARGE8\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "InstanceType",
@@ -3758,7 +3540,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例限额数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "TotalInstances",
@@ -3773,7 +3554,6 @@
       "document": "过滤字段内容",
       "members": [
         {
-          "default": "",
           "document": "过滤属性的 key",
           "member": "string",
           "name": "Key",
@@ -3782,7 +3562,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "过滤属性的 values 值",
           "member": "string",
           "name": "Values",
@@ -3797,7 +3576,6 @@
       "document": "服务部署属性",
       "members": [
         {
-          "default": "",
           "document": "生成包 Id",
           "example": "无",
           "member": "string",
@@ -3807,7 +3585,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建服务器舰队时间",
           "example": "无",
           "member": "string",
@@ -3817,7 +3594,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3827,7 +3603,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务器舰队资源描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3837,7 +3612,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务器舰队 Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3847,7 +3621,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务器舰队类型，目前只支持ON_DEMAND\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3857,7 +3630,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务器类型，例如S5.LARGE8\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3867,7 +3639,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务器舰队名称",
           "example": "无",
           "member": "string",
@@ -3877,7 +3648,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "游戏会话保护策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3887,7 +3657,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "操作系统类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3897,7 +3666,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资源创建限制策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ResourceCreationLimitPolicy",
@@ -3907,7 +3675,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "状态：新建、下载中、验证中、生成中、激活中、活跃、异常、删除中、结束\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3917,7 +3684,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务器舰队停止状态，为空时表示自动扩缩容\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3927,7 +3693,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务器舰队终止时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3937,7 +3702,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "时限保护超时时间，默认60分钟，最小值5，最大值1440\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -3947,7 +3711,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "计费状态：未开通、已开通、异常、欠费隔离、销毁、解冻\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -3957,7 +3720,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "标签列表，最大长度50组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
@@ -3967,7 +3729,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据盘，储存类型为 SSD 云硬盘（CLOUD_SSD）时，100-32000GB；储存类型为高性能云硬盘（CLOUD_PREMIUM）时，10-32000GB；容量以10为单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DiskInfo",
@@ -3977,7 +3738,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "系统盘，储存类型为 SSD 云硬盘（CLOUD_SSD）时，100-500GB；储存类型为高性能云硬盘（CLOUD_PREMIUM）时，50-500GB；容量以1为单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DiskInfo",
@@ -3987,7 +3747,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云联网相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RelatedCcnInfo",
@@ -3997,7 +3756,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "fleet公网出带宽最大值，默认100Mbps，范围1-200Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -4013,7 +3771,6 @@
       "document": "服务部署组容量配置",
       "members": [
         {
-          "default": "",
           "document": "服务部署 Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "FleetId",
@@ -4022,7 +3779,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务器类型，如S3.LARGE8,S2.LARGE8,S5.LARGE8等\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "InstanceType",
@@ -4031,7 +3787,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务器实例统计数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "InstanceCounts",
           "name": "InstanceCounts",
@@ -4040,7 +3795,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务器伸缩容间隔，单位分钟，最小值3，最大值30，默认值10\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "ScalingInterval",
@@ -4055,7 +3809,6 @@
       "document": "与服务器舰队关联的资源，如别名和队列",
       "members": [
         {
-          "default": "",
           "document": "资源类型。\n- ALIAS：别名\n- QUEUE：队列\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Type",
@@ -4064,7 +3817,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资源ID，目前仅支持别名ID和队列名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ResourceId",
@@ -4073,7 +3825,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "资源所在区域，如ap-shanghai、na-siliconvalley等\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ResourceRegion",
@@ -4088,7 +3839,6 @@
       "document": "舰队统计详情",
       "members": [
         {
-          "default": "",
           "document": "舰队ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "FleetId",
@@ -4097,7 +3847,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "InstanceId",
@@ -4106,7 +3855,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "InstanceIP",
@@ -4115,7 +3863,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "BeginTime",
@@ -4124,7 +3871,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "EndTime",
@@ -4133,7 +3879,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "总时长，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "TotalUsedTimeSeconds",
@@ -4142,7 +3887,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "总流量，单位MB\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "float",
           "name": "TotalUsedFlowMegaBytes",
@@ -4157,7 +3901,6 @@
       "document": "舰队统计流量",
       "members": [
         {
-          "default": "",
           "document": "总流量，单位MB\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "float",
           "name": "TotalUsedFlowMegaBytes",
@@ -4166,7 +3909,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "统计开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "BeginTime",
@@ -4181,7 +3923,6 @@
       "document": "舰队统计总时长",
       "members": [
         {
-          "default": "",
           "document": "统计开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "BeginTime",
@@ -4190,7 +3931,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "统计总时长，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "TotalUsedTimeSeconds",
@@ -4205,7 +3945,6 @@
       "document": "服务部署利用率",
       "members": [
         {
-          "default": "",
           "document": "游戏会话数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "ActiveGameServerSessionCount",
@@ -4214,7 +3953,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "活跃进程数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "ActiveServerProcessCount",
@@ -4223,7 +3961,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "当前游戏玩家数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "CurrentPlayerSessionCount",
@@ -4232,7 +3969,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务部署 Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "FleetId",
@@ -4241,7 +3977,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "最大玩家会话数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "MaximumPlayerSessionCount",
@@ -4256,7 +3991,6 @@
       "document": "游戏属性详情",
       "members": [
         {
-          "default": "",
           "document": "属性名称，最大长度不超过32个ASCII字符",
           "member": "string",
           "name": "Key",
@@ -4265,7 +3999,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "属性值，最大长度不超过96个ASCII字符",
           "member": "string",
           "name": "Value",
@@ -4280,7 +4013,6 @@
       "document": "游戏会话详情",
       "members": [
         {
-          "default": "",
           "document": "游戏服务器会话创建时间",
           "member": "string",
           "name": "CreationTime",
@@ -4289,7 +4021,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建者ID，最大长度不超过1024个ASCII字符\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "CreatorId",
@@ -4298,7 +4029,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "当前玩家数量，最小值不小于0",
           "member": "uint64",
           "name": "CurrentPlayerSessionCount",
@@ -4307,7 +4037,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "CVM的DNS标识符\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "DnsName",
@@ -4316,7 +4045,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "舰队ID",
           "member": "string",
           "name": "FleetId",
@@ -4325,7 +4053,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "游戏属性，最大长度不超过16组\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "GameProperty",
           "name": "GameProperties",
@@ -4334,7 +4061,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "游戏服务器会话属性详情，最大长度不超过4096个ASCII字符\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "GameServerSessionData",
@@ -4343,7 +4069,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "游戏服务器会话ID，最小长度不小于1个ASCII字符，最大长度不超过48个ASCII字符",
           "member": "string",
           "name": "GameServerSessionId",
@@ -4352,7 +4077,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "CVM IP地址",
           "member": "string",
           "name": "IpAddress",
@@ -4361,7 +4085,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "对战进程详情，最大长度不超过400000个ASCII字符\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "MatchmakerData",
@@ -4370,7 +4093,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "最大玩家数量，最小值不小于0",
           "member": "uint64",
           "name": "MaximumPlayerSessionCount",
@@ -4379,7 +4101,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "游戏服务器会话名称，最大长度不超过1024个ASCII字符\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Name",
@@ -4388,7 +4109,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "玩家会话创建策略（ACCEPT_ALL,DENY_ALL）\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "PlayerSessionCreationPolicy",
@@ -4397,7 +4117,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "端口号，最小值不小于1，最大值不超过60000",
           "member": "uint64",
           "name": "Port",
@@ -4406,7 +4125,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "游戏服务器会话状态（ACTIVE,ACTIVATING,TERMINATED,TERMINATING,ERROR）",
           "member": "string",
           "name": "Status",
@@ -4415,7 +4133,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "游戏服务器会话状态附加信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "StatusReason",
@@ -4424,7 +4141,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "终止的时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "TerminationTime",
@@ -4433,7 +4149,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例类型，最大长度不超过128个ASCII字符\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "InstanceType",
@@ -4442,7 +4157,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "当前自定义数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "CurrentCustomCount",
@@ -4451,7 +4165,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "最大自定义数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "MaxCustomCount",
@@ -4460,7 +4173,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "权重\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "Weight",
@@ -4469,7 +4181,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "会话可用性状态，是否被屏蔽（Enable,Disable）\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "AvailabilityStatus",
@@ -4484,7 +4195,6 @@
       "document": "游戏服务器会话详情（GameServerSessionDetail）",
       "members": [
         {
-          "default": "",
           "document": "游戏服务器会话",
           "member": "GameServerSession",
           "name": "GameServerSession",
@@ -4493,7 +4203,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "保护策略，可选（NoProtection,FullProtection）\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ProtectionPolicy",
@@ -4508,7 +4217,6 @@
       "document": "游戏会话部署对象",
       "members": [
         {
-          "default": "",
           "document": "部署Id",
           "member": "string",
           "name": "PlacementId",
@@ -4517,7 +4225,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "服务部署组名称",
           "member": "string",
           "name": "GameServerSessionQueueName",
@@ -4526,7 +4233,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "玩家延迟\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "PlayerLatency",
           "name": "PlayerLatencies",
@@ -4535,7 +4241,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务部署状态",
           "member": "string",
           "name": "Status",
@@ -4544,7 +4249,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "分配给正在运行游戏会话的实例的DNS标识符\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "DnsName",
@@ -4553,7 +4257,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "游戏会话Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "GameServerSessionId",
@@ -4562,7 +4265,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "游戏会话名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "GameServerSessionName",
@@ -4571,7 +4273,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务部署区域\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "GameServerSessionRegion",
@@ -4580,7 +4281,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "游戏属性\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "GameProperty",
           "name": "GameProperties",
@@ -4589,7 +4289,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "游戏服务器允许同时连接到游戏会话的最大玩家数量，最小值1，最大值为玩家会话最大限额",
           "member": "uint64",
           "name": "MaximumPlayerSessionCount",
@@ -4598,7 +4297,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "游戏会话数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "GameServerSessionData",
@@ -4607,7 +4305,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "运行游戏会话的实例的IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "IpAddress",
@@ -4616,7 +4313,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "运行游戏会话的实例的端口号\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "Port",
@@ -4625,7 +4321,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "游戏匹配数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "MatchmakerData",
@@ -4634,7 +4329,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "部署的玩家游戏数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "PlacedPlayerSession",
           "name": "PlacedPlayerSessions",
@@ -4643,7 +4337,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "开始时间",
           "member": "string",
           "name": "StartTime",
@@ -4652,7 +4345,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "EndTime",
@@ -4667,7 +4359,6 @@
       "document": "服务部署组对象",
       "members": [
         {
-          "default": "",
           "document": "服务部署组名字",
           "member": "string",
           "name": "Name",
@@ -4676,7 +4367,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "服务部署组资源",
           "member": "string",
           "name": "GameServerSessionQueueArn",
@@ -4685,7 +4375,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "目的fleet（可为别名）列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "GameServerSessionQueueDestination",
           "name": "Destinations",
@@ -4694,7 +4383,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "延迟策略集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "PlayerLatencyPolicy",
           "name": "PlayerLatencyPolicies",
@@ -4703,7 +4391,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "超时时间",
           "member": "uint64",
           "name": "TimeoutInSeconds",
@@ -4712,7 +4399,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签列表，最大长度50组\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "Tag",
           "name": "Tags",
@@ -4727,7 +4413,6 @@
       "document": "服务部署组目的集合",
       "members": [
         {
-          "default": "",
           "document": "服务部署组目的的资源描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "DestinationArn",
@@ -4736,7 +4421,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务部署组目的的状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "FleetStatus",
@@ -4751,7 +4435,6 @@
       "document": "GetGameServerInstanceLogUrl请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "游戏舰队ID",
           "example": "fleet-qp3g3caa-4vruuf5c",
           "member": "string",
@@ -4760,7 +4443,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例ID",
           "example": "ins-pfkj99nn",
           "member": "string",
@@ -4769,7 +4451,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例IP",
           "example": "61.2.53.11",
           "member": "string",
@@ -4778,7 +4459,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "偏移量",
           "example": "0",
           "member": "uint64",
@@ -4787,7 +4467,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "每次条数",
           "example": "20",
           "member": "uint64",
@@ -4841,7 +4520,6 @@
       "document": "GetGameServerSessionLogUrl请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "游戏服务器会话ID，最小长度不小于1个ASCII字符，最大长度不超过48个ASCII字符",
           "member": "string",
           "name": "GameServerSessionId",
@@ -4874,7 +4552,6 @@
       "document": "GetInstanceAccess请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队ID",
           "member": "string",
           "name": "FleetId",
@@ -4882,7 +4559,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例Id",
           "member": "string",
           "name": "InstanceId",
@@ -4915,7 +4591,6 @@
       "document": "GetUploadCredentials请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "生成包所在地域，详见产品支持的 [地域列表](https://cloud.tencent.com/document/api/1165/42053#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)",
           "member": "string",
           "name": "AssetRegion",
@@ -4923,7 +4598,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "生成包的ZIP包名，例如：server.zip",
           "member": "string",
           "name": "BucketKey",
@@ -5001,7 +4675,6 @@
       "document": "允许网络访问范围",
       "members": [
         {
-          "default": "",
           "document": "起始端口号，最小值1025",
           "example": "1026",
           "member": "uint64",
@@ -5011,7 +4684,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "IP 段范围，合法的 CIDR 地址类型，如所有IPv4来源：0.0.0.0/0",
           "example": "0.0.0.0/0",
           "member": "string",
@@ -5021,7 +4693,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "协议类型：TCP或者UDP",
           "example": "TCP",
           "member": "string",
@@ -5031,7 +4702,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "终止端口号，最大值60000",
           "example": "60000",
           "member": "uint64",
@@ -5047,7 +4717,6 @@
       "document": "用于新增安全组",
       "members": [
         {
-          "default": "",
           "document": "起始端口号",
           "member": "uint64",
           "name": "FromPort",
@@ -5056,7 +4725,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "IP 端范围，CIDR方式划分",
           "member": "string",
           "name": "IpRange",
@@ -5065,7 +4733,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "协议类型",
           "member": "string",
           "name": "Protocol",
@@ -5074,7 +4741,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "终止端口号",
           "member": "uint64",
           "name": "ToPort",
@@ -5089,7 +4755,6 @@
       "document": "需要移除的安全组",
       "members": [
         {
-          "default": "",
           "document": "起始端口号",
           "member": "uint64",
           "name": "FromPort",
@@ -5098,7 +4763,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "IP 端范围，CIDR 方式换分",
           "member": "string",
           "name": "IpRange",
@@ -5107,7 +4771,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "协议类型：UDP或者TCP",
           "member": "string",
           "name": "Protocol",
@@ -5116,7 +4779,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "终止端口号",
           "member": "uint64",
           "name": "ToPort",
@@ -5131,7 +4793,6 @@
       "document": "实例信息",
       "members": [
         {
-          "default": "",
           "document": "服务部署ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "fleet-qp3g3caa-mg4w88ho",
           "member": "string",
@@ -5141,7 +4802,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ins-o5ns8y4r",
           "member": "string",
@@ -5151,7 +4811,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "121.4.186.193",
           "member": "string",
@@ -5161,7 +4820,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "dns\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
@@ -5171,7 +4829,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "操作系统\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CentOS 7.4 64位",
           "member": "string",
@@ -5181,7 +4838,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RUNNING",
           "member": "string",
@@ -5191,7 +4847,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "S5.LARGE8",
           "member": "string",
@@ -5201,7 +4856,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-01-28T13:17:02Z",
           "member": "string",
@@ -5211,7 +4865,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例权重\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
           "member": "int64",
@@ -5221,7 +4874,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例是否保留, 1-保留，0-不保留,默认\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -5231,7 +4883,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例的私有IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.0.0.0",
           "member": "string",
@@ -5247,7 +4898,6 @@
       "document": "实例访问凭证信息",
       "members": [
         {
-          "default": "",
           "document": "访问实例所需要的凭据",
           "member": "Credentials",
           "name": "Credentials",
@@ -5256,7 +4906,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "服务部署Id",
           "member": "string",
           "name": "FleetId",
@@ -5265,7 +4914,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例ID",
           "member": "string",
           "name": "InstanceId",
@@ -5274,7 +4922,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例公网IP",
           "member": "string",
           "name": "IpAddress",
@@ -5283,7 +4930,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "操作系统",
           "member": "string",
           "name": "OperatingSystem",
@@ -5298,7 +4944,6 @@
       "document": "服务器实例统计数据",
       "members": [
         {
-          "default": "",
           "document": "活跃的服务器实例数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "Active",
@@ -5307,7 +4952,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "期望的服务器实例数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "Desired",
@@ -5316,7 +4960,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "空闲的服务器实例数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "Idle",
@@ -5325,7 +4968,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务器实例数最大限制\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "MaxiNum",
@@ -5334,7 +4976,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务器实例数最小限制\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "MiniNum",
@@ -5343,7 +4984,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "已开始创建，但未激活的服务器实例数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "Pending",
@@ -5352,7 +4992,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "结束中的服务器实例数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "Terminating",
@@ -5367,7 +5006,6 @@
       "document": "实例扩展信息",
       "members": [
         {
-          "default": "",
           "document": "实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "Instance",
           "name": "Instance",
@@ -5376,7 +5014,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "State",
@@ -5385,7 +5022,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "健康进程数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "HealthyProcessCnt",
@@ -5394,7 +5030,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "活跃进程数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "ActiveProcessCnt",
@@ -5403,7 +5038,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "当前游戏会话总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "GameSessionCnt",
@@ -5412,7 +5046,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "最大游戏会话数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "MaxGameSessionCnt",
@@ -5421,7 +5054,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "当前玩家会话数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "PlayerSessionCnt",
@@ -5430,7 +5062,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "最大玩家会话数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "MaxPlayerSessionCnt",
@@ -5445,7 +5076,6 @@
       "document": "服务器实例类型信息",
       "members": [
         {
-          "default": "",
           "document": "类型名，例如“标准型SA1”",
           "member": "string",
           "name": "TypeName",
@@ -5454,7 +5084,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "类型，例如\"SA1.SMALL1\"",
           "member": "string",
           "name": "InstanceType",
@@ -5463,7 +5092,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "CPU，例如1核就是1",
           "member": "uint64",
           "name": "Cpu",
@@ -5472,7 +5100,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "内存，例如2G就是2",
           "member": "uint64",
           "name": "Memory",
@@ -5481,7 +5108,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "网络收到包,例如25万PPS就是25",
           "member": "uint64",
           "name": "NetworkCard",
@@ -5496,7 +5122,6 @@
       "document": "JoinGameServerSessionBatch请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符",
           "member": "string",
           "name": "GameServerSessionId",
@@ -5504,7 +5129,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "玩家ID列表，最小1组，最大25组",
           "member": "string",
           "name": "PlayerIds",
@@ -5512,7 +5136,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "玩家自定义数据",
           "member": "PlayerDataMap",
           "name": "PlayerDataMap",
@@ -5545,7 +5168,6 @@
       "document": "JoinGameServerSession请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符",
           "member": "string",
           "name": "GameServerSessionId",
@@ -5553,7 +5175,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "玩家ID，最大长度1024个ASCII字符",
           "member": "string",
           "name": "PlayerId",
@@ -5561,7 +5182,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "玩家自定义数据，最大长度2048个ASCII字符",
           "member": "string",
           "name": "PlayerData",
@@ -5594,7 +5214,6 @@
       "document": "ListAliases请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "名字，长度不小于1字符不超过1024字符",
           "member": "string",
           "name": "Name",
@@ -5602,7 +5221,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "路由策略类型，有效值常规别名(SIMPLE)、终止别名(TERMINAL)",
           "member": "string",
           "name": "RoutingStrategyType",
@@ -5610,7 +5228,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "要返回的最大结果数，最小值1",
           "member": "uint64",
           "name": "Limit",
@@ -5618,7 +5235,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移，默认0",
           "member": "uint64",
           "name": "Offset",
@@ -5626,7 +5242,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "排序字段，例如CreationTime",
           "member": "string",
           "name": "OrderBy",
@@ -5634,7 +5249,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "排序方式，有效值asc|desc",
           "member": "string",
           "name": "OrderWay",
@@ -5642,7 +5256,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "资源过滤字段，可以按照资源名称和标签进行过滤- 资源名称过滤    - Key: 固定字符串 \"resource:name\"    - Values: 资源名称数组（舰队当前仅支持单个名称的过滤）- 标签过滤    - 通过标签键过滤        - Key: 固定字符串 \"tag:key\"        - Values 不传    - 通过标签键值过滤        - Key: 固定字符串 \"tag:key-value\"        - Values: 标签键值对数组，例如 [\"key1:value1\", \"key1:value2\", \"key2:value2\"]",
           "member": "Filter",
           "name": "Filters",
@@ -5682,7 +5295,6 @@
       "document": "ListFleets请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "生成包 Id",
           "member": "string",
           "name": "AssetId",
@@ -5690,7 +5302,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结果返回最大值，暂未使用",
           "member": "uint64",
           "name": "Limit",
@@ -5698,7 +5309,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "结果返回偏移，暂未使用",
           "member": "uint64",
           "name": "Offset",
@@ -5706,7 +5316,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "资源过滤字段，可以按照资源名称和标签进行过滤- 资源名称过滤    - Key: 固定字符串 \"resource:name\"    - Values: 资源名称数组（当前仅支持单个名称的过滤）- 标签过滤    - 通过标签键过滤        - Key: 固定字符串 \"tag:key\"        - Values 不传    - 通过标签键值过滤        - Key: 固定字符串 \"tag:key-value\"        - Values: 标签键值对数组，例如 [\"key1:value1\", \"key1:value2\", \"key2:value2\"]",
           "member": "Filter",
           "name": "Filters",
@@ -5746,7 +5355,6 @@
       "document": "部署的玩家游戏会话",
       "members": [
         {
-          "default": "",
           "document": "玩家Id",
           "member": "string",
           "name": "PlayerId",
@@ -5755,7 +5363,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "玩家会话Id",
           "member": "string",
           "name": "PlayerSessionId",
@@ -5770,7 +5377,6 @@
       "document": "玩家自定义数据",
       "members": [
         {
-          "default": "",
           "document": "玩家自定义数据键，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符",
           "member": "string",
           "name": "Key",
@@ -5779,7 +5385,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "玩家自定义数据值，最小长度不小于1个ASCII字符，最大长度不超过2048个ASCII字符",
           "member": "string",
           "name": "Value",
@@ -5794,7 +5399,6 @@
       "document": "玩家延迟信息",
       "members": [
         {
-          "default": "",
           "document": "玩家Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "PlayerId",
@@ -5803,7 +5407,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "延迟对应的区域名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "RegionIdentifier",
@@ -5812,7 +5415,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "毫秒级延迟",
           "member": "uint64",
           "name": "LatencyInMilliseconds",
@@ -5827,7 +5429,6 @@
       "document": "延迟策略",
       "members": [
         {
-          "default": "",
           "document": "任意player允许的最大延迟，单位：毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "MaximumIndividualPlayerLatencyMilliseconds",
@@ -5836,7 +5437,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "放置新GameServerSession时强制实施策略的时间长度，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "PolicyDurationSeconds",
@@ -5851,7 +5451,6 @@
       "document": "玩家会话详情",
       "members": [
         {
-          "default": "",
           "document": "玩家会话创建时间",
           "member": "string",
           "name": "CreationTime",
@@ -5860,7 +5459,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "游戏服务器会话运行的DNS标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "DnsName",
@@ -5869,7 +5467,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "舰队ID",
           "member": "string",
           "name": "FleetId",
@@ -5878,7 +5475,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符",
           "member": "string",
           "name": "GameServerSessionId",
@@ -5887,7 +5483,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "游戏服务器会话运行的CVM地址",
           "member": "string",
           "name": "IpAddress",
@@ -5896,7 +5491,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "玩家自定义数据，最大长度2048个ASCII字符\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "PlayerData",
@@ -5905,7 +5499,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "玩家ID，最大长度1024个ASCII字符\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "PlayerId",
@@ -5914,7 +5507,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "玩家会话ID",
           "member": "string",
           "name": "PlayerSessionId",
@@ -5923,7 +5515,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "端口号，最小值不小于1，最大值不超过60000",
           "member": "uint64",
           "name": "Port",
@@ -5932,7 +5523,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "玩家会话的状态（RESERVED = 1,ACTIVE = 2,COMPLETED = 3,TIMEDOUT = 4）",
           "member": "string",
           "name": "Status",
@@ -5941,7 +5531,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "玩家会话终止时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "TerminationTime",
@@ -5956,7 +5545,6 @@
       "document": "PutScalingPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "扩缩容配置服务器舰队ID",
           "member": "string",
           "name": "FleetId",
@@ -5964,7 +5552,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "扩缩容策略名称，最小长度为1，最大长度为1024",
           "member": "string",
           "name": "Name",
@@ -5972,7 +5559,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "扩缩容调整值，ScalingAdjustmentType取值PercentChangeInCapacity时，取值范围-99~99\nScalingAdjustmentType取值ChangeInCapacity或ExactCapacity时，最小值要缩容的最多CVM个数，最大值为实际最大的CVM个数限额",
           "member": "int64",
           "name": "ScalingAdjustment",
@@ -5980,7 +5566,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "扩缩容调整类型，取值（ChangeInCapacity，ExactCapacity，PercentChangeInCapacity）",
           "member": "string",
           "name": "ScalingAdjustmentType",
@@ -5988,7 +5573,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "扩缩容指标阈值",
           "member": "float",
           "name": "Threshold",
@@ -5996,7 +5580,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "扩缩容策略比较符，取值：>,>=,<,<=",
           "member": "string",
           "name": "ComparisonOperator",
@@ -6004,7 +5587,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "单个策略持续时间长度（分钟）",
           "member": "int64",
           "name": "EvaluationPeriods",
@@ -6012,7 +5594,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "扩缩容参与计算的指标名称，PolicyType取值RuleBased，\nMetricName取值（AvailableGameServerSessions，AvailableCustomCount，PercentAvailableCustomCount，ActiveInstances，IdleInstances，CurrentPlayerSessions和PercentIdleInstances）；\nPolicyType取值TargetBased时，MetricName取值PercentAvailableGameSessions",
           "member": "string",
           "name": "MetricName",
@@ -6020,7 +5601,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "策略类型，取值：TargetBased表示基于目标的策略；RuleBased表示基于规则的策略",
           "member": "string",
           "name": "PolicyType",
@@ -6028,7 +5608,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "扩缩容目标值配置，只有TargetBased类型的策略生效",
           "member": "TargetConfiguration",
           "name": "TargetConfiguration",
@@ -6061,7 +5640,6 @@
       "document": "PutTimerScalingPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "定时器策略消息",
           "example": "无",
           "member": "TimerScalingPolicy",
@@ -6088,7 +5666,6 @@
       "document": "配额资源",
       "members": [
         {
-          "default": "",
           "document": "资源类型，1生成包、2服务部署、3别名、4游戏服务器队列、5实例\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "ResourceType",
@@ -6097,7 +5674,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "总额度\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "HardLimit",
@@ -6106,7 +5682,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "剩余额度\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "Remaining",
@@ -6115,7 +5690,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "额外信息，可能为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ExtraInfo",
@@ -6130,7 +5704,6 @@
       "document": "云联网相关信息描述",
       "members": [
         {
-          "default": "",
           "document": "云联网所属账号",
           "example": "13734*",
           "member": "string",
@@ -6140,7 +5713,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云联网 ID",
           "example": "ccn-f0jyb*",
           "member": "string",
@@ -6150,7 +5722,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "关联云联网状态",
           "example": "CCN_SELECTED_BEFORE_CREATE",
           "member": "string",
@@ -6166,7 +5737,6 @@
       "document": "ResolveAlias请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "要获取fleetId的别名ID",
           "member": "string",
           "name": "AliasId",
@@ -6199,7 +5769,6 @@
       "document": "资源创建规则",
       "members": [
         {
-          "default": "",
           "document": "创建数量，最小值1，默认2",
           "example": "2",
           "member": "uint64",
@@ -6209,7 +5778,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "单位时间，最小值1，默认3，单位分钟",
           "example": "3",
           "member": "uint64",
@@ -6225,7 +5793,6 @@
       "document": "路由策略",
       "members": [
         {
-          "default": "",
           "document": "别名的路由策略的类型，有效值常规别名(SIMPLE)、终止别名(TERMINAL)",
           "member": "string",
           "name": "Type",
@@ -6234,7 +5801,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "别名指向的队列的唯一标识符\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "FleetId",
@@ -6243,7 +5809,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "与终端路由策略一起使用的消息文本，长度不小于1字符不超过1024字符\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Message",
@@ -6258,7 +5823,6 @@
       "document": "运行配置",
       "members": [
         {
-          "default": "",
           "document": "游戏会话进程超时，最小值1，最大值600，单位秒",
           "example": "500",
           "member": "uint64",
@@ -6268,7 +5832,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "最大游戏会话数，最小值1，最大值2147483647",
           "example": "210",
           "member": "uint64",
@@ -6278,7 +5841,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "服务进程配置，至少有一个进程配置",
           "example": "无",
           "member": "ServerProcesse",
@@ -6294,7 +5856,6 @@
       "document": "动态扩缩容配置",
       "members": [
         {
-          "default": "",
           "document": "服务部署ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "FleetId",
@@ -6303,7 +5864,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Name",
@@ -6312,7 +5872,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Status",
@@ -6321,7 +5880,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "保留参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ScalingAdjustment",
@@ -6330,7 +5888,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "保留参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ScalingAdjustmentType",
@@ -6339,7 +5896,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "保留参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ComparisonOperator",
@@ -6348,7 +5904,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "保留参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Threshold",
@@ -6357,7 +5912,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "保留参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "EvaluationPeriods",
@@ -6366,7 +5920,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "保留参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "MetricName",
@@ -6375,7 +5928,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "策略类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "PolicyType",
@@ -6384,7 +5936,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "基于规则的配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "TargetConfiguration",
           "name": "TargetConfiguration",
@@ -6399,7 +5950,6 @@
       "document": "SearchGameServerSessions请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "别名ID",
           "member": "string",
           "name": "AliasId",
@@ -6407,7 +5957,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "舰队ID",
           "member": "string",
           "name": "FleetId",
@@ -6415,7 +5964,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "单次查询记录数上限",
           "member": "uint64",
           "name": "Limit",
@@ -6423,7 +5971,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "页偏移，用于查询下一页，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符",
           "member": "string",
           "name": "NextToken",
@@ -6431,7 +5978,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "搜索条件表达式，支持如下变量\ngameServerSessionName 游戏会话名称 String\ngameServerSessionId 游戏会话ID String\nmaximumSessions 最大的玩家会话数 Number\ncreationTimeMillis 创建时间，单位：毫秒 Number\nplayerSessionCount 当前玩家会话数 Number\nhasAvailablePlayerSessions 是否有可用玩家数 String 取值true或false\ngameServerSessionProperties 游戏会话属性 String\n\n表达式String类型 等于=，不等于<>判断\n表示Number类型支持 =,<>,>,>=,<,<=\n\n例如：\nFilterExpression取值\nplayerSessionCount>=2 AND hasAvailablePlayerSessions=true\"\n表示查找至少有两个玩家，而且有可用玩家会话的游戏会话。\nFilterExpression取值\ngameServerSessionProperties.K1 = 'V1' AND gameServerSessionProperties.K2 = 'V2' OR gameServerSessionProperties.K3 = 'V3'\n\n表示\n查询满足如下游戏服务器会话属性的游戏会话\n{\n    \"GameProperties\":[\n        {\n            \"Key\":\"K1\",\n            \"Value\":\"V1\"\n        },\n        {\n            \"Key\":\"K2\",\n            \"Value\":\"V2\"\n        },\n        {\n            \"Key\":\"K3\",\n            \"Value\":\"V3\"\n        }\n    ]\n}",
           "member": "string",
           "name": "FilterExpression",
@@ -6439,7 +5985,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "排序条件关键字\n支持排序字段\ngameServerSessionName 游戏会话名称 String\ngameServerSessionId 游戏会话ID String\nmaximumSessions 最大的玩家会话数 Number\ncreationTimeMillis 创建时间，单位：毫秒 Number\nplayerSessionCount 当前玩家会话数 Number",
           "member": "string",
           "name": "SortExpression",
@@ -6479,7 +6024,6 @@
       "document": "游戏服务进程",
       "members": [
         {
-          "default": "",
           "document": "并发执行数量，所有进程并发执行总数最小值1，最大值50",
           "example": "2",
           "member": "uint64",
@@ -6489,7 +6033,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "启动路径：Linux路径/local/game/ 或WIndows路径C:\\game\\，最小长度1，最大长度1024",
           "example": "105",
           "member": "string",
@@ -6499,7 +6042,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "启动参数，最小长度0，最大长度1024",
           "example": "30",
           "member": "string",
@@ -6515,7 +6057,6 @@
       "document": "SetServerReserved请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "扩缩容配置服务器舰队ID",
           "example": "fleet-qp3g3caa-mg4w88ho",
           "member": "string",
@@ -6524,7 +6065,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例ID",
           "example": "ins-3g57621x",
           "member": "string",
@@ -6533,7 +6073,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例是否保留, 1-保留，0-不保留,默认",
           "example": "1",
           "member": "int64",
@@ -6560,7 +6099,6 @@
       "document": "SetServerWeight请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队ID",
           "member": "string",
           "name": "FleetId",
@@ -6568,7 +6106,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例ID",
           "member": "string",
           "name": "InstanceId",
@@ -6576,7 +6113,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "权重，最小值0，最大值10，默认值5",
           "member": "int64",
           "name": "Weight",
@@ -6602,7 +6138,6 @@
       "document": "StartFleetActions请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队 Id",
           "member": "string",
           "name": "FleetId",
@@ -6610,7 +6145,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "服务器舰队扩展策略，值为[\"AUTO_SCALING\"]",
           "member": "string",
           "name": "Actions",
@@ -6643,7 +6177,6 @@
       "document": "StartGameServerSessionPlacement请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "开始部署游戏服务器会话的唯一标识符，最大值48个ASCII字符，模式：[a-zA-Z0-9-]+",
           "member": "string",
           "name": "PlacementId",
@@ -6651,7 +6184,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "游戏服务器会话队列名称",
           "member": "string",
           "name": "GameServerSessionQueueName",
@@ -6659,7 +6191,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "游戏服务器允许同时连接到游戏会话的最大玩家数量，最小值1，最大值为玩家会话最大限额",
           "member": "uint64",
           "name": "MaximumPlayerSessionCount",
@@ -6667,7 +6198,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "玩家游戏会话信息",
           "member": "DesiredPlayerSession",
           "name": "DesiredPlayerSessions",
@@ -6675,7 +6205,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "玩家游戏会话属性",
           "member": "GameProperty",
           "name": "GameProperties",
@@ -6683,7 +6212,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "游戏服务器会话数据，最大长度不超过4096个ASCII字符",
           "member": "string",
           "name": "GameServerSessionData",
@@ -6691,7 +6219,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "游戏服务器会话名称，最大长度不超过4096个ASCII字符",
           "member": "string",
           "name": "GameServerSessionName",
@@ -6699,7 +6226,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "玩家延迟",
           "member": "PlayerLatency",
           "name": "PlayerLatencies",
@@ -6732,7 +6258,6 @@
       "document": "StopFleetActions请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队 Id",
           "member": "string",
           "name": "FleetId",
@@ -6740,7 +6265,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "服务器舰队扩展策略，值为[\"AUTO_SCALING\"]",
           "member": "string",
           "name": "Actions",
@@ -6773,7 +6297,6 @@
       "document": "StopGameServerSessionPlacement请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "游戏服务器会话放置的唯一标识符",
           "member": "string",
           "name": "PlacementId",
@@ -6806,7 +6329,6 @@
       "document": "标签结构体",
       "members": [
         {
-          "default": "",
           "document": "标签键，最大长度127字节",
           "example": "tag1",
           "member": "string",
@@ -6816,7 +6338,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签值，最大长度255字节",
           "example": "tagvalue",
           "member": "string",
@@ -6832,7 +6353,6 @@
       "document": "基于规则的动态扩缩容配置项",
       "members": [
         {
-          "default": "",
           "document": "预留存率\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "TargetValue",
@@ -6847,7 +6367,6 @@
       "document": "重复周期配置",
       "members": [
         {
-          "default": "",
           "document": "定时器重复周期类型（未定义0，单次1、按天2、按月3、按周4）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -6857,7 +6376,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "定时器取值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TimerValue",
@@ -6867,7 +6385,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "定时器开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-01-14T03:36:35Z",
           "member": "string",
@@ -6877,7 +6394,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "定时器结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-01-15T03:36:35Z",
           "member": "string",
@@ -6893,7 +6409,6 @@
       "document": "定时器弹性伸缩策略",
       "members": [
         {
-          "default": "",
           "document": "扩缩容配置服务器舰队ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "fleet-qp3g3caa-mg4w88ho",
           "member": "string",
@@ -6903,7 +6418,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "期望实例数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
@@ -6913,7 +6427,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "最小实例数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -6923,7 +6436,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "最大实例数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
@@ -6933,7 +6445,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "伸缩容间隔，单位：分钟\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
@@ -6943,7 +6454,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "扩缩容类型（手动1，自动2、未定义0）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -6953,7 +6463,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "基于目标的扩展策略的设置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TargetConfiguration",
@@ -6969,7 +6478,6 @@
       "document": "定时器策略消息",
       "members": [
         {
-          "default": "",
           "document": "定时器ID，进行encode，填写时更新\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "timerId-oc80v5zp",
           "member": "string",
@@ -6979,7 +6487,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "定时器名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testonce1",
           "member": "string",
@@ -6989,7 +6496,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "定时器状态(未定义0、未生效1、生效中2、已停止3、已过期4)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -6999,7 +6505,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "定时器弹性伸缩策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TimerFleetCapacity",
@@ -7009,7 +6514,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "重复周期配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TimerConfiguration",
@@ -7025,7 +6529,6 @@
       "document": "定时器取值配置",
       "members": [
         {
-          "default": "",
           "document": "每X天，执行一次(重复周期-按天/单次)\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "Day",
@@ -7034,7 +6537,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "每月从第x天，执行一次(重复周期-按月)\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "FromDay",
@@ -7043,7 +6545,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "每月到第x天，执行一次(重复周期-按月)\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "ToDay",
@@ -7052,7 +6553,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "重复周期-按周，周几（多个值,取值周一(1,2,3,4,5,6,7)周日）\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "WeekDays",
@@ -7067,7 +6567,6 @@
       "document": "UpdateAlias请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "要更新的别名的唯一标识符",
           "member": "string",
           "name": "AliasId",
@@ -7075,7 +6574,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "名字，长度不小于1字符不超过1024字符",
           "member": "string",
           "name": "Name",
@@ -7083,7 +6581,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "别名的可读说明，长度不小于1字符不超过1024字符",
           "member": "string",
           "name": "Description",
@@ -7091,7 +6588,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "别名的路由配置",
           "member": "RoutingStrategy",
           "name": "RoutingStrategy",
@@ -7124,7 +6620,6 @@
       "document": "UpdateAsset请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "生成包ID",
           "member": "string",
           "name": "AssetId",
@@ -7132,7 +6627,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "生成包名字，最小长度为1，最大长度为64",
           "member": "string",
           "name": "AssetName",
@@ -7140,7 +6634,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "生成包版本，最小长度为1，最大长度为64",
           "member": "string",
           "name": "AssetVersion",
@@ -7166,7 +6659,6 @@
       "document": "UpdateBucketAccelerateOpt请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "true为开启全球加速，false为关闭",
           "member": "bool",
           "name": "Allowed",
@@ -7192,7 +6684,6 @@
       "document": "UpdateBucketCORSOpt请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "允许的访问来源;具体参见 [cos文档](https://cloud.tencent.com/document/product/436/8279)",
           "member": "string",
           "name": "AllowedOrigins",
@@ -7200,7 +6691,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "允许的 HTTP 操作方法;可以配置多个:PUT、GET、POST、HEAD。[cos文档](https://cloud.tencent.com/document/product/436/8279)",
           "member": "string",
           "name": "AllowedMethods",
@@ -7208,7 +6698,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "用于指定允许浏览器发送 CORS 请求时携带的自定义 HTTP 请求头部;可以配置*，代表允许所有头部，为了避免遗漏，推荐配置为*。[cos文档](https://cloud.tencent.com/document/product/436/8279)",
           "member": "string",
           "name": "AllowedHeaders",
@@ -7216,7 +6705,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "跨域资源共享配置的有效时间，单位为秒。[cos文档](https://cloud.tencent.com/document/product/436/8279)",
           "member": "int64",
           "name": "MaxAgeSeconds",
@@ -7224,7 +6712,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "允许浏览器获取的 CORS 请求响应中的头部，不区分大小写；默认情况下浏览器只能访问简单响应头部：Cache-Control、Content-Type、Expires、Last-Modified，如果需要访问其他响应头部，需要添加 ExposeHeader 配置。[cos文档](https://cloud.tencent.com/document/product/436/8279)",
           "member": "string",
           "name": "ExposeHeaders",
@@ -7250,7 +6737,6 @@
       "document": "UpdateFleetAttributes请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队 Id",
           "member": "string",
           "name": "FleetId",
@@ -7258,7 +6744,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "服务器舰队描述，最小长度0，最大长度100",
           "member": "string",
           "name": "Description",
@@ -7266,7 +6751,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "服务器舰队名称，最小长度1，最大长度50",
           "member": "string",
           "name": "Name",
@@ -7274,7 +6758,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "保护策略：不保护NoProtection、完全保护FullProtection、时限保护TimeLimitProtection",
           "member": "string",
           "name": "NewGameSessionProtectionPolicy",
@@ -7282,7 +6765,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "资源创建限制策略",
           "member": "ResourceCreationLimitPolicy",
           "name": "ResourceCreationLimitPolicy",
@@ -7290,7 +6772,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "时限保护超时时间，默认60分钟，最小值5，最大值1440；当NewGameSessionProtectionPolicy为TimeLimitProtection时参数有效",
           "member": "int64",
           "name": "GameServerSessionProtectionTimeLimit",
@@ -7323,7 +6804,6 @@
       "document": "UpdateFleetCapacity请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队ID",
           "member": "string",
           "name": "FleetId",
@@ -7331,7 +6811,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "期望的服务器实例数",
           "member": "uint64",
           "name": "DesiredInstances",
@@ -7339,7 +6818,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "服务器实例数最小限制，最小值0，最大值不超过最高配额查看各地区最高配额减1",
           "member": "uint64",
           "name": "MinSize",
@@ -7347,7 +6825,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "服务器实例数最大限制，最小值1，最大值不超过最高配额查看各地区最高配额",
           "member": "uint64",
           "name": "MaxSize",
@@ -7355,7 +6832,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "服务器伸缩容间隔，单位分钟，最小值3，最大值30，默认值10",
           "member": "uint64",
           "name": "ScalingInterval",
@@ -7388,7 +6864,6 @@
       "document": "UpdateFleetName请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队 Id",
           "member": "string",
           "name": "FleetId",
@@ -7396,7 +6871,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "服务器舰队名称，最小长度1，最大长度50",
           "member": "string",
           "name": "Name",
@@ -7422,7 +6896,6 @@
       "document": "UpdateFleetPortSettings请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队 Id",
           "member": "string",
           "name": "FleetId",
@@ -7430,7 +6903,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "新增安全组",
           "member": "InboundPermissionAuthorization",
           "name": "InboundPermissionAuthorizations",
@@ -7438,7 +6910,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "移除安全组",
           "member": "InboundPermissionRevocations",
           "name": "InboundPermissionRevocations",
@@ -7471,7 +6942,6 @@
       "document": "UpdateGameServerSessionQueue请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "游戏服务器会话队列名字，长度1~128",
           "member": "string",
           "name": "Name",
@@ -7479,7 +6949,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "目的服务器舰队（可为别名）列表",
           "member": "GameServerSessionQueueDestination",
           "name": "Destinations",
@@ -7487,7 +6956,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "延迟策略集合",
           "member": "PlayerLatencyPolicy",
           "name": "PlayerLatencyPolicies",
@@ -7495,7 +6963,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "超时时间",
           "member": "uint64",
           "name": "TimeoutInSeconds",
@@ -7528,7 +6995,6 @@
       "document": "UpdateGameServerSession请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "游戏服务器会话ID，最小长度1个ASCII字符，最大长度不超过256个ASCII字符",
           "member": "string",
           "name": "GameServerSessionId",
@@ -7536,7 +7002,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "最大玩家数量，最小值不小于0",
           "member": "uint64",
           "name": "MaximumPlayerSessionCount",
@@ -7544,7 +7009,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "游戏服务器会话名称，最小长度不小于1个ASCII字符，最大长度不超过1024个ASCII字符",
           "member": "string",
           "name": "Name",
@@ -7552,7 +7016,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "玩家会话创建策略，包括允许所有玩家加入和禁止所有玩家加入（ACCEPT_ALL,DENY_ALL）",
           "member": "string",
           "name": "PlayerSessionCreationPolicy",
@@ -7560,7 +7023,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "保护策略，包括不保护、时限保护和完全保护(NoProtection,TimeLimitProtection,FullProtection)",
           "member": "string",
           "name": "ProtectionPolicy",
@@ -7593,7 +7055,6 @@
       "document": "UpdateRuntimeConfiguration请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "服务器舰队Id",
           "member": "string",
           "name": "FleetId",
@@ -7601,7 +7062,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "服务器舰队配置",
           "member": "RuntimeConfiguration",
           "name": "RuntimeConfiguration",

@@ -82,7 +82,6 @@
       "document": "动作库筛选栏位",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "关键字",
           "example": "动作名称",
@@ -93,7 +92,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索内容值",
           "example": "[\"开机\",\"关机\"]",
@@ -116,8 +114,7 @@
           "member": "uint64",
           "name": "TemplateId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -126,8 +123,7 @@
           "member": "TaskConfig",
           "name": "TaskConfig",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -142,8 +138,7 @@
           "member": "uint64",
           "name": "TaskId",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -158,7 +153,6 @@
       "document": "DeleteTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "无",
@@ -186,7 +180,6 @@
       "document": "查询-保护策略",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "保护策略ID列表",
           "example": "[\"policy-aaaa\",\"policy-aaaa\"]",
@@ -197,7 +190,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "保护策略状态",
           "example": "已触发",
@@ -208,7 +200,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略规则",
           "example": "or",
@@ -219,7 +210,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "护栏策略生效处理策略 1:顺序执行，2:暂停\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -236,7 +226,6 @@
       "document": "DescribeTaskExecuteLogs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "10",
@@ -246,7 +235,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回的内容行数",
           "example": "100",
@@ -256,7 +244,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志起始的行数。",
           "example": "10",
@@ -297,100 +284,82 @@
           "disabled": false,
           "document": "分页Limit",
           "example": "10",
-          "is_base64": false,
           "member": "int64",
           "name": "Limit",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "分页Offset",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "Offset",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "演练名称",
           "example": "\"1\"",
-          "is_base64": false,
           "member": "string",
           "name": "TaskTitle",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "标签键",
           "example": "\"1\"",
-          "is_base64": false,
           "member": "string",
           "name": "TaskTag",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "任务状态(1001 -- 未开始 1002 -- 进行中 1003 -- 暂停中 1004 -- 任务结束)",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "TaskStatus",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "开始时间，固定格式%Y-%m-%d %H:%M:%S",
           "example": "\"1\"",
-          "is_base64": false,
           "member": "string",
           "name": "TaskStartTime",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "结束时间，固定格式%Y-%m-%d %H:%M:%S",
           "example": "\"1\"",
-          "is_base64": false,
           "member": "string",
           "name": "TaskEndTime",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "标签对",
           "example": "无",
-          "is_base64": false,
           "member": "TagWithDescribe",
           "name": "Tags",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "筛选条件",
           "example": "None",
-          "is_base64": false,
           "member": "ActionFilter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -406,8 +375,7 @@
           "name": "TaskList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -417,8 +385,7 @@
           "name": "Total",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -433,15 +400,13 @@
       "document": "DescribeTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "1",
           "member": "int64",
           "name": "TaskId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -457,8 +422,7 @@
           "name": "Task",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -468,8 +432,7 @@
           "name": "ReportInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -487,100 +450,82 @@
           "disabled": false,
           "document": "分页Limit, 最大值100",
           "example": "10",
-          "is_base64": false,
           "member": "int64",
           "name": "Limit",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "分页Offset",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "Offset",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "演练名称",
           "example": "\"1\"",
-          "is_base64": false,
           "member": "string",
           "name": "Title",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "标签键",
           "example": "\"1\"",
-          "is_base64": false,
           "member": "string",
           "name": "Tag",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "状态，1---使用中， 2---停用",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "IsUsed",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "标签对",
           "example": "无",
-          "is_base64": false,
           "member": "TagWithDescribe",
           "name": "Tags",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "经验来源 0-自建 1-专家推荐",
           "example": "无",
-          "is_base64": false,
           "member": "int64",
           "name": "TemplateSource",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "经验ID",
           "example": "无",
-          "is_base64": false,
           "member": "int64",
           "name": "TemplateIdList",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "过滤参数",
           "example": "无",
-          "is_base64": false,
           "member": "ActionFilter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -596,8 +541,7 @@
           "name": "TemplateList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -607,8 +551,7 @@
           "name": "Total",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -623,15 +566,13 @@
       "document": "DescribeTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "经验库ID",
           "example": "1",
           "member": "int64",
           "name": "TemplateId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -647,8 +588,7 @@
           "name": "Template",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -663,70 +603,58 @@
       "document": "ExecuteTaskInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "10",
           "member": "uint64",
           "name": "TaskId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务动作ID",
           "example": "20",
           "member": "uint64",
           "name": "TaskActionId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务动作实例ID",
           "example": "[1,2,3]",
           "member": "uint64",
           "name": "TaskInstanceIds",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否操作整个任务",
           "example": "true",
           "member": "bool",
           "name": "IsOperateAll",
           "required": true,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作类型：（1--启动   2--执行  3--跳过   5--重试）",
           "example": "1",
           "member": "uint64",
           "name": "ActionType",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动作组ID",
           "example": "1",
           "member": "uint64",
           "name": "TaskGroupId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -747,15 +675,13 @@
       "document": "ExecuteTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要执行的任务ID",
           "example": "1",
           "member": "int64",
           "name": "TaskId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -776,7 +702,6 @@
       "document": "ModifyTaskRunStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "123",
@@ -786,7 +711,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务状态, 1001--未开始 1002--进行中（执行）1003--进行中（暂停）1004--执行结束",
           "example": "1002",
@@ -796,7 +720,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行结果是否符合预期（当前扭转状态为执行结束时，需要必传此字段）",
           "example": "true",
@@ -806,7 +729,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "演习结论（当演习状态转变为执行结束时，需要填写此字段）",
           "example": "演练总结",
@@ -834,7 +756,6 @@
       "document": "用于传入创建、编辑标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键",
           "example": "test",
@@ -845,7 +766,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "mytest",
@@ -869,8 +789,7 @@
           "name": "TagKey",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -880,8 +799,7 @@
           "name": "TagValue",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -897,8 +815,7 @@
           "name": "TaskId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -908,8 +825,7 @@
           "name": "TaskTitle",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -919,8 +835,7 @@
           "name": "TaskDescription",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -930,8 +845,7 @@
           "name": "TaskTag",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -941,8 +855,7 @@
           "name": "TaskStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -952,8 +865,7 @@
           "name": "TaskStatusType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -963,8 +875,7 @@
           "name": "TaskProtectStrategy",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -974,8 +885,7 @@
           "name": "TaskCreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -985,8 +895,7 @@
           "name": "TaskUpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -996,8 +905,7 @@
           "name": "TaskGroups",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1007,8 +915,7 @@
           "name": "TaskStartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1018,8 +925,7 @@
           "name": "TaskEndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1029,8 +935,7 @@
           "name": "TaskExpect",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1040,8 +945,7 @@
           "name": "TaskSummary",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1051,8 +955,7 @@
           "name": "TaskMode",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1062,8 +965,7 @@
           "name": "TaskPauseDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1073,8 +975,7 @@
           "name": "TaskOwnerUin",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1084,8 +985,7 @@
           "name": "TaskRegionId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1095,8 +995,7 @@
           "name": "TaskMonitors",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1106,8 +1005,7 @@
           "name": "TaskPolicy",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1117,8 +1015,7 @@
           "name": "Tags",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1128,8 +1025,7 @@
           "name": "TaskPlanId",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1139,8 +1035,7 @@
           "name": "TaskPlanTitle",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1149,7 +1044,6 @@
       "document": "从经验模板创建演练时需要配置的任务参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "动作组配置，需要保证配置个数和经验中的动作组个数一致",
           "example": "无",
@@ -1157,11 +1051,9 @@
           "name": "TaskGroupsConfig",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更改后的演练名称，不填则默认取经验名称",
           "example": "演练名称",
@@ -1169,11 +1061,9 @@
           "name": "TaskTitle",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更改后的演练描述，不填则默认取经验描述",
           "example": "演练描述",
@@ -1181,11 +1071,9 @@
           "name": "TaskDescription",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "演练执行模式：1----手工执行/ 2 ---自动执行，不填则默认取经验执行模式",
           "example": "1",
@@ -1193,11 +1081,9 @@
           "name": "TaskMode",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "演练自动暂停时间，单位分钟, 不填则默认取经验自动暂停时间",
           "example": "60",
@@ -1205,11 +1091,9 @@
           "name": "TaskPauseDuration",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "演练标签信息，不填则默认取经验标签",
           "example": "[]",
@@ -1217,8 +1101,7 @@
           "name": "Tags",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -1234,8 +1117,7 @@
           "name": "TaskGroupId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1245,8 +1127,7 @@
           "name": "TaskGroupTitle",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1256,8 +1137,7 @@
           "name": "TaskGroupDescription",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1267,8 +1147,7 @@
           "name": "TaskGroupOrder",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1278,8 +1157,7 @@
           "name": "ObjectTypeId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1289,8 +1167,7 @@
           "name": "TaskGroupCreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1300,8 +1177,7 @@
           "name": "TaskGroupUpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1311,8 +1187,7 @@
           "name": "TaskGroupActions",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1322,8 +1197,7 @@
           "name": "TaskGroupInstanceList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1333,8 +1207,7 @@
           "name": "TaskGroupMode",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1344,8 +1217,7 @@
           "name": "TaskGroupDiscardInstanceList",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1355,8 +1227,7 @@
           "name": "TaskGroupSelectedInstanceList",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1366,8 +1237,7 @@
           "name": "TaskGroupInstancesExecuteRule",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1376,7 +1246,6 @@
       "document": "任务分组动作",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务分组动作ID",
           "example": "1",
@@ -1384,11 +1253,9 @@
           "name": "TaskGroupActionId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务分组动作实例列表",
           "example": "无",
@@ -1396,11 +1263,9 @@
           "name": "TaskGroupInstances",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动作ID",
           "example": "1",
@@ -1408,11 +1273,9 @@
           "name": "ActionId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组动作顺序",
           "example": "1",
@@ -1420,11 +1283,9 @@
           "name": "TaskGroupActionOrder",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组动作通用配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
@@ -1432,11 +1293,9 @@
           "name": "TaskGroupActionGeneralConfiguration",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组动作自定义配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
@@ -1444,11 +1303,9 @@
           "name": "TaskGroupActionCustomConfiguration",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组动作状态",
           "example": "1",
@@ -1456,11 +1313,9 @@
           "name": "TaskGroupActionStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动作分组创建时间",
           "example": "\"2021-08-17 20:05:04\"",
@@ -1468,11 +1323,9 @@
           "name": "TaskGroupActionCreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动作分组更新时间",
           "example": "\"2021-08-17 20:05:04\"",
@@ -1480,11 +1333,9 @@
           "name": "TaskGroupActionUpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动作名称",
           "example": "关机",
@@ -1492,11 +1343,9 @@
           "name": "ActionTitle",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态类型: 0 -- 无状态，1 -- 成功，2-- 失败，3--终止，4--跳过",
           "example": "0",
@@ -1504,11 +1353,9 @@
           "name": "TaskGroupActionStatusType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "RandomId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -1516,11 +1363,9 @@
           "name": "TaskGroupActionRandomId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "RecoverId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -1528,11 +1373,9 @@
           "name": "TaskGroupActionRecoverId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ExecuteId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -1540,11 +1383,9 @@
           "name": "TaskGroupActionExecuteId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "调用api类型，0:tat, 1:云api\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1552,11 +1393,9 @@
           "name": "ActionApiType",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1:故障，2:恢复\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1564,11 +1403,9 @@
           "name": "ActionAttribute",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动作类型：平台、自定义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "平台",
@@ -1576,11 +1413,9 @@
           "name": "ActionType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否可重试\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -1588,11 +1423,9 @@
           "name": "IsExecuteRedo",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动作风险级别\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "高风险",
@@ -1600,11 +1433,9 @@
           "name": "ActionRisk",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动作运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
@@ -1612,8 +1443,7 @@
           "name": "TaskGroupActionExecuteTime",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1622,7 +1452,6 @@
       "document": "动作组中的动作参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "该动作在动作组中的顺序，从1开始，不填或填错将匹配不到经验中要修改参数的动作",
           "example": "1",
@@ -1633,7 +1462,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动作通用参数，需要json序列化传入，可以从查询经验详情接口获取，不填默认使用经验中动作参数",
           "example": "无",
@@ -1644,7 +1472,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动作自定义参数，需要json序列化传入，可以从查询经验详情接口获取，不填默认使用经验中动作参数",
           "example": "无",
@@ -1661,7 +1488,6 @@
       "document": "动作组的配置项",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "动作组所关联的实例对象",
           "example": "[\"ins-y5hy9gnh\", \"ins-y5hy9g21\"]",
@@ -1672,7 +1498,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动作组标题，不填默认取经验中的动作组名称",
           "example": "动作组标题",
@@ -1683,7 +1508,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动作组描述，不填默认取经验中的动作组描述",
           "example": "动作组描述",
@@ -1694,7 +1518,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动作执行模式。1 --- 顺序执行，2 --- 阶段执行, 不填默认取经验中的动作组执行模式",
           "example": "1",
@@ -1705,7 +1528,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动作组中的动作参数，不填默认使用经验中的动作参数，配置时可以只指定想要修改参数的动作",
           "example": "[]",
@@ -1722,7 +1544,6 @@
       "document": "任务分组动作实例",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "1",
@@ -1730,11 +1551,9 @@
           "name": "TaskGroupInstanceId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ins_d1fr3",
@@ -1742,11 +1561,9 @@
           "name": "TaskGroupInstanceObjectId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例动作执行状态",
           "example": "1",
@@ -1754,11 +1571,9 @@
           "name": "TaskGroupInstanceStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例动作执行日志\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
@@ -1766,11 +1581,9 @@
           "name": "TaskGroupInstanceExecuteLog",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例创建时间",
           "example": "\"2021-08-17 20:05:04\"",
@@ -1778,11 +1591,9 @@
           "name": "TaskGroupInstanceCreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例更新时间",
           "example": "\"2021-08-17 20:05:04\"",
@@ -1790,11 +1601,9 @@
           "name": "TaskGroupInstanceUpdateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态类型: 0 -- 无状态，1 -- 成功，2-- 失败，3--终止，4--跳过",
           "example": "1",
@@ -1802,11 +1611,9 @@
           "name": "TaskGroupInstanceStatusType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"2021-08-17 20:05:04\"",
@@ -1814,11 +1621,9 @@
           "name": "TaskGroupInstanceStartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"2021-08-17 20:05:04\"",
@@ -1826,11 +1631,9 @@
           "name": "TaskGroupInstanceEndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例是否可重试\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -1838,11 +1641,9 @@
           "name": "TaskGroupInstanceIsRedo",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动作实例执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
@@ -1850,8 +1651,7 @@
           "name": "TaskGroupInstanceExecuteTime",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1867,8 +1667,7 @@
           "name": "TaskGroupInstancesExecuteMode",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1878,8 +1677,7 @@
           "name": "TaskGroupInstancesExecutePercent",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1889,8 +1687,7 @@
           "name": "TaskGroupInstancesExecuteNum",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1906,8 +1703,7 @@
           "name": "TaskId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1917,8 +1713,7 @@
           "name": "TaskTitle",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1928,8 +1723,7 @@
           "name": "TaskDescription",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1939,8 +1733,7 @@
           "name": "TaskTag",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1950,8 +1743,7 @@
           "name": "TaskStatus",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1961,8 +1753,7 @@
           "name": "TaskCreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1972,8 +1763,7 @@
           "name": "TaskUpdateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1983,8 +1773,7 @@
           "name": "TaskPreCheckStatus",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1994,8 +1783,7 @@
           "name": "TaskPreCheckSuccess",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2005,8 +1793,7 @@
           "name": "TaskExpect",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2015,7 +1802,6 @@
       "document": "监控指标",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "监控指标ID",
           "example": "1",
@@ -2026,7 +1812,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监控指标对象类型ID",
           "example": "1",
@@ -2037,7 +1822,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标名称",
           "example": "io",
@@ -2048,7 +1832,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID列表",
           "example": "[\"ins1\",\"ins2\"]",
@@ -2059,7 +1842,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "中文指标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "中文指标",
@@ -2070,7 +1852,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "%",
@@ -2087,7 +1868,6 @@
       "document": "演练报告状态信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "0--未开始，1--正在导出，2--导出成功，3--导出失败",
           "example": "0",
@@ -2095,11 +1875,9 @@
           "name": "Stage",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "\"2022-12-12 12:12:12\"",
@@ -2107,11 +1885,9 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "有效期截止时间",
           "example": "\"2022-12-12 12:12:12\"",
@@ -2119,11 +1895,9 @@
           "name": "ExpirationTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否有效",
           "example": "true",
@@ -2131,11 +1905,9 @@
           "name": "Expired",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "演练报告cos文件地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"http://xxxx\"",
@@ -2143,11 +1915,9 @@
           "name": "CosUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "演练报告导出日志\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -2155,8 +1925,7 @@
           "name": "Log",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2172,8 +1941,7 @@
           "name": "TemplateId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2183,8 +1951,7 @@
           "name": "TemplateTitle",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2194,8 +1961,7 @@
           "name": "TemplateDescription",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2205,8 +1971,7 @@
           "name": "TemplateTag",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2216,8 +1981,7 @@
           "name": "TemplateIsUsed",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2227,8 +1991,7 @@
           "name": "TemplateCreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2238,8 +2001,7 @@
           "name": "TemplateUpdateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2249,8 +2011,7 @@
           "name": "TemplateMode",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2260,8 +2021,7 @@
           "name": "TemplatePauseDuration",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2271,8 +2031,7 @@
           "name": "TemplateOwnerUin",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2282,8 +2041,7 @@
           "name": "TemplateRegionId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2293,8 +2051,7 @@
           "name": "TemplateGroups",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2304,8 +2061,7 @@
           "name": "TemplateMonitors",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2315,8 +2071,7 @@
           "name": "TemplatePolicy",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2326,8 +2081,7 @@
           "name": "Tags",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2337,8 +2091,7 @@
           "name": "TemplateSource",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2347,7 +2100,6 @@
       "document": "任务分组",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "经验库动作ID",
           "example": "1",
@@ -2358,7 +2110,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "经验库动作分组动作列表",
           "example": "无",
@@ -2369,7 +2120,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组标题",
           "example": "1",
@@ -2380,7 +2130,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -2391,7 +2140,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组顺序",
           "example": "1",
@@ -2402,7 +2150,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行模式。1 --- 顺序执行，2 --- 阶段执行",
           "example": "1",
@@ -2413,7 +2160,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对象类型ID",
           "example": "1",
@@ -2424,7 +2170,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组创建时间",
           "example": "\"2021-08-17 20:05:04\"",
@@ -2435,7 +2180,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组更新时间",
           "example": "\"2021-08-17 20:05:04\"",
@@ -2452,7 +2196,6 @@
       "document": "任务分组动作",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "经验库分组动作ID",
           "example": "1",
@@ -2463,7 +2206,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动作ID",
           "example": "1",
@@ -2474,7 +2216,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组动作顺序",
           "example": "1",
@@ -2485,7 +2226,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组动作通用配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
@@ -2496,7 +2236,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组动作自定义配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
@@ -2507,7 +2246,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动作分组创建时间",
           "example": "\"2021-08-17 20:05:04\"",
@@ -2518,7 +2256,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动作分组更新时间",
           "example": "\"2021-08-17 20:05:04\"",
@@ -2529,7 +2266,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动作名称",
           "example": "关机",
@@ -2540,7 +2276,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自身随机id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -2551,7 +2286,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "恢复动作id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -2562,7 +2296,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行动作id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456",
@@ -2573,7 +2306,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "调用api类型，0:tat, 1:云api\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -2584,7 +2316,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1:故障，2:恢复\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -2595,7 +2326,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动作类型：平台和自定义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "平台",
@@ -2619,8 +2349,7 @@
           "name": "TemplateId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2630,8 +2359,7 @@
           "name": "TemplateTitle",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2641,8 +2369,7 @@
           "name": "TemplateDescription",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2652,8 +2379,7 @@
           "name": "TemplateTag",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2663,8 +2389,7 @@
           "name": "TemplateIsUsed",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2674,8 +2399,7 @@
           "name": "TemplateCreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2685,8 +2409,7 @@
           "name": "TemplateUpdateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2696,8 +2419,7 @@
           "name": "TemplateUsedNum",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2707,8 +2429,7 @@
           "name": "TemplateSource",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2717,7 +2438,6 @@
       "document": "监控指标",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "监控指标ID",
           "example": "1",
@@ -2728,7 +2448,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监控指标对象类型ID",
           "example": "1",
@@ -2739,7 +2458,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标名称",
           "example": "io",
@@ -2750,7 +2468,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "中文指标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "中文指标",
@@ -2767,7 +2484,6 @@
       "document": "保护策略",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "保护策略ID列表",
           "example": "[\"policy-aaaa\",\"policy-aaaa\"]",
@@ -2778,7 +2494,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略规则",
           "example": "or",
@@ -2789,7 +2504,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "护栏策略生效处理策略 1:顺序执行，2:暂停",
           "example": "1",

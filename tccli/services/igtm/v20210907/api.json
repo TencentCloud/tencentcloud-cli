@@ -25,8 +25,7 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -35,8 +34,7 @@
           "member": "uint64",
           "name": "ExcludePolicyIds",
           "required": false,
-          "type": "list",
-          "visibility": 2
+          "type": "list"
         }
       ],
       "type": "object"
@@ -51,8 +49,7 @@
           "member": "string",
           "name": "Msg",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

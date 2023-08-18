@@ -19,7 +19,6 @@
       "document": "企业名称智能匹配响应",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "企业名称",
           "example": "腾讯科技（深圳）有限公司",
@@ -30,7 +29,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检索命中名称类型，admin: 工商注册名; history: 历史注册名; abbr: 缩写; product: 产品名",
           "example": "abbr",
@@ -41,7 +39,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检索命中名称",
           "example": "腾讯",
@@ -58,7 +55,6 @@
       "document": "SearchEnterprise请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "企业名称",
           "example": "腾讯",
@@ -68,7 +64,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制数目",
           "example": "3",

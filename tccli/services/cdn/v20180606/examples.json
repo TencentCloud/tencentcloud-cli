@@ -344,6 +344,14 @@
         "title": "获取SCDN的Top数据"
       }
     ],
+    "DescribeSourceMd5VerifyTasks": [
+      {
+        "document": "查询回源诊断任务列表",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSourceMd5VerifyTasks\n<公共请求参数>\n\n{\n    \"Domain\": \"abc\",\n    \"StartDate\": \"abc\",\n    \"EndDate\": \"abc\",\n    \"SourceLog\": \"abc\",\n    \"Result\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Tasks\": [\n            {\n                \"Id\": \"abc\",\n                \"Domain\": \"abc\",\n                \"SourceLog\": \"abc\",\n                \"SourceTime\": \"abc\",\n                \"Url\": \"abc\",\n                \"ETag\": \"abc\",\n                \"Md5\": \"abc\",\n                \"Result\": 0,\n                \"VerifyTime\": \"abc\",\n                \"PurgeTime\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DescribeSourceMd5VerifyTasks"
+      }
+    ],
     "DescribeTopData": [
       {
         "document": "查询ua_device指标的数据",

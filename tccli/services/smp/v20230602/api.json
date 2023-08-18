@@ -32,8 +32,7 @@
           "member": "string",
           "name": "BusinessCode",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -42,8 +41,7 @@
           "member": "string",
           "name": "BusinessCodeName",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -52,8 +50,7 @@
           "member": "string",
           "name": "CashPayAmount",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -62,8 +59,7 @@
           "member": "string",
           "name": "ConsumptionTypeName",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -72,8 +68,7 @@
           "member": "float",
           "name": "DailyTotalCost",
           "required": true,
-          "type": "float",
-          "visibility": 2
+          "type": "float"
         },
         {
           "disabled": false,
@@ -82,8 +77,7 @@
           "member": "int64",
           "name": "DayDiff",
           "required": true,
-          "type": "int",
-          "visibility": 2
+          "type": "int"
         },
         {
           "disabled": false,
@@ -92,8 +86,7 @@
           "member": "string",
           "name": "FeeBeginTime",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -102,8 +95,7 @@
           "member": "string",
           "name": "FeeEndTime",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -112,8 +104,7 @@
           "member": "string",
           "name": "OrderId",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -122,8 +113,7 @@
           "member": "string",
           "name": "PayMode",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -132,8 +122,7 @@
           "member": "string",
           "name": "PayModeName",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -142,8 +131,7 @@
           "member": "string",
           "name": "RealCost",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -152,8 +140,7 @@
           "member": "string",
           "name": "RealTotalCost",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -162,8 +149,7 @@
           "member": "string",
           "name": "ResourceId",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -172,8 +158,7 @@
           "member": "string",
           "name": "ResourceName",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -182,8 +167,7 @@
           "member": "string",
           "name": "TransferPayAmount",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -192,8 +176,7 @@
           "member": "string",
           "name": "VoucherPayAmount",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -202,8 +185,7 @@
           "member": "string",
           "name": "IncentivePayAmount",
           "required": false,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -212,8 +194,7 @@
           "member": "string",
           "name": "ProjectId",
           "required": false,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -222,8 +203,7 @@
           "member": "string",
           "name": "ProjectName",
           "required": false,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -232,8 +212,7 @@
           "member": "string",
           "name": "RegionId",
           "required": false,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -242,8 +221,7 @@
           "member": "string",
           "name": "RegionName",
           "required": false,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -258,8 +236,7 @@
           "member": "string",
           "name": "ProductCode",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -268,8 +245,7 @@
           "member": "string",
           "name": "SubProductCode",
           "required": false,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         }
       ],
       "type": "object"
@@ -285,8 +261,7 @@
           "name": "Data",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -307,8 +282,7 @@
           "member": "string",
           "name": "ProductCode",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -317,8 +291,7 @@
           "member": "string",
           "name": "PayerUin",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -327,8 +300,7 @@
           "member": "Resources",
           "name": "Resources",
           "required": true,
-          "type": "list",
-          "visibility": 2
+          "type": "list"
         },
         {
           "disabled": false,
@@ -337,8 +309,7 @@
           "member": "string",
           "name": "SubProductCode",
           "required": false,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -347,8 +318,7 @@
           "member": "string",
           "name": "Operator",
           "required": false,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         }
       ],
       "type": "object"
@@ -364,8 +334,7 @@
           "name": "Data",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -386,8 +355,7 @@
           "member": "string",
           "name": "OrderId",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -396,8 +364,7 @@
           "member": "OrderData",
           "name": "OrderData",
           "required": true,
-          "type": "object",
-          "visibility": 2
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -413,8 +380,7 @@
           "name": "SelectExtend",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -430,8 +396,7 @@
           "name": "InputType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -441,8 +406,7 @@
           "name": "FieldKey",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -452,8 +416,7 @@
           "name": "DataType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -463,8 +426,7 @@
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -474,8 +436,7 @@
           "name": "Enum",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -485,8 +446,7 @@
           "name": "Required",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -496,8 +456,7 @@
           "name": "Default",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -507,8 +466,7 @@
           "name": "Unit",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -524,8 +482,7 @@
           "name": "EnumKey",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -535,8 +492,7 @@
           "name": "EnumValue",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -551,8 +507,7 @@
           "member": "string",
           "name": "UseBeginTime",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -561,8 +516,7 @@
           "member": "string",
           "name": "UseEndTime",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -571,8 +525,7 @@
           "member": "string",
           "name": "ResourceId",
           "required": false,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -588,8 +541,7 @@
           "name": "PaymentResType",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -599,8 +551,7 @@
           "name": "ResourceId",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -610,8 +561,7 @@
           "name": "PaymentAmount",
           "required": false,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -621,8 +571,7 @@
           "name": "Availability",
           "required": false,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -632,8 +581,7 @@
           "name": "PaymentRatio",
           "required": false,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -643,8 +591,7 @@
           "name": "ExceptionMsg",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -659,8 +606,7 @@
           "member": "string",
           "name": "ResourceId",
           "required": false,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -669,8 +615,7 @@
           "member": "string",
           "name": "DownMonth",
           "required": false,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -679,8 +624,7 @@
           "member": "int64",
           "name": "DownTime",
           "required": false,
-          "type": "int",
-          "visibility": 2
+          "type": "int"
         },
         {
           "disabled": false,
@@ -689,8 +633,7 @@
           "member": "int64",
           "name": "ErrorSum",
           "required": false,
-          "type": "int",
-          "visibility": 2
+          "type": "int"
         },
         {
           "disabled": false,
@@ -699,8 +642,7 @@
           "member": "int64",
           "name": "ServiceUnitTime",
           "required": false,
-          "type": "int",
-          "visibility": 2
+          "type": "int"
         },
         {
           "disabled": false,
@@ -709,8 +651,7 @@
           "member": "int64",
           "name": "FailedRequest",
           "required": false,
-          "type": "int",
-          "visibility": 2
+          "type": "int"
         },
         {
           "disabled": false,
@@ -719,8 +660,7 @@
           "member": "int64",
           "name": "MonthSlaRatio",
           "required": false,
-          "type": "int",
-          "visibility": 2
+          "type": "int"
         },
         {
           "disabled": false,
@@ -729,8 +669,7 @@
           "member": "string",
           "name": "SlaDescription",
           "required": false,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -739,8 +678,7 @@
           "member": "ExtraPara",
           "name": "ExtraPara",
           "required": false,
-          "type": "object",
-          "visibility": 2
+          "type": "object"
         },
         {
           "disabled": false,
@@ -749,8 +687,7 @@
           "member": "ConsumptionBill",
           "name": "ConsumptionBill",
           "required": false,
-          "type": "list",
-          "visibility": 2
+          "type": "list"
         },
         {
           "disabled": false,
@@ -759,8 +696,7 @@
           "member": "DeviceDealInfo",
           "name": "DeviceDealInfo",
           "required": false,
-          "type": "list",
-          "visibility": 2
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -776,8 +712,7 @@
           "name": "PaymentInfos",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -787,8 +722,7 @@
           "name": "PaymentAmountTotal",
           "required": false,
           "type": "float",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -804,8 +738,7 @@
           "name": "Id",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -815,8 +748,7 @@
           "name": "ProductCode",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -826,8 +758,7 @@
           "name": "TypeName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -837,8 +768,7 @@
           "name": "InputJson",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -152,7 +152,6 @@
       "document": "购买的cbs信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "cbs存储大小，单位TB",
           "example": "1",
@@ -163,7 +162,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cbs存储类型，默认为SSD",
           "example": "SSD",
@@ -180,7 +178,6 @@
       "document": "CDC集群内cos的容量信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "已购cos的总容量大小，单位GB",
           "example": "3394.92",
@@ -191,7 +188,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "剩余可用cos的容量大小，单位GB",
           "example": "3367.41",
@@ -202,7 +198,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已用cos的容量大小，单位GB",
           "example": "27.51",
@@ -219,7 +214,6 @@
       "document": "用于购买页面添加cos信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "COS存储大小，单位TB",
           "example": "1",
@@ -230,7 +224,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "COS存储类型，默认为cos",
           "example": "COS",
@@ -253,8 +246,7 @@
           "member": "string",
           "name": "DedicatedClusterId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -263,8 +255,7 @@
           "member": "DedicatedClusterTypeInfo",
           "name": "DedicatedClusterTypes",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -273,8 +264,7 @@
           "member": "CosInfo",
           "name": "CosInfo",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -283,8 +273,7 @@
           "member": "CbsInfo",
           "name": "CbsInfo",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -293,8 +282,7 @@
           "member": "string",
           "name": "PurchaseSource",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -303,8 +291,7 @@
           "member": "string",
           "name": "DedicatedClusterOrderId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -319,8 +306,7 @@
           "member": "string",
           "name": "DedicatedClusterOrderId",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -341,8 +327,7 @@
           "member": "string",
           "name": "SiteId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -351,8 +336,7 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -361,8 +345,7 @@
           "member": "string",
           "name": "Zone",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -371,8 +354,7 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -387,8 +369,7 @@
           "member": "string",
           "name": "DedicatedClusterId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -409,8 +390,7 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -419,8 +399,7 @@
           "member": "string",
           "name": "Country",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -429,8 +408,7 @@
           "member": "string",
           "name": "Province",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -439,8 +417,7 @@
           "member": "string",
           "name": "City",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -449,8 +426,7 @@
           "member": "string",
           "name": "AddressLine",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -459,8 +435,7 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -469,8 +444,7 @@
           "member": "string",
           "name": "Note",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -479,8 +453,7 @@
           "member": "string",
           "name": "FiberType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -489,8 +462,7 @@
           "member": "string",
           "name": "OpticalStandard",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -499,8 +471,7 @@
           "member": "string",
           "name": "PowerConnectors",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -509,8 +480,7 @@
           "member": "string",
           "name": "PowerFeedDrop",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -519,8 +489,7 @@
           "member": "int64",
           "name": "MaxWeight",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -529,8 +498,7 @@
           "member": "int64",
           "name": "PowerDrawKva",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -539,8 +507,7 @@
           "member": "int64",
           "name": "UplinkSpeedGbps",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -549,8 +516,7 @@
           "member": "int64",
           "name": "UplinkCount",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -559,8 +525,7 @@
           "member": "bool",
           "name": "ConditionRequirement",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -569,8 +534,7 @@
           "member": "bool",
           "name": "DimensionRequirement",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -579,8 +543,7 @@
           "member": "bool",
           "name": "RedundantNetworking",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -589,8 +552,7 @@
           "member": "int64",
           "name": "PostalCode",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -599,8 +561,7 @@
           "member": "string",
           "name": "OptionalAddressLine",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -609,8 +570,7 @@
           "member": "bool",
           "name": "NeedHelp",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -619,8 +579,7 @@
           "member": "bool",
           "name": "RedundantPower",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -629,8 +588,7 @@
           "member": "bool",
           "name": "BreakerRequirement",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -645,8 +603,7 @@
           "member": "string",
           "name": "SiteId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -661,7 +618,6 @@
       "document": "专用集群列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专用集群id。如\"cluster-xxxxx\"。",
           "example": "",
@@ -672,7 +628,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用集群所属可用区名称。",
           "example": "",
@@ -683,7 +638,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用集群的描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -694,7 +648,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用集群的名称。",
           "example": "",
@@ -705,7 +658,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用集群的生命周期。如\"PENDING\"。",
           "example": "",
@@ -716,7 +668,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用集群的创建时间。",
           "example": "",
@@ -727,7 +678,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用集群所属的站点id。",
           "example": "",
@@ -751,8 +701,7 @@
           "name": "Zone",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -762,8 +711,7 @@
           "name": "InstanceType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -773,8 +721,7 @@
           "name": "NetworkCard",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -784,8 +731,7 @@
           "name": "Cpu",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -795,8 +741,7 @@
           "name": "Memory",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -806,8 +751,7 @@
           "name": "InstanceFamily",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -817,8 +761,7 @@
           "name": "TypeName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -828,8 +771,7 @@
           "name": "StorageBlockAmount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -839,8 +781,7 @@
           "name": "InstanceBandwidth",
           "required": true,
           "type": "float",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -850,8 +791,7 @@
           "name": "InstancePps",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -861,8 +801,7 @@
           "name": "CpuType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -872,8 +811,7 @@
           "name": "Gpu",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -883,8 +821,7 @@
           "name": "Fpga",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -894,8 +831,7 @@
           "name": "Remark",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -905,8 +841,7 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -916,8 +851,7 @@
           "name": "InstanceQuota",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -926,7 +860,6 @@
       "document": "专用集群订单",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专用集群id",
           "example": "无",
@@ -934,11 +867,9 @@
           "name": "DedicatedClusterId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用集群类型id（移到下一层级，已经废弃，后续将删除）",
           "example": "无",
@@ -946,11 +877,9 @@
           "name": "DedicatedClusterTypeId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支持的存储类型列表（移到下一层级，已经废弃，后续将删除）",
           "example": "无",
@@ -958,11 +887,9 @@
           "name": "SupportedStorageType",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支持的上连交换机的链路传输速率(GiB)（移到下一层级，已经废弃，后续将删除）",
           "example": "无",
@@ -970,11 +897,9 @@
           "name": "SupportedUplinkSpeed",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支持的实例族列表（移到下一层级，已经废弃，后续将删除）",
           "example": "无",
@@ -982,11 +907,9 @@
           "name": "SupportedInstanceFamily",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地板承重要求(KG)",
           "example": "无",
@@ -994,11 +917,9 @@
           "name": "Weight",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "功率要求(KW)",
           "example": "无",
@@ -1006,11 +927,9 @@
           "name": "PowerDraw",
           "required": true,
           "type": "float",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单状态",
           "example": "无",
@@ -1018,11 +937,9 @@
           "name": "OrderStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单创建的时间",
           "example": "无",
@@ -1030,11 +947,9 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "大订单ID",
           "example": "ord-aijx4ets ",
@@ -1042,11 +957,9 @@
           "name": "DedicatedClusterOrderId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单类型，创建CREATE或扩容EXTEND",
           "example": "CREATE",
@@ -1054,11 +967,9 @@
           "name": "Action",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子订单详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1066,11 +977,9 @@
           "name": "DedicatedClusterOrderItems",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cpu值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1078,11 +987,9 @@
           "name": "Cpu",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "mem值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1090,11 +997,9 @@
           "name": "Mem",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "gpu值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1102,11 +1007,9 @@
           "name": "Gpu",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0代表未支付，1代表已支付\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1114,11 +1017,9 @@
           "name": "PayStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支付方式，一次性、按月、按年\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MONTHLY",
@@ -1126,11 +1027,9 @@
           "name": "PayType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买时长的单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "YEAR",
@@ -1138,11 +1037,9 @@
           "name": "TimeUnit",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买时长\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1150,11 +1047,9 @@
           "name": "TimeSpan",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CUSTOM",
@@ -1162,8 +1057,7 @@
           "name": "OrderType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1172,7 +1066,6 @@
       "document": "专用集群子订单",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专用集群类型id",
           "example": "无",
@@ -1180,11 +1073,9 @@
           "name": "DedicatedClusterTypeId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支持的存储类型列表",
           "example": "无",
@@ -1192,11 +1083,9 @@
           "name": "SupportedStorageType",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支持的上连交换机的链路传输速率(GiB)",
           "example": "无",
@@ -1204,11 +1093,9 @@
           "name": "SupportedUplinkSpeed",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支持的实例族列表",
           "example": "无",
@@ -1216,11 +1103,9 @@
           "name": "SupportedInstanceFamily",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地板承重要求(KG)",
           "example": "无",
@@ -1228,11 +1113,9 @@
           "name": "Weight",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "功率要求(KW)",
           "example": "无",
@@ -1240,11 +1123,9 @@
           "name": "PowerDraw",
           "required": true,
           "type": "float",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单状态",
           "example": "无",
@@ -1252,11 +1133,9 @@
           "name": "SubOrderStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单创建的时间",
           "example": "无",
@@ -1264,11 +1143,9 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子订单ID",
           "example": "ord-aijx4ets ",
@@ -1276,11 +1153,9 @@
           "name": "SubOrderId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联的集群规格数量",
           "example": "1",
@@ -1288,11 +1163,9 @@
           "name": "Count",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规格简单描述",
           "example": "通用小型机",
@@ -1300,11 +1173,9 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规格详细描述",
           "example": "适用于...场景",
@@ -1312,11 +1183,9 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CPU数",
           "example": "1",
@@ -1324,11 +1193,9 @@
           "name": "TotalCpu",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存数",
           "example": "1",
@@ -1336,11 +1203,9 @@
           "name": "TotalMem",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "GPU数",
           "example": "1",
@@ -1348,11 +1213,9 @@
           "name": "TotalGpu",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规格英文名",
           "example": "CBS.SSD",
@@ -1360,11 +1223,9 @@
           "name": "TypeName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规格展示\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "M5.21XLARGE700 4、S5.21XLARGE320 2",
@@ -1372,11 +1233,9 @@
           "name": "ComputeFormat",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规格类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "COMPUTE",
@@ -1384,11 +1243,9 @@
           "name": "TypeFamily",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0未支付，1已支付\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1396,8 +1253,7 @@
           "name": "SubOrderPayStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1406,7 +1262,6 @@
       "document": "专用集群配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "配置id",
           "example": "dctype-00000000",
@@ -1414,11 +1269,9 @@
           "name": "DedicatedClusterTypeId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置描述，对应描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "适用于xxx场景",
@@ -1426,11 +1279,9 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置名称，对应计算资源类型",
           "example": "通用小型机规格",
@@ -1438,11 +1289,9 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建配置的时间",
           "example": "无",
@@ -1450,11 +1299,9 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支持的存储类型列表",
           "example": "COS",
@@ -1462,11 +1309,9 @@
           "name": "SupportedStorageType",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支持的上连交换机的链路传输速率",
           "example": "10",
@@ -1474,11 +1319,9 @@
           "name": "SupportedUplinkGiB",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支持的实例族列表",
           "example": "M5",
@@ -1486,11 +1329,9 @@
           "name": "SupportedInstanceFamily",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地板承重要求(KG)",
           "example": "1000",
@@ -1498,11 +1339,9 @@
           "name": "Weight",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "功率要求(KW)",
           "example": "100",
@@ -1510,11 +1349,9 @@
           "name": "PowerDrawKva",
           "required": true,
           "type": "float",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "显示计算资源规格详情，存储等资源不显示；对应规格",
           "example": "M5.21XLARGE700 4、S5.21XLARGE320 2",
@@ -1522,8 +1359,7 @@
           "name": "ComputeFormatDesc",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1532,7 +1368,6 @@
       "document": "DedicatedClusterType => (Id, Count)",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群类型Id",
           "example": "dctype-00000000",
@@ -1543,7 +1378,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群类型个数",
           "example": "1",
@@ -1566,8 +1400,7 @@
           "member": "string",
           "name": "DedicatedClusterIds",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1594,8 +1427,7 @@
           "member": "string",
           "name": "SiteIds",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1622,8 +1454,7 @@
           "member": "string",
           "name": "DedicatedClusterId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1638,8 +1469,7 @@
           "member": "CosCapacity",
           "name": "CosCapacity",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1660,8 +1490,7 @@
           "member": "string",
           "name": "DedicatedClusterId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1676,8 +1505,7 @@
           "member": "HostStatistic",
           "name": "HostStatisticSet",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1692,37 +1520,31 @@
       "document": "DescribeDedicatedClusterHosts请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id",
           "example": "cluster-nk6e8j6c",
           "member": "string",
           "name": "DedicatedClusterId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1738,8 +1560,7 @@
           "name": "HostInfoSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1749,8 +1570,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1771,8 +1591,7 @@
           "member": "string",
           "name": "DedicatedClusterId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1787,8 +1606,7 @@
           "member": "DedicatedClusterInstanceType",
           "name": "DedicatedClusterInstanceTypeSet",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1809,8 +1627,7 @@
           "member": "string",
           "name": "DedicatedClusterIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1819,8 +1636,7 @@
           "member": "string",
           "name": "DedicatedClusterOrderIds",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1829,8 +1645,7 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1839,8 +1654,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1849,8 +1663,7 @@
           "member": "string",
           "name": "Status",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1859,8 +1672,7 @@
           "member": "string",
           "name": "ActionType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1875,8 +1687,7 @@
           "member": "DedicatedClusterOrder",
           "name": "DedicatedClusterOrderSet",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1885,8 +1696,7 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1901,15 +1711,13 @@
       "document": "DescribeDedicatedClusterOverview请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id",
           "example": "cluster-nk6e8j6c",
           "member": "string",
           "name": "DedicatedClusterId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1925,8 +1733,7 @@
           "name": "CvmCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1936,8 +1743,7 @@
           "name": "HostCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1947,8 +1753,7 @@
           "name": "VpnConnectionState",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1958,8 +1763,7 @@
           "name": "VpngwBandwidthData",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1969,8 +1773,7 @@
           "name": "LocalNetInfo",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1980,8 +1783,7 @@
           "name": "VpnConnectionBandwidthData",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2002,8 +1804,7 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2012,8 +1813,7 @@
           "member": "string",
           "name": "DedicatedClusterTypeIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -2022,8 +1822,7 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2032,8 +1831,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2042,8 +1840,7 @@
           "member": "bool",
           "name": "IsCompute",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2058,8 +1855,7 @@
           "member": "DedicatedClusterType",
           "name": "DedicatedClusterTypeSet",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2068,8 +1864,7 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2090,8 +1885,7 @@
           "member": "string",
           "name": "DedicatedClusterIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -2100,8 +1894,7 @@
           "member": "string",
           "name": "Zones",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -2110,8 +1903,7 @@
           "member": "string",
           "name": "SiteIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -2120,8 +1912,7 @@
           "member": "string",
           "name": "LifecycleStatuses",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -2130,8 +1921,7 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2140,8 +1930,7 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2150,8 +1939,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2166,8 +1954,7 @@
           "member": "DedicatedCluster",
           "name": "DedicatedClusterSet",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2176,8 +1963,7 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2192,15 +1978,13 @@
       "document": "DescribeDedicatedSupportedZones请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "传入region列表",
           "example": "无",
           "member": "int64",
           "name": "Regions",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2216,8 +2000,7 @@
           "name": "ZoneSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2238,8 +2021,7 @@
           "member": "string",
           "name": "SiteIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -2248,8 +2030,7 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2258,8 +2039,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2268,8 +2048,7 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2284,8 +2063,7 @@
           "member": "SiteDetail",
           "name": "SiteDetailSet",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2294,8 +2072,7 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2316,8 +2093,7 @@
           "member": "string",
           "name": "SiteIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -2326,8 +2102,7 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2336,8 +2111,7 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2346,8 +2120,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2362,8 +2135,7 @@
           "member": "Site",
           "name": "SiteSet",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2372,8 +2144,7 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2388,7 +2159,6 @@
       "document": "CDC宿主机的详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "宿主机IP",
           "example": "10.1.1.1",
@@ -2396,11 +2166,9 @@
           "name": "HostIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云服务类型",
           "example": "云服务器宿主机",
@@ -2408,11 +2176,9 @@
           "name": "ServiceType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "宿主机运行状态",
           "example": "ONLINE",
@@ -2420,11 +2186,9 @@
           "name": "HostStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "宿主机类型",
           "example": "CG2-25G",
@@ -2432,11 +2196,9 @@
           "name": "HostType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cpu可用数",
           "example": "32",
@@ -2444,11 +2206,9 @@
           "name": "CpuAvailable",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cpu总数",
           "example": "32",
@@ -2456,11 +2216,9 @@
           "name": "CpuTotal",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存可用数",
           "example": "64",
@@ -2468,11 +2226,9 @@
           "name": "MemAvailable",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存总数",
           "example": "64",
@@ -2480,11 +2236,9 @@
           "name": "MemTotal",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运行时间",
           "example": "2020/12/18",
@@ -2492,11 +2246,9 @@
           "name": "RunTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "到期时间",
           "example": "2023/12/18",
@@ -2504,11 +2256,9 @@
           "name": "ExpireTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "宿主机id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "host-xxxx",
@@ -2516,8 +2266,7 @@
           "name": "HostId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2526,7 +2275,6 @@
       "document": "CDC集群内宿主机的统计信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "宿主机规格",
           "example": "S5.21XLARGE320",
@@ -2537,7 +2285,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "宿主机机型系列",
           "example": "S5",
@@ -2548,7 +2295,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "宿主机的CPU核数，单位：核",
           "example": "84",
@@ -2559,7 +2305,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "宿主机内存大小，单位：GB",
           "example": "320",
@@ -2570,7 +2315,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该规格宿主机的数量",
           "example": "240",
@@ -2587,7 +2331,6 @@
       "document": "入带宽数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[0]",
@@ -2595,11 +2338,9 @@
           "name": "Timestamps",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间对应的值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[0]",
@@ -2607,8 +2348,7 @@
           "name": "Values",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2617,7 +2357,6 @@
       "document": "本地网络信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "协议\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "BGP",
@@ -2625,11 +2364,9 @@
           "name": "Protocol",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-xxxx",
@@ -2637,11 +2374,9 @@
           "name": "VpcId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.0.0.0/24",
@@ -2649,11 +2384,9 @@
           "name": "BGPRoute",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本地IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.0.0.0",
@@ -2661,8 +2394,7 @@
           "name": "LocalIp",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2677,8 +2409,7 @@
           "member": "string",
           "name": "DedicatedClusterId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2687,8 +2418,7 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2697,8 +2427,7 @@
           "member": "string",
           "name": "Zone",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2707,8 +2436,7 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2717,8 +2445,7 @@
           "member": "string",
           "name": "SiteId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2739,7 +2466,6 @@
       "document": "ModifyOrderStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要更新成的状态",
           "example": "DELIVERED",
@@ -2749,7 +2475,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "大订单ID",
           "example": "ord-aijx4ets",
@@ -2759,7 +2484,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "小订单ID",
           "example": "无",
@@ -2793,8 +2517,7 @@
           "member": "string",
           "name": "SiteId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2803,8 +2526,7 @@
           "member": "string",
           "name": "FiberType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2813,8 +2535,7 @@
           "member": "string",
           "name": "OpticalStandard",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2823,8 +2544,7 @@
           "member": "string",
           "name": "PowerConnectors",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2833,8 +2553,7 @@
           "member": "string",
           "name": "PowerFeedDrop",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2843,8 +2562,7 @@
           "member": "int64",
           "name": "MaxWeight",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2853,8 +2571,7 @@
           "member": "int64",
           "name": "PowerDrawKva",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2863,8 +2580,7 @@
           "member": "int64",
           "name": "UplinkSpeedGbps",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2873,8 +2589,7 @@
           "member": "int64",
           "name": "UplinkCount",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2883,8 +2598,7 @@
           "member": "bool",
           "name": "ConditionRequirement",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -2893,8 +2607,7 @@
           "member": "bool",
           "name": "DimensionRequirement",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -2903,8 +2616,7 @@
           "member": "bool",
           "name": "RedundantNetworking",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -2913,8 +2625,7 @@
           "member": "bool",
           "name": "NeedHelp",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -2923,8 +2634,7 @@
           "member": "bool",
           "name": "RedundantPower",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -2933,8 +2643,7 @@
           "member": "bool",
           "name": "BreakerRequirement",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2961,8 +2670,7 @@
           "member": "string",
           "name": "SiteId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2971,8 +2679,7 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2981,8 +2688,7 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2991,8 +2697,7 @@
           "member": "string",
           "name": "Note",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3001,8 +2706,7 @@
           "member": "string",
           "name": "Country",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3011,8 +2715,7 @@
           "member": "string",
           "name": "Province",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3021,8 +2724,7 @@
           "member": "string",
           "name": "City",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3031,8 +2733,7 @@
           "member": "string",
           "name": "PostalCode",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3041,8 +2742,7 @@
           "member": "string",
           "name": "AddressLine",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3063,7 +2763,6 @@
       "document": "出带宽数据。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[0]",
@@ -3071,11 +2770,9 @@
           "name": "Timestamps",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对应时间的值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[0]",
@@ -3083,8 +2780,7 @@
           "name": "Values",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3093,7 +2789,6 @@
       "document": "RegionZoneInfo信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Region id",
           "example": "1",
@@ -3104,7 +2799,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ZoneInfo数组",
           "example": "无",
@@ -3121,7 +2815,6 @@
       "document": "客户站点信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "站点名称",
           "example": "",
@@ -3132,7 +2825,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "站点id",
           "example": "",
@@ -3143,7 +2835,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "站点描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -3154,7 +2845,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "站点创建时间",
           "example": "",
@@ -3171,7 +2861,6 @@
       "document": "站点详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "站点id",
           "example": "\"site-u37d8sh\"",
@@ -3182,7 +2871,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "站点名称",
           "example": "\"my-site\"",
@@ -3193,7 +2881,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "站点描述",
           "example": "\"this site is good\"",
@@ -3204,7 +2891,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "站点创建时间",
           "example": "\"2020-12-25T10:26:11Z\"",
@@ -3215,7 +2901,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "光纤类型",
           "example": "\"MM\"",
@@ -3226,7 +2911,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络到腾讯云Region区域的上行链路速度",
           "example": "0",
@@ -3237,7 +2921,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "将CDC连接到网络时，每台CDC网络设备(每个机架 2 台设备)使用的上行链路数量。",
           "example": "0",
@@ -3248,7 +2931,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "将CDC连接到网络时采用的光学标准",
           "example": "\"MM\"",
@@ -3259,7 +2941,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否提供冗余的上游设备(交换机或路由器)，以便两台  网络设备都能连接到网络设备。",
           "example": "false",
@@ -3270,7 +2951,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电源连接器类型",
           "example": "\"MM\"",
@@ -3281,7 +2961,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "从机架上方还是下方供电。",
           "example": "\"above\"",
@@ -3292,7 +2971,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "功耗(KW)",
           "example": "0.0",
@@ -3303,7 +2981,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否满足下面环境条件：\n1、场地没有材料要求或验收标准会影响 CDC 设备配送和安装。\n2、确定的机架位置包含:\n温度范围为 41 到 104°F (5 到 40°C)。\n湿度范围为 10°F (-12°C)和 8% RH (相对湿度)到 70°F(21°C)和 80% RH。\n机架位置的气流方向为从前向后，且应具有足够的 CFM (每分钟立方英尺)。CFM 必须是 CDC 配置的 kVA 功耗值的 145.8 倍。",
           "example": "false",
@@ -3314,7 +2991,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否满足下面的尺寸条件：\n您的装货站台可以容纳一个机架箱(高 x 宽 x 深 = 94\" x 54\" x 48\")。\n您可以提供从机架(高 x 宽 x 深 = 80\" x 24\" x 48\")交货地点到机架最终安置位置的明确通道。测量深度时，应包括站台、走廊通道、门、转弯、坡道、货梯，并将其他通道限制考虑在内。\n在最终的 CDC安置位置，前部间隙可以为 48\" 或更大，后部间隙可以为 24\" 或更大。",
           "example": "false",
@@ -3325,7 +3001,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大承重(KG)",
           "example": "0",
@@ -3336,7 +3011,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "站点地址",
           "example": "\"Furong Road\"",
@@ -3347,7 +3021,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "站点所在地区的详细地址信息（补充）",
           "example": "\"\"",
@@ -3358,7 +3031,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要腾讯云团队协助完成机架支撑工作",
           "example": "true",
@@ -3369,7 +3041,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上游断路器是否具备",
           "example": "false",
@@ -3380,7 +3051,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否电源冗余",
           "example": "false",
@@ -3391,7 +3061,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "站点所在国家",
           "example": "\"China\"",
@@ -3402,7 +3071,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "站点所在省份",
           "example": "\"Hunan\"",
@@ -3413,7 +3081,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "站点所在城市",
           "example": "\"Changsha\"",
@@ -3424,7 +3091,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "站点所在地区的邮编",
           "example": "414012",
@@ -3441,7 +3107,6 @@
       "document": "VPN网关的流量监控数据。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "出带宽流量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3449,11 +3114,9 @@
           "name": "OutBandwidth",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入带宽流量",
           "example": "无",
@@ -3461,8 +3124,7 @@
           "name": "InBandwidth",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3471,7 +3133,6 @@
       "document": "可用区信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "可用区名称",
           "example": "",
@@ -3482,7 +3143,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区描述",
           "example": "",
@@ -3493,7 +3153,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区ID",
           "example": "",
@@ -3504,7 +3163,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。",
           "example": "",

@@ -33,7 +33,6 @@
       "document": "DescribeRenewResourceParams请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "lhdbmysql-oy59wlur",
@@ -43,7 +42,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "续费时长,与TimeUnit组合才能生效，默认1",
           "example": "1",
@@ -53,7 +51,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "续费时长单位，默认m, 与TimeSpan组合生效，可选:日:d,月:m, 年:y",
           "example": "m",
@@ -91,7 +88,6 @@
       "document": "OffLineCluster请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "lhdbmysql-xxxxxxx",
@@ -129,7 +125,6 @@
       "document": "SetRenewFlag请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需操作的实例ID",
           "example": "cynosdbmysql-ins-xxxxxxx",
@@ -139,7 +134,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动续费标志位",
           "example": "1",

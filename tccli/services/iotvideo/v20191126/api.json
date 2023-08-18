@@ -474,7 +474,6 @@
       "document": "终端用户绑定的设备",
       "members": [
         {
-          "default": "",
           "document": "设备TID",
           "member": "string",
           "name": "Tid",
@@ -483,7 +482,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设备名称",
           "member": "string",
           "name": "DeviceName",
@@ -492,7 +490,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设备型号\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "DeviceModel",
@@ -501,7 +498,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "用户角色，owner：主人，guest：访客",
           "member": "string",
           "name": "Role",
@@ -516,7 +512,6 @@
       "document": "设备绑定的终端用户",
       "members": [
         {
-          "default": "",
           "document": "IotVideo平台分配给终端用户的用户id",
           "member": "string",
           "name": "AccessId",
@@ -525,7 +520,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用户角色，owner：主人，guest：访客",
           "member": "string",
           "name": "Role",
@@ -540,7 +534,6 @@
       "document": "ClearDeviceActiveCode请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "设备TID列表，0<元素数量<=100",
           "member": "string",
           "name": "Tids",
@@ -566,7 +559,6 @@
       "document": "版本发布的描述信息，需要国际化，可以为空",
       "members": [
         {
-          "default": "",
           "document": "英文，长度不超过300个字符\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "En",
@@ -575,7 +567,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "中文简体，长度不超过300个字符\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Cn",
@@ -584,7 +575,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "中文繁体(Traditional Chinese)，长度不超过300个字符\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Tc",
@@ -593,7 +583,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "默认语言，最多不超过300个字符\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Default",
@@ -608,7 +597,6 @@
       "document": "CreateAnonymousAccessToken请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "Token的TTL(time to alive)分钟数,最大值1440(即24小时)",
           "member": "int64",
           "name": "TtlMinutes",
@@ -616,7 +604,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "设备ID。创建Token时, 此参数为必须项",
           "member": "string",
           "name": "Tid",
@@ -624,7 +611,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "旧的AccessToken。续期Token时，此参数为必须",
           "member": "string",
           "name": "OldAccessToken",
@@ -671,7 +657,6 @@
       "document": "CreateAppUsr请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "标识用户的唯一ID，防止同一个用户多次注册",
           "member": "string",
           "name": "CunionId",
@@ -679,7 +664,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用于小程序关联手机号",
           "member": "string",
           "name": "Mobile",
@@ -726,7 +710,6 @@
       "document": "CreateBinding请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "终端用户在IoT Video上的唯一标识ID",
           "example": "-9223371585883208722",
           "member": "string",
@@ -735,7 +718,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "设备TID",
           "example": "********",
           "member": "string",
@@ -744,7 +726,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用户角色，owner：主人，guest：访客",
           "example": "owner",
           "member": "string",
@@ -753,7 +734,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否踢掉之前的主人，true：踢掉；false：不踢掉。当role为guest时，可以不填",
           "example": "true",
           "member": "bool",
@@ -762,7 +742,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "设备昵称，最多不超过64个字符",
           "example": "dev001",
           "member": "string",
@@ -771,7 +750,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "绑定过程中的会话token，由设备通过SDK接口确认是否允许绑定的token，用于增加设备被绑定的安全性",
           "example": "sn8a1244/sde=",
           "member": "string",
@@ -807,7 +785,6 @@
       "document": "CreateDevToken请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "客户的终端用户在IoT Video上的唯一标识ID",
           "member": "string",
           "name": "AccessId",
@@ -815,7 +792,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "设备TID列表,0<元素数量<=100",
           "member": "string",
           "name": "Tids",
@@ -823,7 +799,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "Token的TTL(time to alive)分钟数",
           "member": "uint64",
           "name": "TtlMinutes",
@@ -856,7 +831,6 @@
       "document": "CreateDevices请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "member": "string",
           "name": "ProductId",
@@ -864,7 +838,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "创建设备的数量，数量范围1-100",
           "member": "uint64",
           "name": "Number",
@@ -872,7 +845,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "设备名称前缀，支持英文、数字，不超过10字符",
           "member": "string",
           "name": "NamePrefix",
@@ -880,7 +852,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作人",
           "member": "string",
           "name": "Operator",
@@ -913,7 +884,6 @@
       "document": "CreateGencode请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "member": "string",
           "name": "ProductId",
@@ -921,7 +891,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "物模型发布版本号,-1代表未发布的，保存的是草稿箱的版本。1代表已发布的物模型。",
           "member": "int64",
           "name": "Revision",
@@ -954,7 +923,6 @@
       "document": "CreateIotDataType请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "用户自定义数据类型，json格式的字符串",
           "member": "string",
           "name": "IotDataType",
@@ -980,7 +948,6 @@
       "document": "CreateIotModel请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "member": "string",
           "name": "ProductId",
@@ -988,7 +955,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "物模型json串",
           "member": "string",
           "name": "IotModel",
@@ -1014,7 +980,6 @@
       "document": "CreateProduct请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产器型号(APP产品,为APP包名)",
           "member": "string",
           "name": "ProductModel",
@@ -1022,7 +987,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "产品名称\n仅支持中文、英文、数字、下划线，不超过32个字符",
           "member": "string",
           "name": "ProductName",
@@ -1030,7 +994,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "产品描述信息\n不支持单引号、双引号、退格符、回车符、换行符、制表符、反斜杠、下划线、“%”、“#”、“$”，不超过128字符",
           "member": "string",
           "name": "ProductDescription",
@@ -1038,7 +1001,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "设备功能码（ypsxth:音频双向通话 ，spdxth:视频单向通话）",
           "member": "string",
           "name": "Features",
@@ -1046,7 +1008,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "主芯片产商ID",
           "member": "string",
           "name": "ChipManufactureId",
@@ -1054,7 +1015,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "主芯片ID",
           "member": "string",
           "name": "ChipId",
@@ -1062,7 +1022,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "地域：\nChina-Mainland（中国大陆）\nChina-Hong Kong, Macao and Taiwan（港澳台地区）\nAmerica（美国）\nEurope（欧洲）\nIndia（印度）\nOther-Overseas（其他境外地区）",
           "member": "string",
           "name": "ProductRegion",
@@ -1070,7 +1029,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "设备类型, 0-普通视频设备，1-NVR设备",
           "member": "uint64",
           "name": "ProductCate",
@@ -1078,7 +1036,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "接入模型，bit0是0：公版小程序未接入，bit0是1：公版小程序已接入",
           "member": "int64",
           "name": "AccessMode",
@@ -1086,7 +1043,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "Linux,Android,Liteos等系统",
           "member": "string",
           "name": "Os",
@@ -1094,7 +1050,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "芯片架构，只是针对操作系统为android的",
           "member": "string",
           "name": "ChipArch",
@@ -1127,7 +1082,6 @@
       "document": "CreateStorage请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云存套餐ID",
           "member": "string",
           "name": "PkgId",
@@ -1135,7 +1089,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "设备TID",
           "member": "string",
           "name": "Tid",
@@ -1143,7 +1096,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用户唯一标识，由厂商保证内部唯一性",
           "member": "string",
           "name": "UserTag",
@@ -1169,7 +1121,6 @@
       "document": "CreateStorageService请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云存套餐ID：\nyc1m3d ： 全时3天存储月套餐。\nyc1m7d ： 全时7天存储月套餐。\nyc1m30d ：全时30天存储月套餐。\nyc1y3d ：全时3天存储年套餐。\nyc1y7d ：全时7天存储年套餐。\nyc1y30d ：全时30天存储年套餐。\nye1m3d ：事件3天存储月套餐。\nye1m7d ：事件7天存储月套餐。\nye1m30d ：事件30天存储月套餐 。\nye1y3d ：事件3天存储年套餐。\nye1y7d ：事件7天存储年套餐。\nye1y30d ：事件30天存储年套餐。\nyc1w7d : 全时7天存储周套餐。\nye1w7d : 事件7天存储周套餐。",
           "example": "xx",
           "member": "string",
@@ -1178,7 +1129,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "设备TID",
           "example": "xx",
           "member": "string",
@@ -1187,7 +1137,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "订单数量,可一次性创建多个订单",
           "example": "112",
           "member": "int64",
@@ -1196,7 +1145,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "云存服务所在的区域,如ap-guangzhou,ap-singapore, na-siliconvalley, eu-frankfurt",
           "example": "xx",
           "member": "string",
@@ -1205,7 +1153,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "视频流通道号。(对于存在多路视频流的设备，如NVR设备，与设备实际视频流通道号对应)",
           "example": "123",
           "member": "int64",
@@ -1214,7 +1161,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "设备主人用户在IoT Video平台的注册ID。该参数用于验证Paas/Saas平台的设备/用户关系链是否一致",
           "example": "xx",
           "member": "string",
@@ -1223,7 +1169,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "服务生效时间,若不指定此参数，服务立即生效",
           "example": "0",
           "member": "int64",
@@ -1340,7 +1285,6 @@
       "document": "CreateTraceIds请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "设备TID列表",
           "member": "string",
           "name": "Tids",
@@ -1366,7 +1310,6 @@
       "document": "CreateUploadPath请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "member": "string",
           "name": "ProductId",
@@ -1374,7 +1317,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "固件文件名",
           "member": "string",
           "name": "FileName",
@@ -1407,7 +1349,6 @@
       "document": "CreateUsrToken请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "终端用户在IoT Video上的唯一标识ID",
           "example": "*******",
           "member": "string",
@@ -1416,7 +1357,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "终端唯一ID，用于区分同一个用户的多个终端",
           "example": "testDev001",
           "member": "string",
@@ -1425,7 +1365,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "Token的TTL(time to alive)分钟数",
           "example": "10",
           "member": "uint64",
@@ -1434,7 +1373,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "旧的AccessToken。续期Token时，此参数为必须。",
           "example": "02017525B4BCDXXXXXXXXXX305D97E0XXXXXXXX",
           "member": "string",
@@ -1497,7 +1435,6 @@
       "document": "接口DescribeStream输出参数",
       "members": [
         {
-          "default": "",
           "document": "直播协议\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RTSP",
           "member": "string",
@@ -1507,7 +1444,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "流媒体播放地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxxxxxxxxxxxxx",
           "member": "string",
@@ -1517,7 +1453,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "流媒体地址过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1602589211",
           "member": "int64",
@@ -1527,7 +1462,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "视频编码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "H265",
           "member": "string",
@@ -1537,7 +1471,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "音频编码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "G711",
           "member": "string",
@@ -1553,7 +1486,6 @@
       "document": "DeleteAppUsr请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "客户的终端用户在IoT Video上的唯一标识ID",
           "member": "string",
           "name": "AccessId",
@@ -1579,7 +1511,6 @@
       "document": "DeleteBinding请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "终端用户在IoT Video上的唯一标识ID",
           "member": "string",
           "name": "AccessId",
@@ -1587,7 +1518,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "设备TID",
           "member": "string",
           "name": "Tid",
@@ -1595,7 +1525,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用户角色，owner：主人，guest：访客",
           "member": "string",
           "name": "Role",
@@ -1621,7 +1550,6 @@
       "document": "DeleteDevice请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "设备TID列表",
           "member": "string",
           "name": "Tids",
@@ -1647,7 +1575,6 @@
       "document": "DeleteIotDataType请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "自定义数据类型的标识符",
           "member": "string",
           "name": "TypeId",
@@ -1673,7 +1600,6 @@
       "document": "DeleteMessageQueue请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "member": "string",
           "name": "ProductId",
@@ -1699,7 +1625,6 @@
       "document": "DeleteOtaVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "member": "string",
           "name": "ProductId",
@@ -1707,7 +1632,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "固件版本号，格式为x.y.z， x，y 范围0-63，z范围1~524288",
           "member": "string",
           "name": "OtaVersion",
@@ -1715,7 +1639,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作人",
           "member": "string",
           "name": "Operator",
@@ -1741,7 +1664,6 @@
       "document": "DeleteProduct请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "member": "string",
           "name": "ProductId",
@@ -1767,7 +1689,6 @@
       "document": "DeleteTraceIds请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "设备TID列表",
           "member": "string",
           "name": "Tids",
@@ -1793,7 +1714,6 @@
       "document": "DeliverStorageService请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "待转移的源云存服务ID",
           "example": "3452345",
           "member": "string",
@@ -1802,7 +1722,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "设备TID",
           "example": "2345345",
           "member": "string",
@@ -1811,7 +1730,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "视频流通道号。(对于存在多路视频流的设备，如NVR设备，与设备实际视频流通道号对应)",
           "example": "123",
           "member": "int64",
@@ -1820,7 +1738,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "设备主人用户在IoT Video平台的注册ID。该参数用于验证Paas/Saas平台的设备/用户关系链是否一致",
           "example": "4564545645",
           "member": "string",
@@ -1937,7 +1854,6 @@
       "document": "DescribeAccountBalance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "账户类型 1:设备接入 2:云存",
           "member": "int64",
           "name": "AccountType",
@@ -1991,7 +1907,6 @@
       "document": "DescribeBindDev请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "终端用户在IoT Video上的唯一标识ID",
           "member": "string",
           "name": "AccessId",
@@ -2024,7 +1939,6 @@
       "document": "DescribeBindUsr请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "设备TID",
           "member": "string",
           "name": "Tid",
@@ -2032,7 +1946,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "设备主人的AccessId",
           "member": "string",
           "name": "AccessId",
@@ -2065,7 +1978,6 @@
       "document": "DescribeDeviceModel请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "设备TID",
           "member": "string",
           "name": "Tid",
@@ -2073,7 +1985,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "物模型的分支路径",
           "member": "string",
           "name": "Branch",
@@ -2106,7 +2017,6 @@
       "document": "DescribeDevice请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "设备TID",
           "member": "string",
           "name": "Tid",
@@ -2139,7 +2049,6 @@
       "document": "DescribeDevices请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "member": "string",
           "name": "ProductId",
@@ -2147,7 +2056,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否返回全量数据\n当该值为false时，返回值中的设备物模型、固件版本、在线状态、最后在线时间字段等字段，都将返回数据类型的零值。",
           "member": "bool",
           "name": "ReturnModel",
@@ -2155,7 +2063,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "分页数量,0<取值范围<=100",
           "member": "uint64",
           "name": "Limit",
@@ -2163,7 +2070,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页偏移，取值＞0",
           "member": "uint64",
           "name": "Offset",
@@ -2171,7 +2077,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "指定固件版本号，为空查询此产品下所有设备",
           "member": "string",
           "name": "OtaVersion",
@@ -2179,7 +2084,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "设备名称，支持左前缀模糊匹配",
           "member": "string",
           "name": "DeviceName",
@@ -2219,7 +2123,6 @@
       "document": "DescribeIotDataType请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "自定义数据类型的标识符，为空则返回全量自定义类型的列表",
           "member": "string",
           "name": "TypeId",
@@ -2252,7 +2155,6 @@
       "document": "DescribeIotModel请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "member": "string",
           "name": "ProductId",
@@ -2260,7 +2162,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "物模型版本号， -1表示最新编辑的（未发布）",
           "member": "int64",
           "name": "Revision",
@@ -2293,7 +2194,6 @@
       "document": "DescribeIotModels请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "member": "string",
           "name": "ProductId",
@@ -2326,7 +2226,6 @@
       "document": "DescribeLogs请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "设备TID",
           "member": "string",
           "name": "Tid",
@@ -2334,7 +2233,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "当前分页的最大条数,0<取值范围<=100",
           "member": "uint64",
           "name": "Limit",
@@ -2342,7 +2240,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页偏移量,取值范围>0",
           "member": "uint64",
           "name": "Offset",
@@ -2350,7 +2247,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "日志类型 1.在线状态变更 2.ProConst变更 3.ProWritable变更 4.Action控制 5.ProReadonly变更 6.Event事件",
           "member": "uint64",
           "name": "LogType",
@@ -2358,7 +2254,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询的起始时间 UNIX时间戳，单位秒",
           "member": "uint64",
           "name": "StartTime",
@@ -2366,7 +2261,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "物模型对象索引，用于模糊查询，字符长度<=255，每层节点的字符长度<=16",
           "member": "string",
           "name": "DataObject",
@@ -2374,7 +2268,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询的结束时间 UNIX时间戳，单位秒",
           "member": "uint64",
           "name": "EndTime",
@@ -2414,7 +2307,6 @@
       "document": "DescribeMessageQueue请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "member": "string",
           "name": "ProductId",
@@ -2447,7 +2339,6 @@
       "document": "DescribeModelDataRet请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "任务ID",
           "member": "string",
           "name": "TaskId",
@@ -2504,7 +2395,6 @@
       "document": "DescribeOtaVersions请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "分页偏移量",
           "member": "uint64",
           "name": "Offset",
@@ -2512,7 +2402,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "每页数量，0<取值范围<=100",
           "member": "uint64",
           "name": "Limit",
@@ -2520,7 +2409,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "产品ID，为空时查询客户所有产品的版本信息",
           "member": "string",
           "name": "ProductId",
@@ -2528,7 +2416,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "版本号，支持模糊匹配",
           "member": "string",
           "name": "OtaVersion",
@@ -2536,7 +2423,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "版本类型 1未发布 2测试发布 3正式发布 4禁用",
           "member": "uint64",
           "name": "PubStatus",
@@ -2576,7 +2462,6 @@
       "document": "DescribeProduct请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "member": "string",
           "name": "ProductId",
@@ -2609,7 +2494,6 @@
       "document": "DescribeProducts请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "分页大小，当前页面中显示的最大数量，值范围 1-100",
           "member": "uint64",
           "name": "Limit",
@@ -2617,7 +2501,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页偏移，Offset从0开始",
           "member": "uint64",
           "name": "Offset",
@@ -2625,7 +2508,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "产器型号(APP产品,为APP包名)",
           "member": "string",
           "name": "ProductModel",
@@ -2633,7 +2515,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "开始时间 ，UNIX 时间戳，单位秒",
           "member": "int64",
           "name": "StartTime",
@@ -2641,7 +2522,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "结束时间 ，UNIX 时间戳，单位秒",
           "member": "int64",
           "name": "EndTime",
@@ -2681,7 +2561,6 @@
       "document": "DescribePubVersions请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "member": "string",
           "name": "ProductId",
@@ -2714,7 +2593,6 @@
       "document": "DescribeRechargeRecords请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "账户类型 1:设备接入 2:云存。",
           "member": "int64",
           "name": "AccountType",
@@ -2722,7 +2600,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "从第几条记录开始显示, 默认值为0。",
           "member": "int64",
           "name": "Offset",
@@ -2730,7 +2607,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "总共查询多少条记录，默认为值50。",
           "member": "int64",
           "name": "Limit",
@@ -2770,7 +2646,6 @@
       "document": "DescribeRegistrationStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "终端用户的唯一ID列表，0<元素数量<=100",
           "member": "string",
           "name": "CunionIds",
@@ -2803,7 +2678,6 @@
       "document": "DescribeRunLog请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "设备TID",
           "member": "string",
           "name": "Tid",
@@ -2836,7 +2710,6 @@
       "document": "DescribeStorageService请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云存服务ID",
           "example": "2300001383",
           "member": "string",
@@ -2845,7 +2718,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否返回已结束的订单信息(已过期/已退订/已转移)",
           "example": "1",
           "member": "bool",
@@ -2953,7 +2825,6 @@
       "document": "DescribeStream请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "设备TID",
           "example": "xxxxxxxx",
           "member": "string",
@@ -2962,7 +2833,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "终端用户ID",
           "example": "xxxxx",
           "member": "string",
@@ -2971,7 +2841,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "直播协议, 可选值：RTSP、RTMP、HLS、HLS-fmp4",
           "example": "RTMP",
           "member": "string",
@@ -2980,7 +2849,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "音视频流地址",
           "example": "xxxxx",
           "member": "string",
@@ -2989,7 +2857,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "设备访问token，访问用户未绑定的设备时，需提供该参数",
           "example": "xxxxxxx",
           "member": "string",
@@ -3049,7 +2916,6 @@
       "document": "DescribeTraceStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "设备TID列表",
           "member": "string",
           "name": "Tids",
@@ -3082,7 +2948,6 @@
       "document": "用于终端用户临时访问设备的token授权信息",
       "members": [
         {
-          "default": "",
           "document": "客户的终端用户在IotVideo上的唯一标识id",
           "member": "string",
           "name": "AccessId",
@@ -3091,7 +2956,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设备TID",
           "member": "string",
           "name": "Tid",
@@ -3100,7 +2964,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "IotVideo平台的accessToken",
           "member": "string",
           "name": "AccessToken",
@@ -3109,7 +2972,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "Token的过期时间，单位秒(UTC时间)",
           "member": "uint64",
           "name": "ExpireTime",
@@ -3124,7 +2986,6 @@
       "document": "设备证书及密钥",
       "members": [
         {
-          "default": "",
           "document": "设备TID",
           "member": "string",
           "name": "Tid",
@@ -3133,7 +2994,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设备初始证书信息，base64编码",
           "member": "string",
           "name": "Certificate",
@@ -3142,7 +3002,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设备私钥下载地址",
           "member": "string",
           "name": "WhiteBoxSoUrl",
@@ -3157,7 +3016,6 @@
       "document": "设备信息",
       "members": [
         {
-          "default": "",
           "document": "设备TID\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Tid",
@@ -3166,7 +3024,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "激活时间 0代表未激活\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "ActiveTime",
@@ -3175,7 +3032,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "设备是否被禁用\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "bool",
           "name": "Disabled",
@@ -3184,7 +3040,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "固件版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "OtaVersion",
@@ -3193,7 +3048,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "设备在线状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "Online",
@@ -3202,7 +3056,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "设备最后上线时间（mqtt连接成功时间），UNIX时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "LastOnlineTime",
@@ -3211,7 +3064,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "物模型json数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "IotModel",
@@ -3220,7 +3072,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "设备名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "DeviceName",
@@ -3229,7 +3080,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ProductId",
@@ -3238,7 +3088,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "设备初始证书信息，base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Certificate",
@@ -3247,7 +3096,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "设备私钥下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "WhiteBoxSoUrl",
@@ -3256,7 +3104,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "设备推流状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "bool",
           "name": "StreamStatus",
@@ -3271,7 +3118,6 @@
       "document": "设备物模型数据",
       "members": [
         {
-          "default": "",
           "document": "设备TID",
           "member": "string",
           "name": "Tid",
@@ -3280,7 +3126,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "物模型分支路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Branch",
@@ -3289,7 +3134,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "物模型数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "IotModel",
@@ -3304,7 +3148,6 @@
       "document": "设备列表元素所包含的设备基本信息",
       "members": [
         {
-          "default": "",
           "document": "设备TID",
           "member": "string",
           "name": "Tid",
@@ -3313,7 +3156,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设备名称",
           "member": "string",
           "name": "DeviceName",
@@ -3322,7 +3164,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "激活时间 0代表未激活",
           "member": "uint64",
           "name": "ActiveTime",
@@ -3331,7 +3172,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设备是否被禁用",
           "member": "bool",
           "name": "Disabled",
@@ -3340,7 +3180,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设备推流状态",
           "member": "bool",
           "name": "StreamStatus",
@@ -3349,7 +3188,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "固件版本",
           "member": "string",
           "name": "OtaVersion",
@@ -3358,7 +3196,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设备在线状态",
           "member": "uint64",
           "name": "Online",
@@ -3367,7 +3204,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设备最后上线时间（mqtt连接成功时间），UNIX时间戳，单位秒",
           "member": "uint64",
           "name": "LastOnlineTime",
@@ -3376,7 +3212,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "物模型json数据",
           "member": "string",
           "name": "IotModel",
@@ -3385,7 +3220,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设备固件最新更新时间，UNIX时间戳，单位秒",
           "member": "uint64",
           "name": "LastUpdateTime",
@@ -3400,7 +3234,6 @@
       "document": "DisableDevice请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "设备TID ≤100",
           "member": "string",
           "name": "Tids",
@@ -3426,7 +3259,6 @@
       "document": "DisableDeviceStream请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "设备TID列表",
           "member": "string",
           "name": "Tids",
@@ -3452,7 +3284,6 @@
       "document": "DisableOtaVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "member": "string",
           "name": "ProductId",
@@ -3460,7 +3291,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "固件版本号，格式为x.y.z， x，y 范围0-63，z范围1~524288",
           "member": "string",
           "name": "OtaVersion",
@@ -3468,7 +3298,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作人",
           "member": "string",
           "name": "Operator",
@@ -3494,7 +3323,6 @@
       "document": "物模型历史版本",
       "members": [
         {
-          "default": "",
           "document": "版本号",
           "member": "int64",
           "name": "Revision",
@@ -3503,7 +3331,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "发布时间",
           "member": "int64",
           "name": "ReleaseTime",
@@ -3518,7 +3345,6 @@
       "document": "设备日志信息",
       "members": [
         {
-          "default": "",
           "document": "发生时间 UNIX时间戳，单位秒",
           "member": "uint64",
           "name": "Occurtime",
@@ -3527,7 +3353,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "日志类型 1在线状态变更 2FP变更 3SP变更 4CO控制 5ST变更 6EV事件",
           "member": "uint64",
           "name": "LogType",
@@ -3536,7 +3361,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "物模型对象索引\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "DataObject",
@@ -3545,7 +3369,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "物模型旧值  json串\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "OldValue",
@@ -3554,7 +3377,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "物模型新值  json串\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "NewValue",
@@ -3569,7 +3391,6 @@
       "document": "ModifyDeviceAction请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "设备TID",
           "member": "string",
           "name": "Tid",
@@ -3577,7 +3398,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "如果设备处于休眠状态，是否唤醒设备",
           "member": "bool",
           "name": "Wakeup",
@@ -3585,7 +3405,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "物模型的分支路径",
           "member": "string",
           "name": "Branch",
@@ -3593,7 +3412,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "写入的物模型数据，如果是json需要转义成字符串",
           "member": "string",
           "name": "Value",
@@ -3601,7 +3419,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "Value字段的类型是否为数值（float、int）",
           "member": "bool",
           "name": "IsNum",
@@ -3641,7 +3458,6 @@
       "document": "ModifyDeviceProperty请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "设备TID",
           "member": "string",
           "name": "Tid",
@@ -3649,7 +3465,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "如果设备处于休眠状态，是否唤醒设备",
           "member": "bool",
           "name": "Wakeup",
@@ -3657,7 +3472,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "物模型的分支路径",
           "member": "string",
           "name": "Branch",
@@ -3665,7 +3479,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "写入的物模型数据，如果是json需要转义成字符串",
           "member": "string",
           "name": "Value",
@@ -3673,7 +3486,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "Value字段是否为数值（float、int）",
           "member": "bool",
           "name": "IsNum",
@@ -3699,7 +3511,6 @@
       "document": "ModifyDevice请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "设备ID",
           "example": "aaaaaaaaa",
           "member": "string",
@@ -3708,7 +3519,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用户ID",
           "example": "9222942471405699047",
           "member": "string",
@@ -3717,7 +3527,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "设备昵称，最多不超过64个字符",
           "example": "Camera",
           "member": "string",
@@ -3744,7 +3553,6 @@
       "document": "ModifyProduct请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "member": "string",
           "name": "ProductId",
@@ -3752,7 +3560,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "产品名称",
           "member": "string",
           "name": "ProductName",
@@ -3760,7 +3567,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "产品描述",
           "member": "string",
           "name": "ProductDescription",
@@ -3768,7 +3574,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "主芯片产商ID",
           "member": "string",
           "name": "ChipManufactureId",
@@ -3776,7 +3581,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "主芯片ID",
           "member": "string",
           "name": "ChipId",
@@ -3802,7 +3606,6 @@
       "document": "ModifyVerContent请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品id",
           "member": "string",
           "name": "ProductId",
@@ -3810,7 +3613,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "需要修改的版本号",
           "member": "string",
           "name": "OtaVersion",
@@ -3818,7 +3620,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作人,字符长度<=64",
           "member": "string",
           "name": "Operator",
@@ -3826,7 +3627,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "备注信息",
           "member": "string",
           "name": "Remark",
@@ -3834,7 +3634,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "版本发布的描述信息，需要国际化，可以为空",
           "member": "Contents",
           "name": "Contents",
@@ -3860,7 +3659,6 @@
       "document": "产品转发消息队列配置",
       "members": [
         {
-          "default": "",
           "document": "消息队列类型 1：CMQ 2：kafka",
           "member": "uint64",
           "name": "MsgQueueType",
@@ -3869,7 +3667,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "消息类型列表，整型值（0-31）之间以“,”分隔",
           "member": "string",
           "name": "MsgType",
@@ -3878,7 +3675,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主题名称",
           "member": "string",
           "name": "Topic",
@@ -3887,7 +3683,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例名称",
           "member": "string",
           "name": "Instance",
@@ -3896,7 +3691,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "消息地域",
           "member": "string",
           "name": "MsgRegion",
@@ -3911,7 +3705,6 @@
       "document": "操作系统信息",
       "members": [
         {
-          "default": "",
           "document": "芯片型号\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ChipId",
@@ -3920,7 +3713,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "芯片厂商\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ChipManufacture",
@@ -3935,7 +3727,6 @@
       "document": "产品发布过的全部版本",
       "members": [
         {
-          "default": "",
           "document": "版本名称",
           "member": "string",
           "name": "OtaVersion",
@@ -3944,7 +3735,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "发布时间，unix时间戳，单位：秒",
           "member": "uint64",
           "name": "PublishTime",
@@ -3959,7 +3749,6 @@
       "document": "产品信息摘要",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "member": "string",
           "name": "ProductId",
@@ -3968,7 +3757,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "产器型号(APP产品,为APP包名)",
           "member": "string",
           "name": "ProductModel",
@@ -3977,7 +3765,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "产品名称",
           "member": "string",
           "name": "ProductName",
@@ -3986,7 +3773,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "产品描述信息",
           "member": "string",
           "name": "ProductDescription",
@@ -3995,7 +3781,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间，UNIX 时间戳，单位秒",
           "member": "uint64",
           "name": "CreateTime",
@@ -4004,7 +3789,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "物模型发布版本号,0代表物模型尚未发布",
           "member": "uint64",
           "name": "IotModelRevision",
@@ -4013,7 +3797,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "产品密钥",
           "member": "string",
           "name": "SecretKey",
@@ -4022,7 +3805,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设备功能码\nypsxth : 音频双向通话;\t\nspdxth : 视频单向通话(监控);\nNVR0824 : NVR设备,大于8路，小于等于24路;\nWifiKeepalive : Wifi保活(低功耗产品);\nAlexa : Alexa接入;\nGoogle : Google接入;\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "FuncCode",
@@ -4031,7 +3813,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "产品类别，0 : 普通视频设备；1 : NVR设备\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "ProductCate",
@@ -4040,7 +3821,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "产品地域\nChina-Mainland（中国大陆）\nChina-Hong Kong, Macao and Taiwan（港澳台地区）\nAmerica（美国）\nEurope（欧洲）\nIndia（印度）\nOther-Overseas（其他境外地区）\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ProductRegion",
@@ -4055,7 +3835,6 @@
       "document": "产品信息",
       "members": [
         {
-          "default": "",
           "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ProductId",
@@ -4064,7 +3843,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ProductName",
@@ -4073,7 +3851,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "产品描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ProductDescription",
@@ -4082,7 +3859,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间，UNIX 时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "CreateTime",
@@ -4091,7 +3867,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "物模型发布版本号,0代表物模型尚未发布\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "IotModelRevision",
@@ -4100,7 +3875,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "产品密钥\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "SecretKey",
@@ -4109,7 +3883,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "设备功能码\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Features",
@@ -4118,7 +3891,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "产器型号(APP产品,为APP包名)\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ProductModel",
@@ -4127,7 +3899,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "主芯片厂商id\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ChipManufactureId",
@@ -4136,7 +3907,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "主芯片型号\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ChipId",
@@ -4145,7 +3915,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "产品类别，0：普通视频设备；1：NVR设备\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "ProductCate",
@@ -4154,7 +3923,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "产品地区\nChina-Mainland（中国大陆）\nChina-Hong Kong, Macao and Taiwan（港澳台地区）\nAmerica（美国）\nEurope（欧洲）\nIndia（印度）\nOther-Overseas（其他境外地区）\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ProductRegion",
@@ -4163,7 +3931,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "接入模型，bit0是0：公版小程序未接入，bit0是1：公版小程序已接入\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "AccessMode",
@@ -4172,7 +3939,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "linux,android,liteos\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Os",
@@ -4187,7 +3953,6 @@
       "document": "充值记录列表",
       "members": [
         {
-          "default": "",
           "document": "流水记录号。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "WaterId",
@@ -4196,7 +3961,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "充值前的余额，单位0.01元。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "BalanceBeforeRecharge",
@@ -4205,7 +3969,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "充值金额，单位0.01元。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "Money",
@@ -4214,7 +3977,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "充值时间, UTC值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "OperateTime",
@@ -4229,7 +3991,6 @@
       "document": "RefundStorageService请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云存服务ID",
           "example": "xxxxxx",
           "member": "string",
@@ -4238,7 +3999,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "云存子订单ID。如果指定子订单ID,则仅退订该子订单，如果未指定子定单ID，则退订所有子订单",
           "example": "111",
           "member": "string",
@@ -4346,7 +4106,6 @@
       "document": "终端用户注册状态",
       "members": [
         {
-          "default": "",
           "document": "终端用户的唯一ID",
           "member": "string",
           "name": "CunionId",
@@ -4355,7 +4114,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "注册状态",
           "member": "bool",
           "name": "IsRegisted",
@@ -4370,7 +4128,6 @@
       "document": "RunDevice请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "TID列表 ≤100",
           "member": "string",
           "name": "Tids",
@@ -4396,7 +4153,6 @@
       "document": "RunDeviceStream请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "设备TID 列表",
           "member": "string",
           "name": "Tids",
@@ -4422,7 +4178,6 @@
       "document": "RunIotModel请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "member": "string",
           "name": "ProductId",
@@ -4430,7 +4185,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "物模型定义，json格式的字符串",
           "member": "string",
           "name": "IotModel",
@@ -4456,7 +4210,6 @@
       "document": "RunOtaVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "member": "string",
           "name": "ProductId",
@@ -4464,7 +4217,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "固件版本号，格式为x.y.z， x，y 范围0-63，z范围1~524288",
           "member": "string",
           "name": "OtaVersion",
@@ -4472,7 +4224,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "灰度值,取值范围0-100，为0时相当于暂停发布",
           "member": "uint64",
           "name": "GrayValue",
@@ -4480,7 +4231,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "指定的旧版本",
           "member": "string",
           "name": "OldVersions",
@@ -4488,7 +4238,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "操作人",
           "member": "string",
           "name": "Operator",
@@ -4496,7 +4245,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "备注信息",
           "member": "string",
           "name": "Remark",
@@ -4504,7 +4252,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "版本发布的描述信息，需要国际化，可以为空",
           "member": "Contents",
           "name": "Contents",
@@ -4530,7 +4277,6 @@
       "document": "RunTestOtaVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "member": "string",
           "name": "ProductId",
@@ -4538,7 +4284,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "固件版本号，格式为x.y.z， x，y 范围0-63，z范围1~524288",
           "member": "string",
           "name": "OtaVersion",
@@ -4546,7 +4291,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "指定可升级的设备TID",
           "member": "string",
           "name": "Tids",
@@ -4554,7 +4298,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "操作人",
           "member": "string",
           "name": "Operator",
@@ -4562,7 +4305,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "备注信息",
           "member": "string",
           "name": "Remark",
@@ -4588,7 +4330,6 @@
       "document": "SendOnlineMsg请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "设备TID",
           "member": "string",
           "name": "Tid",
@@ -4596,7 +4337,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "如果设备处于休眠状态，是否唤醒设备",
           "member": "bool",
           "name": "Wakeup",
@@ -4604,7 +4344,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "等待回应类型\n0：不等待设备回应直接响应请求;\n1：要求设备确认消息已接收,或等待超时后返回;\n2：要求设备进行响应处理,收到设备的响应数据后,将设备响应数据回应给请求方;",
           "member": "uint64",
           "name": "WaitResp",
@@ -4612,7 +4351,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "消息主题",
           "member": "string",
           "name": "MsgTopic",
@@ -4620,7 +4358,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "消息内容，最大长度不超过8k字节",
           "member": "string",
           "name": "MsgContent",
@@ -4660,7 +4397,6 @@
       "document": "SetMessageQueue请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "example": "12345678910",
           "member": "string",
@@ -4669,7 +4405,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "消息队列类型 1-CMQ; 2-Ckafka",
           "example": "2",
           "member": "uint64",
@@ -4678,7 +4413,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "消息类型,整型值（0-31）之间以“,”分隔\n0.设备在线状态变更\n1.常亮属性(ProConst)变更\n2.可写属性(ProWritable)变更\n3.只读属性(ProReadonly)变更\n4.设备控制(Action)\n5.设备事件(Event)\n6.系统事件(System)",
           "example": "0,1,2,3,4,5",
           "member": "string",
@@ -4687,7 +4421,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "消息队列主题，不超过32字符",
           "example": "testTopic",
           "member": "string",
@@ -4696,7 +4429,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "kafka消息队列的实例名，不超过64字符",
           "example": "testInstance",
           "member": "string",
@@ -4705,7 +4437,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "消息地域，不超过32字符",
           "example": "xxx",
           "member": "string",
@@ -4732,7 +4463,6 @@
       "document": "云存订单信息",
       "members": [
         {
-          "default": "",
           "document": "定单唯一性ID",
           "example": "59",
           "member": "string",
@@ -4742,7 +4472,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云存套餐ID",
           "example": "yc1m3d",
           "member": "string",
@@ -4752,7 +4481,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "定单服务状态\n1;订单正在使用。\n2:订单未开始。\n3:订单已经使用过，现在暂时未开始使用(该订单从其他服务转移而来)。\n4:订单已过期。\n5:订单已被退订。\n6:定单已被转移到其他云存服务。",
           "example": "2",
           "member": "int64",
@@ -4762,7 +4490,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "定单服务生效时间",
           "example": "1605343244",
           "member": "int64",
@@ -4772,7 +4499,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "定单服务失效时间",
           "example": "1607935245",
           "member": "int64",
@@ -4788,7 +4514,6 @@
       "document": "系统类型",
       "members": [
         {
-          "default": "",
           "document": "安卓系统\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "OsData",
           "name": "Android",
@@ -4797,7 +4522,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "linux系统\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "OsData",
           "name": "Linux",
@@ -4806,7 +4530,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "LiteOs系统\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "OsData",
           "name": "LiteOs",
@@ -4821,7 +4544,6 @@
       "document": "布尔值，标识指定设备是否在白名单中",
       "members": [
         {
-          "default": "",
           "document": "设备TID",
           "member": "string",
           "name": "Tid",
@@ -4830,7 +4552,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设备追踪状态",
           "member": "bool",
           "name": "IsExist",
@@ -4845,7 +4566,6 @@
       "document": "UpgradeDevice请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "设备TID",
           "member": "string",
           "name": "Tid",
@@ -4853,7 +4573,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "固件版本号",
           "member": "string",
           "name": "OtaVersion",
@@ -4861,7 +4580,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否立即升级",
           "member": "bool",
           "name": "UpgradeNow",
@@ -4894,7 +4612,6 @@
       "document": "UploadOtaVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "产品ID",
           "member": "string",
           "name": "ProductId",
@@ -4902,7 +4619,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "固件版本号，格式为x.y.z， x，y 范围0-63，z范围1~524288",
           "member": "string",
           "name": "OtaVersion",
@@ -4910,7 +4626,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "固件版本URL",
           "member": "string",
           "name": "VersionUrl",
@@ -4918,7 +4633,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件大小，单位：byte",
           "member": "uint64",
           "name": "FileSize",
@@ -4926,7 +4640,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "文件md5校验码（32字符）",
           "member": "string",
           "name": "Md5",
@@ -4934,7 +4647,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作人",
           "member": "string",
           "name": "Operator",
@@ -4942,7 +4654,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "备注信息",
           "member": "string",
           "name": "Remark",
@@ -4950,7 +4661,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "版本发布的描述信息，需要国际化，可以为空",
           "member": "Contents",
           "name": "Contents",
@@ -4976,7 +4686,6 @@
       "document": "固件版本详细信息",
       "members": [
         {
-          "default": "",
           "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ProductId",
@@ -4985,7 +4694,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "固件版本号\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "OtaVersion",
@@ -4994,7 +4702,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "版本类型 1未发布 2测试发布 3正式发布 4禁用\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "PubStatus",
@@ -5003,7 +4710,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "固件版本存储路径URL\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "VersionUrl",
@@ -5012,7 +4718,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "文件大小，byte\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "FileSize",
@@ -5021,7 +4726,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "文件校验码\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Md5",
@@ -5030,7 +4734,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "指定的允许升级的旧版本，PubStatus=3时有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "OldVersions",
@@ -5039,7 +4742,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "指定的允许升级的旧设备id，PubStatus=2时有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Tids",
@@ -5048,7 +4750,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "灰度值（0-100）,PubStatus=3时有效，表示n%的升级总量\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "GrayValue",
@@ -5057,7 +4758,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "最近一次发布时间，UNIX时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "PublishTime",
@@ -5066,7 +4766,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "此版本激活的设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "ActiveCount",
@@ -5075,7 +4774,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "此版本在线的设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "OnlineCount",
@@ -5084,7 +4782,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "上传固件文件的时间，UNIX时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "UpdateTime",
@@ -5093,7 +4790,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "发布记录的最后变更时间，UNIX时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "UploadTime",
@@ -5102,7 +4798,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "该固件版本发布的变更次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "ModifyTimes",
@@ -5111,7 +4806,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Remark",
@@ -5120,7 +4814,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "版本发布的描述信息，需要国际化，可以为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "Contents",
           "name": "Contents",
@@ -5129,7 +4822,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "月活设备数，当月第一天开始有上线的设备数量。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
           "name": "AliveInMonthCnt",

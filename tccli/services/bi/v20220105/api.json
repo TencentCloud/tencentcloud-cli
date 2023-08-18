@@ -32,8 +32,7 @@
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -42,8 +41,7 @@
           "member": "uint64",
           "name": "PageId",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -52,8 +50,7 @@
           "member": "string",
           "name": "BIToken",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -62,8 +59,7 @@
           "member": "string",
           "name": "ExtraParam",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -72,8 +68,7 @@
           "member": "string",
           "name": "Scope",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -89,8 +84,7 @@
           "name": "Extra",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -100,8 +94,7 @@
           "name": "Data",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -111,8 +104,7 @@
           "name": "Msg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -127,7 +119,6 @@
       "document": "申请Token延期",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "申请结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -147,56 +138,46 @@
           "disabled": false,
           "document": "分享项目id",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "分享页面id，嵌出看板时此为空值0",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "PageId",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "page表示嵌出页面，panel表嵌出整个看板",
           "example": "1",
-          "is_base64": false,
           "member": "string",
           "name": "Scope",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "过期时间。 单位：分钟 最大值：240。即，4小时 默认值：240",
           "example": "1",
-          "is_base64": false,
           "member": "string",
           "name": "ExpireTime",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "备用字段",
           "example": "1",
-          "is_base64": false,
           "member": "string",
           "name": "ExtraParam",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -212,8 +193,7 @@
           "name": "Extra",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -223,8 +203,7 @@
           "name": "Data",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -234,8 +213,7 @@
           "name": "Msg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -257,8 +235,7 @@
           "name": "Id",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -268,8 +245,7 @@
           "name": "BIToken",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -279,8 +255,7 @@
           "name": "ProjectId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -290,8 +265,7 @@
           "name": "CreatedUser",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -301,8 +275,7 @@
           "name": "CreatedAt",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -312,8 +285,7 @@
           "name": "UpdatedUser",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -323,8 +295,7 @@
           "name": "UpdatedAt",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -334,8 +305,7 @@
           "name": "PageId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -345,8 +315,7 @@
           "name": "ExtraParam",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -356,8 +325,7 @@
           "name": "Scope",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -367,8 +335,7 @@
           "name": "ExpireTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

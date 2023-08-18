@@ -299,7 +299,6 @@
       "document": "APIGWParams描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "HTTPS",
           "example": "HTTPS",
@@ -310,7 +309,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "POST",
           "example": "POST",
@@ -334,8 +332,7 @@
           "name": "SpecVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -345,8 +342,7 @@
           "name": "Id",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -356,8 +352,7 @@
           "name": "Source",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -367,8 +362,7 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -378,8 +372,7 @@
           "name": "AlarmTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -389,8 +382,7 @@
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -400,8 +392,7 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -411,8 +402,7 @@
           "name": "Data",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -422,8 +412,7 @@
           "name": "RecoverTime",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -433,8 +422,7 @@
           "name": "Zone",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -449,8 +437,7 @@
           "member": "SubjectSummary",
           "name": "Instances",
           "required": true,
-          "type": "list",
-          "visibility": 2
+          "type": "list"
         },
         {
           "disabled": false,
@@ -459,8 +446,7 @@
           "member": "string",
           "name": "Description",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -469,8 +455,7 @@
           "member": "string",
           "name": "ExternalReason",
           "required": true,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -479,8 +464,7 @@
           "member": "string",
           "name": "InternalReason",
           "required": false,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -489,8 +473,7 @@
           "member": "string",
           "name": "RecoverAdvise",
           "required": false,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -499,8 +482,7 @@
           "member": "string",
           "name": "LocationTool",
           "required": false,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         },
         {
           "disabled": false,
@@ -509,8 +491,7 @@
           "member": "string",
           "name": "Follower",
           "required": false,
-          "type": "list",
-          "visibility": 2
+          "type": "list"
         },
         {
           "disabled": false,
@@ -519,8 +500,7 @@
           "member": "string",
           "name": "Handler",
           "required": false,
-          "type": "list",
-          "visibility": 2
+          "type": "list"
         },
         {
           "disabled": false,
@@ -529,8 +509,7 @@
           "member": "string",
           "name": "Owner",
           "required": false,
-          "type": "list",
-          "visibility": 2
+          "type": "list"
         },
         {
           "disabled": false,
@@ -539,8 +518,7 @@
           "member": "string",
           "name": "Title",
           "required": false,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -566,7 +544,6 @@
       "document": "CheckTransformation请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待处理的json字符串",
           "example": "{\"key\": \"value\"}",
@@ -576,7 +553,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一个转换规则列表",
           "example": "无",
@@ -614,7 +590,6 @@
       "document": "用来描述需要投递到kafka topic的参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "ckafka topic name",
           "example": "topic-xxxxxx",
@@ -625,7 +600,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ckafka资源qcs六段式",
           "example": "qcs::ckafka:ap-chongqing:uin/123456:ckafkaId/uin/456789/ckafka-x",
@@ -642,7 +616,6 @@
       "document": "Ckafka 连接器参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "kafka offset",
           "example": "latest",
@@ -653,7 +626,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ckafka  topic",
           "example": "topic",
@@ -670,7 +642,6 @@
       "document": "用来描述ckafka投递目标",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要投递到的ckafka topic",
           "example": "topic-xxxx",
@@ -681,7 +652,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "重试策略",
           "example": "无",
@@ -705,8 +675,7 @@
           "name": "ProductName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -716,8 +685,7 @@
           "name": "ProductType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -727,8 +695,7 @@
           "name": "Type",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -737,7 +704,6 @@
       "document": "Connection信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "状态",
           "example": "Active",
@@ -748,7 +714,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
           "example": "2021-04-27T14:34:19+08:00",
@@ -759,7 +724,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使能开关",
           "example": "true",
@@ -770,7 +734,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "example": "这是一个描述",
@@ -781,7 +744,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2021-04-27T14:34:19+08:00",
@@ -792,7 +754,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "连接器ID",
           "example": "connection-xxxxxxxx",
@@ -803,7 +764,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
@@ -814,7 +774,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "连接器描述",
           "example": "无",
@@ -825,7 +784,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "连接器名称",
           "example": "connection",
@@ -836,7 +794,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型",
           "example": "apigw",
@@ -860,8 +817,7 @@
           "name": "Type",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -871,8 +827,7 @@
           "name": "Status",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -888,8 +843,7 @@
           "name": "ResourceDescription",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -899,8 +853,7 @@
           "name": "APIGWParams",
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -910,8 +863,7 @@
           "name": "CkafkaParams",
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -921,8 +873,7 @@
           "name": "DTSParams",
           "required": false,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -938,8 +889,7 @@
           "name": "ConnectorName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -949,8 +899,7 @@
           "name": "ConnectorType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -959,70 +908,58 @@
       "document": "CreateConnection请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "连接器描述",
           "example": "无",
           "member": "ConnectionDescription",
           "name": "ConnectionDescription",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
           "name": "EventBusId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "连接器名称",
           "example": "connection",
           "member": "string",
           "name": "ConnectionName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "example": "这是一个描述",
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使能开关",
           "example": "true",
           "member": "bool",
           "name": "Enable",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型",
           "example": "apigw",
           "member": "string",
           "name": "Type",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1038,8 +975,7 @@
           "name": "ConnectionId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1060,8 +996,7 @@
           "member": "string",
           "name": "EventBusName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1070,8 +1005,7 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1080,8 +1014,7 @@
           "member": "int64",
           "name": "SaveDays",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1090,8 +1023,7 @@
           "member": "bool",
           "name": "EnableStore",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1106,8 +1038,7 @@
           "member": "string",
           "name": "EventBusId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1122,59 +1053,49 @@
       "document": "CreateRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参考：[事件模式](https://cloud.tencent.com/document/product/1359/56084)",
           "example": "{   \"detail\": {     \"source-ip\": [ { \"cidr\": \"10.0.0.0/24\" } ]  ",
           "member": "string",
           "name": "EventPattern",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件集ID。",
           "example": "eb-xxxxxxxx",
           "member": "string",
           "name": "EventBusId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件集名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符",
           "example": "rule",
           "member": "string",
           "name": "RuleName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使能开关。",
           "example": "true",
           "member": "bool",
           "name": "Enable",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件集描述，不限字符类型，200字符描述以内",
           "example": "这是一个描述",
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1190,8 +1111,7 @@
           "name": "RuleId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1206,48 +1126,40 @@
       "document": "CreateTarget请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
           "name": "EventBusId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标类型",
           "example": "scf",
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标描述",
           "example": "qcs::scf:ap-guangzhou:uin/3473058547:namespace/test/function/",
           "member": "TargetDescription",
           "name": "TargetDescription",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件规则ID",
           "example": "rule-xxxxxxxx",
           "member": "string",
           "name": "RuleId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1263,8 +1175,7 @@
           "name": "TargetId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1279,7 +1190,6 @@
       "document": "CreateTransformation请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件总线 id",
           "example": "eb-xxxxx",
@@ -1289,7 +1199,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则id",
           "example": "rule-xxxxxx",
@@ -1299,7 +1208,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一个转换规则列表，当前仅限定一个",
           "example": "无",
@@ -1342,7 +1250,6 @@
       "document": "rule对应的dlq配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "支持dlq、丢弃、忽略错误继续传递三种模式, 分别对应: DLQ,DROP,IGNORE_ERROR",
           "example": "DLQ",
@@ -1353,7 +1260,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设置了DLQ方式后,此选项必填. 错误消息会被投递到对应的kafka topic中\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1370,26 +1276,22 @@
       "document": "DeleteConnection请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "连接器ID",
           "example": "connection-xxxxxxxx",
           "member": "string",
           "name": "ConnectionId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
           "name": "EventBusId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1410,15 +1312,13 @@
       "document": "DeleteEventBus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
           "name": "EventBusId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1439,26 +1339,22 @@
       "document": "DeleteRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
           "name": "EventBusId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件规则ID",
           "example": "rule-xxxxxxxx",
           "member": "string",
           "name": "RuleId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1479,37 +1375,31 @@
       "document": "DeleteTarget请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
           "name": "EventBusId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件目标ID",
           "example": "target-xxxxxxxx",
           "member": "string",
           "name": "TargetId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件规则ID",
           "example": "rule-xxxxxxxx",
           "member": "string",
           "name": "RuleId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1530,7 +1420,6 @@
       "document": "DeleteTransformation请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxx",
@@ -1540,7 +1429,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID",
           "example": "rule-xxxxxx",
@@ -1550,7 +1438,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转换器id",
           "example": "tsfm-xxxxxx",
@@ -1584,8 +1471,7 @@
           "member": "int64",
           "name": "StartTime",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1594,8 +1480,7 @@
           "member": "int64",
           "name": "EndTime",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1604,8 +1489,7 @@
           "member": "string",
           "name": "EventBusId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1614,8 +1498,7 @@
           "member": "LogFilter",
           "name": "Filter",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1624,8 +1507,7 @@
           "member": "string",
           "name": "GroupByStatus",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1634,8 +1516,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1650,8 +1531,7 @@
           "member": "StatsLogResponse",
           "name": "Results",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1672,8 +1552,7 @@
           "member": "int64",
           "name": "StartTime",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1682,8 +1561,7 @@
           "member": "int64",
           "name": "EndTime",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1692,8 +1570,7 @@
           "member": "string",
           "name": "EventBusId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1702,8 +1579,7 @@
           "member": "string",
           "name": "GroupField",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1712,8 +1588,7 @@
           "member": "int64",
           "name": "Page",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1722,8 +1597,7 @@
           "member": "int64",
           "name": "Limit",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1732,8 +1606,7 @@
           "member": "LogFilter",
           "name": "Filter",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1748,8 +1621,7 @@
           "member": "string",
           "name": "Results",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1764,7 +1636,6 @@
       "document": "描述Es规则目标",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网络连接类型",
           "example": "privatelink",
@@ -1772,11 +1643,9 @@
           "name": "NetMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "索引前缀",
           "example": "esindex",
@@ -1784,11 +1653,9 @@
           "name": "IndexPrefix",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "es日志轮换粒度",
           "example": "none",
@@ -1796,11 +1663,9 @@
           "name": "RotationInterval",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DTS事件配置",
           "example": "default",
@@ -1808,11 +1673,9 @@
           "name": "OutputMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DTS索引配置",
           "example": "default",
@@ -1820,11 +1683,9 @@
           "name": "IndexSuffixMode",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "es模版类型",
           "example": "_type",
@@ -1832,8 +1693,7 @@
           "name": "IndexTemplateType",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -1842,7 +1702,6 @@
       "document": "描述如何过滤数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "语法Rule规则保持一致",
           "example": "\"{\\\"source\\\":\\\"ckafka.cloud.tencent\\\"}\"",
@@ -1859,7 +1718,6 @@
       "document": "eb event信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件源的信息,新产品上报必须符合EB的规范",
           "example": "cvm.cloud.tencent",
@@ -1867,11 +1725,9 @@
           "name": "Source",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件数据，内容由创建事件的系统来控制，当前datacontenttype仅支持application/json;charset=utf-8，所以该字段是json字符串",
           "example": "\"{\\\"a\\\":\\\"b\\\",\\\"c\\\":\\\"d\\\",\\\"e\\\":1}\"",
@@ -1879,11 +1735,9 @@
           "name": "Data",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件类型，可自定义，选填。云服务默认写 COS:Created:PostObject，用“：”分割类型字段",
           "example": "cvm:ErrorEvent:PingUnreachable",
@@ -1891,11 +1745,9 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件来源详细描述，可自定义，选填。云服务默认为标准qcs资源表示语法：qcs::dts:ap-guangzhou:appid/uin:xxx",
           "example": "qcs::dts:ap-guangzhou:appid/uin:xxx",
@@ -1903,11 +1755,9 @@
           "name": "Subject",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件发生的毫秒时间戳，\ntime.Now().UnixNano()/1e6",
           "example": "1631186355147",
@@ -1915,8 +1765,7 @@
           "name": "Time",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
@@ -1932,8 +1781,7 @@
           "name": "ModTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1943,8 +1791,7 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1954,8 +1801,7 @@
           "name": "AddTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1965,8 +1811,7 @@
           "name": "EventBusName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1976,8 +1821,7 @@
           "name": "EventBusId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1987,8 +1831,7 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1998,8 +1841,7 @@
           "name": "PayMode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2009,8 +1851,7 @@
           "name": "ConnectionBriefs",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2020,8 +1861,7 @@
           "name": "TargetBriefs",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2037,8 +1877,7 @@
           "name": "EventName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2048,8 +1887,7 @@
           "name": "EventType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2059,8 +1897,7 @@
           "name": "EventId",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2076,8 +1913,7 @@
           "name": "Id",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2087,8 +1923,7 @@
           "name": "ProductNameCh",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2098,8 +1933,7 @@
           "name": "ProductNameEn",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2109,8 +1943,7 @@
           "name": "EventTypeCh",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2120,8 +1953,7 @@
           "name": "EventTypeEn",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2131,8 +1963,7 @@
           "name": "HasRecovery",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2142,8 +1973,7 @@
           "name": "EventDescription",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2153,8 +1983,7 @@
           "name": "Suggestions",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2164,8 +1993,7 @@
           "name": "EventSource",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2175,8 +2003,7 @@
           "name": "EventType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2192,8 +2019,7 @@
           "name": "SpecVersion",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2203,8 +2029,7 @@
           "name": "Id",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2214,8 +2039,7 @@
           "name": "Source",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2225,8 +2049,7 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2236,8 +2059,7 @@
           "name": "Time",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2247,8 +2069,7 @@
           "name": "Region",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2258,8 +2079,7 @@
           "name": "DataContentType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2269,8 +2089,7 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2280,8 +2099,7 @@
           "name": "Data",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2291,8 +2109,7 @@
           "name": "Subject",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -2308,8 +2125,7 @@
           "name": "EventId",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2319,8 +2135,7 @@
           "name": "EventName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2330,8 +2145,7 @@
           "name": "EventPattern",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2340,7 +2154,6 @@
       "document": "描述如何提取数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "JsonPath, 不指定则使用默认值$.",
           "example": "$",
@@ -2351,7 +2164,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "取值: TEXT/JSON",
           "example": "TEXT",
@@ -2362,7 +2174,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仅在Text需要传递\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2379,7 +2190,6 @@
       "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n* 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n* 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "一个或者多个过滤值。",
           "example": "无",
@@ -2390,7 +2200,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤键的名称。",
           "example": "无",
@@ -2413,8 +2222,7 @@
           "member": "string",
           "name": "EventType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2429,8 +2237,7 @@
           "member": "string",
           "name": "EventTemplate",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2451,8 +2258,7 @@
           "member": "string",
           "name": "EventType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2467,8 +2273,7 @@
           "member": "string",
           "name": "EventTemplate",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2489,8 +2294,7 @@
           "member": "string",
           "name": "EventBusId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2505,8 +2309,7 @@
           "member": "datetime_iso",
           "name": "ModTime",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2515,8 +2318,7 @@
           "member": "string",
           "name": "Description",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2525,8 +2327,7 @@
           "member": "string",
           "name": "ClsTopicId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2535,8 +2336,7 @@
           "member": "datetime_iso",
           "name": "AddTime",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2545,8 +2345,7 @@
           "member": "string",
           "name": "ClsLogsetId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2555,8 +2354,7 @@
           "member": "string",
           "name": "EventBusName",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2565,8 +2363,7 @@
           "member": "string",
           "name": "EventBusId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2575,8 +2372,7 @@
           "member": "string",
           "name": "Type",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2585,8 +2381,7 @@
           "member": "string",
           "name": "PayMode",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2595,8 +2390,7 @@
           "member": "int64",
           "name": "SaveDays",
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2605,8 +2399,7 @@
           "member": "string",
           "name": "LogTopicId",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2615,8 +2408,7 @@
           "member": "bool",
           "name": "EnableStore",
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2625,8 +2417,7 @@
           "member": "string",
           "name": "LinkMode",
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2653,8 +2444,7 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2664,8 +2454,7 @@
           "name": "EventsDetectors",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2686,8 +2475,7 @@
           "member": "string",
           "name": "EventBusId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2696,8 +2484,7 @@
           "member": "string",
           "name": "RuleId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2712,8 +2499,7 @@
           "member": "string",
           "name": "EventBusId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2722,8 +2508,7 @@
           "member": "string",
           "name": "RuleId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2732,8 +2517,7 @@
           "member": "string",
           "name": "RuleName",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2742,8 +2526,7 @@
           "member": "string",
           "name": "Status",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2752,8 +2535,7 @@
           "member": "bool",
           "name": "Enable",
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2762,8 +2544,7 @@
           "member": "string",
           "name": "Description",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2772,8 +2553,7 @@
           "member": "string",
           "name": "EventPattern",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2782,8 +2562,7 @@
           "member": "datetime_iso",
           "name": "AddTime",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2792,8 +2571,7 @@
           "member": "datetime_iso",
           "name": "ModTime",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2808,7 +2586,6 @@
       "document": "GetTransformation请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxx",
@@ -2818,7 +2595,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID",
           "example": "rule-xxxxxx",
@@ -2828,7 +2604,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转换器id",
           "example": "tsfm-xxxxxxx",
@@ -2872,8 +2647,7 @@
           "member": "string",
           "name": "ProductType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2889,8 +2663,7 @@
           "name": "EventNames",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2911,8 +2684,7 @@
           "member": "string",
           "name": "ProductType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2928,8 +2700,7 @@
           "name": "EventPatterns",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2956,8 +2727,7 @@
           "name": "CloudProducts",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2972,7 +2742,6 @@
       "document": "ListConnections请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
@@ -2982,7 +2751,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据哪个字段进行返回结果排序，目前支持如下以下字段：AddTime, ModTime",
           "example": "ModTime",
@@ -2992,7 +2760,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
@@ -3002,7 +2769,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "以升序还是降序的方式返回结果，可选值 ASC 和 DESC",
           "example": "DESC",
@@ -3012,7 +2778,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
@@ -3066,8 +2831,7 @@
           "member": "string",
           "name": "ConnectorType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3083,8 +2847,7 @@
           "name": "EventNames",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3105,8 +2868,7 @@
           "member": "string",
           "name": "ConnectorType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3122,8 +2884,7 @@
           "name": "EventPatterns",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3150,8 +2911,7 @@
           "name": "Connectors",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3172,8 +2932,7 @@
           "member": "string",
           "name": "OrderBy",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3182,8 +2941,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3192,8 +2950,7 @@
           "member": "string",
           "name": "Order",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3202,8 +2959,7 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -3212,8 +2968,7 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3228,8 +2983,7 @@
           "member": "EventBus",
           "name": "EventBuses",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3238,8 +2992,7 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3254,7 +3007,6 @@
       "document": "ListRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
@@ -3264,7 +3016,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）",
           "example": "ModTime",
@@ -3274,7 +3025,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
@@ -3284,7 +3034,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，默认为0。",
           "example": "0",
@@ -3294,7 +3043,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）",
           "example": "DESC",
@@ -3342,70 +3090,58 @@
       "document": "ListTargets请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
           "name": "EventBusId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）",
           "example": "ModTime",
           "member": "string",
           "name": "OrderBy",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件规则ID",
           "example": "rule-xxxxxxxx",
           "member": "string",
           "name": "RuleId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "0",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，默认为0。",
           "example": "20",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "以升序还是降序的方式返回结果，可选值 ASC（升序） 和 DESC（降序）",
           "example": "DESC",
           "member": "string",
           "name": "Order",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3421,8 +3157,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3432,8 +3167,7 @@
           "name": "Targets",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3455,8 +3189,7 @@
           "name": "Key",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3466,8 +3199,7 @@
           "name": "Operator",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3477,8 +3209,7 @@
           "name": "Value",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3488,8 +3219,7 @@
           "name": "Type",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3499,8 +3229,7 @@
           "name": "Filters",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -3516,8 +3245,7 @@
           "name": "Key",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3527,8 +3255,7 @@
           "name": "Operator",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3538,8 +3265,7 @@
           "name": "Value",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -3548,7 +3274,6 @@
       "document": "Transform输出参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "对应输出json中的key",
           "example": "name",
@@ -3559,7 +3284,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可以填json-path也可以支持常量或者内置关键字date类型",
           "example": "$.name",
@@ -3570,7 +3294,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "value的数据类型, 可选值: STRING, NUMBER,BOOLEAN,NULL,SYS_VARIABLE,JSONPATH",
           "example": "JSONPATH",
@@ -3587,7 +3310,6 @@
       "document": "PublishEvent请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件列表",
           "example": "EventList",
@@ -3597,7 +3319,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件集ID",
           "example": "EventBusId",
@@ -3631,8 +3352,7 @@
           "member": "BreakdownEvent",
           "name": "EventList",
           "required": true,
-          "type": "list",
-          "visibility": 2
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3648,8 +3368,7 @@
           "name": "EventList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3664,7 +3383,6 @@
       "document": "PutCloudEvents请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件列表",
           "example": "EventList",
@@ -3674,7 +3392,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件集ID",
           "example": "EventBusId",
@@ -3708,8 +3425,7 @@
           "member": "EventOps",
           "name": "EventList",
           "required": true,
-          "type": "list",
-          "visibility": 2
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3724,8 +3440,7 @@
           "member": "PutEventsRespEventList",
           "name": "EventList",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3740,7 +3455,6 @@
       "document": "PutEvents请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件列表",
           "example": "EventList",
@@ -3750,7 +3464,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件集ID",
           "example": "EventBusId",
@@ -3773,8 +3486,7 @@
           "name": "Id",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3795,7 +3507,6 @@
       "document": "用来描述一个ckafka投递目标的重试策略",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "重试间隔 单位:秒",
           "example": "30",
@@ -3806,7 +3517,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大重试次数",
           "example": "3",
@@ -3823,7 +3533,6 @@
       "document": "规则信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "状态",
           "example": "Active",
@@ -3831,11 +3540,9 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间",
           "example": "2021-04-27T14:34:19+08:00",
@@ -3843,11 +3550,9 @@
           "name": "ModTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使能开关",
           "example": "true",
@@ -3855,11 +3560,9 @@
           "name": "Enable",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "example": "这是一个描述",
@@ -3867,11 +3570,9 @@
           "name": "Description",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID",
           "example": "rule-xxxxxxxx",
@@ -3879,11 +3580,9 @@
           "name": "RuleId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2021-04-27T14:34:19+08:00",
@@ -3891,11 +3590,9 @@
           "name": "AddTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
@@ -3903,11 +3600,9 @@
           "name": "EventBusId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则名称",
           "example": "rule",
@@ -3915,11 +3610,9 @@
           "name": "RuleName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Target 简要信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3927,11 +3620,9 @@
           "name": "Targets",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "rule设置的dlq规则. 可能为null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3939,8 +3630,7 @@
           "name": "DeadLetterConfig",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3949,7 +3639,6 @@
       "document": "云函数参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "批量投递最长等待时间",
           "example": "1",
@@ -3960,7 +3649,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "批量投递最大事件条数",
           "example": "1",
@@ -3971,7 +3659,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开启批量投递使能",
           "example": "false",
@@ -3994,8 +3681,7 @@
           "member": "int64",
           "name": "StartTime",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4004,8 +3690,7 @@
           "member": "int64",
           "name": "EndTime",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4014,8 +3699,7 @@
           "member": "string",
           "name": "EventBusId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4024,8 +3708,7 @@
           "member": "int64",
           "name": "Page",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4034,8 +3717,7 @@
           "member": "int64",
           "name": "Limit",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4044,8 +3726,7 @@
           "member": "LogFilter",
           "name": "Filter",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -4054,8 +3735,7 @@
           "member": "string",
           "name": "OrderFields",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -4064,8 +3744,7 @@
           "member": "string",
           "name": "OrderBy",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4080,8 +3759,7 @@
           "member": "int64",
           "name": "Total",
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4090,8 +3768,7 @@
           "member": "int64",
           "name": "Limit",
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4100,8 +3777,7 @@
           "member": "int64",
           "name": "Page",
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4110,8 +3786,7 @@
           "member": "SearchLogResult",
           "name": "Results",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4133,8 +3808,7 @@
           "name": "Timestamp",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4144,8 +3818,7 @@
           "name": "Message",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4155,8 +3828,7 @@
           "name": "Source",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4166,8 +3838,7 @@
           "name": "Type",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4177,8 +3848,7 @@
           "name": "RuleIds",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4188,8 +3858,7 @@
           "name": "Subject",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4199,8 +3868,7 @@
           "name": "Region",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4210,8 +3878,7 @@
           "name": "Status",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4227,8 +3894,7 @@
           "name": "Count",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4238,8 +3904,7 @@
           "name": "Timestamp",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4255,8 +3920,7 @@
           "name": "Status",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4266,8 +3930,7 @@
           "name": "Data",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4283,8 +3946,7 @@
           "name": "InstanceId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4294,8 +3956,7 @@
           "name": "AppId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4305,8 +3966,7 @@
           "name": "Uin",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4316,8 +3976,7 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -4326,7 +3985,6 @@
       "document": "Target信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "目标类型",
           "example": "scf",
@@ -4337,7 +3995,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
@@ -4348,7 +4005,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标ID",
           "example": "target-xxxxxxxx",
@@ -4359,7 +4015,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标描述",
           "example": "无",
@@ -4370,7 +4025,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件规则ID",
           "example": "rule-xxxxxxxx",
@@ -4381,7 +4035,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开启批量投递使能\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -4392,7 +4045,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "批量投递最长等待时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -4403,7 +4055,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "批量投递最大事件条数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -4420,7 +4071,6 @@
       "document": "目标简要信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "目标ID",
           "example": "target-xxxxxxxx",
@@ -4431,7 +4081,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标类型",
           "example": "scf",
@@ -4448,7 +4097,6 @@
       "document": "TargetDescription描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "QCS资源六段式，更多参考 [资源六段式](https://cloud.tencent.com/document/product/598/10606)",
           "example": "qcs::scf:gz:uin/1111:resource",
@@ -4456,11 +4104,9 @@
           "name": "ResourceDescription",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云函数参数",
           "example": "无",
@@ -4468,11 +4114,9 @@
           "name": "SCFParams",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Ckafka参数",
           "example": "无",
@@ -4480,11 +4124,9 @@
           "name": "CkafkaTargetParams",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ElasticSearch参数",
           "example": "无",
@@ -4492,8 +4134,7 @@
           "name": "ESTargetParams",
           "required": false,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4502,7 +4143,6 @@
       "document": "描述如何切分数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "逗号、| 、制表符、空格、换行符、%、#，限制长度为 1。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": ",",
@@ -4513,7 +4153,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "填写正则表达式：长度128\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "a(.*)bc",
@@ -4530,7 +4169,6 @@
       "document": "描述如何数据转换\n",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "描述如何数据转换",
           "example": "无",
@@ -4547,7 +4185,6 @@
       "document": "一个转换器",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "描述如何提取数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4558,7 +4195,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述如何过滤数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4569,7 +4205,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述如何数据转换\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4586,59 +4221,49 @@
       "document": "UpdateConnection请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "连接器ID",
           "example": "connection-xxxxxxxx",
           "member": "string",
           "name": "ConnectionId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
           "name": "EventBusId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使能开关",
           "example": "true",
           "member": "bool",
           "name": "Enable",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "example": "这是一个描述",
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "连接器名称",
           "example": "connection",
           "member": "string",
           "name": "ConnectionName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4665,8 +4290,7 @@
           "member": "string",
           "name": "EventBusId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4675,8 +4299,7 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4685,8 +4308,7 @@
           "member": "string",
           "name": "EventBusName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4695,8 +4317,7 @@
           "member": "int64",
           "name": "SaveDays",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4705,8 +4326,7 @@
           "member": "string",
           "name": "LogTopicId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4715,8 +4335,7 @@
           "member": "bool",
           "name": "EnableStore",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -4737,70 +4356,58 @@
       "document": "UpdateRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件规则ID",
           "example": "rule-xxxxxxxx",
           "member": "string",
           "name": "RuleId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
           "member": "string",
           "name": "EventBusId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使能开关。",
           "example": "true",
           "member": "bool",
           "name": "Enable",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则描述，不限字符类型，200字符描述以内。",
           "example": "这是一个描述",
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参考：[事件模式](https://cloud.tencent.com/document/product/1359/56084)",
           "example": "{   \"detail\": {     \"source-ip\": [ { \"cidr\": \"10.0.0.0/24\" } ]  ",
           "member": "string",
           "name": "EventPattern",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件规则名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符",
           "example": "rule",
           "member": "string",
           "name": "RuleName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4821,7 +4428,6 @@
       "document": "UpdateTarget请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxxxx",
@@ -4831,7 +4437,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件规则ID",
           "example": "rule-xxxxxxxx",
@@ -4841,7 +4446,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件目标ID",
           "example": "target-xxxxxxxx",
@@ -4851,7 +4455,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开启批量投递使能",
           "example": "false",
@@ -4861,7 +4464,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "批量投递最长等待时间",
           "example": "1",
@@ -4871,7 +4473,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "批量投递最大事件条数",
           "example": "1",
@@ -4899,7 +4500,6 @@
       "document": "UpdateTransformation请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件集ID",
           "example": "eb-xxxxxx",
@@ -4909,7 +4509,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID",
           "example": "rule-xxxxxxxxx",
@@ -4919,7 +4518,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转换器id",
           "example": "tsfm-xxxxxxxxx",
@@ -4929,7 +4527,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一个转换规则列表，当前仅限定一个",
           "example": "无",

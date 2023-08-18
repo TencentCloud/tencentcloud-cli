@@ -47,59 +47,49 @@
       "document": "ApplyConcurrent请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
           "example": "cg_user",
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户IP，用户客户端的公网IP，用于就近调度",
           "example": "125.127.178.228",
           "member": "string",
           "name": "UserIp",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "cap-abcdefgh",
           "member": "string",
           "name": "ProjectId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用版本ID",
           "example": "ver-1a2b3c4d",
           "member": "string",
           "name": "ApplicationVersionId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID。如果是独享项目，将忽略该参数，使用项目绑定的应用。如果是共享项目，使用该参数来指定应用。",
           "example": "app-a1b2c3d4",
           "member": "string",
           "name": "ApplicationId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -126,8 +116,7 @@
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -136,8 +125,7 @@
           "member": "string",
           "name": "UserIp",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -146,8 +134,7 @@
           "member": "string",
           "name": "ClientSession",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -156,8 +143,7 @@
           "member": "string",
           "name": "RunMode",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -166,8 +152,7 @@
           "member": "string",
           "name": "ApplicationParameters",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -176,8 +161,7 @@
           "member": "string",
           "name": "HostUserId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -186,8 +170,7 @@
           "member": "string",
           "name": "Role",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -202,8 +185,7 @@
           "member": "string",
           "name": "ServerSession",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -218,15 +200,13 @@
       "document": "DestroySession请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
           "example": "cg_user",
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -253,8 +233,7 @@
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -275,15 +254,13 @@
       "document": "StopPublishStream请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
           "example": "abc123",
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"

@@ -96,7 +96,6 @@
       "document": "CheckVcode请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模块名VerifyCode",
           "example": "",
@@ -106,7 +105,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作名CheckVcode",
           "example": "",
@@ -116,7 +114,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "帐号ID",
           "example": "",
@@ -126,7 +123,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "合同ID",
           "example": "",
@@ -136,7 +132,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "验证码",
           "example": "",
@@ -164,7 +159,6 @@
       "document": "CreateContractByUpload请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模块名ContractMng",
           "example": "",
@@ -174,7 +168,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作名CreateContractByUpload",
           "example": "",
@@ -184,7 +177,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签署人信息",
           "example": "",
@@ -194,7 +186,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "合同上传链接地址",
           "example": "",
@@ -204,7 +195,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "合同名称",
           "example": "",
@@ -214,7 +204,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "",
@@ -224,7 +213,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "合同发起方腾讯云帐号ID（由平台自动填写）",
           "example": "",
@@ -234,7 +222,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "合同长时间未签署的过期时间",
           "example": "",
@@ -271,7 +258,6 @@
       "document": "CreateEnterpriseAccount请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模块名AccountMng",
           "example": "",
@@ -281,7 +267,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作名CreateEnterpriseAccount",
           "example": "",
@@ -291,7 +276,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企业用户名称",
           "example": "",
@@ -301,7 +285,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企业用户证件类型，8代表营业执照，详情请见常见问题",
           "example": "",
@@ -311,7 +294,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企业用户营业执照号码",
           "example": "",
@@ -321,7 +303,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企业联系人手机号",
           "example": "",
@@ -331,7 +312,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "经办人姓名",
           "example": "",
@@ -341,7 +321,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "经办人证件类型，0代表身份证",
           "example": "",
@@ -351,7 +330,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "经办人证件号码",
           "example": "",
@@ -361,7 +339,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "经办人手机号",
           "example": "",
@@ -371,7 +348,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企业联系人邮箱",
           "example": "",
@@ -408,7 +384,6 @@
       "document": "CreatePersonalAccount请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模块名AccountMng",
           "example": "",
@@ -418,7 +393,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作名CreatePersonalAccount",
           "example": "",
@@ -428,7 +402,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "个人用户姓名",
           "example": "",
@@ -438,7 +411,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "个人用户证件类型，0代表身份证，详情请见常见问题",
           "example": "",
@@ -448,7 +420,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "个人用户证件号码",
           "example": "",
@@ -458,7 +429,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "个人用户手机号",
           "example": "",
@@ -495,7 +465,6 @@
       "document": "CreateSeal请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模块名SealMng",
           "example": "",
@@ -505,7 +474,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作名CreateSeal",
           "example": "",
@@ -515,7 +483,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "帐号ID",
           "example": "",
@@ -525,7 +492,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签章链接，图片必须为png格式",
           "example": "",
@@ -535,7 +501,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片数据，base64编码",
           "example": "",
@@ -572,7 +537,6 @@
       "document": "DeleteAccount请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模块名AccountMng",
           "example": "",
@@ -582,7 +546,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作名DeleteAccount",
           "example": "",
@@ -592,7 +555,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "帐号ID列表",
           "example": "",
@@ -638,7 +600,6 @@
       "document": "DeleteSeal请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模块名SealMng",
           "example": "",
@@ -648,7 +609,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作名DeleteSeal",
           "example": "",
@@ -658,7 +618,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "帐号ID",
           "example": "",
@@ -668,7 +627,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签章ID",
           "example": "",
@@ -705,7 +663,6 @@
       "document": "DescribeTaskStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模块名CommonMng",
           "example": "",
@@ -715,7 +672,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作名DescribeTaskStatus",
           "example": "",
@@ -725,7 +681,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "",
@@ -771,7 +726,6 @@
       "document": "DownloadContract请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模块名ContractMng",
           "example": "",
@@ -781,7 +735,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作名DownloadContract",
           "example": "",
@@ -791,7 +744,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "合同ID",
           "example": "",
@@ -828,7 +780,6 @@
       "document": "SendVcode请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模块名VerifyCode",
           "example": "",
@@ -838,7 +789,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作名SendVcode",
           "example": "",
@@ -848,7 +798,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "合同ID",
           "example": "",
@@ -858,7 +807,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "帐号ID",
           "example": "",
@@ -886,7 +834,6 @@
       "document": "SignContractByCoordinate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模块名ContractMng",
           "example": "",
@@ -896,7 +843,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作名SignContractByCoordinate",
           "example": "",
@@ -906,7 +852,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "合同ID",
           "example": "",
@@ -916,7 +861,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "帐户ID",
           "example": "",
@@ -926,7 +870,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签署坐标，坐标原点在文件左下角，坐标单位为磅，坐标不得超过合同文件边界",
           "example": "",
@@ -936,7 +879,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权时间（由平台自动填充）",
           "example": "",
@@ -946,7 +888,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权IP地址（由平台自动填充）",
           "example": "",
@@ -956,7 +897,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签章ID",
           "example": "",
@@ -966,7 +906,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "选用证书类型：1  表示RSA证书， 2 表示国密证书， 参数不传时默认为1",
           "example": "",
@@ -976,7 +915,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签名图片，base64编码",
           "example": "",
@@ -1004,7 +942,6 @@
       "document": "SignContractByKeyword请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模块名ContractMng",
           "example": "",
@@ -1014,7 +951,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作名SignContractByKeyword",
           "example": "",
@@ -1024,7 +960,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "合同ID",
           "example": "",
@@ -1034,7 +969,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账户ID",
           "example": "",
@@ -1044,7 +978,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签署关键字，偏移坐标原点为关键字中心",
           "example": "",
@@ -1054,7 +987,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权时间（由平台自动填充）",
           "example": "",
@@ -1064,7 +996,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权IP地址（由平台自动填充）",
           "example": "",
@@ -1074,7 +1005,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签章ID",
           "example": "",
@@ -1084,7 +1014,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "选用证书类型：1  表示RSA证书， 2 表示国密证书， 参数不传时默认为1",
           "example": "",
@@ -1094,7 +1023,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签名图片，base64编码",
           "example": "",
@@ -1122,7 +1050,6 @@
       "document": "签署人信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "账户ID",
           "example": "",
@@ -1133,7 +1060,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权时间（上传合同可不传该参数）",
           "example": "",
@@ -1144,7 +1070,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权IP地址（上传合同可不传该参数）",
           "example": "",
@@ -1155,7 +1080,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签章ID",
           "example": "",
@@ -1166,7 +1090,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签名图片，优先级比SealId高",
           "example": "",
@@ -1177,7 +1100,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认值：1  表示RSA证书， 2 表示国密证书， 参数不传时默认为1",
           "example": "",
@@ -1188,7 +1110,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签名域的标签值",
           "example": "",
@@ -1205,7 +1126,6 @@
       "document": "签署关键字信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "关键字",
           "example": "",
@@ -1216,7 +1136,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "X轴偏移坐标",
           "example": "",
@@ -1227,7 +1146,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Y轴偏移坐标",
           "example": "",
@@ -1238,7 +1156,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签章图片宽度",
           "example": "",
@@ -1249,7 +1166,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签章图片高度",
           "example": "",
@@ -1266,7 +1182,6 @@
       "document": "签署坐标对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "签名域页数",
           "example": "",
@@ -1277,7 +1192,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签名域左下角X轴坐标轴",
           "example": "",
@@ -1288,7 +1202,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签名域左下角Y轴坐标轴",
           "example": "",
@@ -1299,7 +1212,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签名域右上角X轴坐标轴",
           "example": "",
@@ -1310,7 +1222,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签名域右上角Y轴坐标轴",
           "example": "",

@@ -47,15 +47,13 @@
       "document": "DescribeDownloadTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "excel下载结果的唯一id，由DownloadReportFileAsync接口生成。",
           "example": "-1#Group#0f7c2fac-20ee-4da9-8e71-944577bf7616",
           "member": "string",
           "name": "ResultId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -71,8 +69,7 @@
           "name": "CosUrl",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -82,8 +79,7 @@
           "name": "TaskStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -93,8 +89,7 @@
           "name": "CosUrlPdf",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -109,7 +104,6 @@
       "document": "评估项信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "评估项ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -120,7 +114,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "评估项名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "云数据库（Redis）跨可用区部署",
@@ -131,7 +124,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "评估项描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "检查 Redis 实例是否跨可用区部署，如果实例未跨可用区部署，当实例出现可用区级别的灾难故障时，可能造成实例无法访问风险",
@@ -142,7 +134,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "评估项对应产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "redis",
@@ -153,7 +144,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "评估项对应产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "云数据库（Redis）",
@@ -164,7 +154,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "评估项优化建议\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "如果业务有较高容灾需求，建议采用跨可用区部署方案，提升业务可靠性，[跨可用区分布操作指引](https://cloud.tenc",
@@ -175,7 +164,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "评估项类别ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -186,7 +174,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "评估项类别名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "可靠",
@@ -197,7 +184,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "评估项风险列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"ConditionId\":178,\"Level\":2,\"LevelDesc\":\"中风险\",\"Desc\":\"Redis 实例",
@@ -214,7 +200,6 @@
       "document": "评估项警告条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "警告条件ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -225,7 +210,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "警告级别，2:中风险，3:高风险\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -236,7 +220,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "警告级别描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "中风险",
@@ -247,7 +230,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "警告条件描述",
           "example": "Redis 实例未跨可用区部署",
@@ -264,15 +246,13 @@
       "document": "DescribeStrategies请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "巡检类型",
           "example": "public/private",
           "member": "string",
           "name": "Env",
           "required": false,
-          "type": "string",
-          "visibility": 2
+          "type": "string"
         }
       ],
       "type": "object"
@@ -288,8 +268,7 @@
           "name": "Strategies",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -304,59 +283,49 @@
       "document": "DescribeTaskStrategyRisks请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "评估项ID",
           "example": "1",
           "member": "uint64",
           "name": "StrategyId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量,默认值为100,最大值为200",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量,默认0",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境",
           "example": "\"public\"",
           "member": "string",
           "name": "Env",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务类型",
           "example": "\"allTaskType\"",
           "member": "string",
           "name": "TaskType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -372,8 +341,7 @@
           "name": "RiskFieldsDesc",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -383,8 +351,7 @@
           "name": "StrategyId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -394,8 +361,7 @@
           "name": "RiskTotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -405,8 +371,7 @@
           "name": "Risks",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -416,8 +381,7 @@
           "name": "ResourceCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -432,70 +396,58 @@
       "document": "DescribeTaskSummary请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务的ID",
           "example": "e9ea4f2a-98c5-47ed-9706-a7446a06ad1a",
           "member": "string",
           "name": "TaskId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "filter",
           "example": "无",
           "member": "Filters",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境",
           "example": "\"public\"",
           "member": "string",
           "name": "Env",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务类型",
           "example": "\"allTaskType\"",
           "member": "string",
           "name": "TaskType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云架构id",
           "example": "1",
           "member": "uint64",
           "name": "CloudMapID",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "判断报告类型",
           "example": "0",
           "member": "int64",
           "name": "ReportType",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -511,8 +463,7 @@
           "name": "StrategySummaries",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -522,8 +473,7 @@
           "name": "GroupSummaries",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -533,8 +483,7 @@
           "name": "CreateTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -544,8 +493,7 @@
           "name": "FinishTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -555,8 +503,7 @@
           "name": "TaskId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -566,8 +513,7 @@
           "name": "Has",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -577,8 +523,7 @@
           "name": "IsFinish",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -588,8 +533,7 @@
           "name": "LastSuccessTaskId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -610,8 +554,7 @@
           "member": "int64",
           "name": "Id",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -620,8 +563,7 @@
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -630,8 +572,7 @@
           "member": "string",
           "name": "TaskId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -640,8 +581,7 @@
           "member": "string",
           "name": "Env",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -650,8 +590,7 @@
           "member": "Tags",
           "name": "Tags",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -660,8 +599,7 @@
           "member": "string",
           "name": "TaskType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -670,8 +608,7 @@
           "member": "int64",
           "name": "TopicType",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -680,8 +617,7 @@
           "member": "string",
           "name": "CloudMapUuid",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -697,8 +633,7 @@
           "name": "ResultId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -708,8 +643,7 @@
           "name": "ReportAuthorized",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -724,7 +658,6 @@
       "document": "过滤条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "过滤名称",
           "example": "aaa",
@@ -735,7 +668,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤值",
           "example": "[a,b]",
@@ -752,7 +684,6 @@
       "document": "分组的扫描结果概览。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分组Id，-1：总览，1：安全，2：可靠，3：服务限制，4：成本，5：性能。",
           "example": "",
@@ -763,7 +694,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该分组下高风险的策略数量(不包括忽略策略数量)。",
           "example": "",
@@ -774,7 +704,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该分组下中风险的策略数量(不包括忽略策略数量)。",
           "example": "",
@@ -785,7 +714,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该分组下低风险的策略数量(不包括忽略策略数量)。",
           "example": "",
@@ -796,7 +724,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该分组下无风险的策略数量(不包括忽略策略数量)。",
           "example": "",
@@ -813,7 +740,6 @@
       "document": "键值对",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "键名",
           "example": "aaa",
@@ -824,7 +750,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "键名对应值",
           "example": "xxx",
@@ -841,7 +766,6 @@
       "document": "风险实例字段描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "字段ID",
           "example": "InstanceState",
@@ -852,7 +776,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段名称",
           "example": "状态",
@@ -863,7 +786,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段类型, \nstring: 字符串类型，例如\"aa\"\nint: 整形，例如 111\nstringSlice : 字符串数组类型，例如[\"a\", \"b\"]\ntags: 标签类型, 例如: [{\"Key\":\"kkk\",\"Value\":\"vvv\"},{\"Key\":\"kkk2\",\"Value\":\"vvv2\"}]",
           "example": "string",
@@ -874,7 +796,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段值对应字典\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -898,8 +819,7 @@
           "name": "StrategyId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -909,8 +829,7 @@
           "name": "Code",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -920,8 +839,7 @@
           "name": "GroupId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -931,8 +849,7 @@
           "name": "HighRiskCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -942,8 +859,7 @@
           "name": "MediumRiskCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -953,8 +869,7 @@
           "name": "LowRiskCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -964,8 +879,7 @@
           "name": "NoRiskCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -975,8 +889,7 @@
           "name": "IgnoredInstanceCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -986,8 +899,7 @@
           "name": "StrategyName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -997,8 +909,7 @@
           "name": "Count",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1008,8 +919,7 @@
           "name": "AccessUrl",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1018,7 +928,6 @@
       "document": "查询tag对应的类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Tag对应的key\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aaa",
@@ -1029,7 +938,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "tag对应的values\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[a,b]",

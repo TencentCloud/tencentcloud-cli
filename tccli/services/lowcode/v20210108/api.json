@@ -166,7 +166,6 @@
       "document": "应用页面详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用页面 ID",
           "example": "无",
@@ -177,7 +176,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用页面名称",
           "example": "无",
@@ -188,7 +186,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否可以访问",
           "example": "无",
@@ -199,7 +196,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页面 key",
           "example": "无",
@@ -216,7 +212,6 @@
       "document": "BindProcessComponent请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "前端应用标识。",
           "example": "无",
@@ -226,7 +221,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境ID",
           "example": "无",
@@ -236,7 +230,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "App静态托管的域名地址前缀，前端填写时精确到AppCode结尾，如/#/app/appCode-001",
           "example": "https://app1xxxx.tcloudbaseapp.com//adminportal/#/app/appCode-00",
@@ -246,7 +239,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前应用绑定的所有流程Key列表。",
           "example": "无",
@@ -256,7 +248,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境信息， pre: 预览环境，pro: 正式环境，默认为预览环境。",
           "example": "无",
@@ -284,7 +275,6 @@
       "document": "CopyProcessDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "被复制的流程标识，同一主账号下必须唯一。",
           "example": "无",
@@ -294,7 +284,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新流程标识，同一主账号下必须唯一。",
           "example": "无",
@@ -304,7 +293,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新流程名称。",
           "example": "无",
@@ -314,7 +302,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境ID",
           "example": "无",
@@ -324,7 +311,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被复制的流程版本。",
           "example": "无",
@@ -334,7 +320,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新流程描述。",
           "example": "无",
@@ -344,7 +329,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境信息， pre: 预览环境，pro: 正式环境，默认为预览环境。",
           "example": "无",
@@ -354,7 +338,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用Id",
           "example": "无",
@@ -364,7 +347,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被复制的流程完整版本号，规则：主版本.次版本。",
           "example": "无",
@@ -392,232 +374,175 @@
       "document": "CreateDataSourceDetail请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "数据源名称",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Title",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "数据源标识",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "数据源类型，database-自建数据源；cloud-integration-自定义数据源",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "环境 id",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "EnvId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "数据源描述",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "数据源字段配置",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Schema",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "自定义方法集",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Methods",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "数据源版本",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "DataSourceVersion",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "schema 版本",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "SchemaVersion",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "创建人",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Creator",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "是否异步调用 0 同步 1 异步",
           "example": "无",
-          "is_base64": false,
           "member": "int64",
           "name": "AsyncCall",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "模板类型 0 无模板 1 外部数据源模板",
           "example": "无",
-          "is_base64": false,
           "member": "int64",
           "name": "TemplateType",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "外部数据源模板code",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "TemplateCode",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "外部数据源授权id",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "TicketId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "数据源属性配置",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Configuration",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "绑定应用id",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "BindAppCode",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "子类型 ：database 标准模型 custom-database 自定义模型 system 系统模型 connector 连接器 custom-connector 自定义连接器",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "SubType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "授权账号信息。非oauth外部数据源传SecretId、SecretKey授权",
           "example": "无",
-          "is_base64": false,
           "member": "TicketCredentialInfo",
           "name": "CredentialInfo",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "模型分组",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "GroupId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -633,8 +558,7 @@
           "name": "Data",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -656,8 +580,7 @@
           "name": "Id",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -667,8 +590,7 @@
           "name": "Title",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -678,8 +600,7 @@
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -689,8 +610,7 @@
           "name": "Type",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -700,8 +620,7 @@
           "name": "Description",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -711,8 +630,7 @@
           "name": "Schema",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -722,8 +640,7 @@
           "name": "CmsProject",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -733,8 +650,7 @@
           "name": "PkgId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -744,8 +660,7 @@
           "name": "SchemaVersion",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -755,8 +670,7 @@
           "name": "CreatorId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -766,8 +680,7 @@
           "name": "CreatedAt",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -777,8 +690,7 @@
           "name": "UpdatedAt",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -788,8 +700,7 @@
           "name": "EnvId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -799,8 +710,7 @@
           "name": "DataSourceVersion",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -810,8 +720,7 @@
           "name": "AppUsageList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -821,8 +730,7 @@
           "name": "PublishedAt",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -832,8 +740,7 @@
           "name": "ChildDataSourceIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -843,8 +750,7 @@
           "name": "Fun",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -854,8 +760,7 @@
           "name": "ScfStatus",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -865,8 +770,7 @@
           "name": "Methods",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -876,8 +780,7 @@
           "name": "ChildDataSourceNames",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -887,8 +790,7 @@
           "name": "IsNewDataSource",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -898,8 +800,7 @@
           "name": "ViewId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -909,8 +810,7 @@
           "name": "Configuration",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -920,8 +820,7 @@
           "name": "TemplateCode",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -931,8 +830,7 @@
           "name": "Source",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": true,
@@ -942,8 +840,7 @@
           "name": "PublishVersion",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -953,8 +850,7 @@
           "name": "PublishViewId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -964,8 +860,7 @@
           "name": "SubType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -975,8 +870,7 @@
           "name": "AuthStatus",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -986,8 +880,7 @@
           "name": "AuthInfo",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -997,8 +890,7 @@
           "name": "PublishStatus",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1008,8 +900,7 @@
           "name": "UpdateVersion",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1019,8 +910,7 @@
           "name": "RelationFieldList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1029,7 +919,6 @@
       "document": "数据详情列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据详情列表",
           "example": "无",
@@ -1040,7 +929,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源列表总个数",
           "example": "无",
@@ -1064,8 +952,7 @@
           "name": "Id",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1075,8 +962,7 @@
           "name": "Title",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1086,8 +972,7 @@
           "name": "EditStatusUse",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1097,8 +982,7 @@
           "name": "PreviewStatusUse",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1108,8 +992,7 @@
           "name": "OnlineStatusUse",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1119,8 +1002,7 @@
           "name": "DataSourceId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1129,7 +1011,6 @@
       "document": "腾讯会议token",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯会议access_token\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1140,7 +1021,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯会议openid\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1151,7 +1031,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "token过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1168,7 +1047,6 @@
       "document": "腾讯文档token",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯文档asscee_token\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1179,7 +1057,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯文档应用id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1190,7 +1067,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户openid\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1201,7 +1077,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户token类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1212,7 +1087,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户授权范围\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1223,7 +1097,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "token过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1240,7 +1113,6 @@
       "document": "腾讯地图token",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯地图key",
           "example": "无",
@@ -1251,7 +1123,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期时间",
           "example": "无",
@@ -1268,7 +1139,6 @@
       "document": "数据源模糊查询参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据源标识模糊匹配",
           "example": "无",
@@ -1279,7 +1149,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源名称模糊匹配",
           "example": "无",
@@ -1296,7 +1165,6 @@
       "document": "外部数据源模板详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模板编号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1307,7 +1175,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1318,7 +1185,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板icon\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1329,7 +1195,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板方法json\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1340,7 +1205,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板来源 0 空模板 1 腾讯文档 2 腾讯会议 3 企业微信 4 微信电商\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1351,7 +1215,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1362,7 +1225,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1373,7 +1235,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1384,7 +1245,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权链接\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1401,7 +1261,6 @@
       "document": "外部数据源token",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯文档token\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1412,7 +1271,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯会议token\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1423,7 +1281,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯地图token\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1440,7 +1297,6 @@
       "document": "DeleteMaterialInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境id",
           "example": "env-123",
@@ -1450,7 +1306,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "唯一标识",
           "example": "123",
@@ -1484,8 +1339,7 @@
           "member": "int64",
           "name": "PageSize",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1494,8 +1348,7 @@
           "member": "int64",
           "name": "PageIndex",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1504,8 +1357,7 @@
           "member": "string",
           "name": "EnvId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1514,8 +1366,7 @@
           "member": "string",
           "name": "Appids",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1524,8 +1375,7 @@
           "member": "string",
           "name": "DataSourceIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1534,8 +1384,7 @@
           "member": "string",
           "name": "DataSourceNames",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1544,8 +1393,7 @@
           "member": "string",
           "name": "DataSourceType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1554,8 +1402,7 @@
           "member": "DataSourceQueryOption",
           "name": "QueryOption",
           "required": false,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         },
         {
           "disabled": false,
@@ -1564,8 +1411,7 @@
           "member": "string",
           "name": "ViewIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1574,8 +1420,7 @@
           "member": "int64",
           "name": "AppLinkStatus",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1584,8 +1429,7 @@
           "member": "int64",
           "name": "QueryBindToApp",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1594,8 +1438,7 @@
           "member": "int64",
           "name": "QueryConnector",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1604,8 +1447,7 @@
           "member": "string",
           "name": "NotQuerySubTypeList",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1614,8 +1456,7 @@
           "member": "string",
           "name": "ChannelList",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1624,8 +1465,7 @@
           "member": "bool",
           "name": "QueryDataSourceRelationList",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1640,8 +1480,7 @@
           "member": "DataSourceDetailItems",
           "name": "Data",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1656,7 +1495,6 @@
       "document": "DescribeFoldProcessBasicInfos请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境ID",
           "example": "env-001",
@@ -1666,7 +1504,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程标识，同一主账号下必须唯一。",
           "example": "flow_abc",
@@ -1676,7 +1513,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程名称。",
           "example": "process_name",
@@ -1686,7 +1522,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程状态：0-草稿，1-启用，2-禁用。",
           "example": "1",
@@ -1696,7 +1531,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页面限制。",
           "example": "10",
@@ -1706,7 +1540,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量。",
           "example": "0",
@@ -1716,7 +1549,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境信息， pre: 预览环境，pro: 正式环境，默认为预览环境。",
           "example": "pre",
@@ -1726,7 +1558,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用Id列表",
           "example": "无",
@@ -1764,7 +1595,6 @@
       "document": "DescribeMaterialInfoList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境id",
           "example": "env-123",
@@ -1774,7 +1604,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支持模糊查询",
           "example": "test*",
@@ -1784,7 +1613,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签, 标签是或的关系",
           "example": "无",
@@ -1794,7 +1622,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支持模糊查找",
           "example": ".png",
@@ -1804,7 +1631,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页大小,默认20",
           "example": "20",
@@ -1814,7 +1640,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码,默认0",
           "example": "1",
@@ -1862,7 +1687,6 @@
       "document": "DescribeMaterialUploadUrl请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境id",
           "example": "env-123",
@@ -1872,7 +1696,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件名, 可以不唯一",
           "example": "apple",
@@ -1882,7 +1705,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "几天后过期",
           "example": "3",
@@ -1940,7 +1762,6 @@
       "document": "DescribeMessageTemplates请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分页",
           "example": "10",
@@ -1950,7 +1771,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页大小",
           "example": "10",
@@ -1960,7 +1780,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境信息， pre: 预览环境，pro: 正式环境，默认为预览环境。",
           "example": "pre",
@@ -1970,7 +1789,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境ID",
           "example": "无",
@@ -1980,7 +1798,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息模板标题搜索关键字",
           "example": "无",
@@ -1990,7 +1807,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息模板编码",
           "example": "0",
@@ -2000,7 +1816,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息模版类型，0 或者不传:所有类型，1:用户自定义，2:待办默认，3:加签通知",
           "example": "1",
@@ -2010,7 +1825,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用Id列表",
           "example": "无",
@@ -2020,7 +1834,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源名称列表",
           "example": "无",
@@ -2058,7 +1871,6 @@
       "document": "DescribePermissionForAppPage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用 ID",
           "example": "无",
@@ -2068,7 +1880,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "角色 ID",
           "example": "无",
@@ -2078,7 +1889,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境ID",
           "example": "无",
@@ -2088,7 +1898,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用类型",
           "example": "无",
@@ -2098,7 +1907,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "角色 ID",
           "example": "无",
@@ -2136,7 +1944,6 @@
       "document": "DescribePermissions请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "权限类型1: app, 2: datasource, 3: process",
           "example": "无",
@@ -2146,7 +1953,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "角色ID",
           "example": "无",
@@ -2156,7 +1962,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页限制",
           "example": "无",
@@ -2166,7 +1971,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "无",
@@ -2176,7 +1980,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境ID",
           "example": "无",
@@ -2186,7 +1989,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境类型",
           "example": "无",
@@ -2196,7 +1998,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源子类型",
           "example": "\"\"",
@@ -2206,7 +2007,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名称标识模糊搜索",
           "example": "无",
@@ -2216,7 +2016,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联应用列表",
           "example": "无",
@@ -2254,7 +2053,6 @@
       "document": "DescribeProcessBasicInfos请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境ID",
           "example": "env-001",
@@ -2264,7 +2062,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程标识，同一主账号下必须唯一。",
           "example": "flow_abc",
@@ -2274,7 +2071,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程名称。",
           "example": "process_name",
@@ -2284,7 +2080,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程状态：0-草稿，1-启用，2-禁用。",
           "example": "1",
@@ -2294,7 +2089,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页面限制。",
           "example": "10",
@@ -2304,7 +2098,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量。",
           "example": "0",
@@ -2314,7 +2107,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境信息， pre: 预览环境，pro: 正式环境，默认为预览环境。",
           "example": "pre",
@@ -2352,7 +2144,6 @@
       "document": "DescribeProcessNodeList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "流程唯一标识，同一主账号下必须唯一。",
           "example": "无",
@@ -2362,7 +2153,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境ID",
           "example": "无",
@@ -2372,7 +2162,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程版本。",
           "example": "无",
@@ -2382,7 +2171,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境信息， pre: 预览环境，pro: 正式环境，默认为预览环境。",
           "example": "无",
@@ -2420,7 +2208,6 @@
       "document": "查询外部数据源模板列表出参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "外部数据源模板列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2431,7 +2218,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2448,7 +2234,6 @@
       "document": "DescribeTemplateList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "当前页",
           "example": "无",
@@ -2458,7 +2243,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页条数",
           "example": "无",
@@ -2468,7 +2252,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板code",
           "example": "无",
@@ -2478,7 +2261,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境Id",
           "example": "无",
@@ -2488,7 +2270,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "oauth state参数tag",
           "example": "无",
@@ -2498,7 +2279,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用id",
           "example": "无",
@@ -2508,7 +2288,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板来源列表 0 空模板 1 腾讯文档 2 腾讯会议 3 企业微信 4 微信电商 5 腾讯地图",
           "example": "无",
@@ -2546,7 +2325,6 @@
       "document": "DescribeWxAccessToken请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户的微信小程序appId",
           "example": "wxAppId",
@@ -2556,7 +2334,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务商appId",
           "example": "spAppId",
@@ -2604,7 +2381,6 @@
       "document": "DescribeWxAppInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "中间商小程序Id, 可以不填",
           "example": "xx",
@@ -2614,7 +2390,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "微信小程序Id,可以不填",
           "example": "xx",
@@ -2652,7 +2427,6 @@
       "document": "FlushEnvPreToProd请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境信息， pre: 预览环境，pro: 正式环境，默认为预览环境。",
           "example": "pre",
@@ -2680,7 +2454,6 @@
       "document": "GetDataSourceToken请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据源id",
           "example": "无",
@@ -2718,7 +2491,6 @@
       "document": "组可读可写权限",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "可读，当非ConditionPermission时使用",
           "example": "false",
@@ -2726,11 +2498,9 @@
           "name": "Readable",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可写，当非ConditionPermission时使用",
           "example": "true",
@@ -2738,11 +2508,9 @@
           "name": "Writable",
           "required": false,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "读条件数组，当ConditionPermission时使用",
           "example": "无",
@@ -2750,11 +2518,9 @@
           "name": "WritableCondition",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "写条件数组，当ConditionPermission时使用",
           "example": "无",
@@ -2762,8 +2528,7 @@
           "name": "ReadableCondition",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2772,7 +2537,6 @@
       "document": "素材信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "素材名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -2783,7 +2547,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://github.com/humin09/helloworld",
@@ -2794,7 +2557,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否公开\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -2805,7 +2567,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-04-09 12:00:00",
@@ -2816,7 +2577,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签, 类似[\"food\",\"female\"]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2827,7 +2587,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": ".jpg",
@@ -2838,7 +2597,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "以k为单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10k",
@@ -2849,7 +2607,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-04-09 12:00:00",
@@ -2860,7 +2617,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -2871,7 +2627,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-04-09 12:00:00",
@@ -2882,7 +2637,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "拥有者uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12201109",
@@ -2899,7 +2653,6 @@
       "document": "消息模板基本信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "发送方式-消息类型列表，取值来自MessagePostType\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2910,7 +2663,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息模板标题\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2921,7 +2673,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息模板描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2932,7 +2683,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息模板所属应用编码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2943,7 +2693,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息模板管理数据源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2954,7 +2703,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息模板创建人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2965,7 +2713,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2976,7 +2723,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2987,7 +2733,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2998,7 +2743,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模版类型（1-用户自定义，2-待办默认，3-加签通知）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3009,7 +2753,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3020,7 +2763,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源视图ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3037,7 +2779,6 @@
       "document": "消息模板列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -3048,7 +2789,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息模板列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3065,7 +2805,6 @@
       "document": "ModifyDataSource请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据源 Id",
           "example": "无",
@@ -3075,7 +2814,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源环境",
           "example": "无",
@@ -3085,7 +2823,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源名称",
           "example": "无",
@@ -3095,7 +2832,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源描述",
           "example": "无",
@@ -3105,7 +2841,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源配置",
           "example": "无",
@@ -3115,7 +2850,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义方法",
           "example": "无",
@@ -3125,7 +2859,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否异步调用 0 同步 1 异步",
           "example": "无",
@@ -3135,7 +2868,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "属性配置json",
           "example": "无",
@@ -3145,7 +2877,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权id",
           "example": "无",
@@ -3155,7 +2886,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "非oauth授权信息。腾讯地图，只需传SecretKey",
           "example": "无",
@@ -3183,7 +2913,6 @@
       "document": "OperateProcessBasicInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "流程操作动作，支持的操作有创建（ACTION_CREATE）、删除（ACTION_DELETE）、启用（ACTION_ENABLE）和禁用（ACTION_DISABLE）。",
           "example": "ACTION_CREATE",
@@ -3193,7 +2922,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程标识，同一主账号下必须唯一。",
           "example": "flow_abc",
@@ -3203,7 +2931,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境ID",
           "example": "无",
@@ -3213,7 +2940,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程名称。",
           "example": "process name",
@@ -3223,7 +2949,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程描述。",
           "example": "process desc",
@@ -3233,7 +2958,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程版本。",
           "example": "1",
@@ -3243,7 +2967,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境信息， pre: 预览环境，pro: 正式环境，默认为预览环境。",
           "example": "pre",
@@ -3253,7 +2976,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用Id",
           "example": "app-1aps7o6t",
@@ -3263,7 +2985,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程完整版本号，规则：主版本.次版本。",
           "example": "无",
@@ -3291,7 +3012,6 @@
       "document": "资源权限信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3302,7 +3022,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3313,7 +3032,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3324,7 +3042,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3341,7 +3058,6 @@
       "document": "流程基础信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "客户 uin.",
           "example": "无",
@@ -3352,7 +3068,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子账户 uin",
           "example": "无",
@@ -3363,7 +3078,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账户 ID.",
           "example": "无",
@@ -3374,7 +3088,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程唯一标识",
           "example": "无",
@@ -3385,7 +3098,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程名称",
           "example": "无",
@@ -3396,7 +3108,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程描述",
           "example": "无",
@@ -3407,7 +3118,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程版本",
           "example": "无",
@@ -3418,7 +3128,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程状态：1-草稿，2-启用，3-禁用，4-发布",
           "example": "无",
@@ -3429,7 +3138,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间",
           "example": "无",
@@ -3440,7 +3148,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "无",
@@ -3451,7 +3158,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被引用次数",
           "example": "无",
@@ -3462,7 +3168,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发布时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3473,7 +3178,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "uin账号昵称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3484,7 +3188,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程详情编辑是否已经初始化过",
           "example": "无",
@@ -3501,7 +3204,6 @@
       "document": "流程基本信息扩展",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "子账户 uin",
           "example": "无",
@@ -3512,7 +3214,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子账户 uin",
           "example": "无",
@@ -3523,7 +3224,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号APPID.",
           "example": "无",
@@ -3534,7 +3234,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程唯一标识",
           "example": "无",
@@ -3545,7 +3244,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程名称",
           "example": "无",
@@ -3556,7 +3254,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程描述",
           "example": "无",
@@ -3567,7 +3264,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程版本",
           "example": "无",
@@ -3578,7 +3274,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程状态：1-草稿，2-启用，3-禁用，4-发布",
           "example": "无",
@@ -3589,7 +3284,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间",
           "example": "无",
@@ -3600,7 +3294,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "无",
@@ -3611,7 +3304,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被引用次数",
           "example": "0",
@@ -3622,7 +3314,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发布时间",
           "example": "无",
@@ -3633,7 +3324,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "uin账号昵称",
           "example": "无",
@@ -3644,7 +3334,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "折叠的流程列表",
           "example": "无",
@@ -3655,7 +3344,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程是否已经编辑过\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -3672,7 +3360,6 @@
       "document": "流程详情列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "返回基础信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3683,7 +3370,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3700,7 +3386,6 @@
       "document": "流程折叠基本信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "返回折叠的基础信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -3711,7 +3396,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -3728,7 +3412,6 @@
       "document": "流程节点信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "流程节点标识，同一流程下必须唯一。",
           "example": "无",
@@ -3739,7 +3422,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流程节点名称。",
           "example": "无",
@@ -3756,7 +3438,6 @@
       "document": "用于自定义查询条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询key",
           "example": "\"key\"",
@@ -3767,7 +3448,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "search 表示模糊搜索 字段key 中包含 value 的记录, 使用正则匹配实现\n 'eq' | 'neq' | 'lt' | 'gt' | 'gte' | 'lte' | 'in' | 'nin' | 'search'",
           "example": " \"eq\"",
@@ -3778,7 +3458,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询值",
           "example": "\"val\"",
@@ -3802,8 +3481,7 @@
           "name": "Field",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3813,8 +3491,7 @@
           "name": "Format",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3824,8 +3501,7 @@
           "name": "RelateDataSourceName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3834,7 +3510,6 @@
       "document": "资源信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3845,7 +3520,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3856,7 +3530,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3867,7 +3540,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3878,7 +3550,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3889,7 +3560,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户本人的可读可写权限，对应前端的查看本人和修改本人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3900,7 +3570,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "全部的可读可写权限，对应前端的查看全部和修改全部\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3917,7 +3586,6 @@
       "document": "数据源授权信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "授权用户",
           "example": "无",
@@ -3934,7 +3602,6 @@
       "document": "授权秘钥",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "授权秘钥key",
           "example": "无",
@@ -3945,7 +3612,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权秘钥id",
           "example": "无",
@@ -3962,7 +3628,6 @@
       "document": "UnbindProcessComponent请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "前端组件唯一标识。",
           "example": "无",
@@ -3972,7 +3637,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境ID",
           "example": "无",
@@ -3982,7 +3646,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境信息， pre: 预览环境，pro: 正式环境，默认为预览环境。",
           "example": "无",
@@ -4010,7 +3673,6 @@
       "document": "UpdateMaterialInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境id",
           "example": "env-123",
@@ -4020,7 +3682,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "唯一标识, 通过查询上传链接可以获取",
           "example": "123",
@@ -4030,7 +3691,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件名, 可以不唯一",
           "example": "test.jpg",
@@ -4040,7 +3700,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类似 [\"road\",\"food\"]",
           "example": "无",
@@ -4050,7 +3709,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体类型",
           "example": ".png",
@@ -4060,7 +3718,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "几天后过期, 0表示永不过期",
           "example": "3",
@@ -4088,7 +3745,6 @@
       "document": "微信小程序信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "中间商小程序Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -4099,7 +3755,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "小程序Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -4110,7 +3765,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "小程序令牌",
           "example": "xx",
@@ -4121,7 +3775,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "小程序名称",
           "example": "xx",
@@ -4132,7 +3785,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期时间",
           "example": "xx",

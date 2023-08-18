@@ -33,7 +33,6 @@
       "document": "ReceiveAIMarkNotice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "当前处理的桶名称：机构对应的桶 或者 桶下的项目目录。 ”example-12345/10001“",
           "example": "无",
@@ -43,7 +42,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "具体的文件路径，预标注的结果文件地址",
           "example": "无",
@@ -53,7 +51,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID （必须返回调用时传递的TaskId）",
           "example": "无",
@@ -63,7 +60,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "废弃",
           "example": "0020000e",
@@ -73,7 +69,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "code码  1:处理成功、0:处理失败、2：开始处理；其他code暂不约定",
           "example": "1",
@@ -83,7 +78,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息（主要用于异常时返回错误信息）",
           "example": "SUCCESS",
@@ -121,7 +115,6 @@
       "document": "ReceiveAIRaceScoreNotice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID （必须返回调用时传递的TaskId）",
           "example": "无",
@@ -131,7 +124,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "评分",
           "example": "无",
@@ -141,7 +133,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前处理的桶名称：机构对应的桶 或者 桶下的项目目录。 ”example-12345/10001“",
           "example": "无",
@@ -151,7 +142,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "具体的文件路径，预标注的结果文件地址",
           "example": "无",
@@ -161,7 +151,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "code码  1:处理成功、0:处理失败、2：开始处理；其他code暂不约定",
           "example": "1",
@@ -171,7 +160,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息（主要用于异常时返回错误信息）",
           "example": "SUCCESS",
@@ -209,136 +197,112 @@
       "document": "ReceiveAIRunNotice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "当前任务处理id，如果没有任务id，则传入uuid即可",
           "example": "无",
           "member": "string",
           "name": "TaskId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据来源：1：Tione；2：Tiems",
           "example": "1",
           "member": "string",
           "name": "Src",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前任务处理的桶名称：机构对应的桶 ”example-12345“",
           "example": "100159-123345",
           "member": "string",
           "name": "BucketName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前任务处理的文件路径",
           "example": "无",
           "member": "string",
           "name": "Path",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务处理码：1:处理成功、0:处理失败、2：开始处理、3：处理进行中",
           "example": "1",
           "member": "string",
           "name": "Code",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "处理结果说明。成功 或者 失败原因",
           "example": "SUCCESS",
           "member": "string",
           "name": "Msg",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "处理任务所用机型",
           "example": "TI.8XLARGE64.32core64g",
           "member": "string",
           "name": "GpuType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "处理任务所用核数/卡数， 可以为0，则表示使用该机型全部gpu",
           "example": "100",
           "member": "string",
           "name": "GpuNum",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务开始时间，格式：2021-05-07 01:00:00",
           "example": "2021-05-07 01:00:00",
           "member": "string",
           "name": "BeginTime",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务结束时间，格式：2021-05-07 01:00:00",
           "example": "2021-05-07 01:00:00",
           "member": "string",
           "name": "EndTime",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "处理任务所用内存，单位MB，为0 ，则表示使用机型全部内存",
           "example": "64",
           "member": "string",
           "name": "Mem",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计费所用的主账号Uin",
           "example": "333333",
           "member": "string",
           "name": "AccountUin",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -354,8 +318,7 @@
           "name": "Result",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

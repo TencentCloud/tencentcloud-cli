@@ -166,7 +166,6 @@
       "document": "私有域解析账号Vpc信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VpcId： vpc-xadsafsdasd",
           "example": "无",
@@ -177,7 +176,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Vpc所属地区: ap-guangzhou, ap-shanghai\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -188,7 +186,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Vpc所属账号: 123456789\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123456789",
@@ -199,7 +196,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "vpc资源名称：testname\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testname",
@@ -216,7 +212,6 @@
       "document": "查询关联账号VPC列表出参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VpcId： vpc-xadsafsdasd",
           "example": "无",
@@ -227,7 +222,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Vpc所属地区: ap-guangzhou, ap-shanghai",
           "example": "无",
@@ -238,7 +232,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Vpc所属账号: 123456789",
           "example": "无",
@@ -249,7 +242,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "vpc资源名称：testname",
           "example": "无",
@@ -266,7 +258,6 @@
       "document": "关联的VPC出参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "关联账户的uin",
           "example": "12345678",
@@ -277,7 +268,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "vpcid",
           "example": "vpc-wdskdss1",
@@ -288,7 +278,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域",
           "example": "ap-guangzhou",
@@ -305,7 +294,6 @@
       "document": "操作日志",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "日志类型",
           "example": "",
@@ -316,7 +304,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志表名",
           "example": "",
@@ -327,7 +314,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志总数",
           "example": "",
@@ -338,7 +324,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志列表",
           "example": "",
@@ -355,7 +340,6 @@
       "document": "日志详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "时间",
           "example": "",
@@ -366,7 +350,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作人uin",
           "example": "",
@@ -377,7 +360,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志内容",
           "example": "",
@@ -394,7 +376,6 @@
       "document": "CreatePrivateDNSAccount请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有域解析账号",
           "example": "无",
@@ -428,8 +409,7 @@
           "member": "string",
           "name": "ZoneId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -438,8 +418,7 @@
           "member": "string",
           "name": "RecordType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -448,8 +427,7 @@
           "member": "string",
           "name": "SubDomain",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -458,8 +436,7 @@
           "member": "string",
           "name": "RecordValue",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -468,8 +445,7 @@
           "member": "int64",
           "name": "Weight",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -478,8 +454,7 @@
           "member": "int64",
           "name": "MX",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -488,8 +463,7 @@
           "member": "int64",
           "name": "TTL",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -504,8 +478,7 @@
           "member": "string",
           "name": "RecordId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -520,92 +493,76 @@
       "document": "CreatePrivateZone请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名，格式必须是标准的TLD",
           "example": "a.com",
           "member": "string",
           "name": "Domain",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建私有域的同时，为其打上标签",
           "example": "无",
           "member": "TagInfo",
           "name": "TagSet",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建私有域的同时，将其关联至VPC",
           "example": "无",
           "member": "VpcInfo",
           "name": "VpcSet",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "测试域名",
           "member": "string",
           "name": "Remark",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启子域名递归, ENABLED， DISABLED。默认值为ENABLED",
           "example": "ENABLED",
           "member": "string",
           "name": "DnsForwardStatus",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建私有域的同时，将其关联至VPC",
           "example": "无",
           "member": "VpcInfo",
           "name": "Vpcs",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建私有域同时绑定关联账号的VPC",
           "example": "无",
           "member": "AccountVpcInfo",
           "name": "AccountVpcSet",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否CNAME加速：ENABLED，DISABLED，默认值为ENABLED",
           "example": "ENABLED",
           "member": "string",
           "name": "CnameSpeedupStatus",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -619,10 +576,9 @@
           "example": "41",
           "member": "string",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -630,10 +586,9 @@
           "example": "a.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -648,7 +603,6 @@
       "document": "时间统计值",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "时间",
           "example": "",
@@ -659,7 +613,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "值",
           "example": "",
@@ -676,15 +629,13 @@
       "document": "DeleteEndPoint请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "终端节点ID",
           "example": "eid-juygvf672i",
           "member": "string",
           "name": "EndPointId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -705,7 +656,6 @@
       "document": "DeletePrivateDNSAccount请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有域解析账号",
           "example": "无",
@@ -733,37 +683,31 @@
       "document": "DeletePrivateZoneRecord请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有域ID",
           "example": "1999",
           "member": "string",
           "name": "ZoneId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录ID",
           "example": "2323",
           "member": "string",
           "name": "RecordId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录ID数组，RecordId 优先",
           "example": "[]",
           "member": "string",
           "name": "RecordIdSet",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -784,26 +728,22 @@
       "document": "DeletePrivateZone请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有域ID",
           "example": "1",
           "member": "string",
           "name": "ZoneId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有域ID数组，ZoneId 优先",
           "example": "无",
           "member": "string",
           "name": "ZoneIdSet",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -824,7 +764,6 @@
       "document": "DescribeAccountVpcList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "关联账号的uin",
           "example": "123456789",
@@ -834,7 +773,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，从0开始",
           "example": "无",
@@ -844,7 +782,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页限制数目， 最大100，默认20",
           "example": "无",
@@ -854,7 +791,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤参数",
           "example": "无",
@@ -902,7 +838,6 @@
       "document": "DescribeAuditLog请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "请求量统计起始时间",
           "example": "2020-11-22 00:00:00",
@@ -912,7 +847,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "筛选参数：ZoneId：私有域ID；Domain：私有域；OperatorUin：操作者账号ID",
           "example": "无",
@@ -922,7 +856,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求量统计结束时间",
           "example": "2020-11-23 23:59:59",
@@ -932,7 +865,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，从0开始",
           "example": "0",
@@ -942,7 +874,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页限制数目， 最大100，默认20",
           "example": "20",
@@ -1037,7 +968,6 @@
       "document": "DescribePrivateDNSAccountList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，从0开始",
           "example": "无",
@@ -1047,7 +977,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页限制数目， 最大100，默认20",
           "example": "无",
@@ -1057,7 +986,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤参数",
           "example": "无",
@@ -1105,37 +1033,31 @@
       "document": "DescribePrivateZoneList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，从0开始",
           "example": "无",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页限制数目， 最大100，默认20",
           "example": "无",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤参数",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1151,8 +1073,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1162,8 +1083,7 @@
           "name": "PrivateZoneSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1178,48 +1098,40 @@
       "document": "DescribePrivateZoneRecordList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有域ID: zone-xxxxxx",
           "example": "1",
           "member": "string",
           "name": "ZoneId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤参数（支持使用Value、RecordType过滤）",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，从0开始",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页限制数目， 最大200，默认20",
           "example": "200",
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1235,8 +1147,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1246,8 +1157,7 @@
           "name": "RecordSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1262,15 +1172,13 @@
       "document": "DescribePrivateZone请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名，格式必须是标准的TLD",
           "example": "无",
           "member": "string",
           "name": "ZoneId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1286,8 +1194,7 @@
           "name": "PrivateZone",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1356,7 +1263,6 @@
       "document": "DescribeRequestData请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "请求量统计起始时间，格式：2020-11-22 00:00:00",
           "example": "2020-11-22 00:00:00",
@@ -1366,7 +1272,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "筛选参数：",
           "example": "无",
@@ -1376,7 +1281,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求量统计结束时间，格式：2020-11-22 23:59:59",
           "example": "2020-11-23 23:59:59",
@@ -1424,7 +1328,6 @@
       "document": "筛选参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数名",
           "example": "",
@@ -1435,7 +1338,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数值数组",
           "example": "",
@@ -1452,7 +1354,6 @@
       "document": "流量包用量",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "流量包类型：ZONE 私有域；TRAFFIC 解析流量包",
           "example": "zone",
@@ -1463,7 +1364,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包总额度",
           "example": "无",
@@ -1474,7 +1374,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包可用额度",
           "example": "无",
@@ -1491,7 +1390,6 @@
       "document": "统计数据表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源描述",
           "example": "无",
@@ -1499,11 +1397,9 @@
           "name": "Resource",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表名",
           "example": "无",
@@ -1511,11 +1407,9 @@
           "name": "Metric",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表数据",
           "example": "无",
@@ -1523,11 +1417,9 @@
           "name": "DataSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询范围内的请求总量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
@@ -1535,8 +1427,7 @@
           "name": "MetricCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1545,92 +1436,76 @@
       "document": "ModifyPrivateZoneRecord请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有域ID",
           "example": "zone-xxxxxx",
           "member": "string",
           "name": "ZoneId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录ID",
           "example": "289",
           "member": "string",
           "name": "RecordId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录类型，可选的记录类型为：\"A\", \"AAAA\", \"CNAME\", \"MX\", \"TXT\", \"PTR\"",
           "example": "A",
           "member": "string",
           "name": "RecordType",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子域名，例如 \"www\", \"m\", \"@\"",
           "example": "@",
           "member": "string",
           "name": "SubDomain",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录值，例如 IP：192.168.10.2，CNAME：cname.qcloud.com.，MX：mail.qcloud.com.",
           "example": "8.8.8.8",
           "member": "string",
           "name": "RecordValue",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录权重，值为1-100",
           "example": "100",
           "member": "int64",
           "name": "Weight",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50",
           "example": "50",
           "member": "int64",
           "name": "MX",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录缓存时间，数值越小生效越快，取值1-86400s, 默认 600",
           "example": "600",
           "member": "int64",
           "name": "TTL",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1651,48 +1526,40 @@
       "document": "ModifyPrivateZone请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有域ID",
           "example": "1",
           "member": "string",
           "name": "ZoneId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "测试域名",
           "member": "string",
           "name": "Remark",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启子域名递归, ENABLED， DISABLED",
           "example": "ENABLED",
           "member": "string",
           "name": "DnsForwardStatus",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启CNAME加速：ENABLED， DISABLED",
           "example": "ENABLED",
           "member": "string",
           "name": "CnameSpeedupStatus",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1713,7 +1580,6 @@
       "document": "ModifyPrivateZoneVpc请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有域ID",
           "example": "1",
@@ -1723,7 +1589,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有域关联的全部VPC列表",
           "example": "无",
@@ -1733,7 +1598,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有域账号关联的全部VPC列表",
           "example": "无",
@@ -1754,7 +1618,7 @@
           "example": "1",
           "member": "string",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1764,7 +1628,7 @@
           "example": "无",
           "member": "VpcInfo",
           "name": "VpcSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1774,7 +1638,7 @@
           "example": "无",
           "member": "AccountVpcInfoOutput",
           "name": "AccountVpcSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1797,8 +1661,7 @@
           "member": "string",
           "name": "ZoneId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1807,8 +1670,7 @@
           "member": "int64",
           "name": "RecordIds",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1817,8 +1679,7 @@
           "member": "string",
           "name": "Status",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1834,8 +1695,7 @@
           "name": "ZoneId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1845,8 +1705,7 @@
           "name": "RecordIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1856,8 +1715,7 @@
           "name": "Status",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1872,7 +1730,6 @@
       "document": "私有域解析账号",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主账号Uin",
           "example": "123456789",
@@ -1883,7 +1740,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主账号名称",
           "example": "privatedns@qcloud.com",
@@ -1894,7 +1750,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户昵称",
           "example": "私有域解析用户",
@@ -1911,7 +1766,6 @@
       "document": "私有域信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有域id: zone-xxxxxxxx",
           "example": "1782",
@@ -1919,11 +1773,9 @@
           "name": "ZoneId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名所有者uin",
           "example": "444353877",
@@ -1931,11 +1783,9 @@
           "name": "OwnerUin",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有域名",
           "example": "test.com",
@@ -1943,11 +1793,9 @@
           "name": "Domain",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2020-12-26 18:51:20",
@@ -1955,11 +1803,9 @@
           "name": "CreatedOn",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间",
           "example": "2020-12-26 18:51:20",
@@ -1967,11 +1813,9 @@
           "name": "UpdatedOn",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录数",
           "example": "0",
@@ -1979,11 +1823,9 @@
           "name": "RecordCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "备注",
@@ -1991,11 +1833,9 @@
           "name": "Remark",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定的Vpc列表",
           "example": "[]",
@@ -2003,11 +1843,9 @@
           "name": "VpcSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有域状态：正常解析：ENABLED, 暂停解析：SUSPEND, 锁定：FROZEN",
           "example": "ENABLED",
@@ -2015,11 +1853,9 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名递归解析状态：开通：ENABLED, 关闭，DISABLED",
           "example": "DISABLED",
@@ -2027,11 +1863,9 @@
           "name": "DnsForwardStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签键值对集合",
           "example": "[{TagKey: \"testtag\", TagValue: \"testtag\"}]",
@@ -2039,11 +1873,9 @@
           "name": "Tags",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定的关联账号的vpc列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2051,11 +1883,9 @@
           "name": "AccountVpcSet",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否自定义TLD\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -2063,11 +1893,9 @@
           "name": "IsCustomTld",
           "required": true,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CNAME加速状态：开通：ENABLED, 关闭，DISABLED",
           "example": "DISABLED",
@@ -2075,11 +1903,9 @@
           "name": "CnameSpeedupStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转发规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "转发规则名",
@@ -2087,11 +1913,9 @@
           "name": "ForwardRuleName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转发规则类型：云上到云下，DOWN；云下到云上，UP，目前只支持DOWN\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DOWN",
@@ -2099,11 +1923,9 @@
           "name": "ForwardRuleType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转发的地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.0.23.41:53,10.0.23.42:53,",
@@ -2111,11 +1933,9 @@
           "name": "ForwardAddress",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "终端节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "终端节点名",
@@ -2123,8 +1943,7 @@
           "name": "EndPointName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2133,7 +1952,6 @@
       "document": "私有域信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "记录id",
           "example": "12076",
@@ -2141,11 +1959,9 @@
           "name": "RecordId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有域id: zone-xxxxxxxx",
           "example": "zone-pckv03qy",
@@ -2153,11 +1969,9 @@
           "name": "ZoneId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子域名",
           "example": "www",
@@ -2165,11 +1979,9 @@
           "name": "SubDomain",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录类型，可选的记录类型为：\"A\", \"AAAA\", \"CNAME\", \"MX\", \"TXT\", \"PTR\"",
           "example": "A",
@@ -2177,11 +1989,9 @@
           "name": "RecordType",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录值",
           "example": "1.1.1.1",
@@ -2189,11 +1999,9 @@
           "name": "RecordValue",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录缓存时间，数值越小生效越快，取值1-86400s, 默认 600",
           "example": "300",
@@ -2201,11 +2009,9 @@
           "name": "TTL",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -2213,11 +2019,9 @@
           "name": "MX",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录状态：ENABLED",
           "example": "enabled",
@@ -2225,11 +2029,9 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录权重，值为1-100\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
@@ -2237,11 +2039,9 @@
           "name": "Weight",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录创建时间",
           "example": "2021-09-07 19:00:58",
@@ -2249,11 +2049,9 @@
           "name": "CreatedOn",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录更新时间",
           "example": "2021-09-07 19:00:58",
@@ -2261,11 +2059,9 @@
           "name": "UpdatedOn",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "附加信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2273,11 +2069,9 @@
           "name": "Extra",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0暂停，1启用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "是否暂停",
@@ -2285,8 +2079,7 @@
           "name": "Enabled",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2307,8 +2100,7 @@
           "name": "ServiceStatus",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2323,7 +2115,6 @@
       "document": "标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键",
           "example": "",
@@ -2334,7 +2125,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "",
@@ -2351,7 +2141,6 @@
       "document": "Tld额度",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "总共额度",
           "example": "1",
@@ -2362,7 +2151,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已使用额度",
           "example": "1",
@@ -2373,7 +2161,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "库存",
           "example": "5000",
@@ -2384,7 +2171,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户限额",
           "example": "100",
@@ -2401,7 +2187,6 @@
       "document": "Vpc信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VpcId： vpc-xadsafsdasd",
           "example": "",
@@ -2412,7 +2197,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Vpc所属地区: ap-guangzhou, ap-shanghai",
           "example": "",

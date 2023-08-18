@@ -74,8 +74,7 @@
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -84,8 +83,7 @@
           "member": "string",
           "name": "GameId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -94,8 +92,7 @@
           "member": "string",
           "name": "GameRegion",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -104,8 +101,7 @@
           "member": "string",
           "name": "GameParas",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -114,8 +110,7 @@
           "member": "string",
           "name": "ClientSession",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -124,8 +119,7 @@
           "member": "string",
           "name": "Resolution",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -134,8 +128,7 @@
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -144,8 +137,7 @@
           "member": "uint64",
           "name": "SetNo",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -154,8 +146,7 @@
           "member": "uint64",
           "name": "Bitrate",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -164,8 +155,7 @@
           "member": "uint64",
           "name": "MaxBitrate",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -174,8 +164,7 @@
           "member": "uint64",
           "name": "MinBitrate",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -184,8 +173,7 @@
           "member": "uint64",
           "name": "Fps",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -194,8 +182,7 @@
           "member": "string",
           "name": "UserIp",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -204,8 +191,7 @@
           "member": "uint64",
           "name": "Optimization",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -214,8 +200,7 @@
           "member": "string",
           "name": "HostUserId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -224,8 +209,7 @@
           "member": "string",
           "name": "Role",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -234,8 +218,7 @@
           "member": "string",
           "name": "GameContext",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -244,8 +227,7 @@
           "member": "string",
           "name": "RunMode",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -260,8 +242,7 @@
           "member": "string",
           "name": "ServerSession",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -270,8 +251,7 @@
           "member": "string",
           "name": "RoleNumber",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -280,8 +260,7 @@
           "member": "string",
           "name": "Role",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -302,8 +281,7 @@
           "member": "string",
           "name": "GameId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -312,8 +290,7 @@
           "member": "string",
           "name": "GroupId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -322,8 +299,7 @@
           "member": "string",
           "name": "GameRegion",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -332,8 +308,7 @@
           "member": "string",
           "name": "GameType",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -348,8 +323,7 @@
           "member": "uint64",
           "name": "Total",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -358,8 +332,7 @@
           "member": "uint64",
           "name": "Running",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -374,26 +347,22 @@
       "document": "SaveGameArchive请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "游戏用户ID",
           "example": "1621578692",
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "游戏ID",
           "example": "game-a7l8c3ab",
           "member": "string",
           "name": "GameId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -414,26 +383,22 @@
       "document": "StartPublishStream请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
           "example": "123123",
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "推流地址，仅支持rtmp协议",
           "example": "rtmp://live.stream.com/publish",
           "member": "string",
           "name": "PublishUrl",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -454,26 +419,22 @@
       "document": "StopGame请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
           "example": "xxx",
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "【多人游戏】游戏主机用户ID",
           "example": "无",
           "member": "string",
           "name": "HostUserId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -494,15 +455,13 @@
       "document": "StopPublishStream请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
           "example": "123123",
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -523,48 +482,40 @@
       "document": "SwitchGameArchive请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "游戏用户ID",
           "example": "161394323449",
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "游戏ID",
           "example": "game-av2bl5r5",
           "member": "string",
           "name": "GameId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "游戏存档Url",
           "example": "http://archive.cdn.com/user123.zip",
           "member": "string",
           "name": "GameArchiveUrl",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "游戏相关参数",
           "example": "{\\\"ArchiveEnv\\\":\\\"tcg\\\",\\\"ArchiveCategoryId\\\":\\\"393\\\",\\\"ArchiveG",
           "member": "string",
           "name": "GameContext",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -585,70 +536,58 @@
       "document": "TrylockWorker请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
           "example": "xxx",
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "游戏ID",
           "example": "game-abcd1234",
           "member": "string",
           "name": "GameId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等，如果不为空，优先按照该区域进行调度分配机器",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "GameRegion",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "【废弃】资源池编号",
           "example": "1",
           "member": "uint64",
           "name": "SetNo",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "【必选】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验",
           "example": "125.127.178.228",
           "member": "string",
           "name": "UserIp",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组ID",
           "example": "cgg-1234abcd",
           "member": "string",
           "name": "GroupId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"

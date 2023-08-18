@@ -75,7 +75,6 @@
       "document": "CreateFlowService请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "定义文本（JSON格式）",
           "example": "qrn:qcs:asw:ap-xxxx:123456:execution:cfq5fjii:cgr51dcii",
@@ -85,7 +84,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态机所属服务名",
           "example": "Hello-World",
@@ -95,7 +93,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是不是新的角色",
           "example": "false",
@@ -105,7 +102,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态机类型（EXPRESS，STANDARD）",
           "example": "EXPRESS",
@@ -115,7 +111,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态机所属服务中文名",
           "example": "你好ASW",
@@ -125,7 +120,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "角色资源名, 比如: qcs::cam::uin/20103392:roleName/SomeRoleForYourStateMachine",
           "example": "qcs::cam::uin/12345:roleName/NameOfARole",
@@ -135,7 +129,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "这是一个ASW工作流示例",
@@ -145,7 +138,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启CLS日志投递功能",
           "example": "true",
@@ -155,7 +147,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该状态机的默认输入",
           "example": "{}",
@@ -203,7 +194,6 @@
       "document": "DescribeExecutionHistory请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "执行资源名",
           "example": "qrn:qcs:asw:ap-guangzhou:12345:http:json:flowmachine:bfhzs4j8",
@@ -241,7 +231,6 @@
       "document": "DescribeExecution请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "执行资源名",
           "example": "",
@@ -350,7 +339,6 @@
       "document": "DescribeExecutions请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "状态机资源名",
           "example": "",
@@ -360,7 +348,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页大小，最大100",
           "example": "",
@@ -370,7 +357,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页序号，从1开始",
           "example": "",
@@ -380,7 +366,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按状态过滤条件，INIT，RUNNING，SUCCEED，FAILED，TERMINATED",
           "example": "",
@@ -390,7 +375,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按执行名过滤条件",
           "example": "",
@@ -418,7 +402,6 @@
       "document": "DescribeFlowServiceDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "状态机所属服务资源名",
           "example": "qrn:qcs:asw:sh:1300074211:http:json:flowmachine:flowservicete",
@@ -556,7 +539,6 @@
       "document": "DescribeFlowServices请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "",
@@ -566,7 +548,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "",
@@ -576,7 +557,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，详见下表：实例过滤条件表。每次请求的Filter.Values的上限为5。参数名字仅支持FlowServiceName， Status, Type三种情况",
           "example": "",
@@ -622,7 +602,6 @@
       "document": "执行的事件历史",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "执行资源名",
           "example": "",
@@ -633,7 +612,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自增序号",
           "example": "",
@@ -644,7 +622,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件类型",
           "example": "",
@@ -655,7 +632,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "步骤节点名称",
           "example": "",
@@ -666,7 +642,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该步骤引用的资源名",
           "example": "",
@@ -677,7 +652,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该事件发生时间，毫秒",
           "example": "",
@@ -688,7 +662,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件内容",
           "example": "",
@@ -699,7 +672,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -716,7 +688,6 @@
       "document": "模版过滤类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "过滤器名字",
           "example": "",
@@ -727,7 +698,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤器值的数组",
           "example": "",
@@ -744,7 +714,6 @@
       "document": "ModifyFlowService请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "状态机资源名",
           "example": "无",
@@ -754,7 +723,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "定义JSON",
           "example": "无",
@@ -764,7 +732,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态机所属服务名",
           "example": "无",
@@ -774,7 +741,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态机所属服务中文名",
           "example": "无",
@@ -784,7 +750,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是新角色",
           "example": "false",
@@ -794,7 +759,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态机类型",
           "example": "无",
@@ -804,7 +768,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "角色资源名",
           "example": "无",
@@ -814,7 +777,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态机备注",
           "example": "无",
@@ -824,7 +786,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否允许日志投递",
           "example": "true",
@@ -872,7 +833,6 @@
       "document": "StartExecution请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "状态机资源名",
           "example": "qrn:qcs:asw:ap-xxxx:123456:execution:cfq5fjii:cgr51dcii",
@@ -882,7 +842,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输入参数，内容为JsonObject，长度不大于524288字符。",
           "example": "{}",
@@ -892,7 +851,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本次执行名。如果不填，系统会自动生成。如果填，应保证状态机下唯一",
           "example": "name of execution",
@@ -940,7 +898,6 @@
       "document": "状态机",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "状态机资源",
           "example": "",
@@ -951,7 +908,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态机类型。EXPRESS，STANDARD",
           "example": "",
@@ -962,7 +918,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态机名称",
           "example": "",
@@ -973,7 +928,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态机中文名",
           "example": "",
@@ -984,7 +938,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。timestamp",
           "example": "",
@@ -995,7 +948,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间。timestamp",
           "example": "",
@@ -1006,7 +958,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态机状态",
           "example": "",
@@ -1017,7 +968,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建者的subAccountUin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1028,7 +978,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改者的subAccountUin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1039,7 +988,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态机id",
           "example": "",
@@ -1050,7 +998,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板id",
           "example": "",
@@ -1061,7 +1008,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "",
@@ -1078,7 +1024,6 @@
       "document": "StopExecution请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "执行名称",
           "example": "qrn:qcs:asw:ap-xxxx:123456:execution:cfq5fjii:cgr51dcii",

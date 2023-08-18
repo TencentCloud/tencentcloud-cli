@@ -103,7 +103,6 @@
       "document": "ApplyStack请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源栈ID",
           "example": "",
@@ -113,7 +112,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待执行apply事件的版本ID",
           "example": "",
@@ -150,7 +148,6 @@
       "document": "CreateStack请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源栈名称，不得超过60个字符",
           "example": "",
@@ -160,7 +157,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源栈所在地域",
           "example": "",
@@ -170,7 +166,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "HCL模板URL，⽬前仅限 COS URL, ⽂件为zip压缩格式",
           "example": "",
@@ -180,7 +175,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源栈描述，不得超过200个字符",
           "example": "",
@@ -226,7 +220,6 @@
       "document": "CreateStackVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待增加版本的资源栈ID",
           "example": "",
@@ -236,7 +229,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板 URL，⽬前仅限 COS URL, ⽂件为zip压缩格式",
           "example": "",
@@ -246,7 +238,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本名称，不得超过60个字符",
           "example": "",
@@ -256,7 +247,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本描述，不得超过200个字符",
           "example": "",
@@ -293,7 +283,6 @@
       "document": "DeleteStack请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待删除的资源栈ID",
           "example": "",
@@ -321,7 +310,6 @@
       "document": "DeleteStackVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待删除的版本ID",
           "example": "",
@@ -349,7 +337,6 @@
       "document": "DescribeStackEvent请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件ID",
           "example": "",
@@ -449,7 +436,6 @@
       "document": "DescribeStackEvents请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "按照⼀个或者多个事件ID查询",
           "example": "",
@@ -459,7 +445,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "<li>**VersionId**</li>\n按照【**版本ID**】过滤，VersionId形如 `ver-kg8hn58h`\n类型：string\n\n<li>**StackId**</li>\n按照【**资源栈ID**】过滤，StackId形如 `stk-hz5vn3te`\n类型：string\n\n<li>**Type**</li>\n按照【**事件类型**】过滤，Type 形如 plan, apply, destroy\n类型：string\n\n<li>**Status**</li>\n按照【**事件状态**】过滤，Status形如 queueing, running, success, failed\n类型：string",
           "example": "",
@@ -469,7 +454,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节",
           "example": "",
@@ -479,7 +463,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节",
           "example": "",
@@ -525,7 +508,6 @@
       "document": "DescribeStackVersions请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "按照⼀个或者多个版本ID查询",
           "example": "",
@@ -535,7 +517,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节",
           "example": "",
@@ -545,7 +526,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节",
           "example": "",
@@ -555,7 +535,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "<li>**Name**</li>\n按照【**版本名称**】进行过滤\n类型：string\n\n<li>**Status**</li>\n按照【**版本状态**】过滤，形如`VERSION_EDITING`，`PLAN_IN_PROGRESS`等\n类型：string\n\n<li>**StackId**</li>\n按照版本所属的【**资源栈ID**】进行过滤，形如`stk-xxxxxx`\n类型：string",
           "example": "",
@@ -601,7 +580,6 @@
       "document": "DescribeStacks请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "按照⼀个或者多个资源栈ID查询",
           "example": "",
@@ -611,7 +589,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "",
@@ -621,7 +598,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "",
@@ -667,7 +643,6 @@
       "document": "DestroyStack请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源栈ID",
           "example": "",
@@ -677,7 +652,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待执行destroy事件的版本ID",
           "example": "",
@@ -714,7 +688,6 @@
       "document": "事件详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件ID",
           "example": "",
@@ -725,7 +698,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本ID",
           "example": "",
@@ -736,7 +708,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源栈ID",
           "example": "",
@@ -747,7 +718,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件类型",
           "example": "",
@@ -758,7 +728,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本状态",
           "example": "",
@@ -769,7 +738,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态信息",
           "example": "",
@@ -780,7 +748,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -797,7 +764,6 @@
       "document": "查询过滤条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "条件名字",
           "example": "",
@@ -808,7 +774,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "匹配的值，可以有多个",
           "example": "",
@@ -825,7 +790,6 @@
       "document": "PlanStack请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源栈ID",
           "example": "",
@@ -835,7 +799,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待执行plan事件的版本ID",
           "example": "",
@@ -872,7 +835,6 @@
       "document": "资源栈信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源栈ID",
           "example": "",
@@ -883,7 +845,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源栈名称",
           "example": "",
@@ -894,7 +855,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源栈描述",
           "example": "",
@@ -905,7 +865,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所处地域",
           "example": "",
@@ -916,7 +875,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源栈状态",
           "example": "",
@@ -927,7 +885,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -944,7 +901,6 @@
       "document": "UpdateStack请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待更新的资源栈ID",
           "example": "",
@@ -954,7 +910,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源栈名称，不得超过60个字符",
           "example": "",
@@ -964,7 +919,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源栈描述，不得超过200个字符",
           "example": "",
@@ -992,7 +946,6 @@
       "document": "UpdateStackVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待更新的版本ID",
           "example": "",
@@ -1002,7 +955,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板 URL，⽬前仅限 COS URL, ⽂件为zip压缩格式",
           "example": "",
@@ -1012,7 +964,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本名称，不得超过60个字符",
           "example": "",
@@ -1022,7 +973,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本描述，不得超过200个字符",
           "example": "",
@@ -1050,7 +1000,6 @@
       "document": "版本信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "版本ID",
           "example": "",
@@ -1061,7 +1010,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本名称",
           "example": "",
@@ -1072,7 +1020,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本描述",
           "example": "",
@@ -1083,7 +1030,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源栈ID",
           "example": "",
@@ -1094,7 +1040,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本状态",
           "example": "",
@@ -1105,7 +1050,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",

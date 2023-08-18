@@ -26,7 +26,6 @@
       "document": "DeleteEtcdInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "etcd实例id",
           "example": "etcd-abcd1234",
           "member": "string",
@@ -53,7 +52,6 @@
       "document": "DescribeEtcdInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "按照一个或者多个实例ID查询。实例ID形如：etcd-xxxxxxxx。参数不支持同时指定InstanceIds和Filters",
           "example": "[\"etcd-abcd1234\"]",
           "member": "string",
@@ -62,7 +60,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "支持按照vpc-id和instance-id过滤。参数不支持同时指定InstanceIds和Filters",
           "example": "无",
           "member": "Filter",
@@ -71,7 +68,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0",
           "example": "0",
           "member": "uint64",
@@ -80,7 +76,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为20，最大值为100",
           "example": "0",
           "member": "uint64",
@@ -125,7 +120,6 @@
       "document": "etcd信息",
       "members": [
         {
-          "default": "",
           "document": "实例id",
           "example": "etcd-ctq51lvf",
           "member": "string",
@@ -135,7 +129,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例名",
           "example": "test",
           "member": "string",
@@ -145,7 +138,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -155,7 +147,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "实例所属vpcId",
           "example": "vpc-35lahm68",
           "member": "string",
@@ -165,7 +156,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "etcd版本",
           "example": "v3.5.0",
           "member": "string",
@@ -175,7 +165,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "实例状态",
           "example": "running",
           "member": "string",
@@ -185,7 +174,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "etcd成员信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "EtcdMember",
@@ -195,7 +183,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "对外访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://10.0.1.127:1234",
           "member": "string",
@@ -211,7 +198,6 @@
       "document": "etcd集群成员信息",
       "members": [
         {
-          "default": "",
           "document": "节点名字",
           "example": "etcd-6app8i2u-etcd-0",
           "member": "string",
@@ -221,7 +207,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "节点当前版本",
           "example": "v3.4.13.tke.2",
           "member": "string",
@@ -231,7 +216,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "所属可用区",
           "example": "ap-chongqing-1",
           "member": "string",
@@ -241,7 +225,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "节点状态",
           "example": "Running",
           "member": "string",
@@ -257,7 +240,6 @@
       "document": "过滤器",
       "members": [
         {
-          "default": "",
           "document": "属性名称, 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
           "example": "instance-id",
           "member": "string",
@@ -267,7 +249,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
           "example": "[\"abc\"]",
           "member": "string",

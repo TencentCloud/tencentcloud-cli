@@ -341,8 +341,7 @@
           "name": "SdkAppId",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -352,8 +351,7 @@
           "name": "Caller",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -363,8 +361,7 @@
           "name": "Callee",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -374,8 +371,7 @@
           "name": "CreateTime",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -390,8 +386,7 @@
           "member": "int64",
           "name": "ApplyId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -400,8 +395,7 @@
           "member": "string",
           "name": "Checker",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -410,8 +404,7 @@
           "member": "int64",
           "name": "State",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -420,8 +413,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -430,8 +422,7 @@
           "member": "string",
           "name": "CheckMsg",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -452,7 +443,6 @@
       "document": "外呼任务被叫信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "被叫号码",
           "example": "\"008613912345678\"",
@@ -460,11 +450,9 @@
           "name": "Callee",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "呼叫状态 0初始 1已接听 2未接听 3呼叫中 4待重试",
           "example": "1",
@@ -472,11 +460,9 @@
           "name": "State",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话ID列表",
           "example": "[\"aaaa-xxxx\"]",
@@ -484,8 +470,7 @@
           "name": "Sessions",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -494,7 +479,6 @@
       "document": "自动外呼任务列表项",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务名",
           "example": "任务1",
@@ -502,11 +486,9 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被叫数量",
           "example": "5",
@@ -514,11 +496,9 @@
           "name": "CalleeCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主叫号码列表",
           "example": "[\"008601012345678\"]]",
@@ -526,11 +506,9 @@
           "name": "Callers",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始时间戳",
           "example": "123",
@@ -538,11 +516,9 @@
           "name": "NotBefore",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
@@ -550,11 +526,9 @@
           "name": "NotAfter",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务使用的IvrId",
           "example": "5",
@@ -562,11 +536,9 @@
           "name": "IvrId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务状态0初始 1运行中 2已完成 3结束中 4已结束",
           "example": "1",
@@ -574,11 +546,9 @@
           "name": "State",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务Id",
           "example": "341431",
@@ -586,8 +556,7 @@
           "name": "TaskId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -602,8 +571,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -612,8 +580,7 @@
           "member": "string",
           "name": "Number",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -622,8 +589,7 @@
           "member": "uint64",
           "name": "SkillGroupIds",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -644,7 +610,6 @@
       "document": "BindStaffSkillGroupList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
@@ -654,7 +619,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "坐席邮箱",
           "example": "staff1@xx.com",
@@ -664,7 +628,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定技能组列表",
           "example": "无",
@@ -699,8 +662,7 @@
           "name": "IvrCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -710,8 +672,7 @@
           "name": "QueueCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -721,8 +682,7 @@
           "name": "RingCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -732,8 +692,7 @@
           "name": "AcceptCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -743,8 +702,7 @@
           "name": "TransferOuterCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -754,8 +712,7 @@
           "name": "MaxQueueDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -765,8 +722,7 @@
           "name": "AvgQueueDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -776,8 +732,7 @@
           "name": "MaxRingDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -787,8 +742,7 @@
           "name": "AvgRingDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -798,8 +752,7 @@
           "name": "MaxAcceptDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -809,8 +762,7 @@
           "name": "AvgAcceptDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -819,7 +771,6 @@
       "document": "呼入线路维度相关指标",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "线路号码",
           "example": "02188888888",
@@ -830,7 +781,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "线路相关指标",
           "example": "无",
@@ -841,7 +791,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属技能组相关指标",
           "example": "无",
@@ -858,7 +807,6 @@
       "document": "呼入技能组相关指标",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "技能组ID",
           "example": "1",
@@ -869,7 +817,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据指标",
           "example": "无",
@@ -880,7 +827,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "技能组名称",
           "example": "技能组名称",
@@ -897,37 +843,31 @@
       "document": "被叫属性",
       "members": [
         {
-          "ValueAllowedNull": true,
           "disabled": false,
           "document": "被叫号码",
           "example": "008613012345678",
           "member": "string",
           "name": "Callee",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "ValueAllowedNull": true,
           "disabled": false,
           "document": "随路数据",
           "example": "xxx",
           "member": "string",
           "name": "UUI",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "ValueAllowedNull": true,
           "disabled": false,
           "document": "参数",
           "example": "无",
           "member": "Variable",
           "name": "Variables",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -943,8 +883,7 @@
           "name": "SdkAppId",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -954,8 +893,7 @@
           "name": "ApplicantId",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -965,8 +903,7 @@
           "name": "Callers",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -976,8 +913,7 @@
           "name": "Callees",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -987,8 +923,7 @@
           "name": "Description",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -998,8 +933,7 @@
           "name": "State",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1009,8 +943,7 @@
           "name": "CreateTime",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1020,8 +953,7 @@
           "name": "UpdateTime",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1030,7 +962,6 @@
       "document": "CheckCustomGatewayConnect请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "客户网关地址： 例如：10.0.0.1:5060",
           "example": "无",
@@ -1061,23 +992,19 @@
           "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
-          "is_base64": false,
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "管理员账号",
           "example": "foo@tencent.com",
-          "is_base64": false,
           "member": "string",
           "name": "SeatUserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1093,8 +1020,7 @@
           "name": "URL",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1115,8 +1041,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1125,8 +1050,7 @@
           "member": "int64",
           "name": "NotBefore",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1135,8 +1059,7 @@
           "member": "string",
           "name": "Callees",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1145,8 +1068,7 @@
           "member": "string",
           "name": "Callers",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1155,8 +1077,7 @@
           "member": "uint64",
           "name": "IvrId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1165,8 +1086,7 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1175,8 +1095,7 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1185,8 +1104,7 @@
           "member": "int64",
           "name": "NotAfter",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1195,8 +1113,7 @@
           "member": "uint64",
           "name": "Tries",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1205,8 +1122,7 @@
           "member": "Variable",
           "name": "Variables",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1215,8 +1131,7 @@
           "member": "string",
           "name": "UUI",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1225,8 +1140,7 @@
           "member": "CalleeAttribute",
           "name": "CalleeAttributes",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1241,8 +1155,7 @@
           "member": "uint64",
           "name": "TaskId",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1257,48 +1170,40 @@
       "document": "CreateCCCSkillGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用 ID（必填）",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "技能组名称",
           "example": "test",
           "member": "string",
           "name": "SkillGroupName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "技能组类型0-电话，1-在线，3-音频，4-视频",
           "example": "0",
           "member": "int64",
           "name": "SkillGroupType",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "技能组接待人数上限（该技能组中1个座席可接待的人数上限）默认为1。1、若技能组类型为在线，则接待上限可设置为1及以上\n2、若技能组类型为电话、音频、视频，则接待上线必须只能为1",
           "example": "1",
           "member": "uint64",
           "name": "MaxConcurrency",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1314,8 +1219,7 @@
           "name": "SkillGroupId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1336,8 +1240,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1346,8 +1249,7 @@
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1356,8 +1258,7 @@
           "member": "string",
           "name": "Callee",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1366,8 +1267,7 @@
           "member": "string",
           "name": "Caller",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1376,8 +1276,7 @@
           "member": "string",
           "name": "Callers",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1386,8 +1285,7 @@
           "member": "bool",
           "name": "IsForceUseMobile",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -1396,8 +1294,7 @@
           "member": "string",
           "name": "Uui",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1412,8 +1309,7 @@
           "member": "string",
           "name": "SessionId",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1434,8 +1330,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1444,8 +1339,7 @@
           "member": "string",
           "name": "Callers",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1454,8 +1348,7 @@
           "member": "string",
           "name": "Callees",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1464,8 +1357,7 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1480,8 +1372,7 @@
           "member": "uint64",
           "name": "ApplicantId",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1502,8 +1393,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1512,8 +1402,7 @@
           "member": "string",
           "name": "ExtensionId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1522,8 +1411,7 @@
           "member": "string",
           "name": "ExtensionName",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1532,8 +1420,7 @@
           "member": "uint64",
           "name": "SkillGroupIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1542,8 +1429,7 @@
           "member": "string",
           "name": "Relation",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1570,8 +1456,7 @@
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1580,8 +1465,7 @@
           "member": "string",
           "name": "SeatUserId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1596,8 +1480,7 @@
           "member": "string",
           "name": "Token",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1606,8 +1489,7 @@
           "member": "int64",
           "name": "ExpiredTime",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1616,8 +1498,7 @@
           "member": "string",
           "name": "SdkURL",
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1638,8 +1519,7 @@
           "member": "SipTrunkInfo",
           "name": "SipTrunk",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1654,8 +1534,7 @@
           "member": "int64",
           "name": "Id",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1676,8 +1555,7 @@
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1686,8 +1564,7 @@
           "member": "SeatUserInfo",
           "name": "Staffs",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1696,8 +1573,7 @@
           "member": "bool",
           "name": "SendPassword",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1712,8 +1588,7 @@
           "member": "ErrStaffItem",
           "name": "ErrorStaffList",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1728,7 +1603,6 @@
       "document": "CreateUserSig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
@@ -1738,7 +1612,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户 ID",
           "example": "foo",
@@ -1748,7 +1621,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "有效期，单位秒，不超过 1 小时",
           "example": "86400",
@@ -1758,7 +1630,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户签名数据",
           "example": "bar",
@@ -1796,26 +1667,22 @@
       "document": "DeleteExtension请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TCCC 实例应用 ID",
           "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分机号",
           "example": "1001",
           "member": "string",
           "name": "ExtensionId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1842,8 +1709,7 @@
           "member": "int64",
           "name": "Id",
           "required": true,
-          "type": "int",
-          "visibility": 2
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1864,7 +1730,6 @@
       "document": "DeleteStaff请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
@@ -1874,7 +1739,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待删除客服邮箱列表",
           "example": "无",
@@ -1918,8 +1782,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1928,8 +1791,7 @@
           "member": "uint64",
           "name": "PageNumber",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1938,8 +1800,7 @@
           "member": "uint64",
           "name": "PageSize",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1948,8 +1809,7 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1964,8 +1824,7 @@
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1974,8 +1833,7 @@
           "member": "ActiveCarrierPrivilegeNumber",
           "name": "ActiveCarrierPrivilegeNumbers",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1984,8 +1842,7 @@
           "member": "uint64",
           "name": "PendingApplicantIds",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2000,7 +1857,6 @@
       "document": "DescribeAutoCalloutTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
@@ -2010,7 +1866,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务Id",
           "example": "3",
@@ -2118,37 +1973,31 @@
       "document": "DescribeAutoCalloutTasks请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页大小",
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页数",
           "example": "0",
           "member": "uint64",
           "name": "PageNumber",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2164,8 +2013,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2175,8 +2023,7 @@
           "name": "Tasks",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2191,15 +2038,13 @@
       "document": "DescribeCCCBuyInfoList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID列表，不传时查询所有应用",
           "example": "[1400000,14000001]",
           "member": "int64",
           "name": "SdkAppIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2215,8 +2060,7 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2226,8 +2070,7 @@
           "name": "SdkAppIdBuyList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2237,8 +2080,7 @@
           "name": "PackageBuyList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2259,8 +2101,7 @@
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2269,8 +2110,7 @@
           "member": "bool",
           "name": "EnabledSkillGroup",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -2279,8 +2119,7 @@
           "member": "bool",
           "name": "EnabledNumber",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -2289,8 +2128,7 @@
           "member": "int64",
           "name": "GroupIdList",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2305,8 +2143,7 @@
           "member": "int64",
           "name": "Timestamp",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2315,8 +2152,7 @@
           "member": "CallInMetrics",
           "name": "TotalMetrics",
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2325,8 +2161,7 @@
           "member": "CallInNumberMetrics",
           "name": "NumberMetrics",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2335,8 +2170,7 @@
           "member": "CallInSkillGroupMetrics",
           "name": "SkillGroupMetrics",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2357,8 +2191,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2367,8 +2200,7 @@
           "member": "uint64",
           "name": "PageNumber",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2377,8 +2209,7 @@
           "member": "uint64",
           "name": "PageSize",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2387,8 +2218,7 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2403,8 +2233,7 @@
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2413,8 +2242,7 @@
           "member": "CarrierPrivilegeNumberApplicant",
           "name": "Applicants",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2435,8 +2263,7 @@
           "member": "int64",
           "name": "InstanceId",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2445,8 +2272,7 @@
           "member": "int64",
           "name": "SdkAppId",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2455,8 +2281,7 @@
           "member": "string",
           "name": "CdrId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2465,8 +2290,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2475,8 +2299,7 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2485,8 +2308,7 @@
           "member": "int64",
           "name": "Order",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2495,8 +2317,7 @@
           "member": "string",
           "name": "SessionId",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2511,8 +2332,7 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2521,8 +2341,7 @@
           "member": "MessageBody",
           "name": "Messages",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2537,26 +2356,22 @@
       "document": "DescribeExtension请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TCCC 实例应用 ID",
           "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分机号",
           "example": "1001",
           "member": "string",
           "name": "ExtensionId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2572,8 +2387,7 @@
           "name": "ExtensionId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2583,8 +2397,7 @@
           "name": "ExtensionDomain",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2594,8 +2407,7 @@
           "name": "Password",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2605,8 +2417,7 @@
           "name": "OutboundProxy",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2616,8 +2427,7 @@
           "name": "Transport",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2632,70 +2442,58 @@
       "document": "DescribeExtensions请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TCCC 实例应用 ID",
           "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页页号（从0开始）",
           "example": "0",
           "member": "int64",
           "name": "PageNumber",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "筛选分机号列表",
           "example": "无",
           "member": "string",
           "name": "ExtensionIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页大小",
           "example": "50",
           "member": "int64",
           "name": "PageSize",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模糊查询字段（模糊查询分机号、分机名称、坐席邮箱、坐席名称）",
           "example": "xxx",
           "member": "string",
           "name": "FuzzingKeyWord",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要返回话机当前状态",
           "example": "false",
           "member": "bool",
           "name": "IsNeedStatus",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2711,8 +2509,7 @@
           "name": "Total",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2722,8 +2519,7 @@
           "name": "ExtensionList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2744,8 +2540,7 @@
           "member": "int64",
           "name": "StartTimestamp",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2754,8 +2549,7 @@
           "member": "int64",
           "name": "EndTimestamp",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2764,8 +2558,7 @@
           "member": "int64",
           "name": "InstanceId",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2774,8 +2567,7 @@
           "member": "int64",
           "name": "SdkAppId",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2784,8 +2576,7 @@
           "member": "int64",
           "name": "Limit",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2794,8 +2585,7 @@
           "member": "int64",
           "name": "Offset",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2804,8 +2594,7 @@
           "member": "int64",
           "name": "Type",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2820,8 +2609,7 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2830,8 +2618,7 @@
           "member": "IMCdrInfo",
           "name": "IMCdrs",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2852,8 +2639,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2862,8 +2648,7 @@
           "member": "uint64",
           "name": "PageNumber",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2872,8 +2657,7 @@
           "member": "uint64",
           "name": "PageSize",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2888,8 +2672,7 @@
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2898,8 +2681,7 @@
           "member": "NumberInfo",
           "name": "Numbers",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2914,7 +2696,6 @@
       "document": "DescribePSTNActiveSessionList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
@@ -2924,7 +2705,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据偏移",
           "example": "0",
@@ -2934,7 +2714,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回的数据条数，最大 25",
           "example": "25",
@@ -2982,7 +2761,6 @@
       "document": "DescribeProtectedTelCdr请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "起始时间戳，Unix 秒级时间戳",
           "example": "1611631881",
@@ -2992,7 +2770,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间戳，Unix 秒级时间戳",
           "example": "1611631881",
@@ -3002,7 +2779,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用 ID，可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
@@ -3012,7 +2788,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页尺寸，上限 100",
           "example": "100",
@@ -3022,7 +2797,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页页码，从 0 开始",
           "example": "0",
@@ -3076,8 +2850,7 @@
           "member": "uint64",
           "name": "PageNumber",
           "required": false,
-          "type": "int",
-          "visibility": 2
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3086,8 +2859,7 @@
           "member": "uint64",
           "name": "PageSize",
           "required": false,
-          "type": "int",
-          "visibility": 2
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3096,8 +2868,7 @@
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "visibility": 2
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3112,8 +2883,7 @@
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 2
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3122,8 +2892,7 @@
           "member": "SipTrunkInfo",
           "name": "SipTrunkList",
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3144,8 +2913,7 @@
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3154,8 +2922,7 @@
           "member": "int64",
           "name": "PageSize",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3164,8 +2931,7 @@
           "member": "int64",
           "name": "PageNumber",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3174,8 +2940,7 @@
           "member": "int64",
           "name": "SkillGroupId",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3184,8 +2949,7 @@
           "member": "int64",
           "name": "ModifiedTime",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3194,8 +2958,7 @@
           "member": "string",
           "name": "SkillGroupName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3210,8 +2973,7 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3220,8 +2982,7 @@
           "member": "SkillGroupInfoItem",
           "name": "SkillGroupList",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3242,8 +3003,7 @@
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3252,8 +3012,7 @@
           "member": "int64",
           "name": "PageSize",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3262,8 +3021,7 @@
           "member": "int64",
           "name": "PageNumber",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3272,8 +3030,7 @@
           "member": "string",
           "name": "StaffMail",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3282,8 +3039,7 @@
           "member": "int64",
           "name": "ModifiedTime",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3292,8 +3048,7 @@
           "member": "int64",
           "name": "SkillGroupId",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3308,8 +3063,7 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3318,8 +3072,7 @@
           "member": "StaffInfo",
           "name": "StaffList",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3340,8 +3093,7 @@
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3350,8 +3102,7 @@
           "member": "string",
           "name": "StaffList",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -3360,8 +3111,7 @@
           "member": "int64",
           "name": "GroupIdList",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -3370,8 +3120,7 @@
           "member": "string",
           "name": "StatusList",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3386,8 +3135,7 @@
           "member": "StaffStatusMetrics",
           "name": "Metrics",
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3408,8 +3156,7 @@
           "member": "int64",
           "name": "StartTimeStamp",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3418,8 +3165,7 @@
           "member": "int64",
           "name": "EndTimeStamp",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3428,8 +3174,7 @@
           "member": "int64",
           "name": "SdkAppIdList",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3444,8 +3189,7 @@
           "member": "int64",
           "name": "TelCallOutCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3454,8 +3198,7 @@
           "member": "int64",
           "name": "TelCallInCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3464,8 +3207,7 @@
           "member": "int64",
           "name": "SeatUsedCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3474,8 +3216,7 @@
           "member": "int64",
           "name": "VoipCallInCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3484,8 +3225,7 @@
           "member": "int64",
           "name": "AsrOfflineCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3494,8 +3234,7 @@
           "member": "int64",
           "name": "AsrRealtimeCount",
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3510,7 +3249,6 @@
       "document": "DescribeTelCdr请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "起始时间戳，Unix 秒级时间戳",
           "example": "1611631881",
@@ -3520,7 +3258,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间戳，Unix 秒级时间戳",
           "example": "1611631881",
@@ -3530,7 +3267,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID（废弃）",
           "example": "11",
@@ -3540,7 +3276,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数据条数，上限（废弃）",
           "example": "0",
@@ -3550,7 +3285,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移（废弃）",
           "example": "0",
@@ -3560,7 +3294,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
@@ -3570,7 +3303,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页尺寸（必填），上限 100",
           "example": "100",
@@ -3580,7 +3312,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页页码（必填），从 0 开始",
           "example": "0",
@@ -3590,7 +3321,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按手机号筛选",
           "example": "[\"13012345678\"]",
@@ -3600,7 +3330,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按SessionId筛选",
           "example": "[\"7cb26a84-83b2-42d8-a19b-7dae78e9b78e\"]",
@@ -3648,7 +3377,6 @@
       "document": "DescribeTelSession请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
@@ -3658,7 +3386,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话 ID",
           "example": "6bb56a09-2787-40bc-80c5-dc6dab783eff",
@@ -3702,8 +3429,7 @@
           "member": "string",
           "name": "PhoneNumbers",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -3712,8 +3438,7 @@
           "member": "int64",
           "name": "Disabled",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3722,8 +3447,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3751,8 +3475,7 @@
           "name": "StaffEmail",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3762,8 +3485,7 @@
           "name": "Code",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3773,8 +3495,7 @@
           "name": "Message",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3783,7 +3504,6 @@
       "document": "话机信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "1400000000",
@@ -3791,11 +3511,9 @@
           "name": "SdkAppId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分机全名",
           "example": "xxx@xxx.com",
@@ -3803,11 +3521,9 @@
           "name": "FullExtensionId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分机号",
           "example": "1001",
@@ -3815,11 +3531,9 @@
           "name": "ExtensionId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属技能组列表",
           "example": "1000,1001",
@@ -3827,11 +3541,9 @@
           "name": "SkillGroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分机名称",
           "example": "分机1",
@@ -3839,11 +3551,9 @@
           "name": "ExtensionName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "1617184839",
@@ -3851,11 +3561,9 @@
           "name": "CreateTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后修改时间",
           "example": "1617184839",
@@ -3863,11 +3571,9 @@
           "name": "ModifyTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "话机状态(0 离线、100 空闲、200忙碌）",
           "example": "100",
@@ -3875,11 +3581,9 @@
           "name": "Status",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否注册",
           "example": "true",
@@ -3887,11 +3591,9 @@
           "name": "Register",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定坐席邮箱",
           "example": "xxx@xxx.com",
@@ -3899,11 +3601,9 @@
           "name": "Relation",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定坐席名称",
           "example": "坐席1",
@@ -3911,8 +3611,7 @@
           "name": "RelationName",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3928,8 +3627,7 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -3939,8 +3637,7 @@
           "name": "Values",
           "required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -3949,26 +3646,22 @@
       "document": "HangUpCall请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TCCC 实例应用 ID",
           "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话ID",
           "example": "1001",
           "member": "string",
           "name": "SessionId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3996,8 +3689,7 @@
           "name": "Host",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -4007,8 +3699,7 @@
           "name": "Port",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -4017,7 +3708,6 @@
       "document": "文本会话服务记录信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "服务记录ID",
           "example": "12933",
@@ -4025,11 +3715,9 @@
           "name": "Id",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务时长秒数",
           "example": "199",
@@ -4037,11 +3725,9 @@
           "name": "Duration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束状态\n0 异常结束\n1 正常结束\n3 无坐席在线\n17 坐席放弃接听\n100 黑名单\n101 坐席手动转接\n102 IVR阶段放弃\n108 用户超时自动结束",
           "example": "1",
@@ -4049,11 +3735,9 @@
           "name": "EndStatus",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户昵称",
           "example": "访客_e8d6",
@@ -4061,11 +3745,9 @@
           "name": "Nickname",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务类型 1为全媒体，2为文本客服",
           "example": "2",
@@ -4073,11 +3755,9 @@
           "name": "Type",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客服ID",
           "example": "foo@tencent.com",
@@ -4085,11 +3765,9 @@
           "name": "StaffId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务时间戳",
           "example": "1632814604",
@@ -4097,11 +3775,9 @@
           "name": "Timestamp",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "87fa1d7a-4194-4f2a-83dc-d7c293411720",
@@ -4109,11 +3785,9 @@
           "name": "SessionId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "技能组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1154",
@@ -4121,11 +3795,9 @@
           "name": "SkillGroupId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "技能组名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "foo",
@@ -4133,11 +3805,9 @@
           "name": "SkillGroupName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "满意度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"Id\":1,\"Label\":\"满意\"}",
@@ -4145,8 +3815,7 @@
           "name": "Satisfaction",
           "required": true,
           "type": "object",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4155,7 +3824,6 @@
       "document": "IM满意度",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "满意度值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -4163,11 +3831,9 @@
           "name": "Id",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "满意度标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "非常满意",
@@ -4175,8 +3841,7 @@
           "name": "Label",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4185,7 +3850,6 @@
       "document": "ivr 按键信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "按键\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -4196,7 +3860,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按键关联的标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "非常满意",
@@ -4213,7 +3876,6 @@
       "document": "单条消息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "消息类型",
           "example": "",
@@ -4224,7 +3886,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息内容",
           "example": "",
@@ -4241,7 +3902,6 @@
       "document": "聊天消息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "消息时间戳",
           "example": "",
@@ -4252,7 +3912,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发消息的用户ID",
           "example": "",
@@ -4263,7 +3922,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息列表",
           "example": "",
@@ -4280,59 +3938,49 @@
       "document": "ModifyExtension请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TCCC 实例应用 ID",
           "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分机号",
           "example": "1001",
           "member": "string",
           "name": "ExtensionId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分机名称",
           "example": "分机1",
           "member": "string",
           "name": "ExtensionName",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属技能组列表",
           "example": "无",
           "member": "int64",
           "name": "SkillGroupIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定坐席邮箱账号",
           "example": "xxx@xxx.com",
           "member": "string",
           "name": "Relation",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4359,8 +4007,7 @@
           "member": "SipTrunkInfo",
           "name": "SipTrunk",
           "required": true,
-          "type": "object",
-          "visibility": 1
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4387,8 +4034,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4397,8 +4043,7 @@
           "member": "string",
           "name": "Email",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4407,8 +4052,7 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4417,8 +4061,7 @@
           "member": "string",
           "name": "Phone",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4427,8 +4070,7 @@
           "member": "string",
           "name": "Nick",
           "required": false,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4437,8 +4079,7 @@
           "member": "int64",
           "name": "SkillGroupIds",
           "required": false,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         },
         {
           "disabled": false,
@@ -4447,8 +4088,7 @@
           "member": "bool",
           "name": "UseMobileCallOut",
           "required": false,
-          "type": "bool",
-          "visibility": 1
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -4457,8 +4097,7 @@
           "member": "int64",
           "name": "UseMobileAccept",
           "required": false,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4486,8 +4125,7 @@
           "name": "Number",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4497,8 +4135,7 @@
           "name": "CallOutSkillGroupIds",
           "required": false,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4507,7 +4144,6 @@
       "document": "PSTN 会话类型。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "会话 ID",
           "example": "d62a280a-b7dc-4a05-8295-eba7b61c2490",
@@ -4518,7 +4154,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话临时房间 ID",
           "example": "0",
@@ -4529,7 +4164,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主叫",
           "example": "00861010101033",
@@ -4540,7 +4174,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被叫",
           "example": "00861010101031",
@@ -4551,7 +4184,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间，Unix 时间戳",
           "example": "1617184839",
@@ -4562,7 +4194,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "振铃时间，Unix 时间戳",
           "example": "1617184839",
@@ -4573,7 +4204,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接听时间，Unix 时间戳",
           "example": "1617184839",
@@ -4584,7 +4214,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "坐席邮箱",
           "example": "foo@tencent.com",
@@ -4595,7 +4224,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "坐席工号",
           "example": "007",
@@ -4606,7 +4234,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话状态\nringing 振铃中\nseatJoining  等待坐席接听\ninProgress 进行中\nfinished 已完成",
           "example": "finished",
@@ -4617,7 +4244,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话呼叫方向， 0 呼入 | 1 - 呼出",
           "example": "0",
@@ -4628,7 +4254,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转外线使用的号码（转外线主叫）",
           "example": "00861010101031",
@@ -4639,7 +4264,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转外线被叫",
           "example": "00861010101032",
@@ -4650,7 +4274,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空",
           "example": "008613XXXX5678",
@@ -4661,7 +4284,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空",
           "example": "008613XXXX5678",
@@ -4678,7 +4300,6 @@
       "document": "PSTN 会话信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "会话 ID",
           "example": "1",
@@ -4689,7 +4310,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话临时房间 ID",
           "example": "1",
@@ -4700,7 +4320,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主叫",
           "example": "13712345678",
@@ -4711,7 +4330,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被叫",
           "example": "13712345678",
@@ -4722,7 +4340,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间，Unix 时间戳",
           "example": "1617184839",
@@ -4733,7 +4350,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接听时间，Unix 时间戳",
           "example": "1617184839",
@@ -4744,7 +4360,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "坐席邮箱",
           "example": "xxx@xxx.com",
@@ -4755,7 +4370,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "坐席工号",
           "example": "1",
@@ -4766,7 +4380,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "坐席状态 inProgress 进行中",
           "example": "inProgress",
@@ -4777,7 +4390,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话呼叫方向， 0 呼入 | 1 - 呼出",
           "example": "0",
@@ -4788,7 +4400,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "振铃时间，Unix 时间戳",
           "example": "1617184839",
@@ -4799,7 +4410,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空",
           "example": "008613XXXX5678",
@@ -4810,7 +4420,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空",
           "example": "008613XXXX5678",
@@ -4834,8 +4443,7 @@
           "name": "PackageId",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4845,8 +4453,7 @@
           "name": "Type",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4856,8 +4463,7 @@
           "name": "CapacitySize",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4867,8 +4473,7 @@
           "name": "CapacityRemain",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4878,8 +4483,7 @@
           "name": "BuyTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4889,8 +4493,7 @@
           "name": "EndTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4906,8 +4509,7 @@
           "name": "PhoneNum",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4917,8 +4519,7 @@
           "name": "Type",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4928,8 +4529,7 @@
           "name": "CallType",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4939,8 +4539,7 @@
           "name": "BuyTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4950,8 +4549,7 @@
           "name": "EndTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4961,8 +4559,7 @@
           "name": "State",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4971,26 +4568,22 @@
       "document": "ResetExtensionPassword请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TCCC 实例应用 ID",
           "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分机号",
           "example": "1001",
           "member": "string",
           "name": "ExtensionId",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5006,8 +4599,7 @@
           "name": "Password",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5029,8 +4621,7 @@
           "name": "SdkAppId",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5040,8 +4631,7 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5051,8 +4641,7 @@
           "name": "StaffBuyNum",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5062,8 +4651,7 @@
           "name": "StaffBuyList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5073,8 +4661,7 @@
           "name": "PhoneNumBuyList",
           "required": true,
           "type": "list",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5084,8 +4671,7 @@
           "name": "SipBuyNum",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5101,8 +4687,7 @@
           "name": "Name",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5112,8 +4697,7 @@
           "name": "Mail",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5123,8 +4707,7 @@
           "name": "StaffNumber",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5134,8 +4717,7 @@
           "name": "Phone",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5145,8 +4727,7 @@
           "name": "Nick",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5156,8 +4737,7 @@
           "name": "UserId",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5167,8 +4747,7 @@
           "name": "SkillGroupNameList",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5184,8 +4763,7 @@
           "name": "Mail",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5195,8 +4773,7 @@
           "name": "Phone",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5206,8 +4783,7 @@
           "name": "RingTimestamp",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5217,8 +4793,7 @@
           "name": "AcceptTimestamp",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5228,8 +4803,7 @@
           "name": "EndedTimestamp",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5239,8 +4813,7 @@
           "name": "RecordId",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5250,8 +4823,7 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5261,8 +4833,7 @@
           "name": "TransferFrom",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5272,8 +4843,7 @@
           "name": "TransferFromType",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5283,8 +4853,7 @@
           "name": "TransferTo",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5294,8 +4863,7 @@
           "name": "TransferToType",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5305,8 +4873,7 @@
           "name": "SkillGroupId",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5316,8 +4883,7 @@
           "name": "EndStatusString",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5327,8 +4893,7 @@
           "name": "RecordURL",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5338,8 +4903,7 @@
           "name": "Sequence",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5349,8 +4913,7 @@
           "name": "StartTimestamp",
           "required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5360,8 +4923,7 @@
           "name": "SkillGroupName",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5371,8 +4933,7 @@
           "name": "CustomRecordURL",
           "required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5388,8 +4949,7 @@
           "name": "Id",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5399,8 +4959,7 @@
           "name": "Uin",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5410,8 +4969,7 @@
           "name": "AppId",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5421,8 +4979,7 @@
           "name": "Mode",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5432,8 +4989,7 @@
           "name": "CheckHealth",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5443,8 +4999,7 @@
           "name": "ProviderId",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5454,8 +5009,7 @@
           "name": "RegisterUserName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5465,8 +5019,7 @@
           "name": "RegisterPassword",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5476,8 +5029,7 @@
           "name": "RegisterServer",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5487,8 +5039,7 @@
           "name": "RegisterServerPort",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5498,8 +5049,7 @@
           "name": "RegisterOutboundProxy",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5509,8 +5059,7 @@
           "name": "RegisterOutboundProxyPort",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5520,8 +5069,7 @@
           "name": "RegisterProto",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5531,8 +5079,7 @@
           "name": "RegisterFullName",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5542,8 +5089,7 @@
           "name": "RegisterExpires",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5553,8 +5099,7 @@
           "name": "InboundCalleeFormat",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5564,8 +5109,7 @@
           "name": "InboundCalleeField",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5575,8 +5119,7 @@
           "name": "OutboundCallerFormat",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5586,8 +5129,7 @@
           "name": "State",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5597,8 +5139,7 @@
           "name": "AllowIpList",
           "required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5608,8 +5149,7 @@
           "name": "RegisterStatus",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5619,8 +5159,7 @@
           "name": "HealthStatus",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5630,8 +5169,7 @@
           "name": "Name",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5641,8 +5179,7 @@
           "name": "RegisterServerTCPPort",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5652,8 +5189,7 @@
           "name": "RegisterServerTLSPort",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5663,8 +5199,7 @@
           "name": "RegisterOutboundProxyTCPPort",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5674,8 +5209,7 @@
           "name": "RegisterOutboundProxyTLSPort",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 2
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5691,8 +5225,7 @@
           "name": "SkillGroupId",
           "required": false,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5702,8 +5235,7 @@
           "name": "SkillGroupName",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5713,8 +5245,7 @@
           "name": "Type",
           "required": false,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5724,8 +5255,7 @@
           "name": "RoutePolicy",
           "required": false,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5735,8 +5265,7 @@
           "name": "UsingLastSeat",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5746,8 +5275,7 @@
           "name": "MaxConcurrency",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5757,8 +5285,7 @@
           "name": "LastModifyTimestamp",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -5768,8 +5295,7 @@
           "name": "SkillGroupType",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5778,7 +5304,6 @@
       "document": "技能组信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "技能组ID",
           "example": "101",
@@ -5789,7 +5314,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "技能组名称",
           "example": "Test",
@@ -5800,7 +5324,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "优先级",
           "example": "1",
@@ -5811,7 +5334,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型：IM、TEL、ALL（全媒体）",
           "example": "IM",
@@ -5835,8 +5357,7 @@
           "name": "Num",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5846,8 +5367,7 @@
           "name": "BuyTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5857,8 +5377,7 @@
           "name": "EndTime",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5868,8 +5387,7 @@
           "name": "SipNum",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5878,7 +5396,6 @@
       "document": "带有技能组优先级的坐席信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "坐席名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xiaowang",
@@ -5889,7 +5406,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "坐席邮箱",
           "example": "10982291@qq.com",
@@ -5900,7 +5416,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "坐席电话号码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "18092226822",
@@ -5911,7 +5426,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "坐席昵称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xiaohong",
@@ -5922,7 +5436,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "坐席工号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "101",
@@ -5933,7 +5446,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属技能组列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -5944,7 +5456,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1614149408",
@@ -5968,8 +5479,7 @@
           "name": "Type",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5979,8 +5489,7 @@
           "name": "Direct",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5996,8 +5505,7 @@
           "name": "Email",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6007,8 +5515,7 @@
           "name": "Status",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6018,8 +5525,7 @@
           "name": "StatusExtra",
           "required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6029,8 +5535,7 @@
           "name": "OnlineDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6040,8 +5545,7 @@
           "name": "FreeDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6051,8 +5555,7 @@
           "name": "BusyDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6062,8 +5565,7 @@
           "name": "NotReadyDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6073,8 +5575,7 @@
           "name": "RestDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6084,8 +5585,7 @@
           "name": "AfterCallWorkDuration",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6095,8 +5595,7 @@
           "name": "Reason",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6106,8 +5605,7 @@
           "name": "ReserveRest",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6117,8 +5615,7 @@
           "name": "ReserveNotReady",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6128,8 +5625,7 @@
           "name": "UseMobileAccept",
           "required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6139,8 +5635,7 @@
           "name": "UseMobileCallOut",
           "required": true,
           "type": "bool",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6150,8 +5645,7 @@
           "name": "LastOnlineTimestamp",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6161,8 +5655,7 @@
           "name": "LastStatusTimestamp",
           "required": false,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6171,7 +5664,6 @@
       "document": "StopAutoCalloutTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "呼叫中心实例Id",
           "example": "1",
@@ -6181,7 +5673,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务Id",
           "example": "1",
@@ -6216,8 +5707,7 @@
           "name": "Caller",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6227,8 +5717,7 @@
           "name": "Callee",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6238,8 +5727,7 @@
           "name": "Time",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6249,8 +5737,7 @@
           "name": "Direction",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6260,8 +5747,7 @@
           "name": "Duration",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6271,8 +5757,7 @@
           "name": "RecordURL",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6282,8 +5767,7 @@
           "name": "SeatUser",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6293,8 +5777,7 @@
           "name": "EndStatus",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6304,8 +5787,7 @@
           "name": "SkillGroup",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6315,8 +5797,7 @@
           "name": "CallerLocation",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6326,8 +5807,7 @@
           "name": "IVRDuration",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6337,8 +5817,7 @@
           "name": "RingTimestamp",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6348,8 +5827,7 @@
           "name": "AcceptTimestamp",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6359,8 +5837,7 @@
           "name": "EndedTimestamp",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6370,8 +5847,7 @@
           "name": "IVRKeyPressed",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6381,8 +5857,7 @@
           "name": "HungUpSide",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6392,8 +5867,7 @@
           "name": "ServeParticipants",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6403,8 +5877,7 @@
           "name": "SkillGroupId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6414,8 +5887,7 @@
           "name": "EndStatusString",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6425,8 +5897,7 @@
           "name": "StartTimestamp",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6436,8 +5907,7 @@
           "name": "QueuedTimestamp",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6447,8 +5917,7 @@
           "name": "PostIVRKeyPressed",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6458,8 +5927,7 @@
           "name": "QueuedSkillGroupId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6469,8 +5937,7 @@
           "name": "SessionId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6480,8 +5947,7 @@
           "name": "ProtectedCaller",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6491,8 +5957,7 @@
           "name": "ProtectedCallee",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6502,8 +5967,7 @@
           "name": "Uui",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6513,8 +5977,7 @@
           "name": "IVRKeyPressedEx",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6524,8 +5987,7 @@
           "name": "AsrUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6535,8 +5997,7 @@
           "name": "CustomRecordURL",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6546,8 +6007,7 @@
           "name": "Remark",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6557,8 +6017,7 @@
           "name": "QueuedSkillGroupName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6568,8 +6027,7 @@
           "name": "VoicemailRecordURL",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6579,8 +6037,7 @@
           "name": "VoicemailAsrURL",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true,
-          "visibility": 1
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6595,8 +6052,7 @@
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
-          "type": "int",
-          "visibility": 1
+          "type": "int"
         },
         {
           "disabled": false,
@@ -6605,8 +6061,7 @@
           "member": "string",
           "name": "Number",
           "required": true,
-          "type": "string",
-          "visibility": 1
+          "type": "string"
         },
         {
           "disabled": false,
@@ -6615,8 +6070,7 @@
           "member": "uint64",
           "name": "SkillGroupIds",
           "required": true,
-          "type": "list",
-          "visibility": 1
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6637,7 +6091,6 @@
       "document": "UnbindStaffSkillGroupList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
@@ -6647,7 +6100,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客服邮箱",
           "example": "staff1@xx.com",
@@ -6657,7 +6109,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "解绑技能组列表",
           "example": "无",
@@ -6685,7 +6136,6 @@
       "document": "变量",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "变量名",
           "example": "key1",
@@ -6693,11 +6143,9 @@
           "name": "Key",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "变量值",
           "example": "value",
@@ -6705,8 +6153,7 @@
           "name": "Value",
           "required": true,
           "type": "string",
-          "value_allowed_null": false,
-          "visibility": 1
+          "value_allowed_null": false
         }
       ],
       "usage": "in"
