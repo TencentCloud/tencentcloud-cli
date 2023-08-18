@@ -287,13 +287,6 @@
       "output": "DescribeBackupConfigResponse",
       "status": "online"
     },
-    "DescribeBackupDatabases": {
-      "document": "接口已废弃，需要下线\n\n本接口(DescribeBackupDatabases)用于查询备份文件包含的库 (已废弃)。\n旧版本支持全量备份后，用户如果分库表下载逻辑备份文件，需要用到此接口。\n新版本支持(CreateBackup)创建逻辑备份的时候，直接发起指定库表备份，用户直接下载该备份文件即可。",
-      "input": "DescribeBackupDatabasesRequest",
-      "name": "查询备份数据库列表",
-      "output": "DescribeBackupDatabasesResponse",
-      "status": "deprecated"
-    },
     "DescribeBackupDecryptionKey": {
       "document": "本接口(DescribeBackupDecryptionKey)用于查询备份文件解密密钥。",
       "input": "DescribeBackupDecryptionKeyRequest",
@@ -6078,22 +6071,6 @@
       ],
       "usage": "out"
     },
-    "DatabaseName": {
-      "document": "数据库表名",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "数据库表名",
-          "example": "",
-          "member": "string",
-          "name": "DatabaseName",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "usage": "out"
-    },
     "DatabasePrivilege": {
       "document": "数据库权限",
       "members": [
@@ -7375,94 +7352,6 @@
           "member": "int64",
           "name": "BinlogStandbyDays",
           "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeBackupDatabasesRequest": {
-      "document": "DescribeBackupDatabases请求参数结构体",
-      "members": [
-        {
-          "default": "",
-          "disabled": false,
-          "document": "实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。",
-          "example": "cdb-c1nl9rpv",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "开始时间，格式为：2017-07-12 10:29:20。",
-          "example": "2017-07-12 10:29:20",
-          "member": "string",
-          "name": "StartTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "要查询的数据库名前缀。",
-          "example": "test",
-          "member": "string",
-          "name": "SearchDatabase",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "分页偏移量。",
-          "example": "10",
-          "member": "int64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "disabled": false,
-          "document": "分页大小，最小值为1，最大值为2000。",
-          "example": "10",
-          "member": "int64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeBackupDatabasesResponse": {
-      "document": "DescribeBackupDatabases返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "返回的数据个数。",
-          "example": "2",
-          "member": "int64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "符合查询条件的数据库数组。",
-          "example": "无",
-          "member": "DatabaseName",
-          "name": "Items",
-          "required": true,
-          "type": "list",
           "value_allowed_null": false
         },
         {

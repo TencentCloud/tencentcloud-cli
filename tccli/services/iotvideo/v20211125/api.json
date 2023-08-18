@@ -259,6 +259,13 @@
       "output": "DescribeCloudStorageEventsResponse",
       "status": "online"
     },
+    "DescribeCloudStorageOrder": {
+      "document": "查询云存服务详情",
+      "input": "DescribeCloudStorageOrderRequest",
+      "name": "查询云存服务详情",
+      "output": "DescribeCloudStorageOrderResponse",
+      "status": "online"
+    },
     "DescribeCloudStoragePackageConsumeDetails": {
       "document": "获取云存套餐包消耗详细记录",
       "input": "DescribeCloudStoragePackageConsumeDetailsRequest",
@@ -3981,6 +3988,75 @@
           "name": "VideoURL",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageOrderRequest": {
+      "document": "DescribeCloudStorageOrder请求参数结构体",
+      "members": [
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "订单id",
+          "example": "\"sdfsdfsd\"",
+          "is_base64": false,
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageOrderResponse": {
+      "document": "DescribeCloudStorageOrder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云存套餐开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1606963491",
+          "member": "uint64",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云存套餐过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1606963491",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "套餐id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"sdfsdf\"",
+          "member": "string",
+          "name": "PackageId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "套餐状态\n0：等待生效\n1: 已过期\n2:生效",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

@@ -17,7 +17,7 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "xx",
+        "RequestId": "1111",
         "AddressTemplateGroupSet": [
             {
                 "AddressTemplateGroupName": "test",
@@ -29,11 +29,15 @@ Output:
                 "AddressTemplateSet": [
                     {
                         "AddressTemplateId": "ipm-xxxxxxxx",
-                        "AddressTemplateName": "xxxxxxxx"
+                        "AddressTemplateName": "xxxxxxxx",
+                        "From": "",
+                        "To": ""
                     },
                     {
                         "AddressTemplateId": "ipm-yyyyyyyy",
-                        "AddressTemplateName": "yyyyyyyy"
+                        "AddressTemplateName": "yyyyyyyy",
+                        "From": "",
+                        "To": ""
                     }
                 ],
                 "CreatedTime": "2022-12-06 20:00:00"

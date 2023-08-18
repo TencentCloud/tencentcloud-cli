@@ -168,6 +168,14 @@
         "title": "示例"
       }
     ],
+    "DeleteUser": [
+      {
+        "document": "删除单个用户",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUser\n<公共请求参数>\n\n{\n    \"UserId\": \"2Ty68D0mcAVOZrxnaDIS6eRMvla\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4193da2e-d84e-4fc0-9b92-1f9f5832cb51\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "DescribeAnswerList": [
       {
         "document": "示例",

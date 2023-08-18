@@ -568,7 +568,7 @@
       "status": "online"
     },
     "SearchLog": {
-      "document": "本接口用于检索分析日志, 该接口除受默认接口请求频率限制外，针对单个日志主题，查询并发数不能超过15。",
+      "document": "本接口用于检索分析日志, 该接口除受默认接口请求频率限制外，针对单个日志主题，查询并发数不能超过15。\n\nAPI返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Accept-Encoding:gzip）。",
       "input": "SearchLogRequest",
       "name": "检索分析日志",
       "output": "SearchLogResponse",
@@ -11166,7 +11166,7 @@
         {
           "Reference": [],
           "disabled": false,
-          "document": "表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数\n注意：\n* 仅当检索分析语句(Query)不包含SQL时有效\n* SQL结果条数指定方式参考<a href=\"https://cloud.tencent.com/document/product/614/58977\" target=\"_blank\">SQL LIMIT语法</a>",
+          "document": "表示单次查询返回的原始日志条数，默认为100，最大值为1000，获取后续日志需使用Context参数\n注意：\n* 仅当检索分析语句(Query)不包含SQL时有效\n* SQL结果条数指定方式参考<a href=\"https://cloud.tencent.com/document/product/614/58977\" target=\"_blank\">SQL LIMIT语法</a>",
           "example": "100",
           "is_base64": false,
           "member": "int64",

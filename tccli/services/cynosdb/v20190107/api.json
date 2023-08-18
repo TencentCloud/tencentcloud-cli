@@ -414,7 +414,7 @@
       "status": "online"
     },
     "DescribeProxyNodes": {
-      "document": "本接口（DescribeProxyNodes）用于查询代理接口列表。",
+      "document": "本接口（DescribeProxyNodes）用于查询代理节点列表。",
       "input": "DescribeProxyNodesRequest",
       "name": "查询代理节点列表",
       "output": "DescribeProxyNodesResponse",
@@ -9238,50 +9238,55 @@
       "document": "DescribeProxyNodes请求参数结构体",
       "members": [
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100",
           "example": "100",
+          "is_base64": false,
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "记录偏移量，默认值为0",
           "example": "0",
+          "is_base64": false,
           "member": "int64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "排序字段，取值范围：\n<li> CREATETIME：创建时间</li>\n<li> PERIODENDTIME：过期时间</li>",
           "example": "\"CREATETIME\"",
+          "is_base64": false,
           "member": "string",
           "name": "OrderBy",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "排序类型，取值范围：\n<li> ASC：升序排序 </li>\n<li> DESC：降序排序 </li>",
           "example": "\"desc\"",
+          "is_base64": false,
           "member": "string",
           "name": "OrderByType",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "Reference": [],
           "disabled": false,
           "document": "搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
           "example": "无",
+          "is_base64": false,
           "member": "QueryFilter",
           "name": "Filters",
           "required": false,
@@ -9299,7 +9304,7 @@
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9309,7 +9314,7 @@
           "example": "无",
           "member": "ProxyNodeInfo",
           "name": "ProxyNodeInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

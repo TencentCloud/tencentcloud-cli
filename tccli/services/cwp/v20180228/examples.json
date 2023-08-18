@@ -1066,7 +1066,7 @@
     ],
     "DescribeLicenseBindList": [
       {
-        "document": "",
+        "document": "DescribeLicenseBindList",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLicenseBindList\n<公共请求参数>\n\n{\n    \"LicenseId\": 1,\n    \"LicenseType\": 0,\n    \"ResourceId\": \"xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"de41ce31-f2c0-49a9-a476-57051a5c7c6c\",\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"MachineName\": \"云服务器\",\n                \"MachineWanIp\": \"1.1.1.1\",\n                \"MachineIp\": \"1.1.1.1\",\n                \"Quuid\": \"xxxx-xxxx-xxx-xxxx\",\n                \"Uuid\": \"xxxx-xxxx-xxx-xxxx\",\n                \"Tags\": [\n                    \"标签\"\n                ],\n                \"AgentStatus\": \"OFFLINE\",\n                \"IsUnBind\": true,\n                \"IsSwitchBind\": true\n            }\n        ]\n    }\n}",
         "title": "示例"

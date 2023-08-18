@@ -1124,6 +1124,7 @@
       "document": "ChannelCreateConvertTaskApi请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。",
           "example": "无",
@@ -1134,6 +1135,7 @@
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "资源类型 支持doc,docx,html,xls,xlsx,jpg,jpeg,png,bmp文件类型",
           "example": "无",
@@ -1144,6 +1146,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "资源名称，长度限制为256字符",
           "example": "无",
@@ -1154,8 +1157,9 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
-          "document": "资源Id，通过UploadFiles获取",
+          "document": "文件Id，通过UploadFiles获取",
           "example": "无",
           "is_base64": false,
           "member": "string",
@@ -1164,6 +1168,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": true,
           "document": "调用方用户信息，不用传",
           "example": "无",
@@ -1174,6 +1179,7 @@
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": true,
           "document": "暂未开放",
           "example": "无",
@@ -1527,45 +1533,66 @@
       "document": "ChannelCreateFlowGroupByFiles请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "每个子合同的发起所需的信息，数量限制2-50",
           "example": "无",
+          "is_base64": false,
           "member": "FlowFileInfo",
           "name": "FlowFileInfos",
           "required": true,
           "type": "list"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "合同组名称，长度不超过200个字符",
           "example": "\"xxx\"",
+          "is_base64": false,
           "member": "string",
           "name": "FlowGroupName",
           "required": true,
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。",
           "example": "无",
+          "is_base64": false,
           "member": "Agent",
           "name": "Agent",
           "required": false,
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "签署人校验方式\nVerifyCheck: 人脸识别（默认）\nMobileCheck：手机号验证\n参数说明：若选择后者，未实名的个人签署方查看合同时，无需进行人脸识别实名认证（但签署合同时仍然需要人脸实名），该能力仅适用于个人签署方。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "ApproverVerifyType",
           "required": false,
           "type": "string"
         },
         {
+          "Reference": [],
+          "disabled": false,
+          "document": "合同组的配置项信息包括：在合同组签署过程中，是否需要对每个子合同进行独立的意愿确认。",
+          "example": "无",
+          "is_base64": false,
+          "member": "FlowGroupOptions",
+          "name": "FlowGroupOptions",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "Reference": [],
           "disabled": true,
           "document": "操作者的信息，此参数不用传",
           "example": "无",
+          "is_base64": false,
           "member": "UserInfo",
           "name": "Operator",
           "required": false,
@@ -2084,6 +2111,7 @@
       "document": "ChannelCreatePrepareFlow请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "资源id，与ResourceType对应",
           "example": "无",
@@ -2094,6 +2122,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "资源类型，1：模板，目前仅支持模板，与ResourceId对应",
           "example": "无",
@@ -2104,6 +2133,7 @@
           "type": "int"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "合同流程基础信息",
           "example": "无",
@@ -2114,6 +2144,7 @@
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填",
           "example": "无",
@@ -2124,6 +2155,7 @@
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "合同流程配置信息，用于配置发起合同时定制化",
           "example": "无",
@@ -2134,6 +2166,7 @@
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "合同签署人信息",
           "example": "无",
@@ -2144,6 +2177,7 @@
           "type": "list"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "通过flowid快速获得之前成功通过页面发起的合同生成链接",
           "example": "无",
@@ -2154,6 +2188,7 @@
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": true,
           "document": "该参数不可用，请通过获取 web 可嵌入接口获取合同流程预览 URL",
           "example": "无",
@@ -2164,6 +2199,7 @@
           "type": "bool"
         },
         {
+          "Reference": [],
           "disabled": true,
           "document": "企业机构信息，不用传",
           "example": "无",
@@ -2174,6 +2210,7 @@
           "type": "object"
         },
         {
+          "Reference": [],
           "disabled": true,
           "document": "操作人（用户）信息，不用传",
           "example": "无",
@@ -2191,7 +2228,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "预发起的合同链接",
+          "document": "预发起的合同链接， 可以直接点击进入进行合同发起",
           "example": "无",
           "member": "string",
           "name": "PrepareFlowUrl",
@@ -2201,7 +2238,7 @@
         },
         {
           "disabled": false,
-          "document": "合同发起后预览链接",
+          "document": "合同发起后预览链接， 注意此时合同并未发起，仅只是展示效果",
           "example": "无",
           "member": "string",
           "name": "PreviewFlowUrl",
@@ -6215,6 +6252,30 @@
           "example": "flase",
           "member": "bool",
           "name": "NeedSignReview",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
+    },
+    "FlowGroupOptions": {
+      "document": "合同组的配置项信息包括：在合同组签署过程中，是否需要对每个子合同进行独立的意愿确认。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发起方企业经办人（即签署人为发起方企业员工）是否需要对子合同进行独立的意愿确认：\nfasle：发起方企业经办人签署时对所有子合同进行统一的意愿确认\ntrue：发起方企业经办人签署时需要对子合同进行独立的意愿确认\n默认为fasle。",
+          "example": "fasle",
+          "member": "bool",
+          "name": "SelfOrganizationApproverSignEach",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "非发起方企业经办人（即：签署人为个人或者不为发起方企业的员工）是否需要对子合同进行独立的意愿确认：\nfasle：非发起方企业经办人签署时对所有子合同进行统一的意愿确认\ntrue：非发起方企业经办人签署时需要对子合同进行独立的意愿确认\n默认为false。",
+          "example": "fasle",
+          "member": "bool",
+          "name": "OtherApproverSignEach",
           "required": false,
           "type": "bool"
         }

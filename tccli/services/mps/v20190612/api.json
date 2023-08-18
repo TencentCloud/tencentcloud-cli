@@ -1285,70 +1285,84 @@
       "document": "对视频转自适应码流的输入参数类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "转自适应码流模板 ID。",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "Definition",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印列表，支持多张图片或文字水印，最大可支持 10 张。",
-          "example": "",
+          "example": "无",
           "member": "WatermarkInput",
           "name": "WatermarkSet",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转自适应码流后文件的目标存储，不填则继承上层的 OutputStorage 值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转自适应码流后，manifest 文件的输出路径，可以为相对路径或者绝对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}.{format}`。",
-          "example": "",
+          "example": "{inputName}_adaptiveDynamicStreaming_{definition}.{format}",
+          "is_base64": false,
           "member": "string",
           "name": "OutputObjectPath",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转自适应码流后，子流文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}.{format}`。",
-          "example": "",
+          "example": "{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}.{format}",
+          "is_base64": false,
           "member": "string",
           "name": "SubStreamObjectName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转自适应码流（仅 HLS）后，分片文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}_{segmentNumber}.{format}`。",
-          "example": "",
+          "example": "{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}_{segmentNumber}.{format}",
+          "is_base64": false,
           "member": "string",
           "name": "SegmentObjectName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "要插入的字幕文件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AddOnSubtitle",
+          "name": "AddOnSubtitles",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1515,6 +1529,35 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AddOnSubtitle": {
+      "document": "外挂字幕。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "插入形式，可选值：\n<li>subtitle-stream：插入字幕轨道</li>\n<li>close-caption：编码到SEI帧</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "is_base64": false,
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字幕文件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MediaInputInfo",
+          "name": "Subtitle",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -16178,7 +16221,7 @@
           "example": "8000",
           "member": "int64",
           "name": "Bitrate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16188,7 +16231,7 @@
           "example": "8000",
           "member": "int64",
           "name": "SamplingRate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16198,7 +16241,7 @@
           "example": "aac",
           "member": "string",
           "name": "Codec",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16208,7 +16251,7 @@
           "example": "2",
           "member": "int64",
           "name": "Channel",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -16218,7 +16261,7 @@
           "example": "mp4a.40.2",
           "member": "string",
           "name": "Codecs",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16228,7 +16271,7 @@
           "example": "无",
           "member": "float",
           "name": "Loudness",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         }
@@ -17792,7 +17835,7 @@
           "example": "100000",
           "member": "int64",
           "name": "Bitrate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17802,7 +17845,7 @@
           "example": "1920",
           "member": "int64",
           "name": "Height",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17812,7 +17855,7 @@
           "example": "1080",
           "member": "int64",
           "name": "Width",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17822,7 +17865,7 @@
           "example": "h264",
           "member": "string",
           "name": "Codec",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17832,7 +17875,7 @@
           "example": "30",
           "member": "int64",
           "name": "Fps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17842,7 +17885,7 @@
           "example": "bt470bg",
           "member": "string",
           "name": "ColorPrimaries",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17852,7 +17895,7 @@
           "example": "gbr",
           "member": "string",
           "name": "ColorSpace",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17862,7 +17905,7 @@
           "example": "bt709",
           "member": "string",
           "name": "ColorTransfer",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17872,7 +17915,7 @@
           "example": "sdr",
           "member": "string",
           "name": "HdrType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17882,7 +17925,7 @@
           "example": "avc1.ffe100",
           "member": "string",
           "name": "Codecs",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -19876,6 +19919,7 @@
           "disabled": false,
           "document": "封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a。其中，mp3、flac、ogg、m4a 为纯音频文件。",
           "example": "mp4",
+          "is_base64": false,
           "member": "string",
           "name": "Container",
           "output_required": true,
@@ -19964,11 +20008,23 @@
           "disabled": false,
           "document": "转码扩展字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
+          "is_base64": false,
           "member": "string",
           "name": "StdExtInfo",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "要插入的字幕文件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AddOnSubtitle",
+          "name": "AddOnSubtitles",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -22022,46 +22078,54 @@
       "members": [
         {
           "disabled": false,
-          "document": "S3 bucket。",
+          "document": "S3 bucket。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
+          "is_base64": false,
           "member": "string",
           "name": "S3Bucket",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "S3 bucket 对应的区域。",
+          "document": "S3 bucket 对应的区域。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-southeast-1",
+          "is_base64": false,
           "member": "string",
           "name": "S3Region",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "AWS 内网上传 媒体资源的秘钥id。",
+          "document": "AWS 内网上传 媒体资源的秘钥id。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
+          "is_base64": false,
           "member": "string",
           "name": "S3SecretId",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "AWS 内网上传 媒体资源的秘钥key。",
+          "document": "AWS 内网上传 媒体资源的秘钥key。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
+          "is_base64": false,
           "member": "string",
           "name": "S3SecretKey",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "SRTAddressDestination": {
       "document": "转推的目标地址信息。",

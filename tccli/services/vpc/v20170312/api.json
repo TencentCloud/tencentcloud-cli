@@ -10479,27 +10479,33 @@
       "document": "DescribeAddressTemplateGroups请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "过滤条件。\n<li>address-template-group-name - String - （过滤条件）IP地址模板集合名称。</li>\n<li>address-template-group-id - String - （过滤条件）IP地址模板实集合例ID，例如：ipmg-mdunqeb6。</li>",
           "example": "无",
+          "is_base64": false,
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "1",
+          "is_base64": false,
           "member": "string",
           "name": "Offset",
           "required": false,
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
+          "is_base64": false,
           "member": "string",
           "name": "Limit",
           "required": false,
@@ -10517,6 +10523,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10526,6 +10533,7 @@
           "example": "无",
           "member": "AddressTemplateGroup",
           "name": "AddressTemplateGroupSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10542,27 +10550,33 @@
       "document": "DescribeAddressTemplates请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "过滤条件。\n<li>address-template-name - IP地址模板名称。</li>\n<li>address-template-id - IP地址模板实例ID，例如：ipm-mdunqeb6。</li>\n<li>address-ip - IP地址。</li>",
           "example": "无",
+          "is_base64": false,
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
+          "is_base64": false,
           "member": "string",
           "name": "Offset",
           "required": false,
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
+          "is_base64": false,
           "member": "string",
           "name": "Limit",
           "required": false,
@@ -10580,6 +10594,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10589,6 +10604,7 @@
           "example": "无",
           "member": "AddressTemplate",
           "name": "AddressTemplateSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14046,27 +14062,33 @@
       "document": "DescribeServiceTemplateGroups请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "过滤条件。\n<li>service-template-group-name - String - （过滤条件）协议端口模板集合名称。</li>\n<li>service-template-group-id - String - （过滤条件）协议端口模板集合实例ID，例如：ppmg-e6dy460g。</li>",
           "example": "{\"Name\":\"service-template-group-name\",\"Value\":\"TestName\"}",
+          "is_base64": false,
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
+          "is_base64": false,
           "member": "string",
           "name": "Offset",
           "required": false,
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
+          "is_base64": false,
           "member": "string",
           "name": "Limit",
           "required": false,
@@ -14084,6 +14106,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14093,6 +14116,7 @@
           "example": "[{\"ServiceTemplateGroupName\":\"TestName\",\"ServiceTemplateGroupId\":\"ppmg-2klmrefu\",\"ServiceTemplateIdSet\":[\"ppm-529nwwj8\"],\"ServiceTemplateSet\":[{\"ServiceTemplateId\":\"ppm-529nwwj8\",\"ServiceTemplateName\":\"test\"}],\"CreatedTime\":\"2018-04-03 22:05:32\"}]",
           "member": "ServiceTemplateGroup",
           "name": "ServiceTemplateGroupSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14109,27 +14133,33 @@
       "document": "DescribeServiceTemplates请求参数结构体",
       "members": [
         {
+          "Reference": [],
           "disabled": false,
           "document": "过滤条件。\n<li>service-template-name - 协议端口模板名称。</li>\n<li>service-template-id - 协议端口模板实例ID，例如：ppm-e6dy460g。</li>\n<li>service-port- 协议端口。</li>",
           "example": "无",
+          "is_base64": false,
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
+          "is_base64": false,
           "member": "string",
           "name": "Offset",
           "required": false,
           "type": "string"
         },
         {
+          "Reference": [],
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
-          "example": "2",
+          "example": "20",
+          "is_base64": false,
           "member": "string",
           "name": "Limit",
           "required": false,
@@ -14147,6 +14177,7 @@
           "example": "8",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14156,6 +14187,7 @@
           "example": "无",
           "member": "ServiceTemplate",
           "name": "ServiceTemplateSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15242,10 +15274,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "白名单对象数组。",
+          "document": "白名单对象数组。已废弃",
           "example": "无",
           "member": "VpcEndPointServiceUser",
           "name": "VpcEndpointServiceUserSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "白名单对象数组。",
+          "example": "无",
+          "member": "VpcEndPointServiceUser",
+          "name": "VpcEndPointServiceUserSet",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15255,6 +15298,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

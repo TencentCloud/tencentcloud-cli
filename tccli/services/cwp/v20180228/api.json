@@ -19450,7 +19450,6 @@
       "document": "DescribeLicenseBindList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "授权ID",
           "example": "1",
@@ -19460,7 +19459,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权类型",
           "example": "0",
@@ -19470,7 +19468,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "example": "''",
@@ -19480,9 +19477,8 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
-          "document": "<li>Keywords 机器别名/公私IP 模糊查询</li>",
+          "document": "<li>InstanceID、IP、\n\nMachineName 模糊查询</li>",
           "example": "[]",
           "member": "Filters",
           "name": "Filters",
@@ -19490,7 +19486,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制条数,默认10.",
           "example": "10",
@@ -19500,7 +19495,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量,默认0.",
           "example": "0",
@@ -19521,7 +19515,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19531,7 +19525,7 @@
           "example": "[]",
           "member": "LicenseBindDetail",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

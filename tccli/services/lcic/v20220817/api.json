@@ -147,6 +147,13 @@
       "output": "DeleteSupervisorResponse",
       "status": "online"
     },
+    "DeleteUser": {
+      "document": "删除已注册用户。注：如果该成员已被添加到群组，请先在群组中删除该成员。",
+      "input": "DeleteUserRequest",
+      "name": "删除用户",
+      "output": "DeleteUserResponse",
+      "status": "online"
+    },
     "DescribeAnswerList": {
       "document": "获取房间答题详情",
       "input": "DescribeAnswerListRequest",
@@ -1866,6 +1873,35 @@
     },
     "DeleteSupervisorResponse": {
       "document": "DeleteSupervisor返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserRequest": {
+      "document": "DeleteUser请求参数结构体",
+      "members": [
+        {
+          "Reference": [],
+          "disabled": false,
+          "document": "待删除用户的ID",
+          "example": "abc",
+          "is_base64": false,
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserResponse": {
+      "document": "DeleteUser返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
