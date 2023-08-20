@@ -2734,7 +2734,7 @@
           "example": "topic-gzz05csc",
           "member": "string",
           "name": "TopicId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

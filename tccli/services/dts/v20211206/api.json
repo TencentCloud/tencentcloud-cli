@@ -196,6 +196,13 @@
       "output": "ModifyMigrateNameResponse",
       "status": "online"
     },
+    "ModifyMigrateRateLimit": {
+      "document": "用户在发现迁移任务对用户的数据库的负载影响较大时、可通过该接口限制任务的传输速率",
+      "input": "ModifyMigrateRateLimitRequest",
+      "name": "修改迁移任务的传输速率",
+      "output": "ModifyMigrateRateLimitResponse",
+      "status": "online"
+    },
     "ModifyMigrationJob": {
       "document": "配置迁移服务，配置成功后可通过`CreateMigrationCheckJob` 创建迁移校验任务接口发起校验任务，只有校验通过才能启动迁移任务。",
       "input": "ModifyMigrationJobRequest",
@@ -208,6 +215,13 @@
       "input": "ModifySyncJobConfigRequest",
       "name": "修改同步任务配置",
       "output": "ModifySyncJobConfigResponse",
+      "status": "online"
+    },
+    "ModifySyncRateLimit": {
+      "document": "用户在发现同步任务对用户的数据库的负载影响较大时、可通过该接口限制任务的传输速率",
+      "input": "ModifySyncRateLimitRequest",
+      "name": "修改同步任务的传输速率",
+      "output": "ModifySyncRateLimitResponse",
       "status": "online"
     },
     "PauseMigrateJob": {
@@ -4996,6 +5010,78 @@
       ],
       "type": "object"
     },
+    "ModifyMigrateRateLimitRequest": {
+      "document": "ModifyMigrateRateLimit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "迁移任务ID",
+          "example": "dts-saasxa",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "迁移任务全量导出线程数、有效值为 1-16",
+          "example": "8",
+          "member": "int64",
+          "name": "DumpThread",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "迁移全量导出的 Rps 限制、需要大于 0",
+          "example": "400000",
+          "member": "int64",
+          "name": "DumpRps",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "迁移任务全量导入线程数、有效值为 1-16",
+          "example": "8",
+          "member": "int64",
+          "name": "LoadThread",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "迁移任务增量导入线程数、有效值为 1-128",
+          "example": "32",
+          "member": "int64",
+          "name": "SinkerThread",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "全量导入Rps限制",
+          "example": "400000",
+          "member": "int64",
+          "name": "LoadRps",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMigrateRateLimitResponse": {
+      "document": "ModifyMigrateRateLimit返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyMigrationJobRequest": {
       "document": "ModifyMigrationJob请求参数结构体",
       "members": [
@@ -5130,6 +5216,78 @@
     },
     "ModifySyncJobConfigResponse": {
       "document": "ModifySyncJobConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySyncRateLimitRequest": {
+      "document": "ModifySyncRateLimit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "迁移任务ID",
+          "example": "dts-saasxa",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同步任务全量导出线程数、有效值为 1-16",
+          "example": "8",
+          "member": "int64",
+          "name": "DumpThread",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "同步任务全量导出的 Rps 限制、需要大于 0",
+          "example": "20000",
+          "member": "int64",
+          "name": "DumpRps",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "同步任务全量导入线程数、有效值为 1-16",
+          "example": "8",
+          "member": "int64",
+          "name": "LoadThread",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "同步任务增量导入线程数、有效值为 1-128",
+          "example": "32",
+          "member": "int64",
+          "name": "SinkerThread",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "同步任务全量导入的Rps",
+          "example": "8",
+          "member": "int64",
+          "name": "LoadRps",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySyncRateLimitResponse": {
+      "document": "ModifySyncRateLimit返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

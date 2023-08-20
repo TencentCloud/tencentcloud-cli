@@ -3082,26 +3082,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "启发式自定义时间缓存配置开关，取值有：\non：开启\noff：关闭",
+          "document": "启发式自定义时间缓存配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on",
           "member": "string",
           "name": "HeuristicCacheTimeSwitch",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "单位 秒.",
+          "document": "单位 秒.\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "HeuristicCacheTime",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "CacheConfigCache": {
       "document": "路径缓存缓存配置",
@@ -9918,26 +9920,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "启发式缓存配置开关，取值有：\non：开启\noff：关闭",
+          "document": "启发式缓存配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on",
           "member": "string",
           "name": "Switch",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "自定义启发式缓存时间配置",
+          "document": "自定义启发式缓存时间配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CacheConfig",
           "name": "CacheConfig",
+          "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "Hsts": {
       "document": "HSTS 配置。",

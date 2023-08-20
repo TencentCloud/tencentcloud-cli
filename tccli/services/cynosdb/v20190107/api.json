@@ -9807,7 +9807,7 @@
           "example": "无",
           "member": "BillingResourceInfo",
           "name": "BillingResourceInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14797,7 +14797,7 @@
           "example": "无",
           "member": "string",
           "name": "ProxyNodeId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14807,7 +14807,7 @@
           "example": "无",
           "member": "int64",
           "name": "ProxyNodeConnections",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14817,7 +14817,7 @@
           "example": "无",
           "member": "int64",
           "name": "Cpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14827,7 +14827,7 @@
           "example": "无",
           "member": "int64",
           "name": "Mem",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14837,7 +14837,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14847,7 +14847,7 @@
           "example": "无",
           "member": "string",
           "name": "ProxyGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14857,7 +14857,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14867,7 +14867,7 @@
           "example": "无",
           "member": "int64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14877,7 +14877,7 @@
           "example": "无",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14887,7 +14887,17 @@
           "example": "无",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库代理节点名字",
+          "example": "无",
+          "member": "string",
+          "name": "OssProxyNodeName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

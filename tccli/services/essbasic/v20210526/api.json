@@ -246,9 +246,9 @@
       "status": "online"
     },
     "CreateConsoleLoginUrl": {
-      "document": "此接口（CreateConsoleLoginUrl）用于创建第三方平台子客企业控制台Web/移动登录链接。登录链接是子客控制台的唯一入口。\n若子客企业未激活，会进入企业激活流程，首次参与激活流程的经办人会成为超管。（若企业激活过程中填写信息有误，需要重置激活流程，可以换一个经办人OpenId获取新的链接进入。）\n若子客企业已激活，使用了新的经办人OpenId进入，则会进入经办人的实名流程。\n若子客企业、经办人均已完成认证，则会直接进入子客Web控制台。",
+      "document": "此接口（CreateConsoleLoginUrl）用于创建第三方平台子客企业控制台Web/移动登录链接。支持web控制台、电子签小程序和H5链接。登录链接是进入子客控制台的唯一入口。\n链接访问后，会根据企业的和员工的状态（企业根据ProxyOrganizationOpenId参数，员工根据OpenId参数判断），进入不同的流程，主要情况分类如下：\n1. 若子客企业未激活，会进入企业激活流程，首次参与激活流程的经办人会成为超管。\n2. 若子客企业已激活，员工未激活，则会进入经办人激活流程。\n3. 若子客企业、经办人均已完成认证，则会直接进入子客Web控制台。\n\n如果是企业激活流程，需要注意如下情况：\n\n1. 若在激活过程中，更换用户OpenID重新生成链接，之前的认证会被清理。因此不要在认证过程中多人同时操作，导致认证过程互相影响。\n2. 若您认证中发现信息有误需要重新认证，可以通过更换OpenID重新生成链接的方式，来清理掉已有的流程。",
       "input": "CreateConsoleLoginUrlRequest",
-      "name": "生成控制台、移动端链接",
+      "name": "生成子客登录链接",
       "output": "CreateConsoleLoginUrlResponse",
       "status": "online"
     },
@@ -344,7 +344,7 @@
       "status": "online"
     },
     "SyncProxyOrganization": {
-      "document": "此接口（SyncProxyOrganization）用于同步第三方平台子客企业信息，主要是子客企业的营业执照，便于子客企业开通过程中不用手动上传。若有需要调用此接口，需要在创建控制链接CreateConsoleLoginUrl之后即刻进行调用。",
+      "document": "此接口（SyncProxyOrganization）用于同步第三方平台子客企业信息，包括企业名称，企业营业执照，企业统一社会信用代码和法人姓名等，便于子客企业在企业激活过程中无需手动上传营业执照或补充企业信息。注意：\n1. 需要在子客企业激活前调用该接口，如果您的企业已经提交企业信息或者企业已经激活，同步的企业信息将不会生效。\n2. 如果您同时传递了营业执照信息和企业名称等信息，在认证过程中将以营业执照中的企业信息为准，请注意企业信息需要和营业执照信息对应。",
       "input": "SyncProxyOrganizationRequest",
       "name": "同步企业信息",
       "output": "SyncProxyOrganizationResponse",
@@ -4094,7 +4094,7 @@
         },
         {
           "disabled": false,
-          "document": "子客企业名称，最大长度64个字符",
+          "document": "子客企业名称，最大长度64个字符\n注意：\n1、如果您的企业已经在认证授权中或者激活完成，这里修改子客企业名字将不会生效。\n2、该名称需要与Agent.ProxyOrganizationOpenId相匹配。",
           "example": "无",
           "member": "string",
           "name": "ProxyOrganizationName",
@@ -4103,34 +4103,7 @@
         },
         {
           "disabled": false,
-          "document": "子客企业经办人的姓名，最大长度50个字符",
-          "example": "无",
-          "member": "string",
-          "name": "ProxyOperatorName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "PC控制台指定模块，文件/合同管理:\"DOCUMENT\"，模板管理:\"TEMPLATE\"，印章管理:\"SEAL\"，组织架构/人员:\"OPERATOR\"，空字符串：\"账号信息\"。 EndPoint为\"CHANNEL\"/\"APP\"只支持\"SEAL\"-印章管理",
-          "example": "无",
-          "member": "string",
-          "name": "Module",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "控制台指定模块Id",
-          "example": "无",
-          "member": "string",
-          "name": "ModuleId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "子客企业统一社会信用代码，最大长度200个字符",
+          "document": "子客企业统一社会信用代码，最大长度200个字符\n注意：\n1、如果您的企业已经在认证授权中或者激活完成，这里修改子客企业名字将不会生效。",
           "example": "无",
           "member": "string",
           "name": "UniformSocialCreditCode",
@@ -4139,7 +4112,34 @@
         },
         {
           "disabled": false,
-          "document": "是否展示左侧菜单栏 是：ENABLE（默认） 否：DISABLE",
+          "document": "子客企业经办人的姓名，最大长度50个字符\n注意：\n1、若经办人已经实名，这里修改经办人名字传入将不会生效。\n2、该名称需要和Agent. ProxyOperator.OpenId相匹配",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyOperatorName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "PC控制台登录后进入该参数指定的模块，如果不传递，将默认进入控制台首页。支持的模块包括：\n1、DOCUMENT:合同管理模块，\n2、TEMPLATE:企业模板管理模块，\n3、SEAL:印章管理模块，\n4、OPERATOR:组织管理模块，\n默认将进入企业中心模块\n注意：\n1、如果EndPoint选择\"CHANNEL\"或\"APP\"，该参数仅支持传递\"SEAL\"，进入印章管理模块\n2、该参数仅在企业和员工激活完成，登录控制台场景才生效。",
+          "example": "无",
+          "member": "string",
+          "name": "Module",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "该参数和Module参数配合使用，用于指定模块下的资源Id，指定后链接登录将展示该资源的详情。\n根据Module参数的不同所代表的含义不同。当前支持：\n1、如果Module=\"SEAL\"，ModuleId代表印章Id, 登录链接将直接查看指定印章的详情。\n2、如果Module=\"TEMPLATE\"，ModuleId代表模版Id，登录链接将直接查看指定模版的详情。\n3、如果Module=\"1、DOCUMENT\"，ModuleId代表合同Id，登录链接将直接查看指定合同的详情。\n注意：\n1、该参数仅在企业和员工激活完成，登录控制台场景才生效。\n2、ModuleId需要和Module对应，ModuleId可以通过API或者控制台获取到。",
+          "example": "无",
+          "member": "string",
+          "name": "ModuleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否展示左侧菜单栏 \n\"ENABLE\": 是，展示 \n“DISABLE”: 否，不展示\n默认值为ENABLE\n注意：\n1、该参数仅在企业和员工激活完成，登录控制台场景才生效。",
           "example": "无",
           "member": "string",
           "name": "MenuStatus",
@@ -4148,7 +4148,7 @@
         },
         {
           "disabled": false,
-          "document": "链接跳转类型：\"PC\"-PC控制台，“CHANNEL”-H5跳转到电子签小程序；“APP”-第三方APP或小程序跳转电子签小程序，默认为PC控制台",
+          "document": "生成链接的类型：\n\"PC\"：PC控制台链接\n\"CHANNEL\"：H5跳转到电子签小程序链接\n\"APP\"：第三方APP或小程序跳转电子签小程序链接\n默认将生成PC控制台链接",
           "example": "无",
           "member": "string",
           "name": "Endpoint",
@@ -4157,7 +4157,7 @@
         },
         {
           "disabled": false,
-          "document": "触发自动跳转事件，仅对App类型有效，\"VERIFIED\":企业认证完成/员工认证完成后跳回原App/小程序",
+          "document": "触发自动跳转事件，仅对EndPoint为App类型有效，可选值包括：\n\"VERIFIED\":企业认证完成/员工认证完成后跳回原App/小程序",
           "example": "无",
           "member": "string",
           "name": "AutoJumpBackEvent",
@@ -4166,7 +4166,7 @@
         },
         {
           "disabled": false,
-          "document": "支持的授权方式,授权方式: \"1\" - 上传授权书认证  \"2\" - 法定代表人认证",
+          "document": "可选的企业授权方式: \n1：上传授权书 \n2：转法定代表人授权\n4：企业实名认证（信任第三方认证源）（此项仅支持单选）\n未选择信任第三方认证源时，如果是法人进行企业激活，仅支持法人扫脸直接授权，该配置不生效；选择信任第三方认证源时，请先通过“同步企业信息”接口同步信息。\n该参数仅在企业激活场景生效",
           "example": "无",
           "member": "int64",
           "name": "AuthorizationTypes",
@@ -4190,28 +4190,31 @@
       "members": [
         {
           "disabled": false,
-          "document": "子客企业Web控制台url注意事项：\n1. 所有类型的链接在企业未认证/员工未认证完成时，只要在有效期内（一年）都可以访问\n2. 若企业认证完成且员工认证完成后，重新获取pc端的链接5分钟之内有效，且只能访问一次\n3. 若企业认证完成且员工认证完成后，重新获取H5/APP的链接只要在有效期内（一年）都可以访问\n4. 此链接仅单次有效，使用后需要再次创建新的链接（部分聊天软件，如企业微信默认会对链接进行解析，此时需要使用类似“代码片段”的方式或者放到txt文件里发送链接）\n5. 创建的链接应避免被转义，如：&被转义为\\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义",
+          "document": "子客企业Web控制台url注意事项：\n1. 所有类型的链接在企业未认证/员工未认证完成时，只要在有效期内（一年）都可以访问\n2. 若企业认证完成且员工认证完成后，重新获取pc端的链接在5分钟之内有效，且只能访问一次\n3. 若企业认证完成且员工认证完成后，重新获取CHANNEL/APP的链接只要在有效期内（一年）都可以访问\n4. 此链接仅单次有效，每次登录需要需要重新创建新的链接，尽量不要做链接存储，多次使用。\n5. 创建的链接应避免被转义，如：&被转义为\\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义",
           "example": "无",
           "member": "string",
           "name": "ConsoleUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子客企业是否已开通腾讯电子签，true-是，false-否",
+          "document": "子客企业是否已开通腾讯电子签，true-是，false-否\n注意：\n1、企业是否实名根据传参Agent.ProxyOrganizationOpenId进行判断，非企业名称或者社会信用代码",
           "example": "无",
           "member": "bool",
           "name": "IsActivated",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前经办人是否已认证（false:未认证 true:已认证）",
+          "document": "当前经办人是否已认证，true-是，false-否\n注意：\n1、经办人是否实名是根据Agent.ProxyOperator.OpenId判断，非经办人姓名",
           "example": "无",
           "member": "bool",
           "name": "ProxyOperatorIsVerified",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -7831,6 +7834,24 @@
           "name": "Operator",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "第三方平台子客企业法人/负责人证件类型，默认居民身份证（ID_CARD）类型，暂不支持其他类型",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyLegalIdCardType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "第三方平台子客企业法人/负责人证件号",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyLegalIdCardNumber",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

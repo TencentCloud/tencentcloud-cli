@@ -57,8 +57,8 @@
         },
         {
           "disabled": false,
-          "document": "当前文本需要采用的纠错策略。\n目前支持的纠错策略枚举值如下：\n[\n{\n  \"key\":\"symbols\",\n  \"value\":\"\",\n},\n{\n  \"key\":\"word\",\n  \"value\":\"\"\n},\n{\n  \"key\":\"sensitiveNumber\",\n  \"value\":\"gpt\" // 为空默认使用博通ai能力，传递gpt使用gpt ai能力检测\n},\n{\n  \"key\":\"zhErrCharacters\",\n  \"value\":\"\"\n},\n{\n  \"key\":\"link\",\n  \"value\":\"\"\n},\n{\n  \"key\":\"code\",\n  \"value\":\"go\" // 需要检测的编程语言，目前仅支持go,php\n},\n{\n  \"key\":\"blackList\",\n  \"value\":\"阿里云,百度云\"//需要找出的黑名单词汇，使用英文逗号隔开\n},\n]\n}\n]",
-          "example": "[{\"key\":\"zhErrCharacters\",\"value\":\"gpt\"}]",
+          "document": "当前文本需要采用的纠错策略。\n目前支持的纠错策略枚举值如下：\n[\n{\n  \"key\":\"symbols\",\n  \"value\":\"paired,end,repeat\",\n},\n{\n  \"key\":\"word\",\n  \"value\":\"\"\n},\n{\n  \"key\":\"sensitiveNumber\",\n  \"value\":\"\" \n},\n{\n  \"key\":\"zhErrCharacters\",\n  \"value\":\"gpt\" // 为空默认使用博通ai能力，传递gpt使用gpt ai能力检测\n},\n{\n  \"key\":\"link\",\n  \"value\":\"\"\n},\n{\n  \"key\":\"code\",\n  \"value\":\"go\" // 需要检测的编程语言，目前仅支持go,php\n},\n{\n  \"key\":\"blackList\",\n  \"value\":\"阿里云,百度云\"//需要找出的黑名单词汇，使用英文逗号隔开\n}",
+          "example": "当前文本需要采用的纠错策略。 目前支持的纠错策略枚举值如下： [ {   \"Key\":\"symbols\",   \"Value\":\"paired,end,repeat\", }, {   \"Key\":\"word\",   \"Value\":\"\" }, {   \"Key\":\"sensitiveNumber\",   \"Value\":\"\"  }, {   \"Key\":\"zhErrCharacters\",   \"Value\":\"gpt\" // 为空默认使用博通ai能力，传递gpt使用gpt ai能力检测 }, {   \"Key\":\"link\",   \"Value\":\"\" }, {   \"Key\":\"code\",   \"Value\":\"go\" // 需要检测的编程语言，目前仅支持go,php }, {   \"Key\":\"blackList\",   \"Value\":\"阿里云,百度云\"//需要找出的黑名单词汇，使用英文逗号隔开 }, ]",
           "member": "ScanPolicy",
           "name": "ScanPolicy",
           "required": true,
@@ -73,9 +73,10 @@
         {
           "disabled": false,
           "document": "纠错接口返回的错误列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"offset\":5,\"len\":1,\"wrongSegment\":\"茶\",\"correct\":\"查\",\"type\":\"zhErrCharacters\",\"typeDesc\":\"错别字\"}]",
+          "example": "[{\"Offset\":5,\"Len\":1,\"WrongSegment\":\"茶\",\"Correct\":\"查\",\"Policy\":\"zhErrCharacters\",\"PolicyDesc\":\"错别字\"}]",
           "member": "WrongSegmentInfo",
           "name": "List",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -559,13 +560,21 @@
       "members": [
         {
           "disabled": false,
+          "document": "目前支持的策略Key包括：\nsymbols：标点符号\nword：单词拼写\nsensitiveNumber：敏感数字\nzhErrCharacters：错别字\nlink：链接\ncode：代码\nblackList：黑名单",
+          "example": "zhErrCharacters",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "策略需要的额外信息，比如\nzhErrCharacters错别字检查同时支持chatgpt和botong两种方式检查，用户可根据自行需要选择采用",
           "example": "gpt",
           "member": "string",
           "name": "Value",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         }
       ],
       "usage": "in"
