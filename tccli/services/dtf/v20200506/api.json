@@ -19,7 +19,6 @@
       "document": "DescribeTransactions请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "事务分组ID",
           "example": "group-qy9484ln",
           "member": "string",
@@ -28,7 +27,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "事务开始时间查询起始时间戳，UTC，精确到毫秒",
           "example": "1618555374569",
           "member": "int64",
@@ -37,7 +35,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "事务开始时间查询截止时间戳，UTC，精确到毫秒",
           "example": "1618555374569",
           "member": "int64",
@@ -46,7 +43,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "仅查询异常状态的事务，true：仅查询异常，false或不传入：查询所有",
           "example": "true",
           "member": "bool",
@@ -55,7 +51,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "主事务ID，不传入时查询全量，高优先级",
           "example": "1212121",
           "member": "int64",
@@ -64,7 +59,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "主事务ID列表，不传入时查询全量，低优先级",
           "example": "[112121, 121212]",
           "member": "int64",
@@ -73,7 +67,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "每页数量",
           "example": "0",
           "member": "int64",
@@ -82,7 +75,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "起始偏移量",
           "example": "20",
           "member": "int64",
@@ -118,7 +110,6 @@
       "document": "分页主事务",
       "members": [
         {
-          "default": "",
           "document": "总条数，特定在该接口中总是会返回null\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "TotalCount",
@@ -127,7 +118,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "主事务分组列表",
           "member": "Transaction",
           "name": "Content",
@@ -142,7 +132,6 @@
       "document": "主事务",
       "members": [
         {
-          "default": "",
           "document": "主事务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123123123",
           "member": "int64",
@@ -152,7 +141,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "主事务开始时间戳，UTC，精确到毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1618555940814",
           "member": "int64",
@@ -162,7 +150,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "主事务结束时间戳，UTC，精确到毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1618555940814",
           "member": "int64",
@@ -172,7 +159,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "主事务提交时间戳，UTC，精确到毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1618555940814",
           "member": "int64",
@@ -182,7 +168,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "主事务回滚时间戳，UTC，精确到毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1618555940814",
           "member": "int64",
@@ -192,7 +177,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "主事务异常停止时间戳，UTC，精确到毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1618555940814",
           "member": "int64",
@@ -202,7 +186,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "主事务超时时长，单位毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "60000",
           "member": "int64",
@@ -212,7 +195,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "主事务状态：0:Trying, 1:Confirming, 2: Confirmed, 3:Canceling, 4: Canceled\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
@@ -222,7 +204,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "主事务结束标识：0:运行中, 1: 已结束\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -232,7 +213,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "主事务超时标识：0:运行中, 1: 已超时\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
@@ -242,7 +222,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
@@ -252,7 +231,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "事务分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "group-x3wsdh94",
           "member": "string",
@@ -262,7 +240,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "主事务来源服务标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "spring-boot-account",
           "member": "string",
@@ -272,7 +249,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "分支事务数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
           "member": "int64",
@@ -282,7 +258,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "重试标识：true：可以重试；false：不可重试\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",

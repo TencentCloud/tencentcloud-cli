@@ -229,7 +229,6 @@
       "document": "Album",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专辑名",
           "example": "",
@@ -240,7 +239,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专辑图片大小及类别\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -257,7 +255,6 @@
       "document": "用户license基础信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用名称，注：后面三个字段AndroidPackageName、IOSBundleId、PcIdentifier，三者选填一个",
           "example": "无",
@@ -268,7 +265,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的安卓包名",
           "example": "无",
@@ -279,7 +275,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的IOS的BundleId名",
           "example": "无",
@@ -290,7 +285,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "PC标识名",
           "example": "无",
@@ -307,7 +301,6 @@
       "document": "Artist",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌手名",
           "example": "",
@@ -324,7 +317,6 @@
       "document": "AuthInfo集合",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主体名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -335,7 +327,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -346,7 +337,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用场景",
           "example": "",
@@ -357,7 +347,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用地域",
           "example": "",
@@ -368,7 +357,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权时间",
           "example": "",
@@ -379,7 +367,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否可商业化",
           "example": "",
@@ -390,7 +377,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否可跨平台",
           "example": "",
@@ -401,7 +387,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加密后Id",
           "example": "",
@@ -418,7 +403,6 @@
       "document": "BatchDescribeKTVMusicDetails请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲Id列表，注：列表最大长度为50",
           "example": "无",
@@ -466,7 +450,6 @@
       "document": "副歌片段信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "副歌时间，单位：毫秒",
           "example": "无",
@@ -477,7 +460,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "副歌结束时间，单位：毫秒",
           "example": "无",
@@ -494,7 +476,6 @@
       "document": "CreateKTVRobot请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "RTC厂商类型，取值有：\n<li>TRTC</li>",
           "example": "TRTC",
@@ -504,7 +485,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "进房参数。",
           "example": "无",
@@ -514,7 +494,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "license基础信息",
           "example": "无",
@@ -524,7 +503,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建机器人时初始化参数。",
           "example": "无",
@@ -562,7 +540,6 @@
       "document": "数据信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Song Name",
           "example": "无",
@@ -573,7 +550,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲版本",
           "example": "无",
@@ -584,7 +560,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲总时长（非试听时长）",
           "example": "无",
@@ -595,7 +570,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "试听开始时间",
           "example": "无",
@@ -606,7 +580,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "试听结束时间",
           "example": "无",
@@ -617,7 +590,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签名称",
           "example": "无",
@@ -634,7 +606,6 @@
       "document": "DescribeAuthInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量：Offset=Offset+Limit",
           "example": "",
@@ -644,7 +615,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据条数",
           "example": "",
@@ -654,7 +624,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索关键字",
           "example": "",
@@ -700,7 +669,6 @@
       "document": "DescribeCloudMusicPurchased请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "授权项目Id",
           "example": "xx",
@@ -738,7 +706,6 @@
       "document": "DescribeCloudMusic请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲Id",
           "example": "xxx",
@@ -748,7 +715,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲类型，可选值有：\n<li>MP3-128K-FTW：含有水印的试听资源；</li>\n<li>MP3-320K-FTD-P：320kbps歌曲热门片段；</li>\n<li>MP3-320K-FTD：320kbps已核验歌曲完整资源。</li>\n默认为：MP3-128K-FTW",
           "example": "MP3-320K-FTD-P",
@@ -836,7 +802,6 @@
       "document": "DescribeItemById请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲ID，目前暂不支持批量查询",
           "example": "",
@@ -873,7 +838,6 @@
       "document": "DescribeItems请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "offset (Default = 0)，(当前页-1) * Limit",
           "example": "",
@@ -883,7 +847,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "条数，必须大于0，最大值为30",
           "example": "",
@@ -893,7 +856,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从<a href=\"https://cloud.tencent.com/document/product/1155/40109\">获取分类内容（Station）列表接口</a>中获取。",
           "example": "",
@@ -903,7 +865,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（电台/歌单）ID，CategoryId和CategoryCode两个必传1个，可以从<a href=\"https://cloud.tencent.com/document/product/1155/40109\">获取分类内容（Station）列表接口</a>中获取。",
           "example": "",
@@ -976,7 +937,6 @@
       "document": "DescribeKTVMusicDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "曲目 Id",
           "example": "\"\"",
@@ -1101,7 +1061,6 @@
       "document": "DescribeKTVPlaylistDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌单Id",
           "example": "无",
@@ -1111,7 +1070,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。",
           "example": "10",
@@ -1121,7 +1079,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回的记录条数，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。",
           "example": "10",
@@ -1169,7 +1126,6 @@
       "document": "DescribeKTVPlaylists请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌单类型，取值有：\n·OfficialRec：官方推荐\n·Normal：自定义\n当该字段未填时，默认为取OfficialRec",
           "example": "1",
@@ -1179,7 +1135,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。\n取值范围：Offset + Limit 不超过5000",
           "example": "10",
@@ -1189,7 +1144,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回的记录条数，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。\n取值范围：Offset + Limit 不超过5000",
           "example": "100",
@@ -1237,7 +1191,6 @@
       "document": "DescribeKTVRobots请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机器人Id列表。",
           "example": "ame-xxxxx",
@@ -1247,7 +1200,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器人状态，取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>Destroy：销毁</li>",
           "example": "Play",
@@ -1257,7 +1209,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "匹配创建时间在此时间段内的机器人。\n<li>包含所指定的头尾时间点。</li>",
           "example": "无",
@@ -1267,7 +1218,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。",
           "example": "0",
@@ -1277,7 +1227,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回的起始偏移量，默认值：10。",
           "example": "10",
@@ -1362,7 +1311,6 @@
       "document": "DescribeKTVSingerMusics请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌手id",
           "example": "无",
@@ -1372,7 +1320,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，默认值：0。",
           "example": "0",
@@ -1382,7 +1329,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回的记录条数，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。",
           "example": "10",
@@ -1430,7 +1376,6 @@
       "document": "DescribeKTVSingers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌手id集合，精确匹配歌手id\n<li> 数组长度限制10</li>",
           "example": "无",
@@ -1440,7 +1385,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌手性别集合，不传为全部，精确匹配歌手性别类型，\n<li>数组长度限制1</li>\n<li>取值范围：直播互动曲库歌手分类信息接口，返回性别分类信息列表中，分类英文名</li>",
           "example": "无",
@@ -1450,7 +1394,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌手区域集合，不传为全部，精确匹配歌手区域\n<li>数组长度限制10</li>\n<li>取值范围：直播互动曲库歌手分类信息接口，返回的区域分类信息列表中，分类英文名</li>",
           "example": "无",
@@ -1460,7 +1403,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式。默认按照播放数倒序\n<li> Sort.Field 可选 PlayCount。</li>",
           "example": "无",
@@ -1470,7 +1412,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，默认值：0。",
           "example": "无",
@@ -1480,7 +1421,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回的记录条数，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。",
           "example": "无",
@@ -1528,7 +1468,6 @@
       "document": "DescribeKTVSuggestions请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "联想关键词",
           "example": "\"\"",
@@ -1566,7 +1505,6 @@
       "document": "DescribeKTVTopList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "榜单类型。默认Hot\n<li> Hot, 热歌榜。</li>",
           "example": "Hot",
@@ -1576,7 +1514,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "榜单周期 默认为Week\n<li> Week, 周榜。</li>\n<li> Month, 月榜。</li>",
           "example": "Week",
@@ -1624,7 +1561,6 @@
       "document": "DescribeLyric请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲ID",
           "example": "xxxxx",
@@ -1634,7 +1570,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "格式，可选项，可不填写，默认值为：LRC-LRC。\n<li>LRC-LRC：歌词；</li>\n<li>JSON-ST：波形图。</li>",
           "example": "LRC-LRC",
@@ -1672,7 +1607,6 @@
       "document": "DescribeMusic请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲ID",
           "example": "xxxx",
@@ -1682,7 +1616,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "在应用前端播放音乐C端用户的唯一标识。无需是账户信息，用户唯一标识即可。",
           "example": "xx",
@@ -1692,7 +1625,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "MP3-320K-FTD-P  为获取320kbps歌曲热门片段。\nMP3-320K-FTD 为获取320kbps已核验歌曲完整资源。",
           "example": "MP3-64K-FTD-P",
@@ -1702,7 +1634,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CDN URL Protocol:HTTP or HTTPS/SSL\nValues:Y , N(default)",
           "example": "无",
@@ -1740,7 +1671,6 @@
       "document": "DescribeMusicSaleStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲Id集合，可传单个，也可传多个，上线查询单次50个",
           "example": "无",
@@ -1750,7 +1680,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询哪个渠道的数据，1为曲库包，2为单曲",
           "example": "1",
@@ -1788,7 +1717,6 @@
       "document": "DescribePackageItems请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "订单id，从获取已购曲库包列表中获取",
           "example": "",
@@ -1798,7 +1726,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认0，Offset=Offset+Length",
           "example": "",
@@ -1808,7 +1735,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认20",
           "example": "",
@@ -1845,7 +1771,6 @@
       "document": "DescribePackages请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "默认0，Offset=Offset+Length",
           "example": "",
@@ -1855,7 +1780,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认20",
           "example": "",
@@ -1892,7 +1816,6 @@
       "document": "DescribePkgOfflineMusic请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "订单id",
           "example": "无",
@@ -1902,7 +1825,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条(注：单次上限为100)。",
           "example": "无",
@@ -1912,7 +1834,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回的记录条数，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。",
           "example": "无",
@@ -1960,7 +1881,6 @@
       "document": "DescribeStations请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "条数，必须大于0",
           "example": "",
@@ -1970,7 +1890,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "offset (Default = 0)，Offset=Offset+Limit",
           "example": "",
@@ -2043,7 +1962,6 @@
       "document": "DestroyKTVRobot请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机器人Id。",
           "example": "ame-xxxxx",
@@ -2071,7 +1989,6 @@
       "document": "图片路径",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "station图片大小及类别\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2082,7 +1999,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "station图片地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2099,7 +2015,6 @@
       "document": "歌曲信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Song ID",
           "example": "",
@@ -2110,7 +2025,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Song info\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2121,7 +2035,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专辑信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2132,7 +2045,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "多个歌手集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2143,7 +2055,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲状态，1:添加进购物车；2:核销进曲库包\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2160,7 +2071,6 @@
       "document": "直播进房输入参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TRTC进房参数",
           "example": "无",
@@ -2177,7 +2087,6 @@
       "document": "KTV 曲目基础信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲 Id",
           "example": "\"\"",
@@ -2188,7 +2097,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲名称",
           "example": "\"\"",
@@ -2199,7 +2107,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "演唱者基础信息列表",
           "example": "\"\"",
@@ -2210,7 +2117,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已弃用，请使用SingerInfoSet",
           "example": "\"\"",
@@ -2221,7 +2127,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作词者列表",
           "example": "\"\"",
@@ -2232,7 +2137,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作曲者列表",
           "example": "\"\"",
@@ -2243,7 +2147,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签列表",
           "example": "\"\"",
@@ -2254,7 +2157,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲时长",
           "example": "0",
@@ -2271,7 +2173,6 @@
       "document": "直播互动歌曲规格信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规格，取值有：\n<li>audio/mi：低规格；</li>\n<li>audio/lo：中规格；</li>\n<li>audio/hi：高规格。</li>",
           "example": "\"\"",
@@ -2282,7 +2183,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "码率，单位为 bps。",
           "example": "0",
@@ -2293,7 +2193,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件大小，单位为字节。",
           "example": "0",
@@ -2310,7 +2209,6 @@
       "document": "即使广播曲库歌曲信息详情列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "即使广播曲库歌曲基础信息",
           "example": "无",
@@ -2321,7 +2219,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放凭证",
           "example": "无",
@@ -2332,7 +2229,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌词下载地址",
           "example": "无",
@@ -2343,7 +2239,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲规格信息列表",
           "example": "无",
@@ -2354,7 +2249,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音高数据文件下载地址",
           "example": "无",
@@ -2365,7 +2259,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "副歌片段数据列表",
           "example": "无",
@@ -2376,7 +2269,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "前奏间隔，单位：毫秒；注：若参数返回为0则无人声部分",
           "example": "无",
@@ -2393,7 +2285,6 @@
       "document": "即使广播曲库歌曲标签分组信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签分组英文名",
           "example": "\"\"",
@@ -2404,7 +2295,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签分组中文名",
           "example": "\"\"",
@@ -2415,7 +2305,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签分类下标签列表",
           "example": "\"\"",
@@ -2432,7 +2321,6 @@
       "document": "即使广播曲库歌曲标签信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签Id",
           "example": "\"\"",
@@ -2443,7 +2331,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签",
           "example": "\"\"",
@@ -2460,7 +2347,6 @@
       "document": "排行榜结构",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲Id",
           "example": "无",
@@ -2471,7 +2357,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲名称",
           "example": "无",
@@ -2482,7 +2367,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌手名称列表",
           "example": "无",
@@ -2493,7 +2377,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌词名称列表",
           "example": "无",
@@ -2504,7 +2387,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作曲列表",
           "example": "无",
@@ -2515,7 +2397,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签列表",
           "example": "无",
@@ -2526,7 +2407,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放时长",
           "example": "10",
@@ -2543,7 +2423,6 @@
       "document": "推荐歌单基础信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌单Id",
           "example": "无",
@@ -2554,7 +2433,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌单标题",
           "example": "无",
@@ -2565,7 +2443,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌单介绍",
           "example": "无",
@@ -2576,7 +2453,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲数量",
           "example": "1",
@@ -2593,7 +2469,6 @@
       "document": "机器人信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机器人Id。",
           "example": "ame-xxxxx",
@@ -2604,7 +2479,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态，取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>Destroy：销毁</li>",
           "example": "Play",
@@ -2615,7 +2489,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放列表。",
           "example": "xxxx",
@@ -2626,7 +2499,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前歌单索引位置。",
           "example": "1",
@@ -2637,7 +2509,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放进度，单位：毫秒。",
           "example": "120",
@@ -2648,7 +2519,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频参数。",
           "example": "无",
@@ -2659,7 +2529,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "进房信息。",
           "example": "无",
@@ -2670,7 +2539,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "RTC厂商类型，取值有：\n<li>TRTC</li>",
           "example": "TRTC",
@@ -2681,7 +2549,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放模式，PlayMode取值有：\n<li>RepeatPlaylist：列表循环</li>\n<li>Order：顺序播放</li>\n<li>RepeatSingle：单曲循环</li>\n<li>Shuffle：随机播放</li>",
           "example": "无",
@@ -2692,7 +2559,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "<del>音量，范围 0~100，默认为 50。</del>（已废弃，请采用 SetRealVolumeInput ）",
           "example": "无",
@@ -2703,7 +2569,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "真实音量，范围 0~100，默认为 50。",
           "example": "无",
@@ -2720,7 +2585,6 @@
       "document": "KTV 歌手基础信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌手id",
           "example": "\"\"",
@@ -2731,7 +2595,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌手名",
           "example": "\"\"",
@@ -2748,7 +2611,6 @@
       "document": "KTV歌手分类信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分类中文名",
           "example": "大陆",
@@ -2759,7 +2621,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分类英文名",
           "example": " Japan",
@@ -2776,7 +2637,6 @@
       "document": "直播互动歌曲的歌手信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌手id",
           "example": "无",
@@ -2787,7 +2647,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌手名",
           "example": "张学友",
@@ -2798,7 +2657,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌手性别: 男，女，组合",
           "example": "男",
@@ -2809,7 +2667,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地区: 大陆，港台，欧美，日本",
           "example": "大陆",
@@ -2820,7 +2677,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲数",
           "example": "201",
@@ -2831,7 +2687,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲总播放次数",
           "example": "2000",
@@ -2848,7 +2703,6 @@
       "document": "即使广播曲库联想词信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "联想词",
           "example": "\"\"",
@@ -2865,7 +2719,6 @@
       "document": "歌词信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌词cdn地址",
           "example": "",
@@ -2876,7 +2729,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌词后缀名",
           "example": "",
@@ -2887,7 +2739,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌词类型",
           "example": "",
@@ -2904,7 +2755,6 @@
       "document": "ModifyMusicOnShelves请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲变更信息",
           "example": "无",
@@ -2914,7 +2764,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ame对接资源方密钥",
           "example": "无",
@@ -2942,7 +2791,6 @@
       "document": "音乐详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "音乐播放链接相对路径，必须通过在正版曲库直通车控制台上登记的域名进行拼接。",
           "example": "",
@@ -2953,7 +2801,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频文件大小",
           "example": "",
@@ -2964,7 +2811,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频文件类型",
           "example": "",
@@ -2975,7 +2821,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Song fragment start.试听片段开始时间，试听时长为auditionEnd-auditionBegin\nUnit :ms",
           "example": "",
@@ -2986,7 +2831,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Song fragment end.试听片段结束时间, 试听时长为auditionEnd-auditionBegin\nUnit :ms",
           "example": "",
@@ -2997,7 +2841,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音乐播放链接全路径，前提是在正版曲库直通车控制台添加过域名，否则返回空字符。\n如果添加过多个域名只返回第一个添加域名的播放全路径。",
           "example": "",
@@ -3014,7 +2857,6 @@
       "document": "歌曲变更细节",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源方音乐Id",
           "example": "无",
@@ -3025,7 +2867,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源方识别信息",
           "example": "TME",
@@ -3036,7 +2877,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分类标签",
           "example": "[\"伴奏\"]",
@@ -3047,7 +2887,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关键词",
           "example": "[\"\"]",
@@ -3058,7 +2897,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节奏信息",
           "example": "0",
@@ -3069,7 +2907,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商业化权益",
           "example": "5.67",
@@ -3080,7 +2917,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用歌曲信息,1.图文/短视频,2.网络直播,3.网络电台FM,4.免费游戏,5.商业游戏,6.网店网站设计,7.广告营销,8.网络长视频",
           "example": "[\"1\"]",
@@ -3091,7 +2927,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用地域,1. 中国大陆,2. 中国含港澳台,3. 全球",
           "example": "[\"1\"]",
@@ -3102,7 +2937,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权时间,1. 1年, 5. 随片永久",
           "example": "\"1\"",
@@ -3113,7 +2947,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商业化授权，1. 支持商业化 ,2. 不支持商业化",
           "example": "\"1\"",
@@ -3124,7 +2957,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "跨平台传播，1. 支持跨平台传播 ,2. 不支持跨平台传播",
           "example": "\"1\"",
@@ -3135,7 +2967,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "传播渠道",
           "example": "\"1\"",
@@ -3152,7 +2983,6 @@
       "document": "对外开放信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "音乐Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -3163,7 +2993,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专辑名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -3174,7 +3003,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专辑图片路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -3185,7 +3013,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音乐名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -3196,7 +3023,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音乐图片路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -3207,7 +3033,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌手\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3218,7 +3043,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放时长\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -3229,7 +3053,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3240,7 +3063,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌词url\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -3251,7 +3073,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "波形图url\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -3268,7 +3089,6 @@
       "document": "返回单曲页面歌曲是否在售状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲Id",
           "example": "无",
@@ -3279,7 +3099,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "在售状态,0为在售，1为临时下架，2为永久下架",
           "example": "无",
@@ -3296,7 +3115,6 @@
       "document": "曲库包已下架歌曲详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲Id",
           "example": "无",
@@ -3307,7 +3125,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲名称",
           "example": "无",
@@ -3318,7 +3135,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不可用原因",
           "example": "无",
@@ -3329,7 +3145,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不可用时间",
           "example": "无",
@@ -3346,7 +3161,6 @@
       "document": "曲库包信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "订单id",
           "example": "",
@@ -3357,7 +3171,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "曲库包名称",
           "example": "",
@@ -3368,7 +3181,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权地区-global: 全球  CN: 中国",
           "example": "",
@@ -3379,7 +3191,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权次数",
           "example": "",
@@ -3390,7 +3201,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "套餐有效期，单位:天",
           "example": "",
@@ -3401,7 +3211,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0:不可商业化；1:可商业化",
           "example": "",
@@ -3412,7 +3221,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "套餐价格，单位：元",
           "example": "",
@@ -3423,7 +3231,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生效开始时间,格式yyyy-MM-dd HH:mm:ss",
           "example": "",
@@ -3434,7 +3241,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生效结束时间,格式yyyy-MM-dd HH:mm:ss",
           "example": "",
@@ -3445,7 +3251,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "剩余授权次数",
           "example": "",
@@ -3456,7 +3261,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "曲库包用途信息",
           "example": "",
@@ -3473,7 +3277,6 @@
       "document": "曲库包歌曲信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "订单id",
           "example": "空字符串",
@@ -3484,7 +3287,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲名",
           "example": "空字符串",
@@ -3495,7 +3297,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲ID",
           "example": "空字符串",
@@ -3506,7 +3307,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专辑图片",
           "example": "空字符串",
@@ -3517,7 +3317,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌手名",
           "example": "空字符串",
@@ -3528,7 +3327,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲时长",
           "example": "空字符串",
@@ -3539,7 +3337,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权区域，global: 全球 CN: 中国",
           "example": "空字符串",
@@ -3550,7 +3347,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签数组",
           "example": "空数组",
@@ -3567,7 +3363,6 @@
       "document": "播放指令输入参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "歌曲位置索引。",
           "example": "2",
@@ -3584,7 +3379,6 @@
       "document": "PutMusicOnTheShelves请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源方歌曲Id",
           "example": "无",
@@ -3642,7 +3436,6 @@
       "document": "ReportData请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "上报数据\n注:reportData为客户端压缩后的上报数据进行16进制转换的字符串数据\n压缩说明：\na) 上报的json格式字符串通过流的转换（ByteArrayInputStream, java.util.zip.GZIPOutputStream），获取到压缩后的字节数组。\nb) 将压缩后的字节数组转成16进制字符串。\n\nreportData由两部分数据组成：\n1）report_type（上报类型）\n2）data（歌曲上报数据）\n不同的report_type对应的data数据结构不一样。\n\n详细说明请参考文档reportdata.docx：\nhttps://github.com/tencentyun/ame-documents",
           "example": "1f8b08000000000000007xxxxxxx",
@@ -3670,7 +3463,6 @@
       "document": "SearchKTVMusics请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "搜索关键词",
           "example": "\"\"",
@@ -3680,7 +3472,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。\n取值范围：Offset + Limit 不超过5000。",
           "example": "0",
@@ -3690,7 +3481,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回的起始偏移量，默认值：50。将返回第 Offset 到第 Offset+Limit-1 条。",
           "example": "10",
@@ -3700,7 +3490,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式。默认按照匹配度排序\n<li> Sort.Field 可选 CreateTime</li>\n<li> Sort.Order 可选 Desc </li>\n<li> 当 KeyWord 不为空时，Sort.Field 字段无效， 搜索结果将以匹配度排序。</li>",
           "example": "\"\"",
@@ -3710,7 +3499,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签 ID 集合，匹配集合指定所有 ID 。\n<li>数组长度限制：10。</li>",
           "example": "\"\"",
@@ -3758,7 +3546,6 @@
       "document": "调整播放进度指令参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "播放位置，单位：毫秒。",
           "example": "120",
@@ -3775,7 +3562,6 @@
       "document": "发送自定义信息指令参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "自定义消息，json格式字符串。",
           "example": "{\"field\":\"value\"}",
@@ -3786,7 +3572,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息重复次数，默认为 1。",
           "example": "2",
@@ -3803,7 +3588,6 @@
       "document": "音频参数信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规格，取值有：\n<li>audio/mi：低规格</li>\n<li>audio/lo：中规格</li>\n<li>audio/hi：高规格</li>",
           "example": "audio/hi",
@@ -3814,7 +3598,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频类型，取值有：\n<li>Original：原唱</li>\n<li>Accompaniment：伴奏</li>",
           "example": "Original",
@@ -3831,7 +3614,6 @@
       "document": "设置销毁模式",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "销毁模式，取值有：\n<li>Auto：房间没人时自动销毁</li>\n<li>Expire：房间没人时过期自动销毁</li>\n<li>Never：不自动销毁，需手动销毁</li>默认为：Auto。",
           "example": "Auto",
@@ -3842,7 +3624,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期销毁时间，单位：秒，当DestroyMode取Expire时必填。",
           "example": "120",
@@ -3859,7 +3640,6 @@
       "document": "设置播放模式",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "播放模式，取值有：\n<li>RepeatPlaylist：列表循环</li>\n<li>Order：顺序播放</li>\n<li>RepeatSingle：单曲循环</li>\n<li>Shuffle：随机播放</li>",
           "example": "RepeatPlaylist",
@@ -3932,7 +3712,6 @@
       "document": "设置真实音量。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "真实音量大小，取值范围为 0~100，默认值为 50。",
           "example": "50",
@@ -3949,7 +3728,6 @@
       "document": "设置音量。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "音量大小，取值范围为 0~100，默认值为 50。",
           "example": "50",
@@ -3966,7 +3744,6 @@
       "document": "排序依据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段",
           "example": "无",
@@ -3977,7 +3754,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式，可选值：Asc（升序）、Desc（降序）",
           "example": "Asc",
@@ -3994,7 +3770,6 @@
       "document": "分类内容",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "StationID",
           "example": "",
@@ -4005,7 +3780,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Station MCCode\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4016,7 +3790,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Category Name\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4027,7 +3800,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Station的排序值，供参考（返回结果已按其升序）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4038,7 +3810,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "station图片集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4055,7 +3826,6 @@
       "document": "SyncKTVRobotCommand请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机器人Id。",
           "example": "ame-xxxxx",
@@ -4065,7 +3835,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指令，取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>SwitchPrevious：上一首</li>\n<li>SwitchNext：下一首</li>\n<li>SetPlayMode：设置播放模式</li>\n<li>Seek：调整播放进度</li>\n<li>SetPlaylist：歌单变更</li>\n<li>SetAudioParam：音频参数变更</li>\n<li>SendMessage：发送自定义消息</li>\n<li>SetDestroyMode：设置销毁模式</li>\n<li><del>SetVolume：设置音量</del>（已废弃，请采用 SetRealVolume）</li>\n<li>SetRealVolume：设置真实音量</li>",
           "example": "Play",
@@ -4075,7 +3844,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放参数。",
           "example": "无",
@@ -4085,7 +3853,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放列表变更信息，当Command取SetPlaylist时，必填。",
           "example": "无",
@@ -4095,7 +3862,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放进度，当Command取Seek时，必填。",
           "example": "无",
@@ -4105,7 +3871,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频参数，当Command取SetAudioParam时，必填。",
           "example": "无",
@@ -4115,7 +3880,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义消息，当Command取SendMessage时，必填。",
           "example": "无",
@@ -4125,7 +3889,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放模式，当Command取SetPlayMode时，必填。",
           "example": "无",
@@ -4135,7 +3898,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "销毁模式，当Command取SetDestroyMode时，必填。",
           "example": "无",
@@ -4145,7 +3907,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "<del>音量，当Command取SetVolume时，必填。</del>\n（已废弃，请采用 SetRealVolumeCommandInput ）",
           "example": "无",
@@ -4155,7 +3916,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "真实音量，当Command取SetRealVolume时，必填。",
           "example": "无",
@@ -4183,7 +3943,6 @@
       "document": "KTV 机器人初始化参数，在创建后自动完成相关初始化工作。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "可同时传入多个指令，顺序执行。取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>SwitchPrevious：上一首</li>\n<li>SwitchNext：下一首</li>\n<li>SetPlayMode：设置播放模式</li>\n<li>Seek：调整播放进度</li>\n<li>SetPlaylist：歌单变更</li>\n<li>SetAudioParam：音频参数变更</li>\n<li>SendMessage：发送自定义消息</li>\n<li>SetDestroyMode：设置销毁模式</li>\n<li><del>SetVolume：设置音量</del>（已废弃，请采用 SetRealVolume）</li>\n<li>SetRealVolume：设置真实音量</li>",
           "example": "无",
@@ -4194,7 +3953,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放参数。",
           "example": "无",
@@ -4205,7 +3963,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放列表变更信息，当Command取SetPlaylist时，必填。",
           "example": "无",
@@ -4216,7 +3973,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放进度，当Command取Seek时，必填。",
           "example": "无",
@@ -4227,7 +3983,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频参数，当Command取SetAudioParam时，必填。",
           "example": "无",
@@ -4238,7 +3993,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义消息，当Command取SendMessage时，必填。",
           "example": "无",
@@ -4249,7 +4003,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放模式，当Command取SetPlayMode时，必填。",
           "example": "无",
@@ -4260,7 +4013,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "销毁模式，当Command取SetDestroyMode时，必填。",
           "example": "无",
@@ -4271,7 +4023,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "<del>音量，当Command取SetVolume时，必填。</del>\n（已废弃，请采用 SetRealVolumeCommandInput）",
           "example": "无",
@@ -4282,7 +4033,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "真实音量，当Command取SetRealVolume时，必填。",
           "example": "无",
@@ -4375,7 +4125,6 @@
       "document": "下架歌曲复合结构",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源方对应音乐Id",
           "example": "无",
@@ -4386,7 +4135,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当曲目临时下架时：已订购客户无影响，无需消息通知。当曲目封杀下架后，推送消息至已订购老客户，枚举值，判断是否上/下架\n在售状态，0在售，1临时下架，2永久下架",
           "example": "1",
@@ -4403,7 +4151,6 @@
       "document": "TakeMusicOffShelves请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源方下架必传结构",
           "example": "无",
@@ -4461,7 +4208,6 @@
       "document": "时间范围",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "<li>大于等于此时间（起始时间）。</li>\n<li>格式按照 ISO 8601标准表示，详见 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\" target=\"_blank\">ISO 日期格式说明</a>。</li>",
           "example": "2020-12-10T07:25:52Z",
@@ -4472,7 +4218,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "<li>小于此时间（结束时间）。</li>\n<li>格式按照 ISO 8601标准表示，详见 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\" target=\"_blank\">ISO 日期格式说明</a>。</li>",
           "example": "2020-12-10T07:25:52Z",
@@ -4489,7 +4234,6 @@
       "document": "曲库包用途信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用途id",
           "example": "",
@@ -4500,7 +4244,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用途范围名称",
           "example": "",

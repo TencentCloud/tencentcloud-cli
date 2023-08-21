@@ -173,7 +173,6 @@
       "document": "算法配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "镜像名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -184,7 +183,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输入模式File|Pipe\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -195,7 +193,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "算法名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -212,7 +209,6 @@
       "document": "计费标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "计费项标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -223,7 +219,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储大小",
           "example": "",
@@ -234,7 +229,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计费状态\nNone: 不计费\nStorageOnly: 仅存储计费\nComputing: 计算和存储都计费",
           "example": "",
@@ -251,7 +245,6 @@
       "document": "接入CLS服务的配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "接入类型，可选项为free、customer",
           "example": "",
@@ -262,7 +255,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义CLS的日志集ID，只有当Type为customer时生效",
           "example": "",
@@ -273,7 +265,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义CLS的日志主题ID，只有当Type为customer时生效",
           "example": "",
@@ -290,7 +281,6 @@
       "document": "存储库列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -301,7 +291,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
           "example": "",
@@ -312,7 +301,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储库名称",
           "example": "",
@@ -323,7 +311,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Git配置",
           "example": "",
@@ -334,7 +321,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否有Git凭证",
           "example": "",
@@ -351,7 +337,6 @@
       "document": "cos路径",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "cos桶\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -362,7 +347,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cos文件key\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -373,7 +357,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分布式数据下载方式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -384,7 +367,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -401,7 +383,6 @@
       "document": "CreateCodeRepository请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "存储库名称",
           "example": "",
@@ -411,7 +392,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Git相关配置",
           "example": "",
@@ -421,7 +401,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Git凭证",
           "example": "",
@@ -458,7 +437,6 @@
       "document": "CreateNotebookInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Notebook实例名称，不能超过63个字符\n规则：“^\\[a-zA-Z0-9\\](-\\*\\[a-zA-Z0-9\\])\\*$”",
           "example": "",
@@ -468,7 +446,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Notebook算力类型\n参考https://cloud.tencent.com/document/product/851/41239",
           "example": "",
@@ -478,7 +455,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据卷大小(GB)\n用户持久化Notebook实例的数据",
           "example": "",
@@ -488,7 +464,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "外网访问权限，可取值Enabled/Disabled\n开启后，Notebook实例可以具有访问外网80，443端口的权限",
           "example": "",
@@ -498,7 +473,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Root用户权限，可取值Enabled/Disabled\n开启后，Notebook实例可以切换至root用户执行命令",
           "example": "",
@@ -508,7 +482,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID\n如果需要Notebook实例访问VPC内的资源，则需要选择对应的子网",
           "example": "",
@@ -518,7 +491,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生命周期脚本名称\n必须是已存在的生命周期脚本，具体参考https://cloud.tencent.com/document/product/851/43140",
           "example": "",
@@ -528,7 +500,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认存储库名称\n可以是已创建的存储库名称或者已https://开头的公共git库\n参考https://cloud.tencent.com/document/product/851/43139",
           "example": "",
@@ -538,7 +509,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "其他存储库列表\n每个元素可以是已创建的存储库名称或者已https://开头的公共git库\n参考https://cloud.tencent.com/document/product/851/43139",
           "example": "",
@@ -548,7 +518,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已弃用，请使用ClsConfig配置。\n是否开启CLS日志服务，可取值Enabled/Disabled，默认为Disabled\n开启后，Notebook运行的日志会收集到CLS中，CLS会产生费用，请根据需要选择",
           "example": "",
@@ -558,7 +527,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动停止配置\n选择定时停止Notebook实例",
           "example": "",
@@ -568,7 +536,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动停止，可取值Enabled/Disabled\n取值为Disabled的时候StoppingCondition将被忽略\n取值为Enabled的时候读取StoppingCondition作为自动停止的配置",
           "example": "",
@@ -578,7 +545,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接入日志的配置，默认接入免费日志",
           "example": "",
@@ -615,7 +581,6 @@
       "document": "CreateNotebookLifecycleScript请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Notebook生命周期脚本名称",
           "example": "",
@@ -625,7 +590,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建脚本，base64编码\nbase64后的脚本长度不能超过16384个字符",
           "example": "",
@@ -635,7 +599,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "启动脚本，base64编码\nbase64后的脚本长度不能超过16384个字符",
           "example": "",
@@ -672,7 +635,6 @@
       "document": "CreatePresignedNotebookInstanceUrl请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Notebook实例名称\n规则：“^\\[a-zA-Z0-9\\](-\\*\\[a-zA-Z0-9\\])\\*$”",
           "example": "",
@@ -682,7 +644,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "session有效时间，秒，取值范围[1800, 43200]",
           "example": "",
@@ -719,7 +680,6 @@
       "document": "CreateTrainingJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "算法镜像配置",
           "example": "",
@@ -729,7 +689,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输出数据配置",
           "example": "",
@@ -739,7 +698,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源实例配置",
           "example": "",
@@ -749,7 +707,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "训练任务名称",
           "example": "",
@@ -759,7 +716,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输入数据配置",
           "example": "",
@@ -769,7 +725,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "中止条件",
           "example": "",
@@ -779,7 +734,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络配置",
           "example": "",
@@ -789,7 +743,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "算法超级参数",
           "example": "",
@@ -799,7 +752,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境变量配置",
           "example": "",
@@ -809,7 +761,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "角色名称",
           "example": "",
@@ -819,7 +770,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "在资源不足（ResourceInsufficient）时后台不定时尝试重新创建训练任务。可取值Enabled/Disabled\n默认值为Disabled即不重新尝试。设为Enabled时重新尝试有一定的时间期限，定义在 StoppingCondition 中 MaxWaitTimeInSecond中 ，默认值为1天，超过该期限创建失败。",
           "example": "",
@@ -856,7 +806,6 @@
       "document": "数据源",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "cos数据源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -867,7 +816,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统输入源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -884,7 +832,6 @@
       "document": "DeleteCodeRepository请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "存储库名称",
           "example": "",
@@ -921,7 +868,6 @@
       "document": "DeleteNotebookInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Notebook实例名称",
           "example": "",
@@ -949,7 +895,6 @@
       "document": "DeleteNotebookLifecycleScript请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "生命周期脚本名称",
           "example": "",
@@ -959,7 +904,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否忽略已关联的 notebook 实例强行删除生命周期脚本，默认 false",
           "example": "",
@@ -987,7 +931,6 @@
       "document": "DescribeCodeRepositories请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
           "example": "",
@@ -997,7 +940,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20",
           "example": "",
@@ -1007,7 +949,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件。\ninstance-name - String - 是否必填：否 -（过滤条件）按照名称过滤。\nsearch-by-name - String - 是否必填：否 -（过滤条件）按照名称检索，模糊匹配。",
           "example": "",
@@ -1017,7 +958,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序规则。默认取Descending\nDescending 按更新时间降序\nAscending 按更新时间升序",
           "example": "",
@@ -1063,7 +1003,6 @@
       "document": "DescribeCodeRepository请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "存储库名称",
           "example": "",
@@ -1136,7 +1075,6 @@
       "document": "DescribeNotebookInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Notebook实例名称\n规则：“^\\[a-zA-Z0-9\\](-\\*\\[a-zA-Z0-9\\])\\*$”",
           "example": "",
@@ -1353,7 +1291,6 @@
       "document": "DescribeNotebookInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "",
@@ -1363,7 +1300,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制数目",
           "example": "",
@@ -1373,7 +1309,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序规则。默认取Descending\nDescending 按更新时间降序\nAscending 按更新时间升序",
           "example": "",
@@ -1383,7 +1318,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件。\ninstance-name - String - 是否必填：否 -（过滤条件）按照名称过滤。\nsearch-by-name - String - 是否必填：否 -（过滤条件）按照名称检索，模糊匹配。\nlifecycle-name - String - 是否必填：否 -（过滤条件）按照生命周期脚本名称过滤。\ndefault-code-repo-name - String - 是否必填：否 -（过滤条件）按照默认存储库名称过滤。\nadditional-code-repo-name - String - 是否必填：否 -（过滤条件）按照其他存储库名称过滤。\nbilling-status - String - 是否必填：否 - （过滤条件）按照计费状态过滤，可取以下值\n   StorageOnly：仅存储计费的实例\n   Computing：计算和存储都计费的实例",
           "example": "",
@@ -1393,7 +1327,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "【废弃字段】排序字段",
           "example": "",
@@ -1439,7 +1372,6 @@
       "document": "DescribeNotebookLifecycleScript请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "生命周期脚本名称",
           "example": "",
@@ -1512,7 +1444,6 @@
       "document": "DescribeNotebookLifecycleScripts请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
           "example": "",
@@ -1522,7 +1453,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20",
           "example": "",
@@ -1532,7 +1462,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件。\ninstance-name - String - 是否必填：否 -（过滤条件）按照名称过滤。\nsearch-by-name - String - 是否必填：否 -（过滤条件）按照名称检索，模糊匹配。",
           "example": "",
@@ -1542,7 +1471,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序规则。默认取Descending\nDescending 按更新时间降序\nAscending 按更新时间升序",
           "example": "",
@@ -1641,7 +1569,6 @@
       "document": "DescribeTrainingJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "训练任务名称",
           "example": "",
@@ -1840,7 +1767,6 @@
       "document": "DescribeTrainingJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "",
@@ -1850,7 +1776,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制数目",
           "example": "",
@@ -1860,7 +1785,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间晚于",
           "example": "",
@@ -1870,7 +1794,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间早于",
           "example": "",
@@ -1880,7 +1803,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据名称过滤",
           "example": "",
@@ -1890,7 +1812,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据状态过滤",
           "example": "",
@@ -1900,7 +1821,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件。\ninstance-name - String - 是否必填：否 -（过滤条件）按照名称过滤。\nsearch-by-name - String - 是否必填：否 -（过滤条件）按照名称检索，模糊匹配。",
           "example": "",
@@ -1946,7 +1866,6 @@
       "document": "环境变量",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "名称",
           "example": "",
@@ -1957,7 +1876,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "值",
           "example": "",
@@ -1974,7 +1892,6 @@
       "document": "文件系统输入数据源",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统目录\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1985,7 +1902,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1996,7 +1912,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统访问模式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2007,7 +1922,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2024,7 +1938,6 @@
       "document": "过滤器",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "过滤字段名称",
           "example": "",
@@ -2035,7 +1948,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤字段取值",
           "example": "",
@@ -2052,7 +1964,6 @@
       "document": "存储库Git相关配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "git地址",
           "example": "",
@@ -2063,7 +1974,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代码分支\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2080,7 +1990,6 @@
       "document": "Git凭证",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "无秘钥，默认选项",
           "example": "",
@@ -2091,7 +2000,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Git用户名密码base64编码后的字符串\n编码前的内容应为Json字符串，如\n{\"UserName\": \"用户名\", \"Password\":\"密码\"}",
           "example": "",
@@ -2108,7 +2016,6 @@
       "document": "输入数据配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "通道名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2119,7 +2026,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2130,7 +2036,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输入类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2141,7 +2046,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2158,7 +2062,6 @@
       "document": "模型输出",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "cos输出路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2175,7 +2078,6 @@
       "document": "notebook实例概览",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2186,7 +2088,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最近修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2197,7 +2098,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "notebook实例名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2208,7 +2108,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "notebook实例状态，取值范围：\nPending: 创建中\nInservice: 运行中\nStopping: 停止中\nStopped: 已停止\nFailed: 失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2219,7 +2118,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "算力类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2230,7 +2128,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2241,7 +2138,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2252,7 +2148,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运行截止时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2263,7 +2158,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动停止配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2274,7 +2168,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是预付费实例\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2285,7 +2178,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计费标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2296,7 +2188,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运行时长，秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2307,7 +2198,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "剩余时长，秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2324,7 +2214,6 @@
       "document": "notebook生命周期脚本实例概览",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "notebook生命周期脚本名称",
           "example": "",
@@ -2335,7 +2224,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -2346,7 +2234,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间",
           "example": "",
@@ -2363,7 +2250,6 @@
       "document": "输出数据配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "cos输出桶\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2374,7 +2260,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cos输出key前缀\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2385,7 +2270,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统输出，如果指定了文件系统，那么Cos输出会被忽略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2402,7 +2286,6 @@
       "document": "计算资源配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "计算实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2413,7 +2296,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计算实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2424,7 +2306,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "挂载CBS大小（GB）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2441,7 +2322,6 @@
       "document": " 二级状态流水",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "状态开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2452,7 +2332,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2463,7 +2342,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2474,7 +2352,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2491,7 +2368,6 @@
       "document": "StartNotebookInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Notebook实例名称",
           "example": "",
@@ -2501,7 +2377,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动停止，可取值Enabled/Disabled\n取值为Disabled的时候StoppingCondition将被忽略\n取值为Enabled的时候读取StoppingCondition作为自动停止的配置",
           "example": "",
@@ -2511,7 +2386,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动停止配置，只在AutoStopping为Enabled的时候生效",
           "example": "",
@@ -2539,7 +2413,6 @@
       "document": "StopNotebookInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Notebook实例名称",
           "example": "",
@@ -2567,7 +2440,6 @@
       "document": "StopTrainingJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "训练任务名称",
           "example": "",
@@ -2595,7 +2467,6 @@
       "document": "终止条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "最长运行运行时间（秒）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2606,7 +2477,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最长等待运行时间（秒）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2623,7 +2493,6 @@
       "document": "训练任务概要",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2634,7 +2503,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最近修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2645,7 +2513,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "训练任务名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2656,7 +2523,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "训练任务状态，取值范围\nInProgress：运行中\nCompleted: 已完成\nFailed: 失败\nStopping: 停止中\nStopped：已停止\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2667,7 +2533,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2678,7 +2543,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "算了实例Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2689,7 +2553,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2706,7 +2569,6 @@
       "document": "UpdateCodeRepository请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询存储库名称",
           "example": "",
@@ -2716,7 +2578,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Git凭证",
           "example": "",
@@ -2753,7 +2614,6 @@
       "document": "UpdateNotebookInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Notebook实例名称\n规则：“^\\[a-zA-Z0-9\\](-\\*\\[a-zA-Z0-9\\])\\*$”",
           "example": "",
@@ -2763,7 +2623,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "角色的资源描述",
           "example": "",
@@ -2773,7 +2632,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Root访问权限",
           "example": "",
@@ -2783,7 +2641,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据卷大小(GB)",
           "example": "",
@@ -2793,7 +2650,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "算力资源类型",
           "example": "",
@@ -2803,7 +2659,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "notebook生命周期脚本名称",
           "example": "",
@@ -2813,7 +2668,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否解绑生命周期脚本，默认 false。\n该值为true时，LifecycleScriptsName将被忽略",
           "example": "",
@@ -2823,7 +2677,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认存储库名称\n可以是已创建的存储库名称或者已https://开头的公共git库",
           "example": "",
@@ -2833,7 +2686,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "其他存储库列表\n每个元素可以是已创建的存储库名称或者已https://开头的公共git库",
           "example": "",
@@ -2843,7 +2695,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否取消关联默认存储库，默认false\n该值为true时，DefaultCodeRepository将被忽略",
           "example": "",
@@ -2853,7 +2704,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否取消关联其他存储库，默认false\n该值为true时，AdditionalCodeRepositories将被忽略",
           "example": "",
@@ -2863,7 +2713,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已弃用，请使用ClsConfig配置。是否开启CLS日志服务，可取值Enabled/Disabled",
           "example": "",
@@ -2873,7 +2722,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动停止，可取值Enabled/Disabled\n取值为Disabled的时候StoppingCondition将被忽略\n取值为Enabled的时候读取StoppingCondition作为自动停止的配置",
           "example": "",
@@ -2883,7 +2731,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动停止配置，只在AutoStopping为Enabled的时候生效",
           "example": "",
@@ -2893,7 +2740,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接入日志的配置，默认使用免费日志服务。",
           "example": "",
@@ -2921,7 +2767,6 @@
       "document": "UpdateNotebookLifecycleScript请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "notebook生命周期脚本名称",
           "example": "",
@@ -2931,7 +2776,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建脚本，base64编码\nbase64后的脚本长度不能超过16384个字符",
           "example": "",
@@ -2941,7 +2785,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "启动脚本，base64编码\nbase64后的脚本长度不能超过16384个字符",
           "example": "",
@@ -2969,7 +2812,6 @@
       "document": "VPC配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "安全组id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2980,7 +2822,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",

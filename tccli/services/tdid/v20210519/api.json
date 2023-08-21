@@ -103,7 +103,6 @@
       "document": "CheckChain请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "群组ID",
           "example": "1",
@@ -113,7 +112,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络ID",
           "example": "bcos-fmtkyt8xne",
@@ -123,7 +121,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "did服务机构名称",
           "example": "test",
@@ -181,7 +178,6 @@
       "document": "CreateCredential请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数集合，详见示例",
           "example": "无",
@@ -191,7 +187,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数集合，详见示例",
           "example": "无",
@@ -201,7 +196,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本",
           "example": "1.0.0",
@@ -211,7 +205,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否未签名",
           "example": "true",
@@ -249,7 +242,6 @@
       "document": "CreateSelectiveCredential请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数集合",
           "example": "1",
@@ -259,7 +251,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "批露策略id",
           "example": "2000000",
@@ -297,7 +288,6 @@
       "document": "CreateTDidByPrivateKey请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网络ID",
           "example": "bcos-fmtkyt8xne",
@@ -307,7 +297,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "群组ID",
           "example": "1",
@@ -317,7 +306,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私钥",
           "example": "test",
@@ -355,7 +343,6 @@
       "document": "CreateTDidByPublicKey请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网络ID",
           "example": "bcos-fmtkyt8xne",
@@ -365,7 +352,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "群组ID",
           "example": "1",
@@ -375,7 +361,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "身份公钥",
           "example": "test1",
@@ -385,7 +370,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加密公钥",
           "example": "test",
@@ -423,7 +407,6 @@
       "document": "CreateTDid请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "群组ID",
           "example": "1",
@@ -433,7 +416,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络ID",
           "example": "bcos-fmtkyt8xne",
@@ -443,7 +425,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署机构为1，否则为0",
           "example": "0",
@@ -481,7 +462,6 @@
       "document": "凭证链上状态信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "凭证唯一id",
           "example": "a",
@@ -492,7 +472,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "凭证状态（0：吊销；1：有效）",
           "example": "1",
@@ -503,7 +482,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "凭证颁发者Did",
           "example": "a",
@@ -514,7 +492,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "凭证摘要\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "a",
@@ -525,7 +502,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "凭证签名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "a",
@@ -536,7 +512,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -553,7 +528,6 @@
       "document": "创建凭证入参的FunctionArg",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "CPT ID",
           "example": "1",
@@ -564,7 +538,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签发者 did",
           "example": "1",
@@ -575,7 +548,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期时间",
           "example": "1",
@@ -586,7 +558,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "声明",
           "example": "1",
@@ -603,7 +574,6 @@
       "document": "GetAuthorityIssuer请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "tdid",
           "example": "did:tdid:1:0xa75368ab6ab9cb6d01e81d22155279ee4eca3f4d",
@@ -701,7 +671,6 @@
       "document": "GetCptInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Cpt索引",
           "example": "1",
@@ -739,7 +708,6 @@
       "document": "GetCredentialStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "凭证id",
           "example": "a",
@@ -777,7 +745,6 @@
       "document": "GetDidDocument请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "tdid",
           "example": "did:tdid:1:0xa75368ab6ab9cb6d01e81d22155279ee4eca3f4d",
@@ -825,7 +792,6 @@
       "document": "验证凭证签名",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "1",
@@ -836,7 +802,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建着did",
           "example": "1",
@@ -847,7 +812,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "salt值",
           "example": "1",
@@ -858,7 +822,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签名",
           "example": "1",
@@ -869,7 +832,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "type类型",
           "example": "1",
@@ -886,7 +848,6 @@
       "document": "RegisterCpt请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "群组ID",
           "example": "1",
@@ -896,7 +857,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络ID",
           "example": "bcos-fmtkyt8xne",
@@ -906,7 +866,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CptJson的具体信息",
           "example": "test",
@@ -916,7 +875,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cptId 不填默认自增",
           "example": "1",
@@ -964,7 +922,6 @@
       "document": "SetCredentialStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "凭证状态",
           "example": "test1a152",
@@ -992,7 +949,6 @@
       "document": "创建凭证第二个",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "凭证did",
           "example": "1",
@@ -1009,7 +965,6 @@
       "document": "VerifyCredential请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数集合",
           "example": "1",
@@ -1067,7 +1022,6 @@
       "document": "验证凭证参数值",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "CPT ID",
           "example": "1",
@@ -1078,7 +1032,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "issuer did",
           "example": "1",
@@ -1089,7 +1042,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期时间",
           "example": "1",
@@ -1100,7 +1052,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "声明",
           "example": "1",
@@ -1111,7 +1062,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "颁发时间",
           "example": "1",
@@ -1122,7 +1072,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "context值",
           "example": "1",
@@ -1133,7 +1082,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "id值",
           "example": "1",
@@ -1144,7 +1092,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签名值",
           "example": "无",
@@ -1155,7 +1102,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "type值",
           "example": "[\"a\",\"b\"]",

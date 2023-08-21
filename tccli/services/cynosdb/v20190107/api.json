@@ -915,7 +915,6 @@
       "document": "集群支持的功能",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否支持从可用区",
           "example": "yes",
@@ -926,7 +925,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不支持从可用区的原因\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -937,7 +935,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否支持RO实例",
           "example": "yes",
@@ -948,7 +945,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不支持RO实例的原因\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -965,7 +961,6 @@
       "document": "数据库账号信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库账号名",
           "example": "xxx",
@@ -976,7 +971,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库账号描述",
           "example": "xxx",
@@ -987,7 +981,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "xxx",
@@ -998,7 +991,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
           "example": "xxx",
@@ -1009,7 +1001,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机",
           "example": "xxx",
@@ -1020,7 +1011,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户最大连接数",
           "example": "0",
@@ -1037,7 +1027,6 @@
       "document": "账号参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数名称，当前仅支持参数：max_user_connections",
           "example": "max_user_connections",
@@ -1048,7 +1037,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数值",
           "example": "1",
@@ -1068,7 +1056,6 @@
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-bzxxrmtq",
-          "is_base64": false,
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1078,7 +1065,6 @@
           "disabled": false,
           "document": "实例 ID 列表，单个实例 ID 格式如：cynosdbmysql-ins-n7ocdslw，与TDSQL-C MySQL数据库控制台页面中显示的实例 ID 相同，可使用 查询实例列表 接口获取，其值为输出参数中字段 InstanceId 的值。",
           "example": "[\"cynosdbmysql-ins-7upukfpw\\r\\n\"]",
-          "is_base64": false,
           "member": "string",
           "name": "InstanceIdList",
           "required": true,
@@ -1113,7 +1099,6 @@
       "document": "AddClusterSlaveZone请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-xxxxxxx",
@@ -1123,7 +1108,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "从可用区",
           "example": "ap-guangzhou-2",
@@ -1389,7 +1373,6 @@
       "document": "AssociateSecurityGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例组ID数组",
           "example": "cynosdbmysql-ins-4senc2fm",
@@ -1399,7 +1382,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要修改的安全组ID列表，一个或者多个安全组Id组成的数组。",
           "example": "[\"sg-ajr1jzgj\\n\"]",
@@ -1409,7 +1391,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区",
           "example": "ap-guangzhou-3",
@@ -1643,7 +1624,6 @@
       "document": "审计日志文件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "审计日志文件名称",
           "example": "FileName",
@@ -1654,7 +1634,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审计日志文件创建时间。格式为 : \"2019-03-20 17:09:13\"。",
           "example": "2019-03-20 17:09:13",
@@ -1665,7 +1644,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件状态值。可能返回的值为：\n\"creating\" - 生成中;\n\"failed\" - 创建失败;\n\"success\" - 已生成;",
           "example": "creating",
@@ -1676,7 +1654,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件大小，单位为 KB。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1234",
@@ -1687,7 +1664,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审计日志下载地址。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DownloadUrl",
@@ -1698,7 +1674,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ErrMsg",
@@ -1715,7 +1690,6 @@
       "document": "审计日志过滤条件。查询审计日志时，用户过滤返回的审计日志。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "客户端地址。",
           "example": "192.168.0.1",
@@ -1726,7 +1700,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名。",
           "example": "[\"user\"]",
@@ -1737,7 +1710,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称。",
           "example": "[\"db_test\"]",
@@ -1748,7 +1720,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表名称。",
           "example": "[\"table_test\"]",
@@ -1759,7 +1730,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审计策略名称。",
           "example": "[\"policy_test\"]",
@@ -1770,7 +1740,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SQL 语句。支持模糊匹配。",
           "example": "无",
@@ -1781,7 +1750,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SQL 类型。目前支持：\"SELECT\", \"INSERT\", \"UPDATE\", \"DELETE\", \"CREATE\", \"DROP\", \"ALTER\", \"SET\", \"REPLACE\", \"EXECUTE\"。",
           "example": "SELECT",
@@ -1792,7 +1760,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行时间。单位为：ms。表示筛选执行时间大于该值的审计日志。",
           "example": "100",
@@ -1803,7 +1770,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "影响行数。表示筛选影响行数大于该值的审计日志。",
           "example": "10",
@@ -1814,7 +1780,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SQL 类型。支持多个类型同时查询。目前支持：\"SELECT\", \"INSERT\", \"UPDATE\", \"DELETE\", \"CREATE\", \"DROP\", \"ALTER\", \"SET\", \"REPLACE\", \"EXECUTE\"。",
           "example": "[\"SELECT\"]",
@@ -1825,7 +1790,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SQL 语句。支持传递多个sql语句。",
           "example": "\"DELETE FROM test\"",
@@ -1836,7 +1800,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回行数。",
           "example": "2",
@@ -1847,7 +1810,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "线程ID。",
           "example": "[\"49354\"]",
@@ -1864,7 +1826,6 @@
       "document": "规则审计的过滤条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "单条审计规则。",
           "example": "无",
@@ -1881,7 +1842,6 @@
       "document": "审计规则模版的详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则模版ID。",
           "example": "cynosdb-art-dnpg9p3r",
@@ -1892,7 +1852,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则模版名称。",
           "example": "规则模版名称",
@@ -1903,7 +1862,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则模版的过滤条件",
           "example": "无",
@@ -1914,7 +1872,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则模版描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "规则模版描述",
@@ -1925,7 +1882,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则模版创建时间。",
           "example": "2022-11-15 11:11:11",
@@ -1942,7 +1898,6 @@
       "document": "备份文件信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "快照文件ID，已废弃，请使用BackupId",
           "example": "无",
@@ -1953,7 +1908,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件名",
           "example": "无",
@@ -1964,7 +1918,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件大小",
           "example": "无",
@@ -1975,7 +1928,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份开始时间",
           "example": "无",
@@ -1986,7 +1938,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份完成时间",
           "example": "无",
@@ -1997,7 +1948,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份类型：snapshot，快照备份；logic，逻辑备份",
           "example": "无",
@@ -2008,7 +1958,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份方式：auto，自动备份；manual，手动备份",
           "example": "无",
@@ -2019,7 +1968,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件状态：success：备份成功；fail：备份失败；creating：备份文件创建中；deleting：备份文件删除中",
           "example": "无",
@@ -2030,7 +1978,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件时间",
           "example": "无",
@@ -2041,7 +1988,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2052,7 +1998,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照类型，可选值：full，全量；increment，增量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2063,7 +2008,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2080,7 +2024,6 @@
       "document": "计费资源信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "”cynosdbmysql-xxx\"",
@@ -2091,7 +2034,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID列表",
           "example": "[\"cynosdbmysql-ins-xxx\"]]",
@@ -2102,7 +2044,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单ID",
           "example": "\"xxx\"",
@@ -2201,7 +2142,6 @@
       "document": "Binlog描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Binlog文件名称",
           "example": "无",
@@ -2212,7 +2152,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件大小，单位：字节",
           "example": "无",
@@ -2223,7 +2162,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事务最早时间",
           "example": "无",
@@ -2234,7 +2172,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事务最晚时间",
           "example": "无",
@@ -2245,7 +2182,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Binlog文件ID",
           "example": "无",
@@ -2262,7 +2198,6 @@
       "document": "CloseAuditService请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID。",
           "example": "cynosdbmysql-ins-6990cckk",
@@ -2290,7 +2225,6 @@
       "document": "CloseClusterPasswordComplexity请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID数组",
           "example": "cynosdbpg-bzxxrmtq",
@@ -2391,7 +2325,6 @@
       "document": "CloseWan请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例组id",
           "example": "cynosdbmysql-grp-o48ssqs5",
@@ -2565,7 +2498,6 @@
       "document": "参数修改记录",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数名称",
           "example": "无",
@@ -2576,7 +2508,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前值",
           "example": "无",
@@ -2587,7 +2518,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后的值",
           "example": "无",
@@ -2598,7 +2528,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改状态",
           "example": "无",
@@ -2609,7 +2538,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "无",
@@ -2620,7 +2548,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
           "example": "无",
@@ -2631,7 +2558,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-xxx",
@@ -2642,7 +2568,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "cynosdbmysql-ins-xxx",
@@ -2659,7 +2584,6 @@
       "document": "CopyClusterPasswordComplexity请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "复制集群ID数组",
           "example": "cynosdbpg-bzxxrmtq",
@@ -2669,7 +2593,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群id",
           "example": "cynosdbpg-bzxxrmtq",
@@ -2707,7 +2630,6 @@
       "document": "CreateAccounts请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id",
           "example": "xxx",
@@ -2717,7 +2639,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新账户列表",
           "example": "无",
@@ -2836,7 +2757,6 @@
       "document": "CreateAuditRuleTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "审计规则。",
           "example": "无",
@@ -2846,7 +2766,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则模版名称。",
           "example": "这是规则模版名称",
@@ -2856,7 +2775,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则模版描述。",
           "example": "规则模版自白。",
@@ -2894,7 +2812,6 @@
       "document": "CreateBackup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbpg-45knmnra",
@@ -2904,7 +2821,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份类型, 可选值：logic，逻辑备份；snapshot，物理备份",
           "example": "logic",
@@ -2914,7 +2830,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份的库, 只在 BackupType 为 logic 时有效",
           "example": "无",
@@ -2924,7 +2839,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份的表, 只在 BackupType 为 logic 时有效",
           "example": "无",
@@ -2934,7 +2848,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注名",
           "example": "备份备注",
@@ -2972,7 +2885,6 @@
       "document": "CreateClusterDatabase请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-xxxxxxx",
@@ -2982,7 +2894,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名",
           "example": "test",
@@ -2992,7 +2903,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字符集类型",
           "example": "utf8",
@@ -3002,7 +2912,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序规则",
           "example": " utf8_general_ci ",
@@ -3012,7 +2921,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权用户主机权限",
           "example": "无",
@@ -3022,7 +2930,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "test",
@@ -3053,7 +2960,6 @@
           "disabled": false,
           "document": "可用区",
           "example": "ap-guangzhou-3",
-          "is_base64": false,
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -3063,7 +2969,6 @@
           "disabled": false,
           "document": "所属VPC网络ID",
           "example": "vpc-1ptuei0b",
-          "is_base64": false,
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -3073,7 +2978,6 @@
           "disabled": false,
           "document": "所属子网ID",
           "example": "subnet-1tmw9t4o",
-          "is_base64": false,
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -3083,7 +2987,6 @@
           "disabled": false,
           "document": "数据库类型，取值范围: \n<li> MYSQL </li>",
           "example": "MYSQL",
-          "is_base64": false,
           "member": "string",
           "name": "DbType",
           "required": true,
@@ -3093,7 +2996,6 @@
           "disabled": false,
           "document": "数据库版本，取值范围: \n<li> MYSQL可选值：5.7，8.0 </li>",
           "example": "5.7",
-          "is_base64": false,
           "member": "string",
           "name": "DbVersion",
           "required": true,
@@ -3103,7 +3005,6 @@
           "disabled": false,
           "document": "所属项目ID",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -3113,7 +3014,6 @@
           "disabled": false,
           "document": "当DbMode为NORMAL或不填时必选\n普通实例Cpu核数",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "Cpu",
           "required": false,
@@ -3123,7 +3023,6 @@
           "disabled": false,
           "document": "当DbMode为NORMAL或不填时必选\n普通实例内存,单位GB",
           "example": "4",
-          "is_base64": false,
           "member": "int64",
           "name": "Memory",
           "required": false,
@@ -3133,7 +3032,6 @@
           "disabled": false,
           "document": "该参数无实际意义，已废弃。\n存储大小，单位GB。",
           "example": "100",
-          "is_base64": false,
           "member": "int64",
           "name": "Storage",
           "required": false,
@@ -3143,7 +3041,6 @@
           "disabled": false,
           "document": "集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）",
           "example": "MyClusterName",
-          "is_base64": false,
           "member": "string",
           "name": "ClusterName",
           "required": false,
@@ -3153,7 +3050,6 @@
           "disabled": false,
           "document": "账号密码(8-64个字符，包含大小写英文字母、数字和符号~!@#$%^&*_-+=`|\\(){}[]:;'<>,.?/中的任意三种)",
           "example": "passwd@admin",
-          "is_base64": false,
           "member": "string",
           "name": "AdminPassword",
           "required": false,
@@ -3163,7 +3059,6 @@
           "disabled": false,
           "document": "端口，默认3306，取值范围[0, 65535)",
           "example": "3306",
-          "is_base64": false,
           "member": "int64",
           "name": "Port",
           "required": false,
@@ -3173,7 +3068,6 @@
           "disabled": false,
           "document": "计费模式，按量计费：0，包年包月：1。默认按量计费。",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "PayMode",
           "required": false,
@@ -3183,7 +3077,6 @@
           "disabled": false,
           "document": "购买集群数，可选值范围[1,50]，默认为1",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "Count",
           "required": false,
@@ -3193,7 +3086,6 @@
           "disabled": false,
           "document": "回档类型：\nnoneRollback：不回档；\nsnapRollback，快照回档；\ntimeRollback，时间点回档",
           "example": "noneRollback",
-          "is_base64": false,
           "member": "string",
           "name": "RollbackStrategy",
           "required": false,
@@ -3203,7 +3095,6 @@
           "disabled": false,
           "document": "快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "RollbackId",
           "required": false,
@@ -3213,7 +3104,6 @@
           "disabled": false,
           "document": "回档时，传入源集群ID，用于查找源poolId",
           "example": "cynosdbmysql-xxxxxxxx",
-          "is_base64": false,
           "member": "string",
           "name": "OriginalClusterId",
           "required": false,
@@ -3223,7 +3113,6 @@
           "disabled": false,
           "document": "时间点回档，指定时间；快照回档，快照时间",
           "example": "2021-04-26 18:13:10",
-          "is_base64": false,
           "member": "string",
           "name": "ExpectTime",
           "required": false,
@@ -3233,7 +3122,6 @@
           "disabled": false,
           "document": "该参数无实际意义，已废弃。\n时间点回档，指定时间允许范围",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "ExpectTimeThresh",
           "required": false,
@@ -3243,7 +3131,6 @@
           "disabled": false,
           "document": "普通实例存储上限，单位GB\n当DbType为MYSQL，且存储计费模式为预付费时，该参数需不大于cpu与memory对应存储规格上限",
           "example": "100",
-          "is_base64": false,
           "member": "int64",
           "name": "StorageLimit",
           "required": false,
@@ -3253,7 +3140,6 @@
           "disabled": false,
           "document": "实例数量，数量范围为(0,16]",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "InstanceCount",
           "required": false,
@@ -3263,7 +3149,6 @@
           "disabled": false,
           "document": "包年包月购买时长",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "TimeSpan",
           "required": false,
@@ -3273,7 +3158,6 @@
           "disabled": false,
           "document": "包年包月购买时长单位，['s','d','m','y']",
           "example": "m",
-          "is_base64": false,
           "member": "string",
           "name": "TimeUnit",
           "required": false,
@@ -3283,7 +3167,6 @@
           "disabled": false,
           "document": "包年包月购买是否自动续费，默认为0",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "AutoRenewFlag",
           "required": false,
@@ -3293,7 +3176,6 @@
           "disabled": false,
           "document": "是否自动选择代金券 1是 0否 默认为0",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "AutoVoucher",
           "required": false,
@@ -3303,7 +3185,6 @@
           "disabled": false,
           "document": "实例数量（该参数已不再使用，只做存量兼容处理）",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "HaCount",
           "required": false,
@@ -3313,7 +3194,6 @@
           "disabled": false,
           "document": "订单来源",
           "example": "MyOrderSource",
-          "is_base64": false,
           "member": "string",
           "name": "OrderSource",
           "required": false,
@@ -3323,7 +3203,6 @@
           "disabled": false,
           "document": "集群创建需要绑定的tag数组信息",
           "example": "无",
-          "is_base64": false,
           "member": "Tag",
           "name": "ResourceTags",
           "required": false,
@@ -3333,7 +3212,6 @@
           "disabled": false,
           "document": "Db类型\n当DbType为MYSQL时可选(默认NORMAL)：\n<li>NORMAL</li>\n<li>SERVERLESS</li>",
           "example": "NORMAL",
-          "is_base64": false,
           "member": "string",
           "name": "DbMode",
           "required": false,
@@ -3343,7 +3221,6 @@
           "disabled": false,
           "document": "当DbMode为SEVERLESS时必填\ncpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回",
           "example": "1.0",
-          "is_base64": false,
           "member": "float",
           "name": "MinCpu",
           "required": false,
@@ -3353,7 +3230,6 @@
           "disabled": false,
           "document": "当DbMode为SEVERLESS时必填：\ncpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回",
           "example": "2.0",
-          "is_base64": false,
           "member": "float",
           "name": "MaxCpu",
           "required": false,
@@ -3363,7 +3239,6 @@
           "disabled": false,
           "document": "当DbMode为SEVERLESS时，指定集群是否自动暂停，可选范围\n<li>yes</li>\n<li>no</li>\n默认值:yes",
           "example": "yes",
-          "is_base64": false,
           "member": "string",
           "name": "AutoPause",
           "required": false,
@@ -3373,7 +3248,6 @@
           "disabled": false,
           "document": "当DbMode为SEVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]\n默认值:600",
           "example": "600",
-          "is_base64": false,
           "member": "int64",
           "name": "AutoPauseDelay",
           "required": false,
@@ -3383,7 +3257,6 @@
           "disabled": false,
           "document": "集群存储计费模式，按量计费：0，包年包月：1。默认按量计费\n当DbType为MYSQL时，在集群计算计费模式为后付费（包括DbMode为SERVERLESS）时，存储计费模式仅可为按量计费\n回档与克隆均不支持包年包月存储",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "StoragePayMode",
           "required": false,
@@ -3393,7 +3266,6 @@
           "disabled": false,
           "document": "安全组id数组",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -3403,7 +3275,6 @@
           "disabled": false,
           "document": "告警策略Id数组",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "AlarmPolicyIds",
           "required": false,
@@ -3413,7 +3284,6 @@
           "disabled": false,
           "document": "参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感",
           "example": "无",
-          "is_base64": false,
           "member": "ParamItem",
           "name": "ClusterParams",
           "required": false,
@@ -3423,7 +3293,6 @@
           "disabled": false,
           "document": "交易模式，0-下单且支付，1-下单",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "DealMode",
           "required": false,
@@ -3433,7 +3302,6 @@
           "disabled": false,
           "document": "参数模版ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "ParamTemplateId",
           "required": false,
@@ -3443,7 +3311,6 @@
           "disabled": false,
           "document": "多可用区地址",
           "example": "ap-guangzhou-2",
-          "is_base64": false,
           "member": "string",
           "name": "SlaveZone",
           "required": false,
@@ -3453,7 +3320,6 @@
           "disabled": false,
           "document": "实例初始化配置信息，主要用于购买集群时选不同规格实例",
           "example": "无",
-          "is_base64": false,
           "member": "InstanceInitInfo",
           "name": "InstanceInitInfos",
           "required": false,
@@ -5570,7 +5436,6 @@
       "document": "实例详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户Uin",
           "example": "",
@@ -5581,7 +5446,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户AppId",
           "example": "",
@@ -5592,7 +5456,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "",
@@ -5603,7 +5466,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群名称",
           "example": "",
@@ -5614,7 +5476,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "",
@@ -5625,7 +5486,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称",
           "example": "",
@@ -5636,7 +5496,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "",
@@ -5647,7 +5506,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域",
           "example": "",
@@ -5658,7 +5516,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区",
           "example": "",
@@ -5669,7 +5526,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例状态",
           "example": "",
@@ -5680,7 +5536,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例状态中文描述",
           "example": "",
@@ -5691,7 +5546,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库类型",
           "example": "",
@@ -5702,7 +5556,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库版本",
           "example": "",
@@ -5713,7 +5566,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cpu，单位：核",
           "example": "",
@@ -5724,7 +5576,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存，单位：GB",
           "example": "",
@@ -5735,7 +5586,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储量，单位：GB",
           "example": "",
@@ -5746,7 +5596,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例类型",
           "example": "",
@@ -5757,7 +5606,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例当前角色",
           "example": "",
@@ -5768,7 +5616,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
           "example": "",
@@ -5779,7 +5626,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -5790,7 +5636,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费模式",
           "example": "",
@@ -5801,7 +5646,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例过期时间",
           "example": "",
@@ -5812,7 +5656,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络类型",
           "example": "",
@@ -5823,7 +5666,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC网络ID",
           "example": "",
@@ -5834,7 +5676,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID",
           "example": "",
@@ -5845,7 +5686,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例内网IP",
           "example": "",
@@ -5856,7 +5696,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例内网端口",
           "example": "",
@@ -5867,7 +5706,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例外网域名",
           "example": "",
@@ -5878,7 +5716,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字符集",
           "example": "",
@@ -5889,7 +5726,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cynos内核版本",
           "example": "",
@@ -5900,7 +5736,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "续费标志",
           "example": "",
@@ -5911,7 +5746,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "serverless实例cpu下限",
           "example": "",
@@ -5922,7 +5756,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "serverless实例cpu上限",
           "example": "",
@@ -5933,7 +5766,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "serverless实例状态, 可能值：\nresume\npause",
           "example": "",
@@ -5950,7 +5782,6 @@
       "document": "实例组信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户appId",
           "example": "无",
@@ -5961,7 +5792,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "无",
@@ -5972,7 +5802,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "无",
@@ -5983,7 +5812,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "删除时间",
           "example": "无",
@@ -5994,7 +5822,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例组ID",
           "example": "无",
@@ -6005,7 +5832,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态",
           "example": "无",
@@ -6016,7 +5842,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例组类型。ha-ha组；ro-只读组",
           "example": "无",
@@ -6027,7 +5852,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
           "example": "无",
@@ -6038,7 +5862,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内网IP",
           "example": "无",
@@ -6049,7 +5872,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内网端口",
           "example": "无",
@@ -6060,7 +5882,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "外网域名",
           "example": "无",
@@ -6071,7 +5892,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "外网ip",
           "example": "无",
@@ -6082,7 +5902,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "外网端口",
           "example": "无",
@@ -6093,7 +5912,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "外网状态",
           "example": "无",
@@ -6104,7 +5922,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例组包含实例信息",
           "example": "无",
@@ -6115,7 +5932,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC的ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6126,7 +5942,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6137,7 +5952,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "正在回收IP信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6148,7 +5962,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "正在进行的任务",
           "example": "无",
@@ -6159,7 +5972,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务列表",
           "example": "无",
@@ -6170,7 +5982,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "biz_net_service表id",
           "example": "无",
@@ -6187,7 +5998,6 @@
       "document": "数据库权限列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库",
           "example": "",
@@ -6198,7 +6008,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限列表",
           "example": "",
@@ -6215,7 +6024,6 @@
       "document": "数据库表信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "db",
@@ -6226,7 +6034,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表名称列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6369,7 +6176,6 @@
       "document": "数据库表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称",
           "example": "db-xx",
@@ -6380,7 +6186,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库表名称",
           "example": "table-xx",
@@ -6397,7 +6202,6 @@
       "document": "DeleteAccounts请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-ixgbd0di",
@@ -6407,7 +6211,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号数组，包含account和host",
           "example": "无",
@@ -6435,7 +6238,6 @@
       "document": "DeleteAuditLogFile请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "cynosdbmysql-ins-xx",
@@ -6445,7 +6247,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审计日志文件名称。",
           "example": "\"test.csv\"",
@@ -6473,7 +6274,6 @@
       "document": "DeleteAuditRuleTemplates请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "审计规则模版ID。",
           "example": "cynosdb-art-l1mlbo59",
@@ -6501,7 +6301,6 @@
       "document": "DeleteBackup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbpg-45knmnra",
@@ -6511,7 +6310,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件ID，旧版本使用的字段，不推荐使用",
           "example": "[\"4928\\r\\n\"]",
@@ -6521,7 +6319,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件ID，推荐使用",
           "example": "[\"1000\\r\\n\"]",
@@ -6549,7 +6346,6 @@
       "document": "DeleteClusterDatabase请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-xxxxxxx",
@@ -6559,7 +6355,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名",
           "example": "test",
@@ -6614,7 +6409,6 @@
       "document": "DescribeAccountAllGrantPrivileges请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id",
           "example": "xxx",
@@ -6624,7 +6418,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号信息",
           "example": "无",
@@ -6692,7 +6485,6 @@
       "document": "DescribeAccountPrivileges请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id",
           "example": "cynosmysql-xxxxxxxx",
@@ -6702,7 +6494,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账户名",
           "example": "xxx",
@@ -6712,7 +6503,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机",
           "example": "xxx",
@@ -6722,7 +6512,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名，为*时，忽略Type/TableName, 表示修改用户全局权限；",
           "example": "xxx",
@@ -6732,7 +6521,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定数据库下的对象类型，可选\"table\"，\"*\"",
           "example": "table",
@@ -6742,7 +6530,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当Type=\"table\"时，用来指定表名",
           "example": "xx",
@@ -6783,7 +6570,6 @@
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-on5xw0ni",
-          "is_base64": false,
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -6793,7 +6579,6 @@
           "disabled": false,
           "document": "需要过滤的账户列表",
           "example": "[admin]",
-          "is_base64": false,
           "member": "string",
           "name": "AccountNames",
           "required": false,
@@ -6803,7 +6588,6 @@
           "disabled": false,
           "document": "数据库类型，取值范围: \n<li> MYSQL </li>\n该参数已废用",
           "example": "MYSQL",
-          "is_base64": false,
           "member": "string",
           "name": "DbType",
           "required": false,
@@ -6813,7 +6597,6 @@
           "disabled": false,
           "document": "需要过滤的账户列表",
           "example": "[0.0.0.0]",
-          "is_base64": false,
           "member": "string",
           "name": "Hosts",
           "required": false,
@@ -6823,7 +6606,6 @@
           "disabled": false,
           "document": "限制量",
           "example": "10",
-          "is_base64": false,
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -6833,7 +6615,6 @@
           "disabled": false,
           "document": "偏移量",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -6843,7 +6624,6 @@
           "disabled": false,
           "document": "模糊匹配关键字(同时匹配AccountName和AccountHost，返回并集结果，支持正则)",
           "example": "“test\"",
-          "is_base64": false,
           "member": "string",
           "name": "AccountRegular",
           "required": false,
@@ -6888,7 +6668,6 @@
       "document": "DescribeAuditLogFiles请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "cynosdbmysql-ins-xx",
@@ -6898,7 +6677,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页大小参数。默认值为 20，最小值为 1，最大值为 100。",
           "example": "100",
@@ -6908,7 +6686,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量。",
           "example": "0",
@@ -6918,7 +6695,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审计日志文件名。",
           "example": "FileName",
@@ -6969,7 +6745,6 @@
           "disabled": false,
           "document": "实例ID",
           "example": "cynosdbmysql-ins-xx",
-          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6979,7 +6754,6 @@
           "disabled": false,
           "document": "开始时间，格式为：\"2017-07-12 10:29:20\"。",
           "example": "2017-07-12 10:29:20",
-          "is_base64": false,
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -6989,7 +6763,6 @@
           "disabled": false,
           "document": "结束时间，格式为：\"2017-07-12 10:29:20\"。",
           "example": "2017-07-12 10:29:20",
-          "is_base64": false,
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -6999,7 +6772,6 @@
           "disabled": false,
           "document": "排序方式。支持值包括：\"ASC\" - 升序，\"DESC\" - 降序。",
           "example": "ASC",
-          "is_base64": false,
           "member": "string",
           "name": "Order",
           "required": false,
@@ -7009,7 +6781,6 @@
           "disabled": false,
           "document": "排序字段。支持值包括：\n\"timestamp\" - 时间戳；\n\"affectRows\" - 影响行数；\n\"execTime\" - 执行时间。",
           "example": "timestap",
-          "is_base64": false,
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -7019,7 +6790,6 @@
           "disabled": false,
           "document": "已废弃。",
           "example": "无",
-          "is_base64": false,
           "member": "AuditLogFilter",
           "name": "Filter",
           "required": false,
@@ -7029,7 +6799,6 @@
           "disabled": false,
           "document": "分页参数，单次返回的数据条数。默认值为100，最大值为100。",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -7039,7 +6808,6 @@
           "disabled": false,
           "document": "分页偏移量。",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -7049,7 +6817,6 @@
           "disabled": false,
           "document": "过滤条件。多个值之前是且的关系。",
           "example": "无",
-          "is_base64": false,
           "member": "InstanceAuditLogFilter",
           "name": "LogFilter",
           "required": false,
@@ -7094,7 +6861,6 @@
       "document": "DescribeAuditRuleTemplates请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则模版ID。",
           "example": "cynosdb-art-nuzwpha1",
@@ -7104,7 +6870,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则模版名称",
           "example": "测试template",
@@ -7114,7 +6879,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单次请求返回的数量。默认值20。",
           "example": "10",
@@ -7124,7 +6888,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认值为 0。",
           "example": "0",
@@ -7172,7 +6935,6 @@
       "document": "DescribeAuditRuleWithInstanceIds请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID。目前仅支持单个实例的查询。",
           "example": "[\"cynosdbmysql-ins-6990cckk\"]",
@@ -7220,7 +6982,6 @@
       "document": "DescribeBackupConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-45knmnra",
@@ -7298,7 +7059,6 @@
       "document": "DescribeBackupDownloadUrl请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-123",
@@ -7308,7 +7068,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份ID",
           "example": "100",
@@ -7346,7 +7105,6 @@
       "document": "DescribeBackupList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbpg-ilgo90hu",
@@ -7356,7 +7114,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件列表大小，取值范围(0,100]",
           "example": "10",
@@ -7366,7 +7123,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件列表偏移，取值范围[0,INF)",
           "example": "0",
@@ -7376,7 +7132,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库类型，取值范围: \n<li> MYSQL </li>",
           "example": "MYSQL",
@@ -7386,7 +7141,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份ID",
           "example": "无",
@@ -7396,7 +7150,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份类型，可选值：snapshot，快照备份； logic，逻辑备份",
           "example": "snapshot",
@@ -7406,7 +7159,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份方式，可选值：auto，自动备份；manual，手动备",
           "example": "auto",
@@ -7416,7 +7168,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照类型，可选值：full，全量；increment，增量",
           "example": "full",
@@ -7426,7 +7177,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份开始时间",
           "example": "2022-01-01 12:00:00",
@@ -7436,7 +7186,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份结束时间",
           "example": "2022-01-01 14:00:00",
@@ -7446,7 +7195,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件名，模糊查询",
           "example": "无",
@@ -7456,7 +7204,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份备注名，模糊查询",
           "example": "无",
@@ -7466,7 +7213,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照备份Id列表",
           "example": "无",
@@ -7514,7 +7260,6 @@
       "document": "DescribeBinlogDownloadUrl请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-123",
@@ -7524,7 +7269,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Binlog文件ID",
           "example": "100",
@@ -7562,7 +7306,6 @@
       "document": "DescribeBinlogSaveDays请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-123",
@@ -7600,7 +7343,6 @@
       "document": "DescribeBinlogs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-123",
@@ -7610,7 +7352,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间",
           "example": "2022-01-01 12:00:00",
@@ -7620,7 +7361,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "example": "2022-01-01 14:00:00",
@@ -7630,7 +7370,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "100",
@@ -7640,7 +7379,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制条数",
           "example": "100",
@@ -7688,7 +7426,6 @@
       "document": "DescribeClusterDetailDatabases请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-xxxxxxx",
@@ -7698,7 +7435,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认0",
           "example": "0",
@@ -7708,7 +7444,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认20,最大100",
           "example": "20",
@@ -7718,7 +7453,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称",
           "example": "test",
@@ -7769,7 +7503,6 @@
           "disabled": false,
           "document": "集群Id",
           "example": "cynosdbpg-5804k48e",
-          "is_base64": false,
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -7804,7 +7537,6 @@
       "document": "DescribeClusterInstanceGrps请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-oib3wx0i",
@@ -7852,7 +7584,6 @@
       "document": "DescribeClusterParamLogs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "123",
@@ -7862,7 +7593,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID列表，用来记录具体操作哪些实例",
           "example": "[123,123]",
@@ -7872,7 +7602,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段，定义在回返结果的基于哪个字段进行排序",
           "example": "123",
@@ -7882,7 +7611,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "定义具体的排序规则，限定为desc,asc,DESC,ASC其中之一",
           "example": "DESC",
@@ -7892,7 +7620,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为 20，取值范围为(0,100]",
           "example": "20",
@@ -7902,7 +7629,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录偏移量，默认值为0，取值范围为[0,INF)",
           "example": "0",
@@ -7950,7 +7676,6 @@
       "document": "DescribeClusterParams请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbpg-1xcycbu8",
@@ -7960,7 +7685,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数名字",
           "example": "binlog",
@@ -8008,7 +7732,6 @@
       "document": "DescribeClusterPasswordComplexity请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbpg-bzxxrmtq",
@@ -8096,7 +7819,6 @@
       "document": "DescribeClusters请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "引擎类型：目前支持“MYSQL”， “POSTGRESQL”",
           "example": "MYSQL",
@@ -8106,7 +7828,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100",
           "example": "20",
@@ -8116,7 +7837,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录偏移量，默认值为0",
           "example": "0",
@@ -8126,7 +7846,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段，取值范围：\n<li> CREATETIME：创建时间</li>\n<li> PERIODENDTIME：过期时间</li>",
           "example": "\"CREATETIME\"",
@@ -8136,7 +7855,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序类型，取值范围：\n<li> ASC：升序排序 </li>\n<li> DESC：降序排序 </li>",
           "example": "\"DESC\"",
@@ -8146,7 +7864,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
           "example": "无",
@@ -8194,7 +7911,6 @@
       "document": "DescribeDBSecurityGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例组ID",
           "example": "cynosdbpg-ins-jhi2gdi0",
@@ -8232,7 +7948,6 @@
       "document": "DescribeFlow请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务流ID",
           "example": "123",
@@ -8270,7 +7985,6 @@
       "document": "DescribeInstanceDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "cynosdbmysql-ins-bzkxxrmt",
@@ -8427,7 +8141,6 @@
       "document": "DescribeInstanceParams请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "无",
@@ -8437,7 +8150,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，支持批量查询",
           "example": "无",
@@ -8447,7 +8159,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数名搜索条件，支持模糊匹配",
           "example": "无",
@@ -8485,7 +8196,6 @@
       "document": "DescribeInstanceSlowQueries请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "cynosdbmysql-ins-123",
@@ -8495,7 +8205,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事务开始最早时间",
           "example": "2022-01-01 12:00:00",
@@ -8505,7 +8214,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事务开始最晚时间",
           "example": "2022-01-01 14:00:00",
@@ -8515,7 +8223,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制条数",
           "example": "20",
@@ -8525,7 +8232,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "0",
@@ -8535,7 +8241,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名",
           "example": "root",
@@ -8545,7 +8250,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端host",
           "example": "10.10.10.10",
@@ -8555,7 +8259,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名",
           "example": "db1",
@@ -8565,7 +8268,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段，可选值：QueryTime,LockTime,RowsExamined,RowsSent",
           "example": "QueryTime",
@@ -8575,7 +8277,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序类型，可选值：asc,desc",
           "example": "desc",
@@ -8776,7 +8477,6 @@
       "document": "DescribeMaintainPeriod请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "cynosdbmysql-ins-n7ocdslw",
@@ -9061,7 +8761,6 @@
       "document": "DescribeProjectSecurityGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "11954",
@@ -9071,7 +8770,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制量",
           "example": "1",
@@ -9081,7 +8779,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "1",
@@ -9091,7 +8788,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索关键字",
           "example": "无",
@@ -9238,55 +8934,45 @@
       "document": "DescribeProxyNodes请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100",
           "example": "100",
-          "is_base64": false,
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "记录偏移量，默认值为0",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "排序字段，取值范围：\n<li> CREATETIME：创建时间</li>\n<li> PERIODENDTIME：过期时间</li>",
           "example": "\"CREATETIME\"",
-          "is_base64": false,
           "member": "string",
           "name": "OrderBy",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "排序类型，取值范围：\n<li> ASC：升序排序 </li>\n<li> DESC：降序排序 </li>",
           "example": "\"desc\"",
-          "is_base64": false,
           "member": "string",
           "name": "OrderByType",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
           "example": "无",
-          "is_base64": false,
           "member": "QueryFilter",
           "name": "Filters",
           "required": false,
@@ -9657,7 +9343,6 @@
       "document": "DescribeResourcesByDealName请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "计费订单ID（如果计费还没回调业务发货，可能出现错误码InvalidParameterValue.DealNameNotFound，这种情况需要业务重试DescribeResourcesByDealName接口直到成功）",
           "example": "1000000001111",
@@ -9667,7 +9352,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计费订单ID列表，可以一次查询若干条订单ID对应资源信息（如果计费还没回调业务发货，可能出现错误码InvalidParameterValue.DealNameNotFound，这种情况需要业务重试DescribeResourcesByDealName接口直到成功）",
           "example": "[\"xxx\",\"xxx\"]",
@@ -9688,7 +9372,7 @@
           "example": "无",
           "member": "BillingResourceInfo",
           "name": "BillingResourceInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9705,7 +9389,6 @@
       "document": "DescribeRollbackTimeRange请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-oib3wx0i",
@@ -9763,7 +9446,6 @@
       "document": "DescribeRollbackTimeValidity请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "",
@@ -9773,7 +9455,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "期望回滚的时间点",
           "example": "",
@@ -9783,7 +9464,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回滚时间点的允许误差范围",
           "example": "",
@@ -9847,7 +9527,6 @@
       "document": "DescribeSupportProxyVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-xxxxxxx",
@@ -9857,7 +9536,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库代理组ID",
           "example": "无",
@@ -9950,7 +9628,6 @@
       "document": "DisassociateSecurityGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例组ID数组",
           "example": "cynosdbmysql-ins-4senc2fm",
@@ -9960,7 +9637,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要修改的安全组ID列表，一个或者多个安全组ID组成的数组。",
           "example": "[\"sg-ajr1jzgj\\n\"]",
@@ -9970,7 +9646,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区",
           "example": "ap-guangzhou-3",
@@ -10154,7 +9829,6 @@
           "disabled": false,
           "document": "实例ID",
           "example": "cynosdbmysql-ins-123",
-          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -10164,7 +9838,6 @@
           "disabled": false,
           "document": "事务开始最早时间",
           "example": "2022-01-01 12:00:00",
-          "is_base64": false,
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -10174,7 +9847,6 @@
           "disabled": false,
           "document": "事务开始最晚时间",
           "example": "2022-01-01 14:00:00",
-          "is_base64": false,
           "member": "string",
           "name": "EndTime",
           "required": false,
@@ -10184,7 +9856,6 @@
           "disabled": false,
           "document": "限制条数",
           "example": "100",
-          "is_base64": false,
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -10194,7 +9865,6 @@
           "disabled": false,
           "document": "偏移量",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -10204,7 +9874,6 @@
           "disabled": false,
           "document": "用户名",
           "example": "root",
-          "is_base64": false,
           "member": "string",
           "name": "Username",
           "required": false,
@@ -10214,7 +9883,6 @@
           "disabled": false,
           "document": "客户端host",
           "example": "10.10.10.10",
-          "is_base64": false,
           "member": "string",
           "name": "Host",
           "required": false,
@@ -10224,7 +9892,6 @@
           "disabled": false,
           "document": "数据库名",
           "example": "db1",
-          "is_base64": false,
           "member": "string",
           "name": "Database",
           "required": false,
@@ -10234,7 +9901,6 @@
           "disabled": false,
           "document": "文件类型，可选值：csv, original",
           "example": "csv",
-          "is_base64": false,
           "member": "string",
           "name": "FileType",
           "required": false,
@@ -10244,7 +9910,6 @@
           "disabled": false,
           "document": "排序字段，可选值： QueryTime,LockTime,RowsExamined,RowsSent",
           "example": "QueryTime",
-          "is_base64": false,
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -10254,7 +9919,6 @@
           "disabled": false,
           "document": "排序类型，可选值：asc,desc",
           "example": "desc",
-          "is_base64": false,
           "member": "string",
           "name": "OrderByType",
           "required": false,
@@ -10289,7 +9953,6 @@
       "document": "GrantAccountPrivileges请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id",
           "example": "xxx",
@@ -10299,7 +9962,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号信息",
           "example": "无",
@@ -10309,7 +9971,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库表权限码数组",
           "example": "无",
@@ -10319,7 +9980,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库表信息",
           "example": "无",
@@ -10347,7 +10007,6 @@
       "document": "账号，包含accountName和host",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "账号",
           "example": "",
@@ -10358,7 +10017,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机，默认‘%’",
           "example": "",
@@ -10375,7 +10033,6 @@
       "document": "InquirePriceCreate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "可用区,每个地域提供最佳实践",
           "example": "ap-guangzhou-3",
@@ -10385,7 +10042,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买计算节点个数",
           "example": "1",
@@ -10395,7 +10051,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS",
           "example": "PREPAID",
@@ -10405,7 +10060,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储购买类型，可选值为：PREPAID, POSTPAID",
           "example": "POSTPAID",
@@ -10415,7 +10069,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CPU核数，PREPAID与POSTPAID实例类型必传",
           "example": "1",
@@ -10425,7 +10078,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存大小，单位G，PREPAID与POSTPAID实例类型必传",
           "example": "1",
@@ -10435,7 +10087,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Ccu大小，serverless类型必传",
           "example": "0.5",
@@ -10445,7 +10096,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储大小，PREPAID存储类型必传",
           "example": "10",
@@ -10455,7 +10105,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买时长，PREPAID购买类型必传",
           "example": "1",
@@ -10465,7 +10114,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时长单位，可选值为：m,d。PREPAID购买类型必传",
           "example": "m",
@@ -10513,7 +10161,6 @@
       "document": "InquirePriceRenew请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "xxx",
@@ -10523,7 +10170,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买时长,与TimeUnit组合才能生效",
           "example": "1",
@@ -10533,7 +10179,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买时长单位, 与TimeSpan组合生效，可选:日:d,月:m",
           "example": "m",
@@ -10614,7 +10259,6 @@
           "disabled": false,
           "document": "过滤项。目前支持以下搜索条件：\n\n包含、不包含、包含（分词维度）、不包含（分词维度）:\nsql - SQL详情\n\n等于、不等于、包含、不包含：\nhost - 客户端地址；\nuser - 用户名；\ndbName - 数据库名称；\n\n等于、不等于：\nsqlType - SQL类型；\nerrCode - 错误码；\nthreadId - 线程ID；\n\n范围搜索（时间类型统一为微妙）：\nexecTime - 执行时间；\nlockWaitTime - 锁等待时间；\nioWaitTime - IO等待时间；\ntrxLivingTime - 事物持续时间；\ncpuTime - cpu时间；\ncheckRows - 扫描行数；\naffectRows - 影响行数；\nsentRows - 返回行数。",
           "example": "host",
-          "is_base64": false,
           "member": "string",
           "name": "Type",
           "required": true,
@@ -10624,7 +10268,6 @@
           "disabled": false,
           "document": "过滤条件。支持以下条件：\nWINC-包含（分词维度），\nWEXC-不包含（分词维度）,\nINC - 包含,\nEXC - 不包含,\nEQS - 等于,\nNEQ - 不等于,\nRA - 范围。",
           "example": "INC",
-          "is_base64": false,
           "member": "string",
           "name": "Compare",
           "required": true,
@@ -10634,7 +10277,6 @@
           "disabled": false,
           "document": "过滤的值。反向查询时，多个值之前是且的关系，正向查询多个值是或的关系。",
           "example": "100.0.",
-          "is_base64": false,
           "member": "string",
           "name": "Value",
           "required": true,
@@ -10647,7 +10289,6 @@
       "document": "实例的审计规则详情，DescribeAuditRuleWithInstanceIds接口的出参。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID。",
           "example": "cynosdbmysql-ins-6990cckk",
@@ -10658,7 +10299,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是规则审计。true-规则审计，false-全审计。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -10669,7 +10309,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审计规则详情。仅当AuditRule=true时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -10707,7 +10346,6 @@
           "disabled": false,
           "document": "实例类型 rw/ro",
           "example": "rw",
-          "is_base64": false,
           "member": "string",
           "name": "InstanceType",
           "required": true,
@@ -10881,7 +10519,6 @@
       "document": "实例参数信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "无",
@@ -10892,7 +10529,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例参数列表",
           "example": "无",
@@ -10909,7 +10545,6 @@
       "document": "实例可售卖规格详细信息，创建实例时Cpu/Memory确定实例规格，存储可选大小为[MinStorageSize,MaxStorageSize]",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例CPU，单位：核",
           "example": "无",
@@ -10920,7 +10555,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例内存，单位：GB",
           "example": "无",
@@ -10931,7 +10565,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例最大可用存储，单位：GB",
           "example": "无",
@@ -10942,7 +10575,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例最小可用存储，单位：GB",
           "example": "无",
@@ -10953,7 +10585,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否有库存",
           "example": "无",
@@ -10964,7 +10595,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器类型",
           "example": "无",
@@ -10975,7 +10605,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大IOPS",
           "example": "无",
@@ -10986,7 +10615,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大IO带宽",
           "example": "无",
@@ -10997,7 +10625,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域库存信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -11008,7 +10635,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "库存数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -11025,7 +10651,6 @@
       "document": "IsolateCluster请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbpg-bzxxrmtq",
@@ -11035,7 +10660,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该参数已废用",
           "example": "MYSQL",
@@ -11083,7 +10707,6 @@
       "document": "IsolateInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-ins-bzkxxrmt",
@@ -11093,7 +10716,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID数组",
           "example": "[\"cynosdbmysql-ixgbd0di\\n\"]",
@@ -11103,7 +10725,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该参数已废弃",
           "example": "MYSQL",
@@ -11156,7 +10777,6 @@
       "document": "ModifyAccountDescription请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库账号名",
           "example": "admin",
@@ -11166,7 +10786,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库账号描述信息",
           "example": "admin",
@@ -11176,7 +10795,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbpg-on5xw0ni",
@@ -11186,7 +10804,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机，默认为\"%\"",
           "example": "%",
@@ -11214,7 +10831,6 @@
       "document": "ModifyAccountHost请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id",
           "example": "cynosdbpg-on5xw0ni",
@@ -11224,7 +10840,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新主机",
           "example": "xx",
@@ -11234,7 +10849,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号信息",
           "example": "无",
@@ -11262,7 +10876,6 @@
       "document": "ModifyAccountParams请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id，不超过32个字符",
           "example": "xxx",
@@ -11272,7 +10885,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号信息",
           "example": "无",
@@ -11282,7 +10894,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库表权限数组,当前仅支持参数：max_user_connections，max_user_connections不能大于10240",
           "example": "无",
@@ -11310,7 +10921,6 @@
       "document": "ModifyAccountPrivileges请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id",
           "example": "xxx",
@@ -11320,7 +10930,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号信息",
           "example": "无",
@@ -11330,7 +10939,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "全局权限数组",
           "example": "[\"xxx\\r\\n\"]",
@@ -11340,7 +10948,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库权限数组",
           "example": "无",
@@ -11350,7 +10957,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表权限数组",
           "example": "无",
@@ -11378,7 +10984,6 @@
       "document": "ModifyAuditRuleTemplates请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "审计规则模版ID。",
           "example": "cynosdb-art-l1mlbo59",
@@ -11388,7 +10993,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后的审计规则。",
           "example": "无",
@@ -11398,7 +11002,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后的规则模版名称。",
           "example": "新规则模版名称",
@@ -11408,7 +11011,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后的规则模版描述。",
           "example": "新规则模版描述",
@@ -11436,7 +11038,6 @@
       "document": "ModifyAuditService请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID。",
           "example": "cynosdbmysql-ins-6990cckk",
@@ -11446,7 +11047,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志保留时长。",
           "example": "30",
@@ -11456,7 +11056,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高频日志保留时长。",
           "example": "7",
@@ -11466,7 +11065,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改实例审计规则为全审计。",
           "example": "true",
@@ -11476,7 +11074,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则审计。",
           "example": "无",
@@ -11486,7 +11083,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则模版ID。",
           "example": "无",
@@ -11586,7 +11182,6 @@
       "document": "ModifyBackupName请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-123",
@@ -11596,7 +11191,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件ID",
           "example": "100",
@@ -11606,7 +11200,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注名，长度不能超过60个字符",
           "example": "无",
@@ -11634,7 +11227,6 @@
       "document": "ModifyBinlogSaveDays请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdb-123",
@@ -11644,7 +11236,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Binlog保留天数",
           "example": "7",
@@ -11672,7 +11263,6 @@
       "document": "ModifyClusterDatabase请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-xxxxxxx",
@@ -11682,7 +11272,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名",
           "example": "test",
@@ -11692,7 +11281,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新授权用户主机权限",
           "example": "无",
@@ -11702,7 +11290,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "test",
@@ -11712,7 +11299,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "历史授权用户主机权限",
           "example": "无",
@@ -11740,7 +11326,6 @@
       "document": "ModifyClusterName请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbpg-5804k48e",
@@ -11750,7 +11335,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群名",
           "example": "newName",
@@ -11778,7 +11362,6 @@
       "document": "ModifyClusterParam请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-ins-jhi2gdi0",
@@ -11788,7 +11371,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要修改的参数列表。每一个元素是ParamName、CurrentValue和OldValue的组合。ParamName是参数名称，CurrentValue是当前值，OldValue是之前值且不做校验",
           "example": "无",
@@ -11798,7 +11380,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "维护期间执行-yes,立即执行-no",
           "example": "yes",
@@ -11836,7 +11417,6 @@
       "document": "ModifyClusterPasswordComplexity请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id",
           "example": "cynosdbpg-bzxxrmtq",
@@ -11846,7 +11426,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密码长度",
           "example": "8",
@@ -11856,7 +11435,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "大小写字符个数",
           "example": "1",
@@ -11866,7 +11444,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "特殊字符个数",
           "example": "1",
@@ -11876,7 +11453,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数字个数",
           "example": "1",
@@ -11886,7 +11462,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密码强度（\"MEDIUM\", \"STRONG\"）",
           "example": "MEDIUM",
@@ -11896,7 +11471,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据字典",
           "example": "无",
@@ -11934,7 +11508,6 @@
       "document": "ModifyClusterSlaveZone请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群Id",
           "example": "cynosdbmysql-xxxxxxx",
@@ -11944,7 +11517,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "旧从可用区",
           "example": "ap-guangzhou-2",
@@ -11954,7 +11526,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新从可用区",
           "example": "ap-guangzhou-3",
@@ -11992,7 +11563,6 @@
       "document": "ModifyClusterStorage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosmysql-xxxxxxxx",
@@ -12002,7 +11572,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群新存储大小（单位G）",
           "example": "20",
@@ -12012,7 +11581,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群原存储大小（单位G）",
           "example": "10",
@@ -12022,7 +11590,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "交易模式 0-下单并支付 1-下单",
           "example": "0",
@@ -12125,7 +11692,6 @@
       "document": "ModifyInstanceName请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "cynosdb-ins-dokydbam",
@@ -12135,7 +11701,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称",
           "example": "newName",
@@ -12163,7 +11728,6 @@
       "document": "ModifyInstanceParam请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "无",
@@ -12173,7 +11737,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "无",
@@ -12183,7 +11746,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群参数列表",
           "example": "无",
@@ -12193,7 +11755,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例参数列表",
           "example": "无",
@@ -12203,7 +11764,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "yes：在运维时间窗内修改，no：立即执行（默认值）",
           "example": "无",
@@ -12241,7 +11801,6 @@
       "document": "ModifyMaintainPeriodConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "cynosdbmysql-ins-n7ocdslw",
@@ -12251,7 +11810,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "维护开始时间，单位为秒，如3:00为10800",
           "example": "3600",
@@ -12261,7 +11819,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "维护持续时间，单位为秒，如1小时为3600",
           "example": "3600",
@@ -12271,7 +11828,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每周维护日期，日期取值范围[Mon, Tue, Wed, Thu, Fri, Sat, Sun]",
           "example": "[Mon]",
@@ -12299,7 +11855,6 @@
       "document": "修改的实例参数信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数名",
           "example": "无",
@@ -12310,7 +11865,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数当前值",
           "example": "无",
@@ -12321,7 +11875,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数旧值（只在出参时有用）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -12392,7 +11945,6 @@
       "document": "ModifyProxyDesc请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-xxxxxxx",
@@ -12402,7 +11954,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库代理组ID",
           "example": "无",
@@ -12412,7 +11963,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库代理描述",
           "example": "无",
@@ -12692,7 +12242,6 @@
       "document": "ModifyVipVport请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id",
           "example": "xxx",
@@ -12702,7 +12251,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例组id",
           "example": "xxx",
@@ -12712,7 +12260,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要修改的目的ip",
           "example": "xx.xx.xx.xx",
@@ -12722,7 +12269,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要修改的目的端口",
           "example": "5432",
@@ -12732,7 +12278,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库类型，取值范围: \n<li> MYSQL </li>",
           "example": "MYSQL",
@@ -12742,7 +12287,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "旧ip回收前的保留时间，单位小时，0表示立即回收",
           "example": "0",
@@ -12780,7 +12324,6 @@
       "document": "系统支持的模块",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否支持，可选值:yes,no",
           "example": "yes",
@@ -12791,7 +12334,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模块名",
           "example": "Wan",
@@ -12924,7 +12466,6 @@
       "document": "x08新创建的账号",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-16",
           "example": "0",
@@ -12935,7 +12476,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密码，密码长度范围为8到64个字符",
           "example": "0",
@@ -12946,7 +12486,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机",
           "example": "0",
@@ -12957,7 +12496,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "example": "0",
@@ -12968,7 +12506,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户最大连接数，不能大于10240",
           "example": "0",
@@ -12999,7 +12536,6 @@
           "disabled": false,
           "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "TaskType",
           "output_required": true,
@@ -13011,7 +12547,6 @@
           "disabled": false,
           "document": "任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "TaskStatus",
           "output_required": true,
@@ -13023,7 +12558,6 @@
           "disabled": false,
           "document": "任务ID（集群ID|实例组ID|实例ID）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "ObjectId",
           "output_required": true,
@@ -13035,7 +12569,6 @@
           "disabled": false,
           "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "ObjectType",
           "output_required": true,
@@ -13050,7 +12583,6 @@
       "document": "OfflineCluster请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-bzxxrmtq",
@@ -13088,7 +12620,6 @@
       "document": "OfflineInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-bzxxrmtq",
@@ -13098,7 +12629,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID数组",
           "example": "[\"cynosdbmysql-ins-7upukfpw\\n\"]",
@@ -13136,7 +12666,6 @@
       "document": "数据库地址",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -13147,7 +12676,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -13158,7 +12686,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "期望执行回收时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -13175,7 +12702,6 @@
       "document": "OpenAuditService请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID。",
           "example": "cynosdbmysql-ins-6990cckk",
@@ -13185,7 +12711,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志保留时长。",
           "example": "30",
@@ -13195,7 +12720,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高频日志保留时长。",
           "example": "7",
@@ -13205,7 +12729,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审计规则。同RuleTemplateIds都不填是全审计。",
           "example": "无",
@@ -13215,7 +12738,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则模版ID。同AuditRuleFilters都不填是全审计。",
           "example": "[\"cynosdb-art-l1mlbo59\"]",
@@ -13243,7 +12765,6 @@
       "document": "OpenClusterPasswordComplexity请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id",
           "example": "cynosdbpg-bzxxrmtq",
@@ -13253,7 +12774,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密码长度",
           "example": "8",
@@ -13263,7 +12783,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "大小写字符个数",
           "example": "1",
@@ -13273,7 +12792,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "特殊字符个数",
           "example": "1",
@@ -13283,7 +12801,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数字个数",
           "example": "1",
@@ -13293,7 +12810,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密码强度（\"MEDIUM\", \"STRONG\"）",
           "example": "MEDIUM",
@@ -13303,7 +12819,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据字典",
           "example": "无",
@@ -13439,7 +12954,6 @@
       "document": "OpenWan请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例组id",
           "example": "cynosdbmysql-grp-o48ssqs5",
@@ -13689,7 +13203,6 @@
       "document": "实例参数详细描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数名称",
           "example": "无",
@@ -13700,7 +13213,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数类型：integer，enum，float，string，func",
           "example": "无",
@@ -13711,7 +13223,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "true-支持\"func\"，false-不支持公式",
           "example": "无",
@@ -13722,7 +13233,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认值",
           "example": "无",
@@ -13733,7 +13243,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数描述",
           "example": "无",
@@ -13744,7 +13253,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数当前值",
           "example": "无",
@@ -13755,7 +13263,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改参数后，是否需要重启数据库以使参数生效。0-不需要重启，1-需要重启。",
           "example": "无",
@@ -13766,7 +13273,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数容许的最大值",
           "example": "无",
@@ -13777,7 +13283,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数容许的最小值",
           "example": "无",
@@ -13788,7 +13293,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数的可选枚举值。如果为非枚举值，则为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -13799,7 +13303,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1：全局参数，0：非全局参数",
           "example": "无",
@@ -13810,7 +13313,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "匹配类型，multiVal",
           "example": "无",
@@ -13821,7 +13323,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "匹配目标值，当multiVal时，各个key用，分割",
           "example": "无",
@@ -13832,7 +13333,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "true-为公式，false-非公式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -13843,7 +13343,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数设置为公式时，Func返回设置的公式内容\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -13854,7 +13353,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数是否可修改\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -13871,7 +13369,6 @@
       "document": "参数信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "当前值",
           "example": "无",
@@ -13882,7 +13379,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认值",
           "example": "无",
@@ -13893,7 +13389,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数为enum/string/bool时，可选值列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -13904,7 +13399,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数类型为float/integer时的最大值",
           "example": "无",
@@ -13915,7 +13409,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数类型为float/integer时的最小值",
           "example": "无",
@@ -13926,7 +13419,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数名称",
           "example": "无",
@@ -13937,7 +13429,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要重启生效",
           "example": "无",
@@ -13948,7 +13439,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数类型：integer/float/string/enum/bool",
           "example": "无",
@@ -13959,7 +13449,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "匹配类型，multiVal, regex在参数类型是string时使用",
           "example": "无",
@@ -13970,7 +13459,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "匹配目标值，当multiVal时，各个key用;分割",
           "example": "无",
@@ -13981,7 +13469,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数描述",
           "example": "无",
@@ -13992,7 +13479,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为全局参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -14003,7 +13489,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数是否可修改\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -14014,7 +13499,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为函数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -14025,7 +13509,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -14042,7 +13525,6 @@
       "document": "修改参数时，传入参数描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数名称",
           "example": "xx",
@@ -14053,7 +13535,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前值",
           "example": "xx",
@@ -14064,7 +13545,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原有值",
           "example": "xx",
@@ -14081,7 +13561,6 @@
       "document": "实例参数信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "当前值",
           "example": "无",
@@ -14092,7 +13571,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认值",
           "example": "无",
@@ -14103,7 +13581,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数的可选枚举值。如果为非枚举值，则为空",
           "example": "无",
@@ -14114,7 +13591,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1：全局参数，0：非全局参数",
           "example": "无",
@@ -14125,7 +13601,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大值",
           "example": "无",
@@ -14136,7 +13611,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最小值",
           "example": "无",
@@ -14147,7 +13621,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改参数后，是否需要重启数据库以使参数生效。0-不需要重启，1-需要重启。",
           "example": "无",
@@ -14158,7 +13631,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数名称",
           "example": "无",
@@ -14169,7 +13641,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数类型：integer，enum，float，string，func",
           "example": "无",
@@ -14180,7 +13651,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数描述",
           "example": "无",
@@ -14191,7 +13661,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型是否为公式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -14202,7 +13671,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数配置公式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -14219,7 +13687,6 @@
       "document": "参数模板信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数模板ID",
           "example": "1234",
@@ -14230,7 +13697,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数模板名称",
           "example": "\"test\"",
@@ -14241,7 +13707,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数模板描述",
           "example": "\"cynosdbmysqltemplste\"",
@@ -14252,7 +13717,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "引擎版本",
           "example": "\"5.7\"",
@@ -14263,7 +13727,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库类型，可选值：NORMAL，SERVERLESS",
           "example": "NORMAL",
@@ -14274,7 +13737,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数模板详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"\"}]",
@@ -14291,7 +13753,6 @@
       "document": "PauseServerless请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-8vcxoq75",
@@ -14301,7 +13762,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否强制暂停，忽略当前的用户链接  0:不强制  1:强制， 默认为1",
           "example": "1",
@@ -14560,7 +14020,6 @@
       "document": "数据库代理组详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库代理组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -14571,7 +14030,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库代理组读写分离信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -14582,7 +14040,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库代理节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -14593,7 +14050,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库代理连接池信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -14604,7 +14060,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库代理网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -14615,7 +14070,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库代理任务集\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -14738,7 +14192,6 @@
       "document": "数据库代理，读写分离实例权重",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例Id",
           "example": "cynosdbmysql-ins-xxxxxxx",
@@ -14749,7 +14202,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例权重",
           "example": "0",
@@ -14771,7 +14223,7 @@
           "example": "无",
           "member": "string",
           "name": "ProxyNodeId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14781,7 +14233,7 @@
           "example": "无",
           "member": "int64",
           "name": "ProxyNodeConnections",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14791,7 +14243,7 @@
           "example": "无",
           "member": "int64",
           "name": "Cpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14801,7 +14253,7 @@
           "example": "无",
           "member": "int64",
           "name": "Mem",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14811,7 +14263,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14821,7 +14273,7 @@
           "example": "无",
           "member": "string",
           "name": "ProxyGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14831,7 +14283,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14841,7 +14293,7 @@
           "example": "无",
           "member": "int64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14851,7 +14303,7 @@
           "example": "无",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14861,7 +14313,17 @@
           "example": "无",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库代理节点名字",
+          "example": "无",
+          "member": "string",
+          "name": "OssProxyNodeName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -14872,7 +14334,6 @@
       "document": "数据库代理规格",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库代理cpu核数",
           "example": "无",
@@ -14883,7 +14344,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库代理内存",
           "example": "无",
@@ -14926,7 +14386,6 @@
       "document": "查询过滤器",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "搜索字段，目前支持：\"InstanceId\", \"ProjectId\", \"InstanceName\", \"Vip\"",
           "example": "\"projectId\"",
@@ -14937,7 +14396,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索字符串",
           "example": "\"xxx\"",
@@ -14948,7 +14406,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否精确匹配",
           "example": "1",
@@ -14959,7 +14416,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索字段",
           "example": "\"123\"",
@@ -14970,7 +14426,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作符",
           "example": "无",
@@ -14987,7 +14442,6 @@
       "document": "查询参数过滤器",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "搜索字段，目前支持：\"InstanceId\", \"ProjectId\", \"InstanceName\", \"Vip\"",
           "example": "无",
@@ -14998,7 +14452,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索字符串",
           "example": "无",
@@ -15009,7 +14462,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否精确匹配",
           "example": "无",
@@ -15062,7 +14514,6 @@
       "document": "ReloadBalanceProxyNode请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-xxxxxxx",
@@ -15072,7 +14523,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库代理组ID",
           "example": "无",
@@ -15120,7 +14570,6 @@
       "document": "RemoveClusterSlaveZone请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-xxxxxxx",
@@ -15130,7 +14579,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "从可用区",
           "example": "ap-guangzhou-2",
@@ -15168,7 +14616,6 @@
       "document": "ResetAccountPassword请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库账号名",
           "example": "root",
@@ -15178,7 +14625,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库账号新密码",
           "example": "abc@2018",
@@ -15188,7 +14634,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbpg-on5xw0ni",
@@ -15198,7 +14643,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机，不填默认为\"%\"",
           "example": "%",
@@ -15254,7 +14698,6 @@
       "document": "RestartInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例id",
           "example": "xxx",
@@ -15292,7 +14735,6 @@
       "document": "ResumeServerless请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbmysql-xxxx",
@@ -15330,7 +14772,6 @@
       "document": "RevokeAccountPrivileges请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id",
           "example": "xxx",
@@ -15340,7 +14781,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号信息",
           "example": "无",
@@ -15350,7 +14790,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库表权限数组",
           "example": "无",
@@ -15360,7 +14799,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库表信息",
           "example": "无",
@@ -15388,7 +14826,6 @@
       "document": "RollBackCluster请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cynosdbpg-bzxxrmtq",
@@ -15398,7 +14835,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回档策略 timeRollback-按时间点回档 snapRollback-按备份文件回档",
           "example": "snapRollback",
@@ -15408,7 +14844,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回档ID",
           "example": "1",
@@ -15418,7 +14853,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "期望回档时间",
           "example": "2022-01-20 00:00:00",
@@ -15428,7 +14862,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "期望阈值（已废弃）",
           "example": "1",
@@ -15438,7 +14871,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回档数据库列表",
           "example": "无",
@@ -15448,7 +14880,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回档数据库表列表",
           "example": "无",
@@ -15458,7 +14889,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按时间点回档模式，full: 普通; db: 快速; table: 极速  （默认是普通）",
           "example": "full",
@@ -15551,7 +14981,6 @@
           "disabled": false,
           "document": "旧表名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
-          "is_base64": false,
           "member": "string",
           "name": "OldTable",
           "output_required": false,
@@ -15563,7 +14992,6 @@
           "disabled": false,
           "document": "新表名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
-          "is_base64": false,
           "member": "string",
           "name": "NewTable",
           "output_required": false,
@@ -15578,7 +15006,6 @@
       "document": "可回档的时间范围",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间",
           "example": "无",
@@ -15589,7 +15016,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "example": "无",
@@ -15606,7 +15032,6 @@
       "document": "审计规则的规则过滤条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "审计规则过滤条件的参数名称。可选值：host – 客户端 IP；user – 数据库账户；dbName – 数据库名称；sqlType-SQL类型；sql-sql语句。",
           "example": "sqlType",
@@ -15617,7 +15042,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审计规则过滤条件的匹配类型。可选值：INC – 包含；EXC – 不包含；EQS – 等于；NEQ – 不等于。",
           "example": "INC",
@@ -15628,7 +15052,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审计规则过滤条件的匹配值。",
           "example": "UPDATE",
@@ -15711,7 +15134,6 @@
       "document": "售卖地域信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域英文名",
           "example": "ap-guangzhou",
@@ -15722,7 +15144,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域数字ID",
           "example": "1",
@@ -15733,7 +15154,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域中文名",
           "example": "上海",
@@ -15744,7 +15164,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可售卖可用区列表",
           "example": "无",
@@ -15755,7 +15174,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "引擎类型",
           "example": "MYSQL",
@@ -15766,7 +15184,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域模块支持情况",
           "example": "无",
@@ -15783,7 +15200,6 @@
       "document": "售卖可用区信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "可用区英文名",
           "example": "ap-shanghai-4",
@@ -15794,7 +15210,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区数字ID",
           "example": "200004",
@@ -15805,7 +15220,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区中文名",
           "example": "上海四区",
@@ -15816,7 +15230,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否支持serverless集群<br>\n0:不支持<br>\n1:支持",
           "example": "1",
@@ -15827,7 +15240,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否支持普通集群<br>\n0:不支持<br>\n1:支持",
           "example": "1",
@@ -15838,7 +15250,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理区",
           "example": "ap-guangzhou-2",
@@ -15849,7 +15260,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户是否有可用区权限\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -15860,7 +15270,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为全链路RDMA可用区",
           "example": "无",
@@ -15877,7 +15286,6 @@
       "document": "SearchClusterDatabases请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id",
           "example": "xxx",
@@ -15887,7 +15295,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名",
           "example": "test",
@@ -15897,7 +15304,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否精确搜索。\n0: 模糊搜索 1:精确搜索 \n默认为0",
           "example": "1",
@@ -15935,7 +15341,6 @@
       "document": "SearchClusterTables请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id",
           "example": "xxx",
@@ -15945,7 +15350,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名",
           "example": "test",
@@ -15955,7 +15359,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据表名",
           "example": "1",
@@ -15965,7 +15368,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据表类型：\nview：只返回 view，\nbase_table： 只返回基本表，\nall：返回 view 和表",
           "example": "all",
@@ -16003,7 +15405,6 @@
       "document": "安全组详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "",
@@ -16014,7 +15415,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间，时间格式：yyyy-mm-dd hh:mm:ss",
           "example": "",
@@ -16025,7 +15425,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入站规则",
           "example": "",
@@ -16036,7 +15435,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "出站规则",
           "example": "",
@@ -16047,7 +15445,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组ID",
           "example": "",
@@ -16058,7 +15455,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组名称",
           "example": "",
@@ -16069,7 +15465,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组备注",
           "example": "",
@@ -16086,7 +15481,6 @@
       "document": "SetRenewFlag请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需操作的实例ID",
           "example": "['cynosdbmysql-ins-xxxxxxxx']",
@@ -16096,7 +15490,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动续费标志位，续费标记 0:正常续费  1:自动续费 2:到期不续",
           "example": "1",
@@ -16253,7 +15646,6 @@
           "disabled": false,
           "document": "集群ID",
           "example": "xxx",
-          "is_base64": false,
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -16263,7 +15655,6 @@
           "disabled": false,
           "document": "字符串vpc id",
           "example": "xx",
-          "is_base64": false,
           "member": "string",
           "name": "UniqVpcId",
           "required": true,
@@ -16273,7 +15664,6 @@
           "disabled": false,
           "document": "字符串子网id",
           "example": "xx",
-          "is_base64": false,
           "member": "string",
           "name": "UniqSubnetId",
           "required": true,
@@ -16283,7 +15673,6 @@
           "disabled": false,
           "document": "旧地址回收时间",
           "example": "xx",
-          "is_base64": false,
           "member": "int64",
           "name": "OldIpReserveHours",
           "required": true,
@@ -16318,7 +15707,6 @@
       "document": "SwitchClusterZone请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群Id",
           "example": "cynosdbmysql-xxxxxxx",
@@ -16328,7 +15716,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前可用区",
           "example": "ap-guangzhou-2",
@@ -16338,7 +15725,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要切换到的可用区",
           "example": "ap-guangzhou-3",
@@ -16348,7 +15734,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "维护期间执行-yes,立即执行-no",
           "example": "false",
@@ -16386,7 +15771,6 @@
       "document": "SwitchProxyVpc请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "xxx",
@@ -16396,7 +15780,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字符串vpc id",
           "example": "xx",
@@ -16406,7 +15789,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字符串子网id",
           "example": "xx",
@@ -16416,7 +15798,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "旧地址回收时间",
           "example": "xx",
@@ -16426,7 +15807,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库代理组Id（该参数为必填项，可以通过DescribeProxies接口获得）",
           "example": "无",
@@ -16464,7 +15844,6 @@
       "document": "mysql表权限",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名",
           "example": "",
@@ -16475,7 +15854,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表名",
           "example": "",
@@ -16486,7 +15864,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限列表",
           "example": "",
@@ -16503,7 +15880,6 @@
       "document": "集群绑定的标签信息，包含标签键TagKey和标签值TagValue",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键",
           "example": "无",
@@ -16514,7 +15890,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "无",
@@ -16531,7 +15906,6 @@
       "document": "参数模板详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "当前值",
           "example": "1024",
@@ -16542,7 +15916,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认值",
           "example": "2048",
@@ -16553,7 +15926,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数类型为enum时可选的值类型集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[12,23,45]",
@@ -16564,7 +15936,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数类型为float/integer时的最大值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "200",
@@ -16575,7 +15946,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数类型为float/integer时的最小值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -16586,7 +15956,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数名称",
           "example": "binlog_back",
@@ -16597,7 +15966,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要重启",
           "example": "1",
@@ -16608,7 +15976,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数描述",
           "example": "this is set bin log size",
@@ -16619,7 +15986,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数类型，integer/float/string/enum",
           "example": "float",
@@ -16636,7 +16002,6 @@
       "document": "计费询价结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "预付费模式下资源总价，不包含优惠，单位:分\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6000",
@@ -16647,7 +16012,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总的折扣，100表示100%不打折",
           "example": "100",
@@ -16658,7 +16022,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预付费模式下的优惠后总价, 单位: 分,例如用户享有折扣 =TotalPrice × Discount\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6000",
@@ -16669,7 +16032,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "后付费模式下的单位资源价格，不包含优惠，单位:分\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "350",
@@ -16680,7 +16042,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "优惠后后付费模式下的单位资源价格, 单位: 分,例如用户享有折扣=UnitPricet × Discount\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "350",
@@ -16691,7 +16052,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计费价格单位",
           "example": "GB*h",
@@ -16744,7 +16104,6 @@
       "document": "UpgradeClusterVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id",
           "example": "xxx",
@@ -16754,7 +16113,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内核版本",
           "example": "2.0.0",
@@ -16764,7 +16122,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "升级时间类型，可选：upgradeImmediate,upgradeInMaintain",
           "example": "upgradeImmediate",
@@ -16802,7 +16159,6 @@
       "document": "UpgradeInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "cynosdbpg-ins-n7ocdslw",
@@ -16812,7 +16168,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库CPU",
           "example": "2",
@@ -16822,7 +16177,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库内存，单位GB",
           "example": "4",
@@ -16832,7 +16186,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "升级类型：upgradeImmediate，upgradeInMaintain",
           "example": "upgradeImmediate",
@@ -16842,7 +16195,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该参数已废弃",
           "example": "1000",
@@ -16852,7 +16204,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否自动选择代金券 1是 0否 默认为0",
           "example": "0",
@@ -16862,7 +16213,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该参数已废弃",
           "example": "MYSQL",
@@ -16872,7 +16222,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "交易模式 0-下单并支付 1-下单",
           "example": "0",
@@ -16882,7 +16231,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NormalUpgrade：普通变配，FastUpgrade：极速变配，若变配过程判断会造成闪断，变配流程会终止。",
           "example": "NormalUpgrade",
@@ -17129,7 +16477,6 @@
       "document": "用户主机权限",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "授权用户",
           "example": "root",
@@ -17140,7 +16487,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端ip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "%",
@@ -17151,7 +16497,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户权限\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "readonly",
@@ -17168,7 +16513,6 @@
       "document": "可用区库存信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "可用区",
           "example": "无",
@@ -17179,7 +16523,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否有库存",
           "example": "无",
@@ -17190,7 +16533,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "库存数量",
           "example": "1",

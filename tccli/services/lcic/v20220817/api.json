@@ -1052,7 +1052,6 @@
       "document": "BindDocumentToRoom请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "房间ID。",
           "example": "1234657",
@@ -1062,7 +1061,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文档ID。",
           "example": "abc",
@@ -1072,7 +1070,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定类型。后台可透传到客户端，默认为0。客户端可以根据这个字段实现业务逻辑。",
           "example": "0",
@@ -1100,7 +1097,6 @@
       "document": "CreateDocument请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "低代码互动课堂的SdkAppId。",
           "example": "123467",
@@ -1110,7 +1106,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文档地址。",
           "example": "无",
@@ -1120,7 +1115,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文档名称。",
           "example": "abc",
@@ -1130,7 +1124,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文档所有者的Id",
           "example": "abc",
@@ -1140,7 +1133,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转码类型，可以有如下取值：\n0 无需转码（默认）\n1 需要转码的文档，ppt，pptx，pdf，doc，docx\n2 需要转码的视频，mp4，3pg，mpeg，avi，flv，wmv，rm，h264等\n2 需要转码的音频，mp3，wav，wma，aac，flac，opus",
           "example": "1",
@@ -1150,7 +1142,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限，可以有如下取值：\n0 私有文档（默认）\n1 公共文档",
           "example": "1",
@@ -1160,7 +1151,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文档后缀名。",
           "example": "doc",
@@ -1170,7 +1160,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文档大小，单位 字节",
           "example": "123",
@@ -1334,242 +1323,198 @@
       "document": "CreateRoom请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "房间名称。",
           "example": "房间名称",
-          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": true,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "预定的房间开始时间，unix时间戳（秒）。",
           "example": "1659600138",
-          "is_base64": false,
           "member": "uint64",
           "name": "StartTime",
           "required": true,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "预定的房间结束时间，unix时间戳（秒）。",
           "example": "1659600138",
-          "is_base64": false,
           "member": "uint64",
           "name": "EndTime",
           "required": true,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "低代码互动课堂的SdkAppId。",
           "example": "123467",
-          "is_base64": false,
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "Resolution",
           "required": true,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "最大连麦人数（不包括老师）。取值范围[0, 16]",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "MaxMicNumber",
           "required": true,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频",
           "example": "videodoc",
-          "is_base64": false,
           "member": "string",
           "name": "SubType",
           "required": true,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "老师ID。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有老师权限。",
           "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
-          "is_base64": false,
           "member": "string",
           "name": "TeacherId",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "进入课堂时是否自动连麦。可以有以下取值：\n0 不自动连麦（需要手动申请上麦，默认值）\n1 自动连麦",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "AutoMic",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "释放音视频权限后是否自动取消连麦。可以有以下取值：\n0 自动取消连麦（默认值）\n1 保持连麦状态",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "TurnOffMic",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "声音音质。可以有以下取值：\n0：流畅模式（默认值），占用更小的带宽、拥有更好的降噪效果，适用于1对1、小班教学、多人音视频会议等场景。\n1：高音质模式，适合需要高保真传输音乐的场景，但降噪效果会被削弱，适用于音乐教学场景。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "AudioQuality",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "上课后是否禁止自动录制。可以有以下取值：\n0 不禁止录制（自动开启录制，默认值）\n1 禁止录制\n注：如果该配置取值为0，录制将从上课后开始，课堂结束后停止。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "DisableRecord",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "助教Id列表。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有助教权限。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Assistants",
           "required": false,
           "type": "list"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "rtc人数。",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "RTCAudienceNumber",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "观看类型。互动观看 （默认）",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "AudienceType",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "录制模板。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "RecordLayout",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "房间绑定的群组ID,非空时限制组成员进入",
           "example": "abc",
-          "is_base64": false,
           "member": "string",
           "name": "GroupId",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "是否允许老师/助教直接控制学生的摄像头/麦克风。可以有以下取值：\n0 不允许直接控制（需同意，默认值）\n1 允许直接控制（无需同意）",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "EnableDirectControl",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "开启专注模式。\n0 收看全部角色音视频(默认)\n1 只看老师和助教",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "InteractionMode",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "VideoOrientation",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "开启课后评分。 0：不开启(默认)  1：开启",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "IsGradingRequiredPostClass",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "RoomType",
           "required": false,
@@ -1640,7 +1585,6 @@
       "document": "DeleteAppCustomContent请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID。",
           "example": "1234657",
@@ -1650,7 +1594,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定需要删除的已设置的scene场景自定义元素，如果为空则删除应用下已设置的所有自定义元素。",
           "example": "无",
@@ -1678,7 +1621,6 @@
       "document": "DeleteDocument请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文档ID。",
           "example": "xx",
@@ -1823,7 +1765,6 @@
       "document": "DeleteRoom请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "房间ID。",
           "example": "3123456789",
@@ -1887,11 +1828,9 @@
       "document": "DeleteUser请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "待删除用户的ID",
           "example": "abc",
-          "is_base64": false,
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -2809,7 +2748,6 @@
           "disabled": false,
           "document": "房间Id。",
           "example": "301234567",
-          "is_base64": false,
           "member": "uint64",
           "name": "RoomId",
           "required": true,
@@ -3315,7 +3253,6 @@
       "document": "DescribeUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户Id。",
           "example": "abc",
@@ -3661,7 +3598,6 @@
           "disabled": false,
           "document": "房间Id。",
           "example": "301234567",
-          "is_base64": false,
           "member": "uint64",
           "name": "RoomId",
           "required": true,
@@ -3671,7 +3607,6 @@
           "disabled": false,
           "document": "应用Id。",
           "example": "12345",
-          "is_base64": false,
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -3681,7 +3616,6 @@
           "disabled": false,
           "document": "起始页，1开始。keyword为空时有效。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "Page",
           "required": true,
@@ -3691,7 +3625,6 @@
           "disabled": false,
           "document": "每页个数。keyword为空时有效。一次性最多200条。",
           "example": "10",
-          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -3701,7 +3634,6 @@
           "disabled": false,
           "document": "搜索事件类型。有以下事件类型:\nRoomStart:房间开始\nRoomEnd:房间结束\nMemberJoin:成员加入\nMemberQuit:成员退出\nRecordFinish:录制结束\nCameraOn: 摄像头打开\nCameraOff: 摄像头关闭\nMicOn: 麦克风打开\nMicOff: 麦克风关闭\nScreenOn: 屏幕共享打开\nScreenOff: 屏幕共享关闭\nVisibleOn: 页面可见\nVisibleOff: 页面不可见",
           "example": "RoomStart",
-          "is_base64": false,
           "member": "string",
           "name": "Keyword",
           "required": false,
@@ -4109,7 +4041,6 @@
       "document": "LoginOriginId请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "低代码互动课堂的SdkAppId。",
           "example": "1234657",
@@ -4119,7 +4050,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户在客户系统的Id，需要在同一应用下唯一。",
           "example": "userid",
@@ -4167,7 +4097,6 @@
       "document": "LoginUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "注册获取的用户id。",
           "example": "abc",
@@ -4615,7 +4544,6 @@
           "disabled": false,
           "document": "房间ID。",
           "example": "312345678",
-          "is_base64": false,
           "member": "uint64",
           "name": "RoomId",
           "required": true,
@@ -4625,7 +4553,6 @@
           "disabled": false,
           "document": "低代码互动课堂的SdkAppId",
           "example": "123467",
-          "is_base64": false,
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -4635,7 +4562,6 @@
           "disabled": false,
           "document": "预定的房间开始时间，unix时间戳（秒）。直播开始后不允许修改。",
           "example": "1659600138",
-          "is_base64": false,
           "member": "uint64",
           "name": "StartTime",
           "required": false,
@@ -4645,7 +4571,6 @@
           "disabled": false,
           "document": "预定的房间结束时间，unix时间戳（秒）。直播开始后不允许修改。",
           "example": "1659600138",
-          "is_base64": false,
           "member": "uint64",
           "name": "EndTime",
           "required": false,
@@ -4655,7 +4580,6 @@
           "disabled": false,
           "document": "老师ID。直播开始后不允许修改。",
           "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
-          "is_base64": false,
           "member": "string",
           "name": "TeacherId",
           "required": false,
@@ -4665,7 +4589,6 @@
           "disabled": false,
           "document": "房间名称。",
           "example": "房间名称",
-          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": false,
@@ -4675,7 +4598,6 @@
           "disabled": false,
           "document": "分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清\n直播开始后不允许修改。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "Resolution",
           "required": false,
@@ -4685,7 +4607,6 @@
           "disabled": false,
           "document": "最大连麦人数（不包括老师）。取值范围[0, 17)\n直播开始后不允许修改。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "MaxMicNumber",
           "required": false,
@@ -4695,7 +4616,6 @@
           "disabled": false,
           "document": "进入房间时是否自动连麦。可以有以下取值：\n0 不自动连麦（默认值）\n1 自动连麦\n直播开始后不允许修改。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "AutoMic",
           "required": false,
@@ -4705,7 +4625,6 @@
           "disabled": false,
           "document": "高音质模式。可以有以下取值：\n0 不开启高音质（默认值）\n1 开启高音质\n直播开始后不允许修改。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "AudioQuality",
           "required": false,
@@ -4715,7 +4634,6 @@
           "disabled": false,
           "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频\n直播开始后不允许修改。",
           "example": "video",
-          "is_base64": false,
           "member": "string",
           "name": "SubType",
           "required": false,
@@ -4725,7 +4643,6 @@
           "disabled": false,
           "document": "禁止录制。可以有以下取值：\n0 不禁止录制（默认值）\n1 禁止录制\n直播开始后不允许修改。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "DisableRecord",
           "required": false,
@@ -4735,7 +4652,6 @@
           "disabled": false,
           "document": "助教Id列表。直播开始后不允许修改。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Assistants",
           "required": false,
@@ -4745,7 +4661,6 @@
           "disabled": false,
           "document": "房间绑定的群组ID。直播开始后不允许修改。",
           "example": "abc",
-          "is_base64": false,
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -4755,7 +4670,6 @@
           "disabled": false,
           "document": "打开学生麦克风/摄像头的授权开关。直播开始后不允许修改。",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "EnableDirectControl",
           "required": false,
@@ -4765,7 +4679,6 @@
           "disabled": false,
           "document": "开启专注模式。\n0 收看全部角色音视频(默认)\n1 只看老师和助教",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "InteractionMode",
           "required": false,
@@ -4775,7 +4688,6 @@
           "disabled": false,
           "document": "横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "VideoOrientation",
           "required": false,
@@ -4785,7 +4697,6 @@
           "disabled": false,
           "document": "开启课后评分。 0：不开启(默认)  1：开启",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "IsGradingRequiredPostClass",
           "required": false,
@@ -4795,7 +4706,6 @@
           "disabled": false,
           "document": "房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "RoomType",
           "required": false,
@@ -4921,7 +4831,6 @@
       "document": "RegisterUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "低代码互动课堂的SdkAppId。",
           "example": "123467",
@@ -4931,7 +4840,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名称。",
           "example": "nickname",
@@ -4941,7 +4849,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户在客户系统的Id，需要在同一应用下唯一。",
           "example": "id12345",
@@ -4951,7 +4858,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户头像。",
           "example": "abc",
@@ -5002,7 +4908,6 @@
           "disabled": false,
           "document": "房间名称。",
           "example": "房间名称",
-          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": true,
@@ -5048,7 +4953,6 @@
           "disabled": false,
           "document": "房间子类型，可以有以下取值： videodoc 文档+视频 video 纯视频",
           "example": "videodoc",
-          "is_base64": false,
           "member": "string",
           "name": "SubType",
           "required": true,
@@ -5058,7 +4962,6 @@
           "disabled": false,
           "document": "老师ID。通过[注册用户]接口获取的UserId。",
           "example": "1jmPi2qddazF5PTgJtGYss9bg4T",
-          "is_base64": false,
           "member": "string",
           "name": "TeacherId",
           "required": false,
@@ -5104,7 +5007,6 @@
           "disabled": false,
           "document": "助教Id列表。通过[注册用户]接口获取的UserId。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Assistants",
           "required": false,
@@ -5141,7 +5043,6 @@
           "disabled": false,
           "document": "房间绑定的群组ID",
           "example": "xfdfgdf",
-          "is_base64": false,
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -5613,7 +5514,6 @@
       "document": "UnbindDocumentFromRoom请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "房间ID。",
           "example": "1234657",
@@ -5623,7 +5523,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文档ID。",
           "example": "abc",

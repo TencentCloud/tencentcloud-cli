@@ -400,7 +400,6 @@
       "document": "标签信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键",
           "example": "xxxx",
@@ -411,7 +410,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "xxxx",

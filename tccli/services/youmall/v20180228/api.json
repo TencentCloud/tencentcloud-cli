@@ -196,7 +196,6 @@
       "document": "客户到场信息",
       "members": [
         {
-          "default": "",
           "document": "到场时间",
           "member": "datetime",
           "name": "ArrivedTime",
@@ -204,7 +203,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "出场时间",
           "member": "datetime",
           "name": "LeaveTime",
@@ -212,7 +210,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "停留时间，秒",
           "member": "uint64",
           "name": "StaySecond",
@@ -220,7 +217,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "到场抓拍图片",
           "member": "string",
           "name": "InCapPic",
@@ -228,7 +224,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "出场抓拍图片",
           "member": "string",
           "name": "OutCapPic",
@@ -236,7 +231,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "轨迹编码",
           "member": "string",
           "name": "TraceId",
@@ -250,7 +244,6 @@
       "document": "摄像头抓图人物属性",
       "members": [
         {
-          "default": "",
           "document": "临时id，还未生成face id时返回",
           "member": "string",
           "name": "TempId",
@@ -258,7 +251,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "人脸face id",
           "member": "int64",
           "name": "FaceId",
@@ -266,7 +258,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "确定当次返回的哪个id有效，1-FaceId，2-TempId",
           "member": "int64",
           "name": "IdType",
@@ -274,7 +265,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "当次抓拍到的人脸图片base编码",
           "member": "string",
           "name": "FacePic",
@@ -282,7 +272,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "当次抓拍时间戳",
           "member": "int64",
           "name": "Time",
@@ -290,7 +279,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "当前的person基本信息，图片以FacePic为准，结构体内未填",
           "member": "PersonInfo",
           "name": "PersonInfo",
@@ -304,7 +292,6 @@
       "document": "CreateAccount请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集团ID",
           "member": "string",
           "name": "CompanyId",
@@ -312,7 +299,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "账号名；需要是手机号",
           "member": "string",
           "name": "Name",
@@ -320,7 +306,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "密码；需要是(`~!@#$%^&*()_+=-）中的至少两种且八位以上",
           "member": "string",
           "name": "Password",
@@ -328,7 +313,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "客户门店编码",
           "member": "string",
           "name": "ShopCode",
@@ -336,7 +320,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "备注说明; 30个字符以内",
           "member": "string",
           "name": "Remark",
@@ -362,7 +345,6 @@
       "document": "CreateFacePicture请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集团ID",
           "member": "string",
           "name": "CompanyId",
@@ -370,7 +352,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "人物类型（0表示普通顾客，1 白名单，2 表示黑名单，101表示集团白名单，102表示集团黑名单）",
           "member": "int64",
           "name": "PersonType",
@@ -378,7 +359,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "图片BASE编码",
           "member": "string",
           "name": "Picture",
@@ -386,7 +366,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片名称",
           "member": "string",
           "name": "PictureName",
@@ -394,7 +373,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "店铺ID，如果不填表示操作集团身份库",
           "member": "int64",
           "name": "ShopId",
@@ -402,7 +380,6 @@
           "type": "int"
         },
         {
-          "default": "false",
           "document": "是否强制更新：为ture时会为用户创建一个新的指定PersonType的身份;目前这个参数已废弃，可不传",
           "member": "bool",
           "name": "IsForceUpload",
@@ -446,7 +423,6 @@
       "document": "客户天轨迹",
       "members": [
         {
-          "default": "",
           "document": "轨迹日期",
           "member": "date",
           "name": "TraceDate",
@@ -454,7 +430,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "轨迹点序列",
           "member": "PersonTracePoint",
           "name": "TracePointSet",
@@ -468,7 +443,6 @@
       "document": "DeletePersonFeature请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "公司ID",
           "member": "string",
           "name": "CompanyId",
@@ -476,7 +450,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "门店ID",
           "member": "int64",
           "name": "ShopId",
@@ -484,7 +457,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "顾客ID",
           "member": "int64",
           "name": "PersonId",
@@ -510,7 +482,6 @@
       "document": "DescribeCameraPerson请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "优mall集团id，通过\"指定身份标识获取客户门店列表\"接口获取",
           "member": "string",
           "name": "CompanyId",
@@ -518,7 +489,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "优mall店铺id，通过\"指定身份标识获取客户门店列表\"接口获取",
           "member": "int64",
           "name": "ShopId",
@@ -526,7 +496,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "摄像头id",
           "member": "int64",
           "name": "CameraId",
@@ -534,7 +503,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "拉取开始时间戳，单位秒",
           "member": "int64",
           "name": "StartTime",
@@ -542,7 +510,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "拉取结束时间戳，单位秒，不超过StartTime+10秒，超过默认为StartTime+10",
           "member": "int64",
           "name": "EndTime",
@@ -550,7 +517,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "pos机id",
           "member": "string",
           "name": "PosId",
@@ -558,7 +524,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "拉取图片数，默认为1，最大为3",
           "member": "int64",
           "name": "Num",
@@ -566,7 +531,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否需要base64的图片，0-不需要，1-需要，默认0",
           "member": "int64",
           "name": "IsNeedPic",
@@ -622,7 +586,6 @@
       "document": "DescribeClusterPersonArrivedMall请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "卖场编码",
           "member": "string",
           "name": "MallId",
@@ -630,7 +593,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "客户编码",
           "member": "string",
           "name": "PersonId",
@@ -638,7 +600,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询开始时间",
           "member": "datetime",
           "name": "StartTime",
@@ -646,7 +607,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询结束时间",
           "member": "datetime",
           "name": "EndTime",
@@ -696,7 +656,6 @@
       "document": "DescribeClusterPersonTrace请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "卖场编码",
           "member": "string",
           "name": "MallId",
@@ -704,7 +663,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "客户编码",
           "member": "string",
           "name": "PersonId",
@@ -712,7 +670,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询开始时间",
           "member": "datetime",
           "name": "StartTime",
@@ -720,7 +677,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询结束时间",
           "member": "datetime",
           "name": "EndTime",
@@ -770,7 +726,6 @@
       "document": "DescribeFaceIdByTempId请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "优mall集团id，通过\"指定身份标识获取客户门店列表\"接口获取",
           "member": "string",
           "name": "CompanyId",
@@ -778,7 +733,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "优mall店铺id，通过\"指定身份标识获取客户门店列表\"接口获取",
           "member": "int64",
           "name": "ShopId",
@@ -786,7 +740,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "临时id",
           "member": "string",
           "name": "TempId",
@@ -794,7 +747,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "摄像头id",
           "member": "int64",
           "name": "CameraId",
@@ -802,7 +754,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "pos机id",
           "member": "string",
           "name": "PosId",
@@ -810,7 +761,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片url过期时间：在当前时间+PictureExpires秒后，图片url无法继续正常访问；单位s；默认值1*24*60*60（1天）",
           "member": "int64",
           "name": "PictureExpires",
@@ -878,7 +828,6 @@
       "document": "DescribeHistoryNetworkInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "请求时间戳",
           "member": "int64",
           "name": "Time",
@@ -886,7 +835,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "优mall集团id，通过\"指定身份标识获取客户门店列表\"接口获取",
           "member": "string",
           "name": "CompanyId",
@@ -894,7 +842,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "优mall店铺id，通过\"指定身份标识获取客户门店列表\"接口获取，为0则拉取集团全部店铺当前",
           "member": "int64",
           "name": "ShopId",
@@ -902,7 +849,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "拉取开始日期，格式：2018-09-05",
           "member": "string",
           "name": "StartDay",
@@ -910,7 +856,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "拉取结束日期，格式L:2018-09-05，超过StartDay 90天，按StartDay+90天算",
           "member": "string",
           "name": "EndDay",
@@ -918,7 +863,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "拉取条数，默认10",
           "member": "int64",
           "name": "Limit",
@@ -926,7 +870,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "拉取偏移，返回offset之后的数据",
           "member": "int64",
           "name": "Offset",
@@ -958,7 +901,6 @@
       "document": "DescribeNetworkInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "请求时间戳",
           "member": "int64",
           "name": "Time",
@@ -966,7 +908,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "优mall集团id，通过\"指定身份标识获取客户门店列表\"接口获取",
           "member": "string",
           "name": "CompanyId",
@@ -974,7 +915,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "优mall店铺id，通过\"指定身份标识获取客户门店列表\"接口获取，不填则拉取集团全部店铺当前",
           "member": "int64",
           "name": "ShopId",
@@ -1006,7 +946,6 @@
       "document": "DescribePersonArrivedMall请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "卖场编码",
           "member": "string",
           "name": "MallId",
@@ -1014,7 +953,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "客户编码",
           "member": "string",
           "name": "PersonId",
@@ -1022,7 +960,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询开始时间",
           "member": "string",
           "name": "StartTime",
@@ -1030,7 +967,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询结束时间",
           "member": "string",
           "name": "EndTime",
@@ -1080,7 +1016,6 @@
       "document": "DescribePersonInfoByFacePicture请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "优mall集团id，通过\"指定身份标识获取客户门店列表\"接口获取",
           "member": "string",
           "name": "CompanyId",
@@ -1088,7 +1023,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "优mall店铺id，通过\"指定身份标识获取客户门店列表\"接口获取",
           "member": "int64",
           "name": "ShopId",
@@ -1096,7 +1030,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "人脸图片BASE编码",
           "member": "string",
           "name": "Picture",
@@ -1164,7 +1097,6 @@
       "document": "DescribePersonInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "公司ID",
           "member": "string",
           "name": "CompanyId",
@@ -1172,7 +1104,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "门店ID",
           "member": "uint64",
           "name": "ShopId",
@@ -1180,7 +1111,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "起始ID，第一次拉取时StartPersonId传0，后续送入的值为上一页最后一条数据项的PersonId",
           "member": "uint64",
           "name": "StartPersonId",
@@ -1188,7 +1118,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量：分页控制参数，第一页传0，第n页Offset=(n-1)*Limit",
           "member": "uint64",
           "name": "Offset",
@@ -1196,7 +1125,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "Limit:每页的数据项，最大100，超过100会被强制指定为100",
           "member": "uint64",
           "name": "Limit",
@@ -1204,7 +1132,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "图片url过期时间：在当前时间+PictureExpires秒后，图片url无法继续正常访问；单位s；默认值1*24*60*60（1天）",
           "member": "uint64",
           "name": "PictureExpires",
@@ -1212,7 +1139,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "身份类型(0表示普通顾客，1 白名单，2 表示黑名单）",
           "member": "uint64",
           "name": "PersonType",
@@ -1262,7 +1188,6 @@
       "document": "DescribePerson请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "卖场编码",
           "member": "string",
           "name": "MallId",
@@ -1270,7 +1195,6 @@
           "type": "string"
         },
         {
-          "default": "0",
           "document": "查询偏移",
           "member": "uint64",
           "name": "Offset",
@@ -1278,7 +1202,6 @@
           "type": "int"
         },
         {
-          "default": "20",
           "document": "查询数量，默认20，最大查询数量100",
           "member": "uint64",
           "name": "Limit",
@@ -1316,7 +1239,6 @@
       "document": "DescribePersonTraceDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "卖场编码",
           "member": "string",
           "name": "MallId",
@@ -1324,7 +1246,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "客户编码",
           "member": "string",
           "name": "PersonId",
@@ -1332,7 +1253,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "轨迹编码",
           "member": "string",
           "name": "TraceId",
@@ -1382,7 +1302,6 @@
       "document": "DescribePersonTrace请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "卖场编码",
           "member": "string",
           "name": "MallId",
@@ -1390,7 +1309,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "客户编码",
           "member": "string",
           "name": "PersonId",
@@ -1398,7 +1316,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询开始时间",
           "member": "datetime",
           "name": "StartTime",
@@ -1406,7 +1323,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询结束时间",
           "member": "datetime",
           "name": "EndTime",
@@ -1456,7 +1372,6 @@
       "document": "DescribePersonVisitInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "公司ID",
           "member": "string",
           "name": "CompanyId",
@@ -1464,7 +1379,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "门店ID",
           "member": "uint64",
           "name": "ShopId",
@@ -1472,7 +1386,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量：分页控制参数，第一页传0，第n页Offset=(n-1)*Limit",
           "member": "uint64",
           "name": "Offset",
@@ -1480,7 +1393,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "Limit:每页的数据项，最大100，超过100会被强制指定为100",
           "member": "uint64",
           "name": "Limit",
@@ -1488,7 +1400,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "开始日期，格式yyyy-MM-dd，已废弃，请使用StartDateTime",
           "member": "date",
           "name": "StartDate",
@@ -1496,7 +1407,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结束日期，格式yyyy-MM-dd，已废弃，请使用EndDateTime",
           "member": "date",
           "name": "EndDate",
@@ -1504,7 +1414,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片url过期时间：在当前时间+PictureExpires秒后，图片url无法继续正常访问；单位s；默认值1*24*60*60（1天）",
           "member": "uint64",
           "name": "PictureExpires",
@@ -1512,7 +1421,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "开始时间，格式yyyy-MM-dd HH:mm:ss",
           "member": "datetime",
           "name": "StartDateTime",
@@ -1520,7 +1428,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结束时间，格式yyyy-MM-dd HH:mm:ss",
           "member": "datetime",
           "name": "EndDateTime",
@@ -1570,7 +1477,6 @@
       "document": "DescribeShopHourTrafficInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "公司ID",
           "member": "string",
           "name": "CompanyId",
@@ -1578,7 +1484,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "门店ID",
           "member": "uint64",
           "name": "ShopId",
@@ -1586,7 +1491,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "开始日期，格式：yyyy-MM-dd",
           "member": "date",
           "name": "StartDate",
@@ -1594,7 +1498,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结束日期，格式：yyyy-MM-dd",
           "member": "date",
           "name": "EndDate",
@@ -1602,7 +1505,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "偏移量：分页控制参数，第一页传0，第n页Offset=(n-1)*Limit",
           "member": "uint64",
           "name": "Offset",
@@ -1610,7 +1512,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "Limit:每页的数据项，最大100，超过100会被强制指定为100",
           "member": "uint64",
           "name": "Limit",
@@ -1660,7 +1561,6 @@
       "document": "DescribeShopInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "偏移量：分页控制参数，第一页传0，第n页Offset=(n-1)*Limit",
           "member": "uint64",
           "name": "Offset",
@@ -1668,7 +1568,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "Limit:每页的数据项，最大100，超过100会被强制指定为100",
           "member": "uint64",
           "name": "Limit",
@@ -1706,7 +1605,6 @@
       "document": "DescribeShopTrafficInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "公司ID",
           "member": "string",
           "name": "CompanyId",
@@ -1714,7 +1612,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "门店ID",
           "member": "uint64",
           "name": "ShopId",
@@ -1722,7 +1619,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "开始日期，格式yyyy-MM-dd",
           "member": "date",
           "name": "StartDate",
@@ -1730,7 +1626,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "介绍日期，格式yyyy-MM-dd",
           "member": "date",
           "name": "EndDate",
@@ -1738,7 +1633,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "偏移量：分页控制参数，第一页传0，第n页Offset=(n-1)*Limit",
           "member": "uint64",
           "name": "Offset",
@@ -1746,7 +1640,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "Limit:每页的数据项，最大100，超过100会被强制指定为100",
           "member": "uint64",
           "name": "Limit",
@@ -1796,7 +1689,6 @@
       "document": "DescribeTrajectoryData请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集团ID",
           "member": "string",
           "name": "CompanyId",
@@ -1804,7 +1696,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "店铺ID",
           "member": "int64",
           "name": "ShopId",
@@ -1812,7 +1703,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "开始日期，格式yyyy-MM-dd",
           "member": "string",
           "name": "StartDate",
@@ -1820,7 +1710,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结束日期，格式yyyy-MM-dd",
           "member": "string",
           "name": "EndDate",
@@ -1828,7 +1717,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "限制返回数据的最大条数，最大 400（负数代为 400）",
           "member": "int64",
           "name": "Limit",
@@ -1836,7 +1724,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "顾客性别顾虑，0是男，1是女，其它代表不分性别",
           "member": "int64",
           "name": "Gender",
@@ -1904,7 +1791,6 @@
       "document": "DescribeZoneFlowAgeInfoByZoneId请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集团ID",
           "member": "string",
           "name": "CompanyId",
@@ -1912,7 +1798,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "店铺ID",
           "member": "int64",
           "name": "ShopId",
@@ -1920,7 +1805,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "区域ID",
           "member": "int64",
           "name": "ZoneId",
@@ -1928,7 +1812,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "开始日期，格式yyyy-MM-dd",
           "member": "string",
           "name": "StartDate",
@@ -1936,7 +1819,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结束日期，格式yyyy-MM-dd",
           "member": "string",
           "name": "EndDate",
@@ -1992,7 +1874,6 @@
       "document": "DescribeZoneFlowAndStayTime请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集团ID",
           "member": "string",
           "name": "CompanyId",
@@ -2000,7 +1881,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "店铺ID",
           "member": "int64",
           "name": "ShopId",
@@ -2008,7 +1888,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "开始日期，格式yyyy-MM-dd",
           "member": "string",
           "name": "StartDate",
@@ -2016,7 +1895,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结束日期，格式yyyy-MM-dd",
           "member": "string",
           "name": "EndDate",
@@ -2060,7 +1938,6 @@
       "document": "DescribeZoneFlowDailyByZoneId请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集团ID",
           "member": "string",
           "name": "CompanyId",
@@ -2068,7 +1945,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "店铺ID",
           "member": "int64",
           "name": "ShopId",
@@ -2076,7 +1952,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "区域ID",
           "member": "int64",
           "name": "ZoneId",
@@ -2084,7 +1959,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "开始日期，格式yyyy-MM-dd",
           "member": "string",
           "name": "StartDate",
@@ -2092,7 +1966,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结束日期，格式yyyy-MM-dd",
           "member": "string",
           "name": "EndDate",
@@ -2148,7 +2021,6 @@
       "document": "DescribeZoneFlowGenderAvrStayTimeByZoneId请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集团ID",
           "member": "string",
           "name": "CompanyId",
@@ -2156,7 +2028,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "店铺ID",
           "member": "int64",
           "name": "ShopId",
@@ -2164,7 +2035,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "区域ID",
           "member": "int64",
           "name": "ZoneId",
@@ -2172,7 +2042,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "开始日期，格式yyyy-MM-dd",
           "member": "string",
           "name": "StartDate",
@@ -2180,7 +2049,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结束日期，格式yyyy-MM-dd",
           "member": "string",
           "name": "EndDate",
@@ -2236,7 +2104,6 @@
       "document": "DescribeZoneFlowGenderInfoByZoneId请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集团ID",
           "member": "string",
           "name": "CompanyId",
@@ -2244,7 +2111,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "店铺ID",
           "member": "int64",
           "name": "ShopId",
@@ -2252,7 +2118,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "区域ID",
           "member": "int64",
           "name": "ZoneId",
@@ -2260,7 +2125,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "开始日期，格式yyyy-MM-dd",
           "member": "string",
           "name": "StartDate",
@@ -2268,7 +2132,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结束日期，格式yyyy-MM-dd",
           "member": "string",
           "name": "EndDate",
@@ -2330,7 +2193,6 @@
       "document": "DescribeZoneFlowHourlyByZoneId请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集团ID",
           "member": "string",
           "name": "CompanyId",
@@ -2338,7 +2200,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "店铺ID",
           "member": "int64",
           "name": "ShopId",
@@ -2346,7 +2207,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "区域ID",
           "member": "int64",
           "name": "ZoneId",
@@ -2354,7 +2214,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "开始日期，格式yyyy-MM-dd",
           "member": "string",
           "name": "StartDate",
@@ -2362,7 +2221,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结束日期，格式yyyy-MM-dd",
           "member": "string",
           "name": "EndDate",
@@ -2418,7 +2276,6 @@
       "document": "DescribeZoneTrafficInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "公司ID",
           "member": "string",
           "name": "CompanyId",
@@ -2426,7 +2283,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "店铺ID",
           "member": "uint64",
           "name": "ShopId",
@@ -2434,7 +2290,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "开始日期，格式yyyy-MM-dd",
           "member": "date",
           "name": "StartDate",
@@ -2442,7 +2297,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结束日期，格式yyyy-MM-dd",
           "member": "date",
           "name": "EndDate",
@@ -2450,7 +2304,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "偏移量：分页控制参数，第一页传0，第n页Offset=(n-1)*Limit",
           "member": "uint64",
           "name": "Offset",
@@ -2458,7 +2311,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "Limit:每页的数据项，最大100，超过100会被强制指定为100",
           "member": "uint64",
           "name": "Limit",
@@ -2508,7 +2360,6 @@
       "document": "性别年龄分组下的客流信息",
       "members": [
         {
-          "default": "",
           "document": "性别: 0男1女",
           "member": "uint64",
           "name": "Gender",
@@ -2516,7 +2367,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "年龄区间，枚举值：0-17、18-23、24-30、31-40、41-50、51-60、>60",
           "member": "string",
           "name": "AgeGap",
@@ -2524,7 +2374,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "客流量",
           "member": "uint64",
           "name": "TrafficCount",
@@ -2538,7 +2387,6 @@
       "document": "分时客流量详细信息",
       "members": [
         {
-          "default": "",
           "document": "小时 取值为：0，1，2，3，4，5，6，7，8，9，10，11，12，13，14，15，16，17，18，19，20，21，22，23",
           "member": "uint64",
           "name": "Hour",
@@ -2546,7 +2394,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分时客流量",
           "member": "uint64",
           "name": "HourTrafficTotalCount",
@@ -2560,7 +2407,6 @@
       "document": "ModifyPersonFeatureInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集团ID",
           "member": "string",
           "name": "CompanyId",
@@ -2568,7 +2414,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "需要修改的顾客id",
           "member": "int64",
           "name": "PersonId",
@@ -2576,7 +2421,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "图片BASE编码",
           "member": "string",
           "name": "Picture",
@@ -2584,7 +2428,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片名称（尽量不要重复）",
           "member": "string",
           "name": "PictureName",
@@ -2592,7 +2435,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "人物类型，仅能操作黑白名单顾客（1 白名单，2 表示黑名单，101表示集团白名单，102表示集团黑名单）",
           "member": "int64",
           "name": "PersonType",
@@ -2600,7 +2442,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "店铺ID，如果不填表示操作集团身份库",
           "member": "int64",
           "name": "ShopId",
@@ -2662,7 +2503,6 @@
       "document": "ModifyPersonTagInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "优mall集团id，通过\"指定身份标识获取客户门店列表\"接口获取",
           "member": "string",
           "name": "CompanyId",
@@ -2670,7 +2510,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "优mall店铺id，通过\"指定身份标识获取客户门店列表\"接口获取，为0则拉取集团全部店铺当前",
           "member": "int64",
           "name": "ShopId",
@@ -2678,7 +2517,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "需要设置的顾客信息，批量设置最大为10个",
           "member": "PersonTagInfo",
           "name": "Tags",
@@ -2704,7 +2542,6 @@
       "document": "ModifyPersonType请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集团ID",
           "member": "string",
           "name": "CompanyId",
@@ -2712,7 +2549,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "门店ID",
           "member": "uint64",
           "name": "ShopId",
@@ -2720,7 +2556,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "顾客ID",
           "member": "uint64",
           "name": "PersonId",
@@ -2728,7 +2563,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "身份类型(0表示普通顾客，1 白名单，2 表示黑名单）",
           "member": "uint64",
           "name": "PersonType",
@@ -2736,7 +2570,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "身份子类型:\nPersonType=0时(普通顾客)，0普通顾客\nPersonType=1时(白名单)，0店员，1商场人员，2其他类型人员，3区域经理，4注册会员，5VIP用户\nPersonType=2时(黑名单)，0普通黑名单，1小偷)",
           "member": "uint64",
           "name": "PersonSubType",
@@ -2762,7 +2595,6 @@
       "document": "网络状态",
       "members": [
         {
-          "default": "",
           "document": "集团id",
           "member": "string",
           "name": "CompanyId",
@@ -2770,7 +2602,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "店铺id",
           "member": "int64",
           "name": "ShopId",
@@ -2778,7 +2609,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "店铺省份",
           "member": "string",
           "name": "Province",
@@ -2786,7 +2616,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "店铺城市",
           "member": "string",
           "name": "City",
@@ -2794,7 +2623,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "店铺名",
           "member": "string",
           "name": "ShopName",
@@ -2802,7 +2630,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "上传带宽，单位Mb/s，-1：未知",
           "member": "float",
           "name": "Upload",
@@ -2810,7 +2637,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "下载带宽，单位Mb/s，-1：未知",
           "member": "float",
           "name": "Download",
@@ -2818,7 +2644,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "最小延迟，单位ms，-1：未知",
           "member": "float",
           "name": "MinRtt",
@@ -2826,7 +2651,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "平均延迟，单位ms，-1：未知",
           "member": "float",
           "name": "AvgRtt",
@@ -2834,7 +2658,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "最大延迟，单位ms，-1：未知",
           "member": "float",
           "name": "MaxRtt",
@@ -2842,7 +2665,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "平均偏差延迟，单位ms，-1：未知",
           "member": "float",
           "name": "MdevRtt",
@@ -2850,7 +2672,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "丢包率百分比，-1：未知",
           "member": "float",
           "name": "Loss",
@@ -2858,7 +2679,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "更新时间戳",
           "member": "int64",
           "name": "UpdateTime",
@@ -2866,7 +2686,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "上报网络状态设备",
           "member": "string",
           "name": "Mac",
@@ -2880,7 +2699,6 @@
       "document": "查询网络状态历史数据输出",
       "members": [
         {
-          "default": "",
           "document": "总数",
           "member": "int64",
           "name": "Count",
@@ -2888,7 +2706,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "集团id",
           "member": "string",
           "name": "CompanyId",
@@ -2896,7 +2713,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "店铺id",
           "member": "int64",
           "name": "ShopId",
@@ -2904,7 +2720,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "店铺省份",
           "member": "string",
           "name": "Province",
@@ -2912,7 +2727,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "店铺城市",
           "member": "string",
           "name": "City",
@@ -2920,7 +2734,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "店铺名称",
           "member": "string",
           "name": "ShopName",
@@ -2928,7 +2741,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "网络信息",
           "member": "NetworkInfo",
           "name": "Infos",
@@ -2942,7 +2754,6 @@
       "document": "没有店铺信息的网络状态",
       "members": [
         {
-          "default": "",
           "document": "上传带宽，单位Mb/s，-1：未知",
           "member": "float",
           "name": "Upload",
@@ -2950,7 +2761,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "下载带宽，单位Mb/s，-1：未知",
           "member": "float",
           "name": "Download",
@@ -2958,7 +2768,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "最小延迟，单位ms，-1：未知",
           "member": "float",
           "name": "MinRtt",
@@ -2966,7 +2775,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "平均延迟，单位ms，-1：未知",
           "member": "float",
           "name": "AvgRtt",
@@ -2974,7 +2782,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "最大延迟，单位ms，-1：未知",
           "member": "float",
           "name": "MaxRtt",
@@ -2982,7 +2789,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "平均偏差延迟，单位ms，-1：未知",
           "member": "float",
           "name": "MdevRtt",
@@ -2990,7 +2796,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "丢包率百分比，-1：未知",
           "member": "float",
           "name": "Loss",
@@ -2998,7 +2803,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "更新时间戳",
           "member": "int64",
           "name": "UpdateTime",
@@ -3006,7 +2810,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "上报网络状态设备",
           "member": "string",
           "name": "Mac",
@@ -3020,7 +2823,6 @@
       "document": "获取当前门店最新网络状态数据返回结构",
       "members": [
         {
-          "default": "",
           "document": "总数",
           "member": "int64",
           "name": "Count",
@@ -3028,7 +2830,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "网络状态",
           "member": "NetworkAndShopInfo",
           "name": "Infos",
@@ -3042,7 +2843,6 @@
       "document": "轨迹点坐标",
       "members": [
         {
-          "default": "",
           "document": "CAD图X坐标",
           "member": "float",
           "name": "CADX",
@@ -3050,7 +2850,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "CAD图Y坐标",
           "member": "float",
           "name": "CADY",
@@ -3058,7 +2857,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "抓拍时间点",
           "member": "datetime",
           "name": "CapTime",
@@ -3066,7 +2864,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "抓拍图片",
           "member": "string",
           "name": "CapPic",
@@ -3074,7 +2871,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "卖场区域类型",
           "member": "int64",
           "name": "MallAreaType",
@@ -3082,7 +2878,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "坐标编号",
           "member": "int64",
           "name": "PosId",
@@ -3090,7 +2885,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "门店编号",
           "member": "int64",
           "name": "ShopId",
@@ -3098,7 +2892,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "事件",
           "member": "string",
           "name": "Event",
@@ -3112,7 +2905,6 @@
       "document": "用户信息",
       "members": [
         {
-          "default": "",
           "document": "用户ID",
           "member": "uint64",
           "name": "PersonId",
@@ -3120,7 +2912,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "人脸图片Base64内容，已弃用，返回默认空值",
           "member": "string",
           "name": "PersonPicture",
@@ -3128,7 +2919,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "性别：0男1女",
           "member": "int64",
           "name": "Gender",
@@ -3136,7 +2926,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "年龄",
           "member": "int64",
           "name": "Age",
@@ -3144,7 +2933,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "身份类型（0表示普通顾客，1 白名单，2 表示黑名单）",
           "member": "int64",
           "name": "PersonType",
@@ -3152,7 +2940,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "人脸图片Url，在有效期内可以访问下载",
           "member": "string",
           "name": "PersonPictureUrl",
@@ -3160,7 +2947,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "身份子类型:\nPersonType=0时(普通顾客)，0普通顾客\nPersonType=1时(白名单)，0店员，1商场人员，2其他类型人员，3区域经理，4注册用户，5VIP用户\nPersonType=2时(黑名单)，0普通黑名单，1小偷)",
           "member": "int64",
           "name": "PersonSubType",
@@ -3168,7 +2954,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "到访次数，-1表示未知",
           "member": "int64",
           "name": "VisitTimes",
@@ -3176,7 +2961,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "到访天数，-1表示未知",
           "member": "int64",
           "name": "VisitDays",
@@ -3190,7 +2974,6 @@
       "document": "来访客人基本资料",
       "members": [
         {
-          "default": "",
           "document": "客人编码",
           "member": "string",
           "name": "PersonId",
@@ -3198,7 +2981,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "性别",
           "member": "uint64",
           "name": "Gender",
@@ -3206,7 +2988,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "年龄",
           "member": "uint64",
           "name": "Age",
@@ -3214,7 +2995,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "首次到场时间",
           "member": "datetime",
           "name": "FirstArrivedTime",
@@ -3222,7 +3002,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "来访次数",
           "member": "uint64",
           "name": "ArrivedCount",
@@ -3230,7 +3009,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "客户图片",
           "member": "string",
           "name": "PicUrl",
@@ -3238,7 +3016,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "置信度",
           "member": "float",
           "name": "Similarity",
@@ -3252,7 +3029,6 @@
       "document": "修改顾客属性参数",
       "members": [
         {
-          "default": "",
           "document": "顾客原类型",
           "member": "int64",
           "name": "OldType",
@@ -3260,7 +3036,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "顾客新类型",
           "member": "int64",
           "name": "NewType",
@@ -3268,7 +3043,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "顾客face id",
           "member": "int64",
           "name": "PersonId",
@@ -3282,7 +3056,6 @@
       "document": "客户轨迹点",
       "members": [
         {
-          "default": "",
           "document": "卖场区域编码",
           "member": "uint64",
           "name": "MallAreaId",
@@ -3290,7 +3063,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "门店编码",
           "member": "uint64",
           "name": "ShopId",
@@ -3298,7 +3070,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "卖场区域类型",
           "member": "uint64",
           "name": "MallAreaType",
@@ -3306,7 +3077,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "轨迹事件",
           "member": "uint64",
           "name": "TraceEventType",
@@ -3314,7 +3084,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "轨迹事件发生时间点",
           "member": "datetime",
           "name": "TraceEventTime",
@@ -3322,7 +3091,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "抓拍图片",
           "member": "string",
           "name": "CapPic",
@@ -3330,7 +3098,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "购物袋类型",
           "member": "uint64",
           "name": "ShoppingBagType",
@@ -3338,7 +3105,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "购物袋数量",
           "member": "uint64",
           "name": "ShoppingBagCount",
@@ -3352,7 +3118,6 @@
       "document": "客户轨迹序列",
       "members": [
         {
-          "default": "",
           "document": "轨迹编码",
           "member": "string",
           "name": "TraceId",
@@ -3360,7 +3125,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "轨迹点序列",
           "member": "PersonTracePoint",
           "name": "TracePointSet",
@@ -3374,7 +3138,6 @@
       "document": "用户到访明细",
       "members": [
         {
-          "default": "",
           "document": "用户ID",
           "member": "uint64",
           "name": "PersonId",
@@ -3382,7 +3145,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "用户到访ID",
           "member": "uint64",
           "name": "VisitId",
@@ -3390,7 +3152,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "到访时间：Unix时间戳",
           "member": "uint64",
           "name": "InTime",
@@ -3398,7 +3159,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "抓拍到的头像Base64内容，已弃用，返回默认空值",
           "member": "string",
           "name": "CapturedPicture",
@@ -3406,7 +3166,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "口罩类型：0不戴口罩，1戴口罩",
           "member": "uint64",
           "name": "MaskType",
@@ -3414,7 +3173,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "眼镜类型：0不戴眼镜，1普通眼镜 , 2墨镜",
           "member": "uint64",
           "name": "GlassType",
@@ -3422,7 +3180,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "发型：0 短发,  1长发",
           "member": "uint64",
           "name": "HairType",
@@ -3430,7 +3187,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "抓拍到的头像Url，在有效期内可以访问下载",
           "member": "string",
           "name": "CapturedPictureUrl",
@@ -3438,7 +3194,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "抓拍头像的场景图信息",
           "member": "SceneInfo",
           "name": "SceneInfo",
@@ -3452,7 +3207,6 @@
       "document": "RegisterCallback请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "集团id，通过\"指定身份标识获取客户门店列表\"接口获取",
           "member": "string",
           "name": "CompanyId",
@@ -3460,7 +3214,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "通知回调地址，完整url，示例（http://youmall.tencentcloudapi.com/）",
           "member": "string",
           "name": "BackUrl",
@@ -3468,7 +3221,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "请求时间戳",
           "member": "uint64",
           "name": "Time",
@@ -3476,7 +3228,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否需要顾客图片，1-需要图片，其它-不需要图片",
           "member": "uint64",
           "name": "NeedFacePic",
@@ -3502,7 +3253,6 @@
       "document": "场景图信息",
       "members": [
         {
-          "default": "",
           "document": "场景图",
           "member": "string",
           "name": "ScenePictureURL",
@@ -3510,7 +3260,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "抓拍头像左上角X坐标在场景图中的像素点位置",
           "member": "int64",
           "name": "HeadX",
@@ -3518,7 +3267,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "抓拍头像左上角Y坐标在场景图中的像素点位置",
           "member": "int64",
           "name": "HeadY",
@@ -3526,7 +3274,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "抓拍头像在场景图中占有的像素宽度",
           "member": "int64",
           "name": "HeadWidth",
@@ -3534,7 +3281,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "抓拍头像在场景图中占有的像素高度",
           "member": "int64",
           "name": "HeadHeight",
@@ -3548,7 +3294,6 @@
       "document": "门店客流量列表信息",
       "members": [
         {
-          "default": "",
           "document": "日期",
           "member": "date",
           "name": "Date",
@@ -3556,7 +3301,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "客流量",
           "member": "uint64",
           "name": "DayTrafficTotalCount",
@@ -3564,7 +3308,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "性别年龄分组下的客流信息",
           "member": "GenderAgeTrafficDetail",
           "name": "GenderAgeTrafficDetailSet",
@@ -3578,7 +3321,6 @@
       "document": "分时客流量信息",
       "members": [
         {
-          "default": "",
           "document": "日期，格式yyyy-MM-dd",
           "member": "date",
           "name": "Date",
@@ -3586,7 +3328,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "分时客流详细信息",
           "member": "HourTrafficInfoDetail",
           "name": "HourTrafficInfoDetailSet",
@@ -3600,7 +3341,6 @@
       "document": "客户所属的门店信息",
       "members": [
         {
-          "default": "",
           "document": "公司ID",
           "member": "string",
           "name": "CompanyId",
@@ -3608,7 +3348,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "门店ID",
           "member": "uint64",
           "name": "ShopId",
@@ -3616,7 +3355,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "门店名称",
           "member": "string",
           "name": "ShopName",
@@ -3624,7 +3362,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "客户门店编码",
           "member": "string",
           "name": "ShopCode",
@@ -3632,7 +3369,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "省",
           "member": "string",
           "name": "Province",
@@ -3640,7 +3376,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "市",
           "member": "string",
           "name": "City",
@@ -3648,7 +3383,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "公司名称",
           "member": "string",
           "name": "CompanyName",
@@ -3662,7 +3396,6 @@
       "document": "轨迹动线信息子结构",
       "members": [
         {
-          "default": "",
           "document": "区域动线，形如 x-x-x-x-x，其中 x 为区域 ID",
           "member": "string",
           "name": "Zones",
@@ -3670,7 +3403,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "该动线出现次数",
           "member": "int64",
           "name": "Count",
@@ -3678,7 +3410,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "该动线平均停留时间（秒）",
           "member": "int64",
           "name": "AvgStayTime",
@@ -3692,7 +3423,6 @@
       "document": "区域性别平均停留时间子结构",
       "members": [
         {
-          "default": "",
           "document": "男性平均停留时间",
           "member": "float",
           "name": "MaleAvrStayTime",
@@ -3700,7 +3430,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "女性平均停留时间",
           "member": "float",
           "name": "FemaleAvrStayTime",
@@ -3714,7 +3443,6 @@
       "document": "每日客流统计子结构",
       "members": [
         {
-          "default": "",
           "document": "日期，如 2018-08-6",
           "member": "string",
           "name": "Day",
@@ -3722,7 +3450,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "客流量",
           "member": "int64",
           "name": "FlowCount",
@@ -3736,7 +3463,6 @@
       "document": "客流停留统计子结构",
       "members": [
         {
-          "default": "",
           "document": "区域id",
           "member": "int64",
           "name": "ZoneId",
@@ -3744,7 +3470,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "区域名称",
           "member": "string",
           "name": "ZoneName",
@@ -3752,7 +3477,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "人流量",
           "member": "uint64",
           "name": "FlowCount",
@@ -3760,7 +3484,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "平均停留时长",
           "member": "uint64",
           "name": "AvrStayTime",
@@ -3774,7 +3497,6 @@
       "document": "客流统计分时数据子结构",
       "members": [
         {
-          "default": "",
           "document": "分时 0~23",
           "member": "int64",
           "name": "Hour",
@@ -3782,7 +3504,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "客流量",
           "member": "int64",
           "name": "FlowCount",
@@ -3796,7 +3517,6 @@
       "document": "门店区域客流信息",
       "members": [
         {
-          "default": "",
           "document": "日期",
           "member": "date",
           "name": "Date",
@@ -3804,7 +3524,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "门店区域客流详细信息",
           "member": "ZoneTrafficInfoDetail",
           "name": "ZoneTrafficInfoDetailSet",
@@ -3818,7 +3537,6 @@
       "document": "门店区域客流详细信息",
       "members": [
         {
-          "default": "",
           "document": "区域ID",
           "member": "uint64",
           "name": "ZoneId",
@@ -3826,7 +3544,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "区域名称",
           "member": "string",
           "name": "ZoneName",
@@ -3834,7 +3551,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "客流量",
           "member": "uint64",
           "name": "TrafficTotalCount",
@@ -3842,7 +3558,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "平均停留时间",
           "member": "uint64",
           "name": "AvgStayTime",

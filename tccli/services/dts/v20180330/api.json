@@ -173,7 +173,6 @@
       "document": "ActivateSubscribe请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "订阅实例ID。",
           "example": "subs-ieuwi83j2e",
@@ -183,7 +182,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库实例ID",
           "example": "cdb-9dijwkkw2",
@@ -193,7 +191,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅类型0-全实例订阅，1数据订阅，2结构订阅，3数据订阅与结构订阅",
           "example": "0",
@@ -203,7 +200,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅对象",
           "example": "无",
@@ -213,7 +209,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅服务所在子网。默认为数据库实例所在的子网内。",
           "example": "Default-VPC",
@@ -223,7 +218,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅服务端口；默认为7507",
           "example": "7507",
@@ -261,7 +255,6 @@
       "document": "CompleteMigrateJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据迁移任务ID",
           "example": "dts-1kl0iy0v",
@@ -271,7 +264,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "完成任务的方式,仅支持旧版MySQL迁移任务。waitForSync-等待主从差距为0才停止,immediately-立即完成，不会等待主从差距一致。默认为waitForSync",
           "example": "waitForSync",
@@ -299,7 +291,6 @@
       "document": "抽样检验时的抽样参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据内容检测参数。表中选出用来数据对比的行，占表的总行数的百分比。取值范围是整数[1-100]",
           "example": "",
@@ -310,7 +301,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据内容检测参数。迁移库表中，要进行数据内容检测的表，占所有表的百分比。取值范围是整数[1-100]",
           "example": "",
@@ -321,7 +311,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据数量检测，检测表行数是否一致。迁移库表中，要进行数据数量检测的表，占所有表的百分比。取值范围是整数[1-100]",
           "example": "",
@@ -338,7 +327,6 @@
       "document": "CreateMigrateCheckJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据迁移任务ID",
           "example": "dts-1kl0iy0v",
@@ -366,7 +354,6 @@
       "document": "CreateMigrateJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据迁移任务名称",
           "example": "usertest                               // DTS任务名称",
@@ -376,7 +363,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务配置选项",
           "example": "无",
@@ -386,7 +372,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源实例数据库类型，目前支持：mysql，redis，mongodb，postgresql，mariadb，percona，sqlserver 不同地域数据库类型的具体支持情况，请参考控制台创建迁移页面。",
           "example": "mysql                          // 源实例是mysql",
@@ -396,7 +381,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源实例接入类型，值包括：extranet(外网),cvm(CVM自建实例),dcg(专线接入的实例),vpncloud(云VPN接入的实例),cdb(腾讯云数据库实例),ccn(云联网实例)",
           "example": "extranet                         // 公网迁移",
@@ -406,7 +390,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源实例信息，具体内容跟迁移任务类型相关",
           "example": "无",
@@ -416,7 +399,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标实例数据库类型，目前支持：mysql，redis，mongodb，postgresql，mariadb，percona，sqlserver，cynosdbmysql。不同地域数据库类型的具体支持情况，请参考控制台创建迁移页面。",
           "example": "mysql                          // 目标实例mysql",
@@ -426,7 +408,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标实例接入类型，目前支持：cdb（腾讯云数据库实例）",
           "example": "cdb                              // 目标实例是腾讯云mysql",
@@ -436,7 +417,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标实例信息",
           "example": "无",
@@ -446,7 +426,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要迁移的源数据库表信息，用json格式的字符串描述。当MigrateOption.MigrateObject配置为2（指定库表迁移）时必填。\n对于database-table两级结构的数据库：\n[{\"Database\":\"db1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db2\"}]\n对于database-schema-table三级结构：\n[{\"Database\":\"db1\",\"Schema\":\"s1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db1\",\"Schema\":\"s2\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db2\",\"Schema\":\"s1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db3\"},{\"Database\":\"db4\",\"Schema\":\"s1\"}]",
           "example": "无",
@@ -456,7 +435,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移实例的tag",
           "example": "无",
@@ -466,7 +444,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源实例类型: \"\"或者\"simple\":主从节点，\"cluster\": 集群节点",
           "example": "cluster",
@@ -476,7 +453,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源实例信息，具体内容跟迁移任务类型相关",
           "example": "无",
@@ -514,7 +490,6 @@
       "document": "CreateSubscribe请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "订阅的数据库类型，目前支持的有 mysql",
           "example": "mysql",
@@ -524,7 +499,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例付费类型，1小时计费，0包年包月",
           "example": "1",
@@ -534,7 +508,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买时长。PayType为0时必填。单位为月，最大支持120",
           "example": "120",
@@ -544,7 +517,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买数量,默认为1，最大为10",
           "example": "1",
@@ -554,7 +526,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否自动续费，0表示不自动续费，1表示自动续费，默认为0。小时计费实例设置该标识无效。",
           "example": "1",
@@ -564,7 +535,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例资源标签",
           "example": "无",
@@ -574,7 +544,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户自定义实例名",
           "example": "user-defined-name",
@@ -612,7 +581,6 @@
       "document": "DeleteMigrateJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据迁移任务ID",
           "example": "dts-1kl0iy0v",
@@ -685,7 +653,6 @@
       "document": "DescribeMigrateCheckJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据迁移任务ID",
           "example": "dts-1kl0iy0v",
@@ -763,7 +730,6 @@
       "document": "DescribeMigrateJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据迁移任务ID",
           "example": "dts-83i2usk2",
@@ -773,7 +739,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据迁移任务名称",
           "example": "无",
@@ -783,7 +748,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段，可以取值为JobId、Status、JobName、MigrateType、RunMode、CreateTime",
           "example": "CreateTime",
@@ -793,7 +757,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式，升序为ASC，降序为DESC",
           "example": "DESC",
@@ -803,7 +766,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
           "example": "0",
@@ -813,7 +775,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回实例数量，默认20，有效区间[1,100]",
           "example": "2",
@@ -823,7 +784,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签过滤条件",
           "example": "无",
@@ -906,7 +866,6 @@
       "document": "DescribeSubscribeConf请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "订阅实例ID",
           "example": "subs-ieuwi83j2e",
@@ -1214,7 +1173,6 @@
       "document": "DescribeSubscribes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅的实例ID",
           "example": "subs-fr19dk5e2y",
@@ -1224,7 +1182,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅的实例名称",
           "example": "name-fr19dk5e2y ",
@@ -1234,7 +1191,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定数据库实例的ID",
           "example": "cdb-5gsip99h",
@@ -1244,7 +1200,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅实例的通道ID",
           "example": "topic-subs-fr19dk5e2y-cdb-5gsip99h",
@@ -1254,7 +1209,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计费模式筛选，可能的值：0-包年包月，1-按量计费",
           "example": "1",
@@ -1264,7 +1218,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅的数据库产品，如mysql",
           "example": "mysql",
@@ -1274,7 +1227,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅实例的状态，creating - 创建中，normal - 正常运行，isolating - 隔离中，isolated - 已隔离，offlining - 下线中",
           "example": "[\"isolate\\n\"]",
@@ -1284,7 +1236,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅实例的配置状态，unconfigure - 未配置， configuring - 配置中，configured - 已配置",
           "example": "running",
@@ -1294,7 +1245,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回记录的起始偏移量，默认为0。请输入非负整数",
           "example": "0",
@@ -1304,7 +1254,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单次返回的记录数量，默认20。请输入1到100的整数",
           "example": "1",
@@ -1314,7 +1263,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方向，可选的值为\"DESC\"和\"ASC\"，默认为\"DESC\"，按创建时间逆序排序",
           "example": "DESC",
@@ -1324,7 +1272,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签过滤条件",
           "example": "无",
@@ -1334,7 +1281,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅实例版本;txdts-旧版数据订阅，kafka-kafka版本数据订阅",
           "example": "kafka",
@@ -1382,7 +1328,6 @@
       "document": "目的实例信息，具体内容跟迁移任务类型相关",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "目标实例地域，如ap-guangzhou",
           "example": "无",
@@ -1393,7 +1338,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标实例ID，如cdb-jd92ijd8",
           "example": "无",
@@ -1404,7 +1348,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标实例vip。已废弃，无需填写",
           "example": "无",
@@ -1415,7 +1358,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标实例vport。已废弃，无需填写",
           "example": "无",
@@ -1426,7 +1368,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目前只对MySQL有效。当为整实例迁移时，1-只读，0-可读写。",
           "example": "无",
@@ -1437,7 +1378,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标数据库账号",
           "example": "无",
@@ -1448,7 +1388,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标数据库密码",
           "example": "无",
@@ -1465,7 +1404,6 @@
       "document": "迁移任务错误信息及提示",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "具体的报错日志, 包含错误码和错误信息",
           "example": "",
@@ -1476,7 +1414,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报错对应的帮助文档Ur",
           "example": "",
@@ -1493,7 +1430,6 @@
       "document": "IsolateSubscribe请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "订阅实例ID",
           "example": "subs-ieuwi83j2e",
@@ -1521,7 +1457,6 @@
       "document": "描述详细迁移过程",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "总步骤数",
           "example": "",
@@ -1532,7 +1467,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前步骤",
           "example": "",
@@ -1543,7 +1477,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总进度,如：\"10\"",
           "example": "",
@@ -1554,7 +1487,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前步骤进度,如:\"1\"",
           "example": "",
@@ -1565,7 +1497,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主从差距，MB；在增量同步阶段有效，目前支持产品为：redis和mysql",
           "example": "",
@@ -1576,7 +1507,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主从差距，秒；在增量同步阶段有效，目前支持产品为：mysql",
           "example": "",
@@ -1587,7 +1517,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "步骤信息",
           "example": "",
@@ -1604,7 +1533,6 @@
       "document": "迁移任务详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据迁移任务ID",
           "example": "dts-75sekyal",
@@ -1615,7 +1543,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据迁移任务名称",
           "example": "test",
@@ -1626,7 +1553,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务配置选项",
           "example": "{\"ConsistencyParams\":{\"SelectRowsPerTable\":0,\"TablesSelectAll\":0",
@@ -1637,7 +1563,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源实例数据库类型:mysql，redis，mongodb，postgresql，mariadb，percona",
           "example": "mysql",
@@ -1648,7 +1573,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源实例接入类型，值包括：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),cdb(腾讯云数据库实例),ccn(云联网实例)",
           "example": "cdb",
@@ -1659,7 +1583,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源实例信息，具体内容跟迁移任务类型相关",
           "example": "{\"AccessKey\":\"\",\"CcnId\":\"\",\"CvmInstanceId\":\"\",\"EngineVersion\":\"\"",
@@ -1670,7 +1593,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标实例数据库类型:mysql，redis，mongodb，postgresql，mariadb，percona",
           "example": "mysql",
@@ -1681,7 +1603,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标实例接入类型，目前支持：cdb(腾讯云数据库实例)",
           "example": "cdb",
@@ -1692,7 +1613,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标实例信息",
           "example": "{\"CcnId\":\"\",\"CvmInstanceId\":\"\",\"InstanceId\":\"crs-eciqrvyo\",\"Ip\":",
@@ -1703,7 +1623,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要迁移的源数据库表信息，如果需要迁移的是整个实例，该字段为[]",
           "example": "\"\"",
@@ -1714,7 +1633,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务创建(提交)时间",
           "example": "2022-04-14 16:35:23",
@@ -1725,7 +1643,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务开始执行时间",
           "example": "2022-04-14 16:48:33",
@@ -1736,7 +1653,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务执行结束时间",
           "example": "2022-04-14 16:48:33",
@@ -1747,7 +1663,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务状态,取值为：1-创建中(Creating),3-校验中(Checking)4-校验通过(CheckPass),5-校验不通过（CheckNotPass）,7-任务运行(Running),8-准备完成（ReadyComplete）,9-任务成功（Success）,10-任务失败（Failed）,11-撤销中（Stopping）,12-完成中（Completing）",
           "example": "6",
@@ -1758,7 +1673,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务详情",
           "example": "{\"CurrentStepProgress\":\"0\",\"MasterSlaveDistance\":-1,\"Progress\":\"",
@@ -1769,7 +1683,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务错误信息提示，当任务发生错误时，不为null或者空值",
           "example": " []",
@@ -1780,7 +1693,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -1791,7 +1703,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源实例为集群时且接入为非cdb时源实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"AccessKey\":\"\",\"CcnId\":\"\",\"CvmInstanceId\":\"\",\"EngineVersion\":\"",
@@ -1808,7 +1719,6 @@
       "document": "迁移任务配置选项",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务运行模式，值包括：1-立即执行，2-定时执行",
           "example": "",
@@ -1819,7 +1729,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "期望执行时间，当runMode=2时，该字段必填，时间格式：yyyy-mm-dd hh:mm:ss",
           "example": "",
@@ -1830,7 +1739,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据迁移类型，值包括：1-结构迁移,2-全量迁移,3-全量+增量迁移",
           "example": "",
@@ -1841,7 +1749,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移对象，1-整个实例，2-指定库表",
           "example": "",
@@ -1852,7 +1759,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "抽样数据一致性检测参数，1-未配置,2-全量检测,3-抽样检测, 4-仅校验不一致表,5-不检测",
           "example": "",
@@ -1863,7 +1769,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否用源库Root账户覆盖目标库，值包括：0-不覆盖，1-覆盖，选择库表或者结构迁移时应该为0",
           "example": "",
@@ -1874,7 +1779,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不同数据库用到的额外参数.以JSON格式描述. \nRedis可定义如下的参数: \n{ \n\t\"ClientOutputBufferHardLimit\":512, \t从机缓冲区的硬性容量限制(MB) \n\t\"ClientOutputBufferSoftLimit\":512, \t从机缓冲区的软性容量限制(MB) \n\t\"ClientOutputBufferPersistTime\":60, 从机缓冲区的软性限制持续时间(秒) \n\t\"ReplBacklogSize\":512, \t环形缓冲区容量限制(MB) \n\t\"ReplTimeout\":120，\t\t复制超时时间(秒) \n}\nMongoDB可定义如下的参数: \n{\n\t'SrcAuthDatabase':'admin', \n\t'SrcAuthFlag': \"1\", \n\t'SrcAuthMechanism':\"SCRAM-SHA-1\"\n}\nMySQL暂不支持额外参数设置。",
           "example": "",
@@ -1885,7 +1789,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仅用于“抽样数据一致性检测”，ConsistencyType配置为抽样检测时，必选",
           "example": "",
@@ -1902,7 +1805,6 @@
       "document": "迁移中的步骤信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "步骤序列",
           "example": "",
@@ -1913,7 +1815,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "步骤展现名称",
           "example": "",
@@ -1924,7 +1825,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "步骤英文标识",
           "example": "",
@@ -1935,7 +1835,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "步骤状态:0-默认值,1-成功,2-失败,3-执行中,4-未执行",
           "example": "",
@@ -1946,7 +1845,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前步骤开始的时间，格式为\"yyyy-mm-dd hh:mm:ss\"，该字段不存在或者为空是无意义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1963,7 +1861,6 @@
       "document": "ModifyMigrateJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待修改的数据迁移任务ID",
           "example": "dts-75sekyal",
@@ -1973,7 +1870,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据迁移任务名称",
           "example": "test",
@@ -1983,7 +1879,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务配置选项",
           "example": "无",
@@ -1993,7 +1888,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源实例接入类型，值包括：extranet(外网),cvm(CVM自建实例),dcg(专线接入的实例),vpncloud(云VPN接入的实例),cdb(云上CDB实例)",
           "example": "cvm",
@@ -2003,7 +1897,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源实例信息，具体内容跟迁移任务类型相关",
           "example": "无",
@@ -2013,7 +1906,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标实例接入类型，值包括：extranet(外网),cvm(CVM自建实例),dcg(专线接入的实例),vpncloud(云VPN接入的实例)，cdb(云上CDB实例). 目前只支持cdb.",
           "example": "cdb",
@@ -2023,7 +1915,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标实例信息, 其中目标实例地域不允许修改.",
           "example": "无",
@@ -2033,7 +1924,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当选择'指定库表'迁移的时候, 需要设置待迁移的源数据库表信息,用符合json数组格式的字符串描述, 如下所例。\n\n对于database-table两级结构的数据库：\n[{\"Database\":\"db1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db2\"}]\n对于database-schema-table三级结构：\n[{\"Database\":\"db1\",\"Schema\":\"s1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db1\",\"Schema\":\"s2\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db2\",\"Schema\":\"s1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db3\"},{\"Database\":\"db4\",\"Schema\":\"s1\"}]\n\n如果是'整个实例'的迁移模式,不需设置该字段",
           "example": "无",
@@ -2043,7 +1933,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源实例类型: \"\"或者\"simple\":主从节点，\"cluster\": 集群节点",
           "example": "cluster",
@@ -2053,7 +1942,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源实例信息，具体内容跟迁移任务类型相关",
           "example": "无",
@@ -2117,7 +2005,6 @@
       "document": "ModifySubscribeConsumeTime请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅实例的ID",
           "example": "",
@@ -2127,7 +2014,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费时间起点，也即是指定订阅数据的时间起点，时间格式如：Y-m-d h:m:s，取值范围为过去24小时之内",
           "example": "",
@@ -2155,7 +2041,6 @@
       "document": "ModifySubscribeName请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅实例的ID",
           "example": "subs-ieuwi83j2e",
@@ -2165,7 +2050,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅实例的名称，长度限制为[1,60]",
           "example": "test",
@@ -2193,7 +2077,6 @@
       "document": "ModifySubscribeObjects请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅实例的ID",
           "example": "subs-ieuwi83j2e",
@@ -2203,7 +2086,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅的类型，可选的值有：0 - 全实例订阅；1 - 数据订阅；2 - 结构订阅；3 - 数据订阅+结构订阅",
           "example": "0",
@@ -2213,7 +2095,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅的数据库表信息",
           "example": "无",
@@ -2251,7 +2132,6 @@
       "document": "ModifySubscribeVipVport请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅实例的ID",
           "example": "",
@@ -2261,7 +2141,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定目的子网，如果传此参数，DstIp必须在目的子网内",
           "example": "",
@@ -2271,7 +2150,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标IP，与DstPort至少传一个",
           "example": "",
@@ -2281,7 +2159,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标PORT，支持范围为：[1025-65535]",
           "example": "",
@@ -2309,7 +2186,6 @@
       "document": "OfflineIsolatedSubscribe请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅实例的ID",
           "example": "subs-ieuwi83j2e",
@@ -2337,7 +2213,6 @@
       "document": "ResetSubscribe请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅实例的ID",
           "example": "subs-ieuwi83j2e",
@@ -2365,7 +2240,6 @@
       "document": "源实例信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "阿里云AccessKey。源库是阿里云RDS5.6适用",
           "example": "",
@@ -2376,7 +2250,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的IP地址",
           "example": "",
@@ -2387,7 +2260,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的端口",
           "example": "",
@@ -2398,7 +2270,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的用户名",
           "example": "",
@@ -2409,7 +2280,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的密码",
           "example": "",
@@ -2420,7 +2290,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "阿里云RDS实例ID。源库是阿里云RDS5.6/5.6适用",
           "example": "",
@@ -2431,7 +2300,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CVM实例短ID，格式如：ins-olgl39y8，与云服务器控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段",
           "example": "",
@@ -2442,7 +2310,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关ID，格式如：dcg-0rxtqqxb",
           "example": "",
@@ -2453,7 +2320,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID，格式如：vpc-92jblxto",
           "example": "",
@@ -2464,7 +2330,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络下的子网ID，格式如：subnet-3paxmkdz",
           "example": "",
@@ -2475,7 +2340,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPN网关ID，格式如：vpngw-9ghexg7q",
           "example": "",
@@ -2486,7 +2350,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库实例ID，格式如：cdb-powiqx8q",
           "example": "",
@@ -2497,7 +2360,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域英文名，如：ap-guangzhou",
           "example": "",
@@ -2508,7 +2370,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当实例为RDS实例时，填写为aliyun, 其他情况均填写others",
           "example": "",
@@ -2519,7 +2380,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云联网ID，如：ccn-afp6kltc\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2530,7 +2390,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库版本，当实例为RDS实例时才有效，格式如：5.6或者5.7，默认为5.6",
           "example": "",
@@ -2547,7 +2406,6 @@
       "document": "StartMigrateJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据迁移任务ID",
           "example": "dts-1kl0iy0v",
@@ -2575,7 +2433,6 @@
       "document": "StopMigrateJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据迁移任务ID",
           "example": "dts-1kl0iy0v",
@@ -2603,7 +2460,6 @@
       "document": "查询订阅配置的错误信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "error",
@@ -2620,7 +2476,6 @@
       "document": "订阅实例信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅的实例ID",
           "example": "",
@@ -2631,7 +2486,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅实例的名称",
           "example": "",
@@ -2642,7 +2496,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅实例绑定的通道ID",
           "example": "",
@@ -2653,7 +2506,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅绑定实例对应的产品名称",
           "example": "",
@@ -2664,7 +2516,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅实例绑定的数据库实例ID",
           "example": "",
@@ -2675,7 +2526,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅实例绑定的数据库实例状态",
           "example": "",
@@ -2686,7 +2536,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅实例的配置状态，unconfigure - 未配置， configuring - 配置中，configured - 已配置",
           "example": "",
@@ -2697,7 +2546,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上次修改时间",
           "example": "",
@@ -2708,7 +2556,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -2719,7 +2566,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "隔离时间",
           "example": "",
@@ -2730,7 +2576,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "到期时间",
           "example": "",
@@ -2741,7 +2586,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下线时间",
           "example": "",
@@ -2752,7 +2596,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最近一次修改的消费时间起点，如果从未修改则为零值",
           "example": "",
@@ -2763,7 +2606,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅实例所属地域",
           "example": "",
@@ -2774,7 +2616,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计费方式，0 - 包年包月，1 - 按量计费",
           "example": "",
@@ -2785,7 +2626,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅实例的Vip",
           "example": "",
@@ -2796,7 +2636,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅实例的Vport",
           "example": "",
@@ -2807,7 +2646,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅实例Vip所在VPC的唯一ID",
           "example": "",
@@ -2818,7 +2656,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅实例Vip所在子网的唯一ID",
           "example": "",
@@ -2829,7 +2666,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅实例的状态，creating - 创建中，normal - 正常运行，isolating - 隔离中，isolated - 已隔离，offlining - 下线中，offline - 已下线",
           "example": "",
@@ -2840,7 +2676,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SDK最后一条确认消息的时间戳，如果SDK一直消费，也可以作为SDK当前消费时间点",
           "example": "",
@@ -2851,7 +2686,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2862,7 +2696,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动续费标识。0-不自动续费，1-自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2873,7 +2706,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅实例版本；txdts-旧版数据订阅,kafka-kafka版本数据订阅\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2926,7 +2758,6 @@
       "document": "数据订阅地域售卖信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域名称，如广州\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2937,7 +2768,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地区标识，如ap-guangzhou\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2948,7 +2778,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域名称，如华南地区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2959,7 +2788,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为默认地域，0 - 不是，1 - 是的\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2970,7 +2798,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前地域的售卖情况，1 - 正常， 2-灰度，3 - 停售\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2987,7 +2814,6 @@
       "document": "标签过滤",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键值",
           "example": "",
@@ -2998,7 +2824,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "",
@@ -3015,7 +2840,6 @@
       "document": "标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键值",
           "example": "",
@@ -3026,7 +2850,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",

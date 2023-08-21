@@ -243,7 +243,6 @@
       "document": "AddUsersForUserManager请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群字符串ID",
           "example": "emr-xxx",
@@ -253,7 +252,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户信息列表",
           "example": "[{\"UserName\":\"user1\",\"UserGroup\":\"group1\",\"PassWord\":\"123456\"}]",
@@ -301,7 +299,6 @@
       "document": "资源描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "描述Master节点资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -312,7 +309,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述Core节点资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -323,7 +319,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述Taskr节点资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -334,7 +329,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述Common节点资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -345,7 +339,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Master节点数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -356,7 +349,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Corer节点数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -367,7 +359,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Task节点数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -378,7 +369,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Common节点数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -395,7 +385,6 @@
       "document": "yarn application 统计信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "队列名",
           "example": "root.default",
@@ -406,7 +395,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名",
           "example": "hadoop",
@@ -417,7 +405,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业类型",
           "example": "MAPREDUCE",
@@ -428,7 +415,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SumMemorySeconds含义",
           "example": "58250",
@@ -439,7 +425,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SumVCoreSeconds含义",
           "example": "33",
@@ -450,7 +435,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SumHDFSBytesWritten（带单位）",
           "example": "48 bytes",
@@ -461,7 +445,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SumHDFSBytesRead（待单位）",
           "example": "269.1 MB",
@@ -472,7 +455,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业数",
           "example": "3",
@@ -489,7 +471,6 @@
       "document": "引导脚本",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "脚本位置，支持cos上的文件，且只支持https协议。",
           "example": "",
@@ -500,7 +481,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行时间。\nresourceAfter 表示在机器资源申请成功后执行。\nclusterBefore 表示在集群初始化前执行。\nclusterAfter 表示在集群初始化后执行。",
           "example": "",
@@ -511,7 +491,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "脚本参数",
           "example": "",
@@ -528,7 +507,6 @@
       "document": "COS 相关配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "COS SecretId",
           "example": "SecretId ",
@@ -539,7 +517,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "COS SecrectKey",
           "example": "SecrectKey",
@@ -550,7 +527,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志存储在COS上的路径",
           "example": "cosn://ad-data-xxxxxx/data/logs/xxxxxxx",
@@ -567,7 +543,6 @@
       "document": "出参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库实例\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -578,7 +553,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -589,7 +563,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库端口\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -600,7 +573,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库内存规格\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -611,7 +583,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库磁盘规格\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -622,7 +593,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -633,7 +603,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -644,7 +613,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "申请时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -655,7 +623,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -666,7 +633,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -677,7 +643,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -688,7 +653,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "续费标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -699,7 +663,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库字符串\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -710,7 +673,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ZoneId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -721,7 +683,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "RegionId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -738,7 +699,6 @@
       "document": "当前集群共用组件与集群对应关系",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "依赖关系，0:被其他集群依赖，1:依赖其他集群\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -749,7 +709,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "共用组件\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "zookeeper",
@@ -760,7 +719,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "共用集群\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "emr-123",
@@ -771,7 +729,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "共用集群状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -788,7 +745,6 @@
       "document": "集群实例信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "ID号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "13284",
@@ -799,7 +755,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "emr-38om728d",
@@ -810,7 +765,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标题\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "集群运行中",
@@ -821,7 +775,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tencent_emr",
@@ -832,7 +785,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -843,7 +795,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地区ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10002",
@@ -854,7 +805,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户APPID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "251112431",
@@ -865,7 +815,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户UIN\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100000122121",
@@ -876,7 +825,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -887,7 +835,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群VPCID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "87821",
@@ -898,7 +845,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021891",
@@ -909,7 +855,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的状态码。取值范围：\n<li>2：表示集群运行中。</li>\n<li>3：表示集群创建中。</li>\n<li>4：表示集群扩容中。</li>\n<li>5：表示集群增加router节点中。</li>\n<li>6：表示集群安装组件中。</li>\n<li>7：表示集群执行命令中。</li>\n<li>8：表示重启服务中。</li>\n<li>9：表示进入维护中。</li>\n<li>10：表示服务暂停中。</li>\n<li>11：表示退出维护中。</li>\n<li>12：表示退出暂停中。</li>\n<li>13：表示配置下发中。</li>\n<li>14：表示销毁集群中。</li>\n<li>15：表示销毁core节点中。</li>\n<li>16：销毁task节点中。</li>\n<li>17：表示销毁router节点中。</li>\n<li>18：表示更改webproxy密码中。</li>\n<li>19：表示集群隔离中。</li>\n<li>20：表示集群冲正中。</li>\n<li>21：表示集群回收中。</li>\n<li>22：表示变配等待中。</li>\n<li>23：表示集群已隔离。</li>\n<li>24：表示缩容节点中。</li>\n<li>33：表示集群等待退费中。</li>\n<li>34：表示集群已退费。</li>\n<li>301：表示创建失败。</li>\n<li>302：表示扩容失败。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -920,7 +865,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "添加时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-10-18 19:46:32",
@@ -931,7 +875,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已经运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0天18小时32分钟28秒",
@@ -942,7 +885,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群产品配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -953,7 +895,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主节点外网IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "--",
@@ -964,7 +905,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EMR版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "EMR-V2.5.0",
@@ -975,7 +915,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "收费类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -986,7 +925,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "交易版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -997,7 +935,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源订单ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1008,7 +945,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否计费集群\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1019,7 +955,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群错误状态告警信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1030,7 +965,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否采用新架构\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1041,7 +975,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "元数据库信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1052,7 +985,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1063,7 +995,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Hive元数据信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1074,7 +1005,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群类型:EMR,CLICKHOUSE,DRUID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "HADOOP",
@@ -1085,7 +1015,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群所有节点的别名序列化\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1096,7 +1025,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群版本Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
@@ -1107,7 +1035,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地区ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou-2",
@@ -1118,7 +1045,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Hadoop-Default",
@@ -1129,7 +1055,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景化集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Hadoop",
@@ -1140,7 +1065,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景化EMR版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ClickHouse-V1.0.0",
@@ -1151,7 +1075,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景化集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Hadoop",
@@ -1162,7 +1085,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "vpc name\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "emr",
@@ -1173,7 +1095,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "subnet name\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "emr-name",
@@ -1184,7 +1105,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群依赖关系\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1195,7 +1115,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群vpcid 字符串类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1206,7 +1125,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网id 字符串类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1217,7 +1135,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1228,7 +1145,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是跨AZ集群\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -1239,7 +1155,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开通异常节点自动补偿\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -1256,7 +1171,6 @@
       "document": "集群配置。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "付费方式。\nPREPAID 包年包月。\nPOSTPAID_BY_HOUR 按量计费，默认方式。",
           "example": "PREPAID",
@@ -1267,7 +1181,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为HA集群。",
           "example": "true",
@@ -1278,7 +1191,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群所使用的安全组，目前仅支持一个。",
           "example": "sg-xxxxxxxx",
@@ -1289,7 +1201,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例位置。",
           "example": "无",
@@ -1300,7 +1211,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例所在VPC。",
           "example": "无",
@@ -1311,7 +1221,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例登录配置。",
           "example": "无",
@@ -1322,7 +1231,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例标签，示例：[\"{\\\"TagKey\\\":\\\"test-tag1\\\",\\\"TagValue\\\":\\\"001\\\"}\",\"{\\\"TagKey\\\":\\\"test-tag2\\\",\\\"TagValue\\\":\\\"002\\\"}\"]。",
           "example": "[\"{\\\"TagKey\\\":\\\"test-tag1\\\",\\\"TagValue\\\":\\\"001\\\"}\",\"{\\\"TagKey\\\":",
@@ -1333,7 +1241,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "元数据库配置。",
           "example": "无",
@@ -1344,7 +1251,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例硬件配置。",
           "example": "无",
@@ -1355,7 +1261,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否申请公网IP，默认为false。",
           "example": "false",
@@ -1366,7 +1271,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "包年包月配置，只对包年包月集群生效。",
           "example": "无",
@@ -1377,7 +1281,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群置放群组。",
           "example": "无",
@@ -1388,7 +1291,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否使用cbs加密。",
           "example": "false",
@@ -1399,7 +1301,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否使用远程登录，默认为false。",
           "example": "false",
@@ -1442,7 +1343,6 @@
       "document": "自定义配置参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "配置文件名，支持SPARK、HIVE、HDFS、YARN的部分配置文件自定义。",
           "example": "",
@@ -1453,7 +1353,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置参数通过KV的形式传入，部分文件支持自定义，可以通过特殊的键\"content\"传入所有内容。",
           "example": "",
@@ -1470,7 +1369,6 @@
       "document": "CreateCluster请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "EMR产品版本名称如EMR-V2.3.0 表示2.3.0版本的EMR， 当前支持产品版本名称查询：[产品版本名称](https://cloud.tencent.com/document/product/589/66338)",
           "example": "EMR-V1.3.1",
@@ -1480,7 +1378,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启节点高可用。取值范围：\n<li>true：表示开启节点高可用。</li>\n<li>false：表示不开启节点高可用。</li>",
           "example": "true",
@@ -1490,7 +1387,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称。\n<li>长度限制为6-36个字符。</li>\n<li>只允许包含中文、字母、数字、-、_。</li>",
           "example": "emr测试",
@@ -1500,7 +1396,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例计费模式。取值范围：\n<li>PREPAID：预付费，即包年包月。</li>\n<li>POSTPAID_BY_HOUR：按小时后付费。</li>",
           "example": "PREPAID",
@@ -1510,7 +1405,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例登录设置。通过该参数可以设置所购买节点的登录方式密码或者密钥。\n<li>设置密钥时，密码仅用于组件原生WebUI快捷入口登录。</li>\n<li>未设置密钥时，密码用于登录所购节点以及组件原生WebUI快捷入口登录。</li>",
           "example": "无",
@@ -1520,7 +1414,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群应用场景以及支持部署组件配置",
           "example": "无",
@@ -1530,7 +1423,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
           "example": "无",
@@ -1540,7 +1432,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例所属安全组的ID，形如sg-xxxxxxxx。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的SecurityGroupId字段来获取。",
           "example": "sg-xxxxxxxxxx",
@@ -1550,7 +1441,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "[引导操作](https://cloud.tencent.com/document/product/589/35656)脚本设置。",
           "example": "无",
@@ -1560,7 +1450,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "唯一随机标识，时效性为5分钟，需要调用者指定 防止客户端重复创建资源，例如 a9a90aa6-751a-41b6-aad6-fae360632808",
           "example": "sdcdwxxxws",
@@ -1570,7 +1459,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启集群Master节点公网。取值范围：\n<li>NEED_MASTER_WAN：表示开启集群Master节点公网。</li>\n<li>NOT_NEED_MASTER_WAN：表示不开启。</li>默认开启集群Master节点公网。",
           "example": "无",
@@ -1580,7 +1468,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启外网远程登录。（在SecurityGroupId不为空时，该参数无效）不填默认为不开启 取值范围：\n<li>true：表示开启</li>\n<li>false：表示不开启</li>",
           "example": "无",
@@ -1590,7 +1477,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启Kerberos认证。默认不开启 取值范围：\n<li>true：表示开启</li>\n<li>false：表示不开启</li>",
           "example": "无",
@@ -1600,7 +1486,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "[自定义软件配置](https://cloud.tencent.com/document/product/589/35655?from_cn_redirect=1)",
           "example": "无",
@@ -1610,7 +1495,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的实例。",
           "example": "无",
@@ -1620,7 +1504,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分散置放群组ID列表，当前只支持指定一个。\n该参数可以通过调用 [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/product/213/17810)的返回值中的DisasterRecoverGroupId字段来获取。",
           "example": "[\"disa-xxxxx\"]",
@@ -1630,7 +1513,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启集群维度CBS加密。默认不加密 取值范围：\n<li>true：表示加密</li>\n<li>false：表示不加密</li>",
           "example": "true",
@@ -1640,7 +1522,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "MetaDB信息，当MetaType选择EMR_NEW_META时，MetaDataJdbcUrl MetaDataUser MetaDataPass UnifyMetaInstanceId不用填\n当MetaType选择EMR_EXIT_META时，填写UnifyMetaInstanceId\n当MetaType选择USER_CUSTOM_META时，填写MetaDataJdbcUrl MetaDataUser MetaDataPass",
           "example": "无",
@@ -1650,7 +1531,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "共享组件信息",
           "example": "无",
@@ -1660,7 +1540,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点资源的规格，有几个可用区，就填几个，按顺序第一个为主可用区，第二个为备可用区，第三个为仲裁可用区。如果没有开启跨AZ，则长度为1即可。",
           "example": "无",
@@ -1698,7 +1577,6 @@
       "document": "CreateInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID，不同产品ID表示不同的EMR产品版本。取值范围：\n<li>16：表示EMR-V2.3.0。</li>\n<li>20：表示EMR-V2.5.0。</li>\n<li>25：表示EMR-V3.1.0。</li>\n<li>27：表示KAFKA-V1.0.0。</li>\n<li>30：表示EMR-V2.6.0。</li>\n<li>33 :   表示EMR-V3.2.1。</li>\n<li>34 :   表示EMR-V3.3.0。</li>\n<li>36 :   表示STARROCKS-V1.0.0。</li>\n<li>37 :   表示EMR-V3.4.0。</li>\n<li>38 :   表示EMR-V2.7.0。</li>\n<li>39 :   表示STARROCKS-V1.1.0。</li>\n<li>41 :   表示DRUID-V1.1.0。</li>",
           "example": "4",
@@ -1708,7 +1586,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）对应不同可选组件列表，不同产品版本可选组件列表查询：[组件版本](https://cloud.tencent.com/document/product/589/20279) ；\n填写实例值：hive、flink。",
           "example": "[\"hadoop-2.8.4\\n\",\"zookeeper-3.4.9\\n\",\"knox-1.2.0\\n\"]",
@@ -1718,7 +1595,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启节点高可用。取值范围：\n<li>0：表示不开启节点高可用。</li>\n<li>1：表示开启节点高可用。</li>",
           "example": "0",
@@ -1728,7 +1604,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称。\n<li>长度限制为6-36个字符。</li>\n<li>只允许包含中文、字母、数字、-、_。</li>",
           "example": "emr测试",
@@ -1738,7 +1613,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例计费模式。取值范围：\n<li>0：表示按量计费。</li>\n<li>1：表示包年包月。</li>",
           "example": "0",
@@ -1748,7 +1622,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买实例的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>",
           "example": "3600",
@@ -1758,7 +1631,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买实例的时间单位。取值范围：\n<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>\n<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>",
           "example": "s",
@@ -1768,7 +1640,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例登录设置。通过该参数可以设置所购买节点的登录方式密码或者密钥。\n<li>设置密钥时，密码仅用于组件原生WebUI快捷入口登录。</li>\n<li>未设置密钥时，密码用于登录所购节点以及组件原生WebUI快捷入口登录。</li>",
           "example": "无",
@@ -1778,7 +1649,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。",
           "example": "无",
@@ -1788,7 +1658,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点资源的规格。",
           "example": "无",
@@ -1798,7 +1667,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开启COS访问需要设置的参数。",
           "example": "无",
@@ -1808,7 +1676,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
           "example": "无",
@@ -1818,7 +1685,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例所属安全组的ID，形如sg-xxxxxxxx。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的SecurityGroupId字段来获取。",
           "example": "sg-xxxxxxxxxx",
@@ -1828,7 +1694,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "[引导操作](https://cloud.tencent.com/document/product/589/35656)脚本设置。",
           "example": "无",
@@ -1838,7 +1703,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "包年包月实例是否自动续费。取值范围：\n<li>0：表示不自动续费。</li>\n<li>1：表示自动续费。</li>",
           "example": "0",
@@ -1848,7 +1712,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端Token。",
           "example": "sdcdwxxxws",
@@ -1858,7 +1721,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启集群Master节点公网。取值范围：\n<li>NEED_MASTER_WAN：表示开启集群Master节点公网。</li>\n<li>NOT_NEED_MASTER_WAN：表示不开启。</li>默认开启集群Master节点公网。",
           "example": "NEED_MASTER_WAN",
@@ -1868,7 +1730,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要开启外网远程登录，即22号端口。在SgId不为空时，该参数无效。",
           "example": "22",
@@ -1878,7 +1739,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启安全集群。0表示不开启，非0表示开启。",
           "example": "0",
@@ -1888,7 +1748,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "访问外部文件系统。",
           "example": "fs",
@@ -1898,7 +1757,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的实例。",
           "example": "无",
@@ -1908,7 +1766,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分散置放群组ID列表，当前只支持指定一个。\n该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/product/213/15486 ) 的返回值中的SecurityGroupId字段来获取。",
           "example": "[\"disa-xxxxx\"]",
@@ -1918,7 +1775,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群维度CBS加密盘，默认0表示不加密，1表示加密",
           "example": "0",
@@ -1928,7 +1784,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "hive共享元数据库类型。取值范围：\n<li>EMR_NEW_META：表示集群默认创建</li>\n<li>EMR_EXIT_META：表示集群使用指定EMR-MetaDB。</li>\n<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>",
           "example": "EMR_EXIT_META",
@@ -1938,7 +1793,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EMR-MetaDB实例",
           "example": "instdxxxxx",
@@ -1948,7 +1802,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义MetaDB信息",
           "example": "无",
@@ -1958,7 +1811,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义应用角色。",
           "example": "roleName",
@@ -1968,7 +1820,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景化取值：\nHadoop-Kudu\nHadoop-Zookeeper\nHadoop-Presto\nHadoop-Hbase",
           "example": "Hadoop-Kudu",
@@ -1978,7 +1829,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "共享组件信息",
           "example": "无",
@@ -1988,7 +1838,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "如果为0，则MultiZone、MultiDeployStrategy、MultiZoneSettings是disable的状态，如果为1，则废弃ResourceSpec，使用MultiZoneSettings。",
           "example": "1",
@@ -1998,7 +1847,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "true表示开启跨AZ部署；仅为新建集群时的用户参数，后续不支持调整。",
           "example": "false",
@@ -2008,7 +1856,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点资源的规格，有几个可用区，就填几个，按顺序第一个为主可用区，第二个为备可用区，第三个为仲裁可用区。如果没有开启跨AZ，则长度为1即可。",
           "example": "无",
@@ -2046,7 +1893,6 @@
       "document": "用户Hive-MetaDB信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "自定义MetaDB的JDBC连接，示例: jdbc:mysql://10.10.10.10:3306/dbname",
           "example": "jdbc:mysql://ip:port/hive",
@@ -2057,7 +1903,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义MetaDB用户名",
           "example": "userName",
@@ -2068,7 +1913,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义MetaDB密码",
           "example": "pwd",
@@ -2079,7 +1923,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "hive共享元数据库类型。取值范围：\n<li>EMR_DEFAULT_META：表示集群默认创建</li>\n<li>EMR_EXIST_META：表示集群使用指定EMR-MetaDB。</li>\n<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>",
           "example": "无",
@@ -2090,7 +1933,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EMR-MetaDB实例",
           "example": "无",
@@ -2107,7 +1949,6 @@
       "document": "用户自建Hive-MetaDB信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "自定义MetaDB的JDBC连接，请以 jdbc:mysql:// 开头",
           "example": "jdbc:mysql://ip:port/hive",
@@ -2118,7 +1959,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义MetaDB用户名",
           "example": "userName",
@@ -2129,7 +1969,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义MetaDB密码",
           "example": "pwd",
@@ -2146,7 +1985,6 @@
       "document": "共用自建组件参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "自定义参数key",
           "example": "zookeeper.quorum",
@@ -2157,7 +1995,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义参数value",
           "example": "1.1.1.1",
@@ -2237,7 +2074,6 @@
       "document": "共用组件信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "共用组件名",
           "example": "zookeeper",
@@ -2248,7 +2084,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "共用组件集群",
           "example": "emr-123",
@@ -2265,7 +2100,6 @@
       "document": "DescribeClusterNodes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群实例ID,实例ID形如: emr-xxxxxxxx",
           "example": "emr-6deluvd4",
@@ -2275,7 +2109,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点标识，取值为：\n<li>all：表示获取全部类型节点，cdb信息除外。</li>\n<li>master：表示获取master节点信息。</li>\n<li>core：表示获取core节点信息。</li>\n<li>task：表示获取task节点信息。</li>\n<li>common：表示获取common节点信息。</li>\n<li>router：表示获取router节点信息。</li>\n<li>db：表示获取正常状态的cdb信息。</li>\n<li>recyle：表示获取回收站隔离中的节点信息，包括cdb信息。</li>\n<li>renew：表示获取所有待续费的节点信息，包括cdb信息，自动续费节点不会返回。</li>\n注意：现在只支持以上取值，输入其他值会导致错误。",
           "example": "all",
@@ -2285,7 +2118,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页编号，默认值为0，表示第一页。",
           "example": "0",
@@ -2295,7 +2127,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页返回数量，默认值为100，最大值为100。",
           "example": "10",
@@ -2305,7 +2136,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源类型:支持all/host/pod，默认为all",
           "example": "all",
@@ -2315,7 +2145,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支持搜索的字段",
           "example": "无",
@@ -2325,7 +2154,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "无",
@@ -2335,7 +2163,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "无",
@@ -2403,7 +2230,6 @@
       "document": "DescribeCvmQuota请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "EMR集群ID",
           "example": "emr-xxxxxxx",
@@ -2413,7 +2239,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "区ID",
           "example": "100002",
@@ -2471,7 +2296,6 @@
       "document": "DescribeEmrApplicationStatics请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id",
           "example": "emr-9kd5tnmq",
@@ -2481,7 +2305,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始时间，时间戳（秒）",
           "example": "1621570097",
@@ -2491,7 +2314,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间，时间戳（秒）",
           "example": "1621590097",
@@ -2501,7 +2323,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤的队列名",
           "example": "[]",
@@ -2511,7 +2332,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤的用户名",
           "example": "[]",
@@ -2521,7 +2341,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤的作业类型",
           "example": "[]",
@@ -2531,7 +2350,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组字段，可选：queue, user, applicationType",
           "example": "[]",
@@ -2541,7 +2359,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段，可选：sumMemorySeconds, sumVCoreSeconds, sumHDFSBytesWritten, sumHDFSBytesRead",
           "example": "sumMemorySeconds",
@@ -2551,7 +2368,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否顺序排序，0-逆序，1-正序",
           "example": "1",
@@ -2561,7 +2377,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页号",
           "example": "0",
@@ -2571,7 +2386,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页容量",
           "example": "20",
@@ -2652,7 +2466,6 @@
           "disabled": false,
           "document": "集群ID",
           "example": "emr-9kd5tnmq",
-          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2662,7 +2475,6 @@
           "disabled": false,
           "document": "起始时间秒",
           "example": "1621570097",
-          "is_base64": false,
           "member": "uint64",
           "name": "StartTime",
           "required": true,
@@ -2672,7 +2484,6 @@
           "disabled": false,
           "document": "结束时间秒，EndTime-StartTime不得超过1天秒数86400",
           "example": "1621590097",
-          "is_base64": false,
           "member": "uint64",
           "name": "EndTime",
           "required": true,
@@ -2682,7 +2493,6 @@
           "disabled": false,
           "document": "分页起始偏移，从0开始",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -2692,7 +2502,6 @@
           "disabled": false,
           "document": "分页大小，合法范围[1,100]",
           "example": "20",
-          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -2740,7 +2549,6 @@
           "disabled": false,
           "document": "集群ID",
           "example": "emr-a9871cxr",
-          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2750,7 +2558,6 @@
           "disabled": false,
           "document": "起始时间秒",
           "example": "1686101465",
-          "is_base64": false,
           "member": "int64",
           "name": "StartTime",
           "required": true,
@@ -2760,7 +2567,6 @@
           "disabled": false,
           "document": "结束时间秒，EndTime-StartTime不得超过1天秒数86400",
           "example": "1686201465",
-          "is_base64": false,
           "member": "int64",
           "name": "EndTime",
           "required": true,
@@ -2770,7 +2576,6 @@
           "disabled": false,
           "document": "分页起始偏移，从0开始",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -2780,7 +2585,6 @@
           "disabled": false,
           "document": "分页大小，合法范围[1,100]",
           "example": "20",
-          "is_base64": false,
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -2825,7 +2629,6 @@
       "document": "DescribeInstanceRenewNodes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群实例ID,实例ID形如: emr-xxxxxxxx",
           "example": "emr-6deluvd4",
@@ -3086,7 +2889,6 @@
       "document": "DescribeJobFlow请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "流程任务Id，RunJobFlow接口返回的值。",
           "example": "1",
@@ -3134,7 +2936,6 @@
       "document": "DescribeResourceSchedule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "emr集群的英文id",
           "example": "emr-2xef56",
@@ -3202,7 +3003,6 @@
       "document": "DescribeUsersForUserManager请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群实例ID",
           "example": "emr-xxx",
@@ -3212,7 +3012,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码",
           "example": "0",
@@ -3222,7 +3021,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页的大小",
           "example": "10",
@@ -3232,7 +3030,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询用户列表过滤器",
           "example": "无",
@@ -3242,7 +3039,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要keytab文件的信息，仅对开启kerberos的集群有效，默认为false",
           "example": "true",
@@ -3293,7 +3089,6 @@
           "disabled": false,
           "document": "集群ID",
           "example": "emr-xfyags1d",
-          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3303,7 +3098,6 @@
           "disabled": false,
           "document": "起始时间秒",
           "example": "1686029737",
-          "is_base64": false,
           "member": "int64",
           "name": "StartTime",
           "required": true,
@@ -3313,7 +3107,6 @@
           "disabled": false,
           "document": "结束时间秒，EndTime-StartTime不得超过1天秒数86400",
           "example": "1686129737",
-          "is_base64": false,
           "member": "int64",
           "name": "EndTime",
           "required": true,
@@ -3323,7 +3116,6 @@
           "disabled": false,
           "document": "分页起始偏移，从0开始",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -3333,7 +3125,6 @@
           "disabled": false,
           "document": "分页大小，合法范围[1,100]",
           "example": "20",
-          "is_base64": false,
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -3378,7 +3169,6 @@
       "document": "磁盘组。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘规格。",
           "example": "",
@@ -3389,7 +3179,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "同类型磁盘数量。",
           "example": "",
@@ -3406,7 +3195,6 @@
       "document": "磁盘描述。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘类型。\nLOCAL_BASIC  本地盘。\nCLOUD_BASIC 云硬盘。\nLOCAL_SSD 本地SSD。\nCLOUD_SSD 云SSD。\nCLOUD_PREMIUM 高效云盘。\nCLOUD_HSSD 增强型云SSD。",
           "example": "",
@@ -3417,7 +3205,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘大小，单位GB。",
           "example": "",
@@ -3434,7 +3221,6 @@
       "document": "节点磁盘信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -3445,7 +3231,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "系统盘类型 取值范围：\n<li>CLOUD_SSD：表示云SSD。</li>\n<li>CLOUD_PREMIUM：表示高效云盘。</li>\n<li>CLOUD_BASIC：表示云硬盘。</li>\n<li>LOCAL_BASIC：表示本地盘。</li>\n<li>LOCAL_SSD：表示本地SSD。</li>\n\n数据盘类型 取值范围：\n<li>CLOUD_SSD：表示云SSD。</li>\n<li>CLOUD_PREMIUM：表示高效云盘。</li>\n<li>CLOUD_BASIC：表示云硬盘。</li>\n<li>LOCAL_BASIC：表示本地盘。</li>\n<li>LOCAL_SSD：表示本地SSD。</li>\n<li>CLOUD_HSSD：表示增强型SSD云硬盘。</li>\n<li>CLOUD_THROUGHPUT：表示吞吐型云硬盘。</li>\n<li>CLOUD_TSSD：表示极速型SSD云硬盘。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CLOUD_SSD",
@@ -3456,7 +3241,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据容量，单位为GB\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3473,7 +3257,6 @@
       "document": "POD浮动规格",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需求最小cpu核数",
           "example": "0.1234",
@@ -3484,7 +3267,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需求最大cpu核数",
           "example": "1.2345",
@@ -3495,7 +3277,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需求最小memory，单位MB",
           "example": "1234.5678",
@@ -3506,7 +3287,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需求最大memory，单位MB",
           "example": "8765.4321",
@@ -3829,7 +3609,6 @@
       "document": "Emr询价描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "刊例价格\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3840,7 +3619,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "折扣价格\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3851,7 +3629,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "s",
@@ -3862,7 +3639,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "询价配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3873,7 +3649,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否支持竞价实例\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -3890,7 +3665,6 @@
       "document": "EMR产品配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "软件信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"\"]",
@@ -3901,7 +3675,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Master节点个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -3912,7 +3685,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Core节点个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
@@ -3923,7 +3695,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Task节点个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
@@ -3934,7 +3705,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Common节点个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
@@ -3945,7 +3715,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Master节点资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
@@ -3956,7 +3725,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Core节点资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
@@ -3967,7 +3735,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Task节点资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
@@ -3978,7 +3745,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Common节点资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
@@ -3989,7 +3755,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否使用COS\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -4000,7 +3765,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "收费类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -4011,7 +3775,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Router节点个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
@@ -4022,7 +3785,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否支持HA\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -4033,7 +3795,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否支持安全模式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -4044,7 +3805,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"111\"",
@@ -4055,7 +3815,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启Cbs加密\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -4066,7 +3825,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义应用角色。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"123\"",
@@ -4077,7 +3835,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"sg-3xxx\"]",
@@ -4088,7 +3845,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SSH密钥Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "skey-xxxxxxxx",
@@ -4105,7 +3861,6 @@
       "document": "执行动作。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务类型，目前支持以下类型。\n1. “MR”，将通过hadoop jar的方式提交。\n2. \"HIVE\"，将通过hive -f的方式提交。\n3. \"SPARK\"，将通过spark-submit的方式提交。",
           "example": "",
@@ -4116,7 +3871,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务参数，提供除提交指令以外的参数。",
           "example": "",
@@ -4133,7 +3887,6 @@
       "document": "共用组件信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "共用组件类型，EMR/CUSTOM",
           "example": "EMR",
@@ -4144,7 +3897,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义参数集合",
           "example": "无",
@@ -4155,7 +3907,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "共用组件名",
           "example": "zookeeper",
@@ -4166,7 +3917,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "共用组件集群",
           "example": "emr-123",
@@ -4183,7 +3933,6 @@
       "document": "Emr集群列表实例自定义查询过滤",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "字段名称",
           "example": "",
@@ -4194,7 +3943,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤字段值",
           "example": "",
@@ -4307,7 +4055,6 @@
       "document": "Pod HostPath挂载方式描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Pod挂载宿主机的目录。资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4553,7 +4300,6 @@
           "disabled": false,
           "document": "实例续费的时长。需要结合TimeUnit一起使用。1表示续费一个月",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "TimeSpan",
           "required": true,
@@ -4563,7 +4309,6 @@
           "disabled": false,
           "document": "待续费集群ID列表。",
           "example": "emr-vm-jv1s4",
-          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4573,7 +4318,6 @@
           "disabled": false,
           "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
           "example": "无",
-          "is_base64": false,
           "member": "Placement",
           "name": "Placement",
           "required": true,
@@ -4583,7 +4327,6 @@
           "disabled": false,
           "document": "实例计费模式。此处只支持取值为1，表示包年包月。",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "PayMode",
           "required": true,
@@ -4593,7 +4336,6 @@
           "disabled": false,
           "document": "实例续费的时间单位。取值范围：\n<li>m：表示月份。</li>",
           "example": "m",
-          "is_base64": false,
           "member": "string",
           "name": "TimeUnit",
           "required": false,
@@ -4603,7 +4345,6 @@
           "disabled": false,
           "document": "货币种类。取值范围：\n<li>CNY：表示人民币。</li>",
           "example": "CNY",
-          "is_base64": false,
           "member": "string",
           "name": "Currency",
           "required": false,
@@ -5168,7 +4909,6 @@
       "document": "InquiryPriceUpdateInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "变配的时间单位。取值范围：\n<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>\n<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>",
           "example": "s",
@@ -5178,7 +4918,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "变配的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>",
           "example": "3600",
@@ -5188,7 +4927,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点变配的目标配置。",
           "example": "无",
@@ -5198,7 +4936,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例计费模式。取值范围：\n<li>0：表示按量计费。</li>\n<li>1：表示包年包月。</li>",
           "example": "0",
@@ -5208,7 +4945,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
           "example": "无",
@@ -5218,7 +4954,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "货币种类。取值范围：\n<li>CNY：表示人民币。</li>",
           "example": "CNY",
@@ -5228,7 +4963,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "批量变配资源ID列表",
           "example": "[\"emr-vm-xxx\"]",
@@ -5306,7 +5040,6 @@
       "document": "实例预付费参数，只有在付费类型为PREPAID时生效。\n",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "包年包月时间，默认为1，单位：月。\n取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11, 12, 24, 36, 48, 60。",
           "example": "无",
@@ -5317,7 +5050,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否自动续费，默认为否。\n<li>true：是</li>\n<li>false：否</li>",
           "example": "无",
@@ -5334,7 +5066,6 @@
       "document": "机器资源描述。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机器类型描述。",
           "example": "",
@@ -5345,7 +5076,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器类型描述，可参考CVM的该含义。",
           "example": "",
@@ -5356,7 +5086,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签KV对。",
           "example": "",
@@ -5367,7 +5096,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘描述列表。",
           "example": "",
@@ -5384,7 +5112,6 @@
       "document": "流程作业资源描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主节点数量。",
           "example": "",
@@ -5395,7 +5122,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主节点配置。",
           "example": "",
@@ -5406,7 +5132,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Core节点数量",
           "example": "",
@@ -5417,7 +5142,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Core节点配置。",
           "example": "",
@@ -5428,7 +5152,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Task节点数量。",
           "example": "",
@@ -5439,7 +5162,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Common节点数量。",
           "example": "",
@@ -5450,7 +5172,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Task节点配置。",
           "example": "",
@@ -5461,7 +5182,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Common节点配置。",
           "example": "",
@@ -5478,7 +5198,6 @@
       "document": "任务步骤结果描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务步骤名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test-job",
@@ -5489,7 +5208,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务步骤失败时的处理策略，可以为以下值：\n\"CONTINUE\"，跳过当前失败步骤，继续后续步骤。\n“TERMINATE_CLUSTER”，终止当前及后续步骤，并销毁集群。\n“CANCEL_AND_WAIT”，取消当前步骤并阻塞等待处理。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CONTINUE",
@@ -5500,7 +5218,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前步骤的状态，可以为以下值：\n“JobFlowStepStatusInit”，初始化状态，等待执行。\n“JobFlowStepStatusRunning”，任务步骤正在执行。\n“JobFlowStepStatusFailed”，任务步骤执行失败。\n“JobFlowStepStatusSucceed”，任务步骤执行成功。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "JobFlowStepStatusRunning",
@@ -5511,7 +5228,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "YARN任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "application_1658300000000_0001",
@@ -5528,7 +5244,6 @@
       "document": "登录设置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例登录密码，8-16个字符，包含大写字母、小写字母、数字和特殊字符四种，特殊符号仅支持!@%^*，密码第一位不能为特殊字符",
           "example": "无",
@@ -5539,7 +5254,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密钥ID。关联密钥后，就可以通过对应的私钥来访问实例；PublicKeyId可通过接口[DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699)获取",
           "example": "无",
@@ -5556,7 +5270,6 @@
       "document": "元数据库信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "元数据类型。",
           "example": "",
@@ -5567,7 +5280,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统一元数据库实例ID。",
           "example": "",
@@ -5578,7 +5290,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自建元数据库信息。",
           "example": "",
@@ -5595,7 +5306,6 @@
       "document": "ModifyResourcePools请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "emr集群id",
           "example": "emr-2xef56",
@@ -5605,7 +5315,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "取值范围：\n<li>fair:代表公平调度标识</li>\n<li>capacity:代表容量调度标识</li>",
           "example": "fair",
@@ -5653,7 +5362,6 @@
       "document": "ModifyResourceScheduleConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "emr集群的英文id",
           "example": "emr-2xef56",
@@ -5663,7 +5371,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "业务标识，fair表示编辑公平的配置项，fairPlan表示编辑执行计划，capacity表示编辑容量的配置项",
           "example": "fair",
@@ -5673,7 +5380,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后的模块消息",
           "example": "null",
@@ -5731,7 +5437,6 @@
       "document": "ModifyResourceScheduler请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "emr集群的英文id",
           "example": "emr-2xef56",
@@ -5741,7 +5446,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "老的调度器:fair",
           "example": "fair",
@@ -5751,7 +5455,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新的调度器:capacity",
           "example": "capacity",
@@ -5782,7 +5485,6 @@
           "disabled": false,
           "document": "集群id 或者 cvm id",
           "example": "emr-xxxx",
-          "is_base64": false,
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -5792,7 +5494,6 @@
           "disabled": false,
           "document": "资源6段式表达式",
           "example": "qcs::emr:ap-guangzhou:...",
-          "is_base64": false,
           "member": "string",
           "name": "Resource",
           "required": true,
@@ -5802,7 +5503,6 @@
           "disabled": false,
           "document": "资源前缀",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "ResourcePrefix",
           "required": true,
@@ -5812,7 +5512,6 @@
           "disabled": false,
           "document": "ap-beijing",
           "example": "地域",
-          "is_base64": false,
           "member": "string",
           "name": "ResourceRegion",
           "required": true,
@@ -5822,7 +5521,6 @@
           "disabled": false,
           "document": "emr",
           "example": "服务类型",
-          "is_base64": false,
           "member": "string",
           "name": "ServiceType",
           "required": true,
@@ -5862,22 +5560,18 @@
       "document": "ModifyResourcesTags请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "标签类型，取值Cluster或者Node",
           "example": "cluster",
-          "is_base64": false,
           "member": "string",
           "name": "ModifyType",
           "required": true,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "标签信息",
           "example": "无",
-          "is_base64": false,
           "member": "ModifyResourceTags",
           "name": "ModifyResourceTagsInfoList",
           "required": true,
@@ -5971,7 +5665,6 @@
       "document": "多云盘参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "该类型云盘个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5982,7 +5675,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5993,7 +5685,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6010,7 +5701,6 @@
       "document": "各个可用区的参数信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "\"master\"、\"standby\"、\"third-party\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"master\"",
@@ -6021,7 +5711,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "无",
@@ -6032,7 +5721,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "无",
@@ -6043,7 +5731,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "无",
@@ -6060,7 +5747,6 @@
       "document": "资源描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "描述Master节点资源",
           "example": "无",
@@ -6071,7 +5757,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述Core节点资源",
           "example": "无",
@@ -6082,7 +5767,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述Task节点资源",
           "example": "无",
@@ -6093,7 +5777,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Master节点数量",
           "example": "2",
@@ -6104,7 +5787,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Core节点数量",
           "example": "3",
@@ -6115,7 +5797,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Task节点数量",
           "example": "0",
@@ -6126,7 +5807,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述Common节点资源",
           "example": "无",
@@ -6137,7 +5817,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Common节点数量",
           "example": "3",
@@ -6154,7 +5833,6 @@
       "document": "用于创建集群价格清单 节点价格详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "节点类型 master core task common router mysql\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "master",
@@ -6165,7 +5843,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点组成部分价格详情",
           "example": "无",
@@ -6698,7 +6375,6 @@
       "document": "资源详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规格类型，如S2.MEDIUM8\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "S2.MEDIUM8",
@@ -6709,7 +6385,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "系统盘，系统盘个数不超过1块\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6720,7 +6395,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要绑定的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6731,7 +6405,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云数据盘，云数据盘总个数不超过15块\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6742,7 +6415,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本地数据盘\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6775,7 +6447,6 @@
       "document": "资源详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规格\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6786,7 +6457,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规格名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6797,7 +6467,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "硬盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6808,7 +6477,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "硬盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6819,7 +6487,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "系统盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6830,7 +6497,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6841,7 +6507,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CPU个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6852,7 +6517,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "硬盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6863,7 +6527,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规格\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6880,7 +6543,6 @@
       "document": "用于创建集群价格清单-节点组成部分价格",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "类型包括：节点->node、系统盘->rootDisk、云数据盘->dataDisk、metaDB\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "node",
@@ -6891,7 +6553,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单价（原价）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6902,7 +6563,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单价（折扣价）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6913,7 +6573,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总价（折扣价）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6924,7 +6583,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "折扣\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "7.5",
@@ -6935,7 +6593,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6952,7 +6609,6 @@
       "document": "Pod PVC存储方式描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘大小，单位为GB。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6963,7 +6619,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘类型。CLOUD_PREMIUM;CLOUD_SSD\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6974,7 +6629,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6991,7 +6645,6 @@
       "document": "描述集群实例位置信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例所属的可用区，例如ap-guangzhou-1。该参数也可以通过调用[DescribeZones](https://cloud.tencent.com/document/product/213/15707) 的返回值中的Zone字段来获取。",
           "example": "ap-guangzhou-1",
@@ -7002,7 +6655,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例所属项目ID。该参数可以通过调用[DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。不填为默认项目。",
           "example": "0",
@@ -7019,7 +6671,6 @@
       "document": "POD自定义权限和自定义参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TKE或EKS集群ID",
           "example": "\"\"",
@@ -7030,7 +6681,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义权限\n如：\n{\n  \"apiVersion\": \"v1\",\n  \"clusters\": [\n    {\n      \"cluster\": {\n        \"certificate-authority-data\": \"xxxxxx==\",\n        \"server\": \"https://xxxxx.com\"\n      },\n      \"name\": \"cls-xxxxx\"\n    }\n  ],\n  \"contexts\": [\n    {\n      \"context\": {\n        \"cluster\": \"cls-xxxxx\",\n        \"user\": \"100014xxxxx\"\n      },\n      \"name\": \"cls-a44yhcxxxxxxxxxx\"\n    }\n  ],\n  \"current-context\": \"cls-a4xxxx-context-default\",\n  \"kind\": \"Config\",\n  \"preferences\": {},\n  \"users\": [\n    {\n      \"name\": \"100014xxxxx\",\n      \"user\": {\n        \"client-certificate-data\": \"xxxxxx\",\n        \"client-key-data\": \"xxxxxx\"\n      }\n    }\n  ]\n}",
           "example": "\"\"",
@@ -7041,7 +6691,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义参数\n如：\n{\n    \"apiVersion\": \"apps/v1\",\n    \"kind\": \"Deployment\",\n    \"metadata\": {\n      \"name\": \"test-deployment\",\n      \"labels\": {\n        \"app\": \"test\"\n      }\n    },\n    \"spec\": {\n      \"replicas\": 3,\n      \"selector\": {\n        \"matchLabels\": {\n          \"app\": \"test-app\"\n        }\n      },\n      \"template\": {\n        \"metadata\": {\n          \"annotations\": {\n            \"your-organization.com/department-v1\": \"test-example-v1\",\n            \"your-organization.com/department-v2\": \"test-example-v2\"\n          },\n          \"labels\": {\n            \"app\": \"test-app\",\n            \"environment\": \"production\"\n          }\n        },\n        \"spec\": {\n          \"nodeSelector\": {\n            \"your-organization/node-test\": \"test-node\"\n          },\n          \"containers\": [\n            {\n              \"name\": \"nginx\",\n              \"image\": \"nginx:1.14.2\",\n              \"ports\": [\n                {\n                  \"containerPort\": 80\n                }\n              ]\n            }\n          ],\n          \"affinity\": {\n            \"nodeAffinity\": {\n              \"requiredDuringSchedulingIgnoredDuringExecution\": {\n                \"nodeSelectorTerms\": [\n                  {\n                    \"matchExpressions\": [\n                      {\n                        \"key\": \"disk-type\",\n                        \"operator\": \"In\",\n                        \"values\": [\n                          \"ssd\",\n                          \"sas\"\n                        ]\n                      },\n                      {\n                        \"key\": \"cpu-num\",\n                        \"operator\": \"Gt\",\n                        \"values\": [\n                          \"6\"\n                        ]\n                      }\n                    ]\n                  }\n                ]\n              }\n            }\n          }\n        }\n      }\n    }\n  }",
           "example": "\"\"",
@@ -7058,7 +6707,6 @@
       "document": "扩容容器资源时的资源描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "外部资源提供者的标识符，例如\"cls-a1cd23fa\"。",
           "example": "\"\"",
@@ -7069,7 +6717,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "外部资源提供者类型，例如\"tke\",当前仅支持\"tke\"。",
           "example": "\"\"",
@@ -7080,7 +6727,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源的用途，即节点类型，当前仅支持\"TASK\"。",
           "example": "\"\"",
@@ -7091,7 +6737,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CPU核数。",
           "example": "\"\"",
@@ -7102,7 +6747,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存大小，单位为GB。",
           "example": "\"\"",
@@ -7113,7 +6757,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Eks集群-CPU类型，当前支持\"intel\"和\"amd\"",
           "example": "\"\"",
@@ -7124,7 +6767,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Pod节点数据目录挂载信息。",
           "example": "\"\"",
@@ -7135,7 +6777,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否浮动规格，默认否\n<li>true：代表是</li>\n<li>false：代表否</li>",
           "example": "\"\"",
@@ -7146,7 +6787,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "浮动规格\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -7157,7 +6797,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代表vpc网络唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -7168,7 +6807,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代表vpc子网唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -7179,7 +6817,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "pod name\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7196,7 +6833,6 @@
       "document": "POD自定义权限和自定义参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TKE或EKS集群ID",
           "example": "cls-1234abcd",
@@ -7207,7 +6843,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义权限\n如：\n{\n  \"apiVersion\": \"v1\",\n  \"clusters\": [\n    {\n      \"cluster\": {\n        \"certificate-authority-data\": \"xxxxxx==\",\n        \"server\": \"https://xxxxx.com\"\n      },\n      \"name\": \"cls-xxxxx\"\n    }\n  ],\n  \"contexts\": [\n    {\n      \"context\": {\n        \"cluster\": \"cls-xxxxx\",\n        \"user\": \"100014xxxxx\"\n      },\n      \"name\": \"cls-a44yhcxxxxxxxxxx\"\n    }\n  ],\n  \"current-context\": \"cls-a4xxxx-context-default\",\n  \"kind\": \"Config\",\n  \"preferences\": {},\n  \"users\": [\n    {\n      \"name\": \"100014xxxxx\",\n      \"user\": {\n        \"client-certificate-data\": \"xxxxxx\",\n        \"client-key-data\": \"xxxxxx\"\n      }\n    }\n  ]\n}",
           "example": "{   \"apiVersion\": \"v1\",   \"clusters\": [     {       \"cluster\": {",
@@ -7218,7 +6853,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义参数\n如：\n{\n    \"apiVersion\": \"apps/v1\",\n    \"kind\": \"Deployment\",\n    \"metadata\": {\n      \"name\": \"test-deployment\",\n      \"labels\": {\n        \"app\": \"test\"\n      }\n    },\n    \"spec\": {\n      \"replicas\": 3,\n      \"selector\": {\n        \"matchLabels\": {\n          \"app\": \"test-app\"\n        }\n      },\n      \"template\": {\n        \"metadata\": {\n          \"annotations\": {\n            \"your-organization.com/department-v1\": \"test-example-v1\",\n            \"your-organization.com/department-v2\": \"test-example-v2\"\n          },\n          \"labels\": {\n            \"app\": \"test-app\",\n            \"environment\": \"production\"\n          }\n        },\n        \"spec\": {\n          \"nodeSelector\": {\n            \"your-organization/node-test\": \"test-node\"\n          },\n          \"containers\": [\n            {\n              \"name\": \"nginx\",\n              \"image\": \"nginx:1.14.2\",\n              \"ports\": [\n                {\n                  \"containerPort\": 80\n                }\n              ]\n            }\n          ],\n          \"affinity\": {\n            \"nodeAffinity\": {\n              \"requiredDuringSchedulingIgnoredDuringExecution\": {\n                \"nodeSelectorTerms\": [\n                  {\n                    \"matchExpressions\": [\n                      {\n                        \"key\": \"disk-type\",\n                        \"operator\": \"In\",\n                        \"values\": [\n                          \"ssd\",\n                          \"sas\"\n                        ]\n                      },\n                      {\n                        \"key\": \"cpu-num\",\n                        \"operator\": \"Gt\",\n                        \"values\": [\n                          \"6\"\n                        ]\n                      }\n                    ]\n                  }\n                ]\n              }\n            }\n          }\n        }\n      }\n    }\n  }",
           "example": "{   \"apiVersion\": \"apps/v1\",   \"kind\": \"Deployment\",   \"metadata",
@@ -7235,7 +6869,6 @@
       "document": "Pod资源售卖规格",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "可售卖的资源规格，仅为以下值:\"TASK\",\"CORE\",\"MASTER\",\"ROUTER\"。",
           "example": "",
@@ -7246,7 +6879,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cpu核数。",
           "example": "",
@@ -7257,7 +6889,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存数量，单位为GB。",
           "example": "",
@@ -7268,7 +6899,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该规格资源可申请的最大数量。",
           "example": "",
@@ -7285,7 +6915,6 @@
       "document": "扩容容器资源时的资源描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "外部资源提供者的标识符，例如\"cls-a1cd23fa\"。",
           "example": "\"\"",
@@ -7296,7 +6925,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "外部资源提供者类型，例如\"tke\",当前仅支持\"tke\"。",
           "example": "\"\"",
@@ -7307,7 +6935,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源的用途，即节点类型，当前仅支持\"TASK\"。",
           "example": "\"\"",
@@ -7318,7 +6945,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CPU核数。",
           "example": "0",
@@ -7329,7 +6955,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存大小，单位为GB。",
           "example": "0",
@@ -7340,7 +6965,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源对宿主机的挂载点，指定的挂载点对应了宿主机的路径，该挂载点在Pod中作为数据存储目录使用。弃用",
           "example": "[]",
@@ -7351,7 +6975,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Eks集群-CPU类型，当前支持\"intel\"和\"amd\"",
           "example": "\"\"",
@@ -7362,7 +6985,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Pod节点数据目录挂载信息。",
           "example": "[]",
@@ -7373,7 +6995,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否浮动规格，1是，0否",
           "example": "0",
@@ -7384,7 +7005,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "浮动规格\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7395,7 +7015,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代表vpc网络唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -7406,7 +7025,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代表vpc子网唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -7417,7 +7035,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "pod name\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7434,7 +7051,6 @@
       "document": "Pod相关信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "使用Pod资源扩容时，指定的Pod规格以及来源等信息",
           "example": "无",
@@ -7445,7 +7061,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "POD自定义权限和自定义参数",
           "example": "无",
@@ -7462,7 +7077,6 @@
       "document": "单个pod状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "pod的名称",
           "example": "1234-5677-3352-2",
@@ -7473,7 +7087,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "pod uuid",
           "example": "1234-5677-3352-2",
@@ -7484,7 +7097,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "pod的状态",
           "example": "POD_STATE_DELETED",
@@ -7495,7 +7107,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "pod处于该状态原因",
           "example": "pod is deleted",
@@ -7506,7 +7117,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "pod所属集群",
           "example": "emr-cluster",
@@ -7517,7 +7127,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "pod内存大小",
           "example": "2",
@@ -7534,7 +7143,6 @@
       "document": "Pod的存储设备描述信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "存储类型，可为\"pvc\"，\"hostpath\"。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7545,7 +7153,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当VolumeType为\"pvc\"时，该字段生效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7556,7 +7163,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当VolumeType为\"hostpath\"时，该字段生效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7573,7 +7179,6 @@
       "document": "预执行脚本配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "脚本在COS上路径，已废弃",
           "example": "emr/emr_init.sh",
@@ -7584,7 +7189,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行脚本参数",
           "example": "无",
@@ -7595,7 +7199,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "COS的Bucket名称，已废弃",
           "example": "starmaker-research-xxxx",
@@ -7606,7 +7209,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "COS的Region名称，已废弃",
           "example": "ap-mumbai",
@@ -7617,7 +7219,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "COS的Domain数据，已废弃",
           "example": "xxxx",
@@ -7628,7 +7229,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行顺序",
           "example": "0",
@@ -7639,7 +7239,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "resourceAfter 或 clusterAfter",
           "example": "resourceAfter",
@@ -7650,7 +7249,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "脚本文件名，已废弃",
           "example": "无",
@@ -7661,7 +7259,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "脚本的cos地址",
           "example": "cos://xxxxx",
@@ -7672,7 +7269,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cos的SecretId",
           "example": "xxxx",
@@ -7683,7 +7279,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cos的SecretKey",
           "example": "xxxxx",
@@ -7694,7 +7289,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cos的appid，已废弃",
           "example": "xxxxxx",
@@ -7711,7 +7305,6 @@
       "document": "价格详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "节点ID",
           "example": "emr-vm-xxxxxxxx",
@@ -7722,7 +7315,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "价格计算公式",
           "example": "无",
@@ -7733,7 +7325,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原价",
           "example": "4.3",
@@ -7744,7 +7335,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "折扣价",
           "example": "3.2",
@@ -7761,7 +7351,6 @@
       "document": "询价资源",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要的规格\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7772,7 +7361,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "硬盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7783,7 +7371,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "硬盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7794,7 +7381,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "系统盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7805,7 +7391,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7816,7 +7401,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "核心数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7827,7 +7411,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "硬盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7838,7 +7421,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云盘列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7849,7 +7431,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7860,7 +7441,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规格\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7871,7 +7451,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7882,7 +7461,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7893,7 +7471,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本地盘的数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7910,7 +7487,6 @@
       "document": "获取CVM配额",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "已使用配额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -7921,7 +7497,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "剩余配额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -7932,7 +7507,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总配额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -7943,7 +7517,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -7960,7 +7533,6 @@
       "document": "集群续费实例信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "节点资源ID",
           "example": "emr-vm-wwwe2",
@@ -7971,7 +7543,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点类型。0:common节点；1:master节点\n；2:core节点；3:task节点",
           "example": "1",
@@ -7982,7 +7553,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内网IP",
           "example": "192.182.1.1",
@@ -7993,7 +7563,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点内存描述",
           "example": "8G",
@@ -8004,7 +7573,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点核数",
           "example": "4",
@@ -8015,7 +7583,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "硬盘大小",
           "example": "100G",
@@ -8026,7 +7593,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期时间",
           "example": "2021-02-01",
@@ -8037,7 +7603,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点规格",
           "example": "CVM.S2",
@@ -8048,7 +7613,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘类型",
           "example": "1",
@@ -8065,7 +7629,6 @@
       "document": "资源详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "节点规格描述，如CVM.SA2。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CVM.SA2",
@@ -8076,7 +7639,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储类型\n取值范围：\n<li>4：表示云SSD。</li>\n<li>5：表示高效云盘。</li>\n<li>6：表示增强型SSD云硬盘。</li>\n<li>11：表示吞吐型云硬盘。</li>\n<li>12：表示极速型SSD云硬盘。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
@@ -8087,7 +7649,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘类型\n取值范围：\n<li>CLOUD_SSD：表示云SSD。</li>\n<li>CLOUD_PREMIUM：表示高效云盘。</li>\n<li>CLOUD_BASIC：表示云硬盘。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "LOUD_PREMIUM",
@@ -8098,7 +7659,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存容量,单位为M\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "131072",
@@ -8109,7 +7669,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CPU核数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -8120,7 +7679,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据盘容量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "300",
@@ -8131,7 +7689,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "系统盘容量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -8142,7 +7699,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云盘列表，当数据盘为一块云盘时，直接使用DiskType和DiskSize参数，超出部分使用MultiDisks\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8153,7 +7709,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要绑定的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8164,7 +7719,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规格类型，如S2.MEDIUM8\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "S2.MEDIUM8",
@@ -8175,7 +7729,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本地盘数量，该字段已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -8186,7 +7739,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本地盘数量，如2\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -8203,7 +7755,6 @@
       "document": "RunJobFlow请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作业名称。",
           "example": "test",
@@ -8213,7 +7764,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否新创建集群。\ntrue，新创建集群，则使用Instance中的参数进行集群创建。\nfalse，使用已有集群，则通过InstanceId传入。",
           "example": "false",
@@ -8223,7 +7773,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业流程执行步骤。",
           "example": "无",
@@ -8233,7 +7782,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业流程正常完成时，集群的处理方式，可选择:\nTerminate 销毁集群。\nReserve 保留集群。",
           "example": "Terminate",
@@ -8243,7 +7791,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只有CreateCluster为true时生效，目前只支持EMR版本，例如EMR-2.2.0，不支持ClickHouse和Druid版本。",
           "example": "无",
@@ -8253,7 +7800,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只在CreateCluster为true时生效。\ntrue 表示安装kerberos，false表示不安装kerberos。",
           "example": "无",
@@ -8263,7 +7809,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只在CreateCluster为true时生效。\n新建集群时，要安装的软件列表。",
           "example": "无",
@@ -8273,7 +7818,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "引导脚本。",
           "example": "无",
@@ -8283,7 +7827,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定配置创建集群。",
           "example": "无",
@@ -8293,7 +7836,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业日志保存地址。",
           "example": "无",
@@ -8303,7 +7845,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只在CreateCluster为false时生效。",
           "example": "无",
@@ -8313,7 +7854,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义应用角色，大数据应用访问外部服务时使用的角色，默认为\"EME_QCSRole\"。",
           "example": "无",
@@ -8323,7 +7863,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "重入标签，用来可重入检查，防止在一段时间内，创建相同的流程作业。",
           "example": "无",
@@ -8333,7 +7872,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只在CreateCluster为true时生效，使用该配置创建集群。",
           "example": "无",
@@ -8371,7 +7909,6 @@
       "document": "ScaleOutCluster请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "节点计费模式。取值范围：\n<li>PREPAID：预付费，即包年包月。</li>\n<li>POSTPAID_BY_HOUR：按小时后付费。</li>\n<li>SPOTPAID：竞价付费（仅支持TASK节点）。</li>",
           "example": "\"\"",
@@ -8381,7 +7918,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群实例ID。",
           "example": "无",
@@ -8391,7 +7927,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩容节点类型以及数量",
           "example": "无",
@@ -8401,7 +7936,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，例如 a9a90aa6-751a-41b6-aad6-fae36063280",
           "example": "\"\"",
@@ -8411,7 +7945,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
           "example": "无",
@@ -8421,7 +7954,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "[引导操作](https://cloud.tencent.com/document/product/589/35656)脚本设置。",
           "example": "无",
@@ -8431,7 +7963,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩容部署服务，新增节点将默认继承当前节点类型中所部署服务，部署服务含默认可选服务，该参数仅支持可选服务填写，如：存量task节点已部署HDFS、YARN、impala；使用api扩容task节不部署impala时，此参数仅填写HDFS、YARN",
           "example": "无",
@@ -8441,7 +7972,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署进程，默认部署扩容服务的全部进程，支持修改部署进程，如：当前task节点部署服务为：HDFS、YARN、impala，默认部署服务为：DataNode,NodeManager,ImpalaServer，若用户需修改部署进程信息，此参数信息可填写：\tDataNode,NodeManager,ImpalaServerCoordinator或DataNode,NodeManager,ImpalaServerExecutor",
           "example": "无",
@@ -8451,7 +7981,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分散置放群组ID列表，当前只支持指定一个。\n该参数可以通过调用 [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/product/213/17810)的返回值中的DisasterRecoverGroupId字段来获取。",
           "example": "无",
@@ -8461,7 +7990,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩容节点绑定标签列表。",
           "example": "无",
@@ -8471,7 +7999,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩容所选资源类型，可选范围为\"host\",\"pod\"，host为普通的CVM资源，Pod为TKE集群或EKS集群提供的资源",
           "example": "无",
@@ -8481,7 +8008,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Pod相关资源信息",
           "example": "无",
@@ -8491,7 +8017,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用clickhouse集群扩容时，选择的机器分组名称",
           "example": "无",
@@ -8501,7 +8026,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用clickhouse集群扩容时，选择的机器分组类型。new为新增，old为选择旧分组",
           "example": "无",
@@ -8511,7 +8035,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩容指定 Yarn Node Label",
           "example": "无",
@@ -8521,7 +8044,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩容后是否启动服务，默认取值否\n<li>true：是</li>\n<li>false：否</li>",
           "example": "无",
@@ -8531,7 +8053,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规格设置",
           "example": "无",
@@ -8541,7 +8062,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例所属的可用区，例如ap-guangzhou-1。该参数也可以通过调用[DescribeZones](https://cloud.tencent.com/document/product/213/15707) 的返回值中的Zone字段来获取。",
           "example": "无",
@@ -8551,7 +8071,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网，默认是集群创建时的子网",
           "example": "sub-xxx",
@@ -8609,7 +8128,6 @@
       "document": "ScaleOutInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "扩容的时间单位。取值范围：\n<li>s：表示秒。PayMode取值为0时，TimeUnit只能取值为s。</li>\n<li>m：表示月份。PayMode取值为1时，TimeUnit只能取值为m。</li>",
           "example": "s",
@@ -8619,7 +8137,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩容的时长。结合TimeUnit一起使用。\n<li>TimeUnit为s时，该参数只能填写3600，表示按量计费实例。</li>\n<li>TimeUnit为m时，该参数填写的数字表示包年包月实例的购买时长，如1表示购买一个月</li>",
           "example": "3600",
@@ -8629,7 +8146,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID。",
           "example": "emr-5n3l5c83",
@@ -8639,7 +8155,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例计费模式。取值范围：\n<li>0：表示按量计费。</li>\n<li>1：表示包年包月。</li>",
           "example": "0",
@@ -8649,7 +8164,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端Token。",
           "example": "\"\"",
@@ -8659,7 +8173,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "引导操作脚本设置。",
           "example": "无",
@@ -8669,7 +8182,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩容的Task节点数量。",
           "example": "0",
@@ -8679,7 +8191,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩容的Core节点数量。",
           "example": "1",
@@ -8689,7 +8200,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩容时不需要安装的进程。",
           "example": "[]",
@@ -8699,7 +8209,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩容的Router节点数量。",
           "example": "0",
@@ -8709,7 +8218,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署的服务。\n<li>SoftDeployInfo和ServiceNodeInfo是同组参数，和UnNecessaryNodeList参数互斥。</li>\n<li>建议使用SoftDeployInfo和ServiceNodeInfo组合。</li>",
           "example": "[]",
@@ -8719,7 +8227,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "启动的进程。",
           "example": "[]",
@@ -8729,7 +8236,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分散置放群组ID列表，当前仅支持指定一个。",
           "example": "[]",
@@ -8739,7 +8245,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩容节点绑定标签列表。",
           "example": "无",
@@ -8749,7 +8254,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩容所选资源类型，可选范围为\"host\",\"pod\"，host为普通的CVM资源，Pod为TKE集群或EKS集群提供的资源",
           "example": "\"\"",
@@ -8759,7 +8263,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用Pod资源扩容时，指定的Pod规格以及来源等信息",
           "example": "无",
@@ -8769,7 +8272,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用clickhouse集群扩容时，选择的机器分组名称",
           "example": "\"\"",
@@ -8779,7 +8281,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用clickhouse集群扩容时，选择的机器分组类型。new为新增，old为选择旧分组",
           "example": "\"\"",
@@ -8789,7 +8290,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则扩容指定 yarn node label",
           "example": "\"\"",
@@ -8799,7 +8299,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "POD自定义权限和自定义参数",
           "example": "无",
@@ -8809,7 +8308,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩容的Master节点的数量。\n使用clickhouse集群扩容时，该参数不生效。\n使用kafka集群扩容时，该参数不生效。\n当HardwareResourceType=POD时，该参数不生效。",
           "example": "1",
@@ -8819,7 +8317,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩容后是否启动服务，true：启动，false：不启动",
           "example": "\"true\"",
@@ -8829,7 +8326,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区，默认是集群的主可用区",
           "example": "100002",
@@ -8839,7 +8335,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网，默认是集群创建时的子网",
           "example": "sub-xxx",
@@ -8849,7 +8344,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预设配置组",
           "example": "\"\"",
@@ -8859,7 +8353,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0表示关闭自动续费，1表示开启自动续费",
           "example": "1",
@@ -8937,7 +8430,6 @@
       "document": "扩容节点类型以及数量",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "扩容节点类型取值范围：\n  <li>MASTER</li>\n  <li>TASK</li>\n  <li>CORE</li>\n  <li>ROUTER</li>",
           "example": "无",
@@ -8948,7 +8440,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩容节点数量",
           "example": "无",
@@ -8965,7 +8456,6 @@
       "document": "集群应用场景以及支持部署组件信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "部署的组件列表。不同的EMR产品版本ProductVersion 对应不同可选组件列表，不同产品版本可选组件列表查询：[组件版本](https://cloud.tencent.com/document/product/589/20279) ；\n填写实例值：hive、flink。",
           "example": "[\"hadoop-2.8.4\\n\",\"zookeeper-3.4.9\\n\",\"knox-1.2.0\\n\"]",
@@ -8976,7 +8466,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认Hadoop-Default,[场景查询](https://cloud.tencent.com/document/product/589/14624)场景化取值范围：\nHadoop-Kudu\nHadoop-Zookeeper\nHadoop-Presto\nHadoop-Hbase\nHadoop-Default",
           "example": "Hadoop-Kudu",
@@ -8993,7 +8482,6 @@
       "document": "添加引导操作",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "脚本的cos地址，参照格式：https://beijing-111111.cos.ap-beijing.myqcloud.com/data/test.sh查询cos存储桶列表：[存储桶列表](https://console.cloud.tencent.com/cos/bucket)",
           "example": "https://becklong-cos-1258469122.cos.ap-guangzhou.myqcloud.com/te",
@@ -9004,7 +8492,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "引导脚步执行时机范围\n<li>resourceAfter：节点初始化后</li>\n<li>clusterAfter：集群启动后</li>\n<li>clusterBefore：集群启动前</li>",
           "example": "无",
@@ -9015,7 +8502,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行脚本参数，参数格式请遵循标准Shell规范",
           "example": "无",
@@ -9026,7 +8512,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "脚本文件名",
           "example": "无",
@@ -9043,7 +8528,6 @@
       "document": "搜索字段",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "支持搜索的类型",
           "example": "",
@@ -9054,7 +8538,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支持搜索的值",
           "example": "",
@@ -9097,7 +8580,6 @@
       "document": "节点信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "节点类型，Master/Core/Task/Router/Common\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Master",
@@ -9108,7 +8590,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -9125,7 +8606,6 @@
       "document": "体外客户端组件依赖信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "组件名称",
           "example": "hdfs-2.8.5",
@@ -9136,7 +8616,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否必选",
           "example": "true",
@@ -9207,7 +8686,6 @@
       "document": "执行步骤",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "执行步骤名称。",
           "example": "step1",
@@ -9218,7 +8696,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行动作。",
           "example": "无",
@@ -9229,7 +8706,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行失败策略。\n1. TERMINATE_CLUSTER 执行失败时退出并销毁集群。\n2. CONTINUE 执行失败时跳过并执行后续步骤。",
           "example": "CONTINUE",
@@ -9240,7 +8716,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定执行Step时的用户名，非必须，默认为hadoop。",
           "example": "hadoop",
@@ -9307,7 +8782,6 @@
       "document": "子网信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "子网信息（名字）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "名字",
@@ -9318,7 +8792,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网信息（ID）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "subnet-xxx",
@@ -9335,7 +8808,6 @@
       "document": "SyncPodState请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "EmrService中pod状态信息",
           "example": "{”pod-1\"，”pod-1\"，““POD_STATE_DELETED”,\"pod is deleted\",\"1223456\"",
@@ -9363,7 +8835,6 @@
       "document": "标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键",
           "example": "depart-xxx",
@@ -9374,7 +8845,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "Intelligent-xxx",
@@ -9463,7 +8933,6 @@
       "document": "TerminateInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID。",
           "example": "emr-4slr7ad7",
@@ -9473,7 +8942,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "销毁节点ID。该参数为预留参数，用户无需配置。",
           "example": "无",
@@ -9537,7 +9005,6 @@
       "document": "集群节点拓扑信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100002",
@@ -9548,7 +9015,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"ap-guangzhou-2\"",
@@ -9559,7 +9025,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9570,7 +9035,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9587,7 +9051,6 @@
       "document": "变配资源规格",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "内存容量，单位为G",
           "example": "",
@@ -9598,7 +9061,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CPU核数",
           "example": "",
@@ -9609,7 +9071,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器资源ID（EMR测资源标识）",
           "example": "",
@@ -9620,7 +9081,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "变配机器规格",
           "example": "",
@@ -9663,7 +9123,6 @@
       "document": "添加的用户信息列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户名",
           "example": "user1",
@@ -9674,7 +9133,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属的组",
           "example": "group1",
@@ -9685,7 +9143,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密码",
           "example": "123456",
@@ -9696,7 +9153,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "提交mr任务",
@@ -9730,7 +9186,6 @@
       "document": "用户管理中用户的简要信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户名",
           "example": "hadoop",
@@ -9741,7 +9196,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属的组",
           "example": "hadoop",
@@ -9752,7 +9206,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Manager表示管理员、NormalUser表示普通用户",
           "example": "NormalUser",
@@ -9763,7 +9216,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-04-28 18:08:28",
@@ -9774,7 +9226,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否可以下载用户对应的keytab文件，对开启kerberos的集群才有意义",
           "example": "true",
@@ -9785,7 +9236,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "keytab文件的下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://image-xxx.cos.region.xx.com/12323/someone.keytab",
@@ -9802,7 +9252,6 @@
       "document": "VPC 参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPC ID",
           "example": "vpc-xxxxx",
@@ -9813,7 +9262,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Subnet ID",
           "example": "subnet-xxxxx",
@@ -9830,7 +9278,6 @@
       "document": "VPC 参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPC ID",
           "example": "vpc-xxxxx",
@@ -9841,7 +9288,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Subnet ID",
           "example": "subnet-xxxxx",
@@ -10354,7 +9800,6 @@
       "document": "用于创建集群价格清单 不同可用区下价格详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "可用区Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100002",
@@ -10365,7 +9810,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不同节点的价格详情",
           "example": "无",
@@ -10382,7 +9826,6 @@
       "document": "可用区配置信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -10393,7 +9836,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -10404,7 +9846,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所有节点资源的规格\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -10415,7 +9856,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "如果是单可用区，ZoneTag可以不用填， 如果是双AZ部署，第一个可用区ZoneTag选择master，第二个可用区ZoneTag选择standby，如果是三AZ部署，第一个可用区ZoneTag选择master，第二个可用区ZoneTag选择standby，第三个可用区ZoneTag选择third-party，取值范围：\n  <li>master</li>\n  <li>standby</li>\n  <li>third-party</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",

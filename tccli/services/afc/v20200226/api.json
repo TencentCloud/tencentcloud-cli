@@ -33,7 +33,6 @@
       "document": "AntiFraudVipCryptoFilter– 业务入参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "约定用入参，默认不涉及默认BusinessSecurityData 与BusinessCrptoData 不传",
           "example": "无",
@@ -44,7 +43,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "约定用入参，默认不涉及",
           "example": "无",
@@ -61,7 +59,6 @@
       "document": "AntiFraudVipFilter– 业务入参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "业务方账号 ID",
           "example": "无",
@@ -72,7 +69,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "业务方APPID",
           "example": "无",
@@ -83,7 +79,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "身份证号\n注 1：下方 idCryptoType 为指定\n加密方式\n注 2：若 idNumber 加密则必传加\n密方式",
           "example": "无",
@@ -94,7 +89,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "手机号码（注：不需要带国家代码\n例如：13430421011）\n注 1：下方 phoneCryptoType 为\n指定加密方式:\n注 2：若 phoneNumber 加密则必\n传加密方式",
           "example": "无",
@@ -105,7 +99,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "业务场景 ID",
           "example": "无",
@@ -116,7 +109,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认不使用，业务方子\n账号，若接口使用密钥对应是子账\n号则必填",
           "example": "无",
@@ -127,7 +119,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已获取约定标识则传 1；\n用于基于特定需求而传的标识字段\n注：有约定则是必传，若未传则查\n询接口失败",
           "example": "无",
@@ -138,7 +129,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "姓名\n注 ：不支持加密",
           "example": "无",
@@ -149,7 +139,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "银行卡号",
           "example": "无",
@@ -160,7 +149,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户请求来源 IP",
           "example": "无",
@@ -171,7 +159,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "国际移动设备识别码",
           "example": "无",
@@ -182,7 +169,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ios 系统广告标示符",
           "example": "无",
@@ -193,7 +179,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户邮箱地址",
           "example": "无",
@@ -204,7 +189,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户住址",
           "example": "无",
@@ -215,7 +199,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "MAC 地址",
           "example": "无",
@@ -226,7 +209,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "国际移动用户识别码",
           "example": "无",
@@ -237,7 +219,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联的腾讯帐号 QQ：1；\n开放帐号微信： 2；",
           "example": "无",
@@ -248,7 +229,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选的 QQ 或微信 openid",
           "example": "无",
@@ -259,7 +239,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "qq 或微信分配给网站或应用的\nappid，用来唯一标识网站或应用",
           "example": "无",
@@ -270,7 +249,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ＷＩＦＩＭＡＣ",
           "example": "无",
@@ -281,7 +259,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "WIFI 服务集标识",
           "example": "无",
@@ -292,7 +269,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "WIFI-BSSID",
           "example": "无",
@@ -303,7 +279,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "拓展字段类型 ID\n注：默认不填写，需要时天御侧将\n提供",
           "example": "无",
@@ -314,7 +289,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "拓展字段内容\n注：默认不填，需要时天御侧将提\n供",
           "example": "无",
@@ -325,7 +299,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "业务 ID，默认不传",
           "example": "无",
@@ -336,7 +309,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "身份证加密类型\n0：不加密（默认值）\n1：md5\n2：sha256\n3：SM3\n注：若 idNumber 加密则必传加密\n方式",
           "example": "无",
@@ -347,7 +319,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "手机号加密类型\n0：不加密（默认值）\n1：md5,\n2：sha256\n3：SM3\n注：若 phoneNumber 加密则必传\n加密方式",
           "example": "无",
@@ -358,7 +329,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "姓名加密类型：——注：已经不支持加\n密，该字段存在是为了兼容可能历史客户\n版本；\n0：不加密（默认值）\n1：md5",
           "example": "无",
@@ -375,7 +345,6 @@
       "document": "反欺诈VIP查询结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "公共错误码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -386,7 +355,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "业务侧错误码。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -397,7 +365,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "业务侧错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -408,7 +375,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表示该条记录能否查到：1 为能查到；-1 为查不到，此时 RiskScore 返回-1；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -419,7 +385,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表示该条记录中的身份 ID 能否查到\n1 为能查到\n-1 为查不到\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -430,7 +395,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当可查到时，返回 0~100 区间，值越高 欺诈可\n能性越大。\n当查不到时（即 found=-1），返回-1\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -441,7 +405,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩展字段，对风险类型的说明。扩展字段并非必\n然出现。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -452,7 +415,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认出现，提供模型版本号说明及多模型返回需\n要时用到；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -463,7 +425,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表示请求时间，标准 sunix 时间戳，非必然出现\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -474,7 +435,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "拓展字段，非必然出现，和 ExtensionIn 对应；\n注：非必然出现，需要返回时天御侧将说明；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -491,7 +451,6 @@
       "document": "GetAntiFraudVip请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "默认不传，约定用原始业务\n入参(二选一BusinessSecurityData 或\nBusinessCryptoData)。",
           "example": "无",
@@ -501,7 +460,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认不传，约定用密文业务\n入参(二选一\nBusinessSecurityData 或\nBusinessCryptoData)。",
           "example": "无",
@@ -539,7 +497,6 @@
       "document": "扩展字段，包含多个模型的结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模型类型",
           "example": "“0”",
@@ -550,7 +507,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该模型评分",
           "example": "“99”",
@@ -567,7 +523,6 @@
       "document": "QueryAntiFraudVip请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "电话号码(五选二)",
           "example": "",
@@ -577,7 +532,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Id号(五选二)",
           "example": "",
@@ -587,7 +541,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "银行卡号(五选二)",
           "example": "",
@@ -597,7 +550,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户请求来源 IP(五选二)",
           "example": "",
@@ -607,7 +559,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "国际移动设备识别码(五选二)",
           "example": "",
@@ -617,7 +568,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ios 系统广告标示符(五选二)",
           "example": "",
@@ -627,7 +577,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "业务场景 ID，需要找技术对接",
           "example": "",
@@ -637,7 +586,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "姓名",
           "example": "",
@@ -647,7 +595,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户邮箱地址",
           "example": "",
@@ -657,7 +604,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户住址",
           "example": "",
@@ -667,7 +613,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联的腾讯帐号 QQ：1；\n开放帐号微信： 2；",
           "example": "",
@@ -677,7 +622,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选的 QQ 或微信 openid",
           "example": "",
@@ -687,7 +631,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "qq 或微信分配给网站或应用的 appid，用来\n唯一标识网站或应用",
           "example": "",
@@ -697,7 +640,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "WIFI MAC",
           "example": "",
@@ -707,7 +649,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "WIFI 服务集标识",
           "example": "",
@@ -717,7 +658,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "WIFI-BSSID",
           "example": "",
@@ -727,7 +667,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "业务 ID，在多个业务中使用此服务，通过此\nID 区分统计数据",
           "example": "",
@@ -737,7 +676,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Id加密类型\n0：不加密（默认值）\n1：md5\n2：sha256\n3：SM3",
           "example": "",
@@ -747,7 +685,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "手机号加密类型\n0：不加密（默认值）\n1：md5, 2：sha256\n3：SM3",
           "example": "",
@@ -757,7 +694,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "MAC 地址",
           "example": "",
@@ -767,7 +703,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "国际移动用户识别码",
           "example": "",
@@ -777,7 +712,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "姓名加密类型\n0：不加密（默认值）\n1：md5\n2：sha256\n3：SM3",
           "example": "",
@@ -850,7 +784,6 @@
       "document": "扩展字段，对风险类型的说明",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "风险码",
           "example": "",
@@ -893,7 +826,6 @@
       "document": "天御信鸽取数平台接口入参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "公证处请求接口名",
           "example": "StartApp",
@@ -904,7 +836,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公证处业务详情二层入参",
           "example": "UpdateAesKey",
@@ -915,7 +846,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "业务二层详情入参的哈希签名",
           "example": "de1y1kdr1526451889661677568",
@@ -932,7 +862,6 @@
       "document": "天御信鸽取数平台接口出参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -943,7 +872,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回包信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Success",
@@ -954,7 +882,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公证处业务回包\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "de1y1kdr1526451889661677568",
@@ -971,7 +898,6 @@
       "document": "TransportGeneralInterface请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "业务入参",
           "example": "无",

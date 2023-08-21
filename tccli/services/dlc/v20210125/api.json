@@ -649,7 +649,6 @@
       "document": "AddDMSPartitions请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分区",
           "example": "无",
@@ -697,7 +696,6 @@
       "document": "AddUsersToWorkGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要操作的工作组和用户信息",
           "example": "无",
@@ -725,7 +723,6 @@
       "document": "AlterDMSDatabase请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "当前名称",
           "example": "anme",
@@ -735,7 +732,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "schema名称",
           "example": "DataLakeCatalog",
@@ -745,7 +741,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路径",
           "example": "cosn://aaa",
@@ -755,7 +750,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "基础对象",
           "example": "无",
@@ -783,7 +777,6 @@
       "document": "AlterDMSPartition请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "当前名称，变更前db名称",
           "example": "db1",
@@ -793,7 +786,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前名称，变更前table名称",
           "example": "tbl1",
@@ -803,7 +795,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前名称，变更前Part名称",
           "example": "[\"part1\", \"part2\"]",
@@ -813,7 +804,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分区",
           "example": "无",
@@ -841,7 +831,6 @@
       "document": "AlterDMSTable请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "当前名称",
           "example": "name1",
@@ -851,7 +840,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前数据库名称",
           "example": "db1",
@@ -861,7 +849,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "基础对象",
           "example": "无",
@@ -871,7 +858,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表类型",
           "example": "EXTERNAL",
@@ -881,7 +867,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称",
           "example": "db1",
@@ -891,7 +876,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储大小",
           "example": "1",
@@ -901,7 +885,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录数量",
           "example": "1",
@@ -911,7 +894,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生命周期",
           "example": "10",
@@ -921,7 +903,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据更新时间",
           "example": "2021-01-01 12:12:12",
@@ -931,7 +912,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结构更新时间",
           "example": "2021-01-01 12:12:12",
@@ -941,7 +921,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后访问时间",
           "example": "2021-01-01 12:12:12",
@@ -951,7 +930,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储对象",
           "example": "无",
@@ -961,7 +939,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "列",
           "example": "无",
@@ -971,7 +948,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分区键值",
           "example": "无",
@@ -981,7 +957,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视图文本",
           "example": "select 1",
@@ -991,7 +966,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视图文本",
           "example": "select 1",
@@ -1001,7 +975,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分区",
           "example": "无",
@@ -1011,7 +984,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前表名",
           "example": "table1",
@@ -1039,7 +1011,6 @@
       "document": "元数据基本对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主键\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1050,7 +1021,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "name",
@@ -1061,7 +1031,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对象GUID值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxx-xxxx-xxx-xxx",
@@ -1072,7 +1041,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据目录\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DataLakeCatalog",
@@ -1083,7 +1051,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述信息",
           "example": "desc",
@@ -1094,7 +1061,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对象owner",
           "example": "root",
@@ -1105,7 +1071,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对象owner账户",
           "example": "root",
@@ -1116,7 +1081,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限",
           "example": "无",
@@ -1127,7 +1091,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "附加属性",
           "example": "无",
@@ -1138,7 +1101,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "附加业务属性",
           "example": "无",
@@ -1149,7 +1111,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据版本",
           "example": "1",
@@ -1160,7 +1121,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2021-01-01 12:12:12",
@@ -1171,7 +1131,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间",
           "example": "2021-01-01 12:12:12",
@@ -1182,7 +1141,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源主键",
           "example": "1",
@@ -1199,7 +1157,6 @@
       "document": "AttachUserPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户Id，和子用户uin相同，需要先使用CreateUser接口创建用户。可以使用DescribeUsers接口查看。",
           "example": "12345678",
@@ -1209,7 +1166,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "鉴权策略集合",
           "example": "无",
@@ -1237,7 +1193,6 @@
       "document": "AttachWorkGroupPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "工作组Id",
           "example": "1",
@@ -1247,7 +1202,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要绑定的策略集合",
           "example": "无",
@@ -1275,7 +1229,6 @@
       "document": "BindWorkGroupsToUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "绑定的用户和工作组信息",
           "example": "无",
@@ -1303,7 +1256,6 @@
       "document": "CSV类型数据格式",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "压缩格式，[\"Snappy\", \"Gzip\", \"None\"选一]。",
           "example": "Snappy",
@@ -1314,7 +1266,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CSV序列化及反序列化数据结构。",
           "example": "无",
@@ -1325,7 +1276,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标题行，默认为0。",
           "example": "1",
@@ -1336,7 +1286,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "格式，默认值为CSV",
           "example": "CSV",
@@ -1353,7 +1302,6 @@
       "document": "CSV序列化及反序列化数据结构",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "CSV序列化转义符，默认为\"\\\\\"，最长8个字符，如 Escape: \"/\\\"",
           "example": "\\\\",
@@ -1364,7 +1312,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CSV序列化字段域符，默认为\"'\"，最长8个字符, 如 Quote: \"\\\"\"",
           "example": "\"",
@@ -1375,7 +1322,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CSV序列化分隔符，默认为\"\\t\"，最长8个字符, 如 Separator: \"\\t\"",
           "example": ",",
@@ -1518,7 +1464,6 @@
       "document": "CheckLockMetaData请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "锁ID",
           "example": "1",
@@ -1528,7 +1473,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源名称",
           "example": "DataLakeCatalog",
@@ -1538,7 +1482,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事务ID",
           "example": "1",
@@ -1548,7 +1491,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期时间ms",
           "example": "100",
@@ -1596,7 +1538,6 @@
       "document": "数据表列信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "列名称，不区分大小写，最大支持25个字符。",
           "example": "col1",
@@ -1607,7 +1548,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "列类型，支持如下类型定义:\nstring|tinyint|smallint|int|bigint|boolean|float|double|decimal|timestamp|date|binary|array<data_type>|map<primitive_type, data_type>|struct<col_name : data_type [COMMENT col_comment], ...>|uniontype<data_type, data_type, ...>。",
           "example": "string",
@@ -1618,7 +1558,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对该类的注释。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "create by zhangsan",
@@ -1629,7 +1568,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表示整个 numeric 的长度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
@@ -1640,7 +1578,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表示小数部分的长度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -1651,7 +1588,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Nullable",
@@ -1662,7 +1598,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段位置，小的在前\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1673,7 +1608,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-09-07 06:19:23",
@@ -1684,7 +1618,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-09-07 06:19:23",
@@ -1695,7 +1628,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为分区字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -1831,7 +1763,6 @@
           "disabled": false,
           "document": "cos路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cosn://***",
-          "is_base64": false,
           "member": "string",
           "name": "CosPath",
           "output_required": false,
@@ -1843,7 +1774,6 @@
           "disabled": false,
           "document": "权限【\"read\",\"write\"】\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"read\",\"write\"]",
-          "is_base64": false,
           "member": "string",
           "name": "Permissions",
           "output_required": false,
@@ -1858,7 +1788,6 @@
       "document": "CreateDMSDatabase请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "基础元数据对象",
           "example": "无",
@@ -1868,7 +1797,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Schema目录",
           "example": "Schema1",
@@ -1878,7 +1806,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Db存储路径",
           "example": "cosn://bucket-1",
@@ -1888,7 +1815,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称",
           "example": "DatabaseName",
@@ -1916,7 +1842,6 @@
       "document": "CreateDMSTable请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "基础对象",
           "example": "无",
@@ -1926,7 +1851,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表类型",
           "example": "EXTERNAL",
@@ -1936,7 +1860,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称",
           "example": "db1",
@@ -1946,7 +1869,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储大小",
           "example": "1",
@@ -1956,7 +1878,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录数量",
           "example": "1",
@@ -1966,7 +1887,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生命周期",
           "example": "10",
@@ -1976,7 +1896,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据更新时间",
           "example": "2021-01-01 12:12:12",
@@ -1986,7 +1905,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结构更新时间",
           "example": "2021-01-01 12:12:12",
@@ -1996,7 +1914,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后访问时间",
           "example": "2021-01-01 12:12:12",
@@ -2006,7 +1923,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储对象",
           "example": "无",
@@ -2016,7 +1932,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "列",
           "example": "无",
@@ -2026,7 +1941,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分区键值",
           "example": "无",
@@ -2036,7 +1950,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视图文本",
           "example": "select 1",
@@ -2046,7 +1959,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视图文本",
           "example": "select 1",
@@ -2056,7 +1968,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分区",
           "example": "无",
@@ -2066,7 +1977,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表名称",
           "example": "表名称",
@@ -2392,7 +2302,6 @@
       "document": "CreateDatabase请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库基础信息",
           "example": "无",
@@ -2402,7 +2311,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源名称，默认为DataLakeCatalog",
           "example": "DataLakeCatalog",
@@ -2440,7 +2348,6 @@
       "document": "CreateExportTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据来源，lakefsStorage、taskResult",
           "example": "lakefsStorage、taskResult",
@@ -2450,7 +2357,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导出任务输入配置",
           "example": "无",
@@ -2460,7 +2366,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导出任务输出配置",
           "example": "无",
@@ -2470,7 +2375,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标数据源的类型，目前支持导出到cos",
           "example": "cos",
@@ -2508,7 +2412,6 @@
       "document": "CreateImportTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据来源，cos",
           "example": "cos",
@@ -2518,7 +2421,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输入配置",
           "example": "无",
@@ -2528,7 +2430,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输出配置",
           "example": "无",
@@ -2538,7 +2439,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标数据源的类型，目前支持导入到托管存储，即lakefsStorage",
           "example": "lakefsStorage",
@@ -2576,7 +2476,6 @@
       "document": "CreateInternalTable请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表基本信息",
           "example": "无",
@@ -2586,7 +2485,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表字段信息",
           "example": "无",
@@ -2596,7 +2494,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表分区信息",
           "example": "无",
@@ -2606,7 +2503,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表属性信息",
           "example": "无",
@@ -2647,7 +2543,6 @@
           "disabled": false,
           "document": "Session名称",
           "example": "session1",
-          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": true,
@@ -2657,7 +2552,6 @@
           "disabled": false,
           "document": "类型，当前支持：spark、pyspark、sparkr、sql",
           "example": "spark",
-          "is_base64": false,
           "member": "string",
           "name": "Kind",
           "required": true,
@@ -2667,7 +2561,6 @@
           "disabled": false,
           "document": "DLC Spark作业引擎名称",
           "example": "data_engine_1",
-          "is_base64": false,
           "member": "string",
           "name": "DataEngineName",
           "required": true,
@@ -2677,7 +2570,6 @@
           "disabled": false,
           "document": "session文件地址，当前支持：cosn://和lakefs://两种路径",
           "example": "[cosn://xxx]",
-          "is_base64": false,
           "member": "string",
           "name": "ProgramDependentFiles",
           "required": false,
@@ -2687,7 +2579,6 @@
           "disabled": false,
           "document": "依赖的jar程序地址，当前支持：cosn://和lakefs://两种路径",
           "example": "[cosn://xxx]",
-          "is_base64": false,
           "member": "string",
           "name": "ProgramDependentJars",
           "required": false,
@@ -2697,7 +2588,6 @@
           "disabled": false,
           "document": "依赖的python程序地址，当前支持：cosn://和lakefs://两种路径",
           "example": "[cosn://xxx]",
-          "is_base64": false,
           "member": "string",
           "name": "ProgramDependentPython",
           "required": false,
@@ -2707,7 +2597,6 @@
           "disabled": false,
           "document": "依赖的pyspark虚拟环境地址，当前支持：cosn://和lakefs://两种路径",
           "example": "[cosn://xxx]",
-          "is_base64": false,
           "member": "string",
           "name": "ProgramArchives",
           "required": false,
@@ -2717,7 +2606,6 @@
           "disabled": false,
           "document": "指定的Driver规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）",
           "example": "small",
-          "is_base64": false,
           "member": "string",
           "name": "DriverSize",
           "required": false,
@@ -2727,7 +2615,6 @@
           "disabled": false,
           "document": "指定的Executor规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）",
           "example": "small",
-          "is_base64": false,
           "member": "string",
           "name": "ExecutorSize",
           "required": false,
@@ -2737,7 +2624,6 @@
           "disabled": false,
           "document": "指定的Executor数量，默认为1",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "ExecutorNumbers",
           "required": false,
@@ -2747,7 +2633,6 @@
           "disabled": false,
           "document": "Session相关配置，当前支持：\n1. dlc.eni: 用户配置的eni网关信息，可以通过该字段设置；\n2. dlc.role.arn: 用户配置的roleArn鉴权策略配置信息，可以通过该字段设置；\n3. dlc.sql.set.config: 用户配置的集群配置信息，可以通过该字段设置；",
           "example": "[\"eni\":\"test_eni\"]",
-          "is_base64": false,
           "member": "KVPair",
           "name": "Arguments",
           "required": false,
@@ -2757,7 +2642,6 @@
           "disabled": false,
           "document": "代理用户，默认为root",
           "example": "root",
-          "is_base64": false,
           "member": "string",
           "name": "ProxyUser",
           "required": false,
@@ -2767,7 +2651,6 @@
           "disabled": false,
           "document": "指定的Session超时时间，单位秒，默认3600秒",
           "example": "3600",
-          "is_base64": false,
           "member": "int64",
           "name": "TimeoutInSecond",
           "required": false,
@@ -2777,7 +2660,6 @@
           "disabled": false,
           "document": "指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于ExecutorNumbers",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "ExecutorMaxNumbers",
           "required": false,
@@ -2787,7 +2669,6 @@
           "disabled": false,
           "document": "指定spark版本名称，当前任务使用该spark镜像运行",
           "example": "pyspark 3.2",
-          "is_base64": false,
           "member": "string",
           "name": "SparkImage",
           "required": false,
@@ -2797,7 +2678,6 @@
           "disabled": false,
           "document": "是否继承集群的资源类配置：0：自定义（默认），1：继承集群；",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "IsInherit",
           "required": false,
@@ -2969,7 +2849,6 @@
       "document": "CreateResultDownload请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询结果任务Id",
           "example": "123abc456",
@@ -2979,7 +2858,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下载格式",
           "example": "CSV",
@@ -2989,7 +2867,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否重新生成下载文件，仅当之前任务为 Timout | Error 时有效",
           "example": "true",
@@ -3027,7 +2904,6 @@
       "document": "CreateScript请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "脚本名称，最大不能超过255个字符。",
           "example": "Script1",
@@ -3037,7 +2913,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "base64编码后的sql语句",
           "example": "U0VMRUNUICogRlJPTSBgdGVzdGA7",
@@ -3047,7 +2922,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "脚本描述， 不能超过50个字符",
           "example": "create by zhangsan",
@@ -3057,7 +2931,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称",
           "example": "database1",
@@ -3431,7 +3304,6 @@
           "disabled": false,
           "document": "DLC Spark作业引擎名称",
           "example": "data_engine_1",
-          "is_base64": false,
           "member": "string",
           "name": "DataEngineName",
           "required": true,
@@ -3441,7 +3313,6 @@
           "disabled": false,
           "document": "运行sql",
           "example": "select 1;",
-          "is_base64": false,
           "member": "string",
           "name": "ExecuteSQL",
           "required": true,
@@ -3451,7 +3322,6 @@
           "disabled": false,
           "document": "指定的Driver规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）",
           "example": "small",
-          "is_base64": false,
           "member": "string",
           "name": "DriverSize",
           "required": false,
@@ -3461,7 +3331,6 @@
           "disabled": false,
           "document": "指定的Executor规格，当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu）",
           "example": "small",
-          "is_base64": false,
           "member": "string",
           "name": "ExecutorSize",
           "required": false,
@@ -3471,7 +3340,6 @@
           "disabled": false,
           "document": "指定的Executor数量，默认为1",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "ExecutorNumbers",
           "required": false,
@@ -3481,7 +3349,6 @@
           "disabled": false,
           "document": "指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于ExecutorNumbers",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "ExecutorMaxNumbers",
           "required": false,
@@ -3491,7 +3358,6 @@
           "disabled": false,
           "document": "指定的Session超时时间，单位秒，默认3600秒",
           "example": "10",
-          "is_base64": false,
           "member": "int64",
           "name": "TimeoutInSecond",
           "required": false,
@@ -3501,7 +3367,6 @@
           "disabled": false,
           "document": "Session唯一标识，当指定sessionid，则使用该session运行任务。",
           "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
-          "is_base64": false,
           "member": "string",
           "name": "SessionId",
           "required": false,
@@ -3511,7 +3376,6 @@
           "disabled": false,
           "document": "指定要创建的session名称",
           "example": "testSession",
-          "is_base64": false,
           "member": "string",
           "name": "SessionName",
           "required": false,
@@ -3521,7 +3385,6 @@
           "disabled": false,
           "document": "Session相关配置，当前支持：1.dlc.eni：用户配置的eni网关信息，可以用过该字段设置；\n2.dlc.role.arn：用户配置的roleArn鉴权策略配置信息，可以用过该字段设置；\n3.dlc.sql.set.config：用户配置的集群配置信息，可以用过该字段设置；",
           "example": "[\"eni\":\"test_eni\"]",
-          "is_base64": false,
           "member": "KVPair",
           "name": "Arguments",
           "required": false,
@@ -3531,7 +3394,6 @@
           "disabled": false,
           "document": "是否继承集群的资源类配置：0：自定义（默认），1：继承集群；",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "IsInherit",
           "required": false,
@@ -3566,7 +3428,6 @@
       "document": "CreateStoreLocation请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "计算结果存储cos路径，如：cosn://bucketname/",
           "example": "cosn://bucketname/",
@@ -3594,7 +3455,6 @@
       "document": "CreateTable请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据表配置信息",
           "example": "无",
@@ -3695,7 +3555,6 @@
       "document": "CreateTasksInOrder请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称。如果SQL语句中有数据库名称，优先使用SQL语句中的数据库，否则使用该参数指定的数据库。",
           "example": "database1",
@@ -3705,7 +3564,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SQL任务信息",
           "example": "无",
@@ -3715,7 +3573,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源名称，默认为COSDataCatalog",
           "example": "COSDataCatalog",
@@ -3835,7 +3692,6 @@
       "document": "CreateUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要授权的子用户uin，可以通过腾讯云控制台右上角 → “账号信息” → “账号ID进行查看”。",
           "example": "12345678",
@@ -3845,7 +3701,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户描述信息，方便区分不同用户",
           "example": "for test",
@@ -3855,7 +3710,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定到用户的权限集合",
           "example": "无",
@@ -3865,7 +3719,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户类型。ADMIN：管理员 COMMON：一般用户。当用户类型为管理员的时候，不能设置权限集合和绑定的工作组集合，管理员默认拥有所有权限。该参数不填默认为COMMON",
           "example": "Admin",
@@ -3875,7 +3728,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定到用户的工作组ID集合。",
           "example": "1",
@@ -3885,7 +3737,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户别名，字符长度小50",
           "example": "testname",
@@ -3913,7 +3764,6 @@
       "document": "CreateWorkGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "工作组名称",
           "example": "workgroup1",
@@ -3923,7 +3773,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作组描述",
           "example": "for test",
@@ -3933,7 +3782,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作组绑定的鉴权策略集合",
           "example": "无",
@@ -3943,7 +3791,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要绑定到工作组的用户Id集合",
           "example": "[\"123456\"]",
@@ -3981,7 +3828,6 @@
       "document": "定时启停策略信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "定时拉起时间：如：周一8点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000000-08:00:00",
@@ -3992,7 +3838,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "定时挂起时间：如：周一20点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000000-20:00:00",
@@ -4003,7 +3848,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "挂起配置：0（默认）：等待任务结束后挂起、1：强制挂起\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -4020,7 +3864,6 @@
       "document": "迁移列对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "name1",
@@ -4031,7 +3874,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "desc1",
@@ -4042,7 +3884,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "EXTERNAL",
@@ -4053,7 +3894,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -4064,7 +3904,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "附加参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4075,7 +3914,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "业务参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4086,7 +3924,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否分区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -4103,7 +3940,6 @@
       "document": "列排序对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "列名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "col1",
@@ -4114,7 +3950,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -4131,7 +3966,6 @@
       "document": "迁移元数据分区对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称",
           "example": "11",
@@ -4142,7 +3976,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据目录名称",
           "example": "aaa",
@@ -4153,7 +3986,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表名称",
           "example": "aaa",
@@ -4164,7 +3996,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据版本",
           "example": "1",
@@ -4175,7 +4006,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分区名称",
           "example": "aaa",
@@ -4186,7 +4016,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "值列表",
           "example": "[\"aa\", \"bb\"]",
@@ -4197,7 +4026,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储大小",
           "example": "1",
@@ -4208,7 +4036,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录数量",
           "example": "1",
@@ -4219,7 +4046,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2021-05-08 16:43:16",
@@ -4230,7 +4056,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间",
           "example": "2021-05-08 16:43:16",
@@ -4241,7 +4066,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后访问时间",
           "example": "2021-05-08 16:43:16",
@@ -4252,7 +4076,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "附件属性",
           "example": "无",
@@ -4263,7 +4086,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储对象",
           "example": "无",
@@ -4280,7 +4102,6 @@
       "document": "元数据存储描述属性",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "存储地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cosn://aaa",
@@ -4291,7 +4112,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输入格式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "InputFormat",
@@ -4302,7 +4122,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输出格式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "OutputFormat",
@@ -4313,7 +4132,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "bucket数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -4324,7 +4142,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是是否压缩\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -4335,7 +4152,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否有子目录\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -4346,7 +4162,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "序列化lib\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aaa",
@@ -4357,7 +4172,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "序列化名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aaa",
@@ -4368,7 +4182,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "桶名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"aa\", \"bb\"]",
@@ -4379,7 +4192,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "序列化参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4390,7 +4202,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "附加参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4401,7 +4212,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "列排序(Expired)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4412,7 +4222,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "列\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4423,7 +4232,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "列排序字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4440,7 +4248,6 @@
       "document": "DMSTable基本信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视图文本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "select 1",
@@ -4451,7 +4258,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视图文本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "select 1",
@@ -4462,7 +4268,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "hive维护版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -4473,7 +4278,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储对象\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4484,7 +4288,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分区列\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4495,7 +4298,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4506,7 +4308,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "EXTERNAL",
@@ -4517,7 +4318,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "db1",
@@ -4528,7 +4328,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Schema名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "schema1",
@@ -4539,7 +4338,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -4550,7 +4348,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -4561,7 +4358,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生命周期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -4572,7 +4368,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后访问时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-01-01 11:11:11",
@@ -4583,7 +4378,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-01-01 11:11:11",
@@ -4594,7 +4388,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结构更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-01-01 11:11:11",
@@ -4605,7 +4398,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "列\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4616,7 +4408,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tb1",
@@ -4633,7 +4424,6 @@
       "document": "DMSTable信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "DMS表信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4644,7 +4434,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "基础对象信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5122,7 +4911,6 @@
       "document": "数据表数据格式。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文本格式，TextFile。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5133,7 +4921,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本格式，CSV。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5144,7 +4931,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本格式，Json。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5155,7 +4941,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Parquet格式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5166,7 +4951,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ORC格式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5177,7 +4961,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "AVRO格式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5220,7 +5003,6 @@
       "document": "数据库对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称，长度0~128，支持数字、字母下划线，不允许数字大头，统一转换为小写。",
           "example": "database1",
@@ -5231,7 +5013,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库描述信息，长度 0~500。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "create by zhangsan",
@@ -5242,7 +5023,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库属性列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5253,7 +5033,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库cos路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cosn://",
@@ -5403,7 +5182,6 @@
       "document": "DeleteScript请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "脚本id，其可以通过DescribeScripts接口提取",
           "example": "[\"89570c65-49de-4bbd-ac0a-a67c724fc80f\"]",
@@ -5468,7 +5246,6 @@
       "document": "DeleteUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要删除的用户的Id",
           "example": "[12345678]",
@@ -5496,7 +5273,6 @@
       "document": "DeleteUsersFromWorkGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要删除的用户信息",
           "example": "无",
@@ -5524,7 +5300,6 @@
       "document": "DeleteWorkGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要删除的工作组Id集合",
           "example": "[0,1]",
@@ -5552,7 +5327,6 @@
       "document": "DescribeDMSDatabase请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称",
           "example": "name",
@@ -5562,7 +5336,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "schema名称",
           "example": "xxxx",
@@ -5572,7 +5345,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "匹配规则",
           "example": "*",
@@ -5640,7 +5412,6 @@
       "document": "DescribeDMSPartitions请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名",
           "example": "db1",
@@ -5650,7 +5421,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表名称",
           "example": "table1",
@@ -5660,7 +5430,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "schema名称",
           "example": "schema1",
@@ -5670,7 +5439,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名称",
           "example": "name1",
@@ -5680,7 +5448,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单个分区名称，精准匹配",
           "example": "[\"aa\", \"bb\"]",
@@ -5690,7 +5457,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "多个分区名称，精准匹配",
           "example": "[\"a1\", \"b1\"]",
@@ -5700,7 +5466,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "多个分区字段的匹配，模糊匹配",
           "example": "[\"a2\", \"a3\"]",
@@ -5710,7 +5475,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤SQL",
           "example": "a = 1 and b =2",
@@ -5720,7 +5484,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大分区数量",
           "example": "1",
@@ -5730,7 +5493,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "翻页跳过数量",
           "example": "100",
@@ -5740,7 +5502,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页面数量",
           "example": "10",
@@ -5750,7 +5511,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表达式",
           "example": "base64()",
@@ -5798,7 +5558,6 @@
       "document": "DescribeDMSTable请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称",
           "example": "db1",
@@ -5808,7 +5567,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库schema名称",
           "example": "schemaName1",
@@ -5818,7 +5576,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表名称",
           "example": "tbl1",
@@ -5828,7 +5585,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据目录",
           "example": "DataLakeCatalog",
@@ -5838,7 +5594,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询关键词",
           "example": "ta",
@@ -5848,7 +5603,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询模式",
           "example": "*",
@@ -5858,7 +5612,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表类型",
           "example": "EXTERNAL",
@@ -6066,7 +5819,6 @@
       "document": "DescribeDMSTables请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称",
           "example": "db1",
@@ -6076,7 +5828,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库schema名称",
           "example": "schemaName1",
@@ -6086,7 +5837,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表名称",
           "example": "tbl1",
@@ -6096,7 +5846,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据目录",
           "example": "DataLakeCatalog",
@@ -6106,7 +5855,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询关键词",
           "example": "ta",
@@ -6116,7 +5864,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询模式",
           "example": "*",
@@ -6126,7 +5873,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表类型",
           "example": "EXTERNAL",
@@ -6136,7 +5882,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "筛选参数：更新开始时间",
           "example": "2006-01-02 15:04:05",
@@ -6146,7 +5891,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "筛选参数：更新结束时间",
           "example": "2006-01-02 15:04:05",
@@ -6156,7 +5900,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数",
           "example": "10",
@@ -6166,7 +5909,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数",
           "example": "0",
@@ -6176,7 +5918,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段：create_time：创建时间",
           "example": "create_time",
@@ -6186,7 +5927,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段：true：升序（默认），false：降序",
           "example": "true",
@@ -6978,7 +6718,6 @@
       "document": "DescribeResultDownload请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询任务Id",
           "example": "11123",
@@ -7480,7 +7219,6 @@
       "document": "DescribeTable请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询对象表名称",
           "example": "table1",
@@ -7490,7 +7228,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询表所在的数据库名称。",
           "example": "database1",
@@ -7500,7 +7237,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询表所在的数据源名称",
           "example": "DataLakeCatalog",
@@ -7673,7 +7409,6 @@
       "document": "DescribeTaskResult请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务唯一ID",
           "example": "fdd9c5fa21ca11eca6fb5254006c64af",
@@ -7683,7 +7418,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上一次请求响应返回的分页信息。第一次可以不带，从头开始返回数据，每次返回MaxResults字段设置的数据量。",
           "example": "nextMarker=\\u0026nextKey=test/DLCQueryResults/2021/10/15/2c60388",
@@ -7693,7 +7427,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回结果的最大行数，范围0~1000，默认为1000.",
           "example": "500",
@@ -7854,7 +7587,6 @@
           "disabled": false,
           "document": "列举的数量限制",
           "example": "无",
-          "is_base64": false,
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -7864,7 +7596,6 @@
           "disabled": false,
           "document": "列举的偏移位置",
           "example": "无",
-          "is_base64": false,
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -7874,7 +7605,6 @@
           "disabled": false,
           "document": "按照arn模糊列举",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Fuzzy",
           "required": false,
@@ -7884,7 +7614,6 @@
           "disabled": false,
           "document": "返回结果按照该字段排序",
           "example": "modify-time",
-          "is_base64": false,
           "member": "string",
           "name": "SortBy",
           "required": false,
@@ -7894,7 +7623,6 @@
           "disabled": false,
           "document": "正序或者倒序，例如：desc",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Sorting",
           "required": false,
@@ -7939,7 +7667,6 @@
       "document": "DescribeUsers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指定查询的子用户uin，用户需要通过CreateUser接口创建。",
           "example": "12345678",
@@ -7949,7 +7676,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
           "example": "0",
@@ -7959,7 +7685,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认20，最大值100",
           "example": "20",
@@ -7969,7 +7694,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段，支持如下字段类型，create-time",
           "example": "create-time",
@@ -7979,7 +7703,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式，desc表示正序，asc表示反序， 默认为asc",
           "example": "desc",
@@ -7989,7 +7712,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，支持如下字段类型，user-type：根据用户类型过滤。user-keyword：根据用户名称过滤",
           "example": "无",
@@ -8037,7 +7759,6 @@
       "document": "DescribeViews请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "列出该数据库下所属数据表。",
           "example": "database1",
@@ -8047,7 +7768,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为10，最大值为100。",
           "example": "20",
@@ -8057,7 +7777,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据偏移量，从0开始，默认为0。",
           "example": "0",
@@ -8067,7 +7786,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，如下支持的过滤类型，传参Name应为其一\nview-name - String - （过滤条件）数据表名称,形如：view-001。\nview-id - String - （过滤条件）view id形如：12342。",
           "example": "无",
@@ -8077,7 +7795,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库所属的数据源名称",
           "example": "COSDataCatalog",
@@ -8087,7 +7804,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段",
           "example": "test",
@@ -8097,7 +7813,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序规则，true:升序；false:降序",
           "example": "false",
@@ -8107,7 +7822,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按视图更新时间筛选，开始时间，如2021-11-11 00:00:00",
           "example": "2021-11-11 00:00:00",
@@ -8117,7 +7831,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按视图更新时间筛选，结束时间，如2021-11-12 00:00:00",
           "example": "2021-11-11 00:00:00",
@@ -8165,7 +7878,6 @@
       "document": "DescribeWorkGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询的工作组Id，不填或填0表示不过滤。",
           "example": "1",
@@ -8175,7 +7887,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，当前仅支持按照工作组名称进行模糊搜索。Key为workgroup-name",
           "example": "无",
@@ -8185,7 +7896,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
           "example": "0",
@@ -8195,7 +7905,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认20，最大值100",
           "example": "20",
@@ -8205,7 +7914,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段，支持如下字段类型，create-time",
           "example": "create-time",
@@ -8215,7 +7923,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式，desc表示正序，asc表示反序， 默认为asc",
           "example": "desc",
@@ -8263,7 +7970,6 @@
       "document": "DetachUserPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户Id，和CAM侧Uin匹配",
           "example": "12345678",
@@ -8273,7 +7979,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "解绑的权限集合",
           "example": "无",
@@ -8301,7 +8006,6 @@
       "document": "DetachWorkGroupPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "工作组Id",
           "example": "1",
@@ -8311,7 +8015,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "解绑的权限集合",
           "example": "无",
@@ -8339,7 +8042,6 @@
       "document": "DropDMSDatabase请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称",
           "example": "db1",
@@ -8349,7 +8051,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否删除数据",
           "example": "true",
@@ -8359,7 +8060,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否级联删除",
           "example": "true",
@@ -8387,7 +8087,6 @@
       "document": "DropDMSPartitions请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称",
           "example": "db1",
@@ -8397,7 +8096,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库Schema名称",
           "example": "schema1",
@@ -8407,7 +8105,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据表名称",
           "example": "table1",
@@ -8417,7 +8114,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分区名称",
           "example": "name1",
@@ -8427,7 +8123,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单个分区名称",
           "example": "[\"1\", \"2\"]",
@@ -8437,7 +8132,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否删除分区数据",
           "example": "false",
@@ -8475,7 +8169,6 @@
       "document": "DropDMSTable请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称",
           "example": "db1",
@@ -8485,7 +8178,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表名称",
           "example": "table1",
@@ -8495,7 +8187,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否删除数据",
           "example": "false",
@@ -8505,7 +8196,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境属性",
           "example": "无",
@@ -8533,7 +8223,6 @@
       "document": "SQL语句对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "自动生成SQL语句。",
           "example": "CREATE DATABASE `test`;;",
@@ -8550,7 +8239,6 @@
       "document": "查询列表过滤条件参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "属性名称, 若存在多个Filter时，Filter间的关系为逻辑或（OR）关系。",
           "example": "task-id",
@@ -8561,7 +8249,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
           "example": "无",
@@ -8858,7 +8545,6 @@
       "document": "元数据加锁内容",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称",
           "example": "db",
@@ -8869,7 +8555,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表名称",
           "example": "table",
@@ -8880,7 +8565,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分区",
           "example": "part",
@@ -8891,7 +8575,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "锁类型：SHARED_READ、SHARED_WRITE、EXCLUSIVE",
           "example": "SHARED_READ",
@@ -8902,7 +8585,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "锁级别：DB、TABLE、PARTITION",
           "example": "DB",
@@ -8913,7 +8595,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "锁操作：SELECT,INSERT,UPDATE,DELETE,UNSET,NO_TXN",
           "example": "SELECT",
@@ -8924,7 +8605,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否保持Acid",
           "example": "false",
@@ -8935,7 +8615,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否动态分区写",
           "example": "false",
@@ -8952,7 +8631,6 @@
       "document": "LockMetaData请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "加锁内容",
           "example": "无",
@@ -8962,7 +8640,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源名称",
           "example": "DataLakeCatalog",
@@ -8972,7 +8649,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事务id",
           "example": "1",
@@ -8982,7 +8658,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端信息",
           "example": "xx",
@@ -8992,7 +8667,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机名",
           "example": "xx",
@@ -9426,7 +9100,6 @@
       "document": "ModifyUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户Id，和CAM侧Uin匹配",
           "example": "12345678",
@@ -9436,7 +9109,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户描述",
           "example": "for test",
@@ -9500,7 +9172,6 @@
       "document": "网络配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网络配置id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "89876",
@@ -9511,7 +9182,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络配置唯一标志符\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9522,7 +9192,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计算引擎id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9533,7 +9202,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源id(已废弃)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9544,7 +9212,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络配置状态（0-初始化，1-正常）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9555,7 +9222,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9566,7 +9232,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9577,7 +9242,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建用户Appid\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9588,7 +9252,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计算引擎名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9599,7 +9262,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络配置名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9610,7 +9272,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络配置类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9621,7 +9282,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9632,7 +9292,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建用户SubAccountUin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9643,7 +9302,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络配置描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9654,7 +9312,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源vpcid\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9665,7 +9322,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源SubnetId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9676,7 +9332,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源SubnetId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9687,7 +9342,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源SubnetCidrBlock\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -10052,7 +9706,6 @@
       "document": "notebook session列表信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "类型，当前支持：spark、pyspark、sparkr、sql",
           "example": "spark",
@@ -10063,7 +9716,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Session唯一标识",
           "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
@@ -10074,7 +9726,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代理用户，默认为root\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "root",
@@ -10085,7 +9736,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Session状态，包含：not_started（未启动）、starting（已启动）、idle（等待输入）、busy(正在运行statement)、shutting_down（停止）、error（异常）、dead（已退出）、killed（被杀死）、success（正常停止）",
           "example": "not_started",
@@ -10096,7 +9746,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Spark任务返回的AppId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "spark-4ke6a46618d24e9c7yh2b62f0ddebdks",
@@ -10107,7 +9756,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Session名称",
           "example": "session1",
@@ -10118,7 +9766,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Session创建时间",
           "example": "2006-01-02 15:04:05",
@@ -10129,7 +9776,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "引擎名称",
           "example": "data_engine_1",
@@ -10140,7 +9786,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最新的运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2006-01-02 15:04:05",
@@ -10151,7 +9796,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建者",
           "example": "test",
@@ -10162,7 +9806,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "spark ui地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://xxx",
@@ -10179,7 +9822,6 @@
       "document": "数据格式其它类型。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "枚举类型，默认值为Json，可选值为[Json, Parquet, ORC, AVRD]之一。",
           "example": "Json",
@@ -10196,7 +9838,6 @@
       "document": "数据表分块信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分区列名。",
           "example": "col1",
@@ -10207,7 +9848,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分区类型。",
           "example": "string",
@@ -10218,7 +9858,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对分区的描述。",
           "example": "create by zhangsan",
@@ -10229,7 +9868,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "隐式分区转换策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "truncate",
@@ -10240,7 +9878,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转换策略参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"3\"]",
@@ -10251,7 +9888,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100000",
@@ -10268,7 +9904,6 @@
       "document": "权限对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要授权的数据库名，填*代表当前Catalog下所有数据库。当授权类型为管理员级别时，只允许填“*”，当授权类型为数据连接级别时只允许填空，其他类型下可以任意指定数据库。",
           "example": "test_database",
@@ -10279,7 +9914,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要授权的数据源名称，管理员级别下只支持填*（代表该级别全部资源）；数据源级别和数据库级别鉴权的情况下，只支持填COSDataCatalog或者*；在数据表级别鉴权下可以填写用户自定义数据源。不填情况下默认为DataLakeCatalog。注意：如果是对用户自定义数据源进行鉴权，DLC能够管理的权限是用户接入数据源的时候提供的账户的子集。",
           "example": "DataLakeCatalog",
@@ -10290,7 +9924,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要授权的表名，填*代表当前Database下所有表。当授权类型为管理员级别时，只允许填“*”，当授权类型为数据连接级别、数据库级别时只允许填空，其他类型下可以任意指定数据表。",
           "example": "test_table",
@@ -10301,7 +9934,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权的权限操作，对于不同级别的鉴权提供不同操作。管理员权限：ALL，不填默认为ALL；数据连接级鉴权：CREATE；数据库级别鉴权：ALL、CREATE、ALTER、DROP；数据表权限：ALL、SELECT、INSERT、ALTER、DELETE、DROP、UPDATE。注意：在数据表权限下，指定的数据源不为COSDataCatalog的时候，只支持SELECT操作。",
           "example": "ALL",
@@ -10312,7 +9944,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权类型，现在支持八种授权类型：ADMIN:管理员级别鉴权 DATASOURCE：数据连接级别鉴权 DATABASE：数据库级别鉴权 TABLE：表级别鉴权 VIEW：视图级别鉴权 FUNCTION：函数级别鉴权 COLUMN：列级别鉴权 ENGINE：数据引擎鉴权。不填默认为管理员级别鉴权。",
           "example": "ADMIN",
@@ -10323,7 +9954,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要授权的函数名，填*代表当前Catalog下所有函数。当授权类型为管理员级别时，只允许填“*”，当授权类型为数据连接级别时只允许填空，其他类型下可以任意指定函数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "fun1",
@@ -10334,7 +9964,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要授权的视图，填*代表当前Database下所有视图。当授权类型为管理员级别时，只允许填“*”，当授权类型为数据连接级别、数据库级别时只允许填空，其他类型下可以任意指定视图。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "view1",
@@ -10345,7 +9974,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要授权的列，填*代表当前所有列。当授权类型为管理员级别时，只允许填“*”\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "column1",
@@ -10356,7 +9984,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要授权的数据引擎，填*代表当前所有引擎。当授权类型为管理员级别时，只允许填“*”\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dataEngine1",
@@ -10367,7 +9994,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户是否可以进行二次授权。当为true的时候，被授权的用户可以将本次获取的权限再次授权给其他子用户。默认为false\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -10378,7 +10004,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限来源，入参不填。USER：权限来自用户本身；WORKGROUP：权限来自绑定的工作组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "USER",
@@ -10389,7 +10014,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权模式，入参不填。COMMON：普通模式；SENIOR：高级模式。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "COMMON",
@@ -10400,7 +10024,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作者，入参不填。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12345678",
@@ -10411,7 +10034,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限创建的时间，入参不填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-07-28 16:19:32",
@@ -10422,7 +10044,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限所属工作组的ID，只有当该权限的来源为工作组时才会有值。即仅当Source字段的值为WORKGROUP时该字段才有值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -10433,7 +10054,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限所属工作组的名称，只有当该权限的来源为工作组时才会有值。即仅当Source字段的值为WORKGROUP时该字段才有值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test_group",
@@ -10444,7 +10064,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -10487,7 +10106,6 @@
       "document": "数据库和数据表属性信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "属性key名称。",
           "example": "owner",
@@ -10498,7 +10116,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "属性key对应的value。",
           "example": "create by zhangsan",
@@ -10515,7 +10132,6 @@
       "document": "ReportHeartbeatMetaData请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据源名称",
           "example": "DataLakeCatalog",
@@ -10525,7 +10141,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "锁ID",
           "example": "1",
@@ -10535,7 +10150,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事务ID",
           "example": "1",
@@ -10563,7 +10177,6 @@
       "document": " SQL查询任务",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "base64加密后的SQL语句",
           "example": "U0VMRUNUICogRlJPTSBgdGVzdGA7",
@@ -10574,7 +10187,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务的配置信息",
           "example": "无",
@@ -10591,7 +10203,6 @@
       "document": "script实例。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "脚本Id，长度36字节。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "89570c65-49de-4bbd-ac0a-a67c724fc80f",
@@ -10602,7 +10213,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "脚本名称，长度0-25。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -10613,7 +10223,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "脚本描述，长度0-50。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "create by zhangsan",
@@ -10624,7 +10233,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认关联数据库。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "database1",
@@ -10635,7 +10243,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SQL描述，长度0-10000。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "U0VMRUNUICogRlJPTSBgdGVzdGA7",
@@ -10646,7 +10253,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间戳， 单位：ms。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611646962000",
@@ -11309,7 +10915,6 @@
       "document": "spark流任务统计信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务开始时间",
           "example": "2022-05-16 00:00:00",
@@ -11320,7 +10925,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据接收器数",
           "example": "1",
@@ -11331,7 +10935,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运行中的接收器数",
           "example": "1",
@@ -11342,7 +10945,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不活跃的接收器数",
           "example": "0",
@@ -11353,7 +10955,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运行中的批数",
           "example": "1",
@@ -11364,7 +10965,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待处理的批数",
           "example": "1",
@@ -11375,7 +10975,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已完成的批数",
           "example": "1",
@@ -11386,7 +10985,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "平均输入速率",
           "example": "0.2",
@@ -11397,7 +10995,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "平均等待时长",
           "example": "1.0",
@@ -11408,7 +11005,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "平均处理时长",
           "example": "2.0",
@@ -11419,7 +11015,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "平均延时",
           "example": "3.0",
@@ -11481,7 +11076,6 @@
       "document": "SwitchDataEngine请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主集群名称",
           "example": "test",
@@ -11491,7 +11085,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启备集群",
           "example": "false",
@@ -11519,7 +11112,6 @@
       "document": "表字段描述信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "字段名称",
           "example": "无",
@@ -11530,7 +11122,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段类型",
           "example": "无",
@@ -11541,7 +11132,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段描述",
           "example": "无",
@@ -11552,7 +11142,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段默认值",
           "example": "无",
@@ -11563,7 +11152,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段是否是非空",
           "example": "无",
@@ -11580,7 +11168,6 @@
       "document": "表分区字段信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "字段名称",
           "example": "无",
@@ -11591,7 +11178,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段类型",
           "example": "无",
@@ -11602,7 +11188,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段描述",
           "example": "无",
@@ -11613,7 +11198,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分区类型",
           "example": "无",
@@ -11624,7 +11208,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分区格式",
           "example": "无",
@@ -11635,7 +11218,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分区分隔数",
           "example": "无",
@@ -11646,7 +11228,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分区转换策略",
           "example": "无",
@@ -11657,7 +11238,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略参数",
           "example": "无",
@@ -11780,7 +11360,6 @@
       "document": "返回数据表的相关信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据表配置信息。",
           "example": "无",
@@ -11791,7 +11370,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据表格式。每次入参可选如下其一的KV结构，[TextFile，CSV，Json, Parquet, ORC, AVRD]。",
           "example": "无",
@@ -11802,7 +11380,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据表列信息。",
           "example": "无",
@@ -11813,7 +11390,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据表分块信息。",
           "example": "无",
@@ -11824,7 +11400,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据存储路径。当前仅支持cos路径，格式如下：cosn://bucket-name/filepath。",
           "example": "cosn://test-bucket-1123423/csvdata/",
@@ -11957,7 +11532,6 @@
       "document": "标签对信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tagKey1",
@@ -11968,7 +11542,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tagValue1",
@@ -11985,7 +11558,6 @@
       "document": "任务类型，任务如SQL查询等。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "SQL查询任务",
           "example": "无",
@@ -11996,7 +11568,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Spark SQL查询任务",
           "example": "无",
@@ -12419,7 +11990,6 @@
       "document": "任务结果信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务唯一ID",
           "example": "fdd9c5fa21ca11eca6fb5254006c64af",
@@ -12430,7 +12000,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源名称，当前任务执行时候选中的默认数据源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "COSDataCatalog",
@@ -12441,7 +12010,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称，当前任务执行时候选中的默认数据库\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "database1",
@@ -12452,7 +12020,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前执行的SQL，一个任务包含一个SQL",
           "example": "select * from test limit 10;",
@@ -12463,7 +12030,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行任务的类型，现在分为DDL、DML、DQL",
           "example": "DDL",
@@ -12474,7 +12040,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务当前的状态，0：初始化 1：任务运行中 2：任务执行成功 -1：任务执行失败 -3：用户手动终止。只有任务执行成功的情况下，才会返回任务执行的结果",
           "example": "2",
@@ -12485,7 +12050,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扫描的数据量，单位byte",
           "example": "1024",
@@ -12496,7 +12060,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计算耗时，单位： ms",
           "example": "42",
@@ -12507,7 +12070,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务结果输出的COS桶地址",
           "example": "cosn://dlc-nj-125849872/test/DLCQueryResults/2021/09/",
@@ -12518,7 +12080,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务创建时间，时间戳",
           "example": "1632991895728",
@@ -12529,7 +12090,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务执行信息，成功时返回success，失败时返回失败原因",
           "example": "success",
@@ -12540,7 +12100,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被影响的行数",
           "example": "OK, No rows affected (0.000000 seconds)",
@@ -12551,7 +12110,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结果的schema信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -12562,7 +12120,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结果信息，反转义后，外层数组的每个元素为一行数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[[\\\"3\\\",\\\"kk\\\"],[\\\"3\\\",\\\"kk\\\"]]",
@@ -12573,7 +12130,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页信息，如果没有更多结果数据，nextToken为空",
           "example": "nextMarker=\\u0026nextKey=test/DLCQueryResults/2021/10/15/2c60388",
@@ -12584,7 +12140,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务执行进度num/100(%)",
           "example": "100",
@@ -12595,7 +12150,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务进度明细",
           "example": "[{\"jobId\":1,\"stages\":[{\"stageId\":1,\"numTasks\":3,\"numActiveTasks\"",
@@ -12606,7 +12160,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "控制台展示格式。table：表格展示 text：文本展示",
           "example": "table",
@@ -12617,7 +12170,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务耗时，单位： ms",
           "example": "1000",
@@ -12634,7 +12186,6 @@
       "document": "批量顺序执行任务集合",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务类型，SQLTask：SQL查询任务。SparkSQLTask：Spark SQL查询任务",
           "example": "SQLTask",
@@ -12645,7 +12196,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "容错策略。Proceed：前面任务出错/取消后继续执行后面的任务。Terminate：前面的任务出错/取消之后终止后面任务的执行，后面的任务全部标记为已取消。",
           "example": "Proceed",
@@ -12656,7 +12206,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "base64加密后的SQL语句，用\";\"号分隔每个SQL语句，一次最多提交50个任务。严格按照前后顺序执行",
           "example": "U0VMRUNUICogRlJPTSBgdGVzdGA7",
@@ -12667,7 +12216,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务的配置信息，当前仅支持SparkSQLTask任务。",
           "example": "无",
@@ -12678,7 +12226,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务的用户自定义参数信息",
           "example": "无",
@@ -12695,7 +12242,6 @@
       "document": "任务概览",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "正在排队的任务个数",
           "example": "1",
@@ -12706,7 +12252,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "初始化的任务个数",
           "example": "1",
@@ -12717,7 +12262,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "正在执行的任务个数",
           "example": "1",
@@ -12728,7 +12272,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前时间范围的总任务个数",
           "example": "1",
@@ -12745,7 +12288,6 @@
       "document": "文本格式",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文本类型，本参数取值为TextFile。",
           "example": "TextFile",
@@ -12756,7 +12298,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "处理文本用的正则表达式。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"(\\\"[^\\]]*\\\") (\\\"[0-9]*\\\") (-|[^ ]*)\" ",
@@ -12773,7 +12314,6 @@
       "document": "UnbindWorkGroupsFromUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "解绑的工作组Id和用户Id的关联关系",
           "example": "无",
@@ -12801,7 +12341,6 @@
       "document": "UnlockMetaData请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "锁ID",
           "example": "1",
@@ -12811,7 +12350,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源名称",
           "example": "DataLakeCatalog",
@@ -12839,7 +12377,6 @@
       "document": "UpdateRowFilter请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "行过滤策略的id，此值可以通过DescribeUserInfo或者DescribeWorkGroupInfo接口获取",
           "example": "1",
@@ -12849,7 +12386,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新的过滤策略。",
           "example": "无",
@@ -12877,7 +12413,6 @@
       "document": "绑定到同一个工作组的用户Id的集合",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "工作组Id",
           "example": "1",
@@ -12888,7 +12423,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户Id集合，和CAM侧Uin匹配",
           "example": "[\"12345678\"]",
@@ -12905,7 +12439,6 @@
       "document": "授权用户信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户Id，和子用户uin相同",
           "example": "12345678",
@@ -12916,7 +12449,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户描述信息，方便区分不同用户\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "测试用户",
@@ -12927,7 +12459,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单独给用户绑定的权限集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -12938,7 +12469,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前用户的创建者",
           "example": "Administrator",
@@ -12949,7 +12479,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间，格式如2021-07-28 16:19:32",
           "example": "2021-07-28 16:19:32",
@@ -12960,7 +12489,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联的工作组集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -12971,7 +12499,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是主账号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -12982,7 +12509,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户类型。ADMIN：管理员 COMMON：普通用户。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ADMIN",
@@ -12993,7 +12519,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户别名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "username",
@@ -13010,7 +12535,6 @@
       "document": "用户部分信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户Id，和CAM侧子用户Uin匹配",
           "example": "12345678",
@@ -13021,7 +12545,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test user",
@@ -13032,7 +12555,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前用户的创建者",
           "example": "Administrator",
@@ -13043,7 +12565,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前用户的创建时间，形如2021-07-28 16:19:32",
           "example": "2021-07-28 16:19:32",
@@ -13054,7 +12575,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户别名",
           "example": "testname",
@@ -13279,7 +12799,6 @@
       "document": "同一个用户绑定的工作组集合",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户Id，和CAM侧Uin匹配",
           "example": "“12345678”",
@@ -13290,7 +12809,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作组Id集合",
           "example": "[1,2,3]",
@@ -13307,7 +12825,6 @@
       "document": "工作组信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询到的工作组唯一Id",
           "example": "1",
@@ -13318,7 +12835,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作组名称",
           "example": "testGroup",
@@ -13329,7 +12845,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作组描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -13340,7 +12855,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作组关联的用户数量",
           "example": "0",
@@ -13351,7 +12865,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作组关联的用户集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -13362,7 +12875,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作组绑定的权限集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -13373,7 +12885,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作组的创建人",
           "example": "Administrator",
@@ -13384,7 +12895,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作组的创建时间，形如2021-07-28 16:19:32",
           "example": "2021-07-28 16:19:32",
@@ -13401,7 +12911,6 @@
       "document": "工作组部分信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "工作组唯一Id",
           "example": "1",
@@ -13412,7 +12921,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作组名称",
           "example": "group1",
@@ -13423,7 +12931,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作组描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -13434,7 +12941,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建者",
           "example": "Administrator",
@@ -13445,7 +12951,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作组创建的时间，形如2021-07-28 16:19:32",
           "example": "2021-07-28 16:19:32",

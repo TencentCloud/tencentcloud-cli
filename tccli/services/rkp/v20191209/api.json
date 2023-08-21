@@ -33,7 +33,6 @@
       "document": "设备信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "devid",
           "example": "",
@@ -44,7 +43,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "风险值",
           "example": "",
@@ -55,7 +53,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "风险详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -66,7 +63,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "概率值",
           "example": "",
@@ -83,7 +79,6 @@
       "document": "GetOpenId请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "dev临时token，通过sdk接口获取",
           "example": "",
@@ -93,7 +88,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "业务ID",
           "example": "",
@@ -103,7 +97,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "业务侧账号体系下的用户ID",
           "example": "",
@@ -113,7 +106,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "平台：0-Android， 1-iOS， 2-web",
           "example": "",
@@ -123,7 +115,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "选项",
           "example": "",
@@ -169,7 +160,6 @@
       "document": "GetToken请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "业务ID",
           "example": "",
@@ -179,7 +169,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "业务子场景",
           "example": "",
@@ -189,7 +178,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "业务侧账号体系下的用户ID",
           "example": "",
@@ -199,7 +187,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户侧的IP",
           "example": "",
@@ -209,7 +196,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期时间",
           "example": "",
@@ -219,7 +205,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上一个token",
           "example": "",
@@ -265,7 +250,6 @@
       "document": "QueryDevAndRisk请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备类型 0表示Android， 1表示IOS",
           "example": "",
@@ -275,7 +259,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Android Imei号",
           "example": "",
@@ -285,7 +268,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Mac地址",
           "example": "",
@@ -295,7 +277,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "android  Aid",
           "example": "",
@@ -305,7 +286,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Android Cid",
           "example": "",
@@ -315,7 +295,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "手机Imsi",
           "example": "",
@@ -325,7 +304,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Df 磁盘分区信息",
           "example": "",
@@ -335,7 +313,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内核版本",
           "example": "",
@@ -345,7 +322,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储大小",
           "example": "",
@@ -355,7 +331,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备驱动指纹",
           "example": "",
@@ -365,7 +340,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "启动时间",
           "example": "",
@@ -375,7 +349,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分辨率 水平*垂直 格式",
           "example": "",
@@ -385,7 +358,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "铃声列表",
           "example": "",
@@ -395,7 +367,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字体列表",
           "example": "",
@@ -405,7 +376,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "传感器列表",
           "example": "",
@@ -415,7 +385,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CPU型号",
           "example": "",
@@ -425,7 +394,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电池容量",
           "example": "",
@@ -435,7 +403,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "信通院广告ID",
           "example": "",
@@ -445,7 +412,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IOS 广告ID",
           "example": "",
@@ -455,7 +421,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IOS 应用ID",
           "example": "",
@@ -465,7 +430,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称",
           "example": "",
@@ -475,7 +439,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IOS手机型号",
           "example": "",
@@ -485,7 +448,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Android 指纹",
           "example": "",
@@ -495,7 +457,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Android序列号",
           "example": "",
@@ -550,7 +511,6 @@
       "document": "风险详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "风险码",
           "example": "",
@@ -561,7 +521,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "风险详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -578,7 +537,6 @@
       "document": "风险信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "风险码",
           "example": "",
@@ -589,7 +547,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "风险详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",

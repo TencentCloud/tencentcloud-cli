@@ -2203,7 +2203,6 @@
       "document": "AcceptAttachCcnInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
           "example": "ccn-gree226l",
@@ -2213,7 +2212,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接受关联实例列表。",
           "example": "无",
@@ -2241,11 +2239,9 @@
       "document": "AcceptVpcPeeringConnection请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "对等连接唯一ID。",
           "example": " pcx-0npfx81k",
-          "is_base64": false,
           "member": "string",
           "name": "PeeringConnectionId",
           "required": true,
@@ -2336,7 +2332,6 @@
       "document": "账户属性对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "属性名",
           "example": "",
@@ -2347,7 +2342,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "属性值",
           "example": "",
@@ -2364,7 +2358,6 @@
       "document": "AddBandwidthPackageResources请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'",
           "example": "[\"eip-pez0oibs\\r\\n\"]",
@@ -2374,7 +2367,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "带宽包唯一标识ID，形如'bwp-xxxx'",
           "example": "bwp-e40edw8y",
@@ -2384,7 +2376,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "带宽包类型，当前支持'BGP'类型，表示内部资源是BGP IP。",
           "example": "BGP",
@@ -2394,7 +2385,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源类型，包括'Address', 'LoadBalance'",
           "example": "Address",
@@ -2404,7 +2394,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "带宽包协议类型。当前支持'ipv4'和'ipv6'协议类型。",
           "example": "ipv4",
@@ -2486,7 +2475,6 @@
       "document": "AddTemplateMember请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数模板实例ID，支持IP地址、协议端口、IP地址组、协议端口组四种参数模板的实例ID。",
           "example": "ipm-test1234",
@@ -2496,7 +2484,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要添加的参数模板成员信息，支持IP地址、协议端口、IP地址组、协议端口组四种类型，类型需要与TemplateId参数类型一致。",
           "example": "无",
@@ -2750,7 +2737,6 @@
       "document": "用于描述弹性公网IP的费用对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "购买实例的时长，单位是月。可支持时长：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36",
           "example": "",
@@ -2761,7 +2747,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动续费标志。0表示手动续费，1表示自动续费，2表示到期不续费。默认缺省为0即手动续费",
           "example": "",
@@ -2778,7 +2763,6 @@
       "document": "IP地址模板信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "ip地址。",
           "example": "2.2.2.2",
@@ -2789,7 +2773,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "desc",
@@ -2806,7 +2789,6 @@
       "document": "IP地址模板",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址模板名称。",
           "example": "name",
@@ -2817,7 +2799,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址模板实例唯一ID。",
           "example": "ipm-3iv46d0c",
@@ -2828,7 +2809,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址信息。",
           "example": "[\"2.2.2.2\"]",
@@ -2839,7 +2819,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。",
           "example": "2021-03-02 14:41:15",
@@ -2850,7 +2829,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "带备注的IP地址信息。",
           "example": "无",
@@ -2867,7 +2845,6 @@
       "document": "IP地址模板集合",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址模板集合名称。",
           "example": "",
@@ -2878,7 +2855,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址模板集合实例ID，例如：ipmg-dih8xdbq。",
           "example": "",
@@ -2889,7 +2865,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址模板ID。",
           "example": "",
@@ -2900,7 +2875,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。",
           "example": "",
@@ -2911,7 +2885,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址模板实例。",
           "example": "",
@@ -3045,7 +3018,6 @@
       "document": "ALG协议类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Ftp协议Alg功能是否开启",
           "example": "",
@@ -3056,7 +3028,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Sip协议Alg功能是否开启",
           "example": "",
@@ -3626,7 +3597,6 @@
       "document": "AssociateDhcpIpWithAddressIp请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "`DhcpIp`唯一`ID`，形如：`dhcpip-9o233uri`。必须是没有绑定`EIP`的`DhcpIp`",
           "example": "dpcpip-9o233uri",
@@ -3636,7 +3606,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "弹性公网`IP`。必须是没有绑定`DhcpIp`的`EIP`",
           "example": "119.29.93.218",
@@ -3988,7 +3957,6 @@
       "document": "AttachSnapshotInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "快照策略Id。",
           "example": "sspolicy-hx8an9sr",
@@ -3998,7 +3966,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联实例信息。",
           "example": "无",
@@ -4071,7 +4038,6 @@
       "document": "时间备份策略详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "备份周期时间，取值为monday, tuesday, wednesday, thursday, friday, saturday, sunday。",
           "example": "monday",
@@ -4082,7 +4048,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份时间点，格式：HH:mm:ss。",
           "example": "3:00",
@@ -4185,7 +4150,6 @@
       "document": "后付费共享带宽包的当前计费用量",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "当前计费用量，单位为 Mbps",
           "example": "15",
@@ -4202,7 +4166,6 @@
       "document": "批量修改快照策略信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "快照策略Id。",
           "example": "sspolicy-hx8an9sr",
@@ -4213,7 +4176,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照策略名称。",
           "example": "test",
@@ -4224,7 +4186,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份策略。",
           "example": "无",
@@ -4235,7 +4196,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照保留时间，支持1～365天。",
           "example": "12",
@@ -4408,7 +4368,6 @@
       "document": "云联网（CCN）关联实例（Instance）对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "云联网实例ID。",
           "example": "ccn-31zf3vib",
@@ -4419,7 +4378,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联实例类型：\n<li>`VPC`：私有网络</li>\n<li>`DIRECTCONNECT`：专线网关</li>\n<li>`BMVPC`：黑石私有网络</li>",
           "example": "VPC",
@@ -4430,7 +4388,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联实例ID。",
           "example": "vpc-lt6ork07",
@@ -4441,7 +4398,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联实例名称。",
           "example": "test",
@@ -4452,7 +4408,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联实例所属大区，例如：ap-guangzhou。",
           "example": "ap-guangzhou",
@@ -4463,7 +4418,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联实例所属UIN（根账号）。",
           "example": "100000072292",
@@ -4474,7 +4428,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联实例CIDR。",
           "example": "10.1.0.0/16",
@@ -4485,7 +4438,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联实例状态：\n<li>`PENDING`：申请中</li>\n<li>`ACTIVE`：已连接</li>\n<li>`EXPIRED`：已过期</li>\n<li>`REJECTED`：已拒绝</li>\n<li>`DELETED`：已删除</li>\n<li>`FAILED`：失败的（2小时后将异步强制解关联）</li>\n<li>`ATTACHING`：关联中</li>\n<li>`DETACHING`：解关联中</li>\n<li>`DETACHFAILED`：解关联失败（2小时后将异步强制解关联）</li>",
           "example": "ACTIVE",
@@ -4496,7 +4448,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联时间。",
           "example": "2021-03-03 16:19:44",
@@ -4507,7 +4458,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云联网所属UIN（根账号）。",
           "example": "100000072292",
@@ -4518,7 +4468,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联实例所属的大地域，如: CHINA_MAINLAND",
           "example": " CHINA_MAINLAND",
@@ -4529,7 +4478,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "remark",
@@ -4540,7 +4488,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由表ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ccnrtb-1234edfr",
@@ -4551,7 +4498,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由表名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -4816,7 +4762,6 @@
       "document": "云联网（CCN）关联实例（Instance）对象。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "关联实例ID。",
           "example": "vpc-lt6ork07",
@@ -4827,7 +4772,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联实例ID所属大区，例如：ap-guangzhou。",
           "example": "ap-guangzhou",
@@ -4838,7 +4782,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联实例类型，可选值：\n<li>`VPC`：私有网络</li>\n<li>`DIRECTCONNECT`：专线网关</li>\n<li>`BMVPC`：黑石私有网络</li>\n<li>`VPNGW`：VPNGW类型</li>",
           "example": "VPC",
@@ -4849,7 +4792,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "remark",
@@ -4860,7 +4802,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例关联的路由表ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ccnrtb-1234edfr",
@@ -4882,7 +4823,6 @@
       "document": "云联网（CCN）地域出带宽上限",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域，例如：ap-guangzhou",
           "example": "无",
@@ -4893,7 +4833,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "出带宽上限，单位：Mbps",
           "example": "无",
@@ -4904,7 +4843,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否黑石地域，默认`false`。",
           "example": "无",
@@ -4915,7 +4853,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目的地域，例如：ap-shanghai\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4926,7 +4863,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目的地域是否为黑石地域，默认`false`。",
           "example": "无",
@@ -4979,7 +4915,6 @@
       "document": "CCN路由策略对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "路由策略ID",
           "example": "",
@@ -4990,7 +4925,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目的端",
           "example": "",
@@ -5001,7 +4935,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下一跳类型（关联实例类型），所有类型：VPC、DIRECTCONNECT",
           "example": "",
@@ -5012,7 +4945,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下一跳（关联实例）",
           "example": "",
@@ -5023,7 +4955,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下一跳名称（关联实例名称）",
           "example": "",
@@ -5034,7 +4965,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下一跳所属地域（关联实例所属地域）",
           "example": "",
@@ -5045,7 +4975,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
           "example": "",
@@ -5056,7 +4985,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由是否启用",
           "example": "",
@@ -5067,7 +4995,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联实例所属UIN（根账号）",
           "example": "",
@@ -5078,7 +5005,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由的扩展状态",
           "example": "",
@@ -5089,7 +5015,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否动态路由",
           "example": "",
@@ -5100,7 +5025,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由优先级",
           "example": "",
@@ -5111,7 +5035,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下一跳扩展名称（关联实例的扩展名称）",
           "example": "",
@@ -5308,7 +5231,6 @@
       "document": "用于发布云联网的cidr信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "local cidr值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.0.0.0/16",
@@ -5319,7 +5241,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否发布到了云联网。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "True",
@@ -5336,7 +5257,6 @@
       "document": "私有网络和基础网络互通设备",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPC实例ID",
           "example": "",
@@ -5346,7 +5266,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云服务器实例唯一ID",
           "example": "",
@@ -5434,7 +5353,6 @@
       "document": "冲突资源条目信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "冲突资源的ID",
           "example": "",
@@ -5445,7 +5363,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "冲突目的资源",
           "example": "",
@@ -5462,7 +5379,6 @@
       "document": "冲突资源信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "冲突资源ID",
           "example": "",
@@ -5473,7 +5389,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "冲突资源",
           "example": "",
@@ -5484,7 +5399,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "冲突资源条目信息",
           "example": "",
@@ -6014,7 +5928,6 @@
       "document": "CreateDefaultSecurityGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID，默认0。可在qcloud控制台项目管理页面查询到。",
           "example": "",
@@ -6159,7 +6072,6 @@
       "document": "CreateDirectConnectGatewayCcnRoutes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关ID，形如：dcg-prpqlmg1",
           "example": "",
@@ -6169,7 +6081,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要连通的IDC网段列表",
           "example": "",
@@ -6197,7 +6108,6 @@
       "document": "CreateDirectConnectGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关名称",
           "example": "test",
@@ -6207,7 +6117,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联网络类型，可选值：\n<li>VPC - 私有网络</li>\n<li>CCN - 云联网</li>",
           "example": "VPC",
@@ -6217,7 +6126,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "<li>NetworkType 为 VPC 时，这里传值为私有网络实例ID</li>\n<li>NetworkType 为 CCN 时，这里传值为云联网实例ID</li>",
           "example": "vpc-m7sr81gh",
@@ -6227,7 +6135,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关类型，可选值：\n<li>NORMAL - （默认）标准型，注：云联网只支持标准型</li>\n<li>NAT - NAT型</li>NAT类型支持网络地址转换配置，类型确定后不能修改；一个私有网络可以创建一个NAT类型的专线网关和一个非NAT类型的专线网关",
           "example": "NAT",
@@ -6237,7 +6144,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云联网路由发布模式，可选值：`standard`（标准模式）、`exquisite`（精细模式）。只有云联网类型专线网关才支持`ModeType`。",
           "example": "standard",
@@ -6247,7 +6153,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关可用区",
           "example": "ap-guangzhou-1",
@@ -6257,7 +6162,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关高可用区容灾组ID",
           "example": "ha_gourp_1",
@@ -6421,7 +6325,6 @@
       "document": "CreateHaVip请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "`HAVIP`所在私有网络`ID`。",
           "example": "vpc-6v2ht8q5",
@@ -6431,7 +6334,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "`HAVIP`所在子网`ID`。",
           "example": "subnet-qq51iwr4",
@@ -6441,7 +6343,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "`HAVIP`名称。",
           "example": "test+name",
@@ -6451,7 +6352,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定虚拟IP地址，必须在`VPC`网段内且未被占用。不指定则自动分配。",
           "example": "10.4.6.15",
@@ -6461,7 +6361,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "`HAVIP`所在弹性网卡`ID`。",
           "example": "eni-ph0075l1",
@@ -6607,7 +6506,6 @@
       "document": "CreateNatGatewayDestinationIpPortTranslationNatRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关的ID，形如：`nat-df45454`。",
           "example": "nat-3isn9hr0",
@@ -6617,7 +6515,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关的端口转换规则。",
           "example": "无",
@@ -6789,7 +6686,6 @@
       "document": "CreateNatGatewaySourceIpTranslationNatRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关的ID，形如：\"nat-df45454\"",
           "example": "nat-3isn9hr0",
@@ -6799,7 +6695,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关的SNAT转换规则",
           "example": "无",
@@ -6917,7 +6812,6 @@
       "document": "CreateNetworkAclQuintupleEntries请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网络ACL实例ID。例如：acl-12345678。",
           "example": "acl-12345678",
@@ -6927,7 +6821,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络五元组ACL规则集。",
           "example": "无",
@@ -7504,7 +7397,6 @@
       "document": "CreateSnapshotPolicies请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "快照策略详情。",
           "example": "无",
@@ -7686,7 +7578,6 @@
       "document": "CreateTrafficPackages请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "流量包规格。可选值:\n<li>10: 10GB流量，有效期一个月</li>\n<li>50: 50GB流量，有效期一个月</li>\n<li>512: 512GB流量，有效期一个月</li>\n<li>1024: 1TB流量，有效期一个月</li>\n<li>5120: 5TB流量，有效期一个月</li>\n<li>51200: 50TB流量，有效期一个月</li>\n<li>60: 60GB流量，有效期半年</li>\n<li>300: 300GB流量，有效期半年</li>\n<li>600: 600GB流量，有效期半年</li>\n<li>3072: 3TB流量，有效期半年</li>\n<li>6144: 6TB流量，有效期半年</li>\n<li>30720: 30TB流量，有效期半年</li>\n<li>61440: 60TB流量，有效期半年</li>\n<li>307200: 300TB流量，有效期半年</li>",
           "example": "10",
@@ -7696,7 +7587,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包数量，可选范围 1~20。",
           "example": "1",
@@ -8223,7 +8113,6 @@
           "disabled": false,
           "document": "VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口返回值中的VpcId获取。",
           "example": "vpc-ngenl4az",
-          "is_base64": false,
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -8233,7 +8122,6 @@
           "disabled": false,
           "document": "VPN网关名称，最大长度不能超过60个字节。",
           "example": "TEST_POSTPAID_VPNGW",
-          "is_base64": false,
           "member": "string",
           "name": "VpnGatewayName",
           "required": true,
@@ -8243,7 +8131,6 @@
           "disabled": false,
           "document": "公网带宽设置。可选带宽规格：5, 10, 20, 50, 100, 200, 500, 1000, 3000；单位：Mbps。",
           "example": "5",
-          "is_base64": false,
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
           "required": true,
@@ -8253,7 +8140,6 @@
           "disabled": false,
           "document": "VPN网关计费模式，PREPAID：表示预付费，即包年包月，POSTPAID_BY_HOUR：表示后付费，即按量计费。默认：POSTPAID_BY_HOUR，如果指定预付费模式，参数InstanceChargePrepaid必填。",
           "example": "POSTPAID_BY_HOUR",
-          "is_base64": false,
           "member": "string",
           "name": "InstanceChargeType",
           "required": false,
@@ -8263,7 +8149,6 @@
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
           "example": "无",
-          "is_base64": false,
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
@@ -8273,7 +8158,6 @@
           "disabled": false,
           "document": "可用区，如：ap-guangzhou-2。",
           "example": "ap-guangzhou",
-          "is_base64": false,
           "member": "string",
           "name": "Zone",
           "required": false,
@@ -8283,7 +8167,6 @@
           "disabled": false,
           "document": "VPN网关类型，默认为IPSEC。值“IPSEC”为VPC型IPSEC VPN网关，值“SSL”为VPC型SSL VPN网关，值“CCN”为云联网型IPSEC VPN网关，值“SSL_CCN”为云联网型SSL VPN网关。",
           "example": "CCN",
-          "is_base64": false,
           "member": "string",
           "name": "Type",
           "required": false,
@@ -8293,7 +8176,6 @@
           "disabled": false,
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
           "example": "无",
-          "is_base64": false,
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -8303,7 +8185,6 @@
           "disabled": false,
           "document": "CDC实例ID。",
           "example": "cluster-gbo27yc4",
-          "is_base64": false,
           "member": "string",
           "name": "CdcId",
           "required": false,
@@ -8313,7 +8194,6 @@
           "disabled": false,
           "document": "SSL VPN连接数设置，可选规格：5, 10, 20, 50, 100, 200, 500, 1000；单位：个。仅 SSL / SSL_CCN 类型需要选这个参数。",
           "example": "5",
-          "is_base64": false,
           "member": "uint64",
           "name": "MaxConnection",
           "required": false,
@@ -8600,7 +8480,6 @@
       "document": "合规化审批单",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "服务商，可选值：`UNICOM`。",
           "example": "无",
@@ -8611,7 +8490,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "合规化审批单`ID`。",
           "example": "无",
@@ -8622,7 +8500,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公司全称。",
           "example": "无",
@@ -8633,7 +8510,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统一社会信用代码。",
           "example": "无",
@@ -8644,7 +8520,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "法定代表人。",
           "example": "无",
@@ -8655,7 +8530,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发证机关。",
           "example": "无",
@@ -8666,7 +8540,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "营业执照。",
           "example": "无",
@@ -8677,7 +8550,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "营业执照住所。",
           "example": "无",
@@ -8688,7 +8560,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "邮编。",
           "example": "无",
@@ -8699,7 +8570,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "经办人。",
           "example": "无",
@@ -8710,7 +8580,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "经办人身份证号。",
           "example": "无",
@@ -8721,7 +8590,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "经办人身份证。",
           "example": "无",
@@ -8732,7 +8600,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "经办人身份证地址。",
           "example": "无",
@@ -8743,7 +8610,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "经办人联系电话。",
           "example": "无",
@@ -8754,7 +8620,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电子邮箱。",
           "example": "无",
@@ -8765,7 +8630,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务受理单。",
           "example": "无",
@@ -8776,7 +8640,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权函。",
           "example": "无",
@@ -8787,7 +8650,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "信息安全承诺书。",
           "example": "无",
@@ -8798,7 +8660,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务开始时间。",
           "example": "无",
@@ -8809,7 +8670,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务截止时间。",
           "example": "无",
@@ -8820,7 +8680,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态。待审批：`PENDING`，已通过：`APPROVED`，已拒绝：`DENY`。",
           "example": "无",
@@ -8831,7 +8690,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审批单创建时间。",
           "example": "无",
@@ -8894,7 +8752,6 @@
       "document": "对端网关",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户网关唯一ID",
           "example": "",
@@ -8904,7 +8761,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关名称",
           "example": "",
@@ -8914,7 +8770,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网地址",
           "example": "",
@@ -8924,7 +8779,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -8940,7 +8794,6 @@
       "document": "对端网关厂商信息对象。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台。",
           "example": "",
@@ -8950,7 +8803,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "软件版本。",
           "example": "",
@@ -8960,7 +8812,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "供应商名称。",
           "example": "",
@@ -8976,7 +8827,6 @@
       "document": "云主机实例信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPC实例ID。",
           "example": "",
@@ -8987,7 +8837,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网实例ID。",
           "example": "",
@@ -8998,7 +8847,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云主机实例ID",
           "example": "",
@@ -9009,7 +8857,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云主机名称。",
           "example": "",
@@ -9020,7 +8867,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云主机状态。",
           "example": "",
@@ -9031,7 +8877,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的CPU核数，单位：核。",
           "example": "",
@@ -9042,7 +8887,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例内存容量，单位：GB。",
           "example": "",
@@ -9053,7 +8897,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。",
           "example": "",
@@ -9064,7 +8907,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例机型。",
           "example": "",
@@ -9075,7 +8917,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例弹性网卡配额（包含主网卡）。",
           "example": "",
@@ -9086,7 +8927,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例弹性网卡内网IP配额（包含主网卡）。",
           "example": "",
@@ -9097,7 +8937,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例已绑定弹性网卡的个数（包含主网卡）。",
           "example": "",
@@ -9368,7 +9207,6 @@
       "document": "DeleteDirectConnectGatewayCcnRoutes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关ID，形如：dcg-prpqlmg1",
           "example": "dcg-prpqlmg1",
@@ -9378,7 +9216,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由ID。形如：ccnr-f49l6u0z。",
           "example": "[\"ccnr-bvipc87w\\r\\n\"]",
@@ -9406,7 +9243,6 @@
       "document": "DeleteDirectConnectGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关唯一`ID`，形如：`dcg-9o233uri`。",
           "example": "",
@@ -9470,7 +9306,6 @@
       "document": "DeleteHaVip请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "`HAVIP`唯一`ID`，形如：`havip-9o233uri`。",
           "example": "havip-9o233uri",
@@ -9570,7 +9405,6 @@
       "document": "DeleteNatGatewayDestinationIpPortTranslationNatRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关的ID，形如：`nat-df45454`。",
           "example": "nat-3isn9hr0",
@@ -9580,7 +9414,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关的端口转换规则。",
           "example": "无",
@@ -9608,7 +9441,6 @@
       "document": "DeleteNatGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关的ID，形如：`nat-df45454`。",
           "example": "nat-ig8xpno8",
@@ -9636,7 +9468,6 @@
       "document": "DeleteNatGatewaySourceIpTranslationNatRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关的ID，形如：`nat-df45454`。",
           "example": "nat-3isn9hr0",
@@ -9646,7 +9477,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关的SNAT ID列表，形如：`snat-df43254`。",
           "example": "[\"snat-3ixd0hr0\\n\"]",
@@ -9701,7 +9531,6 @@
       "document": "DeleteNetworkAclQuintupleEntries请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网络ACL实例ID。例如：acl-12345678。",
           "example": "acl-12345678",
@@ -9711,7 +9540,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络五元组ACL规则集。",
           "example": "无",
@@ -9739,7 +9567,6 @@
       "document": "DeleteNetworkAcl请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网络ACL实例ID。例如：acl-12345678。",
           "example": "acl-12345678",
@@ -9983,7 +9810,6 @@
       "document": "DeleteSnapshotPolicies请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "快照策略Id。",
           "example": "-",
@@ -10191,11 +10017,9 @@
       "document": "DeleteVpcPeeringConnection请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "对等连接唯一ID。",
           "example": "pcx-r2kt047o",
-          "is_base64": false,
           "member": "string",
           "name": "PeeringConnectionId",
           "required": true,
@@ -10283,7 +10107,6 @@
       "document": "DeleteVpnGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPN网关实例ID。",
           "example": "",
@@ -10479,33 +10302,27 @@
       "document": "DescribeAddressTemplateGroups请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "过滤条件。\n<li>address-template-group-name - String - （过滤条件）IP地址模板集合名称。</li>\n<li>address-template-group-id - String - （过滤条件）IP地址模板实集合例ID，例如：ipmg-mdunqeb6。</li>",
           "example": "无",
-          "is_base64": false,
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "1",
-          "is_base64": false,
           "member": "string",
           "name": "Offset",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
-          "is_base64": false,
           "member": "string",
           "name": "Limit",
           "required": false,
@@ -10550,33 +10367,27 @@
       "document": "DescribeAddressTemplates请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "过滤条件。\n<li>address-template-name - IP地址模板名称。</li>\n<li>address-template-id - IP地址模板实例ID，例如：ipm-mdunqeb6。</li>\n<li>address-ip - IP地址。</li>",
           "example": "无",
-          "is_base64": false,
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
-          "is_base64": false,
           "member": "string",
           "name": "Offset",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
-          "is_base64": false,
           "member": "string",
           "name": "Limit",
           "required": false,
@@ -10765,7 +10576,6 @@
       "document": "DescribeBandwidthPackageBillUsage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "后付费共享带宽包的唯一ID",
           "example": "bwp-pply3nak",
@@ -10903,7 +10713,6 @@
       "document": "DescribeBandwidthPackages请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "带宽包唯一ID列表",
           "example": "bwp-ofoubyyt",
@@ -10913,7 +10722,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每次请求的`Filters`的上限为10。参数不支持同时指定`BandwidthPackageIds`和`Filters`。详细的过滤条件如下：\n<li> bandwidth-package_id - String - 是否必填：否 - （过滤条件）按照带宽包的唯一标识ID过滤。</li>\n<li> bandwidth-package-name - String - 是否必填：否 - （过滤条件）按照 带宽包名称过滤。不支持模糊过滤。</li>\n<li> network-type - String - 是否必填：否 - （过滤条件）按照带宽包的类型过滤。类型包括'HIGH_QUALITY_BGP','BGP','SINGLEISP'和'ANYCAST'。</li>\n<li> charge-type - String - 是否必填：否 - （过滤条件）按照带宽包的计费类型过滤。计费类型包括'TOP5_POSTPAID_BY_MONTH'和'PERCENT95_POSTPAID_BY_MONTH'。</li>\n<li> resource.resource-type - String - 是否必填：否 - （过滤条件）按照带宽包资源类型过滤。资源类型包括'Address'和'LoadBalance'</li>\n<li> resource.resource-id - String - 是否必填：否 - （过滤条件）按照带宽包资源Id过滤。资源Id形如'eip-xxxx','lb-xxxx'</li>\n<li> resource.address-ip - String - 是否必填：否 - （过滤条件）按照带宽包资源Ip过滤。</li>\n<li> tag-key - String - 是否必填：否 - （过滤条件）按照标签键进行过滤。</li>\n<li> tag-value - String - 是否必填：否 - （过滤条件）按照标签值进行过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。tag-key使用具体的标签键进行替换。</li>",
           "example": "无",
@@ -10923,7 +10731,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询带宽包偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小结。",
           "example": "0",
@@ -10933,7 +10740,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询带宽包返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小结。",
           "example": "20",
@@ -11404,7 +11210,6 @@
       "document": "DescribeCrossBorderCompliance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "（精确匹配）服务商，可选值：`UNICOM`。",
           "example": "UNICOM",
@@ -11414,7 +11219,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（精确匹配）合规化审批单`ID`。",
           "example": "10002",
@@ -11424,7 +11228,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（模糊查询）公司名称。",
           "example": "腾讯科技（广州）有限公司",
@@ -11434,7 +11237,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（精确匹配）统一社会信用代码。",
           "example": "91440101327598294H",
@@ -11444,7 +11246,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（模糊查询）法定代表人。",
           "example": "张颖",
@@ -11454,7 +11255,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（模糊查询）发证机关。",
           "example": "广州市海珠区市场监督管理局",
@@ -11464,7 +11264,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（模糊查询）营业执照住所。",
           "example": "广州市海珠区新港中路397号自编72号(商业街F5-1)",
@@ -11474,7 +11273,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（精确匹配）邮编。",
           "example": "510320",
@@ -11484,7 +11282,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（模糊查询）经办人。",
           "example": "李四",
@@ -11494,7 +11291,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（精确查询）经办人身份证号。",
           "example": "360732199007108888",
@@ -11504,7 +11300,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（模糊查询）经办人身份证地址。",
           "example": "广州市海珠区新港中路8888号",
@@ -11514,7 +11309,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（精确匹配）经办人联系电话。",
           "example": "020-81167888",
@@ -11524,7 +11318,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（精确匹配）电子邮箱。",
           "example": "test@tencent.com",
@@ -11534,7 +11327,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（精确匹配）服务开始日期，如：`2020-07-28`。",
           "example": "2020-07-29",
@@ -11544,7 +11336,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（精确匹配）服务结束日期，如：`2021-07-28`。",
           "example": "2021-07-29",
@@ -11554,7 +11345,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "（精确匹配）状态。待审批：`PENDING`，通过：`APPROVED `，拒绝：`DENY`。",
           "example": "PENDING",
@@ -11564,7 +11354,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "0",
@@ -11574,7 +11363,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量",
           "example": "20",
@@ -11625,7 +11413,6 @@
           "disabled": false,
           "document": "源地域。",
           "example": "ap-guangzhou",
-          "is_base64": false,
           "member": "string",
           "name": "SourceRegion",
           "required": true,
@@ -11635,7 +11422,6 @@
           "disabled": false,
           "document": "目的地域。",
           "example": "na-siliconvalley",
-          "is_base64": false,
           "member": "string",
           "name": "DestinationRegion",
           "required": true,
@@ -11645,7 +11431,6 @@
           "disabled": false,
           "document": "云联网ID。",
           "example": "ccn-gree226l",
-          "is_base64": false,
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -11655,7 +11440,6 @@
           "disabled": false,
           "document": "云联网所属账号。",
           "example": "251223380",
-          "is_base64": false,
           "member": "string",
           "name": "CcnUin",
           "required": true,
@@ -11665,7 +11449,6 @@
           "disabled": false,
           "document": "时间粒度。单位为:秒，如60为60s的时间粒度",
           "example": "60",
-          "is_base64": false,
           "member": "int64",
           "name": "Period",
           "required": true,
@@ -11675,7 +11458,6 @@
           "disabled": false,
           "document": "开始时间。",
           "example": "2022-08-20 00:00:00",
-          "is_base64": false,
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -11685,7 +11467,6 @@
           "disabled": false,
           "document": "结束时间。",
           "example": "2022-08-20 00:10:00",
-          "is_base64": false,
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -11817,7 +11598,6 @@
       "document": "DescribeDhcpIps请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "DhcpIp实例ID。形如：dhcpip-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定DhcpIpIds和Filters。",
           "example": "[\"dhcpip-12345678\"]",
@@ -11827,7 +11607,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定DhcpIpIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。</li>\n<li>dhcpip-id - String - （过滤条件）DhcpIp实例ID，形如：dhcpip-pxir56ns。</li>\n<li>dhcpip-name - String - （过滤条件）DhcpIp实例名称。</li>\n<li>address-ip - String - （过滤条件）DhcpIp实例的IP，根据IP精确查找。</li>",
           "example": "无",
@@ -11837,7 +11616,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
@@ -11847,7 +11625,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
@@ -11895,7 +11672,6 @@
       "document": "DescribeDirectConnectGatewayCcnRoutes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关ID，形如：`dcg-prpqlmg1`。",
           "example": "dcg-prpqlmg1",
@@ -11905,7 +11681,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云联网路由学习类型，可选值：\n<li>`BGP` - 自动学习。</li>\n<li>`STATIC` - 静态，即用户配置，默认值。</li>",
           "example": "BGP",
@@ -11915,7 +11690,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量。",
           "example": "0",
@@ -11925,7 +11699,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量。",
           "example": "20",
@@ -11973,7 +11746,6 @@
       "document": "DescribeDirectConnectGateways请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关唯一`ID`，形如：`dcg-9o233uri`。",
           "example": "",
@@ -11983,7 +11755,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定`DirectConnectGatewayIds`和`Filters`。\n<li>direct-connect-gateway-id - String - 专线网关唯一`ID`，形如：`dcg-9o233uri`。</li>\n<li>direct-connect-gateway-name - String - 专线网关名称，默认模糊查询。</li>\n<li>direct-connect-gateway-ip - String - 专线网关`IP`。</li>\n<li>gateway-type - String - 网关类型，可选值：`NORMAL`（普通型）、`NAT`（NAT型）。</li>\n<li>network-type- String - 网络类型，可选值：`VPC`（私有网络类型）、`CCN`（云联网类型）。</li>\n<li>ccn-id - String - 专线网关所在云联网`ID`。</li>\n<li>vpc-id - String - 专线网关所在私有网络`ID`。</li>",
           "example": "",
@@ -11993,7 +11764,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量。",
           "example": "",
@@ -12003,7 +11773,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量。",
           "example": "",
@@ -12373,7 +12142,6 @@
       "document": "DescribeGatewayFlowQos请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网关实例ID，目前我们支持的网关实例类型有，\n专线网关实例ID，形如，`dcg-ltjahce6`；\nNat网关实例ID，形如，`nat-ltjahce6`；\nVPN网关实例ID，形如，`vpn-ltjahce6`。",
           "example": "vpngw-4je9dgin",
@@ -12383,7 +12151,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限流的云服务器内网IP。",
           "example": "10.0.0.12",
@@ -12393,7 +12160,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
@@ -12403,7 +12169,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
@@ -12868,7 +12633,6 @@
           "disabled": false,
           "document": "NAT网关ID。",
           "example": "[\"nat-3isn9hr0\\r\\n\"]",
-          "is_base64": false,
           "member": "string",
           "name": "NatGatewayIds",
           "required": false,
@@ -12878,7 +12642,6 @@
           "disabled": false,
           "document": "过滤条件:\n参数不支持同时指定NatGatewayIds和Filters。每次请求的Filters的上限为10，Filter.Values的上限为5\n<li> nat-gateway-id，NAT网关的ID，如`nat-0yi4hekt`</li>\n<li> vpc-id，私有网络VPC的ID，如`vpc-0yi4hekt`</li>\n<li> public-ip-address， 弹性IP，如`139.199.232.238`。</li>\n<li>public-port， 公网端口。</li>\n<li>private-ip-address， 内网IP，如`10.0.0.1`。</li>\n<li>private-port， 内网端口。</li>\n<li>description，规则描述。</li>",
           "example": "无",
-          "is_base64": false,
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -12888,7 +12651,6 @@
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -12898,7 +12660,6 @@
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "10",
-          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -12943,7 +12704,6 @@
       "document": "DescribeNatGatewayDirectConnectGatewayRoute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "nat的唯一标识",
           "example": "nat-2jd1e1rm",
@@ -12953,7 +12713,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "vpc的唯一标识",
           "example": "vpc-ofos1s33",
@@ -12963,7 +12722,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0到200之间",
           "example": "10",
@@ -12973,7 +12731,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "大于0",
           "example": "0",
@@ -13021,7 +12778,6 @@
       "document": "DescribeNatGatewaySourceIpTranslationNatRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关统一 ID，形如：`nat-123xx454`。",
           "example": "nat-3isn9hr0",
@@ -13031,7 +12787,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件:\n<li> resource-id，Subnet的ID或者Cvm ID，如`subnet-0yi4hekt`</li>\n<li> public-ip-address，弹性IP，如`139.199.232.238`</li>\n<li>description，规则描述。</li>",
           "example": "无",
@@ -13041,7 +12796,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
@@ -13051,7 +12805,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "10",
@@ -13102,7 +12855,6 @@
           "disabled": false,
           "document": "NAT网关统一 ID，形如：`nat-123xx454`。每次请求的实例上限为100。参数不支持同时指定NatGatewayIds和Filters。",
           "example": "[\"nat-3isn9hr0\\r\\n\",\"nat-mxkohguo\\r\\n\"]",
-          "is_base64": false,
           "member": "string",
           "name": "NatGatewayIds",
           "required": false,
@@ -13112,7 +12864,6 @@
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定NatGatewayIds和Filters。每次请求的Filters的上限为10，Filter.Values的上限为5。\n<li>nat-gateway-id - String - （过滤条件）协议端口模板实例ID，形如：`nat-123xx454`。</li>\n<li>vpc-id - String - （过滤条件）私有网络 唯一ID，形如：`vpc-123xx454`。</li>\n<li>nat-gateway-name - String - （过滤条件）协议端口模板实例ID，形如：`test_nat`。</li>\n<li>tag-key - String - （过滤条件）标签键，形如：`test-key`。</li>",
           "example": "无",
-          "is_base64": false,
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -13122,7 +12873,6 @@
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -13132,7 +12882,6 @@
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "10",
-          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -13347,7 +13096,6 @@
       "document": "DescribeNetworkAclQuintupleEntries请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网络ACL实例ID。形如：acl-12345678。",
           "example": "acl-12345678",
@@ -13357,7 +13105,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
@@ -13367,7 +13114,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最小值为1，最大值为100。",
           "example": "20",
@@ -13377,7 +13123,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定`HaVipIds`和`Filters`。\n<li>protocol - String - 协议，形如：`TCP`。</li>\n<li>description - String - 描述。</li>\n<li>destination-cidr - String - 目的CIDR， 形如：'192.168.0.0/24'。</li>\n<li>source-cidr- String - 源CIDR， 形如：'192.168.0.0/24'。</li>\n<li>action - String - 动作，形如ACCEPT或DROP。</li>\n<li>network-acl-quintuple-entry-id - String - 五元组唯一ID，形如：'acli45-ahnu4rv5'。</li>\n<li>network-acl-direction - String - 方向，形如：'INGRESS'或'EGRESS'。</li>",
           "example": "无",
@@ -13811,7 +13556,6 @@
       "document": "DescribeSecurityGroupAssociationStatistics请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "安全实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。",
           "example": "",
@@ -13874,7 +13618,6 @@
       "document": "DescribeSecurityGroupPolicies请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。",
           "example": "sg-ohuuioma",
@@ -13884,7 +13627,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件。\n<li>security-group-id - String - 规则中的安全组ID。</li>\n<li>ip - String - IP，支持IPV4和IPV6模糊匹配。</li>\n<li>address-module - String - IP地址模板或IP地址组模板ID。</li>\n<li>service-module - String - 协议端口模板或协议端口组模板ID。</li>\n<li>protocol-type - String - 安全组策略支持的协议，可选值：`TCP`, `UDP`, `ICMP`, `ICMPV6`, `GRE`, `ALL`。</li>\n<li>port - String - 是否必填：否 -协议端口，支持模糊匹配，值为`ALL`时，查询所有的端口。</li>\n<li>poly - String - 协议策略，可选值：`ALL`，所有策略；`ACCEPT`，允许；`DROP`，拒绝。</li>\n<li>direction - String - 协议规则，可选值：`ALL`，所有策略；`INBOUND`，入站规则；`OUTBOUND`，出站规则。</li>\n<li>description - String - 协议描述，该过滤条件支持模糊匹配。</li>",
           "example": "无",
@@ -13958,66 +13700,54 @@
       "document": "DescribeSecurityGroups请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "安全组实例ID，例如：sg-33ocnj9n。每次请求的实例的上限为100。参数不支持同时指定SecurityGroupIds和Filters。",
           "example": "[\"sg-33ocnj9n\"]",
-          "is_base64": false,
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
           "type": "list"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定SecurityGroupIds和Filters。\n<li>security-group-id - String - （过滤条件）安全组ID。</li>\n<li>project-id - Integer - （过滤条件）项目ID。</li>\n<li>security-group-name - String - （过滤条件）安全组名称。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 其中 tag-key 请使用具体的标签键进行替换。</li>",
           "example": "[{\"Name\": \"security-group-id\", \"Values\": [\"sg-33ocnj9n\"]}]",
-          "is_base64": false,
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
-          "is_base64": false,
           "member": "string",
           "name": "Offset",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
-          "is_base64": false,
           "member": "string",
           "name": "Limit",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "排序字段。支持：`CreatedTime` `UpdateTime`。注意：该字段没有默认值。",
           "example": "UpdateTime",
-          "is_base64": false,
           "member": "string",
           "name": "OrderField",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "排序方法。升序：`ASC`，倒序：`DESC`。默认值：`ASC`",
           "example": "DESC",
-          "is_base64": false,
           "member": "string",
           "name": "OrderDirection",
           "required": false,
@@ -14062,33 +13792,27 @@
       "document": "DescribeServiceTemplateGroups请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "过滤条件。\n<li>service-template-group-name - String - （过滤条件）协议端口模板集合名称。</li>\n<li>service-template-group-id - String - （过滤条件）协议端口模板集合实例ID，例如：ppmg-e6dy460g。</li>",
           "example": "{\"Name\":\"service-template-group-name\",\"Value\":\"TestName\"}",
-          "is_base64": false,
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
-          "is_base64": false,
           "member": "string",
           "name": "Offset",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
-          "is_base64": false,
           "member": "string",
           "name": "Limit",
           "required": false,
@@ -14133,33 +13857,27 @@
       "document": "DescribeServiceTemplates请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "过滤条件。\n<li>service-template-name - 协议端口模板名称。</li>\n<li>service-template-id - 协议端口模板实例ID，例如：ppm-e6dy460g。</li>\n<li>service-port- 协议端口。</li>",
           "example": "无",
-          "is_base64": false,
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
-          "is_base64": false,
           "member": "string",
           "name": "Offset",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
-          "is_base64": false,
           "member": "string",
           "name": "Limit",
           "required": false,
@@ -14204,7 +13922,6 @@
       "document": "DescribeSgSnapshotFileContent请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "快照策略Id。",
           "example": "sspolicy-hx8an9sr",
@@ -14214,7 +13931,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照文件Id。",
           "example": "ssfile-emtabuwu2z",
@@ -14224,7 +13940,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组Id。",
           "example": "sg-ntrgm89v",
@@ -14322,7 +14037,6 @@
       "document": "DescribeSnapshotAttachedInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "快照策略Id。",
           "example": "sspolicy-hx8an9sr",
@@ -14332,7 +14046,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件。\n支持的过滤条件如下：\n<li>instance-id：实例ID。</li>\n<li>instance-region：实例所在地域。</li>",
           "example": "无",
@@ -14342,7 +14055,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
@@ -14352,7 +14064,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大为200。",
           "example": "20",
@@ -14490,7 +14201,6 @@
       "document": "DescribeSnapshotPolicies请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "快照策略Id。",
           "example": "-",
@@ -14500,7 +14210,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定SnapshotPolicyIds和Filters。\n<li>snapshot-policy-id - String -（过滤条件）快照策略ID。</li>\n<li>snapshot-policy-name - String -（过滤条件）快照策略名称。</li>",
           "example": "无",
@@ -14510,7 +14219,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
@@ -14520,7 +14228,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大为200。",
           "example": "20",
@@ -15155,7 +14862,6 @@
           "disabled": false,
           "document": "过滤条件。不支持同时传入参数 EndPointServiceIds and Filters。\n<li> service-id - String - （过滤条件）终端节点服务唯一ID。</li>\n<li>service-name - String - （过滤条件）终端节点实例名称。</li>\n<li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-xxx。</li>\n<li>service-type - String - （过滤条件）后端PAAS服务类型，CLB,CDB,CRS，不填默认查询类型为CLB。</li>",
           "example": "无",
-          "is_base64": false,
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -15165,7 +14871,6 @@
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "无",
-          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -15175,7 +14880,6 @@
           "disabled": false,
           "document": "单页返回数量，默认为20，最大值为100。",
           "example": "无",
-          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -15185,7 +14889,6 @@
           "disabled": false,
           "document": "终端节点服务ID。不支持同时传入参数 EndPointServiceIds and Filters。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "EndPointServiceIds",
           "required": false,
@@ -15195,7 +14898,6 @@
           "disabled": false,
           "document": "<li>不支持同时传入参数 Filters 。</li> <li>列出授权给当前账号的的终端节点服务信息。可以配合EndPointServiceIds参数进行过滤，那些终端节点服务授权了该账户。</li>",
           "example": "无",
-          "is_base64": false,
           "member": "bool",
           "name": "IsListAuthorizedEndPointService",
           "required": false,
@@ -15648,7 +15350,6 @@
       "document": "DescribeVpcTaskResult请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "异步任务请求返回的RequestId。",
           "example": "481e9b6e-81d1-4859-b8cf-a673e010b388",
@@ -16147,7 +15848,6 @@
       "document": "DescribeVpnGateways请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPN网关实例ID。形如：vpngw-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpnGatewayIds和Filters。",
           "example": "",
@@ -16157,7 +15857,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定VpnGatewayIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>\n<li>vpn-gateway-id - String - （过滤条件）VPN实例ID形如：vpngw-5aluhh9t。</li>\n<li>vpn-gateway-name - String - （过滤条件）VPN实例名称。</li>\n<li>type - String - （过滤条件）VPN网关类型：'IPSEC', 'SSL'。</li>\n<li>public-ip-address- String - （过滤条件）公网IP。</li>\n<li>renew-flag - String - （过滤条件）网关续费类型，手动续费：'NOTIFY_AND_MANUAL_RENEW'、自动续费：'NOTIFY_AND_AUTO_RENEW'。</li>\n<li>zone - String - （过滤条件）VPN所在可用区，形如：ap-guangzhou-2。</li>",
           "example": "",
@@ -16167,7 +15866,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "",
@@ -16177,7 +15875,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求对象个数",
           "example": "",
@@ -16223,7 +15920,6 @@
       "document": "NAT网关的端口转发规则",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网络协议，可选值：`TCP`、`UDP`。",
           "example": "",
@@ -16234,7 +15930,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "弹性IP。",
           "example": "",
@@ -16245,7 +15940,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网端口。",
           "example": "",
@@ -16256,7 +15950,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内网地址。",
           "example": "",
@@ -16267,7 +15960,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内网端口。",
           "example": "",
@@ -16278,7 +15970,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关转发规则描述。",
           "example": "",
@@ -16295,7 +15986,6 @@
       "document": "DetachCcnInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
           "example": "ccn-gree226l",
@@ -16305,7 +15995,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要解关联网络实例列表",
           "example": "无",
@@ -16405,7 +16094,6 @@
       "document": "DetachSnapshotInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "快照策略Id。",
           "example": "sspolicy-hx8an9sr",
@@ -16415,7 +16103,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例信息。",
           "example": "无",
@@ -16443,7 +16130,6 @@
       "document": "描述 DhcpIp 信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "`DhcpIp`的`ID`，是`DhcpIp`的唯一标识。",
           "example": "",
@@ -16454,7 +16140,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "`DhcpIp`所在私有网络`ID`。",
           "example": "",
@@ -16465,7 +16150,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "`DhcpIp`所在子网`ID`。",
           "example": "",
@@ -16476,7 +16160,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "`DhcpIp`的名称。",
           "example": "",
@@ -16487,7 +16170,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址。",
           "example": "",
@@ -16498,7 +16180,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定`EIP`。",
           "example": "",
@@ -16509,7 +16190,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "`DhcpIp`关联弹性网卡`ID`。",
           "example": "",
@@ -16520,7 +16200,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被绑定的实例`ID`。",
           "example": "",
@@ -16531,7 +16210,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态：\n<li>`AVAILABLE`：运行中</li>\n<li>`UNBIND`：未绑定</li>",
           "example": "",
@@ -16542,7 +16220,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。",
           "example": "",
@@ -16559,7 +16236,6 @@
       "document": "专线网关对象。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关`ID`。",
           "example": "dcg-e6mxyyvj",
@@ -16570,7 +16246,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关名称。",
           "example": "test",
@@ -16581,7 +16256,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关关联`VPC`实例`ID`。",
           "example": "vpc-hm2okght",
@@ -16592,7 +16266,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联网络类型：\n<li>`VPC` - 私有网络</li>\n<li>`CCN` - 云联网</li>",
           "example": "CCN",
@@ -16603,7 +16276,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联网络实例`ID`：\n<li>`NetworkType`为`VPC`时，这里为私有网络实例`ID`</li>\n<li>`NetworkType`为`CCN`时，这里为云联网实例`ID`</li>",
           "example": "ccn-4rukgymd",
@@ -16614,7 +16286,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关类型：\n<li>NORMAL - 标准型，注：云联网只支持标准型</li>\n<li>NAT - NAT型</li>\nNAT类型支持网络地址转换配置，类型确定后不能修改；一个私有网络可以创建一个NAT类型的专线网关和一个非NAT类型的专线网关",
           "example": "NORMAL",
@@ -16625,7 +16296,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。",
           "example": "2020-02-01 12:00:00",
@@ -16636,7 +16306,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关IP。",
           "example": "10.212.253.59",
@@ -16647,7 +16316,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关关联`CCN`实例`ID`。",
           "example": "ccn-4rukgymd",
@@ -16658,7 +16326,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云联网路由学习类型：\n<li>`BGP` - 自动学习。</li>\n<li>`STATIC` - 静态，即用户配置。</li>",
           "example": "BGP",
@@ -16669,7 +16336,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否启用BGP。",
           "example": "true",
@@ -16680,7 +16346,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开启和关闭BGP的community属性。",
           "example": "false",
@@ -16691,7 +16356,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定的NAT网关ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NAT-TEST",
@@ -16702,7 +16366,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关是否支持VXLAN架构\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -16713,7 +16376,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云联网路由发布模式：`standard`（标准模式）、`exquisite`（精细模式）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "standard",
@@ -16724,7 +16386,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为localZone专线网关。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -16735,7 +16396,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关所在可用区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou-1",
@@ -16746,7 +16406,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关流控明细启用状态：\n0：关闭\n1：开启\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -16757,7 +16416,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开启、关闭网关流控明细时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-02-01 12:00:00",
@@ -16768,7 +16426,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否支持开启网关流控明细\n0：不支持\n1：支持\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -16779,7 +16436,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关接入网络类型：\n<li>`VXLAN` - VXLAN类型。</li>\n<li>`MPLS` - MPLS类型。</li>\n<li>`Hybrid` - Hybrid类型。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "VXLAN",
@@ -16790,7 +16446,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "跨可用区容灾专线网关的可用区列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"ap-guangzhou-1\"]",
@@ -16807,7 +16462,6 @@
       "document": "专线网关云联网路由（IDC网段）对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "路由ID。",
           "example": "dcr-xxxxxxx",
@@ -16818,7 +16472,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IDC网段。",
           "example": "192.168.1.0/24",
@@ -16829,7 +16482,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "`BGP`的`AS-Path`属性。",
           "example": "['2342', '342']",
@@ -16840,7 +16492,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "备注",
@@ -16851,7 +16502,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后更新时间",
           "example": "2021-01-01 00:00:00",
@@ -16868,7 +16518,6 @@
       "document": "IDC子网信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关ID",
           "example": "dcg-71awizmv",
@@ -16879,7 +16528,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IDC子网网段",
           "example": "99.99.99.77/32",
@@ -16932,7 +16580,6 @@
       "document": "DisableFlowLogs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "流日志Id。",
           "example": "[\"fl-7rymh5cn\"]",
@@ -16960,7 +16607,6 @@
       "document": "DisableGatewayFlowMonitor请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网关实例ID，目前我们支持的网关实例类型有，\n专线网关实例ID，形如，`dcg-ltjahce6`；\nNat网关实例ID，形如，`nat-ltjahce6`；\nVPN网关实例ID，形如，`vpn-ltjahce6`。",
           "example": "vpngw-gree226l",
@@ -16988,7 +16634,6 @@
       "document": "DisableRoutes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "路由表唯一ID。",
           "example": "rtb-9wzwlnhc",
@@ -16998,7 +16643,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由策略ID。不能和RouteItemIds同时使用，但至少输入一个。该参数取值可通过查询路由列表（[DescribeRouteTables](https://cloud.tencent.com/document/product/215/15763)）获取。",
           "example": "[\"18292\\n\",\"18293\\n\"]",
@@ -17008,7 +16652,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由策略唯一ID。不能和RouteIds同时使用，但至少输入一个。该参数取值可通过查询路由列表（[DescribeRouteTables](https://cloud.tencent.com/document/product/215/15763)）获取。",
           "example": "[\"18292\"]",
@@ -17036,7 +16679,6 @@
       "document": "DisableSnapshotPolicies请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "快照策略Id。",
           "example": "-",
@@ -17154,7 +16796,6 @@
       "document": "DisassociateDhcpIpWithAddressIp请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "`DhcpIp`唯一`ID`，形如：`dhcpip-9o233uri`。必须是已绑定`EIP`的`DhcpIp`。",
           "example": "dhcpip-9o233uri",
@@ -17182,7 +16823,6 @@
       "document": "DisassociateDirectConnectGatewayNatGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关ID。",
           "example": "vpc-xxx",
@@ -17192,7 +16832,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关ID。",
           "example": "nat-xxx",
@@ -17202,7 +16841,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
           "example": "dcg-xxx",
@@ -17230,7 +16868,6 @@
       "document": "DisassociateNatGatewayAddress请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关的ID，形如：`nat-df45454`。",
           "example": "nat-mdbjfr0y",
@@ -17240,7 +16877,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待解绑NAT网关的弹性IP数组。",
           "example": "[\"139.199.232.212\\n\"]",
@@ -17520,7 +17156,6 @@
       "document": "EnableCcnRoutes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
           "example": "ccn-gree226l",
@@ -17530,7 +17165,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CCN路由策略唯一ID。形如：ccnr-f49l6u0z。",
           "example": "[\"ccnr-bvipc87w\\r\\n\"]",
@@ -17558,7 +17192,6 @@
       "document": "EnableFlowLogs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "流日志Id。",
           "example": "[\"fl-7rymh5cn\"]",
@@ -17586,7 +17219,6 @@
       "document": "EnableGatewayFlowMonitor请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网关实例ID，目前我们支持的网关实例有，\n专线网关实例ID，形如，`dcg-ltjahce6`；\nNat网关实例ID，形如，`nat-ltjahce6`；\nVPN网关实例ID，形如，`vpn-ltjahce6`。",
           "example": "vpngw-gree226l",
@@ -17614,7 +17246,6 @@
       "document": "EnableRoutes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "路由表唯一ID。",
           "example": "rtb-9wzwlnhc",
@@ -17624,7 +17255,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由策略ID。不能和RouteItemIds同时使用，但至少输入一个。该参数取值可通过查询路由列表（[DescribeRouteTables](https://cloud.tencent.com/document/product/215/15763)）获取。",
           "example": "[\"18292\\n\",\"18293\\n\"]",
@@ -17634,7 +17264,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由策略唯一ID。不能和RouteIds同时使用，但至少输入一个。该参数取值可通过查询路由列表（[DescribeRouteTables](https://cloud.tencent.com/document/product/215/15763)）获取。",
           "example": "[\"18293\"]",
@@ -17662,7 +17291,6 @@
       "document": "EnableSnapshotPolicies请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "快照策略Id。",
           "example": "-",
@@ -18058,7 +17686,6 @@
       "document": "过滤器键值对",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "属性名称, 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
           "example": "",
@@ -18068,7 +17695,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
           "example": "",
@@ -18240,7 +17866,6 @@
       "document": "流日志存储信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "存储实例Id，当流日志存储类型为ckafka时，必填。",
           "example": "ckafka-aso1kaoq",
@@ -18251,7 +17876,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主题Id，当流日志存储类型为ckafka时，必填。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "topic-asow02oa",
@@ -18268,7 +17892,6 @@
       "document": "网关流量监控明细",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "来源`IP`。",
           "example": "",
@@ -18279,7 +17902,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入包量。",
           "example": "",
@@ -18290,7 +17912,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "出包量。",
           "example": "",
@@ -18301,7 +17922,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入流量，单位：`Byte`。",
           "example": "",
@@ -18312,7 +17932,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "出流量，单位：`Byte`。",
           "example": "",
@@ -18329,7 +17948,6 @@
       "document": "网关流控带宽信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPC实例ID。",
           "example": "",
@@ -18340,7 +17958,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云服务器内网IP。",
           "example": "",
@@ -18351,7 +17968,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流控带宽值。",
           "example": "",
@@ -18362,7 +17978,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。",
           "example": "",
@@ -18514,7 +18129,6 @@
       "document": "描述 HAVIP 信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "`HAVIP`的`ID`，是`HAVIP`的唯一标识。",
           "example": "",
@@ -18525,7 +18139,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "`HAVIP`名称。",
           "example": "",
@@ -18536,7 +18149,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "虚拟IP地址。",
           "example": "",
@@ -18547,7 +18159,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "`HAVIP`所在私有网络`ID`。",
           "example": "",
@@ -18558,7 +18169,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "`HAVIP`所在子网`ID`。",
           "example": "",
@@ -18569,7 +18179,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "`HAVIP`关联弹性网卡`ID`。",
           "example": "",
@@ -18580,7 +18189,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被绑定的实例`ID`。",
           "example": "",
@@ -18591,7 +18199,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定`EIP`。",
           "example": "",
@@ -18602,7 +18209,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态：\n<li>`AVAILABLE`：运行中</li>\n<li>`UNBIND`：未绑定</li>",
           "example": "",
@@ -18613,7 +18219,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。",
           "example": "",
@@ -18624,7 +18229,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用havip的业务标识。",
           "example": "",
@@ -18677,7 +18281,6 @@
       "document": "HaVipDisassociateAddressIp请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "`HAVIP`唯一`ID`，形如：`havip-9o233uri`。必须是已绑定`EIP`的`HAVIP`。",
           "example": "havip-9o233uri",
@@ -18705,7 +18308,6 @@
       "document": "IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC",
           "example": "3DES-CBC",
@@ -18716,7 +18318,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为MD5",
           "example": "MD5",
@@ -18727,7 +18328,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协商模式：可选值：'AGGRESSIVE', 'MAIN'，默认为MAIN",
           "example": "MAIN",
@@ -18738,7 +18338,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本端标识类型：可选值：'ADDRESS', 'FQDN'，默认为ADDRESS",
           "example": "ADDRESS",
@@ -18749,7 +18348,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对端标识类型：可选值：'ADDRESS', 'FQDN'，默认为ADDRESS",
           "example": "ADDRESS",
@@ -18760,7 +18358,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本端标识，当LocalIdentity选为ADDRESS时，LocalAddress必填。localAddress默认为vpn网关公网IP",
           "example": "1.2.3.4",
@@ -18771,7 +18368,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对端标识，当RemoteIdentity选为ADDRESS时，RemoteAddress必填",
           "example": "4.3.2.1",
@@ -18782,7 +18378,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本端标识，当LocalIdentity选为FQDN时，LocalFqdnName必填",
           "example": "LocalName",
@@ -18793,7 +18388,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对端标识，当remoteIdentity选为FQDN时，RemoteFqdnName必填",
           "example": "RemoteName",
@@ -18804,7 +18398,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，",
           "example": "GOURP1",
@@ -18815,7 +18408,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IKE SA Lifetime，单位：秒，设置IKE SA的生存周期，取值范围：60-604800",
           "example": "60",
@@ -18826,7 +18418,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IKE版本",
           "example": "1",
@@ -18843,7 +18434,6 @@
       "document": "IPSec配置，腾讯云提供IPSec安全会话设置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'SM4', 'NULL'， 默认为AES-CBC-128",
           "example": "AES-CBC-128",
@@ -18854,7 +18444,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为",
           "example": "SHA1",
@@ -18865,7 +18454,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPsec SA lifetime(s)：单位秒，取值范围：180-604800",
           "example": "180",
@@ -18876,7 +18464,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "PFS：可选值：'NULL', 'DH-GROUP1', 'DH-GROUP2', 'DH-GROUP5', 'DH-GROUP14', 'DH-GROUP24'，默认为NULL",
           "example": "NULL",
@@ -18887,7 +18474,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPsec SA lifetime(KB)：单位KB，取值范围：2560-604800",
           "example": "2560",
@@ -18939,7 +18525,6 @@
       "document": "InquiryPriceCreateVpnGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps。",
           "example": "5",
@@ -18949,7 +18534,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPN网关计费模式，PREPAID：表示预付费，即包年包月，POSTPAID_BY_HOUR：表示后付费，即按量计费。默认：POSTPAID_BY_HOUR，如果指定预付费模式，参数InstanceChargePrepaid必填。",
           "example": "PREPAID",
@@ -18959,7 +18543,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
           "example": "无",
@@ -18969,7 +18552,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SSL VPN连接数设置，可选规格：5, 10, 20, 50, 100；单位：个。",
           "example": "5",
@@ -18979,7 +18561,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询的VPN类型，支持IPSEC和SSL两种类型，为SSL类型时，MaxConnection参数必传。",
           "example": "IPSEC",
@@ -19017,7 +18598,6 @@
       "document": "InquiryPriceRenewVpnGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPN网关实例ID。",
           "example": "",
@@ -19027,7 +18607,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
           "example": "",
@@ -19063,7 +18642,6 @@
       "document": "InquiryPriceResetVpnGatewayInternetMaxBandwidth请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPN网关实例ID。",
           "example": "",
@@ -19073,7 +18651,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps。",
           "example": "",
@@ -19135,7 +18712,6 @@
       "document": "用于描述实例的统计信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例的类型",
           "example": "",
@@ -19146,7 +18722,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的个数",
           "example": "",
@@ -19163,7 +18738,6 @@
       "document": "IPV6转换规则",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6转换规则唯一ID，形如rule6-xxxxxxxx",
           "example": "",
@@ -19174,7 +18748,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6转换规则名称",
           "example": "",
@@ -19185,7 +18758,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6地址",
           "example": "",
@@ -19196,7 +18768,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6端口号",
           "example": "",
@@ -19207,7 +18778,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议类型，支持TCP/UDP",
           "example": "",
@@ -19218,7 +18788,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPV4地址",
           "example": "",
@@ -19229,7 +18798,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPV4端口号",
           "example": "",
@@ -19240,7 +18808,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转换规则状态，限于CREATING,RUNNING,DELETING,MODIFYING",
           "example": "",
@@ -19251,7 +18818,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转换规则创建时间",
           "example": "",
@@ -19268,7 +18834,6 @@
       "document": "IPV6转换规则",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6端口号，可在0~65535范围取值",
           "example": "",
@@ -19279,7 +18844,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议类型，支持TCP/UDP",
           "example": "",
@@ -19290,7 +18854,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPV4地址",
           "example": "",
@@ -19301,7 +18864,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPV4端口号，可在0~65535范围取值",
           "example": "",
@@ -19318,7 +18880,6 @@
       "document": "IPV6转换实例信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6转换实例唯一ID，形如ip6-xxxxxxxx",
           "example": "",
@@ -19329,7 +18890,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6转换实例名称",
           "example": "",
@@ -19340,7 +18900,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6地址",
           "example": "",
@@ -19351,7 +18910,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6转换地址所属运营商",
           "example": "",
@@ -19362,7 +18920,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转换实例状态，限于CREATING,RUNNING,DELETING,MODIFYING",
           "example": "",
@@ -19373,7 +18930,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6转换实例创建时间",
           "example": "",
@@ -19384,7 +18940,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定的IPV6转换规则数量",
           "example": "",
@@ -19395,7 +18950,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPV6转换规则信息",
           "example": "",
@@ -19412,7 +18966,6 @@
       "document": "占用ip的资源信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPC实例ID。",
           "example": "vpc-mcqaoy0f",
@@ -19423,7 +18976,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网实例ID。",
           "example": "subnet-j4oluywm",
@@ -19434,7 +18986,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址。",
           "example": "172.16.0.16",
@@ -19445,7 +18996,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源类型",
           "example": "ENI",
@@ -19456,7 +19006,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "example": "eni-bjekqff1",
@@ -19473,7 +19022,6 @@
       "document": "IP在线查询的字段信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "国家字段信息",
           "example": "",
@@ -19484,7 +19032,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "省、州、郡一级行政区域字段信息",
           "example": "",
@@ -19495,7 +19042,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "市一级行政区域字段信息",
           "example": "",
@@ -19506,7 +19052,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "市内区域字段信息",
           "example": "",
@@ -19517,7 +19062,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接入运营商字段信息",
           "example": "",
@@ -19528,7 +19072,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "骨干运营商字段信息",
           "example": "",
@@ -19539,7 +19082,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "骨干As号",
           "example": "",
@@ -19550,7 +19092,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "注释字段",
           "example": "",
@@ -19567,7 +19108,6 @@
       "document": "IP地理位置信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "国家信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -19578,7 +19118,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "省、州、郡一级行政区域信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -19589,7 +19128,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "市一级行政区域信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -19600,7 +19138,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "市内区域信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -19611,7 +19148,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接入运营商信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -19622,7 +19158,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "骨干运营商名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -19633,7 +19168,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "骨干运营商AS号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -19644,7 +19178,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "注释信息。目前的填充值为移动接入用户的APN值，如无APN属性则为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -19655,7 +19188,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -19672,7 +19204,6 @@
       "document": "`IPv6`地址信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "`IPv6`地址，形如：`3402:4e00:20:100:0:8cd9:2a67:71f3`",
           "example": "",
@@ -19683,7 +19214,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "False",
           "disabled": false,
           "document": "是否是主`IP`。",
           "example": "",
@@ -19694,7 +19224,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "`EIP`实例`ID`，形如：`eip-hxlqja90`。",
           "example": "",
@@ -19705,7 +19234,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述信息。",
           "example": "",
@@ -19716,7 +19244,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网IP是否被封堵。",
           "example": "",
@@ -19727,7 +19254,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "`IPv6`地址状态：\n<li>`PENDING`：生产中</li>\n<li>`MIGRATING`：迁移中</li>\n<li>`DELETING`：删除中</li>\n<li>`AVAILABLE`：可用的</li>",
           "example": "",
@@ -19770,7 +19296,6 @@
       "document": "单项计费价格信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "按量计费后付费单价，单位：元。",
           "example": "",
@@ -19780,7 +19305,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按量计费后付费计价单元，可取值范围： HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）： GB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。",
           "example": "",
@@ -19790,7 +19314,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预付费商品的原价，单位：元。",
           "example": "",
@@ -19800,7 +19323,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预付费商品的折扣价，单位：元。",
           "example": "",
@@ -19816,7 +19338,6 @@
       "document": "本地网关信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "CDC实例ID",
           "example": "cluster-gbo27yc4",
@@ -19827,7 +19348,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC实例ID",
           "example": "vpc-m0c2kcun",
@@ -19838,7 +19358,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本地网关实例ID",
           "example": "lgw-1234erty",
@@ -19849,7 +19368,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本地网关名称",
           "example": "test",
@@ -19860,7 +19378,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本地网关IP地址",
           "example": "192.168.15.55",
@@ -19871,7 +19388,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本地网关创建时间",
           "example": "2021-03-24 15:31:56",
@@ -19932,7 +19448,6 @@
       "document": "模板对象成员信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模板对象成员",
           "example": "ipm-test1234",
@@ -19943,7 +19458,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板对象成员描述信息",
           "example": "test",
@@ -20374,7 +19888,6 @@
       "document": "ModifyBandwidthPackageAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "带宽包唯一标识ID",
           "example": "bwp-e40edw8y",
@@ -20384,7 +19897,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "带宽包名称",
           "example": "test",
@@ -20394,7 +19906,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "带宽包计费模式，示例 ：\n'TOP5_POSTPAID_BY_MONTH'（后付费-TOP5计费）",
           "example": "TOP5_POSTPAID_BY_MONTH",
@@ -20422,7 +19933,6 @@
       "document": "ModifyCcnAttachedInstancesAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
           "example": "ccn-gree226l",
@@ -20432,7 +19942,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联网络实例列表",
           "example": "无",
@@ -20460,7 +19969,6 @@
       "document": "ModifyCcnAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
           "example": "ccn-gjug0kul",
@@ -20470,7 +19978,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CCN名称，最大长度不能超过60个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。",
           "example": "new+name",
@@ -20480,7 +19987,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CCN描述信息，最大长度不能超过100个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。",
           "example": "test",
@@ -20580,7 +20086,6 @@
       "document": "ModifyDhcpIpAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "`DhcpIp`唯一`ID`，形如：`dhcpip-9o233uri`。",
           "example": "dhcpip-9o233uri",
@@ -20590,7 +20095,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "`DhcpIp`名称，可任意命名，但不得超过60个字符。",
           "example": "new name",
@@ -20618,7 +20122,6 @@
       "document": "ModifyDirectConnectGatewayAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关唯一`ID`，形如：`dcg-9o233uri`。",
           "example": "",
@@ -20628,7 +20131,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关名称，可任意命名，但不得超过60个字符。",
           "example": "",
@@ -20638,7 +20140,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云联网路由学习类型，可选值：`BGP`（自动学习）、`STATIC`（静态，即用户配置）。只有云联网类型专线网关且开启了BGP功能才支持修改`CcnRouteType`。",
           "example": "",
@@ -20648,7 +20149,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云联网路由发布模式，可选值：`standard`（标准模式）、`exquisite`（精细模式）。只有云联网类型专线网关才支持修改`ModeType`。",
           "example": "",
@@ -20730,7 +20230,6 @@
       "document": "ModifyGatewayFlowQos请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网关实例ID，目前我们支持的网关实例类型有，\n专线网关实例ID，形如，`dcg-ltjahce6`；\nNat网关实例ID，形如，`nat-ltjahce6`；\nVPN网关实例ID，形如，`vpn-ltjahce6`。",
           "example": "vpngw-gree226l",
@@ -20740,7 +20239,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流控带宽值。取值大于0，表示限流到指定的Mbps；取值等于0，表示完全限流；取值为-1，不限流。",
           "example": "10",
@@ -20750,7 +20248,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限流的云服务器内网IP。",
           "example": "10.0.0.2",
@@ -21120,7 +20617,6 @@
       "document": "ModifyNatGatewayDestinationIpPortTranslationNatRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关的ID，形如：`nat-df45454`。",
           "example": "nat-3isn9hr0",
@@ -21130,7 +20626,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源NAT网关的端口转换规则。",
           "example": "无",
@@ -21140,7 +20635,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目的NAT网关的端口转换规则。",
           "example": "无",
@@ -21168,7 +20662,6 @@
       "document": "ModifyNatGatewaySourceIpTranslationNatRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关的ID，形如：`nat-df453454`。",
           "example": "nat-3isn9hr0",
@@ -21178,7 +20671,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关的SNAT转换规则。",
           "example": "无",
@@ -21278,7 +20770,6 @@
       "document": "ModifyNetworkAclAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网络ACL实例ID。例如：acl-12345678。",
           "example": "acl-12345678",
@@ -21288,7 +20779,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络ACL名称，最大长度不能超过60个字节。",
           "example": "test modify",
@@ -21361,7 +20851,6 @@
       "document": "ModifyNetworkAclQuintupleEntries请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网络ACL实例ID。例如：acl-12345678。",
           "example": "acl-12345678",
@@ -21371,7 +20860,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络五元组ACL规则集。",
           "example": "无",
@@ -21768,7 +21256,6 @@
       "document": "ModifySnapshotPolicies请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "快照策略修改信息。",
           "example": "无",
@@ -21841,7 +21328,6 @@
       "document": "ModifyTemplateMember请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数模板实例ID，支持IP地址、协议端口、IP地址组、协议端口组四种参数模板的实例ID。",
           "example": "ipm-test1234",
@@ -21851,7 +21337,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要修改的参数模板成员信息，支持IP地址、协议端口、IP地址组、协议端口组四种类型，类型需要与TemplateId参数类型一致，修改顺序与TemplateMember参数顺序一一对应，入参长度需要与TemplateMember参数保持一致。",
           "example": "无",
@@ -21861,7 +21346,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新的参数模板成员信息，支持IP地址、协议端口、IP地址组、协议端口组四种类型，类型需要与TemplateId参数类型一致，修改顺序与OriginalTemplateMember参数顺序一一对应，入参长度需要与OriginalTemplateMember参数保持一致。",
           "example": "无",
@@ -22006,7 +21490,6 @@
       "document": "ModifyVpcEndPointServiceAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "终端节点服务ID。",
           "example": "vpces-hhth8n9j",
@@ -22016,7 +21499,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPCID。",
           "example": "vpc-a2oj00df",
@@ -22026,7 +21508,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "终端节点服务名称。",
           "example": "测试",
@@ -22036,7 +21517,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否自动接受终端节点的连接请求。<ui><li>true：自动接受<li>false：不自动接受</ul>",
           "example": "False",
@@ -22046,7 +21526,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "后端服务的ID，比如lb-xxx。",
           "example": "lb-75d88uw8",
@@ -22406,7 +21885,6 @@
       "document": "查询nat路由的返回路由对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "子网的 `IPv4` `CIDR`",
           "example": "99.99.99.77/32",
@@ -22417,7 +21895,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下一跳网关的类型，目前此接口支持的类型有：\nDIRECTCONNECT：专线网关",
           "example": "DIRECTCONNECT",
@@ -22428,7 +21905,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下一跳网关ID",
           "example": "dcg-71awizmv",
@@ -22439,7 +21915,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由的创建时间",
           "example": "2021-08-23 19:38:31",
@@ -22450,7 +21925,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由的更新时间",
           "example": "021-08-23 19:38:31",
@@ -22673,7 +22147,6 @@
       "document": "NAT网关绑定的弹性IP",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "弹性公网IP（EIP）的唯一 ID，形如：`eip-11112222`。",
           "example": "eip-11112222",
@@ -22684,7 +22157,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "外网IP地址，形如：`123.121.34.33`。",
           "example": "123.121.34.3",
@@ -22695,7 +22167,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源封堵状态。true表示弹性ip处于封堵状态，false表示弹性ip处于未封堵状态。",
           "example": "true",
@@ -22712,7 +22183,6 @@
       "document": "NAT网关的端口转发规则",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网络协议，可选值：`TCP`、`UDP`。",
           "example": "",
@@ -22723,7 +22193,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "弹性IP。",
           "example": "",
@@ -22734,7 +22203,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网端口。",
           "example": "",
@@ -22745,7 +22213,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内网地址。",
           "example": "",
@@ -22756,7 +22223,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内网端口。",
           "example": "",
@@ -22767,7 +22233,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关转发规则描述。",
           "example": "",
@@ -22778,7 +22243,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关的ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -22789,7 +22253,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络VPC的ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -22800,7 +22263,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关转发规则创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -22953,7 +22415,6 @@
       "document": "网络探测目的IP的验证结果。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "探测目的IPv4地址。",
           "example": "",
@@ -22964,7 +22425,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "探测结果。\n0：成功；\n-1：查询不到路由丢包；\n-2：外出ACL丢包；\n-3：IN ACL丢包；\n-4：其他错误；",
           "example": "",
@@ -22975,7 +22435,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时延，单位毫秒",
           "example": "",
@@ -22986,7 +22445,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "丢包率",
           "example": "",
@@ -23003,7 +22461,6 @@
       "document": "网络探测验证结果。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网络探测实例ID。形如：netd-12345678。",
           "example": "",
@@ -23014,7 +22471,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络探测目的IP验证结果对象数组。",
           "example": "",
@@ -23031,7 +22487,6 @@
       "document": "网络ACL",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "`VPC`实例`ID`。",
           "example": "vpc-q26u781x",
@@ -23042,7 +22497,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络ACL实例`ID`。",
           "example": "acl-fy0ys38q",
@@ -23053,7 +22507,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络ACL名称，最大长度为60。",
           "example": "test",
@@ -23064,7 +22517,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。",
           "example": "2021-03-22 20:59:55",
@@ -23075,7 +22527,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络ACL关联的子网数组。",
           "example": "无",
@@ -23086,7 +22537,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络ACl入站规则。",
           "example": "无",
@@ -23097,7 +22547,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络ACL出站规则。",
           "example": "无",
@@ -23108,7 +22557,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络ACL类型。三元组：'TRIPLE'   五元组：'QUINTUPLE'",
           "example": "TRIPLE",
@@ -23119,7 +22567,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签键值对",
           "example": "无",
@@ -23136,7 +22583,6 @@
       "document": "网络ACL规则。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间。",
           "example": "",
@@ -23147,7 +22593,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议, 取值: TCP,UDP, ICMP, ALL。",
           "example": "",
@@ -23158,7 +22603,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。",
           "example": "",
@@ -23169,7 +22613,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网段或IP(互斥)。",
           "example": "",
@@ -23180,7 +22623,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网段或IPv6(互斥)。",
           "example": "",
@@ -23191,7 +22633,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ACCEPT 或 DROP。",
           "example": "",
@@ -23202,7 +22643,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则描述，最大长度100。",
           "example": "",
@@ -23219,7 +22659,6 @@
       "document": "网络ACL规则集合",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "入站规则。",
           "example": "",
@@ -23230,7 +22669,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "出站规则。",
           "example": "",
@@ -23247,7 +22685,6 @@
       "document": "网络ACL五元组",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网络ACL五元组入站规则。",
           "example": "[{ 'SourcePort':'446', 'SourceCidr': '10.0.0.2/24', 'Protocol': ",
@@ -23258,7 +22695,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络ACL五元组出站规则",
           "example": "[{ 'SourcePort':'446', 'SourceCidr': '10.0.0.2/24', 'Protocol': ",
@@ -23275,7 +22711,6 @@
       "document": "网络ACL五元组Entry",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "协议, 取值: TCP,UDP, ICMP, ALL。",
           "example": "UDP",
@@ -23286,7 +22721,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述。",
           "example": "TEST",
@@ -23297,7 +22731,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。",
           "example": "446",
@@ -23308,7 +22741,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源CIDR。",
           "example": "192.168.0.0/24",
@@ -23319,7 +22751,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目的端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。",
           "example": "446",
@@ -23330,7 +22761,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目的CIDR。",
           "example": "192.168.0.0/24",
@@ -23341,7 +22771,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动作，ACCEPT 或 DROP。",
           "example": "ACCEPT",
@@ -23352,7 +22781,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络ACL条目唯一ID。",
           "example": "acli45-ahnu4rv5",
@@ -23363,7 +22791,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "优先级，从1开始。",
           "example": "1",
@@ -23374,7 +22801,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间，用于DescribeNetworkAclQuintupleEntries的出参。",
           "example": "2021-03-02 14:41:15",
@@ -23385,7 +22811,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "方向，INGRESS或EGRESS，用于DescribeNetworkAclQuintupleEntries的出参。",
           "example": "INGRESS",
@@ -23618,7 +23043,6 @@
       "document": "弹性网卡绑定关系",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "云主机实例ID。",
           "example": "",
@@ -23629,7 +23053,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网卡在云主机实例内的序号。",
           "example": "",
@@ -23640,7 +23063,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云主机所有者账户信息。",
           "example": "",
@@ -23651,7 +23073,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定时间。",
           "example": "",
@@ -23668,7 +23089,6 @@
       "document": "NotifyRoutes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "路由表唯一ID。",
           "example": "rtb-9wzwlnhc",
@@ -23678,7 +23098,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由策略唯一ID。",
           "example": "[\"rti-i8bap903\\n\"]",
@@ -23818,7 +23237,6 @@
       "document": "描述网络中心每个产品的配额信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品配额ID",
           "example": "",
@@ -23829,7 +23247,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品配额名称",
           "example": "",
@@ -23840,7 +23257,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品当前配额",
           "example": "",
@@ -23851,7 +23267,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品配额上限",
           "example": "",
@@ -23862,7 +23277,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品配额是否有地域属性",
           "example": "",
@@ -23879,7 +23293,6 @@
       "document": "描述配额信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "配额名称，取值范围：<br><li>`TOTAL_EIP_QUOTA`：用户当前地域下EIP的配额数；<br><li>`DAILY_EIP_APPLY`：用户当前地域下今日申购次数；<br><li>`DAILY_PUBLIC_IP_ASSIGN`：用户当前地域下，重新分配公网 IP次数。",
           "example": "",
@@ -23890,7 +23303,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前数量",
           "example": "",
@@ -23901,7 +23313,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配额数量",
           "example": "",
@@ -23918,7 +23329,6 @@
       "document": "安全组被引用信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "安全组实例ID。",
           "example": "",
@@ -23929,7 +23339,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "引用安全组实例ID（SecurityGroupId）的所有安全组实例ID。",
           "example": "",
@@ -23946,7 +23355,6 @@
       "document": "RefreshDirectConnectGatewayRouteToNatGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "vpc的ID",
           "example": "vpc-3m6kvgrx",
@@ -23956,7 +23364,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关ID",
           "example": "nat-2jd1e1rm",
@@ -23966,7 +23373,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是预刷新；True:是， False:否",
           "example": "True",
@@ -24004,7 +23410,6 @@
       "document": "RejectAttachCcnInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
           "example": "ccn-gree226l",
@@ -24014,7 +23419,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "拒绝关联实例列表。",
           "example": "无",
@@ -24140,7 +23544,6 @@
       "document": "RemoveBandwidthPackageResources请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "带宽包唯一标识ID，形如'bwp-xxxx'",
           "example": "bwp-pr0xbnvw",
@@ -24150,7 +23553,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源类型，包括‘Address’, ‘LoadBalance’",
           "example": "Address",
@@ -24160,7 +23562,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID，可支持资源形如'eip-xxxx', 'lb-xxxx'",
           "example": "[\"eip-alfxy9c8\\r\\n\"]",
@@ -24260,7 +23661,6 @@
       "document": "RenewVpnGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPN网关实例ID。",
           "example": "",
@@ -24270,7 +23670,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预付费计费模式。",
           "example": "",
@@ -24298,7 +23697,6 @@
       "document": "ReplaceDirectConnectGatewayCcnRoutes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关ID，形如：dcg-prpqlmg1",
           "example": "",
@@ -24308,7 +23706,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要连通的IDC网段列表",
           "example": "",
@@ -24516,7 +23913,6 @@
       "document": "ResetAttachCcnInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
           "example": "ccn-gree226l",
@@ -24526,7 +23922,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CCN所属UIN（根账号）。",
           "example": "979137",
@@ -24536,7 +23931,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "重新申请关联网络实例列表。",
           "example": "无",
@@ -24564,7 +23958,6 @@
       "document": "ResetNatGatewayConnection请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关ID。",
           "example": "nat-ig8xpno8",
@@ -24574,7 +23967,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关并发连接上限，形如：1000000、3000000、10000000。",
           "example": "3000000",
@@ -24719,7 +24111,6 @@
       "document": "描述带宽包资源信息的结构",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "带宽包资源类型，包括'Address'和'LoadBalance'",
           "example": "Address",
@@ -24730,7 +24121,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "带宽包资源Id，形如'eip-xxxx', 'lb-xxxx'",
           "example": "eip-d97psd1o",
@@ -24741,7 +24131,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "带宽包资源Ip",
           "example": "139.199.XX.XX",
@@ -24758,7 +24147,6 @@
       "document": "VPC资源看板（各资源个数）",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Vpc实例ID，例如：vpc-bq4bzxpj。",
           "example": "vpc-bq4bzxpj",
@@ -24769,7 +24157,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网实例ID，例如：subnet-bthucmmy。",
           "example": "subnet-bthucmmy",
@@ -24780,7 +24167,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "基础网络互通。",
           "example": "0",
@@ -24791,7 +24177,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关。",
           "example": "1",
@@ -24802,7 +24187,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对等连接。",
           "example": "0",
@@ -24813,7 +24197,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计当前除云服务器 IP、弹性网卡IP和网络探测IP以外的所有已使用的IP总数。云服务器 IP、弹性网卡IP和网络探测IP单独计数。",
           "example": "0",
@@ -24824,7 +24207,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关。",
           "example": "1",
@@ -24835,7 +24217,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPN网关。",
           "example": "0",
@@ -24846,7 +24227,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流日志。",
           "example": "0",
@@ -24857,7 +24237,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络探测。",
           "example": "0",
@@ -24868,7 +24247,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络ACL。",
           "example": "0",
@@ -24879,7 +24257,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云主机。",
           "example": "2",
@@ -24890,7 +24267,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡。",
           "example": "0",
@@ -24901,7 +24277,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关系型数据库。",
           "example": "0",
@@ -24912,7 +24287,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云数据库 TencentDB for Memcached。",
           "example": "0",
@@ -24923,7 +24297,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时序数据库。",
           "example": "0",
@@ -24934,7 +24307,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库 TencentDB for MariaDB（TDSQL）。",
           "example": "0",
@@ -24945,7 +24317,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库 TencentDB for SQL Server。",
           "example": "0",
@@ -24956,7 +24327,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云数据库 TencentDB for PostgreSQL。",
           "example": "0",
@@ -24967,7 +24337,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络附加存储。",
           "example": "0",
@@ -24978,7 +24347,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Snova云数据仓库。",
           "example": "0",
@@ -24989,7 +24357,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息队列 CKAFKA。",
           "example": "0",
@@ -25000,7 +24367,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Grocery。",
           "example": "0",
@@ -25011,7 +24377,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据加密服务。",
           "example": "0",
@@ -25022,7 +24387,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "游戏存储 Tcaplus。",
           "example": "0",
@@ -25033,7 +24397,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cnas。",
           "example": "0",
@@ -25044,7 +24407,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "HTAP 数据库 TiDB。",
           "example": "0",
@@ -25055,7 +24417,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EMR 集群。",
           "example": "0",
@@ -25066,7 +24427,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SEAL。",
           "example": "0",
@@ -25077,7 +24437,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件存储 CFS。",
           "example": "0",
@@ -25088,7 +24447,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Oracle。",
           "example": "0",
@@ -25099,7 +24457,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ElasticSearch服务。",
           "example": "0",
@@ -25110,7 +24467,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "区块链服务。",
           "example": "0",
@@ -25121,7 +24477,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Itop。",
           "example": "0",
@@ -25132,7 +24487,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云数据库审计。",
           "example": "0",
@@ -25143,7 +24497,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企业级云数据库 CynosDB for Postgres。",
           "example": "0",
@@ -25154,7 +24507,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库 TencentDB for Redis。",
           "example": "0",
@@ -25165,7 +24517,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库 TencentDB for MongoDB。",
           "example": "0",
@@ -25176,7 +24527,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分布式数据库 TencentDB for TDSQL。",
           "example": "0",
@@ -25187,7 +24537,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企业级云数据库 CynosDB for MySQL。",
           "example": "0",
@@ -25198,7 +24547,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网。",
           "example": "1",
@@ -25209,7 +24557,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由表。",
           "example": "1",
@@ -25226,7 +24573,6 @@
       "document": "资源统计信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Vpc实例ID，例如：vpc-f1xjkw1b。",
           "example": "",
@@ -25237,7 +24583,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网实例ID，例如：subnet-bthucmmy。",
           "example": "",
@@ -25248,7 +24593,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前已使用的IP总数。",
           "example": "",
@@ -25259,7 +24603,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源统计信息。",
           "example": "",
@@ -25276,7 +24619,6 @@
       "document": "资源统计项。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源类型。比如，CVM，ENI等。",
           "example": "",
@@ -25287,7 +24629,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源名称。",
           "example": "",
@@ -25298,7 +24639,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源个数。",
           "example": "",
@@ -25315,7 +24655,6 @@
       "document": "ResumeSnapshotInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "快照策略Id。",
           "example": "sspolicy-hx8an9sr",
@@ -25325,7 +24664,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照文件Id。",
           "example": "ssfile-emtabuwu2z",
@@ -25335,7 +24673,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例Id。",
           "example": "sg-ntrgm89v",
@@ -25516,7 +24853,6 @@
       "document": "路由冲突对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "路由表实例ID，例如：rtb-azd4dt1c。",
           "example": "",
@@ -25527,7 +24863,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要检查的与之冲突的目的端",
           "example": "",
@@ -25538,7 +24873,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "冲突的路由策略列表",
           "example": "",
@@ -25555,7 +24889,6 @@
       "document": "路由表对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPC实例ID。",
           "example": "vpc-m0c2kcun",
@@ -25566,7 +24899,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由表实例ID，例如：rtb-azd4dt1c。",
           "example": "rtb-32kbqgtm",
@@ -25577,7 +24909,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由表名称。",
           "example": "ruby",
@@ -25588,7 +24919,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由表关联关系。",
           "example": "10.0.0.0/16",
@@ -25599,7 +24929,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPv4路由策略集合。",
           "example": "-",
@@ -25610,7 +24939,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否默认路由表。",
           "example": "True",
@@ -25621,7 +24949,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。",
           "example": "2010-11-21",
@@ -25632,7 +24959,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签键值对。",
           "example": "-",
@@ -25643,7 +24969,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "local路由是否发布云联网。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
@@ -25660,7 +24985,6 @@
       "document": "路由表关联关系",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "子网实例ID。",
           "example": "",
@@ -25670,7 +24994,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由表实例ID。",
           "example": "",
@@ -25686,7 +25009,6 @@
       "document": "安全组对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "安全组实例ID，例如：sg-ohuuioma。",
           "example": "sg-05bb4upy",
@@ -25697,7 +25019,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组名称，可任意命名，但不得超过60个字符。",
           "example": "TestGroup",
@@ -25708,7 +25029,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组备注，最多100个字符。",
           "example": "test-group-desc",
@@ -25719,7 +25039,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目id，默认0。可在qcloud控制台项目管理页面查询到。",
           "example": "0",
@@ -25730,7 +25049,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是默认安全组，默认安全组不支持删除。",
           "example": "false",
@@ -25741,7 +25059,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组创建时间。",
           "example": "2017-04-18 21:02:30",
@@ -25752,7 +25069,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签键值对。",
           "example": "[{\"Key\": \"Version\", \"Value\": \"TEST\"}]",
@@ -25763,7 +25079,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2017-04-18 21:02:30",
@@ -25780,7 +25095,6 @@
       "document": "安全组关联的实例统计",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "安全组实例ID。",
           "example": "",
@@ -25791,7 +25105,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云服务器实例数。",
           "example": "",
@@ -25802,7 +25115,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "MySQL数据库实例数。",
           "example": "",
@@ -25813,7 +25125,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "弹性网卡实例数。",
           "example": "",
@@ -25824,7 +25135,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被安全组引用数。",
           "example": "",
@@ -25835,7 +25145,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡实例数。",
           "example": "",
@@ -25846,7 +25155,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "全量实例的绑定统计。",
           "example": "",
@@ -25857,7 +25165,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所有资源的总计数（不包含被安全组引用数）。",
           "example": "",
@@ -26112,7 +25419,6 @@
       "document": "SecurityPolicyDatabase策略",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "本端网段",
           "example": "",
@@ -26122,7 +25428,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对端网段",
           "example": "",
@@ -26138,7 +25443,6 @@
       "document": "协议端口模板",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "协议端口实例ID，例如：ppm-f5n1f8da。",
           "example": "ppm-f5n1f8da",
@@ -26149,7 +25453,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板名称。",
           "example": "name",
@@ -26160,7 +25463,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议端口信息。",
           "example": "[\"tcp:80\"]",
@@ -26171,7 +25473,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。",
           "example": "2021-03-02 14:41:15",
@@ -26182,7 +25483,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "带备注的协议端口信息。",
           "example": "无",
@@ -26199,7 +25499,6 @@
       "document": "协议端口模板集合",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "协议端口模板集合实例ID，例如：ppmg-2klmrefu。",
           "example": "",
@@ -26210,7 +25509,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议端口模板集合名称。",
           "example": "",
@@ -26221,7 +25519,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议端口模板实例ID。",
           "example": "",
@@ -26232,7 +25529,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。",
           "example": "",
@@ -26243,7 +25539,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议端口模板实例信息。",
           "example": "",
@@ -26286,7 +25581,6 @@
       "document": "协议端口模板信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "协议端口。",
           "example": "tcp:80",
@@ -26297,7 +25591,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "desc",
@@ -26404,7 +25697,6 @@
       "document": "快照文件信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "快照策略Id。",
           "example": "sspolicy-hx8an9sr",
@@ -26415,7 +25707,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例Id。",
           "example": "sg-qwmk1q",
@@ -26426,7 +25717,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照文件Id。",
           "example": "ssfile-rnhdyl67",
@@ -26437,7 +25727,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份时间。",
           "example": "2021-03-02 14:41:15",
@@ -26448,7 +25737,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作者Uin。",
           "example": "123445567",
@@ -26465,7 +25753,6 @@
       "document": "快照策略关联实例信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例Id。",
           "example": "sg-123zsda",
@@ -26476,7 +25763,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例类型，目前支持安全组：securitygroup。",
           "example": "securitygroup",
@@ -26487,7 +25773,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例所在地域。",
           "example": "ap-guangzhou",
@@ -26498,7 +25783,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照策略Id。",
           "example": "sspolicy-hx8an9sr",
@@ -26509,7 +25793,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称。",
           "example": "名称",
@@ -26526,7 +25809,6 @@
       "document": "快照策略",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "快照策略名称。",
           "example": "test",
@@ -26537,7 +25819,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份策略类型，operate-操作备份，time-定时备份。",
           "example": "time",
@@ -26548,7 +25829,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "保留时间，支持1～365天。",
           "example": "12",
@@ -26559,7 +25839,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否创建新的cos桶，默认为False。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "True",
@@ -26570,7 +25849,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cos桶所在地域。",
           "example": "ap-guangzhou",
@@ -26581,7 +25859,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cos桶。",
           "example": "test-123123123",
@@ -26592,7 +25869,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照策略Id。",
           "example": "sspolicy-hx8an9sr",
@@ -26603,7 +25879,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间备份策略。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -26614,7 +25889,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "启用状态，True-启用，False-停用，默认为True。",
           "example": "True",
@@ -26625,7 +25899,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-03-02 14:41:15",
@@ -26642,7 +25915,6 @@
       "document": "NAT的SNAT规则",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID，如果ResourceType为USERDEFINED，可以为空",
           "example": "subnet-7aed90al",
@@ -26653,7 +25925,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SUBNET",
@@ -26664,7 +25935,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源IP/网段",
           "example": "172.168.100.0/24",
@@ -26675,7 +25945,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "弹性IP地址池",
           "example": "['180.12.59.43']",
@@ -26686,7 +25955,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "example": "test",
@@ -26697,7 +25965,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Snat规则ID",
           "example": "snat-3nptcfvp",
@@ -26708,7 +25975,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关的ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "nat-3nptcfvp",
@@ -26719,7 +25985,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络VPC的ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-oty76xyl",
@@ -26730,7 +25995,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关SNAT规则创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-03-14 13:59:00",
@@ -27261,7 +26525,6 @@
       "document": "子网对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "子网的`CIDR`。",
           "example": "",
@@ -27272,7 +26535,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网名称。",
           "example": "",
@@ -27283,7 +26545,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区。形如：`ap-guangzhou-2`。",
           "example": "",
@@ -27294,7 +26555,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定关联路由表，形如：`rtb-3ryrwzuu`。",
           "example": "",
@@ -27311,7 +26571,6 @@
       "document": "标签键值对",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tag-key",
@@ -27322,7 +26581,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tag-value",
@@ -27339,7 +26597,6 @@
       "document": "参数模板配额",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数模板IP地址成员配额。",
           "example": "",
@@ -27350,7 +26607,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数模板IP地址组成员配额。",
           "example": "",
@@ -27361,7 +26617,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数模板I协议端口成员配额。",
           "example": "",
@@ -27372,7 +26627,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数模板协议端口组成员配额。",
           "example": "",
@@ -27389,7 +26643,6 @@
       "document": "流量描述。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实际流量，单位为 字节",
           "example": "",
@@ -27400,7 +26653,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "格式化后的流量，单位见参数 FormatUnit\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -27411,7 +26663,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "格式化后流量的单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -27428,7 +26679,6 @@
       "document": "流量包信息描述类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "流量包唯一ID",
           "example": "tfp-yj123h6i",
@@ -27439,7 +26689,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "未命名",
@@ -27450,7 +26699,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包总量，单位GB",
           "example": "10.0",
@@ -27461,7 +26709,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包剩余量，单位GB",
           "example": "10.0",
@@ -27472,7 +26719,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包状态，可能的值有: AVAILABLE-可用状态， EXPIRED-已过期， EXHAUSTED-已用完， REFUNDED-已退还， DELETED-已删除",
           "example": "AVAILABLE",
@@ -27483,7 +26729,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包创建时间",
           "example": "2022-08-31T11:42:37Z",
@@ -27494,7 +26739,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包截止时间",
           "example": "2022-09-30T11:42:36Z",
@@ -27505,7 +26749,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已使用的流量，单位GB",
           "example": "0.0",
@@ -27516,7 +26759,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -27527,7 +26769,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "区分闲时流量包与全时流量包",
           "example": "FULL_TIME",
@@ -27786,7 +27027,6 @@
       "document": "共享流量包用量明细",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "流量包唯一ID",
           "example": "",
@@ -27797,7 +27037,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -27808,7 +27047,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包总量",
           "example": "",
@@ -27819,7 +27057,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本次抵扣",
           "example": "",
@@ -27830,7 +27067,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本次抵扣后剩余量",
           "example": "",
@@ -27841,7 +27077,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "抵扣时间",
           "example": "",
@@ -27852,7 +27087,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源类型。可能的值: CVM, LB, NAT, HAVIP, EIP",
           "example": "",
@@ -27863,7 +27097,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "example": "",
@@ -27874,7 +27107,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源名称",
           "example": "",
@@ -27885,7 +27117,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量包到期时间",
           "example": "",
@@ -28038,7 +27269,6 @@
       "document": "终端节点服务的服务白名单对象详情。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "AppId。",
           "example": "123",
@@ -28049,7 +27279,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Uin。",
           "example": "123",
@@ -28060,7 +27289,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述信息。",
           "example": "测试",
@@ -28071,7 +27299,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。",
           "example": "2021-01-14 15:58:40",
@@ -28082,7 +27309,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "终端节点服务ID。",
           "example": "vpcsvc-b2mrmmx7",
@@ -28099,7 +27325,6 @@
       "document": "VPC内网IPv6对象。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "`VPC`内`IPv6`地址。",
           "example": "",
@@ -28110,7 +27335,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属子网 `IPv6` `CIDR`。",
           "example": "",
@@ -28121,7 +27345,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "`IPv6`类型。",
           "example": "",
@@ -28132,7 +27355,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "`IPv6`申请时间。",
           "example": "",
@@ -28149,7 +27371,6 @@
       "document": "私有网络配额",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络配额描述",
           "example": "",
@@ -28160,7 +27381,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络配额值",
           "example": "",
@@ -28177,7 +27397,6 @@
       "document": "VPC内网IP对象。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "`VPC`内网`IP`。",
           "example": "",
@@ -28188,7 +27407,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属子网`CIDR`。",
           "example": "",
@@ -28199,7 +27417,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内网`IP`类型。",
           "example": "",
@@ -28210,7 +27427,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "`IP`申请时间。",
           "example": "",
@@ -28227,7 +27443,6 @@
       "document": "Vpc任务结果详细信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "eni-olifj433",
@@ -28238,7 +27453,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SUCCESS",
@@ -28255,7 +27469,6 @@
       "document": "VPN通道对象。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "通道实例ID。",
           "example": "vpnx-xxxxx",
@@ -28266,7 +27479,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道名称。",
           "example": "xxxxx",
@@ -28277,7 +27489,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC实例ID。",
           "example": "vpc-xxxxx",
@@ -28288,7 +27499,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPN网关实例ID。",
           "example": "vpngw-xxxxx",
@@ -28299,7 +27509,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对端网关实例ID。",
           "example": "cgw-xxxxx",
@@ -28310,7 +27519,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预共享密钥。",
           "example": "xxxxx",
@@ -28321,7 +27529,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道传输协议。",
           "example": "IPSEC",
@@ -28332,7 +27539,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道加密协议。",
           "example": "IKE",
@@ -28343,7 +27549,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由类型。",
           "example": "StaticRoute",
@@ -28354,7 +27559,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。",
           "example": "0000-00-00 00:00:00",
@@ -28365,7 +27569,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道的生产状态，PENDING：生产中，AVAILABLE：运行中，DELETING：删除中。",
           "example": "AVAILABLE",
@@ -28376,7 +27579,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道连接状态，AVAILABLE：已连接。",
           "example": "AVAILABLE",
@@ -28387,7 +27589,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SPD。",
           "example": "无",
@@ -28398,7 +27599,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IKE选项。",
           "example": "无",
@@ -28409,7 +27609,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPSEC选择。",
           "example": "无",
@@ -28420,7 +27619,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否支持健康状态探测",
           "example": "false",
@@ -28431,7 +27629,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本端探测ip",
           "example": "0.0.0.0",
@@ -28442,7 +27639,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对端探测ip",
           "example": "0.0.0.0",
@@ -28453,7 +27649,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象",
           "example": "AVAILABLE",
@@ -28464,7 +27659,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -28475,7 +27669,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DPD超时时间。即探测确认对端不存在需要的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "30",
@@ -28486,7 +27679,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "clear",
@@ -28497,7 +27689,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签键值对数组",
           "example": "无",
@@ -28508,7 +27699,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协商类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "flowTrigger",
@@ -28731,7 +27921,6 @@
       "document": "VPN网关配额对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "带宽配额",
           "example": "",
@@ -28742,7 +27931,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配额中文名称",
           "example": "",
@@ -28753,7 +27941,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配额英文名称",
           "example": "",

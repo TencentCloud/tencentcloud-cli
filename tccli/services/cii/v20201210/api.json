@@ -33,7 +33,6 @@
       "document": "结构化对比指标（准确率/召回率）数据",
       "members": [
         {
-          "default": "",
           "document": "短文准确率",
           "member": "string",
           "name": "ShortStructAccuracy",
@@ -42,7 +41,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "短文召回率",
           "member": "string",
           "name": "ShortStructRecall",
@@ -51,7 +49,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "长文结构化准确率",
           "member": "string",
           "name": "LongStructAccuracy",
@@ -60,7 +57,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "长文结构化召回率",
           "member": "string",
           "name": "LongStructRecall",
@@ -69,7 +65,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "长文提取准确率",
           "member": "string",
           "name": "LongContentAccuracy",
@@ -78,7 +73,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "长文提取召回率",
           "member": "string",
           "name": "LongContentRecall",
@@ -93,7 +87,6 @@
       "document": "CreateStructureTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "保单号",
           "example": "p0001",
           "member": "string",
@@ -102,7 +95,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "客户号",
           "example": "c10321",
           "member": "string",
@@ -111,7 +103,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "客户姓名",
           "example": "xx保险",
           "member": "string",
@@ -120,7 +111,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件类型，目前只支持体检报告类型，对应的值为：HealthReport",
           "example": "HealthReport",
           "member": "string",
@@ -129,7 +119,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "报告年份",
           "example": "2021",
           "member": "string",
@@ -138,7 +127,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "报告文件上传的地址列表，需按顺序排列。如果使用ImageList参数，置为空数组即可",
           "example": "[\"original_upload_dir/100000013512_e75d5c6e-7b90-4ff6-b890-483\"]",
           "member": "string",
@@ -147,7 +135,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "险种，如果是体检报告类型，此参数是必填，类型说明如下：\nCriticalDiseaseInsurance:重疾险\nLifeInsurance：寿险\nAccidentInsurance：意外险",
           "example": "[\"CriticalDiseaseInsurance\"]",
           "member": "string",
@@ -156,7 +143,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "报告上传的图片内容数组，图片内容采用base64编码，需按顺序排列",
           "example": "[\"9xkKYHNKWDxxxxx\"]",
           "member": "string",
@@ -192,7 +178,6 @@
       "document": "DescribeStructCompareData请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "结构化任务ID",
           "member": "string",
           "name": "TaskId",
@@ -288,7 +273,6 @@
       "document": "DescribeStructureTaskResult请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "结构化任务ID",
           "example": "46313288149458944",
           "member": "string",
@@ -333,7 +317,6 @@
       "document": "用于返回结构化任务结果",
       "members": [
         {
-          "default": "",
           "document": "图片质量分",
           "member": "float",
           "name": "Quality",
@@ -342,7 +325,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "由结构化算法结构化json转换的字符串，具体协议参见算法结构化结果协议",
           "member": "string",
           "name": "StructureResult",

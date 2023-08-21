@@ -176,7 +176,6 @@
       "document": "DescribeHSMBySubnetId请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Subnet标识符",
           "example": "",
@@ -222,7 +221,6 @@
       "document": "DescribeHSMByVpcId请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPC标识符",
           "example": "",
@@ -268,7 +266,6 @@
       "document": "DescribeSubnet请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量。Limit需要在[1, 100]之间。",
           "example": "10",
@@ -278,7 +275,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量。偏移量最小为0。",
           "example": "0",
@@ -288,7 +284,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询指定VpcId下的子网信息。",
           "example": "vpc-xxxx",
@@ -298,7 +293,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查找关键字",
           "example": "subnet-xxxx",
@@ -346,7 +340,6 @@
       "document": "DescribeSupportedHsm请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Hsm类型，可选值all、virtulization、GHSM、EHSM、SHSM",
           "example": "virtulization",
@@ -384,7 +377,6 @@
       "document": "DescribeUsg请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，当Offset和Limit均为0时将一次性返回用户所有的安全组列表。",
           "example": "0",
@@ -394,7 +386,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回量，当Offset和Limit均为0时将一次性返回用户所有的安全组列表。",
           "example": "10",
@@ -404,7 +395,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索关键字",
           "example": "sg-xxx",
@@ -452,7 +442,6 @@
       "document": "DescribeUsgRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "根据安全组Id获取安全组详情",
           "example": "[\"xxxxxxxxxxxx\\n\"]",
@@ -500,7 +489,6 @@
       "document": "DescribeVpc请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "返回偏移量。Offset最小为0。",
           "example": "0",
@@ -510,7 +498,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量。Limit需要在[1, 100]之间。",
           "example": "10",
@@ -520,7 +507,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索关键字",
           "example": "vpc-xxxx",
@@ -568,7 +554,6 @@
       "document": "DescribeVsmAttributes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源Id",
           "example": "hsm-xxxx",
@@ -826,7 +811,6 @@
       "document": "DescribeVsms请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移",
           "example": "0",
@@ -836,7 +820,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大数量",
           "example": "10",
@@ -846,7 +829,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询关键字",
           "example": "无",
@@ -856,7 +838,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签过滤条件",
           "example": "无",
@@ -866,7 +847,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备所属的厂商名称，根据厂商来进行筛选",
           "example": "TASS",
@@ -876,7 +856,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Hsm服务类型，可选virtualization、physical、GHSM、EHSM、SHSM、all",
           "example": "virtualization",
@@ -924,7 +903,6 @@
       "document": "设备厂商信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "厂商名称",
           "example": "TASS",
@@ -935,7 +913,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "此厂商旗下的设备信息列表",
           "example": "无",
@@ -1059,7 +1036,6 @@
       "document": "InquiryPriceBuyVsm请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需购买实例的数量",
           "example": "1",
@@ -1069,7 +1045,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费模式：0表示按需计费/后付费，1表示预付费",
           "example": "1",
@@ -1079,7 +1054,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商品的时间大小，整型参数，举例：当TimeSpan为1，TImeUnit为m时，表示询价购买时长为1个月时的价格",
           "example": "1",
@@ -1089,7 +1063,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商品的时间单位，m表示月，y表示年",
           "example": "m",
@@ -1099,7 +1072,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "货币类型，默认为CNY",
           "example": "CNY",
@@ -1109,7 +1081,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认为CREATE，可选RENEW",
           "example": "CREATE",
@@ -1119,7 +1090,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Hsm服务类型，可选值virtualization、physical、GHSM、EHSM、SHSM",
           "example": "virtualization",
@@ -1260,7 +1230,6 @@
       "document": "ModifyVsmAttributes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源Id",
           "example": "xx",
@@ -1270,7 +1239,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UpdateResourceName-修改资源名称,\nUpdateSgIds-修改安全组名称,\nUpdateNetWork-修改网络,\nDefault-默认不修改",
           "example": "[\"xx\"]",
@@ -1280,7 +1248,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源名称",
           "example": "xx",
@@ -1290,7 +1257,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组Id",
           "example": "[\"xx\"]",
@@ -1300,7 +1266,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "虚拟专网Id",
           "example": "xx",
@@ -1310,7 +1275,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网Id",
           "example": "xx",
@@ -1320,7 +1284,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警开关，0表示关闭告警，1表示启用告警",
           "example": "0",
@@ -1584,7 +1547,6 @@
       "document": "安全组基础信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "安全组Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1595,7 +1557,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1606,7 +1567,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1617,7 +1577,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1634,7 +1593,6 @@
       "document": "Subnet对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPC实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1645,7 +1603,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网实例ID，例如：subnet-bthucmmy。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1656,7 +1613,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1667,7 +1623,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网的 IPv4 CIDR。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1678,7 +1633,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1689,7 +1643,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用IP数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1700,7 +1653,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网的 IPv6 CIDR。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1711,7 +1663,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总IP数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1722,7 +1673,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为默认Subnet\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1739,7 +1689,6 @@
       "document": "标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键",
           "example": "",
@@ -1750,7 +1699,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "",
@@ -1767,7 +1715,6 @@
       "document": "标签过滤参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键",
           "example": "",
@@ -1778,7 +1725,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "",
@@ -1795,7 +1741,6 @@
       "document": "安全组策略",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "cidr格式地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1806,7 +1751,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组id代表的地址集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1817,7 +1761,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地址组id代表的地址集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1828,7 +1771,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1839,7 +1781,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1850,7 +1791,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务组id代表的协议和端口集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1861,7 +1801,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1872,7 +1811,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "匹配后行为:ACCEPT/DROP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1889,7 +1827,6 @@
       "document": "安全组规则详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "入站规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1900,7 +1837,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "出站规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1911,7 +1847,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1922,7 +1857,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1933,7 +1867,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1944,7 +1877,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1955,7 +1887,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1972,7 +1903,6 @@
       "document": "VPC对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Vpc名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1983,7 +1913,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VpcId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1994,7 +1923,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2005,7 +1933,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为默认VPC\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2022,7 +1949,6 @@
       "document": "支持的Vsm类型信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VSM类型名称",
           "example": "EVSM",
@@ -2033,7 +1959,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VSM类型值",
           "example": "17",

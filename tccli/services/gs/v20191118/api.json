@@ -347,7 +347,6 @@
       "document": "SaveGameArchive请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "游戏用户ID",
           "example": "1621578692",
@@ -357,7 +356,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "游戏ID",
           "example": "game-a7l8c3ab",
@@ -385,7 +383,6 @@
       "document": "StartPublishStream请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
           "example": "123123",
@@ -395,7 +392,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "推流地址，仅支持rtmp协议",
           "example": "rtmp://live.stream.com/publish",
@@ -423,7 +419,6 @@
       "document": "StopGame请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
           "example": "xxx",
@@ -433,7 +428,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "【多人游戏】游戏主机用户ID",
           "example": "无",
@@ -461,7 +455,6 @@
       "document": "StopPublishStream请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
           "example": "123123",
@@ -489,7 +482,6 @@
       "document": "SwitchGameArchive请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "游戏用户ID",
           "example": "161394323449",
@@ -499,7 +491,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "游戏ID",
           "example": "game-av2bl5r5",
@@ -509,7 +500,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "游戏存档Url",
           "example": "http://archive.cdn.com/user123.zip",
@@ -519,7 +509,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "游戏相关参数",
           "example": "{\\\"ArchiveEnv\\\":\\\"tcg\\\",\\\"ArchiveCategoryId\\\":\\\"393\\\",\\\"ArchiveG",
@@ -547,7 +536,6 @@
       "document": "TrylockWorker请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
           "example": "xxx",
@@ -557,7 +545,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "游戏ID",
           "example": "game-abcd1234",
@@ -567,7 +554,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "游戏区域，ap-guangzhou、ap-shanghai、ap-beijing等，如果不为空，优先按照该区域进行调度分配机器",
           "example": "ap-guangzhou",
@@ -577,7 +563,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "【废弃】资源池编号",
           "example": "1",
@@ -587,7 +572,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "【必选】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验",
           "example": "125.127.178.228",
@@ -597,7 +581,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组ID",
           "example": "cgg-1234abcd",

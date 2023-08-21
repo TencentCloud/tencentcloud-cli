@@ -10,6 +10,8 @@ tccli essbasic SyncProxyOrganization --cli-unfold-argument  \
     --UniformSocialCreditCode code \
     --BusinessLicense l \
     --ProxyLegalName name \
+    --ProxyLegalIdCardType ID_CARD \
+    --ProxyLegalIdCardNumber 666666200001011066 \
     --Agent.ProxyOperator.OpenId proxy-operator-openid \
     --Agent.ProxyOrganizationOpenId proxy-organization-openid \
     --Agent.AppId test-appid
@@ -19,7 +21,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "s16221xxx14775648"
+        "RequestId": "s16221***14775648"
     }
 }
 ```

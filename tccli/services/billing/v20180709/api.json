@@ -265,7 +265,6 @@
       "document": "适用商品信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "适用商品名称，值为“全产品通用”或商品名称组成的string，以\",\"分割。",
           "example": "全产品通用",
@@ -276,7 +275,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "postPay后付费/prePay预付费/riPay预留实例/空字符串或者\"*\"表示全部模式。如GoodsName为多个商品名以\",\"分割组成的string，而PayMode为\"*\"，表示每一件商品的模式都为\"*\"。",
           "example": "*",
@@ -1231,7 +1229,6 @@
       "document": "账单 Tag 信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分账标签键",
           "example": "",
@@ -1242,7 +1239,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "",
@@ -1633,7 +1629,6 @@
       "document": "产品过滤条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品名称代码",
           "example": "p_clb",
@@ -1644,7 +1639,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品名称",
           "example": "负载均衡CLB",
@@ -1661,7 +1655,6 @@
       "document": "付费模式过滤条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "付费模式",
           "example": "",
@@ -1672,7 +1665,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费模式名称",
           "example": "",
@@ -1689,7 +1681,6 @@
       "document": "项目过滤条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "",
@@ -1700,7 +1691,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目名称",
           "example": "",
@@ -1717,7 +1707,6 @@
       "document": "地域过滤条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域ID",
           "example": "",
@@ -1728,7 +1717,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域名称",
           "example": "",
@@ -1745,7 +1733,6 @@
       "document": "账单筛选条件对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "只支持6和12两个值",
           "example": "6",
@@ -1756,7 +1743,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品名称代码",
           "example": "p_clb",
@@ -1767,7 +1753,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "0",
@@ -1778,7 +1763,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域ID",
           "example": "0",
@@ -1789,7 +1773,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费模式，可选prePay和postPay",
           "example": "postPay",
@@ -1800,7 +1783,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源关键字",
           "example": "lb-1weg57ny",
@@ -1811,7 +1793,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品名称代码",
           "example": "['p_clb']",
@@ -1822,7 +1803,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子产品名称代码",
           "example": "['sp_clb']",
@@ -1833,7 +1813,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域ID",
           "example": "[1]",
@@ -1844,7 +1823,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "[0]",
@@ -1855,7 +1833,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费模式，可选prePay和postPay",
           "example": "['postPay']",
@@ -1866,7 +1843,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "交易类型",
           "example": "['postpay_deduct_h']",
@@ -1877,7 +1853,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否隐藏0元流水",
           "example": "1",
@@ -1888,7 +1863,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序规则，可选desc和asc",
           "example": "asc",
@@ -1899,7 +1873,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "交易ID",
           "example": "20211101400077789101862",
@@ -1910,7 +1883,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "组件编码",
           "example": "['v_clb_ins']",
@@ -1921,7 +1893,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件ID",
           "example": "1",
@@ -1932,7 +1903,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件类型",
           "example": "-",
@@ -1943,7 +1913,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态",
           "example": "[1]",
@@ -2142,7 +2111,6 @@
       "document": "消耗按地域汇总详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域ID",
           "example": "",
@@ -2153,7 +2121,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域名称",
           "example": "",
@@ -2164,7 +2131,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "折后总价",
           "example": "",
@@ -2175,7 +2141,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "趋势",
           "example": "",
@@ -2186,7 +2151,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品消费详情",
           "example": "",
@@ -2203,7 +2167,6 @@
       "document": "消耗按资源汇总过滤条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品列表",
           "example": "",
@@ -2214,7 +2177,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目列表",
           "example": "",
@@ -2225,7 +2187,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域列表",
           "example": "",
@@ -2236,7 +2197,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费模式列表",
           "example": "",
@@ -2479,7 +2439,6 @@
       "document": "消耗汇总详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "折后总价",
           "example": "",
@@ -2496,7 +2455,6 @@
       "document": "消耗费用趋势",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "趋势类型，upward上升/downward下降/none无",
           "example": "",
@@ -2507,7 +2465,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "趋势值，Type为none是该字段值为null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2524,7 +2481,6 @@
       "document": "cos产品用量明细返回数据结构",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "存储桶名称",
           "example": "waytestssq1-1258535724",
@@ -2535,7 +2491,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用量开始时间",
           "example": "2022-11-23 00:00:00",
@@ -2546,7 +2501,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用量结束时间",
           "example": "2022-11-23 23:59:59",
@@ -2557,7 +2511,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子产品名称",
           "example": "cos流量",
@@ -2568,7 +2521,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计费项名称",
           "example": "cos外网下行流量",
@@ -2579,7 +2531,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用量",
           "example": "10",
@@ -2590,7 +2541,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单位",
           "example": "GB",
@@ -2607,7 +2557,6 @@
       "document": "消耗组件明细",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "组件类型名称",
           "example": "",
@@ -2618,7 +2567,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "组件名称",
           "example": "",
@@ -2629,7 +2577,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "刊例价",
           "example": "",
@@ -2640,7 +2587,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "刊例价单位",
           "example": "",
@@ -2651,7 +2597,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用量",
           "example": "",
@@ -2662,7 +2607,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用量单位",
           "example": "",
@@ -2673,7 +2617,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原价",
           "example": "",
@@ -2684,7 +2627,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "折扣",
           "example": "",
@@ -2695,7 +2637,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "折后价",
           "example": "",
@@ -2706,7 +2647,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代金券支付金额",
           "example": "",
@@ -2717,7 +2657,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "现金支付金额",
           "example": "",
@@ -2728,7 +2667,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "赠送金支付金额",
           "example": "",
@@ -2745,7 +2683,6 @@
       "document": "消耗明细数据类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "支付者uin",
           "example": "909619400",
@@ -2756,7 +2693,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品名称",
           "example": "移动推送",
@@ -2767,7 +2703,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子产品名称",
           "example": "移动推送基础服务",
@@ -2778,7 +2713,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计费模式名称",
           "example": "包年包月",
@@ -2789,7 +2723,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目名称",
           "example": "默认项目",
@@ -2800,7 +2733,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "区域名称",
           "example": "华南地区（广州）",
@@ -2811,7 +2743,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地区名称",
           "example": "其他",
@@ -2822,7 +2753,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源id",
           "example": "tpns1150002173220210809400005346410791c7c8b9aff765f56aaa052c8f16",
@@ -2833,7 +2763,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源名称",
           "example": "未命名",
@@ -2844,7 +2773,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "包年包月续费",
@@ -2855,7 +2783,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单id",
           "example": "20211009400006732337101",
@@ -2866,7 +2793,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "交易id",
           "example": "20211009400006732337101",
@@ -2877,7 +2803,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "费用开始时间",
           "example": "2021-11-03 00:00:00",
@@ -2888,7 +2813,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "费用结束时间",
           "example": "2021-11-03 23:59:59",
@@ -2899,7 +2823,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "组件明细",
           "example": "[           {             \"ComponentCodeName\": \"移动推送TPNS_预付费_境内资",
@@ -2910,7 +2833,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子产品名称代码",
           "example": "sp_tpns_basic",
@@ -4260,7 +4182,6 @@
       "document": "DescribeCostDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数量，最大值为100",
           "example": "",
@@ -4270,7 +4191,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "",
@@ -4280,7 +4200,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "周期开始时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通成本分析后，且距今 24 个月内的数据。",
           "example": "",
@@ -4290,7 +4209,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "周期结束时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通成本分析后，且距今 24 个月内的数据。",
           "example": "",
@@ -4300,7 +4218,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要访问列表的总记录数，用于前端分页\n1-表示需要， 0-表示不需要",
           "example": "",
@@ -4310,7 +4227,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "月份，格式为yyyy-mm，Month和BeginTime&EndTime必传一个，如果有传BeginTime&EndTime则Month字段无效。不能早于开通成本分析的月份，最多可拉取24个月内的数据。",
           "example": "",
@@ -4320,7 +4236,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询指定产品信息（暂时未开放获取）",
           "example": "",
@@ -4330,7 +4245,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费模式 prePay/postPay",
           "example": "",
@@ -4340,7 +4254,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询指定资源信息",
           "example": "",
@@ -5007,7 +4920,6 @@
       "document": "DescribeDosageDetailByDate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询账单开始日期，如 2019-01-01",
           "example": "2019-01-01",
@@ -5017,7 +4929,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询账单结束日期，如 2019-01-01， 时间跨度不超过7天",
           "example": "2019-01-01",
@@ -5027,7 +4938,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "互动直播：\n10194   互动直播-核心机房           :\n10195   互动直播-边缘机房\n\ncdn业务：\n102383：CDN静态加速流量(国内)\n102384：CDN静态加速带宽(国内)\n102385：CDN静态加速流量(海外)\n102386：CDN静态加速带宽(海外)\n\n100967：弹性公网IP-按流量计费\n101065：公网负载均衡-按流量计费\n\n视频直播\n10226 视频直播流量(国内)\n10227 视频直播带宽(国内)\n100763 视频直播流量(海外)\n100762 视频直播宽带(海外)",
           "example": "10181",
@@ -5037,7 +4947,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询域名 例如 www.qq.com\n非CDN业务查询时传入空字符串，返回的值为空",
           "example": "www.gdxxb.com",
@@ -5047,7 +4956,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1、如果为空，则返回EIP或CLB所有实例的明细；\n2、如果传入实例名，则返回该实例明细",
           "example": "无",
@@ -5376,7 +5284,6 @@
       "document": "由时间和值组成的数据结构",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "时间",
           "example": "",
@@ -5387,7 +5294,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "值",
           "example": "",
@@ -5404,7 +5310,6 @@
       "document": "由域名和使用明细组成的数据结构",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "",
@@ -5415,7 +5320,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用数据明细",
           "example": "",
@@ -5426,7 +5330,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5443,7 +5346,6 @@
       "document": "不适用商品信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "不适用商品名称",
           "example": "某产品",
@@ -5454,7 +5356,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "postPay后付费/prePay预付费/riPay预留实例/空字符串或者\"*\"表示全部模式。",
           "example": "*",
@@ -5471,7 +5372,6 @@
       "document": "PayDeals请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要支付的一个或者多个子订单号，与BigDealIds字段两者必须且仅传一个参数",
           "example": "",
@@ -5481,7 +5381,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否自动使用代金券,1:是,0否,默认0",
           "example": "",
@@ -5491,7 +5390,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代金券ID列表,目前仅支持指定一张代金券",
           "example": "",
@@ -5501,7 +5399,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要支付的一个或者多个大订单号，与OrderIds字段两者必须且仅传一个参数",
           "example": "",
@@ -5662,7 +5559,6 @@
       "document": "商品详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "商品详情名称标识",
           "example": "",
@@ -5673,7 +5569,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商品详情",
           "example": "",
@@ -6110,7 +6005,6 @@
       "document": "购买商品信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "商品名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "某产品",
@@ -6121,7 +6015,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商品细节\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "某子产品",
@@ -6138,7 +6031,6 @@
       "document": "使用记录",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "使用金额（微分）",
           "example": "123",
@@ -6149,7 +6041,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用时间",
           "example": "2020-01-01",
@@ -6160,7 +6051,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用记录细节\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6177,7 +6067,6 @@
       "document": "代金券相关信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "代金券拥有者",
           "example": "aa",
@@ -6188,7 +6077,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "券状态：待使用：unUsed，已使用： used，已发货：delivered，已作废： cancel，已过期：overdue",
           "example": "unUsed",
@@ -6199,7 +6087,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代金券面额（微分）",
           "example": "10000",
@@ -6210,7 +6097,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "剩余金额（微分）",
           "example": "10000",
@@ -6221,7 +6107,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代金券id",
           "example": "aa",
@@ -6232,7 +6117,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "postPay后付费/prePay预付费/riPay预留实例/空字符串或者'*'表示全部模式",
           "example": "postPay",
@@ -6243,7 +6127,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费场景PayMode=postPay时：spotpay-竞价实例,\"settle account\"-普通后付费PayMode=prePay时：purchase-包年包月新购，renew-包年包月续费（自动续费），modify-包年包月配置变更(变配）PayMode=riPay时：oneOffFee-预留实例预付，hourlyFee-预留实例每小时扣费，*-支持全部付费场景",
           "example": "*",
@@ -6254,7 +6137,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "有效期生效时间",
           "example": "2020-01-01",
@@ -6265,7 +6147,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "有效期截止时间",
           "example": "2020-01-01",
@@ -6276,7 +6157,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "适用商品信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6287,7 +6167,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不适用商品信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",

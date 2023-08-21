@@ -67,7 +67,6 @@
       "document": "DescribeToken请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间",
           "example": "tsw_site",

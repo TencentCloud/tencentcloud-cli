@@ -17,7 +17,6 @@
       "document": "返回结构",
       "members": [
         {
-          "default": "",
           "document": "操作时间戳，单位秒",
           "member": "uint64",
           "name": "PostTime",
@@ -26,7 +25,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用户ID \naccountType不同对应不同的用户ID。如果是QQ或微信用户则填入对应的openId",
           "member": "string",
           "name": "Uid",
@@ -35,7 +33,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "操作来源的外网IP",
           "member": "string",
           "name": "UserIp",
@@ -44,7 +41,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "0~100：营销价值评分，分值越高，价值越大\n[0,50]低价值\n[50,70]价值一般\n[70,100]高价值",
           "member": "uint64",
           "name": "ValueScore",
@@ -59,7 +55,6 @@
       "document": "MarketingValueJudgement请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "手机账号类型填写4",
           "member": "uint64",
           "name": "AccountType",
@@ -67,7 +62,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "填写手机号码，如15317537488",
           "member": "string",
           "name": "Uid",
@@ -75,7 +69,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用户请求时的客户端外网IP",
           "member": "string",
           "name": "UserIp",
@@ -83,7 +76,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "用户操作时间戳，单位秒（格林威治时间精确到秒，如1501590972）",
           "member": "uint64",
           "name": "PostTime",
@@ -91,7 +83,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "用户设备号imei/idfa(建议填写)",
           "member": "string",
           "name": "Imei",
@@ -99,7 +90,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "活动链接(建议填写)",
           "member": "string",
           "name": "Referer",

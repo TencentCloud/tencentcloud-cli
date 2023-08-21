@@ -612,7 +612,6 @@
       "document": "帐号列表信息数据。",
       "members": [
         {
-          "default": "",
           "document": "唯一ID。",
           "member": "uint64",
           "name": "Id",
@@ -621,7 +620,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云镜客户端唯一Uuid",
           "member": "string",
           "name": "Uuid",
@@ -630,7 +628,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机内网IP。",
           "member": "string",
           "name": "MachineIp",
@@ -639,7 +636,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机名称。",
           "member": "string",
           "name": "MachineName",
@@ -648,7 +644,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "帐号名。",
           "member": "string",
           "name": "Username",
@@ -657,7 +652,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "帐号所属组。",
           "member": "string",
           "name": "Groups",
@@ -666,7 +660,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "帐号类型。\n<li>ORDINARY：普通帐号</li>\n<li>SUPPER：超级管理员帐号</li>",
           "member": "string",
           "name": "Privilege",
@@ -675,7 +668,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "帐号创建时间。",
           "member": "datetime",
           "name": "AccountCreateTime",
@@ -684,7 +676,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "帐号最后登录时间。",
           "member": "datetime",
           "name": "LastLoginTime",
@@ -699,7 +690,6 @@
       "document": "帐号统计数据。",
       "members": [
         {
-          "default": "",
           "document": "用户名。",
           "member": "string",
           "name": "Username",
@@ -708,7 +698,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机数量。",
           "member": "uint64",
           "name": "MachineNum",
@@ -723,7 +712,6 @@
       "document": "AddLoginWhiteList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "白名单规则",
           "member": "LoginWhiteListsRule",
           "name": "Rules",
@@ -749,7 +737,6 @@
       "document": "AddMachineTag请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云服务器ID",
           "member": "string",
           "name": "Quuid",
@@ -757,7 +744,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "标签ID",
           "member": "uint64",
           "name": "TagId",
@@ -765,7 +751,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "云服务器地区",
           "member": "string",
           "name": "MRegion",
@@ -773,7 +758,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "云服务器类型(CVM|BM)",
           "member": "string",
           "name": "MArea",
@@ -799,7 +783,6 @@
       "document": "主机漏洞信息",
       "members": [
         {
-          "default": "",
           "document": "漏洞ID。",
           "member": "uint64",
           "name": "Id",
@@ -808,7 +791,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机IP。",
           "member": "string",
           "name": "MachineIp",
@@ -817,7 +799,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "漏洞名称。",
           "member": "string",
           "name": "VulName",
@@ -826,7 +807,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "漏洞危害等级。\n<li>HIGH：高危</li>\n<li>MIDDLE：中危</li>\n<li>LOW：低危</li>\n<li>NOTICE：提示</li>",
           "member": "string",
           "name": "VulLevel",
@@ -835,7 +815,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "最后扫描时间。",
           "member": "datetime",
           "name": "LastScanTime",
@@ -844,7 +823,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "漏洞描述。",
           "member": "string",
           "name": "Description",
@@ -853,7 +831,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "漏洞种类ID。",
           "member": "uint64",
           "name": "VulId",
@@ -862,7 +839,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "漏洞状态。\n<li>UN_OPERATED : 待处理</li>\n<li>FIXED : 已修复</li>",
           "member": "string",
           "name": "VulStatus",
@@ -877,7 +853,6 @@
       "document": "高危命令数据",
       "members": [
         {
-          "default": "",
           "document": "ID",
           "member": "uint64",
           "name": "Id",
@@ -886,7 +861,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云镜ID",
           "member": "string",
           "name": "Uuid",
@@ -895,7 +869,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机ID",
           "member": "string",
           "name": "Quuid",
@@ -904,7 +877,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机内网IP",
           "member": "string",
           "name": "Hostip",
@@ -913,7 +885,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "执行用户名",
           "member": "string",
           "name": "User",
@@ -922,7 +893,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "平台类型",
           "member": "uint64",
           "name": "Platform",
@@ -931,7 +901,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "执行命令",
           "member": "string",
           "name": "BashCmd",
@@ -940,7 +909,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则ID",
           "member": "uint64",
           "name": "RuleId",
@@ -949,7 +917,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则名称",
           "member": "string",
           "name": "RuleName",
@@ -958,7 +925,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则等级",
           "member": "uint64",
           "name": "RuleLevel",
@@ -967,7 +933,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "处理状态",
           "member": "uint64",
           "name": "Status",
@@ -976,7 +941,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "发生时间",
           "member": "string",
           "name": "CreateTime",
@@ -985,7 +949,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机名",
           "member": "string",
           "name": "MachineName",
@@ -1000,7 +963,6 @@
       "document": "高危命令规则",
       "members": [
         {
-          "default": "",
           "document": "规则ID",
           "member": "uint64",
           "name": "Id",
@@ -1009,7 +971,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "客户端ID",
           "member": "string",
           "name": "Uuid",
@@ -1018,7 +979,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则名称",
           "member": "string",
           "name": "Name",
@@ -1027,7 +987,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "危险等级(1: 高危 2:中危 3: 低危)",
           "member": "uint64",
           "name": "Level",
@@ -1036,7 +995,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "正则表达式",
           "member": "string",
           "name": "Rule",
@@ -1045,7 +1003,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则描述",
           "member": "string",
           "name": "Decription",
@@ -1054,7 +1011,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "操作人",
           "member": "string",
           "name": "Operator",
@@ -1063,7 +1019,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否全局规则",
           "member": "uint64",
           "name": "IsGlobal",
@@ -1072,7 +1027,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "状态 (0: 有效 1: 无效)",
           "member": "uint64",
           "name": "Status",
@@ -1081,7 +1035,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
           "member": "string",
           "name": "CreateTime",
@@ -1090,7 +1043,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "修改时间",
           "member": "string",
           "name": "ModifyTime",
@@ -1099,7 +1051,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机IP",
           "member": "string",
           "name": "Hostip",
@@ -1114,7 +1065,6 @@
       "document": "暴力破解列表",
       "members": [
         {
-          "default": "",
           "document": "事件ID。",
           "member": "uint64",
           "name": "Id",
@@ -1123,7 +1073,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机IP。",
           "member": "string",
           "name": "MachineIp",
@@ -1132,7 +1081,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "破解事件状态\n<li>BRUTEATTACK_FAIL_ACCOUNT： 暴力破解事件-失败(存在帐号)  </li>\n<li>BRUTEATTACK_FAIL_NOACCOUNT：暴力破解事件-失败(帐号不存在)</li>\n<li>BRUTEATTACK_SUCCESS：暴力破解事件-成功</li>",
           "member": "string",
           "name": "Status",
@@ -1141,7 +1089,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用户名称。",
           "member": "string",
           "name": "UserName",
@@ -1150,7 +1097,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "城市ID。",
           "member": "uint64",
           "name": "City",
@@ -1159,7 +1105,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "国家ID。",
           "member": "uint64",
           "name": "Country",
@@ -1168,7 +1113,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "省份ID。",
           "member": "uint64",
           "name": "Province",
@@ -1177,7 +1121,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "来源IP。",
           "member": "string",
           "name": "SrcIp",
@@ -1186,7 +1129,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "尝试破解次数。",
           "member": "uint64",
           "name": "Count",
@@ -1195,7 +1137,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "发生时间。",
           "member": "datetime",
           "name": "CreateTime",
@@ -1204,7 +1145,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机名称。",
           "member": "string",
           "name": "MachineName",
@@ -1213,7 +1153,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云镜客户端唯一标识UUID。",
           "member": "string",
           "name": "Uuid",
@@ -1222,7 +1161,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否专业版。",
           "member": "bool",
           "name": "IsProVersion",
@@ -1231,7 +1169,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "阻断状态。",
           "member": "string",
           "name": "BanStatus",
@@ -1240,7 +1177,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "机器UUID",
           "member": "string",
           "name": "Quuid",
@@ -1255,7 +1191,6 @@
       "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。",
       "members": [
         {
-          "default": "",
           "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。",
           "member": "uint64",
           "name": "Period",
@@ -1264,7 +1199,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "自动续费标识。取值范围：\n<li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li>\n<li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费</li>\n<li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费</li>\n\n默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。",
           "member": "string",
           "name": "RenewFlag",
@@ -1279,7 +1213,6 @@
       "document": "CloseProVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "主机唯一标识Uuid。\n黑石的InstanceId，CVM的Uuid",
           "member": "string",
           "name": "Quuid",
@@ -1305,7 +1238,6 @@
       "document": "组件列表数据。",
       "members": [
         {
-          "default": "",
           "document": "唯一ID。",
           "member": "uint64",
           "name": "Id",
@@ -1314,7 +1246,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云镜客户端唯一Uuid。",
           "member": "string",
           "name": "Uuid",
@@ -1323,7 +1254,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机内网IP。",
           "member": "string",
           "name": "MachineIp",
@@ -1332,7 +1262,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机名。",
           "member": "string",
           "name": "MachineName",
@@ -1341,7 +1270,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "组件版本号。",
           "member": "string",
           "name": "ComponentVersion",
@@ -1350,7 +1278,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "组件类型。\n<li>SYSTEM：系统组件</li>\n<li>WEB：Web组件</li>",
           "member": "string",
           "name": "ComponentType",
@@ -1359,7 +1286,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "组件名称。",
           "member": "string",
           "name": "ComponentName",
@@ -1368,7 +1294,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "组件检测更新时间。",
           "member": "datetime",
           "name": "ModifyTime",
@@ -1383,7 +1308,6 @@
       "document": "组件统计数据。",
       "members": [
         {
-          "default": "",
           "document": "组件ID。",
           "member": "uint64",
           "name": "Id",
@@ -1392,7 +1316,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机数量。",
           "member": "uint64",
           "name": "MachineNum",
@@ -1401,7 +1324,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "组件名称。",
           "member": "string",
           "name": "ComponentName",
@@ -1410,7 +1332,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "组件类型。\n<li>WEB：Web组件</li>\n<li>SYSTEM：系统组件</li>",
           "member": "string",
           "name": "ComponentType",
@@ -1419,7 +1340,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "组件描述。",
           "member": "string",
           "name": "Description",
@@ -1434,7 +1354,6 @@
       "document": "CreateBaselineStrategy请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "策略名称",
           "member": "string",
           "name": "StrategyName",
@@ -1442,7 +1361,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "检测周期, 表示每隔多少天进行检测.示例: 2, 表示每2天进行检测一次.",
           "member": "uint64",
           "name": "ScanCycle",
@@ -1450,7 +1368,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "定期检测时间，该时间下发扫描. 示例:“22:00”, 表示在22:00下发检测",
           "member": "string",
           "name": "ScanAt",
@@ -1458,7 +1375,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "该策略下选择的基线id数组. 示例: [1,3,5,7]",
           "member": "uint64",
           "name": "CategoryIds",
@@ -1466,7 +1382,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "扫描范围是否全部服务器, 1:是  0:否, 为1则为全部专业版主机",
           "member": "uint64",
           "name": "IsGlobal",
@@ -1474,7 +1389,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "云主机类型：“CVM”：虚拟主机，\"BMS\"：裸金属，\"ECM\"：边缘计算主机",
           "member": "string",
           "name": "MachineType",
@@ -1482,7 +1396,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "主机地域. 示例: \"ap-bj\"",
           "member": "string",
           "name": "RegionCode",
@@ -1490,7 +1403,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "主机id数组. 示例: [\"quuid1\",\"quuid2\"]",
           "member": "string",
           "name": "Quuids",
@@ -1516,7 +1428,6 @@
       "document": "CreateOpenPortTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云镜客户端唯一Uuid。",
           "member": "string",
           "name": "Uuid",
@@ -1542,7 +1453,6 @@
       "document": "CreateProcessTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云镜客户端唯一Uuid。",
           "member": "string",
           "name": "Uuid",
@@ -1568,7 +1478,6 @@
       "document": "CreateUsualLoginPlaces请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云镜客户端UUID数组。",
           "member": "string",
           "name": "Uuids",
@@ -1576,7 +1485,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "登录地域信息数组。",
           "member": "Place",
           "name": "Places",
@@ -1602,7 +1510,6 @@
       "document": "网络攻击日志",
       "members": [
         {
-          "default": "",
           "document": "日志ID",
           "member": "uint64",
           "name": "Id",
@@ -1611,7 +1518,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "客户端ID",
           "member": "string",
           "name": "Uuid",
@@ -1620,7 +1526,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "来源IP",
           "member": "string",
           "name": "SrcIp",
@@ -1629,7 +1534,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "来源端口",
           "member": "uint64",
           "name": "SrcPort",
@@ -1638,7 +1542,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "攻击方式",
           "member": "string",
           "name": "HttpMethod",
@@ -1647,7 +1550,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "攻击描述",
           "member": "string",
           "name": "HttpCgi",
@@ -1656,7 +1558,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "攻击参数",
           "member": "string",
           "name": "HttpParam",
@@ -1665,7 +1566,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "威胁类型",
           "member": "string",
           "name": "VulType",
@@ -1674,7 +1574,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "攻击时间",
           "member": "string",
           "name": "CreatedAt",
@@ -1683,7 +1582,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "目标服务器IP",
           "member": "string",
           "name": "MachineIp",
@@ -1692,7 +1590,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "目标服务器名称",
           "member": "string",
           "name": "MachineName",
@@ -1701,7 +1598,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "目标IP",
           "member": "string",
           "name": "DstIp",
@@ -1710,7 +1606,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "目标端口",
           "member": "uint64",
           "name": "DstPort",
@@ -1719,7 +1614,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "攻击内容",
           "member": "string",
           "name": "HttpContent",
@@ -1734,7 +1628,6 @@
       "document": "DeleteAttackLogs请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "日志ID数组，最大100条。",
           "member": "uint64",
           "name": "Ids",
@@ -1760,7 +1653,6 @@
       "document": "DeleteBashEvents请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "ID数组，最大100条。",
           "member": "uint64",
           "name": "Ids",
@@ -1786,7 +1678,6 @@
       "document": "DeleteBashRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "ID数组，最大100条。",
           "member": "uint64",
           "name": "Ids",
@@ -1812,7 +1703,6 @@
       "document": "DeleteBruteAttacks请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "暴力破解事件Id数组。",
           "member": "uint64",
           "name": "Ids",
@@ -1838,7 +1728,6 @@
       "document": "DeleteLoginWhiteList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "白名单ID",
           "member": "uint64",
           "name": "Ids",
@@ -1864,7 +1753,6 @@
       "document": "DeleteMachine请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云镜客户端Uuid。",
           "member": "string",
           "name": "Uuid",
@@ -1890,7 +1778,6 @@
       "document": "DeleteMachineTag请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "关联的标签ID",
           "member": "uint64",
           "name": "Rid",
@@ -1916,7 +1803,6 @@
       "document": "DeleteMaliciousRequests请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "恶意请求记录ID数组，最大100条。",
           "member": "uint64",
           "name": "Ids",
@@ -1942,7 +1828,6 @@
       "document": "DeleteMalwares请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "木马记录ID数组",
           "member": "uint64",
           "name": "Ids",
@@ -1968,7 +1853,6 @@
       "document": "DeleteNonlocalLoginPlaces请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "异地登录事件ID数组。",
           "member": "uint64",
           "name": "Ids",
@@ -1994,7 +1878,6 @@
       "document": "DeletePrivilegeEvents请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "ID数组，最大100条。",
           "member": "uint64",
           "name": "Ids",
@@ -2020,7 +1903,6 @@
       "document": "DeletePrivilegeRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "ID数组，最大100条。",
           "member": "uint64",
           "name": "Ids",
@@ -2046,7 +1928,6 @@
       "document": "DeleteReverseShellEvents请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "ID数组，最大100条。",
           "member": "uint64",
           "name": "Ids",
@@ -2072,7 +1953,6 @@
       "document": "DeleteReverseShellRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "ID数组，最大100条。",
           "member": "uint64",
           "name": "Ids",
@@ -2098,7 +1978,6 @@
       "document": "DeleteTags请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "标签ID",
           "member": "uint64",
           "name": "Ids",
@@ -2124,7 +2003,6 @@
       "document": "DeleteUsualLoginPlaces请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云镜客户端Uuid",
           "member": "string",
           "name": "Uuid",
@@ -2132,7 +2010,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "已添加常用登录地城市ID数组",
           "member": "uint64",
           "name": "CityIds",
@@ -2158,7 +2035,6 @@
       "document": "DescribeAccountStatistics请求参数结构体",
       "members": [
         {
-          "default": "10",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -2166,7 +2042,6 @@
           "type": "int"
         },
         {
-          "default": "0",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -2174,7 +2049,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>Username - String - 是否必填：否 - 帐号用户名</li>",
           "member": "Filter",
           "name": "Filters",
@@ -2214,7 +2088,6 @@
       "document": "DescribeAccounts请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云镜客户端唯一Uuid。Username和Uuid必填其一，使用Uuid表示，查询该主机下列表信息。",
           "member": "string",
           "name": "Uuid",
@@ -2222,7 +2095,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "云镜客户端唯一Uuid。Username和Uuid必填其一，使用Username表示，查询该用户名下列表信息。",
           "member": "string",
           "name": "Username",
@@ -2230,7 +2102,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -2238,7 +2109,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -2246,7 +2116,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>Username - String - 是否必填：否 - 帐号名</li>\n<li>Privilege - String - 是否必填：否 - 帐号类型（ORDINARY: 普通帐号 | SUPPER: 超级管理员帐号）</li>\n<li>MachineIp - String - 是否必填：否 - 主机内网IP</li>",
           "member": "Filter",
           "name": "Filters",
@@ -2286,7 +2155,6 @@
       "document": "DescribeAgentVuls请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "漏洞类型。\n<li>WEB: Web应用漏洞</li>\n<li>SYSTEM：系统组件漏洞</li>\n<li>BASELINE：安全基线</li>",
           "member": "string",
           "name": "VulType",
@@ -2294,7 +2162,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "客户端UUID。",
           "member": "string",
           "name": "Uuid",
@@ -2302,7 +2169,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -2310,7 +2176,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -2318,7 +2183,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>Status - String - 是否必填：否 - 状态筛选（UN_OPERATED: 待处理 | FIXED：已修复）",
           "member": "Filter",
           "name": "Filters",
@@ -2403,7 +2267,6 @@
       "document": "DescribeAttackLogInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "日志ID",
           "member": "uint64",
           "name": "Id",
@@ -2541,7 +2404,6 @@
       "document": "DescribeAttackLogs请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -2549,7 +2411,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -2557,7 +2418,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>HttpMethod - String - 是否必填：否 - 攻击方法(POST|GET)</li>\n<li>MachineIp - String - 是否必填：否 - 主机内网IP</li>\n<li>DateRange - String - 是否必填：否 - 时间范围(存储最近3个月的数据)，如最近一个月[\"2019-11-17\", \"2019-12-17\"]</li>",
           "member": "Filter",
           "name": "Filters",
@@ -2565,7 +2425,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "主机安全客户端ID",
           "member": "string",
           "name": "Uuid",
@@ -2573,7 +2432,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "云主机机器ID",
           "member": "string",
           "name": "Quuid",
@@ -2613,7 +2471,6 @@
       "document": "DescribeBashEvents请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -2621,7 +2478,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -2629,7 +2485,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 关键词(主机内网IP)</li>",
           "member": "Filter",
           "name": "Filters",
@@ -2669,7 +2524,6 @@
       "document": "DescribeBashRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "0-系统规则; 1-用户规则",
           "member": "uint64",
           "name": "Type",
@@ -2677,7 +2531,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -2685,7 +2538,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -2693,7 +2545,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 关键字(规则名称)</li>",
           "member": "Filter",
           "name": "Filters",
@@ -2733,7 +2584,6 @@
       "document": "DescribeBruteAttacks请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "客户端唯一Uuid。",
           "member": "string",
           "name": "Uuid",
@@ -2741,7 +2591,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -2749,7 +2598,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 -  查询关键字</li>\n<li>Status - String - 是否必填：否 -  查询状态（FAILED：破解失败 |SUCCESS：破解成功）</li>",
           "member": "Filter",
           "name": "Filters",
@@ -2757,7 +2605,6 @@
           "type": "list"
         },
         {
-          "default": "10",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -2797,7 +2644,6 @@
       "document": "DescribeComponentInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "组件ID。",
           "member": "uint64",
           "name": "ComponentId",
@@ -2858,7 +2704,6 @@
       "document": "DescribeComponentStatistics请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -2866,7 +2711,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -2874,7 +2718,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\nComponentName - String - 是否必填：否 - 组件名称",
           "member": "Filter",
           "name": "Filters",
@@ -2914,7 +2757,6 @@
       "document": "DescribeComponents请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云镜客户端唯一Uuid。Uuid和ComponentId必填其一，使用Uuid表示，查询该主机列表信息。",
           "member": "string",
           "name": "Uuid",
@@ -2922,7 +2764,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "组件ID。Uuid和ComponentId必填其一，使用ComponentId表示，查询该组件列表信息。",
           "member": "uint64",
           "name": "ComponentId",
@@ -2930,7 +2771,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -2938,7 +2778,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -2946,7 +2785,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>ComponentVersion - String - 是否必填：否 - 组件版本号</li>\n<li>MachineIp - String - 是否必填：否 - 主机内网IP</li>",
           "member": "Filter",
           "name": "Filters",
@@ -2986,7 +2824,6 @@
       "document": "DescribeHistoryAccounts请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云镜客户端唯一Uuid。",
           "member": "string",
           "name": "Uuid",
@@ -2994,7 +2831,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -3002,7 +2838,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -3010,7 +2845,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>Username - String - 是否必填：否 - 帐号名</li>",
           "member": "Filter",
           "name": "Filters",
@@ -3050,7 +2884,6 @@
       "document": "DescribeImpactedHosts请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "漏洞种类ID。",
           "member": "uint64",
           "name": "VulId",
@@ -3058,7 +2891,6 @@
           "type": "int"
         },
         {
-          "default": "10",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -3066,7 +2898,6 @@
           "type": "int"
         },
         {
-          "default": "0",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -3074,7 +2905,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>Status - String - 是否必填：否 - 状态筛选（UN_OPERATED：待处理 | FIXED：已修复）</li>",
           "member": "Filter",
           "name": "Filters",
@@ -3114,7 +2944,6 @@
       "document": "DescribeLoginWhiteList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -3122,7 +2951,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -3130,7 +2958,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字 </li>",
           "member": "Filter",
           "name": "Filters",
@@ -3170,7 +2997,6 @@
       "document": "DescribeMachineInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云镜客户端唯一Uuid。",
           "member": "string",
           "name": "Uuid",
@@ -3308,7 +3134,6 @@
       "document": "DescribeMachines请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云主机类型。\n<li>CVM：表示虚拟主机</li>\n<li>BM:  表示黑石物理机</li>",
           "member": "string",
           "name": "MachineType",
@@ -3316,7 +3141,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "机器所属地域。如：ap-guangzhou，ap-shanghai",
           "member": "string",
           "name": "MachineRegion",
@@ -3324,7 +3148,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -3332,7 +3155,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -3340,7 +3162,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字 </li>\n<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线 | ONLINE: 在线 | UNINSTALLED：未安装）</li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版）</li>\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询",
           "member": "Filter",
           "name": "Filters",
@@ -3380,7 +3201,6 @@
       "document": "DescribeMaliciousRequests请求参数结构体",
       "members": [
         {
-          "default": "10",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -3388,7 +3208,6 @@
           "type": "int"
         },
         {
-          "default": "0",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -3396,7 +3215,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>Status - String - 是否必填：否 - 状态筛选（UN_OPERATED: 待处理 | TRUSTED：已信任 | UN_TRUSTED：已取消信任）</li>\n<li>Domain - String - 是否必填：否 - 恶意请求的域名</li>\n<li>MachineIp - String - 是否必填：否 - 主机内网IP</li>",
           "member": "Filter",
           "name": "Filters",
@@ -3404,7 +3222,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "云镜客户端唯一UUID。",
           "member": "string",
           "name": "Uuid",
@@ -3444,7 +3261,6 @@
       "document": "DescribeMalwares请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "客户端唯一Uuid。",
           "member": "string",
           "name": "Uuid",
@@ -3452,7 +3268,6 @@
           "type": "string"
         },
         {
-          "default": "10",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -3460,7 +3275,6 @@
           "type": "int"
         },
         {
-          "default": "0",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -3468,7 +3282,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字 </li>\n<li>Status - String - 是否必填：否 - 木马状态（UN_OPERATED: 未处理 | SEGREGATED: 已隔离|TRUSTED：信任）</li>\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询。",
           "member": "Filter",
           "name": "Filters",
@@ -3508,7 +3321,6 @@
       "document": "DescribeNonlocalLoginPlaces请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "客户端唯一Uuid。",
           "member": "string",
           "name": "Uuid",
@@ -3516,7 +3328,6 @@
           "type": "string"
         },
         {
-          "default": "10",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -3524,7 +3335,6 @@
           "type": "int"
         },
         {
-          "default": "0",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -3532,7 +3342,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 -  查询关键字</li>\n<li>Status - String - 是否必填：否 -  登录状态（NON_LOCAL_LOGIN: 异地登录 | NORMAL_LOGIN : 正常登录）</li>",
           "member": "Filter",
           "name": "Filters",
@@ -3572,7 +3381,6 @@
       "document": "DescribeOpenPortStatistics请求参数结构体",
       "members": [
         {
-          "default": "10",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -3580,7 +3388,6 @@
           "type": "int"
         },
         {
-          "default": "0",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -3588,7 +3395,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>Port - Uint64 - 是否必填：否 - 端口号</li>",
           "member": "Filter",
           "name": "Filters",
@@ -3628,7 +3434,6 @@
       "document": "DescribeOpenPortTaskStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云镜客户端唯一Uuid。",
           "member": "string",
           "name": "Uuid",
@@ -3661,7 +3466,6 @@
       "document": "DescribeOpenPorts请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云镜客户端唯一Uuid。Port和Uuid必填其一，使用Uuid表示，查询该主机列表信息。",
           "member": "string",
           "name": "Uuid",
@@ -3669,7 +3473,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "开放端口号。Port和Uuid必填其一，使用Port表示查询该端口的列表信息。",
           "member": "uint64",
           "name": "Port",
@@ -3677,7 +3480,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -3685,7 +3487,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -3693,7 +3494,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>Port - Uint64 - 是否必填：否 - 端口号</li>\n<li>ProcessName - String - 是否必填：否 - 进程名</li>\n<li>MachineIp - String - 是否必填：否 - 主机内网IP</li>",
           "member": "Filter",
           "name": "Filters",
@@ -3799,7 +3599,6 @@
       "document": "DescribePrivilegeEvents请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -3807,7 +3606,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -3815,7 +3613,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 关键词(主机IP)</li>",
           "member": "Filter",
           "name": "Filters",
@@ -3855,7 +3652,6 @@
       "document": "DescribePrivilegeRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -3863,7 +3659,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -3871,7 +3666,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 关键字(进程名称)</li>",
           "member": "Filter",
           "name": "Filters",
@@ -3949,7 +3743,6 @@
       "document": "DescribeProcessStatistics请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -3957,7 +3750,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -3965,7 +3757,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>ProcessName - String - 是否必填：否 - 进程名</li>",
           "member": "Filter",
           "name": "Filters",
@@ -4005,7 +3796,6 @@
       "document": "DescribeProcessTaskStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云镜客户端唯一Uuid。",
           "member": "string",
           "name": "Uuid",
@@ -4038,7 +3828,6 @@
       "document": "DescribeProcesses请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云镜客户端唯一Uuid。Uuid和ProcessName必填其一，使用Uuid表示，查询该主机列表信息。",
           "member": "string",
           "name": "Uuid",
@@ -4046,7 +3835,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "进程名。Uuid和ProcessName必填其一，使用ProcessName表示，查询该进程列表信息。",
           "member": "string",
           "name": "ProcessName",
@@ -4054,7 +3842,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -4062,7 +3849,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -4070,7 +3856,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>ProcessName - String - 是否必填：否 - 进程名</li>\n<li>MachineIp - String - 是否必填：否 - 主机内网IP</li>",
           "member": "Filter",
           "name": "Filters",
@@ -4110,7 +3895,6 @@
       "document": "DescribeReverseShellEvents请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -4118,7 +3902,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -4126,7 +3909,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 关键字(主机内网IP|进程名)</li>",
           "member": "Filter",
           "name": "Filters",
@@ -4166,7 +3948,6 @@
       "document": "DescribeReverseShellRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -4174,7 +3955,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -4182,7 +3962,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 关键字(进程名称)</li>",
           "member": "Filter",
           "name": "Filters",
@@ -4222,7 +4001,6 @@
       "document": "DescribeSecurityDynamics请求参数结构体",
       "members": [
         {
-          "default": "10",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -4230,7 +4008,6 @@
           "type": "int"
         },
         {
-          "default": "0",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -4270,7 +4047,6 @@
       "document": "DescribeSecurityTrends请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "开始时间。",
           "member": "date",
           "name": "BeginDate",
@@ -4278,7 +4054,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结束时间。",
           "member": "date",
           "name": "EndDate",
@@ -4374,7 +4149,6 @@
       "document": "DescribeTagMachines请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "标签ID",
           "member": "uint64",
           "name": "Id",
@@ -4407,7 +4181,6 @@
       "document": "DescribeTags请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云主机类型。\n<li>CVM：表示虚拟主机</li>\n<li>BM:  表示黑石物理机</li>",
           "member": "string",
           "name": "MachineType",
@@ -4415,7 +4188,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "机器所属地域。如：ap-guangzhou，ap-shanghai",
           "member": "string",
           "name": "MachineRegion",
@@ -4448,7 +4220,6 @@
       "document": "DescribeUsualLoginPlaces请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云镜客户端UUID",
           "member": "string",
           "name": "Uuid",
@@ -4481,7 +4252,6 @@
       "document": "DescribeVulInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "漏洞种类ID。",
           "member": "uint64",
           "name": "VulId",
@@ -4615,7 +4385,6 @@
       "document": "DescribeVuls请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "漏洞类型。\n<li>WEB：Web应用漏洞</li>\n<li>SYSTEM：系统组件漏洞</li>\n<li>BASELINE：安全基线</li>",
           "member": "string",
           "name": "VulType",
@@ -4623,7 +4392,6 @@
           "type": "string"
         },
         {
-          "default": "10",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -4631,7 +4399,6 @@
           "type": "int"
         },
         {
-          "default": "0",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -4639,7 +4406,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n<li>Status - String - 是否必填：否 - 状态筛选（UN_OPERATED: 待处理 | FIXED：已修复）\n\nStatus过滤条件值只能取其一，不能是“或”逻辑。",
           "member": "Filter",
           "name": "Filters",
@@ -4679,7 +4445,6 @@
       "document": "DescribeWeeklyReportBruteAttacks请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "专业周报开始时间。",
           "member": "date",
           "name": "BeginDate",
@@ -4687,7 +4452,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -4695,7 +4459,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -4735,7 +4498,6 @@
       "document": "DescribeWeeklyReportInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "专业周报开始时间。",
           "member": "date",
           "name": "BeginDate",
@@ -4852,7 +4614,6 @@
       "document": "DescribeWeeklyReportMalwares请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "专业周报开始时间。",
           "member": "date",
           "name": "BeginDate",
@@ -4860,7 +4621,6 @@
           "type": "string"
         },
         {
-          "default": "10",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -4868,7 +4628,6 @@
           "type": "int"
         },
         {
-          "default": "0",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -4908,7 +4667,6 @@
       "document": "DescribeWeeklyReportNonlocalLoginPlaces请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "专业周报开始时间。",
           "member": "date",
           "name": "BeginDate",
@@ -4916,7 +4674,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -4924,7 +4681,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -4964,7 +4720,6 @@
       "document": "DescribeWeeklyReportVuls请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "专业版周报开始时间。",
           "member": "date",
           "name": "BeginDate",
@@ -4972,7 +4727,6 @@
           "type": "string"
         },
         {
-          "default": "10",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -4980,7 +4734,6 @@
           "type": "int"
         },
         {
-          "default": "0",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -5020,7 +4773,6 @@
       "document": "DescribeWeeklyReports请求参数结构体",
       "members": [
         {
-          "default": "10",
           "document": "返回数量，默认为10，最大值为100。",
           "member": "uint64",
           "name": "Limit",
@@ -5028,7 +4780,6 @@
           "type": "int"
         },
         {
-          "default": "0",
           "document": "偏移量，默认为0。",
           "member": "uint64",
           "name": "Offset",
@@ -5068,7 +4819,6 @@
       "document": "EditBashRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "规则名称",
           "member": "string",
           "name": "Name",
@@ -5076,7 +4826,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "危险等级(1: 高危 2:中危 3: 低危)",
           "member": "uint64",
           "name": "Level",
@@ -5084,7 +4833,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "正则表达式",
           "member": "string",
           "name": "Rule",
@@ -5092,7 +4840,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "规则ID(新增时不填)",
           "member": "uint64",
           "name": "Id",
@@ -5100,7 +4847,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "客户端ID(IsGlobal为1时，Uuid或Hostip必填一个)",
           "member": "string",
           "name": "Uuid",
@@ -5108,7 +4854,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "主机IP(IsGlobal为1时，Uuid或Hostip必填一个)",
           "member": "string",
           "name": "Hostip",
@@ -5116,7 +4861,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否全局规则(默认否)",
           "member": "uint64",
           "name": "IsGlobal",
@@ -5142,7 +4886,6 @@
       "document": "EditPrivilegeRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "规则ID(新增时请留空)",
           "member": "uint64",
           "name": "Id",
@@ -5150,7 +4893,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "客户端ID(IsGlobal为1时，Uuid或Hostip必填一个)",
           "member": "string",
           "name": "Uuid",
@@ -5158,7 +4900,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "主机IP(IsGlobal为1时，Uuid或Hostip必填一个)",
           "member": "string",
           "name": "Hostip",
@@ -5166,7 +4907,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "进程名",
           "member": "string",
           "name": "ProcessName",
@@ -5174,7 +4914,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否S权限进程",
           "member": "uint64",
           "name": "SMode",
@@ -5182,7 +4921,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否全局规则(默认否)",
           "member": "uint64",
           "name": "IsGlobal",
@@ -5208,7 +4946,6 @@
       "document": "EditReverseShellRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "规则ID(新增时请留空)",
           "member": "uint64",
           "name": "Id",
@@ -5216,7 +4953,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "客户端ID(IsGlobal为1时，Uuid或Hostip必填一个)",
           "member": "string",
           "name": "Uuid",
@@ -5224,7 +4960,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "主机IP(IsGlobal为1时，Uuid或Hostip必填一个)",
           "member": "string",
           "name": "Hostip",
@@ -5232,7 +4967,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "目标IP",
           "member": "string",
           "name": "DestIp",
@@ -5240,7 +4974,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "目标端口",
           "member": "string",
           "name": "DestPort",
@@ -5248,7 +4981,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "进程名",
           "member": "string",
           "name": "ProcessName",
@@ -5256,7 +4988,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否全局规则(默认否)",
           "member": "uint64",
           "name": "IsGlobal",
@@ -5282,7 +5013,6 @@
       "document": "EditTags请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "标签名",
           "member": "string",
           "name": "Name",
@@ -5290,7 +5020,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "标签ID",
           "member": "uint64",
           "name": "Id",
@@ -5298,7 +5027,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "CVM主机ID",
           "member": "string",
           "name": "Quuids",
@@ -5530,7 +5258,6 @@
       "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n\n若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。\n\n* 最多只能有5个Filter\n* 同一个Filter存在多个Values，Values值数量最多不能超过5个。\n",
       "members": [
         {
-          "default": "",
           "document": "过滤键的名称。",
           "member": "string",
           "name": "Name",
@@ -5539,7 +5266,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "一个或者多个过滤值。",
           "member": "string",
           "name": "Values",
@@ -5554,7 +5280,6 @@
       "document": "账号变更历史数据。",
       "members": [
         {
-          "default": "",
           "document": "唯一ID。",
           "member": "uint64",
           "name": "Id",
@@ -5563,7 +5288,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云镜客户端唯一Uuid。",
           "member": "string",
           "name": "Uuid",
@@ -5572,7 +5296,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机内网IP。",
           "member": "string",
           "name": "MachineIp",
@@ -5581,7 +5304,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机名。",
           "member": "string",
           "name": "MachineName",
@@ -5590,7 +5312,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "帐号名。",
           "member": "string",
           "name": "Username",
@@ -5599,7 +5320,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "帐号变更类型。\n<li>CREATE：表示新增帐号</li>\n<li>MODIFY：表示修改帐号</li>\n<li>DELETE：表示删除帐号</li>",
           "member": "string",
           "name": "ModifyType",
@@ -5608,7 +5328,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "变更时间。",
           "member": "datetime",
           "name": "ModifyTime",
@@ -5623,7 +5342,6 @@
       "document": "IgnoreImpactedHosts请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "漏洞ID数组。",
           "member": "uint64",
           "name": "Ids",
@@ -5649,7 +5367,6 @@
       "document": "受影响主机信息",
       "members": [
         {
-          "default": "",
           "document": "漏洞ID。",
           "member": "uint64",
           "name": "Id",
@@ -5658,7 +5375,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机IP。",
           "member": "string",
           "name": "MachineIp",
@@ -5667,7 +5383,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机名称。",
           "member": "string",
           "name": "MachineName",
@@ -5676,7 +5391,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "最后检测时间。",
           "member": "datetime",
           "name": "LastScanTime",
@@ -5685,7 +5399,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "漏洞状态。\n<li>UN_OPERATED ：待处理</li>\n<li>SCANING : 扫描中</li>\n<li>FIXED : 已修复</li>",
           "member": "string",
           "name": "VulStatus",
@@ -5694,7 +5407,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云镜客户端唯一标识UUID。",
           "member": "string",
           "name": "Uuid",
@@ -5703,7 +5415,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "漏洞描述。",
           "member": "string",
           "name": "Description",
@@ -5712,7 +5423,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "漏洞种类ID。",
           "member": "uint64",
           "name": "VulId",
@@ -5721,7 +5431,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否为专业版。",
           "member": "bool",
           "name": "IsProVersion",
@@ -5736,7 +5445,6 @@
       "document": "InquiryPriceOpenProVersionPrepaid请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "预付费模式(包年包月)参数设置。",
           "member": "ChargePrepaid",
           "name": "ChargePrepaid",
@@ -5744,7 +5452,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "需要开通专业版机器列表数组。",
           "member": "ProVersionMachine",
           "name": "Machines",
@@ -5784,7 +5491,6 @@
       "document": "异地登录白名单",
       "members": [
         {
-          "default": "",
           "document": "记录ID",
           "member": "uint64",
           "name": "Id",
@@ -5793,7 +5499,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云镜客户端ID",
           "member": "string",
           "name": "Uuid",
@@ -5802,7 +5507,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "白名单地域",
           "member": "Place",
           "name": "Places",
@@ -5811,7 +5515,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "白名单用户（多个用户逗号隔开）",
           "member": "string",
           "name": "UserName",
@@ -5820,7 +5523,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "白名单IP（多个IP逗号隔开）",
           "member": "string",
           "name": "SrcIp",
@@ -5829,7 +5531,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否为全局规则",
           "member": "bool",
           "name": "IsGlobal",
@@ -5838,7 +5539,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建白名单时间",
           "member": "datetime",
           "name": "CreateTime",
@@ -5847,7 +5547,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "修改白名单时间",
           "member": "datetime",
           "name": "ModifyTime",
@@ -5856,7 +5555,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "机器名",
           "member": "string",
           "name": "MachineName",
@@ -5865,7 +5563,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "机器IP",
           "member": "string",
           "name": "HostIp",
@@ -5874,7 +5571,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "起始时间",
           "member": "string",
           "name": "StartTime",
@@ -5883,7 +5579,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "结束时间",
           "member": "string",
           "name": "EndTime",
@@ -5898,7 +5593,6 @@
       "document": "白名单规则",
       "members": [
         {
-          "default": "",
           "document": "加白地域",
           "member": "Place",
           "name": "Places",
@@ -5907,7 +5601,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "加白源IP，支持网段，多个IP以逗号隔开",
           "member": "string",
           "name": "SrcIp",
@@ -5916,7 +5609,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "加白用户名，多个用户名以逗号隔开",
           "member": "string",
           "name": "UserName",
@@ -5925,7 +5617,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否对全局生效",
           "member": "bool",
           "name": "IsGlobal",
@@ -5934,7 +5625,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "白名单生效的机器",
           "member": "string",
           "name": "HostIp",
@@ -5943,7 +5633,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则ID，用于更新规则",
           "member": "uint64",
           "name": "Id",
@@ -5952,7 +5641,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "起始时间",
           "member": "string",
           "name": "StartTime",
@@ -5961,7 +5649,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "结束时间",
           "member": "string",
           "name": "EndTime",
@@ -5976,7 +5663,6 @@
       "document": "主机列表",
       "members": [
         {
-          "default": "",
           "document": "主机名称。",
           "member": "string",
           "name": "MachineName",
@@ -5985,7 +5671,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机系统。",
           "member": "string",
           "name": "MachineOs",
@@ -5994,7 +5679,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机状态。\n<li>OFFLINE: 离线  </li>\n<li>ONLINE: 在线</li>\n<li>MACHINE_STOPPED: 已关机</li>",
           "member": "string",
           "name": "MachineStatus",
@@ -6003,7 +5687,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云镜客户端唯一Uuid，若客户端长时间不在线将返回空字符。",
           "member": "string",
           "name": "Uuid",
@@ -6012,7 +5695,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "CVM或BM机器唯一Uuid。",
           "member": "string",
           "name": "Quuid",
@@ -6021,7 +5703,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "漏洞数。",
           "member": "int64",
           "name": "VulNum",
@@ -6030,7 +5711,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机IP。",
           "member": "string",
           "name": "MachineIp",
@@ -6039,7 +5719,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否是专业版。\n<li>true： 是</li>\n<li>false：否</li>",
           "member": "bool",
           "name": "IsProVersion",
@@ -6048,7 +5727,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机外网IP。",
           "member": "string",
           "name": "MachineWanIp",
@@ -6057,7 +5735,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机状态。\n<li>POSTPAY: 表示后付费，即按量计费  </li>\n<li>PREPAY: 表示预付费，即包年包月</li>",
           "member": "string",
           "name": "PayMode",
@@ -6066,7 +5743,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "木马数。",
           "member": "int64",
           "name": "MalwareNum",
@@ -6075,7 +5751,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签信息",
           "member": "MachineTag",
           "name": "Tag",
@@ -6084,7 +5759,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "基线风险数。",
           "member": "int64",
           "name": "BaselineNum",
@@ -6093,7 +5767,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "网络风险数。",
           "member": "int64",
           "name": "CyberAttackNum",
@@ -6102,7 +5775,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "风险状态。\n<li>SAFE：安全</li>\n<li>RISK：风险</li>\n<li>UNKNOWN：未知</li>",
           "member": "string",
           "name": "SecurityStatus",
@@ -6111,7 +5783,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "入侵事件数",
           "member": "int64",
           "name": "InvasionNum",
@@ -6120,7 +5791,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "地域信息",
           "member": "RegionInfo",
           "name": "RegionInfo",
@@ -6135,7 +5805,6 @@
       "document": "服务器标签信息",
       "members": [
         {
-          "default": "",
           "document": "关联标签ID",
           "member": "int64",
           "name": "Rid",
@@ -6144,7 +5813,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签名",
           "member": "string",
           "name": "Name",
@@ -6153,7 +5821,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签ID",
           "member": "uint64",
           "name": "TagId",
@@ -6168,7 +5835,6 @@
       "document": "恶意请求数据。",
       "members": [
         {
-          "default": "",
           "document": "记录ID。",
           "member": "uint64",
           "name": "Id",
@@ -6177,7 +5843,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云镜客户端UUID。",
           "member": "string",
           "name": "Uuid",
@@ -6186,7 +5851,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机内网IP。",
           "member": "string",
           "name": "MachineIp",
@@ -6195,7 +5859,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机名。",
           "member": "string",
           "name": "MachineName",
@@ -6204,7 +5867,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "恶意请求域名。",
           "member": "string",
           "name": "Domain",
@@ -6213,7 +5875,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "恶意请求数。",
           "member": "uint64",
           "name": "Count",
@@ -6222,7 +5883,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "进程名。",
           "member": "string",
           "name": "ProcessName",
@@ -6231,7 +5891,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "记录状态。\n<li>UN_OPERATED：待处理</li>\n<li>TRUSTED：已信任</li>\n<li>UN_TRUSTED：已取消信任</li>",
           "member": "string",
           "name": "Status",
@@ -6240,7 +5899,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "恶意请求域名描述。",
           "member": "string",
           "name": "Description",
@@ -6249,7 +5907,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "参考地址。",
           "member": "string",
           "name": "Reference",
@@ -6258,7 +5915,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "发现时间。",
           "member": "datetime",
           "name": "CreateTime",
@@ -6267,7 +5923,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "记录合并时间。",
           "member": "datetime",
           "name": "MergeTime",
@@ -6276,7 +5931,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "进程MD5\n值。",
           "member": "string",
           "name": "ProcessMd5",
@@ -6285,7 +5939,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "执行命令行。",
           "member": "string",
           "name": "CmdLine",
@@ -6294,7 +5947,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "进程PID。",
           "member": "uint64",
           "name": "Pid",
@@ -6309,7 +5961,6 @@
       "document": "木马相关信息",
       "members": [
         {
-          "default": "",
           "document": "事件ID。",
           "member": "uint64",
           "name": "Id",
@@ -6318,7 +5969,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机IP。",
           "member": "string",
           "name": "MachineIp",
@@ -6327,7 +5977,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "当前木马状态。\n<li>UN_OPERATED：未处理</li><li>SEGREGATED：已隔离</li><li>TRUSTED：已信任</li>\n<li>SEPARATING：隔离中</li><li>RECOVERING：恢复中</li>",
           "member": "string",
           "name": "Status",
@@ -6336,7 +5985,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "木马所在的路径。",
           "member": "string",
           "name": "FilePath",
@@ -6345,7 +5993,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "木马描述。",
           "member": "string",
           "name": "Description",
@@ -6354,7 +6001,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机名称。",
           "member": "string",
           "name": "MachineName",
@@ -6363,7 +6009,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "木马文件创建时间。",
           "member": "datetime",
           "name": "FileCreateTime",
@@ -6372,7 +6017,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "木马文件修改时间。",
           "member": "datetime_iso",
           "name": "ModifyTime",
@@ -6381,7 +6025,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云镜客户端唯一标识UUID。",
           "member": "string",
           "name": "Uuid",
@@ -6396,7 +6039,6 @@
       "document": "MisAlarmNonlocalLoginPlaces请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "异地登录事件Id数组。",
           "member": "uint64",
           "name": "Ids",
@@ -6422,7 +6064,6 @@
       "document": "ModifyAlarmAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "告警项目。\n<li>Offline：防护软件离线</li>\n<li>Malware：发现木马文件</li>\n<li>NonlocalLogin：发现异地登录行为</li>\n<li>CrackSuccess：被暴力破解成功</li>",
           "member": "string",
           "name": "Attribute",
@@ -6430,7 +6071,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "告警项目属性。\n<li>CLOSE：关闭</li>\n<li>OPEN：打开</li>",
           "member": "string",
           "name": "Value",
@@ -6456,7 +6096,6 @@
       "document": "ModifyAutoOpenProVersionConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "设置自动开通状态。\n<li>CLOSE：关闭</li>\n<li>OPEN：打开</li>",
           "member": "string",
           "name": "Status",
@@ -6482,7 +6121,6 @@
       "document": "ModifyLoginWhiteList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "白名单规则",
           "member": "LoginWhiteListsRule",
           "name": "Rules",
@@ -6508,7 +6146,6 @@
       "document": "ModifyProVersionRenewFlag请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "自动续费标识。取值范围：\n<li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li>\n<li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费</li>\n<li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费</li>",
           "member": "string",
           "name": "RenewFlag",
@@ -6516,7 +6153,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "主机唯一ID，对应CVM的uuid、BM的instanceId。",
           "member": "string",
           "name": "Quuid",
@@ -6542,7 +6178,6 @@
       "document": "异地登录",
       "members": [
         {
-          "default": "",
           "document": "事件ID。",
           "member": "uint64",
           "name": "Id",
@@ -6551,7 +6186,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机IP。",
           "member": "string",
           "name": "MachineIp",
@@ -6560,7 +6194,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "登录状态\n<li>NON_LOCAL_LOGIN：异地登录</li>\n<li>NORMAL_LOGIN：正常登录</li>",
           "member": "string",
           "name": "Status",
@@ -6569,7 +6202,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用户名。",
           "member": "string",
           "name": "UserName",
@@ -6578,7 +6210,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "城市ID。",
           "member": "uint64",
           "name": "City",
@@ -6587,7 +6218,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "国家ID。",
           "member": "uint64",
           "name": "Country",
@@ -6596,7 +6226,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "省份ID。",
           "member": "uint64",
           "name": "Province",
@@ -6605,7 +6234,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "登录IP。",
           "member": "string",
           "name": "SrcIp",
@@ -6614,7 +6242,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "机器名称。",
           "member": "string",
           "name": "MachineName",
@@ -6623,7 +6250,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "登录时间。",
           "member": "datetime",
           "name": "LoginTime",
@@ -6632,7 +6258,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云镜客户端唯一标识Uuid。",
           "member": "string",
           "name": "Uuid",
@@ -6647,7 +6272,6 @@
       "document": "端口列表",
       "members": [
         {
-          "default": "",
           "document": "唯一ID。",
           "member": "uint64",
           "name": "Id",
@@ -6656,7 +6280,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云镜客户端唯一UUID。",
           "member": "string",
           "name": "Uuid",
@@ -6665,7 +6288,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "开放端口号。",
           "member": "uint64",
           "name": "Port",
@@ -6674,7 +6296,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机IP。",
           "member": "string",
           "name": "MachineIp",
@@ -6683,7 +6304,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机名。",
           "member": "string",
           "name": "MachineName",
@@ -6692,7 +6312,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "端口对应进程名。",
           "member": "string",
           "name": "ProcessName",
@@ -6701,7 +6320,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "端口对应进程Pid。",
           "member": "uint64",
           "name": "Pid",
@@ -6710,7 +6328,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "记录创建时间。",
           "member": "datetime",
           "name": "CreateTime",
@@ -6719,7 +6336,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "记录更新时间。",
           "member": "datetime",
           "name": "ModifyTime",
@@ -6734,7 +6350,6 @@
       "document": "端口统计列表",
       "members": [
         {
-          "default": "",
           "document": "端口号",
           "member": "uint64",
           "name": "Port",
@@ -6743,7 +6358,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机数量",
           "member": "uint64",
           "name": "MachineNum",
@@ -6758,7 +6372,6 @@
       "document": "OpenProVersionPrepaid请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "购买相关参数。",
           "member": "ChargePrepaid",
           "name": "ChargePrepaid",
@@ -6766,7 +6379,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "需要开通专业版主机信息数组。",
           "member": "ProVersionMachine",
           "name": "Machines",
@@ -6799,7 +6411,6 @@
       "document": "OpenProVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "云主机类型。\n<li>CVM：表示虚拟主机</li>\n<li>BM:  表示黑石物理机</li>",
           "member": "string",
           "name": "MachineType",
@@ -6807,7 +6418,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "机器所属地域。\n如：ap-guangzhou，ap-shanghai",
           "member": "string",
           "name": "MachineRegion",
@@ -6815,7 +6425,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "主机唯一标识Uuid数组。\n黑石的InstanceId，CVM的Uuid",
           "member": "string",
           "name": "Quuids",
@@ -6823,7 +6432,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "活动ID。",
           "member": "uint64",
           "name": "ActivityId",
@@ -6849,7 +6457,6 @@
       "document": "登录地信息",
       "members": [
         {
-          "default": "",
           "document": "城市 ID。",
           "member": "uint64",
           "name": "CityId",
@@ -6858,7 +6465,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "省份 ID。",
           "member": "uint64",
           "name": "ProvinceId",
@@ -6867,7 +6473,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "国家ID，暂只支持国内：1。",
           "member": "uint64",
           "name": "CountryId",
@@ -6882,7 +6487,6 @@
       "document": "本地提权数据",
       "members": [
         {
-          "default": "",
           "document": "数据ID",
           "member": "uint64",
           "name": "Id",
@@ -6891,7 +6495,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云镜ID",
           "member": "string",
           "name": "Uuid",
@@ -6900,7 +6503,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机ID",
           "member": "string",
           "name": "Quuid",
@@ -6909,7 +6511,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机内网IP",
           "member": "string",
           "name": "Hostip",
@@ -6918,7 +6519,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "进程名",
           "member": "string",
           "name": "ProcessName",
@@ -6927,7 +6527,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "进程路径",
           "member": "string",
           "name": "FullPath",
@@ -6936,7 +6535,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "执行命令",
           "member": "string",
           "name": "CmdLine",
@@ -6945,7 +6543,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用户名",
           "member": "string",
           "name": "UserName",
@@ -6954,7 +6551,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用户组",
           "member": "string",
           "name": "UserGroup",
@@ -6963,7 +6559,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "进程文件权限",
           "member": "string",
           "name": "ProcFilePrivilege",
@@ -6972,7 +6567,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "父进程名",
           "member": "string",
           "name": "ParentProcName",
@@ -6981,7 +6575,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "父进程用户名",
           "member": "string",
           "name": "ParentProcUser",
@@ -6990,7 +6583,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "父进程用户组",
           "member": "string",
           "name": "ParentProcGroup",
@@ -6999,7 +6591,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "父进程路径",
           "member": "string",
           "name": "ParentProcPath",
@@ -7008,7 +6599,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "进程树",
           "member": "string",
           "name": "ProcTree",
@@ -7017,7 +6607,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "处理状态",
           "member": "uint64",
           "name": "Status",
@@ -7026,7 +6615,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "发生时间",
           "member": "string",
           "name": "CreateTime",
@@ -7035,7 +6623,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "机器名",
           "member": "string",
           "name": "MachineName",
@@ -7050,7 +6637,6 @@
       "document": "本地提权规则",
       "members": [
         {
-          "default": "",
           "document": "规则ID",
           "member": "uint64",
           "name": "Id",
@@ -7059,7 +6645,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "客户端ID",
           "member": "string",
           "name": "Uuid",
@@ -7068,7 +6653,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "进程名",
           "member": "string",
           "name": "ProcessName",
@@ -7077,7 +6661,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否S权限",
           "member": "uint64",
           "name": "SMode",
@@ -7086,7 +6669,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "操作人",
           "member": "string",
           "name": "Operator",
@@ -7095,7 +6677,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否全局规则",
           "member": "uint64",
           "name": "IsGlobal",
@@ -7104,7 +6685,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "状态(0: 有效 1: 无效)",
           "member": "uint64",
           "name": "Status",
@@ -7113,7 +6693,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
           "member": "string",
           "name": "CreateTime",
@@ -7122,7 +6701,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "修改时间",
           "member": "string",
           "name": "ModifyTime",
@@ -7131,7 +6709,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机IP",
           "member": "string",
           "name": "Hostip",
@@ -7146,7 +6723,6 @@
       "document": "需要开通专业版机器信息。",
       "members": [
         {
-          "default": "",
           "document": "主机类型。\n<li>CVM: 虚拟主机</li>\n<li>BM: 黑石物理机</li>",
           "member": "string",
           "name": "MachineType",
@@ -7155,7 +6731,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机所在地域。\n如：ap-guangzhou、ap-beijing",
           "member": "string",
           "name": "MachineRegion",
@@ -7164,7 +6739,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机唯一标识Uuid。\n黑石的InstanceId，CVM的Uuid",
           "member": "string",
           "name": "Quuid",
@@ -7179,7 +6753,6 @@
       "document": "进程信息数据。",
       "members": [
         {
-          "default": "",
           "document": "唯一ID。",
           "member": "uint64",
           "name": "Id",
@@ -7188,7 +6761,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云镜客户端唯一UUID。",
           "member": "string",
           "name": "Uuid",
@@ -7197,7 +6769,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机内网IP。",
           "member": "string",
           "name": "MachineIp",
@@ -7206,7 +6777,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机名。",
           "member": "string",
           "name": "MachineName",
@@ -7215,7 +6785,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "进程Pid。",
           "member": "uint64",
           "name": "Pid",
@@ -7224,7 +6793,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "进程Ppid。",
           "member": "uint64",
           "name": "Ppid",
@@ -7233,7 +6801,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "进程名。",
           "member": "string",
           "name": "ProcessName",
@@ -7242,7 +6809,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "进程用户名。",
           "member": "string",
           "name": "Username",
@@ -7251,7 +6817,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "所属平台。\n<li>WIN32：windows32位</li>\n<li>WIN64：windows64位</li>\n<li>LINUX32：Linux32位</li>\n<li>LINUX64：Linux64位</li>",
           "member": "string",
           "name": "Platform",
@@ -7260,7 +6825,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "进程路径。",
           "member": "string",
           "name": "FullPath",
@@ -7269,7 +6833,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间。",
           "member": "datetime",
           "name": "CreateTime",
@@ -7284,7 +6847,6 @@
       "document": "进程数据统计数据。",
       "members": [
         {
-          "default": "",
           "document": "进程名。",
           "member": "string",
           "name": "ProcessName",
@@ -7293,7 +6855,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机数量。",
           "member": "uint64",
           "name": "MachineNum",
@@ -7308,7 +6869,6 @@
       "document": "RecoverMalwares请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "木马Id数组,单次最大删除不能超过200条",
           "member": "uint64",
           "name": "Ids",
@@ -7348,7 +6908,6 @@
       "document": "地域信息",
       "members": [
         {
-          "default": "",
           "document": "地域标志，如 ap-guangzhou，ap-shanghai，ap-beijing",
           "member": "string",
           "name": "Region",
@@ -7357,7 +6916,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "地域中文名，如华南地区（广州），华东地区（上海金融），华北地区（北京）",
           "member": "string",
           "name": "RegionName",
@@ -7366,7 +6924,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "地域ID",
           "member": "uint64",
           "name": "RegionId",
@@ -7375,7 +6932,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "地域代码，如 gz，sh，bj",
           "member": "string",
           "name": "RegionCode",
@@ -7390,7 +6946,6 @@
       "document": "RenewProVersion请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "购买相关参数。",
           "member": "ChargePrepaid",
           "name": "ChargePrepaid",
@@ -7398,7 +6953,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "主机唯一ID，对应CVM的uuid、BM的InstanceId。",
           "member": "string",
           "name": "Quuid",
@@ -7424,7 +6978,6 @@
       "document": "RescanImpactedHost请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "漏洞ID。",
           "member": "uint64",
           "name": "Id",
@@ -7450,7 +7003,6 @@
       "document": "反弹Shell数据",
       "members": [
         {
-          "default": "",
           "document": "ID",
           "member": "uint64",
           "name": "Id",
@@ -7459,7 +7011,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云镜UUID",
           "member": "string",
           "name": "Uuid",
@@ -7468,7 +7019,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机ID",
           "member": "string",
           "name": "Quuid",
@@ -7477,7 +7027,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机内网IP",
           "member": "string",
           "name": "Hostip",
@@ -7486,7 +7035,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "目标IP",
           "member": "string",
           "name": "DstIp",
@@ -7495,7 +7043,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "目标端口",
           "member": "uint64",
           "name": "DstPort",
@@ -7504,7 +7051,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "进程名",
           "member": "string",
           "name": "ProcessName",
@@ -7513,7 +7059,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "进程路径",
           "member": "string",
           "name": "FullPath",
@@ -7522,7 +7067,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "命令详情",
           "member": "string",
           "name": "CmdLine",
@@ -7531,7 +7075,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "执行用户",
           "member": "string",
           "name": "UserName",
@@ -7540,7 +7083,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "执行用户组",
           "member": "string",
           "name": "UserGroup",
@@ -7549,7 +7091,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "父进程名",
           "member": "string",
           "name": "ParentProcName",
@@ -7558,7 +7099,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "父进程用户",
           "member": "string",
           "name": "ParentProcUser",
@@ -7567,7 +7107,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "父进程用户组",
           "member": "string",
           "name": "ParentProcGroup",
@@ -7576,7 +7115,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "父进程路径",
           "member": "string",
           "name": "ParentProcPath",
@@ -7585,7 +7123,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "处理状态",
           "member": "uint64",
           "name": "Status",
@@ -7594,7 +7131,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "产生时间",
           "member": "string",
           "name": "CreateTime",
@@ -7603,7 +7139,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机名",
           "member": "string",
           "name": "MachineName",
@@ -7612,7 +7147,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "进程树",
           "member": "string",
           "name": "ProcTree",
@@ -7627,7 +7161,6 @@
       "document": "反弹Shell规则",
       "members": [
         {
-          "default": "",
           "document": "规则ID",
           "member": "uint64",
           "name": "Id",
@@ -7636,7 +7169,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "客户端ID",
           "member": "string",
           "name": "Uuid",
@@ -7645,7 +7177,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "进程名称",
           "member": "string",
           "name": "ProcessName",
@@ -7654,7 +7185,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "目标IP",
           "member": "string",
           "name": "DestIp",
@@ -7663,7 +7193,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "目标端口",
           "member": "string",
           "name": "DestPort",
@@ -7672,7 +7201,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "操作人",
           "member": "string",
           "name": "Operator",
@@ -7681,7 +7209,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否全局规则",
           "member": "uint64",
           "name": "IsGlobal",
@@ -7690,7 +7217,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "状态 (0: 有效 1: 无效)",
           "member": "uint64",
           "name": "Status",
@@ -7699,7 +7225,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
           "member": "string",
           "name": "CreateTime",
@@ -7708,7 +7233,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "修改时间",
           "member": "string",
           "name": "ModifyTime",
@@ -7717,7 +7241,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机IP",
           "member": "string",
           "name": "Hostip",
@@ -7732,7 +7255,6 @@
       "document": "安全事件消息数据。",
       "members": [
         {
-          "default": "",
           "document": "云镜客户端UUID。",
           "member": "string",
           "name": "Uuid",
@@ -7741,7 +7263,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "安全事件发生事件。",
           "member": "datetime",
           "name": "EventTime",
@@ -7750,7 +7271,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "安全事件类型。\n<li>MALWARE：木马事件</li>\n<li>NON_LOCAL_LOGIN：异地登录</li>\n<li>BRUTEATTACK_SUCCESS：密码破解成功</li>\n<li>VUL：漏洞</li>\n<li>BASELINE：安全基线</li>",
           "member": "string",
           "name": "EventType",
@@ -7759,7 +7279,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "安全事件消息。",
           "member": "string",
           "name": "Message",
@@ -7768,7 +7287,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "安全事件等级。\n<li>RISK: 严重</li>\n<li>HIGH: 高危</li>\n<li>NORMAL: 中危</li>\n<li>LOW: 低危</li>",
           "member": "string",
           "name": "SecurityLevel",
@@ -7783,7 +7301,6 @@
       "document": "安全趋势统计数据。",
       "members": [
         {
-          "default": "",
           "document": "事件时间。",
           "member": "date",
           "name": "Date",
@@ -7792,7 +7309,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "事件数量。",
           "member": "uint64",
           "name": "EventNum",
@@ -7807,7 +7323,6 @@
       "document": "SeparateMalwares请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "木马事件ID数组。",
           "member": "uint64",
           "name": "Ids",
@@ -7847,7 +7362,6 @@
       "document": "SetBashEventsStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "ID数组，最大100条。",
           "member": "uint64",
           "name": "Ids",
@@ -7855,7 +7369,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "新状态(0-待处理 1-高危 2-正常)",
           "member": "uint64",
           "name": "Status",
@@ -7881,7 +7394,6 @@
       "document": "SwitchBashRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "规则ID",
           "member": "uint64",
           "name": "Id",
@@ -7889,7 +7401,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否禁用",
           "member": "uint64",
           "name": "Disabled",
@@ -7915,7 +7426,6 @@
       "document": "标签信息",
       "members": [
         {
-          "default": "",
           "document": "标签ID",
           "member": "uint64",
           "name": "Id",
@@ -7924,7 +7434,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签名",
           "member": "string",
           "name": "Name",
@@ -7933,7 +7442,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "服务器数",
           "member": "uint64",
           "name": "Count",
@@ -7948,7 +7456,6 @@
       "document": "标签相关服务器信息",
       "members": [
         {
-          "default": "",
           "document": "ID",
           "member": "string",
           "name": "Id",
@@ -7957,7 +7464,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机ID",
           "member": "string",
           "name": "Quuid",
@@ -7966,7 +7472,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机名称",
           "member": "string",
           "name": "MachineName",
@@ -7975,7 +7480,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机内网IP",
           "member": "string",
           "name": "MachineIp",
@@ -7984,7 +7488,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机外网IP",
           "member": "string",
           "name": "MachineWanIp",
@@ -7993,7 +7496,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机区域",
           "member": "string",
           "name": "MachineRegion",
@@ -8002,7 +7504,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主机区域类型",
           "member": "string",
           "name": "MachineType",
@@ -8017,7 +7518,6 @@
       "document": "TrustMaliciousRequest请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "恶意请求记录ID。",
           "member": "uint64",
           "name": "Id",
@@ -8043,7 +7543,6 @@
       "document": "TrustMalwares请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "木马ID数组。",
           "member": "uint64",
           "name": "Ids",
@@ -8069,7 +7568,6 @@
       "document": "UntrustMaliciousRequest请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "受信任记录ID。",
           "member": "uint64",
           "name": "Id",
@@ -8095,7 +7593,6 @@
       "document": "UntrustMalwares请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "木马ID数组，单次最大处理不能超过200条。",
           "member": "uint64",
           "name": "Ids",
@@ -8121,7 +7618,6 @@
       "document": "常用登录地",
       "members": [
         {
-          "default": "",
           "document": "ID。",
           "member": "uint64",
           "name": "Id",
@@ -8130,7 +7626,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "云镜客户端唯一标识UUID。",
           "member": "string",
           "name": "Uuid",
@@ -8139,7 +7634,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "国家 ID。",
           "member": "uint64",
           "name": "CountryId",
@@ -8148,7 +7642,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "省份 ID。",
           "member": "uint64",
           "name": "ProvinceId",
@@ -8157,7 +7650,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "城市 ID。",
           "member": "uint64",
           "name": "CityId",
@@ -8172,7 +7664,6 @@
       "document": "漏洞列表数据",
       "members": [
         {
-          "default": "",
           "document": "漏洞种类ID",
           "member": "uint64",
           "name": "VulId",
@@ -8181,7 +7672,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "漏洞名称",
           "member": "string",
           "name": "VulName",
@@ -8190,7 +7680,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "漏洞危害等级:\nHIGH：高危\nMIDDLE：中危\nLOW：低危\nNOTICE：提示",
           "member": "string",
           "name": "VulLevel",
@@ -8199,7 +7688,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "最后扫描时间",
           "member": "datetime",
           "name": "LastScanTime",
@@ -8208,7 +7696,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "受影响机器数量",
           "member": "uint64",
           "name": "ImpactedHostNum",
@@ -8217,7 +7704,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "漏洞状态\n* UN_OPERATED : 待处理\n* FIXED : 已修复",
           "member": "string",
           "name": "VulStatus",
@@ -8232,7 +7718,6 @@
       "document": "周报列表。",
       "members": [
         {
-          "default": "",
           "document": "周报开始时间。",
           "member": "date",
           "name": "BeginDate",
@@ -8241,7 +7726,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "周报结束时间。",
           "member": "date",
           "name": "EndDate",
@@ -8256,7 +7740,6 @@
       "document": "专业周报密码破解数据。",
       "members": [
         {
-          "default": "",
           "document": "主机IP。",
           "member": "string",
           "name": "MachineIp",
@@ -8265,7 +7748,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "被破解用户名。",
           "member": "string",
           "name": "Username",
@@ -8274,7 +7756,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "源IP。",
           "member": "string",
           "name": "SrcIp",
@@ -8283,7 +7764,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "尝试次数。",
           "member": "uint64",
           "name": "Count",
@@ -8292,7 +7772,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "攻击时间。",
           "member": "datetime",
           "name": "AttackTime",
@@ -8307,7 +7786,6 @@
       "document": "专业周报木马数据。",
       "members": [
         {
-          "default": "",
           "document": "主机IP。",
           "member": "string",
           "name": "MachineIp",
@@ -8316,7 +7794,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "木马文件路径。",
           "member": "string",
           "name": "FilePath",
@@ -8325,7 +7802,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "木马文件MD5值。",
           "member": "string",
           "name": "Md5",
@@ -8334,7 +7810,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "木马发现时间。",
           "member": "datetime",
           "name": "FindTime",
@@ -8343,7 +7818,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "当前木马状态。\n<li>UN_OPERATED：未处理</li>\n<li>SEGREGATED：已隔离</li>\n<li>TRUSTED：已信任</li>\n<li>SEPARATING：隔离中</li>\n<li>RECOVERING：恢复中</li>",
           "member": "string",
           "name": "Status",
@@ -8358,7 +7832,6 @@
       "document": "专业周报异地登录数据。",
       "members": [
         {
-          "default": "",
           "document": "主机IP。",
           "member": "string",
           "name": "MachineIp",
@@ -8367,7 +7840,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用户名。",
           "member": "string",
           "name": "Username",
@@ -8376,7 +7848,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "源IP。",
           "member": "string",
           "name": "SrcIp",
@@ -8385,7 +7856,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "国家ID。",
           "member": "uint64",
           "name": "Country",
@@ -8394,7 +7864,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "省份ID。",
           "member": "uint64",
           "name": "Province",
@@ -8403,7 +7872,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "城市ID。",
           "member": "uint64",
           "name": "City",
@@ -8412,7 +7880,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "登录时间。",
           "member": "datetime",
           "name": "LoginTime",
@@ -8427,7 +7894,6 @@
       "document": "专业版周报漏洞数据。",
       "members": [
         {
-          "default": "",
           "document": "主机内网IP。",
           "member": "string",
           "name": "MachineIp",
@@ -8436,7 +7902,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "漏洞名称。",
           "member": "string",
           "name": "VulName",
@@ -8445,7 +7910,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "漏洞类型。\n<li> WEB : Web漏洞</li>\n<li> SYSTEM :系统组件漏洞</li>\n<li> BASELINE : 安全基线</li>",
           "member": "string",
           "name": "VulType",
@@ -8454,7 +7918,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "漏洞描述。",
           "member": "string",
           "name": "Description",
@@ -8463,7 +7926,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "漏洞状态。\n<li> UN_OPERATED : 待处理</li>\n<li> SCANING : 扫描中</li>\n<li> FIXED : 已修复</li>",
           "member": "string",
           "name": "VulStatus",
@@ -8472,7 +7934,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "最后扫描时间。",
           "member": "datetime",
           "name": "LastScanTime",

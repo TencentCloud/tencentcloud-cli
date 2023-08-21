@@ -376,7 +376,6 @@
       "document": "apiGateway实例详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "无",
@@ -387,7 +386,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称",
           "example": "无",
@@ -398,7 +396,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "无",
@@ -409,7 +406,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -420,7 +416,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用协议",
           "example": "无",
@@ -590,7 +585,6 @@
       "document": "CancelCertificateOrder请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "证书 ID。",
           "example": "",
@@ -627,7 +621,6 @@
       "document": "CDN实例详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "无",
@@ -638,7 +631,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已部署证书ID",
           "example": "无",
@@ -649,7 +641,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名状态",
           "example": "无",
@@ -666,7 +657,6 @@
       "document": "云资源配置详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "证书ID",
           "example": "无",
@@ -677,7 +667,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已替换的新证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -688,7 +677,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云资源托管 ，CDN或CLB：部分开启，CDN,CLB：已开启，null：未开启托管\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -699,7 +687,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-05-16T09:06:24",
@@ -716,7 +703,6 @@
       "document": "CLB证书详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "证书ID",
           "example": "无",
@@ -727,7 +713,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "证书绑定的域名",
           "example": "无",
@@ -1250,7 +1235,6 @@
       "document": "clb实例详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "CLB实例ID",
           "example": "无",
@@ -1261,7 +1245,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CLB实例名称",
           "example": "无",
@@ -1272,7 +1255,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CLB监听器列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1571,7 +1553,6 @@
       "document": "CompleteCertificate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "证书ID",
           "example": "",
@@ -1608,7 +1589,6 @@
       "document": "COS实例详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "无",
@@ -1619,7 +1599,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已绑定的证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1630,7 +1609,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ENABLED: 域名上线状态\nDISABLED:域名下线状态",
           "example": "无",
@@ -1641,7 +1619,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储桶名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1652,7 +1629,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储桶地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1858,7 +1834,6 @@
       "document": "CreateCertificate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "证书商品ID，3 = SecureSite 增强型企业版（EV Pro）， 4 = SecureSite 增强型（EV）， 5 = SecureSite 企业型专业版（OV Pro）， 6 = SecureSite 企业型（OV）， 7 = SecureSite 企业型（OV）通配符， 8 = Geotrust 增强型（EV）， 9 = Geotrust 企业型（OV）， 10 = Geotrust 企业型（OV）通配符， 11 = TrustAsia 域名型多域名 SSL 证书， 12 = TrustAsia 域名型（DV）通配符， 13 = TrustAsia 企业型通配符（OV）SSL 证书（D3）， 14 = TrustAsia 企业型（OV）SSL 证书（D3）， 15 = TrustAsia 企业型多域名 （OV）SSL 证书（D3）， 16 = TrustAsia 增强型 （EV）SSL 证书（D3）， 17 = TrustAsia 增强型多域名（EV）SSL 证书（D3）， 18 = GlobalSign 企业型（OV）SSL 证书， 19 = GlobalSign 企业型通配符 （OV）SSL 证书， 20 = GlobalSign 增强型 （EV）SSL 证书， 21 = TrustAsia 企业型通配符多域名（OV）SSL 证书（D3）， 22 = GlobalSign 企业型多域名（OV）SSL 证书， 23 = GlobalSign 企业型通配符多域名（OV）SSL 证书， 24 = GlobalSign 增强型多域名（EV）SSL 证书，25 = Wotrus 域名型证书，26 = Wotrus 域名型多域名证书，27 = Wotrus 域名型通配符证书，28 = Wotrus 企业型证书，29 = Wotrus 企业型多域名证书，30 = Wotrus 企业型通配符证书，31 = Wotrus 增强型证书，32 = Wotrus 增强型多域名证书，33 = DNSPod 国密域名型证书，34 = DNSPod 国密域名型多域名证书，35 = DNSPod 国密域名型通配符证书，37 = DNSPod 国密企业型证书，38 = DNSPod 国密企业型多域名证书，39 = DNSPod 国密企业型通配符证书，40 = DNSPod 国密增强型证书，41 = DNSPod 国密增强型多域名证书，42 = TrustAsia 域名型通配符多域名证书。",
           "example": "25",
@@ -1868,7 +1843,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "证书包含的域名数量",
           "example": "1",
@@ -1878,7 +1852,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "证书年限，当前只支持 1 年证书的购买",
           "example": "1",
@@ -1926,7 +1899,6 @@
       "document": "ddos复杂类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "无",
@@ -1937,7 +1909,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "无",
@@ -1948,7 +1919,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议类型",
           "example": "无",
@@ -1959,7 +1929,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1970,7 +1939,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转发端口",
           "example": "无",
@@ -1987,7 +1955,6 @@
       "document": "DeleteCertificate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "证书 ID。",
           "example": "",
@@ -2024,7 +1991,6 @@
       "document": "DeleteManager请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "管理人ID",
           "example": "无",
@@ -2062,7 +2028,6 @@
       "document": "DeployCertificateInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待部署的证书ID",
           "example": "无",
@@ -2072,7 +2037,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要部署实例列表",
           "example": "无",
@@ -2082,7 +2046,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署的云资源类型",
           "example": "无",
@@ -2092,7 +2055,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署云资源状态：\n云直播：\n-1：域名未关联证书。\n1： 域名https已开启。\n0： 域名https已关闭。",
           "example": "无",
@@ -2140,7 +2102,6 @@
       "document": "DeployCertificateRecordRetry请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待重试部署记录ID",
           "example": "无",
@@ -2150,7 +2111,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待重试部署记录详情ID",
           "example": "无",
@@ -2178,7 +2138,6 @@
       "document": "DeployCertificateRecordRollback请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待重试部署记录ID",
           "example": "无",
@@ -2432,7 +2391,6 @@
       "document": "部署记录信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "部署记录ID",
           "example": "无",
@@ -2443,7 +2401,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署证书ID",
           "example": "无",
@@ -2454,7 +2411,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署资源类型",
           "example": "无",
@@ -2465,7 +2421,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署地域",
           "example": "无",
@@ -2476,7 +2431,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署状态",
           "example": "无",
@@ -2487,7 +2441,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署时间",
           "example": "无",
@@ -2498,7 +2451,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最近一次更新时间",
           "example": "无",
@@ -2515,7 +2467,6 @@
       "document": "资源详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "证书ID",
           "example": "nz9ICcbp",
@@ -2526,7 +2477,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数量",
           "example": "无",
@@ -2537,7 +2487,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源标识:clb,cdn,live,waf,antiddos",
           "example": "无",
@@ -2548,7 +2497,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不建议使用。字段返回和Resources相同。本字段后续只返回null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2559,7 +2507,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联资源ID或关联域名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3013,7 +2960,6 @@
       "document": "DescribeCertificateOperateLogs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "",
@@ -3023,7 +2969,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求日志数量，默认为20。",
           "example": "",
@@ -3033,7 +2978,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间，默认15天前。",
           "example": "",
@@ -3043,7 +2987,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间，默认现在时间。",
           "example": "",
@@ -3488,7 +3431,6 @@
           "disabled": false,
           "document": "分页偏移量，从0开始。",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -3498,7 +3440,6 @@
           "disabled": false,
           "document": "每页数量，默认20。最大1000",
           "example": "11",
-          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -3508,7 +3449,6 @@
           "disabled": false,
           "document": "搜索关键词，可搜索证书 ID、备注名称、域名。例如： a8xHcaIs。",
           "example": "string",
-          "is_base64": false,
           "member": "string",
           "name": "SearchKey",
           "required": false,
@@ -3518,7 +3458,6 @@
           "disabled": false,
           "document": "证书类型：CA = 客户端证书，SVR = 服务器证书。",
           "example": "CA",
-          "is_base64": false,
           "member": "string",
           "name": "CertificateType",
           "required": false,
@@ -3528,7 +3467,6 @@
           "disabled": false,
           "document": "项目 ID。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
@@ -3538,7 +3476,6 @@
           "disabled": false,
           "document": "按到期时间排序：DESC = 降序， ASC = 升序。",
           "example": "DESC ",
-          "is_base64": false,
           "member": "string",
           "name": "ExpirationSort",
           "required": false,
@@ -3548,7 +3485,6 @@
           "disabled": false,
           "document": "证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "CertificateStatus",
           "required": false,
@@ -3558,7 +3494,6 @@
           "disabled": false,
           "document": "是否可部署，可选值：1 = 可部署，0 =  不可部署。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "Deployable",
           "required": false,
@@ -3568,7 +3503,6 @@
           "disabled": false,
           "document": "是否筛选上传托管的 1筛选，0不筛选",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "Upload",
           "required": false,
@@ -3578,7 +3512,6 @@
           "disabled": false,
           "document": "是否筛选可续期证书 1筛选 0不筛选",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "Renew",
           "required": false,
@@ -3588,7 +3521,6 @@
           "disabled": false,
           "document": "筛选来源， upload：上传证书， buy：腾讯云证书， 不传默认全部",
           "example": "upload",
-          "is_base64": false,
           "member": "string",
           "name": "FilterSource",
           "required": false,
@@ -3598,7 +3530,6 @@
           "disabled": false,
           "document": "是否筛选国密证书。1:筛选  0:不筛选",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "IsSM",
           "required": false,
@@ -3608,7 +3539,6 @@
           "disabled": false,
           "document": "筛选证书是否即将过期，传1是筛选，0不筛选",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "FilterExpiring",
           "required": false,
@@ -3618,7 +3548,6 @@
           "disabled": false,
           "document": "是否可托管，可选值：1 = 可托管，0 =  不可托管。",
           "example": "无",
-          "is_base64": false,
           "member": "uint64",
           "name": "Hostable",
           "required": false,
@@ -3663,7 +3592,6 @@
       "document": "DescribeCompanies请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量",
           "example": "0",
@@ -3673,7 +3601,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页每页限制数",
           "example": "10",
@@ -3683,7 +3610,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公司ID",
           "example": "无",
@@ -4293,7 +4219,6 @@
           "disabled": false,
           "document": "部署记录ID",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "DeployRecordId",
           "required": true,
@@ -4303,7 +4228,6 @@
           "disabled": false,
           "document": "分页偏移量，从0开始。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -4313,7 +4237,6 @@
           "disabled": false,
           "document": "每页数量，默认10。",
           "example": "10",
-          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -4388,7 +4311,6 @@
       "document": "DescribeHostDeployRecord请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待部署的证书ID",
           "example": "无",
@@ -4398,7 +4320,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，从0开始。",
           "example": "1",
@@ -4408,7 +4329,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页数量，默认10。",
           "example": "10",
@@ -4418,7 +4338,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源类型",
           "example": "无",
@@ -4466,7 +4385,6 @@
       "document": "DescribeHostLighthouseInstanceList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待部署的证书ID",
           "example": "无",
@@ -4476,7 +4394,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署资源类型 lighthouse",
           "example": "无",
@@ -4486,7 +4403,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时",
           "example": "无",
@@ -4496,7 +4412,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤参数列表",
           "example": "无",
@@ -4826,7 +4741,6 @@
           "disabled": false,
           "document": "一键更新记录ID",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "DeployRecordId",
           "required": true,
@@ -4836,7 +4750,6 @@
           "disabled": false,
           "document": "每页数量，默认10。",
           "example": "10",
-          "is_base64": false,
           "member": "string",
           "name": "Limit",
           "required": false,
@@ -4846,7 +4759,6 @@
           "disabled": false,
           "document": "分页偏移量，从0开始。",
           "example": "0",
-          "is_base64": false,
           "member": "string",
           "name": "Offset",
           "required": false,
@@ -4921,7 +4833,6 @@
       "document": "DescribeHostUpdateRecord请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，从0开始。",
           "example": "1",
@@ -4931,7 +4842,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页数量，默认10。",
           "example": "10",
@@ -4941,7 +4851,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新证书ID",
           "example": "无",
@@ -4951,7 +4860,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原证书ID",
           "example": "无",
@@ -5152,7 +5060,6 @@
       "document": "DescribeManagerDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "管理人ID",
           "example": "无",
@@ -5162,7 +5069,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页每页数量",
           "example": "无",
@@ -5172,7 +5078,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量",
           "example": "无",
@@ -5390,7 +5295,6 @@
       "document": "DescribeManagers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "公司ID",
           "example": "12",
@@ -5400,7 +5304,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量",
           "example": "0",
@@ -5410,7 +5313,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页每页数量",
           "example": "10",
@@ -5420,7 +5322,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "管理人姓名（将废弃），请使用SearchKey",
           "example": "腾讯",
@@ -5430,7 +5331,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模糊查询管理人邮箱（将废弃），请使用SearchKey",
           "example": "tencent@tencent.com",
@@ -5440,7 +5340,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据管理人状态进行筛选，取值有\n'none' 未提交审核\n'audit', 亚信审核中\n'CAaudit' CA审核中\n'ok' 已审核\n'invalid'  审核失败\n'expiring'  即将过期\n'expired' 已过期",
           "example": "audit",
@@ -5450,7 +5349,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "管理人姓/管理人名/邮箱/部门精准匹配",
           "example": "腾讯/tencent@tencent.com/开发一部",
@@ -5498,7 +5396,6 @@
       "document": "DescribePackages请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认0。",
           "example": "无",
@@ -5508,7 +5405,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制数目，默认20。",
           "example": "无",
@@ -5518,7 +5414,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按状态筛选。",
           "example": "无",
@@ -5528,7 +5423,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按过期时间升序或降序排列。",
           "example": "无",
@@ -5538,7 +5432,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按权益包ID搜索。",
           "example": "无",
@@ -5548,7 +5441,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按权益包类型搜索。",
           "example": "无",
@@ -5558,7 +5450,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子产品编号",
           "example": "无",
@@ -5616,7 +5507,6 @@
       "document": "DownloadCertificate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "证书 ID。",
           "example": "",
@@ -5662,7 +5552,6 @@
       "document": "获取证书列表（DescribeCertificate）返回参数键为 DvAuthDetail 的内容。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "DV 认证密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5673,7 +5562,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DV 认证值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5684,7 +5572,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DV 认证值域名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5695,7 +5582,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DV 认证值路径。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5706,7 +5592,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DV 认证子域名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5717,7 +5602,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DV 认证信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5734,7 +5618,6 @@
       "document": "返回参数键为 DvAuths 的内容。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "DV 认证密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5745,7 +5628,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DV 认证值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5756,7 +5638,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DV 认证值域名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5767,7 +5648,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DV 认证值路径。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5778,7 +5658,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DV 认证子域名，\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5789,7 +5668,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DV 认证类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5806,7 +5684,6 @@
       "document": "过滤参数列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "过滤参数key",
           "example": "DomainMatch",
@@ -5817,7 +5694,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤参数值",
           "example": "1",
@@ -5880,7 +5756,6 @@
       "document": "Lighthouse实例",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "asfgas",
@@ -5891,7 +5766,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称",
           "example": "gsehsd",
@@ -5902,7 +5776,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址",
           "example": "无",
@@ -5913,7 +5786,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选择域名",
           "example": "无",
@@ -5930,7 +5802,6 @@
       "document": "live实例详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "无",
@@ -5941,7 +5812,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已绑定的证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5952,7 +5822,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "-1：域名未关联证书。\n1： 域名https已开启。\n0： 域名https已关闭。",
           "example": "无",
@@ -6130,7 +5999,6 @@
       "document": "ModifyCertificateAlias请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "证书 ID。",
           "example": "abcb1234",
@@ -6140,7 +6008,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注名称。",
           "example": "others",
@@ -6178,22 +6045,18 @@
       "document": "ModifyCertificateProject请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "需要修改所属项目的证书 ID 集合，最多100个证书。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "CertificateIdList",
           "required": true,
           "type": "list"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "项目 ID。",
           "example": "无",
-          "is_base64": false,
           "member": "uint64",
           "name": "ProjectId",
           "required": true,
@@ -6283,7 +6146,6 @@
       "document": "证书操作日志。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "操作证书动作。",
           "example": "",
@@ -6294,7 +6156,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作时间。",
           "example": "",
@@ -6311,7 +6172,6 @@
       "document": "权益包基本信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "权益包ID。",
           "example": "无",
@@ -6322,7 +6182,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权益包内权益点总量。",
           "example": "无",
@@ -6333,7 +6192,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权益包内权益点余量。",
           "example": "无",
@@ -6344,7 +6202,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权益包名称。",
           "example": "无",
@@ -6355,7 +6212,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权益点是转入时，来源信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6366,7 +6222,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权益点状态。",
           "example": "无",
@@ -6377,7 +6232,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期时间。",
           "example": "无",
@@ -6388,7 +6242,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间。",
           "example": "无",
@@ -6399,7 +6252,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生成时间。",
           "example": "无",
@@ -6410,7 +6262,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "来源类型。",
           "example": "无",
@@ -6421,7 +6272,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转移信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6438,7 +6288,6 @@
       "document": "权益包转出详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "权益包ID。",
           "example": "无",
@@ -6449,7 +6298,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转移码。",
           "example": "无",
@@ -6460,7 +6308,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本次转移点数。",
           "example": "无",
@@ -6471,7 +6318,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转入的PackageID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6482,7 +6328,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本次转移过期时间。",
           "example": "无",
@@ -6493,7 +6338,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本次转移生成时间。",
           "example": "无",
@@ -6504,7 +6348,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本次转移更新时间。",
           "example": "无",
@@ -6515,7 +6358,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转移状态。",
           "example": "无",
@@ -6526,7 +6368,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接收者uin。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6537,7 +6378,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接收时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6554,7 +6394,6 @@
       "document": "预审核信息列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "证书总年限\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6565,7 +6404,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "证书当前年限\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6576,7 +6414,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "证书预审核管理人ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6593,7 +6430,6 @@
       "document": "获取证书列表（DescribeCertificates）返回参数键为 Certificates 下，key为 ProjectInfo 的内容。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6604,7 +6440,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目创建用户 UIN。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6615,7 +6450,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6626,7 +6460,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目信息简述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6637,7 +6470,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户 UIN。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6648,7 +6480,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6665,88 +6496,72 @@
       "document": "ReplaceCertificate请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "证书 ID。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "CertificateId",
           "required": true,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "验证类型：DNS_AUTO = 自动DNS验证（仅支持在腾讯云解析且解析状态正常的域名使用该验证类型），DNS = 手动DNS验证，FILE = 文件验证。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "ValidType",
           "required": true,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "类型，默认 Original。可选项：Original = 原证书 CSR，Upload = 手动上传，Online = 在线生成。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "CsrType",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "CSR 内容。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "CsrContent",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "KEY 密码。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "CsrkeyPassword",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "重颁发原因。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Reason",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "CSR加密方式，可选：RSA、ECC、SM2\n（CsrType为Online才可选）， 默认为RSA",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "CertCSREncryptAlgo",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "CSR加密参数，CsrEncryptAlgo为RSA时， 可选2048、4096等默认为2048；CsrEncryptAlgo为ECC时，可选prime256v1，secp384r1等，默认为prime256v1; ",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "CertCSRKeyParameter",
           "required": false,
@@ -6852,7 +6667,6 @@
       "document": "返回参数键为 RevokeDomainValidateAuths 的内容。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "DV 认证值路径。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6863,7 +6677,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DV 认证 KEY。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6874,7 +6687,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DV 认证值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6885,7 +6697,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DV 认证域名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6902,7 +6713,6 @@
       "document": "根证书",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "国密签名证书\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "asd",
@@ -6913,7 +6723,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "国密加密证书\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "asd",
@@ -6924,7 +6733,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标准证书\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "asc",
@@ -6941,7 +6749,6 @@
       "document": "SubmitAuditManager请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "管理人ID",
           "example": "无",
@@ -6979,7 +6786,6 @@
       "document": "SubmitCertificateInformation请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "证书 ID。",
           "example": "",
@@ -6989,7 +6795,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CSR 生成方式：online = 在线生成, parse = 手动上传。",
           "example": "",
@@ -6999,7 +6804,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上传的 CSR 内容。",
           "example": "",
@@ -7009,7 +6813,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定证书的域名。",
           "example": "",
@@ -7019,7 +6822,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上传的域名数组（多域名证书可以上传）。",
           "example": "",
@@ -7029,7 +6831,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私钥密码（非必填）。",
           "example": "",
@@ -7039,7 +6840,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公司名称。",
           "example": "",
@@ -7049,7 +6849,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部门名称。",
           "example": "",
@@ -7059,7 +6858,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公司详细地址。",
           "example": "",
@@ -7069,7 +6867,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "国家名称，如中国：CN 。",
           "example": "",
@@ -7079,7 +6876,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公司所在城市。",
           "example": "",
@@ -7089,7 +6885,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公司所在省份。",
           "example": "",
@@ -7099,7 +6894,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公司邮编。",
           "example": "",
@@ -7109,7 +6903,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公司座机区号。",
           "example": "",
@@ -7119,7 +6912,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公司座机号码。",
           "example": "",
@@ -7129,7 +6921,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "证书验证方式。验证类型：DNS_AUTO = 自动DNS验证（仅支持在腾讯云解析且解析状态正常的域名使用该验证类型），DNS = 手动DNS验证，FILE = 文件验证。",
           "example": "",
@@ -7139,7 +6930,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "管理人名。",
           "example": "",
@@ -7149,7 +6939,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "管理人姓。",
           "example": "",
@@ -7159,7 +6948,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "管理人手机号码。",
           "example": "",
@@ -7169,7 +6957,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "管理人邮箱地址。",
           "example": "",
@@ -7179,7 +6966,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "管理人职位。",
           "example": "",
@@ -7189,7 +6975,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联系人名。",
           "example": "",
@@ -7199,7 +6984,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联系人姓。",
           "example": "",
@@ -7209,7 +6993,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联系人邮箱地址。",
           "example": "",
@@ -7219,7 +7002,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联系人手机号码。",
           "example": "",
@@ -7229,7 +7011,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联系人职位。",
           "example": "",
@@ -7266,7 +7047,6 @@
       "document": "获取证书列表（DescribeCertificate）返回参数键为 SubmittedData 的内容。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "CSR 类型，（online = 在线生成CSR，parse = 粘贴 CSR）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7277,7 +7057,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CSR 内容。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7288,7 +7067,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7299,7 +7077,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DNS 信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7310,7 +7087,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私钥密码。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7321,7 +7097,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企业或单位名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7332,7 +7107,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部门。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7343,7 +7117,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地址。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7354,7 +7127,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "国家。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7365,7 +7137,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "市。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7376,7 +7147,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "省。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7387,7 +7157,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "邮政编码。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7398,7 +7167,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "座机区号。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7409,7 +7177,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "座机号码。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7420,7 +7187,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "管理员名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7431,7 +7197,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "管理员姓。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7442,7 +7207,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "管理员电话号码。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7453,7 +7217,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "管理员邮箱地址。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7464,7 +7227,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "管理员职位。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7475,7 +7237,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联系人名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7486,7 +7247,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联系人姓。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7497,7 +7257,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联系人电话号码。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7508,7 +7267,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联系人邮箱地址，\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7519,7 +7277,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联系人职位。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7530,7 +7287,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "验证类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7547,7 +7303,6 @@
       "document": "标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键",
           "example": "",
@@ -7558,7 +7313,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "",
@@ -7621,7 +7375,6 @@
       "document": "tke ingress实例详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "ingress名称",
           "example": "无",
@@ -7632,7 +7385,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "tls域名列表",
           "example": "无",
@@ -7643,7 +7395,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ingress域名列表",
           "example": "无",
@@ -7660,7 +7411,6 @@
       "document": "tke实例详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "无",
@@ -7671,7 +7421,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群名称",
           "example": "无",
@@ -7682,7 +7431,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群命名空间列表",
           "example": "无",
@@ -7699,7 +7447,6 @@
       "document": "tke namespace详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "namespace名称",
           "example": "无",
@@ -7710,7 +7457,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "secret列表",
           "example": "无",
@@ -7727,7 +7473,6 @@
       "document": "tke secret详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "secret名称",
           "example": "无",
@@ -7738,7 +7483,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "证书ID",
           "example": "无",
@@ -7749,7 +7493,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ingress列表",
           "example": "无",
@@ -7760,7 +7503,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "和新证书不匹配的域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7780,7 +7522,6 @@
           "disabled": false,
           "document": "一键更新新证书ID",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "CertificateId",
           "required": true,
@@ -7790,7 +7531,6 @@
           "disabled": false,
           "document": "一键更新原证书ID",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "OldCertificateId",
           "required": true,
@@ -7800,7 +7540,6 @@
           "disabled": false,
           "document": "需要部署的资源类型，参数值可选：clb、cdn、waf、live、ddos、teo、apigateway、vod、tke、tcb",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "ResourceTypes",
           "required": true,
@@ -7810,7 +7549,6 @@
           "disabled": true,
           "document": "需要部署的地域列表（废弃）",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Regions",
           "required": false,
@@ -7820,7 +7558,6 @@
           "disabled": false,
           "document": "云资源需要部署的地域列表",
           "example": "无",
-          "is_base64": false,
           "member": "ResourceTypeRegions",
           "name": "ResourceTypesRegions",
           "required": false,
@@ -7865,7 +7602,6 @@
       "document": "UpdateCertificateRecordRetry请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待重试部署记录ID",
           "example": "无",
@@ -7875,7 +7611,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待重试部署记录详情ID",
           "example": "无",
@@ -7903,7 +7638,6 @@
       "document": "UpdateCertificateRecordRollback请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待重试部署记录ID",
           "example": "无",
@@ -8203,7 +7937,6 @@
       "document": "部署记录信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "记录ID",
           "example": "无",
@@ -8214,7 +7947,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新证书ID",
           "example": "无",
@@ -8225,7 +7957,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原证书ID",
           "example": "无",
@@ -8236,7 +7967,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署资源类型列表",
           "example": "无",
@@ -8247,7 +7977,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署地域列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8258,7 +7987,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署状态",
           "example": "无",
@@ -8269,7 +7997,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署时间",
           "example": "无",
@@ -8280,7 +8007,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后一次更新时间",
           "example": "无",
@@ -8300,7 +8026,6 @@
           "disabled": false,
           "document": "证书内容。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "CertificatePublicKey",
           "required": true,
@@ -8310,7 +8035,6 @@
           "disabled": false,
           "document": "私钥内容，证书类型为 SVR 时必填，为 CA 时可不填。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "CertificatePrivateKey",
           "required": false,
@@ -8320,7 +8044,6 @@
           "disabled": false,
           "document": "证书类型，默认 SVR。CA = CA证书，SVR = 服务器证书。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "CertificateType",
           "required": false,
@@ -8330,7 +8053,6 @@
           "disabled": false,
           "document": "备注名称。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Alias",
           "required": false,
@@ -8340,7 +8062,6 @@
           "disabled": false,
           "document": "项目 ID。",
           "example": "无",
-          "is_base64": false,
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
@@ -8350,7 +8071,6 @@
           "disabled": false,
           "document": "证书用途/证书来源。“CLB，CDN，WAF，LIVE，DDOS”",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "CertificateUse",
           "required": false,
@@ -8360,7 +8080,6 @@
           "disabled": false,
           "document": "标签列表",
           "example": "无",
-          "is_base64": false,
           "member": "Tags",
           "name": "Tags",
           "required": false,
@@ -8370,7 +8089,6 @@
           "disabled": false,
           "document": "相同的证书是否允许重复上传",
           "example": "true",
-          "is_base64": false,
           "member": "bool",
           "name": "Repeatable",
           "required": false,
@@ -8415,7 +8133,6 @@
       "document": "UploadConfirmLetter请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "证书ID",
           "example": "",
@@ -8425,7 +8142,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "base64编码后的证书确认函文件，格式应为jpg、jpeg、png、pdf，大小应在1kb与1.4M之间。",
           "example": "",
@@ -8471,7 +8187,6 @@
       "document": "UploadRevokeLetter请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "证书 ID。",
           "example": "a91hoLqi",
@@ -8481,7 +8196,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "base64编码后的证书确认函文件，格式应为jpg、jpeg、png、pdf，大小应在1kb与1.4M之间。",
           "example": "base64content",
@@ -8529,7 +8243,6 @@
       "document": "VerifyManager请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "管理人ID",
           "example": "23",
@@ -8567,7 +8280,6 @@
       "document": "Vod实例",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "qq.com",
@@ -8578,7 +8290,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "证书ID",
           "example": "asdasd",

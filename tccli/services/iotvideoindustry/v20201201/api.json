@@ -740,7 +740,6 @@
       "document": "异动事件走势列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "对应查询日期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-06-01",
@@ -751,7 +750,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -768,7 +766,6 @@
       "document": "异动事件走势元素",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "类型值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
@@ -779,7 +776,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -796,7 +792,6 @@
       "document": "查询全部设备出参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -807,7 +802,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备类型；2：IPC\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -818,7 +812,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备状态；0：设备不在线；1：设备在线；2：设备隔离中；3：设备未注册\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -829,7 +822,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -840,7 +832,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备扩展属性\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -851,7 +842,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -862,7 +852,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备绑定分组路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -873,7 +862,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备编码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -884,7 +872,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否存在录像,，0:不存在；1：存在\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -895,7 +882,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该设备是否可录制\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -906,7 +892,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备接入协议\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "GB/T 28181",
@@ -917,7 +902,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "组Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "gro-zn3ro30w",
@@ -928,7 +912,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "组名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "一个组的名字",
@@ -945,7 +928,6 @@
       "document": "BindGroupDevices请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分组ID",
           "example": "group-1234abcd",
@@ -955,7 +937,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识列表",
           "example": "[\"test01\",\"test02\"]",
@@ -983,7 +964,6 @@
       "document": "国标通道详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "通道名称",
           "example": "xx",
@@ -994,7 +974,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道唯一标识",
           "example": "34020000001180000036_34020000001320000092",
@@ -1005,7 +984,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道类型 0：未知；1：视频通道；2：音频通道；3：告警通道\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1016,7 +994,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "20位国标通道编码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "34020000001320000092",
@@ -1027,7 +1004,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道扩展信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -1038,7 +1014,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道在线状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1049,7 +1024,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道是否存在录像标识 0：无录像；1：有录像\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1060,7 +1034,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道所属设备唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "34020000001180000036_34020000001180000036",
@@ -1071,7 +1044,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道所属虚拟组织的ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "34020000001180000036",
@@ -1088,7 +1060,6 @@
       "document": "GB28181通道",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "34020000001180000036_34020000001320000092",
@@ -1099,7 +1070,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "34020000001180000036_34020000001320000092",
@@ -1116,7 +1086,6 @@
       "document": "ControlChannelLocalRecord请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识",
           "example": "34020000001180000036_34020000001320000092",
@@ -1126,7 +1095,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道唯一标识",
           "example": "34020000001180000036_34020000001320000092",
@@ -1136,7 +1104,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流Id，流的唯一标识",
           "example": "1038455659",
@@ -1146,7 +1113,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "控制参数，转义的json字符串\n\n目前支持的command：\n\"Command\": \"{\"Action\":\"PAUSE\"}\" 暂停\n\"Command\": \"{\"Action\":\"PLAY\"}\" 暂停恢复\n\"Command\": \"{\"Action\":\"PLAY\",\"Offset\":\"15\"}\" 基于文件起始时间点的位置偏移，单位秒",
           "example": "{\\\"Action\\\":\\\"pause\\\"}",
@@ -1174,7 +1140,6 @@
       "document": "ControlChannelPTZ请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识",
           "example": "99933020581320000064_99933020581320000064",
@@ -1184,7 +1149,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道唯一标识",
           "example": "34020000001180000036_34020000001320000092",
@@ -1194,7 +1158,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "PTZ控制命令类型：\nstop - 停止当前PTZ信令\nleft - 向左移动\nright - 向右移动\nup - 向上移动\ndown - 向下移动\nleftUp - 左上移动\nleftDown - 左下移动\nrightUp - 右上移动\nrightDown - 右下移动\nzoomOut - 镜头缩小\nzoomIn - 镜头放大\nirisIn - 光圈缩小\nirisOut - 光圈放大\nfocusIn - 焦距变近\nfocusOut - 焦距变远",
           "example": "left",
@@ -1222,7 +1185,6 @@
       "document": "ControlDevicePTZ请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识",
           "example": "99933020581320000064_99933020581320000064",
@@ -1232,7 +1194,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "PTZ控制命令类型：\nstop - 停止当前PTZ信令\nleft - 向左移动\nright - 向右移动\nup - 向上移动\ndown - 向下移动\nleftUp - 左上移动\nleftDown - 左下移动\nrightUp - 右上移动\nrightDown - 右下移动\nzoomOut - 镜头缩小\nzoomIn - 镜头放大\nirisIn - 光圈缩小\nirisOut - 光圈放大\nfocusIn - 焦距变近\nfocusOut - 焦距变远",
           "example": "left",
@@ -1242,7 +1203,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道唯一标识",
           "example": "34020000001180000036_34020000001320000092",
@@ -1270,7 +1230,6 @@
       "document": "ControlHomePosition请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "通道ID",
           "example": "99576636581320000310_99782261871320000002",
@@ -1280,7 +1239,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备Id",
           "example": "99576636581320000310_99782261871320000002",
@@ -1290,7 +1248,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "看守位使能 0-停用看守位 1-启用看守位",
           "example": "0",
@@ -1300,7 +1257,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预置位编码 范围1-8，启用看守位时必填",
           "example": "4",
@@ -1310,7 +1266,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "看守位自动归位时间， 启用看守位时必填",
           "example": "1628600451",
@@ -1338,7 +1293,6 @@
       "document": "ControlPreset请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "通道ID",
           "example": "99576636581320000310_99782261871320000002",
@@ -1348,7 +1302,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "控制命令：\nSet-设置当前位置为预置位\nDel-删除指定的预置位\nCall-调用指定的预置位",
           "example": "Del",
@@ -1358,7 +1311,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预置位编码 范围1-8",
           "example": "1",
@@ -1368,7 +1320,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备Id",
           "example": "99576636581320000310_99782261871320000002",
@@ -1396,7 +1347,6 @@
       "document": "ControlRecordStream请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备Id，设备的唯一标识",
           "example": "34020000001180000036_34020000001320000092",
@@ -1406,7 +1356,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流Id，流的唯一标识",
           "example": "1038455659",
@@ -1416,7 +1365,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "|控制参数，CmdJson结构转义的json字符串。| Action  | string  |是|控制动作，play(用于暂停后恢复播放)、pause（暂停）、teardown(停止)、jump(拖动播放)\n| Offset  | uint  |否|拖动播放时的时间偏移量（相对于起始时间）,单位：秒\n目前支持的command：\n\"Command\": \"{\"Action\":\"PAUSE\"}\" 暂停\n\"Command\": \"{\"Action\":\"PLAY\"}\" 暂停恢复\n\"Command\": \"{\"Action\":\"PLAY\",\"Offset\":\"15\"}\" 位置偏移，可以替代jump操作",
           "example": "{\\\"Action\\\":\\\"pause\\\"}",
@@ -1426,7 +1374,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道唯一标识",
           "example": "34020000001180000036_34020000001320000092",
@@ -1454,7 +1401,6 @@
       "document": "CreateDeviceGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分组名称",
           "example": "myGroup",
@@ -1464,7 +1410,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "父分组ID",
           "example": "group_root",
@@ -1474,7 +1419,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组描述",
           "example": "xxx",
@@ -1522,7 +1466,6 @@
       "document": "CreateDevice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称",
           "example": "myDevice",
@@ -1532,7 +1475,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备密码",
           "example": "password",
@@ -1542,7 +1484,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备类型，1：国标VMS设备(公有云不支持此类型)，2：国标IPC设备，3：国标NVR设备，9：智能告警设备(公有云不支持此类型)",
           "example": "2",
@@ -1552,7 +1493,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备需要绑定的分组ID，参数为空则默认绑定到根分组",
           "example": "groupID",
@@ -1610,7 +1550,6 @@
       "document": "CreateLiveChannel请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "直播频道名称",
           "example": "直播频道001",
@@ -1620,7 +1559,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "直播频道类型 1：固定直播；2：移动直播",
           "example": "1",
@@ -1668,7 +1606,6 @@
       "document": "CreateLiveRecordPlan请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "录制计划名",
           "example": "固定直播录制008",
@@ -1678,7 +1615,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计划类型 1：固定直播 2：移动直播",
           "example": "1",
@@ -1688,7 +1624,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间模板ID,固定直播时为必填",
           "example": "tgrp-cyjjxyyyds",
@@ -1698,7 +1633,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制文件存储时长，单位天，默认30天",
           "example": "30",
@@ -1708,7 +1642,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定的直播频道ID列表",
           "example": "[\"channel-01\",\"channel-02\"]",
@@ -1746,7 +1679,6 @@
       "document": "CreateMessageForward请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "区域ID",
           "example": "gz",
@@ -1756,7 +1688,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "区域名称",
           "example": "广州",
@@ -1766,7 +1697,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "kafka_instance",
@@ -1776,7 +1706,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称",
           "example": "实例名称",
@@ -1786,7 +1715,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "json数组， 转发类型 1: 告警 2:GPS",
           "example": "[1,2]",
@@ -1796,7 +1724,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "kafka topic id",
           "example": "topic1",
@@ -1806,7 +1733,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "kafka topic 名称",
           "example": "topname11",
@@ -1844,7 +1770,6 @@
       "document": "CreateRecordPlan请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "计划名称",
           "example": "myPlan",
@@ -1854,7 +1779,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间模板ID",
           "example": "template-xxxxx",
@@ -1864,7 +1788,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "触发录制的事件类别 1:全部",
           "example": "1",
@@ -1874,7 +1797,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该录制计划绑定的设备列表",
           "example": "无",
@@ -1884,7 +1806,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储周期",
           "example": "2",
@@ -1922,7 +1843,6 @@
       "document": "CreateRecordingPlan请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "计划名称",
           "example": "myPlan",
@@ -1932,7 +1852,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间模板ID",
           "example": "template-xxxxx",
@@ -1942,7 +1861,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该录制计划绑定的通道列表",
           "example": "无",
@@ -1952,7 +1870,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储周期(天)；默认存储30天",
           "example": "30",
@@ -1990,7 +1907,6 @@
       "document": "CreateScene请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "场景名称",
           "example": "告警录制",
@@ -2000,7 +1916,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景触发规则",
           "example": "{\"2\":{\"Name\":\"设备报警\",\"WarnType\":{\"1\":\"视频丢失报警\",\"2\":\"设备防拆报警\",\"3\":\"存",
@@ -2010,7 +1925,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制时长 (秒)",
           "example": "3600",
@@ -2020,7 +1934,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录像存储时长(天)",
           "example": "30",
@@ -2030,7 +1943,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备列表(不推荐使用)",
           "example": "无",
@@ -2040,7 +1952,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道列表",
           "example": "无",
@@ -2078,7 +1989,6 @@
       "document": "CreateTimeTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "时间模板名称",
           "example": "myTemplate",
@@ -2088,7 +1998,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为每周全时录制（即7*24h录制），0：非全时录制，1；全时录制，默认0",
           "example": "0",
@@ -2098,7 +2007,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当IsAllWeek为0时必选，用于描述模板的各个时间片段",
           "example": "无",
@@ -2136,7 +2044,6 @@
       "document": "DeleteChannel请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备ID",
           "example": "99576636581320000310_99782261871320000002",
@@ -2146,7 +2053,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道ID",
           "example": "99576636581320000310_99782261871320000002",
@@ -2174,7 +2080,6 @@
       "document": "DeleteDeviceGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分组ID",
           "example": "group-xxx",
@@ -2212,7 +2117,6 @@
       "document": "DeleteDevice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识",
           "example": "device01",
@@ -2250,7 +2154,6 @@
       "document": "DeleteLiveChannel请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "直播频道ID",
           "example": "72f556500f0311ec806aacde48001122",
@@ -2278,7 +2181,6 @@
       "document": "DeleteLiveRecordPlan请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "录制计划ID",
           "example": "plan-001",
@@ -2316,7 +2218,6 @@
       "document": "DeleteLiveVideoList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频ID 列表, 大小限制(100)",
           "example": "[1234,5667,8845]",
@@ -2344,7 +2245,6 @@
       "document": "DeleteMessageForward请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "配置ID",
           "example": "16242",
@@ -2372,7 +2272,6 @@
       "document": "DeleteRecordPlan请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "录制计划ID",
           "example": "plan-xxxxx",
@@ -2410,7 +2309,6 @@
       "document": "DeleteRecordingPlan请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "录制计划ID",
           "example": "plan-xxxxx",
@@ -2448,7 +2346,6 @@
       "document": "DeleteScene请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID",
           "example": "11",
@@ -2476,7 +2373,6 @@
       "document": "DeleteTimeTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "时间模板ID",
           "example": "xxx",
@@ -2514,7 +2410,6 @@
       "document": "DeleteVideoList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频ID列表长度限制100内",
           "example": "[12424,43535]",
@@ -2542,7 +2437,6 @@
       "document": "DeleteWarning请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "告警ID",
           "example": "3",
@@ -2552,7 +2446,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警索引",
           "example": "1624204800",
@@ -2580,7 +2473,6 @@
       "document": "DescribeAbnormalEvents请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间",
           "example": "1624204800",
@@ -2590,7 +2482,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "example": "1624204800",
@@ -2628,7 +2519,6 @@
       "document": "DescribeAllDeviceList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认0",
           "example": "0",
@@ -2638,7 +2528,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制，默认200",
           "example": "10",
@@ -2648,7 +2537,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称，需要模糊匹配设备名称时为必填",
           "example": "myDevice",
@@ -2658,7 +2546,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DeviceId列表，需要精确查找设备时为必填",
           "example": "无",
@@ -2668,7 +2555,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备类型过滤，设备类型，1：国标VMS设备(公有云不支持此类型)，2：国标IPC设备，3：国标NVR设备，9：智能告警设备(公有云不支持此类型)",
           "example": "2,3",
@@ -2716,7 +2602,6 @@
       "document": "DescribeBindSceneChannels请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "条数限制最大不能超过1000",
           "example": "100",
@@ -2726,7 +2611,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID",
           "example": "23",
@@ -2736,7 +2620,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移值",
           "example": "0",
@@ -2784,7 +2667,6 @@
       "document": "DescribeBindSceneDevices请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID",
           "example": "23",
@@ -2794,7 +2676,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移值",
           "example": "0",
@@ -2804,7 +2685,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "条数限制最大不能超过1000",
           "example": "100",
@@ -2852,7 +2732,6 @@
       "document": "DescribeChannelLiveStreamURL请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识，必填参数",
           "example": "99933020581320000064_99933020581320000064",
@@ -2862,7 +2741,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道唯一标识（接口升级字段为必填），必填参数",
           "example": "99933020581320000064_99933020581320000064",
@@ -2900,7 +2778,6 @@
       "document": "DescribeChannelLocalRecordURL请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识",
           "example": "34020000001180000036_34020000001320000092",
@@ -2910,7 +2787,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道唯一标识",
           "example": "34020000001180000036_34020000001320000092",
@@ -2920,7 +2796,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录像文件Id，通过获取本地录像返回",
           "example": "1615995219_1616001641",
@@ -2930,7 +2805,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UNIX 时间戳，30天内，URL失效时间，如180s无人观看此流则URL提前失效",
           "example": "1616914614",
@@ -2940,7 +2814,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录像文件推送的开始时间，需要在RecordId参数起始时间内，可以通过此参数控制回放流起始点",
           "example": "1615995219",
@@ -2950,7 +2823,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录像文件推送的结束时间，需要在RecordId参数起始时间内，可以通过此参数控制回放流起始点",
           "example": "1616001641",
@@ -2988,7 +2860,6 @@
       "document": "DescribeChannelStreamURL请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识，必填参数",
           "example": "99933020581320000064_99933020581320000064",
@@ -2998,7 +2869,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流地址失效时间，固定值填写0，其他参数无效，必填参数",
           "example": "1610199034",
@@ -3008,7 +2878,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道唯一标识（接口升级字段为必填），必填参数",
           "example": "99933020581320000064_99933020581320000064",
@@ -3046,7 +2915,6 @@
       "document": "DescribeChannelsByLiveRecordPlan请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "录制计划ID",
           "example": "1",
@@ -3056,7 +2924,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量",
           "example": "0",
@@ -3066,7 +2933,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页大小",
           "example": "20",
@@ -3114,7 +2980,6 @@
       "document": "DescribeChannels请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备Id",
           "example": "34020000001180000036_34020000001320000092",
@@ -3124,7 +2989,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制，默认0",
           "example": "100",
@@ -3134,7 +2998,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认0",
           "example": "0",
@@ -3144,7 +3007,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道类型  0: 未知类型 1: 视频通道 2:  音频通道 3: 告警通道",
           "example": "[0]",
@@ -3154,7 +3016,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制计划ID， 当为\"null\"值时未绑定录制计划",
           "example": "1624204800",
@@ -3164,7 +3025,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警联动场景ID， 当为 -1 值时未绑定场景",
           "example": "243",
@@ -3279,7 +3139,6 @@
       "document": "DescribeDeviceEvent请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间，秒级时间戳",
           "example": "1624204800",
@@ -3289,7 +3148,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间，秒级时间戳",
           "example": "1624204800",
@@ -3299,7 +3157,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备Id",
           "example": "99576636581320000310_99782261871320000002",
@@ -3309,7 +3166,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认为全部 事件类型 1:注册 2:心跳 4:录制异常 5:播放异常 6:流中断",
           "example": "[1]",
@@ -3319,7 +3175,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移值",
           "example": "0",
@@ -3329,7 +3184,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "limit限制值",
           "example": "100",
@@ -3377,7 +3231,6 @@
       "document": "DescribeDeviceGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识列表",
           "example": "xxx",
@@ -3415,7 +3268,6 @@
       "document": "DescribeDeviceList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认0",
           "example": "0",
@@ -3425,7 +3277,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制，默认200",
           "example": "10",
@@ -3435,7 +3286,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名前缀",
           "example": "myDevice",
@@ -3445,7 +3295,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备类型，1：国标VMS设备(公有云不支持此类型)，2：国标IPC设备，3：国标NVR设备，9：智能告警设备(公有云不支持此类型)",
           "example": "2,3",
@@ -3493,7 +3342,6 @@
       "document": "DescribeDeviceMonitorData请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间戳",
           "example": "1624204800",
@@ -3503,7 +3351,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间戳",
           "example": "1624204800",
@@ -3513,7 +3360,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型 支持 OnlineChannels/OnlineDevices/RecordingChannels",
           "example": "OnlineChannels",
@@ -3523,7 +3369,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间粒度 目前只支持 1h",
           "example": "1h",
@@ -3561,7 +3406,6 @@
       "document": "DescribeDevicePassWord请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识",
           "example": "devename",
@@ -3599,7 +3443,6 @@
       "document": "DescribeDevice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备ID",
           "example": "34020000001180000036_34020000001320000092",
@@ -3637,7 +3480,6 @@
       "document": "DescribeDeviceStreams的出参复杂类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "rtsp地址",
           "example": "https://test.com",
@@ -3648,7 +3490,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "rtmp地址",
           "example": "rtmp://test.com",
@@ -3659,7 +3500,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "hls地址",
           "example": "https://test.com",
@@ -3670,7 +3510,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "flv地址",
           "example": "https://test.com",
@@ -3687,7 +3526,6 @@
       "document": "DescribeDeviceStreams请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识",
           "example": "99933020581320000064_99933020581320000064",
@@ -3697,7 +3535,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流地址失效时间",
           "example": "1610199034",
@@ -3707,7 +3544,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道唯一标识（接口升级字段为必填）",
           "example": "99933020581320000064_99933020581320000064",
@@ -3745,7 +3581,6 @@
       "document": "DescribeGroupById请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分组ID",
           "example": "gro-30to7hxt",
@@ -3783,7 +3618,6 @@
       "document": "DescribeGroupByPath请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分组路径，格式为/aaa(/bbb/ccc)",
           "example": "/group-aaa/group-bbb",
@@ -3821,7 +3655,6 @@
       "document": "DescribeGroupDevices请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分组ID",
           "example": "group-1234abcd",
@@ -3831,7 +3664,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认0",
           "example": "0",
@@ -3841,7 +3673,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制值，默认200",
           "example": "10",
@@ -3851,7 +3682,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称，根据设备名称模糊匹配时必填",
           "example": "nickname",
@@ -3861,7 +3691,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤不可录制设备",
           "example": "1",
@@ -3871,7 +3700,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当Group是普通组的时候，支持根据DeviceTypes筛选类型，\n 设备类型，1：国标VMS设备(公有云不支持此类型)，2：国标IPC设备，3：国标NVR设备，9：智能告警设备(公有云不支持此类型)",
           "example": "1",
@@ -3919,7 +3747,6 @@
       "document": "DescribeGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分组ID列表",
           "example": "[\"gro-30to7hxt\",\"gro-wnvharsw\"]",
@@ -3957,7 +3784,6 @@
       "document": "DescribeIPCChannels请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认0",
           "example": "0",
@@ -3967,7 +3793,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制，默认0",
           "example": "100",
@@ -3977,7 +3802,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备Id",
           "example": "34020000001180000036_34020000001320000092",
@@ -3987,7 +3811,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道类型  0: 未知类型 1: 视频通道 2:  音频通道 3: 告警通道",
           "example": "[0]",
@@ -4035,7 +3858,6 @@
       "document": "DescribeLiveChannelList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "0",
@@ -4045,7 +3867,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大数",
           "example": "20",
@@ -4055,7 +3876,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "直播频道类型，1：固定直播；2：移动直播",
           "example": "1",
@@ -4065,7 +3885,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "直播录制计划ID, null: 直播录制计划为空",
           "example": "无",
@@ -4075,7 +3894,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "频道名称 (支持模糊搜索)",
           "example": "无",
@@ -4123,7 +3941,6 @@
       "document": "DescribeLiveChannel请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "频道ID",
           "example": "e4a6427192a34cca8ea1d74815b7f458",
@@ -4221,7 +4038,6 @@
       "document": "DescribeLiveRecordPlanById请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "录制计划ID",
           "example": "plan-001",
@@ -4299,7 +4115,6 @@
       "document": "DescribeLiveRecordPlanIds请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "时间模板ID",
           "example": "plan-001",
@@ -4309,7 +4124,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量",
           "example": "0",
@@ -4319,7 +4133,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页大小",
           "example": "20",
@@ -4367,7 +4180,6 @@
       "document": "DescribeLiveStream请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "频道ID",
           "example": "e4a6427192a34cca8ea1d74815b7f458",
@@ -4377,7 +4189,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期时间 秒级unix时间戳",
           "example": "124177555",
@@ -4415,7 +4226,6 @@
       "document": "DescribeLiveVideoList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "0",
@@ -4425,7 +4235,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页的每页数量",
           "example": "20",
@@ -4435,7 +4244,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "直播频道ID",
           "example": "无",
@@ -4445,7 +4253,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始录制开始时间",
           "example": "无",
@@ -4455,7 +4262,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始录制结束时间",
           "example": "无",
@@ -4465,7 +4271,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期开始时间",
           "example": "无",
@@ -4475,7 +4280,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期结束时间",
           "example": "无",
@@ -4485,7 +4289,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件大小范围 Byte",
           "example": "无",
@@ -4495,7 +4298,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件大小范围 Byte",
           "example": "无",
@@ -4505,7 +4307,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制状态，5: 录制回写完",
           "example": "无",
@@ -4553,7 +4354,6 @@
       "document": "DescribeMessageForward请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "配置ID",
           "example": "16242",
@@ -4681,7 +4481,6 @@
       "document": "DescribeMessageForwards请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数量限制",
           "example": "100",
@@ -4691,7 +4490,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移",
           "example": "1",
@@ -4739,7 +4537,6 @@
       "document": "DescribeMonitorDataByDate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间戳",
           "example": "1624204800",
@@ -4749,7 +4546,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间戳 最多显示30天数据",
           "example": "1624204800",
@@ -4787,7 +4583,6 @@
       "document": "DescribePresetList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频通道唯一标识",
           "example": "99576636581320000310_99782261871320000002",
@@ -4797,7 +4592,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识",
           "example": "99576636581320000310_99782261871320000002",
@@ -4835,7 +4629,6 @@
       "document": "DescribeRecordDatesByChannel请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识",
           "example": "99870353841320000007_99870353841320000007",
@@ -4845,7 +4638,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道唯一标识",
           "example": "99870353841320000007_99870353841320000007",
@@ -4855,7 +4647,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1: 云端录制 2: 本地录制",
           "example": "1",
@@ -4865,7 +4656,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制量，默认200",
           "example": "10",
@@ -4875,7 +4665,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认0",
           "example": "0",
@@ -4913,7 +4702,6 @@
       "document": "DescribeRecordDatesByLive请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "直播频道ID",
           "example": "cea6f74f29164253b43411fd888f4dc3",
@@ -4923,7 +4711,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页值，本地录制时参数无效",
           "example": "0",
@@ -4933,7 +4720,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制值，本地录制时参数无效",
           "example": "20",
@@ -4971,7 +4757,6 @@
       "document": "DescribeRecordStreamData 复杂类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Rtsp地址",
           "example": "NULL",
@@ -4982,7 +4767,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Rtmp地址",
           "example": "rtmp://dev-pl.video.tencentcs.com/live/1099154940?txSecret=33f87",
@@ -4993,7 +4777,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Hls地址",
           "example": "https://dev-pl.video.tencentcs.com/live/1099154940.m3u8?txSecret",
@@ -5004,7 +4787,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Flv地址",
           "example": "https://dev-pl.video.tencentcs.com/live/1099154940.flv?txSecret=",
@@ -5015,7 +4797,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流Id",
           "example": "1099154940",
@@ -5032,7 +4813,6 @@
       "document": "DescribeRecordStream请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备Id",
           "example": "34020000001180000036_34020000001320000092",
@@ -5042,7 +4822,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流失效时间，UNIX时间戳，30天内",
           "example": "1616914614",
@@ -5052,7 +4831,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录像文件ID",
           "example": "1615995219_1616001641",
@@ -5062,7 +4840,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录像流开始时间，当录像文件ID为空时有效，UNIX时间戳",
           "example": "1615995219",
@@ -5072,7 +4849,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录像流结束时间，当录像文件iD为空时有效，UNIX时间戳",
           "example": "1616001641",
@@ -5082,7 +4858,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道唯一标识（此接口升级为必填字段）",
           "example": "34020000001180000036_34020000001320000092",
@@ -5120,7 +4895,6 @@
       "document": "DescribeRecordingPlanById请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "录制计划ID",
           "example": "plan-xxx",
@@ -5222,7 +4996,6 @@
       "document": "DescribeScene请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID",
           "example": "200",
@@ -5330,7 +5103,6 @@
       "document": "DescribeScenes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "条数限制",
           "example": "100",
@@ -5340,7 +5112,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移",
           "example": "0",
@@ -5388,7 +5159,6 @@
       "document": "DescribeStatisticDetails请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "开始日期，格式【YYYY-MM-DD】",
           "example": "2020-12-09",
@@ -5398,7 +5168,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束日期，格式【YYYY-MM-DD】",
           "example": "2020-12-14",
@@ -5408,7 +5177,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计项。取值范围：\n1.录制设备数：RecordingDevice\n2.非录制设备数：NonRecordingDevice\n3.观看流量总数：WatchFlux\n4.已用存储容量总数：StorageUsage\n5. X-P2P分享流量: P2PFluxTotal\n6. X-P2P峰值带宽: P2PPeakValue\n7. RTMP推流路数(直播推流): LivePushTotal",
           "example": "StorageUsage",
@@ -5446,7 +5214,6 @@
       "document": "DescribeStatisticSummary请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指定日期。格式【YYYY-MM-DD】",
           "example": "2020-12-09",
@@ -5544,7 +5311,6 @@
       "document": "DescribeSubGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分组ID",
           "example": "group_root",
@@ -5554,7 +5320,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组名称，根据名称模糊匹配子分组时为必填",
           "example": "groupA",
@@ -5564,7 +5329,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认0",
           "example": "0",
@@ -5574,7 +5338,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制数，默认200",
           "example": "10",
@@ -5584,7 +5347,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否统计子分组下的设备数，0：统计，1：不统计",
           "example": "1",
@@ -5632,7 +5394,6 @@
       "document": "DescribeSubscriptionStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备ID",
           "example": "99576636581320000310_99782261871320000002",
@@ -5670,7 +5431,6 @@
       "document": "DescribeVideoListByChannel请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识",
           "example": "99870353841320000007_99870353841320000007",
@@ -5680,7 +5440,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道唯一标识",
           "example": "99870353841320000007_99870353841320000007",
@@ -5690,7 +5449,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1: 云端录制 2: 本地录制",
           "example": "1",
@@ -5700,7 +5458,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定某天。取值【YYYY-MM-DD】\n为空时默认查询最近一天的记录",
           "example": "2021-01-01",
@@ -5710,7 +5467,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制量，默认2000",
           "example": "100",
@@ -5720,7 +5476,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认0",
           "example": "0",
@@ -5768,7 +5523,6 @@
       "document": "DescribeVideoList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移",
           "example": "0",
@@ -5778,7 +5532,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制",
           "example": "10",
@@ -5788,7 +5541,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间戳，秒级",
           "example": "1616660711",
@@ -5798,7 +5550,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间戳，秒级",
           "example": "1616661017",
@@ -5808,7 +5559,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备Id",
           "example": "99870353841320000007_99870353841320000007",
@@ -5818,7 +5568,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始录制范围 开始",
           "example": "1624204800",
@@ -5828,7 +5577,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始录制范围 结束",
           "example": "1624204800",
@@ -5838,7 +5586,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期时间范围 开始",
           "example": "1624204800",
@@ -5848,7 +5595,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期时间范围 结束",
           "example": "1624204800",
@@ -5858,7 +5604,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件大小范围 开始 单位byte",
           "example": "20",
@@ -5868,7 +5613,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件大小范围 结束 单位byte",
           "example": "50 ",
@@ -5878,7 +5622,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制状态 99: 录制方已经回写状态 1: 开始录制了，等待回写 2: 已经到了时间模板的停止时间，在等待录制方回写",
           "example": "99",
@@ -5888,7 +5631,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道ID默认必传",
           "example": "99576636581320000310_99782261871320000002",
@@ -5898,7 +5640,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制计划ID",
           "example": "planidyyysssdd",
@@ -5908,7 +5649,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID",
           "example": "3445",
@@ -5918,7 +5658,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警ID",
           "example": "34455",
@@ -5928,7 +5667,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制类型 1: 联动计划录制 2: 告警录制",
           "example": "[1]",
@@ -6013,7 +5751,6 @@
       "document": "DescribeWarnings请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "1:创建时间倒序 2：创建时间升序 3：level倒序 4：leve升序",
           "example": "1",
@@ -6023,7 +5760,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选设备id",
           "example": "99576636581320000310_99782261871320000002",
@@ -6033,7 +5769,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "如果不传则查询所有，取值参见配置",
           "example": "[1]",
@@ -6043,7 +5778,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "如果不传则查询所有，取值参见配置",
           "example": "[0]",
@@ -6053,7 +5787,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不传认为是0",
           "example": "0",
@@ -6063,7 +5796,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不传认为是20",
           "example": "20",
@@ -6073,7 +5805,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "形似：2021-05-21 00:00:00 .取值在当前日前30天内，不传默认是当前日前30天日期",
           "example": "2021-05-21 00:00:00",
@@ -6083,7 +5814,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "形似：2021-05-21 23:59:59 .取值在当前日前30天内，不传默认是当前日前30天日期",
           "example": "2021-05-21 00:00:00",
@@ -6131,7 +5861,6 @@
       "document": "DescribeXP2PData请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "P2P应用ID",
           "example": "1624204800",
@@ -6141,7 +5870,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询开始时间，时间戳秒",
           "example": "1624204800",
@@ -6151,7 +5879,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间，时间戳秒",
           "example": "1624204800",
@@ -6161,7 +5888,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "P2P通路ID",
           "example": "1624204800fasffsgg",
@@ -6199,7 +5925,6 @@
       "document": "设备所在分组信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识",
           "example": "xxx",
@@ -6210,7 +5935,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组ID",
           "example": "xxx",
@@ -6221,7 +5945,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组路径",
           "example": "xxx",
@@ -6232,7 +5955,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "父分组ID",
           "example": "xxx",
@@ -6243,7 +5965,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备错误，仅在用户没权限或者设备已删除时返回具体结果",
           "example": "xxx",
@@ -6260,7 +5981,6 @@
       "document": "用于描述唯一一个设备",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "34020000001180000036_34020000001320000092",
@@ -6271,7 +5991,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "34020000001180000036_34020000001320000092",
@@ -6288,7 +6007,6 @@
       "document": "查询设备统计返回值",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "统计值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -6299,7 +6017,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1624204800",
@@ -6316,7 +6033,6 @@
       "document": "设备事件列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间，秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1624204800",
@@ -6327,7 +6043,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件类型 1:注册 2:心跳 4:录制异常 5:播放异常 6:流中断\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6338,7 +6053,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "succ",
@@ -6349,7 +6063,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备类型",
           "example": "2",
@@ -6360,7 +6073,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备地址",
           "example": "10.0.16.80:9455",
@@ -6371,7 +6083,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备Id",
           "example": "99933020581320000255",
@@ -6382,7 +6093,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道Id",
           "example": "99933020581320000255",
@@ -6393,7 +6103,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件日志",
           "example": "无",
@@ -6404,7 +6113,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备备注名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "设备备注名称1",
@@ -6421,7 +6129,6 @@
       "document": "GetRecordDatesByDev请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识",
           "example": "99870353841320000007_99870353841320000007",
@@ -6431,7 +6138,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制量，默认200",
           "example": "10",
@@ -6441,7 +6147,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认0",
           "example": "0",
@@ -6451,7 +6156,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道唯一标识，对于NVR设备，多通道IPC设备，设备编码与通道编码不一致的IPC设备，此字段为必填",
           "example": "99870353841320000007_99870353841320000007",
@@ -6461,7 +6165,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1: 云端录制 2: 本地录制",
           "example": "1",
@@ -6499,7 +6202,6 @@
       "document": "GetRecordPlanByDev请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识",
           "example": "devicename",
@@ -6537,7 +6239,6 @@
       "document": "GetRecordPlanById请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "录制计划ID",
           "example": "plan-xxx",
@@ -6612,7 +6313,6 @@
       "document": "GetTimeTemplateById请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "时间模板ID",
           "example": "tgrp-xxx",
@@ -6687,7 +6387,6 @@
       "document": "GetVideoListByCon请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识",
           "example": "99870353841320000007_99870353841320000007",
@@ -6697,7 +6396,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "0",
@@ -6707,7 +6405,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制量",
           "example": "100",
@@ -6717,7 +6414,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道唯一标识，对于NVR设备，多通道IPC设备，设备编码与通道编码不一致的IPC设备，此字段为必填",
           "example": "99870353841320000007_99870353841320000007",
@@ -6727,7 +6423,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0：查询指定日期的录像；1：查询最近一天的录像；默认0",
           "example": "1",
@@ -6737,7 +6432,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定某天。取值【YYYY-MM-DD】\n为空时默认查询最近一天的记录",
           "example": "2021-01-01",
@@ -6747,7 +6441,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1: 云端录制 2: 本地录制",
           "example": "1",
@@ -6795,7 +6488,6 @@
       "document": "分组下设备信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -6806,7 +6498,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -6817,7 +6508,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6828,7 +6518,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩展信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -6839,7 +6528,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6850,7 +6538,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "rtsp地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -6861,7 +6548,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备编码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -6872,7 +6558,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否存在录像\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6883,7 +6568,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该设备是否可录制\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6894,7 +6578,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备接入协议\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "GB/T 28181",
@@ -6905,7 +6588,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6916,7 +6598,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备通道总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6927,7 +6608,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备视频通道总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6944,7 +6624,6 @@
       "document": "分组信息详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分组ID",
           "example": "xxx",
@@ -6955,7 +6634,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组名称",
           "example": "xxx",
@@ -6966,7 +6644,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组类型",
           "example": "xxx",
@@ -6977,7 +6654,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组路径",
           "example": "xxx",
@@ -6988,7 +6664,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "父分组ID",
           "example": "xxx",
@@ -6999,7 +6674,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组描述",
           "example": "xxx",
@@ -7010,7 +6684,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩展信息",
           "example": "xxx",
@@ -7021,7 +6694,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "xxx",
@@ -7032,7 +6704,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -7043,7 +6714,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备不存在时产生的错误\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -7060,7 +6730,6 @@
       "document": "分组信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -7071,7 +6740,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "父分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -7082,7 +6750,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -7093,7 +6760,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -7104,7 +6770,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -7115,7 +6780,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组绑定设备数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -7126,7 +6790,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子分组数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -7137,7 +6800,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组附加信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -7148,7 +6810,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -7159,7 +6820,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -7170,7 +6830,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -7187,7 +6846,6 @@
       "document": "频道信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "频道ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cea6f74f29164253b43411fd888f4dc3",
@@ -7198,7 +6856,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "频道名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "001",
@@ -7209,7 +6866,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "频道类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -7220,7 +6876,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道直播状态：1: 未推流，2: 推流中\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -7231,7 +6886,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "推流地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "rtmp://:0/liveFixed/cea6f74f29164253b43411fd888f4dc3",
@@ -7242,7 +6896,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-11-08 19:26:16",
@@ -7253,7 +6906,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-11-08 19:26:16",
@@ -7270,7 +6922,6 @@
       "document": "直播频道详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "频道ID",
           "example": "“xxxx”",
@@ -7281,7 +6932,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "频道名称",
           "example": "\"直播001\"",
@@ -7298,7 +6948,6 @@
       "document": "直播录制详情item",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "录制文件自增ID",
           "example": "1",
@@ -7309,7 +6958,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "直播频道ID",
           "example": "cea6f74f29164253b43411fd888f4dc3",
@@ -7320,7 +6968,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期时间",
           "example": "0",
@@ -7331,7 +6978,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制时长",
           "example": "0",
@@ -7342,7 +6988,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件大小",
           "example": "0",
@@ -7353,7 +6998,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制文件url",
           "example": "\"http/xx.xx.xx/xx.mp4\"",
@@ -7364,7 +7008,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制计划ID",
           "example": "plan-7fqulsjc",
@@ -7375,7 +7018,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制开始时间",
           "example": "1631007068",
@@ -7386,7 +7028,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制结束时间",
           "example": "1631007668",
@@ -7403,7 +7044,6 @@
       "document": "直播录制计划详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "计划ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "planxxx-0",
@@ -7414,7 +7054,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计划名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "namexxx0",
@@ -7431,7 +7070,6 @@
       "document": "消息转发配置信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "配置ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "124354",
@@ -7442,7 +7080,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户Uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1624204800",
@@ -7453,7 +7090,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "json数组， 转发类型 1: 告警 2:GPS\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[1,2]",
@@ -7464,7 +7100,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "区域ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "gz",
@@ -7475,7 +7110,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "区域名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "广州",
@@ -7486,7 +7120,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "kafka_instance",
@@ -7497,7 +7130,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "实例名称",
@@ -7508,7 +7140,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "kafka topic id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "topic1",
@@ -7519,7 +7150,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-09-30T17:26:47+08:00",
@@ -7530,7 +7160,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-09-30T17:26:47+08:00",
@@ -7541,7 +7170,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "topic 名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "topic-kafka",
@@ -7558,7 +7186,6 @@
       "document": "ModifyBindPlanLiveChannel请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "直播录制计划ID",
           "example": "lrplan-w3oovckd",
@@ -7568,7 +7195,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1: 绑定 2: 解绑",
           "example": "1",
@@ -7578,7 +7204,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "直播频道ID列表",
           "example": "[\"20a15bbc31fd45b1a5625c08e5e23a7f\"]",
@@ -7606,7 +7231,6 @@
       "document": "ModifyBindRecordingPlan请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "操作类型： 1-绑定设备 ；2-解绑设备",
           "example": "1",
@@ -7616,7 +7240,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制计划ID",
           "example": "plan-xxxxx",
@@ -7626,7 +7249,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制通道列表",
           "example": "无",
@@ -7654,7 +7276,6 @@
       "document": "ModifyBindSceneChannels请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID",
           "example": "100",
@@ -7664,7 +7285,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1: 绑定 2: 解绑",
           "example": "1",
@@ -7674,7 +7294,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道列表",
           "example": "无",
@@ -7702,7 +7321,6 @@
       "document": "ModifyBindSceneDevice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID",
           "example": "100",
@@ -7712,7 +7330,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1: 绑定 2: 解绑",
           "example": "1",
@@ -7722,7 +7339,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备列表",
           "example": "无",
@@ -7750,7 +7366,6 @@
       "document": "ModifyDeviceData请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识",
           "example": "xxx",
@@ -7760,7 +7375,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称",
           "example": "xxx",
@@ -7798,7 +7412,6 @@
       "document": "ModifyLiveChannel请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "直播频道ID",
           "example": "e4a6427192a34cca8ea1d74815b7f458",
@@ -7808,7 +7421,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "直播频道名",
           "example": "直播004",
@@ -7836,7 +7448,6 @@
       "document": "ModifyLiveRecordPlan请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "录制计划ID",
           "example": "plan-001",
@@ -7846,7 +7457,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制计划名",
           "example": "直播录制001",
@@ -7856,7 +7466,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间模板ID，固定直播时为必填",
           "example": "template-001",
@@ -7884,7 +7493,6 @@
       "document": "ModifyLiveVideo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频ID 列表, 大小限制(100)",
           "example": "[3352901]",
@@ -7894,7 +7502,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期时间 秒 (-1: 为永不过期)",
           "example": "1633599083",
@@ -7922,7 +7529,6 @@
       "document": "ModifyMessageForward请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "配置ID",
           "example": "1624",
@@ -7932,7 +7538,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "json数组， 转发类型 1: 告警 2:GPS",
           "example": "[1,2]",
@@ -7960,7 +7565,6 @@
       "document": "ModifyPreset请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "通道ID",
           "example": "99576636581320000310_99782261871320000002",
@@ -7970,7 +7574,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预置位编码 范围1-8",
           "example": "1",
@@ -7980,7 +7583,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预制位名称",
           "example": "大门",
@@ -7990,7 +7592,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备Id",
           "example": "99576636581320000310_99782261871320000002",
@@ -8018,7 +7619,6 @@
       "document": "ModifyRecordingPlan请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "录制计划ID",
           "example": "plan-xxxxx",
@@ -8028,7 +7628,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计划名称",
           "example": "xxxxxx",
@@ -8038,7 +7637,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间模板ID",
           "example": "tgrp-xxxxx",
@@ -8076,7 +7674,6 @@
       "document": "ModifyScene请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID",
           "example": "200",
@@ -8086,7 +7683,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景名称",
           "example": "场景录制",
@@ -8096,7 +7692,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "触发条件",
           "example": "{\"2\":{\"Name\":\"设备报警\",\"WarnType\":{\"1\":\"视频丢失报警\",\"2\":\"设备防拆报警\",\"3\":\"存",
@@ -8106,7 +7701,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制时长(秒)",
           "example": "3600",
@@ -8134,7 +7728,6 @@
       "document": "ModifySubscriptionStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备ID",
           "example": "99576636581320000310_99782261871320000002",
@@ -8144,7 +7737,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅状态 1：关闭订阅 2：开启订阅",
           "example": "1",
@@ -8154,7 +7746,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅类型 Alarm:告警订阅 Catalog:目录订阅 MobilePosition:移动位置订阅",
           "example": "Alarm",
@@ -8182,7 +7773,6 @@
       "document": "ModifyVideoInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频ID列表长度限制100内",
           "example": "[0]",
@@ -8192,7 +7782,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期时间 时间戳 -1: 永不过期 0: 无效值",
           "example": "1624204800",
@@ -8220,7 +7809,6 @@
       "document": "预置位结构出参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "预置位ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "8",
@@ -8231,7 +7819,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预置位名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Set",
@@ -8242,7 +7829,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预置位状态 0:未设置预置位 1:已设置预置位 2:已设置预置位&看守位",
           "example": "0",
@@ -8253,7 +7839,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预置位启用时的自动归位时间",
           "example": "1628075511",
@@ -8270,7 +7855,6 @@
       "document": "录制计划详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "计划ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "planid",
@@ -8281,7 +7865,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计划名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "planname",
@@ -8292,7 +7875,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "templateid",
@@ -8303,7 +7885,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "templatename",
@@ -8314,7 +7895,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定的通道列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -8325,7 +7905,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储周期（天）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
@@ -8418,7 +7997,6 @@
       "document": "大盘统计-录像存储统计 出参RecordStatistic",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1624204800",
@@ -8429,7 +8007,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8446,7 +8023,6 @@
       "document": "大盘统计-录像存储统计 出参Value",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "期望执行时间 秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1624204800",
@@ -8457,7 +8033,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实际执行时间 秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1624204800",
@@ -8468,7 +8043,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储大小 G\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.3",
@@ -8485,7 +8059,6 @@
       "document": "普通设备的录像详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "录像任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "taskid",
@@ -8496,7 +8069,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制计划ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "planid",
@@ -8507,7 +8079,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本录制片段开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611732169",
@@ -8518,7 +8089,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本录制片段结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611732269",
@@ -8529,7 +8099,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制模式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -8540,7 +8109,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本录制片段对应的录制文件URL\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://xx.mp4",
@@ -8551,7 +8119,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本录制片段当前的录制状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -8562,7 +8129,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "234354",
@@ -8573,7 +8139,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "834",
@@ -8584,7 +8149,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制id，NVR下属设备有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611732169_1611732269",
@@ -8601,7 +8165,6 @@
       "document": "ResetWarning请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "告警ID",
           "example": "2",
@@ -8611,7 +8174,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Es中告警ID",
           "example": "1624204800",
@@ -8639,7 +8201,6 @@
       "document": "场景列表元素",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -8650,7 +8211,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户UIN\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1624204800",
@@ -8661,7 +8221,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "测试场景",
@@ -8672,7 +8231,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "触发规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"2\":{\"Name\":\"设备报警\",\"WarnType\":{\"1\":\"视频丢失报警\",\"2\":\"设备防拆报警\",\"3\":\"存",
@@ -8683,7 +8241,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制时长 秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3600",
@@ -8694,7 +8251,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储时长 天\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -8705,7 +8261,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2021-10-21T19:22:58+08:00",
@@ -8716,7 +8271,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间",
           "example": "2021-10-21T19:22:58+08:00",
@@ -8733,7 +8287,6 @@
       "document": "SIIP服务器相关配置项",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "SIP服务器地址",
           "example": "",
@@ -8744,7 +8297,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SIP服务器端口",
           "example": "",
@@ -8755,7 +8307,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SIP服务器编码",
           "example": "",
@@ -8766,7 +8317,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SIP服务器域",
           "example": "",
@@ -8783,7 +8333,6 @@
       "document": "某天的统计数额",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "日期。格式【YYYY-MM-DD】\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8794,7 +8343,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计数额\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8811,7 +8359,6 @@
       "document": "拉流地址，只有在推流情况下才有\n",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "流ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -8822,7 +8369,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "rtsp流地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "rtsp://127.0.0.1/live/test",
@@ -8833,7 +8379,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "rtmp流地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "rtmp://127.0.0.1/live/test",
@@ -8844,7 +8389,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "hls流地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://127.0.0.1/live/test.m3u8",
@@ -8855,7 +8399,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "flv流地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://127.0.0.1/live/test.flv",
@@ -8872,7 +8415,6 @@
       "document": "时间模板详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "时间模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "id1",
@@ -8883,7 +8425,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "name1",
@@ -8894,7 +8435,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否全时录制，即7*24小时录制 0-否 1-是\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -8905,7 +8445,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为自定义模板 0-否 1-是\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -8916,7 +8455,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间片段详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -8933,7 +8471,6 @@
       "document": "在操作时间模板时，用于描述各个时间片段",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "一周中的周几\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -8944,7 +8481,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间片段的开始时分。格式【HH:MM】\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12:30",
@@ -8955,7 +8491,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间片段的结束时分。格式【HH:MM】\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "14:30",
@@ -8972,7 +8507,6 @@
       "document": "UpdateDeviceGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分组名称",
           "example": "testgroup",
@@ -8982,7 +8516,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组ID",
           "example": "aaaa",
@@ -8992,7 +8525,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组描述",
           "example": "this is test",
@@ -9002,7 +8534,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新父分组ID，用于修改分组路径",
           "example": "newgroupid",
@@ -9030,7 +8561,6 @@
       "document": "UpdateDevicePassWord请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备密码",
           "example": "xxx",
@@ -9040,7 +8570,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识",
           "example": "xxx",
@@ -9078,7 +8607,6 @@
       "document": "UpdateRecordPlan请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "录制计划ID",
           "example": "plan-xxxxx",
@@ -9088,7 +8616,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计划名称",
           "example": "xxxxxx",
@@ -9098,7 +8625,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间模板ID",
           "example": "tgrp-xxxxx",
@@ -9108,7 +8634,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "触发录制的事件 1：全部",
           "example": "1",
@@ -9118,7 +8643,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制设备列表",
           "example": "无",
@@ -9128,7 +8652,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否更新绑定此录制计划的设备列表\n0 - 不更新\n1 - 更新，如果Devices参数为空则清空设备列表，Devices不为空则全量更新设备列表",
           "example": "1",
@@ -9166,7 +8689,6 @@
       "document": "UpdateTimeTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "时间模板ID",
           "example": "xxxx",
@@ -9176,7 +8698,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间模板名称",
           "example": "xx",
@@ -9186,7 +8707,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否全时录制，即7*24小时录制。\n0：非全时录制；1：全时录制。默认1",
           "example": "0",
@@ -9196,7 +8716,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制时间片段",
           "example": "无",
@@ -9234,7 +8753,6 @@
       "document": "告警列表出参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -9245,7 +8763,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "99576636581320000310_99782261871320000002",
@@ -9256,7 +8773,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "video_dev",
@@ -9267,7 +8783,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警通道\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "99576636581320000310_99782261871320000002",
@@ -9278,7 +8793,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警级别 1: \"一级警情\", 2: \"二级警情\", 3: \"三级警情\", 4: \"四级警情\",\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -9289,7 +8803,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警级别名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "四级警情",
@@ -9300,7 +8813,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警方式 2 设备报警 5 视频报警 6 设备故障报警\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -9311,7 +8823,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警方式名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "视频报警",
@@ -9322,7 +8833,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警类型  2: {\n\t\t\tName: \"设备报警\",\n\t\t\tWarnType: map[int]string{\n\t\t\t\t1: \"视频丢失报警\",\n\t\t\t\t2: \"设备防拆报警\",\n\t\t\t\t3: \"存储设备磁盘满报警\",\n\t\t\t\t4: \"设备高温报警\",\n\t\t\t\t5: \"设备低温报警\",\n\t\t\t},\n\t\t},\n\t\t5: {\n\t\t\tName: \"视频报警\",\n\t\t\tWarnType: map[int]string{\n\t\t\t\t1:  \"人工视频报警\",\n\t\t\t\t2:  \"运动目标检测报警\",\n\t\t\t\t3:  \"遗留物检测报警\",\n\t\t\t\t4:  \"物体移除检测报警\",\n\t\t\t\t5:  \"绊线检测报警\",\n\t\t\t\t6:  \"入侵检测报警\",\n\t\t\t\t7:  \"逆行检测报警\",\n\t\t\t\t8:  \"徘徊检测报警\",\n\t\t\t\t9:  \"流量统计报警\",\n\t\t\t\t10: \"密度检测报警\",\n\t\t\t\t11: \"视频异常检测报警\",\n\t\t\t\t12: \"快速移动报警\",\n\t\t\t},\n\t\t},\n\t\t6: {\n\t\t\tName: \"设备故障报警\",\n\t\t\tWarnType: map[int]string{\n\t\t\t\t1: \"存储设备磁盘故障报警\",\n\t\t\t\t2: \"存储设备风扇故障报警\",\n\t\t\t},\n\t\t}\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1 ",
@@ -9333,7 +8843,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否删除\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -9344,7 +8853,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9355,7 +8863,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",

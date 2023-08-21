@@ -472,7 +472,6 @@
       "document": "版本控制-协议详情\n",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "售卖状态。可选值有 sale_out 售罄、saling可售、no_saling不可销售",
           "example": "",
@@ -483,7 +482,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议类型。可选值有 NFS、CIFS",
           "example": "",
@@ -500,7 +498,6 @@
       "document": "版本控制-区域数组",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "区域名称，如“ap-beijing”",
           "example": "",
@@ -511,7 +508,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "区域名称，如“bj”",
           "example": "",
@@ -522,7 +518,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "区域可用情况，当区域内至少有一个可用区处于可售状态时，取值为AVAILABLE，否则为UNAVAILABLE",
           "example": "",
@@ -533,7 +528,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区数组",
           "example": "",
@@ -544,7 +538,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "区域中文名称，如“广州”",
           "example": "",
@@ -698,7 +691,6 @@
       "document": "对象存储桶",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "桶名称",
           "example": "name",
@@ -709,7 +701,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "桶所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "region",
@@ -1059,7 +1050,6 @@
       "document": "CreateCfsPGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "权限组名称，1-64个字符且只能为中文，字母，数字，下划线或横线",
           "example": "test_pgroup",
@@ -1069,7 +1059,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限组描述信息，1-255个字符",
           "example": "test_pgroup_desc",
@@ -1147,7 +1136,6 @@
       "document": "CreateCfsRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "权限组 ID",
           "example": "pgroup-12345",
@@ -1157,7 +1145,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可以填写单个 IP 或者单个网段，例如 10.1.10.11 或者 10.10.1.0/24。默认来访地址为*表示允许所有。同时需要注意，此处需填写 CVM 的内网 IP。",
           "example": "10.1.1.10",
@@ -1167,7 +1154,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则优先级，参数范围1-100。 其中 1 为最高，100为最低",
           "example": "9",
@@ -1177,7 +1163,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "读写权限, 值为 RO、RW；其中 RO 为只读，RW 为读写，不填默认为只读",
           "example": "rw",
@@ -1187,7 +1172,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户权限，值为 all_squash、no_all_squash、root_squash、no_root_squash。其中all_squash为所有访问用户都会被映射为匿名用户或用户组；no_all_squash为访问用户会先与本机用户匹配，匹配失败后再映射为匿名用户或用户组；root_squash为将来访的root用户映射为匿名用户或用户组；no_root_squash为来访的root用户保持root帐号权限。不填默认为root_squash。",
           "example": "root_squash",
@@ -1275,7 +1259,6 @@
       "document": "CreateCfsSnapshot请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统id",
           "example": "cfs-gagaggag",
@@ -1285,7 +1268,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照名称",
           "example": "xx",
@@ -1295,7 +1277,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照标签",
           "example": "[\"TagKey\":\"a\",\"TagValue\":1]",
@@ -1496,7 +1477,6 @@
       "document": "DeleteAutoSnapshotPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "快照策略ID",
           "example": "asp-xx",
@@ -1534,7 +1514,6 @@
       "document": "DeleteCfsFileSystem请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统 ID。说明，进行删除文件系统操作前需要先调用 DeleteMountTarget 接口删除该文件系统的挂载点，否则会删除失败。",
           "example": "cfs-12345",
@@ -1562,7 +1541,6 @@
       "document": "DeleteCfsPGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "权限组 ID",
           "example": "pgroup-12345",
@@ -1610,7 +1588,6 @@
       "document": "DeleteCfsRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "权限组 ID",
           "example": "pgroup-12345",
@@ -1620,7 +1597,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则 ID",
           "example": "rule-12345",
@@ -1668,7 +1644,6 @@
       "document": "DeleteCfsSnapshot请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统快照id",
           "example": "snapcfs-xx",
@@ -1678,7 +1653,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要删除的文件文件系统快照ID 列表，快照ID，跟ID列表至少填一项",
           "example": "[\"snapcfs-xx\",\"snapcfs-xx1\"]",
@@ -1743,7 +1717,6 @@
       "document": "DeleteMountTarget请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统 ID",
           "example": "cfs-12345",
@@ -1753,7 +1726,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "挂载点 ID",
           "example": "mount-12345",
@@ -1781,7 +1753,6 @@
       "document": "DeleteUserQuota请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统 ID",
           "example": "cfs-12345",
@@ -1791,7 +1762,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定配额类型，包括Uid、Gid",
           "example": "Uid",
@@ -1801,7 +1771,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UID/GID信息",
           "example": "1000",
@@ -1829,7 +1798,6 @@
       "document": "DescribeAutoSnapshotPolicies请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "快照策略ID",
           "example": "asp-xx",
@@ -1839,7 +1807,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页码",
           "example": "2",
@@ -1849,7 +1816,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页面长",
           "example": "2",
@@ -1859,7 +1825,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件",
           "example": "无",
@@ -1869,7 +1834,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "升序，降序",
           "example": "ASC,DESC",
@@ -1879,7 +1843,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段",
           "example": "xx",
@@ -2017,7 +1980,6 @@
       "document": "DescribeCfsFileSystemClients请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统 ID。",
           "example": "cfs-12345",
@@ -2058,7 +2020,6 @@
           "disabled": false,
           "document": "文件系统 ID",
           "example": "cfs-12345",
-          "is_base64": false,
           "member": "string",
           "name": "FileSystemId",
           "required": false,
@@ -2068,7 +2029,6 @@
           "disabled": false,
           "document": "私有网络（VPC） ID",
           "example": "vpc-12345",
-          "is_base64": false,
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -2078,7 +2038,6 @@
           "disabled": false,
           "document": "子网 ID",
           "example": "subnet-12345",
-          "is_base64": false,
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -2088,7 +2047,6 @@
           "disabled": false,
           "document": "Offset 分页码",
           "example": "10",
-          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2098,7 +2056,6 @@
           "disabled": false,
           "document": "Limit 页面大小",
           "example": "10",
-          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2170,7 +2127,6 @@
       "document": "DescribeCfsRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "权限组 ID",
           "example": "pgroup-12345",
@@ -2262,7 +2218,6 @@
       "document": "DescribeCfsSnapshots请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID",
           "example": "cfs-gagaggag",
@@ -2272,7 +2227,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照ID",
           "example": "snapcfs-xx",
@@ -2282,7 +2236,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页起始位置",
           "example": "10",
@@ -2292,7 +2245,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页面长度",
           "example": "10",
@@ -2302,7 +2254,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件",
           "example": "无",
@@ -2312,7 +2263,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序取值",
           "example": "xx",
@@ -2322,7 +2272,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序 升序或者降序",
           "example": "ASC，DESC",
@@ -2443,7 +2392,6 @@
       "document": "DescribeMountTargets请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统 ID",
           "example": "cfs-12345",
@@ -2491,7 +2439,6 @@
       "document": "DescribeSnapshotOperationLogs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统快照ID",
           "example": "snapcfs-xx",
@@ -2501,7 +2448,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始时间",
           "example": "2021-08-11 11:51:xx",
@@ -2511,7 +2457,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "example": "2021-08-11 11:51:xx",
@@ -2709,7 +2654,6 @@
       "document": "文件系统客户端信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统IP地址",
           "example": "",
@@ -2720,7 +2664,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端IP地址",
           "example": "",
@@ -2731,7 +2674,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统所属VPCID",
           "example": "",
@@ -2742,7 +2684,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区名称，例如ap-beijing-1，请参考 概览文档中的地域与可用区列表",
           "example": "",
@@ -2753,7 +2694,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区中文名称",
           "example": "",
@@ -2764,7 +2704,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该文件系统被挂载到客户端上的路径信息",
           "example": "",
@@ -3007,7 +2946,6 @@
       "document": "条件过滤",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "值",
           "example": "xx",
@@ -3018,7 +2956,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名称",
           "example": "xx",
@@ -3035,7 +2972,6 @@
       "document": "CFS数据迁移任务信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务名称",
           "example": "name",
@@ -3046,7 +2982,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务id",
           "example": "migrate-001",
@@ -3057,7 +2992,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移方式标志位，默认为0。0: 桶迁移；1: 清单迁移",
           "example": "0",
@@ -3068,7 +3002,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移模式，默认为0。0: 全量迁移",
           "example": "0",
@@ -3079,7 +3012,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源桶名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx-123455",
@@ -3090,7 +3022,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源桶地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
@@ -3101,7 +3032,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据源桶地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://xx-12345.cos.ap-shanghai.myqcloud.com",
@@ -3112,7 +3042,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "清单地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://xx-12345.cos.ap-shanghai.myqcloud.com/list.csv",
@@ -3123,7 +3052,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -3134,7 +3062,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统实例Id",
           "example": "无",
@@ -3145,7 +3072,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统路径",
           "example": "无",
@@ -3156,7 +3082,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "同名文件迁移时覆盖策略，默认为0。0: 最后修改时间优先；1: 全覆盖；2: 不覆盖",
           "example": "无",
@@ -3167,7 +3092,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "无",
@@ -3178,7 +3102,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "完成/终止时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3189,7 +3112,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移状态。0: 已完成；1: 进行中；2: 已终止",
           "example": "无",
@@ -3200,7 +3122,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3211,7 +3132,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已迁移文件数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3222,7 +3142,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移失败文件数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3233,7 +3152,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件容量，单位Byte\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3244,7 +3162,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已迁移文件容量，单位Byte\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3255,7 +3172,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移失败文件容量，单位Byte\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3266,7 +3182,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "全部清单\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3277,7 +3192,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已完成文件清单\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3288,7 +3202,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "失败文件清单\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3299,7 +3212,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源桶路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3410,7 +3322,6 @@
       "document": "挂载点信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统 ID",
           "example": "cfs-hge16re9",
@@ -3421,7 +3332,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "挂载点 ID",
           "example": "mount-0ylt3o7o",
@@ -3432,7 +3342,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "挂载点 IP",
           "example": "10.1.0.7",
@@ -3443,7 +3352,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "挂载根目录",
           "example": "fwsuvz0l",
@@ -3454,7 +3362,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "挂载点状态",
           "example": "available",
@@ -3465,7 +3372,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络类型",
           "example": "VPC",
@@ -3476,7 +3382,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络 ID",
           "example": "vpc-hq13cw04",
@@ -3487,7 +3392,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络名称",
           "example": "qcloudtest",
@@ -3498,7 +3402,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网 Id",
           "example": "subnet-jdl08no5",
@@ -3509,7 +3412,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网名称",
           "example": "qcloudtest",
@@ -3520,7 +3422,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CFS Turbo使用的云联网ID",
           "example": "ccn-1xhbcp41",
@@ -3531,7 +3432,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云联网中CFS Turbo使用的网段",
           "example": "10.0.0.0/24",
@@ -3548,7 +3448,6 @@
       "document": "文件系统绑定权限组信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "权限组ID",
           "example": "",
@@ -3559,7 +3458,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限组名称",
           "example": "",
@@ -3576,7 +3474,6 @@
       "document": "权限组数组",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "权限组ID",
           "example": "",
@@ -3587,7 +3484,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限组名称",
           "example": "",
@@ -3598,7 +3494,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述信息",
           "example": "",
@@ -3609,7 +3504,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -3620,7 +3514,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联文件系统个数",
           "example": "",
@@ -3637,7 +3530,6 @@
       "document": "权限组规则列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID",
           "example": "",
@@ -3648,7 +3540,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "允许访问的客户端IP",
           "example": "",
@@ -3659,7 +3550,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "读写权限, ro为只读，rw为读写",
           "example": "",
@@ -3670,7 +3560,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户权限。其中all_squash为所有访问用户都会被映射为匿名用户或用户组；no_all_squash为访问用户会先与本机用户匹配，匹配失败后再映射为匿名用户或用户组；root_squash为将来访的root用户映射为匿名用户或用户组；no_root_squash为来访的root用户保持root帐号权限。",
           "example": "",
@@ -3681,7 +3570,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则优先级，1-100。 其中 1 为最高，100为最低",
           "example": "",
@@ -3754,7 +3642,6 @@
       "document": "SetUserQuota请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统 ID",
           "example": "cfs-12345",
@@ -3764,7 +3651,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定配额类型，包括Uid、Gid",
           "example": "Uid",
@@ -3774,7 +3660,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UID/GID信息",
           "example": "1000",
@@ -3784,7 +3669,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "容量硬限制，单位GiB",
           "example": "10",
@@ -3794,7 +3678,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件硬限制，单位个",
           "example": "10000",
@@ -4061,7 +3944,6 @@
       "document": "文件系统快照统计",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域",
           "example": "ap-guangzhou",
@@ -4072,7 +3954,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照总个数",
           "example": "2",
@@ -4083,7 +3964,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照总容量",
           "example": "33",
@@ -4187,7 +4067,6 @@
       "document": "UnbindAutoSnapshotPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要解绑的文件系统ID列表，用\",\" 分割",
           "example": "cfs-abc,cfs-dbc",
@@ -4197,7 +4076,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "解绑的快照ID",
           "example": "asp-xx",
@@ -4335,7 +4213,6 @@
       "document": "UpdateCfsFileSystemName请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统 ID",
           "example": "cfs-12345",
@@ -4345,7 +4222,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户自定义文件系统名称",
           "example": "fs_name",
@@ -4403,7 +4279,6 @@
       "document": "UpdateCfsFileSystemPGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "权限组 ID",
           "example": "pgroup-12345",
@@ -4413,7 +4288,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统 ID",
           "example": "cfs-12345",
@@ -4461,7 +4335,6 @@
       "document": "UpdateCfsFileSystemSizeLimit请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统容量限制大小，输入范围0-1073741824, 单位为GB；其中输入值为0时，表示不限制文件系统容量。",
           "example": "1000",
@@ -4471,7 +4344,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID，目前仅支持标准型文件系统。",
           "example": "cfs-12345",
@@ -4574,7 +4446,6 @@
       "document": "UpdateCfsRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "权限组 ID",
           "example": "pgroup-12345",
@@ -4584,7 +4455,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则 ID",
           "example": "rule-12345",
@@ -4594,7 +4464,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可以填写单个 IP 或者单个网段，例如 10.1.10.11 或者 10.10.1.0/24。默认来访地址为*表示允许所有。同时需要注意，此处需填写 CVM 的内网 IP。",
           "example": "10.0.0.10",
@@ -4604,7 +4473,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "读写权限, 值为RO、RW；其中 RO 为只读，RW 为读写，不填默认为只读",
           "example": "rw",
@@ -4614,7 +4482,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户权限，值为all_squash、no_all_squash、root_squash、no_root_squash。其中all_squash为所有访问用户都会被映射为匿名用户或用户组；no_all_squash为访问用户会先与本机用户匹配，匹配失败后再映射为匿名用户或用户组；root_squash为将来访的root用户映射为匿名用户或用户组；no_root_squash为来访的root用户保持root帐号权限。不填默认为root_squash。",
           "example": "no_root_squash",
@@ -4624,7 +4491,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则优先级，参数范围1-100。 其中 1 为最高，100为最低",
           "example": "7",
@@ -4712,7 +4578,6 @@
       "document": "UpdateCfsSnapshotAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统快照ID",
           "example": "snapcfs-xx",
@@ -4722,7 +4587,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统快照名称",
           "example": "xx",
@@ -4732,7 +4596,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统快照保留天数",
           "example": "xx",
@@ -4770,7 +4633,6 @@
       "document": "文件系统配额信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指定配额类型，包括Uid、Gid",
           "example": "Uid",
@@ -4781,7 +4643,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UID/GID信息",
           "example": "1000",
@@ -4792,7 +4653,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "容量硬限制，单位GiB",
           "example": "10",
@@ -4803,7 +4663,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件硬限制，单位个",
           "example": "10000",
@@ -4814,7 +4673,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID",
           "example": "cfs-1245",
@@ -4825,7 +4683,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "容量使用，单位GiB\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "9",
@@ -4836,7 +4693,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件使用个数，单位个\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "9999",

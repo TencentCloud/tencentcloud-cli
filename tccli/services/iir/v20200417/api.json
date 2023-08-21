@@ -19,7 +19,6 @@
       "document": "检测到的主体在图片中的矩形框位置（四个顶点坐标）",
       "members": [
         {
-          "default": "",
           "document": "位置矩形框的左上角横坐标",
           "member": "int64",
           "name": "XMin",
@@ -28,7 +27,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "位置矩形框的左上角纵坐标",
           "member": "int64",
           "name": "YMin",
@@ -37,7 +35,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "位置矩形框的右下角横坐标",
           "member": "int64",
           "name": "XMax",
@@ -46,7 +43,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "位置矩形框的右下角纵坐标",
           "member": "int64",
           "name": "YMax",
@@ -61,7 +57,6 @@
       "document": "图像识别出的商品的详细信息。 \n当图像中检测到多个物品时，会对显著性最高的物品进行识别。",
       "members": [
         {
-          "default": "",
           "document": "1表示找到同款商品，以下字段为同款商品信息； \n0表示未找到同款商品， 具体商品信息为空（参考价格、名称、品牌等），仅提供商品类目。  \n是否找到同款的判断依据为Score分值，分值越大则同款的可能性越大。",
           "member": "int64",
           "name": "FindSKU",
@@ -70,7 +65,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "本商品在图片中的坐标，表示为矩形框的四个顶点坐标。",
           "member": "Location",
           "name": "Location",
@@ -79,7 +73,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "商品名称",
           "member": "string",
           "name": "Name",
@@ -88,7 +81,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "商品品牌",
           "member": "string",
           "name": "Brand",
@@ -97,7 +89,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "参考价格，综合多个信息源，仅供参考。",
           "member": "string",
           "name": "Price",
@@ -106,7 +97,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "识别结果的商品类目。 \n包含：鞋、图书音像、箱包、美妆个护、服饰、家电数码、玩具乐器、食品饮料、珠宝、家居家装、药品、酒水、绿植园艺、其他商品、非商品等。 \n当类别为“非商品”时，除Location、Score和本字段之外的商品信息为空。",
           "member": "string",
           "name": "ProductCategory",
@@ -115,7 +105,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "输入图片中的主体物品和输出结果的相似度。分值越大，输出结果与输入图片是同款的可能性越高。",
           "member": "float",
           "name": "Score",
@@ -124,7 +113,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "搜索到的商品配图URL",
           "member": "string",
           "name": "Image",
@@ -139,7 +127,6 @@
       "document": "RecognizeProduct请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "图片限制：内测版仅支持jpg、jpeg，图片大小不超过1M，分辨率在25万到100万之间。 \n建议先对图片进行压缩，以便提升处理速度。",
           "member": "string",
           "name": "ImageUrl",
@@ -147,7 +134,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "图片经过base64编码的内容。最大不超过1M，分辨率在25万到100万之间。 \n与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
           "member": "string",
           "name": "ImageBase64",
@@ -187,7 +173,6 @@
       "document": "检测到的图片中的商品位置和品类预测。 \n当图片中存在多个商品时，输出多组坐标，按照__显著性__排序（综合考虑面积、是否在中心、检测算法置信度）。 \n最多可以输出__3组__检测结果。",
       "members": [
         {
-          "default": "",
           "document": "商品的品类预测结果。 \n包含：鞋、图书音像、箱包、美妆个护、服饰、家电数码、玩具乐器、食品饮料、珠宝、家居家装、药品、酒水、绿植园艺、其他商品、非商品等。",
           "member": "string",
           "name": "Category",
@@ -196,7 +181,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "商品品类预测的置信度",
           "member": "float",
           "name": "CategoryScore",
@@ -205,7 +189,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "检测到的主体在图片中的坐标，表示为矩形框的四个顶点坐标",
           "member": "Location",
           "name": "Location",

@@ -33,7 +33,6 @@
       "document": "DescribeProducts请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "返回数量，默认为 20，最大值为 100。",
           "example": "20",
           "member": "int64",
@@ -42,7 +41,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移量，默认为 0。",
           "example": "0",
           "member": "int64",
@@ -87,7 +85,6 @@
       "document": "DescribeRegions请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "待查询产品的名称，例如cvm，具体取值请查询DescribeProducts接口",
           "example": "cvm",
           "member": "string",
@@ -132,7 +129,6 @@
       "document": "DescribeZones请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "待查询产品的名称，例如cvm，具体取值请查询DescribeProducts接口",
           "example": "cvm",
           "member": "string",
@@ -246,7 +242,6 @@
       "document": "地域管理系统支持的产品信息",
       "members": [
         {
-          "default": "",
           "document": "产品名称，如cvm",
           "example": "cvm",
           "member": "string",
@@ -262,7 +257,6 @@
       "document": "可用区信息",
       "members": [
         {
-          "default": "",
           "document": "可用区名称，例如，ap-guangzhou-3\n全网可用区名称如下：\n<li> ap-chongqing-1 </li>\n<li> ap-seoul-1 </li>\n<li> ap-seoul-2 </li>\n<li> ap-chengdu-1 </li>\n<li> ap-chengdu-2 </li>\n<li> ap-hongkong-1 </li>\n<li> ap-hongkong-2 </li>\n<li> ap-shenzhen-fsi-1 </li>\n<li> ap-shenzhen-fsi-2 </li>\n<li> ap-shenzhen-fsi-3 </li>\n<li> ap-guangzhou-1（售罄）</li>\n<li> ap-guangzhou-2（售罄）</li>\n<li> ap-guangzhou-3 </li>\n<li> ap-guangzhou-4 </li>\n<li> ap-guangzhou-6 </li>\n<li> ap-tokyo-1 </li>\n<li> ap-singapore-1 </li>\n<li> ap-singapore-2 </li>\n<li> ap-shanghai-fsi-1 </li>\n<li> ap-shanghai-fsi-2 </li>\n<li> ap-shanghai-fsi-3 </li>\n<li> ap-bangkok-1 </li>\n<li> ap-shanghai-1（售罄） </li>\n<li> ap-shanghai-2 </li>\n<li> ap-shanghai-3 </li>\n<li> ap-shanghai-4 </li>\n<li> ap-shanghai-5 </li>\n<li> ap-mumbai-1 </li>\n<li> ap-mumbai-2 </li>\n<li> eu-moscow-1 </li>\n<li> ap-beijing-1 </li>\n<li> ap-beijing-2 </li>\n<li> ap-beijing-3 </li>\n<li> ap-beijing-4 </li>\n<li> ap-beijing-5 </li>\n<li> na-siliconvalley-1 </li>\n<li> na-siliconvalley-2 </li>\n<li> eu-frankfurt-1 </li>\n<li> na-toronto-1 </li>\n<li> na-ashburn-1 </li>\n<li> na-ashburn-2 </li>\n<li> ap-nanjing-1 </li>\n<li> ap-nanjing-2 </li>",
           "example": "ap-guangzhou-3",
           "member": "string",
@@ -272,7 +266,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "可用区描述，例如，广州三区",
           "example": "广州三区",
           "member": "string",
@@ -282,7 +275,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "可用区ID",
           "example": "1",
           "member": "string",
@@ -292,7 +284,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。",
           "example": "AVAILABLE",
           "member": "string",
@@ -302,7 +293,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "父级zone\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -312,7 +302,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "父级可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -322,7 +311,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "父级可用区描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -332,7 +320,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "zone类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
@@ -342,7 +329,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "控制台类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "公有云",
           "member": "string",
@@ -352,7 +338,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "和ZoneId一样，适用于控制台调用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",

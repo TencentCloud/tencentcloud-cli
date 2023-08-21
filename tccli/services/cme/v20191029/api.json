@@ -362,7 +362,6 @@
       "document": "制作云用户账号信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户 Id。",
           "example": "1000000001",
@@ -373,7 +372,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户手机号码。",
           "example": "15515555055",
@@ -384,7 +382,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户昵称。",
           "example": "Nick",
@@ -395,7 +392,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号状态，取值：\n<li>Normal：有效；</li>\n<li>Stopped：无效。</li>",
           "example": "Normal",
@@ -412,7 +408,6 @@
       "document": "添加的团队成员信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "团队成员 ID。",
           "example": "",
@@ -423,7 +418,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "团队成员备注。",
           "example": "",
@@ -434,7 +428,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "团队成员角色，不填则默认添加普通成员。可选值：\n<li>Admin：团队管理员；</li>\n<li>Member：普通成员。</li>",
           "example": "",
@@ -451,7 +444,6 @@
       "document": "AddTeamMember请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
@@ -461,7 +453,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "团队 ID。",
           "example": "1kdk882ddd88338ddd3k3",
@@ -471,7 +462,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要添加的成员列表，一次最多添加30个成员。",
           "example": "无",
@@ -481,7 +471,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以向任意团队中添加成员。如果指定操作者，则操作者必须为管理员或者团队所有者。",
           "example": "60097a8a8ea83d00017b484b",
@@ -509,7 +498,6 @@
       "document": "音频素材信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "素材元信息。",
           "example": "",
@@ -520,7 +508,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材媒体文件的播放 URL 地址。",
           "example": "",
@@ -531,7 +518,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材媒体文件的封面图片地址。",
           "example": "",
@@ -542,7 +528,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材状态。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -553,7 +538,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材媒体文件的原始 URL 地址。",
           "example": "",
@@ -564,7 +548,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云点播媒资 FileId。",
           "example": "",
@@ -581,7 +564,6 @@
       "document": "音频流信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "码率，单位：bps。",
           "example": "",
@@ -592,7 +574,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "采样率，单位：hz。",
           "example": "",
@@ -603,7 +584,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "编码格式。",
           "example": "",
@@ -620,7 +600,6 @@
       "document": "音频轨道上的音频片段信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "音频媒体来源类型，取值有：\n<ul>\n<li>VOD ：素材来源于云点播文件 ；</li>\n<li>CME ：视频来源于制作云媒体文件 ；</li>\n<li>EXTERNAL ：视频来源于媒资绑定，如果媒体不是存储在腾讯云点播中或者云创中，都需要使用媒资绑定。</li>\n</ul>",
           "example": "EXTERNAL ",
@@ -631,7 +610,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频媒体，可取值为：\n<ul>\n<li>当 SourceType 为 VOD 时，参数填云点播 FileId ；</li>\n<li>当 SourceType 为 CME 时，参数填多媒体创作引擎媒体 Id；</li>\n<li>当 SourceType 为 EXTERNAL 时，目前仅支持外部媒体 URL(如`https://www.example.com/a.mp3`)，参数填写规则请参见注意事项。</li>\n</ul>\n\n注意：\n<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `https` 时(如：`https://www.example.com/a.mp3`)，参数为：`1000000:www.example.com/a.mp3`。</li>\n<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `http` 时(如：`http://www.example.com/b.mp3`)，参数为：`1000001:www.example.com/b.mp3`。</li>",
           "example": "1000000:www.qq.com/a.mp4",
@@ -642,7 +620,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频片段取自媒体文件的起始时间，单位为秒。0 表示从媒体开始位置截取。默认为0。",
           "example": "0",
@@ -653,7 +630,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频片段的时长，单位为秒。默认和媒体本身长度一致，表示截取全部媒体。",
           "example": "20",
@@ -696,7 +672,6 @@
       "document": "授权者",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "授权者类型，取值有：\n<li>PERSON：个人。</li>\n<li>TEAM：团队。</li>",
           "example": "",
@@ -707,7 +682,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Id，当 Type=PERSON，取值为用户 Id。当Type=TEAM，取值为团队 ID。",
           "example": "",
@@ -724,7 +698,6 @@
       "document": "多媒体创作引擎导出信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "导出媒体归属，个人或团队。",
           "example": "无",
@@ -735,7 +708,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导出的媒体名称，不得超过30个字符。",
           "example": "无",
@@ -746,7 +718,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导出的媒体信息，不得超过50个字符。",
           "example": "无",
@@ -757,7 +728,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导出的媒体分类路径，长度不能超过15字符。不存在默认创建。",
           "example": "无",
@@ -768,7 +738,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导出的媒体标签，单个标签不得超过10个字符。",
           "example": "无",
@@ -779,7 +748,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "第三方平台发布信息列表。暂未正式对外，请勿使用。",
           "example": "无",
@@ -796,7 +764,6 @@
       "document": "分类创建事件。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分类归属。",
           "example": "无",
@@ -807,7 +774,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分类路径。",
           "example": "/媒体",
@@ -824,7 +790,6 @@
       "document": "分类删除事件。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "删除的分类归属。",
           "example": "无",
@@ -835,7 +800,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "删除的分类路径列表。",
           "example": "无",
@@ -852,7 +816,6 @@
       "document": "分类信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "归属者。",
           "example": "",
@@ -863,7 +826,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分类路径。",
           "example": "",
@@ -880,7 +842,6 @@
       "document": "分类移动事件。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "源分类归属。",
           "example": "无",
@@ -891,7 +852,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源分类路径列表。",
           "example": "无",
@@ -902,7 +862,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标分类归属。",
           "example": "无",
@@ -913,7 +872,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标分类归属。",
           "example": "/媒体",
@@ -1002,7 +960,6 @@
       "document": "COS 发布信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "发布生成的对象存储文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。",
           "example": "无",
@@ -1013,7 +970,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发布生成的对象存储文件所在的 COS Bucket 所属园区，如 ap-chongqing。",
           "example": "无",
@@ -1024,7 +980,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发布生成的视频在 COS 存储的对象键。对象键（ObjectKey）是对象（Object）在存储桶（Bucket）中的唯一标识。",
           "example": "无",
@@ -1035,7 +990,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发布生成的封面在 COS 存储的对象键。",
           "example": "无",
@@ -1370,7 +1324,6 @@
       "document": "CreateTeam请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台名称，指定访问的平台。",
           "example": "test",
@@ -1380,7 +1333,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "团队名称，限30个字符。",
           "example": "测试团队名称",
@@ -1390,7 +1342,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "团队所有者，指定用户 ID。",
           "example": "997988688",
@@ -1400,7 +1351,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "团队所有者的备注，限30个字符。",
           "example": "管理员李四",
@@ -1410,7 +1360,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义团队 ID。创建后不可修改，限20个英文字符及\"-\"。同时不能以 cmetid_开头。不填会生成默认团队 ID。",
           "example": "无",
@@ -1448,7 +1397,6 @@
       "document": "CreateVideoEncodingPreset请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台名称，指定访问的平台。",
           "example": "test",
@@ -1458,7 +1406,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置名，可用来简单描述该配置的作用。",
           "example": "测试模板",
@@ -1468,7 +1415,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "封装格式，可选值：\n<li>mp4 ；</li>\n<li>mov 。</li>\n默认值：mp4。",
           "example": "mp4",
@@ -1478,7 +1424,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否去除视频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n默认值：0。",
           "example": "0",
@@ -1488,7 +1433,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否去除音频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n默认值：0。",
           "example": "1",
@@ -1498,7 +1442,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "编码配置的视频设置。默认值参考VideoEncodingPresetVideoSetting 定义。",
           "example": "无",
@@ -1508,7 +1451,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "编码配置的音频设置。默认值参考VideoEncodingPresetAudioSetting 定义。",
           "example": "无",
@@ -1546,7 +1488,6 @@
       "document": "DeleteClass请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台名称，指定访问的平台。",
           "example": "test",
@@ -1556,7 +1497,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "归属者。",
           "example": "无",
@@ -1566,7 +1506,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分类路径。",
           "example": "/a/b",
@@ -1576,7 +1515,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
           "example": "test",
@@ -1730,7 +1668,6 @@
       "document": "DeleteTeamMembers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
@@ -1740,7 +1677,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "团队 ID。",
           "example": "1kdk882ddd88338ddd3k3",
@@ -1750,7 +1686,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要删除的成员列表。",
           "example": "[\"999kd3ej3okjdije3lejjdjk99\\r\\n\",\"999kd3ej3okjdije3lejjdjk98\\r\\n\"]",
@@ -1760,7 +1695,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以删除所有团队的成员。如果指定操作者，则操作者必须为团队管理员或者所有者。",
           "example": "60097a8a8ea83d00017b484b",
@@ -1788,7 +1722,6 @@
       "document": "DeleteTeam请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
@@ -1798,7 +1731,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要删除的团队  ID。",
           "example": "9aoodiiiekj899dkk99d7d6d5dff77f",
@@ -1808,7 +1740,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以删除所有团队。如果指定操作者，则操作者必须为团队所有者。",
           "example": "60097a8a8ea83d00017b484b",
@@ -1836,7 +1767,6 @@
       "document": "DeleteVideoEncodingPreset请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台名称，指定访问的平台。",
           "example": "无",
@@ -1846,7 +1776,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要删除的视频编码配置 ID。",
           "example": "无",
@@ -1946,7 +1875,6 @@
       "document": "DescribeClass请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台名称，指定访问的平台。",
           "example": "test",
@@ -1956,7 +1884,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "归属者。",
           "example": "无",
@@ -1966,7 +1893,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
           "example": "userId",
@@ -2004,7 +1930,6 @@
       "document": "DescribeJoinTeams请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
@@ -2014,7 +1939,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "团队成员　ID。",
           "example": "1993939392iidkei8ei",
@@ -2024,7 +1948,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，默认值：0。",
           "example": "0",
@@ -2034,7 +1957,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回记录条数，默认值：30，最大值：30。",
           "example": "10",
@@ -2191,7 +2113,6 @@
       "document": "DescribePlatforms请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台 Id 列表。如果不填，则不按平台 Id 进行过滤。",
           "example": "test",
@@ -2201,7 +2122,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "平台绑定的 License Id 列表。如果不填，则不按平台绑定的 License Id 进行过滤。",
           "example": "cmelid_8621ba0483c211ea90dc6c92bf621f6e",
@@ -2211,7 +2131,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回的起始偏移量，默认值：0。",
           "example": "0",
@@ -2221,7 +2140,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回的记录条数，默认值：10，最大值：20。",
           "example": "10",
@@ -2395,7 +2313,6 @@
       "document": "DescribeResourceAuthorization请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "1000000001",
@@ -2405,7 +2322,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "归属者。",
           "example": "{\"Type\":\"PERSON\",\"Id\":\"e7abc68e-6908-0000-2222-3221728e1111\"}",
@@ -2415,7 +2331,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源。",
           "example": "{\"Type\":\"CLASS\",\"Id\":\"1\"}",
@@ -2425,7 +2340,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以查询任意资源的被授权情况。如果指定操作者，则操作者必须对被授权资源有读权限。",
           "example": "1234c68e-1111-2222-3333-3221728e4444",
@@ -2473,7 +2387,6 @@
       "document": "DescribeSharedSpace请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
@@ -2483,7 +2396,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被授权目标，个人或团队。",
           "example": "无",
@@ -2493,7 +2405,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以查询任意个人或者团队的共享空间。如果指定操作者，则操作者必须本人或者团队成员。",
           "example": "teamAmemberXXX",
@@ -2755,7 +2666,6 @@
       "document": "DescribeTeamMembers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
@@ -2765,7 +2675,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "团队 ID。",
           "example": "1kdk882ddd88338ddd3k3",
@@ -2775,7 +2684,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "成员 ID 列表，限指定30个指定成员。如不填，则返回指定团队下的所有成员。",
           "example": "无",
@@ -2785,7 +2693,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，默认值：0",
           "example": "0",
@@ -2795,7 +2702,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回记录条数，默认值：30，最大值：30。",
           "example": "10",
@@ -2805,7 +2711,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以拉取任意团队成员的信息。如果指定操作者，则操作者必须为团队成员。",
           "example": "60097a8a8ea83d00017b484b",
@@ -2853,7 +2758,6 @@
       "document": "DescribeTeams请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
@@ -2863,7 +2767,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "团队 ID 列表，限30个。若不填，则默认获取平台下所有团队。",
           "example": "[\"1kdk882ddd88338ddd3k3\\n\",\"1kdk882ddd88338ddd3k4\\n\"]",
@@ -2873,7 +2776,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，默认值：0。",
           "example": "0",
@@ -2883,7 +2785,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回记录条数，默认值：20，最大值：30。",
           "example": "10",
@@ -2931,7 +2832,6 @@
       "document": "DescribeVideoEncodingPresets请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台名称，指定访问的平台。",
           "example": "无",
@@ -2941,7 +2841,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要查询的配置 ID 列表。填写该参数则按照配置 ID 进行查询。",
           "example": "无",
@@ -2951,7 +2850,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页大小，默认20。最大值50。",
           "example": "无",
@@ -2961,7 +2859,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页起始，默认0。",
           "example": "无",
@@ -3009,7 +2906,6 @@
       "document": "空的轨道片段，用来进行时间轴的占位。如需要两个音频片段之间有一段时间的静音，可以用 EmptyTrackItem 来进行占位。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "持续时间，单位为秒。",
           "example": "",
@@ -3026,7 +2922,6 @@
       "document": "用于描述资源的归属，归属者为个人或者团队。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "类型，取值有：\n<li>PERSON：个人。</li>\n<li>TEAM：团队。</li>",
           "example": "",
@@ -3037,7 +2932,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Id，当 Type=PERSON，取值为用户 Id，当 Type=TEAM，取值为团队 Id。",
           "example": "",
@@ -3054,7 +2948,6 @@
       "document": "回调事件内容。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件类型，可取值有：\n<li>Storage.NewFileCreated：新文件产生事件；</li>\n<li>Project.StreamConnect.StatusChanged：云转推项目状态变更事件；</li>\n<li>Project.Switcher.StatusChanged：导播台项目状态变更事件；</li>\n<li>Material.Imported：媒体导入事件；</li>\n<li>Material.Added：媒体添加事件；</li>\n<li>Material.Moved：媒体移动事件；</li>\n<li>Material.Modified：媒体变更事件；</li>\n<li>Material.Deleted：媒体删除事件；</li>\n<li>Class.Created：分类新增事件；</li>\n<li>Class.Moved：分类移动事件；</li>\n<li>Class.Deleted：分类删除事件；</li>\n<li>Task.VideoExportCompleted：视频导出完成事件； </li>\n<li>Project.MediaCast.StatusChanged：点播转直播项目状态变更事件。 </li>",
           "example": "Storage.NewFileCreated",
@@ -3065,7 +2958,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作者，表示触发事件的操作者。如果是 `cmeid_system` 表示平台管理员操作。",
           "example": "无",
@@ -3076,7 +2968,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新文件产生事件。仅当 EventType 为 Storage.NewFileCreated 时有效。",
           "example": "无",
@@ -3087,7 +2978,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云转推项目状态变更事件。仅当 EventType 为 Project.StreamConnect.StatusChanged 时有效。",
           "example": "无",
@@ -3098,7 +2988,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导播台项目状态变更事件。仅当 EventType 为 Project.Switcher.StatusChanged 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3109,7 +2998,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体导入事件。仅当 EventType 为 Material.Imported 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3120,7 +3008,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体添加事件。仅当 EventType 为 Material.Added 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3131,7 +3018,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体移动事件。仅当 EventType 为 Material.Moved 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3142,7 +3028,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体更新事件。仅当 EventType 为 Material.Modified 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3153,7 +3038,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体删除事件。仅当 EventType 为 Material.Deleted 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3164,7 +3048,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分类创建事件。仅当 EventType 为 Class.Created 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3175,7 +3058,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分类移动事件。仅当 EventType 为 Class.Moved 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3186,7 +3068,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分类删除事件。仅当 EventType 为 Class.Deleted 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3197,7 +3078,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频导出完成事件。仅当 EventType 为 Task.VideoExportCompleted 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3208,7 +3088,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点播转直播项目状态变更事件。仅当 EventType 为 Project.MediaCast.StatusChanged 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3433,7 +3312,6 @@
       "document": "ExportVideoByVideoSegmentationData请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "default_platform",
@@ -3443,7 +3321,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频拆条项目 Id 。",
           "example": "cmepid_5fd1dfaf0e1b530001f5d9b0",
@@ -3453,7 +3330,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定需要导出的智能拆条片段的组 Id 。",
           "example": "5fd6e20b0e1b530001f5daed",
@@ -3463,7 +3339,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定需要导出的智能拆条片段 Id  集合。",
           "example": "[\"seg_5fd6e20b0e1b530001f5daee\\n\"]",
@@ -3473,7 +3348,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导出模板 Id，目前不支持自定义创建，只支持下面的预置模板 Id。\n<li>10：分辨率为 480P，输出视频格式为 MP4；</li>\n<li>11：分辨率为 720P，输出视频格式为 MP4；</li>\n<li>12：分辨率为 1080P，输出视频格式为 MP4。</li>",
           "example": "10",
@@ -3483,7 +3357,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导出目标，指定导出视频的目标媒资库，可取值有：\n<li>CME：多媒体创作引擎，即导出为多媒体创作引擎媒资库，此导出目标在云点播媒资库依然可见；</li>\n<li>VOD：云点播，即导出为云点播媒资库，此导出目标在多媒体创作引擎媒资库将不可见。</li>",
           "example": "VOD",
@@ -3493,7 +3366,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导出的多媒体创作引擎媒体信息。当导出目标为 CME 时必填。",
           "example": "无",
@@ -3503,7 +3375,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导出的云点播媒资信息。当导出目标为 VOD 时必填。",
           "example": "无",
@@ -3513,7 +3384,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以操作任意智能拆条项目。如果指定操作者，则操作者必须为项目所有。",
           "example": "16556266637489",
@@ -3659,7 +3529,6 @@
       "document": "媒资绑定资源信息，包含媒资绑定模板 ID 和文件信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "目前仅支持绑定 COS 桶的媒体，请填写存储对象 Key 值，例如：`example-folder/example.mp4`。",
           "example": "www.qq.com/a.mp4",
@@ -3670,7 +3539,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段废弃，请勿使用。",
           "example": "1000000",
@@ -3681,7 +3549,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒资挂载的存储 Id。",
           "example": "60097a8a8ea83d00017b484b",
@@ -3698,7 +3565,6 @@
       "document": "FlattenListMedia请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
@@ -3708,7 +3574,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体分类路径，例如填写\"/a/b\"，则代表平铺该分类路径下及其子分类路径下的媒体信息。",
           "example": "/a/b",
@@ -3718,7 +3583,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体分类的归属者。",
           "example": "无",
@@ -3728,7 +3592,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，默认值：0。",
           "example": "0",
@@ -3738,7 +3601,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回记录条数，默认值：10，最大值：50。",
           "example": "10",
@@ -3748,7 +3610,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以平铺查询任意分类下的媒体信息。如果指定操作者，则操作者必须对当前分类有读权限。",
           "example": "user_id",
@@ -3796,7 +3657,6 @@
       "document": "GenerateVideoSegmentationSchemeByAi请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
@@ -3806,7 +3666,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频拆条项目 Id 。",
           "example": "60336ab29997a50001942xxx",
@@ -3816,7 +3675,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以对任务视频拆条项目发起拆条任务。如果指定操作者，则操作者必须为项目所有者。",
           "example": "user_id",
@@ -3854,7 +3712,6 @@
       "document": "GrantResourceAuthorization请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
@@ -3864,7 +3721,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源归属者，个人或者团队。",
           "example": "无",
@@ -3874,7 +3730,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被授权资源。",
           "example": "无",
@@ -3884,7 +3739,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被授权目标，个人或者团队。",
           "example": "无",
@@ -3894,7 +3748,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "详细授权值。 取值有：\n<li>R：可读，可以浏览媒体，但不能使用该媒体文件（将其添加到 Project），或复制到自己的媒资库中</li>\n<li>X：可用，可以使用该素材（将其添加到 Project），但不能将其复制到自己的媒资库中，意味着被授权者无法将该资源进一步扩散给其他个人或团队。</li>\n<li>C：可复制，既可以使用该素材（将其添加到 Project），也可以将其复制到自己的媒资库中。</li>\n<li>W：可修改、删除媒资。</li>",
           "example": "[\"R\\n\"]",
@@ -3904,7 +3757,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以授权任意归属者的资源。如果指定操作者，则操作者必须对资源拥有写权限。",
           "example": "123",
@@ -4169,7 +4021,6 @@
       "document": "图片素材信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片高度，单位：px。",
           "example": "",
@@ -4180,7 +4031,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片宽度，单位：px。",
           "example": "",
@@ -4191,7 +4041,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材媒体文件的展示 URL 地址。",
           "example": "",
@@ -4202,7 +4051,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片大小，单位：字节。",
           "example": "",
@@ -4213,7 +4061,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材媒体文件的原始 URL 地址。",
           "example": "",
@@ -4224,7 +4071,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云点播媒资 FileId。",
           "example": "",
@@ -4360,7 +4206,6 @@
       "document": "导入媒资信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "云点播文件 FileId。",
           "example": "362565566555118451552",
@@ -4371,7 +4216,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体 Id。",
           "example": "60097a8a8ea83d00017b484b",
@@ -4496,7 +4340,6 @@
       "document": "整型范围",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "按整形代表值的下限检索。",
           "example": "",
@@ -4507,7 +4350,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按整形代表值的上限检索。",
           "example": "",
@@ -4524,7 +4366,6 @@
       "document": "加入的团队信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "团队 ID。",
           "example": "teamid",
@@ -4535,7 +4376,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "团队名称。",
           "example": "test",
@@ -4546,7 +4386,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "团队成员个数。",
           "example": "10",
@@ -4557,7 +4396,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "成员在团队中的角色，取值有：\n<li>Owner：团队所有者，添加团队成员及修改团队成员解决时不能填此角色；</li>\n<li>Admin：团队管理员；</li>\n<li>Member：普通成员。</li>",
           "example": "Member",
@@ -4574,7 +4412,6 @@
       "document": "快手视频发布信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频发布标题，限30个字符。",
           "example": "",
@@ -4591,7 +4428,6 @@
       "document": "链接类型的素材信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "链接类型取值:\n<li>CLASS: 分类链接;</li>\n<li> MATERIAL：素材链接。</li>",
           "example": "",
@@ -4602,7 +4438,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "链接状态取值：\n<li> Normal：正常 ；</li>\n<li>NotFound：链接目标不存在；</li> <li>Forbidden：无权限。</li>",
           "example": "",
@@ -4613,7 +4448,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材链接详细信息，当LinkType=\"MATERIAL\"时有值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4624,7 +4458,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分类链接目标信息，当LinkType=“CLASS”时有值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4641,7 +4474,6 @@
       "document": "链接素材信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "素材基本信息。",
           "example": "",
@@ -4652,7 +4484,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频素材信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4663,7 +4494,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频素材信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4674,7 +4504,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片素材信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4790,7 +4619,6 @@
       "document": "直播拉流信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "直播拉流地址。",
           "example": "rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600c",
@@ -4807,7 +4635,6 @@
       "document": "直播剪辑项目输入参数。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "直播流播放地址，目前仅支持 HLS 和 FLV 格式。",
           "example": "",
@@ -4818,7 +4645,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "直播流录制时长，单位为秒，最大值为 7200。",
           "example": "",
@@ -4835,7 +4661,6 @@
       "document": "登录态信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户 Id。",
           "example": "",
@@ -4846,7 +4671,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户登录状态。\n<li>Online：在线；</li>\n<li>Offline：离线。</li>",
           "example": "",
@@ -4863,7 +4687,6 @@
       "document": "媒体添加事件。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "添加的媒体 Id 列表。",
           "example": "无",
@@ -4874,7 +4697,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "添加的媒体归属。",
           "example": "无",
@@ -4885,7 +4707,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "添加的媒体分类路径。",
           "example": "/媒体",
@@ -4902,7 +4723,6 @@
       "document": "媒体基本信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "媒体 Id。",
           "example": "无",
@@ -4913,7 +4733,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体类型，取值为：\n<li> AUDIO :音频;</li>\n<li> VIDEO :视频;</li>\n<li> IMAGE :图片;</li>\n<li> LINK  :链接.</li>\n<li> OTHER : 其他.</li>",
           "example": "无",
@@ -4924,7 +4743,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体归属实体。",
           "example": "无",
@@ -4935,7 +4753,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体名称。",
           "example": "无",
@@ -4946,7 +4763,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体文件的创建时间，使用 ISO 日期格式。",
           "example": "无",
@@ -4957,7 +4773,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 ISO 日期格式。",
           "example": "无",
@@ -4968,7 +4783,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体的分类路径。",
           "example": "无",
@@ -4979,7 +4793,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预置标签列表。",
           "example": "无",
@@ -4990,7 +4803,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人工标签列表。",
           "example": "无",
@@ -5001,7 +4813,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体文件的预览图。",
           "example": "无",
@@ -5012,7 +4823,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体绑定的标签信息列表 。\n该字段已废弃。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5029,7 +4839,6 @@
       "document": "媒体删除事件。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "删除的媒体 Id 列表。",
           "example": "无",
@@ -5046,7 +4855,6 @@
       "document": "媒体导入事件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "导入的媒体信息列表。",
           "example": "无",
@@ -5057,7 +4865,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体归属。",
           "example": "无",
@@ -5068,7 +4875,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体分类路径。",
           "example": "/媒体",
@@ -5161,7 +4967,6 @@
       "document": "媒体更新事件。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "媒体 Id。",
           "example": "60097a8a8ea83d00017b484b",
@@ -5172,7 +4977,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新后的媒体名称。如未更新则为空。",
           "example": "test",
@@ -5183,7 +4987,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新后的媒体预置标签列表。如未更新媒体预置标签，则该字段为空数组。",
           "example": "无",
@@ -5194,7 +4997,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新后的媒体自定义标签列表。如未更新媒体自定义标签，则该字段为空数组。",
           "example": "无",
@@ -5211,7 +5013,6 @@
       "document": "媒体移动事件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要移动的媒体 Id 列表。",
           "example": "无",
@@ -5222,7 +5023,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源媒体归属。",
           "example": "无",
@@ -5233,7 +5033,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源媒体分类路径。",
           "example": "/媒体",
@@ -5244,7 +5043,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标媒体分类归属。",
           "example": "0",
@@ -5255,7 +5053,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标媒体分类路径。",
           "example": "/媒体/视频",
@@ -5272,7 +5069,6 @@
       "document": "素材的状态，目前仅包含素材编辑可用状态。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "素材编辑可用状态，取值有：\n<li>NORMAL：正常，可直接用于编辑；</li>\n<li>ABNORMAL : 异常，不可用于编辑；</li>\n<li>PROCESSING：处理中，暂不可用于编辑。</li>",
           "example": "",
@@ -5289,7 +5085,6 @@
       "document": "素材标签信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签类型，取值为：\n<li>PRESET：预置标签；</li>",
           "example": "",
@@ -5300,7 +5095,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签 Id 。当标签类型为 PRESET 时，标签 Id 为预置标签 Id 。",
           "example": "",
@@ -5311,7 +5105,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签名称。",
           "example": "",
@@ -5328,7 +5121,6 @@
       "document": "点播转直播输出信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "输出源 Id。由系统进行分配。",
           "example": "无",
@@ -5339,7 +5131,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输出直播流地址。支持的直播流类型为 RTMP 和 SRT。",
           "example": "无",
@@ -5350,7 +5141,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输出源的名称。",
           "example": "无",
@@ -5367,7 +5157,6 @@
       "document": "点播转直播输出断流信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "发生断流的输出源信息。",
           "example": "无",
@@ -5378,7 +5167,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输出源断流原因，取值有：\n<li>SystemError：系统错误；</li>\n<li>Unknown：未知错误。</li>",
           "example": "SystemError",
@@ -5395,7 +5183,6 @@
       "document": "点播转直播输出源状态信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "输出源 Id，由系统分配。",
           "example": "无",
@@ -5406,7 +5193,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输出源直播地址。",
           "example": "无",
@@ -5417,7 +5203,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输出源的状态。取值有：\n<li> Working ：运行中；</li>\n<li> Stopped：停止输出；</li>\n<li> Failed：输出失败。</li>",
           "example": "Working",
@@ -5462,7 +5247,6 @@
       "document": "点播转直播播放信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "点播转直播项目运行状态，取值有：\n<li> Working : 运行中；</li>\n<li> Idle: 空闲状态。</li>",
           "example": "Working",
@@ -5473,7 +5257,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前播放的输入源 Id。",
           "example": "无",
@@ -5484,7 +5267,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前播放的输入源的播放位置，单位：秒。",
           "example": "100",
@@ -5495,7 +5277,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前播放的输入源时长，单位：秒。",
           "example": "100",
@@ -5506,7 +5287,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输出源状态信息。",
           "example": "无",
@@ -5517,7 +5297,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已经循环播放的次数。",
           "example": "1",
@@ -5656,7 +5435,6 @@
       "document": "点播转直播项目输入信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "输入源列表。输入源列表最大个数为100.",
           "example": "无",
@@ -5667,7 +5445,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输出源列表。输出源列表最大个数为10.",
           "example": "无",
@@ -5678,7 +5455,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输出媒体配置。",
           "example": "无",
@@ -5689,7 +5465,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放控制参数。",
           "example": "无",
@@ -5789,7 +5564,6 @@
       "document": "点播转直播输入断流信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "发生断流的输入源信息。",
           "example": "无",
@@ -5800,7 +5574,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输入源断开原因。取值有：\n<li>SystemError：系统错误；</li>\n<li>Unknown：未知错误。</li>",
           "example": "SystemError",
@@ -5817,7 +5590,6 @@
       "document": "点播转直播视频配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频宽度，单位：px，默认值为1280。",
           "example": "1280",
@@ -5828,7 +5600,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频高度，单位：px，默认值为720。支持的视频分辨率最大为1920*1080。",
           "example": "720",
@@ -5839,7 +5610,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频码率，单位：kbps，默认值为2500。最大值为10000 kbps。",
           "example": "2000",
@@ -5850,7 +5620,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频帧率，单位：Hz，默认值为25。最大值为60。",
           "example": "25",
@@ -5867,7 +5636,6 @@
       "document": "雪碧图",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "雪碧图小图的高度。",
           "example": "",
@@ -5878,7 +5646,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "雪碧图小图的宽度。",
           "example": "",
@@ -5889,7 +5656,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "雪碧图小图的总数量。",
           "example": "",
@@ -5900,7 +5666,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "截取雪碧图输出的地址。",
           "example": "",
@@ -5911,7 +5676,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "雪碧图子图位置与时间关系的 WebVtt 文件地址。WebVtt 文件表明了各个雪碧图小图对应的时间点，以及在雪碧大图里的坐标位置，一般被播放器用于实现预览。",
           "example": "",
@@ -5928,7 +5692,6 @@
       "document": "文件元信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大小。",
           "example": "",
@@ -5939,7 +5702,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "容器类型。",
           "example": "",
@@ -5950,7 +5712,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频流码率平均值与音频流码率平均值之和，单位：bps。",
           "example": "",
@@ -5961,7 +5722,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频流高度的最大值，单位：px。",
           "example": "",
@@ -5972,7 +5732,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频流宽度的最大值，单位：px。",
           "example": "",
@@ -5983,7 +5742,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时长，单位：秒。",
           "example": "",
@@ -5994,7 +5752,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频拍摄时的选择角度，单位：度",
           "example": "",
@@ -6005,7 +5762,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频流信息。",
           "example": "",
@@ -6016,7 +5772,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频流信息。",
           "example": "",
@@ -6033,7 +5788,6 @@
       "document": "媒体处理视频合成任务的预处理操作。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "预处理操作的类型，取值范围：\n<li>ImageTextMask：图片文字遮罩。</li>",
           "example": "无",
@@ -6044,7 +5798,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预处理操作参数。\n当 Type 取值 ImageTextMask 时，参数为要保留的文字。",
           "example": "无",
@@ -6061,7 +5814,6 @@
       "document": "媒体替换信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "替换的媒体类型，取值有：\n<li>CMEMaterialId：替换的媒体类型为媒体 ID；</li>\n<li>ImageUrl：替换的媒体类型为图片 URL；</li>\n\n注：默认为 CMEMaterialId 。",
           "example": "无",
@@ -6072,7 +5824,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体 ID。\n当媒体类型取值为 CMEMaterialId 时有效。",
           "example": "60097a8a8ea83d00017b484b",
@@ -6083,7 +5834,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体 URL。\n当媒体类型取值为 ImageUrl 时有效，\n图片仅支持 jpg、png 格式，且大小不超过 2M 。",
           "example": "无",
@@ -6094,7 +5844,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "替换媒体选取的开始时间，单位为秒，默认为 0。",
           "example": "0",
@@ -6105,7 +5854,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预处理操作。\n注：目前该功能暂不支持，请勿使用。",
           "example": "无",
@@ -6122,7 +5870,6 @@
       "document": "轨道信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "轨道类型，取值有：\n<ul>\n<li>Video ：视频轨道。视频轨道由以下 Item 组成：<ul><li>VideoTrackItem</li><li>EmptyTrackItem</li><li>MediaTransitionItem</li></ul> </li>\n<li>Audio ：音频轨道。音频轨道由以下 Item 组成：<ul><li>AudioTrackItem</li><li>EmptyTrackItem</li></ul> </li>\n</ul>",
           "example": "Video",
@@ -6133,7 +5880,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "轨道上的媒体片段列表。",
           "example": "无",
@@ -6150,7 +5896,6 @@
       "document": "媒体轨道的片段信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "片段类型。取值有：\n<li>Video：视频片段；</li>\n<li>Audio：音频片段；</li>\n<li>Empty：空白片段；</li>\n<li>Transition：转场。</li>",
           "example": "Video",
@@ -6161,7 +5906,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频片段，当 Type = Video 时有效。",
           "example": "无",
@@ -6172,7 +5916,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频片段，当 Type = Audio 时有效。",
           "example": "无",
@@ -6183,7 +5926,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "空白片段，当 Type = Empty 时有效。空片段用于时间轴的占位。<li>如需要两个音频片段之间有一段时间的静音，可以用 EmptyTrackItem 来进行占位。</li>\n<li>使用 EmptyTrackItem 进行占位，来定位某个Item。</li>",
           "example": "无",
@@ -6194,7 +5936,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转场，当 Type = Transition 时有效。",
           "example": "b64e98advodcq198uje890",
@@ -6211,7 +5952,6 @@
       "document": "转场信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "转场 Id 。暂只支持一个转场。",
           "example": "60097a8a8ea83d00017b484b",
@@ -6222,7 +5962,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转场持续时间，单位为秒，默认为2秒。进行转场处理的两个媒体片段，第二个片段在轨道上的起始时间会自动进行调整，设置为前面一个片段的结束时间减去转场的持续时间。",
           "example": "2.0",
@@ -6455,7 +6194,6 @@
       "document": "ModifyTeam请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
@@ -6465,7 +6203,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "团队 ID。",
           "example": "997988688",
@@ -6475,7 +6212,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "团队名称。团队名称不能置空，并且不能超过30个字符。",
           "example": "测试团队名称",
@@ -6485,7 +6221,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以修改所有团队的信息。如果指定操作者，则操作者必须为团队管理员或者所有者。",
           "example": "60097a8a8ea83d00017b484b",
@@ -6513,7 +6248,6 @@
       "document": "ModifyVideoEncodingPreset请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台名称，指定访问的平台。",
           "example": "无",
@@ -6523,7 +6257,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置 ID。",
           "example": "无",
@@ -6533,7 +6266,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更改后的视频编码配置名，不填则不修改。",
           "example": "无",
@@ -6543,7 +6275,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否去除视频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n默认值：0。",
           "example": "无",
@@ -6553,7 +6284,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否去除音频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n默认值：0。",
           "example": "无",
@@ -6563,7 +6293,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更改后的编码配置的视频设置。",
           "example": "无",
@@ -6573,7 +6302,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更改后的编码配置的音频设置。",
           "example": "无",
@@ -6718,7 +6446,6 @@
       "document": "其他类型素材",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "素材媒体文件的播放 URL 地址。",
           "example": "无",
@@ -6729,7 +6456,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云点播媒资 FileId。",
           "example": "无",
@@ -6791,7 +6517,6 @@
       "document": "企鹅号发布信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频发布标题。",
           "example": "",
@@ -6802,7 +6527,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频发布描述信息。",
           "example": "",
@@ -6813,7 +6537,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频标签。",
           "example": "",
@@ -6824,7 +6547,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频分类，详见[企鹅号官网](https://open.om.qq.com/resources/resourcesCenter)视频分类。",
           "example": "",
@@ -6841,7 +6563,6 @@
       "document": "平台信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台标识。",
           "example": "test",
@@ -6852,7 +6573,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "平台描述。",
           "example": "describetion",
@@ -6863,7 +6583,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云点播子应用 Id。",
           "example": "1402233125",
@@ -6874,7 +6593,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "平台绑定的 license Id。",
           "example": "60097a8a8ea83d00017b484b",
@@ -6885,7 +6603,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "平台状态，可取值为：\n<li>Normal：正常，可使用。；</li>\n<li>Stopped：已停用，暂无法使用；</li>\n<li>Expired：已过期，需要重新购买会员包。</li>",
           "example": "Normal",
@@ -6896,7 +6613,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间，格式按照 ISO 8601 标准表示。",
           "example": "2021-09-02T03:13:08Z",
@@ -6907,7 +6623,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间，格式按照 ISO 8601 标准表示。",
           "example": "2021-09-02T03:13:08Z",
@@ -6924,7 +6639,6 @@
       "document": "预置标签信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签 Id 。",
           "example": "",
@@ -6935,7 +6649,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签名称。",
           "example": "",
@@ -6946,7 +6659,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "父级预设 Id。",
           "example": "",
@@ -6963,7 +6675,6 @@
       "document": "项目信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目 Id。",
           "example": "project_id",
@@ -6974,7 +6685,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目名称。",
           "example": "新建",
@@ -6985,7 +6695,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "画布宽高比。",
           "example": "无",
@@ -6996,7 +6705,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目类别，取值有：\n<li>VIDEO_EDIT：视频编辑。</li>\n<li>SWITCHER：导播台。</li>\n<li>VIDEO_SEGMENTATION：视频拆条。</li>\n<li>STREAM_CONNECT：云转推。</li>\n<li>RECORD_REPLAY：录制回放。</li>",
           "example": "STREAM_CONNECT",
@@ -7007,7 +6715,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "归属者。",
           "example": "无",
@@ -7018,7 +6725,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目封面图片地址。",
           "example": "无",
@@ -7029,7 +6735,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云转推项目信息，仅当项目类别取值 STREAM_CONNECT 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7040,7 +6745,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点播转直播项目信息，仅当项目类别取值为 MEDIA_CAST 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7051,7 +6755,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目更新时间，格式按照 ISO 8601 标准表示。",
           "example": "2021-03-23T07:51:18.029Z",
@@ -7062,7 +6765,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目创建时间，格式按照 ISO 8601 标准表示。",
           "example": "2021-03-23T07:51:18.029Z",
@@ -7079,7 +6781,6 @@
       "document": " 点播转直播项目状态变更事件。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目 Id。",
           "example": "60097a8a8ea83d00017b484b",
@@ -7090,7 +6791,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目状态，取值有：\n<li>Started：点播转直播开始；</li>\n<li>Stopped：点播转直播结束；</li>\n<li>SourceInterrupted：点播转直播输入断流；</li>\n<li>DestinationInterrupted：点播转直播输出断流。</li>",
           "example": "Started",
@@ -7101,7 +6801,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点播转直播输入断流信息，仅当 Status 取值 SourceInterrupted 时有效。",
           "example": "无",
@@ -7112,7 +6811,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点播转直播输出断流信息，仅当 Status 取值 DestinationInterrupted 时有效。",
           "example": "无",
@@ -7129,7 +6827,6 @@
       "document": "云转推项目状态变更事件。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目 Id。",
           "example": "60097a8a8ea83d00017b484b",
@@ -7140,7 +6837,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目状态，取值有：\n<li>Working：云转推推流开始；</li>\n<li>Stopped：云转推推流结束；</li>\n<li>InputInterrupted：云转推输入断流；</li>\n<li>OutputInterrupted：云转推输出断流。</li>",
           "example": "PushStreamFinish",
@@ -7151,7 +6847,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云转推输入断流信息，仅当 Status 取值 InputInterrupted 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7162,7 +6857,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云转推输出断流信息，仅当 Status 取值 OutputInterrupted 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7179,7 +6873,6 @@
       "document": "导播台项目状态变更事件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "导播台项目 Id。",
           "example": "60097a8a8ea83d00017b484b",
@@ -7190,7 +6883,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导播台项目状态，可取值有：\n<li>Started：导播台启动；</li>\n<li>Stopped：导播台停止；</li>\n<li>PvwStarted：导播台 PVW 开启；</li>\n<li>PgmStarted：导播台 PGM 开启，输出推流开始；</li>\n<li>PvwStopped：导播台 PVW 停止；</li>\n<li>PgmStopped：导播台 PGM 停止，输出推流结束。</li>",
           "example": "Started",
@@ -7207,7 +6899,6 @@
       "document": "录制回放项目输入信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "录制拉流地址。",
           "example": "无",
@@ -7218,7 +6909,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制文件归属者。",
           "example": "无",
@@ -7229,7 +6919,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制文件存储分类路径。",
           "example": "无",
@@ -7240,7 +6929,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回放推流地址。",
           "example": "无",
@@ -7257,7 +6945,6 @@
       "document": "用于描述资源",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "类型，取值有：\n<li>MATERIAL：素材。</li>\n<li>CLASS：分类。</li>",
           "example": "",
@@ -7268,7 +6955,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源 Id，当 Type 为 MATERIAL 时，取值为素材 Id；当 Type 为 CLASS 时，取值为分类路径 ClassPath。",
           "example": "",
@@ -7285,7 +6971,6 @@
       "document": "资源信息，包含资源以及归属信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "媒资和分类资源。",
           "example": "无",
@@ -7296,7 +6981,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源归属，个人或团队。",
           "example": "无",
@@ -7313,7 +6997,6 @@
       "document": "RevokeResourceAuthorization请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
           "example": "test",
@@ -7323,7 +7006,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源所属实体。",
           "example": "无",
@@ -7333,7 +7015,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被授权资源。",
           "example": "无",
@@ -7343,7 +7024,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被授权目标实体。",
           "example": "无",
@@ -7353,7 +7033,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "详细授权值。 取值有：\n<li>R：可读，可以浏览素材，但不能使用该素材（将其添加到 Project），或复制到自己的媒资库中</li>\n<li>X：可用，可以使用该素材（将其添加到 Project），但不能将其复制到自己的媒资库中，意味着被授权者无法将该资源进一步扩散给其他个人或团队。</li>\n<li>C：可复制，既可以使用该素材（将其添加到 Project），也可以将其复制到自己的媒资库中。</li>\n<li>W：可修改、删除媒资。</li>",
           "example": "[\"R\\r\\n\"]",
@@ -7363,7 +7042,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，撤销任意资源的授权权限。如果指定操作者，则操作者必须对被授权资源有写权限。",
           "example": "123",
@@ -7391,7 +7069,6 @@
       "document": "直播推流信息，包括推流地址有效时长，多媒体创作引擎后端生成直播推流地址。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "直播推流地址有效期，单位：秒 。",
           "example": "60",
@@ -7402,7 +7079,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "直播推流地址，入参不填默认由多媒体创作引擎生成。",
           "example": "rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600c",
@@ -7563,7 +7239,6 @@
       "document": "搜索空间",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分类路径归属。",
           "example": "",
@@ -7574,7 +7249,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按分类路径检索。 不填则默认按根分类路径检索。",
           "example": "",
@@ -7591,7 +7265,6 @@
       "document": "卡槽信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "卡槽 Id。",
           "example": "0",
@@ -7602,7 +7275,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "卡槽类型，可取值有：\n<li> AUDIO：音频卡槽，可替换素材类型为 AUDIO 的音频素材;</li>\n<li> VIDEO：视频卡槽，可替换素材类型为 VIDEO 的视频素材;</li>\n<li> IMAGE：图片卡槽，可替换素材类型为 IMAGE 的图片素材;</li>\n<li> TEXT：文本卡槽，可替换文本内容。</li>",
           "example": "0",
@@ -7613,7 +7285,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认素材ID。当卡槽类型为 AUDIO，VIDEO，或 IMAGE 中的一种时有效。",
           "example": "60097a8a8ea83d00017b484b",
@@ -7624,7 +7295,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认文本卡槽信息。当卡槽类型为 TEXT 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7635,7 +7305,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材时长，单位秒。",
           "example": "100",
@@ -7652,7 +7321,6 @@
       "document": "卡槽替换信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "卡槽 Id。",
           "example": "0",
@@ -7663,7 +7331,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "替换类型，可取值有：\n<li> AUDIO ：音频；</li>\n<li> VIDEO ：视频；</li>\n<li> IMAGE ：图片；</li>\n<li> TEXT ：文本。</li>\n注意：这里必须保证替换的素材类型与模板轨道数据的素材类型一致。如果替换的类型为Text,，则必须保证模板轨道数据中相应卡槽的位置标记的是文本。",
           "example": "VIDEO",
@@ -7674,7 +7341,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体替换信息，仅当要替换的媒体类型为音频、视频、图片时有效。",
           "example": " 无",
@@ -7685,7 +7351,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本替换信息，仅当要替换的卡槽类型为文本时有效。",
           "example": "无",
@@ -7702,7 +7367,6 @@
       "document": "排序",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段。",
           "example": "",
@@ -7713,7 +7377,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式，可选值：Asc（升序）、Desc（降序），默认降序。",
           "example": "",
@@ -7730,7 +7393,6 @@
       "document": "新文件生成事件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "云点播文件  Id。",
           "example": "5285890818667693889292992",
@@ -7741,7 +7403,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体 Id。",
           "example": "60a75c1c30fcbe0001cc8990d0",
@@ -7752,7 +7413,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作者 Id。（废弃，请勿使用）",
           "example": "3fa6b09e-05c6-433e-bc1e-6457d264f1dd",
@@ -7763,7 +7423,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作类型，可取值有：\n<li>Upload：本地上传；</li>\n<li>PullUpload：拉取上传；</li>\n<li>VideoEdit：视频剪辑；</li>\n<li>LiveStreamClip：直播流剪辑；</li>\n<li>LiveStreamRecord：直播流录制。</li>",
           "example": "Upload",
@@ -7774,7 +7433,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体归属。",
           "example": "无",
@@ -7785,7 +7443,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体分类路径。",
           "example": "/媒体",
@@ -7796,7 +7453,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生成文件的任务 Id。当生成新文件是拉取上传、视频剪辑、直播流剪辑时为任务 Id。",
           "example": "125000800-PullUpload-6fdaf790821a36dbe95ec8f557366c71t",
@@ -7807,7 +7463,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "来源上下文信息。视频剪辑生成新文件时此字段为项目 Id；直播流剪辑或者直播流录制生成新文件则为原始流地址。",
           "example": "60097a8a8ea83d00017b484b",
@@ -7824,7 +7479,6 @@
       "document": "云转推输入断流信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "云转推输入源标识，取值有：\n<li>Main：主源；</li>\n<li>Backup：备源。</li>",
           "example": "Main",
@@ -7841,7 +7495,6 @@
       "document": "云转推输出源。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "云转推输出源标识，转推项目级别唯一。若不填则由后端生成。",
           "example": "135ed54d55d",
@@ -7852,7 +7505,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云转推输出源名称。",
           "example": "test",
@@ -7863,7 +7515,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云转推输出源类型，取值：\n<li>URL ：URL类型</li>\n不填默认为URL类型。",
           "example": "URL",
@@ -7874,7 +7525,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云转推推流地址。",
           "example": "rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600c",
@@ -7891,7 +7541,6 @@
       "document": "云转推输出源信息，包含输出源和输出源转推状态。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "输出源。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7902,7 +7551,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输出流状态：\n<li>On ：开；</li>\n<li>Off ：关 。</li>",
           "example": "On",
@@ -7919,7 +7567,6 @@
       "document": "云转推输出断流信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "云转推输出标识。",
           "example": "outputId",
@@ -7930,7 +7577,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云转推输出名称。",
           "example": "test",
@@ -7941,7 +7587,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云转推输出地址。",
           "example": "rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600c",
@@ -7958,7 +7603,6 @@
       "document": "云转推项目信息，包含输入源、输出源、当前转推开始时间等信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "转推项目状态，取值有：\n<li>Working ：转推中；</li>\n<li>Idle ：空闲中。</li>",
           "example": "Working",
@@ -7969,7 +7613,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前转推输入源，取值有：\n<li>Main ：主输入源；</li>\n<li>Backup ：备输入源。</li>",
           "example": "Main",
@@ -7980,7 +7623,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前转推开始时间， 采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。仅 Status 取值 Working 时有效。",
           "example": "2021-03-23T07:51:18.029Z",
@@ -7991,7 +7633,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前转推计划结束时间， 采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。仅 Status 取值 Working 时有效。",
           "example": "2021-03-23T08:51:18.029Z",
@@ -8002,7 +7643,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上一次转推结束时间， 采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。仅 Status 取值 Idle 时有效。",
           "example": "2021-03-22T08:51:18.029Z",
@@ -8013,7 +7653,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云转推主输入源。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8024,7 +7663,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云转推备输入源。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8035,7 +7673,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云转推输出源。",
           "example": "无",
@@ -8052,7 +7689,6 @@
       "document": "云转推项目输入信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "云转推主输入源信息。",
           "example": "无",
@@ -8063,7 +7699,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云转推备输入源信息。",
           "example": "无",
@@ -8074,7 +7709,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云转推输出源信息。",
           "example": "无",
@@ -8091,7 +7725,6 @@
       "document": "输入流信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "流输入类型，取值：\n<li>VodPull ： 点播拉流；</li>\n<li>LivePull ：直播拉流；</li>\n<li>RtmpPush ： 直播推流。</li>",
           "example": "LivePull",
@@ -8102,7 +7735,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点播拉流信息，当 InputType = VodPull 时必填。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8113,7 +7745,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "直播拉流信息，当 InputType = LivePull  时必填。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8124,7 +7755,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "直播推流信息，当 InputType = RtmpPush 时必填。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8141,7 +7771,6 @@
       "document": "导播台主监输出配置信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "导播台输出模板 ID，可取值：\n<li>10001：分辨率为1080 P；</li>\n<li>10002：分辨率为720 P；</li>\n<li>10003：分辨率为480 P。</li>",
           "example": "",
@@ -8152,7 +7781,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导播台输出宽，单位：像素。",
           "example": "",
@@ -8163,7 +7791,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导播台输出高，单位：像素。",
           "example": "",
@@ -8174,7 +7801,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导播台输出帧率，单位：帧/秒",
           "example": "",
@@ -8185,7 +7811,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导播台输出码率， 单位：bit/s。",
           "example": "",
@@ -8202,7 +7827,6 @@
       "document": "导播台项目输入信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "导播台停止时间，格式按照 ISO 8601 标准表示。若不填，该值默认为当前时间加七天。",
           "example": "",
@@ -8213,7 +7837,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导播台主监输出配置信息。若不填，默认输出 720P。",
           "example": "",
@@ -8230,7 +7853,6 @@
       "document": "任务基础信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务 Id。",
           "example": "",
@@ -8241,7 +7863,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务类型，取值有：\n<li>VIDEO_EDIT_PROJECT_EXPORT：项目导出。</li>",
           "example": "",
@@ -8252,7 +7873,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务状态，取值有：\n<li>PROCESSING：处理中：</li>\n<li>SUCCESS：成功；</li>\n<li>FAIL：失败。</li>",
           "example": "",
@@ -8263,7 +7883,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务进度，取值为：0~100。",
           "example": "",
@@ -8274,7 +7893,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误码。\n<li>0：成功；</li>\n<li>其他值：失败。</li>",
           "example": "",
@@ -8285,7 +7903,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息。",
           "example": "",
@@ -8296,7 +7913,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间，格式按照 ISO 8601 标准表示。",
           "example": "",
@@ -8313,7 +7929,6 @@
       "document": "团队信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "团队 ID。",
           "example": "",
@@ -8324,7 +7939,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "团队名称。",
           "example": "",
@@ -8335,7 +7949,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "团队成员个数",
           "example": "",
@@ -8346,7 +7959,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "团队创建时间，格式按照 ISO 8601 标准表示。",
           "example": "",
@@ -8357,7 +7969,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "团队最后更新时间，格式按照 ISO 8601 标准表示。",
           "example": "",
@@ -8374,7 +7985,6 @@
       "document": "团队成员信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "团队成员 ID。",
           "example": "",
@@ -8385,7 +7995,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "团队成员备注。",
           "example": "",
@@ -8396,7 +8005,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "团队成员角色，取值：\n<li>Owner：团队所有者，添加团队成员及修改团队成员解决时不能填此角色；</li>\n<li>Admin：团队管理员；</li>\n<li>Member：普通成员。</li>",
           "example": "",
@@ -8413,7 +8021,6 @@
       "document": "模板插槽文本替换信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "替换的文本信息。",
           "example": "无",
@@ -8430,7 +8037,6 @@
       "document": "文本类型卡槽信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文本内容。",
           "example": "无",
@@ -8447,7 +8053,6 @@
       "document": "第三方平台视频发布信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "发布通道  ID。",
           "example": "无",
@@ -8458,7 +8063,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企鹅号发布信息，如果使用的发布通道为企鹅号时必填。",
           "example": "无",
@@ -8469,7 +8073,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新浪微博发布信息，如果使用的发布通道为新浪微博时必填。",
           "example": "无",
@@ -8480,7 +8083,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快手发布信息，如果使用的发布通道为快手时必填。",
           "example": "无",
@@ -8491,7 +8093,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯云对象存储发布信息， 如果使用的发布通道为腾讯云对象存储时必填。",
           "example": "无",
@@ -8534,7 +8135,6 @@
       "document": "云点播导出信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "导出的媒资名称。",
           "example": "",
@@ -8545,7 +8145,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导出的媒资分类 Id。",
           "example": "",
@@ -8556,7 +8155,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "第三方平台发布信息列表。暂未正式对外，请勿使用。",
           "example": "",
@@ -8573,7 +8171,6 @@
       "document": "视频编辑项目输入参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "画布宽高比，取值有：\n<li>16:9；</li>\n<li>9:16；</li>\n<li>2:1。</li>\n默认值 16:9 。",
           "example": "16:9",
@@ -8584,7 +8181,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频编辑模板媒体 ID ，通过模板媒体导入项目轨道数据时填写。",
           "example": "无",
@@ -8595,7 +8191,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输入的媒体轨道列表，包括视频、音频，等媒体组成的多个轨道信息。其中：<li>输入的多个轨道在时间轴上和输出媒体文件的时间轴对齐；</li><li>时间轴上相同时间点的各个轨道的素材进行重叠，视频或者图片按轨道顺序进行图像的叠加，轨道顺序高的素材叠加在上面，音频素材进行混音；</li><li>视频、音频，每一种类型的轨道最多支持10个。</li>\n注：当从模板导入项目时（即 VideoEditTemplateId 不为空时），该参数无效。",
           "example": "无",
@@ -8668,7 +8263,6 @@
       "document": "视频编辑模板素材信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频编辑模板宽高比。",
           "example": "16:9",
@@ -8679,7 +8273,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "卡槽信息。",
           "example": "无",
@@ -8690,7 +8283,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板预览视频 URL 地址 。",
           "example": "无",
@@ -8707,7 +8299,6 @@
       "document": "视频编码配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "配置 ID。",
           "example": "无",
@@ -8718,7 +8309,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置名。",
           "example": "无",
@@ -8729,7 +8319,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "封装格式，可选值：\n<li>mp4 ；</li>\n<li>mov 。</li>",
           "example": "无",
@@ -8740,7 +8329,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否去除视频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n默认值：0。",
           "example": "无",
@@ -8751,7 +8339,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否去除音频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n默认值：0。",
           "example": "无",
@@ -8762,7 +8349,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频编码配置中的视频设置。",
           "example": "无",
@@ -8773,7 +8359,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频编码配置中的音频设置。",
           "example": "无",
@@ -8790,7 +8375,6 @@
       "document": "视频编码配置中的音频设置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "音频流的编码格式，可选值：\nAAC：AAC 编码。\n\n默认值：AAC。",
           "example": "AAC",
@@ -8801,7 +8385,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频码率，单位：bps。\n默认值：64K。",
           "example": "0",
@@ -8812,7 +8395,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频声道数，可选值： \n<li>1：单声道；</li>\n<li>2：双声道。</li> \n默认值：2。",
           "example": "2",
@@ -8823,7 +8405,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频流的采样率，仅支持 16000； 32000； 44100； 48000。单位：Hz。 \n默认值：16000。",
           "example": "16000",
@@ -8840,7 +8421,6 @@
       "document": "视频编码配置中的音频设置更新信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "音频码率，单位：bps。\n不填则不修改。",
           "example": "0",
@@ -8851,7 +8431,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频声道数，可选值： \n<li>1：单声道；</li>\n<li>2：双声道。</li> \n不填则不修改。",
           "example": "2",
@@ -8862,7 +8441,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频流的采样率，目前仅支持： 16000； 32000； 44100； 48000。单位：Hz。\n不填则不修改。",
           "example": "16000",
@@ -8879,7 +8457,6 @@
       "document": "视频编码配置中的视频设置信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频流的编码格式，可选值：\n<li>H264：H.264 编码。</li>",
           "example": "H264",
@@ -8890,7 +8467,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频短边尺寸，取值范围： [128, 4096]，单位：px。\n视频最后的分辨率，根据短边尺寸和宽高比进行计算。\n例：如果项目的宽高比是 16：9 ：\n<li>短边尺寸为 1080，则导出视频的分辨率为 1920 * 1080。</li>\n<li>短边尺寸为 720，则导出视频的分辨率为 1280 * 720。</li>\n如果项目的宽高比是 9：16 ：\n<li>短边尺寸为 1080，则导出视频的分辨率为 1080 * 1920。</li>\n<li>短边尺寸为 720，则导出视频的分辨率为 720 * 1280。</li>\n默认值：1080。",
           "example": "1080",
@@ -8901,7 +8477,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定码率，单位 bps。当该参数为'0'时则不强制限定码率。\n默认值：0。",
           "example": "0",
@@ -8918,7 +8493,6 @@
       "document": "视频编码配置的视频设置更新信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频短边尺寸，取值范围： [128, 4096]，单位：px。\n视频最后的分辨率，根据短边尺寸和宽高比进行计算。\n例：如果项目的宽高比是 16：9 ：\n<li>短边尺寸为 1080，则导出视频的分辨率为 1920 * 1080。</li>\n<li>短边尺寸为 720，则导出视频的分辨率为 1280 * 720。</li>\n如果项目的宽高比是 9：16 ：\n<li>短边尺寸为 1080，则导出视频的分辨率为 1080 * 1920。</li>\n<li>短边尺寸为 720，则导出视频的分辨率为 720 * 1280。</li>\n不填则不修改。",
           "example": "1080",
@@ -8929,7 +8503,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定码率，单位 bps。当该参数为'0' 时则不强制限定码率。\n不填则不修改。",
           "example": "0",
@@ -8940,7 +8513,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定帧率。单位 Hz。\n不填则不修改。",
           "example": "25",
@@ -8957,7 +8529,6 @@
       "document": "视频导出完成事件。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务 Id。",
           "example": "123-FusionCME-391d2d669d70952a99e3be240e0acf11t",
@@ -8968,7 +8539,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务状态，取值有：\n<li>SUCCESS：成功；</li>\n<li>FAIL：失败。</li>",
           "example": "SUCCESS",
@@ -8979,7 +8549,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误码，取值有：\n<li>0：成功；</li>\n<li>其他值：失败。</li>",
           "example": "0",
@@ -8990,7 +8559,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息。",
           "example": "fail",
@@ -9001,7 +8569,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9018,7 +8585,6 @@
       "document": "视频导出扩展参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "封装格式，可选值：\n<li>mp4 </li>\n<li>mov </li>\n不填则使用视频导出编码配置。",
           "example": "mp4",
@@ -9029,7 +8595,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频短边尺寸，取值范围： [128, 4096]，单位：px。\n视频最后的分辨率，根据短边尺寸和宽高比进行计算。\n例如：项目的宽高比是 16：9 ：\n<li>短边尺寸为 1080，则导出视频的分辨率为 1920 * 1080。</li>\n<li>短边尺寸为 720，则导出视频的分辨率为 1280 * 720</li>\n不填则使用视频导出编码配置。",
           "example": "1080",
@@ -9040,7 +8605,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定码率，单位 bps。当该参数为 0 时则不强制限定码率。\n不填则使用视频导出编码配置。",
           "example": "0",
@@ -9051,7 +8615,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "帧率。取值范围：[15, 60]，不填默认值为 25。",
           "example": "0",
@@ -9062,7 +8625,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否去除视频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n不填则使用视频导出编码配置。",
           "example": "0",
@@ -9073,7 +8635,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否去除音频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n不填则使用视频导出编码配置。",
           "example": "0",
@@ -9084,7 +8645,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "片段起始时间，单位：毫秒。",
           "example": "0",
@@ -9095,7 +8655,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "片段结束时间，单位：毫秒。",
           "example": "0",
@@ -9112,7 +8671,6 @@
       "document": "视频素材信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "素材元信息。",
           "example": "",
@@ -9123,7 +8681,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "雪碧图信息。",
           "example": "",
@@ -9134,7 +8691,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材媒体文件的播放 URL 地址。",
           "example": "",
@@ -9145,7 +8701,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材媒体文件的封面图片地址。",
           "example": "",
@@ -9156,7 +8711,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体文件分辨率。取值为：LD/SD/HD/FHD/2K/4K。",
           "example": "",
@@ -9167,7 +8721,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材状态。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -9178,7 +8731,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材媒体文件的原始 URL 地址。",
           "example": "",
@@ -9189,7 +8741,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云点播媒资 FileId。",
           "example": "",
@@ -9206,7 +8757,6 @@
       "document": "视频拆条项目的输入信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "画布宽高比，取值有：\n<li>16:9；</li>\n<li>9:16；</li>\n<li>2:1。</li>\n默认值 16:9 。",
           "example": "16:9",
@@ -9217,7 +8767,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频拆条处理模型，不填则默认为手工分割视频。取值 ：\n<li>AI.GameHighlights.PUBG：和平精英集锦 ;</li>\n<li>AI.GameHighlights.Honor OfKings：王者荣耀集锦 ;</li>\n<li>AI.SportHighlights.Football：足球集锦 </li>\n<li>AI.SportHighlights.Basketball：篮球集锦 ；</li>\n<li>AI.PersonSegmentation：人物集锦  ;</li>\n<li>AI.NewsSegmentation：新闻拆条。</li>",
           "example": "无",
@@ -9234,7 +8783,6 @@
       "document": "视频流信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "码率，单位：bps。",
           "example": "",
@@ -9245,7 +8793,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高度，单位：px。",
           "example": "",
@@ -9256,7 +8803,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "宽度，单位：px。",
           "example": "",
@@ -9267,7 +8813,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "编码格式。",
           "example": "",
@@ -9278,7 +8823,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "帧率，单位：hz。",
           "example": "",
@@ -9295,7 +8839,6 @@
       "document": "视频轨的视频片段信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频媒体来源类型，取值有：\n<ul>\n<li>VOD ：媒体来源于云点播文件 。</li>\n<li>CME ：视频来源制作云媒体文件。</li>\n<li>EXTERNAL ：视频来源于媒资绑定，如果媒体不是存储在腾讯云点播中或者云创中，都需要使用媒资绑定。</li>\n</ul>",
           "example": "VOD",
@@ -9306,7 +8849,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频媒体，可取值为：\n<ul>\n<li>当 SourceType 为 VOD 时，参数填云点播 FileId ；</li>\n<li>当 SourceType 为 CME 时，参数填多媒体创作引擎媒体 Id；</li>\n<li>当 SourceType 为 EXTERNAL 时，目前仅支持外部媒体 URL(如`https://www.example.com/a.mp4`)，参数填写规则请参见注意事项。</li>\n</ul>\n\n注意：\n<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `https` 时(如：`https://www.example.com/a.mp4`)，参数为：`1000000:www.example.com/a.mp4`。</li>\n<li>当 SourceType 为 EXTERNAL 并且媒体 URL Scheme 为 `http` 时(如：`http://www.example.com/b.mp4`)，参数为：`1000001:www.example.com/b.mp4`。</li>",
           "example": "60097a8a8ea83d00017b484b",
@@ -9317,7 +8859,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频片段取自媒体文件的起始时间，单位为秒。默认为0。",
           "example": "0",
@@ -9328,7 +8869,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频片段时长，单位为秒。默认取视频媒体文件本身长度，表示截取全部媒体文件。如果源文件是图片，Duration需要大于0。",
           "example": "20",
@@ -9339,7 +8879,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频片段原点距离画布原点的水平位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 XPos 为画布宽度指定百分比的位置，如 10% 表示 XPos 为画布口宽度的 10%。</li>\n<li>当字符串以 px 结尾，表示视频片段 XPos 单位为像素，如 100px 表示 XPos 为100像素。</li>\n默认值：0px。",
           "example": "10px",
@@ -9350,7 +8889,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频片段原点距离画布原点的垂直位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 YPos 为画布高度指定百分比的位置，如 10% 表示 YPos 为画布高度的 10%。</li>\n<li>当字符串以 px 结尾，表示视频片段 YPos 单位为像素，如 100px 表示 YPos 为100像素。</li>\n默认值：0px。",
           "example": "20px",
@@ -9361,7 +8899,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频原点位置，取值有：\n<li>Center：坐标原点为中心位置，如画布中心。</li>\n默认值 ：Center。",
           "example": "Center",
@@ -9372,7 +8909,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频片段的高度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 Height 为画布高度的百分比大小，如 10% 表示 Height 为画布高度的 10%；</li>\n<li>当字符串以 px 结尾，表示视频片段 Height 单位为像素，如 100px 表示 Height 为100像素；</li>\n<li>当 Width、Height 均为空，则 Width 和 Height 取视频媒体文件本身的 Width、Height；</li>\n<li>当 Width 为空，Height 非空，则 Width 按比例缩放；</li>\n<li>当 Width 非空，Height 为空，则 Height 按比例缩放。</li>",
           "example": "1080px",
@@ -9383,7 +8919,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频片段的宽度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示视频片段 Width 为画布宽度的百分比大小，如 10% 表示 Width 为画布宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示视频片段 Width 单位为像素，如 100px 表示 Width 为100像素；</li>\n<li>当 Width、Height 均为空，则 Width 和 Height 取视频媒体文件本身的 Width、Height；</li>\n<li>当 Width 为空，Height 非空，则 Width 按比例缩放；</li>\n<li>当 Width 非空，Height 为空，则 Height 按比例缩放。</li>",
           "example": "1920px",
@@ -9400,7 +8935,6 @@
       "document": "点播拉流信息，包括输入拉流地址和播放次数。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "点播输入拉流 URL 。",
           "example": "无",
@@ -9411,7 +8945,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "播放次数，取值有：\n<li>-1 : 循环播放，直到转推结束；</li>\n<li>0 : 不循环；</li>\n<li>大于0 : 具体循环次数，次数和时间以先结束的为准。</li>\n默认不循环。",
           "example": "-1",
@@ -9428,7 +8961,6 @@
       "document": "点播文件播放信息，包含当前在播地址和该地址已播时长 。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "当前正在播放文件 Url 。",
           "example": "http://playdomain/patch/file.m3u8",
@@ -9439,7 +8971,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点播文件已播放时长，单位：秒。",
           "example": "10",
@@ -9456,7 +8987,6 @@
       "document": "微博发布信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频发布标题。",
           "example": "",
@@ -9467,7 +8997,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频发布描述信息。",
           "example": "",
@@ -9478,7 +9007,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "微博可见性，可取值为：\n<li>Public：公开，所有人可见；</li>\n<li>Private：私有，仅自己可见。</li>\n\n默认为 Public，所有人可见。",
           "example": "",

@@ -98,7 +98,6 @@
       "document": "人脸信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框的横坐标",
           "example": "1",
@@ -109,7 +108,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框的纵坐标",
           "example": "1",
@@ -120,7 +118,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框的宽度",
           "example": "1",
@@ -131,7 +128,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框的高度",
           "example": "1",
@@ -148,7 +144,6 @@
       "document": "人脸框信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框左上角横坐标。",
           "example": "1",
@@ -159,7 +154,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框左上角纵坐标。",
           "example": "1",
@@ -170,7 +164,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框宽度。",
           "example": "1",
@@ -181,7 +174,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框高度。",
           "example": "1",
@@ -201,7 +193,6 @@
           "disabled": false,
           "document": "活动 ID，请在<a href=\"https://console.cloud.tencent.com/facefusion\" target=\"_blank\">人脸融合控制台</a>查看。",
           "example": "300029",
-          "is_base64": false,
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -211,7 +202,6 @@
           "disabled": false,
           "document": "素材 ID，请在<a href=\"https://console.cloud.tencent.com/facefusion\" target=\"_blank\">人脸融合控制台</a>查看。",
           "example": "qc_300029_453345_1",
-          "is_base64": false,
           "member": "string",
           "name": "ModelId",
           "required": true,
@@ -221,7 +211,6 @@
           "disabled": false,
           "document": "返回图像方式（url 或 base64) ，二选一。url有效期为7天。",
           "example": "url",
-          "is_base64": false,
           "member": "string",
           "name": "RspImgType",
           "required": true,
@@ -231,7 +220,6 @@
           "disabled": false,
           "document": "用户人脸图片、素材模板图的人脸位置信息。",
           "example": "[]",
-          "is_base64": false,
           "member": "MergeInfo",
           "name": "MergeInfos",
           "required": true,
@@ -241,7 +229,6 @@
           "disabled": false,
           "document": "脸型融合比例，数值越高，融合后的脸型越像素材人物。取值范围[0,100] \n若此参数不填写，则使用人脸融合控制台中脸型参数数值。（换脸版算法暂不支持此参数调整）",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "FuseProfileDegree",
           "required": false,
@@ -251,7 +238,6 @@
           "disabled": false,
           "document": "五官融合比例，数值越高，融合后的五官越像素材人物。取值范围[0,100] \n若此参数不填写，则使用人脸融合控制台中五官参数数值。（换脸版算法暂不支持此参数调整）",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "FuseFaceDegree",
           "required": false,
@@ -261,7 +247,6 @@
           "disabled": false,
           "document": "为融合结果图添加合成标识的开关，默认为1。\n1：添加标识。\n0：不添加标识。\n其他数值：默认按1处理。\n建议您使用显著标识来提示结果图使用了人脸融合技术，是AI合成的图片。",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "LogoAdd",
           "required": false,
@@ -271,7 +256,6 @@
           "disabled": false,
           "document": "标识内容设置。\n默认在融合结果图右下角添加“本图片为AI合成图片”字样，您可根据自身需要替换为其他的Logo图片。",
           "example": "{}",
-          "is_base64": false,
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -281,7 +265,6 @@
           "disabled": false,
           "document": "融合参数。",
           "example": "无",
-          "is_base64": false,
           "member": "FuseParam",
           "name": "FuseParam",
           "required": false,
@@ -346,7 +329,6 @@
       "document": "logo参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标识图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配",
           "example": "{}",
@@ -357,7 +339,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标识图片Url地址",
           "example": "string",
@@ -368,7 +349,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标识图片base64",
           "example": "string",
@@ -411,7 +391,6 @@
       "document": "人脸图片和待被融合的素材模板图的人脸位置信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "输入图片base64",
           "example": "string",
@@ -422,7 +401,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输入图片url",
           "example": "string",
@@ -433,7 +411,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上传的图片人脸位置信息（人脸框）",
           "example": "{}",
@@ -444,7 +421,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "控制台上传的素材人脸ID，不填默认取最大人脸",
           "example": "string",

@@ -61,7 +61,6 @@
       "document": "调用明细结构体",
       "members": [
         {
-          "default": "",
           "document": "数据类型 0 imei 1 qimei 2 qq 3 phone 7:IDFA 8:MD5(imei)",
           "member": "uint64",
           "name": "DataType",
@@ -70,7 +69,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "有效数据量",
           "member": "uint64",
           "name": "ValidAmount",
@@ -79,7 +77,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "调用时间",
           "member": "datetime",
           "name": "Date",
@@ -94,7 +91,6 @@
       "document": "调用明细返回数据体",
       "members": [
         {
-          "default": "",
           "document": "符合条件的总条数",
           "member": "uint64",
           "name": "TotalCount",
@@ -103,7 +99,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "调用明细数组",
           "member": "CallDetailItem",
           "name": "CallDetailSet",
@@ -118,7 +113,6 @@
       "document": "调用量统计item",
       "members": [
         {
-          "default": "",
           "document": "当前统计量的时间段",
           "member": "datetime",
           "name": "Date",
@@ -127,7 +121,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "当前时间段的调用量",
           "member": "uint64",
           "name": "Amount",
@@ -142,7 +135,6 @@
       "document": "调用量统计信息，包括周/日/月/总调用量",
       "members": [
         {
-          "default": "",
           "document": "今日调用量",
           "member": "uint64",
           "name": "TodayAmount",
@@ -151,7 +143,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "本周调用量",
           "member": "uint64",
           "name": "WeekAmount",
@@ -160,7 +151,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "本月调用量",
           "member": "uint64",
           "name": "MonthAmount",
@@ -169,7 +159,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "总调用量",
           "member": "uint64",
           "name": "TotalAmount",
@@ -184,7 +173,6 @@
       "document": "GetTaskDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "任务ID",
           "example": "0",
           "member": "uint64",
@@ -220,7 +208,6 @@
       "document": "GetTaskList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "查询分页页码",
           "example": "0",
           "member": "uint64",
@@ -229,7 +216,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询分页大小",
           "example": "10",
           "member": "uint64",
@@ -238,7 +224,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询起始时间（13位数字的UNIX时间戳，单位毫秒 ）",
           "example": "1616056520000",
           "member": "uint64",
@@ -247,7 +232,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询结束时间（13位数字的UNIX时间戳，单位毫秒 ）",
           "example": "1616056520000",
           "member": "uint64",
@@ -256,7 +240,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "任务名称",
           "example": "task1",
           "member": "string",
@@ -265,7 +248,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询任务状态 0:默认状态 1:任务正在运行 2:任务运行成功 3:任务运行失败",
           "example": "0",
           "member": "uint64",
@@ -301,7 +283,6 @@
       "document": "画像标签详情数据对象",
       "members": [
         {
-          "default": "",
           "document": "标签数据对象",
           "member": "LabelValue",
           "name": "Value",
@@ -310,7 +291,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签表述，如\"汽车资讯\"、\"游戏#手游\"等",
           "member": "string",
           "name": "Label",
@@ -325,7 +305,6 @@
       "document": "标签数据",
       "members": [
         {
-          "default": "",
           "document": "标签覆盖率占比（在整个上传的ID列表中的覆盖率）",
           "member": "float",
           "name": "Proportion",
@@ -334,7 +313,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签大盘覆盖率占比",
           "member": "float",
           "name": "Market",
@@ -343,7 +321,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "TGI指数，由Proportion除以Market得到",
           "member": "float",
           "name": "Tgi",
@@ -358,7 +335,6 @@
       "document": "任务列表项Model",
       "members": [
         {
-          "default": "",
           "document": "任务ID",
           "member": "uint64",
           "name": "ID",
@@ -367,7 +343,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务名称",
           "member": "string",
           "name": "TaskName",
@@ -376,7 +351,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务起始时间（13位数字的UNIX 时间戳，单位毫秒 ）",
           "member": "uint64",
           "name": "StartTime",
@@ -385,7 +359,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务状态 0:默认状态 1:任务正在运行 2:任务运行成功 3:任务运行失败",
           "member": "uint64",
           "name": "Status",
@@ -394,7 +367,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "画像覆盖人数",
           "member": "uint64",
           "name": "Available",
@@ -403,7 +375,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务失败描述信息",
           "member": "string",
           "name": "ErrMsg",
@@ -418,7 +389,6 @@
       "document": "PredictRating请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "ID标志的类型，0:IMEI 7:IDFA 8:MD5(imei) 100: 手机号明文 101: 手机号md5加密",
           "example": "8",
           "member": "int64",
@@ -427,7 +397,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "请求唯一标志ID",
           "example": "9aa40fe5e32938e34f767cc0f9f58702",
           "member": "string",
@@ -463,7 +432,6 @@
       "document": "QueryCallDetails请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "请求类型 1:人群特征洞察统计 2:购车意向预测统计",
           "example": "1",
           "member": "uint64",
@@ -472,7 +440,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "开始时间戳（毫秒）",
           "example": "1602470155000",
           "member": "uint64",
@@ -481,7 +448,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "结束时间戳（毫秒）",
           "example": "1602470355000",
           "member": "uint64",
@@ -490,7 +456,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "页数",
           "example": "1",
           "member": "uint64",
@@ -499,7 +464,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "每页个数",
           "example": "100",
           "member": "uint64",
@@ -535,7 +499,6 @@
       "document": "QueryCallStat请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "请求类型 1:人群特征洞察统计 2:购车意向预测统计",
           "example": "1",
           "member": "uint64",
@@ -544,7 +507,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "开始时间戳（毫秒）",
           "example": "1602470155000",
           "member": "uint64",
@@ -553,7 +515,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "结束时间戳（毫秒）",
           "example": "1602470355000",
           "member": "uint64",
@@ -589,7 +550,6 @@
       "document": "QueryGeneralStat请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "请求类型:1,人群特征洞察统计 2购车意向预测统计",
           "example": "1",
           "member": "uint64",
@@ -625,7 +585,6 @@
       "document": "返回购车意向评级",
       "members": [
         {
-          "default": "",
           "document": "线索评级（取值：0、1、2、3分别代表无、低、中、高意愿）",
           "member": "int64",
           "name": "Rank",
@@ -640,7 +599,6 @@
       "document": "任务ID信息",
       "members": [
         {
-          "default": "",
           "document": "画像洞察任务ID",
           "member": "uint64",
           "name": "Id",
@@ -655,7 +613,6 @@
       "document": "画像任务详情对象",
       "members": [
         {
-          "default": "",
           "document": "画像TAG ID",
           "member": "uint64",
           "name": "TagId",
@@ -664,7 +621,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "画像TAG描述（如“省份分布”）",
           "member": "string",
           "name": "TagDesc",
@@ -673,7 +629,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "画像Label对象列表（一个TAG对于N个Label，例如“省份分布”TAG对应“广东省”、“浙江省”等多个Label）",
           "member": "LabelDetailData",
           "name": "LabelDetailDataList",
@@ -688,7 +643,6 @@
       "document": "任务列表对象",
       "members": [
         {
-          "default": "",
           "document": "查询分页页码",
           "member": "uint64",
           "name": "PageNumber",
@@ -697,7 +651,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "查询分页大小",
           "member": "uint64",
           "name": "PageSize",
@@ -706,7 +659,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务列表总记录数",
           "member": "uint64",
           "name": "TotalCount",
@@ -715,7 +667,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务列表",
           "member": "ListModel",
           "name": "TaskList",
@@ -730,7 +681,6 @@
       "document": "UploadId请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "id标志的类型: 0:imei 7:IDFA 8:MD5(imei)",
           "example": "0",
           "member": "uint64",
@@ -739,7 +689,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "任务名称",
           "example": "Test123",
           "member": "string",
@@ -748,7 +697,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "ID列表（ID间使用换行符分割、然后使用Base64编码）",
           "example": "aaaa",
           "member": "string",

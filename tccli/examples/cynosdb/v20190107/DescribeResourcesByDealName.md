@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cynosdb DescribeResourcesByDealName --cli-unfold-argument  \
-    --DealName xxx
+    --DealName 201302542054
 ```
 
 Output: 

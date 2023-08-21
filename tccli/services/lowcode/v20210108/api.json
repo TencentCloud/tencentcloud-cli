@@ -19,7 +19,6 @@
       "document": "数据源详情列表",
       "members": [
         {
-          "default": "",
           "document": "数据源 ID",
           "example": "无",
           "member": "string",
@@ -29,7 +28,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "数据源名称",
           "example": "无",
           "member": "string",
@@ -39,7 +37,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "数据源标识",
           "example": "无",
           "member": "string",
@@ -49,7 +46,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "数据源类型",
           "example": "无",
           "member": "string",
@@ -59,7 +55,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "数据源描述",
           "example": "无",
           "member": "string",
@@ -69,7 +64,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "数据源配置",
           "example": "无",
           "member": "string",
@@ -79,7 +73,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "cms 项目状态, 0: 重新获取详情信息，1： 不需要重新获取详情信息",
           "example": "无",
           "member": "string",
@@ -89,7 +82,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "当前为环境 id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -99,7 +91,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "schema 版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -109,7 +100,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建者用户 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -119,7 +109,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -129,7 +118,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -139,7 +127,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "环境 id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -149,7 +136,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -159,7 +145,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "所属应用数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DataSourceLinkApp",
@@ -169,7 +154,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "发布时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -179,7 +163,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "子数据源ids\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -189,7 +172,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据源发布信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -199,7 +181,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "云函数状态 1 Active 2 Creating 3 Updating 4 Deleting  9 Deleted 11 CreatFailed  12 UpdateFailed 13 DeleteFailed 21 UpdateTimeOut\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
@@ -209,7 +190,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "自定义方法\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -219,7 +199,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "子数据源名数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -229,7 +208,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否旧数据源 1 新 0 旧\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -239,7 +217,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据源视图id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -249,7 +226,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据源属性配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -259,7 +235,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "外部数据源模板code\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -269,7 +244,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "外部数据源模板来源 0 空模板 1 腾讯文档 2 腾讯会议 3 企业微信 4 微信电商\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -279,7 +253,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "发布版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -289,7 +262,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "发布视图id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -299,7 +271,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据源子类型   \"database\" 标准模型 \"custom-database\" 自定义模型 \"system\" 系统模型 \"connector\" 连接器 \"custom-connector\" 自定义连接器 \"hidden\" 隐藏数据源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -309,7 +280,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "授权状态  0 授权无效 1 授权有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -319,7 +289,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据源授权信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TicketAuthInfo",
@@ -335,7 +304,6 @@
       "document": "数据详情列表",
       "members": [
         {
-          "default": "",
           "document": "数据详情列表",
           "example": "无",
           "member": "DataSourceDetail",
@@ -345,7 +313,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "数据源列表总个数",
           "example": "无",
           "member": "int64",
@@ -361,7 +328,6 @@
       "document": "数据源关联App信息",
       "members": [
         {
-          "default": "",
           "document": "应用Id",
           "example": "app-xx",
           "member": "string",
@@ -371,7 +337,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MyApp",
           "member": "string",
@@ -381,7 +346,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否编辑状态使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -391,7 +355,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否预览状态使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -401,7 +364,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "是否正式状态使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -417,7 +379,6 @@
       "document": "数据源模糊查询参数",
       "members": [
         {
-          "default": "",
           "document": "数据源标识模糊匹配",
           "example": "无",
           "member": "string",
@@ -427,7 +388,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "数据源名称模糊匹配",
           "example": "无",
           "member": "string",
@@ -443,7 +403,6 @@
       "document": "DescribeDataSourceList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "每页条数",
           "example": "无",
           "member": "int64",
@@ -452,7 +411,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "页码",
           "example": "无",
           "member": "int64",
@@ -461,7 +419,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "环境 id",
           "example": "无",
           "member": "string",
@@ -470,7 +427,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "应用id数组",
           "example": "无",
           "member": "string",
@@ -479,7 +435,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "数据源id数组",
           "example": "无",
           "member": "string",
@@ -488,7 +443,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "数据源名称数组",
           "example": "无",
           "member": "string",
@@ -497,7 +451,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "数据源类型 database-自建数据源；cloud-integration-自定义数据源",
           "example": "无",
           "member": "string",
@@ -506,7 +459,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "数据源模糊查询参数",
           "example": "无",
           "member": "DataSourceQueryOption",
@@ -515,7 +467,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "数据源视图Id数组",
           "example": "无",
           "member": "string",
@@ -524,7 +475,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "查询未关联应用的数据源，0:未关联，该参数配合 AppIds 参数一块使用",
           "example": "无",
           "member": "int64",
@@ -533,7 +483,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询应用绑定数据源: 0: 否,1: 是",
           "example": "无",
           "member": "int64",
@@ -542,7 +491,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询连接器 0 数据模型 1 连接器 2 自定义连接器",
           "example": "无",
           "member": "int64",
@@ -551,7 +499,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询数据源黑名单机制，比如不想要系统数据源[\"system\"]",
           "example": "[\"system\"]",
           "member": "string",
@@ -587,7 +534,6 @@
       "document": "数据源授权信息",
       "members": [
         {
-          "default": "",
           "document": "授权用户",
           "example": "无",
           "member": "string",

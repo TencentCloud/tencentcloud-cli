@@ -138,7 +138,6 @@
       "document": "玩家属性字典类型值",
       "members": [
         {
-          "default": "",
           "document": "属性字典 key [a-zA-Z0-9-\\.]*",
           "member": "string",
           "name": "Key",
@@ -147,7 +146,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "属性字典 value",
           "member": "int64",
           "name": "Value",
@@ -162,7 +160,6 @@
       "document": "CancelMatching请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "匹配 Code",
           "member": "string",
           "name": "MatchCode",
@@ -170,7 +167,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "要取消的匹配匹配票据 ID",
           "member": "string",
           "name": "MatchTicketId",
@@ -203,7 +199,6 @@
       "document": "CreateMatch请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "匹配名称，[a-zA-Z0-9-\\.]* 长度128",
           "member": "string",
           "name": "MatchName",
@@ -211,7 +206,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "规则code",
           "member": "string",
           "name": "RuleCode",
@@ -219,7 +213,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "超时时间，1-600秒",
           "member": "int64",
           "name": "Timeout",
@@ -227,7 +220,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否为匹配结果请求服务器资源，0表示否，1表示请求GSE资源",
           "member": "int64",
           "name": "ServerType",
@@ -235,7 +227,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "匹配描述，最长1024",
           "member": "string",
           "name": "MatchDesc",
@@ -243,7 +234,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "只支持https 和 http 协议",
           "member": "string",
           "name": "NotifyUrl",
@@ -251,7 +241,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "游戏服务器队列地域",
           "member": "string",
           "name": "ServerRegion",
@@ -259,7 +248,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "游戏服务器队列",
           "member": "string",
           "name": "ServerQueue",
@@ -267,7 +255,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "自定义推送数据",
           "member": "string",
           "name": "CustomPushData",
@@ -275,7 +262,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "游戏服务器会话数据",
           "member": "string",
           "name": "ServerSessionData",
@@ -283,7 +269,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "游戏属性，key-value结构的数组",
           "member": "StringKV",
           "name": "GameProperties",
@@ -291,7 +276,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "日志开关，0表示关，1表示开",
           "member": "int64",
           "name": "LogSwitch",
@@ -299,7 +283,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "标签，key-value结构的数组",
           "member": "StringKV",
           "name": "Tags",
@@ -332,7 +315,6 @@
       "document": "CreateRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "规则名称，[a-zA-Z0-9-\\.]* 长度128",
           "member": "string",
           "name": "RuleName",
@@ -340,7 +322,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "规则脚本，长度65535",
           "member": "string",
           "name": "RuleScript",
@@ -348,7 +329,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "规则描述，最长1024",
           "member": "string",
           "name": "RuleDesc",
@@ -356,7 +336,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "标签，key-value结构的数组，最多关联50组标签",
           "member": "StringKV",
           "name": "Tags",
@@ -389,7 +368,6 @@
       "document": "DeleteMatch请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "匹配code",
           "member": "string",
           "name": "MatchCode",
@@ -415,7 +393,6 @@
       "document": "DeleteRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "规则code",
           "member": "string",
           "name": "RuleCode",
@@ -441,7 +418,6 @@
       "document": "DescribeData请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "起始时间，单位：秒",
           "member": "int64",
           "name": "StartTime",
@@ -449,7 +425,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "截止时间，单位：秒",
           "member": "int64",
           "name": "EndTime",
@@ -457,7 +432,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "时间粒度，1表示1天；2表示1小时；3表示1分钟；4表示10分钟；5表示30分钟",
           "member": "int64",
           "name": "TimeType",
@@ -465,7 +439,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "匹配code",
           "member": "string",
           "name": "MatchCode",
@@ -505,7 +478,6 @@
       "document": "DescribeMatchCodes请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "偏移量，页码",
           "member": "int64",
           "name": "Offset",
@@ -513,7 +485,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "每页数量",
           "member": "int64",
           "name": "Limit",
@@ -521,7 +492,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "搜索的字符串",
           "member": "string",
           "name": "MatchCode",
@@ -561,7 +531,6 @@
       "document": "DescribeMatch请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "匹配code",
           "member": "string",
           "name": "MatchCode",
@@ -594,7 +563,6 @@
       "document": "DescribeMatches请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "当前页号，不传则获取所有有权限的资源。",
           "member": "int64",
           "name": "PageNumber",
@@ -602,7 +570,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "单页大小，不传则获取所有有权限的资源。",
           "member": "int64",
           "name": "PageSize",
@@ -610,7 +577,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询类型（可选）：match表示通过matchCode或者matchName来搜索，rule表示通过ruleCode或者ruleName来搜索，其余类型不做过滤处理。",
           "member": "string",
           "name": "SearchType",
@@ -618,7 +584,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询关键词，针对SearchType进行具体过滤的内容。",
           "member": "string",
           "name": "Keyword",
@@ -626,7 +591,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "标签列表，用于过滤。",
           "member": "Tag",
           "name": "Tags",
@@ -694,7 +658,6 @@
       "document": "DescribeMatchingProgress请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "匹配票据 ID列表, 列表长度 12。",
           "example": "无",
           "member": "MTicket",
@@ -739,7 +702,6 @@
       "document": "DescribeRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "规则code",
           "member": "string",
           "name": "RuleCode",
@@ -772,7 +734,6 @@
       "document": "DescribeRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "当前页号，不传则返回第一页",
           "member": "int64",
           "name": "PageNumber",
@@ -780,7 +741,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "单页大小，最大 30，不填默认30",
           "member": "int64",
           "name": "PageSize",
@@ -788,7 +748,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询类型（可选）：match表示通过matchCode或者matchName来搜索，rule表示通过ruleCode或者ruleName来搜索，其余类型不做过滤处理。",
           "member": "string",
           "name": "SearchType",
@@ -796,7 +755,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询关键词，针对SearchType进行具体过滤的内容。",
           "member": "string",
           "name": "Keyword",
@@ -804,7 +762,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "标签列表，用于过滤。",
           "member": "Tag",
           "name": "Tags",
@@ -872,7 +829,6 @@
       "document": "DescribeToken请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "匹配code",
           "member": "string",
           "name": "MatchCode",
@@ -912,7 +868,6 @@
       "document": "matchCode和匹配票据 ID组合结构",
       "members": [
         {
-          "default": "",
           "document": "匹配Code",
           "member": "string",
           "name": "MatchCode",
@@ -921,7 +876,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "匹配票据 ID",
           "member": "string",
           "name": "MatchTicketId",
@@ -936,7 +890,6 @@
       "document": "玩家匹配属性",
       "members": [
         {
-          "default": "",
           "document": "属性名 长度 128 [a-zA-Z0-9-\\.]*",
           "member": "string",
           "name": "Name",
@@ -945,7 +898,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "属性类型: 0 数值; 1 string; 默认 0",
           "member": "uint64",
           "name": "Type",
@@ -954,7 +906,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "数字属性值 默认 0.0",
           "member": "float",
           "name": "NumberValue",
@@ -963,7 +914,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "字符串属性值 长度 128 默认 \"\"",
           "member": "string",
           "name": "StringValue",
@@ -972,7 +922,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "list 属性值",
           "member": "string",
           "name": "ListValue",
@@ -981,7 +930,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "字典属性值",
           "member": "AttributeMap",
           "name": "MapValue",
@@ -996,7 +944,6 @@
       "document": "匹配code",
       "members": [
         {
-          "default": "",
           "document": "匹配code\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "MatchCode",
@@ -1011,7 +958,6 @@
       "document": "匹配信息",
       "members": [
         {
-          "default": "",
           "document": "匹配code",
           "member": "string",
           "name": "MatchCode",
@@ -1020,7 +966,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "匹配名称",
           "member": "string",
           "name": "MatchName",
@@ -1029,7 +974,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "匹配描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "MatchDesc",
@@ -1038,7 +982,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "规则code",
           "member": "string",
           "name": "RuleCode",
@@ -1047,7 +990,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
           "member": "string",
           "name": "CreateTime",
@@ -1056,7 +998,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "超时时间",
           "member": "int64",
           "name": "Timeout",
@@ -1065,7 +1006,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "接收通知地址",
           "member": "string",
           "name": "NotifyUrl",
@@ -1074,7 +1014,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否为匹配结果请求服务器资源，0否，1请求GSE资源",
           "member": "int64",
           "name": "ServerType",
@@ -1083,7 +1022,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "服务器队列所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ServerRegion",
@@ -1092,7 +1030,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "服务器队列\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ServerQueue",
@@ -1101,7 +1038,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "自定义推送数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "CustomPushData",
@@ -1110,7 +1046,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "游戏服务器会话数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ServerSessionData",
@@ -1119,7 +1054,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "游戏属性\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "StringKV",
           "name": "GameProperties",
@@ -1128,7 +1062,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "日志开关，0表示关，1表示开",
           "member": "int64",
           "name": "LogSwitch",
@@ -1137,7 +1070,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "日志集id\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "LogsetId",
@@ -1146,7 +1078,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "日志集名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "LogsetName",
@@ -1155,7 +1086,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "日志主题id\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "LogTopicId",
@@ -1164,7 +1094,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "日志主题名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "LogTopicName",
@@ -1173,7 +1102,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "StringKV",
           "name": "Tags",
@@ -1182,7 +1110,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "地区\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Region",
@@ -1191,7 +1118,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "用户AppId\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "AppId",
@@ -1200,7 +1126,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "用户主账号Uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Uin",
@@ -1209,7 +1134,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "用户创建账号Uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "CreateUin",
@@ -1218,7 +1142,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "RuleName",
@@ -1227,7 +1150,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "日志状态，0表示正常，1表示日志集不存在，2表示日志主题不存在，3表示日志集和日志主题都不存在。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "LogStatus",
@@ -1242,7 +1164,6 @@
       "document": "匹配票据信息",
       "members": [
         {
-          "default": "",
           "document": "匹配票据 ID长度 128 [a-zA-Z0-9-\\.]*",
           "member": "string",
           "name": "Id",
@@ -1251,7 +1172,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "匹配 Code",
           "member": "string",
           "name": "MatchCode",
@@ -1260,7 +1180,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "根据 MatchType 取不同的结构序列化结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "MatchResult",
@@ -1269,7 +1188,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "表示不同的匹配类型,NORMAL | GSE\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "MatchType",
@@ -1278,7 +1196,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "玩家信息列表",
           "member": "Player",
           "name": "Players",
@@ -1287,7 +1204,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "匹配状态: SEARCHING 匹配中; PLACING 匹配放置中; COMPLETED 匹配完成; CANCELLED 匹配取消; TIMEDOUT 匹配超时; FAILED 匹配失败",
           "member": "string",
           "name": "Status",
@@ -1296,7 +1212,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "匹配状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "StatusMessage",
@@ -1305,7 +1220,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "匹配状态原因\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "StatusReason",
@@ -1314,7 +1228,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "收到发起匹配请求的时间 eg: \"2020-08-17T08:14:38.077Z\"",
           "member": "string",
           "name": "StartTime",
@@ -1323,7 +1236,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "匹配请求因完成、失败、超时、被取消而停止执行的时间 eg: \"2020-08-17T08:14:38.077Z\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "EndTime",
@@ -1338,7 +1250,6 @@
       "document": "ModifyMatch请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "匹配名称，[a-zA-Z0-9-\\.]* 长度128",
           "member": "string",
           "name": "MatchName",
@@ -1346,7 +1257,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "规则code",
           "member": "string",
           "name": "RuleCode",
@@ -1354,7 +1264,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "超时时间，1-600秒",
           "member": "int64",
           "name": "Timeout",
@@ -1362,7 +1271,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "是否为匹配结果请求服务器资源，0表示否，1表示请求GSE资源",
           "member": "int64",
           "name": "ServerType",
@@ -1370,7 +1278,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "匹配code",
           "member": "string",
           "name": "MatchCode",
@@ -1378,7 +1285,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "匹配描述，最长1024",
           "member": "string",
           "name": "MatchDesc",
@@ -1386,7 +1292,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "只支持 http 和 https 协议",
           "member": "string",
           "name": "NotifyUrl",
@@ -1394,7 +1299,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "游戏服务器队列地域",
           "member": "string",
           "name": "ServerRegion",
@@ -1402,7 +1306,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "游戏服务器队列",
           "member": "string",
           "name": "ServerQueue",
@@ -1410,7 +1313,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "自定义推送数据",
           "member": "string",
           "name": "CustomPushData",
@@ -1418,7 +1320,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "游戏服务器会话数据",
           "member": "string",
           "name": "ServerSessionData",
@@ -1426,7 +1327,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "游戏属性，key-value结构的数组",
           "member": "StringKV",
           "name": "GameProperties",
@@ -1434,7 +1334,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "日志开关，0表示关，1表示开",
           "member": "int64",
           "name": "LogSwitch",
@@ -1442,7 +1341,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "标签，key-value结构的数组",
           "member": "StringKV",
           "name": "Tags",
@@ -1475,7 +1373,6 @@
       "document": "ModifyRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "规则code",
           "member": "string",
           "name": "RuleCode",
@@ -1483,7 +1380,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "规则名称，只能包含数字、字母、. 和 -",
           "member": "string",
           "name": "RuleName",
@@ -1491,7 +1387,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "规则描述，最长1024",
           "member": "string",
           "name": "RuleDesc",
@@ -1499,7 +1394,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "标签，key-value结构的数组，最多关联50组标签",
           "member": "StringKV",
           "name": "Tags",
@@ -1532,7 +1426,6 @@
       "document": "ModifyToken请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "匹配Code。",
           "member": "string",
           "name": "MatchCode",
@@ -1540,7 +1433,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "单位秒，取值0-1800。此参数表示当前Token被替换后，GPM将持续推送原Token的时间。在CompatibleSpan时间范围内，用户将在事件消息中收到当前和原始Token。",
           "member": "uint64",
           "name": "CompatibleSpan",
@@ -1548,7 +1440,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "Token，[a-zA-Z0-9-_.], 长度0-64。如果为空，将由GPM随机生成。",
           "member": "string",
           "name": "MatchToken",
@@ -1588,7 +1479,6 @@
       "document": "玩家信息。",
       "members": [
         {
-          "default": "",
           "document": "玩家 PlayerId 长度 128 [a-zA-Z\\d-\\._]*",
           "example": "Id",
           "member": "string",
@@ -1598,7 +1488,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "玩家昵称，长度 128",
           "example": "Name",
           "member": "string",
@@ -1608,7 +1497,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "玩家匹配属性，最多 10 条",
           "example": "MatchAttributes",
           "member": "MatchAttribute",
@@ -1618,7 +1506,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "队伍名，可以传递不同队伍名，长度 128 [a-zA-Z0-9-\\.]*",
           "example": "Team",
           "member": "string",
@@ -1628,7 +1515,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "自定义玩家状态 透传参数 [0, 99999]",
           "example": "CustomPlayerStatus",
           "member": "uint64",
@@ -1638,7 +1524,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "自定义玩家信息 透传参数 长度 1024",
           "example": "CustomProfile",
           "member": "string",
@@ -1648,7 +1533,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "各区域延迟，最多 20 条",
           "example": "RegionLatencies",
           "member": "RegionLatency",
@@ -1664,7 +1548,6 @@
       "document": "玩家到各区域的延迟",
       "members": [
         {
-          "default": "",
           "document": "地域\nap-beijing          华北地区(北京)\nap-chengdu          西南地区(成都)\nap-guangzhou          华南地区(广州)\nap-hongkong          港澳台地区(中国香港)\nap-seoul          亚太地区(首尔)\nap-shanghai          华东地区(上海)\nap-singapore          东南亚地区(新加坡)\neu-frankfurt          欧洲地区(法兰克福)\nna-siliconvalley          美国西部(硅谷)\nna-toronto          北美地区(多伦多)\nap-mumbai          亚太地区(孟买)\nna-ashburn          美国东部(弗吉尼亚)\nap-bangkok          亚太地区(曼谷)\neu-moscow          欧洲地区(莫斯科)\nap-tokyo          亚太地区(东京)",
           "member": "string",
           "name": "Region",
@@ -1673,7 +1556,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "毫秒延迟 0～999999",
           "member": "uint64",
           "name": "Latency",
@@ -1688,7 +1570,6 @@
       "document": "匹配概况",
       "members": [
         {
-          "default": "",
           "document": "总次数",
           "member": "string",
           "name": "TotalTimes",
@@ -1697,7 +1578,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "成功率",
           "member": "float",
           "name": "SuccessPercent",
@@ -1706,7 +1586,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "超时率",
           "member": "float",
           "name": "TimeoutPercent",
@@ -1715,7 +1594,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "失败率",
           "member": "float",
           "name": "FailPercent",
@@ -1724,7 +1602,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "平均匹配时间",
           "member": "float",
           "name": "AverageSec",
@@ -1739,7 +1616,6 @@
       "document": "统计数据之趋势数据",
       "members": [
         {
-          "default": "",
           "document": "总次数",
           "member": "string",
           "name": "TotalList",
@@ -1748,7 +1624,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "被取消次数",
           "member": "string",
           "name": "CancelList",
@@ -1757,7 +1632,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "成功次数",
           "member": "string",
           "name": "SuccessList",
@@ -1766,7 +1640,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "失败次数",
           "member": "string",
           "name": "FailList",
@@ -1775,7 +1648,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "超时次数",
           "member": "string",
           "name": "TimeoutList",
@@ -1784,7 +1656,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "时间数组，单位：秒",
           "member": "string",
           "name": "TimeList",
@@ -1799,7 +1670,6 @@
       "document": "规则简单信息",
       "members": [
         {
-          "default": "",
           "document": "规则名称 [a-zA-Z\\d-\\.]*",
           "member": "string",
           "name": "RuleName",
@@ -1808,7 +1678,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "关联匹配",
           "member": "StringKV",
           "name": "MatchCodeList",
@@ -1817,7 +1686,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
           "member": "string",
           "name": "CreateTime",
@@ -1826,7 +1694,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则code",
           "member": "string",
           "name": "RuleCode",
@@ -1841,7 +1708,6 @@
       "document": "规则信息",
       "members": [
         {
-          "default": "",
           "document": "规则名称 [a-zA-Z0-9-\\.]*",
           "member": "string",
           "name": "RuleName",
@@ -1850,7 +1716,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
           "member": "string",
           "name": "CreateTime",
@@ -1859,7 +1724,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "RuleDesc",
@@ -1868,7 +1732,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "规则脚本",
           "member": "string",
           "name": "RuleScript",
@@ -1877,7 +1740,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "StringKV",
           "name": "Tags",
@@ -1886,7 +1748,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "关联匹配\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "StringKV",
           "name": "MatchCodeList",
@@ -1895,7 +1756,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "规则code",
           "member": "string",
           "name": "RuleCode",
@@ -1904,7 +1764,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "地区\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Region",
@@ -1913,7 +1772,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "用户AppId\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "AppId",
@@ -1922,7 +1780,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "用户Uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Uin",
@@ -1931,7 +1788,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "用户OwnerUin\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "CreateUin",
@@ -1946,7 +1802,6 @@
       "document": "StartMatchingBackfill请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "匹配code",
           "example": "match_code",
           "member": "string",
@@ -1955,7 +1810,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "玩家信息",
           "example": "无",
           "member": "Player",
@@ -1964,7 +1818,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "游戏服务器回话 ID [1-256] 个ASCII 字符",
           "example": "game_server_session_id",
           "member": "string",
@@ -1973,7 +1826,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "匹配票据 Id 默认 \"\" 为空则由 GPM 自动生成 长度 [1, 128]",
           "example": "match_ticket_id",
           "member": "string",
@@ -2009,7 +1861,6 @@
       "document": "StartMatching请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "匹配 Code。",
           "member": "string",
           "name": "MatchCode",
@@ -2017,7 +1868,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "玩家信息 最多 200 条。",
           "member": "Player",
           "name": "Players",
@@ -2025,7 +1875,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "匹配票据 ID 默认空字符串，为空则由 GPM 自动生成 长度 128，只能包含数字、字母、. 和 -",
           "member": "string",
           "name": "MatchTicketId",
@@ -2065,7 +1914,6 @@
       "document": "string keyValue解构",
       "members": [
         {
-          "default": "",
           "document": "键",
           "member": "string",
           "name": "Key",
@@ -2074,7 +1922,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "值",
           "member": "string",
           "name": "Value",
@@ -2089,7 +1936,6 @@
       "document": "标签键值对",
       "members": [
         {
-          "default": "",
           "document": "标签键",
           "member": "string",
           "name": "TagKey",
@@ -2098,7 +1944,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签值",
           "member": "string",
           "name": "TagValue",

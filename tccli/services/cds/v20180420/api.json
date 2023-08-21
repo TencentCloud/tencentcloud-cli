@@ -54,7 +54,6 @@
       "document": "数据安全产品实例信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "",
@@ -65,7 +64,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户AppId",
           "example": "",
@@ -76,7 +74,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户Uin",
           "example": "",
@@ -87,7 +84,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "",
@@ -98,7 +94,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "续费标识",
           "example": "",
@@ -109,7 +104,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属地域",
           "example": "",
@@ -120,7 +114,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费模式（数据安全审计只支持预付费：1）",
           "example": "",
@@ -131,7 +124,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例状态： 0，未生效；1：正常运行； 2：被隔离； 3，已过期",
           "example": "",
@@ -142,7 +134,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例被隔离时间，格式：yyyy-mm-dd HH:ii:ss",
           "example": "",
@@ -153,7 +144,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例创建时间，格式： yyyy-mm-dd HH:ii:ss",
           "example": "",
@@ -164,7 +154,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例过期时间，格式：yyyy-mm-dd HH:ii:ss",
           "example": "",
@@ -175,7 +164,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -186,7 +174,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例公网IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -197,7 +184,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例私网IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -208,7 +194,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例类型（版本）",
           "example": "",
@@ -219,7 +204,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -236,7 +220,6 @@
       "document": "数据安全审计产品规格信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规格描述",
           "example": "",
@@ -247,7 +230,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规格名称",
           "example": "",
@@ -258,7 +240,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大吞吐量",
           "example": "",
@@ -269,7 +250,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大实例数",
           "example": "",
@@ -280,7 +260,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入库速率（每小时）",
           "example": "",
@@ -291,7 +270,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大在线存储量，单位：条",
           "example": "",
@@ -302,7 +280,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大归档存储量，单位：条",
           "example": "",
@@ -380,7 +357,6 @@
       "document": "DescribeDbauditInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询条件地域",
           "example": "",
@@ -390,7 +366,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制数目，默认10， 最大50",
           "example": "",
@@ -400,7 +375,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认1",
           "example": "",
@@ -472,7 +446,6 @@
       "document": "InquiryPriceDbauditInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例规格，取值范围： cdsaudit，cdsaudit_adv， cdsaudit_ent 分别为合规版，高级版，企业版",
           "example": "",
@@ -482,7 +455,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "询价类型： renew，续费；newbuy，新购",
           "example": "",
@@ -492,7 +464,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买实例的时长。取值范围：1（y/m），2（y/m）,，3（y/m），4（m）， 5（m），6（m）， 7（m），8（m），9（m）， 10（m）",
           "example": "",
@@ -502,7 +473,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买时长单位，y：年；m：月",
           "example": "",
@@ -512,7 +482,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例所在地域",
           "example": "",
@@ -558,7 +527,6 @@
       "document": "ModifyDbauditInstancesRenewFlag请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "1453498545",
@@ -568,7 +536,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0，表示默认状态(用户未设置，即初始状态)；1，表示自动续费；2，表示明确不自动续费",
           "example": "1",
@@ -596,7 +563,6 @@
       "document": "数盾地域信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域ID",
           "example": "",
@@ -607,7 +573,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域名称",
           "example": "",
@@ -618,7 +583,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域描述",
           "example": "",
@@ -629,7 +593,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域可用状态",
           "example": "",

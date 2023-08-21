@@ -642,7 +642,6 @@
       "document": "云api直接绑定设备出参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID/设备名",
           "example": "fsdf",
@@ -653,7 +652,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "sdf",
@@ -664,7 +662,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名",
           "example": "sdf",
@@ -675,7 +672,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备别名",
           "example": "sdfsdf",
@@ -686,7 +682,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "icon地址",
           "example": "sdfsdf",
@@ -697,7 +692,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "家庭ID",
           "example": "sdffsd",
@@ -708,7 +702,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房间ID",
           "example": "sdfds",
@@ -719,7 +712,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备类型",
           "example": "0",
@@ -730,7 +722,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "23423423",
@@ -741,7 +732,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
           "example": "234234234",
@@ -758,7 +748,6 @@
       "document": "获取返回列表的详情。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "量产ID",
           "example": "",
@@ -769,7 +758,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "",
@@ -780,7 +768,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "烧录方式",
           "example": "",
@@ -791,7 +778,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -802,7 +788,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品名称",
           "example": "",
@@ -819,7 +804,6 @@
       "document": "BindDeviceInfo",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID。",
           "example": "",
@@ -830,7 +814,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称。",
           "example": "",
@@ -847,7 +830,6 @@
       "document": "BindDevices请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网关设备的产品ID。",
           "example": "12345ABCDE",
@@ -857,7 +839,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关设备的设备名。",
           "example": "test",
@@ -867,7 +848,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被绑定设备的产品ID。",
           "example": "ABCDE12345",
@@ -877,7 +857,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被绑定的多个设备名。",
           "example": "[\"test0\\n\"]",
@@ -905,7 +884,6 @@
       "document": "绑定、未绑定产品详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID。",
           "example": "productud",
@@ -916,7 +894,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品名称。",
           "example": "productname",
@@ -927,7 +904,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品所属项目ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "projectid",
@@ -938,7 +914,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物模型类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -949,7 +924,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品分组模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -960,7 +934,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -971,7 +944,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "连接类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "else",
@@ -982,7 +954,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dev",
@@ -993,7 +964,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品拥有者名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1010,7 +980,6 @@
       "document": "BindProducts请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网关产品ID。",
           "example": "9I5O8HSUDJ",
@@ -1020,7 +989,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待绑定的子产品ID数组。",
           "example": "[\"12345ABCDE\\r\\n\"]",
@@ -1048,7 +1016,6 @@
       "document": "CallDeviceActionAsync请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品Id",
           "example": "TOIDHQ3AOQ",
@@ -1058,7 +1025,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称",
           "example": "light1",
@@ -1068,7 +1034,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品数据模板中行为功能的标识符，由开发者自行根据设备的应用场景定义",
           "example": "openlight",
@@ -1078,7 +1043,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输入参数",
           "example": "{\"vol\":4}",
@@ -1126,7 +1090,6 @@
       "document": "CallDeviceActionSync请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品Id",
           "example": "TOIDHQ3AOQ",
@@ -1136,7 +1099,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称",
           "example": "light1",
@@ -1146,7 +1108,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品数据模板中行为功能的标识符，由开发者自行根据设备的应用场景定义",
           "example": "openlight",
@@ -1156,7 +1117,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输入参数",
           "example": "{\"vol\":4}",
@@ -1214,7 +1174,6 @@
       "document": "ControlDeviceData请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "BKTTNGIQOG",
@@ -1224,7 +1183,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称",
           "example": "devtest01",
@@ -1234,7 +1192,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "属性数据, JSON格式字符串, 注意字段需要在物模型属性里定义",
           "example": "{\"brightness\":1}",
@@ -1244,7 +1201,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求类型 , 不填该参数或者 desired 表示下发属性给设备,  reported 表示模拟设备上报属性",
           "example": "desired",
@@ -1254,7 +1210,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备ID，该字段有值将代替 ProductId/DeviceName , 通常情况不需要填写",
           "example": "BKTTNGIQOG/devtest01",
@@ -1264,7 +1219,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上报数据UNIX时间戳(毫秒), 仅对Method:reported有效",
           "example": "1642127909000",
@@ -1312,7 +1266,6 @@
       "document": "CreateBatchProduction请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "prj-pq00mstg",
@@ -1322,7 +1275,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "R32ONVL0EU",
@@ -1332,7 +1284,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "烧录方式，0为直接烧录，1为动态注册。",
           "example": "0",
@@ -1342,7 +1293,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生成方式，0为系统生成，1为文件上传。",
           "example": "0",
@@ -1352,7 +1302,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件上传URL，用于文件上传时填写。",
           "example": "http://tencent.com",
@@ -1362,7 +1311,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "量产数量，用于系统生成时填写。",
           "example": "5",
@@ -1372,7 +1320,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否生成二维码,0为不生成，1为生成。",
           "example": "0",
@@ -1430,7 +1377,6 @@
       "document": "CreateDevice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID。",
           "example": "LJ0INDNU7Us",
@@ -1440,7 +1386,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称。命名规则：[a-zA-Z0-9:_-]{1,48}。",
           "example": "device2",
@@ -1450,7 +1395,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "LoRaWAN 设备地址",
           "example": "xxx",
@@ -1460,7 +1404,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "LoRaWAN 应用密钥",
           "example": "xxx",
@@ -1470,7 +1413,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "LoRaWAN 设备唯一标识",
           "example": "xxx",
@@ -1480,7 +1422,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "LoRaWAN 应用会话密钥",
           "example": "xxx",
@@ -1490,7 +1431,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "LoRaWAN 网络会话密钥",
           "example": "xxx",
@@ -1500,7 +1440,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "手动指定设备的PSK密钥",
           "example": "NTBiMmNlZThiZTM5YjU0YjNmZWI2NjVxxxU0Njc0OTU=",
@@ -1538,7 +1477,6 @@
       "document": "CreateFenceBind请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "围栏Id",
           "example": "6",
@@ -1548,7 +1486,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "围栏绑定的产品列表",
           "example": "无",
@@ -1576,7 +1513,6 @@
       "document": "CreateLoRaFrequency请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "频点配置名称",
           "example": "F10",
@@ -1586,7 +1522,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据上行信道",
           "example": "[486300000]",
@@ -1596,7 +1531,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据下行RX1信道",
           "example": "[486300000]",
@@ -1606,7 +1540,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据下行RX2信道",
           "example": "[486300000]",
@@ -1616,7 +1549,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入网上行信道",
           "example": "[486300000]",
@@ -1626,7 +1558,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入网下行RX1信道",
           "example": "[486300000]",
@@ -1636,7 +1567,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入网下行RX2信道",
           "example": "[486300000]",
@@ -1646,7 +1576,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "频点配置描述",
           "example": "test",
@@ -1684,7 +1613,6 @@
       "document": "CreateLoRaGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "LoRa 网关Id",
           "example": "ff00000000000002",
@@ -1694,7 +1622,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关名称",
           "example": "ddgws",
@@ -1704,7 +1631,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "详情描述",
           "example": "fortest",
@@ -1714,7 +1640,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "位置坐标",
           "example": "无",
@@ -1724,7 +1649,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "位置信息",
           "example": "tfine",
@@ -1734,7 +1658,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "位置详情",
           "example": "fyd",
@@ -1744,7 +1667,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否公开",
           "example": "true",
@@ -1754,7 +1676,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "频点ID",
           "example": "无",
@@ -1792,7 +1713,6 @@
       "document": "CreatePositionFence请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "位置空间Id",
           "example": "5bf5407370cc40848f39a2896a2ab052",
@@ -1802,7 +1722,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "围栏名称",
           "example": "TestFence",
@@ -1812,7 +1731,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "围栏区域信息，采用 GeoJSON 格式",
           "example": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[113.9498,22.5319],[113.9709,22.5319],[113.9709,22.5723],[113.9498,22.5723],[113.9498,22.5319]]]},\"properties\":null}]}",
@@ -1822,7 +1740,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "围栏描述",
           "example": "TT",
@@ -1850,7 +1767,6 @@
       "document": "CreatePositionSpace请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "ProjectId",
@@ -1860,7 +1776,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "空间名称",
           "example": "space",
@@ -1870,7 +1785,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权类型，0：只读 1：读写",
           "example": "0",
@@ -1880,7 +1794,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品列表",
           "example": "[\"ProductId\"]",
@@ -1890,7 +1803,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "example": "service",
@@ -1900,7 +1812,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "缩略图",
           "example": "http://www.example.com",
@@ -1938,7 +1849,6 @@
       "document": "CreateProject请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目名称",
           "example": "TestProjectName",
@@ -1948,7 +1858,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目描述",
           "example": "projcet_desc",
@@ -1958,7 +1867,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，不带实例ID，默认为公共实例",
           "example": "instance_id",
@@ -1996,7 +1904,6 @@
       "document": "CreateStudioProduct请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品名称，名称不能和已经存在的产品名称重复。命名规则：[a-zA-Z0-9:_-]{1,32}",
           "example": "name",
@@ -2006,7 +1913,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品分组模板ID , ( 自定义模板填写1 , 控制台调用会使用预置的其他ID)",
           "example": "10",
@@ -2016,7 +1922,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品类型 填写 ( 0 普通产品 ， 5 网关产品)",
           "example": "0",
@@ -2026,7 +1931,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加密类型 ，1表示证书认证，2表示秘钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式",
           "example": "1",
@@ -2036,7 +1940,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "连接类型 可以填写 wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、else、sub_zigbee、sub_ble、sub_433mhz、sub_else、sub_blemesh",
           "example": "wifi",
@@ -2046,7 +1949,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据协议 (1 使用物模型 2 为自定义)",
           "example": "1",
@@ -2056,7 +1958,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品描述",
           "example": "desc",
@@ -2066,7 +1967,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品的项目ID",
           "example": "prj-zunfat46",
@@ -2104,7 +2004,6 @@
       "document": "CreateTopicPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "",
@@ -2114,7 +2013,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Topic名称",
           "example": "",
@@ -2124,7 +2022,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Topic权限，1发布，2订阅，3订阅和发布",
           "example": "",
@@ -2152,7 +2049,6 @@
       "document": "CreateTopicRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则名称",
           "example": "test_create",
@@ -2162,7 +2058,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则内容",
           "example": "无",
@@ -2190,7 +2085,6 @@
       "document": "DeleteDevice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID。",
           "example": "KO9JAFB9W5",
@@ -2200,7 +2094,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称。",
           "example": "dev",
@@ -2210,7 +2103,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否删除绑定设备",
           "example": "false",
@@ -2258,7 +2150,6 @@
       "document": "DeleteDevices请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "多个设备标识",
           "example": "无",
@@ -2306,7 +2197,6 @@
       "document": "DeleteFenceBind请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "围栏Id",
           "example": "1",
@@ -2316,7 +2206,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "围栏绑定的产品信息",
           "example": "无",
@@ -2344,7 +2233,6 @@
       "document": "DeleteLoRaFrequency请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "频点唯一ID",
           "example": "0cdd67ed-c198-403f-a2b7-043e09c7639d",
@@ -2372,7 +2260,6 @@
       "document": "DeleteLoRaGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "LoRa 网关 Id",
           "example": "ff00000000000002",
@@ -2400,7 +2287,6 @@
       "document": "DeletePositionFence请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "位置空间Id",
           "example": "5bf5407370cc40848f39a2896a2ab052",
@@ -2410,7 +2296,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "围栏Id",
           "example": "1",
@@ -2438,7 +2323,6 @@
       "document": "DeletePositionSpace请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "位置空间Id",
           "example": "Id",
@@ -2466,7 +2350,6 @@
       "document": "DeleteProject请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "prj-z6j2tyr0",
@@ -2494,7 +2377,6 @@
       "document": "DeleteStudioProduct请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "AVBRC1R7QS",
@@ -2522,7 +2404,6 @@
       "document": "DeleteTopicPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "",
@@ -2532,7 +2413,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Topic名称",
           "example": "",
@@ -2560,7 +2440,6 @@
       "document": "DeleteTopicRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则名",
           "example": "test_create",
@@ -2588,7 +2467,6 @@
       "document": "DescribeBatchProduction请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "R32ONVL0EU",
@@ -2598,7 +2476,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "量产ID",
           "example": "LC-ya6zinv9",
@@ -2686,7 +2563,6 @@
       "document": "DescribeBindedProducts请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网关产品ID",
           "example": "ABCDE12345",
@@ -2696,7 +2572,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量",
           "example": "0",
@@ -2706,7 +2581,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页大小",
           "example": "10",
@@ -2716,7 +2590,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否跨账号绑定产品",
           "example": "1",
@@ -2764,7 +2637,6 @@
       "document": "DescribeDeviceBindGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品Id",
           "example": "productId",
@@ -2774,7 +2646,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名",
           "example": "dev",
@@ -2852,7 +2723,6 @@
       "document": "DescribeDeviceDataHistory请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "区间开始时间（Unix 时间戳，毫秒级）",
           "example": "1548677099000",
@@ -2862,7 +2732,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "区间结束时间（Unix 时间戳，毫秒级）",
           "example": "1548763499000",
@@ -2872,7 +2741,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "LJ0INDNU7U",
@@ -2882,7 +2750,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称",
           "example": "light1",
@@ -2892,7 +2759,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "属性字段名称，对应数据模板中功能属性的标识符",
           "example": "color",
@@ -2902,7 +2768,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回条数",
           "example": "5",
@@ -2912,7 +2777,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检索上下文",
           "example": "xxx",
@@ -2980,7 +2844,6 @@
       "document": "DescribeDeviceData请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "LJ0INDNU7U",
@@ -2990,7 +2853,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称",
           "example": "light1",
@@ -3000,7 +2862,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备ID，该字段有值将代替 ProductId/DeviceName",
           "example": "LK7LIPL6GE",
@@ -3038,7 +2899,6 @@
       "document": "DescribeDeviceLocationSolve请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "ZUBPP0Y2G9",
@@ -3048,7 +2908,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称",
           "example": "D1",
@@ -3058,7 +2917,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "定位解析类型，wifi或GNSSNavigation",
           "example": "wifi",
@@ -3068,7 +2926,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "LoRaEdge卫星导航电文",
           "example": "1",
@@ -3078,7 +2935,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "wifi信息",
           "example": "无",
@@ -3146,7 +3002,6 @@
       "document": "DescribeDevicePositionList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品标识列表",
           "example": "[\"X4912BAIVR\"]",
@@ -3156,7 +3011,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "坐标类型",
           "example": "3",
@@ -3166,7 +3020,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移",
           "example": "0",
@@ -3176,7 +3029,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页的大小",
           "example": "100",
@@ -3278,7 +3130,6 @@
       "document": "DescribeFenceBindList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "围栏Id",
           "example": "1",
@@ -3288,7 +3139,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "翻页偏移量，0起始",
           "example": "0",
@@ -3298,7 +3148,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大返回结果数",
           "example": "10",
@@ -3346,7 +3195,6 @@
       "document": "DescribeFenceEventList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "围栏告警信息的查询起始时间，Unix时间，单位为毫秒",
           "example": "1604030050000",
@@ -3356,7 +3204,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "围栏告警信息的查询结束时间，Unix时间，单位为毫秒",
           "example": "1604039050000",
@@ -3366,7 +3213,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "围栏Id",
           "example": "146",
@@ -3376,7 +3222,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "翻页偏移量，0起始",
           "example": "0",
@@ -3386,7 +3231,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大返回结果数",
           "example": "10",
@@ -3396,7 +3240,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警对应的产品Id",
           "example": "X4912BAIVR",
@@ -3406,7 +3249,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警对应的设备名称",
           "example": "dev1",
@@ -3599,7 +3441,6 @@
       "document": "DescribeGatewayBindDevices请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网关设备的产品ID",
           "example": "12345ABCDE",
@@ -3609,7 +3450,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关设备的设备名",
           "example": "test",
@@ -3619,7 +3459,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子产品的ID",
           "example": "ABCDE12345",
@@ -3629,7 +3468,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页的偏移",
           "example": "0",
@@ -3639,7 +3477,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页的页大小",
           "example": "10",
@@ -3697,7 +3534,6 @@
       "document": "DescribeGatewaySubDeviceList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网关产品ID",
           "example": "productId",
@@ -3707,7 +3543,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关设备名称",
           "example": "deviceName",
@@ -3717,7 +3552,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移",
           "example": "0",
@@ -3727,7 +3561,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页的大小",
           "example": "20",
@@ -3775,7 +3608,6 @@
       "document": "DescribeGatewaySubProducts请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网关产品ID",
           "example": "gatewayProductId",
@@ -3785,7 +3617,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页的偏移量",
           "example": "1",
@@ -3795,7 +3626,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页的大小",
           "example": "10",
@@ -3805,7 +3635,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目Id",
           "example": "pri_1233545",
@@ -3815,7 +3644,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否跨账号产品",
           "example": "1",
@@ -3863,7 +3691,6 @@
       "document": "DescribeLoRaFrequency请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "频点唯一ID",
           "example": "0cdd67ed-c198-403f-a2b7-043e09c7639d",
@@ -3901,7 +3728,6 @@
       "document": "DescribeModelDefinition请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "PKRXJVL39S",
@@ -3939,7 +3765,6 @@
       "document": "DescribePositionFenceList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "位置空间Id",
           "example": "5bf5407370cc40848f39a2896a2ab052",
@@ -3949,7 +3774,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "翻页偏移量，0起始",
           "example": "0",
@@ -3959,7 +3783,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大返回结果数",
           "example": "100",
@@ -4043,7 +3866,6 @@
       "document": "DescribeSpaceFenceEventList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "位置空间Id",
           "example": "fccea82eb28b4943b654a35ce9dd5952",
@@ -4053,7 +3875,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "围栏告警信息的查询起始时间，Unix时间，单位为毫秒",
           "example": "1579572927008",
@@ -4063,7 +3884,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "围栏告警信息的查询结束时间，Unix时间，单位为毫秒",
           "example": "1611108927008",
@@ -4073,7 +3893,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "翻页偏移量，0起始",
           "example": "0",
@@ -4083,7 +3902,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大返回结果数",
           "example": "10",
@@ -4167,7 +3985,6 @@
       "document": "DescribeTopicPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "",
@@ -4177,7 +3994,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Topic名字",
           "example": "",
@@ -4232,7 +4048,6 @@
       "document": "DescribeTopicRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则名称。",
           "example": "test_create",
@@ -4270,7 +4085,6 @@
       "document": "DeviceData",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备证书，用于 TLS 建立链接时校验客户端身份。采用非对称加密时返回该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4281,7 +4095,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4292,7 +4105,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备私钥，用于 TLS 建立链接时校验客户端身份，腾讯云后台不保存，请妥善保管。采用非对称加密时返回该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4303,7 +4115,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对称加密密钥，base64编码。采用对称加密时返回该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4320,7 +4131,6 @@
       "document": "设备历史数据结构",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "时间点，毫秒时间戳",
           "example": "",
@@ -4331,7 +4141,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段取值",
           "example": "",
@@ -4564,7 +4373,6 @@
       "document": "设备位置详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称",
           "example": "",
@@ -4575,7 +4383,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "位置信息时间",
           "example": "",
@@ -4586,7 +4393,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备经度信息",
           "example": "",
@@ -4597,7 +4403,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备纬度信息",
           "example": "",
@@ -4614,7 +4419,6 @@
       "document": "设备签名",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备名",
           "example": "",
@@ -4625,7 +4429,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备签名",
           "example": "",
@@ -4688,7 +4491,6 @@
       "document": "ProductId -> DeviceName",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品id",
           "example": "JZYTG1M2EN",
@@ -4699,7 +4501,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称",
           "example": "dev01",
@@ -4716,7 +4517,6 @@
       "document": "DirectBindDeviceInFamily请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "小程序appid",
           "example": "sdfsdf",
@@ -4726,7 +4526,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户ID",
           "example": "234234234",
@@ -4736,7 +4535,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "家庭ID",
           "example": "dsfsdf",
@@ -4746,7 +4544,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "sdffsdf",
@@ -4756,7 +4553,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名",
           "example": "sdfsd",
@@ -4766,7 +4562,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房间ID",
           "example": "2",
@@ -4804,7 +4599,6 @@
       "document": "DisableTopicRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则名称",
           "example": "test_create",
@@ -4832,7 +4626,6 @@
       "document": "EnableTopicRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则名称",
           "example": "test_create",
@@ -4860,7 +4653,6 @@
       "document": "设备事件的搜索结果项",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件的时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4871,7 +4663,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件的产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4882,7 +4673,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件的设备名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4893,7 +4683,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件的标识符ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4904,7 +4693,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件的类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4915,7 +4703,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件的数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4932,7 +4719,6 @@
       "document": "子设备详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品Id",
           "example": "productId",
@@ -4943,7 +4729,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称",
           "example": "devicename",
@@ -4954,7 +4739,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备ID",
           "example": "deviceId",
@@ -4965,7 +4749,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备别名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aliasName",
@@ -4976,7 +4759,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备绑定的家庭ID",
           "example": "familyId",
@@ -4987,7 +4769,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备所在的房间ID，默认\"0\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "roomId",
@@ -4998,7 +4779,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "url",
@@ -5009,7 +4789,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "grid图标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "url",
@@ -5020,7 +4799,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备绑定时间戳",
           "example": "1627459546",
@@ -5031,7 +4809,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备更新时间戳",
           "example": "1627459546",
@@ -5048,7 +4825,6 @@
       "document": "围栏告警位置点",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "围栏告警时间",
           "example": "",
@@ -5059,7 +4835,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "围栏告警位置的经度",
           "example": "",
@@ -5070,7 +4845,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "围栏告警位置的纬度",
           "example": "",
@@ -5087,7 +4861,6 @@
       "document": "围栏绑定的设备信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称",
           "example": "",
@@ -5098,7 +4871,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警条件(In，进围栏报警；Out，出围栏报警；InOrOut，进围栏或者出围栏均报警)",
           "example": "",
@@ -5109,7 +4881,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否使能围栏(true，使能；false，禁用)",
           "example": "",
@@ -5120,7 +4891,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警处理方法",
           "example": "",
@@ -5137,7 +4907,6 @@
       "document": "围栏绑定的产品信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "围栏绑定的设备信息",
           "example": "",
@@ -5148,7 +4917,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "围栏绑定的产品Id",
           "example": "",
@@ -5165,7 +4933,6 @@
       "document": "围栏事件详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "围栏事件的产品Id",
           "example": "",
@@ -5176,7 +4943,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "围栏事件的设备名称",
           "example": "",
@@ -5187,7 +4953,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "围栏Id",
           "example": "",
@@ -5198,7 +4963,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "围栏事件的告警类型（In，进围栏报警；Out，出围栏报警；InOrOut，进围栏或者出围栏均报警）",
           "example": "",
@@ -5209,7 +4973,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "围栏事件的设备位置信息",
           "example": "",
@@ -5226,7 +4989,6 @@
       "document": "设备固件详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "固件版本",
           "example": "1.0.0",
@@ -5237,7 +4999,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "固件MD5值",
           "example": "bd9dc3549a0d75bb242d9d4f5842f221",
@@ -5248,7 +5009,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "固件创建时间",
           "example": "1619322032",
@@ -5259,7 +5019,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "productName",
@@ -5270,7 +5029,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "固件名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "firmwareName",
@@ -5281,7 +5039,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "固件描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "firmwareDesc",
@@ -5292,7 +5049,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "productId",
@@ -5303,7 +5059,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "固件升级模块\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "mcu",
@@ -5314,7 +5069,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建者子 uin\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -5325,7 +5079,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建者昵称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "喵喵",
@@ -5342,7 +5095,6 @@
       "document": "GenSingleDeviceSignatureOfPublic请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备所属的产品ID",
           "example": "H4EAI7TIZR",
@@ -5352,7 +5104,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要绑定的设备",
           "example": "dev001",
@@ -5362,7 +5113,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备绑定签名的有效时间,以秒为单位。取值范围：0 < Expire <= 86400，Expire == -1（十年）",
           "example": "-1",
@@ -5400,7 +5150,6 @@
       "document": "GetBatchProductionsList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "prj-pq00mstg",
@@ -5410,7 +5159,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "0",
@@ -5420,7 +5168,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量限制",
           "example": "3",
@@ -5468,7 +5215,6 @@
       "document": "GetCOSURL请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "ABCDE12345",
@@ -5478,7 +5224,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "固件版本",
           "example": "2.0.0",
@@ -5488,7 +5233,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件大小",
           "example": "10000",
@@ -5616,7 +5360,6 @@
       "document": "GetDeviceLocationHistory请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品Id",
           "example": "X4912BAIVR",
@@ -5626,7 +5369,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名",
           "example": "dev1",
@@ -5636,7 +5378,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询起始时间，Unix时间，单位为毫秒",
           "example": "1604890314000",
@@ -5646,7 +5387,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间，Unix时间，单位为毫秒",
           "example": "1609890353000",
@@ -5656,7 +5396,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "坐标类型",
           "example": "3",
@@ -5739,7 +5478,6 @@
       "document": "GetGatewaySubDeviceList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网关产品ID",
           "example": "productId",
@@ -5749,7 +5487,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关设备名称",
           "example": "deviceName",
@@ -5759,7 +5496,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移",
           "example": "0",
@@ -5769,7 +5505,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页的大小",
           "example": "20",
@@ -5817,7 +5552,6 @@
       "document": "GetLoRaGatewayList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否是社区网关",
           "example": "true",
@@ -5827,7 +5561,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "0",
@@ -5837,7 +5570,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制个数",
           "example": "10",
@@ -5885,7 +5617,6 @@
       "document": "GetPositionSpaceList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目Id",
           "example": "prj-projectid",
@@ -5895,7 +5626,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "翻页偏移量，0起始",
           "example": "0",
@@ -5905,7 +5635,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大返回结果数",
           "example": "20",
@@ -6052,7 +5781,6 @@
       "document": "GetStudioProductList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "prj-zunfat46",
@@ -6062,7 +5790,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品DevStatus",
           "example": "dev",
@@ -6072,7 +5799,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "0",
@@ -6082,7 +5808,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数量限制",
           "example": "0",
@@ -6130,7 +5855,6 @@
       "document": "GetTopicRuleList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "请求的页数",
           "example": "1",
@@ -6140,7 +5864,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页的大小",
           "example": "10",
@@ -6188,7 +5911,6 @@
       "document": "ListEventHistory请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "QDA1PZLBNB",
@@ -6198,7 +5920,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称",
           "example": "dev01",
@@ -6208,7 +5929,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索的事件类型：alert 表示告警，fault 表示故障，info 表示信息，为空则表示查询上述所有类型事件",
           "example": "1",
@@ -6218,7 +5938,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始时间（Unix 时间戳，秒级）, 为0 表示 当前时间 - 24h",
           "example": "1560355200",
@@ -6228,7 +5947,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间（Unix 时间戳，秒级）, 为0 表示当前时间",
           "example": "1601196327",
@@ -6238,7 +5956,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索上下文, 用作查询游标",
           "example": "f",
@@ -6248,7 +5965,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单次获取的历史数据项目的最大数量, 缺省10",
           "example": "50",
@@ -6258,7 +5974,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件标识符，可以用来指定查询特定的事件，如果不指定，则查询所有事件。",
           "example": "low_voltage",
@@ -6398,7 +6113,6 @@
       "document": "ListTopicPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "",
@@ -6435,7 +6149,6 @@
       "document": "LoRa自定义频点信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "频点唯一ID",
           "example": "",
@@ -6446,7 +6159,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "频点名称",
           "example": "",
@@ -6457,7 +6169,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "频点描述",
           "example": "",
@@ -6468,7 +6179,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据上行信道",
           "example": "",
@@ -6479,7 +6189,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据下行信道RX1",
           "example": "",
@@ -6490,7 +6199,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据下行信道RX2",
           "example": "",
@@ -6501,7 +6209,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入网上行信道",
           "example": "",
@@ -6512,7 +6219,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入网下行RX1信道",
           "example": "",
@@ -6523,7 +6229,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入网下行RX2信道",
           "example": "",
@@ -6534,7 +6239,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -6551,7 +6255,6 @@
       "document": "LoRa 网关信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "LoRa 网关Id",
           "example": "",
@@ -6562,7 +6265,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是公开网关",
           "example": "",
@@ -6573,7 +6275,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关描述",
           "example": "",
@@ -6584,7 +6285,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关名称",
           "example": "",
@@ -6595,7 +6295,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关位置信息",
           "example": "",
@@ -6606,7 +6305,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关位置详情",
           "example": "",
@@ -6617,7 +6315,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "LoRa 网关位置坐标",
           "example": "",
@@ -6628,7 +6325,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后更新时间",
           "example": "",
@@ -6639,7 +6335,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -6650,7 +6345,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后上报时间",
           "example": "",
@@ -6661,7 +6355,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "频点ID",
           "example": "",
@@ -6678,7 +6371,6 @@
       "document": "网关坐标",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "纬度",
           "example": "0.0",
@@ -6689,7 +6381,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "精度",
           "example": "0.0",
@@ -6700,7 +6391,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "准确度",
           "example": "0.0",
@@ -6711,7 +6401,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "海拔",
           "example": "0.0",
@@ -6728,7 +6417,6 @@
       "document": "ModifyFenceBind请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "围栏Id",
           "example": "1",
@@ -6738,7 +6426,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "围栏绑定的产品列表",
           "example": "无",
@@ -6766,7 +6453,6 @@
       "document": "ModifyLoRaFrequency请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "频点唯一ID",
           "example": "0cdd67ed-c198-403f-a2b7-043e09c7639d",
@@ -6776,7 +6462,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "频点名称",
           "example": "F2",
@@ -6786,7 +6471,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "频点描述",
           "example": "test",
@@ -6796,7 +6480,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据上行信道",
           "example": "[486300000]",
@@ -6806,7 +6489,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据下行信道RX1",
           "example": "[486300000]",
@@ -6816,7 +6498,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据下行信道RX2",
           "example": "[486300000]",
@@ -6826,7 +6507,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入网上行信道",
           "example": "[486300000]",
@@ -6836,7 +6516,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入网下行信道RX1",
           "example": "[486300000]",
@@ -6846,7 +6525,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入网下行信道RX2",
           "example": "[486300000]",
@@ -6884,7 +6562,6 @@
       "document": "ModifyLoRaGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "描述信息",
           "example": "fortest3",
@@ -6894,7 +6571,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "LoRa网关Id",
           "example": "ff00000000000003",
@@ -6904,7 +6580,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "LoRa网关位置坐标",
           "example": "无",
@@ -6914,7 +6589,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "LoRa网关名称",
           "example": "gw3",
@@ -6924,7 +6598,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否公开可见",
           "example": "false",
@@ -6934,7 +6607,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "位置信息",
           "example": "tfine",
@@ -6944,7 +6616,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "位置详情",
           "example": "fyd",
@@ -6954,7 +6625,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "频点ID",
           "example": "xxx",
@@ -6992,7 +6662,6 @@
       "document": "ModifyModelDefinition请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "LJ0INDNU7U",
@@ -7002,7 +6671,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据模板定义",
           "example": "{\"version\":\"1.0\",\"profile\":{\"productID\":\"9IEQWQY47W\"},\"properties\":[{\"id\":\"power_switch\",\"name\":\"电灯开关\",\"desc\":\"控制电灯开灭\",\"required\":true,\"mode\":\"rw\",\"define\":{\"type\":\"bool\",\"mapping\":{\"0\":\"关\",\"1\":\"开\"}}},{\"id\":\"color\",\"name\":\"颜色1\",\"required\":false,\"desc\":\"灯光颜色\",\"mode\":\"rw\",\"define\":{\"type\":\"enum\",\"mapping\":{\"0\":\"Red\",\"1\":\"Green\",\"2\":\"Blue\"}}},{\"id\":\"brightness\",\"name\":\"颜色\",\"desc\":\"灯光颜色\",\"mode\":\"rw\",\"define\":{\"type\":\"int\",\"unit\":\"%\",\"step\":\"1\",\"min\":\"0\",\"max\":\"100\"}},{\"id\":\"name\",\"name\":\"灯位置名称\",\"desc\":\"灯位置名称：书房、客厅等\",\"mode\":\"rw\",\"required\":true,\"define\":{\"type\":\"string\",\"min\":\"0\",\"max\":\"64\"}}],\"events\":[{\"id\":\"status_report\",\"name\":\"DeviceStatus\",\"desc\":\"Report the device status我是中文\",\"type\":\"info\",\"required\":true,\"params\":[{\"id\":\"status\",\"name\":\"running_state\",\"desc\":\"Report current device running state\",\"define\":{\"type\":\"bool\",\"mapping\":{\"0\":\"normal\",\"1\":\"fault\"}}},{\"id\":\"message\",\"name\":\"Message\",\"desc\":\"Some extra message\",\"define\":{\"type\":\"string\",\"min\":\"0\",\"max\":\"64\"}}]},{\"id\":\"low_voltage\",\"name\":\"LowVoltage\",\"desc\":\"Alert for device voltage is low\",\"type\":\"alert\",\"required\":false,\"params\":[{\"id\":\"voltage\",\"name\":\"Voltage\",\"desc\":\"Current voltage\",\"define\":{\"type\":\"float\",\"unit\":\"V\",\"step\":\"1\",\"min\":\"0.0\",\"max\":\"24.0\"}}]},{\"id\":\"hardware_fault\",\"name\":\"Hardware_fault\",\"desc\":\"Report hardware fault\",\"type\":\"fault\",\"required\":false,\"params\":[{\"id\":\"name\",\"name\":\"Name\",\"desc\":\"Name like: memory,tf card, censors ...\",\"define\":{\"type\":\"string\",\"min\":\"0\",\"max\":\"64\"}},{\"id\":\"error_code\",\"name\":\"Error_Code\",\"desc\":\"Error code for fault\",\"define\":{\"type\":\"int\",\"unit\":\"\",\"step\":\"1\",\"min\":\"0\",\"max\":\"2000\"}}]}]}",
@@ -7047,7 +6715,6 @@
       "document": "ModifyPositionSpace请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "位置空间Id",
           "example": "Id",
@@ -7057,7 +6724,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "位置空间名称",
           "example": "space",
@@ -7067,7 +6733,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权类型",
           "example": "0",
@@ -7077,7 +6742,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品列表",
           "example": "[\"ProductId\"]",
@@ -7087,7 +6751,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "位置空间描述",
           "example": "service",
@@ -7097,7 +6760,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "缩略图",
           "example": "http://www.example.com",
@@ -7125,7 +6787,6 @@
       "document": "ModifyProject请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "prj-4r2kajtp",
@@ -7135,7 +6796,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目名称",
           "example": "name",
@@ -7145,7 +6805,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目描述",
           "example": "desc",
@@ -7183,7 +6842,6 @@
       "document": "ModifySpaceProperty请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "位置空间Id",
           "example": "spaceId",
@@ -7193,7 +6851,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品Id",
           "example": "productId",
@@ -7203,7 +6860,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品属性",
           "example": "[\"ProductId\"]",
@@ -7312,7 +6968,6 @@
       "document": "ModifyTopicPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "",
@@ -7322,7 +6977,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新前Topic名",
           "example": "",
@@ -7332,7 +6986,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新后Topic名",
           "example": "",
@@ -7342,7 +6995,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Topic权限",
           "example": "",
@@ -7370,7 +7022,6 @@
       "document": "ModifyTopicRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则名称",
           "example": "test_create",
@@ -7380,7 +7031,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "替换的规则包体",
           "example": "无",
@@ -7408,7 +7058,6 @@
       "document": "围栏详细信息(包含创建时间及更新时间)",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "围栏信息",
           "example": "",
@@ -7419,7 +7068,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "围栏创建时间",
           "example": "",
@@ -7430,7 +7078,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "围栏更新时间",
           "example": "",
@@ -7447,7 +7094,6 @@
       "document": "围栏信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "围栏Id",
           "example": "",
@@ -7458,7 +7104,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "位置空间Id",
           "example": "",
@@ -7469,7 +7114,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "围栏名称",
           "example": "",
@@ -7480,7 +7124,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "围栏描述",
           "example": "",
@@ -7491,7 +7134,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "围栏区域信息，采用 GeoJSON 格式",
           "example": "",
@@ -7508,7 +7150,6 @@
       "document": "位置点",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "位置点的时间",
           "example": "1597042572000",
@@ -7519,7 +7160,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "位置点的经度",
           "example": "106.04509595706622",
@@ -7530,7 +7170,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "位置点的纬度",
           "example": "27.030664678580806",
@@ -7541,7 +7180,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "位置点的定位类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NAV",
@@ -7552,7 +7190,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "位置点的精度预估，单位为米\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "42.3",
@@ -7569,7 +7206,6 @@
       "document": "位置空间详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目Id",
           "example": "prj",
@@ -7580,7 +7216,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "位置空间Id",
           "example": "a877xxxa1",
@@ -7591,7 +7226,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "位置空间名称",
           "example": "name",
@@ -7602,7 +7236,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权类型",
           "example": "0",
@@ -7613,7 +7246,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "desc",
@@ -7624,7 +7256,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品列表",
           "example": "[\"TOIDHQ3AO1\",\"TOIDHQ3AO2\"]]",
@@ -7635,7 +7266,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "缩略图",
           "example": "icon",
@@ -7646,7 +7276,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "1598863974",
@@ -7657,7 +7286,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
           "example": "1598863974",
@@ -7668,7 +7296,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户自定义地图缩放",
           "example": "3",
@@ -7685,7 +7312,6 @@
       "document": "产品设备位置信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备位置列表",
           "example": "",
@@ -7696,7 +7322,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品标识",
           "example": "",
@@ -7707,7 +7332,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备位置数量",
           "example": "",
@@ -7910,7 +7534,6 @@
       "document": "产品模型定义",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "",
@@ -7921,7 +7544,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模型定义",
           "example": "",
@@ -7932,7 +7554,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间，秒级时间戳",
           "example": "",
@@ -7943,7 +7564,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间，秒级时间戳",
           "example": "",
@@ -7954,7 +7574,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品所属分类的模型快照（产品创建时刻的）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7965,7 +7584,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品的连接类型的模型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7982,7 +7600,6 @@
       "document": "项目详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "",
@@ -7993,7 +7610,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目名称",
           "example": "",
@@ -8004,7 +7620,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目描述",
           "example": "",
@@ -8015,7 +7630,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间，unix时间戳",
           "example": "",
@@ -8026,7 +7640,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间，unix时间戳",
           "example": "",
@@ -8169,7 +7782,6 @@
       "document": "PublishBroadcastMessage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "LK7LIPL6GE",
@@ -8179,7 +7791,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息内容",
           "example": "1234561",
@@ -8189,7 +7800,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息质量等级",
           "example": "1",
@@ -8199,7 +7809,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ayload内容的编码格式，取值为base64或空。base64表示云端将收到的请求数据进行base64解码后下发到设备，空则直接将原始内容下发到设备",
           "example": "base64",
@@ -8237,7 +7846,6 @@
       "document": "PublishMessage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "",
@@ -8247,7 +7855,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称",
           "example": "",
@@ -8257,7 +7864,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息发往的主题",
           "example": "",
@@ -8267,7 +7873,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云端下发到设备的控制报文",
           "example": "",
@@ -8277,7 +7882,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息服务质量等级，取值为0或1",
           "example": "",
@@ -8287,7 +7891,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Payload的内容编码格式，取值为base64或空。base64表示云端将接收到的base64编码后的报文再转换成二进制报文下发至设备，为空表示不作转换，透传下发至设备",
           "example": "",
@@ -8315,7 +7918,6 @@
       "document": "PublishRRPCMessage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "productId",
@@ -8325,7 +7927,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称",
           "example": "deviceName",
@@ -8335,7 +7936,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息内容，utf8编码",
           "example": "payload",
@@ -8383,7 +7983,6 @@
       "document": "ReleaseStudioProduct请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "BJQM4UXMKN",
@@ -8393,7 +7992,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品DevStatus",
           "example": "released",
@@ -8421,7 +8019,6 @@
       "document": "搜索关键词",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "搜索条件的Key",
           "example": "",
@@ -8432,7 +8029,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索条件的值",
           "example": "",
@@ -8449,7 +8045,6 @@
       "document": "SearchPositionSpace请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目Id",
           "example": "prj-projectid",
@@ -8459,7 +8054,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "位置空间名字",
           "example": "name",
@@ -8469,7 +8063,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，从0开始",
           "example": "0",
@@ -8479,7 +8072,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大获取数量",
           "example": "20",
@@ -8617,7 +8209,6 @@
       "document": "SearchTopicRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则名",
           "example": "test_create",
@@ -8665,7 +8256,6 @@
       "document": "Topic信息, 包括Topic名字和权限",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Topic名称",
           "example": "",
@@ -8676,7 +8266,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Topic权限 , 1上报  2下发",
           "example": "",
@@ -8693,7 +8282,6 @@
       "document": "TopicRule结构",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则名称。",
           "example": "",
@@ -8704,7 +8292,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则的SQL语句，如： SELECT * FROM 'pid/dname/event'，然后对其进行base64编码，得：U0VMRUNUICogRlJPTSAncGlkL2RuYW1lL2V2ZW50Jw==",
           "example": "",
@@ -8715,7 +8302,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8726,7 +8312,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "行为的JSON字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8737,7 +8322,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否禁用规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8754,7 +8338,6 @@
       "document": "规则信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则名称",
           "example": "",
@@ -8765,7 +8348,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则描述",
           "example": "",
@@ -8776,7 +8358,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -8787,7 +8368,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则是否禁用",
           "example": "",
@@ -8804,7 +8384,6 @@
       "document": "TopicRulePayload结构",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则的SQL语句，如： SELECT * FROM 'pid/dname/event'，然后对其进行base64编码，得：U0VMRUNUICogRlJPTSAncGlkL2RuYW1lL2V2ZW50Jw==",
           "example": "",
@@ -8815,7 +8394,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "行为的JSON字符串，大部分种类举例如下：\n[\n{\n\"republish\": {\n\"topic\": \"TEST/test\"\n}\n},\n{\n\"forward\": {\n\"api\": \"http://test.com:8080\"\n}\n},\n{\n\"ckafka\": {\n\"instance\": {\n\"id\": \"ckafka-test\",\n\"name\": \"\"\n},\n\"topic\": {\n\"id\": \"topic-test\",\n\"name\": \"test\"\n},\n\"region\": \"gz\"\n}\n},\n{\n\"cmqqueue\": {\n\"queuename\": \"queue-test-TEST\",\n\"region\": \"gz\"\n}\n},\n{\n\"mysql\": {\n\"instanceid\": \"cdb-test\",\n\"region\": \"gz\",\n\"username\": \"test\",\n\"userpwd\": \"*****\",\n\"dbname\": \"d_mqtt\",\n\"tablename\": \"t_test\",\n\"fieldpairs\": [\n{\n\"field\": \"test\",\n\"value\": \"test\"\n}\n],\n\"devicetype\": \"CUSTOM\"\n}\n}\n]",
           "example": "",
@@ -8826,7 +8404,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则描述",
           "example": "",
@@ -8837,7 +8414,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否禁用规则",
           "example": "",
@@ -8854,7 +8430,6 @@
       "document": "UnbindDevices请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网关设备的产品ID",
           "example": "12345ABCDE",
@@ -8864,7 +8439,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关设备的设备名",
           "example": "test",
@@ -8874,7 +8448,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "ABCDE12345",
@@ -8884,7 +8457,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名列表",
           "example": "[\"test0\\n\"]",
@@ -8912,7 +8484,6 @@
       "document": "UnbindProducts请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网关产品ID",
           "example": "12345ABCDE",
@@ -8922,7 +8493,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待解绑的子产品ID数组",
           "example": "[\"12345ABCDE\\r\\n\"]",
@@ -8960,7 +8530,6 @@
       "document": "UpdateDevicesEnableState请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "多个设备标识",
           "example": "无",
@@ -8970,7 +8539,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1：启用；0：禁用",
           "example": "1",
@@ -9018,7 +8586,6 @@
       "document": "UpdateFirmware请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "ABCDE12345",
@@ -9028,7 +8595,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名",
           "example": "abc",
@@ -9038,7 +8604,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "固件新的版本号",
           "example": "2.0.0",
@@ -9048,7 +8613,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "固件原版本号",
           "example": "1.0.0",
@@ -9058,7 +8622,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "固件升级方式；0 静默升级 1 用户确认升级   不填默认静默升级",
           "example": "0",
@@ -9086,7 +8649,6 @@
       "document": "UploadFirmware请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID",
           "example": "ABCDE12345",
@@ -9096,7 +8658,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "固件版本号",
           "example": "1.0.0",
@@ -9106,7 +8667,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "固件的MD5值",
           "example": "hfshfspodkoiwuidoiwjcuie",
@@ -9116,7 +8676,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "固件的大小",
           "example": "1024",
@@ -9126,7 +8685,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "固件名称",
           "example": "dev_firmwarev1.0",
@@ -9136,7 +8694,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "固件描述",
           "example": "version1.0固件",
@@ -9146,7 +8703,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "固件升级模块；可选值 mcu|moudule",
           "example": "mcu",
@@ -9174,7 +8730,6 @@
       "document": "wifi定位信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "mac地址",
           "example": "78a106a5b166",
@@ -9185,7 +8740,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "信号强度",
           "example": "-1",

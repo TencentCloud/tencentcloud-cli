@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CreateCloudNativeAPIGateway": [
+      {
+        "document": "创建云原生API网关实例",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGateway\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Type\": \"kong\",\n    \"GatewayVersion\": \"2.5.1\",\n    \"NodeConfig\": {\n        \"Specification\": \"1c2g\",\n        \"Number\": 2\n    },\n    \"VpcConfig\": {\n        \"VpcId\": \"vpc-xxxxxx\",\n        \"SubnetId\": \"subnet-xxxxxx\"\n    },\n    \"Description\": \"test\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValue\": \"abc\"\n        }\n    ],\n    \"EnableCls\": false,\n    \"FeatureVersion\": \"STANDARD\",\n    \"InternetMaxBandwidthOut\": 1,\n    \"EngineRegion\": \"ap-guangzhou\",\n    \"IngressClassName\": \"abc\",\n    \"TradeType\": 0,\n    \"InternetConfig\": {\n        \"InternetAddressVersion\": \"abc\",\n        \"InternetPayMode\": \"abc\",\n        \"InternetMaxBandwidthOut\": 1,\n        \"Description\": \"abc\",\n        \"SlaType\": \"abc\",\n        \"MultiZoneFlag\": true,\n        \"MasterZoneId\": \"abc\",\n        \"SlaveZoneId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"GatewayId\": \"abc\",\n            \"Status\": \"abc\",\n            \"TaskId\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建云原生API网关实例"
+      }
+    ],
     "CreateCloudNativeAPIGatewayCanaryRule": [
       {
         "document": "创建灰度规则",
@@ -48,6 +56,22 @@
         "title": "创建引擎实例"
       }
     ],
+    "CreateNativeGatewayServerGroup": [
+      {
+        "document": "创建云原生网关引擎分组",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNativeGatewayServerGroup\n<公共请求参数>\n\n{\n    \"GatewayId\": \"abc\",\n    \"Name\": \"abc\",\n    \"NodeConfig\": {\n        \"Specification\": \"abc\",\n        \"Number\": 0\n    },\n    \"SubnetId\": \"abc\",\n    \"Description\": \"abc\",\n    \"InternetMaxBandwidthOut\": 1,\n    \"InternetConfig\": {\n        \"InternetAddressVersion\": \"abc\",\n        \"InternetPayMode\": \"abc\",\n        \"InternetMaxBandwidthOut\": 1,\n        \"Description\": \"abc\",\n        \"SlaType\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"GatewayId\": \"abc\",\n            \"GroupId\": \"abc\",\n            \"Status\": \"abc\",\n            \"TaskId\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建云原生网关引擎分组"
+      }
+    ],
+    "DeleteCloudNativeAPIGateway": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGateway\n<公共请求参数>\n\n{\n    \"GatewayId\": \"<GatewayId>\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9922cab4-4ad3-4146-9535-cbc788082899\",\n        \"Result\": {\n            \"GatewayId\": \"gateway-8d8b6b2d\",\n            \"Status\": \"Deleting\"\n        }\n    }\n}",
+        "title": "测试删除云原生API网关实例"
+      }
+    ],
     "DeleteCloudNativeAPIGatewayCanaryRule": [
       {
         "document": "删除灰度规则",
@@ -94,6 +118,22 @@
         "input": "https://tse.tencentcloudapi.com/?Action=DeleteEngine\n&InstanceId=ins-12345678\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\"\n    }\n}",
         "title": "删除引擎实例"
+      }
+    ],
+    "DeleteNativeGatewayServerGroup": [
+      {
+        "document": "删除网关实例分组",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNativeGatewayServerGroup\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxx\",\n    \"GroupId\": \"group-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"GatewayId\": \"abc\",\n            \"GroupId\": \"abc\",\n            \"Status\": \"abc\",\n            \"TaskId\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除网关实例分组"
+      }
+    ],
+    "DescribeCloudNativeAPIGateway": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGateway\n<公共请求参数>\n\n{\n    \"GatewayId\": \"<GatewayId>\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Status\": \"Creating\",\n            \"EnableCls\": true,\n            \"TradeType\": 0,\n            \"Name\": \"test\",\n            \"Tags\": [\n                {\n                    \"TagKey\": \"xx\",\n                    \"TagValue\": \"xx\"\n                }\n            ],\n            \"FeatureVersion\": \"xx\",\n            \"VpcConfig\": {\n                \"SubnetId\": \"xx\",\n                \"VpcId\": \"xx\"\n            },\n            \"IsolateTime\": \"xx\",\n            \"CurDeadline\": \"xx\",\n            \"EnableInternet\": true,\n            \"GatewayVersion\": \"2.4.1\",\n            \"AutoRenewFlag\": 0,\n            \"NodeConfig\": {\n                \"Specification\": \"1c2g\",\n                \"Number\": 2\n            },\n            \"EngineRegion\": \"xx\",\n            \"GatewayId\": \"gateway-7bb4fcb0\",\n            \"Type\": \"Kong\",\n            \"CreateTime\": \"2021-09-09 11:52:30\",\n            \"InternetMaxBandwidthOut\": 1,\n            \"Description\": \"测试\"\n        },\n        \"RequestId\": \"0f2cc04f-0e03-4e70-8df8-c57288b04373\"\n    }\n}",
+        "title": "测试获取云原生API网关基础信息"
       }
     ],
     "DescribeCloudNativeAPIGatewayCanaryRules": [
@@ -152,6 +192,14 @@
         "title": "查询云原生网关服务列表"
       }
     ],
+    "DescribeCloudNativeAPIGateways": [
+      {
+        "document": "",
+        "input": "https://tse.tencentcloudapi.com/?Action=DescribeCloudNativeAPIGateways\n&Limit=20\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"adc44984-762c-42e0-b39a-80777e5c3bcc\",\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"GatewayList\": [\n                {\n                    \"CreateTime\": \"2021-09-09 11:52:30\",\n                    \"Description\": \"测试\",\n                    \"GatewayId\": \"gateway-7bb4fcb0\",\n                    \"GatewayVersion\": \"2.4.1\",\n                    \"Name\": \"test\",\n                    \"NodeConfig\": {\n                        \"Number\": 2,\n                        \"Specification\": \"1c2g\"\n                    },\n                    \"Status\": \"Creating\",\n                    \"Type\": \"Kong\",\n                    \"VpcConfig\": {\n                        \"SubnetId\": \"subnet-xxx\",\n                        \"VpcId\": \"vpc-xxx\"\n                    },\n                    \"Tags\": [\n                        {\n                            \"TagKey\": \"xx\",\n                            \"TagValue\": \"xx\"\n                        }\n                    ]\n                }\n            ]\n        }\n    }\n}",
+        "title": "测试获取云原生API网关实例列表"
+      }
+    ],
     "DescribeNacosReplicas": [
       {
         "document": "查询Nacos类型引擎实例副本信息",
@@ -208,6 +256,14 @@
         "title": "查询nacos服务接口列表"
       }
     ],
+    "ModifyCloudNativeAPIGateway": [
+      {
+        "document": "测试修改云原生API网关实例基础信息",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGateway\n<公共请求参数>\n\n{\n    \"GatewayId\": \"<GatewayId>\",\n    \"Name\": \"<Name>\",\n    \"Description\": \"<Description>\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9922cab4-4ad3-4146-9535-cbc788082899\"\n    }\n}",
+        "title": "测试修改云原生API网关实例基础信息"
+      }
+    ],
     "ModifyCloudNativeAPIGatewayCanaryRule": [
       {
         "document": "编辑灰度规则",
@@ -246,6 +302,22 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewayServiceRateLimit\n<公共请求参数>\n\n{\n    \"GatewayId\": \"abc\",\n    \"Name\": \"abc\",\n    \"LimitDetail\": {\n        \"Enabled\": true,\n        \"QpsThresholds\": [\n            {\n                \"Unit\": \"second\",\n                \"Max\": 10\n            }\n        ],\n        \"Path\": \"abc\",\n        \"Header\": \"abc\",\n        \"LimitBy\": \"abc\",\n        \"ExternalRedis\": {\n            \"RedisHost\": \"abc\",\n            \"RedisPassword\": \"abc\",\n            \"RedisPort\": 0,\n            \"RedisTimeout\": 0\n        },\n        \"Policy\": \"abc\",\n        \"RateLimitResponse\": {\n            \"Body\": \"abc\",\n            \"Headers\": [\n                {\n                    \"Key\": \"abc\",\n                    \"Value\": \"abc\"\n                }\n            ],\n            \"HttpStatus\": 0\n        },\n        \"RateLimitResponseUrl\": \"abc\",\n        \"ResponseType\": \"abc\",\n        \"HideClientHeaders\": true,\n        \"LineUpTime\": 0,\n        \"IsDelay\": true\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "修改云原生网关限流插件(服务)"
+      }
+    ],
+    "ModifyNativeGatewayServerGroup": [
+      {
+        "document": "修改云原生API网关实例分组基础信息",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNativeGatewayServerGroup\n<公共请求参数>\n\n{\n    \"GatewayId\": \"<GatewayId>\",\n    \"Name\": \"<Name>\",\n    \"Description\": \"<Description>\",\n    \"GroupId\": \"<GroupId>\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9922cab4-4ad3-4146-9535-cbc788082899\"\n    }\n}",
+        "title": "修改云原生API网关实例分组基础信息"
+      }
+    ],
+    "UpdateCloudNativeAPIGatewaySpec": [
+      {
+        "document": "修改云原生API网关实例规格",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCloudNativeAPIGatewaySpec\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxxx1234\",\n    \"GroupId\": \"abc\",\n    \"NodeConfig\": {\n        \"Specification\": \"abc\",\n        \"Number\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"GatewayId\": \"gateway-xxxx1234\",\n            \"Status\": \"Updating\",\n            \"TaskId\": \"task-xxxx1234\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "编辑云原生API网关实例规格示例"
       }
     ],
     "UpdateEngineInternetAccess": [

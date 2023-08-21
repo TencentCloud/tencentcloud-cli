@@ -383,7 +383,6 @@
       "document": "审批申请单",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "审批单号",
           "example": "10001",
@@ -394,7 +393,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "申请类型",
           "example": "表格合并",
@@ -405,7 +403,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群Id",
           "example": "1822112",
@@ -416,7 +413,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群名称",
           "example": "Test",
@@ -427,7 +423,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格组名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "db_user",
@@ -438,7 +433,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格名称",
           "example": "db_user_info",
@@ -449,7 +443,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "申请人",
           "example": "yuxinfan",
@@ -460,7 +453,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "建单时间",
           "example": "2021-01-18 20:10:21",
@@ -471,7 +463,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "处理状态 -1 撤回 0-待审核 1-已经审核并提交任务 2-已驳回",
           "example": "0",
@@ -482,7 +473,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格组Id",
           "example": "222",
@@ -493,7 +483,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已提交的任务Id，未提交申请为0",
           "example": "222",
@@ -504,7 +493,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯云上table的唯一键\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tcaplus_dsdfsdf",
@@ -515,7 +503,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-01-18 20:10:21",
@@ -526,7 +513,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审批人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "yuxinfan",
@@ -537,7 +523,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -548,7 +533,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该申请单是否可以被当前用户审批\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -559,7 +543,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该申请单是否可以被当前用户撤回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -576,7 +559,6 @@
       "document": "更新申请单结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "申请单id",
           "example": "10001",
@@ -587,7 +569,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "申请类型",
           "example": "0",
@@ -598,7 +579,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "处理状态 0-待审核 1-已经审核并提交任务 2-已驳回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -609,7 +589,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已提交的任务Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -620,7 +599,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -637,7 +615,6 @@
       "document": "申请单id及其状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id-申请单id",
           "example": "1-10001",
@@ -648,7 +625,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "处理状态-1-撤回 1-通过 2-驳回，非0状态的申请单不可改变状态。",
           "example": "0",
@@ -659,7 +635,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "申请单类型",
           "example": "0",
@@ -670,7 +645,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群Id",
           "example": "10001",
@@ -687,7 +661,6 @@
       "document": "备份保留策略详情\n集群策略： ClueterId=集群Id， TableGroupId=-1,  TableName=\"-1\"\n集群+表格组策略： ClueterId=集群Id， TableGroupId=表格组Id,  TableName=\"-1\"\n集群+表格组+表格策略： ClueterId=集群Id， TableGroupId=表格组Id,  TableName=\"表格名\"\n\nFileTag=0 txh引擎文件， =1 ulog流水文件， 当要设置为=1时， 这两项不可变 TableGroupId=-1和TableName=\"-1\"\nExpireDay为大于等于1，小于999的整形数字\nOperType=0 代表动作为新增， =1 代表动作为删除， =2 代表动作为修改， 其中0和2可以混用，后端实现兼容",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "所属表格组ID",
           "example": "0",
@@ -698,7 +671,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表名称",
           "example": "0",
@@ -709,7 +681,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件标签，见上面描述",
           "example": "0",
@@ -720,7 +691,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "淘汰天数，见上面描述",
           "example": "0",
@@ -731,7 +701,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作类型，见上面描述",
           "example": "0",
@@ -748,7 +717,6 @@
       "document": "备份记录\n作为出参时，每个字段都会填充\n作为入参时， 原封不动将每个字段填回结构体， 注意只有FIleTag=OSDATA才可以调用此接口",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表格组ID",
           "example": "0",
@@ -759,7 +727,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表名称",
           "example": "0",
@@ -770,7 +737,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份源",
           "example": "0",
@@ -781,7 +747,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件标签：TCAPLUS_FULL或OSDATA",
           "example": "0",
@@ -792,7 +757,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分片数量",
           "example": "0",
@@ -803,7 +767,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份批次日期",
           "example": "0",
@@ -814,7 +777,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件汇总大小",
           "example": "0",
@@ -825,7 +787,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份成功率",
           "example": "0",
@@ -836,7 +797,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件过期时间",
           "example": "0",
@@ -847,7 +807,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "业务ID",
           "example": "0",
@@ -918,7 +877,6 @@
       "document": "集群详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群名称",
           "example": "0",
@@ -929,7 +887,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "0",
@@ -940,7 +897,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群所在地域",
           "example": "0",
@@ -951,7 +907,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群数据描述语言类型，如：`PROTO`,`TDR`",
           "example": "0",
@@ -962,7 +917,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络类型",
           "example": "0",
@@ -973,7 +927,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群关联的用户私有网络实例ID",
           "example": "0",
@@ -984,7 +937,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群关联的用户子网实例ID",
           "example": "0",
@@ -995,7 +947,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "0",
@@ -1006,7 +957,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群密码",
           "example": "0",
@@ -1017,7 +967,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密码状态",
           "example": "0",
@@ -1028,7 +977,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TcaplusDB SDK连接参数，接入ID",
           "example": "0",
@@ -1039,7 +987,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TcaplusDB SDK连接参数，接入地址",
           "example": "0",
@@ -1050,7 +997,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TcaplusDB SDK连接参数，接入端口",
           "example": "0",
@@ -1061,7 +1007,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "如果PasswordStatus是unmodifiable说明有旧密码还未过期，此字段将显示旧密码过期的时间，否则为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1072,7 +1017,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TcaplusDB SDK连接参数，接入ipv6地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1083,7 +1027,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群类型，0,1:共享集群; 2:独立集群\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1094,7 +1037,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群状态, 0：表示正常运行中，1：表示冻结隔离一般欠费进入此状态，2：表示待回收，一般用户主动触发删除进入这个状态，3：待释放，进入这个状态，表示可以释放此表占用的资源了，4：变更中\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1105,7 +1047,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "读CU\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1116,7 +1057,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "写CU\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1127,7 +1067,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘容量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1138,7 +1077,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "独占server机器信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1149,7 +1087,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "独占proxy机器信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1160,7 +1097,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启审核 0-不开启 1-开启",
           "example": "0",
@@ -1171,7 +1107,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审批人uin列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1182,7 +1117,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启了数据订阅\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1193,7 +1127,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据订阅的kafka信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1204,7 +1137,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群Txh备份文件多少天后过期删除\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1215,7 +1147,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群Ulog备份文件多少天后过期删除\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1226,7 +1157,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群Ulog备份文件过期策略是否为只读， 0： UlogBackupExpire是只读，不可修改， 1： UlogBackupExpire可以修改（当前业务存在Svrid第二段等于clusterid的机器）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1237,7 +1167,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "restproxy状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1254,7 +1183,6 @@
       "document": "CompareIdlFiles请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待修改表格所在集群ID",
           "example": "",
@@ -1264,7 +1192,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待修改表格列表",
           "example": "",
@@ -1274,7 +1201,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "选中的已上传IDL文件列表，与NewIdlFiles必选其一",
           "example": "",
@@ -1284,7 +1210,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本次上传IDL文件列表，与ExistingIdlFiles必选其一",
           "example": "",
@@ -1339,7 +1264,6 @@
       "document": "比较表格的Meta信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "源表格的集群id",
           "example": "",
@@ -1350,7 +1274,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源表格的表格组id",
           "example": "",
@@ -1361,7 +1284,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源表格的表名",
           "example": "",
@@ -1372,7 +1294,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标表格的集群id",
           "example": "",
@@ -1383,7 +1304,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标表格的表格组id",
           "example": "",
@@ -1394,7 +1314,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标表格的表名",
           "example": "",
@@ -1405,7 +1324,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源表格的实例id",
           "example": "",
@@ -1416,7 +1334,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标表格的实例id",
           "example": "",
@@ -1433,7 +1350,6 @@
       "document": "CreateBackup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待创建备份表所属集群ID",
           "example": "0",
@@ -1443,7 +1359,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待创建备份表信息列表",
           "example": "0",
@@ -1453,7 +1368,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注信息",
           "example": "0",
@@ -1501,7 +1415,6 @@
       "document": "CreateCluster请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群数据描述语言类型，如：`PROTO`，`TDR`或`MIX`",
           "example": "TDR",
@@ -1511,7 +1424,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群名称，可使用中文或英文字符，最大长度32个字符",
           "example": "gz测试TDR",
@@ -1521,7 +1433,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群所绑定的私有网络实例ID，形如：vpc-f49l6u0z",
           "example": "vpc-kppg4pm1",
@@ -1531,7 +1442,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群所绑定的子网实例ID，形如：subnet-pxir56ns",
           "example": "subnet-3sww53pa",
@@ -1541,7 +1451,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群访问密码，必须是a-zA-Z0-9的字符,且必须包含数字和大小写字母",
           "example": "84ea4cbf06573ED",
@@ -1551,7 +1460,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群标签列表",
           "example": "无",
@@ -1561,7 +1469,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群是否开启IPv6功能",
           "example": "0",
@@ -1571,7 +1478,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "独占集群占用的svr机器",
           "example": "无",
@@ -1581,7 +1487,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "独占集群占用的proxy机器",
           "example": "无",
@@ -1591,7 +1496,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群类型1共享2独占",
           "example": "1",
@@ -1601,7 +1505,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密码认证类型，0 静态认证， 1 签名认证",
           "example": "1",
@@ -1639,7 +1542,6 @@
       "document": "CreateSnapshots请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表格所属集群id",
           "example": "1",
@@ -1649,7 +1551,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照列表",
           "example": "无",
@@ -1697,7 +1598,6 @@
       "document": "CreateTableGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表格组所属集群ID",
           "example": "",
@@ -1707,7 +1607,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格组名称，可以采用中文、英文或数字字符，最大长度32个字符",
           "example": "",
@@ -1717,7 +1616,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格组ID，可以由用户指定，但在同一个集群内不能重复，如果不指定则采用自增的模式",
           "example": "",
@@ -1727,7 +1625,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格组标签列表",
           "example": "",
@@ -1836,7 +1733,6 @@
       "document": "DeleteBackupRecords请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待删除备份记录的所在集群ID",
           "example": "5674209986",
@@ -1846,7 +1742,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待删除备份记录的详情",
           "example": "无",
@@ -1884,7 +1779,6 @@
       "document": "DeleteCluster请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待删除的集群ID",
           "example": "",
@@ -1921,7 +1815,6 @@
       "document": "DeleteIdlFiles请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IDL所属集群ID",
           "example": "",
@@ -1931,7 +1824,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待删除的IDL文件信息列表",
           "example": "",
@@ -1977,7 +1869,6 @@
       "document": "DeleteSnapshots请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表格所属集群id",
           "example": "1",
@@ -1987,7 +1878,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "删除的快照列表",
           "example": "无",
@@ -2038,7 +1928,6 @@
           "disabled": false,
           "document": "表格所属集群实例ID",
           "example": "5674209986",
-          "is_base64": false,
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -2048,7 +1937,6 @@
           "disabled": false,
           "document": "待删除分布式索引的表格列表",
           "example": "无",
-          "is_base64": false,
           "member": "SelectedTableInfoNew",
           "name": "SelectedTables",
           "required": true,
@@ -2093,7 +1981,6 @@
       "document": "DeleteTableGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表格组所属的集群ID",
           "example": "",
@@ -2103,7 +1990,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格组ID",
           "example": "",
@@ -2248,7 +2134,6 @@
       "document": "DescribeApplications请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID，用于获取指定集群的单据",
           "example": "10001",
@@ -2258,7 +2143,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页，限制当前返回多少条记录，大于等于10",
           "example": "1",
@@ -2268,7 +2152,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页，从多少条数据开始返回",
           "example": "12",
@@ -2278,7 +2161,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "申请单状态，用于过滤，0-待审核 1-已经审核并提交任务 2-已驳回",
           "example": "0",
@@ -2288,7 +2170,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格组id，用于过滤",
           "example": "xx",
@@ -2298,7 +2179,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格名，用于过滤",
           "example": "xx",
@@ -2308,7 +2188,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "申请人uin，用于过滤",
           "example": "xx",
@@ -2318,7 +2197,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "申请类型，用于过滤，0加表 1删除表 2清理表 3修改表 4表重建 5存储层扩缩容 6接入层扩缩容 7复制表数据 8key回档",
           "example": "0",
@@ -2366,7 +2244,6 @@
       "document": "DescribeBackupRecords请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID，用于获取指定集群的单据",
           "example": "10001",
@@ -2376,7 +2253,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页",
           "example": "1",
@@ -2386,7 +2262,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页",
           "example": "12",
@@ -2396,7 +2271,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格组id，用于过滤",
           "example": "xx",
@@ -2406,7 +2280,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格名，用于过滤",
           "example": "xx",
@@ -2454,7 +2327,6 @@
       "document": "DescribeClusterTags请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID列表",
           "example": "",
@@ -2500,7 +2372,6 @@
       "document": "DescribeClusters请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指定查询的集群ID列表",
           "example": "10001",
@@ -2510,7 +2381,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询过滤条件",
           "example": "无",
@@ -2520,7 +2390,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询列表偏移量",
           "example": "0",
@@ -2530,7 +2399,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询列表返回记录数，默认值20",
           "example": "0",
@@ -2540,7 +2408,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否启用Ipv6",
           "example": "0",
@@ -2588,7 +2455,6 @@
       "document": "DescribeIdlFileInfos请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件所属集群ID",
           "example": "",
@@ -2598,7 +2464,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件所属表格组ID",
           "example": "",
@@ -2608,7 +2473,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定文件ID列表",
           "example": "",
@@ -2618,7 +2482,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询列表偏移量",
           "example": "",
@@ -2628,7 +2491,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询列表返回记录数",
           "example": "",
@@ -2674,7 +2536,6 @@
       "document": "DescribeMachine请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "不为0，表示查询支持ipv6的机器",
           "example": "",
@@ -2746,7 +2607,6 @@
       "document": "DescribeSnapshots请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表格所属集群id",
           "example": "18685341856",
@@ -2756,7 +2616,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属表格组ID",
           "example": "1",
@@ -2766,7 +2625,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表名称",
           "example": "cl_generic",
@@ -2776,7 +2634,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照名称",
           "example": "SnapshotName",
@@ -2786,7 +2643,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "批量拉取快照的表格列表",
           "example": "无",
@@ -2834,7 +2690,6 @@
       "document": "DescribeTableGroupTags请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待查询标签表格组所属集群ID",
           "example": "",
@@ -2844,7 +2699,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待查询标签表格组ID列表",
           "example": "",
@@ -2890,7 +2744,6 @@
       "document": "DescribeTableGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表格组所属集群ID",
           "example": "",
@@ -2900,7 +2753,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格组ID列表",
           "example": "",
@@ -2910,7 +2762,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，本接口支持：TableGroupName，TableGroupId",
           "example": "",
@@ -2920,7 +2771,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询列表偏移量",
           "example": "",
@@ -2930,7 +2780,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询列表返回记录数",
           "example": "",
@@ -2976,7 +2825,6 @@
       "document": "DescribeTableTags请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表格所属集群ID",
           "example": "",
@@ -2986,7 +2834,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格列表",
           "example": "",
@@ -3032,7 +2879,6 @@
       "document": "DescribeTablesInRecycle请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待查询表格所属集群ID",
           "example": "",
@@ -3042,7 +2888,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待查询表格所属表格组ID列表",
           "example": "",
@@ -3052,7 +2897,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，本接口支持：TableName，TableInstanceId",
           "example": "",
@@ -3062,7 +2906,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结果偏移量",
           "example": "",
@@ -3072,7 +2915,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结果返回记录数量",
           "example": "",
@@ -3208,7 +3050,6 @@
       "document": "DescribeTasks请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要查询任务所属的集群ID列表",
           "example": "",
@@ -3218,7 +3059,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要查询的任务ID列表",
           "example": "",
@@ -3228,7 +3068,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，本接口支持：Content，TaskType, Operator, Time",
           "example": "",
@@ -3238,7 +3077,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询列表偏移量",
           "example": "",
@@ -3248,7 +3086,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询列表返回记录数",
           "example": "",
@@ -3323,7 +3160,6 @@
           "disabled": false,
           "document": "对应appid",
           "example": "123",
-          "is_base64": false,
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -3371,7 +3207,6 @@
           "disabled": false,
           "document": "对应于appid",
           "example": "5674209986",
-          "is_base64": false,
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -3416,7 +3251,6 @@
       "document": "描述每个实例（应用，大区或表）处理过程中可能出现的错误详情。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "错误码",
           "example": "",
@@ -3427,7 +3261,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息",
           "example": "",
@@ -3444,7 +3277,6 @@
       "document": "表格字段信息列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表格字段名称",
           "example": "",
@@ -3455,7 +3287,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段是否是主键字段",
           "example": "",
@@ -3466,7 +3297,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段类型",
           "example": "",
@@ -3477,7 +3307,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段长度",
           "example": "",
@@ -3494,7 +3323,6 @@
       "document": "过滤条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "过滤字段名",
           "example": "\"name\"",
@@ -3505,7 +3333,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤字段值",
           "example": "\"value\"",
@@ -3516,7 +3343,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤字段值",
           "example": "[\"value1\", \"value2\"]",
@@ -3533,7 +3359,6 @@
       "document": "表定义描述文件详情，包含文件内容",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件名称，不包含扩展名",
           "example": "",
@@ -3544,7 +3369,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据描述语言（IDL）类型",
           "example": "",
@@ -3555,7 +3379,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件扩展名",
           "example": "",
@@ -3566,7 +3389,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件大小（Bytes）",
           "example": "",
@@ -3577,7 +3399,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件ID，对于已上传的文件有意义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -3588,7 +3409,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件内容，对于本次新上传的文件有意义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -3605,7 +3425,6 @@
       "document": "表定义描述文件详情，不包含文件内容",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件名称，不包含扩展名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -3616,7 +3435,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据描述语言（IDL）类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -3627,7 +3445,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件扩展名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -3638,7 +3455,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件大小（Bytes）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -3649,7 +3465,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -3660,7 +3475,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -3680,7 +3494,6 @@
           "disabled": false,
           "document": "表格所属的集群id",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -3690,7 +3503,6 @@
           "disabled": false,
           "document": "用于导入的快照信息",
           "example": "无",
-          "is_base64": false,
           "member": "SnapshotInfo",
           "name": "Snapshots",
           "required": true,
@@ -3700,7 +3512,6 @@
           "disabled": false,
           "document": "是否导入部分记录，TRUE表示导入部分记录，FALSE表示全表导入",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "ImportSpecialKey",
           "required": true,
@@ -3710,7 +3521,6 @@
           "disabled": false,
           "document": "是否导入到当前表，TRUE表示导入到当前表，FALSE表示导入到新表",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "ImportOriginTable",
           "required": true,
@@ -3720,7 +3530,6 @@
           "disabled": false,
           "document": "部分记录的key文件",
           "example": "无",
-          "is_base64": false,
           "member": "KeyFile",
           "name": "KeyFile",
           "required": false,
@@ -3730,7 +3539,6 @@
           "disabled": false,
           "document": "如果导入到新表，此为新表所属的表格组id",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "NewTableGroupId",
           "required": false,
@@ -3740,7 +3548,6 @@
           "disabled": false,
           "document": "如果导入到新表，此为新表的表名，系统会以该名称自动创建一张结构相同的空表",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "NewTableName",
           "required": false,
@@ -3785,7 +3592,6 @@
       "document": "ckafka地址信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "kafaka address",
           "example": "ckafka-3azrwxvw.ap-shanghai.ckafka.tencentcloudmq.com:6006",
@@ -3796,7 +3602,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "kafaka topic",
           "example": "tcapstream",
@@ -3807,7 +3612,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "kafka username",
           "example": "ckafka-3azrwxvw#tcaplusDev",
@@ -3818,7 +3622,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "kafka password",
           "example": "tcaplusDev123321",
@@ -3829,7 +3632,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ckafka实例",
           "example": "ckafka-l4xpzgpz",
@@ -3840,7 +3642,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否走VPC",
           "example": "0",
@@ -3857,7 +3658,6 @@
       "document": "部分key导入快照数据时所需要的key文件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "key文件名称",
           "example": "",
@@ -3868,7 +3668,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "key文件扩展名",
           "example": "",
@@ -3879,7 +3678,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "key文件内容",
           "example": "",
@@ -3890,7 +3688,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "key文件大小",
           "example": "",
@@ -3907,7 +3704,6 @@
       "document": "机器类型和数量",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机器类型",
           "example": "",
@@ -3918,7 +3714,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器数量",
           "example": "",
@@ -3935,7 +3730,6 @@
       "document": "合服结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -3946,7 +3740,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "成功时此字段返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -3957,7 +3750,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对比的表格信息",
           "example": "0",
@@ -3968,7 +3760,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "申请单Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -4030,7 +3821,6 @@
       "document": "合服请求入参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "合服的表格信息",
           "example": "",
@@ -4041,7 +3831,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否检查索引",
           "example": "",
@@ -4058,7 +3847,6 @@
       "document": "ModifyCensorship请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id",
           "example": "2143435",
@@ -4068,7 +3856,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群是否开启审核 0-关闭 1-开启",
           "example": "0",
@@ -4078,7 +3865,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审批人uin列表",
           "example": "54654,4544564",
@@ -4136,7 +3922,6 @@
       "document": "ModifyClusterMachine请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id",
           "example": "",
@@ -4146,7 +3931,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "svr占用的机器",
           "example": "",
@@ -4156,7 +3940,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "proxy占用的机器",
           "example": "",
@@ -4166,7 +3949,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群类型1共享集群2独占集群",
           "example": "",
@@ -4203,7 +3985,6 @@
       "document": "ModifyClusterName请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要修改名称的集群ID",
           "example": "",
@@ -4213,7 +3994,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要修改的集群名称，可使用中文或英文字符，最大长度32个字符",
           "example": "",
@@ -4241,7 +4021,6 @@
       "document": "ModifyClusterPassword请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要修改密码的集群ID",
           "example": "23311894780",
@@ -4251,7 +4030,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群旧密码",
           "example": "canmkdmk1215LM",
@@ -4261,7 +4039,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群旧密码预期失效时间",
           "example": "2019-08-26%2017%3A25%3A00",
@@ -4271,7 +4048,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群新密码，密码必须是a-zA-Z0-9的字符,且必须包含数字和大小写字母",
           "example": "99c59cb345c61063db",
@@ -4281,7 +4057,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新模式： `1` 更新密码；`2` 更新旧密码失效时间，默认为`1` 模式",
           "example": "1",
@@ -4309,7 +4084,6 @@
       "document": "ModifyClusterTags请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待修改标签的集群ID",
           "example": "",
@@ -4319,7 +4093,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待增加或修改的标签列表",
           "example": "",
@@ -4329,7 +4102,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待删除的标签",
           "example": "",
@@ -4366,7 +4138,6 @@
       "document": "ModifySnapshots请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表格所属集群id",
           "example": "1",
@@ -4376,7 +4147,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照列表",
           "example": "无",
@@ -4424,7 +4194,6 @@
       "document": "ModifyTableGroupName请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表格组所属的集群ID",
           "example": "",
@@ -4434,7 +4203,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待修改名称的表格组ID",
           "example": "",
@@ -4444,7 +4212,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新的表格组名称，可以使用中英文字符和符号",
           "example": "",
@@ -4472,7 +4239,6 @@
       "document": "ModifyTableGroupTags请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待修改标签表格组所属集群ID",
           "example": "",
@@ -4482,7 +4248,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待修改标签表格组ID",
           "example": "",
@@ -4492,7 +4257,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待增加或修改的标签列表",
           "example": "",
@@ -4502,7 +4266,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待删除的标签",
           "example": "",
@@ -4782,7 +4545,6 @@
       "document": "从IDL表描述文件中解析出来的表信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表格描述语言类型：`PROTO`或`TDR`\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4793,7 +4555,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4804,7 +4565,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4815,7 +4575,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格数据结构类型：`GENERIC`或`LIST`\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4826,7 +4585,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主键字段信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4837,7 +4595,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原主键字段信息，改表校验时有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4848,7 +4605,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "非主键字段信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4859,7 +4615,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原非主键字段信息，改表校验时有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4870,7 +4625,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属表格组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4881,7 +4635,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主键字段总大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4892,7 +4645,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "非主键字段总大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4903,7 +4655,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "索引键集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4914,7 +4665,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分表因子集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4925,7 +4675,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TDR版本号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4936,7 +4685,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4947,7 +4695,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "LIST类型表格元素个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4958,7 +4705,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SORTLIST类型表格排序字段个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4969,7 +4715,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SORTLIST类型表格排序顺序\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4986,7 +4731,6 @@
       "document": "center资源池中的机器信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "唯一id",
           "example": "",
@@ -4997,7 +4741,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否支持ipv6",
           "example": "",
@@ -5008,7 +4751,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "剩余可用app",
           "example": "",
@@ -5019,7 +4761,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "svr机器列表",
           "example": "",
@@ -5030,7 +4771,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "proxy机器列表",
           "example": "",
@@ -5047,7 +4787,6 @@
       "document": "独占的proxy详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "proxy的唯一id",
           "example": "1.2.2.2",
@@ -5058,7 +4797,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器类型",
           "example": "0",
@@ -5069,7 +4807,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求包速度",
           "example": "0",
@@ -5080,7 +4817,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求包时延",
           "example": "0",
@@ -5091,7 +4827,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "慢处理包速度",
           "example": "0",
@@ -5102,7 +4837,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3.46.0",
@@ -5119,7 +4853,6 @@
       "document": "proxy机器信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "唯一id",
           "example": "tcaproxy-123",
@@ -5130,7 +4863,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器类型",
           "example": "T1",
@@ -5141,7 +4873,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可分配proxy资源数",
           "example": "1",
@@ -5212,7 +4943,6 @@
       "document": "TcaplusDB服务地域信息详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域Ap-Code",
           "example": "",
@@ -5223,7 +4953,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域缩写",
           "example": "",
@@ -5234,7 +4963,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域ID",
           "example": "",
@@ -5245,7 +4973,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否支持ipv6，0:不支持，1:支持",
           "example": "",
@@ -5262,7 +4989,6 @@
       "document": "RollbackTables请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待回档表格所在集群ID",
           "example": "",
@@ -5272,7 +4998,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待回档表格列表",
           "example": "",
@@ -5282,7 +5007,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待回档时间",
           "example": "",
@@ -5292,7 +5016,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回档模式，支持：`KEYS`",
           "example": "",
@@ -5338,7 +5061,6 @@
       "document": "被选中的表信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表所属表格组ID",
           "example": "",
@@ -5349,7 +5071,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格名称",
           "example": "",
@@ -5360,7 +5081,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表实例ID",
           "example": "",
@@ -5371,7 +5091,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格描述语言类型：`PROTO`或`TDR`",
           "example": "",
@@ -5382,7 +5101,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格数据结构类型：`GENERIC`或`LIST`",
           "example": "",
@@ -5393,7 +5111,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "LIST表元素个数",
           "example": "",
@@ -5404,7 +5121,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格预留容量（GB）",
           "example": "",
@@ -5415,7 +5131,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格预留读CU",
           "example": "",
@@ -5426,7 +5141,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格预留写CU",
           "example": "",
@@ -5437,7 +5151,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格备注信息",
           "example": "",
@@ -5448,7 +5161,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Key回档文件名，回档专用",
           "example": "",
@@ -5459,7 +5171,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Key回档文件扩展名，回档专用",
           "example": "",
@@ -5470,7 +5181,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Key回档文件大小，回档专用",
           "example": "",
@@ -5481,7 +5191,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Key回档文件内容，回档专用",
           "example": "",
@@ -5498,7 +5207,6 @@
       "document": "附带被选中字段信息的表格列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表所属表格组ID",
           "example": "101",
@@ -5509,7 +5217,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格名称",
           "example": "tb_example",
@@ -5520,7 +5227,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表实例ID",
           "example": "tcaplus-1f224454",
@@ -5531,7 +5237,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格描述语言类型：`PROTO`或`TDR`",
           "example": "PROTO",
@@ -5542,7 +5247,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格数据结构类型：`GENERIC`或`LIST`",
           "example": "GENERIC",
@@ -5553,7 +5257,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待创建索引、缓写、数据订阅的字段列表",
           "example": "无",
@@ -5564,7 +5267,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "索引分片数",
           "example": "3",
@@ -5575,7 +5277,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ckafka实例信息",
           "example": "无",
@@ -5592,7 +5293,6 @@
       "document": "server独占机器的详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "svr唯一id",
           "example": "1.2.2.2",
@@ -5603,7 +5303,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器类型",
           "example": "master",
@@ -5614,7 +5313,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存占用量",
           "example": "0",
@@ -5625,7 +5323,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘占用量",
           "example": "0",
@@ -5636,7 +5333,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "读次数",
           "example": "0",
@@ -5647,7 +5343,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "写次数",
           "example": "0",
@@ -5658,7 +5353,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3.46.0",
@@ -5675,7 +5369,6 @@
       "document": "svr的机器列表ServerList",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机器唯一id",
           "example": "",
@@ -5686,7 +5379,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器类型",
           "example": "",
@@ -5703,7 +5395,6 @@
       "document": "SetBackupExpireRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表所属集群实例ID",
           "example": "5674209986",
@@ -5713,7 +5404,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "淘汰策略数组",
           "example": "无",
@@ -5754,7 +5444,6 @@
           "disabled": false,
           "document": "表所属集群实例ID",
           "example": "5674209986",
-          "is_base64": false,
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -5764,7 +5453,6 @@
           "disabled": false,
           "document": "待创建分布式索引表格列表",
           "example": "无",
-          "is_base64": false,
           "member": "SelectedTableWithField",
           "name": "SelectedTables",
           "required": true,
@@ -5863,7 +5551,6 @@
       "document": "快照列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "所属表格组ID",
           "example": "",
@@ -5874,7 +5561,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表名称",
           "example": "",
@@ -5885,7 +5571,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照名称",
           "example": "",
@@ -5896,7 +5581,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照时间点",
           "example": "",
@@ -5907,7 +5591,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照过期时间点",
           "example": "",
@@ -5924,7 +5607,6 @@
       "document": "新的快照过期时间",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "所属表格组ID",
           "example": "",
@@ -5935,7 +5617,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表名称",
           "example": "",
@@ -5946,7 +5627,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照名称",
           "example": "",
@@ -5957,7 +5637,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照过期时间点",
           "example": "",
@@ -5974,7 +5653,6 @@
       "document": "创建快照结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表格所属表格组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -5985,7 +5663,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -5996,7 +5673,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID，对于创建单任务的接口有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -6007,7 +5683,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -6018,7 +5693,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -6029,7 +5703,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照的时间点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -6040,7 +5713,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照的过期时间点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -6051,7 +5723,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照创建时间点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -6062,7 +5733,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -6073,7 +5743,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照状态，0 生成中 1 正常 2 删除中 3 已失效 4 回档使用中\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -6090,7 +5759,6 @@
       "document": "缓写表字段名称的映射",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TcaplusDB表字段名称",
           "example": "id",
@@ -6101,7 +5769,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标缓写表的字段名称",
           "example": "id",
@@ -6118,7 +5785,6 @@
       "document": "TcaplusDB的缓写表信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "目标缓写表的分表数目",
           "example": "1",
@@ -6129,7 +5795,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标缓写表名前缀",
           "example": "无",
@@ -6140,7 +5805,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "缓写数据库实例ID",
           "example": "cdb-70zdmgg1",
@@ -6151,7 +5815,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "缓写表所在数据库名称",
           "example": "db",
@@ -6162,7 +5825,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "缓写状态，0：创建中，1：进行中，2：关闭，-1：被删除",
           "example": "0",
@@ -6173,7 +5835,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格所在集群ID",
           "example": "18641706761",
@@ -6184,7 +5845,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格所在表格组ID",
           "example": "1",
@@ -6195,7 +5855,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格名称",
           "example": "tablename",
@@ -6206,7 +5865,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格ID",
           "example": "tcaplus-d753f0db",
@@ -6217,7 +5875,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TcaplusDB表主键字段到目标缓写表字段的映射",
           "example": "无",
@@ -6228,7 +5885,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TcaplusDB表字段到目标缓写表字段的映射",
           "example": "无",
@@ -6245,7 +5901,6 @@
       "document": "表格组详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表格组ID",
           "example": "\"123\"",
@@ -6256,7 +5911,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格组名称",
           "example": "\"ZoneName\"",
@@ -6267,7 +5921,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格组创建时间",
           "example": "20211011",
@@ -6278,7 +5931,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格组包含的表格数量",
           "example": "10",
@@ -6289,7 +5941,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格组包含的表格存储总量（MB）",
           "example": "100",
@@ -6300,7 +5951,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格Txh备份文件多少天后过期删除\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -6311,7 +5961,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启mysql负载均衡,0未开启 1开启中 2已开启",
           "example": "1",
@@ -6322,7 +5971,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "mysql负载均衡vip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.0.0.0",
@@ -6333,7 +5981,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "mysql负载均衡vport\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3306",
@@ -6350,7 +5997,6 @@
       "document": "表格详情信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表格名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6361,7 +6007,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6372,7 +6017,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格数据结构类型，如：`GENERIC`或`LIST`\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6383,7 +6027,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格数据描述语言（IDL）类型，如：`PROTO`或`TDR`\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6394,7 +6037,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格所属集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6405,7 +6047,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格所属集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6416,7 +6057,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格所属表格组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6427,7 +6067,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格所属表格组名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6438,7 +6077,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格主键字段结构json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6449,7 +6087,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格非主键字段结构json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6460,7 +6097,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格分表因子集合，对PROTO类型表格有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6471,7 +6107,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格索引键字段集合，对PROTO类型表格有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6482,7 +6117,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "LIST类型表格元素个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6493,7 +6127,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格所关联IDL文件信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6504,7 +6137,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格预留容量（GB）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6515,7 +6147,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格预留读CU\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6526,7 +6157,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格预留写CU\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6537,7 +6167,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格实际数据量大小（MB）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6548,7 +6177,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6559,7 +6187,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6570,7 +6197,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格最后一次修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6581,7 +6207,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6592,7 +6217,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6603,7 +6227,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TcaplusDB SDK数据访问接入ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6614,7 +6237,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SORTLIST类型表格排序字段个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6625,7 +6247,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SORTLIST类型表格排序顺序\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6636,7 +6257,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格分布式索引/缓写、kafka数据订阅信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6647,7 +6267,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格Txh备份文件多少天后过期删除\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -6658,7 +6277,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格的缓写信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6675,7 +6293,6 @@
       "document": "表处理结果信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表格实例ID，形如：tcaplus-3be64cbb\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -6686,7 +6303,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID，对于创建单任务的接口有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -6697,7 +6313,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -6708,7 +6323,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格数据结构类型，如：`GENERIC`或`LIST`\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -6719,7 +6333,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表数据描述语言（IDL）类型，如：`PROTO`或`TDR`\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -6730,7 +6343,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格所属表格组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -6741,7 +6353,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -6752,7 +6363,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID列表，对于创建多任务的接口有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -6763,7 +6373,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯云申请审核单Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -6780,7 +6389,6 @@
       "document": "表格回档结果信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表格实例ID，形如：tcaplus-3be64cbb\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6791,7 +6399,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID，对于创建单任务的接口有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6802,7 +6409,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6813,7 +6419,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格数据结构类型，如：`GENERIC`或`LIST`\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6824,7 +6429,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格数据描述语言（IDL）类型，如：`PROTO`或`TDR`\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6835,7 +6439,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格所属表格组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6846,7 +6449,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6857,7 +6459,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID列表，对于创建多任务的接口有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6868,7 +6469,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上传的key文件ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6879,7 +6479,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "校验成功Key数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6890,7 +6489,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Key文件中包含总的Key数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6907,7 +6505,6 @@
       "document": "标签信息单元",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键",
           "example": "",
@@ -6918,7 +6515,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6935,7 +6531,6 @@
       "document": "集群的标签信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6946,7 +6541,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6957,7 +6551,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6974,7 +6567,6 @@
       "document": "表格标签信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表格实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6985,7 +6577,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6996,7 +6587,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7007,7 +6597,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7018,7 +6607,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7035,7 +6623,6 @@
       "document": "表格组标签信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7046,7 +6633,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7057,7 +6643,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7068,7 +6653,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7085,7 +6669,6 @@
       "document": "任务信息详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "",
@@ -7096,7 +6679,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务类型",
           "example": "",
@@ -7107,7 +6689,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务所关联的TcaplusDB内部事务ID",
           "example": "",
@@ -7118,7 +6699,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务所属集群ID",
           "example": "",
@@ -7129,7 +6709,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务所属集群名称",
           "example": "",
@@ -7140,7 +6719,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务进度",
           "example": "",
@@ -7151,7 +6729,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务创建时间",
           "example": "",
@@ -7162,7 +6739,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务最后更新时间",
           "example": "",
@@ -7173,7 +6749,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作者",
           "example": "",
@@ -7184,7 +6759,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务详情",
           "example": "",
@@ -7204,7 +6778,6 @@
           "disabled": false,
           "document": "申请单状态",
           "example": "无",
-          "is_base64": false,
           "member": "ApplyStatus",
           "name": "ApplyStatus",
           "required": true,
@@ -7249,7 +6822,6 @@
       "document": "VerifyIdlFiles请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待创建表格的集群ID",
           "example": "",
@@ -7259,7 +6831,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待创建表格的表格组ID",
           "example": "",
@@ -7269,7 +6840,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "曾经上传过的IDL文件信息列表，与NewIdlFiles至少有一者",
           "example": "",
@@ -7279,7 +6849,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待上传的IDL文件信息列表，与ExistingIdlFiles至少有一者",
           "example": "",

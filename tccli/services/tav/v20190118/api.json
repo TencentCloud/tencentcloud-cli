@@ -35,7 +35,6 @@
       "document": "GetLocalEngine请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "购买服务后获得的授权信息，用于保证请求有效性",
           "member": "string",
           "name": "Key",
@@ -82,7 +81,6 @@
       "document": "GetScanResult请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "购买服务后获得的授权信息，用于保证请求有效性",
           "member": "string",
           "name": "Key",
@@ -90,7 +88,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "需要获取扫描接口的md5（只允许单个md5）",
           "member": "string",
           "name": "Md5",
@@ -137,7 +134,6 @@
       "document": "ScanFileHash请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "购买服务后获得的授权信息，用于保证请求有效性",
           "member": "string",
           "name": "Key",
@@ -145,7 +141,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "需要查询的md5值（支持单个和多个，多个md5间用逗号分格）",
           "member": "string",
           "name": "Md5s",
@@ -153,7 +148,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "保留字段默认填0",
           "member": "string",
           "name": "WithCategory",
@@ -161,7 +155,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "松严规则控制字段默认填10（5-松、10-标准、15-严）",
           "member": "string",
           "name": "SensitiveLevel",
@@ -208,7 +201,6 @@
       "document": "ScanFile请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "购买服务后获得的授权信息，用于保证请求有效性",
           "member": "string",
           "name": "Key",
@@ -216,7 +208,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件下载url地址",
           "member": "string",
           "name": "Sample",
@@ -224,7 +215,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件的md5值",
           "member": "string",
           "name": "Md5",

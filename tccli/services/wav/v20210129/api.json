@@ -194,7 +194,6 @@
       "document": "活动详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "活动id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1381619428653346818",
@@ -205,7 +204,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "留资活动",
@@ -216,7 +214,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动状态，10:未开始状态、20:已开始（进行中）状态、30:已结束状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
@@ -227,7 +224,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动类型，100:留资活动\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
@@ -238,7 +234,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动开始时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1618243200",
@@ -249,7 +244,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动结束时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1618329600",
@@ -260,7 +254,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动主图\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://tmap-travel-didi-1255598736.cos.ap-guangzhou.myqcloud.co",
@@ -271,7 +264,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议编号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1380815131099852801",
@@ -282,7 +274,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动更新时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1621500202",
@@ -293,7 +284,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{                     \"optionalCityCodeList\": [                 ",
@@ -310,7 +300,6 @@
       "document": "活动参与详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "活动id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1381619428653346818",
@@ -321,7 +310,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "留资活动",
@@ -332,7 +320,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "销售姓名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "销售1",
@@ -343,7 +330,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "销售电话\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "13000000000",
@@ -354,7 +340,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参与id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1381612531432296450",
@@ -365,7 +350,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活码id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1381612531432296450",
@@ -376,7 +360,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户电话\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "13000000000",
@@ -387,7 +370,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户姓名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "用户1",
@@ -398,7 +380,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"{\\\"cityInfo\\\":{\\\"cityCode\\\":\\\"420100\\\",\\\"cityName\\\":\\\"武汉市\\\",\\\"p",
@@ -409,7 +390,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "线索id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1381612531432296450",
@@ -420,7 +400,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参与时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1618329600",
@@ -431,7 +410,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "线索是否是重复创建， 0 ：新建、 1：合并、 2：重复， 默认为0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -442,7 +420,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "重复线索id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1391954669730611201",
@@ -453,7 +430,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为参与多次活动， 1：参与一次、2、参与多次，默认为0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -464,7 +440,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1618329600",
@@ -475,7 +450,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间戳，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1618329600",
@@ -588,7 +562,6 @@
       "document": "渠道活码详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "渠道活码id",
           "example": "1397103193143300098",
@@ -599,7 +572,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "欢迎语类型，0：普通欢迎语、1:渠道欢迎语",
           "example": "1",
@@ -610,7 +582,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "渠道来源",
           "example": "1",
@@ -621,7 +592,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "渠道来源名称",
           "example": "自然到店",
@@ -632,7 +602,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "二维码名称",
           "example": "测试企业标签的活码",
@@ -643,7 +612,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用成员用户id集",
           "example": "[                     1386218784692961300                 ]",
@@ -654,7 +622,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用成员企微账号id集",
           "example": "[                     \"544064e019b53e4791115020ffc68f33\"        ",
@@ -665,7 +632,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签",
           "example": "[                     {                         \"GroupName\": \"测试",
@@ -676,7 +642,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动通过好友，0：开启、1：关闭，默认0开启",
           "example": "0",
@@ -687,7 +652,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "添加好友人数",
           "example": "0",
@@ -698,7 +662,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "备注",
@@ -709,7 +672,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "欢迎语id（通过欢迎语新增返回的id）",
           "example": "1397103192673538050",
@@ -720,7 +682,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联系我config_id",
           "example": "13ef26feea8c92e2b0c895db45987fb9",
@@ -731,7 +692,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联系我二维码地址",
           "example": "https://wework.qpic.cn/wwpic/142302_fc9KKS9RSyS58cp_1621930333/0",
@@ -742,7 +702,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录状态， 0：有效、1：无效",
           "example": "0",
@@ -753,7 +712,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID",
           "example": "LXC",
@@ -796,7 +754,6 @@
       "document": "会话存档数据详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "消息id",
           "example": "xx",
@@ -807,7 +764,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动作名称，switch表示切换企微账号，send表示企微普通消息",
           "example": "switch, send",
@@ -818,7 +774,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息类型，当Action != \"switch\"时存在，例如video, text, voice 等，和企微开放文档一一对应\nhttps://open.work.weixin.qq.com/api/doc/90000/90135/91774\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "video, text, voice",
@@ -829,7 +784,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息发送人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -840,7 +794,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息接收人列表，注意接收人可能只有一个\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"xx\"]",
@@ -851,7 +804,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "如果是群消息，则不为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "roomId",
@@ -862,7 +814,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息发送的时间戳，单位为秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1621496513",
@@ -873,7 +824,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "MsgType=video时的消息体，忽略此字段，见BodyJson字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -884,7 +834,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据MsgType的不同取值，解析内容不同，参考：https://open.work.weixin.qq.com/api/doc/90000/90135/91774\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
@@ -901,7 +850,6 @@
       "document": "会话存档的视频消息类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频时长，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
@@ -912,7 +860,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "645990",
@@ -923,7 +870,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频资源对象Cos下载地址",
           "example": "http://xx",
@@ -1582,7 +1528,6 @@
       "document": "CreateChannelCode请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "欢迎语类型:0普通欢迎语,1渠道欢迎语",
           "example": "1",
@@ -1592,7 +1537,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用成员用户id集",
           "example": "[         1386218784692961300     ]",
@@ -1602,7 +1546,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用成员企微账号id集",
           "example": "[         \"544064e019b53e4791115020ffc68f33\"     ]",
@@ -1612,7 +1555,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID,字典表中的APP_TYPE值,多个已逗号分隔",
           "example": "DEFAULT",
@@ -1622,7 +1564,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "渠道来源",
           "example": "1",
@@ -1632,7 +1573,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "渠道来源名称",
           "example": "自然到店",
@@ -1642,7 +1582,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "二维码名称",
           "example": "测试企业标签的活码",
@@ -1652,7 +1591,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签",
           "example": "无",
@@ -1662,7 +1600,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动通过好友：0开启 1关闭, 默认开启",
           "example": "0",
@@ -1672,7 +1609,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "欢迎语id（通过欢迎语新增返回的id）",
           "example": "1397103192673538050",
@@ -1682,7 +1618,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "如图",
@@ -1692,7 +1627,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "渠道类型 0 未知 1 公域 2私域",
           "example": "1",
@@ -1720,7 +1654,6 @@
       "document": "CreateCorpTag请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签组名称，最长为15个字符",
           "example": "GROUP_NAME",
@@ -1730,7 +1663,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签信息数组",
           "example": "无",
@@ -1740,7 +1672,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签组次序值。sort值大的排序靠前。有效的值范围是[0, 2^32)",
           "example": "1",
@@ -1778,7 +1709,6 @@
       "document": "CreateLead请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "来源ID",
           "example": "无",
@@ -1788,7 +1718,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "来源名称",
           "example": "51QC",
@@ -1798,7 +1727,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间， 单位毫秒",
           "example": "1638178594245",
@@ -1808,7 +1736,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "线索类型：1-400呼入，2-常规留资",
           "example": "2",
@@ -1818,7 +1745,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "经销商id",
           "example": "1438394065134600193",
@@ -1828,7 +1754,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "品牌id",
           "example": "1373911438101237762",
@@ -1838,7 +1763,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车系id",
           "example": "1376410380566495234",
@@ -1848,7 +1772,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户姓名",
           "example": "张三",
@@ -1858,7 +1781,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户手机号",
           "example": "134****1234",
@@ -1868,7 +1790,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车型id",
           "example": "1376759329958998019",
@@ -1878,7 +1799,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户性别: 0-未知, 1-男, 2-女",
           "example": "0",
@@ -1888,7 +1808,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "销售姓名",
           "example": "李四",
@@ -1898,7 +1817,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "销售手机号",
           "example": "134****6789",
@@ -1908,7 +1826,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cc坐席姓名",
           "example": "王五",
@@ -1918,7 +1835,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "备注",
@@ -1966,7 +1882,6 @@
       "document": "CRM统计数据响应",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "新增线索",
           "example": "10",
@@ -1977,7 +1892,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新增建档",
           "example": "5",
@@ -1988,7 +1902,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新增到店",
           "example": "1",
@@ -1999,7 +1912,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新增下订",
           "example": "5",
@@ -2010,7 +1922,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新增成交",
           "example": "10",
@@ -2021,7 +1932,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新增战败",
           "example": "3",
@@ -2032,7 +1942,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新增好友",
           "example": "2",
@@ -2043,7 +1952,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计时间, 单位：天",
           "example": "2022-11-11",
@@ -2060,7 +1968,6 @@
       "document": "外部联系人SaaS使用明细数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件码",
           "example": "1000",
@@ -2071,7 +1978,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件类型",
           "example": "1",
@@ -2082,7 +1988,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件来源",
           "example": "1",
@@ -2093,7 +1998,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "外部联系人id",
           "example": "wmQIM2CwAAL1ZKqK-icQG9XAMa3AhP-A",
@@ -2104,7 +2008,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "销售顾问id",
           "example": "1323253932850728968",
@@ -2115,7 +2018,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材类型",
           "example": "1",
@@ -2126,7 +2028,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材编号id",
           "example": "1348495383617208321",
@@ -2137,7 +2038,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件上报时间，单位：秒",
           "example": "1647423519",
@@ -2772,7 +2672,6 @@
       "document": "客户信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "外部联系人的userId",
           "example": "wmQIM2CwAAE-JSOVGMzsRayI3ow5kGzQ",
@@ -2783,7 +2682,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "外部联系人性别 0-未知 1-男性 2-女性",
           "example": "1",
@@ -2794,7 +2692,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "外部联系人的名称",
           "example": "文",
@@ -2805,7 +2702,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "外部联系人的类型，1表示该外部联系人是微信用户，2表示该外部联系人是企业微信用户",
           "example": "1",
@@ -2816,7 +2712,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "外部联系人在微信开放平台的唯一身份标识（微信unionid），通过此字段企业可将外部联系人与公众号/小程序用户关联起来。仅当联系人类型是微信用户，且企业或第三方服务商绑定了微信开发者ID有此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ozynqsulJFCZ2z1aYeS8h-nuasdAAA",
@@ -2827,7 +2722,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "外部联系人联系电话\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "134****3232",
@@ -2870,7 +2764,6 @@
       "document": "外部联系人简短信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "外部联系人的userId",
           "example": "woAJ2GCAAAXtWyujaWJHDDGi0mACAAA",
@@ -2881,7 +2774,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "添加了此外部联系人的企业成员userId",
           "example": "yangGuo",
@@ -2892,7 +2784,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "添加了此外部联系人的企业成员的姓名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "销售名称",
@@ -2903,7 +2794,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "添加了此外部联系人的企业成员的归属部门id列表",
           "example": "[0,1]",
@@ -2920,7 +2810,6 @@
       "document": "外部联系人标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "该成员添加此外部联系人所打标签的分组名称（标签功能需要企业微信升级到2.7.5及以上版本）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "标签分组名称",
@@ -2931,7 +2820,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该成员添加此外部联系人所打标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "标签名称",
@@ -2942,7 +2830,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该成员添加此外部联系人所打标签类型, 1-企业设置, 2-用户自定义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -2953,7 +2840,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该成员添加此外部联系人所打企业标签的id，仅企业设置（type为1）的标签返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "etAJ2GCAAAXtWyujaWJHDDGi0mACHAAA",
@@ -2970,7 +2856,6 @@
       "document": "外部联系人事件信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件编码, 添加外部联系人(ADD_EXTERNAL_CUSTOMER)/成员删除外部联系人(DELETE_EXTERNAL_CUSTOMER)/外部联系人删除成员(DELETE_FOLLOW_USER)",
           "example": "ADD_EXTERNAL_CUSTOMER",
@@ -2981,7 +2866,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "外部联系人id",
           "example": "woQIM2CwAA8BPLSVDDBZUYIlviX3_9DQ",
@@ -2992,7 +2876,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企微SaaS的成员id",
           "example": "1323253932850728968",
@@ -3003,7 +2886,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件上报时间戳，单位：秒",
           "example": "1614923098",
@@ -3020,7 +2902,6 @@
       "document": "外部联系人映射信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "企业主体对应的外部联系人userId",
           "example": "wmQIM2CwAAywHqH07voRw9iuAAA09eQ",
@@ -3031,7 +2912,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "乐销车应用主体对应的外部联系人, 当不存在好友关系时，该字段值为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "wmQIM2CwAAywHqH07voRw9feafe9eQ",
@@ -3184,7 +3064,6 @@
       "document": "添加了此外部联系人的企业成员信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "添加了此外部联系人的企业成员userid",
           "example": "rocky",
@@ -3195,7 +3074,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该成员对此外部联系人的备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "备注",
@@ -3206,7 +3084,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该成员对此外部联系人的描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "描述",
@@ -3217,7 +3094,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该成员添加此外部联系人的时间戳，单位为秒",
           "example": "1618322621",
@@ -3228,7 +3104,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该成员添加此客户的来源，具体含义详见<a href=\"https://work.weixin.qq.com/api/doc/90000/90135/92114#%E6%9D%A5%E6%BA%90%E5%AE%9A%E4%B9%89\">来源定义</a>",
           "example": "1",
@@ -3239,7 +3114,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发起添加的userid，如果成员主动添加，为成员的userid；如果是客户主动添加，则为客户的外部联系人userid；如果是内部成员共享/管理员分配，则为对应的成员/管理员userid",
           "example": "wmQIM2CwAAE-JSOVGMzsRayI3ow5kGzQ",
@@ -3250,7 +3124,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该成员添加此外部联系人所打标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -3363,7 +3236,6 @@
       "document": "license相关信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "license编号",
           "example": "A1c0tVAAAGSB1",
@@ -3374,7 +3246,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "license版本；1-基础版，2-标准版，3-增值版",
           "example": "1",
@@ -3385,7 +3256,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生效开始时间, 格式yyyy-MM-dd HH:mm:ss",
           "example": "2021-07-01 00:00:00",
@@ -3396,7 +3266,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生效结束时间, 格式yyyy-MM-dd HH:mm:ss",
           "example": "2022-07-01 00:00:00",
@@ -3407,7 +3276,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "隔离截止时间, 格式yyyy-MM-dd HH:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-07-08 00:00:00",
@@ -3418,7 +3286,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源计划销毁时间, 格式yyyy-MM-dd HH:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-07-15 00:00:00",
@@ -3429,7 +3296,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源状态，1.正常，2.隔离，3.销毁",
           "example": "1",
@@ -3440,7 +3306,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩展信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -3457,7 +3322,6 @@
       "document": "活动活码详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "活码id",
           "example": "1381612531432296450",
@@ -3468,7 +3332,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活码名称",
           "example": "留资活动活码",
@@ -3479,7 +3342,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "短链url\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://aggretrip.map.qq.com/wework_saas/dist/index.html?wexin_t",
@@ -3490,7 +3352,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活码二维码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://aggretrip.map.qq.com/wework_saas/dist/index.html?wexin_t",
@@ -3501,7 +3362,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动id",
           "example": "1381619428653346818",
@@ -3512,7 +3372,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动名称",
           "example": "留资活动名称",
@@ -3523,7 +3382,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活码状态，-1：删除，0：启用，1禁用，默认为0",
           "example": "0",
@@ -3534,7 +3392,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活码参数，每个活码参数都是不一样的， 这个的值对应的是字符串json类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"channel\": {                         \"chan",
@@ -3545,7 +3402,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间戳，单位为秒",
           "example": "1621496513",
@@ -3556,7 +3412,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间戳，单位为秒",
           "example": "1621496513",
@@ -3573,7 +3428,6 @@
       "document": "素材信息响应体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "素材id",
           "example": "1348481184631488514",
@@ -3584,7 +3438,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "图片名称",
@@ -3595,7 +3448,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材状态, -1: 删除 0: 启用 1: 禁用",
           "example": "0",
@@ -3612,7 +3464,6 @@
       "document": "小程序码信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主键id",
           "example": "30",
@@ -3623,7 +3474,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "小程序名称",
           "example": "小程序名称",
@@ -3634,7 +3484,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "小程序logo",
           "example": "https://xxx.jpg",
@@ -3645,7 +3494,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "小程序管理端地址",
           "example": "https://www.xxx.com",
@@ -3656,7 +3504,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态：0正常，1删除",
           "example": "0",
@@ -3667,7 +3514,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间戳，单位为秒",
           "example": "1621496513",
@@ -3678,7 +3524,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间戳，单位为秒",
           "example": "1621496513",
@@ -3721,7 +3566,6 @@
       "document": "QueryActivityJoinList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "活动id",
           "example": "1381612531432296450",
@@ -3731,7 +3575,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页游标，对应结果返回的NextCursor,首次请求保持为空",
           "example": "bJbnlggwpL8gcUbAj2fc96iYzzeRd",
@@ -3741,7 +3584,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单页数据限制",
           "example": "1000",
@@ -3789,7 +3631,6 @@
       "document": "QueryActivityList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分页游标，对应结果返回的NextCursor,首次请求保持为空",
           "example": "bJbnlggwpL8gcUbAj2fc96iYzzeRd",
@@ -3799,7 +3640,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单页数据限制",
           "example": "1000",
@@ -3847,7 +3687,6 @@
       "document": "QueryActivityLiveCodeList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
@@ -3857,7 +3696,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
           "example": "100",
@@ -3989,7 +3827,6 @@
       "document": "QueryChannelCodeList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
           "example": "1397103193143300098=",
@@ -3999,7 +3836,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
           "example": "100",
@@ -4047,7 +3883,6 @@
       "document": "QueryChatArchivingList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
@@ -4057,7 +3892,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
           "example": "100",
@@ -4189,7 +4023,6 @@
       "document": "QueryCrmStatistics请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询开始时间， 单位秒",
           "example": "1647187200",
@@ -4199,7 +4032,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间， 单位秒",
           "example": "1647273600",
@@ -4209,7 +4041,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
@@ -4219,7 +4050,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
           "example": "100",
@@ -4229,7 +4059,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求的企业成员id，为空时默认全租户",
           "example": "1323253932850728968",
@@ -4239,7 +4068,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求的部门id，为空时默认全租户",
           "example": "3",
@@ -4287,7 +4115,6 @@
       "document": "QueryCustomerEventDetailStatistics请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询开始时间， 单位秒",
           "example": "1647273600",
@@ -4297,7 +4124,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间， 单位秒",
           "example": "1647573600",
@@ -4307,7 +4133,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
@@ -4317,7 +4142,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
           "example": "100",
@@ -4646,7 +4470,6 @@
       "document": "QueryExternalContactList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
@@ -4656,7 +4479,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
           "example": "100",
@@ -4704,7 +4526,6 @@
       "document": "QueryExternalUserEventList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询开始时间， 单位秒",
           "example": "1647187200",
@@ -4714,7 +4535,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间， 单位秒",
           "example": "1647273600",
@@ -4724,7 +4544,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
@@ -4734,7 +4553,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
           "example": "100",
@@ -4782,7 +4600,6 @@
       "document": "QueryExternalUserMappingInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "企业主体对应的外部联系人id列表，列表长度限制最大为50。",
           "example": "[\"wmQIM2CwAAywHqH07voRw9aacKXf09eQ\"]",
@@ -4904,7 +4721,6 @@
       "document": "QueryLicenseInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "license编号",
           "example": "afeafefefe1",
@@ -4942,7 +4758,6 @@
       "document": "QueryMaterialList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "素材类型：0-图片，1-视频，3-文章，10-车型，11-名片",
           "example": "0",
@@ -4952,7 +4767,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
@@ -4962,7 +4776,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
           "example": "100",
@@ -5010,7 +4823,6 @@
       "document": "QueryMiniAppCodeList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
@@ -5020,7 +4832,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
           "example": "100",
@@ -5068,7 +4879,6 @@
       "document": "QueryStaffEventDetailStatistics请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询开始时间， 单位秒",
           "example": "1647273600",
@@ -5078,7 +4888,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间， 单位秒",
           "example": "1647573600",
@@ -5088,7 +4897,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
@@ -5098,7 +4906,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
           "example": "100",
@@ -5202,7 +5009,6 @@
       "document": "QueryVehicleInfoList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用于分页查询的游标，字符串类型，由上一次调用返回，首次调用可不填",
           "example": "2Kgdu51quLaeNJSlwb79im883bftBE9d9Emju5I2MVw=",
@@ -5212,7 +5018,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回的最大记录数，整型，最大值100，默认值50，超过最大值时取最大值",
           "example": "100",
@@ -5270,7 +5075,6 @@
       "document": "企业成员SaaS使用明细数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件码",
           "example": "1000",
@@ -5281,7 +5085,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件类型",
           "example": "1",
@@ -5292,7 +5095,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件来源",
           "example": "1",
@@ -5303,7 +5105,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "销售顾问id",
           "example": "1323253932850728968",
@@ -5314,7 +5115,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材类型",
           "example": "1",
@@ -5325,7 +5125,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材编号id",
           "example": "1348495383617208321",
@@ -5336,7 +5135,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件上报时间，单位：秒",
           "example": "1647423519",
@@ -5353,7 +5151,6 @@
       "document": "标签详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签名称",
           "example": "标签名称",
@@ -5364,7 +5161,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签业务ID",
           "example": "1394843909254754300",
@@ -5375,7 +5171,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企微标签ID",
           "example": "etQIM2CwAA6_HurtDtzSyK68jfiaX0UQ",
@@ -5386,7 +5181,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签排序的次序值，sort值大的排序靠前。有效的值范围是[0, 2^32)",
           "example": "0",
@@ -5397,7 +5191,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签创建时间,单位为秒",
           "example": "1621500202",
@@ -5414,7 +5207,6 @@
       "document": "标签组信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "企微标签组id",
           "example": "etQIM2CwAAbJ-IpFWKlyEHrWD1Z6qYkw",
@@ -5425,7 +5217,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签组业务id",
           "example": "1348107208961921026",
@@ -5436,7 +5227,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企微标签组名称，不能超过15个字符",
           "example": "组名",
@@ -5447,7 +5237,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签组次序值。sort值大的排序靠前。有效的值范围是[0, 2^32)",
           "example": "1",
@@ -5458,7 +5247,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签组创建时间,单位为秒",
           "example": "1621500202",
@@ -5469,7 +5257,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签组内的标签列表, 上限为20",
           "example": "无",
@@ -5486,7 +5273,6 @@
       "document": "标签信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签名称, 最大长度限制15个字符",
           "example": "标签名称",
@@ -5497,7 +5283,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签组排序,值越大,排序越靠前",
           "example": "1",
@@ -5514,7 +5299,6 @@
       "document": "车型车系信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "品牌id",
           "example": "1334702033519960066",
@@ -5525,7 +5309,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "品牌名称",
           "example": "品牌名称",
@@ -5536,7 +5319,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车系id",
           "example": "1334702033528348674",
@@ -5547,7 +5329,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车系名称",
           "example": "车系名称",
@@ -5558,7 +5339,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车型id",
           "example": "1334740794876203009",
@@ -5569,7 +5349,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车型名称",
           "example": "车型名称",
@@ -5612,7 +5391,6 @@
       "document": "企微个人标签信息,渠道活码使用",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "测试111",
@@ -5623,7 +5401,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签分组业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1394843720913727500",
@@ -5634,7 +5411,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "涛涛涛涛涛涛涛涛涛涛涛涛涛11",
@@ -5645,7 +5421,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "etQIM2CwAA6_HurtDtzSyK68jfiaX0UQ",
@@ -5656,7 +5431,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1394843909254754300",
@@ -5667,7 +5441,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签分类，1：企业设置、2：用户自定义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -5678,7 +5451,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签业务ID字符串格式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1394843909254754300",

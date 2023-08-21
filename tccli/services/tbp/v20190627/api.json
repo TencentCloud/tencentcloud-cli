@@ -26,7 +26,6 @@
       "document": "Group是消息组的具体定义，当前包含ContentType、Url、Content三个字段。其中，具体的ContentType字段定义，参考互联网MIME类型标准。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "消息类型参考互联网MIME类型标准，当前仅支持\"text/plain\"。",
           "example": "",
@@ -37,7 +36,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回内容以链接形式提供。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -48,7 +46,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "普通文本。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -65,7 +62,6 @@
       "document": "从TBP-RTS服务v1.3版本起，机器人以消息组列表的形式响应，消息组列表GroupList包含多组消息，用户根据需要对部分或全部消息组进行组合使用。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "消息组列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -82,7 +78,6 @@
       "document": "槽位信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "槽位名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -93,7 +88,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "槽位值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",

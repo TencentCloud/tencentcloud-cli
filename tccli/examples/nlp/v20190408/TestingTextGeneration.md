@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli nlp TestingTextGeneration --cli-unfold-argument  \
-    --Model gpt_176B_v1.3_m5.2_v100 \
+    --Model TestingModel \
     --QueryId 2121 \
     --Messages.0.Role system \
     --Messages.0.Content  \
@@ -35,7 +35,7 @@ Output:
         ],
         "Created": 1692092667,
         "Id": "2121",
-        "Model": "SFT_COMMON_V100_CSIG",
+        "Model": "TestingModel",
         "Usage": {
             "PromptTokens": 7,
             "CompletionTokens": 185,
@@ -53,7 +53,7 @@ Input:
 
 ```
 tccli nlp TestingTextGeneration --cli-unfold-argument  \
-    --Model gpt_176B_v1.3_m5.2_v100 \
+    --Model TestingModel \
     --QueryId 2121 \
     --Temperature 0 \
     --TopP 0 \
@@ -87,7 +87,7 @@ Input:
 
 ```
 tccli nlp TestingTextGeneration --cli-unfold-argument  \
-    --Model gpt_176B_v1.3_m5.2_v100 \
+    --Model TestingModel \
     --QueryId 12122 \
     --Messages.0.Role system \
     --Messages.0.Content  \
@@ -113,7 +113,7 @@ Output:
         ],
         "Created": 1692102278,
         "Id": "12122",
-        "Model": "gpt_176B_v1.3_m5.2_v100",
+        "Model": "TestingModel",
         "RequestId": "886975d4-f865-4db6-afb7-f2fcfa8d08a5",
         "Usage": {
             "CompletionTokens": 176,

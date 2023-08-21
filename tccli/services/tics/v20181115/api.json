@@ -40,7 +40,6 @@
       "document": "DescribeDomainInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要查询的域名",
           "example": "",
@@ -50,7 +49,6 @@
           "type": "string"
         },
         {
-          "default": "0",
           "disabled": false,
           "document": "附加字段，是否返回上下文。当为0时不返回上下文，当为1时返回上下文。",
           "example": "",
@@ -141,7 +139,6 @@
       "document": "DescribeFileInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要查询文件的MD5",
           "example": "",
@@ -151,7 +148,6 @@
           "type": "string"
         },
         {
-          "default": "0",
           "disabled": false,
           "document": "附加字段，是否返回上下文。当为0时不返回上下文，当为1时返回上下文。",
           "example": "",
@@ -242,7 +238,6 @@
       "document": "DescribeIpInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要查询的IP",
           "example": "",
@@ -252,7 +247,6 @@
           "type": "string"
         },
         {
-          "default": "0",
           "disabled": false,
           "document": "附加字段，是否返回上下文。当为0时不返回上下文，当为1时返回上下文。",
           "example": "",
@@ -343,7 +337,6 @@
       "document": "DescribeThreatInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询对象，域名或IP",
           "example": "",
@@ -353,7 +346,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询类型，当前取值为domain或ip",
           "example": "",
@@ -363,7 +355,6 @@
           "type": "string"
         },
         {
-          "default": "0",
           "disabled": false,
           "document": "附加字段，是否返回上下文。当为0时不返回上下文，当为1时返回上下文。",
           "example": "",
@@ -454,7 +445,6 @@
       "document": "文件信息类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "判定渠道",
           "example": "",
@@ -465,7 +455,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测优先级",
           "example": "",
@@ -476,7 +465,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "引擎优先级",
           "example": "",
@@ -487,7 +475,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "样本是否存在",
           "example": "",
@@ -498,7 +485,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件上传",
           "example": "",
@@ -509,7 +495,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件大小",
           "example": "",
@@ -520,7 +505,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件上传时间",
           "example": "",
@@ -531,7 +515,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "病毒文件全名",
           "example": "",
@@ -542,7 +525,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IDC位置",
           "example": "",
@@ -553,7 +535,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件md5值",
           "example": "",
@@ -564,7 +545,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "PE结构是否存在",
           "example": "",
@@ -575,7 +555,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "PE结构上传",
           "example": "",
@@ -586,7 +565,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全性等级",
           "example": "",
@@ -597,7 +575,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扫描时间",
           "example": "",
@@ -608,7 +585,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子判定渠道",
           "example": "",
@@ -619,7 +595,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "病毒名",
           "example": "",
@@ -630,7 +605,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "病毒类型",
           "example": "",
@@ -641,7 +615,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "白名单分数",
           "example": "",
@@ -658,7 +631,6 @@
       "document": "{ \"source\": \"inergj_ai_predict\", \"stamp\": \"msraminer\", \"time\": 1531994023 }",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "来源",
           "example": "",
@@ -669,7 +641,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标记",
           "example": "",
@@ -680,7 +651,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间",
           "example": "",
@@ -697,7 +667,6 @@
       "document": "标签及对应的解释",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签",
           "example": "",
@@ -708,7 +677,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签对应的中文解释",
           "example": "",

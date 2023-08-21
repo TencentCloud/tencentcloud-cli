@@ -61,7 +61,6 @@
       "document": "ChangeRoomPlayerProfile请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "游戏资源Id。",
           "member": "string",
           "name": "GameId",
@@ -69,7 +68,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "发起修改的玩家Id。",
           "member": "string",
           "name": "PlayerId",
@@ -77,7 +75,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "需要修改的玩家自定义属性。",
           "member": "string",
           "name": "CustomProfile",
@@ -110,7 +107,6 @@
       "document": "ChangeRoomPlayerStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "游戏资源Id。",
           "member": "string",
           "name": "GameId",
@@ -118,7 +114,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "玩家自定义状态。",
           "member": "uint64",
           "name": "CustomStatus",
@@ -126,7 +121,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "玩家id。",
           "member": "string",
           "name": "PlayerId",
@@ -159,7 +153,6 @@
       "document": "DescribePlayer请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "游戏资源Id。",
           "example": "obg-fr4vwil4",
           "member": "string",
@@ -168,7 +161,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "玩家OpenId。",
           "example": "xxxxxx",
           "member": "string",
@@ -177,7 +169,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "玩家PlayerId，由后台分配，当OpenId不传的时候，PlayerId必传，传入PlayerId可以查询当前PlayerId的玩家信息，当OpenId传入的时候，PlayerId可不传，按照OpenId查询玩家信息。",
           "example": "joe123455das",
           "member": "string",
@@ -213,7 +204,6 @@
       "document": "DescribeRoom请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "游戏资源Id。",
           "example": "obg-fr4vwil4",
           "member": "string",
@@ -222,7 +212,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "玩家Id。当房间Id不传的时候，玩家Id必传，传入玩家Id可以查询当前玩家所在的房间信息，当房间Id传入的时候，优先按照房间Id查询房间信息。",
           "example": "joe123455das",
           "member": "string",
@@ -231,7 +220,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "房间Id。",
           "example": "xxsdsdasdas",
           "member": "string",
@@ -267,7 +255,6 @@
       "document": "DismissRoom请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "表示游戏资源唯一 ID, 由后台自动分配, 无法修改。",
           "member": "string",
           "name": "GameId",
@@ -275,7 +262,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "表示游戏房间唯一ID。",
           "member": "string",
           "name": "RoomId",
@@ -301,7 +287,6 @@
       "document": "ModifyRoom请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "游戏资源Id。",
           "member": "string",
           "name": "GameId",
@@ -309,7 +294,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "房间ID。",
           "member": "string",
           "name": "RoomId",
@@ -317,7 +301,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "发起者的PlayerId。",
           "member": "string",
           "name": "PlayerId",
@@ -325,7 +308,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "需要修改的房间选项，0表示房间名称，1表示房主，2表示是否允许观战，3表示是否支持邀请码/密码，4表示是否私有，5表示是否自定义房间属性，6表示是否禁止加人。",
           "member": "int64",
           "name": "ChangeRoomOptionList",
@@ -333,7 +315,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "房间名称。",
           "member": "string",
           "name": "RoomName",
@@ -341,7 +322,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "变更房主。",
           "member": "string",
           "name": "Owner",
@@ -349,7 +329,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否支持观战。",
           "member": "bool",
           "name": "IsViewed",
@@ -357,7 +336,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否支持邀请码/密码。",
           "member": "bool",
           "name": "IsInvited",
@@ -365,7 +343,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "是否私有。",
           "member": "bool",
           "name": "IsPrivate",
@@ -373,7 +350,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "自定义房间属性。",
           "member": "string",
           "name": "CustomProperties",
@@ -381,7 +357,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "房间是否禁止加人。",
           "member": "bool",
           "name": "IsForbidJoin",
@@ -414,7 +389,6 @@
       "document": "玩家信息详情",
       "members": [
         {
-          "default": "",
           "document": "玩家 OpenId。最长不超过64个字符。",
           "member": "string",
           "name": "OpenId",
@@ -423,7 +397,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "玩家昵称。最长不超过32个字符。",
           "member": "string",
           "name": "Name",
@@ -432,7 +405,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "队伍 ID。最长不超过16个字符。",
           "member": "string",
           "name": "TeamId",
@@ -441,7 +413,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "是否为机器人。",
           "member": "bool",
           "name": "IsRobot",
@@ -450,7 +421,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "玩家 PlayerId。出参使用，由后端返回。",
           "member": "string",
           "name": "PlayerId",
@@ -459,7 +429,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "自定义玩家状态。非负数，最大不超过4294967295。默认为0。",
           "member": "uint64",
           "name": "CustomPlayerStatus",
@@ -468,7 +437,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "自定义玩家属性。最长不超过256个字符。默认为空字符串。",
           "member": "string",
           "name": "CustomProfile",
@@ -483,7 +451,6 @@
       "document": "RemoveRoomPlayer请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "游戏资源Id。",
           "member": "string",
           "name": "GameId",
@@ -491,7 +458,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "被踢出房间的玩家Id。",
           "member": "string",
           "name": "RemovePlayerId",
@@ -524,7 +490,6 @@
       "document": "房间信息详情。",
       "members": [
         {
-          "default": "",
           "document": "表示房间名称。最长不超过32个字符。",
           "member": "string",
           "name": "Name",
@@ -533,7 +498,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "表示房间最大玩家数量。最大不超过100人。",
           "member": "int64",
           "name": "MaxPlayers",
@@ -542,7 +506,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "表示房主OpenId。最长不超过16个字符。",
           "member": "string",
           "name": "OwnerOpenId",
@@ -551,7 +514,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "表示是否私有，私有指的是不允许其他玩家通过匹配加入房间。",
           "member": "bool",
           "name": "IsPrivate",
@@ -560,7 +522,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "表示玩家详情列表。",
           "member": "Player",
           "name": "Players",
@@ -569,7 +530,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "表示团队属性列表。",
           "member": "Team",
           "name": "Teams",
@@ -578,7 +538,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "表示房间 ID。出参用，由后端返回。",
           "member": "string",
           "name": "Id",
@@ -587,7 +546,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "表示房间类型。最长不超过32个字符。",
           "member": "string",
           "name": "Type",
@@ -596,7 +554,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "表示创建方式：0.单人主动发起创建房间请求；1.多人在线匹配请求分配房间；2. 直接创建满员房间。调用云API的创房请求默认为3，目前通过云API调用只支持第3种方式。",
           "member": "int64",
           "name": "CreateType",
@@ -605,7 +562,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "表示自定义房间属性，不传为空字符串。最长不超过1024个字符。",
           "member": "string",
           "name": "CustomProperties",
@@ -614,7 +570,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "表示房间帧同步状态。0表示未开始帧同步，1表示已开始帧同步，用于出参。",
           "member": "int64",
           "name": "FrameSyncState",
@@ -623,7 +578,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "表示帧率。由控制台设置，用于出参。",
           "member": "int64",
           "name": "FrameRate",
@@ -632,7 +586,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "表示路由ID。用于出参。",
           "member": "string",
           "name": "RouteId",
@@ -641,7 +594,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "表示房间创建的时间戳（单位：秒）。",
           "member": "int64",
           "name": "CreateTime",
@@ -650,7 +602,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "表示开始帧同步时的时间戳（单位：秒）,未开始帧同步时返回为0。",
           "member": "int64",
           "name": "StartGameTime",
@@ -659,7 +610,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "表示是否禁止加入房间。出参使用，默认为False，通过SDK的ChangeRoom接口可以修改。",
           "member": "bool",
           "name": "IsForbidJoin",
@@ -668,7 +618,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "表示房主PlayerId。",
           "member": "string",
           "name": "Owner",
@@ -683,7 +632,6 @@
       "document": "团队属性",
       "members": [
         {
-          "default": "",
           "document": "队伍ID。最长不超过16个字符。",
           "member": "string",
           "name": "Id",
@@ -692,7 +640,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "队伍名称。最长不超过32个字符。",
           "member": "string",
           "name": "Name",
@@ -701,7 +648,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "队伍最小人数。最大不超过100人。",
           "member": "int64",
           "name": "MinPlayers",
@@ -710,7 +656,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "队伍最大人数。最大不超过100人。",
           "member": "int64",
           "name": "MaxPlayers",

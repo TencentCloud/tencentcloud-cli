@@ -539,7 +539,7 @@
     "DescribeResourcesByDealName": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourcesByDealName\n<公共请求参数>\n\n{\n    \"DealName\": \"xxx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourcesByDealName\n<公共请求参数>\n\n{\n    \"DealName\": \"201302542054\"\n}",
         "output": "{\n    \"Response\": {\n        \"BillingResourceInfos\": [\n            {\n                \"ClusterId\": \"cynosdbmysql-r8ewihg4\",\n                \"InstanceIds\": [\n                    \"cynosdbmysql-ins-pecl0drs\"\n                ],\n                \"DealName\": \"xxx\"\n            },\n            {\n                \"ClusterId\": \"cynosdbmysql-hjosrxhu\",\n                \"InstanceIds\": [\n                    \"cynosdbmysql-ins-7f59pahg\"\n                ],\n                \"DealName\": \"xxx\"\n            }\n        ],\n        \"RequestId\": \"005b862f-f408-4a95-a7e7-26f3e672e081\"\n    }\n}",
         "title": "查询订单id关联的资源信息"
       }

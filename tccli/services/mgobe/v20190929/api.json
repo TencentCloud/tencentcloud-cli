@@ -19,7 +19,6 @@
       "document": "DismissRoom请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "表示游戏资源唯一 ID, 由后台自动分配, 无法修改。",
           "member": "string",
           "name": "GameId",
@@ -27,7 +26,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "表示游戏房间唯一ID。",
           "member": "string",
           "name": "RoomId",

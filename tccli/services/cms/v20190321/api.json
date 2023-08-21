@@ -140,7 +140,6 @@
       "document": "图片二维码详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "检测是否成功，0：成功，-1：出错\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -151,7 +150,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "从图片中检测到的二维码，可能为多个\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -168,7 +166,6 @@
       "document": "二维码在图片中的位置，由边界点的坐标表示",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "二维码边界点X轴坐标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -179,7 +176,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "二维码边界点Y轴坐标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -196,7 +192,6 @@
       "document": "坐标",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "宽度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -207,7 +202,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "左上角纵坐标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -218,7 +212,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "左上角横坐标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -229,7 +222,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -322,7 +314,6 @@
       "document": "文本返回的自定义词库结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "命中的自定义关键词",
           "example": "",
@@ -333,7 +324,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义词库名称",
           "example": "",
@@ -344,7 +334,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义库id",
           "example": "",
@@ -355,7 +344,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命中的自定义关键词的类型",
           "example": "",
@@ -437,7 +425,6 @@
       "document": "词库关键词删除结果详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "关键词ID",
           "example": "100",
@@ -448,7 +435,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关键词内容",
           "example": "wo",
@@ -459,7 +445,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否删除成功",
           "example": "true",
@@ -470,7 +455,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息",
           "example": "NotFound",
@@ -642,7 +626,6 @@
       "document": "文本返回的详细结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "该标签下命中的关键词",
           "example": "",
@@ -653,7 +636,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "恶意类型\n100：正常\n20001：政治\n20002：色情 \n20006：涉毒违法\n20007：谩骂\n20105：广告引流 \n24001：暴恐",
           "example": "",
@@ -664,7 +646,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该标签模型命中的分值",
           "example": "",
@@ -675,7 +656,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词",
           "example": "",
@@ -692,7 +672,6 @@
       "document": "设备信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IOS设备，IDFV - Identifier For Vendor（应用开发商标识符）",
           "example": "",
@@ -703,7 +682,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备指纹Token",
           "example": "",
@@ -714,7 +692,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户IP",
           "example": "",
@@ -725,7 +702,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Mac地址",
           "example": "",
@@ -736,7 +712,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IOS设备，Identifier For Advertising（广告标识符）",
           "example": "",
@@ -747,7 +722,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备指纹ID",
           "example": "",
@@ -758,7 +732,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备序列号",
           "example": "",
@@ -775,7 +748,6 @@
       "document": "入参过滤条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询字段",
           "example": "1",
@@ -786,7 +758,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询值",
           "example": "[\"1\"]",
@@ -803,7 +774,6 @@
       "document": "图片识别结果详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "恶意类型\n100：正常 \n20001：政治\n20002：色情 \n20006：涉毒违法\n20007：谩骂 \n20103：性感\n24001：暴恐",
           "example": "",
@@ -814,7 +784,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片性感详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -825,7 +794,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否恶意 0：正常 1：可疑",
           "example": "",
@@ -836,7 +804,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片二维码详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -847,7 +814,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片涉政详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -858,7 +824,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片违法详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -869,7 +834,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片涉黄详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -880,7 +844,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片暴恐详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -891,7 +854,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片OCR详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -902,7 +864,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "logo详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -913,7 +874,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片相似度详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -924,7 +884,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "手机检测详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -941,7 +900,6 @@
       "document": "图片性感详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "关键词明细",
           "example": "",
@@ -952,7 +910,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "恶意类型\n100：正常\n20103：性感",
           "example": "",
@@ -963,7 +920,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "性感标签：性感特征中文描述",
           "example": "",
@@ -974,7 +930,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "性感分：分值范围 0-100，分数越高性感倾向越明显",
           "example": "",
@@ -985,7 +940,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "处置判定 0：正常 1：可疑",
           "example": "",
@@ -1002,7 +956,6 @@
       "document": "图片违法详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "恶意类型\n100：正常 \n20006：涉毒违法",
           "example": "",
@@ -1013,7 +966,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "处置判定 0：正常 1：可疑",
           "example": "",
@@ -1024,7 +976,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关键词明细",
           "example": "",
@@ -1035,7 +986,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "违法标签：返回违法特征中文描述，如赌桌，枪支",
           "example": "",
@@ -1046,7 +996,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "违法分：分值范围 0-100，分数越高违法倾向越明显",
           "example": "",
@@ -1126,7 +1075,6 @@
       "document": "图片涉政详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "恶意类型\n100：正常 \n20001：政治",
           "example": "",
@@ -1137,7 +1085,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "处置判定  0：正常 1：可疑",
           "example": "",
@@ -1148,7 +1095,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命中的人脸名称",
           "example": "",
@@ -1159,7 +1105,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命中的logo标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1170,7 +1115,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命中的政治物品名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1181,7 +1125,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "政治（人脸）分：分值范围 0-100，分数越高可疑程度越高",
           "example": "",
@@ -1192,7 +1135,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关键词明细",
           "example": "",
@@ -1209,7 +1151,6 @@
       "document": "图片涉黄详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "恶意类型\n100：正常\n20002：色情",
           "example": "",
@@ -1220,7 +1161,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "处置判定 0：正常 1：可疑",
           "example": "",
@@ -1231,7 +1171,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关键词明细",
           "example": "",
@@ -1242,7 +1181,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "色情标签：色情特征中文描述",
           "example": "",
@@ -1253,7 +1191,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "色情分：分值范围 0-100，分数越高色情倾向越明显",
           "example": "",
@@ -1270,7 +1207,6 @@
       "document": "图片暴恐详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "关键词明细\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1281,7 +1217,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "恶意类型\n100：正常\n24001：暴恐\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1292,7 +1227,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "暴恐标签：返回暴恐特征中文描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1303,7 +1237,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "暴恐分：分值范围0--100，分数越高暴恐倾向越明显\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1314,7 +1247,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "处置判定 0：正常 1：可疑\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1443,7 +1375,6 @@
       "document": "Logo审核结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "logo图标置信度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1454,7 +1385,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "logo图标坐标信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1465,7 +1395,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "logo图标名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1482,7 +1411,6 @@
       "document": "Logo命中详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "命中的Applogo详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1499,7 +1427,6 @@
       "document": "OCR识别结果详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别到的详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1510,7 +1437,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别到的文本信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1527,7 +1453,6 @@
       "document": "OCR详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "检测到的文本坐标信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1538,7 +1463,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本命中恶意违规类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1549,7 +1473,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测到的文本信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1560,7 +1483,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本涉嫌违规分值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1571,7 +1493,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本命中具体标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1582,7 +1503,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本命中违规的关键词\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1599,7 +1519,6 @@
       "document": "手机模型识别检测",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "恶意类型\n100：正常\n21000：综合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1610,7 +1529,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "特征中文描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1621,7 +1539,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分值范围 0-100，分数越高倾向越明显\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1632,7 +1549,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "处置判定 0：正常 1：可疑\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1649,7 +1565,6 @@
       "document": "账号风险检测结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "预留字段，暂时不使用",
           "example": "",
@@ -1660,7 +1575,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预留字段，暂时不用",
           "example": "",
@@ -1671,7 +1585,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "风险类别，RiskAccount，RiskIP, RiskIMEI",
           "example": "",
@@ -1682,7 +1595,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "风险等级，1:疑似，2：恶意",
           "example": "",
@@ -1699,7 +1611,6 @@
       "document": "logo位置信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "logo图标宽度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1710,7 +1621,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "logo纵坐标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1721,7 +1631,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "logo横坐标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1732,7 +1641,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "logo图标中心旋转度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1743,7 +1651,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "logo图标高度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1760,7 +1667,6 @@
       "document": "相似度详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "恶意类型\n100：正常 \n20001：政治\n20002：色情 \n20006：涉毒违法\n20007：谩骂 \n24001：暴恐",
           "example": "",
@@ -1771,7 +1677,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "处置判定 0：未匹配到 1：恶意 2：白样本",
           "example": "",
@@ -1782,7 +1687,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回的种子url\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1799,7 +1703,6 @@
       "document": "文本识别结果详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "恶意类型\n100：正常\n20001：政治\n20002：色情 \n20006：涉毒违法\n20007：谩骂\n20105：广告引流 \n24001：暴恐",
           "example": "",
@@ -1810,7 +1713,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否恶意 0：正常 1：可疑",
           "example": "",
@@ -1821,7 +1723,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "和请求中的DataId一致，原样返回",
           "example": "",
@@ -1832,7 +1733,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输出的其他信息，不同客户内容不同",
           "example": "",
@@ -1843,7 +1743,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最终使用的BizType",
           "example": "",
@@ -1854,7 +1753,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息类输出结果",
           "example": "",
@@ -1865,7 +1763,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号风险检测结果",
           "example": "",
@@ -1876,7 +1773,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息类ID信息",
           "example": "",
@@ -1887,7 +1783,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命中的模型分值",
           "example": "",
@@ -1898,7 +1793,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息类公共相关参数",
           "example": "",
@@ -1909,7 +1803,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "建议值,Block：打击,Review：待复审,Normal：正常",
           "example": "",
@@ -1920,7 +1813,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命中的关键词",
           "example": "",
@@ -1931,7 +1823,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回的详细结果",
           "example": "",
@@ -1942,7 +1833,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回的自定义词库结果",
           "example": "",
@@ -1953,7 +1843,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "恶意标签，Normal：正常，Polity：涉政，Porn：色情，Illegal：违法，Abuse：谩骂，Terror：暴恐，Ad：广告，Custom：自定义关键词",
           "example": "",
@@ -1970,7 +1859,6 @@
       "document": "TextModeration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文本内容Base64编码。原文长度需小于15000字节，即5000个汉字以内。",
           "example": "",
@@ -1980,7 +1868,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据ID，英文字母、下划线、-组成，不超过64个字符",
           "example": "",
@@ -1990,7 +1877,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略",
           "example": "",
@@ -2000,7 +1886,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户相关信息",
           "example": "",
@@ -2010,7 +1895,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "业务应用ID",
           "example": "",
@@ -2020,7 +1904,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备相关信息",
           "example": "",
@@ -2066,7 +1949,6 @@
       "document": "消息类输出公共参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "接口唯一ID，旁路调用接口返回有该字段，标识唯一接口",
           "example": "",
@@ -2077,7 +1959,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息发送时间",
           "example": "",
@@ -2088,7 +1969,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接入业务的唯一ID",
           "example": "",
@@ -2099,7 +1979,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求字段里的Common.Uin",
           "example": "",
@@ -2116,7 +1995,6 @@
       "document": "消息类输出ID参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "接入业务的唯一ID",
           "example": "",
@@ -2127,7 +2005,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户账号uin，对应请求协议里的Content.User.Uin。旁路结果有回带，串联结果无该字段",
           "example": "",
@@ -2144,7 +2021,6 @@
       "document": "消息类输出结果参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "操作人,信安处理人企业微信ID",
           "example": "",
@@ -2155,7 +2031,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "恶意类型，广告（10001）， 政治（20001）， 色情（20002）， 社会事件（20004）， 暴力（20011）， 低俗（20012）， 违法犯罪（20006）， 欺诈（20008）， 版权（20013）， 谣言（20104）， 其他（21000）",
           "example": "",
@@ -2166,7 +2041,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "恶意操作码，\n删除（1）， 通过（2）， 先审后发（100012）",
           "example": "",
@@ -2177,7 +2051,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作结果备注说明",
           "example": "",
@@ -2194,7 +2067,6 @@
       "document": "用户相关信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户等级，默认0 未知 1 低 2 中 3 高",
           "example": "",
@@ -2205,7 +2077,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "性别 默认0 未知 1 男性 2 女性",
           "example": "",
@@ -2216,7 +2087,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "年龄 默认0 未知",
           "example": "",
@@ -2227,7 +2097,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户账号ID，如填写，会根据账号历史恶意情况，判定消息有害结果，特别是有利于可疑恶意情况下的辅助判断。账号可以填写微信uin、QQ号、微信openid、QQopenid、字符串等。该字段和账号类别确定唯一账号。",
           "example": "",
@@ -2238,7 +2107,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "手机号",
           "example": "",
@@ -2249,7 +2117,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号类别，\"1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-其它string\"",
           "example": "",
@@ -2260,7 +2127,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户昵称",
           "example": "",
@@ -2323,7 +2189,6 @@
       "document": "关键词信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "关键词条ID",
           "example": "2",
@@ -2334,7 +2199,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关键词内容",
           "example": "1",
@@ -2345,7 +2209,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关键词标签；取值范围为：\"Normal\",\"Polity\",\"Porn\",\"Sexy\",\"Ad\",\"Illegal\",\"Abuse\",\"Terror\",\"Spam\",\"Moan\"",
           "example": "3",
@@ -2356,7 +2219,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "4",
@@ -2367,7 +2229,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -2378,7 +2239,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "词类型：Default,Pinyin,English,CompoundWord,ExclusionWord,AffixWord\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Default",

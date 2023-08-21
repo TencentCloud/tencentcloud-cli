@@ -796,7 +796,6 @@
       "document": "巴拉多返回的数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指标名（connum表示TCP活跃连接数；\nnew_conn表示新建TCP连接数；\ninactive_conn表示非活跃连接数;\nintraffic表示入流量；\nouttraffic表示出流量；\nalltraffic表示出流量和入流量之和；\ninpkg表示入包速率；\noutpkg表示出包速率；）",
           "member": "string",
@@ -806,7 +805,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "值数组",
           "member": "float",
@@ -816,7 +814,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "值数组的大小",
           "member": "uint64",
@@ -832,7 +829,6 @@
       "document": "高防包绑定IP对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址",
           "example": "1.1.1.1",
@@ -843,7 +839,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定的产品分类，取值[public（CVM、CLB产品），bm（黑石产品），eni（弹性网卡），vpngw（VPN网关）， natgw（NAT网关），waf（Web应用安全产品），fpc（金融产品），gaap（GAAP产品）, other(托管IP)]",
           "example": "public",
@@ -854,7 +849,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品分类下的子类型，取值[cvm（CVM），lb（负载均衡器），eni（弹性网卡），vpngw（VPN），natgw（NAT），waf（WAF），fpc（金融），gaap（GAAP），other（托管IP），eip（黑石弹性IP）]",
           "example": "cvm",
@@ -865,7 +859,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP所属的资源实例ID，当绑定新IP时必须填写此字段；例如是弹性网卡的IP，则InstanceId填写弹性网卡的ID(eni-*); 如果绑定的是托管IP没有对应的资源实例ID，请填写\"none\";",
           "example": "none",
@@ -876,7 +869,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运营商，0：电信；1：联通；2：移动；5：BGP",
           "example": "5",
@@ -893,7 +885,6 @@
       "document": "CC告警阈值",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "CC告警阈值",
           "member": "uint64",
@@ -909,7 +900,6 @@
       "document": "CC攻击事件记录",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）",
           "member": "string",
@@ -919,7 +909,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -929,7 +918,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源的IP",
           "member": "string",
@@ -939,7 +927,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "攻击开始时间",
           "member": "datetime",
@@ -949,7 +936,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "攻击结束时间",
           "member": "datetime",
@@ -959,7 +945,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总请求QPS峰值",
           "member": "uint64",
@@ -969,7 +954,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "攻击QPS峰值",
           "member": "uint64",
@@ -979,7 +963,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "攻击状态，取值[0（攻击中）, 1（攻击结束）]",
           "member": "uint64",
@@ -989,7 +972,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
@@ -999,7 +981,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
@@ -1009,7 +990,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "uri列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
@@ -1019,7 +999,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "攻击源列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
@@ -1035,7 +1014,6 @@
       "document": "CC的访问频率控制规则",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "CC的访问频率控制规则ID",
           "member": "string",
@@ -1045,7 +1023,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "URI字符串，必须以/开头，例如/abc/a.php，长度不超过31；当URI=/时，匹配模式只能选择前缀匹配；",
           "member": "string",
@@ -1055,7 +1032,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "User-Agent字符串，长度不超过80",
           "member": "string",
@@ -1065,7 +1041,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cookie字符串，长度不超过40",
           "member": "string",
@@ -1075,7 +1050,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "匹配规则，取值[\"include\"(前缀匹配)，\"equal\"(完全匹配)]",
           "member": "string",
@@ -1085,7 +1059,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计周期，单位秒，取值[10, 30, 60]",
           "member": "uint64",
@@ -1095,7 +1068,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "访问次数，取值[1-10000]",
           "member": "uint64",
@@ -1105,7 +1077,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行动作，取值[\"alg\"（人机识别）, \"drop\"（拦截）]",
           "member": "string",
@@ -1115,7 +1086,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行时间，单位秒，取值[1-900]",
           "member": "uint64",
@@ -1131,7 +1101,6 @@
       "document": "cc自定义规则",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "策略名称",
           "member": "string",
@@ -1141,7 +1110,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "匹配模式，取值[matching(匹配模式), speedlimit(限速模式)]",
           "member": "string",
@@ -1151,7 +1119,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略id",
           "member": "string",
@@ -1161,7 +1128,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每分钟限制的次数",
           "member": "uint64",
@@ -1171,7 +1137,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行策略模式，拦截或者验证码，取值[alg（验证码）, drop（拦截）]",
           "member": "string",
@@ -1181,7 +1146,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生效开关",
           "member": "uint64",
@@ -1191,7 +1155,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "member": "string",
@@ -1201,7 +1164,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则列表",
           "member": "CCRule",
@@ -1211,7 +1173,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP列表，如果不填时，请传空数组但不能为null；",
           "member": "string",
@@ -1221,7 +1182,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cc防护类型，取值[http，https]",
           "member": "string",
@@ -1231,7 +1191,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选字段，表示HTTPS的CC防护域名对应的转发规则ID;",
           "member": "string",
@@ -1241,7 +1200,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "HTTPS的CC防护域名",
           "member": "string",
@@ -1257,7 +1215,6 @@
       "document": "cc自定义策略配置的规则",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则的key, 可以为host、cgi、ua、referer",
           "member": "string",
@@ -1267,7 +1224,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则的条件，可以为include、not_include、equal",
           "member": "string",
@@ -1277,7 +1233,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则的值，长度小于31字节",
           "member": "string",
@@ -1293,7 +1248,6 @@
       "document": "7层CC自定义规则",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "统计周期，单位秒，取值[10, 30, 60]",
           "member": "uint64",
@@ -1303,7 +1257,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "访问次数，取值[1-10000]",
           "member": "uint64",
@@ -1313,7 +1266,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行动作，取值[\"alg\"（人机识别）, \"drop\"（拦截）]",
           "member": "string",
@@ -1323,7 +1275,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行时间，单位秒，取值[1-900]",
           "member": "uint64",
@@ -1339,7 +1290,6 @@
       "document": "CreateBasicDDoSAlarmThreshold请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（basic表示DDoS基础防护）",
           "member": "string",
@@ -1348,7 +1298,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "=get表示读取告警阈值；=set表示设置告警阈值；",
           "member": "string",
@@ -1357,7 +1306,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选，告警阈值类型，1-入流量，2-清洗流量；当Method为set时必须填写；",
           "member": "uint64",
@@ -1366,7 +1314,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选，告警阈值，当Method为set时必须填写；当设置阈值为0时表示清除告警阈值配置；",
           "member": "uint64",
@@ -1409,7 +1356,6 @@
       "document": "CreateBoundIP请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgp表示独享包；bgp-multip表示共享包）",
           "member": "string",
@@ -1418,7 +1364,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源实例ID",
           "member": "string",
@@ -1427,7 +1372,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定到资源实例的IP数组，当资源实例为高防包(独享包)时，数组只允许填1个IP；当没有要绑定的IP时可以为空数组；但是BoundDevList和UnBoundDevList至少有一个不为空；",
           "member": "BoundIpInfo",
@@ -1436,7 +1380,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "与资源实例解绑的IP数组，当资源实例为高防包(独享包)时，数组只允许填1个IP；当没有要解绑的IP时可以为空数组；但是BoundDevList和UnBoundDevList至少有一个不为空；",
           "member": "BoundIpInfo",
@@ -1445,7 +1388,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已弃用，不填",
           "member": "string",
@@ -1480,7 +1422,6 @@
       "document": "CreateCCFrequencyRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -1489,7 +1430,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -1498,7 +1438,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）",
           "member": "string",
@@ -1507,7 +1446,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "匹配规则，取值[\"include\"(前缀匹配)，\"equal\"(完全匹配)]",
           "member": "string",
@@ -1516,7 +1454,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计周期，单位秒，取值[10, 30, 60]",
           "member": "uint64",
@@ -1525,7 +1462,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "访问次数，取值[1-10000]",
           "member": "uint64",
@@ -1534,7 +1470,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行动作，取值[\"alg\"（人机识别）, \"drop\"（拦截）]",
           "member": "string",
@@ -1543,7 +1478,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行时间，单位秒，取值[1-900]",
           "member": "uint64",
@@ -1552,7 +1486,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "URI字符串，必须以/开头，例如/abc/a.php，长度不超过31；当URI=/时，匹配模式只能选择前缀匹配；",
           "member": "string",
@@ -1561,7 +1494,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "User-Agent字符串，长度不超过80",
           "member": "string",
@@ -1570,7 +1502,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cookie字符串，长度不超过40",
           "member": "string",
@@ -1605,7 +1536,6 @@
       "document": "CreateCCSelfDefinePolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -1614,7 +1544,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -1623,7 +1552,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CC策略描述",
           "member": "CCPolicy",
@@ -1658,7 +1586,6 @@
       "document": "CreateDDoSPolicyCase请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -1667,7 +1594,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略场景名，字符串长度小于64",
           "member": "string",
@@ -1676,7 +1602,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开发平台，取值[PC（PC客户端）， MOBILE（移动端）， TV（电视端）， SERVER（主机）]",
           "member": "string",
@@ -1685,7 +1610,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "细分品类，取值[WEB（网站）， GAME（游戏）， APP（应用）， OTHER（其他）]",
           "member": "string",
@@ -1694,7 +1618,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用协议，取值[tcp（TCP协议），udp（UDP协议），icmp（ICMP协议），all（其他协议）]",
           "member": "string",
@@ -1703,7 +1626,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TCP业务起始端口，取值(0, 65535]",
           "member": "string",
@@ -1712,7 +1634,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TCP业务结束端口，取值(0, 65535]，必须大于等于TCP业务起始端口",
           "member": "string",
@@ -1721,7 +1642,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UDP业务起始端口，取值范围(0, 65535]",
           "member": "string",
@@ -1730,7 +1650,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UDP业务结束端口，取值范围(0, 65535)，必须大于等于UDP业务起始端口",
           "member": "string",
@@ -1739,7 +1658,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否有海外客户，取值[no（没有）, yes（有）]",
           "member": "string",
@@ -1748,7 +1666,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否会主动对外发起TCP请求，取值[no（不会）, yes（会）]",
           "member": "string",
@@ -1757,7 +1674,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否会主动对外发起UDP业务请求，取值[no（不会）, yes（会）]",
           "member": "string",
@@ -1766,7 +1682,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主动发起TCP请求的端口，取值范围(0, 65535]",
           "member": "string",
@@ -1775,7 +1690,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主动发起UDP请求的端口，取值范围(0, 65535]",
           "member": "string",
@@ -1784,7 +1698,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TCP载荷的固定特征码，字符串长度小于512",
           "member": "string",
@@ -1793,7 +1706,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UDP载荷的固定特征码，字符串长度小于512",
           "member": "string",
@@ -1802,7 +1714,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Web业务的API的URL",
           "member": "string",
@@ -1811,7 +1722,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TCP业务报文长度最小值，取值范围(0, 1500)",
           "member": "string",
@@ -1820,7 +1730,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TCP业务报文长度最大值，取值范围(0, 1500)，必须大于等于TCP业务报文长度最小值",
           "member": "string",
@@ -1829,7 +1738,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UDP业务报文长度最小值，取值范围(0, 1500)",
           "member": "string",
@@ -1838,7 +1746,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UDP业务报文长度最大值，取值范围(0, 1500)，必须大于等于UDP业务报文长度最小值",
           "member": "string",
@@ -1847,7 +1754,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否有VPN业务，取值[no（没有）, yes（有）]",
           "member": "string",
@@ -1856,7 +1762,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TCP业务端口列表，同时支持单个端口和端口段，字符串格式，例如：80,443,700-800,53,1000-3000",
           "member": "string",
@@ -1865,7 +1770,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UDP业务端口列表，同时支持单个端口和端口段，字符串格式，例如：80,443,700-800,53,1000-3000",
           "member": "string",
@@ -1900,7 +1804,6 @@
       "document": "CreateDDoSPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -1909,7 +1812,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议禁用，必须填写且数组长度必须为1",
           "member": "DDoSPolicyDropOption",
@@ -1918,7 +1820,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略名称",
           "member": "string",
@@ -1927,7 +1828,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "端口禁用，当没有禁用端口时填空数组",
           "member": "DDoSPolicyPortLimit",
@@ -1936,7 +1836,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求源IP黑白名单，当没有IP黑白名单时填空数组",
           "member": "IpBlackWhite",
@@ -1945,7 +1844,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报文过滤，当没有报文过滤时填空数组",
           "member": "DDoSPolicyPacketFilter",
@@ -1954,7 +1852,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印策略参数，当没有启用水印功能时填空数组，最多只能传一条水印策略（即数组大小不超过1）",
           "member": "WaterPrintPolicy",
@@ -1989,7 +1886,6 @@
       "document": "CreateInstanceName请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -1998,7 +1894,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -2007,7 +1902,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源实例名称，长度不超过32个字符",
           "member": "string",
@@ -2042,7 +1936,6 @@
       "document": "CreateL4HealthConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -2051,7 +1944,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -2060,7 +1952,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "四层健康检查配置数组",
           "member": "L4HealthConfig",
@@ -2095,7 +1986,6 @@
       "document": "CreateL4Rules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -2104,7 +1994,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -2113,7 +2002,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则列表",
           "member": "L4RuleEntry",
@@ -2148,7 +2036,6 @@
       "document": "CreateL7CCRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -2157,7 +2044,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -2166,7 +2052,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作码，取值[query(表示查询)，add(表示添加)，del(表示删除)]",
           "member": "string",
@@ -2175,7 +2060,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "7层转发规则ID，例如：rule-0000001",
           "member": "string",
@@ -2184,7 +2068,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "7层CC自定义规则参数，当操作码为query时，可以不用填写；当操作码为add或del时，必须填写，且数组长度只能为1；",
           "member": "CCRuleConfig",
@@ -2219,7 +2102,6 @@
       "document": "CreateL7HealthConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -2228,7 +2110,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -2237,7 +2118,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "七层健康检查配置数组",
           "member": "L7HealthConfig",
@@ -2272,7 +2152,6 @@
       "document": "CreateL7RuleCert请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -2281,7 +2160,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源实例ID，例如高防IP实例的ID，高防IP专业版实例的ID",
           "member": "string",
@@ -2290,7 +2168,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID",
           "member": "string",
@@ -2299,7 +2176,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "证书类型，当为协议为HTTPS协议时必须填，取值[2(腾讯云托管证书)]",
           "member": "uint64",
@@ -2308,7 +2184,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当证书来源为腾讯云托管证书时，此字段必须填写托管证书ID",
           "member": "string",
@@ -2317,7 +2192,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当证书来源为自有证书时，此字段必须填写证书内容；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
           "member": "string",
@@ -2326,7 +2200,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
           "member": "string",
@@ -2361,7 +2234,6 @@
       "document": "CreateL7Rules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -2370,7 +2242,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -2379,7 +2250,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则列表",
           "member": "L7RuleEntry",
@@ -2414,7 +2284,6 @@
       "document": "CreateL7RulesUpload请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -2423,7 +2292,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -2432,7 +2300,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则列表",
           "member": "L7RuleEntry",
@@ -2467,7 +2334,6 @@
       "document": "CreateNetReturn请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（net表示高防IP专业版）",
           "member": "string",
@@ -2476,7 +2342,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源实例ID",
           "member": "string",
@@ -2503,7 +2368,6 @@
       "document": "CreateNewL4Rules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "高防产品代号：bgpip",
           "member": "string",
@@ -2512,7 +2376,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "添加规则资源列表",
           "member": "string",
@@ -2521,7 +2384,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "添加规则IP列表",
           "member": "string",
@@ -2530,7 +2392,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则列表",
           "member": "L4RuleEntry",
@@ -2565,7 +2426,6 @@
       "document": "CreateNewL7Rules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP）",
           "member": "string",
@@ -2574,7 +2434,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID列表",
           "member": "string",
@@ -2583,7 +2442,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源IP列表",
           "member": "string",
@@ -2592,7 +2450,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则列表",
           "member": "L7RuleEntry",
@@ -2627,7 +2484,6 @@
       "document": "CreateNewL7RulesUpload请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP）",
           "member": "string",
@@ -2636,7 +2492,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID列表",
           "member": "string",
@@ -2645,7 +2500,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源IP列表",
           "member": "string",
@@ -2654,7 +2508,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则列表",
           "member": "L7RuleEntry",
@@ -2689,7 +2542,6 @@
       "document": "CreateUnblockIp请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IP",
           "member": "string",
@@ -2698,7 +2550,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "解封类型（user：自助解封；auto：自动解封； update：升级解封；bind：绑定高防包解封）",
           "member": "string",
@@ -2749,7 +2600,6 @@
       "document": "DDoS告警阈值",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "告警阈值类型，1-入流量，2-清洗流量",
           "member": "uint64",
@@ -2759,7 +2609,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警阈值，大于0（目前排定的值）",
           "member": "uint64",
@@ -2775,7 +2624,6 @@
       "document": "攻击源信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "攻击源ip",
           "member": "string",
@@ -2785,7 +2633,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "省份（国内有效，不包含港澳台）",
           "member": "string",
@@ -2795,7 +2642,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "国家",
           "member": "string",
@@ -2805,7 +2651,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "累计攻击包量",
           "member": "uint64",
@@ -2815,7 +2660,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "累计攻击流量",
           "member": "uint64",
@@ -2831,7 +2675,6 @@
       "document": "DDoS攻击事件记录",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）",
           "member": "string",
@@ -2841,7 +2684,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -2851,7 +2693,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源的IP",
           "member": "string",
@@ -2861,7 +2702,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "攻击开始时间",
           "member": "datetime",
@@ -2871,7 +2711,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "攻击结束时间",
           "member": "datetime",
@@ -2881,7 +2720,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "攻击最大带宽",
           "member": "uint64",
@@ -2891,7 +2729,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "攻击最大包速率",
           "member": "uint64",
@@ -2901,7 +2738,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "攻击类型",
           "member": "string",
@@ -2911,7 +2747,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否被封堵，取值[1（是），0（否），2（无效值）]",
           "member": "uint64",
@@ -2921,7 +2756,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否超过弹性防护峰值，取值取值[yes(是)，no(否)，空字符串（未知值）]",
           "member": "string",
@@ -2931,7 +2765,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "攻击状态，取值[0（攻击中）, 1（攻击结束）]",
           "member": "uint64",
@@ -2941,7 +2774,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
@@ -2951,7 +2783,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "攻击事件Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
@@ -2967,7 +2798,6 @@
       "document": "DDoS高级策略的禁用协议选项",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "禁用TCP协议，取值范围[0,1]",
           "member": "uint64",
@@ -2977,7 +2807,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "禁用UDP协议，取值范围[0,1]",
           "member": "uint64",
@@ -2987,7 +2816,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "禁用ICMP协议，取值范围[0,1]",
           "member": "uint64",
@@ -2997,7 +2825,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "禁用其他协议，取值范围[0,1]",
           "member": "uint64",
@@ -3007,7 +2834,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "拒绝海外流量，取值范围[0,1]",
           "member": "uint64",
@@ -3017,7 +2843,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "空连接防护，取值范围[0,1]",
           "member": "uint64",
@@ -3027,7 +2852,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "基于来源IP及目的IP的新建连接抑制，取值范围[0,4294967295]",
           "member": "uint64",
@@ -3037,7 +2861,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "基于目的IP的新建连接抑制，取值范围[0,4294967295]",
           "member": "uint64",
@@ -3047,7 +2870,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "基于来源IP及目的IP的并发连接抑制，取值范围[0,4294967295]",
           "member": "uint64",
@@ -3057,7 +2879,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "基于目的IP的并发连接抑制，取值范围[0,4294967295]",
           "member": "uint64",
@@ -3067,7 +2888,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "基于连接抑制触发阈值，取值范围[0,4294967295]",
           "member": "uint64",
@@ -3077,7 +2897,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异常连接检测条件，空连接防护开关，，取值范围[0,1]",
           "member": "uint64",
@@ -3087,7 +2906,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异常连接检测条件，连接超时，，取值范围[0,65535]",
           "member": "uint64",
@@ -3097,7 +2915,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异常连接检测条件，syn占比ack百分比，，取值范围[0,100]",
           "member": "uint64",
@@ -3107,7 +2924,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异常连接检测条件，syn阈值，取值范围[0,100]",
           "member": "uint64",
@@ -3117,7 +2933,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "tcp限速，取值范围[0,4294967295]",
           "member": "uint64",
@@ -3127,7 +2942,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "udp限速，取值范围[0,4294967295]",
           "member": "uint64",
@@ -3137,7 +2951,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "icmp限速，取值范围[0,4294967295]",
           "member": "uint64",
@@ -3147,7 +2960,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "other协议限速，取值范围[0,4294967295]",
           "member": "uint64",
@@ -3163,7 +2975,6 @@
       "document": "DDoS高级策略的报文过滤项",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "协议，取值范围[tcp,udp,icmp,all]",
           "member": "string",
@@ -3173,7 +2984,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始源端口，取值范围[0,65535]",
           "member": "uint64",
@@ -3183,7 +2993,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束源端口，取值范围[0,65535]",
           "member": "uint64",
@@ -3193,7 +3002,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始目的端口，取值范围[0,65535]",
           "member": "uint64",
@@ -3203,7 +3011,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束目的端口，取值范围[0,65535]",
           "member": "uint64",
@@ -3213,7 +3020,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最小包长，取值范围[0,1500]",
           "member": "uint64",
@@ -3223,7 +3029,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大包长，取值范围[0,1500]",
           "member": "uint64",
@@ -3233,7 +3038,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否检测载荷，取值范围[\nbegin_l3(IP头)\nbegin_l4(TCP头)\nbegin_l5(载荷)\nno_match(不检测)\n]",
           "member": "string",
@@ -3243,7 +3047,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是正则表达式，取值范围[sunday(表示关键字),pcre(表示正则表达式)]",
           "member": "string",
@@ -3253,7 +3056,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关键字或正则表达式",
           "member": "string",
@@ -3263,7 +3065,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测深度，取值范围[0,1500]",
           "member": "uint64",
@@ -3273,7 +3074,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测偏移量，取值范围[0,1500]",
           "member": "uint64",
@@ -3283,7 +3083,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否包括，取值范围[0(表示不包含),1(表示包含)]",
           "member": "uint64",
@@ -3293,7 +3092,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略动作，取值范围[drop，drop_black，drop_rst，drop_black_rst，transmit]",
           "member": "string",
@@ -3309,7 +3107,6 @@
       "document": "DDoS高级策略的禁用端口",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "协议，取值范围[tcp,udp,all]",
           "member": "string",
@@ -3319,7 +3116,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始目的端口，取值范围[0,65535]",
           "member": "uint64",
@@ -3329,7 +3125,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束目的端口，取值范围[0,65535]，要求大于等于开始目的端口",
           "member": "uint64",
@@ -3339,7 +3134,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始源端口，取值范围[0,65535]\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
@@ -3349,7 +3143,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束源端口，取值范围[0,65535]，要求大于等于开始源端口\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
@@ -3359,7 +3152,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行动作，取值[drop(丢弃) ，transmit(转发)]\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
@@ -3369,7 +3161,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "禁用端口类型，取值[0（目的端口范围禁用）， 1（源端口范围禁用）， 2（目的和源端口范围同时禁用）]\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
@@ -3385,7 +3176,6 @@
       "document": "DDoS高级策略",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "策略绑定的资源",
           "member": "ResourceIp",
@@ -3395,7 +3185,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "禁用协议",
           "member": "DDoSPolicyDropOption",
@@ -3405,7 +3194,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "禁用端口",
           "member": "DDoSPolicyPortLimit",
@@ -3415,7 +3203,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报文过滤",
           "member": "DDoSPolicyPacketFilter",
@@ -3425,7 +3212,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "黑白IP名单",
           "member": "IpBlackWhite",
@@ -3435,7 +3221,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略ID",
           "member": "string",
@@ -3445,7 +3230,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略名称",
           "member": "string",
@@ -3455,7 +3239,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略创建时间",
           "member": "string",
@@ -3465,7 +3248,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印策略参数，最多只有一个，当没有水印策略时数组为空",
           "member": "WaterPrintPolicy",
@@ -3475,7 +3257,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印密钥，最多只有2个，当没有水印策略时数组为空",
           "member": "WaterPrintKey",
@@ -3485,7 +3266,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略绑定的资源实例\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
@@ -3495,7 +3275,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略所属的策略场景\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
@@ -3511,7 +3290,6 @@
       "document": "DeleteCCFrequencyRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -3520,7 +3298,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CC防护的访问频率控制规则ID",
           "member": "string",
@@ -3555,7 +3332,6 @@
       "document": "DeleteCCSelfDefinePolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -3564,7 +3340,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -3573,7 +3348,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略ID",
           "member": "string",
@@ -3608,7 +3382,6 @@
       "document": "DeleteDDoSPolicyCase请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -3617,7 +3390,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略场景ID",
           "member": "string",
@@ -3652,7 +3424,6 @@
       "document": "DeleteDDoSPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -3661,7 +3432,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略ID",
           "member": "string",
@@ -3696,7 +3466,6 @@
       "document": "DeleteL4Rules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -3705,7 +3474,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -3714,7 +3482,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID列表",
           "member": "string",
@@ -3749,7 +3516,6 @@
       "document": "DeleteL7Rules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -3758,7 +3524,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -3767,7 +3532,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID列表",
           "member": "string",
@@ -3802,7 +3566,6 @@
       "document": "DeleteNewL4Rules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP）",
           "member": "string",
@@ -3811,7 +3574,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "删除接口结构体",
           "member": "L4DelRule",
@@ -3846,7 +3608,6 @@
       "document": "DeleteNewL7Rules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP)",
           "member": "string",
@@ -3855,7 +3616,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "删除规则列表",
           "member": "L4DelRule",
@@ -3890,7 +3650,6 @@
       "document": "DescribeActionLog请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间",
           "member": "datetime",
@@ -3899,7 +3658,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "member": "datetime",
@@ -3908,7 +3666,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -3917,7 +3674,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索值，只支持资源ID或用户UIN",
           "member": "string",
@@ -3926,7 +3682,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一页条数，填0表示不分页",
           "member": "uint64",
@@ -3935,7 +3690,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页起始偏移，取值为(页码-1)*一页条数",
           "member": "uint64",
@@ -3978,7 +3732,6 @@
       "document": "DescribeBGPIPL7RuleMaxCnt请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP）",
           "member": "string",
@@ -3987,7 +3740,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源实例ID",
           "member": "string",
@@ -4022,7 +3774,6 @@
       "document": "DescribeBaradData请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -4031,7 +3782,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源实例ID",
           "member": "string",
@@ -4040,7 +3790,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标名，取值：\nconnum表示TCP活跃连接数；\nnew_conn表示新建TCP连接数；\ninactive_conn表示非活跃连接数;\nintraffic表示入流量；\nouttraffic表示出流量；\nalltraffic表示出流量和入流量之和；\ninpkg表示入包速率；\noutpkg表示出包速率；",
           "member": "string",
@@ -4049,7 +3798,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计时间粒度，单位秒（300表示5分钟；3600表示小时；86400表示天）",
           "member": "uint64",
@@ -4058,7 +3806,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计开始时间，秒部分保持为0，分钟部分为5的倍数",
           "member": "datetime",
@@ -4067,7 +3814,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计结束时间，秒部分保持为0，分钟部分为5的倍数",
           "member": "datetime",
@@ -4076,7 +3822,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计方式，取值：\nmax表示最大值；\nmin表示最小值；\navg表示均值；",
           "member": "string",
@@ -4085,7 +3830,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议端口数组",
           "member": "ProtocolPort",
@@ -4094,7 +3838,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源实例下的IP，只有当Business=net(高防IP专业版)时才必须填写资源的一个IP（因为高防IP专业版资源实例有多个IP，才需要指定）；",
           "member": "string",
@@ -4129,7 +3872,6 @@
       "document": "DescribeBasicCCThreshold请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询的IP地址，取值如：1.1.1.1",
           "member": "string",
@@ -4138,7 +3880,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询IP所属地域，取值如：gz、bj、sh、hk等地域缩写",
           "member": "string",
@@ -4147,7 +3888,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专区类型，取值如：公有云专区：public，黑石专区：bm, NAT服务器专区：nat，互联网通道：channel。",
           "member": "string",
@@ -4156,7 +3896,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备类型，取值如：服务器：cvm，公有云负载均衡：clb，黑石负载均衡：lb，NAT服务器：nat，互联网通道：channel.",
           "member": "string",
@@ -4165,7 +3904,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选，IPInstance Nat 网关（如果查询的设备类型是NAT服务器，需要传此参数，通过nat资源查询接口获取）",
           "member": "string",
@@ -4174,7 +3912,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选，运营商线路（如果查询的设备类型是NAT服务器，需要传此参数为5）",
           "member": "uint64",
@@ -4217,7 +3954,6 @@
       "document": "DescribeBasicDeviceThreshold请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询的IP地址，取值如：1.1.1.1",
           "member": "string",
@@ -4226,7 +3962,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询IP所属地域，取值如：gz、bj、sh、hk等地域缩写",
           "member": "string",
@@ -4235,7 +3970,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专区类型，取值如：公有云专区：public，黑石专区：bm, NAT服务器专区：nat，互联网通道：channel。",
           "member": "string",
@@ -4244,7 +3978,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备类型，取值如：服务器：cvm，公有云负载均衡：clb，黑石负载均衡：lb，NAT服务器：nat，互联网通道：channel.",
           "member": "string",
@@ -4253,7 +3986,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "有效性检查，取值为1",
           "member": "uint64",
@@ -4262,7 +3994,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选，IPInstance Nat 网关（如果查询的设备类型是NAT服务器，需要传此参数，通过nat资源查询接口获取）",
           "member": "string",
@@ -4271,7 +4002,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选，运营商线路（如果查询的设备类型是NAT服务器，需要传此参数为5）",
           "member": "uint64",
@@ -4306,7 +4036,6 @@
       "document": "DescribeBizHttpStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP）",
           "example": "bgpip",
@@ -4316,7 +4045,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源Id",
           "example": "bgpip-000000xe",
@@ -4326,7 +4054,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计周期，可取值300，1800，3600， 21600，86400，单位秒",
           "example": "300",
@@ -4336,7 +4063,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计开始时间",
           "example": "2020-02-01 12:04:12",
@@ -4346,7 +4072,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计结束时间",
           "example": "2020-02-03 18:03:23",
@@ -4356,7 +4081,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计方式，仅支持sum",
           "example": "sum",
@@ -4366,7 +4090,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议及端口列表，协议可取值TCP, UDP, HTTP, HTTPS，仅统计纬度为连接数时有效",
           "example": "无",
@@ -4376,7 +4099,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "特定域名查询",
           "example": "www.xx.com",
@@ -4414,7 +4136,6 @@
       "document": "DescribeBizTrend请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP）",
           "member": "string",
@@ -4423,7 +4144,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源实例ID",
           "member": "string",
@@ -4432,7 +4152,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计周期，可取值300，1800，3600，21600，86400，单位秒",
           "member": "uint64",
@@ -4441,7 +4160,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计开始时间",
           "member": "datetime",
@@ -4450,7 +4168,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计结束时间",
           "member": "datetime",
@@ -4459,7 +4176,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计方式，可取值max, min, avg, sum, 如统计纬度是流量速率或包量速率，仅可取值max",
           "member": "string",
@@ -4468,7 +4184,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计纬度，可取值connum, new_conn, inactive_conn, intraffic, outtraffic, inpkg, outpkg, qps",
           "member": "string",
@@ -4477,7 +4192,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议及端口列表，协议可取值TCP, UDP, HTTP, HTTPS，仅统计纬度为连接数时有效",
           "member": "ProtocolPort",
@@ -4486,7 +4200,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计纬度为qps时，可选特定域名查询",
           "member": "string",
@@ -4529,7 +4242,6 @@
       "document": "DescribeCCAlarmThreshold请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（shield表示棋牌；bgpip表示高防IP；bgp表示高防包；bgp-multip表示多ip高防包；net表示高防IP专业版）",
           "member": "string",
@@ -4538,7 +4250,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID,字符串类型",
           "member": "string",
@@ -4573,7 +4284,6 @@
       "document": "DescribeCCEvList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）",
           "member": "string",
@@ -4582,7 +4292,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间",
           "member": "datetime",
@@ -4591,7 +4300,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "member": "datetime",
@@ -4600,7 +4308,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源实例ID",
           "member": "string",
@@ -4609,7 +4316,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源实例的IP，当business不为basic时，如果IpList不为空则Id也必须不能为空；",
           "member": "string",
@@ -4618,7 +4324,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一页条数，填0表示不分页",
           "member": "uint64",
@@ -4627,7 +4332,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页起始偏移，取值为(页码-1)*一页条数",
           "member": "uint64",
@@ -4710,7 +4414,6 @@
       "document": "DescribeCCFrequencyRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -4719,7 +4422,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -4728,7 +4430,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）；当填写时表示获取转发规则的访问频率控制规则；",
           "member": "string",
@@ -4771,7 +4472,6 @@
       "document": "DescribeCCIpAllowDeny请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -4780,7 +4480,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -4789,7 +4488,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "黑或白名单，取值[white(白名单)，black(黑名单)]\n注意：此数组只能有一个值，不能同时获取黑名单和白名单",
           "member": "string",
@@ -4798,7 +4496,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数",
           "member": "uint64",
@@ -4807,7 +4504,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数",
           "member": "uint64",
@@ -4816,7 +4512,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选，代表HTTP协议或HTTPS协议的CC防护，取值[http（HTTP协议的CC防护），https（HTTPS协议的CC防护）]；",
           "member": "string",
@@ -4867,7 +4562,6 @@
       "document": "DescribeCCSelfDefinePolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgp高防包；bgp-multip共享包）",
           "member": "string",
@@ -4876,7 +4570,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -4885,7 +4578,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "拉取的条数",
           "member": "uint64",
@@ -4894,7 +4586,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "member": "uint64",
@@ -4937,7 +4628,6 @@
       "document": "DescribeCCTrend请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）",
           "member": "string",
@@ -4946,7 +4636,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源的IP",
           "member": "string",
@@ -4955,7 +4644,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标，取值[inqps(总请求峰值，dropqps(攻击请求峰值))]",
           "member": "string",
@@ -4964,7 +4652,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]",
           "member": "int64",
@@ -4973,7 +4660,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计开始时间",
           "member": "datetime",
@@ -4982,7 +4668,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计结束时间",
           "member": "datetime",
@@ -4991,7 +4676,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源实例ID，当Business为basic时，此字段不用填写（因为基础防护没有资源实例）",
           "member": "string",
@@ -5000,7 +4684,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名，可选",
           "member": "string",
@@ -5099,7 +4782,6 @@
       "document": "DescribeCCUrlAllow请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -5108,7 +4790,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -5117,7 +4798,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "黑或白名单，取值[white(白名单)]，目前只支持白名单\n注意：此数组只能有一个值，且只能为white",
           "member": "string",
@@ -5126,7 +4806,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数",
           "member": "uint64",
@@ -5135,7 +4814,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数",
           "member": "uint64",
@@ -5144,7 +4822,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选，代表HTTP协议或HTTPS协议的CC防护，取值[http（HTTP协议的CC防护），https（HTTPS协议的CC防护）]；",
           "member": "string",
@@ -5195,7 +4872,6 @@
       "document": "DescribeDDoSAlarmThreshold请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（shield表示棋牌；bgpip表示高防IP；bgp表示高防包；bgp-multip表示多ip高防包；net表示高防IP专业版）",
           "member": "string",
@@ -5204,7 +4880,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID,字符串类型",
           "member": "string",
@@ -5239,7 +4914,6 @@
       "document": "DescribeDDoSAttackIPRegionMap请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（shield表示棋牌；bgpip表示高防IP；bgp表示高防包；bgp-multip表示多ip高防包；net表示高防IP专业版）",
           "member": "string",
@@ -5248,7 +4922,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -5257,7 +4930,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计开始时间",
           "member": "datetime",
@@ -5266,7 +4938,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计结束时间，最大可统计的时间范围是半年；",
           "member": "datetime",
@@ -5275,7 +4946,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定资源的特定IP的攻击源，可选",
           "member": "string",
@@ -5318,7 +4988,6 @@
       "document": "DescribeDDoSAttackSource请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -5327,7 +4996,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -5336,7 +5004,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始时间",
           "member": "datetime",
@@ -5345,7 +5012,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "member": "datetime",
@@ -5354,7 +5020,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一页条数，填0表示不分页",
           "member": "uint64",
@@ -5363,7 +5028,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页起始偏移，取值为(页码-1)*一页条数",
           "member": "uint64",
@@ -5372,7 +5036,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "获取指定资源的特定ip的攻击源，可选",
           "member": "string",
@@ -5415,7 +5078,6 @@
       "document": "DescribeDDoSCount请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -5424,7 +5086,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -5433,7 +5094,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源的IP",
           "member": "string",
@@ -5442,7 +5102,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计开始时间",
           "member": "datetime",
@@ -5451,7 +5110,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计结束时间",
           "member": "datetime",
@@ -5460,7 +5118,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标，取值[traffic（攻击协议流量, 单位KB）, pkg（攻击协议报文数）, classnum（攻击事件次数）]",
           "member": "string",
@@ -5543,7 +5200,6 @@
       "document": "DescribeDDoSDefendStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（basic表示基础防护；bgp表示独享包；bgp-multip表示共享包；bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -5552,7 +5208,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源实例ID，只有当Business不是基础防护时才需要填写此字段；",
           "member": "string",
@@ -5561,7 +5216,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "基础防护的IP，只有当Business为基础防护时才需要填写此字段；",
           "member": "string",
@@ -5570,7 +5224,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只有当Business为基础防护时才需要填写此字段，IP所属的产品类型，取值[public（CVM产品），bm（黑石产品），eni（弹性网卡），vpngw（VPN网关）， natgw（NAT网关），waf（Web应用安全产品），fpc（金融产品），gaap（GAAP产品）, other(托管IP)]",
           "member": "string",
@@ -5579,7 +5232,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只有当Business为基础防护时才需要填写此字段，IP所属的产品子类，取值[cvm（CVM），lb（负载均衡器），eni（弹性网卡），vpngw（VPN），natgw（NAT），waf（WAF），fpc（金融），gaap（GAAP），other（托管IP），eip（黑石弹性IP）]",
           "member": "string",
@@ -5588,7 +5240,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只有当Business为基础防护时才需要填写此字段，IP所属的资源实例ID，当绑定新IP时必须填写此字段；例如是弹性网卡的IP，则InstanceId填写弹性网卡的ID(eni-*);",
           "member": "string",
@@ -5597,7 +5248,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只有当Business为基础防护时才需要填写此字段，表示IP所属的地域，取值：\n\"bj\":     华北地区(北京)\n\"cd\":     西南地区(成都)\n\"cq\":     西南地区(重庆)\n\"gz\":     华南地区(广州)\n\"gzopen\": 华南地区(广州Open)\n\"hk\":     中国香港\n\"kr\":     东南亚地区(首尔)\n\"sh\":     华东地区(上海)\n\"shjr\":   华东地区(上海金融)\n\"szjr\":   华南地区(深圳金融)\n\"sg\":     东南亚地区(新加坡)\n\"th\":     东南亚地区(泰国)\n\"de\":     欧洲地区(德国)\n\"usw\":    美国西部（硅谷）\n\"ca\":     北美地区(多伦多)\n\"jp\":     日本\n\"hzec\":   杭州\n\"in\":     印度\n\"use\":    美东地区（弗吉尼亚）\n\"ru\":     俄罗斯\n\"tpe\":    中国台湾\n\"nj\":     南京",
           "member": "string",
@@ -5648,7 +5298,6 @@
       "document": "DescribeDDoSEvInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -5657,7 +5306,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -5666,7 +5314,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源的IP",
           "member": "string",
@@ -5675,7 +5322,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "攻击开始时间",
           "member": "datetime",
@@ -5684,7 +5330,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "攻击结束时间",
           "member": "datetime",
@@ -5847,7 +5492,6 @@
       "document": "DescribeDDoSEvList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）",
           "member": "string",
@@ -5856,7 +5500,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间",
           "member": "datetime",
@@ -5865,7 +5508,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "member": "datetime",
@@ -5874,7 +5516,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源实例ID，当Business为basic时，此字段不用填写（因为基础防护没有资源实例）",
           "member": "string",
@@ -5883,7 +5524,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源的IP",
           "member": "string",
@@ -5892,7 +5532,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否超过弹性防护峰值，取值[yes(是)，no(否)]，填写空字符串时表示不进行过滤",
           "member": "string",
@@ -5901,7 +5540,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一页条数，填0表示不分页",
           "member": "uint64",
@@ -5910,7 +5548,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页起始偏移，取值为(页码-1)*一页条数",
           "member": "uint64",
@@ -5993,7 +5630,6 @@
       "document": "DescribeDDoSIpLog请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（net表示高防IP专业版）",
           "member": "string",
@@ -6002,7 +5638,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -6011,7 +5646,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源的IP",
           "member": "string",
@@ -6020,7 +5654,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "攻击开始时间",
           "member": "datetime",
@@ -6029,7 +5662,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "攻击结束时间",
           "member": "datetime",
@@ -6104,7 +5736,6 @@
       "document": "DescribeDDoSNetCount请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（net表示高防IP专业版）",
           "member": "string",
@@ -6113,7 +5744,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -6122,7 +5752,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计开始时间",
           "member": "datetime",
@@ -6131,7 +5760,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计结束时间",
           "member": "datetime",
@@ -6140,7 +5768,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标，取值[traffic（攻击协议流量, 单位KB）, pkg（攻击协议报文数）, classnum（攻击事件次数）]",
           "member": "string",
@@ -6215,7 +5842,6 @@
       "document": "DescribeDDoSNetEvInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（net表示高防IP专业版）",
           "member": "string",
@@ -6224,7 +5850,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -6233,7 +5858,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "攻击开始时间",
           "member": "datetime",
@@ -6242,7 +5866,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "攻击结束时间",
           "member": "datetime",
@@ -6397,7 +6020,6 @@
       "document": "DescribeDDoSNetEvList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（net表示高防IP专业版）",
           "member": "string",
@@ -6406,7 +6028,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -6415,7 +6036,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间",
           "member": "datetime",
@@ -6424,7 +6044,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "member": "datetime",
@@ -6433,7 +6052,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一页条数，填0表示不分页",
           "member": "uint64",
@@ -6442,7 +6060,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页起始偏移，取值为(页码-1)*一页条数",
           "member": "uint64",
@@ -6517,7 +6134,6 @@
       "document": "DescribeDDoSNetIpLog请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（net表示高防IP专业版）",
           "member": "string",
@@ -6526,7 +6142,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -6535,7 +6150,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "攻击开始时间",
           "member": "datetime",
@@ -6544,7 +6158,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "攻击结束时间",
           "member": "datetime",
@@ -6611,7 +6224,6 @@
       "document": "DescribeDDoSNetTrend请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（net表示高防IP专业版）",
           "member": "string",
@@ -6620,7 +6232,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -6629,7 +6240,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标，取值[bps(攻击流量带宽，pps(攻击包速率))]",
           "member": "string",
@@ -6638,7 +6248,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]",
           "member": "uint64",
@@ -6647,7 +6256,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计开始时间",
           "member": "datetime",
@@ -6656,7 +6264,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计结束时间",
           "member": "datetime",
@@ -6747,7 +6354,6 @@
       "document": "DescribeDDoSPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -6756,7 +6362,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选字段，资源ID，如果填写则表示该资源绑定的DDoS高级策略",
           "member": "string",
@@ -6791,7 +6396,6 @@
       "document": "DescribeDDoSTrend请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）",
           "member": "string",
@@ -6800,7 +6404,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源实例的IP",
           "member": "string",
@@ -6809,7 +6412,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标，取值[bps(攻击流量带宽，pps(攻击包速率))]",
           "member": "string",
@@ -6818,7 +6420,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]",
           "member": "int64",
@@ -6827,7 +6428,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计开始时间",
           "member": "datetime",
@@ -6836,7 +6436,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计结束时间",
           "member": "datetime",
@@ -6845,7 +6444,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源实例ID，当Business为basic时，此字段不用填写（因为基础防护没有资源实例）",
           "member": "string",
@@ -6944,7 +6542,6 @@
       "document": "DescribeDDoSUsedStatis请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP）",
           "member": "string",
@@ -6979,7 +6576,6 @@
       "document": "DescribeIPProductInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgp表示独享包；bgp-multip表示共享包）",
           "member": "string",
@@ -6988,7 +6584,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP列表",
           "member": "string",
@@ -7023,7 +6618,6 @@
       "document": "DescribeInsurePacks请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "可选字段，保险包套餐ID，当要获取指定ID（例如insure-000000xe）的保险包套餐时请填写此字段；",
           "member": "string",
@@ -7083,7 +6677,6 @@
       "document": "DescribeIpUnBlockList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间",
           "member": "datetime",
@@ -7092,7 +6685,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "member": "datetime",
@@ -7101,7 +6693,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP（不为空时，进行IP过滤）",
           "member": "string",
@@ -7110,7 +6701,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数（不为空时，进行分页查询），此字段后面会弃用，请用Limit和Offset字段代替；",
           "member": "Paging",
@@ -7119,7 +6709,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一页条数，填0表示不分页",
           "member": "uint64",
@@ -7128,7 +6717,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页起始偏移，取值为(页码-1)*一页条数",
           "member": "uint64",
@@ -7187,7 +6775,6 @@
       "document": "DescribeL4HealthConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -7196,7 +6783,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -7205,7 +6791,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID数组，当导出所有规则的健康检查配置则不填或填空数组；",
           "member": "string",
@@ -7240,7 +6825,6 @@
       "document": "DescribeL4RulesErrHealth请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -7249,7 +6833,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -7300,7 +6883,6 @@
       "document": "DescribeL7HealthConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -7309,7 +6891,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -7318,7 +6899,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID数组，当导出所有规则的健康检查配置则不填或填空数组；",
           "member": "string",
@@ -7353,7 +6933,6 @@
       "document": "DescribeNewL4RulesErrHealth请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP）",
           "member": "string",
@@ -7362,7 +6941,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID列表",
           "member": "string",
@@ -7405,7 +6983,6 @@
       "document": "DescribeNewL4Rules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP）",
           "member": "string",
@@ -7414,7 +6991,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定IP查询",
           "member": "string",
@@ -7423,7 +6999,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定高防IP端口查询",
           "member": "uint64",
@@ -7432,7 +7007,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一页条数，填0表示不分页",
           "member": "uint64",
@@ -7441,7 +7015,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页起始偏移，取值为(页码-1)*一页条数",
           "member": "uint64",
@@ -7492,7 +7065,6 @@
       "document": "DescribeNewL7RulesErrHealth请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP)",
           "member": "string",
@@ -7501,7 +7073,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则Id列表",
           "member": "string",
@@ -7544,7 +7115,6 @@
       "document": "DescribePackIndex请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示高防包；net表示高防IP专业版）",
           "member": "string",
@@ -7579,7 +7149,6 @@
       "document": "DescribePcap请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -7588,7 +7157,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源实例ID",
           "member": "string",
@@ -7597,7 +7165,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "攻击事件的开始时间，格式为\"2018-08-28 07:00:00\"",
           "member": "datetime",
@@ -7606,7 +7173,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "攻击事件的结束时间，格式为\"2018-08-28 07:02:00\"",
           "member": "datetime",
@@ -7615,7 +7181,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源的IP，只有当Business为net时才需要填写资源实例下的IP；",
           "member": "string",
@@ -7650,7 +7215,6 @@
       "document": "DescribePolicyCase请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -7659,7 +7223,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略场景ID",
           "member": "string",
@@ -7694,7 +7257,6 @@
       "document": "DescribeResIpList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -7703,7 +7265,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID, 如果不填，则获取用户所有资源的IP",
           "member": "string",
@@ -7738,7 +7299,6 @@
       "document": "DescribeResourceList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgp表示独享包；bgp-multip表示共享包；bgpip表示高防IP；net表示高防IP专业版）",
           "example": "bgpip",
@@ -7748,7 +7308,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域码搜索，可选，当不指定地域时空数组，当指定地域时，填地域码。例如：[\"gz\", \"sh\"]",
           "example": "gz",
@@ -7758,7 +7317,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "线路搜索，可选，只有当获取高防IP资源列表是可以选填，取值为[1（BGP线路），2（南京电信），3（南京联通），99（第三方合作线路）]，当获取其他产品时请填空数组；",
           "example": "1",
@@ -7768,7 +7326,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID搜索，可选，当不为空数组时表示获取指定资源的资源列表；",
           "example": "无",
@@ -7778,7 +7335,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源名称搜索，可选，当不为空字符串时表示按名称搜索资源；",
           "example": "无",
@@ -7788,7 +7344,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP搜索列表，可选，当不为空时表示按照IP搜索资源；",
           "example": "无",
@@ -7798,7 +7353,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源状态搜索列表，可选，取值为[0（运行中）, 1（清洗中）, 2（封堵中）]，当填空数组时不进行状态搜索；",
           "example": "无",
@@ -7808,7 +7362,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "即将到期搜索；可选，取值为[0（不搜索），1（搜索即将到期的资源）]",
           "example": "无",
@@ -7818,7 +7371,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段，可选",
           "example": "无",
@@ -7828,7 +7380,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一页条数，填0表示不分页",
           "example": "无",
@@ -7838,7 +7389,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页起始偏移，取值为(页码-1)*一页条数",
           "example": "无",
@@ -7848,7 +7398,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高防IP专业版资源的CNAME，可选，只对高防IP专业版资源列表有效；",
           "example": "无",
@@ -7858,7 +7407,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高防IP专业版资源的域名，可选，只对高防IP专业版资源列表有效；",
           "example": "无",
@@ -7916,7 +7464,6 @@
       "document": "DescribeRuleSets请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -7925,7 +7472,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID列表",
           "member": "string",
@@ -7968,7 +7514,6 @@
       "document": "DescribeSchedulingDomainList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "一页条数，填0表示不分页",
           "member": "uint64",
@@ -7977,7 +7522,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页起始偏移，取值为(页码-1)*一页条数",
           "member": "uint64",
@@ -7986,7 +7530,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选，筛选特定的域名",
           "member": "string",
@@ -8070,7 +7613,6 @@
       "document": "DescribeSourceIpSegment请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -8079,7 +7621,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -8114,7 +7655,6 @@
       "document": "DescribeTransmitStatis请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版；bgp表示独享包；bgp-multip表示共享包）",
           "member": "string",
@@ -8123,7 +7663,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源实例ID",
           "member": "string",
@@ -8132,7 +7671,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标名，取值：\ntraffic表示流量带宽；\npkg表示包速率；",
           "member": "string",
@@ -8141,7 +7679,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计时间粒度（300表示5分钟；3600表示小时；86400表示天）",
           "member": "uint64",
@@ -8150,7 +7687,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计开始时间，秒部分保持为0，分钟部分为5的倍数",
           "member": "datetime",
@@ -8159,7 +7695,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计结束时间，秒部分保持为0，分钟部分为5的倍数",
           "member": "datetime",
@@ -8168,7 +7703,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源的IP（当Business为bgp-multip时必填，且仅支持一个IP）；当不填写时，默认统计资源实例的所有IP；资源实例有多个IP（比如高防IP专业版）时，统计方式是求和；",
           "member": "string",
@@ -8268,7 +7802,6 @@
       "document": "DescribleL4Rules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -8277,7 +7810,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -8286,7 +7818,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID，可选参数，填写后获取指定的规则",
           "member": "string",
@@ -8295,7 +7826,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一页条数，填0表示不分页",
           "member": "uint64",
@@ -8304,7 +7834,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页起始偏移，取值为(页码-1)*一页条数",
           "member": "uint64",
@@ -8355,7 +7884,6 @@
       "document": "DescribleL7Rules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -8364,7 +7892,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -8373,7 +7900,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID，可选参数，填写后获取指定的规则",
           "member": "string",
@@ -8382,7 +7908,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一页条数，填0表示不分页",
           "member": "uint64",
@@ -8391,7 +7916,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页起始偏移，取值为(页码-1)*一页条数",
           "member": "uint64",
@@ -8400,7 +7924,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名搜索，选填，当需要搜索域名请填写",
           "member": "string",
@@ -8409,7 +7932,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转发协议搜索，选填，取值[http, https, http/https]",
           "member": "string",
@@ -8418,7 +7940,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态搜索，选填，取值[0(规则配置成功)，1(规则配置生效中)，2(规则配置失败)，3(规则删除生效中)，5(规则删除失败)，6(规则等待配置)，7(规则等待删除)，8(规则待配置证书)]",
           "member": "uint64",
@@ -8469,7 +7990,6 @@
       "document": "DescribleNewL7Rules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP）",
           "member": "string",
@@ -8478,7 +7998,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一页条数，填0表示不分页",
           "member": "uint64",
@@ -8487,7 +8006,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页起始偏移，取值为(页码-1)*一页条数",
           "member": "uint64",
@@ -8496,7 +8014,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名搜索，选填，当需要搜索域名请填写",
           "member": "string",
@@ -8505,7 +8022,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转发协议搜索，选填，取值[http, https, http/https]",
           "member": "string",
@@ -8514,7 +8030,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态搜索，选填，取值[0(规则配置成功)，1(规则配置生效中)，2(规则配置失败)，3(规则删除生效中)，5(规则删除失败)，6(规则等待配置)，7(规则等待删除)，8(规则待配置证书)]",
           "member": "uint64",
@@ -8523,7 +8038,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP搜索，选填，当需要搜索IP请填写",
           "member": "string",
@@ -8574,7 +8088,6 @@
       "document": "DescribleRegionCount请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；）",
           "member": "string",
@@ -8583,7 +8096,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据线路统计，取值为[1（BGP线路），2（南京电信），3（南京联通），99（第三方合作线路）]；只对高防IP产品有效，其他产品此字段忽略",
           "member": "uint64",
@@ -8618,7 +8130,6 @@
       "document": "业务流量的http状态码聚合数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "http2xx状态码",
           "example": "[1,2,3]",
@@ -8629,7 +8140,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "http3xx状态码",
           "example": "[1,2,3]",
@@ -8640,7 +8150,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "http404状态码",
           "example": "[1,2,3]",
@@ -8651,7 +8160,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "http4xx状态码",
           "example": "[1,2,3]",
@@ -8662,7 +8170,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "http5xx状态码",
           "example": "[1,2,3]",
@@ -8673,7 +8180,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "http2xx回源状态码",
           "example": "[1,2,3]",
@@ -8684,7 +8190,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "http3xx回源状态码",
           "example": "[1,2,3]",
@@ -8695,7 +8200,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "http404回源状态码",
           "example": "[1,2,3]",
@@ -8706,7 +8210,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "http4xx回源状态码",
           "example": "[1,2,3]",
@@ -8717,7 +8220,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "http5xx回源状态码",
           "example": "[1,2,3]",
@@ -8734,7 +8236,6 @@
       "document": "黑白IP",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址",
           "member": "string",
@@ -8744,7 +8245,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "黑白类型，取值范围[black，white]",
           "member": "string",
@@ -8826,7 +8326,6 @@
       "document": "IP解封记录",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IP",
           "member": "string",
@@ -8836,7 +8335,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "封堵时间",
           "member": "datetime",
@@ -8846,7 +8344,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "解封时间（实际解封时间）",
           "member": "datetime",
@@ -8856,7 +8353,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "解封类型（user：自助解封；auto：自动解封； update：升级解封；bind：绑定高防包解封）",
           "member": "string",
@@ -8872,7 +8368,6 @@
       "document": "字段值，K-V形式",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "字段名称",
           "member": "string",
@@ -8882,7 +8377,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段取值",
           "member": "string",
@@ -8898,7 +8392,6 @@
       "document": "KeyValue记录",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "一条记录的Key-Value数组",
           "member": "KeyValue",
@@ -8914,7 +8407,6 @@
       "document": "删除l4规则接口",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源Id",
           "member": "string",
@@ -8924,7 +8416,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源IP",
           "member": "string",
@@ -8934,7 +8425,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则Id",
           "member": "string",
@@ -8950,7 +8440,6 @@
       "document": "四层健康检查配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "转发协议，取值[TCP, UDP]",
           "member": "string",
@@ -8960,7 +8449,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转发端口",
           "member": "uint64",
@@ -8970,7 +8458,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "=1表示开启；=0表示关闭",
           "member": "uint64",
@@ -8980,7 +8467,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "响应超时时间，单位秒",
           "member": "uint64",
@@ -8990,7 +8476,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测间隔时间，单位秒",
           "member": "uint64",
@@ -9000,7 +8485,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不健康阈值，单位次",
           "member": "uint64",
@@ -9010,7 +8494,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "健康阈值，单位次",
           "member": "uint64",
@@ -9020,7 +8503,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话保持时间，单位秒",
           "member": "uint64",
@@ -9036,7 +8518,6 @@
       "document": "L4规则",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "转发协议，取值[TCP, UDP]",
           "member": "string",
@@ -9046,7 +8527,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转发端口",
           "member": "uint64",
@@ -9056,7 +8536,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源站端口",
           "member": "uint64",
@@ -9066,7 +8545,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回源方式，取值[1(域名回源)，2(IP回源)]",
           "member": "uint64",
@@ -9076,7 +8554,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话保持时间，单位秒",
           "member": "uint64",
@@ -9086,7 +8563,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回源列表",
           "member": "L4RuleSource",
@@ -9096,7 +8572,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡方式，取值[1(加权轮询)，2(源IP hash)]",
           "member": "uint64",
@@ -9106,7 +8581,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]；",
           "member": "uint64",
@@ -9116,7 +8590,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID",
           "member": "string",
@@ -9126,7 +8599,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则描述",
           "member": "string",
@@ -9136,7 +8608,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "移除水印状态，取值[0(关闭)，1(开启)]",
           "member": "uint64",
@@ -9152,7 +8623,6 @@
       "document": "规则健康检查参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID",
           "member": "string",
@@ -9162,7 +8632,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "=1表示开启；=0表示关闭",
           "member": "uint64",
@@ -9172,7 +8641,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "响应超时时间，单位秒",
           "member": "uint64",
@@ -9182,7 +8650,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测间隔时间，单位秒，必须要大于响应超时时间",
           "member": "uint64",
@@ -9192,7 +8659,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不健康阈值，单位次",
           "member": "uint64",
@@ -9202,7 +8668,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "健康阈值，单位次",
           "member": "uint64",
@@ -9218,7 +8683,6 @@
       "document": "L4规则回源列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "回源IP或域名",
           "member": "string",
@@ -9228,7 +8692,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权重值，取值[0,100]",
           "member": "uint64",
@@ -9244,7 +8707,6 @@
       "document": "七层健康检查配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "转发协议，取值[http, https, http/https]",
           "member": "string",
@@ -9254,7 +8716,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转发域名",
           "member": "string",
@@ -9264,7 +8725,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "=1表示开启；=0表示关闭",
           "member": "uint64",
@@ -9274,7 +8734,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测间隔时间，单位秒",
           "member": "uint64",
@@ -9284,7 +8743,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异常判定次数，单位次",
           "member": "uint64",
@@ -9294,7 +8752,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "健康判定次数，单位次",
           "member": "uint64",
@@ -9304,7 +8761,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "健康检查探测方法，可选HEAD或GET，默认为HEAD",
           "member": "string",
@@ -9314,7 +8770,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "健康检查判定正常状态码，1xx =1, 2xx=2, 3xx=4, 4xx=8,5xx=16，多个状态码值加和",
           "member": "uint64",
@@ -9324,7 +8779,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查目录的URL，默认为/",
           "member": "string",
@@ -9340,7 +8794,6 @@
       "document": "L7规则",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "转发协议，取值[http, https]",
           "member": "string",
@@ -9350,7 +8803,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转发域名",
           "member": "string",
@@ -9360,7 +8812,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回源方式，取值[1(域名回源)，2(IP回源)]",
           "member": "uint64",
@@ -9370,7 +8821,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话保持时间，单位秒",
           "member": "uint64",
@@ -9380,7 +8830,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回源列表",
           "member": "L4RuleSource",
@@ -9390,7 +8839,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡方式，取值[1(加权轮询)]",
           "member": "uint64",
@@ -9400,7 +8848,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]",
           "member": "uint64",
@@ -9410,7 +8857,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；",
           "member": "string",
@@ -9420,7 +8866,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0",
           "member": "uint64",
@@ -9430,7 +8875,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当证书来源为腾讯云托管证书时，此字段必须填写托管证书ID",
           "member": "string",
@@ -9440,7 +8884,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当证书来源为自有证书时，此字段必须填写证书内容；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
           "member": "string",
@@ -9450,7 +8893,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
           "member": "string",
@@ -9460,7 +8902,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则描述",
           "member": "string",
@@ -9470,7 +8911,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则状态，取值[0(规则配置成功)，1(规则配置生效中)，2(规则配置失败)，3(规则删除生效中)，5(规则删除失败)，6(规则等待配置)，7(规则等待删除)，8(规则待配置证书)]",
           "member": "uint64",
@@ -9480,7 +8920,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cc防护状态，取值[0(关闭), 1(开启)]",
           "member": "uint64",
@@ -9490,7 +8929,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "HTTPS协议的CC防护状态，取值[0(关闭), 1(开启)]",
           "member": "uint64",
@@ -9500,7 +8938,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "HTTPS协议的CC防护阈值",
           "member": "uint64",
@@ -9510,7 +8947,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "HTTPS协议的CC防护等级",
           "member": "string",
@@ -9520,7 +8956,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
@@ -9530,7 +8965,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接入端口值\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
@@ -9546,7 +8980,6 @@
       "document": "L7规则健康检查参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID",
           "member": "string",
@@ -9556,7 +8989,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "=1表示开启；=0表示关闭",
           "member": "uint64",
@@ -9566,7 +8998,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测间隔时间，单位秒",
           "member": "uint64",
@@ -9576,7 +9007,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不健康阈值，单位次",
           "member": "uint64",
@@ -9586,7 +9016,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "健康阈值，单位次",
           "member": "uint64",
@@ -9596,7 +9025,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "HTTP请求方式，取值[HEAD,GET]",
           "member": "string",
@@ -9606,7 +9034,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "健康检查判定正常状态码，1xx =1, 2xx=2, 3xx=4, 4xx=8,5xx=16，多个状态码值加和",
           "member": "uint64",
@@ -9616,7 +9043,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查目录的URL，默认为/",
           "member": "string",
@@ -9626,7 +9052,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置状态，0： 正常，1：配置中，2：配置失败",
           "member": "uint64",
@@ -9642,7 +9067,6 @@
       "document": "ModifyCCAlarmThreshold请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（shield表示棋牌；bgpip表示高防IP；bgp表示高防包；bgp-multip表示多ip高防包；net表示高防IP专业版）",
           "member": "string",
@@ -9651,7 +9075,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID,字符串类型",
           "member": "string",
@@ -9660,7 +9083,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警阈值，大于0（目前排定的值），后台设置默认值为1000",
           "member": "uint64",
@@ -9669,7 +9091,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源关联的IP列表，高防包未绑定时，传空数组，高防IP专业版传多个IP的数据",
           "member": "string",
@@ -9704,7 +9125,6 @@
       "document": "ModifyCCFrequencyRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -9713,7 +9133,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CC的访问频率控制规则ID",
           "member": "string",
@@ -9722,7 +9141,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "匹配规则，取值[\"include\"(前缀匹配)，\"equal\"(完全匹配)]",
           "member": "string",
@@ -9731,7 +9149,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计周期，单位秒，取值[10, 30, 60]",
           "member": "uint64",
@@ -9740,7 +9157,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "访问次数，取值[1-10000]",
           "member": "uint64",
@@ -9749,7 +9165,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行动作，取值[\"alg\"（人机识别）, \"drop\"（拦截）]",
           "member": "string",
@@ -9758,7 +9173,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行时间，单位秒，取值[1-900]",
           "member": "uint64",
@@ -9767,7 +9181,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "URI字符串，必须以/开头，例如/abc/a.php，长度不超过31；当URI=/时，匹配模式只能选择前缀匹配；",
           "member": "string",
@@ -9776,7 +9189,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "User-Agent字符串，长度不超过80",
           "member": "string",
@@ -9785,7 +9197,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cookie字符串，长度不超过40",
           "member": "string",
@@ -9820,7 +9231,6 @@
       "document": "ModifyCCFrequencyRulesStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -9829,7 +9239,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -9838,7 +9247,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）",
           "member": "string",
@@ -9847,7 +9255,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开启或关闭，取值[\"on\"(开启)，\"off\"(关闭)]",
           "member": "string",
@@ -9882,7 +9289,6 @@
       "document": "ModifyCCHostProtection请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -9891,7 +9297,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -9900,7 +9305,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID",
           "member": "string",
@@ -9909,7 +9313,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开启/关闭CC域名防护，取值[open(表示开启)，close(表示关闭)]",
           "member": "string",
@@ -9944,7 +9347,6 @@
       "document": "ModifyCCIpAllowDeny请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -9953,7 +9355,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -9962,7 +9363,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "add表示添加，delete表示删除",
           "member": "string",
@@ -9971,7 +9371,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "黑/白名单类型；取值[white(白名单)，black(黑名单)]",
           "member": "string",
@@ -9980,7 +9379,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "黑/白名单的IP数组",
           "member": "string",
@@ -9989,7 +9387,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选字段，代表CC防护类型，取值[http（HTTP协议的CC防护），https（HTTPS协议的CC防护）]；当不填时，默认为HTTP协议的CC防护；当填写https时还需要填写Domain和RuleId字段；",
           "member": "string",
@@ -9998,7 +9395,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选字段，表示HTTPS协议的7层转发规则域名（通过获取7层转发规则接口可以获取域名），只有当Protocol字段为https时才必须填写此字段；",
           "member": "string",
@@ -10007,7 +9403,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选字段，表示HTTPS协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID），\n当Method为delete时，不用填写此字段；",
           "member": "string",
@@ -10042,7 +9437,6 @@
       "document": "ModifyCCLevel请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -10051,7 +9445,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -10060,7 +9453,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CC防护等级，取值[default(正常), loose(宽松), strict(严格)];",
           "member": "string",
@@ -10069,7 +9461,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选字段，代表CC防护类型，取值[http（HTTP协议的CC防护），https（HTTPS协议的CC防护）]；当不填时，默认为HTTP协议的CC防护；当填写https时还需要填写RuleId字段；",
           "member": "string",
@@ -10078,7 +9469,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表示7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）；",
           "member": "string",
@@ -10113,7 +9503,6 @@
       "document": "ModifyCCPolicySwitch请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -10122,7 +9511,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -10131,7 +9519,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略ID",
           "member": "string",
@@ -10140,7 +9527,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开关状态",
           "member": "uint64",
@@ -10175,7 +9561,6 @@
       "document": "ModifyCCSelfDefinePolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -10184,7 +9569,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -10193,7 +9577,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略ID",
           "member": "string",
@@ -10202,7 +9585,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CC策略描述",
           "member": "CCPolicy",
@@ -10237,7 +9619,6 @@
       "document": "ModifyCCThreshold请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示基础防护）",
           "member": "string",
@@ -10246,7 +9627,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CC防护阈值，取值(0 100 150 240 350 480 550 700 850 1000 1500 2000 3000 5000 10000 20000);\n当Business为高防IP、高防IP专业版时，其CC防护最大阈值跟资源的保底防护带宽有关，对应关系如下：\n  保底带宽: 最大C防护阈值\n  10:  20000,\n  20:  40000,\n  30:  70000,\n  40:  100000,\n  50:  150000,\n  60:  200000,\n  80:  250000,\n  100: 300000,",
           "member": "uint64",
@@ -10255,7 +9635,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -10264,7 +9643,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选字段，代表CC防护类型，取值[http（HTTP协议的CC防护），https（HTTPS协议的CC防护）]；当不填时，默认为HTTP协议的CC防护；当填写https时还需要填写RuleId字段；",
           "member": "string",
@@ -10273,7 +9651,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选字段，表示HTTPS协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID）；\n当Protocol=https时必须填写；",
           "member": "string",
@@ -10282,7 +9659,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询的IP地址（仅基础防护提供），取值如：1.1.1.1",
           "member": "string",
@@ -10291,7 +9667,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询IP所属地域（仅基础防护提供），取值如：gz、bj、sh、hk等地域缩写",
           "member": "string",
@@ -10300,7 +9675,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专区类型（仅基础防护提供），取值如：公有云专区：public，黑石专区：bm, NAT服务器专区：nat，互联网通道：channel。",
           "member": "string",
@@ -10309,7 +9683,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备类型（仅基础防护提供），取值如：服务器：cvm，公有云负载均衡：clb，黑石负载均衡：lb，NAT服务器：nat，互联网通道：channel.",
           "member": "string",
@@ -10318,7 +9691,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仅基础防护提供。可选，IPInstance Nat 网关（如果查询的设备类型是NAT服务器，需要传此参数，通过nat资源查询接口获取）",
           "member": "string",
@@ -10327,7 +9699,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仅基础防护提供。可选，运营商线路（如果查询的设备类型是NAT服务器，需要传此参数为5）",
           "member": "uint64",
@@ -10336,7 +9707,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选字段，当协议取值HTTPS时，必填",
           "member": "string",
@@ -10371,7 +9741,6 @@
       "document": "ModifyCCUrlAllow请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -10380,7 +9749,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -10389,7 +9757,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "=add表示添加，=delete表示删除",
           "member": "string",
@@ -10398,7 +9765,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "黑/白名单类型；取值[white(白名单)]",
           "member": "string",
@@ -10407,7 +9773,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "URL数组，URL格式如下：\nhttp://域名/cgi\nhttps://域名/cgi",
           "member": "string",
@@ -10416,7 +9781,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选字段，代表CC防护类型，取值[http（HTTP协议的CC防护），https（HTTPS协议的CC防护）]；当不填时，默认为HTTP协议的CC防护；当填写https时还需要填写Domain和RuleId字段；",
           "member": "string",
@@ -10425,7 +9789,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选字段，表示HTTPS协议的7层转发规则域名（通过获取7层转发规则接口可以获取域名），只有当Protocol字段为https时才必须填写此字段；",
           "member": "string",
@@ -10434,7 +9797,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选字段，表示HTTPS协议的7层转发规则ID（通过获取7层转发规则接口可以获取规则ID），当添加并且Protocol=https时必须填写；\n当Method为delete时，可以不用填写此字段；",
           "member": "string",
@@ -10469,7 +9831,6 @@
       "document": "ModifyDDoSAIStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -10478,7 +9839,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -10487,7 +9847,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "=get表示读取AI防护状态；=set表示修改AI防护状态；",
           "member": "string",
@@ -10496,7 +9855,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "AI防护状态，取值[on，off]；当Method=set时必填；",
           "member": "string",
@@ -10539,7 +9897,6 @@
       "document": "ModifyDDoSAlarmThreshold请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（shield表示棋牌；bgpip表示高防IP；bgp表示高防包；bgp-multip表示多ip高防包；net表示高防IP专业版）",
           "member": "string",
@@ -10548,7 +9905,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID,字符串类型",
           "member": "string",
@@ -10557,7 +9913,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警阈值类型，0-未设置，1-入流量，2-清洗流量",
           "member": "uint64",
@@ -10566,7 +9921,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警阈值，大于0（目前暂定的值）",
           "member": "uint64",
@@ -10575,7 +9929,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源关联的IP列表，高防包未绑定时，传空数组，高防IP专业版传多个IP的数据",
           "member": "string",
@@ -10610,7 +9963,6 @@
       "document": "ModifyDDoSDefendStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgp表示独享包；bgp-multip表示共享包；bgpip表示高防IP；net表示高防IP专业版；basic表示基础防护）",
           "member": "string",
@@ -10619,7 +9971,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "防护状态值，取值[0（关闭），1（开启）]",
           "member": "uint64",
@@ -10628,7 +9979,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关闭时长，单位小时，取值[0，1，2，3，4，5，6]；当Status=0表示关闭时，Hour必须大于0；",
           "member": "int64",
@@ -10637,7 +9987,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID；当Business不是基础防护时必须填写此字段；",
           "member": "string",
@@ -10646,7 +9995,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "基础防护的IP，只有当Business为基础防护时才需要填写此字段；",
           "member": "string",
@@ -10655,7 +10003,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只有当Business为基础防护时才需要填写此字段，IP所属的产品类型，取值[public（CVM产品），bm（黑石产品），eni（弹性网卡），vpngw（VPN网关）， natgw（NAT网关），waf（Web应用安全产品），fpc（金融产品），gaap（GAAP产品）, other(托管IP)]",
           "member": "string",
@@ -10664,7 +10011,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只有当Business为基础防护时才需要填写此字段，IP所属的产品子类，取值[cvm（CVM），lb（负载均衡器），eni（弹性网卡），vpngw（VPN），natgw（NAT），waf（WAF），fpc（金融），gaap（GAAP），other（托管IP），eip（黑石弹性IP）]",
           "member": "string",
@@ -10673,7 +10019,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只有当Business为基础防护时才需要填写此字段，IP所属的资源实例ID，当绑定新IP时必须填写此字段；例如是弹性网卡的IP，则InstanceId填写弹性网卡的ID(eni-*);",
           "member": "string",
@@ -10682,7 +10027,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只有当Business为基础防护时才需要填写此字段，表示IP所属的地域，取值：\n\"bj\":     华北地区(北京)\n\"cd\":     西南地区(成都)\n\"cq\":     西南地区(重庆)\n\"gz\":     华南地区(广州)\n\"gzopen\": 华南地区(广州Open)\n\"hk\":     中国香港\n\"kr\":     东南亚地区(首尔)\n\"sh\":     华东地区(上海)\n\"shjr\":   华东地区(上海金融)\n\"szjr\":   华南地区(深圳金融)\n\"sg\":     东南亚地区(新加坡)\n\"th\":     东南亚地区(泰国)\n\"de\":     欧洲地区(德国)\n\"usw\":    美国西部（硅谷）\n\"ca\":     北美地区(多伦多)\n\"jp\":     日本\n\"hzec\":   杭州\n\"in\":     印度\n\"use\":    美东地区（弗吉尼亚）\n\"ru\":     俄罗斯\n\"tpe\":    中国台湾\n\"nj\":     南京",
           "member": "string",
@@ -10717,7 +10061,6 @@
       "document": "ModifyDDoSLevel请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -10726,7 +10069,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -10735,7 +10077,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "=get表示读取防护等级；=set表示修改防护等级",
           "member": "string",
@@ -10744,7 +10085,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "防护等级，取值[low,middle,high]；当Method=set时必填",
           "member": "string",
@@ -10787,7 +10127,6 @@
       "document": "ModifyDDoSPolicyCase请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -10796,7 +10135,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略场景ID",
           "member": "string",
@@ -10805,7 +10143,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开发平台，取值[PC（PC客户端）， MOBILE（移动端）， TV（电视端）， SERVER（主机）]",
           "member": "string",
@@ -10814,7 +10151,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "细分品类，取值[WEB（网站）， GAME（游戏）， APP（应用）， OTHER（其他）]",
           "member": "string",
@@ -10823,7 +10159,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用协议，取值[tcp（TCP协议），udp（UDP协议），icmp（ICMP协议），all（其他协议）]",
           "member": "string",
@@ -10832,7 +10167,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TCP业务起始端口，取值(0, 65535]",
           "member": "string",
@@ -10841,7 +10175,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TCP业务结束端口，取值(0, 65535]，必须大于等于TCP业务起始端口",
           "member": "string",
@@ -10850,7 +10183,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UDP业务起始端口，取值范围(0, 65535]",
           "member": "string",
@@ -10859,7 +10191,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UDP业务结束端口，取值范围(0, 65535)，必须大于等于UDP业务起始端口",
           "member": "string",
@@ -10868,7 +10199,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否有海外客户，取值[no（没有）, yes（有）]",
           "member": "string",
@@ -10877,7 +10207,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否会主动对外发起TCP请求，取值[no（不会）, yes（会）]",
           "member": "string",
@@ -10886,7 +10215,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否会主动对外发起UDP业务请求，取值[no（不会）, yes（会）]",
           "member": "string",
@@ -10895,7 +10223,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主动发起TCP请求的端口，取值范围(0, 65535]",
           "member": "string",
@@ -10904,7 +10231,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主动发起UDP请求的端口，取值范围(0, 65535]",
           "member": "string",
@@ -10913,7 +10239,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TCP载荷的固定特征码，字符串长度小于512",
           "member": "string",
@@ -10922,7 +10247,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UDP载荷的固定特征码，字符串长度小于512",
           "member": "string",
@@ -10931,7 +10255,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Web业务的API的URL",
           "member": "string",
@@ -10940,7 +10263,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TCP业务报文长度最小值，取值范围(0, 1500)",
           "member": "string",
@@ -10949,7 +10271,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TCP业务报文长度最大值，取值范围(0, 1500)，必须大于等于TCP业务报文长度最小值",
           "member": "string",
@@ -10958,7 +10279,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UDP业务报文长度最小值，取值范围(0, 1500)",
           "member": "string",
@@ -10967,7 +10287,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UDP业务报文长度最大值，取值范围(0, 1500)，必须大于等于UDP业务报文长度最小值",
           "member": "string",
@@ -10976,7 +10295,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否有VPN业务，取值[no（没有）, yes（有）]",
           "member": "string",
@@ -10985,7 +10303,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TCP业务端口列表，同时支持单个端口和端口段，字符串格式，例如：80,443,700-800,53,1000-3000",
           "member": "string",
@@ -10994,7 +10311,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UDP业务端口列表，同时支持单个端口和端口段，字符串格式，例如：80,443,700-800,53,1000-3000",
           "member": "string",
@@ -11029,7 +10345,6 @@
       "document": "ModifyDDoSPolicyName请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -11038,7 +10353,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略ID",
           "member": "string",
@@ -11047,7 +10361,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略名称",
           "member": "string",
@@ -11082,7 +10395,6 @@
       "document": "ModifyDDoSPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -11091,7 +10403,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略ID",
           "member": "string",
@@ -11100,7 +10411,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议禁用，必须填写且数组长度必须为1",
           "member": "DDoSPolicyDropOption",
@@ -11109,7 +10419,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "端口禁用，当没有禁用端口时填空数组",
           "member": "DDoSPolicyPortLimit",
@@ -11118,7 +10427,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP黑白名单，当没有IP黑白名单时填空数组",
           "member": "IpBlackWhite",
@@ -11127,7 +10435,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报文过滤，当没有报文过滤时填空数组",
           "member": "DDoSPolicyPacketFilter",
@@ -11136,7 +10443,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印策略参数，当没有启用水印功能时填空数组，最多只能传一条水印策略（即数组大小不超过1）",
           "member": "WaterPrintPolicy",
@@ -11171,7 +10477,6 @@
       "document": "ModifyDDoSSwitch请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（basic表示基础防护）",
           "member": "string",
@@ -11180,7 +10485,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "=get表示读取DDoS防护状态；=set表示修改DDoS防护状态；",
           "member": "string",
@@ -11189,7 +10493,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "基础防护的IP，只有当Business为基础防护时才需要填写此字段；",
           "member": "string",
@@ -11198,7 +10501,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只有当Business为基础防护时才需要填写此字段，IP所属的产品类型，取值[public（CVM产品），bm（黑石产品），eni（弹性网卡），vpngw（VPN网关）， natgw（NAT网关），waf（Web应用安全产品），fpc（金融产品），gaap（GAAP产品）, other(托管IP)]",
           "member": "string",
@@ -11207,7 +10509,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只有当Business为基础防护时才需要填写此字段，IP所属的产品子类，取值[cvm（CVM），lb（负载均衡器），eni（弹性网卡），vpngw（VPN），natgw（NAT），waf（WAF），fpc（金融），gaap（GAAP），other（托管IP），eip（黑石弹性IP）]",
           "member": "string",
@@ -11216,7 +10517,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只有当Business为基础防护时才需要填写此字段，IP所属的资源实例ID，当绑定新IP时必须填写此字段；例如是弹性网卡的IP，则InstanceId填写弹性网卡的ID(eni-*);",
           "member": "string",
@@ -11225,7 +10525,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只有当Business为基础防护时才需要填写此字段，表示IP所属的地域，取值：\n\"bj\":     华北地区(北京)\n\"cd\":     西南地区(成都)\n\"cq\":     西南地区(重庆)\n\"gz\":     华南地区(广州)\n\"gzopen\": 华南地区(广州Open)\n\"hk\":     中国香港\n\"kr\":     东南亚地区(首尔)\n\"sh\":     华东地区(上海)\n\"shjr\":   华东地区(上海金融)\n\"szjr\":   华南地区(深圳金融)\n\"sg\":     东南亚地区(新加坡)\n\"th\":     东南亚地区(泰国)\n\"de\":     欧洲地区(德国)\n\"usw\":    美国西部（硅谷）\n\"ca\":     北美地区(多伦多)\n\"jp\":     日本\n\"hzec\":   杭州\n\"in\":     印度\n\"use\":    美东地区（弗吉尼亚）\n\"ru\":     俄罗斯\n\"tpe\":    中国台湾\n\"nj\":     南京",
           "member": "string",
@@ -11234,7 +10533,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选字段，防护状态值，取值[0（关闭），1（开启）]；当Method为get时可以不填写此字段；",
           "member": "uint64",
@@ -11269,7 +10567,6 @@
       "document": "ModifyDDoSThreshold请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -11278,7 +10575,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -11287,7 +10583,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DDoS清洗阈值，取值[0, 60, 80, 100, 150, 200, 250, 300, 400, 500, 700, 1000];\n当设置值为0时，表示采用默认值；",
           "member": "uint64",
@@ -11322,7 +10617,6 @@
       "document": "ModifyDDoSWaterKey请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -11331,7 +10625,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略ID",
           "member": "string",
@@ -11340,7 +10633,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密钥操作，取值：[add（添加），delete（删除），open（开启），close（关闭），get（获取密钥）]",
           "member": "string",
@@ -11349,7 +10641,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密钥ID，当添加密钥操作时可以不填或填0，其他操作时必须填写；",
           "member": "uint64",
@@ -11384,7 +10675,6 @@
       "document": "ModifyElasticLimit请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -11393,7 +10683,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -11402,7 +10691,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "弹性防护阈值，取值[0 10000 20000 30000 40000 50000 60000 70000 80000 90000 100000 120000 150000 200000 250000 300000 400000 600000 800000 220000 310000 110000 270000 610000]",
           "member": "uint64",
@@ -11437,7 +10725,6 @@
       "document": "ModifyL4Health请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -11446,7 +10733,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -11455,7 +10741,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "健康检查参数数组",
           "member": "L4RuleHealth",
@@ -11490,7 +10775,6 @@
       "document": "ModifyL4KeepTime请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -11499,7 +10783,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -11508,7 +10791,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID",
           "member": "string",
@@ -11517,7 +10799,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]",
           "member": "uint64",
@@ -11526,7 +10807,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话保持时间，单位秒",
           "member": "uint64",
@@ -11561,7 +10841,6 @@
       "document": "ModifyL4Rules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -11570,7 +10849,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -11579,7 +10857,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则",
           "member": "L4RuleEntry",
@@ -11614,7 +10891,6 @@
       "document": "ModifyL7Rules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版）",
           "member": "string",
@@ -11623,7 +10899,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -11632,7 +10907,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则",
           "member": "L7RuleEntry",
@@ -11667,7 +10941,6 @@
       "document": "ModifyNetReturnSwitch请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（net表示高防IP专业版）",
           "member": "string",
@@ -11676,7 +10949,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源实例ID",
           "member": "string",
@@ -11685,7 +10957,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Status 表示回切开关，0: 关闭， 1:打开",
           "member": "uint64",
@@ -11694,7 +10965,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回切时长，单位：小时，取值[0,1,2,3,4,5,6;]当status=1时必选填写Hour>0",
           "member": "uint64",
@@ -11721,7 +10991,6 @@
       "document": "ModifyNewDomainRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP）",
           "member": "string",
@@ -11730,7 +10999,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -11739,7 +11007,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名转发规则",
           "member": "NewL7RuleEntry",
@@ -11774,7 +11041,6 @@
       "document": "ModifyNewL4Rule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP）",
           "member": "string",
@@ -11783,7 +11049,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -11792,7 +11057,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转发规则",
           "member": "L4RuleEntry",
@@ -11827,7 +11091,6 @@
       "document": "ModifyResBindDDoSPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版）",
           "member": "string",
@@ -11836,7 +11099,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -11845,7 +11107,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略ID",
           "member": "string",
@@ -11854,7 +11115,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定或解绑，bind表示绑定策略，unbind表示解绑策略",
           "member": "string",
@@ -11889,7 +11149,6 @@
       "document": "ModifyResourceRenewFlag请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "大禹子产品代号（bgpip表示高防IP；net表示高防IP专业版；shield表示棋牌盾；bgp表示独享包；bgp-multip表示共享包；insurance表示保险包；staticpack表示三网套餐包）",
           "member": "string",
@@ -11898,7 +11157,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源Id",
           "member": "string",
@@ -11907,7 +11165,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动续费标记（0手动续费；1自动续费；2到期不续费）",
           "member": "uint64",
@@ -11942,7 +11199,6 @@
       "document": "四层规则结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "转发协议，取值[TCP, UDP]",
           "member": "string",
@@ -11952,7 +11208,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转发端口",
           "member": "uint64",
@@ -11962,7 +11217,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源站端口",
           "member": "uint64",
@@ -11972,7 +11226,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话保持时间，单位秒",
           "member": "uint64",
@@ -11982,7 +11235,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回源列表",
           "member": "L4RuleSource",
@@ -11992,7 +11244,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡方式，取值[1(加权轮询)，2(源IP hash)]",
           "member": "uint64",
@@ -12002,7 +11253,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]；",
           "member": "uint64",
@@ -12012,7 +11262,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回源方式，取值[1(域名回源)，2(IP回源)]",
           "member": "uint64",
@@ -12022,7 +11271,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID",
           "member": "string",
@@ -12032,7 +11280,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则描述",
           "member": "string",
@@ -12042,7 +11289,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "移除水印状态，取值[0(关闭)，1(开启)]",
           "member": "uint64",
@@ -12052,7 +11298,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则修改时间",
           "member": "datetime",
@@ -12062,7 +11307,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对应地区信息",
           "member": "uint64",
@@ -12072,7 +11316,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定资源IP信息",
           "member": "string",
@@ -12082,7 +11325,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定资源Id信息",
           "member": "string",
@@ -12098,7 +11340,6 @@
       "document": "L7规则",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "转发协议，取值[http, https]",
           "member": "string",
@@ -12108,7 +11349,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转发域名",
           "member": "string",
@@ -12118,7 +11358,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回源方式，取值[1(域名回源)，2(IP回源)]",
           "member": "uint64",
@@ -12128,7 +11367,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话保持时间，单位秒",
           "member": "uint64",
@@ -12138,7 +11376,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回源列表",
           "member": "L4RuleSource",
@@ -12148,7 +11385,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡方式，取值[1(加权轮询)]",
           "member": "uint64",
@@ -12158,7 +11394,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]",
           "member": "uint64",
@@ -12168,7 +11403,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；",
           "member": "string",
@@ -12178,7 +11412,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0",
           "member": "uint64",
@@ -12188,7 +11421,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当证书来源为腾讯云托管证书时，此字段必须填写托管证书ID",
           "member": "string",
@@ -12198,7 +11430,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当证书来源为自有证书时，此字段必须填写证书内容；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
           "member": "string",
@@ -12208,7 +11439,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
           "member": "string",
@@ -12218,7 +11448,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则描述",
           "member": "string",
@@ -12228,7 +11457,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则状态，取值[0(规则配置成功)，1(规则配置生效中)，2(规则配置失败)，3(规则删除生效中)，5(规则删除失败)，6(规则等待配置)，7(规则等待删除)，8(规则待配置证书)]",
           "member": "uint64",
@@ -12238,7 +11466,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cc防护状态，取值[0(关闭), 1(开启)]",
           "member": "uint64",
@@ -12248,7 +11475,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "HTTPS协议的CC防护状态，取值[0(关闭), 1(开启)]",
           "member": "uint64",
@@ -12258,7 +11484,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "HTTPS协议的CC防护阈值",
           "member": "uint64",
@@ -12268,7 +11493,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "HTTPS协议的CC防护等级",
           "member": "string",
@@ -12278,7 +11502,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "区域码",
           "member": "uint64",
@@ -12288,7 +11511,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源Id",
           "member": "string",
@@ -12298,7 +11520,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源Ip",
           "member": "string",
@@ -12308,7 +11529,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间",
           "member": "datetime",
@@ -12318,7 +11538,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭",
           "member": "uint64",
@@ -12328,7 +11547,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接入端口值\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
@@ -12344,7 +11562,6 @@
       "document": "排序字段",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段名称，取值[\nbandwidth（带宽），\noverloadCount（超峰值次数）\n]",
           "member": "string",
@@ -12354,7 +11571,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "升降序，取值为[asc（升序），（升序），desc（降序）， DESC（降序）]",
           "member": "string",
@@ -12370,7 +11586,6 @@
       "document": "分页索引",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "起始位置",
           "member": "uint64",
@@ -12380,7 +11595,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数量",
           "member": "uint64",
@@ -12396,7 +11610,6 @@
       "document": "Protocol、Port参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "协议（tcp；udp）",
           "member": "string",
@@ -12406,7 +11619,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "端口",
           "member": "uint64",
@@ -12422,7 +11634,6 @@
       "document": "地域资源实例数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域码",
           "member": "string",
@@ -12432,7 +11643,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域码（新规范）",
           "member": "string",
@@ -12442,7 +11652,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源实例数",
           "member": "uint64",
@@ -12458,7 +11667,6 @@
       "document": "资源的IP数组",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "member": "string",
@@ -12468,7 +11676,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源的IP数组",
           "member": "string",
@@ -12484,7 +11691,6 @@
       "document": "调度域名信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "调度域名",
           "member": "string",
@@ -12494,7 +11700,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "BGP线路IP列表",
           "member": "string",
@@ -12504,7 +11709,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电信线路IP列表",
           "member": "string",
@@ -12514,7 +11718,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联通线路IP列表",
           "member": "string",
@@ -12524,7 +11727,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "移动线路IP列表",
           "member": "string",
@@ -12534,7 +11736,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "海外线路IP列表",
           "member": "string",
@@ -12544,7 +11745,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "调度方式，当前仅支持优先级, 取值为priority",
           "member": "string",
@@ -12554,7 +11754,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "member": "datetime",
@@ -12564,7 +11763,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ttl",
           "member": "uint64",
@@ -12574,7 +11772,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "uint64",
@@ -12584,7 +11781,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "datetime",
@@ -12600,7 +11796,6 @@
       "document": "操作返回码，只用于返回成功的情况",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "成功/错误码",
           "member": "string",
@@ -12610,7 +11805,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "member": "string",
@@ -12626,7 +11820,6 @@
       "document": "水印Key",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "水印KeyID",
           "member": "string",
@@ -12636,7 +11829,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印Key值",
           "member": "string",
@@ -12646,7 +11838,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印Key的版本号",
           "member": "string",
@@ -12656,7 +11847,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启，取值[0（没有开启），1（已开启）]",
           "member": "uint64",
@@ -12666,7 +11856,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密钥生成时间",
           "member": "datetime",
@@ -12682,7 +11871,6 @@
       "document": "水印策略参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TCP端口段，例如[\"2000-3000\",\"3500-4000\"]",
           "member": "string",
@@ -12692,7 +11880,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UDP端口段，例如[\"2000-3000\",\"3500-4000\"]",
           "member": "string",
@@ -12702,7 +11889,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印偏移量，取值范围[0, 100)",
           "member": "uint64",
@@ -12712,7 +11898,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否自动剥离，取值[0（不自动剥离），1（自动剥离）]",
           "member": "uint64",
@@ -12722,7 +11907,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启，取值[0（没有开启），1（已开启）]",
           "member": "uint64",

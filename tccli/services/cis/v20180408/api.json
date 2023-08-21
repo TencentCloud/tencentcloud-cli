@@ -52,7 +52,6 @@
       "document": "容器实例中容器结构体",
       "members": [
         {
-          "default": "",
           "document": "容器启动命令",
           "member": "string",
           "name": "Command",
@@ -60,7 +59,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "容器启动参数",
           "member": "string",
           "name": "Args",
@@ -68,7 +66,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "容器环境变量",
           "member": "EnvironmentVar",
           "name": "EnvironmentVars",
@@ -76,7 +73,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "镜像",
           "member": "string",
           "name": "Image",
@@ -84,7 +80,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "容器名，由小写字母、数字和 - 组成，由小写字母开头，小写字母或数字结尾，且长度不超过 63个字符",
           "member": "string",
           "name": "Name",
@@ -92,7 +87,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "CPU，单位：核",
           "member": "float",
           "name": "Cpu",
@@ -100,7 +94,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "内存，单位：Gi",
           "member": "float",
           "name": "Memory",
@@ -108,7 +101,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "重启次数",
           "member": "uint64",
           "name": "RestartCount",
@@ -116,7 +108,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "当前状态",
           "member": "ContainerState",
           "name": "CurrentState",
@@ -124,7 +115,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "上一次状态",
           "member": "ContainerState",
           "name": "PreviousState",
@@ -132,7 +122,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "容器工作目录",
           "member": "string",
           "name": "WorkingDir",
@@ -140,7 +129,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "容器ID",
           "member": "string",
           "name": "ContainerId",
@@ -154,7 +142,6 @@
       "document": "容器实例的具体信息",
       "members": [
         {
-          "default": "",
           "document": "容器实例ID",
           "member": "string",
           "name": "InstanceId",
@@ -162,7 +149,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "容器实例名称",
           "member": "string",
           "name": "InstanceName",
@@ -170,7 +156,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "容器实例所属VpcId",
           "member": "string",
           "name": "VpcId",
@@ -178,7 +163,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "容器实例所属SubnetId",
           "member": "string",
           "name": "SubnetId",
@@ -186,7 +170,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "容器实例状态",
           "member": "string",
           "name": "State",
@@ -194,7 +177,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "容器列表",
           "member": "Container",
           "name": "Containers",
@@ -202,7 +184,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "重启策略",
           "member": "string",
           "name": "RestartPolicy",
@@ -210,7 +191,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "创建时间",
           "member": "datetime",
           "name": "CreateTime",
@@ -218,7 +198,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "启动时间",
           "member": "datetime",
           "name": "StartTime",
@@ -226,7 +205,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "可用区",
           "member": "string",
           "name": "Zone",
@@ -234,7 +212,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "Vpc名称",
           "member": "string",
           "name": "VpcName",
@@ -242,7 +219,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "VpcCidr",
           "member": "string",
           "name": "VpcCidr",
@@ -250,7 +226,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "SubnetName",
           "member": "string",
           "name": "SubnetName",
@@ -258,7 +233,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "子网Cidr",
           "member": "string",
           "name": "SubnetCidr",
@@ -266,7 +240,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "内网IP",
           "member": "string",
           "name": "LanIp",
@@ -280,7 +253,6 @@
       "document": "容器日志",
       "members": [
         {
-          "default": "",
           "document": "容器名称",
           "member": "string",
           "name": "Name",
@@ -288,7 +260,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "日志",
           "member": "string",
           "name": "Log",
@@ -296,7 +267,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "日志记录时间",
           "member": "string",
           "name": "Time",
@@ -310,7 +280,6 @@
       "document": "容器状态",
       "members": [
         {
-          "default": "",
           "document": "容器运行开始时间",
           "member": "datetime",
           "name": "StartTime",
@@ -318,7 +287,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "容器状态",
           "member": "string",
           "name": "State",
@@ -326,7 +294,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "状态详情",
           "member": "string",
           "name": "Reason",
@@ -334,7 +301,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "容器运行结束时间",
           "member": "datetime",
           "name": "FinishTime",
@@ -342,7 +308,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "容器运行退出码",
           "member": "int64",
           "name": "ExitCode",
@@ -356,7 +321,6 @@
       "document": "CreateContainerInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "可用区",
           "member": "string",
           "name": "Zone",
@@ -364,7 +328,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "vpcId",
           "member": "string",
           "name": "VpcId",
@@ -372,7 +335,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "subnetId",
           "member": "string",
           "name": "SubnetId",
@@ -380,7 +342,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "容器实例名称，由小写字母、数字和 - 组成，由小写字母开头，小写字母或数字结尾，且长度不超过 40个字符",
           "member": "string",
           "name": "InstanceName",
@@ -388,7 +349,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "重启策略（Always,OnFailure,Never）",
           "member": "string",
           "name": "RestartPolicy",
@@ -396,7 +356,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "容器列表",
           "member": "Container",
           "name": "Containers",
@@ -428,7 +387,6 @@
       "document": "DeleteContainerInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "容器实例名称",
           "member": "string",
           "name": "InstanceName",
@@ -460,7 +418,6 @@
       "document": "DescribeContainerInstanceEvents请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "容器实例名称",
           "member": "string",
           "name": "InstanceName",
@@ -492,7 +449,6 @@
       "document": "DescribeContainerInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "容器实例名称",
           "member": "string",
           "name": "InstanceName",
@@ -524,7 +480,6 @@
       "document": "DescribeContainerInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "偏移量，默认为0",
           "member": "uint64",
           "name": "Offset",
@@ -532,7 +487,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为10",
           "member": "uint64",
           "name": "Limit",
@@ -540,7 +494,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "过滤条件。\n- Zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。\n- VpcId - String - 是否必填：否 -（过滤条件）按照VpcId过滤。\n- InstanceName - String - 是否必填：否 -（过滤条件）按照容器实例名称做模糊查询。",
           "member": "Filter",
           "name": "Filters",
@@ -578,7 +531,6 @@
       "document": "DescribeContainerLog请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "容器实例名称",
           "member": "string",
           "name": "InstanceName",
@@ -586,7 +538,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "容器名称",
           "member": "string",
           "name": "ContainerName",
@@ -594,7 +545,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "日志显示尾部行数",
           "member": "uint64",
           "name": "Tail",
@@ -602,7 +552,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "日志起始时间",
           "member": "string",
           "name": "SinceTime",
@@ -634,7 +583,6 @@
       "document": "容器环境变量",
       "members": [
         {
-          "default": "",
           "document": "环境变量名",
           "member": "string",
           "name": "Name",
@@ -642,7 +590,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "环境变量值",
           "member": "string",
           "name": "Value",
@@ -656,7 +603,6 @@
       "document": "容器实例事件",
       "members": [
         {
-          "default": "",
           "document": "事件首次出现时间",
           "member": "string",
           "name": "FirstSeen",
@@ -664,7 +610,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "事件上次出现时间",
           "member": "string",
           "name": "LastSeen",
@@ -672,7 +617,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "事件等级",
           "member": "string",
           "name": "Level",
@@ -680,7 +624,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "事件出现次数",
           "member": "string",
           "name": "Count",
@@ -688,7 +631,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "事件出现原因",
           "member": "string",
           "name": "Reason",
@@ -696,7 +638,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "事件消息",
           "member": "string",
           "name": "Message",
@@ -710,7 +651,6 @@
       "document": "过滤条件",
       "members": [
         {
-          "default": "",
           "document": "过滤字段，可选值 - Zone，VpcId，InstanceName",
           "member": "string",
           "name": "Name",
@@ -718,7 +658,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "过滤值列表",
           "member": "string",
           "name": "ValueList",
@@ -732,7 +671,6 @@
       "document": "InquiryPriceCreateCis请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "可用区",
           "member": "string",
           "name": "Zone",
@@ -740,7 +678,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "CPU，单位：核",
           "member": "float",
           "name": "Cpu",
@@ -748,7 +685,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "内存，单位：Gi",
           "member": "float",
           "name": "Memory",
@@ -780,7 +716,6 @@
       "document": "价格",
       "members": [
         {
-          "default": "",
           "document": "原价，单位：元",
           "member": "float",
           "name": "DiscountPrice",
@@ -788,7 +723,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "document": "折扣价，单位：元",
           "member": "float",
           "name": "OriginalPrice",

@@ -25,7 +25,14 @@ Output:
                 "TaxClassifyCode": "",
                 "TaxRate": "3%",
                 "Unit": "次",
-                "UnitPrice": "87.28"
+                "UnitPrice": "87.28",
+                "VehicleType": "",
+                "VehicleBrand": "",
+                "DeparturePlace": "",
+                "ArrivalPlace": "",
+                "TransportItemsName": "",
+                "ConstructionPlace": "",
+                "ConstructionName": ""
             }
         ],
         "PdfPageSize": 0,

@@ -320,7 +320,6 @@
       "document": "AbortCronJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "project-xx",
@@ -330,7 +329,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "定时任务ID数组",
           "example": "[\"cron-xx\"]",
@@ -358,7 +356,6 @@
       "document": "AbortJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "job-xx",
@@ -368,7 +365,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "project-xx",
@@ -378,7 +374,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID",
           "example": "scenario-xx",
@@ -388,7 +383,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "中断原因",
           "example": "1",
@@ -416,7 +410,6 @@
       "document": "AdjustJobSpeed请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "job-xxx",
@@ -426,7 +419,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标RPS",
           "example": "60",
@@ -454,7 +446,6 @@
       "document": "聚合函数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指标支持的聚合函数",
           "example": "Rate",
@@ -465,7 +456,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "聚合函数作用于指标后对应的描述",
           "example": "请求RPS",
@@ -476,7 +466,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "聚合之后的指标单位",
           "example": "reqs/s",
@@ -615,7 +604,6 @@
       "document": "告警历史记录项",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "告警历史记录项 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "alert-xxx",
@@ -626,7 +614,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "project-xx",
@@ -637,7 +624,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "scenario-xx",
@@ -648,7 +634,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -659,7 +644,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-09-02T03:18:35+08:00",
@@ -670,7 +654,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-09-02T03:18:35+08:00",
@@ -681,7 +664,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "job-xx",
@@ -692,7 +674,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "App ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -703,7 +684,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主账号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -714,7 +694,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子账号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -725,7 +704,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -736,7 +714,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警对象\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -747,7 +724,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警规则 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sla-xx",
@@ -758,7 +734,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SLA规则: 请求的错误百分比 > 5.00 % | 当前值: 7.61 %",
@@ -775,7 +750,6 @@
       "document": "告警历史项的状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "停止压测任务成功与否\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "21",
@@ -786,7 +760,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发送告警通知成功与否\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -859,7 +832,6 @@
       "document": "检查点汇总结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "检查点名字",
           "example": "status is ok",
@@ -870,7 +842,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查点所在步骤名字",
           "example": "buy dog",
@@ -881,7 +852,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查点成功次数",
           "example": "123",
@@ -892,7 +862,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查失败次数",
           "example": "123",
@@ -903,7 +872,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误比例",
           "example": "0.99",
@@ -976,7 +944,6 @@
       "document": "CopyScenario请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目 ID",
           "example": "project-xx",
@@ -986,7 +953,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景 ID",
           "example": "scenario-xx",
@@ -1024,7 +990,6 @@
       "document": "CreateAlertChannel请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Notice ID",
           "example": "notice-xx",
@@ -1034,7 +999,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目 ID",
           "example": "project-xx",
@@ -1044,7 +1008,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "AMP Consumer ID",
           "example": "consumer-xx",
@@ -1072,7 +1035,6 @@
       "document": "CreateCronJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "定时任务名字",
           "example": "cronjob",
@@ -1082,7 +1044,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "project-xx",
@@ -1092,7 +1053,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID",
           "example": "scenario-xx",
@@ -1102,7 +1062,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景名称",
           "example": "xx",
@@ -1112,7 +1071,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行频率类型，1:只执行一次; 2:日粒度; 3:周粒度; 4:高级",
           "example": "1",
@@ -1122,7 +1080,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cron表达式",
           "example": "*/1 * * * *",
@@ -1132,7 +1089,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务发起人",
           "example": "tom",
@@ -1142,7 +1098,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "example": "2014-08-03T12:00:00+08:00",
@@ -1152,7 +1107,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Notice ID",
           "example": "notice-xx",
@@ -1162,7 +1116,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "定时任务备注",
@@ -1200,7 +1153,6 @@
       "document": "CreateFile请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件 ID",
           "example": "file-xx",
@@ -1210,7 +1162,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目 ID",
           "example": "project-xx",
@@ -1220,7 +1171,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件种类，参数文件-1，协议文件-2，请求文件-3",
           "example": "1",
@@ -1230,7 +1180,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件名",
           "example": "uin.csv",
@@ -1240,7 +1189,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件大小",
           "example": "3896",
@@ -1250,7 +1198,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件类型，文件夹-folder",
           "example": "csv",
@@ -1260,7 +1207,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "行数",
           "example": "1001",
@@ -1270,7 +1216,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "前几行数据",
           "example": "[\"uin\",\"1\",\"2\"]",
@@ -1280,7 +1225,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "后几行数据",
           "example": "[\"998\",\"999\",\"1000\"]",
@@ -1290,7 +1234,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表头是否在文件内",
           "example": "true",
@@ -1300,7 +1243,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表头",
           "example": "[\"uin\"]",
@@ -1310,7 +1252,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件夹中的文件",
           "example": "无",
@@ -1338,7 +1279,6 @@
       "document": "CreateProject请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目名",
           "example": "test",
@@ -1348,7 +1288,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目描述",
           "example": "this is a test project",
@@ -1358,7 +1297,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签数组",
           "example": "无",
@@ -1399,7 +1337,6 @@
           "disabled": false,
           "document": "场景名",
           "example": "test",
-          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1409,7 +1346,6 @@
           "disabled": false,
           "document": "压测引擎类型",
           "example": "pts-http, pts-js,pts-jmeter,pts-trpc",
-          "is_base64": false,
           "member": "string",
           "name": "Type",
           "required": true,
@@ -1419,7 +1355,6 @@
           "disabled": false,
           "document": "项目ID",
           "example": "project-xx",
-          "is_base64": false,
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -1429,7 +1364,6 @@
           "disabled": false,
           "document": "场景描述",
           "example": "this is a test scenario",
-          "is_base64": false,
           "member": "string",
           "name": "Description",
           "required": false,
@@ -1439,7 +1373,6 @@
           "disabled": false,
           "document": "施压配置",
           "example": "无",
-          "is_base64": false,
           "member": "Load",
           "name": "Load",
           "required": false,
@@ -1449,7 +1382,6 @@
           "disabled": false,
           "document": "deprecated",
           "example": "[\"a.prop\",\"b.prop\"]",
-          "is_base64": false,
           "member": "string",
           "name": "Configs",
           "required": false,
@@ -1459,7 +1391,6 @@
           "disabled": false,
           "document": "测试数据集",
           "example": "无",
-          "is_base64": false,
           "member": "TestData",
           "name": "Datasets",
           "required": false,
@@ -1469,7 +1400,6 @@
           "disabled": false,
           "document": "deprecated",
           "example": "[\"a.jar\",\"b.jar\"]",
-          "is_base64": false,
           "member": "string",
           "name": "Extensions",
           "required": false,
@@ -1479,7 +1409,6 @@
           "disabled": false,
           "document": "deprecated",
           "example": "sla-xx",
-          "is_base64": false,
           "member": "string",
           "name": "SLAId",
           "required": false,
@@ -1489,7 +1418,6 @@
           "disabled": false,
           "document": "cron job ID",
           "example": "cron-xx",
-          "is_base64": false,
           "member": "string",
           "name": "CronId",
           "required": false,
@@ -1499,7 +1427,6 @@
           "disabled": false,
           "document": "deprecated",
           "example": "[\"a.js\"]",
-          "is_base64": false,
           "member": "string",
           "name": "Scripts",
           "required": false,
@@ -1509,7 +1436,6 @@
           "disabled": false,
           "document": "测试脚本文件信息",
           "example": "无",
-          "is_base64": false,
           "member": "ScriptInfo",
           "name": "TestScripts",
           "required": false,
@@ -1519,7 +1445,6 @@
           "disabled": false,
           "document": "协议文件路径",
           "example": "无",
-          "is_base64": false,
           "member": "ProtocolInfo",
           "name": "Protocols",
           "required": false,
@@ -1529,7 +1454,6 @@
           "disabled": false,
           "document": "请求文件路径",
           "example": "无",
-          "is_base64": false,
           "member": "FileInfo",
           "name": "RequestFiles",
           "required": false,
@@ -1539,7 +1463,6 @@
           "disabled": false,
           "document": "SLA 策略",
           "example": "无",
-          "is_base64": false,
           "member": "SLAPolicy",
           "name": "SLAPolicy",
           "required": false,
@@ -1549,7 +1472,6 @@
           "disabled": false,
           "document": "拓展包文件路径",
           "example": "无",
-          "is_base64": false,
           "member": "FileInfo",
           "name": "Plugins",
           "required": false,
@@ -1559,7 +1481,6 @@
           "disabled": false,
           "document": "域名解析配置",
           "example": "无",
-          "is_base64": false,
           "member": "DomainNameConfig",
           "name": "DomainNameConfig",
           "required": false,
@@ -1569,7 +1490,6 @@
           "disabled": false,
           "document": "创建人名",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Owner",
           "required": false,
@@ -1604,7 +1524,6 @@
       "document": "COS临时凭证",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "临时secret ID",
           "example": "xx",
@@ -1615,7 +1534,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "临时secret key",
           "example": "xx",
@@ -1626,7 +1544,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "临时token",
           "example": "xx",
@@ -1643,7 +1560,6 @@
       "document": "定时任务",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "定时任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cron-xx",
@@ -1654,7 +1570,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "定时任务名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -1665,7 +1580,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "project-xx",
@@ -1676,7 +1590,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "scenario-xx",
@@ -1687,7 +1600,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -1698,7 +1610,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cron 表达式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "*/1 * * * *",
@@ -1709,7 +1620,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2014-08-03T12:00:00+08:00",
@@ -1720,7 +1630,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "中止原因\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1731,7 +1640,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "定时任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1742,7 +1650,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Notice ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "notice-xx",
@@ -1753,7 +1660,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2014-08-03T12:00:00+08:00",
@@ -1764,7 +1670,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2014-08-03T12:00:00+08:00",
@@ -1775,7 +1680,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行频率类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1786,7 +1690,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "备注",
@@ -1797,7 +1700,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "tom\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "任务发起人",
@@ -1808,7 +1710,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "App ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -1819,7 +1720,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主账号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -1830,7 +1730,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子账号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -1847,7 +1746,6 @@
       "document": "sample附带原始查询语句中的metric, aggregation",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指标名",
           "example": "pts_engine_req_total",
@@ -1858,7 +1756,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "聚合条件",
           "example": "Rate",
@@ -1869,7 +1766,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"LabelName\":\"Method\", \"LabelValue\":\"GET\"}]",
@@ -1880,7 +1776,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询值",
           "example": "123.34",
@@ -1891,7 +1786,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Time is the number of milliseconds since the epoch\n// (1970-01-01 00:00 UTC) excluding leap seconds.",
           "example": "12345433",
@@ -1902,7 +1796,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标对应的单位，当前单位有：s,bytes,bytes/s,reqs,reqs/s,checks,checks/s,iters,iters/s,VUs, %",
           "example": "ms",
@@ -1913,7 +1806,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标序列名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "请求RPS",
@@ -1930,7 +1822,6 @@
       "document": "指标矩阵，可包含多条指标序列",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指标名字",
           "example": "pts_engine_req_total",
@@ -1941,7 +1832,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "聚合函数",
           "example": "Rate",
@@ -1952,7 +1842,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "reqs/s",
@@ -1963,7 +1852,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标序列数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1980,7 +1868,6 @@
       "document": "施压机 DNS 配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "DNS IP 列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"0.0.0.0\"]",
@@ -1997,7 +1884,6 @@
       "document": "DeleteAlertChannel请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目 ID",
           "example": "project-xx",
@@ -2007,7 +1893,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Notice ID",
           "example": "notice-xx",
@@ -2035,7 +1920,6 @@
       "document": "DeleteCronJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "project-xx",
@@ -2045,7 +1929,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "定时任务ID数组",
           "example": "[\"cron-xx\"]",
@@ -2073,7 +1956,6 @@
       "document": "DeleteFiles请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目 ID",
           "example": "project-xx",
@@ -2083,7 +1965,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件 ID 数组",
           "example": "[\"file-xx\"]",
@@ -2111,7 +1992,6 @@
       "document": "DeleteJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID数组",
           "example": "[\"job-xx\"]",
@@ -2121,7 +2001,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "project-xx",
@@ -2131,7 +2010,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID数组",
           "example": "[\"scenario-xx\"]",
@@ -2159,7 +2037,6 @@
       "document": "DeleteProjects请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID数组",
           "example": "[\"project-xx\"]",
@@ -2169,7 +2046,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否删除项目相关的场景。默认为否。",
           "example": "true",
@@ -2179,7 +2055,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否删除项目相关的任务。默认为否。",
           "example": "true",
@@ -2207,7 +2082,6 @@
       "document": "DeleteScenarios请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID数组",
           "example": "[\"scenario-xx\"]",
@@ -2217,7 +2091,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "project-xx",
@@ -2227,7 +2100,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否删除场景相关的任务。默认为否。",
           "example": "true",
@@ -2255,7 +2127,6 @@
       "document": "DescribeAlertChannels请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目 ID 列表",
           "example": "[\"project-xx\"]",
@@ -2265,7 +2136,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
           "example": "1",
@@ -2275,7 +2145,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大为100",
           "example": "10",
@@ -2285,7 +2154,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Notice ID 列表",
           "example": "[\"notice-xx\"]",
@@ -2295,7 +2163,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序项",
           "example": "CreatedAt",
@@ -2305,7 +2172,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否正序",
           "example": "true",
@@ -2353,7 +2219,6 @@
       "document": "DescribeAlertRecords请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目 ID 列表",
           "example": "[\"project-xx\"]",
@@ -2363,7 +2228,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景 ID 列表",
           "example": "[\"scenario-xx\"]",
@@ -2373,7 +2237,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务 ID 列表",
           "example": "[\"job-xx\"]",
@@ -2383,7 +2246,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否正序",
           "example": "true",
@@ -2393,7 +2255,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序项",
           "example": "CreatedAt",
@@ -2403,7 +2264,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
           "example": "1",
@@ -2413,7 +2273,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大为100",
           "example": "10",
@@ -2423,7 +2282,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按场景名筛选",
           "example": "[\"my-scenario\"]",
@@ -2498,7 +2356,6 @@
       "document": "DescribeCheckSummary请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "\"123\"",
@@ -2508,7 +2365,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID",
           "example": "\"123\"",
@@ -2518,7 +2374,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "project-xx",
@@ -2556,7 +2411,6 @@
       "document": "DescribeCronJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID数组",
           "example": "[\"project-xx\"]",
@@ -2566,7 +2420,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
           "example": "0",
@@ -2576,7 +2429,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量",
           "example": "10",
@@ -2586,7 +2438,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "定时任务ID数组",
           "example": "[\"cron-xx\"]",
@@ -2596,7 +2447,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "定时任务名字，模糊查询",
           "example": "test",
@@ -2606,7 +2456,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "定时任务状态数组",
           "example": "[1,2]",
@@ -2616,7 +2465,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序的列",
           "example": "status",
@@ -2626,7 +2474,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否正序",
           "example": "true",
@@ -2737,7 +2584,6 @@
       "document": "DescribeFiles请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目 ID 数组",
           "example": "[\"project-xx\"]",
@@ -2747,7 +2593,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件 ID 数组",
           "example": "[\"file-xx\"]",
@@ -2757,7 +2602,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件名",
           "example": "uin.csv",
@@ -2767,7 +2611,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为 0",
           "example": "1",
@@ -2777,7 +2620,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为 20，最大为 100",
           "example": "10",
@@ -2787,7 +2629,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件种类，参数文件-1，协议文件-2，请求文件-3",
           "example": "1",
@@ -2835,7 +2676,6 @@
       "document": "DescribeJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID数组",
           "example": "[\"scenario-xx\"]",
@@ -2845,7 +2685,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID数组",
           "example": "[\"project-xx\"]",
@@ -2855,7 +2694,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页起始位置",
           "example": "0",
@@ -2865,7 +2703,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页最大数目",
           "example": "10",
@@ -2875,7 +2712,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID数组",
           "example": "[\"job-xx\"]",
@@ -2885,7 +2721,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按字段排序",
           "example": "id",
@@ -2895,7 +2730,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "升序/降序",
           "example": "true",
@@ -2905,7 +2739,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务开始时间",
           "example": "2021-09-08T16:08:50+08:00",
@@ -2915,7 +2748,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务结束时间",
           "example": "2021-09-08T16:08:50+08:00",
@@ -2925,7 +2757,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "调试任务标记",
           "example": "false",
@@ -2935,7 +2766,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务的状态",
           "example": "[10,11]",
@@ -2983,7 +2813,6 @@
       "document": "DescribeLabelValues请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "\"123\"",
@@ -2993,7 +2822,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID",
           "example": "\"123\"",
@@ -3003,7 +2831,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标名称",
           "example": "pts_engine_req_total",
@@ -3013,7 +2840,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询标签名称",
           "example": "service",
@@ -3023,7 +2849,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "project-xx",
@@ -3061,7 +2886,6 @@
       "document": "DescribeMetricLabelWithValues请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "job id",
           "example": "job-12345",
@@ -3071,7 +2895,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "project id",
           "example": "project-12345",
@@ -3081,7 +2904,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "scenario id",
           "example": "scenario-12345",
@@ -3382,7 +3204,6 @@
       "document": "DescribeRequestSummary请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "压测任务ID",
           "example": "job-12345",
@@ -3392,7 +3213,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "压测场景ID",
           "example": "scenario-12345",
@@ -3402,7 +3222,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "压测项目ID",
           "example": "project-12345",
@@ -3440,7 +3259,6 @@
       "document": "DescribeSampleBatchQuery请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "job id",
           "example": "\"123\"",
@@ -3450,7 +3268,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景id",
           "example": "\"123\"",
@@ -3460,7 +3277,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询指标数组",
           "example": "无",
@@ -3470,7 +3286,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "project-xx",
@@ -3697,7 +3512,6 @@
       "document": "DescribeSampleMatrixBatchQuery请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "job-12345",
@@ -3707,7 +3521,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "project-12345",
@@ -3717,7 +3530,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID",
           "example": "scenario-12345",
@@ -3727,7 +3539,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询语句",
           "example": "无",
@@ -3765,7 +3576,6 @@
       "document": "DescribeSampleMatrixQuery请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "job-12345",
@@ -3775,7 +3585,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "project-12345",
@@ -3785,7 +3594,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID",
           "example": "scenario-12345",
@@ -3795,7 +3603,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标名字",
           "example": "pts_engine_req_total",
@@ -3805,7 +3612,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "聚合函数",
           "example": "Rate",
@@ -3815,7 +3621,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标过滤",
           "example": "无",
@@ -3825,7 +3630,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组",
           "example": "无",
@@ -3863,7 +3667,6 @@
       "document": "DescribeSampleQuery请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "job id",
           "example": "\"123\"",
@@ -3873,7 +3676,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景Id",
           "example": "\"123\"",
@@ -3883,7 +3685,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标名",
           "example": "pts_engine_req_total",
@@ -3893,7 +3694,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "聚合条件",
           "example": "Rate,Count,Avg,P90,P95,P99,Gauge",
@@ -3903,7 +3703,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "project-xx",
@@ -3913,7 +3712,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件",
           "example": "[{\"LabelName\":\"Method\", \"LabelValue\":\"GET\"}]",
@@ -4104,7 +3902,6 @@
       "document": "DescribeScenarios请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID数组",
           "example": "[\"scenario-xx\"]",
@@ -4114,7 +3911,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景名",
           "example": "test",
@@ -4124,7 +3920,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景状态数组",
           "example": "[1,2]",
@@ -4134,7 +3929,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
           "example": "1",
@@ -4144,7 +3938,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大为100",
           "example": "10",
@@ -4154,7 +3947,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序的列",
           "example": "status",
@@ -4164,7 +3956,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否正序",
           "example": "true",
@@ -4174,7 +3965,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID数组",
           "example": "[\"project-xx\"]",
@@ -4184,7 +3974,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景类型",
           "example": "pts-js",
@@ -4232,7 +4021,6 @@
       "document": "施压机的域名解析相关配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名绑定配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4243,7 +4031,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DNS 配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4326,7 +4113,6 @@
       "document": "文件列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件 ID",
           "example": "file-xx",
@@ -4337,7 +4123,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件种类，参数文件-1，协议文件-2，请求文件-3",
           "example": "1",
@@ -4348,7 +4133,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件名",
           "example": "uin.csv",
@@ -4359,7 +4143,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件字节数",
           "example": "3896",
@@ -4370,7 +4153,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件类型",
           "example": "csv",
@@ -4381,7 +4163,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
           "example": "2006-01-02 15:04:05",
@@ -4392,7 +4173,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件行数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1001",
@@ -4403,7 +4183,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "头部数据行\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"uin\",\"1\",\"2\"]",
@@ -4414,7 +4193,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "尾部数据行\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"998\",\"999\",\"1000\"]",
@@ -4425,7 +4203,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "首行是否为参数名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -4436,7 +4213,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数名数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"uin\"]",
@@ -4447,7 +4223,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件夹中的文件\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4458,7 +4233,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联场景\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4469,7 +4243,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -4480,7 +4253,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2006-01-02 15:04:05",
@@ -4491,7 +4263,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "project-xx",
@@ -4502,7 +4273,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "此字段不再使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -4513,7 +4283,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户主账号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -4524,7 +4293,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户子账号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -4535,7 +4303,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户账号的 App ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -4552,7 +4319,6 @@
       "document": "文件基本信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "a.log",
@@ -4563,7 +4329,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
@@ -4574,7 +4339,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "csv",
@@ -4585,7 +4349,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-09-02T03:18:35+08:00",
@@ -4596,7 +4359,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "file-xx",
@@ -4649,7 +4411,6 @@
       "document": "GenerateTmpKey请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "project-xx",
@@ -4659,7 +4420,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID",
           "example": "scenario-xx",
@@ -4717,7 +4477,6 @@
       "document": "压力分布配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域ID",
           "example": "1",
@@ -4728,7 +4487,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域",
           "example": "ap-guangzhou",
@@ -4739,7 +4497,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "百分比",
           "example": "50",
@@ -4756,7 +4513,6 @@
       "document": "施压机域名绑定配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需绑定的域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"example.com\"]",
@@ -4767,7 +4523,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需绑定的 IP 地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.0.0.0",
@@ -4784,7 +4539,6 @@
       "document": "查询结构封装",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指标名",
           "example": "pts_engine_req_total",
@@ -4795,7 +4549,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "聚合函数",
           "example": "Rate,Count,Avg,P99,P95",
@@ -4806,7 +4559,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "deprecated, 请使用Filters",
           "example": "[{\"LabelName\":\"Method\", \"LabelValue\":\"GET\"}]",
@@ -4817,7 +4569,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标过滤",
           "example": "[{\"LabelName\":\"Method\",\"Operator\":0, \"LabelValue\":\"GET\"}]",
@@ -4828,7 +4579,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标分组",
           "example": "[\"status\"]",
@@ -5324,7 +5074,6 @@
       "document": "包含labelName 和labelValue",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "label名字",
           "example": "service",
@@ -5335,7 +5084,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "label值",
           "example": "http://www.baidu.com",
@@ -5352,7 +5100,6 @@
       "document": "标签及对应的值",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签名称",
           "example": "service",
@@ -5363,7 +5110,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "[\"500\"，\"200\"]",
@@ -5380,7 +5126,6 @@
       "document": "施压配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "施压配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5391,7 +5136,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "压力来源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5402,7 +5146,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "压力分布\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5419,7 +5162,6 @@
       "document": "发压host来源",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "发压host的IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.1.1.1",
@@ -5430,7 +5172,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发压host所在的pod\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -5441,7 +5182,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
@@ -5458,7 +5198,6 @@
       "document": "施压配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "并发施压模式的配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5469,7 +5208,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "RPS施压模式的配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5480,7 +5218,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "脚本内置压力模式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5497,7 +5234,6 @@
       "document": "指标结构",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "后台指标",
           "example": "pts_engine_reqs_total",
@@ -5508,7 +5244,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "前台展示指标名称",
           "example": "RequestCount",
@@ -5519,7 +5254,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "请求数量",
@@ -5530,7 +5264,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标类型",
           "example": "Counter",
@@ -5541,7 +5274,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认指标单位",
           "example": "s",
@@ -5552,7 +5284,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标支持的聚合函数",
           "example": "无",
@@ -5563,7 +5294,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否内部指标，内部指标不可在前台提供用户自由选择",
           "example": "true",
@@ -5580,7 +5310,6 @@
       "document": "PTS提供的指标名，指标对应的labels及values",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "metric 名字",
           "example": "RequestCount",
@@ -5591,7 +5320,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "label及values 数组",
           "example": "无",
@@ -5608,7 +5336,6 @@
       "document": "通用日志",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "23423423",
@@ -5619,7 +5346,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志级别\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "debug/info/error",
@@ -5630,7 +5356,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志输出内容\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "this is log body",
@@ -5647,7 +5372,6 @@
       "document": "测试启动前后的消息通知",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "发生事件",
           "example": "[\"name\", \"age\"]",
@@ -5658,7 +5382,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "webhook的网址",
           "example": "\"http://abc.com\"",
@@ -5675,7 +5398,6 @@
       "document": "事件通知回调",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "通知事件\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -5686,7 +5408,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回调 URL\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://xxx.com/notify",
@@ -5703,7 +5424,6 @@
       "document": "项目",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "project-xx",
@@ -5714,7 +5434,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目名",
           "example": "test",
@@ -5725,7 +5444,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "this is a test project",
@@ -5736,7 +5454,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -5747,7 +5464,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目状态",
           "example": "1",
@@ -5758,7 +5474,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2021-08-23T20:59:07+08:00",
@@ -5769,7 +5484,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间",
           "example": "2021-08-23T20:59:07+08:00",
@@ -5780,7 +5494,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "App ID",
           "example": "123",
@@ -5791,7 +5504,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户ID",
           "example": "xx",
@@ -5802,7 +5514,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子用户ID",
           "example": "xx",
@@ -5819,7 +5530,6 @@
       "document": "协议文件详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "协议详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hello.proto",
@@ -5830,7 +5540,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
@@ -5841,7 +5550,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "proto",
@@ -5852,7 +5560,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-09-02T03:18:35+08:00",
@@ -5863,7 +5570,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "file-xx",
@@ -5880,7 +5586,6 @@
       "document": "采用日志响应时间RT范围",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "最小响应时间，单位ms",
           "example": "10",
@@ -5891,7 +5596,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大响应时间，单位ms",
           "example": "100",
@@ -5908,7 +5612,6 @@
       "document": "地域",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域代码",
           "example": "ap-guangzhou",
@@ -5919,7 +5622,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域ID",
           "example": "1",
@@ -5930,7 +5632,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域所在的地区",
           "example": "华南地区",
@@ -5941,7 +5642,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域名称",
           "example": "广州",
@@ -5952,7 +5652,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域状态",
           "example": "1",
@@ -5963,7 +5662,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域简称",
           "example": "gz",
@@ -5974,7 +5672,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2021-08-20T16:33:00+08:00",
@@ -5985,7 +5682,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
           "example": "2021-08-20T16:33:00+08:00",
@@ -6002,7 +5698,6 @@
       "document": "压测请求明细",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "请求URL",
           "example": "http://www.baidu.com",
@@ -6013,7 +5708,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求方法",
           "example": "GET",
@@ -6024,7 +5718,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求次数",
           "example": "100",
@@ -6035,7 +5728,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求响应平均耗时，单位秒",
           "example": "0.50",
@@ -6046,7 +5738,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求p90耗时，单位秒",
           "example": "0.90",
@@ -6057,7 +5748,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求p95耗时，单位秒",
           "example": "0.95",
@@ -6068,7 +5758,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求最小耗时，单位秒",
           "example": "0.10",
@@ -6079,7 +5768,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求最大耗时，单位秒",
           "example": "0.99",
@@ -6090,7 +5778,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求错误率",
           "example": "1，代表错误率1%",
@@ -6101,7 +5788,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求p99耗时，单位秒",
           "example": "0.55",
@@ -6112,7 +5798,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "响应状态码",
           "example": "200",
@@ -6123,7 +5808,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "响应详情",
           "example": "ok",
@@ -6140,7 +5824,6 @@
       "document": "RPS模式的施压配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "最大RPS\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
@@ -6151,7 +5834,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "施压时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "60",
@@ -6162,7 +5844,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "deprecated\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "30",
@@ -6173,7 +5854,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6",
@@ -6184,7 +5864,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始RPS\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "500",
@@ -6195,7 +5874,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标RPS，入参无效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "500",
@@ -6206,7 +5884,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "优雅关停的等待时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
@@ -6223,7 +5900,6 @@
       "document": "RestartCronJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "project-xx",
@@ -6233,7 +5909,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "定时任务ID数组",
           "example": "[\"cron-xx\"]",
@@ -6261,7 +5936,6 @@
       "document": "SLA 标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "service",
@@ -6272,7 +5946,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abc",
@@ -6289,7 +5962,6 @@
       "document": "SLA 策略",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "SLA 规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6300,7 +5972,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警通知渠道\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6317,7 +5988,6 @@
       "document": "SLA 规则",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "压测指标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "pts_engine_req_total",
@@ -6328,7 +5998,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "压测指标聚合方法\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "avg",
@@ -6339,7 +6008,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "压测指标条件判断符号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": ">",
@@ -6350,7 +6018,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "阈值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.00",
@@ -6361,7 +6028,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6372,7 +6038,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否停止压测任务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -6383,7 +6048,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "持续时长\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1m",
@@ -6400,7 +6064,6 @@
       "document": "采样日志",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "日志毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3242342332432",
@@ -6411,7 +6074,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "采样日志属性\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6422,7 +6084,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "har格式的采样请求\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6439,7 +6100,6 @@
       "document": "sample采样值",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "is the number of milliseconds since the epoch (1970-01-01 00:00 UTC) excluding leap seconds.",
           "example": "2342342",
@@ -6450,7 +6110,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "is a representation of a value for a given sample at a given time.",
           "example": "3242.23",
@@ -6467,7 +6126,6 @@
       "document": "连续指标采样内容",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "labels描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"LabelName\":\"Method\", \"LabelValue\":\"GET\"}]",
@@ -6478,7 +6136,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标采样数组",
           "example": "[{\"Timestamp\":24355, \"Value\":3243.45}]",
@@ -6489,7 +6146,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标序列名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "请求RPS",
@@ -6782,7 +6438,6 @@
       "document": "查询与特定scenario关联的job的参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "job偏移量",
           "example": "0",
@@ -6793,7 +6448,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制最多查询的job数",
           "example": "10",
@@ -6804,7 +6458,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段",
           "example": "start_time",
@@ -6815,7 +6468,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否升序",
           "example": "true/false",
@@ -6832,7 +6484,6 @@
       "document": "带已执行任务的scenario",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "scecario结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6843,7 +6494,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "job结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6860,7 +6510,6 @@
       "document": "脚本信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hello.js",
@@ -6871,7 +6520,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
@@ -6882,7 +6530,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "js",
@@ -6893,7 +6540,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-09-02T03:18:35+08:00",
@@ -6904,7 +6550,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "base64编码后的文件内容\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sfadsfdsfdfdfsfdsgerdf",
@@ -6915,7 +6560,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "base64编码后的har结构体\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sfadsfdsfdfdfsfdsgerdf",
@@ -6926,7 +6570,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "脚本权重，范围 1-100\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
@@ -6937,7 +6580,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "file-xxx",
@@ -6990,7 +6632,6 @@
       "document": "分阶段施压时，对单个阶段的配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "施压时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "30",
@@ -7001,7 +6642,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "虚拟用户数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "30",
@@ -7018,7 +6658,6 @@
       "document": "StartJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID",
           "example": "scenario-xx",
@@ -7028,7 +6667,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务发起人",
           "example": "tom",
@@ -7038,7 +6676,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "project-xx",
@@ -7048,7 +6685,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否调试",
           "example": "true",
@@ -7058,7 +6694,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "备注",
@@ -7096,7 +6731,6 @@
       "document": "标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "owner",
@@ -7107,7 +6741,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tom",
@@ -7124,7 +6757,6 @@
       "document": "测试数据集",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "测试数据集所在的文件名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "info.csv",
@@ -7135,7 +6767,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "测试数据集是否分片\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -7146,7 +6777,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "首行是否为参数名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -7157,7 +6787,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数名数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"name\", \"age\"]",
@@ -7168,7 +6797,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件行数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
@@ -7179,7 +6807,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-09-02T03:18:35+08:00",
@@ -7190,7 +6817,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件字节数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
@@ -7201,7 +6827,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "头部数据行\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7212,7 +6837,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "尾部数据行\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7223,7 +6847,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CSV",
@@ -7234,7 +6857,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "file-xx",
@@ -7251,7 +6873,6 @@
       "document": "UpdateCronJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "project-xx",
@@ -7261,7 +6882,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "定时任务ID",
           "example": "cron-xx",
@@ -7271,7 +6891,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "备注",
@@ -7281,7 +6900,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cron表达式",
           "example": "*/1 * * * *",
@@ -7291,7 +6909,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行频率类型，1:只执行一次; 2:日粒度; 3:周粒度; 4:高级",
           "example": "1",
@@ -7301,7 +6918,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "定时任务名字",
           "example": "cronjob",
@@ -7311,7 +6927,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID",
           "example": "scenario-xx",
@@ -7321,7 +6936,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景名称",
           "example": "xx",
@@ -7331,7 +6945,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务发起人",
           "example": "tom",
@@ -7341,7 +6954,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "example": "2014-08-03T12:00:00+08:00",
@@ -7351,7 +6963,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Notice ID",
           "example": "notice-xx",
@@ -7379,7 +6990,6 @@
       "document": "UpdateFileScenarioRelation请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件 ID",
           "example": "file-xx",
@@ -7389,7 +6999,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目 ID",
           "example": "project-xx",
@@ -7399,7 +7008,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景 ID 数组",
           "example": "[\"scenario-xx\"]",
@@ -7427,7 +7035,6 @@
       "document": "UpdateJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "job-xx",
@@ -7437,7 +7044,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "project-xx",
@@ -7447,7 +7053,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景ID",
           "example": "scenario-xx",
@@ -7457,7 +7062,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务备注信息",
           "example": "this is a test job",
@@ -7485,7 +7089,6 @@
       "document": "UpdateProject请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "project-xx",
@@ -7495,7 +7098,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目名",
           "example": "test",
@@ -7505,7 +7107,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目描述",
           "example": "this is a test project",
@@ -7515,7 +7116,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目状态，默认传递1",
           "example": "1",
@@ -7525,7 +7125,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签数组",
           "example": "无",
@@ -7556,7 +7155,6 @@
           "disabled": false,
           "document": "场景ID",
           "example": "scenario-xx",
-          "is_base64": false,
           "member": "string",
           "name": "ScenarioId",
           "required": true,
@@ -7566,7 +7164,6 @@
           "disabled": false,
           "document": "场景名",
           "example": "test",
-          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": false,
@@ -7576,7 +7173,6 @@
           "disabled": false,
           "document": "场景描述",
           "example": "this is a test scenario",
-          "is_base64": false,
           "member": "string",
           "name": "Description",
           "required": false,
@@ -7586,7 +7182,6 @@
           "disabled": false,
           "document": "压测引擎类型",
           "example": "k6",
-          "is_base64": false,
           "member": "string",
           "name": "Type",
           "required": false,
@@ -7596,7 +7191,6 @@
           "disabled": false,
           "document": "施压配置",
           "example": "无",
-          "is_base64": false,
           "member": "Load",
           "name": "Load",
           "required": false,
@@ -7606,7 +7200,6 @@
           "disabled": false,
           "document": "deprecated",
           "example": "WyJhYmMiLCAiZGVmIl0K",
-          "is_base64": false,
           "member": "string",
           "name": "EncodedScripts",
           "required": false,
@@ -7616,7 +7209,6 @@
           "disabled": false,
           "document": "deprecated",
           "example": "[\"a.prop\",\"b.prop\"]",
-          "is_base64": false,
           "member": "string",
           "name": "Configs",
           "required": false,
@@ -7626,7 +7218,6 @@
           "disabled": false,
           "document": "测试数据集",
           "example": "无",
-          "is_base64": false,
           "member": "TestData",
           "name": "Datasets",
           "required": false,
@@ -7636,7 +7227,6 @@
           "disabled": false,
           "document": "deprecated",
           "example": "[\"a.jar\",\"b.jar\"]",
-          "is_base64": false,
           "member": "string",
           "name": "Extensions",
           "required": false,
@@ -7646,7 +7236,6 @@
           "disabled": false,
           "document": "SLA规则ID",
           "example": "sla-xx",
-          "is_base64": false,
           "member": "string",
           "name": "SLAId",
           "required": false,
@@ -7656,7 +7245,6 @@
           "disabled": false,
           "document": "cron job ID",
           "example": "cron-xx",
-          "is_base64": false,
           "member": "string",
           "name": "CronId",
           "required": false,
@@ -7666,7 +7254,6 @@
           "disabled": false,
           "document": "场景状态（注：现已无需传递该参数）",
           "example": "2",
-          "is_base64": false,
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -7676,7 +7263,6 @@
           "disabled": false,
           "document": "项目ID",
           "example": "project-xx",
-          "is_base64": false,
           "member": "string",
           "name": "ProjectId",
           "required": false,
@@ -7686,7 +7272,6 @@
           "disabled": false,
           "document": "测试脚本路径",
           "example": "无",
-          "is_base64": false,
           "member": "ScriptInfo",
           "name": "TestScripts",
           "required": false,
@@ -7696,7 +7281,6 @@
           "disabled": false,
           "document": "协议文件路径",
           "example": "无",
-          "is_base64": false,
           "member": "ProtocolInfo",
           "name": "Protocols",
           "required": false,
@@ -7706,7 +7290,6 @@
           "disabled": false,
           "document": "请求文件路径",
           "example": "无",
-          "is_base64": false,
           "member": "FileInfo",
           "name": "RequestFiles",
           "required": false,
@@ -7716,7 +7299,6 @@
           "disabled": false,
           "document": "SLA 策略",
           "example": "无",
-          "is_base64": false,
           "member": "SLAPolicy",
           "name": "SLAPolicy",
           "required": false,
@@ -7726,7 +7308,6 @@
           "disabled": false,
           "document": "拓展包文件路径",
           "example": "无",
-          "is_base64": false,
           "member": "FileInfo",
           "name": "Plugins",
           "required": false,
@@ -7736,7 +7317,6 @@
           "disabled": false,
           "document": "域名解析配置",
           "example": "无",
-          "is_base64": false,
           "member": "DomainNameConfig",
           "name": "DomainNameConfig",
           "required": false,
@@ -7746,7 +7326,6 @@
           "disabled": false,
           "document": "WebHook请求配置",
           "example": "无",
-          "is_base64": false,
           "member": "Notification",
           "name": "NotificationHooks",
           "required": false,
@@ -7756,7 +7335,6 @@
           "disabled": false,
           "document": "创建人名",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Owner",
           "required": false,
@@ -7781,7 +7359,6 @@
       "document": "压力来源配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域ID",
           "example": "1",
@@ -7792,7 +7369,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域",
           "example": "ap-guangzhou",
@@ -7803,7 +7379,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-xx",
@@ -7814,7 +7389,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",

@@ -26,7 +26,6 @@
       "document": "FlowProductRemind请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "服务商uin",
           "example": "12345678",
@@ -36,7 +35,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务商实例ID",
           "example": "1054492229",
@@ -46,7 +44,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云市场实例ID",
           "example": "market-g9sjptwqi",
@@ -56,7 +53,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例总流量",
           "example": "2000",
@@ -66,7 +62,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "剩余流量",
           "example": "200",
@@ -76,7 +71,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量单位",
           "example": "Mb",
@@ -134,7 +128,6 @@
       "document": "GetUsagePlanUsageAmount请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用于查询实例的Id",
           "example": "\"123456789\"",

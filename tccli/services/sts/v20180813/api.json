@@ -54,7 +54,6 @@
       "document": "API密钥数据列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "密钥ID",
           "example": "",
@@ -65,7 +64,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间(时间戳)",
           "example": "",
@@ -76,7 +74,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态(2:有效, 3:禁用, 4:已删除)",
           "example": "",
@@ -381,7 +378,6 @@
       "document": "临时证书",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "token。token长度和绑定的策略有关，最长不超过4096字节。",
           "example": "",
@@ -392,7 +388,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "临时证书密钥ID。最长不超过1024字节。",
           "example": "",
@@ -403,7 +398,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "临时证书密钥Key。最长不超过1024字节。",
           "example": "",
@@ -554,7 +548,6 @@
       "document": "QueryApiKey请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待查询的账号(不填默认查当前账号)",
           "example": "",
@@ -591,7 +584,6 @@
       "document": "标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键，最长128个字符，区分大小写。",
           "example": "department",
@@ -602,7 +594,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值，最长256个字符，区分大小写。",
           "example": "engineering",

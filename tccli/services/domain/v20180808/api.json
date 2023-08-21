@@ -201,7 +201,6 @@
       "document": "BatchModifyDomainInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "批量修改的域名。",
           "example": "[\"h101.tencent.com\"]",
@@ -211,7 +210,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板ID。",
           "example": "tmpl-xxxxx",
@@ -221,7 +219,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "true： 开启60天内禁止转移注册商锁定\nfalse：关闭60天内禁止转移注册商锁定\n默认 true",
           "example": "true",
@@ -259,7 +256,6 @@
       "document": "批量任务状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "批量任务id",
           "example": "",
@@ -270,7 +266,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "批量任务状态  doing：进行中  success：成功  failed：失败  partial_success：部分成功",
           "example": "",
@@ -281,7 +276,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "批量任务类型",
           "example": "",
@@ -374,7 +368,6 @@
       "document": "CheckBatchStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "操作日志 ID数组，最多 200 个",
           "example": "[1]",
@@ -565,7 +558,6 @@
       "document": "域名联系人信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "注册人（中文）",
           "example": "",
@@ -576,7 +568,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "注册人（英文）",
           "example": "",
@@ -587,7 +578,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联系人（中文）",
           "example": "",
@@ -598,7 +588,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联系人（英文）",
           "example": "",
@@ -609,7 +598,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "省份（中文）",
           "example": "",
@@ -620,7 +608,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "城市（中文）",
           "example": "",
@@ -631,7 +618,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "街道（中文）",
           "example": "",
@@ -642,7 +628,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "街道（英文）",
           "example": "",
@@ -653,7 +638,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "国家（中文）",
           "example": "",
@@ -664,7 +648,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联系人手机号",
           "example": "",
@@ -675,7 +658,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联系人邮箱",
           "example": "",
@@ -686,7 +668,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "邮编",
           "example": "",
@@ -697,7 +678,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户类型 E:组织， I:个人",
           "example": "",
@@ -708,7 +688,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "省份（英文）。作为入参时可以不填",
           "example": "",
@@ -719,7 +698,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "城市（英文）。作为入参时可以不填",
           "example": "",
@@ -730,7 +708,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "国家（英文）。作为入参时可以不填",
           "example": "",
@@ -747,7 +724,6 @@
       "document": "CreateDomainBatch请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模板ID。详情请查看：[获取模板列表](https://cloud.tencent.com/document/product/242/48940)",
           "example": "tmpl-xxxxxx",
@@ -757,7 +733,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买域名的年限，可选值：[1-10]",
           "example": "1",
@@ -767,7 +742,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "批量购买的域名,最多为4000个",
           "example": "qq.com",
@@ -777,7 +751,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费模式 0手动在线付费，1使用余额付费，2使用特惠包",
           "example": "0",
@@ -787,7 +760,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动续费开关。有两个可选值：\n0 表示关闭，不自动续费（默认值）\n1 表示开启，将自动续费",
           "example": "无",
@@ -797,7 +769,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用的特惠包ID，PayMode为2时必填",
           "example": "LSWXOQ20210419",
@@ -807,7 +778,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启更新锁：0=默认不开启，1=开启",
           "example": "1",
@@ -817,7 +787,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启转移锁：0=默认不开启，1=开启",
           "example": "1",
@@ -827,7 +796,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "渠道来源，pc/miniprogram/h5等",
           "example": "pc",
@@ -837,7 +805,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单来源，common正常/dianshi_active点石活动等",
           "example": "common",
@@ -847,7 +814,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动id",
           "example": "11059",
@@ -888,7 +854,6 @@
           "disabled": false,
           "document": "域名 ID",
           "example": "domain-ewqdskla",
-          "is_base64": false,
           "member": "string",
           "name": "DomainId",
           "required": true,
@@ -913,7 +878,6 @@
       "document": "CreatePhoneEmail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "手机号或者邮箱",
           "example": "12365432367",
@@ -923,7 +887,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1：手机   2：邮箱",
           "example": "1",
@@ -933,7 +896,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "验证码",
           "example": "234567",
@@ -1006,7 +968,6 @@
       "document": "DeletePhoneEmail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "手机或者邮箱",
           "example": "12365432345",
@@ -1016,7 +977,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1：手机  2：邮箱",
           "example": "1",
@@ -1044,7 +1004,6 @@
       "document": "DeleteTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模板ID",
           "example": "模板ID",
@@ -1072,7 +1031,6 @@
       "document": "DescribeBatchOperationLogDetails请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "日志ID。",
           "example": "1",
@@ -1082,7 +1040,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
@@ -1092,7 +1049,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为200。",
           "example": "20",
@@ -1140,7 +1096,6 @@
       "document": "DescribeBatchOperationLogs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "1",
@@ -1150,7 +1105,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为200。",
           "example": "20",
@@ -1198,7 +1152,6 @@
       "document": "DescribeDomainBaseInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "域名",
@@ -1246,7 +1199,6 @@
       "document": "DescribeDomainNameList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
           "example": "0",
@@ -1256,7 +1208,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，取值范围[1,100]",
           "example": "20",
@@ -1558,7 +1509,6 @@
       "document": "DescribeTemplate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模板ID",
           "example": "",
@@ -1741,7 +1691,6 @@
       "document": "批量操作日志详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "详情ID",
           "example": "",
@@ -1752,7 +1701,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "",
@@ -1763,7 +1711,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行状态：\ndoing 执行中。\nfailed 操作失败。\nsuccess  操作成功。",
           "example": "",
@@ -1774,7 +1721,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1785,7 +1731,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -1796,7 +1741,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
           "example": "",
@@ -1813,7 +1757,6 @@
       "document": "批量操作记录",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "日志ID",
           "example": "",
@@ -1824,7 +1767,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数量",
           "example": "",
@@ -1835,7 +1777,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行状态：\ndoing 执行中。\ndone 执行完成。",
           "example": "",
@@ -1846,7 +1787,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "提交时间",
           "example": "",
@@ -1863,7 +1803,6 @@
       "document": "域名列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否是溢价域名：\nture 是    \nfalse 不是",
           "example": "1",
@@ -1874,7 +1813,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名资源ID。",
           "example": "'domain-acnsd121q'",
@@ -1885,7 +1823,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名名称。",
           "example": "xxxx.com",
@@ -1896,7 +1833,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否已设置自动续费 。\n0：未设置 \n1：已设置\n2：设置后，关闭",
           "example": "1",
@@ -1907,7 +1843,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "注册时间。",
           "example": "xxxx",
@@ -1918,7 +1853,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "到期时间。",
           "example": "xxxx",
@@ -1929,7 +1863,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名后缀",
           "example": ".com",
@@ -1940,7 +1873,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "编码后的后缀（中文会进行编码）",
           "example": ".com",
@@ -1951,7 +1883,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名购买状态。\nok：正常\nAboutToExpire: 即将到期\nRegisterPending：注册中\nRegisterDoing：注册中\nRegisterFailed：注册失败\nRenewPending：续费期\nRenewDoing：续费中\nRedemptionPending：赎回期\nRedemptionDoing：赎回中\nTransferPending：转入中\nTransferTransing：转入中\nTransferFailed：转入失败",
           "example": "ok",
@@ -1968,7 +1899,6 @@
       "document": "获取域名基础模板信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名资源ID。",
           "example": "domain-12345",
@@ -1979,7 +1909,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名名称。",
           "example": "test.com",
@@ -1990,7 +1919,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名实名认证状态。\nNotUpload：未实名认证\nInAudit：实名审核中\nApproved：实名审核通过\nReject：实名审核失败\nNoAudit: 无需实名认证",
           "example": "InAudit",
@@ -2001,7 +1929,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名实名认证不通过原因。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "证件照片不清晰",
@@ -2012,7 +1939,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名命名审核状态。\nNotAudit：命名审核未上传\nPending：命名审核待上传\nAuditing：域名命名审核中\nApproved：域名命名审核通过\nRejected：域名命名审核拒绝",
           "example": "Pending",
@@ -2023,7 +1949,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名命名审核不通过原因。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "域名包含非法字符",
@@ -2034,7 +1959,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "注册时间。",
           "example": "2020-01-01",
@@ -2045,7 +1969,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "到期时间",
           "example": "2020-01-01",
@@ -2056,7 +1979,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名状态。\nok：正常\nserverHold：注册局暂停解析 \nclientHold：注册商暂停解析\npendingTransfer：转移中\nrenewingPeriod：续费期\nredemptionPeriod：偿还期\npendingDelete：删除期\nserverTransferProhibited：注册局禁止转移\nserverUpdateProhibited：注册局禁止更新\nserverDeleteProhibited：注册局禁止删除\nclientTransferProhibited：注册商禁止转移\nclientUpdateProhibited：注册商禁止更新\nclientDeleteProhibited：注册商禁止删除\nserverRenewProhibited: 注册局禁止续费\nclientRenewProhobited: 注册商禁止续费",
           "example": "ok",
@@ -2067,7 +1989,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名购买状态。\nok：正常\nRegisterPending：待注册\nRegisterDoing：注册中\nRegisterFailed：注册失败\nAboutToExpire: 即将过期\nRenewPending：已进入续费期，需要进行续费\nRenewDoing：续费中\nRedemptionPending：已进入赎回期，需要进行续费\nRedemptionDoing：赎回中\nTransferPending：待转入中\nTransferTransing：转入中\nTransferFailed：转入失败",
           "example": "ok",
@@ -2078,7 +1999,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "注册商类型\nepp: DNSPod, Inc.（烟台帝思普网络科技有限公司）\nqcloud: Tencent Cloud Computing (Beijing) Limited Liability Company（腾讯云计算（北京）有限责任公司）\nyunxun: Guangzhou Yunxun Information Technology Co., Ltd.（广州云讯信息科技有限公司）\nxinnet: Xin Net Technology Corporation（北京新网数码信息技术有限公司）",
           "example": "epp",
@@ -2089,7 +2009,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名绑定的ns",
           "example": "[\"new.dnspod.net\", \"oat.dnspod.net\"]",
@@ -2100,7 +2019,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "true：开启锁定\nfalse：关闭锁定",
           "example": "false",
@@ -2111,7 +2029,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "锁定结束时间",
           "example": "2021-08-31 18:17:32",
@@ -2122,7 +2039,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "认证类型：I=个人，E=企业",
           "example": "I",
@@ -2133,7 +2049,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名所有者，中文",
           "example": "张三",
@@ -2144,7 +2059,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名所有者，英文",
           "example": "zhangsan",
@@ -2155,7 +2069,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名联系人，中文",
           "example": "张三",
@@ -2166,7 +2079,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名联系人，英文",
           "example": "zhangsan",
@@ -2183,7 +2095,6 @@
       "document": "ModifyDomainDNSBatch请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "批量操作的域名。",
           "example": "[\"h101.tencent.com\"]",
@@ -2193,7 +2104,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名DNS 数组。",
           "example": "[\"f1g1ns2.dnspod.net\",\"f1g1ns2.dnspod.net\"]",
@@ -2231,7 +2141,6 @@
       "document": "ModifyDomainOwnerBatch请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要过户的域名。",
           "example": "[\"h101.tencent.com\"]",
@@ -2241,7 +2150,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转入账户的uin。",
           "example": "123456",
@@ -2251,7 +2159,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否同时转移对应的 DNS 解析域名，默认false",
           "example": "false",
@@ -2261,7 +2168,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转入账户的appid。",
           "example": "123456",
@@ -2299,7 +2205,6 @@
       "document": "手机号邮箱列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "手机号或者邮箱",
           "example": "12356742345",
@@ -2310,7 +2215,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1：手机  2：邮箱",
           "example": "1",
@@ -2321,7 +2225,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2021-09-28 12:10:10",
@@ -2332,7 +2235,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1=控制台校验，2=第三方校验",
           "example": "1",
@@ -2349,7 +2251,6 @@
       "document": "域名价格信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名后缀，例如.com",
           "example": "",
@@ -2360,7 +2261,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买年限，范围[1-10]",
           "example": "",
@@ -2371,7 +2271,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名原价",
           "example": "",
@@ -2382,7 +2281,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名现价",
           "example": "",
@@ -2393,7 +2291,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商品的购买类型，新购，续费，赎回，转入，续费并转入",
           "example": "",
@@ -2410,7 +2307,6 @@
       "document": "RenewDomainBatch请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名续费的年限。",
           "example": "1",
@@ -2420,7 +2316,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "批量续费的域名。",
           "example": "[\"h101.dlgslb.cn\",\"h103.dlgslb.cn\"]",
@@ -2430,7 +2325,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费模式 0手动在线付费，1使用余额付费，2使用特惠包。",
           "example": "1",
@@ -2440,7 +2334,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动续费开关。有三个可选值：\n0 表示关闭，不自动续费\n1 表示开启，将自动续费\n2 表示不处理，保留域名原有状态（默认值）",
           "example": "2",
@@ -2450,7 +2343,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "特惠包ID",
           "example": "XXX",
@@ -2460,7 +2352,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "渠道来源，pc/miniprogram/h5等",
           "example": "pc",
@@ -2470,7 +2361,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单来源，common正常/dianshi_active点石活动等",
           "example": "common",
@@ -2480,7 +2370,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动id",
           "example": "11059",
@@ -2518,7 +2407,6 @@
       "document": "SendPhoneEmailCode请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "手机或者邮箱号。",
           "example": "12365432345",
@@ -2528,7 +2416,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1：手机  2：邮箱。",
           "example": "1",
@@ -2718,7 +2605,6 @@
       "document": "TransferInDomainBatch请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "转入的域名名称数组。",
           "example": "[\"h101.tencent.com\"]",
@@ -2728,7 +2614,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名转移码数组。",
           "example": "[\"123456\"]",
@@ -2738,7 +2623,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板ID。",
           "example": "tmpl-xxxxx",
@@ -2748,7 +2632,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费模式 0手动在线付费，1使用余额付费。",
           "example": "0",
@@ -2758,7 +2641,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动续费开关。有两个可选值：\n0 表示关闭，不自动续费（默认值）\n1 表示开启，将自动续费",
           "example": "0",
@@ -2768,7 +2650,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "true： 开启60天内禁止转移注册商锁定\nfalse：关闭60天内禁止转移注册商锁定\n默认 true",
           "example": "true",
@@ -2778,7 +2659,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启更新锁：0=默认不开启，1=开启",
           "example": "1",
@@ -2788,7 +2668,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启转移锁：0=默认不开启，1=开启",
           "example": "1",
@@ -2798,7 +2677,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "渠道来源，pc/miniprogram/h5等",
           "example": "pc",
@@ -2808,7 +2686,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订单来源，common正常/dianshi_active点石活动等",
           "example": "common",
@@ -2818,7 +2695,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活动id",
           "example": "11059",
@@ -2856,7 +2732,6 @@
       "document": "TransferProhibitionBatch请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "批量操作的域名。",
           "example": "[\"h101.tencent.com\"]",
@@ -2866,7 +2741,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启禁止域名转移。\nTrue: 开启禁止域名转移状态。\nFalse：关闭禁止域名转移状态。",
           "example": "1",
@@ -2904,7 +2778,6 @@
       "document": "UpdateProhibitionBatch请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "批量操作的域名。",
           "example": "[\"h101.tencent.com\"]",
@@ -2914,7 +2787,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启禁止域名更新。\nTrue:开启禁止域名更新状态。\nFalse：关闭禁止域名更新状态。",
           "example": "1",
@@ -2952,7 +2824,6 @@
       "document": "UploadImage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资质照片，照片的base64编码。",
           "example": "照片的base64编码",

@@ -82,7 +82,6 @@
       "document": "BuildPacks信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "基础镜像",
           "example": "无",
@@ -93,7 +92,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "启动命令",
           "example": "无",
@@ -104,7 +102,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "语言",
           "example": "java",
@@ -115,7 +112,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上传文件名",
           "example": "无",
@@ -132,7 +128,6 @@
       "document": "cls日志信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "cls所属地域",
           "example": "ap-shanghai",
@@ -143,7 +138,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cls日志集ID",
           "example": "xxx-yyy-zzz-***",
@@ -154,7 +148,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cls日志主题ID",
           "example": "xxx-yyy-zzz-***",
@@ -165,7 +158,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2021-01-01T00:00:00+08:00",
@@ -308,7 +300,6 @@
       "document": "CreateCloudRunServer请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境Id",
           "example": "env-example",
@@ -318,7 +309,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务名",
           "example": "serverName",
@@ -328,7 +318,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署信息",
           "example": "无",
@@ -338,7 +327,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务配置信息",
           "example": "无",
@@ -376,7 +364,6 @@
       "document": "数据库资源信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库唯一标识",
           "example": "oc80v5zp",
@@ -387,7 +374,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态。包含以下取值：\n<li>INITIALIZING：资源初始化中</li>\n<li>RUNNING：运行中，可正常使用的状态</li>\n<li>UNUSABLE：禁用，不可用</li>\n<li>OVERDUE：资源过期</li>",
           "example": "INITIALIZING",
@@ -398,7 +384,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属地域。\n当前支持ap-shanghai",
           "example": "ap-shanghai",
@@ -415,7 +400,6 @@
       "document": "部署参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "部署类型：package/image/repository/pipeline/jar/war",
           "example": "package",
@@ -426,7 +410,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署类型为image时传入",
           "example": "无",
@@ -437,7 +420,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署类型为package时传入",
           "example": "无",
@@ -448,7 +430,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署类型为package时传入",
           "example": "无",
@@ -459,7 +440,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署备注",
           "example": "无",
@@ -470,7 +450,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代码仓库信息",
           "example": "无",
@@ -481,7 +460,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无Dockerfile时填写",
           "example": "无",
@@ -492,7 +470,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发布类型 GRAY | FULL",
           "example": "无",
@@ -509,7 +486,6 @@
       "document": "DescribeCloudRunEnvs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境ID，如果传了这个参数则只返回该环境的相关信息",
           "example": "prod-6gvwy9lua50e9504",
@@ -519,7 +495,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定Channels字段为可见渠道列表或不可见渠道列表\n如只想获取渠道A的环境 就填写IsVisible= true,Channels = [\"A\"], 过滤渠道A拉取其他渠道环境时填写IsVisible= false,Channels = [\"A\"]",
           "example": "false",
@@ -529,7 +504,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "渠道列表，代表可见或不可见渠道由IsVisible参数指定",
           "example": "[ide,qc_console]",
@@ -567,7 +541,6 @@
       "document": "DescribeCloudRunServerDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境Id",
           "example": "env-example",
@@ -577,7 +550,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务名",
           "example": "serverName",
@@ -635,7 +607,6 @@
       "document": "DescribeCloudRunServers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境Id",
           "example": "env-example",
@@ -645,7 +616,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认为9， 最大为30\n不传或传0时 取默认9\n大于30时取30",
           "example": "15",
@@ -655,7 +625,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不传或传0时 会默认为1",
           "example": "1",
@@ -703,7 +672,6 @@
       "document": "DescribeEnvBaseInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境 Id",
           "example": "test-1gbtbgkjf8f48e2c",
@@ -741,7 +709,6 @@
       "document": "DescribeServerManageTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境Id",
           "example": "test-1gbtbgkjf8f48e2c",
@@ -751,7 +718,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务名",
           "example": "server",
@@ -761,7 +727,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务Id",
           "example": "1111",
@@ -771,7 +736,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作标识",
           "example": "无",
@@ -819,7 +783,6 @@
       "document": "环境基础信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境Id",
           "example": "test-1gbtbgkjf8f48e2c",
@@ -830,7 +793,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "套餐类型：Trial ｜ Standard ｜ Professional ｜ Enterprise",
           "example": "Standard",
@@ -841,7 +803,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC Id",
           "example": "vpc-5k6fot41",
@@ -852,7 +813,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境创建时间",
           "example": "2022-05-27 15:00:00",
@@ -863,7 +823,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境别名",
           "example": "test",
@@ -874,7 +833,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境状态",
           "example": "normal",
@@ -885,7 +843,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境地域",
           "example": "ap-shanghai",
@@ -896,7 +853,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境类型 tcbr ｜ run",
           "example": "tcbr",
@@ -907,7 +863,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网id",
           "example": "subnet-4l06atqr  cloud_run_cluster_pod_subnet3",
@@ -924,7 +879,6 @@
       "document": "环境信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "账户下该环境唯一标识",
           "example": "prod-6gvwy9lua50e9504",
@@ -935,7 +889,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境来源。包含以下取值：\n<li>miniapp：微信小程序</li>\n<li>qcloud ：腾讯云</li>",
           "example": "qcloud",
@@ -946,7 +899,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境别名，要以a-z开头，不能包含 a-zA-z0-9- 以外的字符",
           "example": "tcb",
@@ -957,7 +909,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2021-04-26T12:00:00+08:00",
@@ -968,7 +919,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后修改时间",
           "example": "2021-04-26T12:00:00+08:00",
@@ -979,7 +929,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境状态。包含以下取值：\n<li>NORMAL：正常可用</li>\n<li>UNAVAILABLE：服务不可用，可能是尚未初始化或者初始化过程中</li>",
           "example": "NORMAL",
@@ -990,7 +939,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否到期自动降为免费版\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -1001,7 +949,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境渠道\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "qc_console",
@@ -1012,7 +959,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支付方式。包含以下取值：\n<li> prepayment：预付费</li>\n<li> postpaid：后付费</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "postpaid",
@@ -1023,7 +969,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为默认环境\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -1034,7 +979,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境所属地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-shanghai",
@@ -1045,7 +989,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境类型：baas, run, hosting, weda,tcbr\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "baas",
@@ -1056,7 +999,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库列表",
           "example": "[]",
@@ -1067,7 +1009,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储列表",
           "example": "[]",
@@ -1078,7 +1019,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数列表",
           "example": "[]",
@@ -1089,7 +1029,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云日志服务列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -1100,7 +1039,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "静态资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -1111,7 +1049,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -1122,7 +1059,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义日志服务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -1133,7 +1069,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "tcb产品套餐ID，参考DescribePackages接口的返回值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "basic1",
@@ -1144,7 +1079,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "套餐中文名称，参考DescribePackages接口的返回值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "基础版1",
@@ -1161,7 +1095,6 @@
       "document": "函数的信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间",
           "example": "tcb",
@@ -1172,7 +1105,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属地域。\n当前支持ap-shanghai",
           "example": "ap-shanghai",
@@ -1189,7 +1121,6 @@
       "document": "扩缩容入参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "扩缩容类型",
           "example": "cpu, mem, cpu/mem",
@@ -1200,7 +1131,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩缩容阈值",
           "example": "60",
@@ -1217,7 +1147,6 @@
       "document": "云日志服务相关信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "log名",
           "example": "tcbr-pre-01",
@@ -1228,7 +1157,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "log-id",
           "example": "qp3g3ca",
@@ -1239,7 +1167,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "topic名",
           "example": "topic01",
@@ -1250,7 +1177,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "topic-id",
           "example": "oc80v5zp",
@@ -1261,7 +1187,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cls日志所属地域",
           "example": "ap-shanghai",
@@ -1278,7 +1203,6 @@
       "document": "通用Key Value",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "键值对Key",
           "example": "key",
@@ -1289,7 +1213,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "键值对Value",
           "example": "value",
@@ -1306,7 +1229,6 @@
       "document": "在线版本信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "版本名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test-001",
@@ -1317,7 +1239,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "镜像url\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -1328,7 +1249,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
@@ -1345,7 +1265,6 @@
       "document": "OperateServerManage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境Id",
           "example": "test-1gbtbgkjf8f48e2c",
@@ -1355,7 +1274,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务名",
           "example": "test",
@@ -1365,7 +1283,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任报Id",
           "example": "1111",
@@ -1375,7 +1292,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作类型:cancel | go_back | done",
           "example": "cancel",
@@ -1385,7 +1301,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作标识",
           "example": "无",
@@ -1413,7 +1328,6 @@
       "document": "ReleaseGray请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境Id",
           "example": "test-1gbtbgkjf8f48e2c",
@@ -1423,7 +1337,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务名",
           "example": "test",
@@ -1433,7 +1346,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "灰度类型",
           "example": "gray",
@@ -1443,7 +1355,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量类型",
           "example": "HEADERS",
@@ -1453,7 +1364,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量策略",
           "example": "无",
@@ -1463,7 +1373,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作标识",
           "example": "无",
@@ -1473,7 +1382,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量比例",
           "example": "100",
@@ -1501,7 +1409,6 @@
       "document": "代码仓库信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "git source",
           "example": "github",
@@ -1512,7 +1419,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仓库名",
           "example": "xxx/xxxx",
@@ -1523,7 +1429,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分支名",
           "example": "master",
@@ -1540,7 +1445,6 @@
       "document": "服务基础配置信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境 Id",
           "example": "test-1gbtbgkjf8f48e2c",
@@ -1551,7 +1455,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务名",
           "example": "test",
@@ -1562,7 +1465,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启公网访问",
           "example": "[\"PUBLIC\", \"OA\", \"MINIAPP\", \"VPC\", \"\"]",
@@ -1573,7 +1475,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cpu 规格",
           "example": "0.25",
@@ -1584,7 +1485,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Mem 规格",
           "example": "0.25",
@@ -1595,7 +1495,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最小副本数",
           "example": "1",
@@ -1606,7 +1505,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大副本数",
           "example": "2",
@@ -1617,7 +1515,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩缩容配置",
           "example": "cpu, mem, cpu/mem",
@@ -1628,7 +1525,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志采集路径",
           "example": "stdout",
@@ -1639,7 +1535,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境变量",
           "example": "{\"MYSQL_USERNAME\":\"root\"}",
@@ -1650,7 +1545,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "延迟检测时间",
           "example": "2",
@@ -1661,7 +1555,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "\"2022-03-10 19:44:07\"",
@@ -1672,7 +1565,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务端口",
           "example": "8080",
@@ -1683,7 +1575,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否有Dockerfile",
           "example": "true",
@@ -1694,7 +1585,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Dockerfile 文件名",
           "example": "\"Dickerfile\"",
@@ -1705,7 +1595,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "构建目录",
           "example": "src/",
@@ -1716,7 +1605,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志类型: none | default | custom",
           "example": "none",
@@ -1727,7 +1615,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cls setId",
           "example": "无",
@@ -1738,7 +1625,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cls 主题id",
           "example": "无",
@@ -1749,7 +1635,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "解析类型：json ｜ line",
           "example": "json",
@@ -1766,7 +1651,6 @@
       "document": "服务基本信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "服务名",
           "example": "serverName",
@@ -1777,7 +1661,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认服务域名",
           "example": "http://xxx.xxx.xxx",
@@ -1788,7 +1671,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义域名",
           "example": "http://xxx.xxx.xxx",
@@ -1799,7 +1681,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务状态：running/deploying/deploy_failed",
           "example": "runnig",
@@ -1810,7 +1691,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
           "example": "2022-03-09 14:00:00",
@@ -1821,7 +1701,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网访问类型",
           "example": "[\"OA\",\"MINIAPP\",\"VPC\"]",
@@ -1832,7 +1711,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "展示自定义域名",
           "example": "[\"http://xxx.xxx.xxx\",\"http://xxx.xxx.xxx\"]",
@@ -1849,7 +1727,6 @@
       "document": "服务管理任务信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务Id",
           "example": "1111",
@@ -1860,7 +1737,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境Id",
           "example": "test-1gbtbgkjf8f48e2c",
@@ -1871,7 +1747,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务名",
           "example": "test",
@@ -1882,7 +1757,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2022-05-27 15:00:00",
@@ -1893,7 +1767,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "变更类型",
           "example": "CONFIG",
@@ -1904,7 +1777,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发布类型",
           "example": "GRAY",
@@ -1915,7 +1787,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署类型",
           "example": "package",
@@ -1926,7 +1797,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上一个版本名",
           "example": "test-001",
@@ -1937,7 +1807,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本名",
           "example": "test-002",
@@ -1948,7 +1817,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流水线Id",
           "example": "111",
@@ -1959,7 +1827,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流水线任务Id",
           "example": "12121",
@@ -1970,7 +1837,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发布单Id",
           "example": "1212",
@@ -1981,7 +1847,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态",
           "example": "finished",
@@ -1992,7 +1857,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "步骤信息",
           "example": "无",
@@ -2003,7 +1867,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "失败原因",
           "example": "无",
@@ -2014,7 +1877,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作标识",
           "example": "无",
@@ -2031,7 +1893,6 @@
       "document": "静态CDN资源信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "静态CDN域名",
           "example": "test-5gak4uz5bd3d7978-1257473911.tcloudbaseapp.com",
@@ -2042,7 +1903,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "静态CDN默认文件夹，当前为根目录",
           "example": "/test",
@@ -2053,7 +1913,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源状态(process/online/offline/init)",
           "example": "online",
@@ -2064,7 +1923,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cos所属区域",
           "example": "ap-shanghai",
@@ -2075,7 +1933,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "bucket信息",
           "example": "tcb-123456",
@@ -2092,7 +1949,6 @@
       "document": "StorageInfo 资源信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源所属地域。\n当前支持ap-shanghai",
           "example": "ap-shanghai",
@@ -2103,7 +1959,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "桶名，存储资源的唯一标识",
           "example": "tcb-123456",
@@ -2114,7 +1969,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cdn 域名",
           "example": "tcb-123456.file.mycloud.com",
@@ -2125,7 +1979,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源所属用户的腾讯云appId",
           "example": "1301106610",
@@ -2142,7 +1995,6 @@
       "document": "标签键值对",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键",
           "example": "key",
@@ -2153,7 +2005,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "value",
@@ -2170,7 +2021,6 @@
       "document": "任务步骤信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "步骤名",
           "example": "无",
@@ -2181,7 +2031,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "未启动：\"todo\"\n运行中：\"running\"\n失败：\"failed\"\n成功结束：\"finished\"",
           "example": "failed",
@@ -2192,7 +2041,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间",
           "example": "2022-05-27 15:00:00",
@@ -2203,7 +2051,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "example": "2022-05-27 15:00:00",
@@ -2214,7 +2061,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消耗时间：秒",
           "example": "10",
@@ -2225,7 +2071,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "失败原因",
           "example": "无",
@@ -2242,7 +2087,6 @@
       "document": "UpdateCloudRunServer请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境Id",
           "example": "env-example",
@@ -2252,7 +2096,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务名",
           "example": "serverName",
@@ -2262,7 +2105,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署信息",
           "example": "无",
@@ -2272,7 +2114,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务配置信息",
           "example": "无",
@@ -2320,7 +2161,6 @@
       "document": "版本流量信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "版本名",
           "example": "server-001",
@@ -2331,7 +2171,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否默认版本",
           "example": "false",
@@ -2342,7 +2181,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量比例",
           "example": "10",
@@ -2353,7 +2191,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "测试KV值",
           "example": "无",
@@ -2364,7 +2201,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权重",
           "example": "100",

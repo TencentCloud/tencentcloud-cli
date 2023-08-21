@@ -201,7 +201,6 @@
       "document": "云联网描述信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络 ID",
           "example": "",
@@ -212,7 +211,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网 ID",
           "example": "",
@@ -223,7 +221,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云联网 ID，如 ccn-rahigzjd",
           "example": "",
@@ -240,7 +237,6 @@
       "document": "CheckSavepoint请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作业 id",
           "example": "cql-52xkpymp",
@@ -250,7 +246,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照资源 id",
           "example": "svp-52xkpymp",
@@ -260,7 +255,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照类型 1: savepoint；2: checkpoint；3: cancelWithSavepoint",
           "example": "1",
@@ -270,7 +264,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照路径，目前只支持 cos 路径",
           "example": "cosn://xxx/xxx",
@@ -280,7 +273,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 id",
           "example": "space-1327",
@@ -921,7 +913,6 @@
       "document": "集群的版本相关信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群的Flink版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Flink-1.11",
@@ -932,7 +923,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群支持的Flink版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"Flink-1.13\", \"\"Flink-1.11\"]",
@@ -1111,7 +1101,6 @@
       "document": "CopyJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "复制明细列表",
           "example": "无",
@@ -1121,7 +1110,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "无",
@@ -1179,7 +1167,6 @@
       "document": "CreateFolder请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "新建文件夹名",
           "example": "joylyu-test",
@@ -1189,7 +1176,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新建文件夹的父目录ID",
           "example": "folder-xxxxxxxx",
@@ -1199,7 +1185,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件夹类型，0是任务文件夹，1是依赖文件夹",
           "example": "0",
@@ -1209,7 +1194,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-xxx",
@@ -1589,7 +1573,6 @@
       "document": "CreateResourceConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "example": "resource-xxx",
@@ -1599,7 +1582,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "位置信息",
           "example": "[]",
@@ -1609,7 +1591,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源描述信息",
           "example": "xxx",
@@ -1619,7 +1600,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1： 资源版本达到上限，自动删除最早可删除的版本",
           "example": "0",
@@ -1629,7 +1609,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-xxx",
@@ -1667,7 +1646,6 @@
       "document": "CreateResource请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源位置",
           "example": "[]",
@@ -1677,7 +1655,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源类型。目前只支持 JAR，取值为 1",
           "example": "1",
@@ -1687,7 +1664,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源描述",
           "example": "v1",
@@ -1697,7 +1673,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源名称",
           "example": "1",
@@ -1707,7 +1682,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源版本描述",
           "example": "1",
@@ -1717,7 +1691,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目录ID",
           "example": "folder-xxxx",
@@ -1727,7 +1700,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-1237",
@@ -1775,7 +1747,6 @@
       "document": "DeleteJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作业Id列表",
           "example": "[]",
@@ -1785,7 +1756,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间Id",
           "example": "space-1327",
@@ -1813,7 +1783,6 @@
       "document": "DeleteResourceConfigs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "example": "resource-xxx",
@@ -1823,7 +1792,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源版本数组",
           "example": "1",
@@ -1833,7 +1801,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-xxx",
@@ -1861,7 +1828,6 @@
       "document": "DeleteResources请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待删除资源ID列表",
           "example": "resource-xxx",
@@ -1871,7 +1837,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-xxx",
@@ -1899,7 +1864,6 @@
       "document": "DeleteTableConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作业ID",
           "example": "cql-xxx",
@@ -1909,7 +1873,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "调试作业ID",
           "example": "123",
@@ -1919,7 +1882,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表名",
           "example": "a",
@@ -1929,7 +1891,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-xxx",
@@ -1957,7 +1918,6 @@
       "document": "DescribeClusters请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "按照一个或者多个集群 ID 查询，每次请求的集群上限为 100",
           "example": "cluster-xxxx",
@@ -1967,7 +1927,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认 0",
           "example": "0",
@@ -1977,7 +1936,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求的集群数量，默认 20，最大值 100",
           "example": "20",
@@ -1987,7 +1945,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群信息结果排序规则，1 按时间降序，2 按照时间升序，3  按照状态排序",
           "example": "1",
@@ -1997,7 +1954,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤规则",
           "example": "[]",
@@ -2007,7 +1963,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-1327",
@@ -2055,7 +2010,6 @@
       "document": "DescribeJobConfigs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作业Id",
           "example": "cql-xxxx",
@@ -2065,7 +2019,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业配置版本",
           "example": "[]",
@@ -2075,7 +2028,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认0",
           "example": "0",
@@ -2085,7 +2037,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页大小，默认20，最大100",
           "example": "20",
@@ -2095,7 +2046,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件",
           "example": "[]",
@@ -2105,7 +2055,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "true 表示只展示草稿",
           "example": "false",
@@ -2115,7 +2064,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-xxx",
@@ -2163,7 +2111,6 @@
       "document": "DescribeJobSavepoint请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作业 SerialId",
           "example": "cql-asdf5678",
@@ -2173,7 +2120,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数，单页总数",
           "example": "1",
@@ -2183,7 +2129,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数，偏移量",
           "example": "1",
@@ -2193,7 +2138,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-xxx",
@@ -2261,7 +2205,6 @@
       "document": "DescribeJobSubmissionLog请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作业ID，例如：cql-6v1jkxrn",
           "example": "cql-ebgioapf",
@@ -2271,7 +2214,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始时间，unix时间戳，毫秒级，例如：1611754219108",
           "example": "1585749042",
@@ -2281,7 +2223,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间，unix时间戳，毫秒级，例如：1611754219108",
           "example": "1585749042",
@@ -2291,7 +2232,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业运行的实例ID, 例如：1,2,3。默认为0，表示未选中任何实例，搜索该时间段内最近的一个实例的日志",
           "example": "0",
@@ -2301,7 +2241,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志搜索的关键词，默认为空",
           "example": "无",
@@ -2311,7 +2250,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志搜索的游标，可透传上次返回的值，默认为空",
           "example": "无",
@@ -2321,7 +2259,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳排序规则，asc - 升序，desc - 降序。默认为升序",
           "example": "asc",
@@ -2331,7 +2268,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索的日志条数上限值，最大为100",
           "example": "100",
@@ -2419,7 +2355,6 @@
       "document": "DescribeJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "按照一个或者多个作业ID查询。作业ID形如：cql-11112222，每次请求的作业上限为100。参数不支持同时指定JobIds和Filters。",
           "example": "[]",
@@ -2429,7 +2364,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，支持的 Filter.Name 为：作业名 Name、作业状态 Status、所属集群 ClusterId、作业id JobId、集群名称 ClusterName。 每次请求的 Filters 个数的上限为 5，Filter.Values 的个数上限为 5。参数不支持同时指定 JobIds 和 Filters。",
           "example": "无",
@@ -2439,7 +2373,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
           "example": "0",
@@ -2449,7 +2382,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页大小，默认为20，最大值为100",
           "example": "20",
@@ -2459,7 +2391,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-1327",
@@ -2507,7 +2438,6 @@
       "document": "DescribeResourceConfigs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "example": "resource-xxx",
@@ -2517,7 +2447,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，仅当设置 Limit 时该参数有效",
           "example": "0",
@@ -2527,7 +2456,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回值大小，不填则返回全量数据",
           "example": "20",
@@ -2537,7 +2465,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源配置Versions集合",
           "example": "1",
@@ -2547,7 +2474,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业配置版本",
           "example": "无",
@@ -2557,7 +2483,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业ID",
           "example": "无",
@@ -2567,7 +2492,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-xxx",
@@ -2615,7 +2539,6 @@
       "document": "DescribeResourceRelatedJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "example": "resource-xxx",
@@ -2625,7 +2548,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认0;   1： 按照作业版本创建时间降序",
           "example": "0",
@@ -2635,7 +2557,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
           "example": "0",
@@ -2645,7 +2566,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页大小，默认为20，最大值为100",
           "example": "20",
@@ -2655,7 +2575,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源版本号",
           "example": "1",
@@ -2665,7 +2584,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-xxx",
@@ -2713,7 +2631,6 @@
       "document": "DescribeResources请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要查询的资源ID数组，数量不超过100个。如果填写了该参数则忽略Filters参数。",
           "example": "[\"resource-8udfak5k\",\"resource-8udfak5j\"]",
@@ -2723,7 +2640,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，仅当设置 Limit 参数时有效",
           "example": "0",
@@ -2733,7 +2649,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "条数限制。如果不填，默认返回 20 条",
           "example": "20",
@@ -2743,7 +2658,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "<li><strong>ResourceName</strong></li>\n<p style=\"padding-left: 30px;\">按照资源名字过滤，支持模糊过滤。传入的过滤名字不超过5个</p><p style=\"padding-left: 30px;\">类型: String</p><p style=\"padding-left: 30px;\">必选: 否</p>",
           "example": "[]",
@@ -2753,7 +2667,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-xxx",
@@ -2801,7 +2714,6 @@
       "document": "DescribeSystemResources请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要查询的资源ID数组",
           "example": "[]",
@@ -2811,7 +2723,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，仅当设置 Limit 参数时有效",
           "example": "0",
@@ -2821,7 +2732,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "条数限制，默认返回 20 条",
           "example": "20",
@@ -2831,7 +2741,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询资源配置列表， 如果不填写，返回该 ResourceIds.N 下所有作业配置列表",
           "example": "[]",
@@ -2841,7 +2750,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "cluster-xxxx",
@@ -2851,7 +2759,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询对应Flink版本的内置connector",
           "example": "Flink-1.11",
@@ -2899,7 +2806,6 @@
       "document": "DescribeTreeJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 Serialid",
           "example": "space-1327",
@@ -3182,7 +3088,6 @@
       "document": "查询作业列表时的过滤器",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要过滤的字段",
           "example": "",
@@ -3193,7 +3098,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段的过滤值",
           "example": "",
@@ -3554,7 +3458,6 @@
       "document": "搜索启动日志时返回的作业实例",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例的Id, 按照启动的时间顺序，从1开始",
           "example": "",
@@ -3565,7 +3468,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业实例的启动时间",
           "example": "",
@@ -3576,7 +3478,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业实例启动的时间（毫秒）",
           "example": "",
@@ -3919,7 +3820,6 @@
       "document": "日志查询的每行日志信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "日志内容\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abc",
@@ -3930,7 +3830,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "毫秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611816200076",
@@ -3941,7 +3840,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志组Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2014BF16012637D-6",
@@ -3952,7 +3850,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志Id，在日志组范围里唯一",
           "example": "131072",
@@ -3963,7 +3860,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志所属的容器名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "flink-job-manager",
@@ -3980,7 +3876,6 @@
       "document": "ModifyJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作业Id",
           "example": "cql-6iaginqp",
@@ -3990,7 +3885,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作业名称，支持长度小于50的中文/英文/数字/”-”/”_”/”.”，不能重名",
           "example": "test",
@@ -4000,7 +3894,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "example": "测试",
@@ -4010,7 +3903,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "拖拽文件需传入此参数",
           "example": "folder-xxxxxxxx",
@@ -4020,7 +3912,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-1237",
@@ -4504,7 +4395,6 @@
       "document": "资源参数描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源bucket",
           "example": "scs-online-1257058945",
@@ -4515,7 +4405,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源路径",
           "example": "251008563/100000006047/flink-cos-fs-hadoop-oceanus-1-20210304112",
@@ -4526,7 +4415,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源所在地域，如果不填，则使用Resource的Region\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-chengdu",
@@ -4543,7 +4431,6 @@
       "document": "资源引用参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "example": "",
@@ -4554,7 +4441,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源版本ID，-1表示使用最新版本",
           "example": "",
@@ -4565,7 +4451,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "引用资源类型，例如主资源设置为1，代表main class所在的jar包",
           "example": "",
@@ -4582,7 +4467,6 @@
       "document": "JobConfig引用资源信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源id",
           "example": "",
@@ -4593,7 +4477,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源版本，-1表示使用最新版本",
           "example": "",
@@ -4604,7 +4487,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源名称",
           "example": "",
@@ -4615,7 +4497,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1: 主资源",
           "example": "",
@@ -4626,7 +4507,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1: 系统内置资源",
           "example": "",
@@ -4643,7 +4523,6 @@
       "document": "资源被Job 引用信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Job id",
           "example": "",
@@ -4654,7 +4533,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Job配置版本",
           "example": "",
@@ -4665,7 +4543,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源版本",
           "example": "",
@@ -4884,7 +4761,6 @@
       "document": "RunJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "批量启动作业的描述信息",
           "example": "无",
@@ -4894,7 +4770,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-1237",
@@ -5150,7 +5025,6 @@
       "document": "停止作业的描述信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作业Id",
           "example": "1",
@@ -5161,7 +5035,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "停止类型，1 停止 2 暂停",
           "example": "1",
@@ -5178,7 +5051,6 @@
       "document": "StopJobs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "批量停止作业的描述信息",
           "example": "无",
@@ -5188,7 +5060,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-1237",
@@ -5216,7 +5087,6 @@
       "document": "系统资源返回值",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID",
           "example": "resource-9ds0xim0",
@@ -5227,7 +5097,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源名称",
           "example": "SampleProgram",
@@ -5238,7 +5107,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源类型。1 表示 JAR 包，目前只支持该值。",
           "example": "1",
@@ -5249,7 +5117,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源备注",
           "example": "我的测试程序包",
@@ -5260,7 +5127,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源所属地域",
           "example": "ap-guangzhou",
@@ -5271,7 +5137,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源的最新版本",
           "example": "2",
@@ -5288,7 +5153,6 @@
       "document": "标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5299,7 +5163,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5392,7 +5255,6 @@
       "document": "TriggerJobSavepoint请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作业 SerialId",
           "example": "cql-12345",
@@ -5402,7 +5264,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "example": "Description",
@@ -5412,7 +5273,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-1327",

@@ -26,7 +26,6 @@
       "document": "bpaas申请入参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "审批流中表单唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "name",
@@ -37,7 +36,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表单value\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "['v1','v2']",
@@ -48,7 +46,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表单参数描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "测试",
@@ -65,7 +62,6 @@
       "document": "审批意见",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "方式 1:输入文字反馈  2:预设选项",
           "example": "1",
@@ -76,7 +72,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审批意见\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -93,7 +88,6 @@
       "document": "审批人",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户uin",
           "example": "1111111",
@@ -104,7 +98,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户类型 (1:用户  2:用户组)",
           "example": "1",
@@ -115,7 +108,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aa",
@@ -126,7 +118,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aa",
@@ -137,7 +128,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动态获取Scf\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -289,7 +279,6 @@
       "document": "OutApproveBpaasApplication请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "状态  1:通过  2:拒绝",
           "example": "1",
@@ -299,7 +288,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审批单id",
           "example": "1",
@@ -309,7 +297,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审批意见",
           "example": "''",
@@ -337,7 +324,6 @@
       "document": "云函数SCF",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Scf函数地域id",
           "example": "1",
@@ -348,7 +334,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Scf函数地域",
           "example": "ap-guangzhou",
@@ -359,7 +344,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Scf函数名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -370,7 +354,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Scf函数入参\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -387,7 +370,6 @@
       "document": "Scf函数入参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数Key",
           "example": "name",
@@ -398,7 +380,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数类型 1用户输入 2预设参数 3表单参数",
           "example": "1",
@@ -409,7 +390,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数值",
           "example": "[]",
@@ -420,7 +400,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "姓名",

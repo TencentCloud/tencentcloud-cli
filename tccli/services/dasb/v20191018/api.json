@@ -701,7 +701,6 @@
       "document": "AddDeviceGroupMembers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资产组ID",
           "example": "1",
@@ -711,7 +710,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要添加到资产组的资产ID集合",
           "example": "[1,2]",
@@ -739,7 +737,6 @@
       "document": "AddUserGroupMembers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户组ID",
           "example": "1",
@@ -749,7 +746,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "成员用户ID集合",
           "example": "[1,2]",
@@ -777,7 +773,6 @@
       "document": "资产同步状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "上一次同步完成的时间",
           "example": "xxx",
@@ -788,7 +783,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上一次同步的结果。 0 - 从未进行, 1 - 成功， 2 - 失败",
           "example": "1",
@@ -799,7 +793,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "同步任务是否正在进行中",
           "example": "false",
@@ -816,7 +809,6 @@
       "document": "审计日志",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "被审计会话的Sid",
           "example": "xxx",
@@ -827,7 +819,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审计者的编号",
           "example": "xxx",
@@ -838,7 +829,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审计动作发生的时间",
           "example": "xxx",
@@ -849,7 +839,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审计者的Ip",
           "example": "xxx",
@@ -860,7 +849,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审计动作类型，1--回放、2--中断、3--监控",
           "example": "1",
@@ -871,7 +859,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被审计主机的Id",
           "example": "xxx",
@@ -882,7 +869,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被审计主机的主机名",
           "example": "xxx",
@@ -893,7 +879,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被审计会话所属的类型，如字符会话",
           "example": "xxx",
@@ -904,7 +889,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被审计主机的内部Ip",
           "example": "xxx",
@@ -915,7 +899,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被审计主机的外部Ip",
           "example": "xxx",
@@ -926,7 +909,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审计者的子账号",
           "example": "xxx",
@@ -943,7 +925,6 @@
       "document": "BindDeviceAccountPassword请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主机账号ID",
           "example": "1",
@@ -953,7 +934,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机账号密码",
           "example": "xxxxxx",
@@ -981,7 +961,6 @@
       "document": "BindDeviceAccountPrivateKey请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主机账号ID",
           "example": "1",
@@ -991,7 +970,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机账号私钥，最新长度128字节，最大长度8192字节",
           "example": "xxxxxx",
@@ -1001,7 +979,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机账号私钥口令，最大长度256字节",
           "example": "xxxxxx",
@@ -1029,7 +1006,6 @@
       "document": "BindDeviceResource请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资产ID集合",
           "example": "[1,2]",
@@ -1039,7 +1015,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "堡垒机服务ID",
           "example": "bh-saas-xxxxxxxx",
@@ -1067,7 +1042,6 @@
       "document": "高危命令模板",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "高危命令模板ID",
           "example": "1",
@@ -1078,7 +1052,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高危命令模板名称",
           "example": "\"我的命令模板\"",
@@ -1089,7 +1062,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命令列表，命令之间用换行符（\"\\n\"）分隔",
           "example": "rm -rf",
@@ -1532,7 +1504,6 @@
       "document": "CreateAssetSyncJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "同步资产类别，1 - 主机资产, 2 - 数据库资产",
           "example": "1",
@@ -1614,7 +1585,6 @@
       "document": "CreateDeviceAccount请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主机记录ID",
           "example": "1",
@@ -1624,7 +1594,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号名",
           "example": "admin",
@@ -1662,7 +1631,6 @@
       "document": "CreateDeviceGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资产组名，最大长度32字符",
           "example": "运维资产组",
@@ -1672,7 +1640,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产组所属部门ID，如：1.2.3",
           "example": "1.2.3",
@@ -1710,7 +1677,6 @@
       "document": "CreateUserGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户组名，最大长度32字符",
           "example": "运维用户组",
@@ -1720,7 +1686,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户组所属部门的ID，如：1.2.3",
           "example": "1.2.3",
@@ -1875,7 +1840,6 @@
       "document": "DeleteAcls请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待删除的权限ID集合",
           "example": "[1,2]",
@@ -1903,7 +1867,6 @@
       "document": "DeleteCmdTemplates请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待删除的ID集合",
           "example": "[1,2]",
@@ -1931,7 +1894,6 @@
       "document": "DeleteDeviceAccounts请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待删除的ID集合",
           "example": "[1,2]",
@@ -1959,7 +1921,6 @@
       "document": "DeleteDeviceGroupMembers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资产组ID",
           "example": "1",
@@ -1969,7 +1930,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要删除的资产ID集合",
           "example": "[1,2]",
@@ -1997,7 +1957,6 @@
       "document": "DeleteDeviceGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待删除的资产组ID集合",
           "example": "[1,2]",
@@ -2025,7 +1984,6 @@
       "document": "DeleteDevices请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待删除的ID集合",
           "example": "[1,2]",
@@ -2053,7 +2011,6 @@
       "document": "DeleteUserGroupMembers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户组ID",
           "example": "1",
@@ -2063,7 +2020,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需删除的成员用户ID集合",
           "example": "[1,2]",
@@ -2091,7 +2047,6 @@
       "document": "DeleteUserGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待删除的用户组ID集合",
           "example": "[1,2]",
@@ -2119,7 +2074,6 @@
       "document": "DeleteUsers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待删除的用户ID集合",
           "example": "无",
@@ -2219,7 +2173,6 @@
       "document": "DeployResource请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要开通服务的资源ID",
           "example": "bh-saas-xxxxxxxx",
@@ -2229,7 +2182,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要开通服务的地域",
           "example": "ap-guangzhou",
@@ -2239,7 +2191,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网所在可用区",
           "example": "ap-guangzhou-3",
@@ -2249,7 +2200,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要开通服务的VPC",
           "example": "vpc-xxxxxx",
@@ -2259,7 +2209,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要开通服务的子网ID",
           "example": "subnet-xxxxxx",
@@ -2269,7 +2218,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要开通服务的子网网段",
           "example": "10.10.10.0/24",
@@ -2279,7 +2227,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要开通服务的VPC名称",
           "example": "vpc1",
@@ -2289,7 +2236,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要开通服务的VPC对应的网段",
           "example": "10.10.0.0/16",
@@ -2299,7 +2245,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要开通服务的子网名称",
           "example": "subnet1",
@@ -2327,7 +2272,6 @@
       "document": "DescribeAcls请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "访问权限ID集合",
           "example": "[1,2]",
@@ -2337,7 +2281,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "访问权限名称，模糊查询，最长64字符",
           "example": "xx",
@@ -2347,7 +2290,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移位置，默认值为0",
           "example": "0",
@@ -2357,7 +2299,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页条目数量，默认20，最大500",
           "example": "10",
@@ -2367,7 +2308,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否根据Name进行精确查询，默认值false",
           "example": "true",
@@ -2377,7 +2317,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "有访问权限的用户ID集合",
           "example": "无",
@@ -2387,7 +2326,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "有访问权限的资产ID集合",
           "example": "无",
@@ -2397,7 +2335,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期",
           "example": "0",
@@ -2407,7 +2344,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部门ID，用于过滤属于某个部门的访问权限",
           "example": "1.2.3",
@@ -2455,7 +2391,6 @@
       "document": "DescribeAssetSyncStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询的资产同步类型。1 -主机资产， 2 - 数据库资产",
           "example": "1",
@@ -2493,7 +2428,6 @@
       "document": "DescribeCmdTemplates请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "命令模板ID集合，非必需",
           "example": "[1,2]",
@@ -2503,7 +2437,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命令模板名，模糊查询，最大长度64字符",
           "example": "xx",
@@ -2513,7 +2446,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移位置，默认值为0",
           "example": "0",
@@ -2523,7 +2455,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页条目数量，默认20",
           "example": "10",
@@ -2606,7 +2537,6 @@
       "document": "DescribeDeviceAccounts请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主机账号ID集合，非必需，如果使用IdSet则忽略其他过滤参数",
           "example": "[1,2]",
@@ -2616,7 +2546,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机账号名，模糊查询，不能单独出现，必须于DeviceId一起提交",
           "example": "root",
@@ -2626,7 +2555,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机ID，未使用IdSet时必须携带",
           "example": "1",
@@ -2636,7 +2564,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移位置，默认值为0",
           "example": "0",
@@ -2646,7 +2573,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页条目数量，默认20",
           "example": "10",
@@ -2694,7 +2620,6 @@
       "document": "DescribeDeviceGroupMembers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资产组ID",
           "example": "1",
@@ -2704,7 +2629,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "true - 查询已在该资产组的资产，false - 查询未在该资产组的资产",
           "example": "true",
@@ -2714,7 +2638,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产名或资产IP，模糊查询",
           "example": "xxx",
@@ -2724,7 +2647,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移位置，默认值为0",
           "example": "0",
@@ -2734,7 +2656,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页条目数，默认20, 最大500",
           "example": "0",
@@ -2744,7 +2665,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产类型，1 - Linux，2 - Windows，3 - MySQL，4 - SQLServer",
           "example": "0",
@@ -2754,7 +2674,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属部门ID",
           "example": "1.2.3",
@@ -2764,7 +2683,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，可按照标签键、标签进行过滤。如果同时指定标签键和标签过滤条件，它们之间为“AND”的关系",
           "example": "无",
@@ -2812,7 +2730,6 @@
       "document": "DescribeDeviceGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资产组ID集合",
           "example": "[1,2]",
@@ -2822,7 +2739,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产组名，最长64个字符，模糊查询",
           "example": "xxx",
@@ -2832,7 +2748,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移位置，默认值为0",
           "example": "0",
@@ -2842,7 +2757,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页条目数量，缺省20，最大500",
           "example": "10",
@@ -2852,7 +2766,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部门ID，用于过滤属于某个部门的资产组",
           "example": "1.2.3",
@@ -2903,7 +2816,6 @@
           "disabled": false,
           "document": "资产ID集合",
           "example": "无",
-          "is_base64": false,
           "member": "uint64",
           "name": "IdSet",
           "required": false,
@@ -2913,7 +2825,6 @@
           "disabled": false,
           "document": "资产名或资产IP，模糊查询",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": false,
@@ -2923,7 +2834,6 @@
           "disabled": false,
           "document": "暂未使用",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Ip",
           "required": false,
@@ -2933,7 +2843,6 @@
           "disabled": false,
           "document": "地域码集合",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "ApCodeSet",
           "required": false,
@@ -2943,7 +2852,6 @@
           "disabled": false,
           "document": "操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer",
           "example": "无",
-          "is_base64": false,
           "member": "uint64",
           "name": "Kind",
           "required": false,
@@ -2953,7 +2861,6 @@
           "disabled": false,
           "document": "分页偏移位置，默认值为0",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2963,7 +2870,6 @@
           "disabled": false,
           "document": "每页条目数量，默认20",
           "example": "10",
-          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2973,7 +2879,6 @@
           "disabled": false,
           "document": "有该资产访问权限的用户ID集合",
           "example": "无",
-          "is_base64": false,
           "member": "uint64",
           "name": "AuthorizedUserIdSet",
           "required": false,
@@ -2983,7 +2888,6 @@
           "disabled": false,
           "document": "过滤条件，资产绑定的堡垒机服务ID集合",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "ResourceIdSet",
           "required": false,
@@ -2993,7 +2897,6 @@
           "disabled": false,
           "document": "可提供按照多种类型过滤, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer",
           "example": "无",
-          "is_base64": false,
           "member": "uint64",
           "name": "KindSet",
           "required": false,
@@ -3003,7 +2906,6 @@
           "disabled": false,
           "document": "资产是否包含托管账号。1，包含；0，不包含",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "ManagedAccount",
           "required": false,
@@ -3013,7 +2915,6 @@
           "disabled": false,
           "document": "过滤条件，可按照部门ID进行过滤",
           "example": "1.2.3",
-          "is_base64": false,
           "member": "string",
           "name": "DepartmentId",
           "required": false,
@@ -3023,7 +2924,6 @@
           "disabled": false,
           "document": "过滤条件，可按照标签键、标签进行过滤。如果同时指定标签键和标签过滤条件，它们之间为“AND”的关系",
           "example": "无",
-          "is_base64": false,
           "member": "TagFilter",
           "name": "TagFilters",
           "required": false,
@@ -3033,7 +2933,6 @@
           "disabled": false,
           "document": "过滤数组。支持的Name：\nBindingStatus 绑定状态",
           "example": "无",
-          "is_base64": false,
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3078,7 +2977,6 @@
       "document": "DescribeLoginEvent请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户名，如果不包含其他条件时对user_name or real_name两个字段模糊查询",
           "example": "xxx",
@@ -3088,7 +2986,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "姓名，模糊查询",
           "example": "xx",
@@ -3098,7 +2995,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询时间范围，起始时间",
           "example": "2021-02-04T15:23:52+08:00",
@@ -3108,7 +3004,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询时间范围，结束时间",
           "example": "2021-02-04T15:23:52+08:00",
@@ -3118,7 +3013,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "来源IP，模糊查询",
           "example": "1.0.0.1",
@@ -3128,7 +3022,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "登录入口：1-字符界面,2-图形界面，3-web页面, 4-API",
           "example": "1",
@@ -3138,7 +3031,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作结果，1-成功，2-失败",
           "example": "1",
@@ -3148,7 +3040,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移位置，默认值为0",
           "example": "0",
@@ -3158,7 +3049,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页每页记录数，默认20",
           "example": "20",
@@ -3206,7 +3096,6 @@
       "document": "DescribeOperationEvent请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户名，如果不包含其他条件时对user_name or real_name两个字段模糊查询",
           "example": "xxx",
@@ -3216,7 +3105,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "姓名，模糊查询",
           "example": "xx",
@@ -3226,7 +3114,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询时间范围，起始时间",
           "example": "2021-02-04T15:23:52+08:00",
@@ -3236,7 +3123,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询时间范围，结束时间",
           "example": "2021-02-04T15:23:52+08:00",
@@ -3246,7 +3132,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "来源IP，模糊查询",
           "example": "1.0.0.1",
@@ -3256,7 +3141,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作类型，参考DescribeOperationType返回结果",
           "example": "100",
@@ -3266,7 +3150,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作结果，1-成功，2-失败",
           "example": "1",
@@ -3276,7 +3159,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移位置，默认值为0",
           "example": "0",
@@ -3286,7 +3168,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页每页记录数，默认20",
           "example": "20",
@@ -3334,7 +3215,6 @@
       "document": "DescribeResources请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域码, 如: ap-guangzhou",
           "example": "ap-guangzhou",
@@ -3344,7 +3224,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照堡垒机开通的 VPC 实例ID查询",
           "example": "vpc-xxxxxx",
@@ -3354,7 +3233,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源ID集合，当传入ID集合时忽略 ApCode 和 VpcId",
           "example": "[]",
@@ -3392,7 +3270,6 @@
       "document": "DescribeUserGroupMembers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户组ID",
           "example": "1",
@@ -3402,7 +3279,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "true - 查询已添加到该用户组的用户，false - 查询未添加到该用户组的用户",
           "example": "true",
@@ -3412,7 +3288,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名或用户姓名，最长64个字符，模糊查询",
           "example": "xx",
@@ -3422,7 +3297,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移位置，默认值为0",
           "example": "0",
@@ -3432,7 +3306,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页条目数量，默认20, 最大500",
           "example": "10",
@@ -3442,7 +3315,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属部门ID",
           "example": "1.2.3",
@@ -3490,7 +3362,6 @@
       "document": "DescribeUserGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户组ID集合",
           "example": "[1,2]",
@@ -3500,7 +3371,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户组名，模糊查询,长度：0-64字符",
           "example": "xx",
@@ -3510,7 +3380,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移位置，默认值为0",
           "example": "0",
@@ -3520,7 +3389,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页条目数量，缺省20，最大500",
           "example": "10",
@@ -3530,7 +3398,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部门ID，用于过滤属于某个部门的用户组",
           "example": "1.2.3",
@@ -3881,7 +3748,6 @@
       "document": "主机账号",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "账号ID",
           "example": "1",
@@ -3892,7 +3758,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机ID",
           "example": "1",
@@ -3903,7 +3768,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号名",
           "example": "admin",
@@ -3914,7 +3778,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "true-已托管密码，false-未托管密码",
           "example": "true",
@@ -3925,7 +3788,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "true-已托管私钥，false-未托管私钥",
           "example": "true",
@@ -4002,7 +3864,6 @@
       "document": "描述键值对过滤器，用于条件过滤查询",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要过滤的字段。",
           "example": "无",
@@ -4013,7 +3874,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段的过滤值。\n若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
           "example": "无",
@@ -4030,7 +3890,6 @@
       "document": "组信息，用于用户组、主机组",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "组ID",
           "example": "1",
@@ -4041,7 +3900,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "组名称",
           "example": "xx",
@@ -4052,7 +3910,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属部门信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4063,7 +3920,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -4080,7 +3936,6 @@
       "document": "ImportExternalDevice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资产参数列表",
           "example": "[]",
@@ -4108,7 +3963,6 @@
       "document": "登录日志",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户名",
           "example": "xx",
@@ -4119,7 +3973,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "姓名",
           "example": "xx",
@@ -4130,7 +3983,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作时间",
           "example": "2020-12-31T17:34:17+0800",
@@ -4141,7 +3993,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "来源IP",
           "example": "1.0.0.1",
@@ -4152,7 +4003,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "登录入口：1-字符界面,2-图形界面，3-web页面, 4-API",
           "example": "1",
@@ -4163,7 +4013,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作结果，1-成功，2-失败",
           "example": "1",
@@ -4450,7 +4299,6 @@
       "document": "ModifyDeviceGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资产组名，最大长度32字符，不能为空",
           "example": "xxx",
@@ -4460,7 +4308,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产组ID",
           "example": "1",
@@ -4470,7 +4317,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产组所属部门ID，如：1.2.3",
           "example": "1.2.3",
@@ -4498,7 +4344,6 @@
       "document": "ModifyDevice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资产记录ID",
           "example": "1",
@@ -4508,7 +4353,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "管理端口",
           "example": "22",
@@ -4518,7 +4362,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产所属组ID集合",
           "example": "[1,2]",
@@ -4528,7 +4371,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产所属部门ID",
           "example": "1.2.3",
@@ -4664,7 +4506,6 @@
       "document": "操作日志",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户名",
           "example": "xx",
@@ -4675,7 +4516,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "姓名",
           "example": "xx",
@@ -4686,7 +4526,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作时间",
           "example": "2020-12-31T17:34:17+0800",
@@ -4697,7 +4536,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "来源IP",
           "example": "1.0.0.1",
@@ -4708,7 +4546,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作类型",
           "example": "100",
@@ -4719,7 +4556,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "具体操作内容",
           "example": "新建主机",
@@ -4730,7 +4566,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作结果，1-成功，2-失败",
           "example": "1",
@@ -4747,7 +4582,6 @@
       "document": "ResetDeviceAccountPassword请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "ID集合",
           "example": "无",
@@ -4775,7 +4609,6 @@
       "document": "ResetDeviceAccountPrivateKey请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "ID集合",
           "example": "无",
@@ -4803,7 +4636,6 @@
       "document": "ResetUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户ID集合",
           "example": "[1]",
@@ -5127,7 +4959,6 @@
       "document": "SearchAuditLog请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间，不得早于当前时间的180天前",
           "example": "2020-01-01T01:01:01Z",
@@ -5137,7 +4968,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "example": "2020-01-01T01:01:01Z",
@@ -5147,7 +4977,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "1",
@@ -5157,7 +4986,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页容量，默认为20，最大200",
           "example": "5",
@@ -5644,7 +5472,6 @@
       "document": "SearchFileBySid请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "若入参为Id，则其他入参字段不作为搜索依据，仅按照Id来搜索会话",
           "example": "xxx",
@@ -5654,7 +5481,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否创建审计日志,通过查看按钮调用时为true,其他为false",
           "example": "true",
@@ -5664,7 +5490,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页的页内记录数，默认为20，最大200",
           "example": "10",
@@ -5674,7 +5499,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可填写路径名或文件名",
           "example": "1.txt",
@@ -5684,7 +5508,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页用偏移量",
           "example": "123",
@@ -5694,7 +5517,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1-已执行，  2-被阻断",
           "example": "1",
@@ -5704,7 +5526,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "以Protocol和Method为条件查询",
           "example": "无",
@@ -5752,7 +5573,6 @@
       "document": "文件操作搜索结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件操作时间",
           "example": "2006-01-02T15:04:05Z",
@@ -5763,7 +5583,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1-上传文件 2-下载文件 3-删除文件 4-移动文件 5-重命名文件 6-新建文件夹 7-移动文件夹 8-重命名文件夹 9-删除文件夹",
           "example": "1",
@@ -5774,7 +5593,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件传输协议",
           "example": "\"SFTP\"",
@@ -5785,7 +5603,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "method为上传、下载、删除时文件在服务器上的位置, 或重命名、移动文件前文件的位置",
           "example": "\"/home/1.txt\"",
@@ -5796,7 +5613,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "method为重命名、移动文件时代表移动后的新位置.其他情况为null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"/home/2.txt\"",
@@ -5807,7 +5623,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "method为上传文件、下载文件、删除文件时显示文件大小。其他情况为null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -5818,7 +5633,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "堡垒机拦截情况, 1-已执行，  2-被阻断",
           "example": "1",
@@ -5835,7 +5649,6 @@
       "document": "SearchFile请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询开始时间",
           "example": "2020-01-03T01:01:01Z",
@@ -5845,7 +5658,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间",
           "example": "2020-01-04T01:01:01Z",
@@ -5855,7 +5667,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名",
           "example": "user1",
@@ -5865,7 +5676,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "姓名",
           "example": "张三",
@@ -5875,7 +5685,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产ID",
           "example": "ins-xxxxxxx",
@@ -5885,7 +5694,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产名称",
           "example": "开发机",
@@ -5895,7 +5703,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产公网IP",
           "example": "100.100.100.100",
@@ -5905,7 +5712,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产内网IP",
           "example": "192.168.1.100",
@@ -5915,7 +5721,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作类型：1 - 文件上传，2 - 文件下载，3 - 文件删除，4 - 文件(夹)移动，5 - 文件(夹)重命名，6 - 新建文件夹，9 - 删除文件夹",
           "example": "1",
@@ -5925,7 +5730,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可填写路径名或文件（夹）名",
           "example": "1.txt",
@@ -5935,7 +5739,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1-已执行，  2-被阻断",
           "example": "1",
@@ -5945,7 +5748,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页的页内记录数，默认为20，最大200",
           "example": "10",
@@ -5955,7 +5757,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移位置，默认值为0",
           "example": "123",
@@ -6003,7 +5804,6 @@
       "document": "文件传输检索结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件传输的时间",
           "example": "2022-01-01T01:01:01Z",
@@ -6014,7 +5814,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名",
           "example": "user1",
@@ -6025,7 +5824,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "姓名",
           "example": "张三",
@@ -6036,7 +5834,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产ID",
           "example": "ins-xxxxxxx",
@@ -6047,7 +5844,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产名称",
           "example": "开发机",
@@ -6058,7 +5854,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产公网IP",
           "example": "100.100.100.100",
@@ -6069,7 +5864,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产内网IP",
           "example": "192.168.1.100",
@@ -6080,7 +5874,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作结果：1 - 已执行，2 - 已阻断",
           "example": "1",
@@ -6091,7 +5884,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作类型：1 - 文件上传，2 - 文件下载，3 - 文件删除，4 - 文件(夹)移动，5 - 文件(夹)重命名，6 - 新建文件夹，9 - 删除文件夹",
           "example": "1",
@@ -6102,7 +5894,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下载的文件（夹）路径及名称",
           "example": "/home/abc.txt",
@@ -6113,7 +5904,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上传或新建文件（夹）路径及名称",
           "example": "/home/abc.txt",
@@ -6130,7 +5920,6 @@
       "document": "用于搜索文件传输记录等日志时按照protocol和method进行过滤",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要查询的文件传输类型，如SFTP/CLIP/RDP/RZSZ",
           "example": "SFTP",
@@ -6141,7 +5930,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "在当前指定的protocol下进一步过滤具体操作类型,如剪贴板文件上传，剪贴板文件下载等",
           "example": "1, 2",
@@ -6248,7 +6036,6 @@
       "document": "SearchSession请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "内部Ip",
           "example": "127.0.0.1",
@@ -6258,7 +6045,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "外部Ip",
           "example": "127.0.0.1",
@@ -6268,7 +6054,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名，长度不超过20",
           "example": "user1",
@@ -6278,7 +6063,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号，长度不超过64",
           "example": "administrator",
@@ -6288,7 +6072,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "来源Ip",
           "example": "127.0.0.1",
@@ -6298,7 +6081,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索区间的开始时间。若入参是Id，则非必传，否则为必传。",
           "example": "2020-01-02T01:01:01Z",
@@ -6308,7 +6090,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索区间的结束时间",
           "example": "2020-01-02T01:01:01Z",
@@ -6318,7 +6099,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话协议类型，只能是1、2、3或4 对应关系为1-tui 2-gui 3-file 4-数据库。若入参是Id，则非必传，否则为必传。",
           "example": "1",
@@ -6328,7 +6108,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "0",
@@ -6338,7 +6117,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页的页内记录数，默认为20，最大200",
           "example": "10",
@@ -6348,7 +6126,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "姓名，长度不超过20",
           "example": "xxx",
@@ -6358,7 +6135,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机名，长度不超过64",
           "example": "xxx",
@@ -6368,7 +6144,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态，1为活跃，2为结束，3为强制离线，4为其他错误",
           "example": "1",
@@ -6378,7 +6153,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "若入参为Id，则其他入参字段不作为搜索依据，仅按照Id来搜索会话",
           "example": "xxx",
@@ -6426,7 +6200,6 @@
       "document": "命令和所属会话",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间",
           "example": "2020-01-01T01:01:01Z",
@@ -6437,7 +6210,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "example": "2020-01-01T01:01:01Z",
@@ -6448,7 +6220,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名",
           "example": "user1",
@@ -6459,7 +6230,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号",
           "example": "administrator",
@@ -6470,7 +6240,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名",
           "example": "xxx",
@@ -6481,7 +6250,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内部Ip",
           "example": "127.0.0.1",
@@ -6492,7 +6260,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "外部Ip",
           "example": "127.0.0.1",
@@ -6503,7 +6270,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命令列表",
           "example": "[]",
@@ -6514,7 +6280,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录数",
           "example": "10",
@@ -6525,7 +6290,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话Id",
           "example": "xxx",
@@ -6536,7 +6300,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备id",
           "example": "xxx",
@@ -6547,7 +6310,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备所属的地域",
           "example": "ap-guangzhou",
@@ -6564,7 +6326,6 @@
       "document": "搜索字符或图形会话时返回的SessionResul结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户名",
           "example": "user1",
@@ -6575,7 +6336,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "姓名",
           "example": "王建国",
@@ -6586,7 +6346,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机账号",
           "example": "administrator",
@@ -6597,7 +6356,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间",
           "example": "2006-01-02T15:04:05Z",
@@ -6608,7 +6366,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "example": "2006-01-02T15:04:05Z",
@@ -6619,7 +6376,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话大小",
           "example": "10",
@@ -6630,7 +6386,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备ID",
           "example": "xxx",
@@ -6641,7 +6396,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名",
           "example": "xxxxx",
@@ -6652,7 +6406,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内部Ip",
           "example": "127.0.0.1",
@@ -6663,7 +6416,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "外部Ip",
           "example": "127.0.0.1",
@@ -6674,7 +6426,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "来源Ip",
           "example": "127.0.0.1",
@@ -6685,7 +6436,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话持续时长",
           "example": "50",
@@ -6696,7 +6446,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该会话内命令数量 ，搜索图形会话时该字段无意义",
           "example": "20",
@@ -6707,7 +6456,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该会话内高危命令数，搜索图形时该字段无意义",
           "example": "3",
@@ -6718,7 +6466,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话状态，如1会话活跃  2会话结束  3强制离线  4其他错误",
           "example": "2",
@@ -6729,7 +6476,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话Id",
           "example": "xxx",
@@ -6740,7 +6486,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备所属的地域",
           "example": "ap-guangzhou",
@@ -6751,7 +6496,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话协议",
           "example": "SSH",
@@ -6768,7 +6512,6 @@
       "document": "资产标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键",
           "example": "\"业务部门\"",
@@ -6779,7 +6522,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "[\"研发部\", \"运营部\"]",

@@ -180,7 +180,6 @@
       "document": "聚合类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "类型",
           "example": "",
@@ -191,7 +190,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数组",
           "example": "",
@@ -208,7 +206,6 @@
       "document": "告警详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "告警基础信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -219,7 +216,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警详情，json序列化\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“xxx”",
@@ -624,7 +620,6 @@
       "document": "资产类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资产类型",
           "example": "",
@@ -635,7 +630,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名字",
           "example": "",
@@ -646,7 +640,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "区域",
           "example": "",
@@ -657,7 +650,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属网络",
           "example": "",
@@ -668,7 +660,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机类型",
           "example": "",
@@ -679,7 +670,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机状态",
           "example": "",
@@ -690,7 +680,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "引擎版本",
           "example": "",
@@ -701,7 +690,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库标识",
           "example": "",
@@ -712,7 +700,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签",
           "example": "",
@@ -723,7 +710,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置风险统计数",
           "example": "",
@@ -734,7 +720,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机IP",
           "example": "",
@@ -745,7 +730,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产唯一标识",
           "example": "",
@@ -756,7 +740,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费类型",
           "example": "",
@@ -767,7 +750,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全事件统计数",
           "example": "",
@@ -778,7 +760,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "漏洞统计数",
           "example": "",
@@ -789,7 +770,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机IP内网",
           "example": "",
@@ -800,7 +780,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属分组",
           "example": "",
@@ -811,7 +790,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发现时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -822,7 +800,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下线时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -833,7 +810,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是新增资产\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -844,7 +820,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属子网\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -855,7 +830,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -866,7 +840,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "vpc名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -877,7 +850,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -888,7 +860,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -899,7 +870,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡实例的网络类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -910,7 +880,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡实例的vip列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -921,7 +890,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ipv6信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -932,7 +900,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ssh端口暴露风险\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -943,7 +910,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "rdp端口暴露风险\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -954,7 +920,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产失陷事件风险\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1487,7 +1452,6 @@
       "document": "资产列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "总数",
           "example": "",
@@ -1498,7 +1462,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产数组",
           "example": "",
@@ -1515,7 +1478,6 @@
       "document": "资产查询过滤参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询参数",
           "example": "无",
@@ -1526,7 +1488,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询连接符，1 and  ，2 or",
           "example": "无",
@@ -1543,7 +1504,6 @@
       "document": "资产测绘结果统计",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资产类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1554,7 +1514,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计计数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1571,7 +1530,6 @@
       "document": "es聚合数据类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "key",
           "example": "",
@@ -1582,7 +1540,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数量",
           "example": "",
@@ -1599,7 +1556,6 @@
       "document": "检查项资产组每一项",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "检查项下资产组ID",
           "example": "",
@@ -1610,7 +1566,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产组实例id",
           "example": "",
@@ -1621,7 +1576,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "处置跳转URL",
           "example": "",
@@ -1632,7 +1586,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查任务id",
           "example": "",
@@ -1643,7 +1596,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查结果",
           "example": "",
@@ -1654,7 +1606,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
           "example": "",
@@ -1665,7 +1616,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1676,7 +1626,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否忽略",
           "example": "",
@@ -1687,7 +1636,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查状态",
           "example": "",
@@ -1698,7 +1646,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产组信息",
           "example": "",
@@ -1709,7 +1656,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产组ES的_id",
           "example": "",
@@ -1720,7 +1666,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "详情",
           "example": "",
@@ -1731,7 +1676,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注内容",
           "example": "",
@@ -1748,7 +1692,6 @@
       "document": "云安全配置检查项详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "检查项Id",
           "example": "",
@@ -1759,7 +1702,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项名称",
           "example": "",
@@ -1770,7 +1712,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项内容",
           "example": "",
@@ -1781,7 +1722,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项处置方案",
           "example": "",
@@ -1792,7 +1732,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项帮助文档",
           "example": "",
@@ -1803,7 +1742,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "未通过总数",
           "example": "",
@@ -1814,7 +1752,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否通过检查",
           "example": "",
@@ -1825,7 +1762,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通过检查项",
           "example": "",
@@ -1836,7 +1772,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "忽略检查项",
           "example": "",
@@ -1847,7 +1782,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "风险检查项",
           "example": "",
@@ -1858,7 +1792,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项英文",
           "example": "",
@@ -1869,7 +1802,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项类型",
           "example": "",
@@ -1880,7 +1812,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "res_count",
           "example": "",
@@ -1891,7 +1822,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否忽略",
           "example": "",
@@ -1908,7 +1838,6 @@
       "document": "等保资产组记录",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "检查项ID",
           "example": "",
@@ -1919,7 +1848,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项类别",
           "example": "",
@@ -1930,7 +1858,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项类型",
           "example": "",
@@ -1941,7 +1868,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不通过总数",
           "example": "",
@@ -1952,7 +1878,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项英文名",
           "example": "",
@@ -1963,7 +1888,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项名称",
           "example": "",
@@ -1974,7 +1898,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项处置方式",
           "example": "",
@@ -1985,7 +1908,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "帮助文档",
           "example": "",
@@ -1996,7 +1918,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通过总数",
           "example": "",
@@ -2007,7 +1928,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项检查内容",
           "example": "",
@@ -2018,7 +1938,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否通过检测",
           "example": "",
@@ -2029,7 +1948,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "忽略总数",
           "example": "",
@@ -2040,7 +1958,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "风险总数",
           "example": "",
@@ -2051,7 +1968,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最近一次检测时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2062,7 +1978,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产组类型",
           "example": "",
@@ -2073,7 +1988,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "res_count",
           "example": "",
@@ -2084,7 +1998,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项UUID",
           "example": "",
@@ -2095,7 +2008,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标准项\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2106,7 +2018,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "章节\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2117,7 +2028,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产类型描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2128,7 +2038,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否忽略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2139,7 +2048,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "风险项\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2150,7 +2058,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "合规检查项完整名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2523,7 +2430,6 @@
       "document": "资产测绘对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资产主IP地址(公网IP)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2534,7 +2440,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2545,7 +2450,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产ID(各模块间通用)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2556,7 +2460,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2567,7 +2470,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产可用区(英文)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2578,7 +2480,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产可用区(中文)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2589,7 +2490,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产所属网络\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2600,7 +2500,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产运行状态(英文)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2611,7 +2510,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产运行状态(中文)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2622,7 +2520,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否白名单：“True”为白名单不测绘，默认“False”正常测绘\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2633,7 +2530,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产测绘状态(“unstart”未开始/“running”测绘中/“finish”已完成/“abandoned”任务中止)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2644,7 +2540,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最近更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2655,7 +2550,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2666,7 +2560,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2677,7 +2570,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "端口和服务信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2688,7 +2580,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "组件信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2699,7 +2590,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2710,7 +2600,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产是否是内网类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2727,7 +2616,6 @@
       "document": "检查项详情对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "检查项唯一标识符uuid",
           "example": "",
@@ -2738,7 +2626,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项名称",
           "example": "",
@@ -2749,7 +2636,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项类型",
           "example": "",
@@ -2760,7 +2646,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最近一次检查时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2771,7 +2656,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "初始未检测状态0, 已通过为1，未通过为2\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2782,7 +2666,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0-未忽略,1-已忽略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2793,7 +2676,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "有风险的资源总数，未通过数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2804,7 +2686,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0-检测中,1-结束检测\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2815,7 +2696,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总资产数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2826,7 +2706,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注内容\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2843,7 +2722,6 @@
       "document": "合规检查项详情对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "等保唯一标识符",
           "example": "",
@@ -2854,7 +2732,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项唯一标识符",
           "example": "",
@@ -2865,7 +2742,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项名称",
           "example": "",
@@ -2876,7 +2752,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项资产类型",
           "example": "",
@@ -2887,7 +2762,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项类型",
           "example": "",
@@ -2898,7 +2772,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项类别",
           "example": "",
@@ -2909,7 +2782,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项标准项",
           "example": "",
@@ -2920,7 +2792,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项章节号",
           "example": "",
@@ -2931,7 +2802,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最近一次检查时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2942,7 +2812,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "初始未检测状态0, 已通过为1，未通过为2\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2953,7 +2822,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "有风险的资源总数，未通过数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2964,7 +2832,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0-检测中,1-结束检测\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2975,7 +2842,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项风险项\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2986,7 +2852,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0-未忽略,1-已忽略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2997,7 +2862,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "等保检查项完整名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -3008,7 +2872,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -3019,7 +2882,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "忽略内容\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -3036,7 +2898,6 @@
       "document": "事件列表对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Md5值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "’‘",
@@ -3047,7 +2908,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "’‘",
@@ -3058,7 +2918,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件类型一级分类\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -3069,7 +2928,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件类型二级分类\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -3080,7 +2938,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件等级\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
@@ -3091,7 +2948,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "处理状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
@@ -3102,7 +2958,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源ip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "’‘",
@@ -3113,7 +2968,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目的ip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "’‘",
@@ -3124,7 +2978,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件发生时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "’‘",
@@ -3135,7 +2988,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目的端口\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -3146,7 +2998,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产ip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -3157,7 +3008,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -3168,7 +3018,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全事件唯一标识符\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -3179,7 +3028,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -3190,7 +3038,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件来源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -3201,7 +3048,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "索引\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -3212,7 +3058,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "索引中的唯一标识符\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -3223,7 +3068,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "受影响资产是否已下线\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -3234,7 +3078,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源ip所属地\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -3245,7 +3088,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目的ip所属地\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -3256,7 +3098,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "木马类型的描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -3267,7 +3108,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "供给链类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -3278,7 +3118,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "受影响组件",
           "example": "test",
@@ -3289,7 +3128,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产ip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -3300,7 +3138,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -3311,7 +3148,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cvm类型资产的公网ip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -3322,7 +3158,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cvm类型资产的内网ip",
           "example": "test",
@@ -3333,7 +3168,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件响应状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -3344,7 +3178,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件最近响应时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -3355,7 +3188,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件建议处理状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -3366,7 +3198,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件剧本类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -3377,7 +3208,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "剧本任务Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -3388,7 +3218,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1445149556-88e0807e-4058-4a03-b913-3b552ac78057",
@@ -3399,7 +3228,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否新接入的云防事件\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -3410,7 +3238,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "出入站方向\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "出站",
@@ -3427,7 +3254,6 @@
       "document": "DescribeAssetDetailList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询条件，可支持的查询字段：AssetUniqid,AssetName,AssetIpAll,AssetVpcid,Tag",
           "example": "无",
@@ -3437,7 +3263,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序条件，可支持的排序字段：\nAssetCspmRiskNum,AssetVulNum,AssetEventNum,SsaAssetDiscoverTime",
           "example": "无",
@@ -3447,7 +3272,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "风险标签",
           "example": "无",
@@ -3457,7 +3281,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签",
           "example": "无",
@@ -3467,7 +3290,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页",
           "example": "无",
@@ -3477,7 +3299,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页大小",
           "example": "无",
@@ -3525,7 +3346,6 @@
       "document": "DescribeAssetDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询过滤参数",
           "example": "{\"id\":\"xxx\"}",
@@ -3563,7 +3383,6 @@
       "document": "DescribeAssetList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询过滤参数",
           "example": "xxx",
@@ -3621,7 +3440,6 @@
       "document": "DescribeAssetsMappingList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "请求参数",
           "example": "",
@@ -3676,7 +3494,6 @@
       "document": "DescribeCheckConfigAssetList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "检查项UUID",
           "example": "",
@@ -3686,7 +3503,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码",
           "example": "",
@@ -3696,7 +3512,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页列表数",
           "example": "",
@@ -3706,7 +3521,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "db搜索条件",
           "example": "",
@@ -3716,7 +3530,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ES过滤条件",
           "example": "",
@@ -3762,7 +3575,6 @@
       "document": "DescribeCheckConfigDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "检查项ID",
           "example": "",
@@ -3799,7 +3611,6 @@
       "document": "DescribeComplianceAssetList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "页码",
           "example": "",
@@ -3809,7 +3620,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页数量",
           "example": "",
@@ -3819,7 +3629,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项uuid",
           "example": "",
@@ -3829,7 +3638,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件",
           "example": "",
@@ -3839,7 +3647,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询条件",
           "example": "",
@@ -3885,7 +3692,6 @@
       "document": "DescribeComplianceDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "检查项uuid",
           "example": "",
@@ -3922,7 +3728,6 @@
       "document": "DescribeComplianceList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "搜索过滤条件",
           "example": "",
@@ -3977,7 +3782,6 @@
       "document": "DescribeConfigList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "搜索过滤条件",
           "example": "",
@@ -4158,7 +3962,6 @@
       "document": "DescribeEventDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件索引名",
           "example": "",
@@ -4168,7 +3971,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件id",
           "example": "",
@@ -4178,7 +3980,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件来源",
           "example": "",
@@ -4188,7 +3989,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件子类型",
           "example": "",
@@ -4198,7 +3998,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件名称",
           "example": "",
@@ -4235,7 +4034,6 @@
       "document": "DescribeLeakDetectionList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "筛选条件",
           "example": "",
@@ -4245,7 +4043,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页数量",
           "example": "",
@@ -4255,7 +4052,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码",
           "example": "",
@@ -4265,7 +4061,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始时间",
           "example": "",
@@ -4275,7 +4070,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "example": "",
@@ -4321,7 +4115,6 @@
       "document": "DescribeMappingResults请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，FilterKey 取值范围：AssetId，AssetIp，PrivateIp，Protocol，Service，OS，Process，Component，AssetType，Domain，Port，LastMappingTime，MappingType，Disposal，Vpc",
           "example": "无",
@@ -4331,7 +4124,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序条件，SortKey取值范围：CreateTime，LastMappingTime",
           "example": "无",
@@ -4341,7 +4133,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码",
           "example": "无",
@@ -4351,7 +4142,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页大小，默认大小20",
           "example": "无",
@@ -4399,7 +4189,6 @@
       "document": "DescribeSafetyEventList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "搜索过滤查询参数",
           "example": "",
@@ -4409,7 +4198,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制数目",
           "example": "",
@@ -4419,7 +4207,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页偏移",
           "example": "",
@@ -4429,7 +4216,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序列名",
           "example": "",
@@ -4439,7 +4225,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序升降：desc-降序 asc-升序",
           "example": "",
@@ -4449,7 +4234,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始查询时间",
           "example": "",
@@ -4459,7 +4243,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束查询时间",
           "example": "",
@@ -4469,7 +4252,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否过滤响应时间",
           "example": "",
@@ -4515,7 +4297,6 @@
       "document": "DescribeSocAlertDetails请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "告警id",
           "example": "\"asd\"",
@@ -4525,7 +4306,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警时间，取Timestamp字段",
           "example": "\"asd\"",
@@ -4563,66 +4343,54 @@
       "document": "DescribeSocAlertList请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "页大小",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "PageSize",
           "required": true,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "页码",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "PageIndex",
           "required": true,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "1:急需关注 2.重保监控 3.全量告警",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "Scenes",
           "required": true,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "查询参数",
           "example": "\"asd\"",
-          "is_base64": false,
           "member": "QueryFilter",
           "name": "Filter",
           "required": false,
           "type": "list"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "排序参数",
           "example": "\"asd\"",
-          "is_base64": false,
           "member": "QuerySort",
           "name": "Sorter",
           "required": false,
           "type": "list"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "是否导出；默认为否，如量级超过1000，则使用单独的导出接口",
           "example": "false",
-          "is_base64": false,
           "member": "bool",
           "name": "ExportFlag",
           "required": false,
@@ -4657,7 +4425,6 @@
       "document": "DescribeSocCheckItemList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询参数,可支持的排序字段:Name,Type,AssetType,Level,Standard,IsFree",
           "example": "无",
@@ -4667,7 +4434,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序参数:无",
           "example": "无",
@@ -4677,7 +4443,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前页码数据，默认值为10",
           "example": "10",
@@ -4687,7 +4452,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前页面索引，默认值为0",
           "example": "1",
@@ -4725,7 +4489,6 @@
       "document": "云安全配置检查项列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "检查项详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4736,7 +4499,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -4753,7 +4515,6 @@
       "document": "DescribeSocCheckResultList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询参数,可支持的查询参数：\nName,Type,AssetType,Result,PloyName,PloyId",
           "example": "无",
@@ -4763,7 +4524,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序参数,可支持的排序参数：CheckStatus,RiskCount",
           "example": "无",
@@ -4773,7 +4533,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前页码数据，默认值为10",
           "example": "20",
@@ -4783,7 +4542,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前页面索引，默认值为0",
           "example": "1",
@@ -4793,7 +4551,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产id",
           "example": "无",
@@ -4831,7 +4588,6 @@
       "document": "检查项结果详情列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "具体检查项详情",
           "example": "无",
@@ -4842,7 +4598,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查结果总数",
           "example": "30",
@@ -4853,7 +4608,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "低危个数",
           "example": "10",
@@ -4864,7 +4618,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "中危个数",
           "example": "10",
@@ -4875,7 +4628,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高危个数",
           "example": "5",
@@ -4886,7 +4638,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "正常个数",
           "example": "5",
@@ -4930,7 +4681,6 @@
       "document": "DescribeVulDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "漏洞唯一标识符",
           "example": "1445149556-100199-a7db49fc-d918-11e8-b7a1-5cb90191b1e0",
@@ -4940,7 +4690,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查看详情来源",
           "example": "xx",
@@ -5188,7 +4937,6 @@
       "document": "DescribeVulList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询过滤参数",
           "example": "xxx",
@@ -5492,7 +5240,6 @@
       "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n\n若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "过滤键的名称。",
           "example": "",
@@ -5503,7 +5250,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一个或者多个过滤值。",
           "example": "",
@@ -5514,7 +5260,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要精确匹配",
           "example": "",
@@ -5853,7 +5598,6 @@
       "document": "DataSaEventPub",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Count",
           "example": "",
@@ -5864,7 +5608,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "List",
           "example": "",
@@ -5881,7 +5624,6 @@
       "document": "过滤条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "过滤key",
           "example": "-",
@@ -5892,7 +5634,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作符(只支持32位)",
           "example": "-",
@@ -5903,7 +5644,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤value",
           "example": "-",
@@ -5966,7 +5706,6 @@
       "document": "排序的字段",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段",
           "example": "\"Time\"",
@@ -5977,7 +5716,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "顺序，1升序2降序",
           "example": "1",
@@ -5994,7 +5732,6 @@
       "document": "测绘结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "测绘类型统计\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6005,7 +5742,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "测绘结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6016,7 +5752,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "测绘任务数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6027,7 +5762,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大测绘任务数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6044,7 +5778,6 @@
       "document": "查询_通用字段",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Id信息",
           "example": "1",
@@ -6055,7 +5788,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户Uin",
           "example": "无",
@@ -6066,7 +5798,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户AppId",
           "example": "无",
@@ -6077,7 +5808,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件名称",
           "example": "test",
@@ -6088,7 +5818,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监控源 0:全部 1:GitHub 2:暗网 默认值1",
           "example": "1",
@@ -6099,7 +5828,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "受影响资产",
           "example": "无",
@@ -6110,7 +5838,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命中主题集下的规则topic名称",
           "example": "test",
@@ -6121,7 +5848,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命中主题集下的规则topic唯一id",
           "example": "123",
@@ -6132,7 +5858,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命中主题集下的自定义规则策略",
           "example": "rule",
@@ -6143,7 +5868,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扫描监测url",
           "example": "无",
@@ -6154,7 +5878,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扫描监测命中次数",
           "example": "10",
@@ -6165,7 +5888,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "风险等级 -1:未知 1:低危 2:中危 3:高危 4:严重",
           "example": "1",
@@ -6176,7 +5898,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全事件处理状态 -1:未知 1:待处理 2:已处理 3:误报 4:已忽略 5:已知晓 6:已信任",
           "example": "1",
@@ -6187,7 +5908,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全事件发生时间",
           "example": "2022-04-13 09:22:39",
@@ -6198,7 +5918,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件插入时间",
           "example": "2022-04-13 09:22:39",
@@ -6209,7 +5928,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件更新时间",
           "example": "2022-04-13 09:22:39",
@@ -6226,7 +5944,6 @@
       "document": "自定义泄露事件列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据条数",
           "example": "20",
@@ -6237,7 +5954,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义泄露事件列表",
           "example": "无",
@@ -6254,7 +5970,6 @@
       "document": "SaDivulgeDataQueryPub请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模糊查询字段(针对appid或者uin)",
           "example": "2312131",
@@ -6264,7 +5979,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全事件名称",
           "example": "test",
@@ -6274,7 +5988,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监控源  0:全部 1:GitHub 2:暗网 默认值1",
           "example": "1",
@@ -6284,7 +5997,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "受影响资产",
           "example": "\"\"",
@@ -6294,7 +6006,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命中主题集下的规则topic名称",
           "example": "test",
@@ -6304,7 +6015,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命中主题集下的规则topic唯一id",
           "example": "\"0\"",
@@ -6314,7 +6024,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "风险等级 -1:未知 1:低危 2:中危 3:高危 4:严重",
           "example": "1,2,3,4",
@@ -6324,7 +6033,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全事件处理状态 -1:未知 1:待处理 2:已处理 3:误报 4:已忽略 5:已知晓 6:已信任",
           "example": "1",
@@ -6334,7 +6042,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始时间",
           "example": "2020-04-10 16:01:14",
@@ -6344,7 +6051,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "example": "2022-04-12 10:56:16",
@@ -6354,7 +6060,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询起始地址",
           "example": "1",
@@ -6364,7 +6069,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询个数",
           "example": "20",
@@ -6402,7 +6106,6 @@
       "document": "SaEventPub请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "受影响资产",
           "example": "",
@@ -6412,7 +6115,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全事件名称",
           "example": "",
@@ -6422,7 +6124,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全事件1级分类，-1:未知 0:全部 1:攻击事件 2:侦查事件 3:僵木蠕毒 4:违规策略",
           "example": "",
@@ -6432,7 +6133,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全事件2级分类，-1:未知 0:全部 1:DDOS事件 2:Web攻击 3:木马 4:异地登录 5:密码破解",
           "example": "",
@@ -6442,7 +6142,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "风险等级，-1:未知 0:全部 1:低危 2:中危 3:高危 4:严重，可多选，如：1,2",
           "example": "",
@@ -6452,7 +6151,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全事件状态，-1:未知 0:全部 1:待处理 2:已处理 3:误报 4:已忽略 5:已知晓 6:已信任",
           "example": "",
@@ -6462,7 +6160,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间",
           "example": "",
@@ -6472,7 +6169,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询起始地址",
           "example": "",
@@ -6482,7 +6178,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询个数",
           "example": "",
@@ -6492,7 +6187,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "example": "",
@@ -6502,7 +6196,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有字段和公有字段映射的原始采集数据唯一标识的MD5值",
           "example": "",
@@ -6544,7 +6237,6 @@
       "document": "SocCheckItem类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"asd\"",
@@ -6555,7 +6247,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"ads\"",
@@ -6566,7 +6257,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "成功数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6577,7 +6267,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "失败数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6594,7 +6283,6 @@
       "document": "检查项相关信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "检查项id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "00fe63c2-94c7-11ea-89eb-6c92bf621820",
@@ -6605,7 +6293,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置要求\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "关系型数据库-MariaDB应该启用备份",
@@ -6616,7 +6303,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "数据安全",
@@ -6627,7 +6313,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查对象\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "mariadb",
@@ -6638,7 +6323,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认风险等级 2:低危 3:中危 4:高危\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
@@ -6649,7 +6333,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "相关规范\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "默认安全规范,等级保护三级合规",
@@ -6660,7 +6343,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项是否付费 1:免费 2:付费\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -6677,7 +6359,6 @@
       "document": "云安全配置检测结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "检查项的uuid",
           "example": "00fe63c2-94c7-11ea-89eb-6c92bf621820",
@@ -6688,7 +6369,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置要求",
           "example": "关系型数据库-MariaDB应该启用备份",
@@ -6699,7 +6379,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项的类型",
           "example": "数据安全",
@@ -6710,7 +6389,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查对象",
           "example": "mariadb",
@@ -6721,7 +6399,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略名",
           "example": "00-all",
@@ -6732,7 +6409,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略id",
           "example": "1016203",
@@ -6743,7 +6419,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "正常,低危,中危,高危",
           "example": "正常",
@@ -6754,7 +6429,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不符合数",
           "example": "12",
@@ -6765,7 +6439,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总数",
           "example": "24",
@@ -6776,7 +6449,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "处置建议url链接",
           "example": "无",
@@ -6793,7 +6465,6 @@
       "document": "返回结构",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "合格项\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"asd\"",
@@ -6810,7 +6481,6 @@
       "document": "soc合规信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"asd\"",
@@ -6821,7 +6491,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"asd\"",
@@ -6832,7 +6501,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分类\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"asd\"",
@@ -6843,7 +6511,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -6854,7 +6521,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "建议\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"asd\"",
@@ -6865,7 +6531,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品字符\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"asd\"",
@@ -6876,7 +6541,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -6887,7 +6551,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置项数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -6904,7 +6567,6 @@
       "document": "soc产品购买信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"asd\"",
@@ -6915,7 +6577,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6926,7 +6587,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6969,7 +6629,6 @@
       "document": "漏洞管理漏洞数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标识",
           "example": "123",
@@ -6980,7 +6639,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "漏洞名称",
           "example": "漏洞名称",
@@ -6991,7 +6649,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "漏洞类型",
           "example": "1",
@@ -7002,7 +6659,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "风险等级",
           "example": "1",
@@ -7013,7 +6669,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "处理状态",
           "example": "1",
@@ -7024,7 +6679,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发现时间",
           "example": "2022-01-01",
@@ -7035,7 +6689,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "影响资产数",
           "example": "1",
@@ -7046,7 +6699,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "影响资产id",
           "example": "123",
@@ -7057,7 +6709,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "影响资产名称",
           "example": "资产名称",
@@ -7068,7 +6719,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "漏洞描述",
           "example": "漏洞描述",
@@ -7079,7 +6729,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参考链接",
           "example": "参考链接",
@@ -7090,7 +6739,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Md5值",
           "example": "Md5值",
@@ -7101,7 +6749,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "漏洞唯一标识",
           "example": "uinqid",
@@ -7112,7 +6759,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "忽略时间",
           "example": "2022-01-01",
@@ -7123,7 +6769,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "受影响资产是否下线\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -7134,7 +6779,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "漏洞首次发现时间",
           "example": "2022-01-01",
@@ -7145,7 +6789,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机源信息标识符",
           "example": "1",
@@ -7156,7 +6799,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产区域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -7167,7 +6809,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产所属网络\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -7178,7 +6819,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -7189,7 +6829,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产子类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -7200,7 +6839,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "127.0.0.1",
@@ -7211,7 +6849,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cvm类型的公网ip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "127.0.0.1",
@@ -7222,7 +6859,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cvm类型的内网ip\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "127.0.0.1",
@@ -7233,7 +6869,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "漏洞来源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "漏洞来源",
@@ -7244,7 +6879,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "影响URL\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "url",
@@ -7255,7 +6889,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资产归属\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -7266,7 +6899,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "影响url\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "url",
@@ -7277,7 +6909,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否扫描\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -7288,7 +6919,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "御知主机id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -7299,7 +6929,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "漏洞描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "漏洞描述",
@@ -7310,7 +6939,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "漏洞文件路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "漏洞文件路径",
@@ -7327,7 +6955,6 @@
       "document": "漏洞管理漏洞列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "列表",
           "example": "",
@@ -7338,7 +6965,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总数",
           "example": "",

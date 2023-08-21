@@ -169,7 +169,6 @@
           "disabled": false,
           "document": "app文件的md5算法值，需要正确传递，在线加固必输。\n例如linux环境下执行算法命令md5sum ：\n#md5sum test.apk \nd40cc11e4bddd643ecdf29cde729a12b",
           "example": "d40cc11e4bddd643ecdf29cde729a12b",
-          "is_base64": false,
           "member": "string",
           "name": "AppMd5",
           "output_required": true,
@@ -192,7 +191,6 @@
           "disabled": false,
           "document": "app下载链接，在线加固必输。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "AppUrl",
           "output_required": true,
@@ -204,7 +202,6 @@
           "disabled": false,
           "document": "app名称，非必输",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "AppName",
           "output_required": true,
@@ -216,7 +213,6 @@
           "disabled": false,
           "document": "app的包名，本次操作的包名。\n当Android是按年收费、免费试用加固时，在线加固和输出工具要求该字段必输，且与AndroidPlan.AppPkgName值相等。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "AppPkgName",
           "output_required": true,
@@ -228,7 +224,6 @@
           "disabled": false,
           "document": "app的文件名，非必输。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "AppFileName",
           "output_required": true,
@@ -240,7 +235,6 @@
           "disabled": false,
           "document": "app版本号，非必输。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "AppVersion",
           "output_required": true,
@@ -252,7 +246,6 @@
           "disabled": false,
           "document": "Android app的文件类型，本次加固操作的应用类型 。\nAndroid在线加固和输出工具加固必输，其值需等于“apk”或“aab”，且与AndroidAppInfo.AppType值相等。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "AppType",
           "output_required": true,
@@ -281,7 +274,6 @@
           "disabled": false,
           "document": "本次操作的包名。\n当收费模式是android按年收费和android免费试用的在线加固和输出工具加固时，要求该字段必输，且与AndroidAppInfo.AppPkgName值相等。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "AppPkgName",
           "output_required": true,
@@ -293,7 +285,6 @@
           "disabled": false,
           "document": "android app的文件类型，本次加固操作的应用类型 。 \nandroid在线加固和输出工具加固必输，其值需等于“apk”或“aab”，且与AndroidAppInfo.AppType值相等。\n",
           "example": "“apk”",
-          "is_base64": false,
           "member": "string",
           "name": "AppType",
           "output_required": true,
@@ -305,7 +296,6 @@
           "disabled": false,
           "document": "android加固必输字段。\n加固策略，json格式字符串。\n字段说明（0-关闭，1-开启）：\n        \"enable\"=1 #DEX整体加固;\n        \"antiprotect\"=1 #反调试;\n        \"antirepack\"=1 #防重打包、防篡改;\n        \"dexsig\"=1       #签名校验;\n        \"antimonitor\"=1 #防模拟器运行保护;\n        \"ptrace\"=1 #防动态注入、动态调试;\n        \"so\".\"enable\" = 1 #文件加密;\n        \"vmp\".\"enable\" = 1 #VMP虚拟化保护;\n        \"respro\".\"assets\".\"enable\" = 1 #assets资源文件加密\n       \"respro\".\"res\".\"enable\" = 1 #res资源文件加密\n\nso文件加密：\n支持5种架构:\napk 格式: /lib/armeabi/libxxx.so,/lib/arm64-v8a/libxxx.so,/lib/armeabi-v7a/libxxx.so,/lib/x86/libxxx.so,/lib/x86_64/libxxx.so\naab格式: /base/lib/armeabi/libxxx.so,/base/lib/arm64-v8a/libxxx.so,/base/lib/armeabi-v7a/libxxx.so,/base/lib/x86/libxxx.so,/base/lib/x86_64/libxxx.so\n请列举 SO 库在 apk 文件解压后的完整有效路径，如:/lib/armeabi/libxxx.so；\n需要加固的 SO 库需确认为自研的 SO 库，不要加固第三方 SO 库，否则会增加 crash 风险\n\nres资源文件加密注意事项：\n请指定需要加密的文件全路径，如：res/layout/1.xml;\nres资源文件加密不能加密APP图标\nres目录文件，不能加密以下后缀规则的文件\".wav\", \".mp2\", \".mp3\", \".ogg\", \".aac\", \".mpg\",\".mpeg\", \".mid\", \".midi\", \".smf\", \".jet\", \".rtttl\", \".imy\", \".xmf\", \".mp4\", \".m4a\", \".m4v\", \".3gp\",\".3gpp\", \".3g2\", \".3gpp2\", \".amr\", \".awb\", \".wma\", \".wmv\"\n\nassets资源文件加密注意事项:\n请指定需要加密的文件全路径，如：assets/main.js；可以完整路径，也可以相对路径。\n如果有通配符需要完整路径 \":all\"或者\"*\"代表所有文件\nassets资源文件加密不能加密APP图标\nassets目录文件，不能加密以下后缀规则的文件\".wav\", \".mp2\", \".mp3\", \".ogg\", \".aac\", \".mpg\",\".mpeg\", \".mid\", \".midi\", \".smf\", \".jet\", \".rtttl\", \".imy\", \".xmf\", \".mp4\", \".m4a\", \".m4v\", \".3gp\",\".3gpp\", \".3g2\", \".3gpp2\", \".amr\", \".awb\", \".wma\", \".wmv\"\n\n\napk[dex+so+vmp+res+assets]加固参数示例：\n‘{\n    \"dex\": {\n        \"enable\": 1,\n        \"antiprotect\": 1,\n        \"antirepack\": 1,\n        \"dexsig\": 1,\n        \"antimonitor\": 1,\n        \"ptrace\": 1\n    },\n    \"so\": {\n        \"enable\": 1,\n        \"ver\": \"1.3.3\",\n        \"file\": [\n            \"/lib/armeabi/libtest.so\"\n        ]\n    },\n    \"vmp\": {\n        \"enable\": 1,\n        \"ndkpath\": \"/xxx/android-ndk-r10e\",\n        \"profile\": \"/xxx/vmpprofile.txt\",\n        \"mapping\": \"/xxx/mapping.txt\"\n    },\n    \"respro\": {\n        \"assets\": {\n            \"enable\": 1,\n            \"file\": [\n                \"assets/1.js\",\n                \"assets/2.jpg\"\n            ]\n        },\n        \"res\": {\n            \"enable\": 1,\n            \"file\": [\n                \"res/layout/1.xml\",\n                \"res/layout/2.xml\"\n            ]\n        }\n    }\n}’\n\naab加固方案一 \n[dex+res+assets]加固json字符串：\n‘{\n    \"dex\": {\n        \"enable\": 1,\n        \"antiprotect\": 1,\n        \"antimonitor\": 1\n    },\n    \"respro\": {\n        \"assets\": {\n            \"enable\": 1,\n            \"file\": [\n                \"assets/1.js\",\n                \"assets/2.jpg\"\n            ]\n        },\n        \"res\": {\n            \"enable\": 1,\n            \"file\": [\n                \"res/layout/1.xml\",\n                \"res/layout/2.xml\"\n            ]\n        }\n    }\n}’\n\naab加固方案二\n单独vmp加固：\n‘{\n    \"vmp\": {\n        \"enable\": 1,\n        \"ndkpath\": \"/xxx/android-ndk-r10e\",\n        \"profile\": \"/xxx/vmpprofile.txt\",\n        \"mapping\": \"/xxx/mapping.txt\",\n        \"antiprotect\": 1,\n        \"antimonitor\": 1\n    }\n}’",
           "example": "‘{     \"dex\": {         \"enable\": 1,         \"antiprotect\": 1,         \"antirepack\": 1,         \"dexsig\": 1,         \"antimonitor\": 1,         \"ptrace\": 1     },     \"so\": {         \"enable\": 1,         \"ver\": \"1.3.3\",         \"file\": [             \"/lib/armeabi/libtest.so\"         ]     },     \"vmp\": {         \"enable\": 1,         \"ndkpath\": \"/xxx/android-ndk-r10e\",         \"profile\": \"/xxx/vmpprofile.txt\",         \"mapping\": \"/xxx/mapping.txt\"     },     \"respro\": {         \"assets\": {             \"enable\": 1,             \"file\": [                 \"assets/1.js\",                 \"assets/2.jpg\"             ]         },         \"res\": {             \"enable\": 1,             \"file\": [                 \"res/layout/1.xml\",                 \"res/layout/2.xml\"             ]         }     } }’",
-          "is_base64": false,
           "member": "string",
           "name": "EncryptParam",
           "output_required": true,
@@ -636,7 +626,6 @@
       "document": "app的详细基础信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "app的名称",
           "example": "",
@@ -647,7 +636,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的包名",
           "example": "",
@@ -658,7 +646,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的版本号",
           "example": "",
@@ -669,7 +656,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的大小",
           "example": "",
@@ -680,7 +666,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的md5",
           "example": "",
@@ -691,7 +676,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的图标url",
           "example": "",
@@ -702,7 +686,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的文件名称",
           "example": "",
@@ -719,7 +702,6 @@
       "document": "提交的app基本信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "app的url，必须保证不用权限校验就可以下载",
           "example": "",
@@ -730,7 +712,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的md5，需要正确传递",
           "example": "",
@@ -741,7 +722,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的大小",
           "example": "",
@@ -752,7 +732,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的文件名",
           "example": "",
@@ -763,7 +742,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的包名，需要正确的传递此字段",
           "example": "",
@@ -774,7 +752,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的版本号",
           "example": "",
@@ -785,7 +762,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的图标url",
           "example": "",
@@ -796,7 +772,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的名称",
           "example": "",
@@ -813,7 +788,6 @@
       "document": "加固后app的信息，包含基本信息和加固信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务唯一标识",
           "example": "",
@@ -824,7 +798,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的名称",
           "example": "",
@@ -835,7 +808,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的包名",
           "example": "",
@@ -846,7 +818,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的版本号",
           "example": "",
@@ -857,7 +828,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的md5",
           "example": "",
@@ -868,7 +838,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的大小",
           "example": "",
@@ -879,7 +848,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加固服务版本",
           "example": "",
@@ -890,7 +858,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加固结果返回码",
           "example": "",
@@ -901,7 +868,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加固后的APP下载地址",
           "example": "",
@@ -912,7 +878,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时",
           "example": "",
@@ -923,7 +888,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求的客户端ip",
           "example": "",
@@ -934,7 +898,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "提交加固时间",
           "example": "",
@@ -945,7 +908,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的图标url",
           "example": "",
@@ -956,7 +918,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加固后app的md5",
           "example": "",
@@ -967,7 +928,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加固后app的大小",
           "example": "",
@@ -1202,7 +1162,6 @@
       "document": "用户绑定app的基本信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "app的icon的url",
           "example": "",
@@ -1213,7 +1172,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的名称",
           "example": "",
@@ -1224,7 +1182,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的包名",
           "example": "",
@@ -1277,7 +1234,6 @@
       "document": "CreateBindInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源id，全局唯一",
           "example": "hsihi12923-ioio",
@@ -1287,7 +1243,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的icon的url",
           "example": "http://q.com/1.png",
@@ -1297,7 +1252,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的名称",
           "example": "微信",
@@ -1307,7 +1261,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app的包名",
           "example": "com.tencent.mm",
@@ -1465,7 +1418,6 @@
           "disabled": false,
           "document": "平台类型  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "PlatformType",
           "required": true,
@@ -1475,7 +1427,6 @@
           "disabled": false,
           "document": "订单采购类型 1-免费试用 2-按年收费 3-按次收费",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "OrderType",
           "required": true,
@@ -1485,7 +1436,6 @@
           "disabled": false,
           "document": "1-在线加固、  2-输出工具加固",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "EncryptOpType",
           "required": true,
@@ -1495,7 +1445,6 @@
           "disabled": false,
           "document": "本次加固使用的资源id",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -1505,7 +1454,6 @@
           "disabled": false,
           "document": "渠道合作android加固App信息 ",
           "example": "无",
-          "is_base64": false,
           "member": "AndroidAppInfo",
           "name": "AndroidAppInfo",
           "required": false,
@@ -1515,7 +1463,6 @@
           "disabled": false,
           "document": "渠道合作android加固策略信息",
           "example": "无",
-          "is_base64": false,
           "member": "AndroidPlan",
           "name": "AndroidPlan",
           "required": false,
@@ -1525,7 +1472,6 @@
           "disabled": false,
           "document": "小程序加固信息",
           "example": "无",
-          "is_base64": false,
           "member": "AppletInfo",
           "name": "AppletInfo",
           "required": false,
@@ -1563,7 +1509,6 @@
           "disabled": false,
           "document": "平台类型枚举值：1-android加固  ；2-ios源码混淆 ； 3-sdk加固 ； 4-applet小程序加固",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "PlatformType",
           "required": true,
@@ -1573,7 +1518,6 @@
           "disabled": false,
           "document": "订单采购类型 1-免费试用 ；2-按年收费 ；3-按次收费",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "OrderType",
           "required": true,
@@ -1583,7 +1527,6 @@
           "disabled": false,
           "document": "代表应用包名列表，值为单个包名（例如：“a.b.xxx”）或多个包名用逗号隔开(例如：“a.b.xxx,b.c.xxx”)。\n当android按年收费加固或android免费试用加固时，该字段要求非空，即PlatformType=1 并且 OrderType=2时，AppPkgNameList必传值。\n",
           "example": "\"a.b.xxx,b.c.xxx\"",
-          "is_base64": false,
           "member": "string",
           "name": "AppPkgNameList",
           "required": false,
@@ -1628,7 +1571,6 @@
       "document": "CreateResourceInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源类型id。13624：加固专业版。",
           "example": "",
@@ -1638,7 +1580,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间单位，取值为d，m，y，分别表示天，月，年。",
           "example": "",
@@ -1648,7 +1589,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间数量。",
           "example": "",
@@ -1658,7 +1598,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源数量。",
           "example": "",
@@ -1695,7 +1634,6 @@
       "document": "CreateShieldInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待加固的应用信息",
           "example": "无",
@@ -1705,7 +1643,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加固服务信息",
           "example": "无",
@@ -1753,7 +1690,6 @@
       "document": "CreateShieldPlanInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源id",
           "example": "127500-shi",
@@ -1763,7 +1699,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略名称",
           "example": "默认加固策略",
@@ -1773,7 +1708,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略具体信息",
           "example": "无",
@@ -1821,7 +1755,6 @@
       "document": "DeleteShieldInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务唯一标识ItemId的列表",
           "example": "satea",
@@ -1859,7 +1792,6 @@
       "document": "DescribeApkDetectionResult请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "软件包的下载链接",
           "example": "\"https://xxx.xxx.xx\"",
@@ -1869,7 +1801,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "软件包的md5值，具有唯一性。腾讯APK云检测服务会根据md5值来判断该包是否为库中已收集的样本，已存在，则返回检测结果，反之，需要一定时间检测该样本。",
           "example": "\"2751xxxxxd1d203d6621ea28a0axxxxx\"",
@@ -1930,7 +1861,6 @@
           "disabled": false,
           "document": "多记录查询时使用，页码",
           "example": "无",
-          "is_base64": false,
           "member": "int64",
           "name": "PageNumber",
           "required": false,
@@ -1940,7 +1870,6 @@
           "disabled": false,
           "document": "多记录每页展示数量",
           "example": "无",
-          "is_base64": false,
           "member": "int64",
           "name": "PageSize",
           "required": false,
@@ -1950,7 +1879,6 @@
           "disabled": false,
           "document": "多记录查询时排序使用  仅支持CreateTime 任务创建时间排序",
           "example": "“CreateTime”",
-          "is_base64": false,
           "member": "string",
           "name": "OrderField",
           "required": false,
@@ -1960,7 +1888,6 @@
           "disabled": false,
           "document": "升序（asc）还是降序（desc），默认：desc。",
           "example": "“desc”",
-          "is_base64": false,
           "member": "string",
           "name": "OrderDirection",
           "required": false,
@@ -1970,7 +1897,6 @@
           "disabled": false,
           "document": "(条件过滤字段) 平台类型  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固",
           "example": "无",
-          "is_base64": false,
           "member": "int64",
           "name": "PlatformType",
           "required": false,
@@ -1980,7 +1906,6 @@
           "disabled": false,
           "document": "(条件过滤字段) 订单采购类型 1-免费试用 2-按年收费 3-按次收费",
           "example": "无",
-          "is_base64": false,
           "member": "int64",
           "name": "OrderType",
           "required": false,
@@ -1990,7 +1915,6 @@
           "disabled": false,
           "document": "(条件过滤字段) 1-在线加固 或 2-输出工具加固",
           "example": "无",
-          "is_base64": false,
           "member": "int64",
           "name": "EncryptOpType",
           "required": false,
@@ -2000,7 +1924,6 @@
           "disabled": false,
           "document": "(条件过滤字段) 单记录查询时使用，结果ID该字段非空时，结构会根据结果ID进行单记录查询，符合查询条件时，只返回一条记录。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "ResultId",
           "required": false,
@@ -2010,7 +1933,6 @@
           "disabled": false,
           "document": "(条件过滤字段) 查询与订单Id关联的任务",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "OrderId",
           "required": false,
@@ -2020,7 +1942,6 @@
           "disabled": false,
           "document": "(条件过滤字段) 查询与资源Id关联的任务",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "ResourceId",
           "required": false,
@@ -2030,7 +1951,6 @@
           "disabled": false,
           "document": "(条件过滤字段) 应用类型：android-apk; android-aab;",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "AppType",
           "required": false,
@@ -2040,7 +1960,6 @@
           "disabled": false,
           "document": "（条件过滤字段）应用的包名",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "AppPkgName",
           "required": false,
@@ -2050,7 +1969,6 @@
           "disabled": false,
           "document": "加固结果，\n0：正在排队；\n1：加固成功；\n2：加固中；\n3：加固失败；\n5：重试；\n多记录查询时，根据查询结果进行检索使用。",
           "example": "无",
-          "is_base64": false,
           "member": "int64",
           "name": "EncryptState",
           "required": false,
@@ -2098,7 +2016,6 @@
           "disabled": false,
           "document": "平台类型  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "PlatformType",
           "required": true,
@@ -2108,7 +2025,6 @@
           "disabled": false,
           "document": "订单采购类型 1-免费试用 2-按年收费 3-按次收费",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "OrderType",
           "required": true,
@@ -2118,7 +2034,6 @@
           "disabled": false,
           "document": "1-在线加固；2-输出工具",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "EncryptOpType",
           "required": true,
@@ -2128,7 +2043,6 @@
           "disabled": false,
           "document": "本次加固使用的资源id",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -2138,7 +2052,6 @@
           "disabled": false,
           "document": "（条件过滤字段）加固查询时，根据包名查询",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "AppPkgName",
           "required": false,
@@ -2148,7 +2061,6 @@
           "disabled": false,
           "document": "（条件过滤字段）加固查询时，根据应用格式查询，枚举值：“apk”、“aab”",
           "example": "\"apk\"",
-          "is_base64": false,
           "member": "string",
           "name": "AppType",
           "required": false,
@@ -2286,7 +2198,6 @@
           "disabled": false,
           "document": "页码",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "PageNumber",
           "required": false,
@@ -2296,7 +2207,6 @@
           "disabled": false,
           "document": "每页展示数量",
           "example": "10",
-          "is_base64": false,
           "member": "int64",
           "name": "PageSize",
           "required": false,
@@ -2306,7 +2216,6 @@
           "disabled": false,
           "document": "按某个字段排序，目前仅支持CreateTime排序。",
           "example": "\"CreateTime\"",
-          "is_base64": false,
           "member": "string",
           "name": "OrderField",
           "required": false,
@@ -2316,7 +2225,6 @@
           "disabled": false,
           "document": "升序（asc）还是降序（desc），默认：desc。",
           "example": "“desc”",
-          "is_base64": false,
           "member": "string",
           "name": "OrderDirection",
           "required": false,
@@ -2326,7 +2234,6 @@
           "disabled": false,
           "document": "（条件过滤字段）平台类型  1.android加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "PlatformType",
           "required": false,
@@ -2336,7 +2243,6 @@
           "disabled": false,
           "document": "（条件过滤字段）订单采购类型 1-免费试用 2-按年收费 3-按次收费",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "OrderType",
           "required": false,
@@ -2346,7 +2252,6 @@
           "disabled": false,
           "document": "（条件过滤字段）订单审批状态：",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "ApprovalStatus",
           "required": false,
@@ -2356,7 +2261,6 @@
           "disabled": false,
           "document": "（条件过滤字段）资源状态：",
           "example": "无",
-          "is_base64": false,
           "member": "int64",
           "name": "ResourceStatus",
           "required": false,
@@ -2366,7 +2270,6 @@
           "disabled": false,
           "document": "（条件过滤字段）订单ID",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "OrderId",
           "required": false,
@@ -2376,7 +2279,6 @@
           "disabled": false,
           "document": "（条件过滤字段）资源ID",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "ResourceId",
           "required": false,
@@ -2386,7 +2288,6 @@
           "disabled": false,
           "document": "（条件过滤字段）包名，查询android加固订单时使用",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "AppPkgName",
           "required": false,
@@ -2431,7 +2332,6 @@
       "document": "DescribeResourceInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "支持CreateTime、ExpireTime、AppName、AppPkgName、BindValue、IsBind过滤",
           "example": "无",
@@ -2441,7 +2341,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
           "example": "0",
@@ -2451,7 +2350,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数量限制，默认为20，最大值为100。",
           "example": "20",
@@ -2461,7 +2359,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源类别id数组，13624：加固专业版，12750：企业版。空数组表示返回全部资源。",
           "example": "[\"12750\\r\\n\"]",
@@ -2471,7 +2368,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按某个字段排序，目前支持CreateTime、ExpireTime其中的一个排序。",
           "example": "CreateTime",
@@ -2481,7 +2377,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "升序（asc）还是降序（desc），默认：desc。",
           "example": "desc",
@@ -2529,7 +2424,6 @@
       "document": "DescribeShieldInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "支持通过app名称，app包名，加固的服务版本，提交的渠道进行筛选。",
           "example": "无",
@@ -2539,7 +2433,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
@@ -2549,7 +2442,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数量限制，默认为20，最大值为100。",
           "example": "20",
@@ -2559,7 +2451,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可以提供ItemId数组来查询一个或者多个结果。注意不可以同时指定ItemIds和Filters。",
           "example": "无",
@@ -2569,7 +2460,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按某个字段排序，目前仅支持TaskTime排序。",
           "example": "\"TaskTime\"",
@@ -2579,7 +2469,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "升序（asc）还是降序（desc），默认：desc。",
           "example": "\"desc\"",
@@ -2627,7 +2516,6 @@
       "document": "DescribeShieldPlanInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源id",
           "example": "jsihsih-xx",
@@ -2637,7 +2525,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务类别id",
           "example": "123",
@@ -2695,7 +2582,6 @@
       "document": "DescribeShieldResult请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务唯一标识",
           "example": "1shi2e-2387hjgus",
@@ -2773,7 +2659,6 @@
       "document": "DescribeUrlDetectionResult请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询的网址",
           "example": "\"http://123.com\"",
@@ -3101,7 +2986,6 @@
       "document": "筛选数据结构",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要过滤的字段",
           "example": "",
@@ -3112,7 +2996,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要过滤字段的值",
           "example": "",
@@ -3161,7 +3044,6 @@
       "document": "APK检测服务：非广告插件结果列表(SDK、风险插件等)",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "非广告类型",
           "example": "\"\"",
@@ -3172,7 +3054,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "非广告插件名称",
           "example": "\"\"",
@@ -3183,7 +3064,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "非广告插件描述",
           "example": "\"\"",
@@ -3406,7 +3286,6 @@
       "document": "加固策略具体信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "默认策略，1为默认，0为非默认",
           "example": "",
@@ -3417,7 +3296,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略id",
           "example": "",
@@ -3428,7 +3306,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略名称",
           "example": "",
@@ -3439,7 +3316,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略信息",
           "example": "",
@@ -3456,7 +3332,6 @@
       "document": "加固策略信息",
       "members": [
         {
-          "default": "1",
           "disabled": false,
           "document": "apk大小优化，0关闭，1开启",
           "example": "",
@@ -3467,7 +3342,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "1",
           "disabled": false,
           "document": "Dex加固，0关闭，1开启",
           "example": "",
@@ -3478,7 +3352,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "1",
           "disabled": false,
           "document": "So加固，0关闭，1开启",
           "example": "",
@@ -3489,7 +3362,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "1",
           "disabled": false,
           "document": "数据收集，0关闭，1开启",
           "example": "",
@@ -3500,7 +3372,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "1",
           "disabled": false,
           "document": "防止重打包，0关闭，1开启",
           "example": "",
@@ -3511,7 +3382,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "0",
           "disabled": false,
           "document": "Dex分离，0关闭，1开启",
           "example": "",
@@ -3522,7 +3392,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "0",
           "disabled": false,
           "document": "内存保护，0关闭，1开启",
           "example": "",
@@ -3533,7 +3402,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "1",
           "disabled": false,
           "document": "Dex签名校验，0关闭，1开启",
           "example": "",
@@ -3544,7 +3412,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "So文件信息",
           "example": "",
@@ -3555,7 +3422,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "vmp，0关闭，1开启",
           "example": "",
@@ -3566,7 +3432,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "保护so的强度，",
           "example": "",
@@ -3577,7 +3442,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "防日志泄漏，0关闭，1开启",
           "example": "",
@@ -3588,7 +3452,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "root检测，0关闭，1开启",
           "example": "",
@@ -3599,7 +3462,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源防篡改，0关闭，1开启",
           "example": "",
@@ -3610,7 +3472,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "防止截屏，0关闭，1开启",
           "example": "",
@@ -3621,7 +3482,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SSL证书防窃取，0关闭，1开启",
           "example": "",
@@ -3638,7 +3498,6 @@
       "document": "APK检测服务：广告插件结果结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数字类型，分别为 1-通知栏广告，2-积分墙广告，3-banner广告，4- 悬浮窗图标广告，5-精品推荐列表广告, 6-插播广告",
           "example": "\"1\"",
@@ -3649,7 +3508,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "广告插件名称",
           "example": "\"\"",
@@ -3660,7 +3518,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "广告插件描述",
           "example": "\"\"",
@@ -3677,11 +3534,9 @@
       "document": "RequestLocalTask请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "Client Id",
           "example": "Client Id",
-          "is_base64": false,
           "member": "string",
           "name": "ClientId",
           "required": true,
@@ -3786,7 +3641,6 @@
       "document": "拉取某个用户的所有资源信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户购买的资源id，全局唯一",
           "example": "",
@@ -3797,7 +3651,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源的pid，MTP加固-12767，应用加固-12750 MTP反作弊-12766 源代码混淆-12736",
           "example": "",
@@ -3808,7 +3661,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买时间戳",
           "example": "",
@@ -3819,7 +3671,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "到期时间戳",
           "example": "",
@@ -3830,7 +3681,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0-未绑定，1-已绑定",
           "example": "",
@@ -3841,7 +3691,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户绑定app的基本信息",
           "example": "",
@@ -3852,7 +3701,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源名称，如应用加固，漏洞扫描",
           "example": "",
@@ -3869,7 +3717,6 @@
       "document": "资源服务信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间戳",
           "example": "",
@@ -3880,7 +3727,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "到期时间戳",
           "example": "",
@@ -3891,7 +3737,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源名称，如应用加固，源码混淆",
           "example": "",
@@ -3908,7 +3753,6 @@
       "document": "APK检测服务参数返回具体信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "banner广告软件标记，分别为-1-不确定，0-否，1-是",
           "example": "\"1\"",
@@ -3919,7 +3763,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "精品推荐列表广告标记，分别为-1-不确定，0-否，1-是",
           "example": "\"\"",
@@ -3930,7 +3773,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "悬浮窗图标广告标记,分别为-1-不确定，0-否，1-是",
           "example": "\"\"",
@@ -3941,7 +3783,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "积分墙广告软件标记，分别为 -1 -不确定，0-否，1-是",
           "example": "\"\"",
@@ -3952,7 +3793,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安装包的md5",
           "example": "\"\"",
@@ -3963,7 +3803,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通知栏广告软件标记，分别为-1-不确定，0-否，1-是",
           "example": "\"\"",
@@ -3974,7 +3813,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1表示官方，0表示非官方",
           "example": "\"1\"",
@@ -3985,7 +3823,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "广告插件结果列表",
           "example": "无",
@@ -3996,7 +3833,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "非广告插件结果列表(SDK、风险插件等)",
           "example": "无",
@@ -4007,7 +3843,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数字类型，分别为0-未知， 1-安全软件，2-风险软件，3-病毒软件",
           "example": "\"1\"",
@@ -4018,7 +3853,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Session id，合作方可以用来区分回调数据，需要唯一。",
           "example": "\"\"",
@@ -4029,7 +3863,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安装包名称",
           "example": "\"\"",
@@ -4040,7 +3873,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "插播广告软件标记，取值：-1 不确定，0否， 1 是",
           "example": "\"-1\"",
@@ -4051,7 +3883,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "病毒名称，utf8编码",
           "example": "\"\"",
@@ -4062,7 +3893,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "病毒描述，utf8编码",
           "example": "\"\"",
@@ -4073,7 +3903,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "二次打包状态：0-表示默认；1-表示二次",
           "example": "\"\"",
@@ -4084,7 +3913,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用错误码：0、1-表示正常；                  \n\n2表示System Error(engine analysis error).\n\n3表示App analysis error, please confirm it.\n\n4表示App have not cert, please confirm it.\n\n5表示App size is zero, please confirm it.\n\n6表示App have not package name, please confirm it.\n\n7表示App build time is empty, please confirm it.\n\n8表示App have not valid cert, please confirm it.\n\n99表示Other error.\n\n1000表示App downloadlink download fail, please confirm it.\n\n1001表示APP md5 different between real md5, please confirm it.\n\n1002表示App md5 uncollect, please offer downloadlink.",
           "example": "\"0\"",
@@ -4095,7 +3923,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对应errno的错误信息描述",
           "example": "\"\"",
@@ -4144,7 +3971,6 @@
       "document": "提交app加固的服务信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "服务版本，基础版basic，专业版professional，企业版enterprise。",
           "example": "",
@@ -4155,7 +3981,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务处理完成后的反向通知回调地址，如果不需要通知请传递空字符串。通知为POST请求，post包体数据示例{\"Response\":{\"ItemId\":\"4cdad8fb86f036b06bccb3f58971c306\",\"ShieldCode\":0,\"ShieldMd5\":\"78701576793c4a5f04e1c9660de0aa0b\",\"ShieldSize\":11997354,\"TaskStatus\":1,\"TaskTime\":1539148141}}，调用方需要返回如下信息，{\"Result\":\"ok\",\"Reason\":\"xxxxx\"}，如果Result字段值不等于ok会继续回调。",
           "example": "",
@@ -4166,7 +3991,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "提交来源 YYB-应用宝 RDM-rdm MC-控制台 MAC_TOOL-mac工具 WIN_TOOL-window工具。",
           "example": "",
@@ -4177,7 +4001,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加固策略编号，如果不传则使用系统默认加固策略。如果指定的plan不存在会返回错误。",
           "example": "",
@@ -4194,7 +4017,6 @@
       "document": "加固后app的信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "加固结果的返回码",
           "example": "",
@@ -4205,7 +4027,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加固后app的大小",
           "example": "",
@@ -4216,7 +4037,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加固后app的md5",
           "example": "",
@@ -4227,7 +4047,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加固后的APP下载地址，该地址有效期为20分钟，请及时下载",
           "example": "",
@@ -4238,7 +4057,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加固的提交时间",
           "example": "",
@@ -4249,7 +4067,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务唯一标识",
           "example": "",
@@ -4260,7 +4077,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加固版本，basic基础版，professional专业版，enterprise企业版",
           "example": "",
@@ -4277,7 +4093,6 @@
       "document": "加固策略信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "加固策略数量",
           "example": "",
@@ -4288,7 +4103,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加固策略具体信息数组",
           "example": "",
@@ -4305,7 +4119,6 @@
       "document": "so加固信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "so文件列表",
           "example": "",
@@ -4322,66 +4135,54 @@
       "document": "UpdateClientState请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "Client Id",
           "example": "ClientId",
-          "is_base64": false,
           "member": "string",
           "name": "ClientId",
           "required": true,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "Ip addr",
           "example": "Ip",
-          "is_base64": false,
           "member": "string",
           "name": "Ip",
           "required": true,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "内部分组",
           "example": "Internal",
-          "is_base64": false,
           "member": "int64",
           "name": "Internal",
           "required": true,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "Client  Version",
           "example": "ServerVersion",
-          "is_base64": false,
           "member": "string",
           "name": "ServerVersion",
           "required": true,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "主机",
           "example": "Hostname",
-          "is_base64": false,
           "member": "string",
           "name": "Hostname",
           "required": true,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "系统",
           "example": "Os",
-          "is_base64": false,
           "member": "string",
           "name": "Os",
           "required": true,
@@ -4416,55 +4217,45 @@
       "document": "UpdateLocalTaskResult请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "任务id",
           "example": "sid",
-          "is_base64": false,
           "member": "string",
           "name": "Sid",
           "required": true,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "一级任务code。标记任务状态",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "ResultCode",
           "required": true,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "二级错误码",
           "example": "4028",
-          "is_base64": false,
           "member": "int64",
           "name": "SubCode",
           "required": true,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "二级错误信息",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "ErrMsg",
           "required": true,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "结果",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Result",
           "required": true,

@@ -264,7 +264,6 @@
       "document": "造成异常体验可能的异常事件类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "异常事件ID，具体值查看附录：异常体验ID映射表：https://cloud.tencent.com/document/product/647/44916",
           "example": "",
@@ -275,7 +274,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "远端用户ID,\"\"：表示异常事件不是由远端用户产生\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -292,7 +290,6 @@
       "document": "用户的异常体验及可能的原因",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户ID",
           "example": "",
@@ -303,7 +300,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异常体验ID",
           "example": "",
@@ -314,7 +310,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字符串房间号",
           "example": "",
@@ -325,7 +320,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异常事件数组",
           "example": "",
@@ -336,7 +330,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异常事件的上报时间",
           "example": "",
@@ -353,7 +346,6 @@
       "document": "转推服务加入TRTC房间的机器人参数。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "转推服务在TRTC房间使用的[UserId](https://cloud.tencent.com/document/product/647/46351#userid)，注意这个userId不能与其他TRTC或者转推服务等已经使用的UserId重复，建议可以把房间ID作为userId的标识的一部分。",
           "example": "room_1234_rtmp_1",
@@ -364,7 +356,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转推服务加入TRTC房间的用户签名，当前 UserId 对应的验证签名，相当于登录密码，具体计算方法请参考TRTC计算[UserSig](https://cloud.tencent.com/document/product/647/45910#UserSig)的方案。",
           "example": "xxxx",
@@ -375,7 +366,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所有参与混流转推的主播持续离开TRTC房间超过MaxIdleTime的时长，自动停止转推，单位：秒。默认值为 30 秒，该值需大于等于 5秒，且小于等于 86400秒(24小时)。",
           "example": "50",
@@ -392,7 +382,6 @@
       "document": "音频编码参数。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "输出流音频采样率。取值为[48000, 44100, 32000, 24000, 16000, 8000]，单位是Hz。",
           "example": "48000",
@@ -403,7 +392,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输出流音频声道数，取值范围[1,2]，1表示混流输出音频为单声道，2表示混流输出音频为双声道。",
           "example": "2",
@@ -414,7 +402,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输出流音频码率。取值范围[8,500]，单位为kbps。",
           "example": "64",
@@ -425,7 +412,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输出流音频编码类型，取值范围[0, 1, 2]，0为LC-AAC，1为HE-AAC，2为HE-AACv2。默认值为0。当音频编码设置为HE-AACv2时，只支持输出流音频声道数为双声道。HE-AAC和HE-AACv2支持的输出流音频采样率范围为[48000, 44100, 32000, 24000, 16000]。",
           "example": "0",
@@ -538,7 +524,6 @@
       "document": "点播相关参数。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯云点播相关参数。",
           "example": "无",
@@ -771,7 +756,6 @@
       "document": "DeleteCloudRecording请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TRTC的SDKAppId，和录制的房间所对应的SDKAppId相同。",
           "example": "1234",
@@ -781,7 +765,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制任务的唯一Id，在启动录制成功后会返回。",
           "example": "1234",
@@ -819,7 +802,6 @@
       "document": "DeletePicture请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片id",
           "example": "123",
@@ -829,7 +811,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用id",
           "example": "123",
@@ -857,7 +838,6 @@
       "document": "DescribeCallDetailInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "通话 ID（唯一标识一次通话）： SdkAppId_RoomId（房间号）_ CreateTime（房间创建时间，unix时间戳，单位为s）例：1400xxxxxx_218695_1590065777。通过 DescribeRoomInfo（查询历史房间列表）接口获取（[查询历史房间列表](https://cloud.tencent.com/document/product/647/44050)）。",
           "example": "1400xxxxxx_218695_1590065777",
@@ -867,7 +847,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询开始时间，本地unix时间戳，单位为秒（如：1590065777），\n注意：支持查询14天内的数据。",
           "example": "1590065777",
@@ -877,7 +856,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间，本地unix时间戳，单位为秒（如：1590065877）\n注意：DataType 不为null ，与StartTime间隔时间不超过1小时；DataType 为null，与StartTime间隔时间不超过4小时。",
           "example": "1590065877",
@@ -887,7 +865,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户SdkAppId（如：1400xxxxxx）。",
           "example": "1400xxxxxx",
@@ -897,7 +874,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需查询的用户数组，默认不填返回6个用户。",
           "example": "[\"a\",\"b\"]",
@@ -907,7 +883,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需查询的指标，不填则只返回用户列表，填all则返回所有指标。\nappCpu：APP CPU使用率；\nsysCpu：系统 CPU使用率；\naBit：上/下行音频码率；单位：bps\naBlock：音频卡顿时长；单位：ms\nbigvBit：上/下行视频码率；单位：bps\nbigvCapFps：视频采集帧率；\nbigvEncFps：视频发送帧率；\nbigvDecFps：渲染帧率；\nbigvBlock：视频卡顿时长；单位：ms\naLoss：上/下行音频丢包率；\nbigvLoss：上/下行视频丢包率；\nbigvWidth：上/下行分辨率宽；\nbigvHeight：上/下行分辨率高",
           "example": "[\"bigvCapFps\"]",
@@ -917,7 +892,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前页数，默认为0，\n注意：PageNumber和PageSize 其中一个不填均默认返回6条数据。",
           "example": "0",
@@ -927,7 +901,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页个数，默认为6，\n范围：[1，100]\n注意：DataType不为null，UserIds长度不能超过6，PageSize最大值不超过6；\nDataType 为null，UserIds长度不超过100，PageSize最大不超过100。",
           "example": "6",
@@ -985,7 +958,6 @@
       "document": "DescribeCloudRecording请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TRTC的SDKAppId，和录制的房间所对应的SDKAppId相同。",
           "example": "1234",
@@ -995,7 +967,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制任务的唯一Id，在启动录制成功后会返回。",
           "example": "123",
@@ -1053,7 +1024,6 @@
       "document": "DescribeMixTranscodingUsage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询开始时间，格式为YYYY-MM-DD。",
           "example": "2022-01-01 00:00:00",
@@ -1063,7 +1033,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间，格式为YYYY-MM-DD。\n单次查询统计区间最多不能超过31天。",
           "example": "2022-01-01 00:00:00",
@@ -1073,7 +1042,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TRTC的SdkAppId，和房间所对应的SdkAppId相同。如果没有这个参数，返回用户下全部实时音视频应用的汇总。",
           "example": "1400123456",
@@ -1121,7 +1089,6 @@
       "document": "DescribePicture请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID",
           "example": "1234567",
@@ -1131,7 +1098,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片ID，不填时返回该应用下所有图片",
           "example": "123",
@@ -1141,7 +1107,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页数量，不填时默认为10",
           "example": "10",
@@ -1151,7 +1116,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码，不填时默认为1",
           "example": "1",
@@ -1199,7 +1163,6 @@
       "document": "DescribeRecordStatistic请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询开始日期，格式为YYYY-MM-DD。",
           "example": "2019-10-11",
@@ -1209,7 +1172,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束日期，格式为YYYY-MM-DD。\n单次查询统计区间最多不能超过31天。",
           "example": "2019-10-13",
@@ -1219,7 +1181,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID，可不传。传应用ID时返回的是该应用的用量，不传时返回多个应用的合计值。",
           "example": "1400123456",
@@ -1257,7 +1218,6 @@
       "document": "DescribeRecordingUsage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询开始时间，格式为YYYY-MM-DD。",
           "example": "2022-01-01 00:00:00",
@@ -1267,7 +1227,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间，格式为YYYY-MM-DD。\n单次查询统计区间最多不能超过31天。",
           "example": "2022-01-01 00:00:00",
@@ -1277,7 +1236,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询单流录制或合流录制，值为\"single\"或\"multi\"。",
           "example": "\"single\"",
@@ -1287,7 +1245,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TRTC的SdkAppId，和房间所对应的SdkAppId相同。如果没有这个参数，返回用户下全部实时音视频应用的汇总。",
           "example": "1400123456",
@@ -1335,7 +1292,6 @@
       "document": "DescribeRelayUsage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询开始时间，格式为YYYY-MM-DD。",
           "example": "2022-01-01 00:00:00",
@@ -1345,7 +1301,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间，格式为YYYY-MM-DD。\n单次查询统计区间最多不能超过31天。",
           "example": "2022-01-01 00:00:00",
@@ -1355,7 +1310,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TRTC的SdkAppId，和房间所对应的SdkAppId相同。如果没有这个参数，返回用户下全部实时音视频应用的汇总。",
           "example": "1400123456",
@@ -1403,7 +1357,6 @@
       "document": "DescribeRoomInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户SdkAppId（如：1400xxxxxx）",
           "example": "1400xxxxxx",
@@ -1413,7 +1366,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询开始时间，本地unix时间戳，单位为秒（如：1590065777）\n注意：支持查询14天内的数据",
           "example": "1590065777",
@@ -1423,7 +1375,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间，本地unix时间戳，单位为秒（如：1590065877）\n注意：与StartTime间隔时间不超过24小时。",
           "example": "1590065877",
@@ -1433,7 +1384,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房间号（如：223)",
           "example": "223",
@@ -1443,7 +1393,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前页数，默认为0，\n注意：PageNumber和PageSize 其中一个不填均默认返回10条数据。",
           "example": "0",
@@ -1453,7 +1402,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页个数，默认为10，\n范围：[1，100]",
           "example": "10",
@@ -1564,7 +1512,6 @@
       "document": "DescribeTRTCMarketQualityMetricData请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户SdkAppId（如：1400xxxxxx）",
           "example": "\"1400188366\"",
@@ -1574,7 +1521,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询开始时间，格式为YYYY-MM-DD。（查询时间范围根据监控仪表盘功能版本而定，【基础版】可查近30天，【进阶版】可查近60天）",
           "example": "2022-10-20",
@@ -1584,7 +1530,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间，格式为YYYY-MM-DD。",
           "example": "2022-10-21",
@@ -1594,7 +1539,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数据的粒度，支持设为以下值：\nd：按天。此时返回查询时间范围内 UTC 时间为零点的数据。\nh：按小时。此时返回查询时间范围内 UTC 时间为整小时的数据。",
           "example": "\"d\"",
@@ -1632,7 +1576,6 @@
       "document": "DescribeTRTCMarketScaleMetricData请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户SdkAppId",
           "example": "\"1400188366\"",
@@ -1642,7 +1585,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询开始时间，格式为YYYY-MM-DD。（查询时间范围根据监控仪表盘功能版本而定，【基础版】可查近30天，【进阶版】可查近60天）",
           "example": "2022-10-20",
@@ -1652,7 +1594,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间，格式为YYYY-MM-DD。",
           "example": "2022-10-21",
@@ -1662,7 +1603,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数据的粒度，支持设为以下值：\nd：按天。此时返回查询时间范围内 UTC 时间为零点的数据。\nh：按小时。此时返回查询时间范围内 UTC 时间为整小时的数据。",
           "example": "\"d\"",
@@ -1700,7 +1640,6 @@
       "document": "DescribeTRTCRealTimeQualityMetricData请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户SdkAppId（如：1400xxxxxx）",
           "example": "\"1400188366\"",
@@ -1710,7 +1649,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间，unix时间戳，单位：秒（查询时间范围根据监控仪表盘功能版本而定，基础版可查近3小时，进阶版可查近12小时）",
           "example": "1665747036",
@@ -1720,7 +1658,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间，unix时间戳，单位：秒",
           "example": "1665747284",
@@ -1730,7 +1667,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房间ID",
           "example": "23390",
@@ -1831,7 +1767,6 @@
       "document": "DescribeTrtcMcuTranscodeTime请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询开始时间，格式为YYYY-MM-DD。",
           "example": "2020-09-07",
@@ -1841,7 +1776,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间，格式为YYYY-MM-DD。\n单次查询统计区间最多不能超过31天。",
           "example": "2020-09-08",
@@ -1851,7 +1785,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID，可不传。传应用ID时返回的是该应用的用量，不传时返回多个应用的合计值。",
           "example": "1400123456",
@@ -1892,7 +1825,6 @@
           "disabled": false,
           "document": "TRTC的SdkAppId，和房间所对应的SdkAppId相同。",
           "example": "1400017192",
-          "is_base64": false,
           "member": "uint64",
           "name": "SdkAppid",
           "required": true,
@@ -1902,7 +1834,6 @@
           "disabled": false,
           "document": "查询开始时间，格式为YYYY-MM-DD HH:MM，精确到分钟级。",
           "example": "2023-01-06 00:00",
-          "is_base64": false,
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -1912,7 +1843,6 @@
           "disabled": false,
           "document": "查询结束时间，格式为YYYY-MM-DD HH:MM，单次查询不超过24h。",
           "example": "2023-01-06 10:00",
-          "is_base64": false,
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -1947,7 +1877,6 @@
       "document": "DescribeTrtcUsage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询开始时间，格式为YYYY-MM-DD。",
           "example": "2022-01-01 00:00:00",
@@ -1957,7 +1886,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间，格式为YYYY-MM-DD。\n单次查询统计区间最多不能超过31天。",
           "example": "2022-01-01 00:00:00",
@@ -1967,7 +1895,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TRTC的SdkAppId，和房间所对应的SdkAppId相同。如果没有这个参数，返回用户下全部实时音视频应用的汇总。",
           "example": "1400123456",
@@ -2015,7 +1942,6 @@
       "document": "DescribeUnusualEvent请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户SdkAppId（如：1400xxxxxx）",
           "example": "1400xxxxxx",
@@ -2025,7 +1951,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询开始时间，本地unix时间戳，单位为秒（如：1590065777）\n注意：支持查询14天内的数据",
           "example": "1590065777",
@@ -2035,7 +1960,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间，本地unix时间戳，单位为秒（如：1590065877）注意：与StartTime间隔时间不超过1小时。",
           "example": "1590065877",
@@ -2045,7 +1969,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房间号，查询房间内任意20条以内异常体验事件",
           "example": "223",
@@ -2093,7 +2016,6 @@
       "document": "DescribeUserEvent请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "通话 ID（唯一标识一次通话）： SdkAppId_RoomId（房间号）_ CreateTime（房间创建时间，unix时间戳，单位为s）例：1400xxxxxx_218695_1590065777。通过 DescribeRoomInfo（查询历史房间列表）接口获取（[查询历史房间列表](https://cloud.tencent.com/document/product/647/44050)）。",
           "example": "1400xxxxxx_3568_1588055615",
@@ -2103,7 +2025,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询开始时间，本地unix时间戳，单位为秒（如：1590065777）\n注意：支持查询14天内的数据",
           "example": "1590065777",
@@ -2113,7 +2034,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间，本地unix时间戳，单位为秒（如：1590065877）\n注意：查询时间大于房间结束时间，以房间结束时间为准。",
           "example": "1590065777",
@@ -2123,7 +2043,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户UserId",
           "example": "user_66319581",
@@ -2133,7 +2052,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房间号（如：223）",
           "example": "1711",
@@ -2143,7 +2061,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户SdkAppId（如：1400xxxxxx）",
           "example": "1400xxxxxx",
@@ -2181,7 +2098,6 @@
       "document": "DescribeUserInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "通话 ID（唯一标识一次通话）： SdkAppId_RoomId（房间号）_ CreateTime（房间创建时间，unix时间戳，单位为s）例：1400xxxxxx_218695_1590065777。通过 DescribeRoomInfo（查询历史房间列表）接口获取（[查询历史房间列表](https://cloud.tencent.com/document/product/647/44050)）。",
           "example": "1400xxxxxx_218695_1590065777",
@@ -2191,7 +2107,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询开始时间，本地unix时间戳，单位为秒（如：1590065777）\n注意：支持查询14天内的数据",
           "example": "1590065777",
@@ -2201,7 +2116,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间，本地unix时间戳，单位为秒（如：1590065877）\n注意：与StartTime间隔时间不超过4小时。",
           "example": "1590065877",
@@ -2211,7 +2125,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户SdkAppId（如：1400xxxxxx）",
           "example": "1400xxxxxx",
@@ -2221,7 +2134,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需查询的用户数组，不填默认返回6个用户\n范围：[1，100]。",
           "example": "[\"a\",\"b\",\"c\"]",
@@ -2231,7 +2143,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前页数，默认为0，\n注意：PageNumber和PageSize 其中一个不填均默认返回6条数据。",
           "example": "0",
@@ -2241,7 +2152,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页个数，默认为6，\n范围：[1，100]。",
           "example": "10",
@@ -2289,7 +2199,6 @@
       "document": "DismissRoomByStrRoomId请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TRTC的SDKAppId。",
           "example": "",
@@ -2299,7 +2208,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房间号。",
           "example": "",
@@ -2327,7 +2235,6 @@
       "document": "DismissRoom请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TRTC的SDKAppId。",
           "example": "",
@@ -2337,7 +2244,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房间号。",
           "example": "",
@@ -2467,7 +2373,6 @@
           "disabled": false,
           "document": "混流-输出流背景图片URL地址，支持png、jpg、jpeg、bmp格式，暂不支持透明通道。URL链接长度限制为512字节。BackgroundImageUrl和BackgroundImageId参数都填时，以BackgroundImageUrl为准。图片大小限制不超过2MB。",
           "example": "xxx",
-          "is_base64": false,
           "member": "string",
           "name": "BackgroundImageUrl",
           "required": false,
@@ -2480,7 +2385,6 @@
       "document": "sdk或webrtc的事件列表。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据内容",
           "example": "",
@@ -2491,7 +2395,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发送端的userId",
           "example": "",
@@ -2508,7 +2411,6 @@
       "document": "事件信息，包括，事件时间戳，事件ID,",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频流类型：\n0：与视频无关的事件；\n2：视频为大画面；\n3：视频为小画面；\n7：视频为旁路画面；",
           "example": "",
@@ -2519,7 +2421,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件上报的时间戳，unix时间（1589891188801ms)",
           "example": "",
@@ -2530,7 +2431,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件Id：分为sdk的事件和webrtc的事件，详情见：附录/事件 ID 映射表：https://cloud.tencent.com/document/product/647/44916",
           "example": "",
@@ -2541,7 +2441,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件的第一个参数，如视频分辨率宽",
           "example": "",
@@ -2552,7 +2451,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件的第二个参数，如视频分辨率高",
           "example": "",
@@ -2685,7 +2583,6 @@
       "document": "指定动态布局中悬浮布局和屏幕分享布局的大画面信息，只在悬浮布局和屏幕分享布局有效。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户媒体流参数。",
           "example": "UserMediaStream",
@@ -2702,7 +2599,6 @@
       "document": "混流转推的音频相关参数。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "音频编码参数。",
           "example": "AudioEncode",
@@ -2713,7 +2609,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频用户白名单，start时，为空或不填表示混所有主播音频，填具体值表示混指定主播音频；update时，不填表示不更新，为空表示更新为混所有主播音频，填具体值表示更新为混指定主播音频。\n使用黑白名单时，黑白名单必须同时填写。都不填写时表示不更新。同一个用户同时在黑白名单时，以黑名单为主。",
           "example": "SubscribeAudioList",
@@ -2724,7 +2619,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "音频用户黑名单，为空或不填表示无黑名单，填具体值表示不混指定主播音频。update时，不填表示不更新，为空表示更新为清空黑名单，填具体值表示更新为不混指定主播音频。\n使用黑白名单时，黑白名单必须同时填写。都不填写时表示不更新。同一个用户同时在黑白名单时，以黑名单为主。",
           "example": "UnSubscribeAudioList",
@@ -2787,7 +2681,6 @@
       "document": "回推房间参数。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "回推房间的RoomId。",
           "example": "room_1234",
@@ -2798,7 +2691,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房间类型，必须和回推房间所对应的RoomId类型相同，0为整形房间号，1为字符串房间号。",
           "example": "1",
@@ -2809,7 +2701,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回推房间使用的UserId(https://cloud.tencent.com/document/product/647/46351#userid)，注意这个userId不能与其他TRTC或者转推服务等已经使用的UserId重复，建议可以把房间ID作为userId的标识的一部分。",
           "example": "room_1234_push_1",
@@ -2820,7 +2711,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回推房间UserId对应的用户签名，相当于登录密码，具体计算方法请参考TRTC计算[UserSig](https://cloud.tencent.com/document/product/647/45910#UserSig)的方案。",
           "example": "xxxx",
@@ -2903,7 +2793,6 @@
           "disabled": false,
           "document": "【此参数配置无效，暂不支持】子画面的背景颜色，常用的颜色有：\n红色：0xcc0033。\n黄色：0xcc9900。\n绿色：0xcccc33。\n蓝色：0x99CCFF。\n黑色：0x000000。\n白色：0xFFFFFF。\n灰色：0x999999。",
           "example": "0xFFFFFF",
-          "is_base64": false,
           "member": "string",
           "name": "BackGroundColor",
           "required": false,
@@ -2913,7 +2802,6 @@
           "disabled": false,
           "document": "子画面的背景图url，填写该参数，当用户关闭摄像头或未进入TRTC房间时，会在布局位置填充为指定图片。若指定图片与布局位置尺寸比例不一致，则会对图片进行拉伸处理，优先级高于BackGroundColor。",
           "example": "xxxx",
-          "is_base64": false,
           "member": "string",
           "name": "BackgroundImageUrl",
           "required": false,
@@ -2944,7 +2832,6 @@
       "document": "混流布局参数。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "布局模式：动态布局（1：悬浮布局（默认），2：屏幕分享布局，3：九宫格布局），静态布局（4：自定义布局）。",
           "example": "4",
@@ -2955,7 +2842,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "纯音频上行是否占布局位置，只在动态布局中有效。0表示纯音频不占布局位置，1表示纯音频占布局位置，不填默认为0。",
           "example": "0",
@@ -2966,7 +2852,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义模板中有效，指定用户视频在混合画面中的位置。",
           "example": "MixLayoutList",
@@ -2977,7 +2862,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定动态布局中悬浮布局和屏幕分享布局的大画面信息，只在悬浮布局和屏幕分享布局有效。",
           "example": "MaxVideoUser",
@@ -2988,7 +2872,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "屏幕分享模板、悬浮模板、九宫格模版有效，画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底",
           "example": "0",
@@ -3102,7 +2985,6 @@
       "document": "转推参数。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "CDN转推URL。",
           "example": "xxxx",
@@ -3113,7 +2995,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是腾讯云CDN，0为转推非腾讯云CDN，1为转推腾讯CDN，不携带该参数默认为1。注意：1，为避免误产生转推费用，该参数建议明确填写，转推非腾讯云CDN时会产生转推费用，详情参见接口文档说明；2，国内站默认只支持转推腾讯云CDN，如您有转推第三方CDN需求，请联系腾讯云技术支持。",
           "example": "1",
@@ -3130,7 +3011,6 @@
       "document": "混流SEI参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "音量布局SEI",
           "example": "LayoutVolume",
@@ -3141,7 +3021,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "透传SEI",
           "example": "PassThrough",
@@ -3158,7 +3037,6 @@
       "document": "混流用户参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户参数。",
           "example": "UserInfo",
@@ -3196,7 +3074,6 @@
           "disabled": false,
           "document": "整个画布背景颜色，常用的颜色有：\n红色：0xcc0033。\n黄色：0xcc9900。\n绿色：0xcccc33。\n蓝色：0x99CCFF。\n黑色：0x000000。\n白色：0xFFFFFF。\n灰色：0x999999。",
           "example": "0xFFFFFF",
-          "is_base64": false,
           "member": "string",
           "name": "BackGroundColor",
           "required": false,
@@ -3206,7 +3083,6 @@
           "disabled": false,
           "document": "整个画布的背景图url，优先级高于BackGroundColor。",
           "example": "xxxx",
-          "is_base64": false,
           "member": "string",
           "name": "BackgroundImageUrl",
           "required": false,
@@ -3237,7 +3113,6 @@
       "document": "图片水印参数。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "水印图片URL地址，支持png、jpg、jpeg格式。图片大小限制不超过5MB。",
           "example": "xxx.png",
@@ -3248,7 +3123,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印在输出时的宽。单位为像素值。",
           "example": "64",
@@ -3259,7 +3133,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印在输出时的高。单位为像素值。",
           "example": "64",
@@ -3270,7 +3143,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印在输出时的X偏移。单位为像素值。",
           "example": "0",
@@ -3281,7 +3153,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印在输出时的Y偏移。单位为像素值。",
           "example": "0",
@@ -3292,7 +3163,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印在输出时的层级，不填默认为0。",
           "example": "0",
@@ -3663,7 +3533,6 @@
       "document": "录制的音视频转码参数。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "录制视频转码参数，注意如果设置了这个参数，那么里面的字段都是必填的，没有默认值，如果不填这个参数，那么取值为默认值。",
           "example": "无",
@@ -3674,7 +3543,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制音频转码参数，注意如果设置了这个参数，那么里面的字段都是必填的，没有默认值，如果不填这个参数，那么取值为默认值。",
           "example": "无",
@@ -3691,7 +3559,6 @@
       "document": "TRTC用户参数。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户ID。",
           "example": "owen-test",
@@ -3702,7 +3569,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动态布局时房间信息必须和主房间信息保持一致，自定义布局时房间信息必须和MixLayoutList中对应用户的房间信息保持一致，不填时默认与主房间信息一致。",
           "example": "room_1234",
@@ -3713,7 +3579,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房间号类型，0为整形房间号，1为字符串房间号。",
           "example": "1",
@@ -3730,7 +3595,6 @@
       "document": "ModifyCloudRecording请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TRTC的SDKAppId，和录制的房间所对应的SDKAppId相同。",
           "example": "1234",
@@ -3740,7 +3604,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制任务的唯一Id，在启动录制成功后会返回。",
           "example": "1234",
@@ -3750,7 +3613,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要更新的混流的布局参数。",
           "example": "无",
@@ -3760,7 +3622,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定订阅流白名单或者黑名单。",
           "example": "无",
@@ -3798,7 +3659,6 @@
       "document": "ModifyPicture请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片id",
           "example": "123",
@@ -3808,7 +3668,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用id",
           "example": "123",
@@ -3818,7 +3677,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片长度",
           "example": "12",
@@ -3828,7 +3686,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片宽度",
           "example": "15",
@@ -3838,7 +3695,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "显示位置x轴方向",
           "example": "15",
@@ -3848,7 +3704,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "显示位置y轴方向",
           "example": "16",
@@ -3876,7 +3731,6 @@
       "document": "旁路转码时长的查询结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "旁路转码时长查询结果数组",
           "example": "无",
@@ -3887,7 +3741,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询记录数量",
           "example": "无",
@@ -3898,7 +3751,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所查询的应用ID，可能值为:1-应用的应用ID，2-total，显示为total则表示查询的是所有应用的用量合计值。",
           "example": "无",
@@ -3961,7 +3813,6 @@
       "document": "图片列表信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片长度",
           "example": "15",
@@ -3972,7 +3823,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片宽度",
           "example": "15",
@@ -3983,7 +3833,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "显示位置x轴方向",
           "example": "36",
@@ -3994,7 +3843,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "显示位置y轴方向",
           "example": "36",
@@ -4005,7 +3853,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用id",
           "example": "1234567",
@@ -4016,7 +3863,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片id",
           "example": "123",
@@ -4033,7 +3879,6 @@
       "document": "自定义模板中有效，指定用户视频在混合画面中的位置。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指定显示在该画面上的用户ID。如果不指定用户ID，会按照用户加入房间的顺序自动匹配PresetLayoutConfig中的画面设置。",
           "example": "user1",
@@ -4044,7 +3889,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当该画面指定用户时，代表用户的流类型。0为摄像头，1为屏幕分享。小画面为web用户时此值填0。",
           "example": "0",
@@ -4055,7 +3899,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该画面在输出时的宽度，单位为像素值，不填默认为0。",
           "example": "640",
@@ -4066,7 +3909,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该画面在输出时的高度，单位为像素值，不填默认为0。",
           "example": "480",
@@ -4077,7 +3919,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该画面在输出时的X偏移，单位为像素值，LocationX与ImageWidth之和不能超过混流输出的总宽度，不填默认为0。",
           "example": "0",
@@ -4088,7 +3929,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该画面在输出时的Y偏移，单位为像素值，LocationY与ImageHeight之和不能超过混流输出的总高度，不填默认为0。",
           "example": "0",
@@ -4099,7 +3939,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该画面在输出时的层级，不填默认为0。",
           "example": "0",
@@ -4110,7 +3949,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底。不填默认为0。",
           "example": "0",
@@ -4121,7 +3959,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该当前位置用户混入的流类型：0为混入音视频，1为只混入视频，2为只混入音频。默认为0，建议配合指定用户ID使用。",
           "example": "0",
@@ -4132,7 +3969,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "占位图ID。启用占位图功能时，在当前位置的用户没有上行视频时显示占位图。占位图大小不能超过2M，在实时音视频控制台上传并生成，https://cloud.tencent.com/document/product/647/50769",
           "example": "0",
@@ -4149,7 +3985,6 @@
       "document": "第三方CDN转推参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯云直播BizId。",
           "example": "",
@@ -4160,7 +3995,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "第三方CDN转推的目的地址，同时只支持转推一个第三方CDN地址。",
           "example": "",
@@ -4177,7 +4011,6 @@
       "document": "Es返回的质量数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据内容",
           "example": "",
@@ -4188,7 +4021,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户ID",
           "example": "",
@@ -4199,7 +4031,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对端Id,为空时表示上行数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4210,7 +4041,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据类型",
           "example": "",
@@ -4305,7 +4135,6 @@
       "document": "录制的使用信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "本组数据对应的时间点，格式如:2020-09-07或2020-09-07 00:05:05。",
           "example": "",
@@ -4316,7 +4145,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频时长-标清SD，单位：秒。",
           "example": "",
@@ -4327,7 +4155,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频时长-高清HD，单位：秒。",
           "example": "",
@@ -4338,7 +4165,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频时长-超清HD，单位：秒。",
           "example": "",
@@ -4349,7 +4175,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "语音时长，单位：秒。",
           "example": "",
@@ -4366,7 +4191,6 @@
       "document": "RemoveUserByStrRoomId请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TRTC的SDKAppId。",
           "example": "",
@@ -4376,7 +4200,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房间号。",
           "example": "",
@@ -4386,7 +4209,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要移出的用户列表，最多10个。",
           "example": "",
@@ -4414,7 +4236,6 @@
       "document": "RemoveUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TRTC的SDKAppId。",
           "example": "1400000001",
@@ -4424,7 +4245,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房间号。",
           "example": "1234",
@@ -4434,7 +4254,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要移出的用户列表，最多10个。",
           "example": "test1",
@@ -4462,7 +4281,6 @@
       "document": "房间信息列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "通话ID（唯一标识一次通话）",
           "example": "",
@@ -4473,7 +4291,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房间号",
           "example": "",
@@ -4484,7 +4301,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房间创建时间",
           "example": "",
@@ -4495,7 +4311,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房间销毁时间",
           "example": "",
@@ -4506,7 +4321,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房间是否已经结束",
           "example": "",
@@ -4517,7 +4331,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房间创建者Id",
           "example": "",
@@ -4534,7 +4347,6 @@
       "document": "历史规模信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "每天开始的时间",
           "example": "",
@@ -4545,7 +4357,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房间人数，用户重复进入同一个房间为1次\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4556,7 +4367,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房间人次，用户每次进入房间为一次\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4567,7 +4377,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "sdkappid下一天内的房间数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4584,7 +4393,6 @@
       "document": "SdkAppId级别录制时长数据。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "SdkAppId的值。",
           "example": "",
@@ -4595,7 +4403,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计的时间点数据。",
           "example": "",
@@ -4612,7 +4419,6 @@
       "document": "查询旁路转码计费时长。\n查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "本组数据对应的时间点，格式如：2020-09-07或2020-09-07 00:05:05。",
           "example": "2020-09-07 00:05:05",
@@ -4623,7 +4429,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "语音时长，单位：秒。",
           "example": "100",
@@ -4634,7 +4439,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频时长-标清SD，单位：秒。",
           "example": "100",
@@ -4645,7 +4449,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频时长-高清HD，单位：秒。",
           "example": "100",
@@ -4656,7 +4459,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频时长-全高清FHD，单位：秒。",
           "example": "100",
@@ -4667,7 +4469,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "带宽，单位：Mbps。",
           "example": " 100.12",
@@ -4684,7 +4485,6 @@
       "document": "SeriesInfo类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据列\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"time\",\"count(queryCount)\"]",
@@ -4695,7 +4495,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[1659927600,399]",
@@ -4712,7 +4511,6 @@
       "document": "单流旁路转推的用户上行信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户媒体流参数。",
           "example": "UserMediaStream",
@@ -4729,7 +4527,6 @@
       "document": "画中画模板中有效，代表小画面的布局参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "代表小画面对应的用户ID。",
           "example": "\"small_video_user\"",
@@ -4740,7 +4537,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代表小画面对应的流类型，0为摄像头，1为屏幕分享。小画面为web用户时此值填0。",
           "example": "0",
@@ -4751,7 +4547,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "小画面在输出时的宽度，单位为像素值，不填默认为0。",
           "example": "640",
@@ -4762,7 +4557,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "小画面在输出时的高度，单位为像素值，不填默认为0。",
           "example": "480",
@@ -4773,7 +4567,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "小画面在输出时的X偏移，单位为像素值，LocationX与ImageWidth之和不能超过混流输出的总宽度，不填默认为0。",
           "example": "0",
@@ -4784,7 +4577,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "小画面在输出时的Y偏移，单位为像素值，LocationY与ImageHeight之和不能超过混流输出的总高度，不填默认为0。",
           "example": "0",
@@ -4948,7 +4740,6 @@
           "disabled": false,
           "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。",
           "example": "1400188366",
-          "is_base64": false,
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -4958,7 +4749,6 @@
           "disabled": false,
           "document": "主房间信息RoomId，转推的TRTC房间所对应的RoomId。",
           "example": "room_1234",
-          "is_base64": false,
           "member": "string",
           "name": "RoomId",
           "required": true,
@@ -4968,7 +4758,6 @@
           "disabled": false,
           "document": "主房间信息RoomType，必须和转推的房间所对应的RoomId类型相同，0为整形房间号，1为字符串房间号。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "RoomIdType",
           "required": true,
@@ -4978,7 +4767,6 @@
           "disabled": false,
           "document": "转推服务加入TRTC房间的机器人参数。",
           "example": "AgentParams",
-          "is_base64": false,
           "member": "AgentParams",
           "name": "AgentParams",
           "required": true,
@@ -4988,7 +4776,6 @@
           "disabled": false,
           "document": "是否转码，0表示无需转码，1表示需要转码。是否收取转码费是由WithTranscoding参数决定的，WithTranscoding为0，表示旁路转推，不会收取转码费用，WithTranscoding为1，表示混流转推，会收取转码费用。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "WithTranscoding",
           "required": true,
@@ -4998,7 +4785,6 @@
           "disabled": false,
           "document": "转推流的音频编码参数。由于音频是必转码的（不会收取转码费用），所以启动任务的时候，必须填写。",
           "example": "AudioParams",
-          "is_base64": false,
           "member": "McuAudioParams",
           "name": "AudioParams",
           "required": false,
@@ -5008,7 +4794,6 @@
           "disabled": false,
           "document": "转推流的视频编码参数，不填表示纯音频转推。",
           "example": "VideoParams",
-          "is_base64": false,
           "member": "McuVideoParams",
           "name": "VideoParams",
           "required": false,
@@ -5018,7 +4803,6 @@
           "disabled": false,
           "document": "需要单流旁路转推的用户上行参数，单流旁路转推时，WithTranscoding需要设置为0。",
           "example": "SingleSubscribeParams",
-          "is_base64": false,
           "member": "SingleSubscribeParams",
           "name": "SingleSubscribeParams",
           "required": false,
@@ -5028,7 +4812,6 @@
           "disabled": false,
           "document": "转推的CDN参数。和回推房间参数必须要有一个。",
           "example": "PublishCdnParams",
-          "is_base64": false,
           "member": "McuPublishCdnParam",
           "name": "PublishCdnParams",
           "required": false,
@@ -5038,7 +4821,6 @@
           "disabled": false,
           "document": "混流SEI参数",
           "example": "SeiParams",
-          "is_base64": false,
           "member": "McuSeiParams",
           "name": "SeiParams",
           "required": false,
@@ -5048,7 +4830,6 @@
           "disabled": false,
           "document": "回推房间信息，和转推CDN参数必须要有一个。注：回推房间需使用特殊的SDK版本，如您有需求，请联系腾讯云技术支持。",
           "example": "FeedBackRoomParams",
-          "is_base64": false,
           "member": "McuFeedBackRoomParams",
           "name": "FeedBackRoomParams",
           "required": false,
@@ -5083,7 +4864,6 @@
       "document": "StopMCUMixTranscodeByStrRoomId请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TRTC的SDKAppId。",
           "example": "",
@@ -5093,7 +4873,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字符串房间号。",
           "example": "",
@@ -5121,7 +4900,6 @@
       "document": "StopMCUMixTranscode请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TRTC的SDKAppId。",
           "example": "1400188366",
@@ -5131,7 +4909,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "房间号。",
           "example": "3560",
@@ -5159,7 +4936,6 @@
       "document": "StopPublishCdnStream请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和转推的房间所对应的SdkAppId相同。",
           "example": "1400188366",
@@ -5169,7 +4945,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "唯一标识转推任务。",
           "example": "xxxx",
@@ -5207,7 +4982,6 @@
       "document": "云端录制查询接口，录制文件的信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "录制文件对应的UserId，如果是混流的话的这里返回的是空串。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -5218,7 +4992,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制索引文件名。",
           "example": "xxx.m3u8",
@@ -5229,7 +5002,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制文件流信息。\nvideo：视频录制文件\naudio：音频录制文件\naudio_video：音视频录制文件\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "audio_video",
@@ -5240,7 +5012,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "录制文件开始Unix时间戳。",
           "example": "1562724852626",
@@ -5283,7 +5054,6 @@
       "document": "指定订阅流白名单或者黑名单，音频的白名单和音频黑名单不能同时设置，视频亦然。同时实际并发订阅的媒体流路数最大支持25路流，混流场景下视频的多画面最大支持24画面。支持通过设置\".*$\"通配符，来前缀匹配黑白名单的UserId，注意房间里不能有和通配符规则相同的用户，否则将视为订阅具体用户，前缀规则会失效。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "订阅音频流白名单，指定订阅哪几个UserId的音频流，例如[\"1\", \"2\", \"3\"], 代表订阅UserId 1，2，3的音频流；[\"1.*$\"], 代表订阅UserId前缀为1的音频流。默认不填订阅房间内所有的音频流，订阅列表用户数不超过32。",
           "example": "[\"123\",\"456\"]",
@@ -5294,7 +5064,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅音频流黑名单，指定不订阅哪几个UserId的音频流，例如[\"1\", \"2\", \"3\"], 代表不订阅UserId 1，2，3的音频流；[\"1.*$\"], 代表不订阅UserId前缀为1的音频流。默认不填订阅房间内所有音频流，订阅列表用户数不超过32。",
           "example": "[\"123\",\"456\"]",
@@ -5305,7 +5074,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅视频流白名单，指定订阅哪几个UserId的视频流，例如[\"1\", \"2\", \"3\"], 代表订阅UserId  1，2，3的视频流；[\"1.*$\"], 代表订阅UserId前缀为1的视频流。默认不填订阅房间内所有视频流，订阅列表用户数不超过32。",
           "example": "[\"123\",\"456\"]",
@@ -5316,7 +5084,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅视频流黑名单，指定不订阅哪几个UserId的视频流，例如[\"1\", \"2\", \"3\"], 代表不订阅UserId  1，2，3的视频流；[\"1.*$\"], 代表不订阅UserId前缀为1的视频流。默认不填订阅房间内所有视频流，订阅列表用户数不超过32。",
           "example": "[\"123\",\"456\"]",
@@ -5333,7 +5100,6 @@
       "document": "TRTC数据大盘/实时监控 API接口数据出参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "StatementID值，监控仪表盘下固定为0。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -5344,7 +5110,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结果数据，以Columns-Values形式返回。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -5355,7 +5120,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Total值，监控仪表盘功能下固定为1。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -5372,7 +5136,6 @@
       "document": "腾讯云点播相关参数。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "媒体后续任务处理操作，即完成媒体上传后，可自动发起任务流操作。参数值为任务流模板名，云点播支持 创建任务流模板 并为模板命名。",
           "example": "xxx",
@@ -5383,7 +5146,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体文件过期时间，为当前时间的绝对过期时间；保存一天，就填\"86400\"，永久保存就填\"0\"，默认永久保存。",
           "example": "86400",
@@ -5394,7 +5156,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定上传园区，仅适用于对上传地域有特殊需求的用户。",
           "example": "ap-shanghai",
@@ -5405,7 +5166,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分类ID，用于对媒体进行分类管理，可通过 创建分类 接口，创建分类，获得分类 ID。\n默认值：0，表示其他分类。",
           "example": "0",
@@ -5416,7 +5176,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "点播 子应用 ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
           "example": "0",
@@ -5427,7 +5186,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务流上下文，任务完成回调时透传。",
           "example": "xxx",
@@ -5438,7 +5196,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上传上下文，上传完成回调时透传。",
           "example": "xxx",
@@ -5449,7 +5206,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上传到vod平台的录制文件格式类型，0：mp4(默认), 1: hls, 2:aac(StreamType=1纯音频录制时有效)。",
           "example": "1",
@@ -5460,7 +5216,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仅支持API录制上传vod，该参数表示用户可以自定义录制文件名前缀，【限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符】。前缀与自动生成的录制文件名之间用__UserId_u_分开。",
           "example": "xxx",
@@ -5477,7 +5232,6 @@
       "document": "返回的质量数据，时间:值",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "时间，unix时间戳（1590065877s)",
           "example": "",
@@ -5488,7 +5242,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前时间返回参数取值，如（bigvCapFps在1590065877取值为0，则Value：0 ）",
           "example": "",
@@ -5505,7 +5258,6 @@
       "document": "实时音视频用量在某一时间段的统计信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "时间点，格式为YYYY-MM-DD HH:mm:ss。多天查询时，HH:mm:ss为00:00:00。",
           "example": "无",
@@ -5516,7 +5268,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用量数组。每个数值含义与UsageKey对应。单位：分钟。",
           "example": "无",
@@ -5650,7 +5401,6 @@
       "document": "用户信息，包括用户进房时间，退房时间等",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "房间号",
           "example": "",
@@ -5661,7 +5411,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户Id",
           "example": "",
@@ -5672,7 +5421,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户进房时间",
           "example": "",
@@ -5683,7 +5431,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户退房时间，用户没有退房则返回当前时间",
           "example": "",
@@ -5694,7 +5441,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "终端类型",
           "example": "",
@@ -5705,7 +5451,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Sdk版本号",
           "example": "",
@@ -5716,7 +5461,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端IP地址",
           "example": "",
@@ -5727,7 +5471,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "判断用户是否已经离开房间",
           "example": "",
@@ -5744,7 +5487,6 @@
       "document": "用户媒体流参数。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "TRTC用户参数。",
           "example": "MixUserInfo",
@@ -5755,7 +5497,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主辅路流类型，0为摄像头，1为屏幕分享，不填默认为0。",
           "example": "0",
@@ -5823,7 +5564,6 @@
       "document": "录制视频转码参数。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "视频的宽度值，单位为像素，默认值360。不能超过1920，与height的乘积不能超过1920*1080。",
           "example": "360",
@@ -5834,7 +5574,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频的高度值，单位为像素，默认值640。不能超过1920，与width的乘积不能超过1920*1080。",
           "example": "640",
@@ -5845,7 +5584,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频的帧率，范围[1, 60]，默认15。",
           "example": "15",
@@ -5856,7 +5594,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频的码率,单位是bps，范围[64000, 8192000]，默认550000bps。",
           "example": "550000",
@@ -5867,7 +5604,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视频关键帧时间间隔，单位秒，默认值10秒。",
           "example": "10",
@@ -6016,7 +5752,6 @@
       "document": "水印类型为图片的参数列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "下载的url地址， 只支持jpg， png，大小限制不超过5M。",
           "example": "https://xxxx",
@@ -6027,7 +5762,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "画布上该画面左上角的 y 轴坐标，取值范围 [0, 2560]，不能超过画布的高。",
           "example": "100",
@@ -6038,7 +5772,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "画布上该画面左上角的 x 轴坐标，取值范围 [0, 2560]，不能超过画布的宽。",
           "example": "100",
@@ -6049,7 +5782,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "画布上该画面宽度的相对值，取值范围 [0, 2560]，与Left相加不应超过画布的宽。",
           "example": "100",
@@ -6060,7 +5792,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "画布上该画面高度的相对值，取值范围 [0, 2560]，与Top相加不应超过画布的高。",
           "example": "100",
@@ -6077,7 +5808,6 @@
       "document": "MCU混流水印参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "混流-水印图片ID。取值为实时音视频控制台上传的图片ID。",
           "example": "51",
@@ -6088,7 +5818,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "混流-水印宽。单位为像素值。水印宽+X偏移不能超过整个画布宽。",
           "example": "64",
@@ -6099,7 +5828,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "混流-水印高。单位为像素值。水印高+Y偏移不能超过整个画布高。",
           "example": "64",
@@ -6110,7 +5838,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印在输出时的X偏移。单位为像素值。水印宽+X偏移不能超过整个画布宽。",
           "example": "10",
@@ -6121,7 +5848,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "水印在输出时的Y偏移。单位为像素值。水印高+Y偏移不能超过整个画布高。",
           "example": "10",
@@ -6132,7 +5858,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "混流-水印图片URL地址，支持png、jpg、jpeg、bmp格式，暂不支持透明通道。URL链接长度限制为512字节。WaterMarkUrl和WaterMarkId参数都填时，以WaterMarkUrl为准。图片大小限制不超过2MB。",
           "example": "xxx",

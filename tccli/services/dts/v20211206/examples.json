@@ -230,6 +230,14 @@
         "title": "修改迁移名称"
       }
     ],
+    "ModifyMigrateRateLimit": [
+      {
+        "document": "修改全量导出线程数成功",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMigrateRateLimit\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-lfjkazze\",\n    \"DumpThread\": 12\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ce7594b5-3fbc-40d8-a514-c35186cef95a\"\n    }\n}",
+        "title": "修改全量导出线程数"
+      }
+    ],
     "ModifyMigrationJob": [
       {
         "document": "",
@@ -244,6 +252,14 @@
         "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySyncJobConfig\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-4t8k7e8t\",\n    \"DynamicObjects\": {\n        \"Mode\": \"Partial\",\n        \"Databases\": [\n            {\n                \"DbName\": \"db1\",\n                \"DbMode\": \"All\",\n                \"TableMode\": \"All\",\n                \"ViewMode\": \"All\"\n            }\n        ]\n    },\n    \"DynamicOptions\": {\n        \"ConflictHandleOption\": {},\n        \"ConflictHandleType\": \"ReportError\",\n        \"DdlOptions\": [\n            {\n                \"DdlObject\": \"Database\",\n                \"DdlValue\": []\n            },\n            {\n                \"DdlObject\": \"Table\",\n                \"DdlValue\": []\n            },\n            {\n                \"DdlObject\": \"View\",\n                \"DdlValue\": []\n            },\n            {\n                \"DdlObject\": \"Index\",\n                \"DdlValue\": []\n            }\n        ],\n        \"OpTypes\": [\n            \"Insert\",\n            \"Update\",\n            \"Delete\",\n            \"DDL\"\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxaasassas\"\n    }\n}",
         "title": "配置修改对象任务"
+      }
+    ],
+    "ModifySyncRateLimit": [
+      {
+        "document": "修改任务全量导出线程数成功",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySyncRateLimit\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-asasdasa\",\n    \"DumpThread\": 12,\n    \"DumpRps\": 0,\n    \"LoadThread\": 0,\n    \"SinkerThread\": 0,\n    \"LoadRps\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改任务全量导出线程数"
       }
     ],
     "PauseMigrateJob": [

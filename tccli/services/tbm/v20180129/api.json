@@ -64,7 +64,6 @@
       "document": "用户年龄画像",
       "members": [
         {
-          "default": "",
           "document": "年龄区间",
           "member": "string",
           "name": "AgeRange",
@@ -73,7 +72,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "百分比",
           "member": "float",
           "name": "Percent",
@@ -88,7 +86,6 @@
       "document": "用户年龄画像元素数组",
       "members": [
         {
-          "default": "",
           "document": "用户年龄画像数组",
           "member": "AgePortrait",
           "name": "PortraitSet",
@@ -103,7 +100,6 @@
       "document": "文章信息",
       "members": [
         {
-          "default": "",
           "document": "文章标题",
           "member": "string",
           "name": "Title",
@@ -112,7 +108,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文章url地址",
           "member": "string",
           "name": "Url",
@@ -121,7 +116,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文章来源",
           "member": "string",
           "name": "FromSite",
@@ -130,7 +124,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文章发表日期",
           "member": "datetime",
           "name": "PubTime",
@@ -139,7 +132,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文章标识",
           "member": "uint64",
           "name": "Flag",
@@ -148,7 +140,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文章热度值",
           "member": "uint64",
           "name": "Hot",
@@ -157,7 +148,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文章来源等级",
           "member": "uint64",
           "name": "Level",
@@ -166,7 +156,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文章摘要",
           "member": "string",
           "name": "Abstract",
@@ -175,7 +164,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文章ID",
           "member": "string",
           "name": "ArticleId",
@@ -190,7 +178,6 @@
       "document": "用户好评差评个数信息",
       "members": [
         {
-          "default": "",
           "document": "评论的日期",
           "member": "date",
           "name": "Date",
@@ -199,7 +186,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "差评的个数",
           "member": "uint64",
           "name": "NegCommentCount",
@@ -208,7 +194,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "好评的个数",
           "member": "uint64",
           "name": "PosCommentCount",
@@ -223,7 +208,6 @@
       "document": "用户评论内容类型",
       "members": [
         {
-          "default": "",
           "document": "用户评论内容",
           "member": "string",
           "name": "Comment",
@@ -232,7 +216,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "评论的时间",
           "member": "datetime",
           "name": "Date",
@@ -247,7 +230,6 @@
       "document": "按日期的统计数据",
       "members": [
         {
-          "default": "",
           "document": "统计日期",
           "member": "date",
           "name": "Date",
@@ -256,7 +238,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "统计值",
           "member": "uint64",
           "name": "Count",
@@ -271,7 +252,6 @@
       "document": "DescribeBrandCommentCount请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "品牌ID",
           "member": "string",
           "name": "BrandId",
@@ -279,7 +259,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询开始日期",
           "member": "date",
           "name": "StartDate",
@@ -287,7 +266,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询结束日期",
           "member": "date",
           "name": "EndDate",
@@ -319,7 +297,6 @@
       "document": "DescribeBrandExposure请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "品牌ID",
           "member": "string",
           "name": "BrandId",
@@ -327,7 +304,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询开始时间",
           "member": "date",
           "name": "StartDate",
@@ -335,7 +311,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询结束时间",
           "member": "date",
           "name": "EndDate",
@@ -373,7 +348,6 @@
       "document": "DescribeBrandMediaReport请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "品牌ID",
           "member": "string",
           "name": "BrandId",
@@ -381,7 +355,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询开始时间",
           "member": "date",
           "name": "StartDate",
@@ -389,7 +362,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询结束时间",
           "member": "date",
           "name": "EndDate",
@@ -427,7 +399,6 @@
       "document": "DescribeBrandNegComments请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "品牌ID",
           "member": "string",
           "name": "BrandId",
@@ -435,7 +406,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询开始时间",
           "member": "date",
           "name": "StartDate",
@@ -443,7 +413,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询结束时间",
           "member": "date",
           "name": "EndDate",
@@ -451,7 +420,6 @@
           "type": "string"
         },
         {
-          "default": "20",
           "document": "查询条数上限，默认20",
           "member": "uint64",
           "name": "Limit",
@@ -459,7 +427,6 @@
           "type": "int"
         },
         {
-          "default": "0",
           "document": "查询偏移，默认从0开始",
           "member": "uint64",
           "name": "Offset",
@@ -497,7 +464,6 @@
       "document": "DescribeBrandPosComments请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "品牌ID",
           "member": "string",
           "name": "BrandId",
@@ -505,7 +471,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询开始时间",
           "member": "date",
           "name": "StartDate",
@@ -513,7 +478,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询结束时间",
           "member": "date",
           "name": "EndDate",
@@ -521,7 +485,6 @@
           "type": "string"
         },
         {
-          "default": "20",
           "document": "查询条数上限，默认20",
           "member": "uint64",
           "name": "Limit",
@@ -529,7 +492,6 @@
           "type": "int"
         },
         {
-          "default": "0",
           "document": "查询偏移，从0开始",
           "member": "uint64",
           "name": "Offset",
@@ -567,7 +529,6 @@
       "document": "DescribeBrandSocialOpinion请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "品牌ID",
           "member": "string",
           "name": "BrandId",
@@ -575,7 +536,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "检索开始时间",
           "member": "date",
           "name": "StartDate",
@@ -583,7 +543,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "检索结束时间",
           "member": "date",
           "name": "EndDate",
@@ -591,7 +550,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询偏移，默认从0开始",
           "member": "int64",
           "name": "Offset",
@@ -599,7 +557,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询条数上限，默认20",
           "member": "int64",
           "name": "Limit",
@@ -607,7 +564,6 @@
           "type": "int"
         },
         {
-          "default": "false",
           "document": "列表显示标记，若为true，则返回文章列表详情",
           "member": "bool",
           "name": "ShowList",
@@ -657,7 +613,6 @@
       "document": "DescribeBrandSocialReport请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "品牌ID",
           "member": "string",
           "name": "BrandId",
@@ -665,7 +620,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询开始时间",
           "member": "date",
           "name": "StartDate",
@@ -673,7 +627,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询结束时间",
           "member": "date",
           "name": "EndDate",
@@ -711,7 +664,6 @@
       "document": "DescribeIndustryNews请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "行业ID",
           "member": "string",
           "name": "IndustryId",
@@ -719,7 +671,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询开始时间",
           "member": "date",
           "name": "StartDate",
@@ -727,7 +678,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询结束时间",
           "member": "date",
           "name": "EndDate",
@@ -735,7 +685,6 @@
           "type": "string"
         },
         {
-          "default": "false",
           "document": "是否显示列表，若为 true，则返回文章列表",
           "member": "bool",
           "name": "ShowList",
@@ -743,7 +692,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "document": "查询偏移，默认从0开始",
           "member": "int64",
           "name": "Offset",
@@ -751,7 +699,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询条数上限，默认20",
           "member": "int64",
           "name": "Limit",
@@ -812,7 +759,6 @@
       "document": "DescribeUserPortrait请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "品牌ID",
           "member": "string",
           "name": "BrandId",
@@ -868,7 +814,6 @@
       "document": "性别画像元素",
       "members": [
         {
-          "default": "",
           "document": "性别",
           "member": "string",
           "name": "Gender",
@@ -877,7 +822,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "百分比",
           "member": "uint64",
           "name": "Percent",
@@ -892,7 +836,6 @@
       "document": "用户性别画像元素数组",
       "members": [
         {
-          "default": "",
           "document": "用户性别画像数组",
           "member": "GenderPortrait",
           "name": "PortraitSet",
@@ -907,7 +850,6 @@
       "document": "行业报道新闻",
       "members": [
         {
-          "default": "",
           "document": "行业报道ID",
           "member": "string",
           "name": "IndustryId",
@@ -916,7 +858,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "报道发表时间",
           "member": "datetime",
           "name": "PubTime",
@@ -925,7 +866,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "报道来源",
           "member": "string",
           "name": "FromSite",
@@ -934,7 +874,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "报道标题",
           "member": "string",
           "name": "Title",
@@ -943,7 +882,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "报道来源url",
           "member": "string",
           "name": "Url",
@@ -952,7 +890,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "报道来源等级",
           "member": "uint64",
           "name": "Level",
@@ -961,7 +898,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "热度值",
           "member": "uint64",
           "name": "Hot",
@@ -970,7 +906,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "报道标识",
           "member": "uint64",
           "name": "Flag",
@@ -979,7 +914,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "报道摘要",
           "member": "string",
           "name": "Abstract",
@@ -994,7 +928,6 @@
       "document": "电影喜好画像元素",
       "members": [
         {
-          "default": "",
           "document": "电影名称",
           "member": "string",
           "name": "Name",
@@ -1003,7 +936,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "百分比",
           "member": "float",
           "name": "Percent",
@@ -1018,7 +950,6 @@
       "document": "用户喜好电影画像元素数组",
       "members": [
         {
-          "default": "",
           "document": "用户喜好电影画像数组",
           "member": "MoviePortrait",
           "name": "PortraitSet",
@@ -1033,7 +964,6 @@
       "document": "省份画像元素",
       "members": [
         {
-          "default": "",
           "document": "省份名称",
           "member": "string",
           "name": "Province",
@@ -1042,7 +972,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "百分比",
           "member": "float",
           "name": "Percent",
@@ -1057,7 +986,6 @@
       "document": "用户省份画像元素数组",
       "members": [
         {
-          "default": "",
           "document": "用户省份画像数组",
           "member": "ProvincePortrait",
           "name": "PortraitSet",
@@ -1072,7 +1000,6 @@
       "document": "明星喜好画像元素",
       "members": [
         {
-          "default": "",
           "document": "喜欢的明星名字",
           "member": "string",
           "name": "Name",
@@ -1081,7 +1008,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "百分比",
           "member": "float",
           "name": "Percent",
@@ -1096,7 +1022,6 @@
       "document": "用户喜好的明星画像元素数组",
       "members": [
         {
-          "default": "",
           "document": "用户喜好的明星画像数组",
           "member": "StarPortrait",
           "name": "PortraitSet",

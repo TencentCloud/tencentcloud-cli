@@ -208,7 +208,6 @@
       "document": "商标信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "商标名称",
           "example": "xxx",
@@ -219,7 +218,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商标证明",
           "example": "xxx",
@@ -230,7 +228,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商标审核状态 1-审核中 2-审核未通过 3-审核通过",
           "example": "xxx",
@@ -241,7 +238,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审核说明",
           "example": "xxx",
@@ -252,7 +248,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商标转让证明",
           "example": "xxx",
@@ -263,7 +258,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商标转让证明审核状态",
           "example": "xxx",
@@ -274,7 +268,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审核说明 1-审核中 2-审核未通过 3-审核通过",
           "example": "xxx",
@@ -291,7 +284,6 @@
       "document": "CreateBPFakeURL请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "保护网址ID",
           "example": "xxx",
@@ -301,7 +293,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仿冒网址",
           "example": "xxx",
@@ -311,7 +302,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "截图",
           "example": "xxx",
@@ -321,7 +311,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "举报说明",
           "example": "xxx",
@@ -349,7 +338,6 @@
       "document": "CreateBPFalseTicket请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "仿冒网址",
           "example": "xxx",
@@ -377,7 +365,6 @@
       "document": "CreateBPOfflineAttachment请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "品牌名字",
           "example": "xxx",
@@ -387,7 +374,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商标证明",
           "example": "xxx",
@@ -397,7 +383,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商标转让证明",
           "example": "xxx",
@@ -407,7 +392,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权书",
           "example": "xxx",
@@ -435,7 +419,6 @@
       "document": "CreateBPOfflineTicket请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "仿冒网址ID",
           "example": "xxx",
@@ -463,7 +446,6 @@
       "document": "CreateBPProtectURLs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "企业名称",
           "example": "xxx",
@@ -473,7 +455,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电话号码",
           "example": "xxx",
@@ -483,7 +464,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "营业执照",
           "example": "xxx",
@@ -493,7 +473,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "保护网站",
           "example": "xxx",
@@ -503,7 +482,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网站名称",
           "example": "xxx",
@@ -531,7 +509,6 @@
       "document": "CreateCRBlock请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作品ID",
           "example": "123",
@@ -541,7 +518,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "侵权链接",
           "example": "https://test.com",
@@ -551,7 +527,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "侵权标题",
           "example": "测试标题",
@@ -561,7 +536,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "侵权平台",
           "example": "测试平台",
@@ -571,7 +545,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "拦截结果回调地址",
           "example": "https://test.com",
@@ -581,7 +554,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权书下载地址",
           "example": "https://test.com",
@@ -591,7 +563,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权书生效日期",
           "example": "2022-01-01 00:00:00",
@@ -601,7 +572,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权书截止日期",
           "example": "2022-01-01 00:00:00",
@@ -611,7 +581,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "侵权截图",
           "example": "https://test.com",
@@ -621,7 +590,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "委托书下载地址",
           "example": "https://test.com",
@@ -631,7 +599,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "委托书生效日期",
           "example": "2022-01-01 00:00:00",
@@ -641,7 +608,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "委托书截止日期",
           "example": "2022-01-01 00:00:00",
@@ -651,7 +617,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否著作权人：0-否 1-是",
           "example": "1",
@@ -661,7 +626,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存证证书下载地址",
           "example": "https://test.com",
@@ -671,7 +635,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存证证书生效日期",
           "example": "2022-01-01 00:00:00",
@@ -681,7 +644,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存证证书截止日期",
           "example": "2022-01-01 00:00:00",
@@ -729,7 +691,6 @@
       "document": "CreateCRCompanyVerify请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "企业名称",
           "example": "腾讯科技有限公司",
@@ -739,7 +700,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企业证件号码",
           "example": "123456",
@@ -749,7 +709,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企业法人姓名",
           "example": "张三",
@@ -759,7 +718,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联系人姓名",
           "example": "李四",
@@ -769,7 +727,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "联系人手机号",
           "example": "13000000000",
@@ -779,7 +736,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "手机验证码，接口接入可以置空",
           "example": "123456",
@@ -789,7 +745,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段已废弃，企业认证号码类型 1：社会信用代码 2：组织机构代码 3：企业工商注册码 4：其他 默认为1",
           "example": "1",
@@ -799,7 +754,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段已废弃，认证类型",
           "example": "1",
@@ -847,7 +801,6 @@
       "document": "CreateCRDesktopCode请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "xxx",
           "example": "xxx",
@@ -857,7 +810,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "xxx",
           "example": "xxx",
@@ -885,7 +837,6 @@
       "document": "CreateCRRightFile请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作品ID",
           "example": "123",
@@ -895,7 +846,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权属文件列表",
           "example": "无",
@@ -933,7 +883,6 @@
       "document": "CreateCRRight请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作品ID",
           "example": "123",
@@ -943,7 +892,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "侵权链接",
           "example": "https://test.com",
@@ -953,7 +901,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "侵权标题",
           "example": "测试标题",
@@ -963,7 +910,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "侵权平台",
           "example": "测试平台",
@@ -973,7 +919,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发函结果回调地址",
           "example": "https://test.com",
@@ -983,7 +928,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权书下载地址",
           "example": "https://test.com",
@@ -993,7 +937,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权书生效日期",
           "example": "2022-01-01 00:00:00",
@@ -1003,7 +946,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权书截止日期",
           "example": "2022-01-01 00:00:00",
@@ -1013,7 +955,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "委托书下载地址",
           "example": "https://test.com",
@@ -1023,7 +964,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "委托书生效日期",
           "example": "2022-01-01 00:00:00",
@@ -1033,7 +973,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "委托书截止日期",
           "example": "2022-01-01 00:00:00",
@@ -1043,7 +982,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主页下载地址",
           "example": "https://test.com",
@@ -1053,7 +991,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主页生效日期",
           "example": "2022-01-01 00:00:00",
@@ -1063,7 +1000,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主页截止日期",
           "example": "2022-01-01 00:00:00",
@@ -1073,7 +1009,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否著作权人：0-否 1-是",
           "example": "1",
@@ -1083,7 +1018,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存证证书下载地址",
           "example": "https://test.com",
@@ -1093,7 +1027,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存证证书生效日期",
           "example": "2022-01-01 00:00:00",
@@ -1103,7 +1036,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存证证书截止日期",
           "example": "2022-01-01 00:00:00",
@@ -1151,7 +1083,6 @@
       "document": "CreateCRTort请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作品ID",
           "example": "xxx",
@@ -1161,7 +1092,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "侵权网址",
           "example": "xxx",
@@ -1171,7 +1101,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "侵权平台",
           "example": "xxx",
@@ -1181,7 +1110,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "侵权标题",
           "example": "xxx",
@@ -1279,7 +1207,6 @@
       "document": "CreateCRUserVerify请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户真实姓名",
           "example": "张三",
@@ -1289,7 +1216,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户身份证号",
           "example": "123456",
@@ -1299,7 +1225,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户手机号码",
           "example": "13000000000",
@@ -1309,7 +1234,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "短信验证码，接口接入可以置空",
           "example": "123456",
@@ -1319,7 +1243,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段已废弃，认证类型",
           "example": "1",
@@ -1808,7 +1731,6 @@
       "document": "DescribeBPFakeURLs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件",
           "example": "xxx",
@@ -1818,7 +1740,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页数",
           "example": "xxx",
@@ -1828,7 +1749,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码",
           "example": "xxx",
@@ -1886,7 +1806,6 @@
       "document": "DescribeBPProtectURLs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "页数",
           "example": "xxx",
@@ -1896,7 +1815,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码",
           "example": "xxx",
@@ -1944,7 +1862,6 @@
       "document": "DescribeBPReportFakeURLs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件",
           "example": "xxx",
@@ -1954,7 +1871,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页数",
           "example": "xxx",
@@ -1964,7 +1880,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码",
           "example": "xxx",
@@ -2012,7 +1927,6 @@
       "document": "DescribeCRMonitorDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作品ID",
           "example": "1",
@@ -2022,7 +1936,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页数",
           "example": "10",
@@ -2032,7 +1945,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码",
           "example": "1",
@@ -2042,7 +1954,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤参数",
           "example": "xxx",
@@ -2182,7 +2093,6 @@
       "document": "DescribeCRObtainDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "侵权ID",
           "example": "xxx",
@@ -2370,7 +2280,6 @@
       "document": "DescribeCRWorkInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作品ID",
           "example": "123",
@@ -2618,7 +2527,6 @@
       "document": "仿冒网站信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "仿冒网址ID",
           "example": "xxx",
@@ -2629,7 +2537,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "保护网站",
           "example": "xxx",
@@ -2640,7 +2547,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测时间",
           "example": "xxx",
@@ -2651,7 +2557,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仿冒网址",
           "example": "xxx",
@@ -2662,7 +2567,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "截图",
           "example": "xxx",
@@ -2673,7 +2577,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址",
           "example": "xxx",
@@ -2684,7 +2587,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP地理位置",
           "example": "xxx",
@@ -2695,7 +2597,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "热度",
           "example": "xxx",
@@ -2706,7 +2607,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网址状态",
           "example": "xxx",
@@ -2717,7 +2617,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "xxx",
@@ -2728,7 +2627,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仿冒网站所属单位",
           "example": "xxx",
@@ -2739,7 +2637,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仿冒网站性质",
           "example": "xxx",
@@ -2750,7 +2647,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仿冒网站名称",
           "example": "xxx",
@@ -2761,7 +2657,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仿冒网站备案号",
           "example": "xxx",
@@ -2772,7 +2667,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仿冒网站创建时间",
           "example": "xxx",
@@ -2783,7 +2677,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仿冒网站过期时间",
           "example": "xxx",
@@ -2800,7 +2693,6 @@
       "document": "权属文件列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件下载地址",
           "example": "xxx",
@@ -2811,7 +2703,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件类型 1-委托书 2-授权书 5-存证证书 11-营业执照",
           "example": "xxx",
@@ -2822,7 +2713,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件有效开始日期",
           "example": "xxx",
@@ -2833,7 +2723,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件有效截止日期",
           "example": "xxx",
@@ -2855,7 +2744,6 @@
       "document": "ModifyBPOfflineAttachment请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "营业执照",
           "example": "xxx",
@@ -2865,7 +2753,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权书",
           "example": "xxx",
@@ -2875,7 +2762,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商标名称",
           "example": "xxx",
@@ -2885,7 +2771,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商标证明",
           "example": "xxx",
@@ -2895,7 +2780,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商标转让证明",
           "example": "xxx",
@@ -2923,7 +2807,6 @@
       "document": "ModifyCRBlockStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "侵权ID",
           "example": "1",
@@ -2933,7 +2816,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "拦截结果回调地址",
           "example": "https://test.com",
@@ -2961,7 +2843,6 @@
       "document": "ModifyCRMonitor请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作品ID",
           "example": "123",
@@ -2971,7 +2852,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监测状态：1-开启监测 2-关闭监测",
           "example": "1",
@@ -2981,7 +2861,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监测截止时间",
           "example": "2022-01-01 00:00:00",
@@ -3009,7 +2888,6 @@
       "document": "ModifyCRObtainStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "侵权ID",
           "example": "123",
@@ -3019,7 +2897,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "取证类型：1-网页取证 2-过程取证(暂不提供)",
           "example": "1",
@@ -3029,7 +2906,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过程取证的取证时长，单位分钟，范围0-120",
           "example": "5",
@@ -3039,7 +2915,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "取证结果回调地址",
           "example": "https://test.com",
@@ -3067,7 +2942,6 @@
       "document": "ModifyCRRightStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "侵权ID",
           "example": "1",
@@ -3077,7 +2951,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发函结果回调地址",
           "example": "xxx",
@@ -3105,7 +2978,6 @@
       "document": "ModifyCRWhiteList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "该字段已废弃，白名单ID",
           "example": "123",
@@ -3115,7 +2987,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段已废弃，平台名称",
           "example": "测试平台",
@@ -3125,7 +2996,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段已废弃，平台站点链接",
           "example": "测试链接",
@@ -3135,7 +3005,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段已废弃，作者ID",
           "example": "123",
@@ -3145,7 +3014,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段已废弃，作品ID",
           "example": "123",
@@ -3155,7 +3023,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作品ID",
           "example": "123",
@@ -3165,7 +3032,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "白名单列表，以\\n分割",
           "example": "\"qq.com\\nbaidu.com\"",
@@ -3359,7 +3225,6 @@
       "document": "监测侵权信息详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "侵权信息ID",
           "example": "1",
@@ -3370,7 +3235,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "侵权标题",
           "example": "xxx",
@@ -3381,7 +3245,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "侵权平台",
           "example": "xxx",
@@ -3392,7 +3255,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "侵权链接",
           "example": "xxx",
@@ -3403,7 +3265,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "侵权链接发布时间",
           "example": "xxx",
@@ -3414,7 +3275,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作者",
           "example": "xxx",
@@ -3425,7 +3285,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发现时间",
           "example": "xxx",
@@ -3436,7 +3295,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "取证状态",
           "example": "1",
@@ -3447,7 +3305,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "维权状态",
           "example": "1",
@@ -3458,7 +3315,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "拦截状态",
           "example": "1",
@@ -3469,7 +3325,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "侵权编号",
           "example": "1",
@@ -3480,7 +3335,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "取证状态说明",
           "example": "1",
@@ -3491,7 +3345,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作品标题",
           "example": "1",
@@ -3502,7 +3355,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "侵权站点",
           "example": "1",
@@ -3513,7 +3365,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ICP备案信息",
           "example": "1",
@@ -3524,7 +3375,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "维权状态说明",
           "example": "1",
@@ -3535,7 +3385,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "取证类型",
           "example": "1",
@@ -3546,7 +3395,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "拦截状态说明",
           "example": "1",
@@ -3557,7 +3405,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作品ID",
           "example": "1",
@@ -3568,7 +3415,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "作品名称",
           "example": "1",
@@ -3579,7 +3425,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权书状态",
           "example": "1",
@@ -3590,7 +3435,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "委托书状态",
           "example": "1",
@@ -3601,7 +3445,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存证证书状态",
           "example": "1",
@@ -3612,7 +3455,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否著作权人",
           "example": "1",
@@ -3623,7 +3465,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否境外网址",
           "example": "1",
@@ -3634,7 +3475,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ip地理位置",
           "example": "1",
@@ -3651,7 +3491,6 @@
       "document": "保护网站信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "保护网站ID",
           "example": "xxx",
@@ -3662,7 +3501,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "保护网站",
           "example": "xxx",
@@ -3673,7 +3511,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "保护网站名称",
           "example": "xxx",
@@ -3684,7 +3521,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "保护网站审核状态 1-审核中 2-审核不通过 3-审核通过",
           "example": "xxx",
@@ -3695,7 +3531,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网站审核不通过原因",
           "example": "xxx",
@@ -3706,7 +3541,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "xxx",
@@ -3723,7 +3557,6 @@
       "document": "举报网址信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "仿冒网址ID",
           "example": "xxx",
@@ -3734,7 +3567,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测时间",
           "example": "xxx",
@@ -3745,7 +3577,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "保护网站",
           "example": "xxx",
@@ -3756,7 +3587,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "保护网站名称",
           "example": "xxx",
@@ -3767,7 +3597,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仿冒网址",
           "example": "xxx",
@@ -3778,7 +3607,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "截图",
           "example": "xxx",
@@ -3789,7 +3617,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP地址",
           "example": "xxx",
@@ -3800,7 +3627,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP地理位置",
           "example": "xxx",
@@ -3811,7 +3637,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "热度",
           "example": "xxx",
@@ -3822,7 +3647,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网站状态",
           "example": "xxx",
@@ -3833,7 +3657,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网站不处理原因",
           "example": "xxx",
@@ -3844,7 +3667,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仿冒网站的企业名称",
           "example": "xxx",
@@ -3855,7 +3677,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仿冒网站的网站性质",
           "example": "xxx",
@@ -3866,7 +3687,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仿冒网站的网站名称",
           "example": "xxx",
@@ -3877,7 +3697,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仿冒网站的备案",
           "example": "xxx",
@@ -3888,7 +3707,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仿冒网站创建时间",
           "example": "xxx",
@@ -3899,7 +3717,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仿冒网站过期时间",
           "example": "xxx",
@@ -3910,7 +3727,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协查处置时间",
           "example": "xxx",
@@ -3927,7 +3743,6 @@
       "document": "UpdateCRWork请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "作品ID",
           "example": "123",
@@ -3937,7 +3752,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件的扩展名，例如txt，docx",
           "example": "txt",
@@ -3947,7 +3761,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内容的base64编码",
           "example": "123abc",
@@ -3957,7 +3770,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本次存证类型：0-不存证 1-存当前文件 2-存历史全量文件",
           "example": "0",

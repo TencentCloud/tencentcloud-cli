@@ -733,7 +733,6 @@
       "document": "AMQP集群配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "单Vhost TPS上限",
           "example": "8000",
@@ -744,7 +743,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单Vhost客户端连接数上限",
           "example": "8000",
@@ -755,7 +753,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大Vhost数量",
           "example": "10",
@@ -766,7 +763,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大exchange数量",
           "example": "100",
@@ -777,7 +773,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大Queue数量",
           "example": "100",
@@ -788,7 +783,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息最大保留时间，以毫秒为单位",
           "example": "100000",
@@ -799,7 +793,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已使用Vhost数量",
           "example": "3",
@@ -810,7 +803,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已使用exchange数量",
           "example": "3",
@@ -821,7 +813,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已使用queue数量",
           "example": "8",
@@ -838,7 +829,6 @@
       "document": "租户AMQP集群详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群基本信息",
           "example": "无",
@@ -849,7 +839,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群配置信息",
           "example": "无",
@@ -860,7 +849,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -871,7 +859,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -888,7 +875,6 @@
       "document": "AMQP集群基本信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "amqp-xxxxx",
@@ -899,7 +885,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群名称",
           "example": "test",
@@ -910,7 +895,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域信息",
           "example": "华南地区",
@@ -921,7 +905,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间，毫秒为单位",
           "example": "100000000",
@@ -932,7 +915,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群说明信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "备注",
@@ -943,7 +925,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网接入地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxx",
@@ -954,7 +935,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC接入地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxxx",
@@ -971,7 +951,6 @@
       "document": "AcknowledgeMessage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用作标识消息的唯一的ID（可从 receiveMessage 的返回值中获得）",
           "example": "5:7:-1",
@@ -981,7 +960,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Topic 名字（可从 receiveMessage 的返回值中获得）这里尽量需要使用topic的全路径，即：tenant/namespace/topic。如果不指定，默认使用的是：public/default",
           "example": "persistent://tenant/namespace/my-topic",
@@ -991,7 +969,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅者的名字，可以从receiveMessage的返回值中获取到。这里尽量与receiveMessage中的订阅者保持一致，否则没办法正确ack 接收回来的消息。",
           "example": "my-sub",
@@ -1029,7 +1006,6 @@
       "document": "用户专享集群信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "物理集群的名称",
           "example": "",
@@ -1051,7 +1027,6 @@
       "document": "ClearCmqQueue请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "队列名字，在单个地域同一帐号下唯一。队列名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
           "example": "test-queue",
@@ -1079,7 +1054,6 @@
       "document": "ClearCmqSubscriptionFilterTags请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主题名字，在单个地域同一帐号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线（-）。",
           "example": "test-topic",
@@ -1089,7 +1063,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅名字，在单个地域同一帐号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
           "example": "test-queue",
@@ -1117,7 +1090,6 @@
       "document": "集群信息集合",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群Id。",
           "example": "1000",
@@ -1128,7 +1100,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群名称。",
           "example": "pulsar-xxxx",
@@ -1139,7 +1110,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "说明信息。",
           "example": "test",
@@ -1150,7 +1120,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "\b接入点数量",
           "example": "0",
@@ -1161,7 +1130,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2021-04-21 19:00:00",
@@ -1172,7 +1140,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群是否健康，1表示健康，0表示异常",
           "example": "1",
@@ -1183,7 +1150,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群健康信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -1194,7 +1160,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败",
           "example": "1",
@@ -1205,7 +1170,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大命名空间数量",
           "example": "100",
@@ -1216,7 +1180,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大Topic数量",
           "example": "8000",
@@ -1227,7 +1190,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大QPS",
           "example": "1000",
@@ -1238,7 +1200,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大消息保留时间，秒为单位",
           "example": "100000000",
@@ -1249,7 +1210,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大存储容量",
           "example": "1024",
@@ -1260,7 +1220,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2.5.1",
@@ -1271,7 +1230,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网访问接入点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -1282,7 +1240,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC访问接入点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -1293,7 +1250,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -1304,7 +1260,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已使用存储限制，MB为单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1315,7 +1270,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大生产消息速率，以条数为单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1326,7 +1280,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大推送消息速率，以条数为单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1337,7 +1290,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大生产消息速率，以字节为单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1348,7 +1300,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大推送消息速率，以字节为单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1359,7 +1310,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已创建主题数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1370,7 +1320,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最长消息延时，以秒为单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1381,7 +1330,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启公网访问，不填时默认开启\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -1392,7 +1340,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1403,7 +1350,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计费模式：\n0: 按量计费\n1: 包年包月\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1420,7 +1366,6 @@
       "document": "cmq DeadLetterPolicy",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "死信队列。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -1431,7 +1376,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "死信队列策略。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1442,7 +1386,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大未消费过期时间。Policy为1时必选。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1453,7 +1396,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大接收次数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1470,7 +1412,6 @@
       "document": "Cmq DeadLetterSource",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "消息队列ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -1481,7 +1422,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息队列名字。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -1498,7 +1438,6 @@
       "document": "cmq 批量queue属性信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "消息队列ID。",
           "example": "xxx",
@@ -1509,7 +1448,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息队列名字。",
           "example": "xxxx",
@@ -1520,7 +1458,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每秒钟生产消息条数的限制，消费消息的大小是该值的1.1倍。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1531,7 +1468,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "带宽限制。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1542,7 +1478,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "飞行消息最大保留时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1553,7 +1488,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大堆积消息数。取值范围在公测期间为 1,000,000 - 10,000,000，正式上线后范围可达到 1000,000-1000,000,000。默认取值在公测期间为 10,000,000，正式上线后为 100,000,000。",
           "example": "0",
@@ -1564,7 +1498,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息接收长轮询等待时间。取值范围0 - 30秒，默认值0。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1575,7 +1508,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息保留周期。取值范围60-1296000秒（1min-15天），默认值345600秒（4 天）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1586,7 +1518,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息可见性超时。取值范围1 - 43200秒（即12小时内），默认值30。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1597,7 +1528,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息最大长度。取值范围1024 - 1048576 Byte（即1K - 1024K），默认值65536。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1608,7 +1538,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回溯队列的消息回溯时间最大值，取值范围0 - 43200秒，0表示不开启消息回溯。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1619,7 +1548,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "队列的创建时间。返回 Unix 时间戳，精确到毫秒。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1630,7 +1558,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后一次修改队列属性的时间。返回 Unix 时间戳，精确到毫秒。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1641,7 +1568,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "在队列中处于 Active 状态（不处于被消费状态）的消息总数，为近似值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1652,7 +1578,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "在队列中处于 Inactive 状态（正处于被消费状态）的消息总数，为近似值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1663,7 +1588,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "延迟消息数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1674,7 +1598,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已调用 DelMsg 接口删除，但还在回溯保留时间内的消息数量。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1685,7 +1608,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息最小未消费时间，单位为秒。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1696,7 +1618,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事务消息队列。true表示是事务消息，false表示不是事务消息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -1707,7 +1628,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "死信队列。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1718,7 +1638,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "死信队列策略。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1729,7 +1648,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事务消息策略。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1740,7 +1658,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建者Uin。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1751,7 +1668,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联的标签。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1762,7 +1678,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息轨迹。true表示开启，false表示不开启。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -1773,7 +1688,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "租户id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1784,7 +1698,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1795,7 +1708,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1806,7 +1718,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大未确认消息数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100000",
@@ -1817,7 +1728,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大消息堆积大小（字节）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "104857600",
@@ -1828,7 +1738,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1984,7 +1893,6 @@
           "disabled": false,
           "document": "主题的 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
-          "is_base64": false,
           "member": "string",
           "name": "TopicId",
           "output_required": true,
@@ -1996,7 +1904,6 @@
           "disabled": false,
           "document": "主题名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
-          "is_base64": false,
           "member": "string",
           "name": "TopicName",
           "output_required": true,
@@ -2118,7 +2025,6 @@
           "disabled": false,
           "document": "租户id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "TenantId",
           "output_required": true,
@@ -2130,7 +2036,6 @@
           "disabled": false,
           "document": "命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "NamespaceName",
           "output_required": true,
@@ -2178,7 +2083,6 @@
       "document": "cmq TransactionPolicy",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "第一次回查时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -2189,7 +2093,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大查询次数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -2206,7 +2109,6 @@
       "document": " 消费者",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "消费者开始连接的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -2217,7 +2119,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费者地址。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -2228,7 +2129,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费者名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -2239,7 +2139,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费者版本。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -2250,7 +2149,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费者连接的主题分区号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -2267,7 +2165,6 @@
       "document": "消费进度详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "当前分区id。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2278,7 +2175,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息数量。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2289,7 +2185,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息积压数量。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2300,7 +2195,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费者每秒分发消息的数量之和。",
           "example": "",
@@ -2311,7 +2205,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费者每秒消息的byte。",
           "example": "",
@@ -2322,7 +2215,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "超时丢弃比例。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2339,7 +2231,6 @@
       "document": "CreateCluster请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过16个字符。",
           "example": "default",
@@ -2349,7 +2240,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户专享物理集群ID，如果不传，则默认在公共集群上创建用户集群资源。",
           "example": "NULL",
@@ -2359,7 +2249,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "说明，128个字符以内。",
           "example": "demo",
@@ -2369,7 +2258,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群的标签列表(已废弃)",
           "example": "NULL",
@@ -2379,7 +2267,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启公网访问，不填时默认开启",
           "example": "true",
@@ -2598,7 +2485,6 @@
       "document": "CreateCmqSubscribe请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主题名字，在单个地域同一帐号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线（-）。",
           "example": "ConnTopic",
@@ -2608,7 +2494,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅名字，在单个地域同一帐号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
           "example": "ConnSubQueue",
@@ -2618,7 +2503,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅的协议，目前支持两种协议：http、queue。使用http协议，用户需自己搭建接受消息的web server。使用queue，消息会自动推送到CMQ queue，用户可以并发地拉取消息。",
           "example": "queue",
@@ -2628,7 +2512,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接收通知的Endpoint，根据协议Protocol区分：对于http，Endpoint必须以“`http://`”开头，host可以是域名或IP；对于Queue，则填QueueName。 请注意，目前推送服务不能推送到私有网络中，因此Endpoint填写为私有网络域名或地址将接收不到推送的消息，目前支持推送到公网和基础网络。",
           "example": "queue_sub",
@@ -2638,7 +2521,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "向Endpoint推送消息出现错误时，CMQ推送服务器的重试策略。取值有：1）BACKOFF_RETRY，退避重试。每隔一定时间重试一次，重试够一定次数后，就把该消息丢弃，继续推送下一条消息；2）EXPONENTIAL_DECAY_RETRY，指数衰退重试。每次重试的间隔是指数递增的，例如开始1s，后面是2s，4s，8s...由于Topic消息的周期是一天，所以最多重试一天就把消息丢弃。默认值是EXPONENTIAL_DECAY_RETRY。",
           "example": "xxx",
@@ -2648,7 +2530,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息正文。消息标签（用于消息过滤)。标签数量不能超过5个，每个标签不超过16个字符。与(Batch)PublishMessage的MsgTag参数配合使用，规则：1）如果FilterTag没有设置，则无论MsgTag是否有设置，订阅接收所有发布到Topic的消息；2）如果FilterTag数组有值，则只有数组中至少有一个值在MsgTag数组中也存在时（即FilterTag和MsgTag有交集），订阅才接收该发布到Topic的消息；3）如果FilterTag数组有值，但MsgTag没设置，则不接收任何发布到Topic的消息，可以认为是2）的一种特例，此时FilterTag和MsgTag没有交集。规则整体的设计思想是以订阅者的意愿为主。",
           "example": "无",
@@ -2658,7 +2539,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "BindingKey数量不超过5个， 每个BindingKey长度不超过64字节，该字段表示订阅接收消息的过滤策略，每个BindingKey最多含有15个“.”， 即最多16个词组。",
           "example": "无",
@@ -2668,7 +2548,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "推送内容的格式。取值：1）JSON；2）SIMPLIFIED，即raw格式。如果Protocol是queue，则取值必须为SIMPLIFIED。如果Protocol是http，两个值均可以，默认值是JSON。",
           "example": "xxx",
@@ -2706,7 +2585,6 @@
       "document": "CreateCmqTopic请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主题名字，在单个地域同一帐号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线（-）。",
           "example": "xxx",
@@ -2716,7 +2594,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息最大长度。取值范围 1024-65536 Byte（即1-64K），默认值 65536。",
           "example": "0",
@@ -2726,7 +2603,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用于指定主题的消息匹配策略。1：表示标签匹配策略；2：表示路由匹配策略，默认值为标签匹配策略。",
           "example": "0",
@@ -2736,7 +2612,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息保存时间。取值范围60 - 86400 s（即1分钟 - 1天），默认值86400。",
           "example": "0",
@@ -2746,7 +2621,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启消息轨迹标识，true表示开启，false表示不开启，不填表示不开启。",
           "example": "false",
@@ -2756,7 +2630,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签数组",
           "example": "无",
@@ -2777,7 +2650,7 @@
           "example": "topic-gzz05csc",
           "member": "string",
           "name": "TopicId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2902,7 +2775,6 @@
       "document": "CreateEnvironmentRole请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境（命名空间）名称。",
           "example": "default",
@@ -2912,7 +2784,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "角色名称。",
           "example": "test_role_1",
@@ -2922,7 +2793,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权项，最多只能包含produce、consume两项的非空字符串数组。",
           "example": "无",
@@ -2932,7 +2802,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "必填字段，集群的ID",
           "example": "xxx",
@@ -3176,7 +3045,6 @@
       "document": "CreateRabbitMQVirtualHost请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群实例Id",
           "example": "amqp-xxx",
@@ -3186,7 +3054,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "vhost名",
           "example": "testVhost",
@@ -3196,7 +3063,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "example": "hello",
@@ -3206,7 +3072,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息轨迹开关,true打开,false关闭,默认关闭",
           "example": "true",
@@ -3244,7 +3109,6 @@
       "document": "CreateRocketMQCluster请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群名称，3-64个字符，只能包含字母、数字、“-”及“_”",
           "example": "test",
@@ -3254,7 +3118,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群描述，128个字符以内",
           "example": "备注",
@@ -3292,7 +3155,6 @@
       "document": "CreateRocketMQGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Group名称，8~64个字符",
           "example": "test",
@@ -3302,7 +3164,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间，目前只支持单个命名空间",
           "example": "无",
@@ -3312,7 +3173,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启消费",
           "example": "true",
@@ -3322,7 +3182,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启广播消费",
           "example": "true",
@@ -3332,7 +3191,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "rocketmq-xxxxx",
@@ -3342,7 +3200,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "说明信息，最长128个字符",
           "example": "备注",
@@ -3352,7 +3209,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Group类型（TCP/HTTP）",
           "example": "TCP",
@@ -3362,7 +3218,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Group最大重试次数",
           "example": "16",
@@ -3701,7 +3556,6 @@
       "document": "CreateSubscription请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境（命名空间）名称。",
           "example": "default",
@@ -3711,7 +3565,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主题名称。",
           "example": "cloud_test",
@@ -3721,7 +3574,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅者名称，不超过128个字符。",
           "example": "cloud_sub",
@@ -3731,7 +3583,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否幂等创建，若否不允许创建同名的订阅关系。",
           "example": "true",
@@ -3741,7 +3592,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注，128个字符以内。",
           "example": "创建订阅关系",
@@ -3751,7 +3601,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Pulsar 集群的ID",
           "example": "pulsar-xxx",
@@ -3761,7 +3610,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否自动创建死信和重试主题，True 表示创建，False表示不创建，默认自动创建死信和重试主题。",
           "example": "true",
@@ -3771,7 +3619,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定死信和重试主题名称规范，LEGACY表示历史命名规则，COMMUNITY表示Pulsar社区命名规范",
           "example": "LEGACY",
@@ -3940,7 +3787,6 @@
       "document": "DeleteCluster请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群Id，传入需要删除的集群Id。",
           "example": "pulsar-ge3n43v3wj",
@@ -3978,7 +3824,6 @@
       "document": "DeleteCmqQueue请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "队列名字，在单个地域同一帐号下唯一。队列名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
           "example": "test",
@@ -4006,7 +3851,6 @@
       "document": "DeleteCmqSubscribe请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主题名字，在单个地域同一帐号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
           "example": "test-topic",
@@ -4016,7 +3860,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅名字，在单个地域同一帐号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
           "example": "test-sub",
@@ -4044,7 +3887,6 @@
       "document": "DeleteCmqTopic请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主题名字，在单个地域同一帐号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
           "example": "test-topic",
@@ -4072,7 +3914,6 @@
       "document": "DeleteEnvironmentRoles请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境（命名空间）名称。",
           "example": "default",
@@ -4082,7 +3923,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "角色名称数组。",
           "example": "[\"test_role\\n\"]",
@@ -4092,7 +3932,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "必填字段，集群的ID",
           "example": "rocketmq-xxxxx",
@@ -4120,7 +3959,6 @@
       "document": "DeleteEnvironments请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境（命名空间）数组，每次最多删除20个。",
           "example": "[test1,test2]",
@@ -4130,7 +3968,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Pulsar 集群的ID",
           "example": "pulsar-ge3n43v3wj",
@@ -4287,7 +4124,6 @@
       "document": "DeleteRocketMQCluster请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待删除的集群Id。",
           "example": "rocketmq-xxxxx",
@@ -4315,7 +4151,6 @@
       "document": "DeleteRocketMQGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "rocketmq-xxxxx",
@@ -4325,7 +4160,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间名称",
           "example": "prod",
@@ -4335,7 +4169,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费组名称",
           "example": "test",
@@ -4363,7 +4196,6 @@
       "document": "DeleteRocketMQNamespace请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "rocketmq-xxxxx",
@@ -4373,7 +4205,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间名称",
           "example": "prod",
@@ -4401,7 +4232,6 @@
       "document": "DeleteRocketMQTopic请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "rocketmq-xxxxx",
@@ -4411,7 +4241,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间名称",
           "example": "prod",
@@ -4421,7 +4250,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主题名称",
           "example": "test",
@@ -4476,7 +4304,6 @@
       "document": "DeleteRoles请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "角色名称数组。",
           "example": "[\"test_role_1\\n\",\"test_role_2\\n\"]",
@@ -4486,7 +4313,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "必填字段，集群Id",
           "example": "pulsar-xxxx",
@@ -4524,7 +4350,6 @@
       "document": "DeleteSubscriptions请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "订阅关系集合，每次最多删除20个。",
           "example": "无",
@@ -4534,7 +4359,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "pulsar集群Id。",
           "example": "test",
@@ -4544,7 +4368,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境（命名空间）名称。",
           "example": "test",
@@ -4554,7 +4377,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否强制删除，默认为false",
           "example": "false",
@@ -4592,7 +4414,6 @@
       "document": "DeleteTopics请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主题集合，每次最多删除20个。",
           "example": "无",
@@ -4602,7 +4423,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "pulsar集群Id。",
           "example": "test",
@@ -4612,7 +4432,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境（命名空间）名称。",
           "example": "test",
@@ -4622,7 +4441,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否强制删除，默认为false",
           "example": "false",
@@ -4660,7 +4478,6 @@
       "document": "DescribeAMQPClusters请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "1",
@@ -4670,7 +4487,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制数目",
           "example": "10",
@@ -4680,7 +4496,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照集群ID关键字搜索",
           "example": "xxx",
@@ -4690,7 +4505,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照集群名称关键字搜索",
           "example": "xxx",
@@ -4700,7 +4514,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID列表过滤",
           "example": "无",
@@ -4710,7 +4523,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签过滤查找时，需要设置为true",
           "example": "无",
@@ -4720,7 +4532,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤器。目前支持按标签过滤。",
           "example": "无",
@@ -4768,7 +4579,6 @@
       "document": "DescribeAllTenants请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询偏移量",
           "example": "0",
@@ -4778,7 +4588,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询限制条数",
           "example": "10",
@@ -4788,7 +4597,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理集群名称",
           "example": "test",
@@ -4798,7 +4606,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "虚拟集群ID",
           "example": "rocketmq-xxxxx",
@@ -4808,7 +4615,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "虚拟集群名称",
           "example": "test",
@@ -4818,7 +4624,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议类型数组",
           "example": "无",
@@ -4828,7 +4633,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段名，支持createTime，updateTime",
           "example": "createTime",
@@ -4838,7 +4642,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "升序排列ASC，降序排列DESC",
           "example": "desc",
@@ -4923,7 +4726,6 @@
       "document": "DescribeBindVpcs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "起始下标，不填默认为0。",
           "example": "",
@@ -4933,7 +4735,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，不填则默认为10，最大值为20。",
           "example": "",
@@ -4943,7 +4744,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Pulsar 集群的ID",
           "example": "",
@@ -4989,7 +4789,6 @@
       "document": "DescribeClusterDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群的ID",
           "example": "pulsar-ge3n43v3wj",
@@ -5027,7 +4826,6 @@
       "document": "DescribeClusters请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "起始下标，不填默认为0。",
           "example": "0",
@@ -5037,7 +4835,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，不填则默认为10，最大值为20。",
           "example": "0",
@@ -5047,7 +4844,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID列表过滤",
           "example": "无",
@@ -5057,7 +4853,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否标签过滤",
           "example": "true",
@@ -5067,7 +4862,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤器。目前支持按标签过滤。",
           "example": "无",
@@ -5115,7 +4909,6 @@
       "document": "DescribeCmqDeadLetterSourceQueues请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "死信队列名称",
           "example": "test",
@@ -5125,7 +4918,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页时本页获取主题列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0。",
           "example": "10",
@@ -5135,7 +4927,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页时本页获取主题的个数，如果不传递该参数，则该参数默认为20，最大值为50。",
           "example": "0",
@@ -5145,7 +4936,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据SourceQueueName过滤",
           "example": "test",
@@ -5229,7 +5019,6 @@
       "document": "DescribeCmqQueues请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分页时本页获取队列列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0",
           "example": "0",
@@ -5239,7 +5028,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页时本页获取队列的个数，如果不传递该参数，则该参数默认为20，最大值为50。",
           "example": "1",
@@ -5249,7 +5037,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据QueueName进行过滤",
           "example": "无",
@@ -5259,7 +5046,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CMQ 队列名称列表过滤",
           "example": "test",
@@ -5269,7 +5055,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签过滤查找时，需要设置为 true",
           "example": "true",
@@ -5279,7 +5064,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤器。目前支持按标签过滤，标签的Name需要加前缀“tag:”，例如：tag:负责人、tag:环境、tag:业务",
           "example": "无",
@@ -5327,66 +5111,54 @@
       "document": "DescribeCmqSubscriptionDetail请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "主题名字，在单个地域同一账号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线（-）。",
           "example": "Conn",
-          "is_base64": false,
           "member": "string",
           "name": "TopicName",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "分页时本页获取主题列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "分页时本页获取主题的个数，如果不传递该参数，则该参数默认为20，最大值为50。",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "根据SubscriptionName进行模糊搜索",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "SubscriptionName",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "队列名称，订阅绑定的endpoint",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "QueueName",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "查询类型。取值：（1）topic；（2）queue。\n默认值是topic。如果 queryType 是 topic，则查询主题下的订阅列表；如果 queryType 是 queue，则查询队列绑定的订阅列表。",
           "example": "topic",
-          "is_base64": false,
           "member": "string",
           "name": "QueryType",
           "required": false,
@@ -5431,7 +5203,6 @@
       "document": "DescribeCmqTopicDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "精确匹配TopicName。",
           "example": "xxx",
@@ -5469,7 +5240,6 @@
       "document": "DescribeCmqTopics请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分页时本页获取队列列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0",
           "example": "0",
@@ -5479,7 +5249,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页时本页获取队列的个数，如果不传递该参数，则该参数默认为20，最大值为50。",
           "example": "1",
@@ -5489,7 +5258,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据TopicName进行模糊搜索",
           "example": "无",
@@ -5499,7 +5267,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CMQ 主题名称列表过滤",
           "example": "test",
@@ -5509,7 +5276,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签过滤查找时，需要设置为 true",
           "example": "true",
@@ -5519,7 +5285,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤器。目前支持按标签过滤，标签的Name需要加前缀“tag:”，例如：tag:负责人、tag:环境、tag:业务",
           "example": "无",
@@ -5567,7 +5332,6 @@
       "document": "DescribeEnvironmentAttributes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境（命名空间）名称。",
           "example": "default",
@@ -5577,7 +5341,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Pulsar 集群的ID",
           "example": "pulsar-ge3n43v3wj",
@@ -5685,7 +5448,6 @@
       "document": "DescribeEnvironmentRoles请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "必填字段，环境（命名空间）名称。",
           "example": "default",
@@ -5695,7 +5457,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始下标，不填默认为0。",
           "example": "0",
@@ -5705,7 +5466,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，不填则默认为10，最大值为20。",
           "example": "10",
@@ -5715,7 +5475,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "必填字段，Pulsar 集群的ID",
           "example": "pulsar-ge3n43v3wj",
@@ -5725,7 +5484,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "角色名称",
           "example": "role",
@@ -5735,7 +5493,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "* RoleName\n按照角色名进行过滤，精确查询。\n类型：String\n必选：否",
           "example": "无",
@@ -5783,7 +5540,6 @@
       "document": "DescribeEnvironments请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间名称，模糊搜索。",
           "example": "default",
@@ -5793,7 +5549,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始下标，不填默认为0。",
           "example": "0",
@@ -5803,7 +5558,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，不填则默认为10，最大值为20。",
           "example": "5",
@@ -5813,7 +5567,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Pulsar 集群的ID",
           "example": "pulsar-ge3n43v3wj",
@@ -5823,7 +5576,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "* EnvironmentId\n按照名称空间进行过滤，精确查询。\n类型：String\n必选：否",
           "example": "无",
@@ -5979,7 +5731,6 @@
       "document": "DescribeNodeHealthOpt请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "节点实例ID",
           "example": "ins-pkqqy3e2",
@@ -6027,7 +5778,6 @@
       "document": "DescribePublisherSummary请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "pulsar-xxxx",
@@ -6037,7 +5787,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间名称",
           "example": "test",
@@ -6047,7 +5796,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主题名称",
           "example": "test",
@@ -6115,7 +5863,6 @@
       "document": "DescribePublishers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "pulsar-xxxxx",
@@ -6125,7 +5872,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间名称",
           "example": "test",
@@ -6135,7 +5881,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主题名称",
           "example": "test",
@@ -6145,7 +5890,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数过滤器，支持ProducerName，Address字段",
           "example": "无",
@@ -6155,7 +5899,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询偏移量，默认为0",
           "example": "0",
@@ -6165,7 +5908,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询条数，默认为20",
           "example": "10",
@@ -6175,7 +5917,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序器",
           "example": "无",
@@ -6223,7 +5964,6 @@
       "document": "DescribePulsarProInstanceDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "pulsar-xxxxx",
@@ -6281,7 +6021,6 @@
       "document": "DescribePulsarProInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询条件过滤器",
           "example": "无",
@@ -6291,7 +6030,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询数目上限，默认20",
           "example": "20",
@@ -6301,7 +6039,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询起始位置",
           "example": "1",
@@ -6448,7 +6185,6 @@
       "document": "DescribeRabbitMQUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群实例Id",
           "example": "amqp-xxx",
@@ -6458,7 +6194,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名检索，支持前缀匹配，后缀匹配",
           "example": "test_user",
@@ -6468,7 +6203,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页Offset",
           "example": "0",
@@ -6478,7 +6212,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页Limit",
           "example": "20",
@@ -6488,7 +6221,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名，精确查询",
           "example": "test_user",
@@ -6498,7 +6230,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户标签，根据标签过滤列表",
           "example": "[\"tag1\",\"tag2\"]",
@@ -6546,7 +6277,6 @@
       "document": "DescribeRabbitMQVipInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "amqp-xxxxx",
@@ -6644,7 +6374,6 @@
       "document": "DescribeRabbitMQVipInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询条件过滤器",
           "example": "无",
@@ -6654,7 +6383,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询数目上限，默认20",
           "example": "20",
@@ -6664,7 +6392,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询起始位置",
           "example": "1",
@@ -6712,7 +6439,6 @@
       "document": "DescribeRabbitMQVirtualHostList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "不适用，默认参数",
           "example": "amqp-xxx",
@@ -6722,7 +6448,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "1",
@@ -6732,7 +6457,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一页限制",
           "example": "20",
@@ -6783,7 +6507,6 @@
           "disabled": false,
           "document": "集群实例Id",
           "example": "amqp-xxx",
-          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6793,7 +6516,6 @@
           "disabled": false,
           "document": "vhost名,不传则查询全部",
           "example": "testVhost",
-          "is_base64": false,
           "member": "string",
           "name": "VirtualHost",
           "required": false,
@@ -6803,7 +6525,6 @@
           "disabled": false,
           "document": "分页Offset",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -6813,7 +6534,6 @@
           "disabled": false,
           "document": "分页Limit",
           "example": "20",
-          "is_base64": false,
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -6823,7 +6543,6 @@
           "disabled": false,
           "document": "search-virtual-host：vhost名称模糊查询，之前前缀和后缀匹配",
           "example": "查询条件",
-          "is_base64": false,
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -6833,7 +6552,6 @@
           "disabled": false,
           "document": "排序依据的字段：\nMessageHeapCount - 消息堆积数；\nMessageRateInOut - 生产消费速率之和；\nMessageRateIn - 生产速率；\nMessageRateOut - 消费速率；",
           "example": "MessageHeapCount",
-          "is_base64": false,
           "member": "string",
           "name": "SortElement",
           "required": false,
@@ -6843,7 +6561,6 @@
           "disabled": false,
           "document": "排序顺序，ascend 或 descend",
           "example": "ascend",
-          "is_base64": false,
           "member": "string",
           "name": "SortOrder",
           "required": false,
@@ -6888,7 +6605,6 @@
       "document": "DescribeRocketMQCluster请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "rocketmq-xxxxx",
@@ -6946,7 +6662,6 @@
       "document": "DescribeRocketMQClusters请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "0",
@@ -6956,7 +6671,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制数目",
           "example": "10",
@@ -6966,7 +6680,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照集群ID关键字搜索",
           "example": "xxxx",
@@ -6976,7 +6689,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照集群名称关键字搜索",
           "example": "xxxx",
@@ -6986,7 +6698,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID列表过滤",
           "example": "无",
@@ -6996,7 +6707,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签过滤查找时，需要设置为true",
           "example": "无",
@@ -7006,7 +6716,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤器。目前支持标签过滤。",
           "example": "无",
@@ -7315,7 +7024,6 @@
       "document": "DescribeRocketMQNamespaces请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "rocketmq-xxxxx",
@@ -7325,7 +7033,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "0",
@@ -7335,7 +7042,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制数目",
           "example": "10",
@@ -7345,7 +7051,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按名称搜索",
           "example": "xxxx",
@@ -7393,7 +7098,6 @@
       "document": "DescribeRocketMQTopics请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询偏移量",
           "example": "0",
@@ -7403,7 +7107,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询限制数",
           "example": "10",
@@ -7413,7 +7116,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "rocketmq-xxxxx",
@@ -7423,7 +7125,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间",
           "example": "prod",
@@ -7433,7 +7134,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按主题类型过滤查询结果，可选择Normal, GlobalOrder, PartitionedOrder, Transaction",
           "example": "无",
@@ -7443,7 +7143,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按主题名称搜索，支持模糊查询",
           "example": "test",
@@ -7491,7 +7190,6 @@
       "document": "DescribeRocketMQVipInstanceDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "rocketmq-xxxxx",
@@ -7602,7 +7300,6 @@
       "document": "DescribeRoles请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "角色名称，模糊查询",
           "example": "test",
@@ -7612,7 +7309,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始下标，不填默认为0。",
           "example": "0",
@@ -7622,7 +7318,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，不填则默认为10，最大值为20。",
           "example": "10",
@@ -7632,7 +7327,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "必填字段，集群Id",
           "example": "test",
@@ -7642,7 +7336,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "* RoleName\n按照角色名进行过滤，精确查询。\n类型：String\n必选：否",
           "example": "无",
@@ -7690,7 +7383,6 @@
       "document": "DescribeSubscriptions请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境（命名空间）名称。",
           "example": "test1",
@@ -7700,7 +7392,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主题名称。",
           "example": "test",
@@ -7710,7 +7401,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始下标，不填默认为0。",
           "example": "0",
@@ -7720,7 +7410,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，不填则默认为10，最大值为20。",
           "example": "10",
@@ -7730,7 +7419,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅者名称，模糊匹配。",
           "example": "test",
@@ -7740,7 +7428,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据过滤条件。",
           "example": "无",
@@ -7750,7 +7437,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Pulsar 集群的ID",
           "example": "pulsar-xxxx",
@@ -8012,7 +7698,6 @@
       "document": "环境角色集合",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境（命名空间）。",
           "example": "",
@@ -8023,7 +7708,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "角色名称。",
           "example": "",
@@ -8034,7 +7718,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权项，最多只能包含produce、consume两项的非空字符串数组。",
           "example": "",
@@ -8045,7 +7728,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "角色描述。",
           "example": "",
@@ -8056,7 +7738,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。",
           "example": "",
@@ -8067,7 +7748,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间。",
           "example": "",
@@ -8136,7 +7816,6 @@
       "document": "过滤参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "过滤参数的名字",
           "example": "xxx",
@@ -8147,7 +7826,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数值",
           "example": "无",
@@ -8164,7 +7842,6 @@
       "document": "过滤订阅列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否仅展示包含真实消费者的订阅。",
           "example": "false",
@@ -8175,7 +7852,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否仅展示消息堆积的订阅。",
           "example": "false",
@@ -8186,7 +7862,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否仅展示存在消息超期丢弃的订阅。",
           "example": "false",
@@ -8197,7 +7872,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照订阅名过滤，精确查询。",
           "example": "false",
@@ -8214,7 +7888,6 @@
       "document": "实例节点分布信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "可用区",
           "example": "ap-guangzhou-1",
@@ -8225,7 +7898,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区id",
           "example": "100001",
@@ -8236,7 +7908,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点数",
           "example": "2",
@@ -8253,7 +7924,6 @@
       "document": "面向运营端的虚拟集群信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "虚拟集群ID",
           "example": "rocketmq-xxxxx",
@@ -8264,7 +7934,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "虚拟集群名称",
           "example": "test",
@@ -8275,7 +7944,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户UIN",
           "example": "1000000",
@@ -8286,7 +7954,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户的APPID",
           "example": "123456546",
@@ -8297,7 +7964,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理集群名称",
           "example": "test",
@@ -8308,7 +7974,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群协议类型，支持的值为TDMQ，ROCKETMQ，AMQP，CMQ",
           "example": "TDMQ",
@@ -8319,7 +7984,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间配额",
           "example": "100",
@@ -8330,7 +7994,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已使用命名空间配额",
           "example": "0",
@@ -8341,7 +8004,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Topic配额",
           "example": "100",
@@ -8352,7 +8014,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已使用Topic配额",
           "example": "0",
@@ -8363,7 +8024,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Topic分区数配额",
           "example": "100",
@@ -8374,7 +8034,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已使用Topic分区数配额",
           "example": "0",
@@ -8385,7 +8044,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储配额, byte为单位",
           "example": "100",
@@ -8396,7 +8054,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间最大生产TPS",
           "example": "100",
@@ -8407,7 +8064,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息最大保留时间，秒为单位",
           "example": "100",
@@ -8418,7 +8074,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间，毫秒为单位",
           "example": "0",
@@ -8429,7 +8084,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间，毫秒为单位",
           "example": "0",
@@ -8440,7 +8094,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间最大消费TPS",
           "example": "1000",
@@ -8451,7 +8104,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间最大消费带宽，byte为单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -8462,7 +8114,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间最大生产带宽，byte为单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -8473,7 +8124,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息最大保留空间，MB为单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -8484,7 +8134,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "public Access Enabled\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -8501,7 +8150,6 @@
       "document": "ModifyAMQPCluster请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "rocketmq-xxxxx",
@@ -8511,7 +8159,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "3-64个字符，只能包含字母、数字、“-”及“_”",
           "example": "test",
@@ -8521,7 +8168,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "说明信息，不超过128个字符",
           "example": "备注",
@@ -8549,7 +8195,6 @@
       "document": "ModifyCluster请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Pulsar 集群的ID，需要更新的集群Id。",
           "example": "pulsar-ge3n43v3wj",
@@ -8559,7 +8204,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新后的集群名称。",
           "example": "test",
@@ -8569,7 +8213,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "说明信息。",
           "example": "demo",
@@ -8579,7 +8222,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开启公网访问，只能为true",
           "example": "true",
@@ -8617,7 +8259,6 @@
       "document": "ModifyCmqQueueAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "队列名字，在单个地域同一帐号下唯一。队列名称是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
           "example": "xxx",
@@ -8627,7 +8268,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大堆积消息数。取值范围在公测期间为 1,000,000 - 10,000,000，正式上线后范围可达到 1000,000-1000,000,000。默认取值在公测期间为 10,000,000，正式上线后为 100,000,000。",
           "example": "0",
@@ -8637,7 +8277,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息接收长轮询等待时间。取值范围 0-30 秒，默认值 0。",
           "example": "0",
@@ -8647,7 +8286,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息可见性超时。取值范围 1-43200 秒（即12小时内），默认值 30。",
           "example": "0",
@@ -8657,7 +8295,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息最大长度，新版CMQ新建的队列默认1024KB，不支持修改",
           "example": "1024",
@@ -8667,7 +8304,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息最长未确认时间。取值范围 30-43200 秒（30秒~12小时），默认值 3600 (1 小时)。",
           "example": "0",
@@ -8677,7 +8313,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "队列是否开启回溯消息能力，该参数取值范围0-1296000，0表示不开启。",
           "example": "0",
@@ -8687,7 +8322,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "第一次查询时间",
           "example": "0",
@@ -8697,7 +8331,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大查询次数",
           "example": "0",
@@ -8707,7 +8340,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "死信队列名称",
           "example": "xxx",
@@ -8717,7 +8349,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "MaxTimeToLivepolicy为1时必选。最大未消费过期时间。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds",
           "example": "0",
@@ -8727,7 +8358,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大接收次数",
           "example": "0",
@@ -8737,7 +8367,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "死信队列策略",
           "example": "0",
@@ -8747,7 +8376,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启消息轨迹标识，true表示开启，false表示不开启，不填表示不开启。",
           "example": "false",
@@ -8757,7 +8385,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启事务，1开启，0不开启",
           "example": "0",
@@ -8767,7 +8394,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "队列可回溯存储空间：若开启消息回溯，取值范围：10240MB - 512000MB，若不开启消息回溯，取值：0",
           "example": "0",
@@ -8795,7 +8421,6 @@
       "document": "ModifyCmqSubscriptionAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主题名字，在单个地域同一帐号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线（-）。",
           "example": "test-topic",
@@ -8805,7 +8430,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅名字，在单个地域同一帐号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
           "example": "tese-sub",
@@ -8815,7 +8439,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "向 Endpoint 推送消息出现错误时，CMQ 推送服务器的重试策略。取值如下：\n（1）BACKOFF_RETRY，退避重试。每隔一定时间重试一次，重试够一定次数后，就把该消息丢弃，继续推送下一条消息。\n（2）EXPONENTIAL_DECAY_RETRY，指数衰退重试。每次重试的间隔是指数递增的，例如开始1s，后面是2s，4s，8s···由于 Topic 消息的周期是一天，所以最多重试一天就把消息丢弃。默认值是 EXPONENTIAL_DECAY_RETRY。",
           "example": "xxx",
@@ -8825,7 +8448,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "推送内容的格式。取值：（1）JSON；（2）SIMPLIFIED，即 raw 格式。如果 Protocol 是 queue，则取值必须为 SIMPLIFIED。如果 Protocol 是 HTTP，两个值均可以，默认值是 JSON。",
           "example": "xxx",
@@ -8835,7 +8457,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息正文。消息标签（用于消息过滤)。标签数量不能超过5个，每个标签不超过16个字符。与(Batch)PublishMessage的MsgTag参数配合使用，规则：1）如果FilterTag没有设置，则无论MsgTag是否有设置，订阅接收所有发布到Topic的消息；2）如果FilterTag数组有值，则只有数组中至少有一个值在MsgTag数组中也存在时（即FilterTag和MsgTag有交集），订阅才接收该发布到Topic的消息；3）如果FilterTag数组有值，但MsgTag没设置，则不接收任何发布到Topic的消息，可以认为是2）的一种特例，此时FilterTag和MsgTag没有交集。规则整体的设计思想是以订阅者的意愿为主。",
           "example": "无",
@@ -8845,7 +8466,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "BindingKey数量不超过5个， 每个BindingKey长度不超过64字节，该字段表示订阅接收消息的过滤策略，每个BindingKey最多含有15个“.”， 即最多16个词组。",
           "example": "无",
@@ -8873,7 +8493,6 @@
       "document": "ModifyCmqTopicAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主题名字，在单个地域同一帐号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
           "example": "test-topic",
@@ -8883,7 +8502,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息最大长度。取值范围1024 - 65536 Byte（即1 - 64K），默认值65536。",
           "example": "1",
@@ -8893,7 +8511,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息保存时间。取值范围60 - 86400 s（即1分钟 - 1天），默认值86400。",
           "example": "1",
@@ -8903,7 +8520,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启消息轨迹标识，true表示开启，false表示不开启，不填表示不开启。",
           "example": "false",
@@ -9039,7 +8655,6 @@
       "document": "ModifyEnvironmentRole请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境（命名空间）名称。",
           "example": "default",
@@ -9049,7 +8664,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "角色名称。",
           "example": "test_role",
@@ -9059,7 +8673,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "授权项，最多只能包含produce、consume两项的非空字符串数组。",
           "example": "无",
@@ -9069,7 +8682,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "必填字段，集群的ID",
           "example": "pulsar-xxxx",
@@ -9232,7 +8844,6 @@
       "document": "ModifyRabbitMQVirtualHost请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群实例Id",
           "example": "amqp-xxx",
@@ -9242,7 +8853,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "vhost名",
           "example": "testVhost",
@@ -9252,7 +8862,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "example": "hello",
@@ -9262,7 +8871,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息轨迹开关,true打开,false关闭",
           "example": "false",
@@ -9344,7 +8952,6 @@
       "document": "ModifyRocketMQGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "rocketmq-xxxxx",
@@ -9354,7 +8961,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间",
           "example": "prod",
@@ -9364,7 +8970,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费组名称",
           "example": "test",
@@ -9374,7 +8979,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "说明信息，最长128个字符",
           "example": "备注",
@@ -9384,7 +8988,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启消费",
           "example": "true",
@@ -9394,7 +8997,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启广播消费",
           "example": "true",
@@ -9404,7 +9006,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大重试次数",
           "example": "16",
@@ -9567,7 +9168,6 @@
       "document": "ModifyRocketMQTopic请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "rocketmq-xxxxx",
@@ -9577,7 +9177,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间名称",
           "example": "prod",
@@ -9587,7 +9186,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主题名称",
           "example": "test",
@@ -9597,7 +9195,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "说明信息，最大128个字符",
           "example": "备注",
@@ -9607,7 +9204,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分区数，全局类型无效，不可小于当前分区数",
           "example": "1",
@@ -9635,7 +9231,6 @@
       "document": "ModifyRole请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "角色名称，不支持中字以及除了短线和下划线外的特殊字符且长度必须大于0且小等于32。",
           "example": "test_role",
@@ -9645,7 +9240,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注说明，长度必须大等于0且小等于128。",
           "example": "更新角色",
@@ -9655,7 +9249,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "必填字段，集群Id",
           "example": "pulsar-xxxx",
@@ -9703,7 +9296,6 @@
       "document": "ModifyTopic请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境（命名空间）名称。",
           "example": "default",
@@ -9713,7 +9305,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主题名。",
           "example": "test_topic",
@@ -9723,7 +9314,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分区数，必须大于或者等于原分区数，若想维持原分区数请输入原数目，修改分区数仅对非全局顺序消息起效果，不允许超过128个分区。",
           "example": "3",
@@ -9733,7 +9323,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注，128字符以内。",
           "example": "修改分区为3",
@@ -9743,7 +9332,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Pulsar 集群的ID",
           "example": "pulsar-xxxxx",
@@ -9791,7 +9379,6 @@
       "document": "分区topic",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "最后一次间隔内发布消息的平均byte大小。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -9802,7 +9389,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费者数量。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -9813,7 +9399,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被记录下来的消息总数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -9824,7 +9409,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后一个ledger创建的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -9835,7 +9419,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本地和复制的发布者每秒发布消息的速率。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -9846,7 +9429,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本地和复制的消费者每秒分发消息的数量之和。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -9857,7 +9439,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本地和复制的发布者每秒发布消息的byte。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -9868,7 +9449,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本地和复制的消费者每秒分发消息的byte。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -9879,7 +9459,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被记录下来的消息总数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -9890,7 +9469,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子分区id。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -9901,7 +9479,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生产者数量。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -9912,7 +9489,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "以byte计算的所有消息存储总量。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -9923,7 +9499,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "topic类型描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -9986,7 +9561,6 @@
       "document": "PublishCmqMsg请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主题名",
           "example": "xxx",
@@ -9996,7 +9570,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息内容，消息总大小需不大于1024K",
           "example": "xxx",
@@ -10006,7 +9579,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息标签，支持传递多标签或单路由，单个标签、路由长度不能超过64个字符。",
           "example": "无",
@@ -10054,7 +9626,6 @@
       "document": "生产者信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "生产者id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -10065,7 +9636,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生产者名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -10076,7 +9646,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生产者地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10.0.0.1:1234",
@@ -10087,7 +9656,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2.7.2",
@@ -10098,7 +9666,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息生产速率（条/秒）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "21.233",
@@ -10109,7 +9676,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息生产吞吐速率（字节/秒）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "21.3655",
@@ -10120,7 +9686,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "平均消息大小（字节）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1233",
@@ -10131,7 +9696,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "连接时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -10142,7 +9706,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生产者连接的主题分区号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -10159,7 +9722,6 @@
       "document": "Pulsar 网络接入点信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "vpc的id，支撑网和公网接入点，该字段为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-xxxx",
@@ -10170,7 +9732,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网id，支撑网和公网接入点，该字段为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "subnet-xxx",
@@ -10181,7 +9742,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接入地址",
           "example": "ip:port",
@@ -10192,7 +9752,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例id",
           "example": "pulsar-xxxx",
@@ -10203,7 +9762,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接入点类型：\n0：支撑网接入点 \n1：VPC接入点 \n2：公网接入点",
           "example": "1",
@@ -10316,7 +9874,6 @@
       "document": "Pulsar专业版集群规格信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群规格名称",
           "example": "标准型",
@@ -10327,7 +9884,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "峰值tps",
           "example": "5000",
@@ -10338,7 +9894,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "峰值带宽。单位：mbps",
           "example": "50",
@@ -10349,7 +9904,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大命名空间个数",
           "example": "50",
@@ -10360,7 +9914,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大主题分区数",
           "example": "4000",
@@ -10371,7 +9924,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规格外弹性TPS\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2000",
@@ -10388,7 +9940,6 @@
       "document": "Pulsar专业版实例信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例id",
           "example": "pulsar-xxxx",
@@ -10399,7 +9950,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称",
           "example": "cluster-test",
@@ -10410,7 +9960,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例版本",
           "example": "2.7.2",
@@ -10421,7 +9970,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例状态，0-创建中，1-正常，2-隔离中，3-已销毁，4 - 异常, 5 - 发货失败，6-变配中，7-变配失败",
           "example": "0",
@@ -10432,7 +9980,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例配置规格名称",
           "example": "基础型",
@@ -10443,7 +9990,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "峰值TPS",
           "example": "10000",
@@ -10454,7 +10000,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储容量，GB为单位",
           "example": "100",
@@ -10465,7 +10010,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例到期时间，毫秒为单位",
           "example": "100000",
@@ -10476,7 +10020,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)",
           "example": "0",
@@ -10487,7 +10030,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0-后付费，1-预付费",
           "example": "0",
@@ -10498,7 +10040,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "备注",
@@ -10509,7 +10050,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例配置ID",
           "example": "vip-basic-1",
@@ -10520,7 +10060,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规格外弹性TPS\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
@@ -10531,7 +10070,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC的id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-xxxx",
@@ -10542,7 +10080,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "subnet-xxx",
@@ -10553,7 +10090,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "峰值带宽。单位：mbps",
           "example": "100",
@@ -10908,7 +10444,6 @@
       "document": "RabbitMQ集群规格信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群规格名称",
           "example": "标准型",
@@ -10919,7 +10454,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点数量",
           "example": "3",
@@ -10930,7 +10464,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "峰值tps",
           "example": "5000",
@@ -10941,7 +10474,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "峰值带宽。单位：mbps",
           "example": "50",
@@ -10952,7 +10484,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储容量。单位：GB",
           "example": "100",
@@ -10963,7 +10494,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网带宽tps。单位：Mbps",
           "example": "1",
@@ -11552,7 +11082,6 @@
       "document": "ReceiveMessage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "接收消息的topic的名字, 这里尽量需要使用topic的全路径，如果不指定，即：tenant/namespace/topic。默认使用的是：public/default",
           "example": "persistent://tenant/namespace/my-topic",
@@ -11562,7 +11091,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅者的名字",
           "example": "my-sub",
@@ -11572,7 +11100,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认值为1000，consumer接收的消息会首先存储到receiverQueueSize这个队列中，用作调优接收消息的速率",
           "example": "1000",
@@ -11582,7 +11109,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认值为：Earliest。用作判定consumer初始接收消息的位置，可选参数为：Earliest, Latest",
           "example": "Latest",
@@ -11592,7 +11118,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用于设置BatchReceivePolicy，指在一次batch中最多接收多少条消息，默认是 0。即不开启BatchReceivePolicy",
           "example": "100",
@@ -11602,7 +11127,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用于设置BatchReceivePolicy，指在一次batch中最多接收的消息体有多大，单位是 bytes。默认是 0，即不开启BatchReceivePolicy",
           "example": "100000",
@@ -11612,7 +11136,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用于设置BatchReceivePolicy，指在一次batch消息的接收z中最多等待的超时时间，单位是毫秒。默认是 0，即不开启BatchReceivePolicy",
           "example": "100",
@@ -11710,7 +11233,6 @@
       "document": "ResetMsgSubOffsetByTimestamp请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间名称。",
           "example": "default",
@@ -11720,7 +11242,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主题名称。",
           "example": "topic",
@@ -11730,7 +11251,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅者名称。",
           "example": "subscription",
@@ -11740,7 +11260,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳，精确到毫秒。",
           "example": "1611050113 ",
@@ -11750,7 +11269,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Pulsar 集群的ID",
           "example": "pulsar-ge3n43v3wj",
@@ -11788,7 +11306,6 @@
       "document": "ResetRocketMQConsumerOffSet请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "rocketmq-xxxxx",
@@ -11798,7 +11315,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间名称",
           "example": "prod",
@@ -11808,7 +11324,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费组名称",
           "example": "test",
@@ -11818,7 +11333,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主题名称",
           "example": "test",
@@ -11828,7 +11342,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "重置方式，0表示从最新位点开始，1表示从指定时间点开始",
           "example": "0",
@@ -11838,7 +11351,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "重置指定的时间戳，仅在 Type 为1是生效，以毫秒为单位",
           "example": "1000000",
@@ -11866,7 +11378,6 @@
       "document": "消息保留策略",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "消息保留时长",
           "example": "0",
@@ -11877,7 +11388,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息保留大小",
           "example": "0",
@@ -11894,7 +11404,6 @@
       "document": "RewindCmqQueue请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "队列名字，在单个地域同一帐号下唯一。队列名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
           "example": "test",
@@ -11904,7 +11413,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设定该时间，则（Batch）receiveMessage接口，会按照生产消息的先后顺序消费该时间戳以后的消息。",
           "example": "1582108595000",
@@ -12038,7 +11546,6 @@
       "document": "租户RocketMQ集群详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群基本信息",
           "example": "无",
@@ -12049,7 +11556,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群配置信息",
           "example": "无",
@@ -12060,7 +11566,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -12253,7 +11758,6 @@
       "document": "RocketMQ近期使用量",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Topic数量",
           "example": "20",
@@ -12264,7 +11768,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息生产数",
           "example": "11000",
@@ -12275,7 +11778,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息消费数",
           "example": "11200",
@@ -12286,7 +11788,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息堆积数",
           "example": "22000",
@@ -12585,7 +12086,6 @@
       "document": "Rocketmq消息消费track信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "消费者组",
           "example": "group",
@@ -12596,7 +12096,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费状态",
           "example": "CONSUMED",
@@ -12607,7 +12106,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息track类型",
           "example": "CONSUMED",
@@ -12618,7 +12116,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
@@ -12787,7 +12284,6 @@
       "document": "RocketMQtopic分布情况",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "topic类型",
           "example": "Normal",
@@ -12798,7 +12294,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "topic数量",
           "example": "10",
@@ -12991,7 +12486,6 @@
       "document": "角色实例",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "角色名称。",
           "example": "",
@@ -13002,7 +12496,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "角色token值。",
           "example": "",
@@ -13013,7 +12506,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注说明。",
           "example": "",
@@ -13024,7 +12516,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。",
           "example": "",
@@ -13035,7 +12526,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间。",
           "example": "",
@@ -13052,7 +12542,6 @@
       "document": "SendBatchMessages请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "消息要发送的topic的名字, 这里尽量需要使用topic的全路径，即：tenant/namespace/topic。如果不指定，默认使用的是：public/default",
           "example": "persistent://tenant/namespace/my-topic",
@@ -13062,7 +12551,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要发送消息的内容",
           "example": "hello tdmq",
@@ -13072,7 +12560,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "String 类型的 token，可以不填，系统会自动获取",
           "example": "abcdefghijklmnopqrstovwxyz",
@@ -13082,7 +12569,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "producer 的名字，要求全局是唯一的，如果不设置，系统会自动生成",
           "example": "producer1",
@@ -13092,7 +12578,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单位：s。消息发送的超时时间。默认值为：30s",
           "example": "30",
@@ -13102,7 +12587,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存中允许缓存的生产消息的最大数量，默认值：1000条",
           "example": "1000",
@@ -13112,7 +12596,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每一个batch中消息的最大数量，默认值：1000条/batch",
           "example": "1000",
@@ -13122,7 +12605,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每一个batch最大等待的时间，超过这个时间，不管是否达到指定的batch中消息的数量和大小，都会将该batch发送出去，默认：10ms",
           "example": "10L",
@@ -13132,7 +12614,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每一个batch中最大允许的消息的大小，默认：128KB",
           "example": "128*1024",
@@ -13180,7 +12661,6 @@
       "document": "SendCmqMsg请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "队列名",
           "example": "xxx",
@@ -13190,7 +12670,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息内容",
           "example": "xxx",
@@ -13200,7 +12679,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "延迟时间",
           "example": "100",
@@ -13338,7 +12816,6 @@
       "document": "SendMsg请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境（命名空间）名称。",
           "example": "default",
@@ -13348,7 +12825,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主题名称，如果是分区topic需要指定具体分区，如果没有指定则默认发到0分区，例如：my_topic-partition-0。",
           "example": "cloud_test",
@@ -13358,7 +12834,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息内容，不能为空且大小不得大于5242880个byte。",
           "example": "one_msg",
@@ -13368,7 +12843,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Pulsar 集群的ID",
           "example": "test",
@@ -13396,7 +12870,6 @@
       "document": "SendRocketMQMessage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id",
           "example": "rocketmq-xxx",
@@ -13406,7 +12879,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间",
           "example": "xxx",
@@ -13416,7 +12888,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "topic名称",
           "example": "xxx",
@@ -13426,7 +12897,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "信息内容",
           "example": "message",
@@ -13436,7 +12906,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息key信息",
           "example": "key",
@@ -13446,7 +12915,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息tag信息",
           "example": "tag",
@@ -13494,7 +12962,6 @@
       "document": "排序器",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段",
           "example": "test",
@@ -13505,7 +12972,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "升序ASC，降序DESC",
           "example": "ASC",
@@ -13522,7 +12988,6 @@
       "document": "订阅者",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主题名称。",
           "example": "test",
@@ -13533,7 +12998,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境（命名空间）名称。",
           "example": "test",
@@ -13544,7 +13008,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费者开始连接的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -13555,7 +13018,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费者地址。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -13566,7 +13028,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费者数量。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "11",
@@ -13577,7 +13038,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费者名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -13588,7 +13048,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "堆积的消息数量。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -13599,7 +13058,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "于TTL，此订阅下没有被发送而是被丢弃的比例。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -13610,7 +13068,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费者每秒分发消息的数量之和。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -13621,7 +13078,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费者每秒消息的byte。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -13632,7 +13088,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -13643,7 +13098,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费者集合。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -13654,7 +13108,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否在线。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -13665,7 +13118,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消费进度集合。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -13676,7 +13128,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -13687,7 +13138,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -13698,7 +13148,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最近修改时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -13709,7 +13158,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅类型，Exclusive，Shared，Failover， Key_Shared，空或NULL表示未知，\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Shared",
@@ -13720,7 +13168,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否由于未 ack 数到达上限而被 block\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -13731,7 +13178,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "未 ack 消息数上限\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5000",
@@ -13748,7 +13194,6 @@
       "document": "订阅关系",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境（命名空间）名称。",
           "example": "",
@@ -13759,7 +13204,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主题名称。",
           "example": "",
@@ -13770,7 +13214,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅名称。",
           "example": "",
@@ -13787,7 +13230,6 @@
       "document": "标签的key/value的类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签的key的值",
           "example": "",
@@ -13798,7 +13240,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签的Value的值",
           "example": "",
@@ -14041,7 +13482,6 @@
       "document": "主题关键信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境（命名空间）名称。",
           "example": "",
@@ -14052,7 +13492,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主题名称。",
           "example": "",
@@ -14069,7 +13508,6 @@
       "document": "UnbindCmqDeadLetter请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "死信策略源队列名称，调用本接口会清空该队列的死信队列策略。",
           "example": "test",
@@ -14123,7 +13561,6 @@
       "document": "vcp绑定记录",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "租户Vpc Id",
           "example": "",
@@ -14134,7 +13571,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "租户Vpc子网Id",
           "example": "",
@@ -14145,7 +13581,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由Id",
           "example": "",
@@ -14156,7 +13591,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Vpc的Id",
           "example": "",
@@ -14167,7 +13601,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Vpc的Port",
           "example": "",
@@ -14178,7 +13611,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "说明，128个字符以内\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -14195,7 +13627,6 @@
       "document": "VPC配置信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "vpc的id",
           "example": "vpc-xxxx",
@@ -14206,7 +13637,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网id",
           "example": "subnet-xxx",
@@ -14269,7 +13699,6 @@
       "document": "vpc信息（由UniqVpcId和UniqSubnetId组成）",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "vpc信息",
           "example": "vpc-9dlrd5h1",
@@ -14280,7 +13709,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网信息",
           "example": "subnet-jadmas",

@@ -23,20 +23,20 @@ Output:
                 "SubTypeDescription": "增值税专用发票",
                 "Polygon": {
                     "LeftBottom": {
-                        "X": -18,
-                        "Y": 880
+                        "X": 15,
+                        "Y": 884
                     },
                     "LeftTop": {
-                        "X": -18,
-                        "Y": 34
+                        "X": 15,
+                        "Y": 31
                     },
                     "RightBottom": {
-                        "X": 1381,
-                        "Y": 880
+                        "X": 1354,
+                        "Y": 884
                     },
                     "RightTop": {
-                        "X": 1381,
-                        "Y": 34
+                        "X": 1354,
+                        "Y": 31
                     }
                 },
                 "Angle": 270,
@@ -44,6 +44,8 @@ Output:
                     "AirTransport": null,
                     "BusInvoice": null,
                     "MachinePrintedInvoice": null,
+                    "MedicalHospitalizedInvoice": null,
+                    "MedicalOutpatientInvoice": null,
                     "MotorVehicleSaleInvoice": null,
                     "NonTaxIncomeElectronicBill": null,
                     "NonTaxIncomeGeneralBill": null,
@@ -62,8 +64,11 @@ Output:
                     "VatElectronicSpecialInvoice": null,
                     "VatElectronicSpecialInvoiceFull": null,
                     "VatInvoiceRoll": null,
+                    "VatSalesList": null,
                     "VatSpecialInvoice": {
+                        "AcquisitionMark": 0,
                         "AgentMark": 0,
+                        "BlockChainMark": 0,
                         "Buyer": "深圳市腾讯计算机系统有限公司",
                         "BuyerAddrTel": "深圳市南山区高新区高新南一路飞亚达大厦5-10楼0755-86013388",
                         "BuyerBankAccount": "招商银行深圳分行振兴支行817282299619961",
@@ -73,7 +78,7 @@ Output:
                         "City": "深圳市",
                         "Code": "4403152130",
                         "CodeConfirm": "4403152130",
-                        "CompanySealContent": "深圳市游戏科技有限公司,04000,发票专用章,N",
+                        "CompanySealContent": "深圳市游戏科技有限公司,040400,复票专用章,NDN",
                         "CompanySealMark": 1,
                         "Date": "2016年04月11日",
                         "ElectronicFullMark": 0,
@@ -97,6 +102,8 @@ Output:
                         "SellerBankAccount": "浦发行深圳科技园支行79210154740015474",
                         "SellerTaxID": "440300094040109",
                         "ServiceName": "",
+                        "SubTax": "",
+                        "SubTotal": "",
                         "Tax": "46.71",
                         "TaxSealContent": "",
                         "Title": "深圳增值税专用发票",
@@ -104,8 +111,6 @@ Output:
                         "TotalCn": "捌佰贰拾伍圆壹角伍分",
                         "TransitMark": 0,
                         "TravelTax": "",
-                        "BlockChainMark": 0,
-                        "AcquisitionMark": 0,
                         "VatInvoiceItemInfos": [
                             {
                                 "DateEnd": "",
@@ -114,6 +119,7 @@ Output:
                                 "Name": "技术服务费",
                                 "Price": "",
                                 "Quantity": "",
+                                "SerialNumber": "",
                                 "Specification": "",
                                 "Tax": "46.71",
                                 "TaxRate": "6%",
@@ -135,27 +141,29 @@ Output:
                 "SubTypeDescription": "过路过桥费发票",
                 "Polygon": {
                     "LeftBottom": {
-                        "X": 30,
-                        "Y": 1478
+                        "X": 29,
+                        "Y": 1480
                     },
                     "LeftTop": {
-                        "X": 30,
-                        "Y": 886
+                        "X": 29,
+                        "Y": 900
                     },
                     "RightBottom": {
-                        "X": 496,
-                        "Y": 1478
+                        "X": 487,
+                        "Y": 1480
                     },
                     "RightTop": {
-                        "X": 496,
-                        "Y": 886
+                        "X": 487,
+                        "Y": 900
                     }
                 },
-                "Angle": 0.11452838033437729,
+                "Angle": 0.0409967303276062,
                 "SingleInvoiceInfos": {
                     "AirTransport": null,
                     "BusInvoice": null,
                     "MachinePrintedInvoice": null,
+                    "MedicalHospitalizedInvoice": null,
+                    "MedicalOutpatientInvoice": null,
                     "MotorVehicleSaleInvoice": null,
                     "NonTaxIncomeElectronicBill": null,
                     "NonTaxIncomeGeneralBill": null,
@@ -186,6 +194,7 @@ Output:
                     "VatElectronicSpecialInvoice": null,
                     "VatElectronicSpecialInvoiceFull": null,
                     "VatInvoiceRoll": null,
+                    "VatSalesList": null,
                     "VatSpecialInvoice": null
                 },
                 "Page": 1,
@@ -200,26 +209,28 @@ Output:
                 "Polygon": {
                     "LeftBottom": {
                         "X": 517,
-                        "Y": 1229
+                        "Y": 1226
                     },
                     "LeftTop": {
                         "X": 517,
                         "Y": 950
                     },
                     "RightBottom": {
-                        "X": 963,
-                        "Y": 1229
+                        "X": 966,
+                        "Y": 1226
                     },
                     "RightTop": {
-                        "X": 963,
+                        "X": 966,
                         "Y": 950
                     }
                 },
-                "Angle": 0.04854407534003258,
+                "Angle": 0.24512287974357605,
                 "SingleInvoiceInfos": {
                     "AirTransport": null,
                     "BusInvoice": null,
                     "MachinePrintedInvoice": null,
+                    "MedicalHospitalizedInvoice": null,
+                    "MedicalOutpatientInvoice": null,
                     "MotorVehicleSaleInvoice": null,
                     "NonTaxIncomeElectronicBill": null,
                     "NonTaxIncomeGeneralBill": null,
@@ -263,13 +274,14 @@ Output:
                     "VatElectronicSpecialInvoice": null,
                     "VatElectronicSpecialInvoiceFull": null,
                     "VatInvoiceRoll": null,
+                    "VatSalesList": null,
                     "VatSpecialInvoice": null
                 },
                 "Page": 1,
                 "CutImage": ""
             }
         ],
-        "RequestId": "4f181ebb-ff56-4e66-b3b1-a45bd7ec233e",
+        "RequestId": "b845b64b-38db-4862-8f2c-8d8b21be6e0b",
         "TotalPDFCount": 1
     }
 }

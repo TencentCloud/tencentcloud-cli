@@ -26,7 +26,6 @@
       "document": "DataManipulation请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "操作类型，add或del",
           "example": "",
@@ -36,7 +35,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据编码类型",
           "example": "",
@@ -46,7 +44,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据",
           "example": "",
@@ -56,7 +53,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用Id",
           "example": "",
@@ -93,7 +89,6 @@
       "document": "数据操作结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID",
           "example": "",
@@ -104,7 +99,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "序号",
           "example": "",
@@ -115,7 +109,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结果",
           "example": "",
@@ -126,7 +119,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作结果明细\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -137,7 +129,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -154,7 +145,6 @@
       "document": "数据操作结果明细",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "结果",
           "example": "",
@@ -165,7 +155,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文档ID",
           "example": "",
@@ -176,7 +165,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误码",
           "example": "",
@@ -193,7 +181,6 @@
       "document": "DataSearch请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "云搜的业务ID，用以表明当前数据请求的业务",
           "example": "",
@@ -203,7 +190,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检索串",
           "example": "",
@@ -213,7 +199,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前页，从第0页开始计算",
           "example": "",
@@ -223,7 +208,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页结果数",
           "example": "",
@@ -233,7 +217,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前检索号，用于定位问题，建议指定并且全局唯一",
           "example": "",
@@ -243,7 +226,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求编码，0表示utf8，1表示gbk，建议指定",
           "example": "",
@@ -253,7 +235,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序类型",
           "example": "",
@@ -263,7 +244,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数值过滤，结果中按属性过滤",
           "example": "",
@@ -273,7 +253,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分类过滤，导航类检索请求",
           "example": "",
@@ -283,7 +262,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检索用户相关字段",
           "example": "",
@@ -293,7 +271,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检索来源",
           "example": "",
@@ -303,7 +280,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否进行二次检索，0关闭，1打开",
           "example": "",
@@ -313,7 +289,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定返回最大篇数，无特殊原因不建议指定",
           "example": "",
@@ -323,7 +298,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否smartbox检索，0关闭，1打开",
           "example": "",
@@ -333,7 +307,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否打开高红标亮，0关闭，1打开",
           "example": "",
@@ -343,7 +316,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定访问QC纠错业务ID",
           "example": "",
@@ -353,7 +325,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按指定字段进行group by，只能对数值字段进行操作",
           "example": "",
@@ -363,7 +334,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按指定字段进行distinct，只能对数值字段进行操作",
           "example": "",
@@ -373,7 +343,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高级排序参数，具体参见高级排序说明",
           "example": "",
@@ -383,7 +352,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高级排序参数，具体参见高级排序说明",
           "example": "",
@@ -393,7 +361,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "经度信息",
           "example": "",
@@ -403,7 +370,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "纬度信息",
           "example": "",
@@ -413,7 +379,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分类过滤并集",
           "example": "",
@@ -450,7 +415,6 @@
       "document": "搜索结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "检索耗时，单位ms",
           "example": "",
@@ -461,7 +425,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索最多可以展示的结果数，多页",
           "example": "",
@@ -472,7 +435,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "和检索请求中的echo相对应",
           "example": "",
@@ -483,7 +445,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检索结果的估算篇数，由索引平台估算",
           "example": "",
@@ -494,7 +455,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检索返回的当前页码结果数",
           "example": "",
@@ -505,7 +465,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检索结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -516,7 +475,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检索的分词结果，array类型，可包含多个\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -533,7 +491,6 @@
       "document": "搜索结果元素",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "动态摘要信息",
           "example": "",
@@ -544,7 +501,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检索文档id",
           "example": "",
@@ -555,7 +511,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原始文档信息",
           "example": "",
@@ -566,7 +521,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "精计算得分",
           "example": "",
@@ -577,7 +531,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文档级回传信息",
           "example": "",
@@ -594,7 +547,6 @@
       "document": "SearchResultSeg",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分词",
           "example": "",

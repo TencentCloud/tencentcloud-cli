@@ -40,7 +40,6 @@
       "document": "音频输出参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回审核内容是否命中审核模型；取值：0（**未命中**）、1（**命中**）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -51,7 +50,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -62,7 +60,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br>\n返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -73,7 +70,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -84,7 +80,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回音频文件经ASR识别后的文本信息。最长可识别**5小时**的音频文件，若超出时长限制，接口将会报错。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -95,7 +90,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回音频片段存储的链接地址，该地址有效期为1天。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -106,7 +100,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回音频文件的时长，单位为毫秒。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -117,7 +110,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回输入参数中的额外附加信息（Extra），如未配置则默认返回值为空。<br>备注：不同客户或Biztype下返回信息不同，如需配置该字段请提交工单咨询或联系售后专员处理。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -128,7 +120,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回音频文件经ASR识别后产生的文本的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -139,7 +130,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回音频文件呻吟检测的详细审核结果。具体结果内容请参见AudioResultDetailMoanResult数据结构的细节描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -150,7 +140,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回音频小语种检测的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -161,7 +150,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -172,7 +160,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别类标签结果信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -189,7 +176,6 @@
       "document": "音频小语种检测结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "语种\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -200,7 +186,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "得分\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -211,7 +196,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -222,7 +206,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -233,7 +216,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子标签码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -250,7 +232,6 @@
       "document": "音频呻吟审核结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回检测结果需要检测的内容类型，此处固定为**Moan**（呻吟）以调用呻吟检测功能。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -261,7 +242,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回呻吟检测的置信度，取值范围：0（**置信度最低**）-100（**置信度最高**），越高代表音频越有可能属于呻吟内容。",
           "example": "1",
@@ -272,7 +252,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回对应呻吟标签的片段在音频文件内的开始时间，单位为毫秒。",
           "example": "1",
@@ -283,7 +262,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回对应呻吟标签的片段在音频文件内的结束时间，单位为毫秒。",
           "example": "1",
@@ -294,7 +272,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "*内测中，敬请期待*",
           "example": "1",
@@ -305,7 +282,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回当前标签（Lable）下的二级标签。",
           "example": "无",
@@ -316,7 +292,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过",
           "example": "Block",
@@ -333,7 +308,6 @@
       "document": "音频ASR文本审核结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -344,7 +318,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回ASR识别出的文本内容命中的关键词信息，用于标注内容违规的具体原因（如：加我微信）。该参数可能会有多个返回值，代表命中的多个关键词；若返回值为空，Score不为空，则代表识别结果所对应的恶意标签（Label）来自于语义模型判断的返回值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -355,7 +328,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段**仅当Label为Custom：自定义关键词时该参数有效**,用于返回自定义库的ID，以方便自定义库管理和配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -366,7 +338,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段**仅当Label为Custom：自定义关键词时该参数有效**,用于返回自定义库的名称,以方便自定义库管理和配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -377,7 +348,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高**），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -388,7 +358,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回自定义关键词对应的词库类型，取值为**1**（黑白库）和**2**（自定义关键词库），若未配置自定义关键词库,则默认值为1（黑白库匹配）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -399,7 +368,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br>\n返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -410,7 +378,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -427,7 +394,6 @@
       "document": "声音段信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "截帧时间。\n点播文件：该值为相对于视频偏移时间，单位为秒，例如：0，5，10\n直播流：该值为时间戳，例如：1594650717\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -438,7 +404,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结果集\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -455,7 +420,6 @@
       "document": "文件桶信息\n参考腾讯云存储相关说明 https://cloud.tencent.com/document/product/436/44352",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯云对象存储，存储桶名称",
           "example": "232323",
@@ -466,7 +430,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域",
           "example": "guagnzhou",
@@ -477,7 +440,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对象Key",
           "example": "322dsd",
@@ -494,7 +456,6 @@
       "document": "CancelTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "123",
@@ -522,7 +483,6 @@
       "document": "CreateVideoModerationTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "业务类型, 定义 模版策略，输出存储配置。如果没有BizType，可以先参考 【创建业务配置】接口进行创建",
           "example": "1001",
@@ -532,7 +492,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务类型：可选VIDEO（点播视频），LIVE_VIDEO（直播视频）",
           "example": "VIDEO",
@@ -542,7 +501,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输入的任务信息，最多可以同时创建10个任务",
           "example": "无",
@@ -552,7 +510,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回调签名key，具体可以查看签名文档。",
           "example": "sfsfsderwerwe",
@@ -562,7 +519,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接收审核信息回调地址，如果设置，则审核过程中产生的违规音频片段和画面截帧发送此接口",
           "example": "http://192.0.0.1:8080",
@@ -572,7 +528,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审核排队优先级。当您有多个视频审核任务排队时，可以根据这个参数控制排队优先级。用于处理插队等逻辑。默认该参数为0",
           "example": "10",
@@ -610,7 +565,6 @@
       "document": "DescribeTaskDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID，创建任务后返回的TaskId字段",
           "example": "task-video-Xw0mjnmaiu-Uv1fs",
@@ -620,7 +574,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否展示所有分片，默认只展示命中规则的分片",
           "example": "true",
@@ -848,7 +801,6 @@
       "document": "DescribeTasks请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "该参数表示任务列表每页展示的任务条数，**默认值为10**（每页展示10条任务）。",
           "example": "无",
@@ -858,7 +810,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该参数表示任务筛选器的输入参数，可根据业务类型、审核文件类型、处理建议及任务状态筛选想要查看的审核任务，具体参数内容请参见TaskFilter数据结构的详细描述。",
           "example": "无",
@@ -868,7 +819,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该参数表示翻页时使用的Token信息，由系统自动生成，并在翻页时向下一个生成的页面传递此参数，以方便快速翻页功能的实现。当到最后一页时，该字段为空。",
           "example": "无",
@@ -878,7 +828,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该参数表示任务列表的开始时间，格式为ISO8601标准的时间戳。**默认值为最近3天**，若传入该参数，则在这一时间到EndTime之间的任务将会被筛选出来。<br>备注：该参数与Filter共同起到任务筛选作用，二者作用无先后顺序。",
           "example": "无",
@@ -888,7 +837,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该参数表示任务列表的结束时间，格式为ISO8601标准的时间戳。**默认值为空**，若传入该参数，则在这StartTime到这一时间之间的任务将会被筛选出来。<br>备注：该参数与Filter共同起到任务筛选作用，二者作用无先后顺序。",
           "example": "无",
@@ -946,7 +894,6 @@
       "document": "Result结果详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "违规标志\n0 未命中\n1 命中\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -957,7 +904,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命中的标签\nPorn 色情\nSexy 性感\nPolity 政治\nIllegal 违法\nAbuse 谩骂\nTerror 暴恐\nAd 广告\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -968,7 +914,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审核建议，可选值：\nPass 通过，\nReview 建议人审，\nBlock 确认违规\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -979,7 +924,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "得分\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -990,7 +934,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "画面截帧图片结果集\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1001,7 +944,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片URL地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1012,7 +954,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "附加字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1029,7 +970,6 @@
       "document": "图片输出结果的子结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "场景\nPorn 色情\nSexy 性感\nPolity 政治\nIllegal 违法\nAbuse 谩骂\nTerror 暴恐\nAd 广告\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1040,7 +980,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否命中\n0 未命中\n1 命中\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1051,7 +990,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审核建议，可选值：\nPass 通过，\nReview 建议人审，\nBlock 确认违规\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1062,7 +1000,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1073,7 +1010,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1084,7 +1020,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1095,7 +1030,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "如果命中场景为涉政，则该数据为人物姓名列表，否则null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1106,7 +1040,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片OCR文本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1117,7 +1050,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "其他详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1134,7 +1066,6 @@
       "document": "具体场景下的图片识别结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1145,7 +1076,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "OCR识别文本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1156,7 +1086,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "位置信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1167,7 +1096,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1178,7 +1106,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "库ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1189,7 +1116,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "库名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1200,7 +1126,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命中的关键词\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1211,7 +1136,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "建议\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1222,7 +1146,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "得分\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1233,7 +1156,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子标签码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1250,7 +1172,6 @@
       "document": "图片详情位置信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "x坐标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1261,7 +1182,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "y坐标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1272,7 +1192,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "宽度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1283,7 +1202,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1294,7 +1212,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "旋转角度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1311,7 +1228,6 @@
       "document": "图片段信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "截帧时间。\n点播文件：该值为相对于视频偏移时间，单位为秒，例如：0，5，10\n直播流：该值为时间戳，例如：1594650717",
           "example": "1",
@@ -1322,7 +1238,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "画面截帧结果详情",
           "example": "1",
@@ -1339,7 +1254,6 @@
       "document": "输入信息详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "传入的类型可选：URL，COS\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1350,7 +1264,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Url地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1361,7 +1274,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "桶信息。当输入当时COS时，该字段不为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1378,7 +1290,6 @@
       "document": "媒体类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "编码格式",
           "example": "1",
@@ -1389,7 +1300,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流检测时分片时长\n注意：此字段可能返回 0，表示取不到有效值。",
           "example": "1",
@@ -1400,7 +1310,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "宽，单位为像素",
           "example": "1",
@@ -1411,7 +1320,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高，单位为像素",
           "example": "1",
@@ -1422,7 +1330,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "封面",
           "example": "无",
@@ -1439,7 +1346,6 @@
       "document": "审核切片asr文本信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回音频文件识别出的对应文本内容，最大支持**前1000个字符**。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "the text",
@@ -1450,7 +1356,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-07-13T11:47:01.925Z",
@@ -1467,7 +1372,6 @@
       "document": "识别类标签结果信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "可能的取值有：Teenager 、Gender\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1478,7 +1382,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -1495,7 +1398,6 @@
       "document": " 数据存储信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "类型 可选：\nURL 资源链接类型\nCOS 腾讯云对象存储类型",
           "example": "VIDEO",
@@ -1506,7 +1408,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源链接",
           "example": "http://xxxxx.com",
@@ -1517,7 +1418,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯云存储桶信息",
           "example": "test",
@@ -1534,7 +1434,6 @@
       "document": "音频切片识别标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "根据Label字段确定具体名称：\n当Label 为Teenager 时 Name可能取值有：Teenager \n当Label 为Gender 时 Name可能取值有：Male 、Female\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1545,7 +1444,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "置信分：0～100，数值越大表示置信度越高\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -1556,7 +1454,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别开始偏移时间，单位：毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
@@ -1567,7 +1464,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别结束偏移时间，单位：毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
@@ -1584,7 +1480,6 @@
       "document": "任务数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1595,7 +1490,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输入的数据ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1606,7 +1500,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "业务类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1617,7 +1510,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1628,7 +1520,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态，可选：PENDING，RUNNING，ERROR，FINISH，CANCELLED\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1639,7 +1530,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1650,7 +1540,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "处理建议\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1661,7 +1550,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1672,7 +1560,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "媒体信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1683,7 +1570,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输入信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1694,7 +1580,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1705,7 +1590,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1722,7 +1606,6 @@
       "document": "Cos TaskFilter ",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务业务类型",
           "example": "1",
@@ -1733,7 +1616,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务类型，可选：VIDEO，AUDIO， LIVE_VIDEO, LIVE_AUDIO",
           "example": "1",
@@ -1744,7 +1626,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "建议，可选：Pass, Review,Block",
           "example": "1",
@@ -1755,7 +1636,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态，可选：PENDING，RUNNING，ERROR，FINISH，CANCELLED",
           "example": "1",
@@ -1772,7 +1652,6 @@
       "document": "音视频任务结构",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据ID",
           "example": "080cbccd-4d19-4792-b2cb-28dc52d108e4",
@@ -1783,7 +1662,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务名",
           "example": "name",
@@ -1794,7 +1672,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务输入",
           "example": "{\"Type\":\"\",\"Url\": \"\"}",
@@ -1811,7 +1688,6 @@
       "document": "任务输出标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "命中的标签\nPorn 色情\nSexy 性感\nPolity 政治\nIllegal 违法\nAbuse 谩骂\nTerror 暴恐\nAd 广告\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1822,7 +1698,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审核建议，可选值：\nPass 通过，\nReview 建议人审，\nBlock 确认违规\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1833,7 +1708,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "得分，分数是 0 ～ 100\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1850,7 +1724,6 @@
       "document": "创建任务时的返回结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "请求时传入的DataId\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "080cbccd-4d19-4792-b2cb-28dc52d108e4",
@@ -1861,7 +1734,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TaskId，任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dsdsf",
@@ -1872,7 +1744,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误码。如果code为OK，则表示创建成功，其他则参考公共错误码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "200",
@@ -1883,7 +1754,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "如果错误，该字段表示错误详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "success",

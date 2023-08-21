@@ -163,7 +163,6 @@
       "document": "GetRuntimeMC请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "环境id",
           "example": "12",
@@ -173,7 +172,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境地域",
           "example": "tinajin",
@@ -183,7 +181,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境运行类型：0:运行时类型、1:api类型",
           "example": "1",
@@ -392,110 +389,90 @@
       "document": "ListRuntimeDeployedInstancesMC请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "运行时id",
           "example": "12",
-          "is_base64": false,
           "member": "int64",
           "name": "RuntimeId",
           "required": true,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "最大请求数量",
           "example": "20",
-          "is_base64": false,
           "member": "int64",
           "name": "Limit",
           "required": true,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "请求偏移量",
           "example": "21",
-          "is_base64": false,
           "member": "int64",
           "name": "Offset",
           "required": true,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "排序类型：1:创建时间排序, 2:更新时间排序（默认）",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "SortType",
           "required": true,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "排序方式：asc，desc（默认）",
           "example": "desc",
-          "is_base64": false,
           "member": "string",
           "name": "Sort",
           "required": true,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "运行时地域",
           "example": "tianjin",
-          "is_base64": false,
           "member": "string",
           "name": "Zone",
           "required": true,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "1:3.0版本新控制台传1；否则传0",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "ApiVersion",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "-1:不按项目筛选，获取所有\n>=0: 按项目id筛选",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "GroupId",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "-2: 不按状态筛选，获取所有\n0: 运行中\n2: 已停止",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "Status",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "0: 应用集成\n1: API管理\n2: ETL",
           "example": "2",
-          "is_base64": false,
           "member": "int64",
           "name": "RuntimeClass",
           "required": false,
@@ -585,7 +562,6 @@
       "document": "GetMonitorMetricResponse",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "11111",
@@ -596,7 +572,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对应的value值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"123\"",
@@ -613,7 +588,6 @@
       "document": "运行时部署的应用实例详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目id",
           "example": "1",
@@ -624,7 +598,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目名称",
           "example": "我的项目",
@@ -635,7 +608,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用id",
           "example": "2",
@@ -646,7 +618,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用名称",
           "example": "邮件系统",
@@ -657,7 +628,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用实例id",
           "example": "3",
@@ -668,7 +638,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用实例版本",
           "example": "1",
@@ -679,7 +648,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用实例创建时间",
           "example": "1619656971",
@@ -690,7 +658,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用实例部署状态. 0:running, 1:deleting",
           "example": "0",
@@ -701,7 +668,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用实例部署创建时间",
           "example": "1624354153",
@@ -712,7 +678,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用实例部署更新时间",
           "example": "1624354153",
@@ -723,7 +688,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用类型：0:NormalApp普通应用 1:TemplateApp模板应用 2:LightApp轻应用 3:MicroConnTemplate微连接模板 4:MicroConnApp微连接应用",
           "example": "1",
@@ -734,7 +698,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用版本：0:旧版 1:3.0新控制台",
           "example": "1",

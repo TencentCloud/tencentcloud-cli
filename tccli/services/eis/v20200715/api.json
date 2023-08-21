@@ -33,7 +33,6 @@
       "document": "DescribeEisConnectorConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "连接器名称",
           "example": "无",
           "member": "string",
@@ -42,7 +41,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "连接器版本",
           "example": "无",
           "member": "string",
@@ -78,7 +76,6 @@
       "document": "连接器操作",
       "members": [
         {
-          "default": "",
           "document": "连接器操作名称",
           "example": "无",
           "member": "string",
@@ -88,7 +85,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "连接器展示名称",
           "example": "无",
           "member": "string",
@@ -98,7 +94,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "操作是否为触发器",
           "example": "无",
           "member": "bool",
@@ -114,7 +109,6 @@
       "document": "连接器概要信息",
       "members": [
         {
-          "default": "",
           "document": "连接器名称",
           "example": "无",
           "member": "string",
@@ -124,7 +118,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "连接器展示名称",
           "example": "无",
           "member": "string",
@@ -134,7 +127,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "连接器对应企业",
           "example": "无",
           "member": "string",
@@ -144,7 +136,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "连接器对应产品",
           "example": "无",
           "member": "string",
@@ -154,7 +145,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "连接器版本",
           "example": "无",
           "member": "string",
@@ -164,7 +154,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "连接器创建时间",
           "example": "无",
           "member": "int64",
@@ -180,7 +169,6 @@
       "document": "ListEisConnectorOperations请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "连接器名称",
           "example": "无",
           "member": "string",
@@ -189,7 +177,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "连接器版本",
           "example": "无",
           "member": "string",
@@ -225,7 +212,6 @@
       "document": "ListEisConnectors请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "连接器名称,非必输，如输入则按照输入值模糊匹配",
           "example": "无",
           "member": "string",
@@ -234,7 +220,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "分页参数,数据偏移量",
           "example": "无",
           "member": "int64",
@@ -243,7 +228,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "分页参数,每页显示的条数",
           "example": "无",
           "member": "int64",

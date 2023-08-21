@@ -299,7 +299,6 @@
       "document": "定期快照高级保留策略，四个参数都为必选参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "保留最新快照Days天内的每天最新的一个快照，取值范围：[0, 100]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6",
@@ -310,7 +309,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "保留最新快照Weeks周内的每周最新的一个快照，取值范围：[0, 100]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "8",
@@ -321,7 +319,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "保留最新快照Months月内的每月最新的一个快照， 取值范围：[0, 100]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
@@ -332,7 +329,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "保留最新快照Years年内的每年最新的一个快照，取值范围：[0, 100]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -439,7 +435,6 @@
       "document": "描述一个实例已挂载和可挂载数据盘的数量。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID。",
           "example": "ins-jw0vit58",
@@ -450,7 +445,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例已挂载数据盘的数量。",
           "example": "1",
@@ -461,7 +455,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例最大可挂载数据盘的数量。",
           "example": "20",
@@ -532,7 +525,6 @@
       "document": "描述了新购云硬盘时自动将云硬盘初始化并挂载至云服务器内部的配置。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要挂载到的实例ID。",
           "example": "[\"ins-abcdefgh\"]",
@@ -543,7 +535,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子机内的挂载点。",
           "example": "[\"/mnt/datadisk0\"]",
@@ -554,7 +545,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统类型，支持的有 ext4、xfs。",
           "example": "ext4",
@@ -899,7 +889,6 @@
       "document": "显示独享集群的大小",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "独享集群的可用容量大小，单位GiB",
           "example": "100000",
@@ -910,7 +899,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "独享集群的总容量大小，单位GiB",
           "example": "200",
@@ -2703,7 +2691,6 @@
       "document": "云硬盘备份点。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "云硬盘备份点的ID。",
           "example": "dbp-xxxxxxxx",
@@ -2714,7 +2701,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云硬盘备份点关联的云硬盘ID。",
           "example": "disk-xxxxxxxx",
@@ -2725,7 +2711,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云硬盘大小，单位GB。",
           "example": "50",
@@ -2736,7 +2721,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云硬盘类型。取值范围：<br><li>SYSTEM_DISK：系统盘<br><li>DATA_DISK：数据盘。",
           "example": "DATA_DISK",
@@ -2747,7 +2731,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份点名称。",
           "example": "Untitled",
@@ -2758,7 +2741,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云硬盘备份点状态。取值范围：<br><li>NORMAL：正常<br><li>CREATING：创建中<br><li>ROLLBACKING：回滚中",
           "example": "NORMAL",
@@ -2769,7 +2751,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云硬盘创建进度百分比。",
           "example": "100",
@@ -2780,7 +2761,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云硬盘备份点的创建时间。",
           "example": "2022-01-01T12:00:00+08:00",
@@ -2791,7 +2771,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云盘是否为加密盘。取值范围：<br><li>false:表示非加密盘<br><li>true:表示加密盘。",
           "example": "false",
@@ -2808,7 +2787,6 @@
       "document": "描述了实例的计费模式",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "购买云盘的时长，默认单位为月，取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。",
           "example": "1",
@@ -2819,7 +2797,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费<br><br>默认取值：NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费。",
           "example": "NOTIFY_AND_AUTO_RENEW",
@@ -2830,7 +2807,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要将云盘的到期时间与挂载的子机对齐时，可传入该参数。该参数表示子机当前的到期时间，此时Period如果传入，则表示子机需要续费的时长，云盘会自动按对齐到子机续费后的到期时间续费，示例取值：2018-03-30 20:15:03。",
           "example": "2018-03-30 20:15:03",
@@ -2976,7 +2952,6 @@
           "disabled": false,
           "document": "过滤键的名称。",
           "example": "disk-usage",
-          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": true,
@@ -2986,7 +2961,6 @@
           "disabled": false,
           "document": "一个或者多个过滤值。",
           "example": "[\"SYSTEM_DISK\"]",
-          "is_base64": false,
           "member": "string",
           "name": "Values",
           "required": true,
@@ -3052,7 +3026,6 @@
       "document": "镜像。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "镜像名称。",
           "example": "test",
@@ -3063,7 +3036,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "镜像实例ID。",
           "example": "img-xxxxxxxx",
@@ -3107,7 +3079,6 @@
       "document": "InquirePriceModifyDiskBackupQuota请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "云硬盘ID， 通过DescribeDisks（查询云硬盘信息）接口查询。",
           "example": "disk-xxxxxxx",
@@ -3117,7 +3088,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后的云硬盘备份点配额，即云盘可以拥有的备份点数量，单位为个。",
           "example": "1",
@@ -3200,7 +3170,6 @@
       "document": "InquiryPriceCreateDisks请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "云硬盘计费类型。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费",
           "example": "PREPAID",
@@ -3210,7 +3179,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘<br><li>CLOUD_TSSD：表示极速型SSD云硬盘。",
           "example": "CLOUD_TSSD",
@@ -3220,7 +3188,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云硬盘大小，单位为GB。云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。",
           "example": "500",
@@ -3230,7 +3197,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云盘所属项目ID。",
           "example": "0",
@@ -3240,7 +3206,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买云盘的数量。不填则默认为1。",
           "example": "1",
@@ -3250,7 +3215,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "额外购买的云硬盘性能值，单位MB/s。<br>目前仅支持增强型SSD云硬盘（CLOUD_HSSD）和极速型SSD云硬盘（CLOUD_TSSD）",
           "example": "100",
@@ -3260,7 +3224,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数指定包年包月云盘的购买时长、是否设置自动续费等属性。<br>创建预付费云盘该参数必传，创建按小时后付费云盘无需传该参数。",
           "example": "无",
@@ -3270,7 +3233,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定云硬盘备份点配额。",
           "example": "0",
@@ -3308,7 +3270,6 @@
       "document": "InquiryPriceRenewDisks请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。",
           "example": "disk-l9mxezxc",
@@ -3318,7 +3279,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月云盘的购买时长。如果在该参数中指定CurInstanceDeadline，则会按对齐到子机到期时间来续费。如果是批量续费询价，该参数与Disks参数一一对应，元素数量需保持一致。",
           "example": "无",
@@ -3328,7 +3288,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定云盘新的到期时间，形式如：2017-12-17 00:00:00。参数`NewDeadline`和`DiskChargePrepaids`是两种指定询价时长的方式，两者必传一个。",
           "example": "2025-01-01 00:00:00",
@@ -3338,7 +3297,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云盘所属项目ID。 如传入则仅用于鉴权。",
           "example": "0",
@@ -4063,7 +4021,6 @@
       "document": "描述预付费或后付费云盘的价格。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "后付费云盘折扣单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.0",
@@ -4074,7 +4031,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预付费云盘预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.0",
@@ -4085,7 +4041,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "后付费云盘原单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.0",
@@ -4096,7 +4051,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高精度后付费云盘原单价, 单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"1.00\"",
@@ -4107,7 +4061,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高精度预付费云盘预支费用的原价, 单位：元\t。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"1.00\"",
@@ -4118,7 +4071,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预付费云盘预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.0",
@@ -4129,7 +4081,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高精度预付费云盘预支费用的折扣价, 单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"1.00\"",
@@ -4140,7 +4091,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高精度后付费云盘折扣单价, 单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"1.00\"",
@@ -4151,7 +4101,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"h\"",
@@ -4472,7 +4421,6 @@
       "document": "描述快照跨地域复制的结果。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "复制到目标地域的新快照ID。",
           "example": "snap-hdbc13ad",
@@ -4483,7 +4431,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指示具体错误信息，成功时为空字符串。",
           "example": "\"\"",
@@ -4494,7 +4441,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误码，成功时取值为“Success”。",
           "example": "\"Success\"",
@@ -4505,7 +4451,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "跨地复制的目标地域。",
           "example": "\"ap-guangzhou\"",
@@ -4522,7 +4467,6 @@
       "document": "标签。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签健。",
           "example": "TagKey",
@@ -4533,7 +4477,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值。",
           "example": "TagValue",

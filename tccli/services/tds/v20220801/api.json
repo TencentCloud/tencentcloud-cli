@@ -40,7 +40,6 @@
       "document": "DescribeFraudBase请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "客户端通过SDK获取的设备Token",
           "example": "eHh4eHh4eHg=",
@@ -178,7 +177,6 @@
       "document": "DescribeFraudPremium请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "客户端通过SDK获取的设备Token",
           "example": "eHh4eHh4eHg=",
@@ -326,7 +324,6 @@
       "document": "DescribeFraudUltimate请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "客户端通过SDK获取的设备Token",
           "example": "eHh4eHh4eHg=",
@@ -336,7 +333,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用场景。目前仅支持login-登录场景、register-注册场景",
           "example": "login",
@@ -346,7 +342,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户唯一标识",
           "example": "15000000000",
@@ -356,7 +351,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件时间戳（毫秒）",
           "example": "1666684836384",
@@ -366,7 +360,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件耗时（毫秒），例如进入登录界面到点击登录按钮耗时",
           "example": "1",
@@ -376,7 +369,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "微信的OpenId",
           "example": "oOn8tchm7cx918p8mdc000vlzm",
@@ -386,7 +378,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "手机号码（注：不需要带国家代码 例如：13430421011）。可以传入原文或MD5",
           "example": "15000000000",
@@ -396,7 +387,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端IP",
           "example": "183.60.88.11",
@@ -406,7 +396,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "QQ的OpenId",
           "example": "无",
@@ -574,7 +563,6 @@
       "document": "DescribeTrustedID请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "客户端通过SDK获取的设备Token",
           "example": "eHh4eHh4eHg=",
@@ -702,7 +690,6 @@
       "document": "风险信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "风险类型",
           "example": "201",
@@ -713,7 +700,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "风险等级",
           "example": "1",

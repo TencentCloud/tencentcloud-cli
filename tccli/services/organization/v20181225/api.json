@@ -152,7 +152,6 @@
       "document": "AcceptOrganizationInvitation请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "邀请ID",
           "example": "",
@@ -180,7 +179,6 @@
       "document": "AddOrganizationNode请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "父组织单元ID",
           "example": "",
@@ -190,7 +188,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "组织单元名字",
           "example": "",
@@ -227,7 +224,6 @@
       "document": "CancelOrganizationInvitation请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "邀请ID",
           "example": "",
@@ -255,7 +251,6 @@
       "document": "CreateOrganization请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "组织类型（目前固定为1）",
           "example": "",
@@ -319,7 +314,6 @@
       "document": "DeleteOrganizationMemberFromNode请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "被删除成员UIN",
           "example": "",
@@ -329,7 +323,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "组织单元ID",
           "example": "",
@@ -357,7 +350,6 @@
       "document": "DeleteOrganizationMembers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "被删除成员的UIN列表",
           "example": "[\"1\\r\\n\"]",
@@ -385,7 +377,6 @@
       "document": "DeleteOrganizationNodes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "组织单元ID列表",
           "example": "",
@@ -430,7 +421,6 @@
       "document": "DenyOrganizationInvitation请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "邀请ID",
           "example": "",
@@ -458,7 +448,6 @@
       "document": "GetOrganizationMember请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "组织成员UIN",
           "example": "",
@@ -620,7 +609,6 @@
       "document": "ListOrganizationInvitations请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否被邀请。1：被邀请，0：发出的邀请",
           "example": "",
@@ -630,7 +618,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "",
@@ -640,7 +627,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制数目",
           "example": "",
@@ -686,7 +672,6 @@
       "document": "ListOrganizationMembers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "",
@@ -696,7 +681,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制数目",
           "example": "",
@@ -742,7 +726,6 @@
       "document": "ListOrganizationNodeMembers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "企业组织单元ID",
           "example": "",
@@ -752,7 +735,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "",
@@ -762,7 +744,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制数目",
           "example": "",
@@ -835,7 +816,6 @@
       "document": "MoveOrganizationMembersToNode请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "组织单元ID",
           "example": "",
@@ -845,7 +825,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "成员UIN列表",
           "example": "",
@@ -873,7 +852,6 @@
       "document": "企业组织邀请",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "邀请ID",
           "example": "",
@@ -884,7 +862,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "被邀请UIN",
           "example": "",
@@ -895,7 +872,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建者UIN",
           "example": "",
@@ -906,7 +882,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建者名称",
           "example": "",
@@ -917,7 +892,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建者邮箱",
           "example": "",
@@ -928,7 +902,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "邀请状态。-1：已过期，0：正常，1：已接受，2：已失效，3：已取消",
           "example": "",
@@ -939,7 +912,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名称",
           "example": "",
@@ -950,7 +922,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "",
@@ -961,7 +932,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "企业组织类型",
           "example": "",
@@ -972,7 +942,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "邀请时间",
           "example": "",
@@ -983,7 +952,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期时间",
           "example": "",
@@ -1000,7 +968,6 @@
       "document": "企业组织成员",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "UIN",
           "example": "",
@@ -1011,7 +978,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名称",
           "example": "",
@@ -1022,7 +988,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "",
@@ -1033,7 +998,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加入时间",
           "example": "",
@@ -1050,7 +1014,6 @@
       "document": "企业组织单元",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "组织单元ID",
           "example": "",
@@ -1061,7 +1024,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名称",
           "example": "",
@@ -1072,7 +1034,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "父单元ID",
           "example": "",
@@ -1083,7 +1044,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "成员数量",
           "example": "",
@@ -1100,7 +1060,6 @@
       "document": "QuitOrganization请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "企业组织ID",
           "example": "",
@@ -1128,7 +1087,6 @@
       "document": "SendOrganizationInvitation请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "被邀请账户UIN",
           "example": "100005229292",
@@ -1138,7 +1096,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名称",
           "example": "testAccount",
@@ -1148,7 +1105,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "test",
@@ -1176,7 +1132,6 @@
       "document": "UpdateOrganizationMember请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "成员UIN",
           "example": "",
@@ -1186,7 +1141,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名称",
           "example": "",
@@ -1196,7 +1150,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "",
@@ -1224,7 +1177,6 @@
       "document": "UpdateOrganizationNode请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "企业组织单元ID",
           "example": "",
@@ -1234,7 +1186,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名称",
           "example": "",
@@ -1244,7 +1195,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "父单元ID",
           "example": "",

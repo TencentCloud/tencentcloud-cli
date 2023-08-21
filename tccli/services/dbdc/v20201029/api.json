@@ -54,7 +54,6 @@
       "document": "DB实例详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "DB实例Id",
           "example": "tdsql-test",
@@ -65,7 +64,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DB实例名称",
           "example": "tdsql-test",
@@ -76,7 +74,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DB实例状态,-1:已隔离, 0:创建中, 1:流程中, 2:运行中, 3:未初始化",
           "example": "2",
@@ -87,7 +84,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DB实例状态描述,-1:已隔离, 0:创建中, 1:流程中, 2:运行中, 3:未初始化",
           "example": "2",
@@ -98,7 +94,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DB实例版本",
           "example": "5.7.17",
@@ -109,7 +104,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Vip信息",
           "example": "10.0.0.1",
@@ -120,7 +114,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Vip使用的端口号",
           "example": "3306",
@@ -131,7 +124,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字符串型的私有网络ID",
           "example": "vpc-test",
@@ -142,7 +134,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字符串型的私有网络子网ID",
           "example": "subnet-test",
@@ -153,7 +144,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为分布式版本,0:否,1:是",
           "example": "1",
@@ -164,7 +154,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DB实例节点数",
           "example": "3",
@@ -175,7 +164,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CPU规格(单位:核数)",
           "example": "2",
@@ -186,7 +174,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存规格(单位:GB)",
           "example": "10",
@@ -197,7 +184,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘规格(单位:GB)",
           "example": "10",
@@ -208,7 +194,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分布式类型的实例的分片数",
           "example": "2",
@@ -219,7 +204,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域",
           "example": "ap-guangzhou",
@@ -230,7 +214,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区",
           "example": "ap-guangzhou-1",
@@ -241,7 +224,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Db所在主机列表, 格式: m1,s1|m2,s2",
           "example": "svr-test1|svr-test2",
@@ -252,7 +234,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机角色, 1:主, 2:从, 3:主+从",
           "example": "1",
@@ -263,7 +244,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DB引擎，MySQL,Percona,MariaDB",
           "example": "MySQL",
@@ -274,7 +254,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2022-05-10 12:00:00",
@@ -291,7 +270,6 @@
       "document": "DescribeDBInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "独享集群实例Id",
           "example": "dbdc-test",
@@ -301,7 +279,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "独享集群主机Id",
           "example": "svr-test",
@@ -311,7 +288,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回数量",
           "example": "1000",
@@ -321,7 +297,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量",
           "example": "1",
@@ -331,7 +306,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例类型,0:mariadb, 1:tdsql",
           "example": "1",
@@ -379,7 +353,6 @@
       "document": "DescribeHostList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "独享集群实例Id",
           "example": "dbdc-test",
@@ -389,7 +362,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回数量",
           "example": "1000",
@@ -399,7 +371,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量",
           "example": "1",
@@ -409,7 +380,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分配状态过滤，0-可分配，1-禁止分配",
           "example": "[0]",
@@ -457,7 +427,6 @@
       "document": "独享集群详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "独享集群实例Id",
           "example": "dbdc-test",
@@ -468,7 +437,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "独享集群实例名称",
           "example": "dbdc-test",
@@ -479,7 +447,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域",
           "example": "ap-guangzhou",
@@ -490,7 +457,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID, 0:CDB, 1:TDSQL",
           "example": "0",
@@ -501,7 +467,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群类型, 0:公有云, 1:金融围笼, 2:CDC集群",
           "example": "0",
@@ -512,7 +477,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机类型, 0:物理机, 1:CVM机型, 2:CDC机型",
           "example": "0",
@@ -523,7 +487,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动续费标志, 0:未设置, 1:自动续费, 2:到期不续费",
           "example": "0",
@@ -534,7 +497,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群状态",
           "example": "1",
@@ -545,7 +507,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群状态描述",
           "example": "运行中",
@@ -556,7 +517,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2021-04-28 00:00:00",
@@ -567,7 +527,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "到期时间",
           "example": "2021-05-28 00:00:00",
@@ -578,7 +537,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机数",
           "example": "1",
@@ -589,7 +547,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DB实例数",
           "example": "1",
@@ -600,7 +557,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分配策略, 0:紧凑, 1:均匀",
           "example": "0",
@@ -611,7 +567,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总主机CPU(单位:核数)",
           "example": "100",
@@ -622,7 +577,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总已分配CPU(单位:核数)",
           "example": "100",
@@ -633,7 +587,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总可分配CPU(单位:核数)",
           "example": "100",
@@ -644,7 +597,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总主机内存(单位:GB)",
           "example": "100",
@@ -655,7 +607,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总已分配内存(单位:GB)",
           "example": "100",
@@ -666,7 +617,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总可分配内存(单位:GB)",
           "example": "100",
@@ -677,7 +627,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总机器磁盘(单位:GB)",
           "example": "1000",
@@ -688,7 +637,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总已分配磁盘(单位:GB)",
           "example": "1000",
@@ -699,7 +647,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总可分配磁盘(单位:GB)",
           "example": "1000",
@@ -710,7 +657,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区",
           "example": "ap-guangzhou-3",
@@ -721,7 +667,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "金融围笼ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cage-x-x",
@@ -732,7 +677,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属集群ID(默认集群为空)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cluster-xxx",
@@ -749,7 +693,6 @@
       "document": "DescribeInstanceDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "独享集群实例Id",
           "example": "dbdc-test",
@@ -1037,7 +980,6 @@
       "document": "DescribeInstanceList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回数量",
           "example": "1000",
@@ -1047,7 +989,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量",
           "example": "1",
@@ -1057,7 +998,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段，createTime,instancename两者之一",
           "example": "createTime",
@@ -1067,7 +1007,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序规则，desc,asc两者之一",
           "example": "desc",
@@ -1077,7 +1016,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按产品过滤，0:CDB, 1:TDSQL",
           "example": "[1]",
@@ -1087,7 +1025,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按实例ID过滤",
           "example": "[\"dbdc-1234\"]",
@@ -1097,7 +1034,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按实例名称过滤",
           "example": "[\"dbdc-name\"]",
@@ -1107,7 +1043,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按金融围笼ID过滤",
           "example": "[\"cage-1-2\"]",
@@ -1117,7 +1052,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按实例状态过滤, -1:已隔离, 0:创建中, 1:运行中, 2:扩容中, 3:删除中",
           "example": "[1]",
@@ -1127,7 +1061,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按所属集群ID过滤",
           "example": "[\"cluster-xxxx\"\"]",
@@ -1175,7 +1108,6 @@
       "document": "DescribeInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群类型: 0 一主一备, 1 一主两备...N-1 一主N备",
           "example": "",
@@ -1185,7 +1117,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID:  0 MYSQL，1 TDSQL",
           "example": "",
@@ -1195,7 +1126,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群uuid: 如 dbdc-q810131s",
           "example": "",
@@ -1205,7 +1135,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否按金融围笼标志搜索",
           "example": "",
@@ -1215,7 +1144,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按实例名字模糊匹配",
           "example": "",
@@ -1225,7 +1153,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页数目, 整型",
           "example": "",
@@ -1235,7 +1162,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码, 整型",
           "example": "",
@@ -1245,7 +1171,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段，枚举：createtime,groupname",
           "example": "",
@@ -1255,7 +1180,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式: asc升序, desc降序",
           "example": "",
@@ -1265,7 +1189,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群状态: -2 已删除, -1 已隔离, 0 创建中, 1 运行中, 2 扩容中, 3 删除中",
           "example": "",
@@ -1311,7 +1234,6 @@
       "document": "设备信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备ID",
           "example": "",
@@ -1322,7 +1244,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备No",
           "example": "",
@@ -1333,7 +1254,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备类型",
           "example": "",
@@ -1344,7 +1264,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备总内存，单位GB",
           "example": "",
@@ -1355,7 +1274,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备总磁盘，单位GB",
           "example": "",
@@ -1366,7 +1284,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备剩余内存，单位GB",
           "example": "",
@@ -1377,7 +1294,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备剩余磁盘，单位GB",
           "example": "",
@@ -1388,7 +1304,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备机器个数",
           "example": "",
@@ -1399,7 +1314,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库实例个数",
           "example": "",
@@ -1416,7 +1330,6 @@
       "document": "主机详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主机Id",
           "example": "svr-test",
@@ -1427,7 +1340,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机名称",
           "example": "svr-test",
@@ -1438,7 +1350,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区",
           "example": "ap-guangzhou-1",
@@ -1449,7 +1360,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机状态",
           "example": "1",
@@ -1460,7 +1370,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分配DB实例状态,0:可分配,1:不可分配",
           "example": "0",
@@ -1471,7 +1380,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机类型, 0:物理机, 1:cvm本地盘, 2:cvm云盘",
           "example": "0",
@@ -1482,7 +1390,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DB实例数",
           "example": "1",
@@ -1493,7 +1400,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机CPU(单位:核数)",
           "example": "100",
@@ -1504,7 +1410,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已分配CPU(单位:核数)",
           "example": "100",
@@ -1515,7 +1420,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可分配CPU(单位:核数)",
           "example": "100",
@@ -1526,7 +1430,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机内存(单位:GB)",
           "example": "100",
@@ -1537,7 +1440,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已分配内存(单位:GB)",
           "example": "100",
@@ -1548,7 +1450,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可分配内存(单位:GB)",
           "example": "100",
@@ -1559,7 +1460,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机磁盘(单位:GB)",
           "example": "100",
@@ -1570,7 +1470,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已分配磁盘(单位:GB)",
           "example": "100",
@@ -1581,7 +1480,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可分配磁盘(GB)",
           "example": "100",
@@ -1592,7 +1490,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CPU分配比",
           "example": "1",
@@ -1603,7 +1500,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存分配比",
           "example": "1",
@@ -1614,7 +1510,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘分配比",
           "example": "1",
@@ -1625,7 +1520,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机型名称",
           "example": "HYI12A",
@@ -1636,7 +1530,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机型类别",
           "example": "SH12",
@@ -1647,7 +1540,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计费标签",
           "example": "excluster_xxx",
@@ -1658,7 +1550,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计费ID",
           "example": "10811",
@@ -1669,7 +1560,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "独享集群实例Id",
           "example": "dbdc-test",
@@ -1686,7 +1576,6 @@
       "document": "集群容量信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群状态，0：运行中，1：不在运行",
           "example": "",
@@ -1697,7 +1586,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "读写集群剩余内存容量，单位GB",
           "example": "",
@@ -1708,7 +1596,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "读写集群剩余磁盘容量，单位GB",
           "example": "",
@@ -1719,7 +1606,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "读写集群总内存容量，单位GB",
           "example": "",
@@ -1730,7 +1616,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "读写集群总磁盘容量，单位GB",
           "example": "",
@@ -1741,7 +1626,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读集群剩余内存容量，单位GB",
           "example": "",
@@ -1752,7 +1636,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读集群剩余磁盘容量，单位GB",
           "example": "",
@@ -1763,7 +1646,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读集群总内存容量，单位GB",
           "example": "",
@@ -1774,7 +1656,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读集群总磁盘容量，单位GB",
           "example": "",
@@ -1785,7 +1666,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群设备详情",
           "example": "",
@@ -1802,7 +1682,6 @@
       "document": "集群设备组信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1813,7 +1692,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "读写设备组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1824,7 +1702,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读设备组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1835,7 +1712,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "空闲设备组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1852,7 +1728,6 @@
       "document": "集群扩展信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID",
           "example": "",
@@ -1863,7 +1738,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群名称",
           "example": "",
@@ -1874,7 +1748,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户ID",
           "example": "",
@@ -1885,7 +1758,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域",
           "example": "",
@@ -1896,7 +1768,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区",
           "example": "",
@@ -1907,7 +1778,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群类型： 0：一主一备，1：一主两备",
           "example": "",
@@ -1918,7 +1788,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群状态: 0 集群创建中, 1 集群有效, 2 集群扩容中, 3 集群删除中, 4 集群缩容中 -1 集群已隔离 -2 集群已删除",
           "example": "",
@@ -1929,7 +1798,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -1940,7 +1808,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例自动续费标识： 0正常续费 1自动续费 2到期不续费",
           "example": "",
@@ -1951,7 +1818,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机型",
           "example": "",
@@ -1962,7 +1828,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期时间",
           "example": "",
@@ -1973,7 +1838,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群信息",
           "example": "",
@@ -1984,7 +1848,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计费侧的产品ID",
           "example": "",
@@ -2001,7 +1864,6 @@
       "document": "ModifyInstanceName请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "独享集群实例Id",
           "example": "dbdc-test",
@@ -2011,7 +1873,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "独享集群实例名称",
           "example": "test",

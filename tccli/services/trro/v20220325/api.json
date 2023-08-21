@@ -173,7 +173,6 @@
       "document": "BatchDeleteDevices请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "目标删除设备所属项目ID",
           "example": "f3glr49ry0i0xlm7",
@@ -183,7 +182,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标删除设备的设备ID数组",
           "example": "[\"dev1\",\"dev2\"]",
@@ -221,7 +219,6 @@
       "document": "BatchDeletePolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "删除权限配置的项目ID",
           "example": "f3glr49rc96pralw",
@@ -231,7 +228,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "删除权限配置的远端设备ID列表",
           "example": "[\"test1\",\"test2\"]",
@@ -241,7 +237,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "删除权限配置的权限模式, black为黑名单，white为白名单",
           "example": "black",
@@ -324,7 +319,6 @@
       "document": "CreateDevice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "创建设备所归属的项目ID",
           "example": "f3glr49ry0i0xlm7",
@@ -334,7 +328,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建设备ID，项目内需要唯一，由小写英文字母、数字和下划线构成，长度不超过18",
           "example": "test_device1",
@@ -344,7 +337,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建设备名称，长度小于24, 可包含中文、数字、英文字母和下划线",
           "example": "vin123",
@@ -354,7 +346,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备类型，field为现场设备（受控设备），remote为远端设备（操控设备），不填默认为field",
           "example": "field",
@@ -364,7 +355,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备认证口令，由大小写英文字母和数字构成，须为16位",
           "example": "abcd1234abcd1234",
@@ -392,7 +382,6 @@
       "document": "CreateProject请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目名称，长度不超过24个字符",
           "example": "project1",
@@ -402,7 +391,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目描述，长度不超过120个字符，不填默认为空",
           "example": "test project",
@@ -412,7 +400,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限模式，black为黑名单，white为白名单，不填默认为black",
           "example": "black",
@@ -450,7 +437,6 @@
       "document": "DeleteProject请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "f3glr49r3axn0fu2",
@@ -478,7 +464,6 @@
       "document": "DescribeDeviceInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "目标设备所属项目ID",
           "example": "f3glr49ry0i0xlm7",
@@ -488,7 +473,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标设备ID",
           "example": "dev1",
@@ -566,7 +550,6 @@
       "document": "DescribeDeviceList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备所属项目ID",
           "example": "\"f3glr49ry0i0xlm7\"",
@@ -576,7 +559,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备类型筛选，不填默认为全部设备类型",
           "example": "field",
@@ -586,7 +568,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对设备ID或Name按关键字进行模糊匹配，不填则不进行模糊匹配",
           "example": "\"test\"",
@@ -596,7 +577,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页返回的最大设备数，不填默认为10",
           "example": "10",
@@ -606,7 +586,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前页码，不填默认为1（首页）",
           "example": "0",
@@ -664,7 +643,6 @@
       "document": "DescribeDeviceSessionDetails请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "会话ID",
           "example": "f3glr49ry0i0xlm7",
@@ -702,7 +680,6 @@
       "document": "DescribeDeviceSessionList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "xxx",
@@ -712,7 +689,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码，从1开始",
           "example": "1",
@@ -722,7 +698,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页个数",
           "example": "10",
@@ -732,7 +707,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备ID",
           "example": "xx",
@@ -742,7 +716,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间",
           "example": "1650000000",
@@ -752,7 +725,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "example": "1650000050",
@@ -810,7 +782,6 @@
       "document": "DescribePolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查看权限的项目ID",
           "example": "f3glr49ry0i0xlm7",
@@ -820,7 +791,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查看的权限模式，black为黑名单，white为白名单，不填默认为当前项目生效的权限模式",
           "example": "black",
@@ -830,7 +800,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模糊匹配模式，remoteMatch为远端设备ID匹配，fieldMatch为现场ID匹配，不填默认为remoteMatch",
           "example": "remoteMatch",
@@ -840,7 +809,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模糊匹配关键字，不填默认不进行模糊匹配",
           "example": "test",
@@ -850,7 +818,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页返回的最大数量，不填默认为10",
           "example": "10",
@@ -860,7 +827,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前页码，不填默认为1（首页）",
           "example": "0",
@@ -938,7 +904,6 @@
       "document": "DescribeProjectInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "目标项目ID",
           "example": "f3glr49r3axn0fu2",
@@ -1006,7 +971,6 @@
       "document": "DescribeProjectList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "每页返回的最大项目数量，不填默认为10",
           "example": "10",
@@ -1016,7 +980,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前页码，不填默认为1（首页）",
           "example": "0",
@@ -1074,7 +1037,6 @@
       "document": "DescribeRecentSessionList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "xxx",
@@ -1084,7 +1046,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页码，从1开始",
           "example": "1",
@@ -1094,7 +1055,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页个数",
           "example": "10",
@@ -1104,7 +1064,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备ID，支持过滤远端设备或现场设备",
           "example": "xx",
@@ -1114,7 +1073,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间范围的起始时间。时间范围最大为最近两小时，若不传或超出范围，则起始时间按两小时前计算",
           "example": "1650000000",
@@ -1124,7 +1082,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间范围的结束时间。时间范围最大为最近两小时，若不传或超出范围，则结束时间按当前时间计算",
           "example": "1650000050",
@@ -1182,7 +1139,6 @@
       "document": "DescribeSessionStatisticsByInterval请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "f3glr49ry0i0xlm7",
@@ -1192,7 +1148,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计时间间隔：hour|day|month",
           "example": "hour",
@@ -1202,7 +1157,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备ID",
           "example": "dev1",
@@ -1212,7 +1166,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始时间，单位：秒",
           "example": "1600000000",
@@ -1222,7 +1175,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间，单位：秒",
           "example": "1610000000",
@@ -1260,7 +1212,6 @@
       "document": "DescribeSessionStatistics请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "f3glr49ry0i0xlm7",
@@ -1270,7 +1221,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备ID",
           "example": "dev1",
@@ -1280,7 +1230,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始时间，单位：秒",
           "example": "1600000000",
@@ -1290,7 +1239,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间，单位：秒",
           "example": "1610000000",
@@ -1444,7 +1392,6 @@
       "document": "设备信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备ID",
           "example": "“dev1”",
@@ -1455,7 +1402,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称",
           "example": "\"test device\"",
@@ -1466,7 +1412,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备状态，offline为离线，ready为在线准备，connected为会话中",
           "example": "offline",
@@ -1477,7 +1422,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备类型，field为现场设备（受控方），remote为远端设备（操控方）",
           "example": "\"field\"",
@@ -1488,7 +1432,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备信息最近修改时间",
           "example": "2022-03-21T08:00:00+08:00",
@@ -1499,7 +1442,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备状态最近更新时间",
           "example": "2022-03-21T09:00:00+08:00",
@@ -1510,7 +1452,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备所属项目Id",
           "example": "m82k54bp7n9rjhai",
@@ -1835,7 +1776,6 @@
       "document": "ModifyDevice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要修改设备归属项目的项目ID",
           "example": "f3glr49ry0i0xlm7",
@@ -1845,7 +1785,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要修改设备的设备ID",
           "example": "dev_1",
@@ -1855,7 +1794,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后的设备名称，不填则不修改",
           "example": "testdevice1",
@@ -1865,7 +1803,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后的设备认证口令，不填则不修改",
           "example": "abcd1234ABCD5678",
@@ -1893,7 +1830,6 @@
       "document": "ModifyPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "修改权限配置的项目ID",
           "example": "f3glr49rc96pralw",
@@ -1903,7 +1839,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改权限配置的远端设备ID",
           "example": "test1",
@@ -1913,7 +1848,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限修改涉及的现场设备ID数组",
           "example": "[\"dev1\",\"dev2\"]",
@@ -1923,7 +1857,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改的目标权限模式，black为黑名单，white为白名单",
           "example": "black",
@@ -1933,7 +1866,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改模式，add为新增（添加现场设备I关联），remove为删除（解除现场设备关联），set为设置（更新现场设备关联）",
           "example": "add",
@@ -1981,7 +1913,6 @@
       "document": "ModifyProject请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "目标修改项目的项目ID",
           "example": "f3glr49rc96pralw",
@@ -1991,7 +1922,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后的项目名称，不填则不修改",
           "example": "mytest",
@@ -2001,7 +1931,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后的项目描述，不填则不修改",
           "example": "test project",
@@ -2011,7 +1940,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后的权限模式，black为黑名单，white为白名单,不填则不修改",
           "example": "black",
@@ -2039,7 +1967,6 @@
       "document": "权限信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "远端设备ID",
           "example": "\"test1\"",
@@ -2050,7 +1977,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联的现场设备ID",
           "example": "[\"dev1\",\"dev2\"]",
@@ -2061,7 +1987,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最近添加时间",
           "example": "2022-03-22T08:00:00+08:00",
@@ -2078,7 +2003,6 @@
       "document": "项目信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "f3glr49rc96pralw",
@@ -2089,7 +2013,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目名称",
           "example": "project1",
@@ -2100,7 +2023,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目描述",
           "example": "test",
@@ -2111,7 +2033,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目权限模式，black为黑名单，white为白名单",
           "example": "black",
@@ -2122,7 +2043,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目信息修改时间",
           "example": "2022-03-25T09:12:11+08:00",
@@ -2139,7 +2059,6 @@
       "document": "最新会话信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "会话ID",
           "example": "xxx",
@@ -2150,7 +2069,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "远端设备ID",
           "example": "xxxxx",
@@ -2161,7 +2079,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "现场设备ID",
           "example": "xxxxx",
@@ -2172,7 +2089,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分辨率",
           "example": "1920*1080",
@@ -2183,7 +2099,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话开始时间",
           "example": "1650000000",
@@ -2194,7 +2109,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后更新时间",
           "example": "1650000060",
@@ -2477,7 +2391,6 @@
       "document": "会话信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "会话ID",
           "example": "xxx",
@@ -2488,7 +2401,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "远端设备ID",
           "example": "xxxxx",
@@ -2499,7 +2411,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "现场设备ID",
           "example": "xxxxx",
@@ -2510,7 +2421,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分辨率",
           "example": "1920*1080",
@@ -2521,7 +2431,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话开始时间",
           "example": "1650000000",
@@ -2532,7 +2441,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话结束时间",
           "example": "1650000060",
@@ -2543,7 +2451,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通话质量：good|normal|bad，对应优良差",
           "example": "good",
@@ -2560,7 +2467,6 @@
       "document": "单位时间间隔的会话统计数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "活跃现场设备数",
           "example": "10",
@@ -2571,7 +2477,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "活跃远端设备数",
           "example": "20",
@@ -2582,7 +2487,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话数量",
           "example": "50",
@@ -2593,7 +2497,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "会话时长，单位：分钟",
           "example": "30",
@@ -2604,7 +2507,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳，单位：秒",
           "example": "1650000000",
@@ -2615,7 +2517,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳，单位：秒",
           "example": "1650000000",
@@ -2626,7 +2527,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "优良会话占比，单位：%",
           "example": "30",

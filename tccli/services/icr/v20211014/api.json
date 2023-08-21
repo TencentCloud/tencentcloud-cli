@@ -19,7 +19,6 @@
       "document": "获取成员列表入参payload",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户ID",
           "example": "无",
@@ -36,7 +35,6 @@
       "document": "GetIndustryV1HomeMembers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "无",
@@ -46,7 +44,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "无",
@@ -62,7 +59,6 @@
       "document": "获取成员列表回包DataList",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -73,7 +69,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "功能列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -84,7 +79,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -95,7 +89,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户行业分类\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -106,7 +99,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子用户数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -117,7 +109,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器人列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -128,7 +119,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -139,7 +129,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -150,7 +139,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "功能列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -161,7 +149,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户账号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -178,7 +165,6 @@
       "document": "获取成员列表接口回包Feature",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "功能名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -189,7 +175,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "功能ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -206,7 +191,6 @@
       "document": "获取成员列表回包Industry",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "行业ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -217,7 +201,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "行业名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -234,7 +217,6 @@
       "document": "获取成员列表回包Payload",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户级别\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -245,7 +227,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -256,7 +237,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -267,7 +247,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移量，从0开始\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -278,7 +257,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -295,7 +273,6 @@
       "document": "获取成员列表接口回包ProductList",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -306,7 +283,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "编辑时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -317,7 +293,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器人ID（AppKey信息）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -328,7 +303,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器人图标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -339,7 +313,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "行业信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -350,7 +323,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作员列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -361,7 +333,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器人名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -372,7 +343,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -383,7 +353,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -400,7 +369,6 @@
       "document": "获取成员列表接口回包TypeList",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "类型ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -411,7 +379,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -460,7 +427,6 @@
       "document": "请求的Metadata",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "渠道",
           "example": "无",
@@ -471,7 +437,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "无",
@@ -482,7 +447,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "无",
@@ -493,7 +457,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "无",
@@ -504,7 +467,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "位置定位服务",
           "example": "无",
@@ -515,7 +477,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "透传字段",
           "example": "无",
@@ -532,7 +493,6 @@
       "document": "请求参数的lbs",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "纬度",
           "example": "无",
@@ -543,7 +503,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "经度",
           "example": "无",
@@ -560,7 +519,6 @@
       "document": "请求参数Vagrant",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "无",
@@ -571,7 +529,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "无",
@@ -588,7 +545,6 @@
       "document": "回包的meta data",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "无",
@@ -599,7 +555,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "无",
@@ -610,7 +565,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "无",
@@ -621,7 +575,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "无",

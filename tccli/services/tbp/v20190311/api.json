@@ -40,7 +40,6 @@
       "document": "CreateBot请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机器人名称",
           "example": "",
@@ -50,7 +49,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器人中文名称",
           "example": "",
@@ -132,7 +130,6 @@
       "document": "Reset请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机器人标识",
           "example": "",
@@ -142,7 +139,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子账户id，每个终端对应一个",
           "example": "",
@@ -152,7 +148,6 @@
           "type": "string"
         },
         {
-          "default": "''",
           "disabled": false,
           "document": "机器人版本号。BotVersion/BotEnv二选一：二者均填，仅BotVersion有效；二者均不填，默认BotEnv=dev",
           "example": "",
@@ -162,7 +157,6 @@
           "type": "string"
         },
         {
-          "default": "''",
           "disabled": false,
           "document": "机器人环境{dev:测试;release:线上}。BotVersion/BotEnv二选一：二者均填，仅BotVersion有效；二者均不填，默认BotEnv=dev",
           "example": "",
@@ -287,7 +281,6 @@
       "document": "槽位信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "槽位名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -298,7 +291,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "槽位值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -459,7 +451,6 @@
       "document": "TextReset请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "机器人标识，用于定义抽象机器人。",
           "example": "",
@@ -469,7 +460,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "终端标识，每个终端(或线程)对应一个，区分并发多用户。",
           "example": "",
@@ -479,7 +469,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器人版本，取值\"dev\"或\"release\"，{调试版本：dev；线上版本：release}。",
           "example": "",

@@ -40,7 +40,6 @@
       "document": "DescribeMaterialList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "活动Id",
           "example": "",
@@ -50,7 +49,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材Id",
           "example": "",
@@ -60,7 +58,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每次拉取条数",
           "example": "",
@@ -70,7 +67,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "",
@@ -116,7 +112,6 @@
       "document": "FaceFusionLite请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "活动 ID，请在人脸融合控制台查看。",
           "example": "100646",
@@ -126,7 +121,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材 ID，请在人脸融合控制台查看。",
           "example": "qc_100646_154021_9",
@@ -136,7 +130,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户人脸图片、素材模板图的人脸位置信息。",
           "example": "[]",
@@ -146,7 +139,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回图像方式（url 或 base64) ，二选一。默认url, url有效期为30天。",
           "example": "url",
@@ -156,7 +148,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请注意，鉴政服务开启后，您需要根据返回结果自行判断是否调整您的业务逻辑。例如提示您的用户图片非法，请更换图片。",
           "example": "1",
@@ -166,7 +157,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "算法引擎参数:  1）选脸版 - youturecreat; 2）优享版 - youtu1vN； 3）畅享版 - ptu； 4）随机 - ALL;  默认为活动选择的算法",
           "example": "string",
@@ -324,7 +314,6 @@
       "document": "人脸信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框的横坐标",
           "example": "",
@@ -335,7 +324,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框的纵坐标",
           "example": "",
@@ -346,7 +334,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框的宽度",
           "example": "",
@@ -357,7 +344,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框的高度",
           "example": "",
@@ -374,7 +360,6 @@
       "document": "人脸框信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框左上角横坐标。",
           "example": "",
@@ -385,7 +370,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框左上角纵坐标。",
           "example": "",
@@ -396,7 +380,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框宽度。",
           "example": "",
@@ -407,7 +390,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框高度。",
           "example": "",
@@ -534,7 +516,6 @@
       "document": "人脸融合不适宜内容识别人脸信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "保留字段",
           "example": "string",
@@ -545,7 +526,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人员名称",
           "example": "string",
@@ -556,7 +536,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对应识别label的置信度，分数越高意味违法违规可能性越大。 \n0到70，Suggestion建议为PASS； \n70到80，Suggestion建议为REVIEW； \n80到100，Suggestion建议为BLOCK。",
           "example": "1",
@@ -567,7 +546,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别场景的审核结论：  \nPASS：正常 \nREVIEW：疑似  \nBLOCK：违规",
           "example": "string",
@@ -584,7 +562,6 @@
       "document": "人脸融合不适宜内容识别返回参数item",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "保留字段",
           "example": "",
@@ -595,7 +572,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态码， 0为处理成功，其他值为处理失败",
           "example": "",
@@ -606,7 +582,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对应状态码信息描述",
           "example": "",
@@ -617,7 +592,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "保留字段",
           "example": "",
@@ -628,7 +602,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "保留字段",
           "example": "",
@@ -639,7 +612,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "审核详细内容",
           "example": "",
@@ -686,7 +658,6 @@
       "document": "人脸信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "人脸序号",
           "example": "",
@@ -697,7 +668,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸框信息",
           "example": "",
@@ -714,7 +684,6 @@
       "document": "人脸图片和待被融合的素材模板图的人脸位置信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "输入图片base64",
           "example": "string",
@@ -725,7 +694,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输入图片url",
           "example": "string",
@@ -736,7 +704,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上传的图片人脸位置信息（人脸框）",
           "example": "{}",
@@ -747,7 +714,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "控制台上传的素材人脸ID，不填默认取最大人脸",
           "example": "string",
@@ -790,7 +756,6 @@
       "document": "素材信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "素材Id",
           "example": "",
@@ -801,7 +766,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材状态",
           "example": "",
@@ -812,7 +776,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "脸型参数P图",
           "example": "",
@@ -823,7 +786,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "五官参数P图",
           "example": "",
@@ -834,7 +796,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "脸型参数优图",
           "example": "",
@@ -845,7 +806,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "五官参数优图",
           "example": "",
@@ -856,7 +816,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "素材COS地址",
           "example": "",
@@ -867,7 +826,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -878,7 +836,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间",
           "example": "",
@@ -889,7 +846,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "人脸信息",
           "example": "",

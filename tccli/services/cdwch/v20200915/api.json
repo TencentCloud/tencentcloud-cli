@@ -159,7 +159,6 @@
       "document": "ActionAlterCkUser请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户信息",
           "example": "cdwch-xxxx",
@@ -169,7 +168,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "api接口类型，\nAddSystemUser新增用户，UpdateSystemUser，修改用户",
           "example": "AddSystemUser",
@@ -207,7 +205,6 @@
       "document": "集群内节点的规格磁盘规格描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "节点磁盘类型，例如“CLOUD_SSD”\\\"CLOUD_PREMIUM\"",
           "example": "xx",
@@ -218,7 +215,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘容量，单位G",
           "example": "xx",
@@ -229,7 +225,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘总数",
           "example": "xx",
@@ -240,7 +235,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "example": "xx",
@@ -333,7 +327,6 @@
       "document": "集群计费相关信息\n",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "计费类型，“PREPAID” 预付费，“POSTPAID_BY_HOUR” 后付费",
           "example": "PREPAID",
@@ -344,7 +337,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "PREPAID需要传递，是否自动续费，1表示自动续费开启",
           "example": "1",
@@ -355,7 +347,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预付费需要传递，计费时间长度，多少个月",
           "example": "1",
@@ -372,7 +363,6 @@
       "document": "新增或是修改ck用户",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群实例id",
           "example": "cdwch-xxxx",
@@ -383,7 +373,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名",
           "example": "test",
@@ -394,7 +383,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密码",
           "example": "password",
@@ -405,7 +393,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "example": "描述",
@@ -422,7 +409,6 @@
       "document": "用于返回XML格式的配置文件和内容以及其他配置文件有关的信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "配置文件名称",
           "example": "config.xml",
@@ -433,7 +419,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置文件对应的相关属性信息",
           "example": "{\"editable\":true,\"display\":true,\"type\":\"Customize\",\"fileOwner\":\"",
@@ -444,7 +429,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置文件对应的其他属性信息",
           "example": "{\"customKey\":{\"name\":\"customKey\",\"type\":\"string\",\"description\":\"",
@@ -455,7 +439,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置文件的内容，base64编码",
           "example": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHlhbmRleD4K",
@@ -466,7 +449,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用于表示当前配置文件是不是有过修改后没有重启，提醒用户需要重启",
           "example": "1",
@@ -477,7 +459,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "保存配置文件的路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/etc/clickhouse-server",
@@ -494,7 +475,6 @@
       "document": "clickhouse vcluster信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "vcluster名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxxx",
@@ -505,7 +485,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前cluster的IP列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -522,7 +501,6 @@
       "document": "配置文件修改信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "配置文件名称",
           "example": "config.xml",
@@ -533,7 +511,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置文件旧内容，base64编码",
           "example": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHlhbmRleD4K",
@@ -544,7 +521,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置文件新内容，base64编码",
           "example": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHlhbmRleD4K",
@@ -555,7 +531,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "保存配置文件的路径",
           "example": "/etc/clickhouse-server",
@@ -572,7 +547,6 @@
       "document": "CreateBackUpSchedule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "编辑时需要传",
           "example": "12345",
@@ -582,7 +556,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "选择的星期 逗号分隔，例如 2 代表周二",
           "example": "\"1,2\"",
@@ -592,7 +565,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行小时",
           "example": "1",
@@ -602,7 +574,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份表列表",
           "example": "[\"1234\"]",
@@ -891,7 +862,6 @@
       "document": "DescribeCkSqlApis请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例id",
           "example": "cdwch-xxxx",
@@ -901,7 +871,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "api接口名称,GetClusters:获取集群cluster列表\nGetSystemUsers:获取系统用户列表\nCheckNodeCluster: 检查节点是否隶属一个cluster\nGetClusterDatabases: 获取一个cluster下的数据库列表\nGetClusterTables: 获取一个cluster下的数据库表列表\nGetPrivilegeUsers: 获取授权的用户列表\nGET_USER_CLUSTER_PRIVILEGES:获取用户cluster下的权限   \nGetUserClusterNewPrivileges:获取用户cluster下的权限 (新版）\nRevokeClusterUser:解绑cluster用户\nDeleteSystemUser:删除系统用户 —— 必须所有cluster先解绑\nGetUserOptionMessages:获取用户配置备注信息\nGET_USER_CONFIGS:获取用户配置列表  QUOTA、PROFILE、POLICY",
           "example": "GetClusters",
@@ -911,7 +880,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群名称，GET_SYSTEM_USERS，GET_PRIVILEGE_USERS，GET_CLUSTER_DATABASES，GET_CLUSTER_TABLES 必填",
           "example": "test",
@@ -921,7 +889,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名称，api与user相关的必填",
           "example": "user1",
@@ -959,7 +926,6 @@
       "document": "DescribeClusterConfigs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群实例ID",
           "example": "cdwch-f625kxu6",
@@ -997,7 +963,6 @@
       "document": "DescribeInstanceClusters请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "xx",
@@ -1035,7 +1000,6 @@
       "document": "DescribeInstanceKeyValConfigs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群实例ID",
           "example": "cdwch-xxxxxxxx",
@@ -1045,7 +1009,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索的配置项名称",
           "example": "max_connections",
@@ -1158,7 +1121,6 @@
       "document": "DescribeInstanceShards请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群实例ID",
           "example": "cdwch-12345678",
@@ -1196,7 +1158,6 @@
       "document": "DescribeInstanceState请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群实例名称",
           "example": "-",
@@ -1370,7 +1331,6 @@
       "document": "DescribeSpec请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域信息，例如\"ap-guangzhou-1\"",
           "example": "ap-guangzhou-1",
@@ -1380,7 +1340,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计费类型，PREPAID 包年包月，POSTPAID_BY_HOUR 按量计费",
           "example": "PREPAID",
@@ -1390,7 +1349,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否弹性ck",
           "example": "false",
@@ -1505,7 +1463,6 @@
       "document": "磁盘规格描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘类型，例如“CLOUD_SSD\", \"LOCAL_SSD\"等",
           "example": "CLOUD_SSD",
@@ -1516,7 +1473,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘类型说明，例如\"云SSD\", \"本地SSD\"等",
           "example": "本地SSD",
@@ -1527,7 +1483,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘最小规格大小，单位G",
           "example": "20",
@@ -1538,7 +1493,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘最大规格大小，单位G",
           "example": "100",
@@ -1549,7 +1503,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "磁盘数目",
           "example": "10",
@@ -1566,7 +1519,6 @@
       "document": "集群配置信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "配置项名称",
           "example": "max_connections",
@@ -1577,7 +1529,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置项内容",
           "example": "100",
@@ -1588,7 +1539,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认值",
           "example": "100",
@@ -1599,7 +1549,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要重启",
           "example": "false",
@@ -1610,7 +1559,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否可编辑",
           "example": "true",
@@ -1621,7 +1569,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置项解释",
           "example": "The maximum number of inbound connections.",
@@ -1632,7 +1579,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件名称",
           "example": "config.xml",
@@ -1643,7 +1589,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则名称类型",
           "example": "number",
@@ -1654,7 +1599,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则名称内容",
           "example": "bigint",
@@ -1665,7 +1609,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改人的uin",
           "example": "1234567890",
@@ -1676,7 +1619,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间",
           "example": "2021-01-01 11:11:11",
@@ -1693,7 +1635,6 @@
       "document": "KV配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "key",
           "example": "x",
@@ -1704,7 +1645,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "value",
           "example": "x",
@@ -2283,7 +2223,6 @@
       "document": "kv配置，多层级item",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "key",
           "example": "xxx",
@@ -2294,7 +2233,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "列表",
           "example": "[]",
@@ -2311,7 +2249,6 @@
       "document": "ModifyClusterConfigs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群ID，例如cdwch-xxxx",
           "example": "cdwch-xxxx",
@@ -2321,7 +2258,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置文件修改信息",
           "example": "无",
@@ -2331,7 +2267,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改原因",
           "example": "为了性能提升",
@@ -2488,7 +2423,6 @@
       "document": "创建集群时的规格",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规格名称",
           "example": "SCH1",
@@ -2499,7 +2433,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数量",
           "example": "1",
@@ -2510,7 +2443,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云盘大小",
           "example": "200",
@@ -2673,7 +2605,6 @@
       "document": "OpenBackUp请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群id",
           "example": "\"cdwch-XXX\"",
@@ -2683,7 +2614,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "OPEN 或者CLOSE",
           "example": "OPEN",
@@ -2693,7 +2623,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "桶名字",
           "example": "\"cos-XXX\"",
@@ -2796,7 +2725,6 @@
       "document": "资源规格描述信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规格名称，例如“SCH1\"",
           "example": "SCH1",
@@ -2807,7 +2735,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cpu核数",
           "example": "4",
@@ -2818,7 +2745,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存大小，单位G",
           "example": "16",
@@ -2829,7 +2755,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分类标记，STANDARD/BIGDATA/HIGHIO分别表示标准型/大数据型/高IO",
           "example": "STANDARD",
@@ -2840,7 +2765,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "系统盘描述信息",
           "example": "复杂结构",
@@ -2851,7 +2775,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据盘描述信息",
           "example": "复杂结构",
@@ -2862,7 +2785,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大节点数目限制",
           "example": "50",
@@ -2873,7 +2795,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否可用，false代表售罄\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -2884,7 +2805,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规格描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2核4G",
@@ -2895,7 +2815,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规格名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "L",
@@ -2906,7 +2825,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "库存数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "30",
@@ -3031,7 +2949,6 @@
       "document": "ScaleUpInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例唯一ID",
           "example": "cdwch-sdf34dsf",
@@ -3041,7 +2958,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点类型，DATA：clickhouse节点，COMMON：为zookeeper节点",
           "example": "DATA",
@@ -3051,7 +2967,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "clickhouse节点规格。",
           "example": "SCH4",
@@ -3061,7 +2976,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否滚动重启，false为不滚动重启，true为滚动重启",
           "example": "false",
@@ -3185,7 +3099,6 @@
       "document": "列表页搜索的标记列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签的键",
           "example": "标签一",
@@ -3196,7 +3109,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签的值",
           "example": "标签值一",
@@ -3207,7 +3119,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1表示只输入标签的键，没有输入值；0表示输入键时且输入值",
           "example": "1",

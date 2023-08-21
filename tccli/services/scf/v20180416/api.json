@@ -327,7 +327,6 @@
       "document": "HTTP域名相关信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "",
@@ -338,7 +337,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VIP",
           "example": "",
@@ -355,7 +353,6 @@
       "document": "函数的版本别名",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "别名指向的主版本",
           "example": "",
@@ -366,7 +363,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "别名的名称",
           "example": "",
@@ -377,7 +373,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "别名的路由信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -388,7 +383,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -399,7 +393,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -410,7 +403,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -427,7 +419,6 @@
       "document": "异步事件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "调用请求id",
           "example": "xxxx-yyyy-zzzz",
@@ -438,7 +429,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "调用类型",
           "example": "TRIGGER_TIMER",
@@ -449,7 +439,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数版本",
           "example": "$LATEST",
@@ -460,7 +449,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件状态，RUNNING 表示运行中, FINISHED 表示调用成功, ABORTED 表示调用终止, FAILED 表示调用失败",
           "example": "FINISHED ",
@@ -471,7 +459,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "调用开始时间，格式: \"%Y-%m-%d %H:%M:%S.%f\"",
           "example": "2021-01-01 00:00:00.001",
@@ -482,7 +469,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "调用结束时间，格式: \"%Y-%m-%d %H:%M:%S.%f\"",
           "example": "2021-01-01 00:00:00.002",
@@ -499,7 +485,6 @@
       "document": "异步事件状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "异步事件状态，RUNNING 表示运行中, FINISHED 表示调用成功, ABORTED 表示调用终止, FAILED 表示调用失败。",
           "example": "RUNNING",
@@ -510,7 +495,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求状态码",
           "example": "200",
@@ -521,7 +505,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异步执行请求 Id",
           "example": "ea7bb7c7-c312-4255-b7dc-b2bf0cfda10e",
@@ -538,7 +521,6 @@
       "document": "函数的异步重试配置详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户错误的异步重试重试配置",
           "example": "",
@@ -549,7 +531,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息保留时间",
           "example": "",
@@ -566,7 +547,6 @@
       "document": "文件系统(cfs)配置描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统信息列表",
           "example": "",
@@ -583,7 +563,6 @@
       "document": "云函数关联的cfs配置信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户id",
           "example": "",
@@ -594,7 +573,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户组id",
           "example": "",
@@ -605,7 +583,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统实例id",
           "example": "",
@@ -616,7 +593,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统挂载点id",
           "example": "",
@@ -627,7 +603,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本地挂载点",
           "example": "",
@@ -638,7 +613,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "远程挂载点",
           "example": "",
@@ -649,7 +623,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ip，配置 cfs 时无需填写。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -660,7 +633,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统所在的私有网络id，配置 cfs 时无需填写。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -671,7 +643,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统所在私有网络的子网id，配置 cfs 时无需填写。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -688,7 +659,6 @@
       "document": "函数代码",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "对象存储桶名称（填写存储桶名称自定义部分，不包含-appid）",
           "example": "BucketName",
@@ -699,7 +669,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对象存储中代码包文件路径，以/开头",
           "example": "ObjectName",
@@ -710,7 +679,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "包含函数代码文件及其依赖项的 zip 格式文件，zip包大小上限为 50MB，使用该接口时要求将 zip 文件的内容转成 base64 编码",
           "example": "base64编码",
@@ -721,7 +689,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对象存储的地域，地域为北京时需要传入ap-beijing,北京一区时需要传递ap-beijing-1，其他的地域不需要传递。",
           "example": "ap-chongqing",
@@ -732,7 +699,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "如果是通过Demo创建的话，需要传入DemoId",
           "example": "Demo的Id",
@@ -743,7 +709,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "如果是从TempCos创建的话，需要传入TempCosObjectName",
           "example": "TempCosObjectName",
@@ -754,7 +719,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Git地址。该功能已下线。",
           "example": "Git地址",
@@ -765,7 +729,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Git用户名。该功能已下线。",
           "example": "Git用户名",
@@ -776,7 +739,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Git密码。该功能已下线。",
           "example": "Git密码",
@@ -787,7 +749,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加密后的Git密码，一般无需指定。该功能已下线。",
           "example": "加密后的Git密码",
@@ -798,7 +759,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Git分支。该功能已下线。",
           "example": "Git分支",
@@ -809,7 +769,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代码在Git仓库中的路径。该功能已下线。",
           "example": "代码在Git仓库中的路径",
@@ -820,7 +779,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定要拉取的版本。该功能已下线。",
           "example": "Git拉取的版本",
@@ -831,7 +789,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加密后的Git用户名，一般无需指定。该功能已下线。",
           "example": "加密后的Git用户名",
@@ -842,7 +799,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "镜像部署时配置TCR镜像信息",
           "example": "TCR镜像配置",
@@ -949,7 +905,6 @@
       "document": "CreateAlias请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "别名的名称，在函数级别中唯一，只能包含字母、数字、'_'和‘-’，且必须以字母开头，长度限制为1-64",
           "example": "<AliasName>",
@@ -959,7 +914,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数名称",
           "example": "<FunctionName>",
@@ -969,7 +923,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "别名指向的主版本",
           "example": "<FunctionVersion>",
@@ -979,7 +932,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数所在的命名空间",
           "example": "<Namespace>",
@@ -989,7 +941,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "别名的请求路由配置",
           "example": "无",
@@ -999,7 +950,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "别名的描述信息",
           "example": "无",
@@ -1495,7 +1445,6 @@
       "document": "DeleteAlias请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "函数名称",
           "example": "<FunctionName>",
@@ -1505,7 +1454,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "别名的名称",
           "example": "<AliasName>",
@@ -1515,7 +1463,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数所在的命名空间",
           "example": "<Namespace>",
@@ -1543,7 +1490,6 @@
       "document": "DeleteFunction请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要删除的函数名称",
           "example": "<FunctionName>",
@@ -1553,7 +1499,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数所属命名空间",
           "example": "\"\"",
@@ -1563,7 +1508,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "填写需要删除的版本号，不填默认删除函数下全部版本。",
           "example": "\"\"",
@@ -1627,7 +1571,6 @@
       "document": "DeleteNamespace请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间名称",
           "example": "test",
@@ -1655,7 +1598,6 @@
       "document": "DeleteProvisionedConcurrencyConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要删除预置并发的函数的名称",
           "example": "test",
@@ -1665,7 +1607,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数的版本号",
           "example": "1",
@@ -1675,7 +1616,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数所属命名空间，默认为default",
           "example": "\"\"",
@@ -1703,7 +1643,6 @@
       "document": "DeleteReservedConcurrencyConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要删除最大独占配额的函数的名称",
           "example": "test",
@@ -1713,7 +1652,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数所属命名空间，默认为default",
           "example": "default",
@@ -1741,7 +1679,6 @@
       "document": "DeleteTrigger请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "函数的名称",
           "example": "ledDummyAPITest",
@@ -1751,7 +1688,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要删除的触发器名称",
           "example": "trigger_name",
@@ -1761,7 +1697,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要删除的触发器类型，目前支持 cos 、cmq、 timer、ckafka 类型",
           "example": "timer",
@@ -1771,7 +1706,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数所属命名空间",
           "example": "default",
@@ -1781,7 +1715,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "如果删除的触发器类型为 COS 触发器，该字段为必填值，存放 JSON 格式的数据 {\"event\":\"cos:ObjectCreated:*\"}，数据内容和 SetTrigger 接口中该字段的格式相同；如果删除的触发器类型为定时触发器或 CMQ 触发器，可以不指定该字段",
           "example": "无",
@@ -1791,7 +1724,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数的版本，默认为 $LATEST，建议填写 [$DEFAULT](https://cloud.tencent.com/document/product/583/36149#.E9.BB.98.E8.AE.A4.E5.88.AB.E5.90.8D)方便后续进行版本的灰度发布。",
           "example": "$DEFAULT",
@@ -1819,7 +1751,6 @@
       "document": "公网访问固定ip配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Eip开启状态，取值['ENABLE','DISABLE']",
           "example": "",
@@ -1836,7 +1767,6 @@
       "document": "公网访问固定ip配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否是固定IP，[\"ENABLE\",\"DISABLE\"]",
           "example": "",
@@ -1847,7 +1777,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1864,7 +1793,6 @@
       "document": "EipOutConfig",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否是固定IP，[\"TRUE\",\"FALSE\"]",
           "example": "",
@@ -1875,7 +1803,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP列表",
           "example": "",
@@ -1908,7 +1835,6 @@
       "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要过滤的字段。过滤条件数量限制为10。\nName可选值：VpcId, SubnetId, ClsTopicId, ClsLogsetId, Role, CfsId, CfsMountInsId, Eip；Values 长度限制为1。\nName可选值：Status, Runtime, FunctionType, PublicNetStatus, AsyncRunEnable, TraceEnable；Values 长度限制为20。\n当 Name = Runtime 时，CustomImage 表示过滤镜像类型函数。",
           "example": "Status",
@@ -1919,7 +1845,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段的过滤值。",
           "example": "[\"Creating\", \"Updating\", \"Deleting\"]",
@@ -2238,7 +2163,6 @@
       "document": "函数版本信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "函数版本名称",
           "example": "\"\"",
@@ -2249,7 +2173,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -2260,7 +2183,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -2271,7 +2193,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -2282,7 +2203,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -2336,7 +2256,6 @@
       "document": "GetAlias请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "函数名称",
           "example": "\"\"",
@@ -2346,7 +2265,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "别名的名称",
           "example": "\"\"",
@@ -2356,7 +2274,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数所在的命名空间",
           "example": "\"\"",
@@ -2480,7 +2397,6 @@
       "document": "GetFunctionAddress请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "函数的名称",
           "example": "<FunctionName>",
@@ -2490,7 +2406,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数的版本",
           "example": "\"\"",
@@ -2500,7 +2415,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数的命名空间",
           "example": "\"\"",
@@ -2548,7 +2462,6 @@
       "document": "GetFunctionEventInvokeConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "函数名称",
           "example": "Unzip-1609933864",
@@ -2558,7 +2471,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数所属命名空间，默认为default",
           "example": "default",
@@ -2568,7 +2480,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数版本，默认为$LATEST",
           "example": "$LATEST",
@@ -3326,7 +3237,6 @@
       "document": "GetProvisionedConcurrencyConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要获取预置并发详情的函数名称。",
           "example": "test",
@@ -3336,7 +3246,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数所在的命名空间，默认为default。",
           "example": "\"\"",
@@ -3346,7 +3255,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数版本号，不传则返回函数所有版本的预置并发信息。",
           "example": "1",
@@ -3394,7 +3302,6 @@
       "document": "GetRequestStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "函数名称",
           "example": "hello",
@@ -3404,7 +3311,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要查询状态的请求 id",
           "example": "无",
@@ -3414,7 +3320,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数的所在的命名空间",
           "example": "无",
@@ -3424,7 +3329,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询的开始时间，例如：2017-05-16 20:00:00，不填默认为当前时间 - 15min",
           "example": "2017-05-16 20:00:00",
@@ -3434,7 +3338,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询的结束时间，例如：2017-05-16 20:59:59。StartTime 为空时，EndTime 默认为当前时间；StartTime 有值时，需要同时传 EndTime。EndTime 需要晚于 StartTime。",
           "example": "2017-05-16 20:59:59",
@@ -3482,7 +3385,6 @@
       "document": "GetReservedConcurrencyConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要获取最大独占配额详情的函数名称。",
           "example": "test",
@@ -3492,7 +3394,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数所在的命名空间，默认为default。",
           "example": "default",
@@ -3616,7 +3517,6 @@
       "document": "多并发执行配置描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启智能动态并发。'FALSE'时是静态并发。''时取消多并发配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "'FALSE'",
@@ -3627,7 +3527,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单实例并发数最大值。取值范围 [1,100]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -3644,7 +3543,6 @@
       "document": "InvokeFunction请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "函数名称",
           "example": "helloworld",
@@ -3654,7 +3552,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "触发函数的版本号或别名，默认值为$DEFAULT",
           "example": "$LATEST",
@@ -3664,7 +3561,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运行函数时的参数，以json格式传入，最大支持的参数长度是 6MB。该字段信息对应函数 [event 入参](https://cloud.tencent.com/document/product/583/9210#.E5.87.BD.E6.95.B0.E5.85.A5.E5.8F.82.3Ca-id.3D.22input.22.3E.3C.2Fa.3E)。",
           "example": "{\\\"key\\\":\\\"value\\\"}",
@@ -3674,7 +3570,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回值会包含4KB的日志，可选值为None和Tail，默认值为None。当该值为Tail时，返回参数中的Log字段会包含对应的函数执行日志",
           "example": "Tail",
@@ -3684,7 +3579,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间，不填默认为 default",
           "example": "default",
@@ -3694,7 +3588,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数灰度流量控制调用，以json格式传入，例如{\"k\":\"v\"}，注意kv都需要是字符串类型，最大支持的参数长度是1024字节",
           "example": "{\\\"key\\\":\\\"value\\\"}",
@@ -3732,7 +3625,6 @@
       "document": "Invoke请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "函数名称",
           "example": "helloworld",
@@ -3742,7 +3634,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "同步调用请使用[同步 Invoke 调用接口](https://cloud.tencent.com/document/product/583/58400) 或填写同步调用参数 RequestResponse ，建议使用同步调用接口以获取最佳性能；异步调用填写 Event；默认为同步。接口超时时间为 300s，更长超时时间请使用异步调用。",
           "example": "RequestResponse",
@@ -3752,7 +3643,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "触发函数的版本号或别名，默认值为 $LATEST",
           "example": "$LATEST",
@@ -3762,7 +3652,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运行函数时的参数，以json格式传入，同步调用最大支持 6MB，异步调用最大支持 128 KB。该字段信息对应函数 [event 入参](https://cloud.tencent.com/document/product/583/9210#.E5.87.BD.E6.95.B0.E5.85.A5.E5.8F.82.3Ca-id.3D.22input.22.3E.3C.2Fa.3E)。",
           "example": "{\\\"key\\\":\\\"value\\\"}",
@@ -3772,7 +3661,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异步调用该字段返回为空。",
           "example": "Tail",
@@ -3782,7 +3670,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间",
           "example": "default",
@@ -3792,7 +3679,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数灰度流量控制调用，以json格式传入，例如{\"k\":\"v\"}，注意kv都需要是字符串类型，最大支持的参数长度是1024字节",
           "example": "{\\\"key\\\":\\\"value\\\"}",
@@ -3830,7 +3716,6 @@
       "document": "k8s label",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "label的名称",
           "example": "labelkey",
@@ -3841,7 +3726,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "label的值",
           "example": "labelvalue",
@@ -3861,7 +3745,6 @@
           "disabled": false,
           "document": "匹配的污点名",
           "example": "key1",
-          "is_base64": false,
           "member": "string",
           "name": "Key",
           "output_required": true,
@@ -3873,7 +3756,6 @@
           "disabled": false,
           "document": "匹配方式，默认值为: Equal\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Equal",
-          "is_base64": false,
           "member": "string",
           "name": "Operator",
           "output_required": true,
@@ -3885,7 +3767,6 @@
           "disabled": false,
           "document": "执行策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NoExecute",
-          "is_base64": false,
           "member": "string",
           "name": "Effect",
           "output_required": true,
@@ -3897,7 +3778,6 @@
           "disabled": false,
           "document": "匹配的污点值，当Operator为Equal时必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "value1",
-          "is_base64": false,
           "member": "string",
           "name": "Value",
           "output_required": true,
@@ -4009,7 +3889,6 @@
       "document": "指定某个Layer版本",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "绑定的层名称。解绑层需传递空字符串。",
           "example": "layername",
@@ -4020,7 +3899,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定或解绑层的版本号。解绑函数版本关联的最后一个层版本时，LayerVersion 填 0。",
           "example": "1",
@@ -4037,7 +3915,6 @@
       "document": "限制信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间个数限制",
           "example": "",
@@ -4048,7 +3925,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间限制信息",
           "example": "",
@@ -4065,7 +3941,6 @@
       "document": "ListAliases请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "函数名称",
           "example": "<FunctionName>",
@@ -4075,7 +3950,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数所在的命名空间",
           "example": "<Namespace>",
@@ -4085,7 +3959,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "如果提供此参数，则只返回与该函数版本有关联的别名",
           "example": "\"\"",
@@ -4095,7 +3968,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据偏移量，默认值为 0",
           "example": "\"\"",
@@ -4105,7 +3977,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数据长度，默认值为 20",
           "example": "\"\"",
@@ -4153,7 +4024,6 @@
       "document": "ListAsyncEvents请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "函数名称",
           "example": "helloworld",
@@ -4163,7 +4033,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间",
           "example": "default",
@@ -4173,7 +4042,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，函数版本",
           "example": "$LATEST",
@@ -4183,7 +4051,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，调用类型列表",
           "example": "[COS]",
@@ -4193,7 +4060,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，事件状态列表",
           "example": "RUNNING",
@@ -4203,7 +4069,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，开始执行时间左闭右开区间",
           "example": "无",
@@ -4213,7 +4078,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，结束执行时间左闭右开区间",
           "example": "无",
@@ -4223,7 +4087,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选值 ASC 和 DESC，默认 DESC",
           "example": "DESC",
@@ -4233,7 +4096,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选值 StartTime 和 EndTime，默认值 StartTime",
           "example": "StartTime",
@@ -4243,7 +4105,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据偏移量，默认值为 0",
           "example": "0",
@@ -4253,7 +4114,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数据长度，默认值为 20，最大值 100",
           "example": "20",
@@ -4263,7 +4123,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，事件调用请求id",
           "example": "5f825fd3-a59d-4879-aa28-3ac967c128885f825fd3-a59d-4879-aa28-3ac9",
@@ -4311,7 +4170,6 @@
       "document": "ListFunctions请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "以升序还是降序的方式返回结果，可选值 ASC 和 DESC",
           "example": "ASC",
@@ -4321,7 +4179,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime, FunctionName",
           "example": "ModTime",
@@ -4331,7 +4188,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据偏移量，默认值为 0",
           "example": "0",
@@ -4341,7 +4197,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数据长度，默认值为 20",
           "example": "2",
@@ -4351,7 +4206,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支持FunctionName模糊匹配",
           "example": "hello-world",
@@ -4361,7 +4215,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间",
           "example": "default",
@@ -4371,7 +4224,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数描述，支持模糊搜索",
           "example": "test",
@@ -4381,7 +4233,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件。\n- tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
@@ -4726,7 +4577,6 @@
       "document": "ListVersionByFunction请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "函数名",
           "example": "xxxxx",
@@ -4736,7 +4586,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数所在命名空间",
           "example": "\"\"",
@@ -4746,7 +4595,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据偏移量，默认值为 0",
           "example": "\"\"",
@@ -4756,7 +4604,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数据长度，默认值为 20",
           "example": "\"\"",
@@ -4766,7 +4613,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "以升序还是降序的方式返回结果，可选值 ASC 和 DESC",
           "example": "\"\"",
@@ -4776,7 +4622,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime",
           "example": "\"\"",
@@ -4834,7 +4679,6 @@
       "document": "日志过滤条件，用于区分正确与错误日志",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "filter.RetCode的取值有：\nnot0 表示只返回错误日志，\nis0 表示只返回正确日志，\nTimeLimitExceeded 返回函数调用发生超时的日志，\nResourceLimitExceeded 返回函数调用发生资源超限的日志，\nUserCodeException 返回函数调用发生用户代码错误的日志，\n无输入则返回所有日志。",
           "example": "",
@@ -4851,7 +4695,6 @@
       "document": "日志搜索上下文",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "",
@@ -4862,7 +4705,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志条数",
           "example": "",
@@ -4873,7 +4715,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志关键词",
           "example": "",
@@ -4884,7 +4725,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志类型，支持Application和Platform，默认为Application",
           "example": "",
@@ -4957,7 +4797,6 @@
       "document": "命名空间限制",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "函数总数",
           "example": "0",
@@ -4968,7 +4807,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Trigger信息",
           "example": "无",
@@ -4979,7 +4817,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Namespace名称",
           "example": "\"\"",
@@ -4990,7 +4827,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "并发量",
           "example": "0",
@@ -5001,7 +4837,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Timeout限制",
           "example": "0",
@@ -5012,7 +4847,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "测试事件限制\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -5023,7 +4857,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "初始化超时限制",
           "example": "0",
@@ -5034,7 +4867,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异步重试次数限制",
           "example": "0",
@@ -5045,7 +4877,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异步重试消息保留时间下限",
           "example": "0",
@@ -5056,7 +4887,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异步重试消息保留时间上限",
           "example": "0",
@@ -5073,7 +4903,6 @@
       "document": "命名空间资源池配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "基于TKE集群的资源池\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "x",
@@ -5093,7 +4922,6 @@
           "disabled": false,
           "document": "集群ID",
           "example": "cls-xxxx",
-          "is_base64": false,
           "member": "string",
           "name": "ClusterID",
           "output_required": true,
@@ -5105,7 +4933,6 @@
           "disabled": false,
           "document": "子网ID",
           "example": "subnet-xx",
-          "is_base64": false,
           "member": "string",
           "name": "SubnetID",
           "output_required": true,
@@ -5117,7 +4944,6 @@
           "disabled": false,
           "document": "命名空间",
           "example": "kube-system",
-          "is_base64": false,
           "member": "string",
           "name": "Namespace",
           "output_required": true,
@@ -5129,7 +4955,6 @@
           "disabled": false,
           "document": "数据存储地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/var/lib/scf",
-          "is_base64": false,
           "member": "string",
           "name": "DataPath",
           "output_required": true,
@@ -5174,7 +4999,6 @@
           "disabled": false,
           "document": "yaml格式的pod patch内容，例如\nmetadata:\n  labels:\n    key: value\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "PodTemplatePatch",
           "output_required": false,
@@ -5189,7 +5013,6 @@
       "document": "名称空间已使用信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "函数数组",
           "example": "func1",
@@ -5200,7 +5023,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间名称",
           "example": "default",
@@ -5211,7 +5033,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间函数个数",
           "example": "1",
@@ -5222,7 +5043,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间配额总量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -5233,7 +5053,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间并发使用量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -5244,7 +5063,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间预置使用量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -5261,7 +5079,6 @@
       "document": "HTTP函数支持其他访问协议的参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "WebSockets协议支持的参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{             IdleTimeOut: 15     }",
@@ -5278,7 +5095,6 @@
       "document": "公网访问配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启公网访问能力取值['DISABLE','ENABLE']",
           "example": "",
@@ -5289,7 +5105,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Eip配置",
           "example": "",
@@ -5306,7 +5121,6 @@
       "document": "公网访问配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启公网访问能力取值['DISABLE','ENABLE']",
           "example": "",
@@ -5317,7 +5131,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Eip配置",
           "example": "",
@@ -5523,7 +5336,6 @@
       "document": "PutProvisionedConcurrencyConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要设置预置并发的函数的名称",
           "example": "test",
@@ -5533,7 +5345,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数的版本号，注：$LATEST版本不支持预置并发",
           "example": "1",
@@ -5543,7 +5354,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预置并发数量，注：所有版本的预置并发数总和存在上限限制，当前的上限是：函数最大并发配额 - 100",
           "example": "10",
@@ -5553,7 +5363,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数所属命名空间，默认为default",
           "example": "default",
@@ -5563,7 +5372,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "定时预置任务",
           "example": "无",
@@ -5573,7 +5381,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预置类型，\n静态预置：Default\n动态追踪并发利用率指标预置：ConcurrencyUtilizationTracking\n预置类型二选一，设置静态预置时可以设置VersionProvisionedConcurrencyNum。\n\n动态利用率预置可以设置TrackingTarget，MinCapacity，MaxCapacity，保持向后兼容性此时VersionProvisionedConcurrencyNum设置为0.",
           "example": "\"\"",
@@ -5583,7 +5390,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标追踪的并发利用率。设置范围(0,1)",
           "example": "0",
@@ -5593,7 +5399,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "缩容时的最小值, 最小值为1",
           "example": "0",
@@ -5603,7 +5408,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩容时的最大值",
           "example": "0",
@@ -5631,7 +5435,6 @@
       "document": "PutReservedConcurrencyConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要设置最大独占配额的函数的名称",
           "example": "test",
@@ -5641,7 +5444,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数最大独占配额，注：函数的最大独占配额内存总和上限：用户总并发内存配额 - 12800",
           "example": "12800",
@@ -5651,7 +5453,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数所属命名空间，默认为default",
           "example": "default",
@@ -5679,7 +5480,6 @@
       "document": "PutTotalConcurrencyConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "账号并发内存配额，注：账号并发内存配额下限：用户已用并发内存总额 + 12800",
           "example": "128000",
@@ -5689,7 +5489,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间，默认为default",
           "example": "\"\"",
@@ -5717,7 +5516,6 @@
       "document": "函数运行状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "函数的名称",
           "example": "\"\"",
@@ -5728,7 +5526,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数执行完成后的返回值",
           "example": "\"\"",
@@ -5739,7 +5536,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询的请求 id",
           "example": "\"\"",
@@ -5750,7 +5546,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求开始时间",
           "example": "\"\"",
@@ -5761,7 +5556,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求执行结果， 0 表示执行成功，1表示运行中，-1 表示执行异常。",
           "example": "0",
@@ -5772,7 +5566,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求运行耗时，单位：ms",
           "example": "0",
@@ -5783,7 +5576,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求消耗内存，单位为 MB",
           "example": "0",
@@ -5794,7 +5586,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "重试次数",
           "example": "0",
@@ -5811,7 +5602,6 @@
       "document": "运行函数的返回",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表示执行过程中的日志输出，异步调用返回为空",
           "example": "\"\"",
@@ -5822,7 +5612,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表示执行函数的返回，异步调用返回为空",
           "example": "\"hello from scf\"",
@@ -5833,7 +5622,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表示执行函数的错误返回信息，异步调用返回为空",
           "example": "\" \"",
@@ -5844,7 +5632,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行函数时的内存大小，单位为Byte，异步调用返回为空",
           "example": "32",
@@ -5855,7 +5642,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表示执行函数的耗时，单位是毫秒，异步调用返回为空",
           "example": "100",
@@ -5866,7 +5652,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表示函数的计费耗时，单位是毫秒，异步调用返回为空",
           "example": "100",
@@ -5877,7 +5662,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "此次函数执行的Id",
           "example": "c2af8a64-c922-4d55-aee0-bd86a5c2cd12",
@@ -5888,7 +5672,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求 Invoke 接口，该参数已弃用。请求 InvokeFunction 接口，该参数值为请求执行[状态码](https://cloud.tencent.com/document/product/583/42611)。",
           "example": "200",
@@ -5905,7 +5688,6 @@
       "document": "异步重试配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "重试次数",
           "example": "",
@@ -5922,7 +5704,6 @@
       "document": "别名的版本路由配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "随机权重路由附加版本",
           "example": "",
@@ -5933,7 +5714,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则路由附加版本",
           "example": "",
@@ -5950,7 +5730,6 @@
       "document": "包含搜索关键字和对应的内容",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "搜索关键字",
           "example": "",
@@ -5961,7 +5740,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索内容",
           "example": "",
@@ -5978,7 +5756,6 @@
       "document": "状态原因描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "错误码",
           "example": "",
@@ -5989,7 +5766,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误描述",
           "example": "",
@@ -6006,7 +5782,6 @@
       "document": "函数标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签的key",
           "example": "",
@@ -6017,7 +5792,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签的value",
           "example": "",
@@ -6034,7 +5808,6 @@
       "document": "TerminateAsyncEvent请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "函数名称",
           "example": "helloworld",
@@ -6044,7 +5817,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "终止的调用请求id",
           "example": "5f825fd3-a59d-4879-aa28-3ac967c128885f825fd3-a59d-4879-aa28-3ac9",
@@ -6054,7 +5826,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间",
           "example": "default",
@@ -6064,7 +5835,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "true，向指定请求[发送 SIGTERM 终止信号](https://cloud.tencent.com/document/product/583/63969#.E5.8F.91.E9.80.81.E7.BB.88.E6.AD.A2.E4.BF.A1.E5.8F.B7]， ，默认值为 false。",
           "example": "false",
@@ -6092,7 +5862,6 @@
       "document": "左闭右开时间区间，包括起始时间和结束时间，格式为\"%Y-%m-%d %H:%M:%S\"",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "起始时间（包括在内），格式\"%Y-%m-%d %H:%M:%S\"",
           "example": "",
@@ -6103,7 +5872,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间（不包括在内），格式\"%Y-%m-%d %H:%M:%S\"",
           "example": "",
@@ -6256,7 +6024,6 @@
       "document": "预置定时任务动作",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "定时预置名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -6267,7 +6034,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "定时预置并发数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -6278,7 +6044,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设置定时触发器的时间配置，cron表达式。Cron 表达式有七个必需字段，按空格分隔。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -6289,7 +6054,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预置类型 Default\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -6306,7 +6070,6 @@
       "document": "TriggerCount描述不同类型触发器的数量",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Cos触发器数量",
           "example": "0",
@@ -6317,7 +6080,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Timer触发器数量",
           "example": "0",
@@ -6328,7 +6090,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cmq触发器数量",
           "example": "0",
@@ -6339,7 +6100,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "触发器总数",
           "example": "0",
@@ -6350,7 +6110,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Ckafka触发器数量",
           "example": "0",
@@ -6361,7 +6120,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Apigw触发器数量",
           "example": "0",
@@ -6372,7 +6130,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cls触发器数量",
           "example": "0",
@@ -6383,7 +6140,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Clb触发器数量",
           "example": "0",
@@ -6394,7 +6150,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Mps触发器数量",
           "example": "0",
@@ -6405,7 +6160,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Cm触发器数量",
           "example": "0",
@@ -6416,7 +6170,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Vod触发器数量",
           "example": "0",
@@ -6427,7 +6180,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Eb触发器数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -6580,7 +6332,6 @@
       "document": "UpdateAlias请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "函数名称",
           "example": "<FunctionName>",
@@ -6590,7 +6341,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "别名的名称",
           "example": "<AliasName>",
@@ -6600,7 +6350,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "别名指向的主版本",
           "example": "<FunctionVersion>",
@@ -6610,7 +6359,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数所在的命名空间",
           "example": "<Namespace>",
@@ -6620,7 +6368,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "别名的路由信息，需要为别名指定附加版本时，必须提供此参数",
           "example": "无",
@@ -6630,7 +6377,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "别名的描述",
           "example": "\"\"",
@@ -6658,7 +6404,6 @@
       "document": "UpdateFunctionCode请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "要修改的函数名称",
           "example": "test",
@@ -6668,7 +6413,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数处理方法名称。名称格式支持“文件名称.函数名称”形式（java 名称格式 包名.类名::方法名），文件名称和函数名称之间以\".\"隔开，文件名称和函数名称要求以字母开始和结尾，中间允许插入字母、数字、下划线和连接符，文件名称和函数名字的长度要求 2-60 个字符",
           "example": "index.main",
@@ -6678,7 +6422,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对象存储桶名称",
           "example": "<CosBucketName>",
@@ -6688,7 +6431,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对象存储对象路径",
           "example": "<CosObjectName>",
@@ -6698,7 +6440,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "包含函数代码文件及其依赖项的 zip 格式文件，使用该接口时要求将 zip 文件的内容转成 base64 编码，最大支持20M",
           "example": "<base64>",
@@ -6708,7 +6449,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数所属命名空间",
           "example": "default",
@@ -6718,7 +6458,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对象存储的地域，注：北京分为ap-beijing和ap-beijing-1",
           "example": "ap-beijing",
@@ -6728,7 +6467,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否自动安装依赖",
           "example": "FALSE",
@@ -6738,7 +6476,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数所属环境",
           "example": "<函数所属环境>",
@@ -6748,7 +6485,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "在更新时是否同步发布新版本，默认为：FALSE，不发布",
           "example": "FALSE",
@@ -6758,7 +6494,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数代码",
           "example": "无",
@@ -6768,7 +6503,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代码来源方式，支持 ZipFile, Cos, Inline 之一",
           "example": "Cos",
@@ -7003,7 +6737,6 @@
       "document": "UpdateFunctionEventInvokeConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "异步重试配置信息",
           "example": "无",
@@ -7013,7 +6746,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数名称",
           "example": "FunctionName",
@@ -7023,7 +6755,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数所属命名空间，默认为default",
           "example": "default",
@@ -7051,7 +6782,6 @@
       "document": "UpdateNamespace请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间名称",
           "example": "test01",
@@ -7061,7 +6791,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间描述",
           "example": "fdsgfds",
@@ -7089,7 +6818,6 @@
       "document": "UpdateTriggerStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "触发器的初始是能状态OPEN表示开启 CLOSE表示关闭",
           "example": "CLOSE",
@@ -7099,7 +6827,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数名称",
           "example": "funcName",
@@ -7109,7 +6836,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "触发器名称",
           "example": "test",
@@ -7119,7 +6845,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "触发器类型",
           "example": "timer",
@@ -7129,7 +6854,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数的版本，默认为 $LATEST，建议填写 [$DEFAULT](https://cloud.tencent.com/document/product/583/36149#.E9.BB.98.E8.AE.A4.E5.88.AB.E5.90.8D)方便后续进行版本的灰度发布。",
           "example": "$DEFAULT",
@@ -7139,7 +6863,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数的命名空间",
           "example": "default",
@@ -7149,7 +6872,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "如果更新的触发器类型为 COS 触发器，该字段为必填值，存放 JSON 格式的数据 {\"event\":\"cos:ObjectCreated:*\"}，数据内容和 SetTrigger 接口中该字段的格式相同；如果更新的触发器类型为定时触发器或 CMQ 触发器，可以不指定该字段",
           "example": "无",
@@ -7177,7 +6899,6 @@
       "document": "已使用的信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间个数",
           "example": "",
@@ -7188,7 +6909,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间详情",
           "example": "",
@@ -7199,7 +6919,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前地域用户并发内存配额上限",
           "example": "",
@@ -7210,7 +6929,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前地域用户已配置并发内存额度",
           "example": "",
@@ -7221,7 +6939,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户实际配置的账号并发配额",
           "example": "",
@@ -7238,7 +6955,6 @@
       "document": "变量参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "变量的名称，不可为空字符",
           "example": "testKey",
@@ -7249,7 +6965,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "变量的值，不可为空字符",
           "example": "testValue",
@@ -7266,7 +6981,6 @@
       "document": "带有匹配规则的函数版本",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "函数版本名称",
           "example": "",
@@ -7277,7 +6991,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "匹配规则的key，调用时通过传key来匹配规则路由到指定版本\nheader方式：\nkey填写\"invoke.headers.User\"，并在 invoke 调用函数时传参 RoutingKey：{\"User\":\"value\"}规则匹配调用",
           "example": "",
@@ -7288,7 +7001,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "匹配方式。取值范围：\nrange：范围匹配\nexact：字符串精确匹配",
           "example": "",
@@ -7299,7 +7011,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "range 匹配规则要求：\n需要为开区间或闭区间描述 (a,b) [a,b]，其中 a、b 均为整数\nexact 匹配规则要求：\n字符串精确匹配",
           "example": "",
@@ -7316,7 +7027,6 @@
       "document": "函数版本的预置并发信息，包括设置预置并发数、已完成预置的并发数和预置任务状态。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设置的预置并发数。",
           "example": "0",
@@ -7327,7 +7037,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前已完成预置的并发数。",
           "example": "0",
@@ -7338,7 +7047,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预置任务状态，Done表示已完成，InProgress表示进行中，Failed表示部分或全部失败。",
           "example": "\"\"",
@@ -7349,7 +7057,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对预置任务状态Status的说明。",
           "example": "\"\"",
@@ -7360,7 +7067,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "函数版本号",
           "example": "\"\"",
@@ -7371,7 +7077,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预置并发定时任务。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -7388,7 +7093,6 @@
       "document": "带有权重的函数版本",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "函数版本名称",
           "example": "",
@@ -7399,7 +7103,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该版本的权重",
           "example": "",
@@ -7442,7 +7145,6 @@
       "document": "HTTP函数通过WebSockets协议访问时的参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "空闲超时时间, 单位秒，默认15s。可配置范围1~1800s。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "15",

@@ -33,7 +33,6 @@
       "document": "DescribeProducts请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。",
           "example": "20",
@@ -43,7 +42,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为 0。",
           "example": "0",
@@ -94,7 +92,6 @@
           "disabled": false,
           "document": "待查询产品的名称，例如cvm，具体取值请查询DescribeProducts接口",
           "example": "cvm",
-          "is_base64": false,
           "member": "string",
           "name": "Product",
           "required": true,
@@ -104,7 +101,6 @@
           "disabled": false,
           "document": "不传或者0表示不查询【可选业务白名单】，1表示查询【可选业务白名单】，该参数设置了1，只有在业务白名单查不到情况下，才会查该白名单",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "Scene",
           "required": false,
@@ -203,7 +199,6 @@
       "document": "地域信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域名称，例如，ap-guangzhou",
           "example": "ap-guangzhou",
@@ -214,7 +209,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域描述，例如，华南地区(广州)",
           "example": "华南地区(广州)",
@@ -225,7 +219,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域是否可用状态",
           "example": "AVAILABLE",
@@ -236,7 +229,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "控制台类型，api调用时默认null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -247,7 +239,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不同语言的地区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "South China",
@@ -258,7 +249,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "控制台展示的地域描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "广州",
@@ -269,7 +259,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -286,7 +275,6 @@
       "document": "地域管理系统支持的产品信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "产品名称，如cvm",
           "example": "cvm",
@@ -303,7 +291,6 @@
       "document": "可用区信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "可用区名称，例如，ap-guangzhou-3\n全网可用区名称如下：\n<li> ap-chongqing-1 </li>\n<li> ap-seoul-1 </li>\n<li> ap-seoul-2 </li>\n<li> ap-chengdu-1 </li>\n<li> ap-chengdu-2 </li>\n<li> ap-hongkong-1 </li>\n<li> ap-hongkong-2 </li>\n<li> ap-shenzhen-fsi-1 </li>\n<li> ap-shenzhen-fsi-2 </li>\n<li> ap-shenzhen-fsi-3 </li>\n<li> ap-guangzhou-1（售罄）</li>\n<li> ap-guangzhou-2（售罄）</li>\n<li> ap-guangzhou-3 </li>\n<li> ap-guangzhou-4 </li>\n<li> ap-guangzhou-6 </li>\n<li> ap-tokyo-1 </li>\n<li> ap-singapore-1 </li>\n<li> ap-singapore-2 </li>\n<li> ap-shanghai-fsi-1 </li>\n<li> ap-shanghai-fsi-2 </li>\n<li> ap-shanghai-fsi-3 </li>\n<li> ap-bangkok-1 </li>\n<li> ap-shanghai-1（售罄） </li>\n<li> ap-shanghai-2 </li>\n<li> ap-shanghai-3 </li>\n<li> ap-shanghai-4 </li>\n<li> ap-shanghai-5 </li>\n<li> ap-mumbai-1 </li>\n<li> ap-mumbai-2 </li>\n<li> eu-moscow-1 </li>\n<li> ap-beijing-1 </li>\n<li> ap-beijing-2 </li>\n<li> ap-beijing-3 </li>\n<li> ap-beijing-4 </li>\n<li> ap-beijing-5 </li>\n<li> na-siliconvalley-1 </li>\n<li> na-siliconvalley-2 </li>\n<li> eu-frankfurt-1 </li>\n<li> na-toronto-1 </li>\n<li> na-ashburn-1 </li>\n<li> na-ashburn-2 </li>\n<li> ap-nanjing-1 </li>\n<li> ap-nanjing-2 </li>",
           "example": "ap-guangzhou-3",
@@ -314,7 +301,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区描述，例如，广州三区",
           "example": "广州三区",
@@ -325,7 +311,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区ID",
           "example": "1",
@@ -336,7 +321,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。",
           "example": "AVAILABLE",
@@ -347,7 +331,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "父级zone\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -358,7 +341,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "父级可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -369,7 +351,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "父级可用区描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -380,7 +361,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "zone类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -391,7 +371,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "控制台类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "公有云",
@@ -402,7 +381,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "和ZoneId一样，适用于控制台调用。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",

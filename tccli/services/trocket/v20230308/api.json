@@ -170,7 +170,6 @@
       "document": "查询过滤器",
       "members": [
         {
-          "ValueAllowedNull": true,
           "disabled": false,
           "document": "过滤条件名",
           "example": "key",
@@ -180,7 +179,6 @@
           "type": "string"
         },
         {
-          "ValueAllowedNull": true,
           "disabled": false,
           "document": "过滤条件的值",
           "example": "无",
@@ -408,7 +406,6 @@
       "document": "标签过滤器",
       "members": [
         {
-          "ValueAllowedNull": true,
           "disabled": false,
           "document": "标签键名称",
           "example": "test",
@@ -418,7 +415,6 @@
           "type": "string"
         },
         {
-          "ValueAllowedNull": true,
           "disabled": false,
           "document": "标签值列表",
           "example": "无",

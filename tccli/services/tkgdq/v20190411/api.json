@@ -29,9 +29,7 @@
       "document": "DescribeEntity请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "实体名称",
-          "is_public": true,
           "member": "string",
           "name": "EntityName",
           "required": true,
@@ -62,18 +60,14 @@
       "document": "DescribeRelation请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "输入第一个实体",
-          "is_public": true,
           "member": "string",
           "name": "LeftEntityName",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
           "document": "输入第二个实体",
-          "is_public": true,
           "member": "string",
           "name": "RightEntityName",
           "required": true,
@@ -104,9 +98,7 @@
       "document": "DescribeTriple请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "三元组查询条件",
-          "is_public": true,
           "member": "string",
           "name": "TripleCondition",
           "required": true,
@@ -137,7 +129,6 @@
       "document": "返回的实体关系查询结果详细内容",
       "members": [
         {
-          "default": "",
           "document": "实体关系查询返回关系的object",
           "member": "EntityRelationObject",
           "name": "Object",
@@ -145,7 +136,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "实体关系查询返回关系的subject",
           "member": "EntityRelationSubject",
           "name": "Subject",
@@ -153,7 +143,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "实体关系查询返回的关系名称",
           "member": "string",
           "name": "Relation",
@@ -167,7 +156,6 @@
       "document": "实体关系查询返回的Object类型",
       "members": [
         {
-          "default": "",
           "document": "object对应id",
           "member": "string",
           "name": "Id",
@@ -175,7 +163,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "object对应name",
           "member": "string",
           "name": "Name",
@@ -183,7 +170,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "object对应popular值",
           "member": "int64",
           "name": "Popular",
@@ -197,7 +183,6 @@
       "document": "实体关系查询返回Subject",
       "members": [
         {
-          "default": "",
           "document": "Subject对应id",
           "member": "string",
           "name": "Id",
@@ -205,7 +190,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "Subject对应name",
           "member": "string",
           "name": "Name",
@@ -213,7 +197,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "Subject对应popular",
           "member": "int64",
           "name": "Popular",
@@ -227,7 +210,6 @@
       "document": "三元组查询返回的元记录",
       "members": [
         {
-          "default": "",
           "document": "实体id",
           "member": "string",
           "name": "Id",
@@ -235,7 +217,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实体名称",
           "member": "string",
           "name": "Name",
@@ -243,7 +224,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实体order",
           "member": "int64",
           "name": "Order",
@@ -251,7 +231,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "实体流行度",
           "member": "int64",
           "name": "Popular",

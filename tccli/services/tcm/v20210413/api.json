@@ -96,7 +96,6 @@
       "document": "腾讯云应用性能管理服务参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否启用",
           "example": "true",
@@ -107,7 +106,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-shanghai",
@@ -118,7 +116,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "APM 实例，如果创建时传入的参数为空，则表示自动创建 APM 实例。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxxx",
@@ -135,7 +132,6 @@
       "document": "AccessLog 配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否启用",
           "example": "true",
@@ -146,7 +142,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "采用的模板，可选值：istio（默认）、trace",
           "example": "istio",
@@ -157,7 +152,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "选中的范围",
           "example": "无",
@@ -168,7 +162,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯云日志服务相关参数",
           "example": "无",
@@ -179,7 +172,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "编码格式，可选值：TEXT、JSON",
           "example": "TEXT",
@@ -190,7 +182,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志格式",
           "example": "[%START_TIME%]",
@@ -201,7 +192,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "GRPC第三方服务器地址",
           "example": "无",
@@ -212,7 +202,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否启用GRPC第三方服务器",
           "example": "true",
@@ -223,7 +212,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否启用标准输出",
           "example": "true",
@@ -240,7 +228,6 @@
       "document": "正在执行的异步操作",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "操作Id",
           "example": "无",
@@ -251,7 +238,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作类型，取值范围：\n- LINK_CLUSTERS: 关联集群\n- RELINK_CLUSTERS: 重新关联集群\n- UNLINK_CLUSTERS: 解关联集群\n- INSTALL_MESH: 安装网格",
           "example": "无",
@@ -268,7 +254,6 @@
       "document": "描述某一网格在特定命名空间下的自动注入状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间名称",
           "example": "default",
@@ -279,7 +264,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "注入状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "INJECT_NEW",
@@ -296,7 +280,6 @@
       "document": "腾讯云日志服务相关参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否启用",
           "example": "true",
@@ -307,7 +290,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志集",
           "example": "mesh-xxx",
@@ -318,7 +300,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志主题",
           "example": "accesslog",
@@ -329,7 +310,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否删除",
           "example": "false",
@@ -346,7 +326,6 @@
       "document": "Mesh集群信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集群Id",
           "example": "cls-xxxxxxxx",
@@ -357,7 +336,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域",
           "example": "sh",
@@ -368,7 +346,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群角色，取值范围：\n- MASTER：控制面所在的主集群\n- REMOTE：主集群管理的远端集群",
           "example": "master",
@@ -379,7 +356,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络Id",
           "example": "vpc-xxxxxxxx",
@@ -390,7 +366,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网Id",
           "example": "subnet-xxxxxxxx",
@@ -401,7 +376,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名称，只读",
           "example": "无",
@@ -412,7 +386,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态，只读",
           "example": "deleted",
@@ -423,7 +396,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联时间，只读",
           "example": "无",
@@ -434,7 +406,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群配置",
           "example": "无",
@@ -445,7 +416,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "详细状态，只读",
           "example": "无",
@@ -456,7 +426,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型，取值范围：\n- TKE\n- EKS",
           "example": "TKE",
@@ -467,7 +436,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群关联的 Namespace 列表",
           "example": "无",
@@ -484,7 +452,6 @@
       "document": "集群配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "自动注入SideCar的NameSpace",
           "example": "无",
@@ -495,7 +462,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Ingress配置列表",
           "example": "无",
@@ -506,7 +472,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Egress配置列表",
           "example": "无",
@@ -517,7 +482,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Istiod配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -528,7 +492,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署配置",
           "example": "无",
@@ -539,7 +502,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动注入命名空间状态列表",
           "example": "无",
@@ -556,7 +518,6 @@
       "document": "集群状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "关联状态，取值范围：\n- LINKING: 关联中\n- LINKED: 已关联\n- UNLINKING: 解关联中\n- LINK_FAILED: 关联失败\n- UNLINK_FAILED: 解关联失败",
           "example": "linking",
@@ -567,7 +528,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联错误详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -584,7 +544,6 @@
       "document": "CreateMesh请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Mesh名称",
           "example": "无",
@@ -594,7 +553,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Mesh版本",
           "example": "1.8.1",
@@ -604,7 +562,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Mesh类型，取值范围：\n- HOSTED：托管网格",
           "example": "HOSTED",
@@ -614,7 +571,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Mesh配置",
           "example": "无",
@@ -624,7 +580,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联集群",
           "example": "无",
@@ -634,7 +589,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签列表",
           "example": "无",
@@ -677,7 +631,6 @@
       "document": "第三方 Prometheus 配置参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 访问地址",
           "example": "http://x.x.x.x:909",
@@ -688,7 +641,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "认证方式",
           "example": "none, basic",
@@ -699,7 +651,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否公网地址，缺省为 false",
           "example": "true",
@@ -710,7 +661,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "虚拟网络id",
           "example": "vpc-xxxxxxxx",
@@ -721,7 +671,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 用户名（用于 basic 认证方式）",
           "example": "test",
@@ -732,7 +681,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 密码（用于 basic 认证方式）",
           "example": "test",
@@ -749,7 +697,6 @@
       "document": "DeleteMesh请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要删除的MeshId",
           "example": "mesh-xxxxxxxx",
@@ -759,7 +706,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CLS组件是否被删除",
           "example": "false",
@@ -769,7 +715,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TMP组件是否被删除",
           "example": "false",
@@ -779,7 +724,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "APM组件是否被删除",
           "example": "false",
@@ -789,7 +733,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana组件是否被删除",
           "example": "false",
@@ -817,7 +760,6 @@
       "document": "部署配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "部署类型，取值范围：\n- SPECIFIC：专有模式\n- AUTO：普通模式",
           "example": "AUTO",
@@ -828,7 +770,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定的节点",
           "example": "无",
@@ -845,7 +786,6 @@
       "document": "DescribeAccessLogConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "mesh名字",
           "example": "无",
@@ -973,7 +913,6 @@
       "document": "DescribeMeshList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件",
           "example": "无",
@@ -983,7 +922,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页限制",
           "example": "10",
@@ -993,7 +931,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页偏移",
           "example": "0",
@@ -1041,7 +978,6 @@
       "document": "DescribeMesh请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要查询的网格 Id",
           "example": "mesh-xxxxxxxx",
@@ -1079,7 +1015,6 @@
       "document": "Egress配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Egress名称",
           "example": "istio-egressgateway-xxx",
@@ -1090,7 +1025,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所在的Namespace",
           "example": "default",
@@ -1101,7 +1035,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作负载配置",
           "example": "无",
@@ -1112,7 +1045,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作负载的状态",
           "example": "无",
@@ -1129,7 +1061,6 @@
       "document": "egress gateway 的状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "egress gateway的当前版本",
           "example": "无",
@@ -1140,7 +1071,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "egress gateway的目标版本",
           "example": "无",
@@ -1151,7 +1081,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "egress gateway的状态，取值：running，upgrading，rollbacking",
           "example": "无",
@@ -1168,7 +1097,6 @@
       "document": "内网独占集群配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Cluster ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tgw-lgt20d75",
@@ -1179,7 +1107,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou-5",
@@ -1196,7 +1123,6 @@
       "document": "内网独占集群配置列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "4层集群配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1207,7 +1133,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "7层集群配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1224,7 +1149,6 @@
       "document": "键值对过滤器，用于条件过滤查询。例如过滤ID、名称等",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要过滤的字段。",
           "example": "mesh-name",
@@ -1235,7 +1159,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段的过滤值。",
           "example": "无",
@@ -1252,7 +1175,6 @@
       "document": "Grafana信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启",
           "example": "true",
@@ -1263,7 +1185,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内网地址",
           "example": "无",
@@ -1274,7 +1195,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1285,7 +1205,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TIMEOUT",
@@ -1296,7 +1215,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网失败详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1313,7 +1231,6 @@
       "document": "HPA 配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "最小副本数",
           "example": "1",
@@ -1324,7 +1241,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大副本数",
           "example": "3",
@@ -1335,7 +1251,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用于计算副本数的指标",
           "example": "无",
@@ -1352,7 +1267,6 @@
       "document": "IngressGateway 实例信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "IngressGateway 实例名字",
           "example": "istio-ingressgateway",
@@ -1363,7 +1277,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间",
           "example": "istio-system",
@@ -1374,7 +1287,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群 ID",
           "example": "cls-xxxxxxxx",
@@ -1385,7 +1297,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Service 配置",
           "example": "无",
@@ -1396,7 +1307,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Workload 配置",
           "example": "无",
@@ -1407,7 +1317,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡配置，自动创建 CLB 时返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1418,7 +1327,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IngressGateway 状态信息，只读",
           "example": "无",
@@ -1429,7 +1337,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡实例ID，使用已有 CLB 时返回",
           "example": "lb-xxxxxxxx",
@@ -1446,7 +1353,6 @@
       "document": "IngressGateway状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡实例状态",
           "example": "无",
@@ -1457,7 +1363,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ingress gateway 当前的版本",
           "example": "无",
@@ -1468,7 +1373,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ingress gateway 目标的版本",
           "example": "无",
@@ -1479,7 +1383,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ingress gateway的状态，取值running, upgrading, rollbacking",
           "example": "无",
@@ -1496,7 +1399,6 @@
       "document": "自动注入配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "不需要进行代理的 ip 地址范围\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"10.0.1.0/24\",\"10.0.2.0/24\"]",
@@ -1507,7 +1409,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否等待sidecar启动\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -1518,7 +1419,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否允许sidecar等待\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -1535,7 +1435,6 @@
       "document": "Istio配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "外部流量策略",
           "example": "ALLOW_ANY",
@@ -1546,7 +1445,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "调用链配置（Deprecated，请使用 MeshConfig.Tracing 进行配置）",
           "example": "无",
@@ -1557,7 +1455,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "禁用策略检查功能\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -1568,7 +1465,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支持HTTP1.0协议\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -1579,7 +1475,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "禁用HTTP重试策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -1590,7 +1485,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SmartDNS策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1607,7 +1501,6 @@
       "document": "Istiod配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "工作负载配置",
           "example": "无",
@@ -1624,7 +1517,6 @@
       "document": "LinkClusterList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网格Id",
           "example": "mesh-xxxxxxxxx",
@@ -1634,7 +1526,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联集群",
           "example": "无",
@@ -1662,7 +1553,6 @@
       "document": "LinkPrometheus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网格ID",
           "example": "mesh-xxxxxxxx",
@@ -1672,7 +1562,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置",
           "example": "无",
@@ -1700,7 +1589,6 @@
       "document": "负载均衡配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡实例的网络类型：\nOPEN：公网属性， INTERNAL：内网属性。\n只读。",
           "example": "OPEN",
@@ -1711,7 +1599,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡实例所在的子网（仅对内网VPC型LB有意义），只读。",
           "example": "subnet-xxxxxxxx",
@@ -1722,7 +1609,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TRAFFIC_POSTPAID_BY_HOUR 按流量按小时后计费 ; BANDWIDTH_POSTPAID_BY_HOUR 按带宽按小时后计费;只读。",
           "example": "TRAFFIC_POSTPAID_BY_HOUR",
@@ -1733,7 +1619,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大出带宽，单位Mbps，仅对公网属性的LB生效，默认值 10",
           "example": "10",
@@ -1744,7 +1629,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-shanghai",
@@ -1755,7 +1639,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运营商类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "GMCC",
@@ -1766,7 +1649,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TGW Group 名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ziyan_huiyi",
@@ -1777,7 +1659,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP 类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "IPv4",
@@ -1788,7 +1669,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1799,7 +1679,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内网独占集群配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1810,7 +1689,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡跨地域配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1873,7 +1751,6 @@
       "document": "Mesh信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Mesh实例Id",
           "example": "mesh-xxxxxxxx",
@@ -1884,7 +1761,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Mesh名称",
           "example": "无",
@@ -1895,7 +1771,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Mesh类型，取值范围：\n- STANDALONE：独立网格\n- HOSTED：托管网格",
           "example": "hosted",
@@ -1906,7 +1781,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域",
           "example": "sh",
@@ -1917,7 +1791,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本",
           "example": "1.8.1",
@@ -1928,7 +1801,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Mesh状态，取值范围：\n- PENDING：等待中\n- CREATING：创建中\n- RUNNING：运行中\n- ABNORMAL：异常\n- UPGRADING：升级中\n- CANARY_UPGRADED：升级灰度完成\n- ROLLBACKING：升级回滚\n- DELETING：删除中\n- CREATE_FAILED：安装失败\n- DELETE_FAILED：删除失败\n- UPGRADE_FAILED：升级失败\n- ROLLBACK_FAILED：回滚失败",
           "example": "RUNNING",
@@ -1939,7 +1811,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "无",
@@ -1950,7 +1821,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1961,7 +1831,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群列表",
           "example": "无",
@@ -1972,7 +1841,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Mesh配置",
           "example": "无",
@@ -1983,7 +1851,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Mesh详细状态",
           "example": "无",
@@ -1994,7 +1861,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签列表",
           "example": "无",
@@ -2011,7 +1877,6 @@
       "document": "网格配置项",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Istio配置",
           "example": "无",
@@ -2022,7 +1887,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "AccessLog配置",
           "example": "无",
@@ -2033,7 +1897,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus配置",
           "example": "无",
@@ -2044,7 +1907,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动注入配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2055,7 +1917,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "调用跟踪配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2066,7 +1927,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Sidecar自定义资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2083,7 +1943,6 @@
       "document": "Mesh当前状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "服务数量",
           "example": "1",
@@ -2094,7 +1953,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "灰度升级的版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.8.1",
@@ -2105,7 +1963,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2116,7 +1973,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态附带信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2127,7 +1983,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "正在执行的异步操作\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2138,7 +1993,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "获取TPS信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2155,7 +2009,6 @@
       "document": "MetricSpec 描述如何通过指定指标进行自动扩缩容",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指标来源类型，支持 Pods/Resource",
           "example": "Pods",
@@ -2166,7 +2019,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用自定义指标扩进行自动扩缩容",
           "example": "无",
@@ -2177,7 +2029,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用资源指标扩进行自动扩缩容",
           "example": "无",
@@ -2194,7 +2045,6 @@
       "document": "ModifyAccessLogConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "mesh ID",
           "example": "mesh-xxx",
@@ -2204,7 +2054,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "选中的范围",
           "example": "无",
@@ -2214,7 +2063,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "采用的模板，可选值：istio（默认）、trace、custom",
           "example": "istio",
@@ -2224,7 +2072,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否启用",
           "example": "true",
@@ -2234,7 +2081,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯云日志服务相关参数",
           "example": "无",
@@ -2244,7 +2090,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "编码格式，可选值：TEXT、JSON",
           "example": "TEXT",
@@ -2254,7 +2099,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志格式",
           "example": "[%START_TIME%]",
@@ -2264,7 +2108,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否启用标准输出",
           "example": "false",
@@ -2274,7 +2117,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否启动GRPC第三方服务器",
           "example": "false",
@@ -2284,7 +2126,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "GRPC第三方服务器地址",
           "example": "xxx",
@@ -2312,7 +2153,6 @@
       "document": "ModifyMesh请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要修改的网格Id",
           "example": "mesh-xxxxxxxx",
@@ -2322,7 +2162,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改的网格名称",
           "example": "name",
@@ -2332,7 +2171,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改的网格配置",
           "example": "无",
@@ -2342,7 +2180,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改的集群配置",
           "example": "无",
@@ -2370,7 +2207,6 @@
       "document": "ModifyTracingConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "mesh名字",
           "example": "mesh-xxx",
@@ -2380,7 +2216,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否启用调用跟踪",
           "example": "true",
@@ -2390,7 +2225,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯云 APM 服务相关参数",
           "example": "无",
@@ -2400,7 +2234,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "调用跟踪采样值",
           "example": "1.0",
@@ -2410,7 +2243,6 @@
           "type": "float"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "调用追踪Zipkin相关配置",
           "example": "xxx",
@@ -2438,7 +2270,6 @@
       "document": "PodsMetricSource 定义了如何根据特定指标进行扩缩容",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指标名",
           "example": "k8s_pod_rate_cpu_core_used_request",
@@ -2449,7 +2280,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标值",
           "example": "80",
@@ -2466,7 +2296,6 @@
       "document": "Prometheus 配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "虚拟网络Id",
           "example": "vpc-xxxxxxxx",
@@ -2477,7 +2306,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网Id",
           "example": "subnet-xxxxxxxx",
@@ -2488,7 +2316,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域",
           "example": "sh",
@@ -2499,7 +2326,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联已存在实例Id，不填则默认创建",
           "example": "无",
@@ -2510,7 +2336,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "第三方 Prometheus\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2527,7 +2352,6 @@
       "document": "Prometheus状态信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus Id",
           "example": "无",
@@ -2538,7 +2362,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "展示名称",
           "example": "无",
@@ -2549,7 +2372,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例Id",
           "example": "无",
@@ -2560,7 +2382,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "虚拟网络Id",
           "example": "无",
@@ -2571,7 +2392,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态",
           "example": "无",
@@ -2582,7 +2402,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地区",
           "example": "sh",
@@ -2593,7 +2412,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2604,7 +2422,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tmp",
@@ -2621,7 +2438,6 @@
       "document": "Resource 定义了资源类型和数量",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源类型 cpu/memory",
           "example": "cpu",
@@ -2632,7 +2448,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源数量",
           "example": "1",
@@ -2649,7 +2464,6 @@
       "document": "ResourceMetricSource 定义了如何根据已知类型的资源指标进行扩缩容",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "资源名称 cpu/memory",
           "example": "cpu",
@@ -2660,7 +2474,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标平均利用率",
           "example": "60",
@@ -2671,7 +2484,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目标平均值",
           "example": "60",
@@ -2688,7 +2500,6 @@
       "document": "ResourceRequirements 描述了计算资源需求。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Limits 描述了允许的最大计算资源量。",
           "example": "无",
@@ -2699,7 +2510,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Requests 描述所需的最小计算资源量。",
           "example": "无",
@@ -2716,7 +2526,6 @@
       "document": "选中的项目",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间",
           "example": "ns",
@@ -2727,7 +2536,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群名称",
           "example": "cls-test",
@@ -2738,7 +2546,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "选中项目名字",
           "example": "istio-proxy sidecar",
@@ -2749,7 +2556,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ingress gw的名称列表",
           "example": "[gw-1,gw-2]",
@@ -2766,7 +2572,6 @@
       "document": "被选中的范围",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "选中的项目详细内容",
           "example": "无",
@@ -2777,7 +2582,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否全选",
           "example": "false",
@@ -2794,7 +2598,6 @@
       "document": "Service信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "ClusterIP/NodePort/LoadBalancer",
           "example": "LoadBalancer",
@@ -2805,7 +2608,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启LB直通Pod",
           "example": "true",
@@ -2816,7 +2618,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务是否希望将外部流量路由到节点本地或集群范围的端点。 有两个可用选项：Cluster（默认）和 Local。Cluster 隐藏了客户端源 IP，可能导致第二跳到另一个节点；Local 保留客户端源 IP 并避免 LoadBalancer 和 NodePort 类型服务的第二跳。",
           "example": "Cluster",
@@ -2833,7 +2634,6 @@
       "document": "智能DNS配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "开启DNS代理\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -2844,7 +2644,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开启自动地址分配\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -2861,7 +2660,6 @@
       "document": "标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键",
           "example": "k1",
@@ -2872,7 +2670,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "v1",
@@ -2883,7 +2680,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否透传给其他关联产品",
           "example": "true",
@@ -2900,7 +2696,6 @@
       "document": "调用链配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "调用链采样率，百分比",
           "example": "1.0",
@@ -2911,7 +2706,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否启用调用跟踪",
           "example": "true",
@@ -2922,7 +2716,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯云 APM 服务相关参数",
           "example": "无",
@@ -2933,7 +2726,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "启动第三方服务器的地址",
           "example": "无",
@@ -2950,7 +2742,6 @@
       "document": "调用追踪的Zipkin设置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Zipkin调用地址",
           "example": "无",
@@ -2967,7 +2758,6 @@
       "document": "UnlinkCluster请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网格Id",
           "example": "mesh-xxxxxxxx",
@@ -2977,7 +2767,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "取消关联的集群Id",
           "example": "cls-xxxxxxxx",
@@ -3005,7 +2794,6 @@
       "document": "UnlinkPrometheus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网格ID",
           "example": "mesh-xxxxxxxx",
@@ -3033,7 +2821,6 @@
       "document": "工作负载配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "工作副本数",
           "example": "1",
@@ -3044,7 +2831,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "资源配置",
           "example": "无",
@@ -3055,7 +2841,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "HPA策略",
           "example": "无",
@@ -3066,7 +2851,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署到指定节点",
           "example": "无",
@@ -3077,7 +2861,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "组件的部署模式，取值说明：\nIN_GENERAL_NODE：常规节点\nIN_EKLET：eklet 节点\nIN_SHARED_NODE_POOL：共享节电池\nIN_EXCLUSIVE_NODE_POOL：独占节点池",
           "example": "IN_GENERAL_NODE",

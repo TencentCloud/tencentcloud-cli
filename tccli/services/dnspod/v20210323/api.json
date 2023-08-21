@@ -488,7 +488,6 @@
       "document": "批量添加的记录",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "记录类型, 详见 DescribeRecordType 接口。",
           "example": "A",
@@ -499,7 +498,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录值。",
           "example": "129.23.32.32",
@@ -510,7 +508,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子域名(主机记录)，默认为@。",
           "example": "www",
@@ -521,7 +518,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "解析记录的线路，详见 DescribeRecordLineList 接口，RecordLine和RecordLineId都未填时，默认为「默认」线路。",
           "example": "百度",
@@ -532,7 +528,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "解析记录的线路 ID，RecordLine和RecordLineId都有时，系统优先取 RecordLineId。",
           "example": "90=0",
@@ -543,7 +538,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录权重值(暂未支持)。",
           "example": "10",
@@ -554,7 +548,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录的 MX 记录值，非 MX 记录类型，默认为 0，MX记录则必选。",
           "example": "20",
@@ -565,7 +558,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录的 TTL 值，默认600。",
           "example": "600",
@@ -576,7 +568,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录状态(暂未支持)。0表示禁用，1表示启用。默认启用。",
           "example": "1",
@@ -587,7 +578,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录备注(暂未支持)。",
           "example": "test",
@@ -1083,7 +1073,6 @@
       "document": "批量添加域名返回结构",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "见RecordInfoBatch\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1094,7 +1083,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务编号",
           "example": "1",
@@ -1105,7 +1093,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test.com",
@@ -1116,7 +1103,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名等级\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DP_FREE",
@@ -1127,7 +1113,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
@@ -1138,7 +1123,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该条任务运行状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "waiting",
@@ -1149,7 +1133,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "plus",
@@ -1166,7 +1149,6 @@
       "document": "批量添加域名任务中的记录信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "子域名(主机记录)。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "www",
@@ -1177,7 +1159,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录类型, 详见 DescribeRecordType 接口\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "A",
@@ -1188,7 +1169,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "解析记录的线路，详见 DescribeRecordLineList 接口\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "百度",
@@ -1199,7 +1179,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "129.23.32.32",
@@ -1210,7 +1189,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录的 TTL 值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "600",
@@ -1221,7 +1199,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录添加状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "waiting",
@@ -1232,7 +1209,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "plus",
@@ -1243,7 +1219,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
@@ -1254,7 +1229,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "此条记录在列表中的ID",
           "example": "1",
@@ -1434,7 +1408,6 @@
       "document": "批量添加记录返回结构",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "见RecordInfoBatch\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1445,7 +1418,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务编号",
           "example": "1",
@@ -1456,7 +1428,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test.com",
@@ -1467,7 +1438,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名等级\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DP_FREE",
@@ -1478,7 +1448,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
@@ -1489,7 +1458,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该条任务运行状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "waiting",
@@ -1500,7 +1468,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "plus",
@@ -1511,7 +1478,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "142123",
@@ -1755,7 +1721,6 @@
           "disabled": false,
           "document": "域名",
           "example": "dnspod.cn",
-          "is_base64": false,
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -1765,7 +1730,6 @@
           "disabled": false,
           "document": "记录类型，通过 API 记录类型获得，大写英文，比如：A 。",
           "example": "A",
-          "is_base64": false,
           "member": "string",
           "name": "RecordType",
           "required": true,
@@ -1775,7 +1739,6 @@
           "disabled": false,
           "document": "记录线路，通过 API 记录线路获得，中文，比如：默认。",
           "example": "默认",
-          "is_base64": false,
           "member": "string",
           "name": "RecordLine",
           "required": true,
@@ -1785,7 +1748,6 @@
           "disabled": false,
           "document": "记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。",
           "example": "200.200.200.200",
-          "is_base64": false,
           "member": "string",
           "name": "Value",
           "required": true,
@@ -1795,7 +1757,6 @@
           "disabled": false,
           "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
           "example": "1923",
-          "is_base64": false,
           "member": "uint64",
           "name": "DomainId",
           "required": false,
@@ -1805,7 +1766,6 @@
           "disabled": false,
           "document": "主机记录，如 www，如果不传，默认为 @。",
           "example": "www",
-          "is_base64": false,
           "member": "string",
           "name": "SubDomain",
           "required": false,
@@ -1815,7 +1775,6 @@
           "disabled": false,
           "document": "线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。",
           "example": "10=1",
-          "is_base64": false,
           "member": "string",
           "name": "RecordLineId",
           "required": false,
@@ -1825,7 +1784,6 @@
           "disabled": false,
           "document": "MX 优先级，当记录类型是 MX 时有效，范围1-20，MX 记录时必选。",
           "example": "10",
-          "is_base64": false,
           "member": "uint64",
           "name": "MX",
           "required": false,
@@ -1835,7 +1793,6 @@
           "disabled": false,
           "document": "TTL，范围1-604800，不同等级域名最小值不同。",
           "example": "600",
-          "is_base64": false,
           "member": "uint64",
           "name": "TTL",
           "required": false,
@@ -1845,7 +1802,6 @@
           "disabled": false,
           "document": "权重信息，0到100的整数。仅企业 VIP 域名可用，0 表示关闭，不传该参数，表示不设置权重信息。",
           "example": "20",
-          "is_base64": false,
           "member": "uint64",
           "name": "Weight",
           "required": false,
@@ -1855,7 +1811,6 @@
           "disabled": false,
           "document": "记录初始状态，取值范围为 ENABLE 和 DISABLE 。默认为 ENABLE ，如果传入 DISABLE，解析不会生效，也不会验证负载均衡的限制。",
           "example": "ENABLE",
-          "is_base64": false,
           "member": "string",
           "name": "Status",
           "required": false,
@@ -1865,7 +1820,6 @@
           "disabled": false,
           "document": "备注",
           "example": "官网主页",
-          "is_base64": false,
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -1936,7 +1890,6 @@
       "document": "子订单号列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "子订单ID",
           "example": "238112403",
@@ -1947,7 +1900,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子订单号",
           "example": "2021042313242309098981923090934",
@@ -2009,7 +1961,6 @@
       "document": "批量删除域名详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名 ID",
           "example": "12124",
@@ -2020,7 +1971,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "domain.com",
@@ -2031,7 +1981,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "error",
@@ -2042,7 +1991,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "删除状态",
           "example": "waiting",
@@ -2053,7 +2001,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作",
           "example": "remove",
@@ -2151,7 +2098,6 @@
       "document": "批量删除记录详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名 ID",
           "example": "12124",
@@ -2162,7 +2108,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "domain.com",
@@ -2173,7 +2118,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "error",
@@ -2184,7 +2128,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "删除状态",
           "example": "waiting",
@@ -2195,7 +2138,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作",
           "example": "remove",
@@ -2206,7 +2148,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "解析记录列表，json 序列化之后的字符串形式",
           "example": "无",
@@ -2448,7 +2389,6 @@
       "document": "查看任务详情返回结构",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "见BatchRecordInfo\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2459,7 +2399,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务编号",
           "example": "1",
@@ -2470,7 +2409,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test.com",
@@ -2481,7 +2419,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名等级\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DP_FREE",
@@ -2492,7 +2429,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
@@ -2503,7 +2439,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该条任务运行状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "waiting",
@@ -2514,7 +2449,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "plus",
@@ -2525,7 +2459,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "142123",
@@ -2758,176 +2691,144 @@
       "document": "DescribeDomainFilterList请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "根据域名分组类型获取域名。可取值为 ALL，MINE，SHARE，RECENT。\nALL：全部\nMINE：我的域名\nSHARE：共享给我的域名\nRECENT：最近操作过的域名",
           "example": "ALL",
-          "is_base64": false,
           "member": "string",
           "name": "Type",
           "required": true,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "记录开始的偏移, 第一条记录为 0, 依次类推。默认值为 0。",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "要获取的域名数量, 比如获取 20 个, 则为 20。默认值为 5000。如果账户中的域名数量超过了 5000, 将会强制分页并且只返回前 5000 条, 这时需要通过 Offset 和 Limit 参数去获取其它域名。",
           "example": "20",
-          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "根据域名分组 id 获取域名，可通过 DescribeDomain 或 DescribeDomainList 接口 GroupId 字段获取。",
           "example": "[1]",
-          "is_base64": false,
           "member": "int64",
           "name": "GroupId",
           "required": false,
           "type": "list"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "根据关键字获取域名。",
           "example": "qq",
-          "is_base64": false,
           "member": "string",
           "name": "Keyword",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "排序字段。可取值为 NAME，STATUS，RECORDS，GRADE，UPDATED_ON。\nNAME：域名名称\nSTATUS：域名状态\nRECORDS：记录数量\nGRADE：套餐等级\nUPDATED_ON：更新时间",
           "example": "NAME",
-          "is_base64": false,
           "member": "string",
           "name": "SortField",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "排序类型，升序：ASC，降序：DESC。",
           "example": "ASC",
-          "is_base64": false,
           "member": "string",
           "name": "SortType",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "根据域名状态获取域名。可取值为 ENABLE，LOCK，PAUSE，SPAM。\nENABLE：正常\nLOCK：锁定\nPAUSE：暂停\nSPAM：封禁",
           "example": "[\"ENABLE\"]",
-          "is_base64": false,
           "member": "string",
           "name": "Status",
           "required": false,
           "type": "list"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "根据套餐获取域名，可通过 DescribeDomain 或 DescribeDomainList 接口 Grade 字段获取。",
           "example": "[\"DP_FREE\"]",
-          "is_base64": false,
           "member": "string",
           "name": "Package",
           "required": false,
           "type": "list"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "根据备注信息获取域名。",
           "example": "备注",
-          "is_base64": false,
           "member": "string",
           "name": "Remark",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "要获取域名的更新时间起始时间点，如 '2021-05-01 03:00:00'。",
           "example": "2021-05-01 03:00:00",
-          "is_base64": false,
           "member": "string",
           "name": "UpdatedAtBegin",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "要获取域名的更新时间终止时间点，如 '2021-05-10 20:00:00'。",
           "example": "2021-05-10 20:00:00",
-          "is_base64": false,
           "member": "string",
           "name": "UpdatedAtEnd",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "要获取域名的记录数查询区间起点。",
           "example": "10",
-          "is_base64": false,
           "member": "uint64",
           "name": "RecordCountBegin",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "要获取域名的记录数查询区间终点。",
           "example": "100",
-          "is_base64": false,
           "member": "uint64",
           "name": "RecordCountEnd",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "项目ID",
           "example": "-1",
-          "is_base64": false,
           "member": "int64",
           "name": "ProjectId",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "标签过滤",
           "example": "无",
-          "is_base64": false,
           "member": "TagItemFilter",
           "name": "Tags",
           "required": false,
@@ -3171,22 +3072,18 @@
       "document": "DescribeDomainPreview请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "域名",
           "example": "dnspod.cn",
-          "is_base64": false,
           "member": "string",
           "name": "Domain",
           "required": true,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
           "example": "61",
-          "is_base64": false,
           "member": "uint64",
           "name": "DomainId",
           "required": false,
@@ -3266,22 +3163,18 @@
       "document": "DescribeDomain请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "域名",
           "example": "dnspod.cn",
-          "is_base64": false,
           "member": "string",
           "name": "Domain",
           "required": true,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
           "example": "61",
-          "is_base64": false,
           "member": "uint64",
           "name": "DomainId",
           "required": false,
@@ -3486,264 +3379,216 @@
       "document": "DescribeRecordFilterList请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "要获取的解析记录所属的域名。",
           "example": "shenjianing.com",
-          "is_base64": false,
           "member": "string",
           "name": "Domain",
           "required": true,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "要获取的解析记录所属的域名 Id，如果传了 DomainId，系统将会忽略 Domain 参数。 可以通过接口 DescribeDomainList 查到所有的 Domain 以及 DomainId。",
           "example": "81345824",
-          "is_base64": false,
           "member": "uint64",
           "name": "DomainId",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "根据解析记录的主机头获取解析记录。默认模糊匹配。可以通过设置 IsExactSubdomain 参数为 true 进行精确查找。",
           "example": "www",
-          "is_base64": false,
           "member": "string",
           "name": "SubDomain",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "获取某些类型的解析记录，如 A，CNAME，NS，AAAA，显性URL，隐性URL，CAA，SPF等。",
           "example": "[\"A\"]",
-          "is_base64": false,
           "member": "string",
           "name": "RecordType",
           "required": false,
           "type": "list"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "获取某些线路ID的解析记录。可以通过接口 DescribeRecordLineList 查看当前域名允许的线路信息。",
           "example": "[\"0\"]",
-          "is_base64": false,
           "member": "string",
           "name": "RecordLine",
           "required": false,
           "type": "list"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "获取某些分组下的解析记录时，传这个分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。",
           "example": "[23]",
-          "is_base64": false,
           "member": "uint64",
           "name": "GroupId",
           "required": false,
           "type": "list"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "通过关键字搜索解析记录，当前支持搜索主机头和记录值",
           "example": "book",
-          "is_base64": false,
           "member": "string",
           "name": "Keyword",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "排序字段，支持 NAME，LINE，TYPE，VALUE，WEIGHT，MX，TTL，UPDATED_ON 几个字段。\nNAME：解析记录的主机头\nLINE：解析记录线路\nTYPE：解析记录类型\nVALUE：解析记录值\nWEIGHT：权重\nMX：MX 优先级\nTTL：解析记录缓存时间\nUPDATED_ON：解析记录更新时间\n",
           "example": "NAME",
-          "is_base64": false,
           "member": "string",
           "name": "SortField",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "排序方式，升序：ASC，降序：DESC。默认值为ASC。",
           "example": "ASC",
-          "is_base64": false,
           "member": "string",
           "name": "SortType",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "偏移量，默认值为0。",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "限制数量，当前Limit最大支持3000。默认值为100。",
           "example": "100",
-          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "根据解析记录的值获取解析记录",
           "example": "1.1.1.1",
-          "is_base64": false,
           "member": "string",
           "name": "RecordValue",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "根据解析记录的状态获取解析记录。可取值为 ENABLE，DISABLE。\nENABLE：正常 \nDISABLE：暂停 ",
           "example": "[\"ENABLE\"]",
-          "is_base64": false,
           "member": "string",
           "name": "RecordStatus",
           "required": false,
           "type": "list"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "要获取解析记录权重查询区间起点。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "WeightBegin",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "要获取解析记录权重查询区间终点。",
           "example": "100",
-          "is_base64": false,
           "member": "uint64",
           "name": "WeightEnd",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "要获取解析记录 MX 优先级查询区间起点。",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "MXBegin",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "要获取解析记录 MX 优先级查询区间终点。",
           "example": "10",
-          "is_base64": false,
           "member": "uint64",
           "name": "MXEnd",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "要获取解析记录 TTL 查询区间起点。",
           "example": "60",
-          "is_base64": false,
           "member": "uint64",
           "name": "TTLBegin",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "要获取解析记录 TTL 查询区间终点。",
           "example": "600",
-          "is_base64": false,
           "member": "uint64",
           "name": "TTLEnd",
           "required": false,
           "type": "int"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "要获取解析记录更新时间查询区间起点。",
           "example": "2023-01-16 00:00:00",
-          "is_base64": false,
           "member": "string",
           "name": "UpdatedAtBegin",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "要获取解析记录更新时间查询区间终点。",
           "example": "2023-01-17 00:00:00",
-          "is_base64": false,
           "member": "string",
           "name": "UpdatedAtEnd",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "根据解析记录的备注获取解析记录。",
           "example": "解析记录备注",
-          "is_base64": false,
           "member": "string",
           "name": "Remark",
           "required": false,
           "type": "string"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "是否根据 Subdomain 参数进行精确查找。",
           "example": "false",
-          "is_base64": false,
           "member": "bool",
           "name": "IsExactSubDomain",
           "required": false,
           "type": "bool"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "项目ID",
           "example": "-1",
-          "is_base64": false,
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -4777,7 +4622,6 @@
       "document": "域名别名解析量统计信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名解析量统计查询信息",
           "example": "无",
@@ -4788,7 +4632,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前统计维度解析量小计",
           "example": "无",
@@ -4841,7 +4684,6 @@
       "document": "当前统计维度解析量小计",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "当前统计维度解析量小计",
           "example": "1000",
@@ -4852,7 +4694,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按天统计时，为统计日期",
           "example": "2022-05-16",
@@ -4863,7 +4704,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按小时统计时，为统计的当前时间的小时数(0-23)，例：HourKey为23时，统计周期为22点-23点的解析量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -4880,7 +4720,6 @@
       "document": "域名解析量统计查询信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "DATE:按天维度统计 HOUR:按小时维度统计",
           "example": "DATE",
@@ -4891,7 +4730,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前统计周期解析量总计",
           "example": "10000",
@@ -4902,7 +4740,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前查询的域名",
           "example": "example.com",
@@ -4913,7 +4750,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前统计周期开始时间",
           "example": "2022-06-08",
@@ -4924,7 +4760,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前统计周期结束时间",
           "example": "2022-06-14",
@@ -4941,7 +4776,6 @@
       "document": "列表页分页统计信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "符合条件的域名数量",
           "example": "1",
@@ -4952,7 +4786,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户可以查看的所有域名数量",
           "example": "1",
@@ -4963,7 +4796,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户账号添加的域名数量",
           "example": "1",
@@ -4974,7 +4806,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "共享给用户的域名数量",
           "example": "1",
@@ -4985,7 +4816,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费域名数量",
           "example": "1",
@@ -4996,7 +4826,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "暂停的域名数量",
           "example": "1",
@@ -5007,7 +4836,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "dns设置错误的域名数量",
           "example": "1",
@@ -5018,7 +4846,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "锁定的域名数量",
           "example": "1",
@@ -5029,7 +4856,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "封禁的域名数量",
           "example": "1",
@@ -5040,7 +4866,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "30天内即将到期的域名数量",
           "example": "1",
@@ -5051,7 +4876,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分享给其它人的域名数量",
           "example": "1",
@@ -5062,7 +4886,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定分组内的域名数量",
           "example": "1",
@@ -5079,7 +4902,6 @@
       "document": "域名信息（创建域名时返回）",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名ID",
           "example": "61",
@@ -5090,7 +4912,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "dnspod.cn",
@@ -5101,7 +4922,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名的punycode",
           "example": "dnspod.cn",
@@ -5112,7 +4932,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名的NS列表",
           "example": "[\"source.dnspod.net\",\"low.dnspod.net\"]",
@@ -5681,7 +5500,6 @@
       "document": "域名共享信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名共享对象的账号",
           "example": "qcloud_uin_100000014227@qcloud.com",
@@ -5692,7 +5510,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "共享模式，“rw”：可读写。 “r”:：只读",
           "example": "r",
@@ -5703,7 +5520,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "共享状态“enabled”：共享成功。“pending”：共享到的账号不存在, 等待注册",
           "example": "enabled",
@@ -5774,7 +5590,6 @@
       "document": "域名分组列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分组ID",
           "example": "1",
@@ -5785,7 +5600,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组名称",
           "example": "很少修改",
@@ -5796,7 +5610,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组类型",
           "example": "system",
@@ -5807,7 +5620,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该分组中域名个数",
           "example": "1",
@@ -5824,7 +5636,6 @@
       "document": "键值对",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "键",
           "example": "ttl",
@@ -5835,7 +5646,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "600",
@@ -5852,7 +5662,6 @@
       "document": "线路分组信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "线路分组ID",
           "example": "15=0",
@@ -5863,7 +5672,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "线路分组名称",
           "example": "华北",
@@ -5874,7 +5682,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组类型",
           "example": "system",
@@ -5885,7 +5692,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "线路分组包含的线路列表",
           "example": "无",
@@ -5902,7 +5708,6 @@
       "document": "解析线路信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "线路名称",
           "example": "电信",
@@ -5913,7 +5718,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "线路ID",
           "example": "10=0",
@@ -5930,7 +5734,6 @@
       "document": "域名锁定信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名 ID",
           "example": "62",
@@ -5941,7 +5744,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名解锁码",
           "example": "M3xkbnNwb2Quc2l0ZXwxNjE3MzMwODMwfDhlMTkyODZlOGJjMjU4MDBlNjVlZDA1",
@@ -5952,7 +5754,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名自动解锁日期",
           "example": "2021-05-02",
@@ -6338,7 +6139,6 @@
       "document": "批量添加记录返回结构",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "见RecordInfoBatchModify\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6349,7 +6149,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务编号",
           "example": "1",
@@ -6360,7 +6159,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test.com",
@@ -6371,7 +6169,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名等级\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DP_FREE",
@@ -6382,7 +6179,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
@@ -6393,7 +6189,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该条任务运行状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "waiting",
@@ -6404,7 +6199,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "plus",
@@ -6415,7 +6209,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "142123",
@@ -7089,7 +6882,6 @@
       "document": "套餐配置明细",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "套餐原价",
           "example": "188",
@@ -7100,7 +6892,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可更换域名次数",
           "example": "10",
@@ -7111,7 +6902,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "允许设置的最小 TTL 值",
           "example": "120",
@@ -7122,7 +6912,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡数量",
           "example": "4",
@@ -7133,7 +6922,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子域名级数",
           "example": "3",
@@ -7144,7 +6932,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "泛解析级数",
           "example": "5",
@@ -7155,7 +6942,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DNS 服务集群个数",
           "example": "8 个",
@@ -7166,7 +6952,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "套餐名称",
           "example": "免费版",
@@ -7177,7 +6962,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "套餐代号",
           "example": "1",
@@ -7188,7 +6972,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "套餐对应的 NS",
           "example": "[s4g2m.dnspod.net\",\"g8y9f.dnspod.net\"]",
@@ -7199,7 +6982,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "套餐代码",
           "example": "DP_Free",
@@ -7279,7 +7061,6 @@
       "document": "域名概览明细",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "zhaodapian.com",
@@ -7290,7 +7071,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名套餐代码",
           "example": "DP_Expert",
@@ -7301,7 +7081,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名套餐名称",
           "example": "企业版",
@@ -7312,7 +7091,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名记录数",
           "example": "108",
@@ -7323,7 +7101,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名停靠状态。0 未开启 1 已开启 2 已暂停",
           "example": "0",
@@ -7334,7 +7111,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义线路数量",
           "example": "12",
@@ -7345,7 +7121,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义线路分组数量",
           "example": "20",
@@ -7356,7 +7131,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名别名数量",
           "example": "5",
@@ -7367,7 +7141,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "允许添加的最大域名别名数量",
           "example": "20",
@@ -7378,7 +7151,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "昨天的解析量",
           "example": "5439",
@@ -7389,7 +7161,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "增值服务数量",
           "example": "15",
@@ -7406,7 +7177,6 @@
       "document": "域名权限项",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "权限名称",
           "example": "分省线路类型",
@@ -7417,7 +7187,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限值",
           "example": "yes",
@@ -7434,7 +7203,6 @@
       "document": "查询记录列表的数量统计信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "子域名数量",
           "example": "2",
@@ -7445,7 +7213,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "列表返回的记录数",
           "example": "2",
@@ -7456,7 +7223,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总的记录数",
           "example": "10",
@@ -7473,7 +7239,6 @@
       "document": "解析记录分组信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分组 ID",
           "example": "1344",
@@ -7484,7 +7249,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组名称",
           "example": "分组1",
@@ -7495,7 +7259,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分组类型：system-系统；user-用户",
           "example": "user",
@@ -7512,7 +7275,6 @@
       "document": "记录信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "记录 ID 。",
           "example": "158",
@@ -7523,7 +7285,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子域名(主机记录)。",
           "example": "www",
@@ -7534,7 +7295,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录类型, 详见 DescribeRecordType 接口。",
           "example": "A",
@@ -7545,7 +7305,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "解析记录的线路，详见 DescribeRecordLineList 接口。",
           "example": "百度",
@@ -7556,7 +7315,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "解析记录的线路 ID ，详见 DescribeRecordLineList 接口。",
           "example": "90=0",
@@ -7567,7 +7325,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录值。",
           "example": "129.23.32.32",
@@ -7578,7 +7335,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录权重值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
@@ -7589,7 +7345,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录的 MX 记录值，非 MX 记录类型，默认为 0。",
           "example": "20",
@@ -7600,7 +7355,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录的 TTL 值。",
           "example": "600",
@@ -7611,7 +7365,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录状态。0表示禁用，1表示启用。",
           "example": "1",
@@ -7622,7 +7375,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该记录的 D 监控状态。\n\"Ok\" : 服务器正常。\n\"Warn\" : 该记录有报警, 服务器返回 4XX。\n\"Down\" : 服务器宕机。\n\"\" : 该记录未开启 D 监控。",
           "example": "Ok",
@@ -7633,7 +7385,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录的备注。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "这是解析记录的备注",
@@ -7644,7 +7395,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "记录最后更新时间。",
           "example": "2021-03-31 11:38:02",
@@ -7655,7 +7405,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名 ID 。",
           "example": "62",
@@ -7953,7 +7702,6 @@
       "document": "域名解析快照配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "配置类型：空字符串-不备份，half_hour-每半小时，hourly-每小时，daily-每天，monthly-每月",
           "example": "half_hour",
@@ -7964,7 +7712,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "添加时间",
           "example": "2022-09-19 15:01:35",
@@ -7975,7 +7722,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属域名 ID",
           "example": "13452",
@@ -7986,7 +7732,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置 ID",
           "example": "21",
@@ -7997,7 +7742,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照数量",
           "example": "2",
@@ -8008,7 +7752,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态：enable-启用，disable-禁用",
           "example": "enable",
@@ -8019,7 +7762,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
           "example": "2022-09-19 15:01:35",
@@ -8036,7 +7778,6 @@
       "document": "快照信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "快照的对象存储地址",
           "example": "https://xx.cos.xx.com/xx.csv",
@@ -8047,7 +7788,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "添加时间",
           "example": "2022-09-20 14:03:13",
@@ -8058,7 +7798,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属域名",
           "example": "xxyy.com",
@@ -8069,7 +7808,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照记录 ID",
           "example": "957A1A5B",
@@ -8080,7 +7818,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名解析记录数",
           "example": "2",
@@ -8091,7 +7828,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态：normal-正常，create-备份中",
           "example": "normal",
@@ -8108,7 +7844,6 @@
       "document": "快照列表分页信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "快照总数",
           "example": "10",
@@ -8221,7 +7956,6 @@
       "document": "子域名别名解析量统计信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "子域名解析量统计查询信息",
           "example": "无",
@@ -8232,7 +7966,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前统计维度解析量小计",
           "example": "无",
@@ -8249,7 +7982,6 @@
       "document": "子域名解析量统计查询信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "DATE:按天维度统计 HOUR:按小时维度统计",
           "example": "DATE",
@@ -8260,7 +7992,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前统计周期解析量总计",
           "example": "10000",
@@ -8271,7 +8002,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前查询的域名",
           "example": "example.com",
@@ -8282,7 +8012,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前统计周期开始时间",
           "example": "2022-06-08",
@@ -8293,7 +8022,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前统计周期结束时间",
           "example": "2022-06-14",
@@ -8304,7 +8032,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前统计的子域名",
           "example": "www",
@@ -8371,7 +8098,6 @@
       "document": "用户信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户昵称",
           "example": "myfm",
@@ -8382,7 +8108,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户ID",
           "example": "5299600",
@@ -8393,7 +8118,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户账号, 邮箱格式",
           "example": "qcloud_uin_100000000328@qcloud.com",
@@ -8404,7 +8128,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号状态：”enabled”: 正常；”disabled”: 被封禁",
           "example": "enabled",
@@ -8415,7 +8138,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电话号码",
           "example": "187****3214",
@@ -8426,7 +8148,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "邮箱是否通过验证：”yes”: 通过；”no”: 未通过",
           "example": "yes",
@@ -8437,7 +8158,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "手机是否通过验证：”yes”: 通过；”no”: 未通过",
           "example": "yes",
@@ -8448,7 +8168,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号等级, 按照用户账号下域名等级排序, 选取一个最高等级为账号等级, 具体对应情况参见域名等级。",
           "example": "DP_Free",
@@ -8459,7 +8178,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名称, 企业用户对应为公司名称",
           "example": "王小云",
@@ -8470,7 +8188,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否绑定微信：”yes”: 通过；”no”: 未通过",
           "example": "yes",
@@ -8481,7 +8198,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户UIN",
           "example": "100000000328",
@@ -8492,7 +8208,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属 DNS 服务器",
           "example": " [\"r6i9m.dnspod.net\",\"a6i6c.dnspod.net\" ]",
@@ -8555,7 +8270,6 @@
       "document": "Whois联系信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8566,7 +8280,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8577,7 +8290,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8588,7 +8300,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8605,7 +8316,6 @@
       "document": "Whois联系信息地址",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8616,7 +8326,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8627,7 +8336,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8638,7 +8346,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8649,7 +8356,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8660,7 +8366,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8671,7 +8376,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8682,7 +8386,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8693,7 +8396,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8704,7 +8406,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8715,7 +8416,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8726,7 +8426,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8743,7 +8442,6 @@
       "document": "Whois信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "联系信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8754,7 +8452,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名注册时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-11-07 14:42:55",
@@ -8765,7 +8462,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2023-11-07 14:42:55",
@@ -8776,7 +8472,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是在腾讯云注册的域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -8787,7 +8482,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否当前操作帐号注册的域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -8798,7 +8492,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名配置的NS\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8809,7 +8502,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Whois原始信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8820,7 +8512,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名注册商\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8831,7 +8522,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -8842,7 +8532,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新日期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-11-17 14:42:55",

@@ -40,7 +40,6 @@
       "document": "AccountTipoffAccess请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "被举报账号，长度低于 128 个字符",
           "member": "string",
           "name": "ReportedAccount",
@@ -48,7 +47,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "被举报账号类型(1-手机号 2-QQ号 3-微信号 4-QQ群号 5-微信openid 6-QQopenid 0-其它)",
           "member": "int64",
           "name": "ReportedAccountType",
@@ -56,7 +54,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "被举报账号所属恶意类型(1-诈骗，2-骚扰，3-广告，4-违法违规，5-赌博传销，0-其他)",
           "member": "int64",
           "name": "EvilType",
@@ -64,7 +61,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "举报者账号，长度低于 128 个字符",
           "member": "string",
           "name": "SenderAccount",
@@ -72,7 +68,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "举报者账号类型(1-手机号 2-QQ号 3-微信号 4-QQ群号 5-微信openid 6-QQopenid 0-其它)",
           "member": "int64",
           "name": "SenderAccountType",
@@ -80,7 +75,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "举报者IP地址",
           "member": "string",
           "name": "SenderIP",
@@ -88,7 +82,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "包含被举报账号的恶意内容（比如文本、图片链接，长度低于1024个字符）",
           "member": "string",
           "name": "EvilContent",
@@ -121,7 +114,6 @@
       "document": "DescribeTextLib请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "内容类型 text: 1; image: 2; audio: 3; video: 4",
           "example": "1",
           "member": "int64",
@@ -157,7 +149,6 @@
       "document": "DescribeTextStat请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "审核类型 1: 机器审核; 2: 人工审核",
           "member": "int64",
           "name": "AuditType",
@@ -165,7 +156,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "查询条件",
           "member": "Filters",
           "name": "Filters",
@@ -212,7 +202,6 @@
       "document": "文本返回的详细结果",
       "members": [
         {
-          "default": "",
           "document": "恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。\n以及令人反感、不安全或不适宜的内容类型。",
           "member": "string",
           "name": "Label",
@@ -221,7 +210,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "建议您拿到判断结果后的执行操作。\n建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Suggestion",
@@ -230,7 +218,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "该标签下命中的关键词\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Keywords",
@@ -239,7 +226,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "该标签模型命中的分值\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "Score",
@@ -248,7 +234,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "仅当Label为Custom自定义关键词时有效，表示自定义关键词库类型，1:黑白库，2：自定义库\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "LibType",
@@ -257,7 +242,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "仅当Label为Custom自定义关键词时有效，表示自定义库id\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "LibId",
@@ -266,7 +250,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "仅当Labe为Custom自定义关键词时有效，表示自定义库名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "LibName",
@@ -281,7 +264,6 @@
       "document": "设备信息",
       "members": [
         {
-          "default": "",
           "document": "用户IP",
           "member": "string",
           "name": "IP",
@@ -290,7 +272,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "Mac地址",
           "member": "string",
           "name": "Mac",
@@ -299,7 +280,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设备指纹Token",
           "member": "string",
           "name": "TokenId",
@@ -308,7 +288,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设备指纹ID",
           "member": "string",
           "name": "DeviceId",
@@ -317,7 +296,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "设备序列号",
           "member": "string",
           "name": "IMEI",
@@ -326,7 +304,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "IOS设备，Identifier For Advertising（广告标识符）",
           "member": "string",
           "name": "IDFA",
@@ -335,7 +312,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "IOS设备，IDFV - Identifier For Vendor（应用开发商标识符）",
           "member": "string",
           "name": "IDFV",
@@ -350,7 +326,6 @@
       "document": "违规数据分布",
       "members": [
         {
-          "default": "",
           "document": "----非必选，该参数功能暂未对外开放",
           "member": "string",
           "name": "EvilType",
@@ -359,7 +334,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "分布类型总量",
           "member": "int64",
           "name": "Count",
@@ -374,7 +348,6 @@
       "document": "文本过滤条件",
       "members": [
         {
-          "default": "",
           "document": "查询字段：\n策略BizType\n子账号SubUin\n日期区间DateRange",
           "member": "string",
           "name": "Name",
@@ -383,7 +356,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "查询值",
           "member": "string",
           "name": "Values",
@@ -398,7 +370,6 @@
       "document": "识别结果统计",
       "members": [
         {
-          "default": "",
           "document": "总调用量",
           "member": "int64",
           "name": "TotalCount",
@@ -407,7 +378,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "总调用时长",
           "member": "int64",
           "name": "TotalHour",
@@ -416,7 +386,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "通过量",
           "member": "int64",
           "name": "PassCount",
@@ -425,7 +394,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "通过时长",
           "member": "int64",
           "name": "PassHour",
@@ -434,7 +402,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "违规量",
           "member": "int64",
           "name": "EvilCount",
@@ -443,7 +410,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "违规时长",
           "member": "int64",
           "name": "EvilHour",
@@ -452,7 +418,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "疑似违规量",
           "member": "int64",
           "name": "SuspectCount",
@@ -461,7 +426,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "疑似违规时长",
           "member": "int64",
           "name": "SuspectHour",
@@ -476,7 +440,6 @@
       "document": "账号风险检测结果",
       "members": [
         {
-          "default": "",
           "document": "风险类别，RiskAccount，RiskIP, RiskIMEI",
           "member": "string",
           "name": "Label",
@@ -485,7 +448,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "风险等级，1:疑似，2：恶意",
           "member": "int64",
           "name": "Level",
@@ -500,7 +462,6 @@
       "document": "自定义库列表",
       "members": [
         {
-          "default": "",
           "document": "库id",
           "member": "int64",
           "name": "LibId",
@@ -509,7 +470,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "库名",
           "member": "string",
           "name": "LibName",
@@ -524,7 +484,6 @@
       "document": "TextModeration请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "文本内容Base64编码。限制原文长度不能超过10000个unicode字符",
           "example": "57uY5aOw57uY6Imy",
           "member": "string",
@@ -533,7 +492,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "该字段用于标识业务场景。您可以在内容安全控制台创建对应的ID，配置不同的内容审核策略，通过接口调用，默认不填为0，后端使用默认策略",
           "example": "11",
           "member": "string",
@@ -542,7 +500,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "数据ID，英文字母、下划线、-组成，不超过64个字符",
           "example": "111",
           "member": "string",
@@ -551,7 +508,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "账号相关信息字段，填入后可识别违规风险账号",
           "example": "aaa",
           "member": "User",
@@ -560,7 +516,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "设备相关信息字段，填入后可识别违规风险设备",
           "example": "ddd",
           "member": "Device",
@@ -677,7 +632,6 @@
       "document": "举报接口响应数据",
       "members": [
         {
-          "default": "",
           "document": "举报结果， \"0-举报数据提交成功  99-举报数据提交失败\"",
           "member": "int64",
           "name": "ResultCode",
@@ -686,7 +640,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "结果描述",
           "member": "string",
           "name": "ResultMsg",
@@ -701,7 +654,6 @@
       "document": "识别量统计",
       "members": [
         {
-          "default": "",
           "document": "总调用量\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "TotalCount",
@@ -710,7 +662,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "总调用时长\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "TotalHour",
@@ -719,7 +670,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "通过量\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "PassCount",
@@ -728,7 +678,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "通过时长\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "PassHour",
@@ -737,7 +686,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "违规量\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "EvilCount",
@@ -746,7 +694,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "违规时长\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "EvilHour",
@@ -755,7 +702,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "疑似违规量\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "SuspectCount",
@@ -764,7 +710,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "疑似违规时长\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "SuspectHour",
@@ -773,7 +718,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "日期\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Date",
@@ -788,7 +732,6 @@
       "document": "用户相关信息",
       "members": [
         {
-          "default": "",
           "document": "用户账号ID，如填写，会根据账号历史恶意情况，判定消息有害结果，特别是有利于可疑恶意情况下的辅助判断。账号可以填写微信uin、QQ号、微信openid、QQopenid、字符串等。该字段和账号类别确定唯一账号。",
           "member": "string",
           "name": "UserId",
@@ -797,7 +740,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用户昵称",
           "member": "string",
           "name": "Nickname",
@@ -806,7 +748,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "账号类别，\"1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-其它string\"",
           "member": "int64",
           "name": "AccountType",
@@ -815,7 +756,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "性别 默认0 未知 1 男性 2 女性",
           "member": "int64",
           "name": "Gender",
@@ -824,7 +764,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "年龄 默认0 未知",
           "member": "int64",
           "name": "Age",
@@ -833,7 +772,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "用户等级，默认0 未知 1 低 2 中 3 高",
           "member": "int64",
           "name": "Level",
@@ -842,7 +780,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "手机号",
           "member": "string",
           "name": "Phone",

@@ -439,7 +439,6 @@
       "document": "AcceptVpcPeerConnection请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "黑石对等连接实例ID",
           "example": "",
@@ -476,7 +475,6 @@
       "document": "AsyncRegisterIps请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络的唯一ID。",
           "example": "",
@@ -486,7 +484,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网唯一ID。",
           "example": "",
@@ -496,7 +493,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要注册的IP列表。",
           "example": "",
@@ -533,7 +529,6 @@
       "document": "BindEipsToNatGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关ID，例如：nat-kdm476mp",
           "example": "nat-2duawe5v",
@@ -543,7 +538,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID，例如：vpc-kd7d06of",
           "example": "vpc-mi51u7gs",
@@ -553,7 +547,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已分配的EIP列表；AssignedEips和AutoAllocEipNum至少输入一个",
           "example": "[\"139.199.40.16\\r\\n\"]",
@@ -563,7 +556,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新建EIP数目，系统将会按您的要求生产该数目个数EIP；AssignedEips和AutoAllocEipNum至少输入一个",
           "example": "2",
@@ -601,7 +593,6 @@
       "document": "BindIpsToNatGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关ID，例如：nat-kdm476mp",
           "example": "",
@@ -611,7 +602,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID，例如：vpc-kd7d06of",
           "example": "",
@@ -621,7 +611,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部分IP信息，子网下只有该部分IP将加入NAT，仅当网关转发模式为IP方式有效",
           "example": "",
@@ -658,7 +647,6 @@
       "document": "BindSubnetsToNatGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关ID，例如：nat-kdm476mp",
           "example": "",
@@ -668,7 +656,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID，例如：vpc-kd7d06of",
           "example": "",
@@ -678,7 +665,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID列表，子网下全部IP将加入NAT，不区分网关转发方式",
           "example": "",
@@ -715,7 +701,6 @@
       "document": "CreateCustomerGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "对端网关名称，可任意命名，但不得超过60个字符。",
           "example": "",
@@ -725,7 +710,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对端网关公网IP。",
           "example": "",
@@ -735,7 +719,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区ID",
           "example": "",
@@ -772,7 +755,6 @@
       "document": "CreateDockerSubnetWithVlan请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "系统分配的私有网络ID，例如：vpc-kd7d06of",
           "example": "",
@@ -782,7 +764,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网信息",
           "example": "",
@@ -819,7 +800,6 @@
       "document": "CreateHostedInterface请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "托管机器唯一ID 数组",
           "example": "",
@@ -829,7 +809,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID或者私有网络统一ID，建议使用统一ID",
           "example": "",
@@ -839,7 +818,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID或者子网统一ID，建议使用统一ID",
           "example": "",
@@ -885,7 +863,6 @@
       "document": "CreateInterfaces请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "物理机实例ID列表",
           "example": "",
@@ -895,7 +872,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID",
           "example": "",
@@ -905,7 +881,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID",
           "example": "",
@@ -942,7 +917,6 @@
       "document": "CreateNatGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "转发模式，其中0表示IP方式，1表示网段方式；通过cidr方式可支持更多的IP接入到NAT网关",
           "example": "1",
@@ -952,7 +926,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID，例如：vpc-kd7d06of",
           "example": "vpc-mi51u7gs",
@@ -962,7 +935,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT名称",
           "example": "test",
@@ -972,7 +944,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "并发连接数规格；取值为1000000、3000000、10000000，分别对应小型、中型、大型NAT网关",
           "example": "10000000",
@@ -982,7 +953,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID列表，子网下全部IP将加入NAT，不区分网关转发方式",
           "example": "[\"subnet-d3668cur\\r\\n\",\"subnet-dipbsl5n\\r\\n\"]",
@@ -992,7 +962,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部分IP信息，子网下只有该部分IP将加入NAT，仅当网关转发模式为IP方式有效；IpInfoSet和SubnetIds中的子网ID不能同时存在",
           "example": "无",
@@ -1002,7 +971,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已分配的EIP列表, AssignedEips和AutoAllocEipNum至少输入一个",
           "example": "[\"139.199.40.59\\r\\n\"]",
@@ -1012,7 +980,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新建EIP数目，系统将会按您的要求生产该数目个数EIP, AssignedEips和AutoAllocEipNum至少输入一个",
           "example": "1",
@@ -1022,7 +989,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "独占标识，取值为0和1，默认值为0；0和1分别表示创建共享型NAT网关和独占NAT型网关；由于同一个VPC网络内，指向NAT集群的默认路由只有一条，因此VPC内只能创建一种类型NAT网关；创建独占型NAT网关时，需联系对应架构师进行独占NAT集群搭建，否则无法创建独占型NAT网关。",
           "example": "0",
@@ -1060,7 +1026,6 @@
       "document": "CreateRoutePolicies请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "路由表ID",
           "example": "",
@@ -1070,7 +1035,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新增的路由",
           "example": "",
@@ -1107,7 +1071,6 @@
       "document": "CreateSubnet请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "系统分配的私有网络ID，例如：vpc-kd7d06of",
           "example": "",
@@ -1117,7 +1080,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网信息",
           "example": "",
@@ -1154,7 +1116,6 @@
       "document": "CreateVirtualSubnetWithVlan请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "系统分配的私有网络ID，例如：vpc-kd7d06of",
           "example": "",
@@ -1164,7 +1125,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网信息",
           "example": "",
@@ -1201,7 +1161,6 @@
       "document": "CreateVpcPeerConnection请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "本端VPC唯一ID",
           "example": "",
@@ -1211,7 +1170,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对端VPC唯一ID",
           "example": "",
@@ -1221,7 +1179,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对端地域，取值范围为gz,sh,bj,hk,cd,de,sh_bm,gz_bm,bj_bm,cq_bm等",
           "example": "",
@@ -1231,7 +1188,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对等连接名称",
           "example": "",
@@ -1241,7 +1197,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对端账户OwnerUin（默认值为本端账户）",
           "example": "",
@@ -1251,7 +1206,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "跨地域必传，带宽上限值",
           "example": "",
@@ -1288,7 +1242,6 @@
       "document": "CreateVpc请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络的名称",
           "example": "",
@@ -1298,7 +1251,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络的CIDR",
           "example": "",
@@ -1308,7 +1260,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络的可用区",
           "example": "",
@@ -1318,7 +1269,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网信息",
           "example": "",
@@ -1328,7 +1278,6 @@
           "type": "list"
         },
         {
-          "default": "False",
           "disabled": false,
           "document": "是否启用内网监控",
           "example": "",
@@ -1365,7 +1314,6 @@
       "document": "对端网关",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户网关唯一ID",
           "example": "",
@@ -1376,7 +1324,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关名称",
           "example": "",
@@ -1387,7 +1334,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "公网地址",
           "example": "",
@@ -1398,7 +1344,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -1409,7 +1354,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPN通道引用个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -1426,7 +1370,6 @@
       "document": "DeleteCustomerGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "对端网关ID，例如：bmcgw-2wqq41m9，可通过DescribeCustomerGateways接口查询对端网关。",
           "example": "",
@@ -1454,7 +1397,6 @@
       "document": "DeleteHostedInterface请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "托管机器唯一ID 数组",
           "example": "",
@@ -1464,7 +1406,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID或者私有网络统一ID，建议使用统一ID",
           "example": "",
@@ -1474,7 +1415,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID或者子网统一ID，建议使用统一ID",
           "example": "",
@@ -1520,7 +1460,6 @@
       "document": "DeleteHostedInterfaces请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "物理机ID",
           "example": "",
@@ -1530,7 +1469,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理机ID",
           "example": "",
@@ -1567,7 +1505,6 @@
       "document": "DeleteInterfaces请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "物理机ID",
           "example": "",
@@ -1577,7 +1514,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网的唯一ID列表",
           "example": "",
@@ -1614,7 +1550,6 @@
       "document": "DeleteNatGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关ID，例如：nat-kdm476mp",
           "example": "nat-kdm476mp",
@@ -1624,7 +1559,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID，例如：vpc-kd7d06of",
           "example": "vpc-mi51u7gs",
@@ -1662,7 +1596,6 @@
       "document": "DeleteRoutePolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "路由表ID",
           "example": "",
@@ -1672,7 +1605,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由表策略ID",
           "example": "",
@@ -1709,7 +1641,6 @@
       "document": "DeleteSubnet请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
           "example": "",
@@ -1719,7 +1650,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网实例ID。可通过DescribeSubnets接口返回值中的SubnetId获取。",
           "example": "",
@@ -1756,7 +1686,6 @@
       "document": "DeleteVirtualIp请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络唯一ID。",
           "example": "",
@@ -1766,7 +1695,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "退还的IP列表。",
           "example": "",
@@ -1803,7 +1731,6 @@
       "document": "DeleteVpcPeerConnection请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "黑石对等连接实例ID",
           "example": "",
@@ -1840,7 +1767,6 @@
       "document": "DeleteVpc请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
           "example": "",
@@ -1877,7 +1803,6 @@
       "document": "DeleteVpnConnection请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPN通道实例ID。形如：bmvpnx-f49l6u0z。",
           "example": "",
@@ -1914,7 +1839,6 @@
       "document": "DeleteVpnGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPN网关实例ID。",
           "example": "",
@@ -1951,7 +1875,6 @@
       "document": "DeregisterIps请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID",
           "example": "",
@@ -1961,7 +1884,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "注销指定IP的列表",
           "example": "",
@@ -1971,7 +1893,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络子网ID",
           "example": "",
@@ -1999,7 +1920,6 @@
       "document": "DescribeCustomerGateways请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "对端网关ID，例如：bmcgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。",
           "example": "",
@@ -2009,7 +1929,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定CustomerGatewayIds和Filters。\n<li>customergateway-name - String - （过滤条件）对端网关名称。</li>\n<li>ip-address - String - （过滤条件)对端网关地址。</li>\n<li>customergateway-id - String - （过滤条件）对端网关唯一ID。</li>\n<li>zone - String - （过滤条件）对端所在可用区，形如：ap-guangzhou-2。</li>",
           "example": "",
@@ -2019,7 +1938,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。",
           "example": "",
@@ -2029,7 +1947,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "",
@@ -2039,7 +1956,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段, 支持\"CreateTime\"排序",
           "example": "",
@@ -2049,7 +1965,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方向, “asc”、“desc”",
           "example": "",
@@ -2095,7 +2010,6 @@
       "document": "DescribeNatGateways请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关ID，例如：nat-kdm476mp",
           "example": "",
@@ -2105,7 +2019,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT名称",
           "example": "",
@@ -2115,7 +2028,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索字段",
           "example": "",
@@ -2125,7 +2037,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID，例如：vpc-kd7d06of",
           "example": "",
@@ -2135,7 +2046,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始值",
           "example": "",
@@ -2145,7 +2055,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移值，默认值为 20",
           "example": "",
@@ -2155,7 +2064,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT所在可用区，形如：ap-guangzhou-2。",
           "example": "",
@@ -2165,7 +2073,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段, 支持\"CreateTime\"排序",
           "example": "",
@@ -2175,7 +2082,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方向, “asc”、“desc”",
           "example": "",
@@ -2221,7 +2127,6 @@
       "document": "DescribeNatSubnets请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关ID，例如：nat-kdm476mp",
           "example": "",
@@ -2231,7 +2136,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID，例如：vpc-kd7d06of",
           "example": "",
@@ -2268,7 +2172,6 @@
       "document": "DescribeRoutePolicies请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "路由表实例ID，例如：rtb-afg8md3c。",
           "example": "rtb-afg8md3c",
@@ -2278,7 +2181,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由策略实例ID，例如：rti-azd4dt1c。",
           "example": "[\"rti-q1j48dkd\\r\\n\"]",
@@ -2288,7 +2190,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定RoutePolicyIds和Filters。\nroute-table-id - String - （过滤条件）路由表实例ID。\nvpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。\nroute-policy-id - String - （过滤条件）路由策略ID。\nroute-policy-description-like - String -（过滤条件）路由项备注。\nroute-policy-type - String - （过滤条件）路由项策略类型。\ndestination-cidr-like - String - （过滤条件）路由项目的地址。\ngateway-id-like - String - （过滤条件）路由项下一跳网关。\ngateway-type - String - （过滤条件）路由项下一条网关类型。\nenable - Bool - （过滤条件）路由策略是否启用。",
           "example": "无",
@@ -2298,7 +2199,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "初始行的偏移量，默认为0。",
           "example": "0",
@@ -2308,7 +2208,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页行数，默认为20。",
           "example": "20",
@@ -2356,7 +2255,6 @@
       "document": "DescribeRouteTables请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "路由表实例ID，例如：rtb-azd4dt1c。",
           "example": "",
@@ -2366,7 +2264,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定RouteTableIds和Filters。\nroute-table-id - String - （过滤条件）路由表实例ID。\nroute-table-name - String - （过滤条件）路由表名称。\nroute-table-id-like - String - （模糊过滤条件）路由表实例ID。\nroute-table-name-like - String - （模糊过滤条件）路由表名称。\nvpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。\nzone - String - （过滤条件）可用区。",
           "example": "",
@@ -2376,7 +2273,6 @@
           "type": "list"
         },
         {
-          "default": "0",
           "disabled": false,
           "document": "初始行的偏移量，默认为0。",
           "example": "",
@@ -2386,7 +2282,6 @@
           "type": "int"
         },
         {
-          "default": "20",
           "disabled": false,
           "document": "每页行数，默认为20。",
           "example": "",
@@ -2396,7 +2291,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段, 支持按“RouteTableId”，“VpcId”, \"RouteTableName\", \"CreateTime\"",
           "example": "",
@@ -2406,7 +2300,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方向, “asc”、“desc”",
           "example": "",
@@ -2452,7 +2345,6 @@
       "document": "DescribeSubnetAvailableIps请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络子网ID",
           "example": "",
@@ -2462,7 +2354,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CIDR前缀，例如10.0.1",
           "example": "",
@@ -2499,7 +2390,6 @@
       "document": "DescribeSubnetByDevice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "物理机ID",
           "example": "",
@@ -2509,7 +2399,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网类型。0: 物理机子网; 7: DOCKER子网 8: 虚拟子网",
           "example": "",
@@ -2519,7 +2408,6 @@
           "type": "list"
         },
         {
-          "default": "0",
           "disabled": false,
           "document": "查询的起始位置。",
           "example": "",
@@ -2529,7 +2417,6 @@
           "type": "int"
         },
         {
-          "default": "0",
           "disabled": false,
           "document": "查询的个数。",
           "example": "",
@@ -2575,7 +2462,6 @@
       "document": "DescribeSubnetByHostedDevice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "托管机器ID, 如chm-xasdfx2j",
           "example": "",
@@ -2585,7 +2471,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网类型。0: 物理机子网; 7: DOCKER子网 8: 虚拟子网",
           "example": "",
@@ -2595,7 +2480,6 @@
           "type": "list"
         },
         {
-          "default": "0",
           "disabled": false,
           "document": "查询的起始位置。",
           "example": "",
@@ -2605,7 +2489,6 @@
           "type": "int"
         },
         {
-          "default": "20",
           "disabled": false,
           "document": "查询的个数。",
           "example": "",
@@ -2651,7 +2534,6 @@
       "document": "DescribeSubnets请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "子网实例ID查询。形如：subnet-pxir56ns。参数不支持同时指定SubnetIds和Filters。",
           "example": "",
@@ -2661,7 +2543,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定SubnetIds和Filters。\nsubnet-id - String - （过滤条件）Subnet实例名称。\nvpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。\ncidr-block - String - （过滤条件）vpc的cidr。\nsubnet-name - String - （过滤条件）子网名称。\nzone - String - （过滤条件）可用区。",
           "example": "",
@@ -2671,7 +2552,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "",
@@ -2681,7 +2561,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量",
           "example": "",
@@ -2691,7 +2570,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段, 支持按“CreateTime”，“VlanId”",
           "example": "",
@@ -2701,7 +2579,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方向, “asc”、“desc”",
           "example": "",
@@ -2747,7 +2624,6 @@
       "document": "DescribeTaskStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "",
@@ -2784,7 +2660,6 @@
       "document": "DescribeVpcPeerConnections请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "对等连接实例ID",
           "example": "",
@@ -2794,7 +2669,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpcPeerConnectionIds和Filters。\n过滤条件，参数不支持同时指定VpcPeerConnectionIds和Filters。\n<li>peer-name - String - （过滤条件）对等连接名称。</li>",
           "example": "",
@@ -2804,7 +2678,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。",
           "example": "",
@@ -2814,7 +2687,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "",
@@ -2824,7 +2696,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID",
           "example": "",
@@ -2870,7 +2741,6 @@
       "document": "DescribeVpcQuota请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "类型",
           "example": "",
@@ -2907,7 +2777,6 @@
       "document": "DescribeVpcResource请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络实例ID",
           "example": "",
@@ -2917,7 +2786,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定SubnetIds和Filters。\nvpc-id - String - （过滤条件）私有网络实例ID，形如：vpc-f49l6u0z。\nvpc-name - String - （过滤条件）私有网络名称。\nzone - String - （过滤条件）可用区。\nstate - String - （过滤条件）VPC状态。available: 运营中; pending: 创建中; failed: 创建失败; deleting: 删除中",
           "example": "",
@@ -2927,7 +2795,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "",
@@ -2937,7 +2804,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量",
           "example": "",
@@ -2947,7 +2813,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段",
           "example": "",
@@ -2957,7 +2822,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方向, “asc”、“desc”",
           "example": "",
@@ -3003,7 +2867,6 @@
       "document": "DescribeVpcView请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络唯一ID",
           "example": "",
@@ -3040,7 +2903,6 @@
       "document": "DescribeVpcs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。",
           "example": "",
@@ -3050,7 +2912,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定VpcIds和Filters。\nvpc-name - String - （过滤条件）VPC实例名称。\nvpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。\ncidr-block - String - （过滤条件）vpc的cidr。\nstate - String - （过滤条件）VPC状态。(pending | available).\nzone -  String - （过滤条件）VPC的可用区。",
           "example": "",
@@ -3060,7 +2921,6 @@
           "type": "list"
         },
         {
-          "default": "0",
           "disabled": false,
           "document": "初始行的偏移量，默认为0。",
           "example": "",
@@ -3070,7 +2930,6 @@
           "type": "int"
         },
         {
-          "default": "20",
           "disabled": false,
           "document": "每页行数，默认为20。",
           "example": "",
@@ -3107,7 +2966,6 @@
       "document": "DescribeVpnConnections请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPN通道实例ID。形如：bmvpnx-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpnConnectionIds和Filters。",
           "example": "",
@@ -3117,7 +2975,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpnConnectionIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>\n<li>state - String - （过滤条件 VPN状态：creating，available，createfailed，changing，changefailed，deleting，deletefailed。</li>\n<li>zone - String - （过滤条件）VPN所在可用区，形如：ap-guangzhou-2。</li>",
           "example": "",
@@ -3127,7 +2984,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。",
           "example": "",
@@ -3137,7 +2993,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "",
@@ -3147,7 +3002,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPN网关实例ID",
           "example": "",
@@ -3157,7 +3011,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPN通道名称",
           "example": "",
@@ -3167,7 +3020,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段, 支持\"CreateTime\"排序",
           "example": "",
@@ -3177,7 +3029,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方向, “asc”、“desc”",
           "example": "",
@@ -3223,7 +3074,6 @@
       "document": "DescribeVpnGateways请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPN网关实例ID。形如：bmvpngw-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpnGatewayIds和Filters。",
           "example": "",
@@ -3233,7 +3083,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定VpnGatewayIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>\n<li>state - String - （过滤条件 VPN状态：creating，available，createfailed，changing，changefailed，deleting，deletefailed。</li>\n<li>zone - String - （过滤条件）VPN所在可用区，形如：ap-guangzhou-2。</li>\n<li>vpngw-name - String - （过滤条件）vpn网关名称。</li>",
           "example": "",
@@ -3243,7 +3092,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "",
@@ -3253,7 +3101,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求对象个数",
           "example": "",
@@ -3263,7 +3110,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段, 支持\"CreateTime\"排序",
           "example": "",
@@ -3273,7 +3119,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方向, “asc”、“desc”",
           "example": "",
@@ -3319,7 +3164,6 @@
       "document": "DownloadCustomerGatewayConfiguration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPN通道实例ID。形如：bmvpnx-f49l6u0z。",
           "example": "",
@@ -3329,7 +3173,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "厂商,取值 h3c，cisco",
           "example": "",
@@ -3366,7 +3209,6 @@
       "document": "过滤器",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "属性名称, 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
           "example": "",
@@ -3377,7 +3219,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
           "example": "",
@@ -3394,7 +3235,6 @@
       "document": "IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC'，默认为3DES-CBC",
           "example": "",
@@ -3405,7 +3245,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "认证算法：可选值：'MD5', 'SHA1'，默认为MD5",
           "example": "",
@@ -3416,7 +3255,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协商模式：可选值：'AGGRESSIVE', 'MAIN'，默认为MAIN",
           "example": "",
@@ -3427,7 +3265,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本端标识类型：可选值：'ADDRESS', 'FQDN'，默认为ADDRESS",
           "example": "",
@@ -3438,7 +3275,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对端标识类型：可选值：'ADDRESS', 'FQDN'，默认为ADDRESS",
           "example": "",
@@ -3449,7 +3285,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本端标识，当LocalIdentity选为ADDRESS时，LocalAddress必填。localAddress默认为vpn网关公网IP",
           "example": "",
@@ -3460,7 +3295,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对端标识，当RemoteIdentity选为ADDRESS时，RemoteAddress必填",
           "example": "",
@@ -3471,7 +3305,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本端标识，当LocalIdentity选为FQDN时，LocalFqdnName必填",
           "example": "",
@@ -3482,7 +3315,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对端标识，当remoteIdentity选为FQDN时，RemoteFqdnName必填",
           "example": "",
@@ -3493,7 +3325,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，",
           "example": "",
@@ -3504,7 +3335,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IKE SA Lifetime，单位：秒，设置IKE SA的生存周期，取值范围：60-604800",
           "example": "",
@@ -3515,7 +3345,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IKE版本",
           "example": "",
@@ -3532,7 +3361,6 @@
       "document": "IPSec配置，腾讯云提供IPSec安全会话设置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "PFS：可选值：'NULL', 'DH-GROUP1', 'DH-GROUP2', 'DH-GROUP5', 'DH-GROUP14', 'DH-GROUP24'，默认为NULL",
           "example": "",
@@ -3543,7 +3371,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPsec SA lifetime(KB)：单位KB，取值范围：2560-604800",
           "example": "",
@@ -3554,7 +3381,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'NULL'， 默认为AES-CBC-128",
           "example": "",
@@ -3565,7 +3391,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "认证算法：可选值：'MD5', 'SHA1'，默认为",
           "example": "",
@@ -3576,7 +3401,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPsec SA lifetime(s)：单位秒，取值范围：180-604800",
           "example": "",
@@ -3587,7 +3411,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全协议，默认为ESP",
           "example": "",
@@ -3598,7 +3421,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报文封装模式:默认为Tunnel",
           "example": "",
@@ -3615,7 +3437,6 @@
       "document": "NAT IP信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID",
           "example": "",
@@ -3626,7 +3447,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP列表",
           "example": "",
@@ -3643,7 +3463,6 @@
       "document": "ModifyCustomerGatewayAttribute请求参数结构体",
       "members": [
         {
-          "default": "无",
           "disabled": false,
           "document": "对端网关ID，例如：bmcgw-2wqq41m9，可通过DescribeCustomerGateways接口查询对端网关。",
           "example": "",
@@ -3653,7 +3472,6 @@
           "type": "string"
         },
         {
-          "default": "无",
           "disabled": false,
           "document": "对端网关名称，可任意命名，但不得超过60个字符。",
           "example": "",
@@ -3681,7 +3499,6 @@
       "document": "ModifyRoutePolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "路由表ID",
           "example": "rtb-19yps3nz",
@@ -3691,7 +3508,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改的路由",
           "example": "无",
@@ -3729,7 +3545,6 @@
       "document": "ModifyRouteTable请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "路由表ID",
           "example": "",
@@ -3739,7 +3554,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由表名称",
           "example": "",
@@ -3767,7 +3581,6 @@
       "document": "ModifySubnetAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID",
           "example": "",
@@ -3777,7 +3590,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID",
           "example": "",
@@ -3787,7 +3599,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网名称",
           "example": "",
@@ -3815,7 +3626,6 @@
       "document": "ModifySubnetDHCPRelay请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID",
           "example": "",
@@ -3825,7 +3635,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID",
           "example": "",
@@ -3835,7 +3644,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启DHCP Relay",
           "example": "",
@@ -3845,7 +3653,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DHCP服务器IP",
           "example": "",
@@ -3855,7 +3662,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预留IP个数",
           "example": "",
@@ -3883,7 +3689,6 @@
       "document": "ModifyVpcAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID",
           "example": "",
@@ -3893,7 +3698,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络名称",
           "example": "",
@@ -3903,7 +3707,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启内网监控，0为关闭，1为开启",
           "example": "",
@@ -3931,7 +3734,6 @@
       "document": "ModifyVpcPeerConnection请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "黑石对等连接唯一ID",
           "example": "",
@@ -3941,7 +3743,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对等连接带宽",
           "example": "",
@@ -3951,7 +3752,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对等连接名称",
           "example": "",
@@ -3988,7 +3788,6 @@
       "document": "ModifyVpnConnectionAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPN通道实例ID。形如：bmvpnx-f49l6u0z。",
           "example": "",
@@ -3998,7 +3797,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC实例ID",
           "example": "",
@@ -4008,7 +3806,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPN通道名称，可任意命名，但不得超过60个字符。",
           "example": "",
@@ -4018,7 +3815,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预共享密钥。",
           "example": "",
@@ -4028,7 +3824,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SPD策略组，例如：{\"10.0.0.5/24\":[\"172.123.10.5/16\"]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。",
           "example": "",
@@ -4038,7 +3833,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议。",
           "example": "",
@@ -4048,7 +3842,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPSec配置，腾讯云提供IPSec安全会话设置。",
           "example": "",
@@ -4085,7 +3878,6 @@
       "document": "ModifyVpnGatewayAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPN网关实例ID。",
           "example": "",
@@ -4095,7 +3887,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPN网关名称，最大长度不能超过60个字节。",
           "example": "",
@@ -4123,7 +3914,6 @@
       "document": "NAT详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关ID",
           "example": "",
@@ -4134,7 +3924,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关名称",
           "example": "",
@@ -4145,7 +3934,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID",
           "example": "",
@@ -4156,7 +3944,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络名称",
           "example": "",
@@ -4167,7 +3954,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关创建状态，其中0表示创建中，1表示运行中，2表示创建失败",
           "example": "",
@@ -4178,7 +3964,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP列表",
           "example": "",
@@ -4189,7 +3974,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "并发连接数规格，取值为1000000, 3000000, 10000000",
           "example": "",
@@ -4200,7 +3984,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区",
           "example": "",
@@ -4211,7 +3994,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "独占标识，其中0表示共享，1表示独占，默认值为0",
           "example": "",
@@ -4222,7 +4004,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转发模式，其中0表示IP方式，1表示网段方式",
           "example": "",
@@ -4233,7 +4014,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络网段",
           "example": "",
@@ -4244,7 +4024,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关类型，取值为 small，middle，big，分别对应小型、中型、大型",
           "example": "",
@@ -4255,7 +4034,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -4266,7 +4044,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关启用状态，1为禁用，0为启用。",
           "example": "",
@@ -4277,7 +4054,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络整型ID",
           "example": "",
@@ -4288,7 +4064,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT资源ID",
           "example": "",
@@ -4305,7 +4080,6 @@
       "document": "NAT子网信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "子网名称",
           "example": "",
@@ -4316,7 +4090,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID",
           "example": "",
@@ -4327,7 +4100,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT子网类型，其中0表示绑定部分IP的NAT子网，1表示绑定全部IP的NAT子网，2表示绑定网关方式的NAT子网",
           "example": "",
@@ -4338,7 +4110,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网网段",
           "example": "",
@@ -4355,7 +4126,6 @@
       "document": "RejectVpcPeerConnection请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "黑石对等连接实例ID",
           "example": "",
@@ -4392,7 +4162,6 @@
       "document": "ResetVpnConnection请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPC唯一ID",
           "example": "",
@@ -4402,7 +4171,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPN通道实例ID。形如：bmvpnx-f49l6u0z。",
           "example": "",
@@ -4430,7 +4198,6 @@
       "document": "路由条目",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "目的网段",
           "example": "",
@@ -4441,7 +4208,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下一跳类型，目前我们支持的类型有：\nLOCAL：物理机默认路由；\nVPN：VPN网关；\nPEERCONNECTION：对等连接；\nCPM：物理机自定义路由；\nCCN：云联网；\nTGW：公网默认路由；\nSSLVPN : SSH SSL VPN网关。",
           "example": "",
@@ -4452,7 +4218,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下一跳地址，这里只需要指定不同下一跳类型的网关ID，系统会自动匹配到下一跳地址。",
           "example": "",
@@ -4463,7 +4228,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由策略描述。",
           "example": "",
@@ -4474,7 +4238,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由策略ID",
           "example": "",
@@ -4485,7 +4248,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由类型，目前我们支持的类型有：\nUSER：用户自定义路由；\nNETD：网络探测路由，创建网络探测实例时，系统默认下发，不可编辑与删除；\nCCN：云联网路由，系统默认下发，不可编辑与删除。\n用户只能添加和编辑USER 类型的路由。",
           "example": "",
@@ -4496,7 +4258,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "true",
           "disabled": false,
           "document": "是否启用",
           "example": "",
@@ -4513,7 +4274,6 @@
       "document": "路由表对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "VPC实例ID。",
           "example": "",
@@ -4524,7 +4284,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC的名称",
           "example": "",
@@ -4535,7 +4294,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC的CIDR",
           "example": "",
@@ -4546,7 +4304,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区",
           "example": "",
@@ -4557,7 +4314,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由表实例ID，例如：rtb-azd4dt1c。",
           "example": "",
@@ -4568,7 +4324,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由表名称。",
           "example": "",
@@ -4579,7 +4334,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。",
           "example": "",
@@ -4596,7 +4350,6 @@
       "document": "SecurityPolicyDatabase策略",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "本端网段",
           "example": "",
@@ -4607,7 +4360,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对端网段",
           "example": "",
@@ -4624,7 +4376,6 @@
       "document": "创建子网时的子网类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "子网名称，可任意命名，但不得超过60个字符",
           "example": "",
@@ -4635,7 +4386,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网网段，子网网段必须在VPC网段内，相同VPC内子网网段不能重叠",
           "example": "",
@@ -4646,7 +4396,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "0",
           "disabled": false,
           "document": "是否开启子网分布式网关，默认传1，传0为关闭子网分布式网关。关闭分布式网关子网用于云服务器化子网，此子网中只能有一台物理机，同时此物理机及其上子机只能在此子网中",
           "example": "",
@@ -4657,7 +4406,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "0",
           "disabled": false,
           "document": "是否开启dhcp relay ，关闭为0，开启为1。默认为0",
           "example": "",
@@ -4668,7 +4416,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DHCP SERVER 的IP地址数组。IP地址为相同VPC的子网内分配的IP",
           "example": "",
@@ -4679,7 +4426,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "0",
           "disabled": false,
           "document": "预留的IP个数。从该子网的最大可分配IP倒序分配N个IP 用于DHCP 动态分配使用的地址段",
           "example": "",
@@ -4690,7 +4436,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "0",
           "disabled": false,
           "document": "子网绑定的vlanId。VlanId取值范围为2000-2999。创建物理机子网，VlanId默认为5; 创建docker子网或者虚拟子网，VlanId默认会分配2000--2999未使用的数值。",
           "example": "",
@@ -4701,7 +4446,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "0",
           "disabled": false,
           "document": "黑石子网的可用区",
           "example": "",
@@ -4712,7 +4456,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "0",
           "disabled": false,
           "document": "是否25G子网，1为是，0为否。",
           "example": "",
@@ -4729,7 +4472,6 @@
       "document": "黑石子网的信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络的唯一ID。",
           "example": "",
@@ -4740,7 +4482,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC的名称。",
           "example": "",
@@ -4751,7 +4492,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC的CIDR。",
           "example": "",
@@ -4762,7 +4502,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络的唯一ID",
           "example": "",
@@ -4773,7 +4512,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网名称。",
           "example": "",
@@ -4784,7 +4522,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网CIDR。",
           "example": "",
@@ -4795,7 +4532,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网类型。0: 黑石物理机子网; 6: ccs子网; 7 Docker子网; 8: 虚拟机子网",
           "example": "",
@@ -4806,7 +4542,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网可用区ID。",
           "example": "",
@@ -4817,7 +4552,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网物理机的个数",
           "example": "",
@@ -4828,7 +4562,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网的VlanId。",
           "example": "",
@@ -4839,7 +4572,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启分布式网关 ，关闭为0，开启为1。",
           "example": "",
@@ -4850,7 +4582,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启dhcp relay ，关闭为0，开启为1。默认为0。",
           "example": "",
@@ -4861,7 +4592,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DHCP SERVER 的IP地址数组。IP地址为相同VPC的子网内分配的IP。",
           "example": "",
@@ -4872,7 +4602,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预留的IP个数。从该子网的最大可分配IP倒序分配N个IP 用于DHCP 动态分配使用的地址段。",
           "example": "",
@@ -4883,7 +4612,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网中可用的IP个数",
           "example": "",
@@ -4894,7 +4622,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网中总共的IP个数",
           "example": "",
@@ -4905,7 +4632,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网创建时间",
           "example": "",
@@ -4916,7 +4642,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "25G子网标识",
           "example": "",
@@ -4927,7 +4652,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网可用区。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4938,7 +4662,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC所在可用区ID",
           "example": "",
@@ -4949,7 +4672,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC所在可用区",
           "example": "",
@@ -4960,7 +4682,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启广播，关闭为0，开启为1。",
           "example": "",
@@ -4977,7 +4698,6 @@
       "document": "UnbindEipsFromNatGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关ID，例如：nat-kdm476mp",
           "example": "nat-2duawe5v",
@@ -4987,7 +4707,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID，例如：vpc-kd7d06of",
           "example": "vpc-mi51u7gs",
@@ -4997,7 +4716,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "已分配的EIP列表",
           "example": "[\"139.199.40.16\\r\\n\"]",
@@ -5035,7 +4753,6 @@
       "document": "UnbindIpsFromNatGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关ID，例如：nat-kdm476mp",
           "example": "",
@@ -5045,7 +4762,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID，例如：vpc-kd7d06of",
           "example": "",
@@ -5055,7 +4771,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部分IP信息；子网须以部分IP将加入NAT网关",
           "example": "",
@@ -5092,7 +4807,6 @@
       "document": "UnbindSubnetsFromNatGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关ID，例如：nat-kdm476mp",
           "example": "",
@@ -5102,7 +4816,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID，例如：vpc-kd7d06of",
           "example": "",
@@ -5112,7 +4825,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID列表，子网不区分加入NAT网关的转发方式",
           "example": "",
@@ -5149,7 +4861,6 @@
       "document": "UpgradeNatGateway请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关ID，例如：nat-kdm476mp",
           "example": "",
@@ -5159,7 +4870,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID，例如：vpc-kd7d06of",
           "example": "",
@@ -5169,7 +4879,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "并发连接数规格；取值为1000000、3000000、10000000，分别对应小型、中型、大型NAT网关",
           "example": "",
@@ -5206,7 +4915,6 @@
       "document": "VPC信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络的唯一ID。",
           "example": "",
@@ -5217,7 +4925,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC的名称。",
           "example": "",
@@ -5228,7 +4935,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC的CIDR。",
           "example": "",
@@ -5239,7 +4945,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区",
           "example": "",
@@ -5250,7 +4955,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC状态",
           "example": "",
@@ -5261,7 +4965,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -5272,7 +4975,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "整型私有网络ID。",
           "example": "",
@@ -5289,7 +4991,6 @@
       "document": "对等连接对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "本端VPC唯一ID",
           "example": "",
@@ -5300,7 +5001,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对端VPC唯一ID",
           "example": "",
@@ -5311,7 +5011,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本端APPID",
           "example": "",
@@ -5322,7 +5021,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对端APPID",
           "example": "",
@@ -5333,7 +5031,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对等连接唯一ID",
           "example": "",
@@ -5344,7 +5041,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对等连接名称",
           "example": "",
@@ -5355,7 +5051,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对等连接状态。pending:申请中,available:运行中,expired:已过期,rejected:已拒绝,deleted:已删除",
           "example": "",
@@ -5366,7 +5061,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本端VPC所属可用区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5377,7 +5071,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对端VPC所属可用区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5388,7 +5081,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本端Uin",
           "example": "",
@@ -5399,7 +5091,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对端Uin",
           "example": "",
@@ -5410,7 +5101,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对等连接类型",
           "example": "",
@@ -5421,7 +5111,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对等连接带宽",
           "example": "",
@@ -5432,7 +5121,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本端VPC地域",
           "example": "",
@@ -5443,7 +5131,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对端VPC地域",
           "example": "",
@@ -5454,7 +5141,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否允许删除\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5465,7 +5151,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -5482,7 +5167,6 @@
       "document": "VPC限额信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "配额类型ID",
           "example": "",
@@ -5493,7 +5177,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配额",
           "example": "",
@@ -5510,7 +5193,6 @@
       "document": "VPC占用资源",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID",
           "example": "",
@@ -5521,7 +5203,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络名称",
           "example": "",
@@ -5532,7 +5213,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络的CIDR",
           "example": "",
@@ -5543,7 +5223,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网个数",
           "example": "",
@@ -5554,7 +5233,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT个数",
           "example": "",
@@ -5565,7 +5243,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC状态",
           "example": "",
@@ -5576,7 +5253,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启监控",
           "example": "",
@@ -5587,7 +5263,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理机个数",
           "example": "",
@@ -5598,7 +5273,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用IP个数",
           "example": "",
@@ -5609,7 +5283,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡个数",
           "example": "",
@@ -5620,7 +5293,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量镜像网关个数",
           "example": "",
@@ -5631,7 +5303,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "弹性IP个数",
           "example": "",
@@ -5642,7 +5313,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关个数",
           "example": "",
@@ -5653,7 +5323,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专线通道个数",
           "example": "",
@@ -5664,7 +5333,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ssl vpn网关个数",
           "example": "",
@@ -5675,7 +5343,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对等链接个数",
           "example": "",
@@ -5686,7 +5353,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ipsec vpn网关个数",
           "example": "",
@@ -5697,7 +5363,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区",
           "example": "",
@@ -5708,7 +5373,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -5719,7 +5383,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否老专区VPC",
           "example": "",
@@ -5730,7 +5393,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云联网服务个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5741,7 +5403,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC允许创建的对等连接个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5752,7 +5413,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC允许创建的同地域的对等连接的个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5763,7 +5423,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "整型私有网络ID",
           "example": "",
@@ -5780,7 +5439,6 @@
       "document": "创建VPC下默认子网",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "子网名称",
           "example": "",
@@ -5791,7 +5449,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网的CIDR",
           "example": "",
@@ -5802,7 +5459,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网的可用区",
           "example": "",
@@ -5819,7 +5475,6 @@
       "document": "VPC视图子网信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID",
           "example": "",
@@ -5830,7 +5485,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网名称",
           "example": "",
@@ -5841,7 +5495,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网CIDR",
           "example": "",
@@ -5852,7 +5505,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网下设备个数",
           "example": "",
@@ -5863,7 +5515,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内网负载均衡个数",
           "example": "",
@@ -5874,7 +5525,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网所在可用区",
           "example": "",
@@ -5891,7 +5541,6 @@
       "document": "VPC视图信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络ID",
           "example": "",
@@ -5902,7 +5551,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络名称",
           "example": "",
@@ -5913,7 +5561,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络CIDR",
           "example": "",
@@ -5924,7 +5571,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络所在可用区",
           "example": "",
@@ -5935,7 +5581,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "外网负载均衡个数",
           "example": "",
@@ -5946,7 +5591,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "弹性公网IP个数",
           "example": "",
@@ -5957,7 +5601,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NAT网关个数",
           "example": "",
@@ -5968,7 +5611,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网列表",
           "example": "",
@@ -5985,7 +5627,6 @@
       "document": "VPN通道对象。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "通道实例ID。",
           "example": "",
@@ -5996,7 +5637,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道名称。",
           "example": "",
@@ -6007,7 +5647,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC实例ID。",
           "example": "",
@@ -6018,7 +5657,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPN网关实例ID。",
           "example": "",
@@ -6029,7 +5667,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对端网关实例ID。",
           "example": "",
@@ -6040,7 +5677,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "预共享密钥。",
           "example": "",
@@ -6051,7 +5687,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道传输协议。",
           "example": "",
@@ -6062,7 +5697,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。",
           "example": "",
@@ -6073,7 +5707,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道的生产状态",
           "example": "",
@@ -6084,7 +5717,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通道连接状态",
           "example": "",
@@ -6095,7 +5727,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SPD。",
           "example": "",
@@ -6106,7 +5737,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IKE选项。",
           "example": "",
@@ -6117,7 +5747,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPSEC选项。",
           "example": "",
@@ -6128,7 +5757,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区",
           "example": "",
@@ -6139,7 +5767,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC网段",
           "example": "",
@@ -6150,7 +5777,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC名称",
           "example": "",
@@ -6161,7 +5787,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPN网关名称",
           "example": "",
@@ -6172,7 +5797,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对端网关名称",
           "example": "",
@@ -6183,7 +5807,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPSEC VPN通道路由策略目的端地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6194,7 +5817,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IPSEC VPN通道路由策略源端地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6211,7 +5833,6 @@
       "document": "VPN网关对象。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网关实例ID。",
           "example": "",
@@ -6222,7 +5843,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC实例ID。",
           "example": "",
@@ -6233,7 +5853,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关实例名称。",
           "example": "",
@@ -6244,7 +5863,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC网段",
           "example": "",
@@ -6255,7 +5873,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC名称",
           "example": "",
@@ -6266,7 +5883,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关出带宽。",
           "example": "",
@@ -6277,7 +5893,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关实例状态",
           "example": "",
@@ -6288,7 +5903,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网关公网IP。",
           "example": "",
@@ -6299,7 +5913,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间。",
           "example": "",
@@ -6310,7 +5923,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区，如：ap-guangzhou",
           "example": "",
@@ -6321,7 +5933,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPN网关的通道数",
           "example": "",

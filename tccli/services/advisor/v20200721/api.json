@@ -26,7 +26,6 @@
       "document": "评估项信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "评估项ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -37,7 +36,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "评估项名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "云数据库（Redis）跨可用区部署",
@@ -48,7 +46,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "评估项描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "检查 Redis 实例是否跨可用区部署，如果实例未跨可用区部署，当实例出现可用区级别的灾难故障时，可能造成实例无法访问风险",
@@ -59,7 +56,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "评估项对应产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "redis",
@@ -70,7 +66,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "评估项对应产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "云数据库（Redis）",
@@ -81,7 +76,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "评估项优化建议\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "如果业务有较高容灾需求，建议采用跨可用区部署方案，提升业务可靠性，[跨可用区分布操作指引](https://cloud.tenc",
@@ -92,7 +86,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "评估项类别ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -103,7 +96,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "评估项类别名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "可靠",
@@ -114,7 +106,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "评估项风险列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"ConditionId\":178,\"Level\":2,\"LevelDesc\":\"中风险\",\"Desc\":\"Redis 实例",
@@ -131,7 +122,6 @@
       "document": "评估项警告条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "警告条件ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -142,7 +132,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "警告级别，2:中风险，3:高风险\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -153,7 +142,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "警告级别描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "中风险",
@@ -164,7 +152,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "警告条件描述",
           "example": "Redis 实例未跨可用区部署",
@@ -208,7 +195,6 @@
       "document": "DescribeTaskStrategyRisks请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "评估项ID",
           "example": "1",
@@ -218,7 +204,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量,默认值为100,最大值为200",
           "example": "10",
@@ -228,7 +213,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量,默认0",
           "example": "0",
@@ -238,7 +222,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "环境",
           "example": "\"public\"",
@@ -248,7 +231,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务类型",
           "example": "\"allTaskType\"",
@@ -326,7 +308,6 @@
       "document": "键值对",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "键名",
           "example": "aaa",
@@ -337,7 +318,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "键名对应值",
           "example": "xxx",
@@ -354,7 +334,6 @@
       "document": "风险实例字段描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "字段ID",
           "example": "InstanceState",
@@ -365,7 +344,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段名称",
           "example": "状态",
@@ -376,7 +354,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段类型, \nstring: 字符串类型，例如\"aa\"\nint: 整形，例如 111\nstringSlice : 字符串数组类型，例如[\"a\", \"b\"]\ntags: 标签类型, 例如: [{\"Key\":\"kkk\",\"Value\":\"vvv\"},{\"Key\":\"kkk2\",\"Value\":\"vvv2\"}]",
           "example": "string",
@@ -387,7 +364,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段值对应字典\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",

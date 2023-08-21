@@ -166,7 +166,6 @@
       "document": "云服务器创建工作空间 DTO",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间名称",
           "example": "xxx",
@@ -177,7 +176,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "镜像id",
           "example": "xxx",
@@ -188,7 +186,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "镜像名称",
           "example": "xxx",
@@ -199,7 +196,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云服务器登录名称",
           "example": "xxx",
@@ -210,7 +206,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云服务器登录地址",
           "example": "xxx",
@@ -221,7 +216,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "云服务器登录端口",
           "example": "xxx",
@@ -232,7 +226,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间类型",
           "example": "xxx",
@@ -243,7 +236,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间版本",
           "example": "xxx",
@@ -254,7 +246,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间资源结构",
           "example": "xxx",
@@ -265,7 +256,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "example": "xxx",
@@ -282,7 +272,6 @@
       "document": "CreateCustomizeTemplates请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属组",
           "example": "cloudstudio-devops",
@@ -292,7 +281,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "无",
@@ -330,7 +318,6 @@
       "document": "CreateWorkspaceByAgent请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "cloudstudio-devops",
@@ -340,7 +327,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "无",
@@ -432,7 +418,6 @@
       "document": "CreateWorkspaceByVersionControl请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间结构",
           "example": "xxx",
@@ -442,7 +427,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属组",
           "example": "xxx",
@@ -516,7 +500,6 @@
       "document": "模板的预置参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模板tag列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -527,7 +510,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板图标列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -538,7 +520,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -555,7 +536,6 @@
       "document": "DeleteCustomizeTemplatesById请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属组",
           "example": "cloudstudio-devops",
@@ -565,7 +545,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板ID",
           "example": "xxx",
@@ -593,7 +572,6 @@
       "document": "DescribeCustomizeTemplatesById请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属组",
           "example": "cloudstudio-devops",
@@ -603,7 +581,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板ID",
           "example": "xxx",
@@ -641,7 +618,6 @@
       "document": "DescribeCustomizeTemplatesPresets请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属组",
           "example": "cloudstudio-devops",
@@ -651,7 +627,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "空间标识",
           "example": "xxx",
@@ -689,7 +664,6 @@
       "document": "DescribeCustomizeTemplates请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属组",
           "example": "cloudstudio-devops",
@@ -727,7 +701,6 @@
       "document": "DescribeWorkspaceEnvList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属组",
           "example": "xxx",
@@ -855,7 +828,6 @@
       "document": "DescribeWorkspaceStatusList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "xxx",
           "example": "xxx",
@@ -893,7 +865,6 @@
       "document": "DescribeWorkspaceStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属组",
           "example": "cloudstudio-devops",
@@ -903,7 +874,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "空间标识",
           "example": "xxx",
@@ -941,7 +911,6 @@
       "document": "可用镜像模板列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "镜像模板ID",
           "example": "46749",
@@ -952,7 +921,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "镜像模板名称",
           "example": "All in One",
@@ -963,7 +931,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Tag时间",
           "example": "2022.2.1",
@@ -974,7 +941,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "example": "支持 Java、Go、Python 等多种语言",
@@ -985,7 +951,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "中文描述",
           "example": "支持 Java、Go、Python 等多种语言",
@@ -996,7 +961,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图标地址",
           "example": "https://cs-res.codehub.cn/workspace/assets/icons/all-in-one.svg",
@@ -1007,7 +971,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建人",
           "example": "admin",
@@ -1018,7 +981,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "访问状态",
           "example": "PUBLIC",
@@ -1029,7 +991,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本",
           "example": "2",
@@ -1040,7 +1001,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分类",
           "example": "99999",
@@ -1057,7 +1017,6 @@
       "document": "ModifyCustomizeTemplateVersionControl请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属组",
           "example": "cloudstudio-devops",
@@ -1067,7 +1026,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板ID",
           "example": "1",
@@ -1077,7 +1035,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "仓库地址",
           "example": "xxx",
@@ -1087,7 +1044,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代码仓库分支/标签",
           "example": "xxx",
@@ -1097,7 +1053,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代码仓库 ref 类型",
           "example": "xxx",
@@ -1135,7 +1090,6 @@
       "document": "ModifyCustomizeTemplatesFullById请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属组",
           "example": "cloudstudio-devops",
@@ -1145,7 +1099,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板ID",
           "example": "xxx",
@@ -1155,7 +1108,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义模板参数",
           "example": "无",
@@ -1193,7 +1145,6 @@
       "document": "ModifyCustomizeTemplatesPartById请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属组",
           "example": "cloudstudio-devops",
@@ -1203,7 +1154,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板ID",
           "example": "xxx",
@@ -1213,7 +1163,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义模板Patched参数",
           "example": "无",
@@ -1251,7 +1200,6 @@
       "document": "ModifyWorkspaceAttributes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属组",
           "example": "cloudstudio-devops",
@@ -1261,7 +1209,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间ID",
           "example": "xxx",
@@ -1271,7 +1218,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间名称",
           "example": "xxx",
@@ -1281,7 +1227,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间描述",
           "example": "xxx",
@@ -1291,7 +1236,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "xxx",
           "example": "xxx",
@@ -1319,7 +1263,6 @@
       "document": "RecoverWorkspace请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "cloudstudio-devops",
@@ -1329,7 +1272,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "xxx",
@@ -1357,7 +1299,6 @@
       "document": "RemoveWorkspace请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "cloudstudio-devops",
@@ -1367,7 +1308,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "xxx",
@@ -1377,7 +1317,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否强制，true或者false",
           "example": "xxx",
@@ -1405,7 +1344,6 @@
       "document": "RunWorkspace请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "空间标识",
           "example": "xx",
@@ -1415,7 +1353,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属组",
           "example": "xxx",
@@ -1443,7 +1380,6 @@
       "document": "StopWorkspace请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "空间标识",
           "example": "xxx",
@@ -1453,7 +1389,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户所属组",
           "example": "xxxx",
@@ -1463,7 +1398,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否强制终止，true或者false",
           "example": "true",
@@ -1491,7 +1425,6 @@
       "document": "用户自定义模板参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://cs-res.codehub.cn/vscode/go.svg",
@@ -1502,7 +1435,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板图标地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Go 1.16.7",
@@ -1513,7 +1445,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Go",
@@ -1524,7 +1455,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板来源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "jqfcxx",
@@ -1535,7 +1465,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -1546,7 +1475,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板仓库类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CUSTOM",
@@ -1557,7 +1485,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
@@ -1574,7 +1501,6 @@
       "document": "用户自定义模板Patched参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模板来源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "jqfcxx",
@@ -1585,7 +1511,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://cs-res.codehub.cn/vscode/go.svg",
@@ -1596,7 +1521,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板图标地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Go 1.16.7",
@@ -1607,7 +1531,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -1618,7 +1541,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Go",
@@ -1635,7 +1557,6 @@
       "document": "用户信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户ID",
           "example": "xxx",
@@ -1646,7 +1567,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户验证信息",
           "example": "xxx",
@@ -1657,7 +1577,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "头像地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -1668,7 +1587,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "介绍\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -1679,7 +1597,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状况",
           "example": "0",
@@ -1696,7 +1613,6 @@
       "document": "用户验证信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "团队名称",
           "example": "programmer-frank",
@@ -1707,7 +1623,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名",
           "example": "cEbpeXHnQI",
@@ -1718,7 +1633,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "昵称",
           "example": "Programmer_frank",
@@ -1729,7 +1643,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为管理员",
           "example": "false",
@@ -1740,7 +1653,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "xxx\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
@@ -1757,7 +1669,6 @@
       "document": "工作空间结构",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间名称",
           "example": "xxx",
@@ -1768,7 +1679,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代码来源类型",
           "example": "xxx",
@@ -1779,7 +1689,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "镜像id",
           "example": "xxx",
@@ -1790,7 +1699,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "镜像名称",
           "example": "xxx",
@@ -1801,7 +1709,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "example": "xxx",
@@ -1812,7 +1719,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间版本",
           "example": "xxx",
@@ -1823,7 +1729,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间资源结构",
           "example": "xxx",
@@ -1834,7 +1739,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代码仓库地址",
           "example": "xxx",
@@ -1845,7 +1749,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代码Ref是分支还是标签",
           "example": "xxx",
@@ -1856,7 +1759,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代码Ref地址",
           "example": "xxx",
@@ -1867,7 +1769,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照Uid",
           "example": "xxx",
@@ -1878,7 +1779,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板id",
           "example": "xxx",
@@ -1889,7 +1789,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "价格id",
           "example": "xxx",
@@ -1900,7 +1799,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "初始化状态",
           "example": "xxx",
@@ -1911,7 +1809,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述",
           "example": "xxx",
@@ -1964,7 +1861,6 @@
       "document": "工作空间基本信息描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间创建时间",
           "example": "null",
@@ -1975,7 +1871,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "空间key",
           "example": "null",
@@ -1986,7 +1881,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作空间id",
           "example": "null",
@@ -2003,7 +1897,6 @@
       "document": "工作空间资源结构",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "CPU核心数",
           "example": "0",
@@ -2014,7 +1907,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一般内存",
           "example": "0",
@@ -2025,7 +1917,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "系统存储",
           "example": "0",
@@ -2036,7 +1927,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户存储",
           "example": "0",
@@ -2047,7 +1937,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "GPU数",
           "example": "0",
@@ -2058,7 +1947,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "GPU内存",
           "example": "0",
@@ -2075,7 +1963,6 @@
       "document": "用户空间共享信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "共享或不共享状态",
           "example": "false",
@@ -2086,7 +1973,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否与我共享\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -2097,7 +1983,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始共享的时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
@@ -2108,7 +1993,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "停止共享的时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
@@ -2119,7 +2003,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "停止共享的时间",
           "example": "[]",
@@ -2136,7 +2019,6 @@
       "document": "获取用户工作空间返回信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "空间ID",
           "example": "xxx",
@@ -2147,7 +2029,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "空间名称",
           "example": "xxx",
@@ -2158,7 +2039,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属人",
           "example": "xxx",
@@ -2169,7 +2049,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "空间标识",
           "example": "xxx",
@@ -2180,7 +2059,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态",
           "example": "xxx",
@@ -2191,7 +2069,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后操作时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -2202,7 +2079,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -2213,7 +2089,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "共享状态",
           "example": "xxx",
@@ -2224,7 +2099,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "空间类型",
           "example": "xxx",
@@ -2235,7 +2109,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -2246,7 +2119,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "空间版本",
           "example": "xxx",
@@ -2257,7 +2129,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图标地址",
           "example": "xxx",
@@ -2268,7 +2139,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -2279,7 +2149,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本控制地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -2290,7 +2159,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本控制描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -2301,7 +2169,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本控制引用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -2312,7 +2179,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本控制引用类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -2323,7 +2189,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本控制类型",
           "example": "xxx",
@@ -2334,7 +2199,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -2345,7 +2209,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "快照ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -2356,7 +2219,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -2367,7 +2229,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CPU数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
@@ -2378,7 +2239,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",

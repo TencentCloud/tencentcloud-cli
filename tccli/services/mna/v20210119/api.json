@@ -103,7 +103,6 @@
       "document": "AddDevice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "新建设备的名称",
           "example": "dev1",
@@ -113,7 +112,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新建设备的备注",
           "example": "mobile",
@@ -123,7 +121,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新建设备的base64密钥字符串，非必选，如果不填写则由系统自动生成",
           "example": "dasdfrfwer32e4r",
@@ -133,7 +130,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否设置预置密钥",
           "example": "true",
@@ -191,7 +187,6 @@
       "document": "接口能力扩展，用于填充电信的加速Token，并为未来参数提供兼容空间",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "电信鉴权的Token。要加速的电信手机终端访问 http://qos.189.cn/qos-api/getToken?appid=TencentCloud 页面，获取返回结果中result的值",
           "example": "177cc9c4ab0-7b93546e8a7a89c7716b38139af3ba6b580045e9",
@@ -202,7 +197,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "终端所处在的省份，建议不填写由服务端自动获取，若需填写请填写带有省、市、自治区、特别行政区等后缀的省份中文全称",
           "example": "广东省",
@@ -219,7 +213,6 @@
       "document": "加速策略关键数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "测速数据",
           "example": "略",
@@ -230,7 +223,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户期望最低门限",
           "example": "略",
@@ -241,7 +233,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户期望最高门限",
           "example": "略",
@@ -285,7 +276,6 @@
       "document": "CreateQos请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "加速业务源地址信息，SrcIpv6和（SrcIpv4+SrcPublicIpv4）二选一，目前Ipv6不可用，全部填写以Ipv4参数为准。",
           "example": "{\"SrcIpv4\": \"192.168.2.11\", \"SrcPublicIpv4\": \"10.22.33.14\"}",
@@ -295,7 +285,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加速业务目标地址信息",
           "example": "{\"DestIpv4\": \"128.22.36.40\"}",
@@ -305,7 +294,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加速套餐\nT100K：时延性保障 + 带宽保障上下行保障 100kbps\nT200K：时延性保障 + 带宽保障上下行保障 200kbps\nT400K：时延性保障 + 带宽保障上下行保障  400kbps\nBD1M：带宽型保障 + 下行带宽保障1Mbps\nBD2M：带宽型保障 + 下行带宽保障2Mbps\nBD4M：带宽型保障 + 下行带宽保障4Mbps\nBU1M：带宽型保障 + 上行带宽保障1Mbps\nBU2M：带宽型保障 + 上行带宽保障2Mbps\nBU4M：带宽型保障 + 上行带宽保障4Mbps",
           "example": "T100K",
@@ -315,7 +303,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "申请加速的设备信息，包括运营商，操作系统，设备唯一标识等。",
           "example": "{\"OS\": 1, \"Vendor\": 2, \"IMEI\": \"357315094232545\"}",
@@ -325,7 +312,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "期望加速时长（单位分钟），默认值30分钟",
           "example": "30",
@@ -335,7 +321,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接口能力扩展，如果是电信用户，必须填充CTCC Token字段",
           "example": "{ \"CTCCToken\" : \"177cc9c4ab0-7b93546\", \"Province\": \"Guangdong\" }",
@@ -345,7 +330,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用模板ID",
           "example": "app-1abcedf",
@@ -355,7 +339,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "针对特殊协议进行加速\n1. IP （默认值）\n2. UDP\n3. TCP",
           "example": "1",
@@ -365,7 +348,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "加速策略关键数据",
           "example": "{\"NetworkData\":{\"RTT\":[30,25,51],\"Loss\":0.02,\"Jitter\":50.5,\"Inte",
@@ -375,7 +357,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "签名",
           "example": "af4764571f217a9bd2c50d8e97c54239bcacb15c835100e59fda84cb33603d14",
@@ -423,7 +404,6 @@
       "document": "DeleteDevice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "删除设备的唯一ID",
           "example": "\"mna-xxx\"",
@@ -451,7 +431,6 @@
       "document": "DeleteQos请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "单次加速唯一 Id",
           "example": "ZWViYzAwNzJmNjRkNGExMDgyMjkzZTY0YzU0ZjZhNDY=-1-0",
@@ -499,7 +478,6 @@
       "document": "DescribeQos请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "单次加速唯一 Id",
           "example": "ZWViYzAwNzJmNjRkNGExMDgyMjkzZTY0YzU0ZjZhNDY=-1-0",
@@ -577,7 +555,6 @@
       "document": "移动网络加速目标地址结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "加速业务目标 ip 地址数组",
           "example": "[10.1.135.152, 10.1.133.14]",
@@ -594,7 +571,6 @@
       "document": "设备的基本信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一ID",
           "example": "\"mna-xxx\"",
@@ -605,7 +581,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备名称",
           "example": "\"xxx\"",
@@ -616,7 +591,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备创建的时间，单位：ms",
           "example": "169043203113091072",
@@ -627,7 +601,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备最后在线时间，单位：ms",
           "example": "169043203113091072",
@@ -638,7 +611,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备的备注",
           "example": "\"xxx\"",
@@ -711,7 +683,6 @@
       "document": "设备信息结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "运营商\n1：移动 \n2：电信\n3：联通\n4：广电\n99：其他",
           "example": "1",
@@ -722,7 +693,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备操作系统：\n1：Android\n2： IOS\n99：其他",
           "example": "1",
@@ -733,7 +703,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备唯一标识\nIOS 填写 IDFV\nAndroid 填写 IMEI",
           "example": "357315094232545",
@@ -744,7 +713,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户手机号码",
           "example": "18649853764",
@@ -755,7 +723,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "无线信息\n1：4G\n2：5G\n3：WIFI\n99：其他",
           "example": "1",
@@ -918,7 +885,6 @@
       "document": "用户期望门限",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "期望发起加速的时延阈值",
           "example": "60",
@@ -929,7 +895,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "期望发起加速的丢包率阈值",
           "example": "0.02",
@@ -940,7 +905,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "期望发起加速的抖动阈值",
           "example": "60",
@@ -1391,7 +1355,6 @@
       "document": "网络详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "流量值（bit）",
           "example": "98",
@@ -1402,7 +1365,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间点，单位：s",
           "example": "1690424186",
@@ -1419,7 +1381,6 @@
       "document": "测速数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "时延数组，最大长度30",
           "example": "[10,20,30]",
@@ -1430,7 +1391,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "丢包率",
           "example": "0.02",
@@ -1441,7 +1401,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "抖动",
           "example": "50.5",
@@ -1452,7 +1411,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "10位秒级时间戳",
           "example": "1644891913",
@@ -1469,7 +1427,6 @@
       "document": "移动网络加速源地址结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户私网 ipv4 地址",
           "example": "10.1.135.152",
@@ -1480,7 +1437,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户公网 ipv4 地址",
           "example": "223.104.63.10",
@@ -1491,7 +1447,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户 ipv6 地址",
           "example": "1050:0:0:0:5:600:300c:326b",
@@ -1562,7 +1517,6 @@
       "document": "更新设备网络状态信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "网络类型：\n0:数据\n1:Wi-Fi",
           "example": "1",
@@ -1573,7 +1527,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "启用/禁用",
           "example": "true",
@@ -1584,7 +1537,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上行限速：bit",
           "example": "10000",
@@ -1595,7 +1547,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下行限速：bit",
           "example": "10000",
@@ -1606,7 +1557,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网卡名",
           "example": "\"xxx\"",

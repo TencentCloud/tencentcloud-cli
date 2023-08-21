@@ -180,7 +180,6 @@
       "document": "ApplyBlackListData请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名，AiApi",
           "example": "AiApi",
           "member": "string",
@@ -189,7 +188,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名，ApplyBlackListData",
           "example": "ApplyBlackListData",
           "member": "string",
@@ -198,7 +196,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "黑名单列表",
           "example": "[{         \"BlackType\": \"xx\",          \"BlackValue\": \"xx\",     ]",
           "member": "BlackListData",
@@ -225,7 +222,6 @@
       "document": "ApplyBlackList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名，本接口取值：account",
           "member": "string",
           "name": "Module",
@@ -233,7 +229,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名，本接口取值：ApplyBlackList",
           "member": "string",
           "name": "Operation",
@@ -241,7 +236,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "黑名单列表",
           "member": "SingleBlackApply",
           "name": "BlackList",
@@ -249,7 +243,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "实例ID，不传默认为系统分配的初始实例",
           "member": "string",
           "name": "InstId",
@@ -275,7 +268,6 @@
       "document": "ApplyCreditAudit请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名，本接口取值：Credit",
           "member": "string",
           "name": "Module",
@@ -283,7 +275,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名，本接口取值：Apply",
           "member": "string",
           "name": "Operation",
@@ -291,7 +282,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例ID",
           "member": "string",
           "name": "InstId",
@@ -299,7 +289,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "产品ID，形如P******。",
           "member": "string",
           "name": "ProductId",
@@ -307,7 +296,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "信审任务ID，同一天内，同一InstId下，同一CaseId只能调用一次。",
           "member": "string",
           "name": "CaseId",
@@ -315,7 +303,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "回调地址",
           "member": "string",
           "name": "CallbackUrl",
@@ -323,7 +310,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "JSON格式的业务字段。",
           "member": "string",
           "name": "Data",
@@ -356,7 +342,6 @@
       "document": "黑名单申请信息",
       "members": [
         {
-          "default": "",
           "document": "黑名单类型，01代表手机号码。",
           "example": "01",
           "member": "string",
@@ -366,7 +351,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "操作类型，A为新增，D为删除。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "A",
           "member": "string",
@@ -376,7 +360,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "黑名单值，BlackType为01时，填写11位手机号码。",
           "example": "13111111111",
           "member": "string",
@@ -386,7 +369,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "备注。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "测试",
           "member": "string",
@@ -396,7 +378,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "黑名单生效截止日期，格式为YYYY-MM-DD，不填默认为永久。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-12-23",
           "member": "date",
@@ -406,7 +387,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "黑名单加入日期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-12-23",
           "member": "date",
@@ -416,7 +396,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "0-生效 1-失效",
           "example": "0",
           "member": "string",
@@ -432,7 +411,6 @@
       "document": "机器人文件结构",
       "members": [
         {
-          "default": "",
           "document": "文件类型 A 拨打结果 T 记录详情",
           "member": "string",
           "name": "FileType",
@@ -441,7 +419,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件地址",
           "member": "string",
           "name": "CosUrl",
@@ -456,7 +433,6 @@
       "document": "机器人对话流信息",
       "members": [
         {
-          "default": "",
           "document": "对话流ID",
           "member": "string",
           "name": "BotFlowId",
@@ -465,7 +441,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "对话流名称",
           "member": "string",
           "name": "BotFlowName",
@@ -474,7 +449,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "号码组信息列表",
           "member": "PhonePool",
           "name": "PhonePoolList",
@@ -489,7 +463,6 @@
       "document": "机器人列表",
       "members": [
         {
-          "default": "",
           "document": "机器人ID",
           "member": "string",
           "name": "BotId",
@@ -498,7 +471,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "机器人名称",
           "member": "string",
           "name": "BotName",
@@ -507,7 +479,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "机器人状态。0-停用 1-启用 2-待审核",
           "member": "string",
           "name": "BotStatus",
@@ -522,7 +493,6 @@
       "document": "作业信息",
       "members": [
         {
-          "default": "",
           "document": "业务日期",
           "example": "2020-12-23",
           "member": "date",
@@ -532,7 +502,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "状态 WAIT：待执行；DOING：执行中；ERROR：执行错误；DONE：已完成；",
           "example": "DOWN",
           "member": "string",
@@ -542,7 +511,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "成功总数",
           "example": "100",
           "member": "int64",
@@ -552,7 +520,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件名称",
           "example": "xxx",
           "member": "string",
@@ -562,7 +529,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件类型 I：呼叫文件 R：停拨文件",
           "example": "i",
           "member": "string",
@@ -572,7 +538,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "作业唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "090000",
           "member": "string",
@@ -588,7 +553,6 @@
       "document": "产品拨打时间集合",
       "members": [
         {
-          "default": "",
           "document": "周一",
           "example": "{}",
           "member": "CallTimeInfo",
@@ -598,7 +562,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "周二",
           "example": "{}",
           "member": "CallTimeInfo",
@@ -608,7 +571,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "周三",
           "example": "{}",
           "member": "CallTimeInfo",
@@ -618,7 +580,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "周四",
           "example": "{}",
           "member": "CallTimeInfo",
@@ -628,7 +589,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "周五",
           "example": "{}",
           "member": "CallTimeInfo",
@@ -638,7 +598,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "周六",
           "example": "{}",
           "member": "CallTimeInfo",
@@ -648,7 +607,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "周日",
           "example": "{}",
           "member": "CallTimeInfo",
@@ -664,7 +622,6 @@
       "document": "产品拨打时间信息",
       "members": [
         {
-          "default": "",
           "document": "产品开始拨打时间，HHmmss格式,默认090000",
           "example": "090000",
           "member": "string",
@@ -674,7 +631,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "产品结束拨打时间，HHmmss格式.默认200000",
           "example": "200000",
           "member": "string",
@@ -690,7 +646,6 @@
       "document": "ChangeBotCallStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名。默认值（固定）：AiApi",
           "example": "AiApi",
           "member": "string",
@@ -699,7 +654,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名。默认值（固定）：ChangeBotCallStatus",
           "example": "QueryCallList",
           "member": "string",
@@ -708,7 +662,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "作业变更状态\nSUSPEND：暂停；EXECUTE：恢复；",
           "example": "SUSPEND",
           "member": "string",
@@ -717,7 +670,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "作业唯一标识",
           "example": "090000",
           "member": "string",
@@ -726,7 +678,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "业务日期",
           "example": "2020-12-23",
           "member": "date",
@@ -735,7 +686,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务ID，二者必填一个",
           "example": "yyy",
           "member": "string",
@@ -744,7 +694,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务名称，二者必填一个",
           "example": "xxx",
           "member": "string",
@@ -771,7 +720,6 @@
       "document": "ChangeBotTaskStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名。默认值（固定）：AiApi",
           "example": "AiApi",
           "member": "string",
@@ -780,7 +728,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名。默认值（固定）：ChangeBotTaskStatus",
           "example": "QueryCallList",
           "member": "string",
@@ -789,7 +736,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "作业变更状态\nSUSPEND：暂停；EXECUTE：恢复；",
           "example": "SUSPEND",
           "member": "string",
@@ -798,7 +744,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务ID，二者必填一个",
           "example": "yyy",
           "member": "string",
@@ -807,7 +752,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务名称，二者必填一个",
           "example": "xxx",
           "member": "string",
@@ -834,7 +778,6 @@
       "document": "CreateBotTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名。默认值（固定）：AiApi",
           "example": "AiApi",
           "member": "string",
@@ -843,7 +786,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名。默认值（固定）：CreateTask",
           "example": "CreateTask",
           "member": "string",
@@ -852,7 +794,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务名称",
           "example": "xx",
           "member": "string",
@@ -861,7 +802,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "对话流ID",
           "example": "123",
           "member": "string",
@@ -870,7 +810,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "是否禁止拨打，默认Y",
           "example": "Y",
           "member": "string",
@@ -879,7 +818,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "拨打线路集合",
           "example": "1",
           "member": "string",
@@ -888,7 +826,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "产品拨打时间集合",
           "example": "{}",
           "member": "CallTimeDict",
@@ -897,7 +834,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "禁止拨打起始时间。默认130000",
           "example": "130000",
           "member": "string",
@@ -906,7 +842,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "禁止拨打结束时间。默认140000",
           "example": "140000",
           "member": "string",
@@ -915,7 +850,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "重播方式，NON：未接通、LABEL：意向分级，可多选，用竖线分隔：NON|LABEL",
           "example": "NON",
           "member": "string",
@@ -924,7 +858,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "重播值集合，A：强意向、B：中意向、C：低意向、D：无意向、E：在忙、F：未接通、G：无效号码，可多选，用竖线分隔：A|B|C|D|E|F|G",
           "example": "A",
           "member": "string",
@@ -933,7 +866,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "继续拨打次数",
           "example": "1",
           "member": "int64",
@@ -942,7 +874,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "拨打间隔",
           "example": "10",
           "member": "int64",
@@ -951,7 +882,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "未接通引用短信签名ID",
           "example": "Test",
           "member": "string",
@@ -960,7 +890,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "未接通引用短信模板ID",
           "example": "XXX",
           "member": "string",
@@ -969,7 +898,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "拨打方式。NORMAL - 正常拨打；TIMER - 定时拨打",
           "example": "NORMAL",
           "member": "string",
@@ -978,7 +906,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "拨打开始日期。CallType=TIMER时有值，yyyy-MM-dd",
           "example": "2020-12-23",
           "member": "string",
@@ -987,7 +914,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "拨打结束日期。CallType=PERIOD 时有值，yyyy-MM-dd",
           "example": "2020-12-23",
           "member": "string",
@@ -1023,7 +949,6 @@
       "document": "DescribeBotFlow请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名。默认值（固定）：AiApi",
           "member": "string",
           "name": "Module",
@@ -1031,7 +956,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名。默认值（固定）：GetFlow",
           "member": "string",
           "name": "Operation",
@@ -1078,7 +1002,6 @@
       "document": "DescribeCreditResult请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名，本接口取值：Credit",
           "member": "string",
           "name": "Module",
@@ -1086,7 +1009,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名，本接口取值：Get",
           "member": "string",
           "name": "Operation",
@@ -1094,7 +1016,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例ID",
           "member": "string",
           "name": "InstId",
@@ -1102,7 +1023,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "产品ID，形如P******。",
           "member": "string",
           "name": "ProductId",
@@ -1110,7 +1030,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "信审任务ID",
           "member": "string",
           "name": "CaseId",
@@ -1118,7 +1037,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "请求日期，格式为YYYY-MM-DD",
           "member": "date",
           "name": "RequestDate",
@@ -1186,7 +1104,6 @@
       "document": "DescribeFileModel请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名。默认值（固定）：AiApi",
           "member": "string",
           "name": "Module",
@@ -1194,7 +1111,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名。默认值（固定）：DescribeFileModel",
           "member": "string",
           "name": "Operation",
@@ -1202,7 +1118,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "模板文件类型，输入input，停拨stop",
           "member": "string",
           "name": "FileType",
@@ -1210,7 +1125,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务ID，二者必填一个",
           "member": "string",
           "name": "BotId",
@@ -1218,7 +1132,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务名称，二者必填一个",
           "member": "string",
           "name": "BotName",
@@ -1251,7 +1164,6 @@
       "document": "DescribeRecords请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名，本接口取值：Record",
           "member": "string",
           "name": "Module",
@@ -1259,7 +1171,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名，本接口取值：List",
           "member": "string",
           "name": "Operation",
@@ -1267,7 +1178,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "产品ID",
           "member": "string",
           "name": "ProductId",
@@ -1275,7 +1185,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "案件编号",
           "member": "string",
           "name": "AccountNum",
@@ -1283,7 +1192,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "被叫号码",
           "member": "string",
           "name": "CalledPhone",
@@ -1291,7 +1199,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询起始日期，格式为YYYY-MM-DD",
           "member": "date",
           "name": "StartBizDate",
@@ -1299,7 +1206,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询结束日期，格式为YYYY-MM-DD",
           "member": "date",
           "name": "EndBizDate",
@@ -1307,7 +1213,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "分页参数，索引，默认为0",
           "member": "string",
           "name": "Offset",
@@ -1315,7 +1220,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "分页参数，页长，默认为20",
           "member": "string",
           "name": "Limit",
@@ -1323,7 +1227,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例ID，不传默认为系统分配的初始实例",
           "member": "string",
           "name": "InstId",
@@ -1363,7 +1266,6 @@
       "document": "DescribeTaskStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名，本接口取值：Task",
           "member": "string",
           "name": "Module",
@@ -1371,7 +1273,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名，本接口取值：DescribeTaskStatus",
           "member": "string",
           "name": "Operation",
@@ -1379,7 +1280,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务ID，\"上传文件\"接口返回的DataResId，形如abc-xyz123",
           "member": "string",
           "name": "TaskId",
@@ -1387,7 +1287,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例ID，不传默认为系统分配的初始实例。",
           "member": "string",
           "name": "InstId",
@@ -1434,7 +1333,6 @@
       "document": "DownloadBotRecord请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块：AiApi",
           "member": "string",
           "name": "Module",
@@ -1442,7 +1340,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作：DownloadRecord",
           "member": "string",
           "name": "Operation",
@@ -1450,7 +1347,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "业务日期",
           "member": "date",
           "name": "BizDate",
@@ -1490,7 +1386,6 @@
       "document": "DownloadDialogueText请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名，本接口取值：Report",
           "member": "string",
           "name": "Module",
@@ -1498,7 +1393,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名，本接口取值：DownloadTextReport",
           "member": "string",
           "name": "Operation",
@@ -1506,7 +1400,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "报告日期，格式为YYYY-MM-DD",
           "member": "date",
           "name": "ReportDate",
@@ -1514,7 +1407,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例ID",
           "member": "string",
           "name": "InstId",
@@ -1547,7 +1439,6 @@
       "document": "DownloadRecordList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名，本接口取值：Record",
           "member": "string",
           "name": "Module",
@@ -1555,7 +1446,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名，本接口取值：DownloadList",
           "member": "string",
           "name": "Operation",
@@ -1563,7 +1453,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "录音日期，格式为YYYY-MM-DD",
           "member": "date",
           "name": "BizDate",
@@ -1571,7 +1460,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例ID",
           "member": "string",
           "name": "InstId",
@@ -1604,7 +1492,6 @@
       "document": "DownloadReport请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名，本接口取值：Report",
           "member": "string",
           "name": "Module",
@@ -1612,7 +1499,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名，本接口取值：DownloadReport",
           "member": "string",
           "name": "Operation",
@@ -1620,7 +1506,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "报告日期，格式为YYYY-MM-DD",
           "member": "date",
           "name": "ReportDate",
@@ -1628,7 +1513,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例ID，不传默认为系统分配的初始实例。",
           "member": "string",
           "name": "InstId",
@@ -1696,7 +1580,6 @@
       "document": "ExportBotData请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名。默认值（固定）：AiApi",
           "member": "string",
           "name": "Module",
@@ -1704,7 +1587,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名。默认值（固定）：ExportBotData",
           "member": "string",
           "name": "Operation",
@@ -1712,7 +1594,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "业务日期。YYYY-MM-DD",
           "member": "date",
           "name": "BizDate",
@@ -1720,7 +1601,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务ID，二者必填一个",
           "member": "string",
           "name": "BotId",
@@ -1728,7 +1608,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务名称，二者必填一个",
           "member": "string",
           "name": "BotName",
@@ -1761,7 +1640,6 @@
       "document": "号码组信息",
       "members": [
         {
-          "default": "",
           "document": "号码组ID",
           "member": "string",
           "name": "PoolId",
@@ -1770,7 +1648,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "号码组名称",
           "member": "string",
           "name": "PoolName",
@@ -1785,7 +1662,6 @@
       "document": "QueryProducts接口对应数据结构。产品对应的相关信息。",
       "members": [
         {
-          "default": "",
           "document": "产品Id",
           "member": "string",
           "name": "ProductId",
@@ -1794,7 +1670,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "产品名称",
           "member": "string",
           "name": "ProductName",
@@ -1803,7 +1678,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ProductCode",
@@ -1812,7 +1686,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "产品状态 0 禁用 1 启用\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "int64",
           "name": "ProductStatus",
@@ -1821,7 +1694,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "场景类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "SceneType",
@@ -1836,7 +1708,6 @@
       "document": "QueryBlackListData请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块:AiApi",
           "example": "AiApi",
           "member": "string",
@@ -1845,7 +1716,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作:QueryBlackListData",
           "example": "QueryBlackListData",
           "member": "string",
@@ -1854,7 +1724,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "页码",
           "example": "1",
           "member": "int64",
@@ -1863,7 +1732,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "每页数量",
           "example": "20",
           "member": "int64",
@@ -1872,7 +1740,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "开始日期",
           "example": "2020-12-12",
           "member": "date",
@@ -1881,7 +1748,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结束日期",
           "example": "2020-12-23",
           "member": "date",
@@ -1890,7 +1756,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "电话号码、手机",
           "example": "13111111111",
           "member": "string",
@@ -1935,7 +1800,6 @@
       "document": "QueryBotList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名：AiApi",
           "member": "string",
           "name": "Module",
@@ -1943,7 +1807,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名：QueryBotList",
           "member": "string",
           "name": "Operation",
@@ -1976,7 +1839,6 @@
       "document": "QueryCallList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名。默认值（固定）：AiApi",
           "example": "AiApi",
           "member": "string",
@@ -1985,7 +1847,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名。默认值（固定）：QueryCallList",
           "example": "QueryCallList",
           "member": "string",
@@ -1994,7 +1855,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "业务日期",
           "example": "2020-11-22",
           "member": "date",
@@ -2003,7 +1863,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务ID，二者必填一个",
           "example": "yyy",
           "member": "string",
@@ -2012,7 +1871,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务名称，二者必填一个",
           "example": "xxx",
           "member": "string",
@@ -2021,7 +1879,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "通过API或平台上传的文件完整名称",
           "example": "A.xlsx",
           "member": "string",
@@ -2057,7 +1914,6 @@
       "document": "QueryInstantData请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名，本接口取值：Data",
           "member": "string",
           "name": "Module",
@@ -2065,7 +1921,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名，本接口取值：Query",
           "member": "string",
           "name": "Operation",
@@ -2073,7 +1928,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "产品ID",
           "member": "string",
           "name": "ProductId",
@@ -2081,7 +1935,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例ID，不传默认为系统分配的初始实例",
           "member": "string",
           "name": "InstanceId",
@@ -2089,7 +1942,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询类型：callRecord 通话记录",
           "member": "string",
           "name": "QueryModel",
@@ -2097,7 +1949,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "查询参数",
           "member": "string",
           "name": "Data",
@@ -2137,7 +1988,6 @@
       "document": "QueryProducts请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名。默认值（固定）：Product",
           "member": "string",
           "name": "Module",
@@ -2145,7 +1995,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名。默认值（固定）：QueryProducts",
           "member": "string",
           "name": "Operation",
@@ -2153,7 +2002,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例Id。",
           "member": "string",
           "name": "InstanceId",
@@ -2186,7 +2034,6 @@
       "document": "QueryRecordList请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名。AiApi",
           "member": "string",
           "name": "Module",
@@ -2194,7 +2041,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名。QueryRecordList",
           "member": "string",
           "name": "Operation",
@@ -2202,7 +2048,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "偏移值",
           "member": "int64",
           "name": "Offset",
@@ -2210,7 +2055,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "偏移位移，最大20",
           "member": "int64",
           "name": "Limit",
@@ -2218,7 +2062,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "任务ID，二者必填一个",
           "member": "string",
           "name": "BotId",
@@ -2226,7 +2069,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务名称，二者必填一个",
           "member": "string",
           "name": "BotName",
@@ -2234,7 +2076,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "被叫号码",
           "member": "string",
           "name": "CalledPhone",
@@ -2242,7 +2083,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "开始日期",
           "member": "date",
           "name": "StartBizDate",
@@ -2250,7 +2090,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "结束日期",
           "member": "date",
           "name": "EndBizDate",
@@ -2290,7 +2129,6 @@
       "document": "录音文件详情",
       "members": [
         {
-          "default": "",
           "document": "任务Id",
           "example": "xxx",
           "member": "string",
@@ -2300,7 +2138,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务名称",
           "example": "ab",
           "member": "string",
@@ -2310,7 +2147,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "任务日期",
           "example": "2020-12-23",
           "member": "date",
@@ -2320,7 +2156,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "被叫号码",
           "example": "13111111111",
           "member": "string",
@@ -2330,7 +2165,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "开始通话时间",
           "example": "2020-12-23 20:11:22",
           "member": "datetime",
@@ -2340,7 +2174,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "通话时长",
           "example": "20",
           "member": "int64",
@@ -2350,7 +2183,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "录音文件地址",
           "example": "http://123/xxx",
           "member": "string",
@@ -2360,7 +2192,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "对话日志。JSON格式",
           "example": "\"\"",
           "member": "string",
@@ -2370,7 +2201,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "录音文件名",
           "example": "test.zip",
           "member": "string",
@@ -2386,7 +2216,6 @@
       "document": "黑名单申请信息",
       "members": [
         {
-          "default": "",
           "document": "黑名单类型，01代表手机号码。",
           "member": "string",
           "name": "BlackType",
@@ -2395,7 +2224,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "操作类型，A为新增，D为删除。",
           "member": "string",
           "name": "OperationType",
@@ -2404,7 +2232,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "黑名单值，BlackType为01时，填写11位手机号码。",
           "member": "string",
           "name": "BlackValue",
@@ -2413,7 +2240,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "备注。",
           "member": "string",
           "name": "BlackDescription",
@@ -2422,7 +2248,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "黑名单生效截止日期，格式为YYYY-MM-DD，不填默认为永久。",
           "member": "date",
           "name": "BlackValidDate",
@@ -2437,7 +2262,6 @@
       "document": "录音信息",
       "members": [
         {
-          "default": "",
           "document": "案件编号。",
           "member": "string",
           "name": "AccountNum",
@@ -2446,7 +2270,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "外呼日期。",
           "member": "date",
           "name": "BizDate",
@@ -2455,7 +2278,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "开始呼叫时间。",
           "member": "datetime",
           "name": "CallStartTime",
@@ -2464,7 +2286,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "主叫号码。",
           "member": "string",
           "name": "CallerPhone",
@@ -2473,7 +2294,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "呼叫方向，O为呼出，I为呼入。",
           "member": "string",
           "name": "Direction",
@@ -2482,7 +2302,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "通话时长。",
           "member": "int64",
           "name": "Duration",
@@ -2491,7 +2310,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "产品ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ProductId",
@@ -2500,7 +2318,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "录音下载链接。\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "RecordCosUrl",
@@ -2515,7 +2332,6 @@
       "document": "短信签名信息",
       "members": [
         {
-          "default": "",
           "document": "短信签名ID",
           "member": "string",
           "name": "SignId",
@@ -2524,7 +2340,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "短信签名名称",
           "member": "string",
           "name": "SignName",
@@ -2539,7 +2354,6 @@
       "document": "短信模板信息",
       "members": [
         {
-          "default": "",
           "document": "短信模板ID",
           "member": "string",
           "name": "TemplateId",
@@ -2548,7 +2362,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "短信模板名称",
           "member": "string",
           "name": "TemplateName",
@@ -2563,7 +2376,6 @@
       "document": "UpdateBotTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名。默认值（固定）：AiApi",
           "example": "AiApi",
           "member": "string",
@@ -2572,7 +2384,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名。默认值（固定）：UpdateTask",
           "example": "CreateTask",
           "member": "string",
@@ -2581,7 +2392,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务名称",
           "example": "xx",
           "member": "string",
@@ -2590,7 +2400,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务ID",
           "example": "123",
           "member": "string",
@@ -2599,7 +2408,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "产品拨打时间集合",
           "example": "{}",
           "member": "CallTimeDict",
@@ -2608,7 +2416,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "document": "是否禁止拨打，默认Y",
           "example": "Y",
           "member": "string",
@@ -2617,7 +2424,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "禁止拨打起始时间。默认130000",
           "example": "130000",
           "member": "string",
@@ -2626,7 +2432,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "禁止拨打结束时间。默认140000",
           "example": "140000",
           "member": "string",
@@ -2635,7 +2440,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "拨打线路集合",
           "example": "1",
           "member": "string",
@@ -2644,7 +2448,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "重播方式，NON：未接通、LABEL：意向分级，可多选，用竖线分隔：NON|LABEL",
           "example": "NON",
           "member": "string",
@@ -2653,7 +2456,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "重播值集合，A：强意向、B：中意向、C：低意向、D：无意向、E：在忙、F：未接通、G：无效号码，可多选，用竖线分隔：A|B|C|D|E|F|G",
           "example": "A",
           "member": "string",
@@ -2662,7 +2464,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "继续拨打次数",
           "example": "1",
           "member": "int64",
@@ -2671,7 +2472,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "拨打间隔",
           "example": "10",
           "member": "int64",
@@ -2680,7 +2480,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "未接通引用短信签名ID",
           "example": "Test",
           "member": "string",
@@ -2689,7 +2488,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "未接通引用短信模板ID",
           "example": "XXX",
           "member": "string",
@@ -2716,7 +2514,6 @@
       "document": "UploadBotData请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名。默认值（固定）：AiApi",
           "member": "string",
           "name": "Module",
@@ -2724,7 +2521,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名。默认值（固定）：UploadData",
           "member": "string",
           "name": "Operation",
@@ -2732,7 +2528,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务数据。JSON格式",
           "member": "string",
           "name": "Data",
@@ -2740,7 +2535,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务ID，二者必填一个",
           "member": "string",
           "name": "BotId",
@@ -2748,7 +2542,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务名称，二者必填一个",
           "member": "string",
           "name": "BotName",
@@ -2774,7 +2567,6 @@
       "document": "UploadBotFile请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名。默认值（固定）：AiApi",
           "member": "string",
           "name": "Module",
@@ -2782,7 +2574,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名。默认值（固定）：Upload",
           "member": "string",
           "name": "Operation",
@@ -2790,7 +2581,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件类型，输入input，停拨stop",
           "member": "string",
           "name": "FileType",
@@ -2798,7 +2588,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件链接",
           "member": "string",
           "name": "FileUrl",
@@ -2806,7 +2595,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件名",
           "member": "string",
           "name": "FileName",
@@ -2814,7 +2602,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务ID，二者必填一个",
           "member": "string",
           "name": "BotId",
@@ -2822,7 +2609,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "任务名称，二者必填一个",
           "member": "string",
           "name": "BotName",
@@ -2848,7 +2634,6 @@
       "document": "UploadDataFile请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名，本接口取值：Data",
           "member": "string",
           "name": "Module",
@@ -2856,7 +2641,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名，本接口取值：Upload",
           "member": "string",
           "name": "Operation",
@@ -2864,7 +2648,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件名",
           "member": "string",
           "name": "FileName",
@@ -2872,7 +2655,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "<p>上传类型，不填默认到期/逾期提醒文件，取值范围：</p><ul style=\"margin-bottom:0px;\"><li>data：到期/逾期提醒文件</li><li>repay：到期/逾期提醒停拨文件</li><li>callback：回访文件</li><li>callstop：回访停拨文件</li><li>blacklist：黑名单文件</li></ul>",
           "member": "string",
           "name": "UploadModel",
@@ -2880,7 +2662,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件，文件与文件地址上传只可选用一种，必须使用multipart/form-data协议来上传二进制流文件，建议使用xlsx格式，大小不超过5MB。",
           "member": "binary",
           "name": "File",
@@ -2888,7 +2669,6 @@
           "type": "binary"
         },
         {
-          "default": "",
           "document": "文件上传地址，文件与文件地址上传只可选用一种，大小不超过50MB。",
           "member": "string",
           "name": "FileUrl",
@@ -2896,7 +2676,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例ID，不传默认为系统分配的初始实例。",
           "member": "string",
           "name": "InstId",
@@ -2929,7 +2708,6 @@
       "document": "UploadDataJson请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "模块名，本接口取值：Data",
           "member": "string",
           "name": "Module",
@@ -2937,7 +2715,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "操作名，本接口取值：UploadJson",
           "member": "string",
           "name": "Operation",
@@ -2945,7 +2722,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "报文信息",
           "member": "string",
           "name": "Data",
@@ -2953,7 +2729,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "<p>上传类型，不填默认到期/逾期提醒数据，取值范围：</p><ul style=\"margin-bottom:0px;\"><li>data：到期/逾期提醒数据</li><li>repay：到期/逾期提醒停拨数据</li></ul>",
           "member": "string",
           "name": "UploadModel",
@@ -2961,7 +2736,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "实例ID，不传默认为系统分配的初始实例。",
           "member": "string",
           "name": "InstanceId",
@@ -2994,7 +2768,6 @@
       "document": "UploadFile请求参数结构体",
       "members": [
         {
-          "default": "Data",
           "document": "模块名",
           "member": "string",
           "name": "Module",
@@ -3002,7 +2775,6 @@
           "type": "string"
         },
         {
-          "default": "UploadFile",
           "document": "操作名",
           "member": "string",
           "name": "Operation",
@@ -3010,7 +2782,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件上传地址，要求地址协议为HTTPS，且URL端口必须为443",
           "member": "string",
           "name": "FileUrl",
@@ -3018,7 +2789,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件名",
           "member": "string",
           "name": "FileName",
@@ -3026,7 +2796,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件日期",
           "member": "date",
           "name": "FileDate",

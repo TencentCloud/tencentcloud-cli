@@ -796,7 +796,6 @@
       "document": "账号创建信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例用户名",
           "example": "ac1",
@@ -807,7 +806,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例密码",
           "example": "无",
@@ -818,7 +816,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "DB权限列表",
           "example": "无",
@@ -829,7 +826,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号备注信息",
           "example": "无",
@@ -840,7 +836,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为管理员账户，当值为true 等价于基础版AccountType=L0，高可用AccountType=L1，当值为false，等价于AccountType=L3",
           "example": "false",
@@ -851,7 +846,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "win-windows鉴权,sql-sqlserver鉴权，不填默认值为sql-sqlserver鉴权",
           "example": "sql",
@@ -862,7 +856,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号类型，IsAdmin的扩展字段。 L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限，默认L3",
           "example": "L0",
@@ -879,7 +872,6 @@
       "document": "账户信息详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "账户名",
           "example": "ac1",
@@ -890,7 +882,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账户备注",
           "example": "无",
@@ -901,7 +892,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账户创建时间",
           "example": "2020-04-09 00:00:00",
@@ -912,7 +902,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账户状态，1-创建中，2-正常，3-修改中，4-密码重置中，-1-删除中",
           "example": "2",
@@ -923,7 +912,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账户更新时间",
           "example": "2020-04-09 00:00:00",
@@ -934,7 +922,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密码更新时间",
           "example": "2020-04-09 00:00:00",
@@ -945,7 +932,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账户内部状态，正常为enable",
           "example": "enable",
@@ -956,7 +942,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该账户对相关db的读写权限信息",
           "example": "无",
@@ -967,7 +952,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为管理员账户",
           "example": "false",
@@ -978,7 +962,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "win-windows鉴权,sql-sqlserver鉴权",
           "example": "win",
@@ -989,7 +972,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "win-windows鉴权账户需要host",
           "example": "172_8_9_12",
@@ -1000,7 +982,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号类型。L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限",
           "example": "L0",
@@ -1017,7 +998,6 @@
       "document": "实例账号密码信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户名",
           "example": "",
@@ -1028,7 +1008,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密码",
           "example": "",
@@ -1127,7 +1106,6 @@
       "document": "账户备注信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "账户名",
           "example": "",
@@ -1138,7 +1116,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对应账户新的备注信息",
           "example": "",
@@ -1155,7 +1132,6 @@
       "document": "AssociateSecurityGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "安全组ID。",
           "example": "sg-igw86yth",
@@ -1165,7 +1141,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID 列表，一个或者多个实例ID组成的数组。多个实例必须是同一个地域，同一个可用区，同一个项目下的。",
           "example": "[\"mssql-6f4ddx2f\\r\\n\"]",
@@ -1193,7 +1168,6 @@
       "document": "备份文件详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件名，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取文件名",
           "example": "auto_xxx.bak.tar",
@@ -1204,7 +1178,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件大小，单位 KB，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取文件大小",
           "example": "20",
@@ -1215,7 +1188,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份开始时间",
           "example": "2020-04-09 00:00:00",
@@ -1226,7 +1198,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份结束时间",
           "example": "2020-04-09 00:00:00",
@@ -1237,7 +1208,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内网下载地址，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取下载地址",
           "example": "http://xxx",
@@ -1248,7 +1218,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "外网下载地址，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取下载地址",
           "example": "http://xxx",
@@ -1259,7 +1228,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件唯一标识，RestoreInstance接口会用到该字段，对于单库备份文件不返回此值；单库备份文件通过DescribeBackupFiles接口获取可回档的ID",
           "example": "1",
@@ -1270,7 +1238,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件状态（0-创建中；1-成功；2-失败）",
           "example": "0",
@@ -1281,7 +1248,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "多库备份时的DB列表",
           "example": "DBName",
@@ -1292,7 +1258,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份策略（0-实例备份；1-多库备份）",
           "example": "0",
@@ -1303,7 +1268,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份方式，0-定时备份；1-手动临时备份；2-定期备份",
           "example": "0",
@@ -1314,7 +1278,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份任务名称，可自定义",
           "example": "mssql-dj5i29c5n",
@@ -1325,7 +1288,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "聚合Id，对于打包备份文件不返回此值。通过此值调用DescribeBackupFiles接口，获取单库备份文件的详细信息",
           "example": "558800",
@@ -1336,7 +1298,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件形式（pkg-打包备份文件，single-单库备份文件）",
           "example": "pkg",
@@ -1347,7 +1308,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例当前地域Code",
           "example": "ap-guangzhou",
@@ -1358,7 +1318,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "跨地域备份的目的地域下载链接",
           "example": "[]",
@@ -1369,7 +1328,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "跨地域备份的目标地域和备份状态",
           "example": "[]",
@@ -1386,7 +1344,6 @@
       "document": "在非打包上传备份模式下，每个库对应一个备份文件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件唯一标识",
           "example": "0",
@@ -1397,7 +1354,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件名称",
           "example": "xxxx.bak",
@@ -1408,7 +1364,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件大小(K)",
           "example": "0",
@@ -1419,7 +1374,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件的库的名称",
           "example": "[db1]",
@@ -1430,7 +1384,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下载地址",
           "example": "http://xxxxx",
@@ -1441,7 +1394,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前实例地域码",
           "example": "ap-guangzhou",
@@ -1452,7 +1404,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份的跨地域region和所对应的下载地址",
           "example": "[]",
@@ -1469,7 +1420,6 @@
       "document": "商业智能服务文件类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件名称",
           "example": "FileName",
@@ -1480,7 +1430,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件类型",
           "example": "FLAT",
@@ -1491,7 +1440,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件的COS_URL",
           "example": "http://bucket/file.txt",
@@ -1502,7 +1450,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件在服务器上的路径",
           "example": "D:\\SISI\\",
@@ -1513,7 +1460,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件大小，单位时Byte",
           "example": "0",
@@ -1524,7 +1470,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件md5值",
           "example": "sdfgefdgrferw",
@@ -1535,7 +1480,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部署文件状态 1-初始化待部署 2-部署中 3-部署成功 4-部署失败",
           "example": "1",
@@ -1546,7 +1490,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注信息",
           "example": "Remark",
@@ -1557,7 +1500,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件创建时间",
           "example": "2020-04-09 00:00:00",
@@ -1568,7 +1510,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件部署开始时间",
           "example": "2020-04-09 00:00:00",
@@ -1579,7 +1520,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件部署结束时间",
           "example": "2020-04-09 00:00:00",
@@ -1590,7 +1530,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报错信息返回",
           "example": "Message",
@@ -1601,7 +1540,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商业智能实例ID",
           "example": "mssql-dj5i29c5n",
@@ -1612,7 +1550,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "动作相关信息",
           "example": "无",
@@ -1629,7 +1566,6 @@
       "document": "CloneDB请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，形如mssql-j8kv137v",
           "example": "mssql-j8kv137v",
@@ -1639,7 +1575,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照ReNameRestoreDatabase中的库进行克隆，并重命名，新库名称必须指定",
           "example": "RenameRestore.0.OldName=db1&RenameRestore.0.NewName=clone_db1",
@@ -1677,7 +1612,6 @@
       "document": "CloseInterCommunication请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "关闭互通的实例ID集合",
           "example": "无",
@@ -1715,7 +1649,6 @@
       "document": "CompleteExpansion请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，形如mssql-j8kv137v",
           "example": "mssql-2pohwxbf",
@@ -1753,7 +1686,6 @@
       "document": "CompleteMigration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务ID",
           "example": "2729",
@@ -1791,7 +1723,6 @@
       "document": "查询已经上传的备份文件大小。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "备份名称",
           "example": "",
@@ -1802,7 +1733,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份大小",
           "example": "",
@@ -1819,7 +1749,6 @@
       "document": "CreateAccount请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库实例ID，形如mssql-njj2mtpl",
           "example": "mssql-njj2mtpl",
@@ -1829,7 +1758,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库实例账户信息",
           "example": "无",
@@ -1867,7 +1795,6 @@
       "document": "CreateBackupMigration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "导入目标实例ID",
           "example": "mssql-rdc0gajn",
@@ -1877,7 +1804,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务恢复类型，FULL-全量备份恢复，FULL_LOG-全量备份+事务日志恢复，FULL_DIFF-全量备份+差异备份恢复",
           "example": "FULL",
@@ -1887,7 +1813,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份上传类型，COS_URL-备份放在用户的对象存储上，提供URL。COS_UPLOAD-备份放在业务的对象存储上，需要用户上传。",
           "example": "COS_UPLOAD",
@@ -1897,7 +1822,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务名称",
           "example": "字符串",
@@ -1907,7 +1831,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UploadType是COS_URL时这里填URL，COS_UPLOAD这里填备份文件的名字。只支持1个备份文件，但1个备份文件内可包含多个库",
           "example": "[\"db1.bak\\n\"]",
@@ -2414,7 +2337,6 @@
       "document": "CreateBusinessIntelligenceFile请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "mssql-dj5i29c5n",
@@ -2424,7 +2346,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "COS_URL",
           "example": "http://bucket/file.txt",
@@ -2434,7 +2355,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件类型 FLAT-作为数据源的平面文件， SSIS-ssis项目包",
           "example": "FLAT",
@@ -2444,7 +2364,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "Remark",
@@ -2960,7 +2879,6 @@
       "document": "CreateDBInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例可用区，类似ap-guangzhou-1（广州一区）；实例可售卖区域可以通过接口DescribeZones获取",
           "example": "ap-guangzhou-1",
@@ -2970,7 +2888,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例内存大小，单位GB",
           "example": "2",
@@ -2980,7 +2897,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例磁盘大小，单位GB",
           "example": "100",
@@ -2990,7 +2906,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费模式，取值支持 PREPAID（预付费），POSTPAID（后付费）。",
           "example": "PREPAID",
@@ -3000,7 +2915,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "1003",
@@ -3010,7 +2924,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本次购买几个实例，默认值为1。取值不超过10",
           "example": "1",
@@ -3020,7 +2933,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC子网ID，形如subnet-bdoe83fa；SubnetId和VpcId需同时设置或者同时不设置",
           "example": "subnet-bdoe83fa",
@@ -3030,7 +2942,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC网络ID，形如vpc-dsp338hz；SubnetId和VpcId需同时设置或者同时不设置",
           "example": "vpc-dsp338hz",
@@ -3040,7 +2951,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买实例周期，默认取值为1，表示一个月。取值不超过48",
           "example": "1",
@@ -3050,7 +2960,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否自动使用代金券；1 - 是，0 - 否，默认不使用",
           "example": "0",
@@ -3060,7 +2969,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "代金券ID数组，目前单个订单只能使用一张",
           "example": "xxxxx",
@@ -3070,7 +2978,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "sqlserver版本，目前所有支持的版本有：2008R2 (SQL Server 2008 R2 Enterprise)，2012SP3 (SQL Server 2012 Enterprise)，201202 (SQL Server 2012 Standard)，2014SP2 (SQL Server 2014 Enterprise)，201402 (SQL Server 2014 Standard)，2016SP1 (SQL Server 2016 Enterprise)，201602 (SQL Server 2016 Standard)，2017 (SQL Server 2017 Enterprise)，201702 (SQL Server 2017 Standard)，2019 (SQL Server 2019 Enterprise)，201902 (SQL Server 2019 Standard)。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息。不填，默认为版本2008R2。",
           "example": "2008R2",
@@ -3080,7 +2987,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动续费标志：0-正常续费  1-自动续费，默认为1自动续费。只在购买预付费实例时有效。",
           "example": "0",
@@ -3090,7 +2996,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组列表，填写形如sg-xxx的安全组ID",
           "example": "sg-xxxx",
@@ -3100,7 +3005,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可维护时间窗配置，以周为单位，表示周几允许维护，1-7分别代表周一到周末",
           "example": "1",
@@ -3110,7 +3014,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可维护时间窗配置，每天可维护的开始时间",
           "example": "2020-04-09 00:00:00",
@@ -3120,7 +3023,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可维护时间窗配置，持续时间，单位：小时",
           "example": "2",
@@ -3130,7 +3032,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买高可用实例的类型：DUAL-双机高可用  CLUSTER-集群，默认值为DUAL",
           "example": "DUAL",
@@ -3140,7 +3041,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否跨可用区部署，默认值为false",
           "example": "ture",
@@ -3150,7 +3050,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新建实例绑定的标签集合",
           "example": "无",
@@ -3160,7 +3059,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "系统字符集排序规则，默认：Chinese_PRC_CI_AS",
           "example": "Chinese_PRC_CI_AS",
@@ -3170,7 +3068,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "系统时区，默认：China Standard Time",
           "example": "China Standard Time",
@@ -3218,7 +3115,6 @@
       "document": "CreateDB请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "mssql-i1z41iwd",
@@ -3228,7 +3124,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库创建信息",
           "example": "无",
@@ -3266,7 +3161,6 @@
       "document": "CreateIncrementalMigration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "导入目标实例ID",
           "example": "mssql-rdc0gajn",
@@ -3276,7 +3170,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份导入任务ID，由CreateBackupMigration接口返回",
           "example": "mssql-backup-migration-cg0ffgqt",
@@ -3286,7 +3179,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "增量备份文件，全量备份任务UploadType是COS_URL时这里填URL，是COS_UPLOAD这里填备份文件的名字；只支持1个备份文件，但1个备份文件内可包含多个库",
           "example": "[\"db_cvm_1_20200927204209_2log2_2noreconvery2.bak\\n\"]",
@@ -3296,7 +3188,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要恢复，NO-不需要，YES-需要，默认不需要",
           "example": "NO",
@@ -3334,7 +3225,6 @@
       "document": "CreateMigration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务的名称",
           "example": "测试接口",
@@ -3344,7 +3234,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移类型（1:结构迁移 2:数据迁移 3:增量同步）",
           "example": "2",
@@ -3354,7 +3243,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移源的类型 1:TencentDB for SQLServer 2:云服务器自建SQLServer数据库 4:SQLServer备份还原 5:SQLServer备份还原（COS方式）",
           "example": "5",
@@ -3364,7 +3252,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移源",
           "example": "无",
@@ -3374,7 +3261,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移目标",
           "example": "无",
@@ -3384,7 +3270,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移DB对象 ，离线迁移不使用（SourceType=4或SourceType=5）。",
           "example": "无",
@@ -3394,7 +3279,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照ReNameRestoreDatabase中的库进行恢复，并重命名，不填则按照默认方式命名恢复的库，且恢复所有的库。SourceType=5的情况下有效。",
           "example": "无",
@@ -3432,7 +3316,6 @@
       "document": "CreatePublishSubscribe请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "发布实例ID，形如mssql-j8kv137v",
           "example": "mssql-2cwisu23",
@@ -3442,7 +3325,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅实例ID，形如mssql-j8kv137v",
           "example": "mssql-hlh6yka1",
@@ -3452,7 +3334,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库的订阅发布关系集合",
           "example": "无",
@@ -3462,7 +3343,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发布订阅的名称，默认值为：default_name",
           "example": "Create_name",
@@ -3726,7 +3606,6 @@
       "document": "跨地域备份下载地址集合",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "跨地域备份目标地域",
           "example": "ap-guangzhou",
@@ -3737,7 +3616,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "跨地域备份内网下载地址",
           "example": " http://xxx",
@@ -3748,7 +3626,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "跨地域备份外网下载地址",
           "example": "http://xxx ",
@@ -3765,7 +3642,6 @@
       "document": "跨地域备份的目标地域和备份状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "跨地域备份目标地域",
           "example": "ap-guangzhou",
@@ -3776,7 +3652,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份跨地域的同步状态 0-创建中；1-成功；2-失败；4-同步中",
           "example": "0",
@@ -3793,7 +3668,6 @@
       "document": "数据库创建信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名",
           "example": "DBName",
@@ -3804,7 +3678,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字符集。可通过接口DescribeDBCharsets查到支持的字符集，不填默认为Chinese_PRC_CI_AS。",
           "example": "Chinese_PRC_CI_AS",
@@ -3815,7 +3688,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库账号权限信息",
           "example": "Accounts",
@@ -3826,7 +3698,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "Remark",
@@ -4501,7 +4372,6 @@
       "document": "数据库权限变更信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名",
           "example": "db_test",
@@ -4512,7 +4382,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限变更信息。ReadWrite表示可读写，ReadOnly表示只读，Delete表示删除账号对该DB的权限，DBOwner所有者",
           "example": "ReadWrite",
@@ -4529,7 +4398,6 @@
       "document": "数据库备注信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称",
           "example": "",
@@ -4540,7 +4408,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注信息",
           "example": "",
@@ -4557,7 +4424,6 @@
       "document": "数据库重命名返回参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "新数据库名称",
           "example": "new_db",
@@ -4568,7 +4434,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "老数据库名称",
           "example": "old_db",
@@ -4611,7 +4476,6 @@
       "document": "该数据结构表示具有发布订阅关系的两个数据库。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "发布数据库名称",
           "example": "",
@@ -4622,7 +4486,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅数据库名称",
           "example": "",
@@ -4639,7 +4502,6 @@
       "document": "该数据结构表示具有发布订阅关系的两个数据库，以及其之间发布订阅的状态信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "发布数据库名称",
           "example": "",
@@ -4650,7 +4512,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅数据库名称",
           "example": "",
@@ -4661,7 +4522,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最近一次同步时间",
           "example": "",
@@ -4672,7 +4532,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库之间的发布订阅状态 running，success，fail，unknow",
           "example": "",
@@ -4885,7 +4744,6 @@
       "document": "数据库可回档时间范围信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称",
           "example": "",
@@ -4896,7 +4754,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可回档开始时间",
           "example": "",
@@ -4907,7 +4764,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可回档结束时间",
           "example": "",
@@ -4924,7 +4780,6 @@
       "document": "订单信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "订单名",
           "example": "",
@@ -4935,7 +4790,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商品数量",
           "example": "",
@@ -4946,7 +4800,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联的流程 ID，可用于查询流程执行状态",
           "example": "",
@@ -4957,7 +4810,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只有创建实例的订单会填充该字段，表示该订单创建的实例的 ID。",
           "example": "",
@@ -4968,7 +4820,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属账号",
           "example": "",
@@ -4979,7 +4830,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例付费类型",
           "example": "",
@@ -5022,7 +4872,6 @@
       "document": "DeleteAccount请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库实例ID，形如mssql-njj2mtpl",
           "example": "mssql-njj2mtpl",
@@ -5032,7 +4881,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例用户名数组",
           "example": "[\"testusername\\r\\n\"]",
@@ -5070,7 +4918,6 @@
       "document": "DeleteBackupMigration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "目标实例ID，由DescribeBackupMigration接口返回",
           "example": "mssql-rdc0gajn",
@@ -5080,7 +4927,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份导入任务ID，由DescribeBackupMigration接口返回",
           "example": "mssql-backup-migration-cg0ffgqt",
@@ -5108,7 +4954,6 @@
       "document": "DeleteBusinessIntelligenceFile请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "mssql-dj5i29c5n",
@@ -5118,7 +4963,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件名称集合",
           "example": "无",
@@ -5146,7 +4990,6 @@
       "document": "DeleteDBInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，格式如：mssql-3l3fgqn7 或 mssqlro-3l3fgqn7",
           "example": "mssql-ms2m7vut",
@@ -5174,7 +5017,6 @@
       "document": "DeleteDB请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，形如mssql-rljoi3bf",
           "example": "mssql-rljoi3bf",
@@ -5184,7 +5026,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名数组",
           "example": "[\"test_db\\r\\n\"]",
@@ -5222,7 +5063,6 @@
       "document": "DeleteIncrementalMigration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "目标实例ID",
           "example": "mssql-rdc0gajn",
@@ -5232,7 +5072,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份导入任务ID，由CreateBackupMigration接口返回",
           "example": "mssql-backup-migration-cg0ffgqt",
@@ -5242,7 +5081,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "增量备份导入任务ID，由CreateIncrementalMigration接口返回",
           "example": "mssql-incremental-migration-67q4wy87",
@@ -5270,7 +5108,6 @@
       "document": "DeleteMigration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务ID",
           "example": "2729",
@@ -5298,7 +5135,6 @@
       "document": "DeletePublishSubscribe请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "发布订阅ID，可通过DescribePublishSubscribe接口获得",
           "example": "5",
@@ -5308,7 +5144,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待删除的数据库的订阅发布关系集合",
           "example": "无",
@@ -5336,7 +5171,6 @@
       "document": "DescribeAccounts请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "mssql-j8kv137v",
@@ -5346,7 +5180,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回，每页返回的数目，取值为1-100，默认值为20",
           "example": "10",
@@ -5356,7 +5189,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回，页编号，默认值为第0页",
           "example": "0",
@@ -5366,7 +5198,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号名称",
           "example": "test_sa",
@@ -5376,7 +5207,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "createTime,updateTime,passTime\" note:\"排序字段，默认按照账号创建时间倒序",
           "example": "createTime",
@@ -5386,7 +5216,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序规则（desc-降序，asc-升序），默认desc",
           "example": "desc",
@@ -5597,7 +5426,6 @@
       "document": "DescribeBackupCommand请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件类型，FULL-全量备份，FULL_LOG-全量备份需要日志增量，FULL_DIFF-全量备份需要差异增量，LOG-日志备份，DIFF-差异备份",
           "example": "FULL",
@@ -5607,7 +5435,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称",
           "example": "db1",
@@ -5617,7 +5444,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要恢复，NO-不需要，YES-需要",
           "example": "YES",
@@ -5627,7 +5453,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件保存的路径；如果不填则默认在D:\\\\",
           "example": "E:/",
@@ -5757,7 +5582,6 @@
       "document": "DescribeBackupMigration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "导入目标实例ID",
           "example": "mssql-rdc0gajn",
@@ -5767,7 +5591,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份导入任务ID，由CreateBackupMigration接口返回",
           "example": "mssql-backup-migration-kpl74n9l",
@@ -5777,7 +5600,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导入任务名称",
           "example": "字符串",
@@ -5787,7 +5609,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件名称",
           "example": "db1",
@@ -5797,7 +5618,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导入任务状态集合",
           "example": "[\"2\\n\"]",
@@ -5807,7 +5627,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导入任务恢复类型，FULL,FULL_LOG,FULL_DIFF",
           "example": "FULL",
@@ -5817,7 +5636,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "COS_URL-备份放在用户的对象存储上，提供URL。COS_UPLOAD-备份放在业务的对象存储上，用户上传",
           "example": "COS_UPLOAD",
@@ -5827,7 +5645,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页，页大小，默认值：100",
           "example": "100",
@@ -5837,7 +5654,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页，页数，默认值：0",
           "example": "0",
@@ -5847,7 +5663,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段，name；createTime；startTime；endTime，默认按照createTime递增排序。",
           "example": "createTime",
@@ -5857,7 +5672,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式，desc-递减排序，asc-递增排序。默认按照asc排序，且在OrderBy为有效值时，本参数有效",
           "example": "desc",
@@ -5905,7 +5719,6 @@
       "document": "DescribeBackupUploadSize请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "导入目标实例ID",
           "example": "mssql-rdc0gajn",
@@ -5915,7 +5728,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份导入任务ID，由CreateBackupMigration接口返回",
           "example": "mssql-backup-migration-kpl74n9l",
@@ -5925,7 +5737,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "增量导入任务ID",
           "example": "无",
@@ -5963,7 +5774,6 @@
       "document": "DescribeBackups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间(yyyy-MM-dd HH:mm:ss)",
           "example": "2018-03-28 00:00:00",
@@ -5973,7 +5783,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间(yyyy-MM-dd HH:mm:ss)",
           "example": "2018-04-20 00:00:00",
@@ -5983,7 +5792,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，形如mssql-njj2mtpl",
           "example": "mssql-njj2mtpl",
@@ -5993,7 +5801,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回，每页返回的数目，取值为1-100，默认值为20",
           "example": "20",
@@ -6003,7 +5810,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回，页编号，默认值为第0页",
           "example": "0",
@@ -6013,7 +5819,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照备份名称筛选，不填则不筛选此项",
           "example": "DBName",
@@ -6023,7 +5828,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照备份策略筛选，0-实例备份，1-多库备份，不填则不筛选此项",
           "example": "0",
@@ -6033,7 +5837,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照备份方式筛选，0-后台自动定时备份，1-用户手动临时备份，2-定期备份，不填则不筛选此项",
           "example": "0",
@@ -6043,7 +5846,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照备份ID筛选，不填则不筛选此项",
           "example": "558800",
@@ -6053,7 +5855,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照备份的库名称筛选，不填则不筛选此项",
           "example": "db1",
@@ -6063,7 +5864,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否分组查询，默认是0，单库备份情况下 0-兼容老方式不分组，1-单库备份分组后展示",
           "example": "0",
@@ -6073,7 +5873,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份类型，1-数据备份，2-日志备份，默认值为1",
           "example": "1",
@@ -6083,7 +5882,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照备份文件形式筛选，pkg-打包备份文件，single-单库备份文件",
           "example": "pkg",
@@ -6131,7 +5929,6 @@
       "document": "DescribeBusinessIntelligenceFile请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "mssql-dj5i29c5n",
@@ -6141,7 +5938,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件名称",
           "example": "file.txt",
@@ -6151,7 +5947,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务状态集合,1-初始化待部署 2-部署中 3-部署成功 4-部署失败",
           "example": "1",
@@ -6161,7 +5956,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件类型 FLAT-平面文件，SSIS商业智能服务项目文件",
           "example": "FLAT",
@@ -6171,7 +5965,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页，页大小，范围1-100",
           "example": "10",
@@ -6181,7 +5974,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页,页数，默认0",
           "example": "0",
@@ -6191,7 +5983,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段，可选值file_name,create_time,start_time",
           "example": "file_name",
@@ -6201,7 +5992,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式，desc,asc",
           "example": "desc",
@@ -6249,7 +6039,6 @@
       "document": "DescribeCrossRegionZone请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，格式如：mssql-3l3fgqn7",
           "example": "mssql-6upluvd5",
@@ -6297,7 +6086,6 @@
       "document": "DescribeDBCharsets请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，形如mssql-j8kv137v",
           "example": "mssql-j8kv137v",
@@ -6533,7 +6321,6 @@
       "document": "DescribeDBInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "0",
@@ -6543,7 +6330,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例状态。取值范围：\n<li>1：申请中</li>\n<li>2：运行中</li>\n<li>3：受限运行中 (主备切换中)</li>\n<li>4：已隔离</li>\n<li>5：回收中</li>\n<li>6：已回收</li>\n<li>7：任务执行中 (实例做备份、回档等操作)</li>\n<li>8：已下线</li>\n<li>9：实例扩容中</li>\n<li>10：实例迁移中</li>\n<li>11：只读</li>\n<li>12：重启中</li>",
           "example": "2",
@@ -6553,7 +6339,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回，页编号，默认值为第0页",
           "example": "0",
@@ -6563,7 +6348,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回，每页返回的数目，取值为1-100，默认值为100",
           "example": "3",
@@ -6573,7 +6357,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "一个或者多个实例ID。实例ID，格式如：mssql-si2823jyl",
           "example": "[\"mssql-3l3fgqn7\\n\"]",
@@ -6583,7 +6366,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "付费类型检索 1-包年包月，0-按量计费",
           "example": "1",
@@ -6593,7 +6375,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例所属VPC的唯一字符串ID，格式如：vpc-xxx，传空字符串(“”)则按照基础网络筛选。",
           "example": "vpc-mknbt351",
@@ -6603,7 +6384,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例所属子网的唯一字符串ID，格式如： subnet-xxx，传空字符串(“”)则按照基础网络筛选。",
           "example": "subnet-f72hylo6",
@@ -6613,7 +6393,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例内网地址列表，格式如：172.1.0.12",
           "example": "[\"172.1.0.12\\n\"]",
@@ -6623,7 +6402,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称列表，模糊查询",
           "example": "[\"\\u6570\\u4ed3\\n\"]",
@@ -6633,7 +6411,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例版本代号列表，格式如：2008R2，2012SP3等",
           "example": "[\"2008R2\\n\"]",
@@ -6643,7 +6420,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例可用区，格式如：ap-guangzhou-2",
           "example": "ap-guangzhou-2",
@@ -6653,7 +6429,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例标签列表",
           "example": "[\"\\u6d4b\\u8bd5tag\\n\"]",
@@ -6663,7 +6438,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模糊查询关键字，支持实例id、实例名、内网ip",
           "example": "172.17.0.12",
@@ -6673,7 +6447,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例唯一Uid列表",
           "example": "gamedb.gz1.cdb.db",
@@ -6683,7 +6456,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务",
           "example": "HA",
@@ -6731,7 +6503,6 @@
       "document": "DescribeDBSecurityGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，格式如：mssql-c1nl9rpv或者mssqlro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。",
           "example": "mssql-6f4ddx2f ",
@@ -6904,7 +6675,6 @@
       "document": "DescribeFlowStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "流程ID",
           "example": "30403",
@@ -6942,7 +6712,6 @@
       "document": "DescribeIncrementalMigration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "备份导入任务ID，由CreateBackupMigration接口返回",
           "example": "mssql-backup-migration-cg0ffgqt",
@@ -6952,7 +6721,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导入目标实例ID",
           "example": "mssql-rdc0gajn",
@@ -6962,7 +6730,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件名称",
           "example": "cvm",
@@ -6972,7 +6739,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "导入任务状态集合",
           "example": "[\"2\\n\"]",
@@ -6982,7 +6748,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页，页大小，默认值：100",
           "example": "100",
@@ -6992,7 +6757,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页，页数，默认值：0",
           "example": "0",
@@ -7002,7 +6766,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段，name；createTime；startTime；endTime，默认按照createTime递增排序。",
           "example": "createTime",
@@ -7012,7 +6775,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式，desc-递减排序，asc-递增排序。默认按照asc排序，且在OrderBy为有效值时，本参数有效",
           "example": "desc",
@@ -7022,7 +6784,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "增量备份导入任务ID，由CreateIncrementalMigration接口返回",
           "example": "mssql-incremental-migration-kp7bgv8p",
@@ -7107,7 +6868,6 @@
       "document": "DescribeInstanceParamRecords请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，格式如：mssql-dj5i29c5n，与云数据库控制台页面中显示的实例 ID 相同，可使用 DescribeDBInstances 接口获取，其值为输出参数中字段 InstanceId 的值。",
           "example": "mssql-dj5i29c5n",
@@ -7117,7 +6877,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页，页数，默认0",
           "example": "0",
@@ -7127,7 +6886,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页，页大小，默认20，最大不超过100",
           "example": "10",
@@ -7175,7 +6933,6 @@
       "document": "DescribeInstanceParams请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，格式如：mssql-dj5i29c5n，与云数据库控制台页面中显示的实例 ID 相同，可使用 DescribeDBInstances 接口获取，其值为输出参数中字段 InstanceId 的值。",
           "example": "mssql-dj5i29c5n",
@@ -7223,7 +6980,6 @@
       "document": "DescribeMaintenanceSpan请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，形如mssql-k8voqdlz",
           "example": "mssql-6upluvd5",
@@ -7281,7 +7037,6 @@
       "document": "DescribeMigrationDatabases请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移源实例的ID，格式如：mssql-si2823jyl",
           "example": "mssql-si2823jyl",
@@ -7291,7 +7046,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移源实例用户名",
           "example": "sqlserver_admin",
@@ -7301,7 +7055,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移源实例密码",
           "example": "123456",
@@ -7349,7 +7102,6 @@
       "document": "DescribeMigrationDetail请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务ID",
           "example": "2728",
@@ -7517,7 +7269,6 @@
       "document": "DescribeMigrations请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "状态集合。只要符合集合中某一状态的迁移任务，就会查出来",
           "example": "[\"1\\r\\n\",\"4\\r\\n\"]",
@@ -7527,7 +7278,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务的名称，模糊匹配",
           "example": "测试",
@@ -7537,7 +7287,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回，每页返回的数目，取值为1-100，默认值为100",
           "example": "10",
@@ -7547,7 +7296,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页返回，页编号，默认值为第0页",
           "example": "0",
@@ -7557,7 +7305,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结果按照关键字排序，可选值为name、createTime、startTime，endTime，status",
           "example": "name",
@@ -7567,7 +7314,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式，可选值为desc、asc",
           "example": "desc",
@@ -7615,7 +7361,6 @@
       "document": "DescribeOrders请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "订单数组。发货时会返回订单名字，利用该订单名字调用DescribeOrders接口查询发货情况",
           "example": "[\"201806271245\\r\\n\"]",
@@ -7663,7 +7408,6 @@
       "document": "DescribeProductConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "可用区英文ID，形如ap-guangzhou-1",
           "example": "ap-guangzhou-2",
@@ -7673,7 +7417,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购买实例的类型 HA-高可用型(包括双机高可用，alwaysOn集群)，RO-只读副本型，SI-基础版本型",
           "example": "HA",
@@ -7721,7 +7464,6 @@
       "document": "DescribeProjectSecurityGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID，可通过控制台项目管理中查看",
           "example": "0",
@@ -7759,7 +7501,6 @@
       "document": "DescribePublishSubscribe请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，形如mssql-j8kv137v",
           "example": "mssql-12klhrx2c",
@@ -7769,7 +7510,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅/发布实例ID，与InstanceId是发布实例还是订阅实例有关；当InstanceId为发布实例时，本字段按照订阅实例ID做筛选；当InstanceId为订阅实例时，本字段按照发布实例ID做筛选；",
           "example": "mssql-hh598yjo",
@@ -7779,7 +7519,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅/发布实例内网IP，与InstanceId是发布实例还是订阅实例有关；当InstanceId为发布实例时，本字段按照订阅实例内网IP做筛选；当InstanceId为订阅实例时，本字段按照发布实例内网IP做筛选；",
           "example": "10.0.1.27",
@@ -7789,7 +7528,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅发布ID，用于筛选",
           "example": "5",
@@ -7799,7 +7537,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅发布名字，用于筛选",
           "example": "Change_name",
@@ -7809,7 +7546,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发布库名字，用于筛选",
           "example": "PublishDBName",
@@ -7819,7 +7555,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅库名字，用于筛选",
           "example": "SubscribeDBName",
@@ -7829,7 +7564,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页，页数",
           "example": "0",
@@ -7839,7 +7573,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页，页大小",
           "example": "10",
@@ -7887,7 +7620,6 @@
       "document": "DescribeReadOnlyGroupByReadOnlyInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，格式如：mssqlro-3l3fgqn7",
           "example": "mssqlro-91masbl1",
@@ -8045,7 +7777,6 @@
       "document": "DescribeReadOnlyGroupDetails请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主实例ID，格式如：mssql-3l3fgqn7",
           "example": "mssql-6f4ddx2f",
@@ -8055,7 +7786,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组ID，格式如：mssqlrg-3l3fgqn7",
           "example": "mssqlrg-552tyamb",
@@ -8223,7 +7953,6 @@
       "document": "DescribeReadOnlyGroupList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主实例ID，格式如：mssql-3l3fgqn7",
           "example": "mssql-6f4ddx2f",
@@ -8298,7 +8027,6 @@
       "document": "DescribeRollbackTime请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "mssql-j8kv137v",
@@ -8308,7 +8036,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要查询的数据库列表",
           "example": "[\"db1\\r\\n\"]",
@@ -8349,7 +8076,6 @@
           "disabled": false,
           "document": "实例ID，形如mssql-k8voqdlz",
           "example": "mssql-9aajrcn7",
-          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8359,7 +8085,6 @@
           "disabled": false,
           "document": "开始时间(yyyy-MM-dd HH:mm:ss)",
           "example": "2018-03-28 00:00:00",
-          "is_base64": false,
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -8369,7 +8094,6 @@
           "disabled": false,
           "document": "结束时间(yyyy-MM-dd HH:mm:ss)",
           "example": "2020-11-20 00:00:00",
-          "is_base64": false,
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -8379,7 +8103,6 @@
           "disabled": false,
           "document": "分页返回，每页返回的数目，取值为1-100，默认值为20",
           "example": "20",
-          "is_base64": false,
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -8389,7 +8112,6 @@
           "disabled": false,
           "document": "分页返回，页编号，默认值为第0页",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -8434,7 +8156,6 @@
       "document": "DescribeUploadBackupInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "导入目标实例ID",
           "example": "mssql-rdc0gajn",
@@ -8444,7 +8165,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份导入任务ID，由CreateBackupMigration接口返回",
           "example": "mssql-backup-migration-kpl74n9l",
@@ -8552,7 +8272,6 @@
       "document": "DescribeUploadIncrementalInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "导入目标实例ID",
           "example": "mssql-rdc0gajn",
@@ -8562,7 +8281,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份导入任务ID，由CreateBackupMigration接口返回",
           "example": "mssql-backup-migration-cg0ffgqt",
@@ -8572,7 +8290,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "增量导入任务ID",
           "example": "mssql-incremental-migration-kp7bgv8p",
@@ -8683,7 +8400,6 @@
           "disabled": false,
           "document": "实例ID",
           "example": "mssql-wy78shs8",
-          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8693,7 +8409,6 @@
           "disabled": false,
           "document": "事件类型，slow-慢SQL事件，blocked-阻塞事件，deadlock-死锁事件",
           "example": "slow",
-          "is_base64": false,
           "member": "string",
           "name": "EventType",
           "required": true,
@@ -8703,7 +8418,6 @@
           "disabled": false,
           "document": "扩展文件生成开始时间(yyyy-MM-dd HH:mm:ss)",
           "example": "2023-01-01 12:00:00",
-          "is_base64": false,
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -8713,7 +8427,6 @@
           "disabled": false,
           "document": "扩展文件生成结束时间(yyyy-MM-dd HH:mm:ss)",
           "example": "2023-01-01 12:05:00",
-          "is_base64": false,
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -8723,7 +8436,6 @@
           "disabled": false,
           "document": "分页返回，页编号，默认值为第0页",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -8733,7 +8445,6 @@
           "disabled": false,
           "document": "分页返回，每页返回的数目，取值为1~100，默认值为20",
           "example": "10",
-          "is_base64": false,
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -8815,7 +8526,6 @@
       "document": "DisassociateSecurityGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "安全组ID。",
           "example": "sg-igw86yth",
@@ -8825,7 +8535,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID 列表，一个或者多个实例ID组成的数组。多个实例必须是同一个地域，同一个可用区，同一个项目下的。",
           "example": "[\"mssql-6f4ddx2f\\r\\n\"]",
@@ -8975,7 +8684,6 @@
       "document": "允许动作信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "支持的所有操作，值包括：view(查看列表) remark(修改备注)，deploy(部署)，delete(删除文件)",
           "example": "view",
@@ -8986,7 +8694,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前状态允许的操作，AllAction的子集,为空表示禁止所有操作",
           "example": "无",
@@ -9270,7 +8977,6 @@
       "document": "实例的数据库信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "mssql-njj2mtpl",
@@ -9281,7 +8987,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库信息列表",
           "example": "无",
@@ -9298,7 +9003,6 @@
       "document": "实例续费状态信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，形如mssql-j8kv137v",
           "example": "",
@@ -9309,7 +9013,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例续费标记。0：正常续费，1：自动续费，2：到期不续",
           "example": "",
@@ -9326,7 +9029,6 @@
       "document": "互通组内实例信息详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "mssql-dj5i29c5n",
@@ -9337,7 +9039,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例互通IP，用于加入互通组后访问",
           "example": "192.168.0.1",
@@ -9348,7 +9049,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例互通端口，用于加入互通组后访问",
           "example": "1433",
@@ -9359,7 +9059,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例互通状态，1 -互通ipprot打开中 2 -互通ipprot已经打开 3 -已经打开互通ip的实例加入到互通组中 4 -已经打开互通ip的实例已加入到互通组 5 -互通ipprot回收中 6 -互通ipprot已回收 7 -已回收的实例从互通组中移除中 8 -已回收的实例从互通组中已经移除",
           "example": "1",
@@ -9370,7 +9069,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例所在地域名称，如 ap-guangzhou",
           "example": "ap-guangzhou",
@@ -9381,7 +9079,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例所在可用区名称，如 ap-guangzhou-1",
           "example": "ap-guangzhou-3",
@@ -9392,7 +9089,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例版本代号",
           "example": "2008R2",
@@ -9403,7 +9099,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例版本",
           "example": "SQL Server 2008 R2 Enterprise",
@@ -9414,7 +9109,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称",
           "example": "Name",
@@ -9425,7 +9119,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例访问IP",
           "example": "192.168.0.2",
@@ -9436,7 +9129,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例访问端口",
           "example": "1433",
@@ -9453,7 +9145,6 @@
       "document": "实例开通或者关闭互通组后的状态",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，例如：mssql-sdf32n1d",
           "example": "mssql-dj5i29c5n",
@@ -9464,7 +9155,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例开通或者关闭互通组的流程ID，FlowId小于0-开通或者关闭失败，反之则成功。",
           "example": "558800",
@@ -9481,7 +9171,6 @@
       "document": "需要迁移的DB列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移数据库的名称",
           "example": "",
@@ -9498,7 +9187,6 @@
       "document": "迁移的进度详情类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "当前环节的名称",
           "example": "",
@@ -9509,7 +9197,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前环节的进度（单位是%）",
           "example": "",
@@ -9526,7 +9213,6 @@
       "document": "迁移任务的源类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移源实例的ID，MigrateType=1(TencentDB for SQLServers)时使用，格式如：mssql-si2823jyl",
           "example": "",
@@ -9537,7 +9223,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移源Cvm的ID，MigrateType=2(云服务器自建SQLServer数据库)时使用",
           "example": "",
@@ -9548,7 +9233,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移源Cvm的Vpc网络标识，MigrateType=2(云服务器自建SQLServer数据库)时使用，格式如：vpc-6ys9ont9",
           "example": "",
@@ -9559,7 +9243,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移源Cvm的Vpc下的子网标识，MigrateType=2(云服务器自建SQLServer数据库)时使用，格式如：subnet-h9extioi",
           "example": "",
@@ -9570,7 +9253,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户名，MigrateType=1或MigrateType=2使用",
           "example": "",
@@ -9581,7 +9263,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "密码，MigrateType=1或MigrateType=2使用",
           "example": "",
@@ -9592,7 +9273,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移源Cvm自建库的内网IP，MigrateType=2(云服务器自建SQLServer数据库)时使用",
           "example": "",
@@ -9603,7 +9283,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移源Cvm自建库的端口号，MigrateType=2(云服务器自建SQLServer数据库)时使用",
           "example": "",
@@ -9614,7 +9293,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "离线迁移的源备份地址，MigrateType=4或MigrateType=5使用",
           "example": "",
@@ -9625,7 +9303,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "离线迁移的源备份密码，MigrateType=4或MigrateType=5使用",
           "example": "",
@@ -9642,7 +9319,6 @@
       "document": "迁移任务的目标类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移目标实例的ID，格式如：mssql-si2823jyl",
           "example": "",
@@ -9653,7 +9329,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移目标实例的用户名",
           "example": "",
@@ -9664,7 +9339,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移目标实例的密码",
           "example": "",
@@ -9681,7 +9355,6 @@
       "document": "查询迁移任务列表类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务ID",
           "example": "",
@@ -9692,7 +9365,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务名称",
           "example": "",
@@ -9703,7 +9375,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务所属的用户ID",
           "example": "",
@@ -9714,7 +9385,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务所属的地域",
           "example": "",
@@ -9725,7 +9395,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移源的类型 1:TencentDB for SQLServer 2:云服务器自建SQLServer数据库 4:SQLServer备份还原 5:SQLServer备份还原（COS方式）",
           "example": "",
@@ -9736,7 +9405,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务的创建时间",
           "example": "",
@@ -9747,7 +9415,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务的开始时间",
           "example": "",
@@ -9758,7 +9425,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务的结束时间",
           "example": "",
@@ -9769,7 +9435,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务的状态（1:初始化,4:迁移中,5.迁移失败,6.迁移成功,7已中止,8已删除,9中止中,10完成中,11中止失败,12完成失败）",
           "example": "",
@@ -9780,7 +9445,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "信息",
           "example": "",
@@ -9791,7 +9455,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否迁移任务经过检查（0:未校验,1:校验成功,2:校验失败,3:校验中）",
           "example": "",
@@ -9802,7 +9465,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务当前进度（单位%）",
           "example": "",
@@ -9813,7 +9475,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务进度细节",
           "example": "",
@@ -9830,7 +9491,6 @@
       "document": "冷备迁移导入",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "备份导入任务ID 或 增量导入任务ID",
           "example": "mssql-incremental-migration-kp7bgv8p",
@@ -9841,7 +9501,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份导入名称，增量导入任务该字段为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MigrationName",
@@ -9852,7 +9511,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用ID",
           "example": "251006279",
@@ -9863,7 +9521,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域",
           "example": "ap-guangzhou",
@@ -9874,7 +9531,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移目标实例ID",
           "example": "mssql-rdc0gajn",
@@ -9885,7 +9541,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务恢复类型",
           "example": "FULL_LOG",
@@ -9896,7 +9551,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份用户上传类型，COS_URL-备份放在用户的对象存储上，提供URL。COS_UPLOAD-备份放在业务的对象存储上，用户上传",
           "example": "COS_UPLOAD",
@@ -9907,7 +9561,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份文件列表，UploadType确定，COS_URL则保存URL，COS_UPLOAD则保存备份名称",
           "example": "db_cvm_1_20200927204209_2log2_2noreconvery2.bak",
@@ -9918,7 +9571,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务状态，2-创建完成，7-全量导入中，8-等待增量，9-导入成功，10-导入失败，12-增量导入中",
           "example": "2",
@@ -9929,7 +9581,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务创建时间",
           "example": "2020-09-27 20:44:59",
@@ -9940,7 +9591,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务开始时间",
           "example": "0000-00-00 00:00:00",
@@ -9951,7 +9601,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务结束时间",
           "example": "0000-00-00 00:00:00",
@@ -9962,7 +9611,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "说明信息",
           "example": "Message",
@@ -9973,7 +9621,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移细节",
           "example": "Detail",
@@ -9984,7 +9631,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前状态允许的操作",
           "example": "Action",
@@ -9995,7 +9641,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是最终恢复，全量导入任务该字段为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NO",
@@ -10006,7 +9651,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "重命名的数据库名称集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -10023,7 +9667,6 @@
       "document": "冷备导入任务允许的操作",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "支持的所有操作，值包括：view(查看任务) ，modify(修改任务)， start(启动任务)，incremental(创建增量任务)，delete(删除任务)，upload(获取上传权限)。",
           "example": "",
@@ -10034,7 +9677,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前状态允许的操作，AllAction的子集,为空表示禁止所有操作",
           "example": "",
@@ -10051,7 +9693,6 @@
       "document": "冷备导入任务迁移细节",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "总步骤数",
           "example": "",
@@ -10062,7 +9703,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前步骤",
           "example": "",
@@ -10073,7 +9713,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总进度,如：\"30\"表示30%",
           "example": "",
@@ -10084,7 +9723,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "步骤信息，null表示还未开始迁移\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -10101,7 +9739,6 @@
       "document": "冷备导入任务迁移步骤细节",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "步骤序列",
           "example": "",
@@ -10112,7 +9749,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "步骤展现名称",
           "example": "",
@@ -10123,7 +9759,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "英文ID标识",
           "example": "",
@@ -10134,7 +9769,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "步骤状态:0-默认值,1-成功,2-失败,3-执行中,4-未执行",
           "example": "",
@@ -10151,7 +9785,6 @@
       "document": "ModifyAccountPrivilege请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库实例ID，形如mssql-njj2mtpl",
           "example": "mssql-njj2mtpl",
@@ -10161,7 +9794,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号权限变更信息",
           "example": "无",
@@ -10199,7 +9831,6 @@
       "document": "ModifyAccountRemark请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，形如mssql-j8kv137v",
           "example": "mssql-j8kv137v",
@@ -10209,7 +9840,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改备注的账户信息",
           "example": "无",
@@ -10237,7 +9867,6 @@
       "document": "ModifyBackupMigration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "导入目标实例ID",
           "example": "mssql-rdc0gajn",
@@ -10247,7 +9876,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份导入任务ID，由CreateBackupMigration接口返回",
           "example": "mssql-backup-migration-kpl74n9l",
@@ -10257,7 +9885,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务名称",
           "example": "字符串",
@@ -10267,7 +9894,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务恢复类型，FULL,FULL_LOG,FULL_DIFF",
           "example": "FULL",
@@ -10277,7 +9903,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "COS_URL-备份放在用户的对象存储上，提供URL。COS_UPLOAD-备份放在业务的对象存储上，用户上传",
           "example": "COS_UPLOAD",
@@ -10287,7 +9912,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UploadType是COS_URL时这里时URL，COS_UPLOAD这里填备份文件的名字；只支持1个备份文件，但1个备份文件内可包含多个库",
           "example": "[\"db1.bak\\n\"]",
@@ -10297,7 +9921,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要重命名的数据库名称集合",
           "example": "[{\"OldName\":\"test1\",\"NewName\":\"test2\"}]",
@@ -10335,7 +9958,6 @@
       "document": "ModifyBackupName请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，格式如：mssql-3l3fgqn7",
           "example": "mssql-6upluvd5",
@@ -10345,7 +9967,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改的备份名称",
           "example": "backup_name",
@@ -10355,7 +9976,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要修改名称的备份ID，可通过 [DescribeBackups](https://cloud.tencent.com/document/product/238/19943)  接口获取。",
           "example": "1234568",
@@ -10365,7 +9985,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份任务组ID，在单库备份文件模式下，可通过[DescribeBackups](https://cloud.tencent.com/document/product/238/19943) 接口获得。\n BackupId 和 GroupId 同时存在，按照BackupId进行修改。",
           "example": "558800",
@@ -10393,7 +10012,6 @@
       "document": "ModifyBackupStrategy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "mssql-j8kv137v",
@@ -10403,7 +10021,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份类型，当length(BackupDay) <=7 && length(BackupDay) >=2时，取值为weekly，当length(BackupDay)=1时，取值daily，默认daily",
           "example": "daily",
@@ -10413,7 +10030,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份时间点，取值为0-23的整数",
           "example": "14",
@@ -10423,7 +10039,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "BackupType取值为daily时，表示备份间隔天数。当前取值只能为1",
           "example": "1",
@@ -10433,7 +10048,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份模式，master_pkg-主节点上打包备份文件；master_no_pkg-主节点单库备份文件；slave_pkg-从节点上打包备份文件；slave_no_pkg-从节点上单库备份文件，从节点上备份只有在always on容灾模式下支持。",
           "example": "master_no_pkg",
@@ -10443,7 +10057,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "BackupType取值为weekly时，表示每周的星期N做备份。（如果数据备份保留时间<7天，则取值[1,2,3,4,5,6,7]。如果数据备份保留时间>=7天，则备份周期取值至少是一周的任意2天）",
           "example": "[1,2,3,4,5,6,7]",
@@ -10453,7 +10066,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据(日志)备份保留时间，取值[3-1830]天，默认7天",
           "example": "7",
@@ -10463,7 +10075,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "定期备份状态 enable-开启，disable-关闭，默认关闭",
           "example": "disable",
@@ -10473,7 +10084,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "定期备份保留天数 [90 - 3650]天，默认365天",
           "example": "90",
@@ -10483,7 +10093,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "定期备份策略 years-每年，quarters-每季度，months-每月，默认months",
           "example": "months",
@@ -10493,7 +10102,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "定期备份保留个数，默认1个",
           "example": "1",
@@ -10503,7 +10111,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "定期备份开始日期，格式-YYYY-MM-DD 默认当前日期",
           "example": "2022-10-10",
@@ -10596,7 +10203,6 @@
       "document": "ModifyDBInstanceName请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库实例ID，形如mssql-njj2mtpl",
           "example": "mssql-njj2mtpl",
@@ -10606,7 +10212,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新的数据库实例名字",
           "example": "testModifyInstanceName",
@@ -10634,7 +10239,6 @@
       "document": "ModifyDBInstanceNetwork请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例id",
           "example": "mssql-p2yli7gv",
@@ -10644,7 +10248,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新VPC网络Id",
           "example": "vpc-ilki4qdp",
@@ -10654,7 +10257,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新子网Id",
           "example": "subnet-lru6dhh8",
@@ -10664,7 +10266,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原vip保留时长，单位小时，默认为0，代表立即回收，最大为168小时",
           "example": "12",
@@ -10674,7 +10275,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定VIP地址",
           "example": "127.0.0.1",
@@ -10712,7 +10312,6 @@
       "document": "ModifyDBInstanceProject请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID数组，形如mssql-j8kv137v",
           "example": "[\"mssql-j8kv137v\\r\\n\"]",
@@ -10722,7 +10321,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID，为0的话表示默认项目",
           "example": "347",
@@ -10760,7 +10358,6 @@
       "document": "ModifyDBInstanceRenewFlag请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例续费状态标记信息",
           "example": "无",
@@ -10798,7 +10395,6 @@
       "document": "ModifyDBInstanceSecurityGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，格式如：mssql-c1nl9rpv 或者 mssqlro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "mssql-6f4ddx2f",
@@ -10808,7 +10404,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。",
           "example": "[\"sg-igw86yth\\r\\n\"]",
@@ -10836,7 +10431,6 @@
       "document": "ModifyDBName请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "mssql-i1z41iwd",
@@ -10846,7 +10440,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "旧数据库名",
           "example": "test_db",
@@ -10856,7 +10449,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新数据库名",
           "example": "test_db_newname",
@@ -10894,7 +10486,6 @@
       "document": "ModifyDBRemark请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，形如mssql-rljoi3bf",
           "example": "mssql-njj2mtpl",
@@ -10904,7 +10495,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名称及备注数组，每个元素包含数据库名和对应的备注",
           "example": "无",
@@ -10932,7 +10522,6 @@
       "document": "ModifyDatabaseCDC请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名数组",
           "example": "[db_test]",
@@ -10942,7 +10531,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开启、关闭数据库CDC功能 enable；开启，disable：关闭",
           "example": "enable",
@@ -10952,7 +10540,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "mssql-j8kv137v",
@@ -10990,7 +10577,6 @@
       "document": "ModifyDatabaseCT请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名数组",
           "example": "[db_test]",
@@ -11000,7 +10586,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "启用、禁用数据库CT功能 enable；启用，disable：禁用",
           "example": "enable",
@@ -11010,7 +10595,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "mssql-j8kv137v",
@@ -11020,7 +10604,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "启用CT时额外保留天数，默认保留3天，最小3天，最大30天",
           "example": "3",
@@ -11058,7 +10641,6 @@
       "document": "ModifyDatabaseMdf请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库名数组",
           "example": "[db_test]",
@@ -11068,7 +10650,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "mssql-j8kv137v",
@@ -11106,7 +10687,6 @@
       "document": "ModifyIncrementalMigration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "导入目标实例ID",
           "example": "mssql-rdc0gajn",
@@ -11116,7 +10696,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份导入任务ID，由CreateBackupMigration接口返回",
           "example": "mssql-backup-migration-cg0ffgqt",
@@ -11126,7 +10705,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "增量导入任务ID，由CreateIncrementalMigration接口返回",
           "example": "mssql-incremental-migration-kp7bgv8p",
@@ -11136,7 +10714,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要恢复，NO-不需要，YES-需要，默认不修改增量备份导入任务是否需要恢复的属性。",
           "example": "YES",
@@ -11146,7 +10723,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "UploadType是COS_URL时这里时URL，COS_UPLOAD这里填备份文件的名字；只支持1个备份文件，但1个备份文件内可包含多个库",
           "example": "[\"db_cvm_1_20200927204209_2log2_2reconvery2.bak\\n\"]",
@@ -11187,7 +10763,6 @@
           "disabled": false,
           "document": "实例ID",
           "example": "mssql-182jha8a",
-          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -11197,7 +10772,6 @@
           "disabled": false,
           "document": "证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，默认取值self。",
           "example": "self",
-          "is_base64": false,
           "member": "string",
           "name": "CertificateAttribution",
           "required": true,
@@ -11207,7 +10781,6 @@
           "disabled": false,
           "document": "引用的其他主账号ID，当CertificateAttribution 为others时必填。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "QuoteUin",
           "required": false,
@@ -11242,7 +10815,6 @@
       "document": "ModifyInstanceParam请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例短 ID 列表",
           "example": "无",
@@ -11252,7 +10824,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要修改的参数列表。每一个元素是 Name 和 CurrentValue 的组合。Name 是参数名，CurrentValue 是要修改的值。<b>注意</b>：如果修改的参数需要<b>重启</b>实例，那么您的实例将会在执行修改时<b>重启</b>。您可以通过DescribeInstanceParams接口查询修改参数时是否会重启实例，以免导致您的实例不符合预期重启。",
           "example": "无",
@@ -11262,7 +10833,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "执行参数调整任务的方式，默认为 0。支持值包括：0 - 立刻执行，1 - 时间窗执行。",
           "example": "0",
@@ -11290,7 +10860,6 @@
       "document": "ModifyMaintenanceSpan请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，形如mssql-k8voqdlz",
           "example": "mssql-6upluvd5",
@@ -11300,7 +10869,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "以周为单位，表示允许周几维护，例如：[1,2,3,4,5,6,7]表示周一到周日均为可维护日，本参数不填，则不修改此值。",
           "example": "[\"1\\r\\n\",\"2\\r\\n\",\"3\\r\\n\"]",
@@ -11310,7 +10878,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每天可维护的开始时间，例如：10:24标识可维护时间窗10点24分开始，本参数不填，则不修改此值。",
           "example": "00:00",
@@ -11320,7 +10887,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每天可维护的持续时间，单位是h，例如：1 表示从可维护的开始时间起持续1小时，本参数不填，则不修改此值。",
           "example": "6",
@@ -11348,7 +10914,6 @@
       "document": "ModifyMigration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务ID",
           "example": "2728",
@@ -11358,7 +10923,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新的迁移任务的名称，若不填则不修改",
           "example": "测试接口",
@@ -11368,7 +10932,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新的迁移类型（1:结构迁移 2:数据迁移 3:增量同步），若不填则不修改",
           "example": "2",
@@ -11378,7 +10941,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移源的类型 1:TencentDB for SQLServer 2:云服务器自建SQLServer数据库 4:SQLServer备份还原 5:SQLServer备份还原（COS方式），若不填则不修改",
           "example": "5",
@@ -11388,7 +10950,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移源，若不填则不修改",
           "example": "无",
@@ -11398,7 +10959,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移目标，若不填则不修改",
           "example": "无",
@@ -11408,7 +10968,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "迁移DB对象 ，离线迁移（SourceType=4或SourceType=5）不使用，若不填则不修改",
           "example": "无",
@@ -11446,7 +11005,6 @@
       "document": "ModifyPublishSubscribeName请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "发布订阅ID",
           "example": "5",
@@ -11456,7 +11014,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待修改的发布订阅名称",
           "example": "Change_name",
@@ -11484,7 +11041,6 @@
       "document": "ModifyReadOnlyGroupDetails请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主实例ID，格式如：mssql-3l3fgqn7",
           "example": "mssql-6f4ddx2f",
@@ -11494,7 +11050,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组ID",
           "example": "mssqlrg-552tyamb",
@@ -11504,7 +11059,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组名称，不填此参数，则不修改",
           "example": "change_name",
@@ -11514,7 +11068,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否启动超时剔除功能,0-不开启剔除功能，1-开启剔除功能，不填此参数，则不修改",
           "example": "1",
@@ -11524,7 +11077,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "启动超时剔除功能后，使用的超时阈值，不填此参数，则不修改",
           "example": "18",
@@ -11534,7 +11086,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "启动超时剔除功能后，只读组至少保留的只读副本数，不填此参数，则不修改",
           "example": "1",
@@ -11544,7 +11095,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组实例权重修改集合，不填此参数，则不修改",
           "example": "无",
@@ -11554,7 +11104,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0-用户自定义权重（根据WeightPairs调整）,1-系统自动分配权重(WeightPairs无效)， 默认为0",
           "example": "0",
@@ -11564,7 +11113,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0-不重新均衡负载，1-重新均衡负载，默认为0",
           "example": "1",
@@ -11592,7 +11140,6 @@
       "document": "OpenInterCommunication请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "打开互通组的实例ID集合",
           "example": "mssql-dj5i29c5n",
@@ -11630,7 +11177,6 @@
       "document": "实例参数修改记录",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "mssql-hbr4jy7i",
@@ -11641,7 +11187,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数名称",
           "example": "fill factor (%)",
@@ -11652,7 +11197,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数修改前的值",
           "example": "2",
@@ -11663,7 +11207,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数修改后的值",
           "example": "100",
@@ -11674,7 +11217,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数修改状态，1-初始化等待被执行，2-执行成功，3-执行失败，4-参数修改中",
           "example": "2",
@@ -11685,7 +11227,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间",
           "example": "2020-04-09 00:00:00",
@@ -11702,7 +11243,6 @@
       "document": "数据库实例参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数名称",
           "example": "fill factor (%)",
@@ -11713,7 +11253,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数值",
           "example": "1",
@@ -11730,7 +11269,6 @@
       "document": "实例参数的详细描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "参数名称",
           "example": "fill factor (%)",
@@ -11741,7 +11279,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数类型，integer-整型，enum-枚举型",
           "example": "INT",
@@ -11752,7 +11289,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数默认值",
           "example": "0",
@@ -11763,7 +11299,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数描述",
           "example": "The fill-factor option is provided for fine-tuning index data st",
@@ -11774,7 +11309,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数当前值",
           "example": "5",
@@ -11785,7 +11319,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改参数后，是否需要重启数据库以使参数生效，0-不需要重启，1-需要重启",
           "example": "1",
@@ -11796,7 +11329,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数允许的最大值",
           "example": "100",
@@ -11807,7 +11339,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数允许的最小值",
           "example": "0",
@@ -11818,7 +11349,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数允许的枚举类型",
           "example": "[\"YES\", \"NO\"]",
@@ -11829,7 +11359,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "参数状态 0-状态正常 1-在修改中",
           "example": "0",
@@ -11846,7 +11375,6 @@
       "document": "发布订阅对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "发布订阅ID",
           "example": "",
@@ -11857,7 +11385,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发布订阅名称",
           "example": "",
@@ -11868,7 +11395,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发布实例ID",
           "example": "",
@@ -11879,7 +11405,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发布实例名称",
           "example": "",
@@ -11890,7 +11415,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发布实例IP",
           "example": "",
@@ -11901,7 +11425,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅实例ID",
           "example": "",
@@ -11912,7 +11435,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅实例名称",
           "example": "",
@@ -11923,7 +11445,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "订阅实例IP",
           "example": "",
@@ -11934,7 +11455,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库的订阅发布关系集合",
           "example": "",
@@ -11951,7 +11471,6 @@
       "document": "QueryMigrationCheckProcess请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务ID",
           "example": "1066",
@@ -12009,7 +11528,6 @@
       "document": "只读组对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "只读组ID",
           "example": "",
@@ -12020,7 +11538,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组名称",
           "example": "",
@@ -12031,7 +11548,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组的地域ID，与主实例相同",
           "example": "",
@@ -12042,7 +11558,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组的可用区ID，与主实例相同",
           "example": "",
@@ -12053,7 +11568,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否启动超时剔除功能，0-不开启剔除功能，1-开启剔除功能",
           "example": "",
@@ -12064,7 +11578,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "启动超时剔除功能后，使用的超时阈值",
           "example": "",
@@ -12075,7 +11588,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "启动超时剔除功能后，只读组至少保留的只读副本数",
           "example": "",
@@ -12086,7 +11598,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组vip",
           "example": "",
@@ -12097,7 +11608,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组vport",
           "example": "",
@@ -12108,7 +11618,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组私有网络ID",
           "example": "",
@@ -12119,7 +11628,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组私有网络子网ID",
           "example": "",
@@ -12130,7 +11638,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组状态: 1-申请成功运行中，5-申请中",
           "example": "",
@@ -12141,7 +11648,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主实例ID，形如mssql-sgeshe3th",
           "example": "",
@@ -12152,7 +11658,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读实例副本集合",
           "example": "",
@@ -12169,7 +11674,6 @@
       "document": "只读副本实例",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "只读副本ID，格式如：mssqlro-3l3fgqn7",
           "example": "mssql-dj5i29c5n",
@@ -12180,7 +11684,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读副本名称",
           "example": "无",
@@ -12191,7 +11694,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读副本唯一UID",
           "example": "无",
@@ -12202,7 +11704,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读副本所在项目ID",
           "example": "0",
@@ -12213,7 +11714,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读副本状态。1：申请中 2：运行中 3：被延迟剔除 4：已隔离 5：回收中 6：已回收 7：任务执行中 8：已下线 9：实例扩容中 10：实例迁移中  12：重启中",
           "example": "1",
@@ -12224,7 +11724,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读副本创建时间",
           "example": "2020-04-09 00:00:00",
@@ -12235,7 +11734,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读副本更新时间",
           "example": "2020-04-09 00:00:00",
@@ -12246,7 +11744,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读副本内存大小，单位G",
           "example": "2",
@@ -12257,7 +11754,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读副本存储空间大小，单位G",
           "example": "100",
@@ -12268,7 +11764,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读副本cpu核心数",
           "example": "1",
@@ -12279,7 +11774,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读副本版本代号",
           "example": "2008R2",
@@ -12290,7 +11784,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "宿主机代号",
           "example": "TS85",
@@ -12301,7 +11794,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读副本模式，2-单机",
           "example": "2",
@@ -12312,7 +11804,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读副本计费模式，1-包年包月，0-按量计费",
           "example": "1",
@@ -12323,7 +11814,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读副本权重",
           "example": "1",
@@ -12334,7 +11824,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读副本延迟时间，单位秒",
           "example": "1",
@@ -12345,7 +11834,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读副本与主实例的同步状态。\nInit:初始化\nDeployReadOnlyInPorgress:部署副本进行中\nDeployReadOnlySuccess:部署副本成功\nDeployReadOnlyFail:部署副本失败\nDeployMasterDBInPorgress:主节点上加入副本数据库进行中\nDeployMasterDBSuccess:主节点上加入副本数据库成功\nDeployMasterDBFail:主节点上加入副本数据库进失败\nDeployReadOnlyDBInPorgress:副本还原加入数据库开始\nDeployReadOnlyDBSuccess:副本还原加入数据库成功\nDeployReadOnlyDBFail:副本还原加入数据库失败\nSyncDelay:同步延迟\nSyncFail:同步故障\nSyncExcluded:已剔除只读组\nSyncNormal:正常",
           "example": "Init",
@@ -12356,7 +11844,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读副本与主实例没有同步的库",
           "example": "db1",
@@ -12367,7 +11854,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读副本与主实例没有同步的账户",
           "example": "ac1",
@@ -12378,7 +11864,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读副本计费开始时间",
           "example": "2020-04-09 00:00:00",
@@ -12389,7 +11874,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读副本计费结束时间",
           "example": "2020-04-09 00:00:00",
@@ -12400,7 +11884,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读副本隔离时间",
           "example": "2020-04-09 00:00:00",
@@ -12411,7 +11894,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读副本所在地域",
           "example": "ap-guangzhou",
@@ -12422,7 +11904,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读副本所在可用区",
           "example": "ap-guangzhou-3",
@@ -12439,7 +11920,6 @@
       "document": "只读实例与权重对应关系",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "只读实例ID，格式如：mssqlro-3l3fgqn7",
           "example": "",
@@ -12450,7 +11930,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读实例权重 ，范围是0-100",
           "example": "",
@@ -12467,7 +11946,6 @@
       "document": "RecycleDBInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID",
           "example": "mssql-ms2m7vut",
@@ -12505,7 +11983,6 @@
       "document": "RecycleReadOnlyGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主实例的ID",
           "example": "mssql-2cwisu23",
@@ -12515,7 +11992,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只读组的ID",
           "example": "mssqlrg-787oxy95",
@@ -12553,7 +12029,6 @@
       "document": "地域信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域英文ID，类似ap-guanghou",
           "example": "",
@@ -12564,7 +12039,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域中文名称",
           "example": "",
@@ -12575,7 +12049,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域数字ID",
           "example": "",
@@ -12586,7 +12059,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该地域目前是否可以售卖，UNAVAILABLE-不可售卖；AVAILABLE-可售卖",
           "example": "",
@@ -12603,7 +12075,6 @@
       "document": "RemoveBackups请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，形如mssql-j8kv137v",
           "example": "mssql-6upluvd5",
@@ -12613,7 +12084,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待删除的备份名称，备份名称可通过DescribeBackups接口的FileName字段获得。单次请求批量删除备份数不能超过10个。",
           "example": "[\"manual_instance_58001_20180702010430.bak.tar\\r\\n\"]",
@@ -12623,7 +12093,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "批量删除手动备份起始时间",
           "example": "2022-04-20 22:23:12",
@@ -12633,7 +12102,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "批量删除手动备份截止时间",
           "example": "2022-04-21 22:23:12",
@@ -12661,7 +12129,6 @@
       "document": "用于RestoreInstance，RollbackInstance，CreateMigration、CloneDB、ModifyBackupMigration 等接口；对恢复的库进行重命名，且支持选择要恢复的库。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "库的名字，如果oldName不存在则返回失败。\n在用于离线迁移任务时可不填。",
           "example": "db1",
@@ -12672,7 +12139,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "库的新名字，在用于离线迁移时，不填则按照OldName命名，OldName和NewName不能同时不填。在用于克隆数据库时，OldName和NewName都必须填写，且不能重复",
           "example": "db2",
@@ -12692,7 +12158,6 @@
           "disabled": false,
           "document": "实例ID，形如mssql-j8kv137v",
           "example": "mssql-j8kv137v",
-          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -12702,7 +12167,6 @@
           "disabled": false,
           "document": "续费多少个月，取值范围为1-48，默认为1",
           "example": "2",
-          "is_base64": false,
           "member": "uint64",
           "name": "Period",
           "required": false,
@@ -12712,7 +12176,6 @@
           "disabled": false,
           "document": "是否自动使用代金券，0-不使用；1-使用；默认不使用",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "AutoVoucher",
           "required": false,
@@ -12722,7 +12185,6 @@
           "disabled": false,
           "document": "代金券ID数组，目前只支持使用1张代金券",
           "example": "VoucherIds",
-          "is_base64": false,
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -12732,7 +12194,6 @@
           "disabled": false,
           "document": "续费标记 0:正常续费 1:自动续费：只用于按量计费转包年包月时有效。",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "AutoRenewFlag",
           "required": false,
@@ -12767,7 +12228,6 @@
       "document": "RenewPostpaidDBInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID，格式如：mssql-3l3fgqn7 或 mssqlro-3l3fgqn7",
           "example": "mssql-ms2m7vut",
@@ -12795,7 +12255,6 @@
       "document": "ResetAccountPassword请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库实例ID，形如mssql-njj2mtpl",
           "example": "mssql-njj2mtpl",
@@ -12805,7 +12264,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新后的账户密码信息数组",
           "example": "无",
@@ -12869,7 +12327,6 @@
       "document": "RestartDBInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据库实例ID，形如mssql-njj2mtpl",
           "example": "mssql-njj2mtpl",
@@ -13078,7 +12535,6 @@
       "document": "RunMigration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务ID",
           "example": "2729",
@@ -13116,7 +12572,6 @@
       "document": "安全组",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID",
           "example": "",
@@ -13127,7 +12582,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间，时间格式：yyyy-mm-dd hh:mm:ss",
           "example": "",
@@ -13138,7 +12592,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入站规则",
           "example": "",
@@ -13149,7 +12602,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "出站规则",
           "example": "",
@@ -13160,7 +12612,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组ID",
           "example": "",
@@ -13171,7 +12622,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组名称",
           "example": "",
@@ -13182,7 +12632,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "安全组备注",
           "example": "",
@@ -13199,7 +12648,6 @@
       "document": "安全组策略",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "策略，ACCEPT 或者 DROP",
           "example": "",
@@ -13210,7 +12658,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "目的 IP 或 IP 段，例如172.16.0.0/12",
           "example": "",
@@ -13221,7 +12668,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "端口或者端口范围",
           "example": "",
@@ -13232,7 +12678,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络协议，支持 UDP、TCP等",
           "example": "",
@@ -13243,7 +12688,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则限定的方向，OUTPUT-出战规则  INPUT-进站规则",
           "example": "",
@@ -13260,7 +12704,6 @@
       "document": "备可用区信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "备可用区地域码",
           "example": "ap-guangzhou-1",
@@ -13271,7 +12714,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备可用区",
           "example": "广州一区",
@@ -13288,7 +12730,6 @@
       "document": "慢查询日志文件信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "慢查询日志文件唯一标识",
           "example": "",
@@ -13299,7 +12740,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件生成的开始时间",
           "example": "",
@@ -13310,7 +12750,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件生成的结束时间",
           "example": "",
@@ -13321,7 +12760,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件大小（KB）",
           "example": "",
@@ -13332,7 +12770,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件中log条数",
           "example": "",
@@ -13343,7 +12780,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内网下载地址",
           "example": "",
@@ -13354,7 +12790,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "外网下载地址",
           "example": "",
@@ -13365,7 +12800,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态（1成功 2失败）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -13382,7 +12816,6 @@
       "document": "实例可售卖的规格信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例规格ID，利用DescribeZones返回的SpecId，结合DescribeProductConfig返回的可售卖规格信息，可获悉某个可用区下可购买什么规格的实例",
           "example": "",
@@ -13393,7 +12826,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机型ID",
           "example": "",
@@ -13404,7 +12836,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机型中文名称",
           "example": "",
@@ -13415,7 +12846,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据库版本信息。取值为2008R2（表示SQL Server 2008 R2），2012SP3（表示SQL Server 2012），2016SP1（表示SQL Server 2016 SP1）",
           "example": "",
@@ -13426,7 +12856,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Version字段对应的版本名称",
           "example": "",
@@ -13437,7 +12866,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "内存大小，单位GB",
           "example": "",
@@ -13448,7 +12876,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CPU核数",
           "example": "",
@@ -13459,7 +12886,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "此规格下最小的磁盘大小，单位GB",
           "example": "",
@@ -13470,7 +12896,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "此规格下最大的磁盘大小，单位GB",
           "example": "",
@@ -13481,7 +12906,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "此规格对应的QPS大小",
           "example": "",
@@ -13492,7 +12916,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "此规格的中文描述信息",
           "example": "",
@@ -13503,7 +12926,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "此规格对应的包年包月Pid",
           "example": "",
@@ -13514,7 +12936,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "此规格对应的按量计费Pid列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -13525,7 +12946,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "此规格下支持的付费模式，POST-仅支持按量计费 PRE-仅支持包年包月 ALL-支持所有",
           "example": "",
@@ -13536,7 +12956,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品类型，HA-高可用型(包括双机高可用，alwaysOn集群)，RO-只读副本型，SI-基础版本型",
           "example": "",
@@ -13547,7 +12966,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "跨可用区类型，MultiZones-只支持跨可用区，SameZones-只支持同可用区，ALL-支持所有",
           "example": "",
@@ -13564,7 +12982,6 @@
       "document": "StartBackupMigration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "导入目标实例ID",
           "example": "mssql-rdc0gajn",
@@ -13574,7 +12991,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份导入任务ID，由CreateBackupMigration接口返回",
           "example": "mssql-backup-migration-kpl74n9l",
@@ -13612,7 +13028,6 @@
       "document": "StartIncrementalMigration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "导入目标实例ID",
           "example": "mssql-rdc0gajn",
@@ -13622,7 +13037,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备份导入任务ID，由CreateBackupMigration接口返回",
           "example": "mssql-backup-migration-cg0ffgqt",
@@ -13632,7 +13046,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "增量备份导入任务ID",
           "example": "mssql-incremental-migration-kp7bgv8p",
@@ -13706,7 +13119,6 @@
       "document": "StartMigrationCheck请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务id",
           "example": "1066",
@@ -13744,7 +13156,6 @@
       "document": "进度步骤详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "具体步骤返回信息",
           "example": "",
@@ -13755,7 +13166,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前步骤状态，0成功，-2未开始",
           "example": "",
@@ -13766,7 +13176,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "步骤名称",
           "example": "",
@@ -13783,7 +13192,6 @@
       "document": "StopMigration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "迁移任务ID",
           "example": "2729",
@@ -13857,7 +13265,6 @@
       "document": "TerminateDBInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主动销毁的实例ID列表，格式如：[mssql-3l3fgqn7]。与云数据库控制台页面中显示的实例ID相同",
           "example": "[\"mssql-njj2mtpl\\n\"]",
@@ -13888,7 +13295,6 @@
           "disabled": false,
           "document": "实例ID，形如mssql-j8kv137v",
           "example": "mssql-j8kv137v",
-          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -13898,7 +13304,6 @@
           "disabled": false,
           "document": "实例升级后内存大小，单位GB，其值不能小于当前实例内存大小",
           "example": "4",
-          "is_base64": false,
           "member": "int64",
           "name": "Memory",
           "required": false,
@@ -13908,7 +13313,6 @@
           "disabled": false,
           "document": "实例升级后磁盘大小，单位GB，其值不能小于当前实例磁盘大小",
           "example": "400",
-          "is_base64": false,
           "member": "int64",
           "name": "Storage",
           "required": false,
@@ -13918,7 +13322,6 @@
           "disabled": false,
           "document": "是否自动使用代金券，0 - 不使用；1 - 默认使用。取值默认为0",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "AutoVoucher",
           "required": false,
@@ -13928,7 +13331,6 @@
           "disabled": false,
           "document": "代金券ID，目前单个订单只能使用一张代金券",
           "example": "0",
-          "is_base64": false,
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -13938,7 +13340,6 @@
           "disabled": false,
           "document": "实例升级后的CPU核心数",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "Cpu",
           "required": false,
@@ -13948,7 +13349,6 @@
           "disabled": false,
           "document": "升级sqlserver的版本，目前支持：2008R2（SQL Server 2008 Enterprise），2012SP3（SQL Server 2012 Enterprise）版本等。每个地域支持售卖的版本不同，可通过DescribeProductConfig接口来拉取每个地域可售卖的版本信息，版本不支持降级，不填则不修改版本",
           "example": "2008R2",
-          "is_base64": false,
           "member": "string",
           "name": "DBVersion",
           "required": false,
@@ -13958,7 +13358,6 @@
           "disabled": false,
           "document": "升级sqlserver的高可用架构,从镜像容灾升级到always on集群容灾，仅支持2017及以上版本且支持always on高可用的实例，不支持降级到镜像方式容灾，CLUSTER-升级为always on容灾，不填则不修改高可用架构",
           "example": "CLUSTER",
-          "is_base64": false,
           "member": "string",
           "name": "HAType",
           "required": false,
@@ -13968,7 +13367,6 @@
           "disabled": false,
           "document": "修改实例是否为跨可用区容灾，SameZones-修改为同可用区 MultiZones-修改为跨可用区",
           "example": "MultiZones",
-          "is_base64": false,
           "member": "string",
           "name": "MultiZones",
           "required": false,
@@ -13978,7 +13376,6 @@
           "disabled": false,
           "document": "执行变配的方式，默认为 1。支持值包括：0 - 立刻执行，1 - 维护时间窗执行",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "WaitSwitch",
           "required": false,
@@ -14013,7 +13410,6 @@
       "document": "可用区信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "可用区英文ID，形如ap-guangzhou-1，表示广州一区",
           "example": "",
@@ -14024,7 +13420,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区中文名称",
           "example": "",
@@ -14035,7 +13430,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区数字ID",
           "example": "",
@@ -14046,7 +13440,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该可用区目前可售卖的规格ID，利用SpecId，结合接口DescribeProductConfig返回的数据，可获悉该可用区目前可售卖的规格大小",
           "example": "",
@@ -14057,7 +13450,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前可用区与规格下，可售卖的数据库版本，形如2008R2（表示SQL Server 2008 R2）。其可选值有2008R2（表示SQL Server 2008 R2），2012SP3（表示SQL Server 2012），2016SP1（表示SQL Server 2016 SP1）",
           "example": "",

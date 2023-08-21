@@ -1055,7 +1055,6 @@
       "document": "告警事件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件名",
           "example": "",
@@ -1066,7 +1065,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "展示的事件名",
           "example": "",
@@ -1077,7 +1075,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警策略类型",
           "example": "",
@@ -1120,7 +1117,6 @@
       "document": "告警分级阈值配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "提醒等级阈值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1131,7 +1127,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "警告等级阈值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1142,7 +1137,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "严重等级阈值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1159,7 +1153,6 @@
       "document": "告警历史数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "告警历史Id",
           "example": "01e1f33f-b4ec-43db-8fd0-6f7e163e6ca5",
@@ -1170,7 +1163,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监控类型",
           "example": "MT_QCE",
@@ -1181,7 +1173,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略类型",
           "example": "cvm_device",
@@ -1192,7 +1183,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警对象",
           "example": "ins-abcdef",
@@ -1203,7 +1193,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警内容",
           "example": "CPU 使用率 > 80%",
@@ -1214,7 +1203,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳，首次出现时间",
           "example": "1611700000",
@@ -1225,7 +1213,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳，最后出现时间",
           "example": "1611734567",
@@ -1236,7 +1223,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警状态，ALARM=未恢复 OK=已恢复 NO_CONF=已失效 NO_DATA=数据不足",
           "example": "ALARM",
@@ -1247,7 +1233,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警策略 Id",
           "example": "policy-abcdef",
@@ -1258,7 +1243,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略名称",
           "example": "云服务器告警策略",
@@ -1269,7 +1253,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "基础产品告警的告警对象所属网络",
           "example": "0",
@@ -1280,7 +1263,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目 Id",
           "example": "0",
@@ -1291,7 +1273,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目名字",
           "example": "默认项目",
@@ -1302,7 +1283,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警对象所属实例组",
           "example": "无",
@@ -1313,7 +1293,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接收人列表",
           "example": "无",
@@ -1324,7 +1303,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接收组列表",
           "example": "无",
@@ -1335,7 +1313,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警渠道列表 SMS=短信 EMAIL=邮件 CALL=电话 WECHAT=微信",
           "example": "无",
@@ -1346,7 +1323,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用于实例、实例组的绑定和解绑接口（[BindingPolicyObject](https://cloud.tencent.com/document/product/248/40421)、[UnBindingAllPolicyObject](https://cloud.tencent.com/document/product/248/40568)、[UnBindingPolicyObject](https://cloud.tencent.com/document/product/248/40567)）的策略 ID",
           "example": "12345",
@@ -1357,7 +1333,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警类型",
           "example": "METRIC",
@@ -1368,7 +1343,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件Id",
           "example": "0",
@@ -1379,7 +1353,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域",
           "example": "ap-guangzhou",
@@ -1390,7 +1363,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略是否存在 0=不存在 1=存在",
           "example": "1",
@@ -1401,7 +1373,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1412,7 +1383,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警实例的维度信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"cluster_name\":\"es-dnxsssss\"}",
@@ -1429,7 +1399,6 @@
       "document": "告警历史的指标信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "云产品监控类型查询数据使用的命名空间",
           "example": "qce/cvm",
@@ -1440,7 +1409,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标名",
           "example": "CpuUsage",
@@ -1451,7 +1419,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计周期",
           "example": "60",
@@ -1462,7 +1429,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "触发告警的数值",
           "example": "10",
@@ -1473,7 +1439,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标的展示名",
           "example": "CPU使用率",
@@ -1490,7 +1455,6 @@
       "document": "告警通知模板详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "告警通知模板 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12345",
@@ -1501,7 +1465,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警通知模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "默认通知",
@@ -1512,7 +1475,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上次修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-11-16 13:56:56",
@@ -1523,7 +1485,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上次修改人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1500000688",
@@ -1534,7 +1495,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=全部通知\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ALL",
@@ -1545,7 +1505,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户通知列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1556,7 +1515,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回调通知列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1567,7 +1525,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否是系统预设通知模板 0=否 1=是\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1578,7 +1535,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通知语言 zh-CN=中文 en-US=英文\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "zh-CN",
@@ -1589,7 +1545,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警通知模板绑定的告警策略ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1600,7 +1555,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "后台 amp consumer id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Consumer-asfafasf",
@@ -1611,7 +1565,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "推送cls渠道\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -1622,7 +1575,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通知模板绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2031,7 +1983,6 @@
       "document": "告警策略事件触发条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "告警触发条件列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2048,7 +1999,6 @@
       "document": "告警策略过滤条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件类型 DIMENSION=使用 Dimensions 做过滤\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2059,7 +2009,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "AlarmPolicyDimension 二维数组序列化后的json字符串，一维数组之间互为或关系，一维数组内的元素互为与关系\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2076,7 +2025,6 @@
       "document": "告警策略触发条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指标名或事件名，支持的指标可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询，支持的事件可以从 [DescribeAlarmEvents](https://cloud.tencent.com/document/product/248/51284) 查询 。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CpuUsage",
@@ -2087,7 +2035,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "秒数 统计周期，支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "60",
@@ -2098,7 +2045,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "英文运算符\nintelligent=无阈值智能检测\neq=等于\nge=大于等于\ngt=大于\nle=小于等于\nlt=小于\nne=不等于\nday_increase=天同比增长\nday_decrease=天同比下降\nday_wave=天同比波动\nweek_increase=周同比增长\nweek_decrease=周同比下降\nweek_wave=周同比波动\ncycle_increase=环比增长\ncycle_decrease=环比下降\ncycle_wave=环比波动\nre=正则匹配\n支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "gt",
@@ -2109,7 +2055,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "阈值，支持的范围可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
@@ -2120,7 +2065,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "周期数 持续通知周期 1=持续1个周期 2=持续2个周期...，支持的值可以从 [DescribeAlarmMetrics](https://cloud.tencent.com/document/product/248/51283) 查询\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -2131,7 +2075,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "秒数 告警间隔  0=不重复 300=每5分钟告警一次 600=每10分钟告警一次 900=每15分钟告警一次 1800=每30分钟告警一次 3600=每1小时告警一次 7200=每2小时告警一次 10800=每3小时告警一次 21600=每6小时告警一次 43200=每12小时告警一次 86400=每1天告警一次\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "300",
@@ -2142,7 +2085,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警频率是否指数增长 0=否 1=是\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -2153,7 +2095,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对于单个触发规则的过滤条件\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2164,7 +2105,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标展示名，用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CPU使用率",
@@ -2175,7 +2115,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单位，用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "%",
@@ -2186,7 +2125,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "触发条件类型 STATIC=静态阈值 DYNAMIC=动态阈值。创建或编辑策略时，如不填则默认为 STATIC。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "STATIC",
@@ -2197,7 +2135,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为高级指标，0否，1是\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -2208,7 +2145,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高级指标是否开通，0否，1是\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -2219,7 +2155,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集成中心产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cvm",
@@ -2230,7 +2165,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -2241,7 +2175,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最小值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -2252,7 +2185,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警分级阈值配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2269,7 +2201,6 @@
       "document": "告警策略触发任务",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "触发任务类型 AS=弹性伸缩\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2280,7 +2211,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用 json 表示配置信息 {\"Key1\":\"Value1\",\"Key2\":\"Value2\"}\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2333,7 +2263,6 @@
       "document": "策略绑定实例维度信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域名",
           "example": "gz",
@@ -2344,7 +2273,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域ID",
           "example": "1",
@@ -2355,7 +2283,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的维度信息，格式为\n{\"unInstanceId\":\"ins-00jvv9mo\"}。不同云产品的维度信息不同，详见\n[指标维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)",
           "example": "{\"unInstanceId\":\"ins-00jvv9mo\"}",
@@ -2366,7 +2293,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件维度信息",
           "example": "{\"uuid\":\"c734cd0d-d050-44bd-8d17-f6381039b4b6\"}",
@@ -2383,7 +2309,6 @@
       "document": "BindingPolicyObject请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "必填。固定值\"monitor\"",
           "example": "monitor",
@@ -2393,7 +2318,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略组id，例如 4739573。逐渐弃用，建议使用 PolicyId 参数",
           "example": "111111",
@@ -2403,7 +2327,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警策略ID，例如“policy-gh892hg0”。PolicyId 参数与 GroupId 参数至少要填一个，否则会报参数错误，建议使用该参数。若两者同时存在则以该参数为准",
           "example": "policy-abc123",
@@ -2413,7 +2336,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例分组ID",
           "example": "0",
@@ -2423,7 +2345,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要绑定的对象维度信息",
           "example": "无",
@@ -2433,7 +2354,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件配置的告警",
           "example": "{   \"source\": \"apigw.cloud.tencent\", // 对应云监控所选 云产品   \"type\": [ ",
@@ -2443,7 +2363,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否配置了事件告警",
           "example": "1",
@@ -2570,7 +2489,6 @@
       "document": "告警通知中的推送CLS操作",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域",
           "example": "ap-guangzhou",
@@ -2581,7 +2499,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志集Id",
           "example": "logset-28hg48g2",
@@ -2592,7 +2509,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主题Id",
           "example": "topic-2ingu2bg",
@@ -2603,7 +2519,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "启停状态，可不传，默认启用。0=停用，1=启用",
           "example": "1",
@@ -2750,7 +2665,6 @@
       "document": "策略类型信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间标示",
           "example": "performance_database_metric",
@@ -2761,7 +2675,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间名称",
           "example": "数据库指标",
@@ -2772,7 +2685,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监控类型",
           "example": " MT_TAW",
@@ -2783,7 +2695,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "维度信息",
           "example": "无",
@@ -2800,7 +2711,6 @@
       "document": "告警条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "告警通知频率",
           "example": "7200",
@@ -2811,7 +2721,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）",
           "example": "0",
@@ -2822,7 +2731,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测方式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"1\"",
@@ -2833,7 +2741,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"95\"",
@@ -2844,7 +2751,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "持续时间，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"300\"",
@@ -2855,7 +2761,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标ID",
           "example": "33",
@@ -2866,7 +2771,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标展示名称（对外）",
           "example": "\"CPU利用率\"",
@@ -2877,7 +2781,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "周期",
           "example": "60",
@@ -2888,7 +2791,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID",
           "example": "623123",
@@ -2899,7 +2801,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标单位",
           "example": "\"%\"",
@@ -2910,7 +2811,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为高级指标，0：否；1：是",
           "example": "0",
@@ -2921,7 +2821,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开通高级指标，0：否；1：是",
           "example": "0",
@@ -2932,7 +2831,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -2985,7 +2883,6 @@
       "document": "CreateAlarmNotice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模块名，这里填“monitor”",
           "example": "monitor",
@@ -2995,7 +2892,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通知模板名称 60字符以内",
           "example": "默认通知模板",
@@ -3005,7 +2901,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通知类型 ALARM=未恢复通知 OK=已恢复通知 ALL=都通知",
           "example": "ALL",
@@ -3015,7 +2910,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通知语言 zh-CN=中文 en-US=英文",
           "example": "zh-CN",
@@ -3025,7 +2919,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户通知 最多5个",
           "example": "无",
@@ -3035,7 +2928,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "回调通知 最多3个",
           "example": "无",
@@ -3045,7 +2937,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "推送CLS日志服务的操作 最多1个",
           "example": "无",
@@ -3055,7 +2946,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板绑定的标签",
           "example": "无",
@@ -3300,7 +3190,6 @@
       "document": "CreateAlertRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 实例 ID，例如：prom-abcd1234",
           "example": "prom-123131",
@@ -3310,7 +3199,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则名称",
           "example": "告警规则测试",
@@ -3320,7 +3208,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则表达式，可参考<a href=\"https://cloud.tencent.com/document/product/1416/56008\">告警规则说明</a>",
           "example": "job:request_latency_seconds:mean5m{job=\"myjob\"} > 0.5",
@@ -3330,7 +3217,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警通知模板 ID 列表",
           "example": "[\"Consumer-5sfs3242\"]",
@@ -3340,7 +3226,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则状态码，取值如下：\n<li>2=RuleEnabled</li>\n<li>3=RuleDisabled</li>",
           "example": "2",
@@ -3350,7 +3235,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则报警持续时间",
           "example": "5m",
@@ -3360,7 +3244,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签列表",
           "example": "[{Key: \"ip\" Value: \"1.1.1.1\"}]",
@@ -3370,7 +3253,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "注释列表。\n\n告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description。",
           "example": "[{Key: \"summary\" Value: \"规则名称\"}]",
@@ -3380,7 +3262,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报警策略模板分类",
           "example": "TargetDown",
@@ -3418,7 +3299,6 @@
       "document": "CreateExporterIntegration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID",
           "example": "prom-xx",
@@ -3428,7 +3308,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型",
           "example": "mysql-exporter",
@@ -3438,7 +3317,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集成配置",
           "example": "{\"name\":\"test\",\"kind\":\"mysql-exporter\", \"instanceSpec\":{}}",
@@ -3448,7 +3326,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Kubernetes 集群类型，取值如下：\n<li> 1= 容器集群(TKE) </li>\n<li> 2=弹性集群<EKS> </li>\n<li> 3= Prometheus管理的弹性集群<MEKS> </li>",
           "example": "3",
@@ -3458,7 +3335,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群 ID",
           "example": "cls-xx",
@@ -3577,7 +3453,6 @@
       "document": "CreateGrafanaIntegration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "my-instance",
@@ -3587,7 +3462,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集成类型，可在实例详情-云产品集成-集成列表查看。例如：tencent-cloud-prometheus",
           "example": "grafana",
@@ -3597,7 +3471,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集成配置",
           "example": "[]",
@@ -3848,7 +3721,6 @@
       "document": "CreatePolicyGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "组策略名称",
           "example": "test_group",
@@ -3858,7 +3730,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "固定值，为\"monitor\"",
           "example": "monitor",
@@ -3868,7 +3739,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略组所属视图的名称，若通过模板创建，可不传入",
           "example": "cvm_device",
@@ -3878,7 +3748,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略组所属项目Id，会进行鉴权操作",
           "example": "0",
@@ -3888,7 +3757,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板策略组Id, 通过模板创建时才需要传",
           "example": "123",
@@ -3898,7 +3766,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否屏蔽策略组，0表示不屏蔽，1表示屏蔽。不填默认为0",
           "example": "1",
@@ -3908,7 +3775,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略组的备注信息",
           "example": "backup_group",
@@ -3918,7 +3784,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "插入时间，戳格式为Unix时间戳，不填则按后台处理时间填充",
           "example": "106648246",
@@ -3928,7 +3793,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略组中的阈值告警规则",
           "example": "无",
@@ -3938,7 +3802,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略组中的事件告警规则",
           "example": "无",
@@ -3948,7 +3811,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为后端调用。当且仅当值为1时，后台拉取策略模板中的规则填充入Conditions以及EventConditions字段",
           "example": "0",
@@ -3958,7 +3820,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标告警规则的且或关系，0表示或规则(满足任意规则就告警)，1表示且规则(满足所有规则才告警)",
           "example": "1",
@@ -3996,7 +3857,6 @@
       "document": "CreatePrometheusAgent请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID",
           "example": "prom-dfae2323",
@@ -4006,7 +3866,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Agent 名称",
           "example": "test",
@@ -4242,7 +4101,6 @@
       "document": "CreatePrometheusMultiTenantInstancePostPayMode请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例名",
           "example": "my-prom-instance",
@@ -4252,7 +4110,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC ID",
           "example": "vpc-345xdef",
@@ -4262,7 +4119,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网 ID",
           "example": "subnet-axxersx",
@@ -4272,7 +4128,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据存储时间（单位天），限制值为15，30，45之一",
           "example": "30",
@@ -4282,7 +4137,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可用区",
           "example": "ap-guangzhou-1",
@@ -4292,7 +4146,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的标签",
           "example": "无",
@@ -4302,7 +4155,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要关联的 Grafana 实例",
           "example": "grafana-xxxx",
@@ -4385,7 +4237,6 @@
       "document": "CreatePrometheusScrapeJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 实例 ID，例如：prom-abcd1234",
           "example": "xx",
@@ -4395,7 +4246,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Agent ID，例如：agent-abcd1234，可在控制台 Agent 管理中获取",
           "example": "xx",
@@ -4405,7 +4255,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "抓取任务配置，格式：job_name:xx",
           "example": "job_name:xx",
@@ -4482,7 +4331,6 @@
           "disabled": false,
           "document": "聚合规则名称",
           "example": "1",
-          "is_base64": false,
           "member": "string",
           "name": "Name",
           "required": true,
@@ -4492,7 +4340,6 @@
           "disabled": false,
           "document": "聚合规则组内容，格式为 yaml",
           "example": "LS0tDQpuYW1lOiBleGFtcGxlDQpydWxlczoNCiAgLSByZWNvcmQ6IGpvYjpodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHM6c3VtDQogICAgZXhwcjogc3VtIGJ5IChqb2IpIChodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHMp",
-          "is_base64": false,
           "member": "string",
           "name": "Group",
           "required": true,
@@ -4502,7 +4349,6 @@
           "disabled": false,
           "document": "Prometheus 实例 ID",
           "example": "prom-x2323",
-          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4512,7 +4358,6 @@
           "disabled": false,
           "document": "规则状态码，取值如下：\n<li>1=RuleDeleted</li>\n<li>2=RuleEnabled</li>\n<li>3=RuleDisabled</li>\n默认状态码为 2 启用。",
           "example": "2",
-          "is_base64": false,
           "member": "int64",
           "name": "RuleState",
           "required": false,
@@ -4547,7 +4392,6 @@
       "document": "CreateSSOAccount请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "myGrafana",
@@ -4557,7 +4401,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户账号 ID ，例如：10000000",
           "example": "1000000000",
@@ -4567,7 +4410,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限",
           "example": "无",
@@ -4577,7 +4419,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "备注",
@@ -4615,7 +4456,6 @@
       "document": "CreateServiceDiscovery请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 实例 ID",
           "example": "",
@@ -4625,7 +4465,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "<li>类型为TKE：对应集成的腾讯云容器服务集群 ID</li>",
           "example": "",
@@ -4635,7 +4474,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户 Kubernetes 集群类型：\n<li> 1 = 容器服务集群(TKE) </li>",
           "example": "",
@@ -4645,7 +4483,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务发现类型，取值如下：\n<li> 1 = ServiceMonitor</li>\n<li> 2 = PodMonitor</li>\n<li> 3 = JobMonitor</li>",
           "example": "",
@@ -4655,7 +4492,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务发现配置信息",
           "example": "",
@@ -4692,7 +4528,6 @@
       "document": "监控数据点",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例对象维度组合",
           "example": "",
@@ -4703,7 +4538,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳数组，表示那些时间点有数据，缺失的时间戳，没有数据点，可以理解为掉点了",
           "example": "",
@@ -4714,7 +4548,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监控值数组，该数组和Timestamps一一对应",
           "example": "",
@@ -4776,7 +4609,6 @@
       "document": "DeleteAlarmPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模块名，固定值 monitor",
           "example": "monitor",
@@ -4786,7 +4618,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警策略 ID 列表",
           "example": "[\"policy-289ghn129\",\"policy-3u3h90h3j\"]",
@@ -4814,7 +4645,6 @@
       "document": "DeleteAlertRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则 ID 列表",
           "example": "[\"arule-m74lrt6g\"]",
@@ -4824,7 +4654,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 实例 ID",
           "example": "prom-123123",
@@ -4852,7 +4681,6 @@
       "document": "DeleteExporterIntegration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID",
           "example": "prom-xx",
@@ -4862,7 +4690,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型",
           "example": "mysql-exporter",
@@ -4872,7 +4699,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名字",
           "example": "test",
@@ -4882,7 +4708,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Kubernetes 集群类型，取值如下：\n<li> 1= 容器集群(TKE) </li>\n<li> 2=弹性集群<EKS> </li>\n<li> 3= Prometheus管理的弹性集群<MEKS> </li>",
           "example": "3",
@@ -4892,7 +4717,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群 ID",
           "example": "cls-xx",
@@ -4947,7 +4771,6 @@
       "document": "DeleteGrafanaIntegration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 实例 ID，例如：grafana-12345678",
           "example": "my-instance",
@@ -4957,7 +4780,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集成 ID，可在实例详情-云产品集成-集成列表查看。例如：integration-abcd1234",
           "example": "my-instance",
@@ -5021,7 +4843,6 @@
       "document": "DeletePolicyGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "固定值，为\"monitor\"",
           "example": "",
@@ -5031,7 +4852,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略组id",
           "example": "",
@@ -5356,7 +5176,6 @@
       "document": "DeleteRecordingRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则 ID 列表",
           "example": "[\"rrule-m74lrt6g\"]",
@@ -5366,7 +5185,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 实例 ID",
           "example": "prom-xxxerwer",
@@ -5394,7 +5212,6 @@
       "document": "DeleteSSOAccount请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "myGrafana",
@@ -5404,7 +5221,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户账号 ID ，例如：10000000",
           "example": "1000000000",
@@ -5432,7 +5248,6 @@
       "document": "DeleteServiceDiscovery请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 实例 ID，例如：prom-sdfk2342a",
           "example": "prom-sdfk2342a",
@@ -5442,7 +5257,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "<li>类型是 TKE，为对应的腾讯云容器服务集群 ID</li>",
           "example": "cls-pwerf3k3",
@@ -5452,7 +5266,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户 Kubernetes 集群类型：\n<li> 1 = 容器服务集群(TKE) </li>",
           "example": "1",
@@ -5462,7 +5275,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务发现类型，取值如下：\n<li> 1 = ServiceMonitor</li>\n<li> 2 = PodMonitor</li>\n<li> 3 = PodMonitor</li>",
           "example": "1",
@@ -5472,7 +5284,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务发现配置信息",
           "example": "yaml",
@@ -5500,7 +5311,6 @@
       "document": "DescribeAccidentEventList接口的出参类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件分类\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5511,7 +5321,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5522,7 +5331,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件分类的ID，1表示服务问题，2表示其他订阅\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5533,7 +5341,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件状态的ID，0表示已恢复，1表示未恢复\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5544,7 +5351,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "影响的对象\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5555,7 +5361,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件的地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5566,7 +5371,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件发生的时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5577,7 +5381,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5594,7 +5397,6 @@
       "document": "DescribeAccidentEventList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "接口模块名，当前接口取值monitor",
           "example": "",
@@ -5604,7 +5406,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始时间，默认一天前的时间戳",
           "example": "",
@@ -5614,7 +5415,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间，默认当前时间戳",
           "example": "",
@@ -5624,7 +5424,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数，每页返回的数量，取值1~100，默认20",
           "example": "",
@@ -5634,7 +5433,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数，页偏移量，从0开始计数，默认0",
           "example": "",
@@ -5644,7 +5442,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据UpdateTime排序的规则，取值asc或desc",
           "example": "",
@@ -5654,7 +5451,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据OccurTime排序的规则，取值asc或desc（优先根据UpdateTimeOrder排序）",
           "example": "",
@@ -5664,7 +5460,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据事件类型过滤，1表示服务问题，2表示其他订阅",
           "example": "",
@@ -5674,7 +5469,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据事件过滤，1表示云服务器存储问题，2表示云服务器网络连接问题，3表示云服务器运行异常，202表示运营商网络抖动",
           "example": "",
@@ -5684,7 +5478,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据事件状态过滤，0表示已恢复，1表示未恢复",
           "example": "",
@@ -5694,7 +5487,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据事件地域过滤，gz表示广州，sh表示上海等",
           "example": "",
@@ -5704,7 +5496,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据影响资源过滤，比如ins-19a06bka",
           "example": "",
@@ -5750,7 +5541,6 @@
       "document": "DescribeAlarmEvents请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模块名，固定值 monitor",
           "example": "monitor",
@@ -5760,7 +5550,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警策略类型，由 DescribeAllNamespaces 获得，例如 cvm_device",
           "example": "cvm_device",
@@ -5770,7 +5559,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监控类型，如 MT_QCE。如果不填默认为 MT_QCE。",
           "example": "MT_QCE",
@@ -5808,7 +5596,6 @@
       "document": "DescribeAlarmHistories请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "固定值，为\"monitor\"",
           "example": "monitor",
@@ -5818,7 +5605,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页数，从 1 开始计数，默认 1",
           "example": "1",
@@ -5828,7 +5614,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页的数量，取值1~100，默认20",
           "example": "20",
@@ -5838,7 +5623,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认按首次出现时间倒序排列 \"ASC\"=正序 \"DESC\"=逆序",
           "example": "DESC",
@@ -5848,7 +5632,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始时间，默认一天前的时间戳。对应 `FirstOccurTime` 告警首次出现时间，告警历史的 `FirstOccurTime` 晚于 `StartTime` 才可能被搜索到。",
           "example": "1611600000",
@@ -5858,7 +5641,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间，默认当前时间戳。对应 `FirstOccurTime` 告警首次出现时间，告警历史的 `FirstOccurTime` 早于 `EndTime` 才可能被搜索到。",
           "example": "1611650000",
@@ -5868,7 +5650,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据监控类型过滤，不选默认查所有类型。\"MT_QCE\"=云产品监控，支持的枚举值有：\"MT_QCE\"=云产品监控；\"MT_TAW\"=应用性能观测；\"MT_RUM\"=前端性能监控；\"MT_PROBE\"=云拨测",
           "example": "MT_QCE",
@@ -5878,7 +5659,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据告警对象过滤 字符串模糊搜索",
           "example": "无",
@@ -5888,7 +5668,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据告警状态过滤 ALARM=未恢复 OK=已恢复 NO_CONF=已失效 NO_DATA=数据不足，不选默认查所有",
           "example": "ALARM",
@@ -5898,7 +5677,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据项目ID过滤，-1=无项目 0=默认项目\n可在此页面查询 [项目管理](https://console.cloud.tencent.com/project)",
           "example": "无",
@@ -5908,7 +5686,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据实例组ID过滤",
           "example": "无",
@@ -5918,7 +5695,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据策略类型过滤，策略类型是监控类型之下的概念，在这里两者都需要传入，例如 `[{\"MonitorType\": \"MT_QCE\", \"Namespace\": \"cvm_device\"}]`\n可使用 [查询所有名字空间 DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 接口查询",
           "example": "[{\"MonitorType\": \"MT_QCE\", \"Namespace\": \"cvm_device\"}]",
@@ -5928,7 +5704,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据指标名过滤",
           "example": "CpuUsage",
@@ -5938,7 +5713,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据策略名称模糊搜索",
           "example": "无",
@@ -5948,7 +5722,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据告警内容模糊搜索",
           "example": "无",
@@ -5958,7 +5731,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据接收人搜索，可以使用“访问管理”的 [拉取子用户 ListUsers](https://cloud.tencent.com/document/product/598/34587) 接口获取用户列表 或 [查询子用户 GetUser](https://cloud.tencent.com/document/product/598/34590) 接口查询子用户详情，此处填入返回结果中的 `Uid` 字段",
           "example": "无",
@@ -5968,7 +5740,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据接收组搜索，可以使用“访问管理”的 [查询用户组列表 ListGroups](https://cloud.tencent.com/document/product/598/34589) 接口获取用户组列表 或 [列出用户关联的用户组 ListGroupsForUser](https://cloud.tencent.com/document/product/598/34588) 查询某个子用户所在的用户组列表 ，此处填入返回结果中的 `GroupId ` 字段",
           "example": "无",
@@ -5978,7 +5749,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据告警策略 Id 列表搜索",
           "example": "policy-abcedf",
@@ -6026,7 +5796,6 @@
       "document": "DescribeAlarmMetrics请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "固定值，为\"monitor\"",
           "example": "",
@@ -6036,7 +5805,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监控类型过滤 \"MT_QCE\"=云产品监控",
           "example": "",
@@ -6046,7 +5814,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警策略类型，由 DescribeAllNamespaces 获得，例如 cvm_device",
           "example": "",
@@ -6119,7 +5886,6 @@
       "document": "DescribeAlarmNotice请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模块名，这里填“monitor”",
           "example": "monitor",
@@ -6129,7 +5895,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警通知模板 id",
           "example": "notice-2g892hg8",
@@ -6581,7 +6346,6 @@
       "document": "DescribeAlarmPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "固定值，为\"monitor\"",
           "example": "monitor",
@@ -6591,7 +6355,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警策略ID",
           "example": "policy-t1pvz47f",
@@ -6629,7 +6392,6 @@
       "document": "DescribeAlertRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 实例 ID",
           "example": "my-prom-gg",
@@ -6639,7 +6401,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100",
           "example": "10",
@@ -6649,7 +6410,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为 0",
           "example": "0",
@@ -6659,7 +6419,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则 ID",
           "example": "arule-f2vx278",
@@ -6669,7 +6428,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则状态码，取值如下：\n<li>2=RuleEnabled</li>\n<li>3=RuleDisabled</li>",
           "example": "2",
@@ -6679,7 +6437,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则名称",
           "example": "告警规则测试",
@@ -6689,7 +6446,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报警策略模板分类",
           "example": "TargetDown",
@@ -6737,7 +6493,6 @@
       "document": "DescribeAllNamespaces请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "根据使用场景过滤 目前仅有\"ST_ALARM\"=告警类型",
           "example": "ST_ALARM",
@@ -6747,7 +6502,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "固定值，为\"monitor\"",
           "example": "monitor",
@@ -6757,7 +6511,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据监控类型过滤 不填默认查所有类型 \"MT_QCE\"=云产品监控",
           "example": "[\"MT_QCE\"]",
@@ -6767,7 +6520,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据namespace的Id过滤 不填默认查询所有",
           "example": "cvm_device",
@@ -6845,7 +6597,6 @@
       "document": "DescribeBaseMetrics请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "业务命名空间，各个云产品的业务命名空间不同。如需获取业务命名空间，请前往各产品监控指标文档，例如云服务器的命名空间，可参见 [云服务器监控指标](https://cloud.tencent.com/document/product/248/6843)",
           "example": "QCE/CVM",
@@ -6855,7 +6606,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标名，各个云产品的指标名不同。如需获取指标名，请前往各产品监控指标文档，例如云服务器的指标名，可参见 [云服务器监控指标](https://cloud.tencent.com/document/product/248/6843)",
           "example": "AccOuttraffic",
@@ -6865,7 +6615,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选参数，按照维度过滤",
           "example": "[\"InstanceId\"]",
@@ -6903,7 +6652,6 @@
       "document": "DescribeBasicAlarmList返回的Alarms",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "该条告警的ID",
           "example": "",
@@ -6914,7 +6662,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6925,7 +6672,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6936,7 +6682,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警状态ID，0表示未恢复；1表示已恢复；2,3,5表示数据不足；4表示已失效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6947,7 +6692,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警状态，ALARM表示未恢复；OK表示已恢复；NO_DATA表示数据不足；NO_CONF表示已失效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6958,7 +6702,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6969,7 +6712,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略组名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6980,7 +6722,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发生时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -6991,7 +6732,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "持续时间，单位s\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7002,7 +6742,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7013,7 +6752,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警内容\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7024,7 +6762,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警对象\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7035,7 +6772,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警对象ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7046,7 +6782,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7057,7 +6792,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC，只有CVM有\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7068,7 +6802,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7079,7 +6812,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7090,7 +6822,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警类型，0表示指标告警，2表示产品事件告警，3表示平台事件告警\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7101,7 +6832,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7112,7 +6842,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警对象维度信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7123,7 +6852,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通知方式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7134,7 +6862,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属实例组信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7151,7 +6878,6 @@
       "document": "DescribeBasicAlarmList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "接口模块名，当前取值monitor",
           "example": "monitor",
@@ -7161,7 +6887,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始时间，默认一天前的时间戳",
           "example": "1573660800",
@@ -7171,7 +6896,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间，默认当前时间戳",
           "example": "1573919999",
@@ -7181,7 +6905,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数，每页返回的数量，取值1~100，默认20",
           "example": "20",
@@ -7191,7 +6914,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数，页偏移量，从0开始计数，默认0",
           "example": "0",
@@ -7201,7 +6923,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据发生时间排序，取值ASC或DESC",
           "example": "DESC",
@@ -7211,7 +6932,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据项目ID过滤",
           "example": "[\"0\\n\"]",
@@ -7221,7 +6941,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据策略类型过滤",
           "example": "[\"cvm_device\\n\"]",
@@ -7231,7 +6950,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据告警状态过滤",
           "example": "[\"1\\n\"]",
@@ -7241,7 +6959,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据告警对象过滤",
           "example": "123",
@@ -7251,7 +6968,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据实例组ID过滤",
           "example": "[11233]",
@@ -7261,7 +6977,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据指标名过滤",
           "example": "[\"mem_used\\n\"]",
@@ -7319,7 +7034,6 @@
       "document": "DescribeBindingPolicyObjectList接口的Dimension",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域id",
           "example": "",
@@ -7330,7 +7044,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域简称",
           "example": "",
@@ -7341,7 +7054,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "维度组合json字符串",
           "example": "",
@@ -7352,7 +7064,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件维度组合json字符串",
           "example": "",
@@ -7369,7 +7080,6 @@
       "document": "查询策略绑定对象列表接口返回的对象实例信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "对象唯一id",
           "example": "",
@@ -7380,7 +7090,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表示对象实例的维度集合，jsonObj字符串",
           "example": "",
@@ -7391,7 +7100,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对象是否被屏蔽，0表示未屏蔽，1表示被屏蔽",
           "example": "",
@@ -7402,7 +7110,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "对象所在的地域",
           "example": "",
@@ -7419,7 +7126,6 @@
       "document": "DescribeBindingPolicyObjectList返回的是实例分组信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例分组id",
           "example": "",
@@ -7430,7 +7136,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警策略类型名称",
           "example": "",
@@ -7441,7 +7146,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后编辑uin",
           "example": "",
@@ -7452,7 +7156,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例分组名称",
           "example": "",
@@ -7463,7 +7166,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例数量",
           "example": "",
@@ -7474,7 +7176,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
           "example": "",
@@ -7485,7 +7186,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -7496,7 +7196,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例所在的地域集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -7513,7 +7212,6 @@
       "document": "DescribeBindingPolicyObjectList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "固定值，为\"monitor\"",
           "example": "monitor",
@@ -7523,7 +7221,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略组id，如果有形如 policy-xxxx 的 id，请填到 PolicyId 字段中，本字段填 0",
           "example": "11111",
@@ -7533,7 +7230,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警策略id，形如 policy-xxxx，如果填入，则GroupId可以填0",
           "example": "policy-xxxxx",
@@ -7543,7 +7239,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每次返回的数量，取值1~100，默认20",
           "example": "20",
@@ -7553,7 +7248,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，从0开始计数，默认0。举例来说，参数 Offset=0&Limit=20 返回第 0 到 19 项，Offset=20&Limit=20 返回第 20 到 39 项，以此类推",
           "example": "0",
@@ -7563,7 +7257,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "筛选对象的维度信息",
           "example": "无",
@@ -7648,7 +7341,6 @@
       "document": "DescribeConditionsTemplateList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "固定值，为\"monitor\"",
           "example": "monitor",
@@ -7658,7 +7350,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视图名，由 [DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 获得。对于云产品监控，取接口出参的 QceNamespacesNew.N.Id，例如 cvm_device",
           "example": "cvm_device",
@@ -7668,7 +7359,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据触发条件模板名称过滤查询",
           "example": "test",
@@ -7678,7 +7368,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "根据触发条件模板ID过滤查询",
           "example": " 1998658",
@@ -7688,7 +7377,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数，每页返回的数量，取值1~100，默认20",
           "example": "1",
@@ -7698,7 +7386,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数，页偏移量，从0开始计数，默认0",
           "example": "0",
@@ -7708,7 +7395,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定按更新时间的排序方式，asc=升序, desc=降序",
           "example": "desc",
@@ -7718,7 +7404,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定按绑定策略数目的排序方式，asc=升序, desc=降序",
           "example": "desc",
@@ -7875,7 +7560,6 @@
       "document": "DescribeGrafanaChannels请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 实例 ID，例如：grafana-12345678",
           "example": "my-instance",
@@ -7885,7 +7569,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "0",
@@ -7895,7 +7578,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询数量",
           "example": "10",
@@ -7905,7 +7587,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警通道名称，例如：test",
           "example": "my-channel",
@@ -7915,7 +7596,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警通道 ID，例如：nchannel-abcd1234",
           "example": "[\"crule-123\"]",
@@ -7925,7 +7605,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警通道状态",
           "example": "1",
@@ -7963,7 +7642,6 @@
       "document": "DescribeGrafanaConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 实例 ID，例如：grafana-12345678",
           "example": "my-instance",
@@ -8037,7 +7715,6 @@
       "document": "DescribeGrafanaInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询偏移量",
           "example": "0",
@@ -8047,7 +7724,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询数量",
           "example": "10",
@@ -8057,7 +7733,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 实例 ID 数组",
           "example": "[\"instance-id\"]",
@@ -8067,7 +7742,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 实例名，支持前缀模糊搜索",
           "example": "instance-id",
@@ -8077,7 +7751,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询状态",
           "example": "[2]",
@@ -8087,7 +7760,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签过滤数组",
           "example": "无",
@@ -8145,7 +7817,6 @@
       "document": "DescribeGrafanaIntegrations请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID",
           "example": "my-instance",
@@ -8155,7 +7826,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集成 ID",
           "example": "my-instance",
@@ -8165,7 +7835,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型",
           "example": "grafana",
@@ -8320,7 +7989,6 @@
       "document": "DescribeInstalledPlugins请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 实例 ID，例如：grafana-kleu3gt0",
           "example": "my-instance",
@@ -8330,7 +7998,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按插件 ID 过滤，例如：grafana-piechart-panel，可通过接口 DescribeInstalledPlugins 查看已安装的插件 ID",
           "example": "grafana-piechart",
@@ -8536,7 +8203,6 @@
       "document": "DescribePolicyConditionList.ConfigManual",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "检测方式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8547,7 +8213,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测阈值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8558,7 +8223,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "持续时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8569,7 +8233,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据周期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8580,7 +8243,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "持续周期个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8591,7 +8253,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "聚合方式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8608,7 +8269,6 @@
       "document": "DescribePolicyConditionList.ConfigManual.CalcType",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "CalcType 取值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8619,7 +8279,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否必须",
           "example": "",
@@ -8636,7 +8295,6 @@
       "document": "DescribePolicyConditionList.ConfigManual.CalcValue",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "默认值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8647,7 +8305,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "固定值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8658,7 +8315,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最大值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8669,7 +8325,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最小值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8680,7 +8335,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否必须",
           "example": "",
@@ -8697,7 +8351,6 @@
       "document": "DescribePolicyConditionList.ConfigManual.ContinueTime",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "默认持续时间，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8708,7 +8361,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选持续时间，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8719,7 +8371,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否必须",
           "example": "",
@@ -8736,7 +8387,6 @@
       "document": "DescribePolicyConditionList.ConfigManual.Period",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "默认周期，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8747,7 +8397,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选周期，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8758,7 +8407,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否必须",
           "example": "",
@@ -8775,7 +8423,6 @@
       "document": "DescribePolicyConditionList.ConfigManual.PeriodNum",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "默认周期数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8786,7 +8433,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可选周期数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8797,7 +8443,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否必须",
           "example": "",
@@ -8814,7 +8459,6 @@
       "document": "DescribePolicyConditionList.ConfigManual.StatType",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数据聚合方式，周期5秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8825,7 +8469,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据聚合方式，周期10秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8836,7 +8479,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据聚合方式，周期1分钟\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8847,7 +8489,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据聚合方式，周期5分钟\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8858,7 +8499,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据聚合方式，周期10分钟\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8869,7 +8509,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据聚合方式，周期30分钟\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8880,7 +8519,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据聚合方式，周期1小时\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8891,7 +8529,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据聚合方式，周期1天\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8908,7 +8545,6 @@
       "document": "DescribePolicyConditionList.EventMetric",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件id",
           "example": "",
@@ -8919,7 +8555,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件名称",
           "example": "",
@@ -8930,7 +8565,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要恢复",
           "example": "",
@@ -8941,7 +8575,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件类型，预留字段，当前固定取值为2",
           "example": "",
@@ -8958,7 +8591,6 @@
       "document": "指标告警配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指标配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -8969,7 +8601,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标id",
           "example": "",
@@ -8980,7 +8611,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标名称",
           "example": "",
@@ -8991,7 +8621,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标单位",
           "example": "",
@@ -9008,7 +8637,6 @@
       "document": "DescribePolicyConditionList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "固定值，为\"monitor\"",
           "example": "",
@@ -9081,7 +8709,6 @@
       "document": "查询策略输出的用户回调信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户回调接口地址",
           "example": "",
@@ -9092,7 +8719,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户回调接口状态，0表示未验证，1表示已验证，2表示存在url但没有通过验证",
           "example": "",
@@ -9103,7 +8729,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户回调接口验证码",
           "example": "",
@@ -9120,7 +8745,6 @@
       "document": "查询策略输出的阈值告警条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指标名称",
           "example": "",
@@ -9131,7 +8755,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据聚合周期(单位秒)",
           "example": "",
@@ -9142,7 +8765,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标id",
           "example": "",
@@ -9153,7 +8775,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "阈值规则id",
           "example": "",
@@ -9164,7 +8785,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标单位",
           "example": "",
@@ -9175,7 +8795,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警发送收敛类型。0连续告警，1指数告警",
           "example": "",
@@ -9186,7 +8805,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次",
           "example": "",
@@ -9197,7 +8815,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "比较类型，1表示大于，2表示大于等于，3表示小于，4表示小于等于，5表示相等，6表示不相等，7表示日同比上涨，8表示日同比下降，9表示周同比上涨，10表示周同比下降，11表示周期环比上涨，12表示周期环比下降\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -9208,7 +8825,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测阈值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -9219,7 +8835,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "持续多长时间触发规则会告警(单位秒)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -9230,7 +8845,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警指标名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -9247,7 +8861,6 @@
       "document": "查询策略输出的模板策略组信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "策略组id",
           "example": "",
@@ -9258,7 +8871,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略组名称",
           "example": "",
@@ -9269,7 +8881,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略类型",
           "example": "",
@@ -9280,7 +8891,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略组说明",
           "example": "",
@@ -9291,7 +8901,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后编辑的用户uin",
           "example": "",
@@ -9302,7 +8911,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -9313,7 +8921,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -9324,7 +8931,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否且规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -9341,7 +8947,6 @@
       "document": "查询策略输出的事件告警条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件id",
           "example": "",
@@ -9352,7 +8957,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件告警规则id",
           "example": "",
@@ -9363,7 +8967,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件名称",
           "example": "",
@@ -9374,7 +8977,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次",
           "example": "",
@@ -9385,7 +8987,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警发送收敛类型。0连续告警，1指数告警",
           "example": "",
@@ -9402,7 +9003,6 @@
       "document": "查询策略输出的告警接收人信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "告警接收组id列表",
           "example": " 无",
@@ -9413,7 +9013,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警接收人id列表",
           "example": "无",
@@ -9424,7 +9023,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警时间段开始时间。范围[0,86400)，作为 UNIX 时间戳转成北京时间后去掉日期，例如7200表示\"10:0:0\"",
           "example": "无",
@@ -9435,7 +9033,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警时间段结束时间。含义同StartTime",
           "example": "无",
@@ -9446,7 +9043,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接收类型。“group”(接收组)或“user”(接收人)",
           "example": "无",
@@ -9457,7 +9053,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警通知方式。可选 \"SMS\",\"SITE\",\"EMAIL\",\"CALL\",\"WECHAT\"",
           "example": "无",
@@ -9468,7 +9063,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电话告警接收者uid\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9479,7 +9073,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电话告警轮数",
           "example": "无",
@@ -9490,7 +9083,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电话告警每轮间隔（秒）",
           "example": "无",
@@ -9501,7 +9093,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电话告警对个人间隔（秒）",
           "example": "无",
@@ -9512,7 +9103,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要电话告警触达提示。0不需要，1需要",
           "example": "无",
@@ -9523,7 +9113,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电话告警通知时机。可选\"OCCUR\"(告警时通知),\"RECOVER\"(恢复时通知)",
           "example": "无",
@@ -9534,7 +9123,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "恢复通知方式。可选\"SMS\"",
           "example": "无",
@@ -9545,7 +9133,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警发送语言\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9562,7 +9149,6 @@
       "document": "DescribePolicyGroupInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "固定值，为\"monitor\"",
           "example": "",
@@ -9572,7 +9158,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略组id",
           "example": "",
@@ -9753,7 +9338,6 @@
       "document": "DescribePolicyGroupList.Group",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "策略组id",
           "example": "无",
@@ -9764,7 +9348,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略组名称",
           "example": "无",
@@ -9775,7 +9358,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启",
           "example": "无",
@@ -9786,7 +9368,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略视图名称",
           "example": "无",
@@ -9797,7 +9378,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最近编辑的用户uin",
           "example": "无",
@@ -9808,7 +9388,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后修改时间",
           "example": "无",
@@ -9819,7 +9398,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "无",
@@ -9830,7 +9408,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略组绑定的实例数",
           "example": "无",
@@ -9841,7 +9418,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略组绑定的未屏蔽实例数",
           "example": "无",
@@ -9852,7 +9428,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为默认策略，0表示非默认策略，1表示默认策略",
           "example": "无",
@@ -9863,7 +9438,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否可以设置成默认策略",
           "example": "无",
@@ -9874,7 +9448,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "父策略组id",
           "example": "无",
@@ -9885,7 +9458,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略组备注",
           "example": "无",
@@ -9896,7 +9468,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略组所属项目id",
           "example": "无",
@@ -9907,7 +9478,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "阈值规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9918,7 +9488,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品事件规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9929,7 +9498,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户接收人列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9940,7 +9508,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板策略组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9951,7 +9518,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略组绑定的实例组信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9962,7 +9528,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "且或规则标识, 0表示或规则(任意一条规则满足阈值条件就告警), 1表示且规则(所有规则都满足阈值条件才告警)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -9979,7 +9544,6 @@
       "document": "DescribePolicyGroupList接口策略组绑定的实例分组信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例分组名称id",
           "example": "",
@@ -9990,7 +9554,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略类型视图名称",
           "example": "",
@@ -10001,7 +9564,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最近编辑的用户uin",
           "example": "",
@@ -10012,7 +9574,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例分组名称",
           "example": "",
@@ -10023,7 +9584,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例数量",
           "example": "",
@@ -10034,7 +9594,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
           "example": "",
@@ -10045,7 +9604,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -10062,7 +9620,6 @@
       "document": "DescribePolicyGroupList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "固定值，为\"monitor\"",
           "example": "monitor",
@@ -10072,7 +9629,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数，每页返回的数量，取值1~100",
           "example": "2",
@@ -10082,7 +9638,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数，页偏移量，从0开始计数",
           "example": "0",
@@ -10092,7 +9647,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按策略名搜索",
           "example": "test",
@@ -10102,7 +9656,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例分组id",
           "example": "12345",
@@ -10112,7 +9665,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按更新时间排序, asc 或者 desc",
           "example": "asc",
@@ -10122,7 +9674,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目id列表",
           "example": "[1]",
@@ -10132,7 +9683,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警策略类型列表",
           "example": "[cvm_device]",
@@ -10142,7 +9692,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否过滤无接收人策略组, 1表示过滤, 0表示不过滤",
           "example": "0",
@@ -10152,7 +9701,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件, 接收组列表",
           "example": "[123]",
@@ -10162,7 +9710,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件, 接收人列表",
           "example": "[12345]",
@@ -10172,7 +9719,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "维度组合字段(json字符串), 例如[[{\"name\":\"unInstanceId\",\"value\":\"ins-6e4b2aaa\"}]]",
           "example": "{}",
@@ -10182,7 +9728,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板策略组id, 多个id用逗号分隔",
           "example": "123,345",
@@ -10192,7 +9737,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件, 接收人或者接收组, user表示接收人, group表示接收组",
           "example": "user",
@@ -10202,7 +9746,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件，告警策略是否已启动或停止",
           "example": "true",
@@ -10260,7 +9803,6 @@
       "document": "DescribeProductEventList的入参Dimensions",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "维度名",
           "example": "",
@@ -10271,7 +9813,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "维度值",
           "example": "",
@@ -10288,7 +9829,6 @@
       "document": "DescribeProductEventList返回的Events",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "111",
@@ -10299,7 +9839,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件中文名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ping不可达",
@@ -10310,7 +9849,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件英文名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ping_unreachable",
@@ -10321,7 +9859,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件简称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ping_unreachable",
@@ -10332,7 +9869,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品中文名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cvm",
@@ -10343,7 +9879,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品英文名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cvm",
@@ -10354,7 +9889,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品简称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cvm",
@@ -10365,7 +9899,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ins-3xdfd90",
@@ -10376,7 +9909,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ins-3xdfd90",
@@ -10387,7 +9919,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "123",
@@ -10398,7 +9929,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "gz",
@@ -10409,7 +9939,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -10420,7 +9949,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否支持告警\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -10431,7 +9959,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "21",
@@ -10442,7 +9969,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611560738",
@@ -10453,7 +9979,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611560790",
@@ -10464,7 +9989,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例对象信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -10475,7 +9999,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例对象附加信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -10486,7 +10009,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否配置告警\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -10497,7 +10019,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -10508,7 +10029,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "显示名称ViewName\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cvm/device",
@@ -10525,7 +10045,6 @@
       "document": "DescribeProductEventList返回的Events的Dimensions",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "维度名（英文）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -10536,7 +10055,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "维度名（中文）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -10547,7 +10065,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "维度值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -10564,7 +10081,6 @@
       "document": "DescribeProductEventList返回的Events里的GroupInfo",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -10575,7 +10091,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -10592,7 +10107,6 @@
       "document": "DescribeProductEventList返回的OverView对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "状态变更的事件数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -10603,7 +10117,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警状态未配置的事件数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -10614,7 +10127,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "异常事件数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -10625,7 +10137,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "未恢复的事件数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -10642,7 +10153,6 @@
       "document": "DescribeProductEventList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "接口模块名，固定值\"monitor\"",
           "example": "monitor",
@@ -10652,7 +10162,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品类型过滤，例如\"cvm\"表示云服务器",
           "example": "cvm",
@@ -10662,7 +10171,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件名称过滤，例如\"guest_reboot\"表示机器重启",
           "example": "guest_reboot",
@@ -10672,7 +10180,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "影响对象，例如\"ins-19708ino\"",
           "example": "ins-19708ino",
@@ -10682,7 +10189,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "维度过滤，例如外网IP:10.0.0.1",
           "example": "无",
@@ -10692,7 +10198,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品事件地域过滤参数，例如gz，各地域缩写可参见[地域列表](https://cloud.tencent.com/document/product/248/50863)",
           "example": "gz",
@@ -10702,7 +10207,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件类型过滤，取值范围[\"status_change\",\"abnormal\"]，分别表示状态变更、异常事件",
           "example": "abnormal",
@@ -10712,7 +10216,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件状态过滤，取值范围[\"recover\",\"alarm\",\"-\"]，分别表示已恢复、未恢复、无状态",
           "example": "recover",
@@ -10722,7 +10225,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目ID过滤",
           "example": "0",
@@ -10732,7 +10234,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警状态配置过滤，1表示已配置，0表示未配置",
           "example": "1",
@@ -10742,7 +10243,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按更新时间排序，ASC表示升序，DESC表示降序，默认DESC",
           "example": "DESC",
@@ -10752,7 +10252,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始时间，默认一天前的时间戳",
           "example": "1572624000",
@@ -10762,7 +10261,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间，默认当前时间戳",
           "example": "1573228799",
@@ -10772,7 +10270,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "页偏移量，默认0",
           "example": "0",
@@ -10782,7 +10279,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页返回的数量，默认20",
           "example": "20",
@@ -11582,7 +11078,6 @@
       "document": "DescribePrometheusInstanceUsage请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "按照一个或者多个实例ID查询。实例ID形如：prom-xxxxxxxx。请求的实例的上限为100。",
           "example": "[\"prom-xxxxxxxx\"]",
@@ -11592,7 +11087,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开始时间",
           "example": "20210101",
@@ -11602,7 +11096,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间",
           "example": "20210102",
@@ -11705,7 +11198,6 @@
       "document": "DescribePrometheusInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "按照一个或者多个实例ID查询。实例ID形如：prom-xxxxxxxx。请求的实例的上限为100。",
           "example": "[\"prom-xxxxx\"]",
@@ -11715,7 +11207,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照【实例状态】进行过滤。\n<ul>\n<li>1：正在创建</li>\n<li>2：运行中</li>\n<li>3：异常</li>\n<li>4：重建中</li>\n<li>5：销毁中</li>\n<li>6：已停服</li>\n<li>8：欠费停服中</li>\n<li>9：欠费已停服</li>\n</ul>",
           "example": "[1,2]",
@@ -11725,7 +11216,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照【实例名称】进行过滤。",
           "example": "1",
@@ -11735,7 +11225,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照【可用区】进行过滤。可用区形如：ap-guangzhou-1。",
           "example": "[\"ap-guangzhou-1\"]",
@@ -11745,7 +11234,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照【标签键值对】进行过滤。tag-key使用具体的标签键进行替换。",
           "example": "无",
@@ -11755,7 +11243,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照【实例的IPv4地址】进行过滤。",
           "example": "[\"1.1.1.1\"]",
@@ -11765,7 +11252,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "1",
@@ -11775,7 +11261,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "1",
@@ -11785,7 +11270,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "按照【计费类型】进行过滤。\n<li>2：包年包月</li>\n<li>3：按量</li>",
           "example": "2",
@@ -12260,7 +11744,6 @@
       "document": "DescribeRecordingRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 实例 ID",
           "example": "prom-sdf342",
@@ -12270,7 +11753,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100",
           "example": "10",
@@ -12280,7 +11762,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为 0",
           "example": "无",
@@ -12290,7 +11771,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则 ID",
           "example": "无",
@@ -12300,7 +11780,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则状态码，取值如下：\n<li>1=RuleDeleted</li>\n<li>2=RuleEnabled</li>\n<li>3=RuleDisabled</li>",
           "example": "2",
@@ -12310,7 +11789,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则名称",
           "example": "无",
@@ -12358,7 +11836,6 @@
       "document": "DescribeSSOAccount请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "myGrafana",
@@ -12368,7 +11845,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000",
           "example": "10000",
@@ -12406,7 +11882,6 @@
       "document": "DescribeServiceDiscovery请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 实例 ID",
           "example": "",
@@ -12416,7 +11891,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "<li>类型是 TKE，为对应的腾讯云容器服务集群 ID</li>",
           "example": "",
@@ -12426,7 +11900,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户 Kubernetes 集群类型：\n<li> 1 = 容器服务集群(TKE) </li>",
           "example": "",
@@ -12589,7 +12062,6 @@
       "document": "DestroyPrometheusInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID，该实例必须先被 terminate",
           "example": "prom-w3rkj7835b",
@@ -12617,7 +12089,6 @@
       "document": "实例对象的维度组合",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例维度名称",
           "example": "",
@@ -12628,7 +12099,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例维度值",
           "example": "",
@@ -12645,7 +12115,6 @@
       "document": "策略类型的维度信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "维度 key 标示，后台英文名",
           "example": "tapm.instance.key",
@@ -12656,7 +12125,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "维度 key 名称，中英文前台展示名",
           "example": "业务系统",
@@ -12667,7 +12135,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否必选",
           "example": "true",
@@ -12678,7 +12145,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "支持的操作符列表",
           "example": "无",
@@ -12689,7 +12155,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否支持多选",
           "example": "true",
@@ -12700,7 +12165,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建后是否可以修改",
           "example": "true",
@@ -12711,7 +12175,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否展示给用户",
           "example": "true",
@@ -12722,7 +12185,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "能否用来过滤策略列表",
           "example": "false",
@@ -12733,7 +12195,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "能否用来过滤告警历史",
           "example": "false",
@@ -12744,7 +12205,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "能否作为聚合维度",
           "example": "true",
@@ -12755,7 +12215,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否必须作为聚合维度",
           "example": "true",
@@ -12766,7 +12225,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "前端翻译要替换的 key\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -12783,7 +12241,6 @@
       "document": "维度信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "维度名数组",
           "example": "",
@@ -12800,7 +12257,6 @@
       "document": "EnableGrafanaInternet请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 实例 ID，例如：grafana-kleu3gt0",
           "example": "my-instance",
@@ -12810,7 +12266,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开启或关闭公网访问，true为开启，false 为不开启",
           "example": "true",
@@ -12838,7 +12293,6 @@
       "document": "EnableGrafanaSSO请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启 SSO，true为开启，false 为不开启",
           "example": "true",
@@ -12848,7 +12302,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "my-instance",
@@ -12876,7 +12329,6 @@
       "document": "EnableSSOCamCheck请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "my-instance",
@@ -12886,7 +12338,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启 cam 鉴权，true为开启，false 为不开启",
           "example": "true",
@@ -12914,7 +12365,6 @@
       "document": "事件告警条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "告警通知频率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -12925,7 +12375,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -12936,7 +12385,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件ID",
           "example": "",
@@ -12947,7 +12395,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件展示名称（对外）",
           "example": "",
@@ -12958,7 +12405,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则ID",
           "example": "",
@@ -13157,7 +12603,6 @@
       "document": "GetPrometheusAgentManagementCommand请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 实例 ID",
           "example": "",
@@ -13167,7 +12612,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus Agent ID",
           "example": "",
@@ -13204,7 +12648,6 @@
       "document": "Grafana可视化服务 授权账户信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户账号ID",
           "example": "1000000000",
@@ -13215,7 +12658,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户权限",
           "example": "无",
@@ -13226,7 +12668,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "xxx",
@@ -13237,7 +12678,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2021-03-11T16:54:33+08:00",
@@ -13248,7 +12688,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "grafana-xxxx",
@@ -13259,7 +12698,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户主账号 UIN",
           "example": "11111",
@@ -13276,7 +12714,6 @@
       "document": "Grafana可视化服务 账号权限",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "组织",
           "example": "Org",
@@ -13287,7 +12724,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限",
           "example": "Admin",
@@ -13304,7 +12740,6 @@
       "document": "Grafana 告警渠道",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "渠道 ID",
           "example": "channel-id",
@@ -13315,7 +12750,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "渠道名",
           "example": "channel-name",
@@ -13326,7 +12760,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警通道模板 ID 数组",
           "example": "[]",
@@ -13337,7 +12770,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2021-03-11T16:54:33+08:00",
@@ -13348,7 +12780,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
           "example": "2021-03-11T16:54:33+08:00",
@@ -13359,7 +12790,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警渠道的所有生效组织\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"1\", \"2\", \"3\"]",
@@ -13376,7 +12806,6 @@
       "document": "查询 Grafana 实例时的实例类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例名",
           "example": "my-instance",
@@ -13387,7 +12816,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID",
           "example": "grafana-abcdefgh",
@@ -13398,7 +12826,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域",
           "example": "ap-guangzhou",
@@ -13409,7 +12836,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC ID",
           "example": "vpc-abcdef",
@@ -13420,7 +12846,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网 ID 数组",
           "example": "[\"subnet-abcdef\"]",
@@ -13431,7 +12856,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 内网地址",
           "example": "192.168.0.1",
@@ -13442,7 +12866,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 公网地址",
           "example": "192.168.0.1",
@@ -13453,7 +12876,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2021-03-11T16:54:33+08:00",
@@ -13464,7 +12886,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运行状态（1:正在创建；2:运行中；3:异常；4:重启中；5:停机中； 6:已停机； 7: 已删除）",
           "example": "1",
@@ -13475,7 +12896,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的标签\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"key\":\"1\",\"value\":\"2\"}]",
@@ -13486,7 +12906,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例的可用区",
           "example": "ap-guangzhou-6",
@@ -13497,7 +12916,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计费模式（1:包年包月）",
           "example": "1",
@@ -13508,7 +12926,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC 名称",
           "example": "Default-VPC",
@@ -13519,7 +12936,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网名称",
           "example": "Default-Subnet",
@@ -13530,7 +12946,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域 ID",
           "example": "1",
@@ -13541,7 +12956,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可访问此实例的完整 URL",
           "example": "http://127.0.0.1",
@@ -13552,7 +12966,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启 SSO",
           "example": "true",
@@ -13563,7 +12976,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "版本号",
           "example": "v7.4.2",
@@ -13574,7 +12986,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SSO登录时是否开启cam鉴权",
           "example": "true",
@@ -13591,7 +13002,6 @@
       "document": "Grafana 集成实例配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集成 ID",
           "example": "my-instance",
@@ -13602,7 +13012,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集成类型",
           "example": "grafana",
@@ -13613,7 +13022,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集成内容",
           "example": "\"{}\"",
@@ -13624,7 +13032,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集成描述",
           "example": "\"\"",
@@ -13635,7 +13042,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 跳转地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -13652,7 +13058,6 @@
       "document": "Grafana 告警渠道",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "渠道 ID",
           "example": "channel-id",
@@ -13663,7 +13068,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "渠道名",
           "example": "channel-name",
@@ -13674,7 +13078,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警通道模板 ID 数组",
           "example": "[]",
@@ -13685,7 +13088,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "2021-03-11T16:54:33+08:00",
@@ -13696,7 +13098,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
           "example": "2021-03-11T16:54:33+08:00",
@@ -13707,7 +13108,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "默认生效组织，已废弃，请使用 OrganizationIds",
           "example": "1",
@@ -13718,7 +13118,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "额外生效组织，已废弃，请使用 OrganizationIds\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"2\", \"3\"]",
@@ -13729,7 +13128,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "生效组织，已废弃，请使用 OrganizationIds\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"1\", \"2\", \"3\"]",
@@ -13740,7 +13138,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警渠道的所有生效组织\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"1\", \"2\", \"3\"]",
@@ -13757,7 +13154,6 @@
       "document": "Grafana 插件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 插件 ID",
           "example": "",
@@ -13768,7 +13164,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 插件版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -13785,7 +13180,6 @@
       "document": "InstallPlugins请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "插件信息",
           "example": "无",
@@ -13795,7 +13189,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "my-instance",
@@ -13833,7 +13226,6 @@
       "document": "实例维度组合数组",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例的维度组合",
           "example": "",
@@ -13850,7 +13242,6 @@
       "document": "DescribeBasicAlarmList返回的Alarms里的InstanceGroup",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -13861,7 +13252,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例组名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -13878,7 +13268,6 @@
       "document": "告警对象所属实例组",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例组 Id",
           "example": "",
@@ -13889,7 +13278,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例组名称",
           "example": "",
@@ -14008,7 +13396,6 @@
       "document": "日志告警请求信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "apm实例id",
           "example": "fake-instanceId",
@@ -14019,7 +13406,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检索条件信息",
           "example": "无",
@@ -14030,7 +13416,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警合并开启/暂停",
           "example": "1",
@@ -14041,7 +13426,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警合并时间",
           "example": "30",
@@ -14058,7 +13442,6 @@
       "document": "日志告警检索条件结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "字段名",
           "example": "k1",
@@ -14069,7 +13452,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "比较符号",
           "example": "eq",
@@ -14080,7 +13462,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段值",
           "example": "val1",
@@ -14097,7 +13478,6 @@
       "document": "Prometheus Agent 管理命令行",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Agent 安装命令\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -14108,7 +13488,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Agent 重启命令\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -14119,7 +13498,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Agent 停止命令\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -14130,7 +13508,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Agent 状态检测命令\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -14141,7 +13518,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Agent 日志检测命令\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -14294,7 +13670,6 @@
       "document": "指标配置",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "允许使用的运算符",
           "example": "",
@@ -14305,7 +13680,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "允许配置的数据周期，以秒为单位",
           "example": "",
@@ -14316,7 +13690,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "允许配置的持续周期个数",
           "example": "",
@@ -14333,7 +13706,6 @@
       "document": "DescribeMetricData接口出参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指标名",
           "example": "",
@@ -14344,7 +13716,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监控数据点",
           "example": "",
@@ -14361,7 +13732,6 @@
       "document": "DescribeMetricData出参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例对象维度组合",
           "example": "",
@@ -14372,7 +13742,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数据点列表",
           "example": "",
@@ -14389,7 +13758,6 @@
       "document": "指标数据的解释",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指标英文解释",
           "example": "",
@@ -14400,7 +13768,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标中文解释",
           "example": "",
@@ -14417,7 +13784,6 @@
       "document": "对业务指标的单位及支持统计周期的描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "命名空间，每个云产品会有一个命名空间",
           "example": "QCE/CVM",
@@ -14428,7 +13794,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标名称",
           "example": "AccOuttraffic",
@@ -14439,7 +13804,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标使用的单位",
           "example": "MB",
@@ -14450,7 +13814,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标使用的单位",
           "example": "\"\"",
@@ -14461,7 +13824,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标支持的统计周期，单位是秒，如60、300",
           "example": "[10,60]",
@@ -14472,7 +13834,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计周期内指标方式",
           "example": "无",
@@ -14483,7 +13844,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计指标含义解释",
           "example": "无",
@@ -14494,7 +13854,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "维度描述信息",
           "example": "无",
@@ -14505,7 +13864,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标中文名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "公网出流量面积",
@@ -14516,7 +13874,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标英文名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AccOuttraffic",
@@ -14533,7 +13890,6 @@
       "document": "DescribeMidDimensionValueList的查询条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "维度",
           "example": "",
@@ -14544,7 +13900,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作符，支持等于(eq)、不等于(ne)，以及in",
           "example": "",
@@ -14555,7 +13910,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "维度值，当Op是eq、ne时，只使用第一个元素",
           "example": "",
@@ -14797,7 +14151,6 @@
       "document": "ModifyAlarmPolicyInfo请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模块名，这里填“monitor”",
           "example": "monitor",
@@ -14807,7 +14160,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警策略 ID",
           "example": "policy-298gn92",
@@ -14817,7 +14169,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要修改的字段 NAME=策略名称 REMARK=策略备注",
           "example": "NAME",
@@ -14827,7 +14178,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改后的值",
           "example": "新的云服务器告警策略",
@@ -14918,7 +14268,6 @@
       "document": "ModifyAlarmPolicyStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模块名，固定值 monitor",
           "example": "monitor",
@@ -14928,7 +14277,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警策略 ID",
           "example": "policy-2g22g82",
@@ -14938,7 +14286,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "启停状态 0=停用 1=启用",
           "example": "0",
@@ -15011,7 +14358,6 @@
       "document": "ModifyAlarmReceivers请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要修改接收人的策略组Id",
           "example": "",
@@ -15021,7 +14367,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "必填。固定为“monitor”",
           "example": "",
@@ -15031,7 +14376,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新接收人信息, 没有填写则删除所有接收人",
           "example": "",
@@ -15059,7 +14403,6 @@
       "document": "ModifyGrafanaInstance请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "my-instance",
@@ -15069,7 +14412,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 实例名称，例如：test",
           "example": "my-instance-1",
@@ -15097,7 +14439,6 @@
       "document": "修改告警策略组传入的指标阈值条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指标id",
           "example": "",
@@ -15108,7 +14449,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "比较类型，1表示大于，2表示大于等于，3表示小于，4表示小于等于，5表示相等，6表示不相等",
           "example": "",
@@ -15119,7 +14459,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测阈值",
           "example": "",
@@ -15130,7 +14469,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检测指标的数据周期",
           "example": "",
@@ -15141,7 +14479,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "持续周期个数",
           "example": "",
@@ -15152,7 +14489,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警发送收敛类型。0连续告警，1指数告警",
           "example": "",
@@ -15163,7 +14499,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次",
           "example": "",
@@ -15174,7 +14509,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则id，不填表示新增，填写了ruleId表示在已存在的规则基础上进行修改",
           "example": "",
@@ -15191,7 +14525,6 @@
       "document": "修改告警策略组传入的事件告警条件",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "事件id",
           "example": "",
@@ -15202,7 +14535,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警发送收敛类型。0连续告警，1指数告警",
           "example": "",
@@ -15213,7 +14545,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警发送周期单位秒。<0 不触发, 0 只触发一次, >0 每隔triggerTime秒触发一次",
           "example": "",
@@ -15224,7 +14555,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则id，不填表示新增，填写了ruleId表示在已存在的规则基础上进行修改",
           "example": "",
@@ -15241,7 +14571,6 @@
       "document": "ModifyPolicyGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "固定值，为\"monitor\"",
           "example": "",
@@ -15251,7 +14580,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略组id",
           "example": "",
@@ -15261,7 +14589,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警类型",
           "example": "",
@@ -15271,7 +14598,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略组名称",
           "example": "",
@@ -15281,7 +14607,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标告警条件的且或关系，1表示且告警，所有指标告警条件都达到才告警，0表示或告警，任意指标告警条件达到都告警",
           "example": "",
@@ -15291,7 +14616,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指标告警条件规则，不填表示删除已有的所有指标告警条件规则",
           "example": "",
@@ -15301,7 +14625,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件告警条件，不填表示删除已有的事件告警条件",
           "example": "",
@@ -15311,7 +14634,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板策略组id",
           "example": "",
@@ -15537,7 +14859,6 @@
       "document": "ModifyPrometheusInstanceAttributes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例名称",
           "example": "my-prom-gg",
@@ -15547,7 +14868,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID",
           "example": "prom-2rsas2",
@@ -15557,7 +14877,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "存储时长（取值为 15、30、45。此参数不适用于包年包月实例）",
           "example": "15",
@@ -15666,7 +14985,6 @@
       "document": "监控类型详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "监控类型ID",
           "example": "19023",
@@ -15677,7 +14995,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监控类型",
           "example": "MT_QCE",
@@ -15688,7 +15005,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排列顺序",
           "example": "1",
@@ -15705,7 +15021,6 @@
       "document": "策略类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "监控类型",
           "example": "",
@@ -15716,7 +15031,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略类型值",
           "example": "",
@@ -15759,7 +15073,6 @@
       "document": "维度支持的操作符信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "运算符标识",
           "example": "eq",
@@ -15770,7 +15083,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运算符展示名",
           "example": "=",
@@ -15787,7 +15099,6 @@
       "document": "周期内的统计方式",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "周期",
           "example": "",
@@ -15798,7 +15109,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "统计方式",
           "example": "",
@@ -15815,7 +15125,6 @@
       "document": "监控数据点",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "该监控数据点生成的时间点",
           "example": "",
@@ -15826,7 +15135,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监控数据点的值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -15843,7 +15151,6 @@
       "document": "策略组信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否可设为默认告警策略",
           "example": "",
@@ -15854,7 +15161,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警策略组ID",
           "example": "",
@@ -15865,7 +15171,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警策略组名称",
           "example": "",
@@ -15876,7 +15181,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -15887,7 +15191,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为默认告警策略",
           "example": "",
@@ -15898,7 +15201,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警策略启用状态",
           "example": "",
@@ -15909,7 +15211,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后修改人UIN",
           "example": "",
@@ -15920,7 +15221,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "未屏蔽的实例数",
           "example": "",
@@ -15931,7 +15231,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "父策略组ID",
           "example": "",
@@ -15942,7 +15241,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属项目ID",
           "example": "",
@@ -15953,7 +15251,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警接收对象信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -15964,7 +15261,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注信息",
           "example": "",
@@ -15975,7 +15271,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "修改时间",
           "example": "",
@@ -15986,7 +15281,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总绑定实例数",
           "example": "",
@@ -15997,7 +15291,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视图",
           "example": "",
@@ -16008,7 +15301,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为与关系规则",
           "example": "",
@@ -16025,7 +15317,6 @@
       "document": "2018版策略模板列表接收人信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "有效时段结束时间",
           "example": "",
@@ -16036,7 +15327,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要发送通知",
           "example": "",
@@ -16047,7 +15337,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警接收渠道\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -16058,7 +15347,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电话告警对个人间隔（秒）",
           "example": "",
@@ -16069,7 +15357,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "消息接收组列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -16080,7 +15367,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接受者类型",
           "example": "",
@@ -16091,7 +15377,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接收人列表。通过平台接口查询到的接收人id列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -16102,7 +15387,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警恢复通知方式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -16113,7 +15397,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电话告警每轮间隔（秒）",
           "example": "",
@@ -16124,7 +15407,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电话告警轮数",
           "example": "",
@@ -16135,7 +15417,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电话告警通知时机。可选\"OCCUR\"(告警时通知),\"RECOVER\"(恢复时通知)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -16146,7 +15427,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "有效时段开始时间",
           "example": "",
@@ -16157,7 +15437,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电话告警接收者uid\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -16174,7 +15453,6 @@
       "document": "策略标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签Key",
           "example": "",
@@ -16185,7 +15463,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签Value",
           "example": "",
@@ -16238,7 +15515,6 @@
       "document": "prometheus agent",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Agent 名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -16249,7 +15525,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Agent ID",
           "example": "",
@@ -16260,7 +15535,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID",
           "example": "",
@@ -16271,7 +15545,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Agent IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -16282,7 +15555,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "心跳时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -16293,7 +15565,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最近一次错误\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -16304,7 +15575,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Agent 版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -16315,7 +15585,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Agent 状态",
           "example": "",
@@ -16840,7 +16109,6 @@
       "document": "实例的授权信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否有计费操作权限(1=有，2=无)",
           "example": "1",
@@ -16851,7 +16119,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否显示VPC信息的权限(1=有，2=无)",
           "example": "1",
@@ -16862,7 +16129,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否可修改Grafana的状态(1=有，2=无)",
           "example": "1",
@@ -16873,7 +16139,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否有管理agent的权限(1=有，2=无)",
           "example": "1",
@@ -16884,7 +16149,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否有管理TKE集成的权限(1=有，2=无)",
           "example": "1",
@@ -16895,7 +16159,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否显示API等信息(1=有, 2=无)",
           "example": "1",
@@ -17687,7 +16950,6 @@
       "document": "prometheus 报警规则 KV 参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "键",
           "example": "",
@@ -17698,7 +16960,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "值",
           "example": "",
@@ -17715,7 +16976,6 @@
       "document": "prometheus 报警规则集",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则 ID",
           "example": "",
@@ -17726,7 +16986,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则名称",
           "example": "",
@@ -17737,7 +16996,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则状态码",
           "example": "",
@@ -17748,7 +17006,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则类别\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -17759,7 +17016,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -17770,7 +17026,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则注释列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -17781,7 +17036,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则表达式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -17792,7 +17046,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则报警持续时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -17803,7 +17056,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报警接收组列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -17814,7 +17066,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则运行健康状态，取值如下：\n<li>unknown 未知状态</li>\n<li>pending 加载中</li>\n<li>ok 运行正常</li>\n<li>err 运行错误</li>",
           "example": "",
@@ -17825,7 +17076,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -17836,7 +17086,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -17853,7 +17102,6 @@
       "document": "Prometheus 抓取任务",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "任务名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -17864,7 +17112,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Agent ID",
           "example": "",
@@ -17875,7 +17122,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务 ID",
           "example": "",
@@ -17886,7 +17132,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -17903,7 +17148,6 @@
       "document": "Prometheus 托管服务标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签的健值",
           "example": "",
@@ -17914,7 +17158,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签对应的值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -18285,7 +17528,6 @@
       "document": "接收人信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "告警时间段开始时间。范围[0,86400)，作为 UNIX 时间戳转成北京时间后去掉日期，例如7200表示\"10:0:0\"",
           "example": "无",
@@ -18296,7 +17538,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警时间段结束时间。含义同StartTime",
           "example": "无",
@@ -18307,7 +17548,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警通知方式。可选 \"SMS\",\"SITE\",\"EMAIL\",\"CALL\",\"WECHAT\"",
           "example": "无",
@@ -18318,7 +17558,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接收人类型。“group” 或 “user”",
           "example": "无",
@@ -18329,7 +17568,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ReceiverId",
           "example": "无",
@@ -18340,7 +17578,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电话告警通知时机。可选\"OCCUR\"(告警时通知),\"RECOVER\"(恢复时通知)",
           "example": "无",
@@ -18351,7 +17588,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电话告警接收者 UID",
           "example": "无",
@@ -18362,7 +17598,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电话告警轮数",
           "example": "无",
@@ -18373,7 +17608,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电话告警对个人间隔（秒）",
           "example": "无",
@@ -18384,7 +17618,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电话告警每轮间隔（秒）",
           "example": "无",
@@ -18395,7 +17628,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "恢复通知方式。可选\"SMS\"",
           "example": "无",
@@ -18406,7 +17638,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否需要电话告警触达提示。0不需要，1需要",
           "example": "无",
@@ -18417,7 +17648,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接收组列表。通过平台接口查询到的接收组 ID 列表",
           "example": "无",
@@ -18428,7 +17658,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接收人列表。通过平台接口查询到的接收人 ID 列表",
           "example": "无",
@@ -18439,7 +17668,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警接收语言，枚举值（zh-CN，en-US）",
           "example": "无",
@@ -18650,7 +17878,6 @@
       "document": "Prometheus 服务发现信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "服务发现名称",
           "example": "",
@@ -18661,7 +17888,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务发现属于的 Namespace",
           "example": "",
@@ -18672,7 +17898,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务发现类型: ServiceMonitor/PodMonitor",
           "example": "",
@@ -18683,7 +17908,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Namespace 选取方式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -18694,7 +17918,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Label 选取方式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -18705,7 +17928,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Endpoints 信息（PodMonitor 不含该参数）",
           "example": "",
@@ -18716,7 +17938,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务发现对应的配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -18733,7 +17954,6 @@
       "document": "SetDefaultAlarmPolicy请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模块名，固定值 monitor",
           "example": "monitor",
@@ -18743,7 +17963,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警策略 ID",
           "example": "policy-jfg9hg2g2",
@@ -18833,7 +18052,6 @@
       "document": "策略列表详情标签返回体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签Key\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tag",
@@ -18844,7 +18062,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签Value\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "value",
@@ -18855,7 +18072,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -18866,7 +18082,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产品类型，如：cvm\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cvm",
@@ -18877,7 +18092,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -18888,7 +18102,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定状态，2：绑定成功，1：绑定中\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -18899,7 +18112,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签状态，2：标签存在，1：标签不存在\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -19018,7 +18230,6 @@
       "document": "模板列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "指标告警规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -19029,7 +18240,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件告警规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -19040,7 +18250,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联告警策略组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -19051,7 +18260,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板策略组ID",
           "example": "1",
@@ -19062,7 +18270,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模板策略组名称",
           "example": "test",
@@ -19073,7 +18280,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "11",
@@ -19084,7 +18290,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后修改人UIN",
           "example": "1",
@@ -19095,7 +18300,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "\"\"",
@@ -19106,7 +18310,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间",
           "example": "1",
@@ -19117,7 +18320,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "视图",
           "example": "cvm_device",
@@ -19128,7 +18330,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为与关系",
           "example": "1",
@@ -19145,7 +18346,6 @@
       "document": "TerminatePrometheusInstances请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID 列表",
           "example": "[\"prom-w3rkj7835b\\n\"]",
@@ -19275,7 +18475,6 @@
       "document": "UnBindingAllPolicyObject请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "固定值，为\"monitor\"",
           "example": "monitor",
@@ -19285,7 +18484,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略组id，如传入 PolicyId 则该字段被忽略可传入任意值如 0",
           "example": "11111",
@@ -19295,7 +18493,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警策略ID，使用此字段时 GroupId 会被忽略",
           "example": "policy-abc123",
@@ -19305,7 +18502,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件配置的告警",
           "example": "{   \"source\": \"apigw.cloud.tencent\", // 对应云监控所选 云产品   \"type\": [ ",
@@ -19315,7 +18511,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否配置了事件告警",
           "example": "1",
@@ -19343,7 +18538,6 @@
       "document": "UnBindingPolicyObject请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "固定值，为\"monitor\"",
           "example": "monitor",
@@ -19353,7 +18547,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略组id，如传入 PolicyId 则该字段被忽略可传入任意值如 0",
           "example": "11111",
@@ -19363,7 +18556,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "待删除对象实例的唯一id列表，UniqueId从调用[获取已绑定对象列表接口](https://cloud.tencent.com/document/api/248/40570)的出参的List中得到",
           "example": "[\"3dd5113208fd467b2e5d0c1111111111\\n\"]",
@@ -19373,7 +18565,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "实例分组id，如果按实例分组删除的话UniqueId参数是无效的",
           "example": "0",
@@ -19383,7 +18574,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "告警策略ID，使用此字段时 GroupId 会被忽略",
           "example": "policy-abc123",
@@ -19393,7 +18583,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "事件配置的告警",
           "example": "{   \"source\": \"apigw.cloud.tencent\", // 对应云监控所选 云产品   \"type\": [ ",
@@ -19403,7 +18592,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否配置了事件告警",
           "example": "1",
@@ -19431,7 +18619,6 @@
       "document": "UnbindPrometheusManagedGrafana请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 实例 ID",
           "example": "prom-x2jlskf",
@@ -19441,7 +18628,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 实例 ID",
           "example": "grafana-sdjl2r",
@@ -19469,7 +18655,6 @@
       "document": "UninstallGrafanaDashboard请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID",
           "example": "prom-c0wy130a",
@@ -19479,7 +18664,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 集成项 Code，删除对应的 Dashboard，Code 如下：\n<li>spring_mvc</li>\n<li>mysql</li>\n<li>go</li>\n<li>redis</li>\n<li>jvm</li>\n<li>pgsql</li>\n<li>mongo</li>\n<li>kafka</li>\n<li>es</li>\n<li>flink</li>\n<li>blackbox</li>\n<li>consule</li>\n<li>memcached</li>\n<li>zk</li>\n<li>tps</li>\n<li>istio</li>\n<li>etcd</li>",
           "example": "[\"spring_mvc\"]",
@@ -19507,7 +18691,6 @@
       "document": "UninstallGrafanaPlugins请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "插件 ID 数组，例如\"PluginIds\": [ \"grafana-clock-panel\" ]，可通过 DescribePluginOverviews 获取 PluginId",
           "example": "[\"grafana-clock-panel\"]",
@@ -19517,7 +18700,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 实例 ID，例如：grafana-abcdefg",
           "example": "my-instance",
@@ -19545,7 +18727,6 @@
       "document": "UpdateAlertRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 报警规则 ID",
           "example": "arule-omq28fcm",
@@ -19555,7 +18736,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 实例 ID",
           "example": "prom-123131",
@@ -19565,7 +18745,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则状态码，取值如下：\n<li>1=RuleDeleted</li>\n<li>2=RuleEnabled</li>\n<li>3=RuleDisabled</li>\n默认状态码为 2 启用。",
           "example": "2",
@@ -19575,7 +18754,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报警规则名称",
           "example": "告警规则测试",
@@ -19585,7 +18763,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报警规则表达式",
           "example": "job:request_latency_seconds:mean5m{job=\"myjob\"} > 0.5",
@@ -19595,7 +18772,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报警规则持续时间",
           "example": "1m",
@@ -19605,7 +18781,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报警规则接收组列表",
           "example": "[\"Consumer-5sfs3242\"]",
@@ -19615,7 +18790,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报警规则标签列表",
           "example": "[{Key: \"ip\" Value: \"1.1.1.1\"}]",
@@ -19625,7 +18799,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报警规则注释列表。\n\n告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description。",
           "example": "[{Key: \"summary\" Value: \"规则名称\"}]",
@@ -19635,7 +18808,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报警策略模板分类",
           "example": "TargetDown",
@@ -19673,7 +18845,6 @@
       "document": "UpdateAlertRuleState请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则 ID 列表",
           "example": "[\"arule-m74lrt6g\"]",
@@ -19683,7 +18854,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 实例 ID",
           "example": "my-prom-gg",
@@ -19693,7 +18863,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则状态码，取值如下：\n<li>2=RuleEnabled</li>\n<li>3=RuleDisabled</li>\n默认状态码为 2 启用。",
           "example": "3",
@@ -19757,7 +18926,6 @@
       "document": "UpdateExporterIntegration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID",
           "example": "prom-xx",
@@ -19767,7 +18935,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型",
           "example": "mysql-exporter",
@@ -19777,7 +18944,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "配置内容",
           "example": "{\"name\":\"test\",\"kind\":\"mysql-exporter\", \"instanceSpec\":{}}",
@@ -19787,7 +18953,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Kubernetes 集群类型，取值如下：\n<li> 1= 容器集群(TKE) </li>\n<li> 2=弹性集群<EKS> </li>\n<li> 3= Prometheus管理的弹性集群<MEKS> </li>",
           "example": "1",
@@ -19797,7 +18962,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集群 ID",
           "example": "cls-xx",
@@ -19825,7 +18989,6 @@
       "document": "UpdateGrafanaConfig请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID",
           "example": "my-instance",
@@ -19835,7 +18998,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "JSON 编码后的字符串",
           "example": "\"{\"server\":{\"root_url\":\"http://balabalahahaha\"}}\"",
@@ -19899,7 +19061,6 @@
       "document": "UpdateGrafanaIntegration请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "集成 ID，可在实例详情-云产品集成-集成列表查看。例如：integration-abcd1234",
           "example": "my-instance",
@@ -19909,7 +19070,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 实例 ID，例如：grafana-12345678",
           "example": "my-instance",
@@ -19919,7 +19079,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集成类型，可在实例详情-云产品集成-集成列表查看。例如：tencent-cloud-prometheus",
           "example": "grafana",
@@ -19929,7 +19088,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "集成内容",
           "example": "'{}'",
@@ -20065,7 +19223,6 @@
       "document": "UpdatePrometheusAgentStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 实例 ID，例如：prom-abcd1234",
           "example": "xx",
@@ -20075,7 +19232,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Agent ID 列表，例如：agent-abcd1234，可在控制台 Agent 管理中获取",
           "example": "[\"xx\"]",
@@ -20085,7 +19241,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要更新的状态\n<li> 1= 开启 </li>\n<li> 2= 关闭 </li>",
           "example": "1",
@@ -20113,7 +19268,6 @@
       "document": "UpdatePrometheusScrapeJob请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 实例 ID，例如：prom-abcd1234",
           "example": "xx",
@@ -20123,7 +19277,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Agent ID，例如：agent-abcd1234，可在控制台 Agent 管理中获取",
           "example": "xx",
@@ -20133,7 +19286,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "抓取任务 ID，例如：job-abcd1234，可在控制台 Agent 管理-抓取任务配置中获取",
           "example": "xx",
@@ -20143,7 +19295,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "抓取任务配置，格式：job_name:xx",
           "example": "job_name:xx",
@@ -20171,7 +19322,6 @@
       "document": "UpdateRecordingRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "聚合规则名称",
           "example": "1",
@@ -20181,7 +19331,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "聚合规则组内容，格式为 yaml，通过 base64 进行编码。",
           "example": "LS0tDQpuYW1lOiBleGFtcGxlDQpydWxlczoNCiAgLSByZWNvcmQ6IGpvYjpodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHM6c3VtDQogICAgZXhwcjogc3VtIGJ5IChqb2IpIChodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHMp",
@@ -20191,7 +19340,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 实例 ID",
           "example": "prom-xrwerwe",
@@ -20201,7 +19349,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 聚合规则 ID",
           "example": "rrule-m74lrt6g",
@@ -20211,7 +19358,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则状态码，取值如下：\n<li>1=RuleDeleted</li>\n<li>2=RuleEnabled</li>\n<li>3=RuleDisabled</li>\n默认状态码为 2 启用。",
           "example": "2",
@@ -20249,7 +19395,6 @@
       "document": "UpdateSSOAccount请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Grafana 实例 ID，例如：grafana-abcdefgh",
           "example": "myGrafana",
@@ -20259,7 +19404,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户账号 ID ，例如：10000000",
           "example": "10000000",
@@ -20269,7 +19413,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "权限",
           "example": "无",
@@ -20279,7 +19422,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "xxx",
@@ -20307,7 +19449,6 @@
       "document": "UpdateServiceDiscovery请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 实例 ID",
           "example": "",
@@ -20317,7 +19458,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "<li>类型是 TKE，为对应的腾讯云容器服务集群 ID</li>",
           "example": "",
@@ -20327,7 +19467,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户 Kubernetes 集群类型：\n<li> 1 = 容器服务集群(TKE) </li>",
           "example": "",
@@ -20337,7 +19476,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务发现类型，取值如下：\n<li> 1 = ServiceMonitor</li>\n<li> 2 = PodMonitor</li>\n<li> 3 = JobMonitor</li>",
           "example": "",
@@ -20347,7 +19485,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务发现配置信息",
           "example": "",
@@ -20384,7 +19521,6 @@
       "document": "UpgradeGrafanaDashboard请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "实例 ID",
           "example": "prom-gds3q53s",
@@ -20394,7 +19530,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Prometheus 集成项 Code，升级对应的 Dashboard，取值如下：\n<li>spring_mvc</li>\n<li>mysql</li>\n<li>go</li>\n<li>redis</li>\n<li>jvm</li>\n<li>pgsql</li>\n<li>mongo</li>\n<li>kafka</li>\n<li>es</li>\n<li>flink</li>\n<li>blackbox</li>\n<li>consule</li>\n<li>memcached</li>\n<li>zk</li>\n<li>tps</li>\n<li>istio</li>\n<li>etcd</li>",
           "example": "[\"spring-mvc\"]",

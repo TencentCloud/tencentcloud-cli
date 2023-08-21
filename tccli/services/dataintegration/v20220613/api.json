@@ -19,7 +19,6 @@
       "document": "批量消息",
       "members": [
         {
-          "default": "",
           "document": "消息体",
           "example": "MessageIdContent",
           "member": "string",
@@ -29,7 +28,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "消息的键名",
           "example": "Message-key-439j9hj92",
           "member": "string",
@@ -45,7 +43,6 @@
       "document": "SendMessage请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "接入资源ID",
           "example": "datahub-rinibi1",
           "member": "string",
@@ -54,7 +51,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "批量消息",
           "example": "无",
           "member": "BatchContent",

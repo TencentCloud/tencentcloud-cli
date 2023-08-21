@@ -152,7 +152,6 @@
       "document": "BindEipAcls请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待关联的 EIP 与 ACL关系列表",
           "example": "无",
@@ -180,7 +179,6 @@
       "document": "BindHosted请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Eip实例ID，可通过DescribeBmEip 接口返回字段中的 eipId获取。Eip和EipId参数必须要填写一个。",
           "example": "eip-kwn5q7mt",
@@ -190,7 +188,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "托管机器实例ID",
           "example": "chm-343fqw4",
@@ -228,7 +225,6 @@
       "document": "BindRs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Eip实例ID",
           "example": "",
@@ -238,7 +234,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理服务器实例ID",
           "example": "",
@@ -401,7 +396,6 @@
       "document": "CreateEip请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "申请数量，默认为1, 最大 20",
           "example": "1",
@@ -411,7 +405,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP计费方式，flow-流量计费；bandwidth-带宽计费",
           "example": "flow",
@@ -421,7 +414,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "带宽设定值（只在带宽计费时生效）",
           "example": "10",
@@ -431,7 +423,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP模式，目前支持tunnel和fullnat",
           "example": "fullnat",
@@ -441,7 +432,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否使用独占集群，0：不使用，1：使用。默认为0",
           "example": "0",
@@ -451,7 +441,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP归属私有网络ID，例如vpc-k7j1t2x1",
           "example": "vpc-bjh0qd20",
@@ -461,7 +450,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "指定申请的IP列表",
           "example": "[\"1.1.1.1\"]",
@@ -509,7 +497,6 @@
       "document": "DeleteEipAcl请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待删除的 ACL 实例 ID",
           "example": "bmeipacl-s1hf4voq",
@@ -537,7 +524,6 @@
       "document": "DeleteEip请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Eip实例ID列表",
           "example": "[\"eip-k5zjz4yy\\r\\n\"]",
@@ -575,7 +561,6 @@
       "document": "DescribeEipAcls请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "ACL 名称，支持模糊查找",
           "example": "abc",
@@ -585,7 +570,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ACL 实例 ID 列表，数组下标从 0 开始",
           "example": "[\"bmeipacl-s1hf4voq\\r\\n\"]",
@@ -595,7 +579,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数。偏移量，默认为 0",
           "example": "0",
@@ -605,7 +588,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页参数。每一页的 EIPACL 列表数目",
           "example": "20",
@@ -615,7 +597,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP实例ID列表",
           "example": "[\"eip-1234abcd\", \"eip-abcd1234\"]",
@@ -625,7 +606,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP IP地址列表",
           "example": "[\"1,1,1,1\"]",
@@ -635,7 +615,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP名称列表",
           "example": "name",
@@ -645,7 +624,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段",
           "example": "CreateTime",
@@ -655,7 +633,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式，取值：0:增序(默认)，1:降序",
           "example": "1",
@@ -665,7 +642,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ACL名称列表，支持模糊查找",
           "example": "[\"abc\", \"def\"]",
@@ -775,7 +751,6 @@
       "document": "DescribeEipTask请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "EIP查询任务ID",
           "example": "2488126",
@@ -813,7 +788,6 @@
       "document": "DescribeEips请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "EIP实例ID列表",
           "example": "",
@@ -823,7 +797,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP IP 列表",
           "example": "",
@@ -833,7 +806,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主机实例ID 列表",
           "example": "",
@@ -843,7 +815,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP名称,模糊匹配",
           "example": "",
@@ -853,7 +824,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态列表, 默认所有",
           "example": "",
@@ -863,7 +833,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
           "example": "",
@@ -873,7 +842,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回EIP数量，默认 20, 最大值 100",
           "example": "",
@@ -883,7 +851,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序字段，支持： EipId,Eip,Status, InstanceId,CreatedAt",
           "example": "",
@@ -893,7 +860,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序方式 0:递增 1:递减(默认)",
           "example": "",
@@ -903,7 +869,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计费模式,流量：flow，带宽：bandwidth",
           "example": "",
@@ -913,7 +878,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP归属VpcId，例如vpc-k7j1t2x1",
           "example": "",
@@ -923,7 +887,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "绑定类型，-1：未绑定，0：物理机，1：nat网关，2：虚拟IP, 3:托管机器",
           "example": "",
@@ -933,7 +896,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "独占标志，0：共享，1：独占",
           "example": "",
@@ -943,7 +905,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP ACL实例ID",
           "example": "",
@@ -953,7 +914,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "搜索条件，是否绑定了EIP ACL， 0：未绑定，1：绑定",
           "example": "",
@@ -999,7 +959,6 @@
       "document": "EipAcl信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "ACL 实例 ID。",
           "example": "",
@@ -1010,7 +969,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ACL 实例名称",
           "example": "",
@@ -1021,7 +979,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ACL 状态。0：无状态，1：有状态",
           "example": "",
@@ -1032,7 +989,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIPACL 创建时间",
           "example": "",
@@ -1043,7 +999,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIPACL 已关联的 eip 数目",
           "example": "",
@@ -1054,7 +1009,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "出站规则",
           "example": "",
@@ -1065,7 +1019,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入站规则",
           "example": "",
@@ -1082,7 +1035,6 @@
       "document": "eipid与aclid关联关系",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "EIP 实例 ID",
           "example": "",
@@ -1093,7 +1045,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ACL 实例 ID",
           "example": "",
@@ -1110,7 +1061,6 @@
       "document": "eipacl规则",
       "members": [
         {
-          "default": "\"\"",
           "disabled": false,
           "document": "源 IP",
           "example": "",
@@ -1121,7 +1071,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "\"\"",
           "disabled": false,
           "document": "目标端口",
           "example": "",
@@ -1132,7 +1081,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "\"\"",
           "disabled": false,
           "document": "协议(TCP/UDP/ICMP/ANY)",
           "example": "",
@@ -1143,7 +1091,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "\"\"",
           "disabled": false,
           "document": "策略（accept/drop）",
           "example": "",
@@ -1154,7 +1101,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "\"\"",
           "disabled": false,
           "document": "备注",
           "example": "",
@@ -1171,7 +1117,6 @@
       "document": "Eip信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "EIP实例ID",
           "example": "",
@@ -1182,7 +1127,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP名称",
           "example": "",
@@ -1193,7 +1137,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP地址",
           "example": "",
@@ -1204,7 +1147,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运营商ID 0：电信； 1：联通； 2：移动； 3：教育网； 4：盈科； 5：BGP； 6：中国香港",
           "example": "",
@@ -1215,7 +1157,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态 0：创建中； 1：绑定中； 2：已绑定； 3：解绑中； 4：未绑定； 6：下线中； 9：创建失败",
           "example": "",
@@ -1226,7 +1167,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否欠费隔离 1： 欠费隔离； 0： 正常。处在欠费隔离情况下的EIP不能进行任何管理操作。",
           "example": "",
@@ -1237,7 +1177,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP所绑定的服务器实例ID，未绑定则为空",
           "example": "",
@@ -1248,7 +1187,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "服务器别名",
           "example": "",
@@ -1259,7 +1197,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP解绑时间",
           "example": "",
@@ -1270,7 +1207,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP创建时间",
           "example": "",
@@ -1281,7 +1217,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP更新时间",
           "example": "",
@@ -1292,7 +1227,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP未绑定服务器时长（单位：秒）",
           "example": "",
@@ -1303,7 +1237,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP所绑定的资源类型，-1：未绑定资源；0：黑石物理机，字段对应unInstanceId；1：Nat网关，字段对应natUid；2：云服务器字段对应vpcIp; 3: 托管机器，字段对应HInstanceId, HInstanceAlias",
           "example": "",
@@ -1314,7 +1247,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP计费模式，\"flow\"：流量计费； \"bandwidth\"：带宽计费",
           "example": "",
@@ -1325,7 +1257,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP带宽计费模式下的带宽上限（单位：MB）",
           "example": "",
@@ -1336,7 +1267,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最近一次操作变更的EIP计费模式，\"flow\"：流量计费； \"bandwidth\"：带宽计费",
           "example": "",
@@ -1347,7 +1277,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最近一次操作变更的EIP计费模式对应的带宽上限值，仅在带宽计费模式下有效（单位：MB）",
           "example": "",
@@ -1358,7 +1287,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络名称",
           "example": "",
@@ -1369,7 +1297,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP所绑定的NAT网关的数字ID，形如：1001,，未绑定则为空",
           "example": "",
@@ -1380,7 +1307,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP所绑定的NAT网关实例ID，形如：\"nat-n47xxxxx\"，未绑定则为空",
           "example": "",
@@ -1391,7 +1317,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP所绑定的云服务器IP(托管或者云服务器的IP），形如：\"10.1.1.3\"。 注意：IP资源需要通过bmvpc模块注册或者申请后才可以绑定eip，接口使用申请子网IP和注册子网IP：,未绑定则为空",
           "example": "",
@@ -1402,7 +1327,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络实例ID",
           "example": "",
@@ -1413,7 +1337,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为独占类型EIP",
           "example": "",
@@ -1424,7 +1347,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络的cidr",
           "example": "",
@@ -1435,7 +1357,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP ACL实例ID",
           "example": "",
@@ -1446,7 +1367,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP ACL名称",
           "example": "",
@@ -1457,7 +1377,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "托管机器实例ID",
           "example": "",
@@ -1468,7 +1387,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "托管机器别名",
           "example": "",
@@ -1485,7 +1403,6 @@
       "document": "EipId与InstanceId绑定关系",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "EIP实例 ID",
           "example": "",
@@ -1496,7 +1413,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "黑石物理机实例ID",
           "example": "",
@@ -1513,7 +1429,6 @@
       "document": "ModifyEipAcl请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "ACL 实例 ID",
           "example": "bmeipacl-s1hf4voq",
@@ -1523,7 +1438,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ACL 名称",
           "example": "abc",
@@ -1533,7 +1447,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ACL 状态。0：无状态 1：有状态",
           "example": "1",
@@ -1543,7 +1456,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则类型（in/out）。in：入站规则 out：出站规则",
           "example": "in",
@@ -1553,7 +1465,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ACL规则列表",
           "example": "无",
@@ -1581,7 +1492,6 @@
       "document": "ModifyEipCharge请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "EIP计费方式，flow-流量计费；bandwidth-带宽计费",
           "example": "",
@@ -1591,7 +1501,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Eip实例ID列表",
           "example": "",
@@ -1601,7 +1510,6 @@
           "type": "list"
         },
         {
-          "default": "1",
           "disabled": false,
           "document": "带宽设定值（只在带宽计费时生效）",
           "example": "",
@@ -1638,7 +1546,6 @@
       "document": "ModifyEipName请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Eip实例ID，可通过/v2/DescribeEip 接口返回字段中的 eipId获取",
           "example": "",
@@ -1648,7 +1555,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "EIP 实例别名",
           "example": "",
@@ -1676,7 +1582,6 @@
       "document": "UnbindEipAcls请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "待解关联的 EIP 与 ACL列表",
           "example": "无",
@@ -1704,7 +1609,6 @@
       "document": "UnbindHosted请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "托管机器实例ID",
           "example": "",
@@ -1714,7 +1618,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Eip实例ID，可通过DescribeBmEip 接口返回字段中的 eipId获取。Eip和EipId参数必须要填写一个。",
           "example": "",
@@ -1724,7 +1627,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "弹性IP。Eip和EipId参数必须要填写一个。",
           "example": "",
@@ -1761,7 +1663,6 @@
       "document": "UnbindRsList请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "物理机绑定的EIP列表",
           "example": "",
@@ -1798,7 +1699,6 @@
       "document": "UnbindRs请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "Eip实例ID",
           "example": "",
@@ -1808,7 +1708,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理服务器实例ID",
           "example": "",

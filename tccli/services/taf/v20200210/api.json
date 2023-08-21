@@ -33,7 +33,6 @@
       "document": "业务入参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "业务入参id",
           "example": "01a5*******c058",
@@ -44,7 +43,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "业务入参类型",
           "example": "1",
@@ -66,7 +64,6 @@
       "document": "流量反欺诈-验准入参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模型ID列表",
           "example": "[1,2]",
@@ -77,7 +74,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备ID，AccountType指定的类型",
           "example": "\"86********\"",
@@ -88,7 +84,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备号类型，1.imei 2.imeiMd5（小写后转MD5转小写）3.idfa， 4.idfaMd5（大写后转MD5转小写），5.手机号,256.其它",
           "example": "1",
@@ -99,7 +94,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户IP",
           "example": "127.0.0.1",
@@ -110,7 +104,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作系统类型(unknown，android，ios，windows)",
           "example": "android",
@@ -121,7 +114,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "操作系统版本",
           "example": "\"V10.1\"",
@@ -132,7 +124,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "纬度",
           "example": "22.3333",
@@ -143,7 +134,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "经度",
           "example": "23.2222",
@@ -154,7 +144,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备型号(MI 6)",
           "example": "V10",
@@ -165,7 +154,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "竞价底价",
           "example": "20",
@@ -176,7 +164,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "年龄",
           "example": "10",
@@ -187,7 +174,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "性别(1.MALE 2.FEMALE)",
           "example": "1",
@@ -198,7 +184,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户地址",
           "example": "“XXX省XXX市XXX街道XXX路”",
@@ -209,7 +194,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "投放模式（0=PDB，1=PD，2=RTB，10=其他）",
           "example": "0",
@@ -220,7 +204,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "广告位类型<br />（0=前贴片，1=开屏广告，2=网页头部广告、3=网页中部广告、4=网页底部广告、5=悬浮广告、10=其它）",
           "example": "1",
@@ -231,7 +214,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "mac地址，建议提供",
           "example": "ADSASDAS-DASDASDASD-DASDASAS",
@@ -242,7 +224,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "电话号码",
           "example": "131",
@@ -253,7 +234,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "浏览器类型",
           "example": "\"xxxl浏览器\"",
@@ -264,7 +244,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端应用",
           "example": "“XXXapp”",
@@ -275,7 +254,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "应用包名",
           "example": "\"xxxpackage\"",
@@ -286,7 +264,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备制造商",
           "example": "\"xxx品牌\"",
@@ -297,7 +274,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备类型（PHONE,TABLET）",
           "example": "“Phone”",
@@ -308,7 +284,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入网方式(wifi,4g,3g,2g)",
           "example": "\"wifi\"",
@@ -319,7 +294,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运营商(1.移动 2.联通 3.电信等)",
           "example": "1",
@@ -330,7 +304,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备屏幕分辨率宽度像素数",
           "example": "1256",
@@ -341,7 +314,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备屏幕分辨率高度像素数",
           "example": "768",
@@ -352,7 +324,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否全屏插广告(0-否，1-是)",
           "example": "1",
@@ -363,7 +334,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "广告位宽度",
           "example": "320",
@@ -374,7 +344,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "广告位高度",
           "example": "240",
@@ -385,7 +354,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网址",
           "example": "\"http:XXXX\"",
@@ -396,7 +364,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上下文信息",
           "example": "“业务1组投放”",
@@ -407,7 +374,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "渠道",
           "example": "“渠道1 ”",
@@ -418,7 +384,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求ID",
           "example": "“13123123”",
@@ -429,7 +394,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求ID的md5值",
           "example": "“adskasdkajsdhjkasdhjkash”",
@@ -440,7 +404,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ad_type",
           "example": "1",
@@ -451,7 +414,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app名称",
           "example": "\"appname\"",
@@ -462,7 +424,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "app版本描述",
           "example": "\"V10.11\"",
@@ -473,7 +434,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "竞价模式1：rtb 2:pd",
           "example": "1",
@@ -484,7 +444,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户是否授权,1为授权，0为未授权",
           "example": "1",
@@ -495,7 +454,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "设备信息",
           "example": "[{\"DeviceType\":\"1\",\"DeviceId\":\"01a5****c058\"}]",
@@ -512,7 +470,6 @@
       "document": "流量反欺诈-验准返回值",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "返回码（0，成功，其他失败）",
           "example": "",
@@ -523,7 +480,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回码对应的信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -534,7 +490,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回模型结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -551,7 +506,6 @@
       "document": "流量反欺诈-验准返回的查询分值",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "模型ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5348",
@@ -562,7 +516,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否正常返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -573,7 +526,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回分值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "29.71",
@@ -584,7 +536,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "模型类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -595,7 +546,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入参Uid\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "01a5*******c058",
@@ -612,7 +562,6 @@
       "document": "RecognizeCustomizedAudience请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "业务入参",
           "example": "",
@@ -649,7 +598,6 @@
       "document": "RecognizePreciseTargetAudience请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "业务数据",
           "example": "",
@@ -686,7 +634,6 @@
       "document": "RecognizeTargetAudience请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "业务数据",
           "example": "无",
@@ -696,7 +643,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "业务加密数据",
           "example": "{     \"BusinessEncryptData\":{         \"EncryptMethod\":0,        ",

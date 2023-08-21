@@ -547,7 +547,7 @@
       "status": "online"
     },
     "VerifyOfdVatInvoiceOCR": {
-      "document": "本接口支持OFD格式的增值税电子普通发票和增值税电子专用发票的识别，返回发票代码、发票号码、开票日期、验证码、机器编号、密码区，购买方和销售方信息，包括名称、纳税人识别号、地址电话、开户行及账号，以及价税合计、开票人、收款人、复核人、税额、不含税金额等字段信息。",
+      "document": "本接口支持OFD格式的 增值税电子普通发票、增值税电子专用发票、电子发票（普通发票）、电子发票（增值税专用发票）识别，返回发票代码、发票号码、开票日期、验证码、机器编号、密码区，购买方和销售方信息，包括名称、纳税人识别号、地址电话、开户行及账号，以及价税合计、开票人、收款人、复核人、税额、不含税金额等字段信息。",
       "input": "VerifyOfdVatInvoiceOCRRequest",
       "name": "OFD发票识别",
       "output": "VerifyOfdVatInvoiceOCRResponse",
@@ -579,7 +579,6 @@
       "document": "AdvertiseOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Base64 值。\n要求图片经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP格式。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "",
@@ -589,7 +588,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url 地址。\n要求图片经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP格式。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "",
@@ -626,7 +624,6 @@
       "document": "广告文字识别结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的文本行内容",
           "example": "",
@@ -637,7 +634,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "置信度 0 ~100",
           "example": "",
@@ -648,7 +644,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本行坐标，以四个顶点坐标表示",
           "example": "",
@@ -659,7 +654,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "此字段为扩展字段。\nGeneralBasicOcr接口返回段落信息Parag，包含ParagNo。",
           "example": "",
@@ -1030,7 +1024,6 @@
       "document": "BankCardOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
@@ -1040,7 +1033,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
           "example": "https://xx/a.jpg",
@@ -1050,7 +1042,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否返回预处理（精确剪裁对齐）后的银行卡图片数据，默认false。",
           "example": "false",
@@ -1060,7 +1051,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否返回卡号的切图图片数据，默认false。",
           "example": "false",
@@ -1070,7 +1060,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "复印件检测开关，如果输入的图片是银行卡复印件图片则返回告警，默认false。",
           "example": "false",
@@ -1080,7 +1069,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "翻拍检测开关，如果输入的图片是银行卡翻拍图片则返回告警，默认false。",
           "example": "false",
@@ -1090,7 +1078,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "边框遮挡检测开关，如果输入的图片是银行卡边框被遮挡则返回告警，默认false。",
           "example": "false",
@@ -1100,7 +1087,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否返回图片质量分数（图片质量分数是评价一个图片的模糊程度的标准），默认false。",
           "example": "false",
@@ -1218,7 +1204,6 @@
       "document": "银行回单识别出的字段",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称(关键字)，支持以下字段：\n付款开户行、收款开户行、付款账号、收款账号、回单类型、回单编号、币种、流水号、凭证号码、交易机构、交易金额、手续费、日期等字段信息。",
           "example": "null",
@@ -1229,7 +1214,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称对应的值，也就是字段Name对应的字符串结果。",
           "example": "null",
@@ -1240,7 +1224,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本行在旋转纠正之后的图像中的像素坐标。",
           "example": "null",
@@ -1716,7 +1699,6 @@
       "document": "汽车票字段信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称(关键字)，支持以下字段：\n发票代码、发票号码、日期、票价、始发地、目的地、姓名、时间、发票消费类型、身份证号、省、市、开票日期、乘车地点、检票口、客票类型、车型、座位号、车次。",
           "example": "无",
@@ -1727,7 +1709,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称对应的值，也就是字段Name对应的字符串结果。",
           "example": "无",
@@ -1738,7 +1719,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本行在旋转纠正之后的图像中的像素坐标。",
           "example": "无",
@@ -1827,7 +1807,6 @@
       "document": "名片识别结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称（关键字，可能重复，比如多个手机），能识别的字段名为：\n姓名、英文姓名、英文地址、公司、英文公司、职位、英文职位、部门、英文部门、手机、电话、传真、社交帐号、QQ、MSN、微信、微博、邮箱、邮编、网址、公司账号、其他。",
           "example": "",
@@ -1838,7 +1817,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称对应的值，也就是字段name对应的字符串结果。",
           "example": "",
@@ -1849,7 +1827,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）",
           "example": "",
@@ -1869,7 +1846,6 @@
           "disabled": false,
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -1879,7 +1855,6 @@
           "disabled": false,
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg ",
-          "is_base64": false,
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -1889,7 +1864,6 @@
           "disabled": false,
           "document": "可选字段，根据需要选择是否请求对应字段。\n目前支持的字段为：\nRetImageType-“PROPROCESS” 图像预处理，string 类型。\n图像预处理功能为，检测图片倾斜的角度，将原本倾斜的图片围绕中心点转正，最终输出一张正的名片抠图。\n\nSDK 设置方式参考：\nConfig = Json.stringify({\"RetImageType\":\"PROPROCESS\"})\nAPI 3.0 Explorer 设置方式参考：\nConfig = {\"RetImageType\":\"PROPROCESS\"}",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Config",
           "required": false,
@@ -1944,7 +1918,6 @@
       "document": "候选字符集(包含候选字Character以及置信度Confidence)",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "候选字符集的单词信息（包括单词Character和单词置信度confidence）",
           "example": "",
@@ -2070,7 +2043,6 @@
       "document": "单元格识别结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "段落编号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2081,7 +2053,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字体大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2098,7 +2069,6 @@
       "document": "卡证智能分类结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分类名称，包括：身份证、护照、名片、银行卡、行驶证、驾驶证、港澳台通行证、户口本、港澳台来往内地通行证、港澳台居住证、不动产证、营业执照",
           "example": "",
@@ -2109,7 +2079,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分类类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2120,7 +2089,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "位置坐标",
           "example": "",
@@ -2137,7 +2105,6 @@
       "document": "ClassifyDetectOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "\"\"",
@@ -2147,7 +2114,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "\"\"",
@@ -2157,7 +2123,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可以指定要识别的票证类型,指定后不出现在此列表的票证将不返回类型。不指定时默认返回所有支持类别票证的识别信息。\n\n以下是当前支持的类型：\nIDCardFront: 身份证正面识别\nIDCardBack: 身份证背面识别\nPassport: 护照\nBusinessCard: 名片识别\nBankCard: 银行卡识别\nVehicleLicenseFront: 行驶证主页识别\nVehicleLicenseBack: 行驶证副页识别\nDriverLicenseFront: 驾驶证主页识别\nDriverLicenseBack: 驾驶证副页识别\nPermitFront: 港澳台通行证正面\nResidenceBooklet: 户口本资料页\nMainlandPermitFront: 港澳台来往内地通行证正面\nHmtResidentPermitFront: 港澳台居住证正面\nHmtResidentPermitBack: 港澳台居住证背面\nEstateCert: 不动产证\nBizLicense: 营业执照",
           "example": "\"\"",
@@ -2195,7 +2160,6 @@
       "document": "坐标",
       "members": [
         {
-          "default": "0",
           "disabled": false,
           "document": "横坐标",
           "example": "",
@@ -2206,7 +2170,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "0",
           "disabled": false,
           "document": "纵坐标",
           "example": "",
@@ -2226,7 +2189,6 @@
           "disabled": false,
           "document": "多个文件的URL列表",
           "example": "无",
-          "is_base64": false,
           "member": "SmartFormFileUrl",
           "name": "FileList",
           "required": true,
@@ -2236,7 +2198,6 @@
           "disabled": false,
           "document": "备注信息1",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "FirstNotes",
           "required": false,
@@ -2246,7 +2207,6 @@
           "disabled": false,
           "document": "备注信息2",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "SecondNotes",
           "required": false,
@@ -2256,7 +2216,6 @@
           "disabled": false,
           "document": "文件类型",
           "example": "0",
-          "is_base64": false,
           "member": "uint64",
           "name": "FileType",
           "required": false,
@@ -2301,7 +2260,6 @@
       "document": "单字在原图中的坐标，以四个顶点坐标表示，以左上角为起点，顺时针返回。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "单字在原图中的坐标，以四个顶点坐标表示，以左上角为起点，顺时针返回。",
           "example": "无",
@@ -2318,7 +2276,6 @@
       "document": "识别出来的单字信息包括单字（包括单字Character和单字置信度confidence）",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "置信度 0 ~100",
           "example": "无",
@@ -2329,7 +2286,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "候选字Character",
           "example": "无",
@@ -2561,7 +2517,6 @@
       "document": "识别出的字段",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称(关键字)，支持以下字段：\n税号 、纳税人识别号 、纳税人名称 、金额合计大写 、金额合计小写 、填发日期 、税务机关 、填票人。",
           "example": "",
@@ -2572,7 +2527,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称对应的值，也就是字段Name对应的字符串结果。",
           "example": "",
@@ -2583,7 +2537,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本行在旋转纠正之后的图像中的像素坐标。",
           "example": "",
@@ -2672,7 +2625,6 @@
       "document": "EduPaperOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "base64",
@@ -2682,7 +2634,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "http://test",
@@ -2692,7 +2643,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "扩展配置信息。\n配置格式：{\"option1\":value1,\"option2\":value2}\n1. task_type：任务类型【0: 关闭版式分析与处理 1: 开启版式分析处理】可选参数，Int32类型，默认值为1\n2. is_structuralization：是否结构化输出【true：返回包体同时返回通用和结构化输出  false：返回包体返回通用输出】 可选参数，Bool类型，默认值为true\n3. if_readable_format：是否按照版式整合通用文本/公式输出结果 可选参数，Bool类型，默认值为false\n示例：\n{\"task_type\": 1,\"is_structuralization\": true,\"if_readable_format\": true}",
           "example": "{}",
@@ -2911,7 +2861,6 @@
       "document": "EstateCertOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 3M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
@@ -2921,7 +2870,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg ",
@@ -3069,7 +3017,6 @@
       "document": "金融票据整单识别单个字段的内容",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称(关键字)，支持以下字段：\n【进账单】\n日期、出票全称、出票账号、出票开户行、收款人全称、收款人账号、收款开户行、大写金额、小写金额、票据种类、票据张数、票据号码；\n【支票】\n开户银行、支票种类、凭证号码2、日期、大写金额、小写金额、付款行编号、密码、凭证号码1；\n【银行承兑汇票】或【商业承兑汇票】\n出票日期、行号1、行号2、出票人全称、出票人账号、付款行全称、收款人全称、收款人账号、收款人开户行、出票金额大写、出票金额小写、汇票到期日、付款行行号、付款行地址。",
           "example": "",
@@ -3080,7 +3027,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称对应的值，也就是字段Name对应的字符串结果。",
           "example": "",
@@ -3213,7 +3159,6 @@
       "document": "机票行程单识别结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称(关键字)，支持以下字段：\n票价、合计金额、填开日期、有效身份证件号码、电子客票号码、验证码、旅客姓名、填开单位、其他税费、燃油附加费、民航发展基金、保险费、销售单位代号、始发地、目的地、航班号、时间、日期、座位等级、承运人、发票消费类型、国内国际标签、印刷序号、客票级别/类别、客票生效日期、有效期截止日期、免费行李。",
           "example": "免费行李",
@@ -3224,7 +3169,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称对应的值，也就是字段 Name 对应的字符串结果。",
           "example": "30K",
@@ -3235,7 +3179,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "多个行程的字段所在行号，下标从0开始，非行字段或未能识别行号的该值返回-1。",
           "example": "0",
@@ -3701,7 +3644,6 @@
       "document": "GeneralEfficientOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Base64 值。\n要求图片经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP格式。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
@@ -3711,7 +3653,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url 地址。\n要求图片经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP格式。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
@@ -3759,7 +3700,6 @@
       "document": "GeneralFastOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
@@ -3769,7 +3709,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
@@ -3779,7 +3718,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。",
           "example": "无",
@@ -3789,7 +3727,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
           "example": "无",
@@ -3857,7 +3794,6 @@
       "document": "GeneralHandwritingOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
@@ -3867,7 +3803,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
@@ -3877,7 +3812,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "场景字段，默认不用填写。\n可选值:only_hw  表示只输出手写体识别结果，过滤印刷体。",
           "example": "无",
@@ -3887,7 +3821,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启单字的四点定位坐标输出，默认值为false。",
           "example": "无",
@@ -3897,7 +3830,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本检测开关，默认值为true。\n设置为false表示直接进行单行识别，可适用于识别单行手写体签名场景。",
           "example": "无",
@@ -4034,7 +3966,6 @@
           "disabled": false,
           "document": "智慧表单任务唯一身份ID",
           "example": "\"209fef6e-117c-11ed-9368-525400e51a47\"",
-          "is_base64": false,
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -4407,7 +4338,6 @@
           "disabled": false,
           "document": "图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -4417,7 +4347,6 @@
           "disabled": false,
           "document": "图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
           "example": "https://xx/a.jpg",
-          "is_base64": false,
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -4427,7 +4356,6 @@
           "disabled": false,
           "document": "FRONT：身份证有照片的一面（人像面），\nBACK：身份证有国徽的一面（国徽面），\n该参数如果不填，将为您自动判断身份证正反面。",
           "example": "FRONT",
-          "is_base64": false,
           "member": "string",
           "name": "CardSide",
           "required": false,
@@ -4437,7 +4365,6 @@
           "disabled": false,
           "document": "以下可选字段均为bool 类型，默认false：\nCropIdCard，身份证照片裁剪（去掉证件外多余的边缘、自动矫正拍摄角度）\nCropPortrait，人像照片裁剪（自动抠取身份证头像区域）\nCopyWarn，复印件告警\nBorderCheckWarn，边框和框内遮挡告警\nReshootWarn，翻拍告警\nDetectPsWarn，疑似存在PS痕迹告警\nTempIdWarn，临时身份证告警\nInvalidDateWarn，身份证有效日期不合法告警\nQuality，图片质量分数（评价图片的模糊程度）\nMultiCardDetect，是否开启多卡证检测\nReflectWarn，是否开启反光检测\n\nSDK 设置方式参考：\nConfig = Json.stringify({\"CropIdCard\":true,\"CropPortrait\":true})\nAPI 3.0 Explorer 设置方式参考：\nConfig = {\"CropIdCard\":true,\"CropPortrait\":true}",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Config",
           "required": false,
@@ -4447,7 +4374,6 @@
           "disabled": false,
           "document": "默认值为true，打开识别结果纠正开关。开关开启后，身份证号、出生日期、性别，三个字段会进行矫正补齐，统一结果输出；若关闭此开关，以上三个字段不会进行矫正补齐，保持原始识别结果输出，若原图出现篡改情况，这三个字段的识别结果可能会不统一。",
           "example": "false",
-          "is_base64": false,
           "member": "bool",
           "name": "EnableRecognitionRectify",
           "required": false,
@@ -4715,7 +4641,6 @@
       "document": "保险单据信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称(关键字)，支持以下字段：\n【病案首页】\n姓名、性别、出生日期、出院诊断、疾病编码、入院病情等。\n【费用清单】\n医疗参保人员类别、身份证号、入院方式、结账日期、项目、金额等。\n【结算单】\n名称、单价、数量、金额、医保内、医保外等。\n【医疗发票】\n姓名、性别、住院时间、收费项目、金额、合计等。",
           "example": "",
@@ -4726,7 +4651,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称对应的值，也就是字段Name对应的字符串结果。",
           "example": "",
@@ -4743,7 +4667,6 @@
       "document": "InsuranceBillOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
@@ -4753,7 +4676,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg ",
@@ -4791,7 +4713,6 @@
       "document": "票据检测结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的图片在混贴票据图片中的旋转角度。",
           "example": "",
@@ -4802,7 +4723,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的图片所属的票据类型。\n-1：未知类型\n0：出租车发票\n1：定额发票\n2：火车票\n3：增值税发票\n4：客运限额发票\n5：机票行程单\n6：酒店账单\n7：完税证明\n8：通用机打发票\n9：汽车票\n10：轮船票\n11：增值税发票（卷票 ）\n12：购车发票\n13：过路过桥费发票\n14：购物小票",
           "example": "",
@@ -4813,7 +4733,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的图片在混贴票据图片中的位置信息。与Angel结合可以得出原图位置，组成RotatedRect((X+0.5\\*Width,Y+0.5\\*Height), (Width, Height), Angle)，详情可参考OpenCV文档。",
           "example": "",
@@ -4824,7 +4743,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入参 ReturnImage 为 True 时返回 Base64 编码后的图片。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -4841,7 +4759,6 @@
       "document": "通用机打发票信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称(关键字)，支持以下字段识别（注：下划线表示一个字段）：\n发票代码、发票号码、日期、合计金额(小写)、合计金额(大写)、购买方识别号、销售方识别号、校验码、购买方名称、销售方名称、时间、种类、发票消费类型、省、市、是否有公司印章、发票名称、<span style=\"text-decoration:underline\">购买方地址、电话</span>、<span style=\"text-decoration:underline\">销售方地址、电话</span>、购买方开户行及账号、销售方开户行及账号、经办人取票用户、经办人支付信息、经办人商户号、经办人订单号、<span style=\"text-decoration:underline\">货物或应税劳务、服务名称</span>、数量、单价、税率、税额、金额、单位、规格型号、合计税额、合计金额、备注、收款人、复核、开票人、密码区、行业分类",
           "example": "无",
@@ -4852,7 +4769,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称对应的值，也就是字段Name对应的字符串结果。",
           "example": "无",
@@ -4863,7 +4779,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本行在旋转纠正之后的图像中的像素坐标。",
           "example": "无",
@@ -5058,7 +4973,6 @@
       "document": "文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "左上角x",
           "example": "537",
@@ -5069,7 +4983,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "左上角y",
           "example": "335",
@@ -5080,7 +4993,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "宽width",
           "example": "169",
@@ -5091,7 +5003,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高height",
           "example": "63",
@@ -5160,7 +5071,6 @@
       "document": "全部车牌信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的车牌号码。",
           "example": "无",
@@ -5171,7 +5081,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "置信度，0 - 100 之间。",
           "example": "无",
@@ -5182,7 +5091,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本行在原图片中的像素坐标框。",
           "example": "无",
@@ -5193,7 +5101,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”。",
           "example": "无",
@@ -5307,7 +5214,6 @@
       "document": "MLIDCardOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。",
           "example": "无",
@@ -5317,7 +5223,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url 地址。( 中国地区之外不支持这个字段 )\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
@@ -5327,7 +5232,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否返回图片，默认false",
           "example": "无",
@@ -6213,7 +6117,6 @@
       "document": "医疗发票识别结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "医疗发票识别结果条目",
           "example": "无",
@@ -6230,7 +6133,6 @@
       "document": "医疗发票识别结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称\n<table><tr><td>分类</td><td>name</td></tr><tr><td>票据基本信息</td><td>发票名称</td></tr><tr><td></td><td>票据代码</td></tr><tr><td></td><td>票据号码</td></tr><tr><td></td><td>电子票据代码</td></tr><tr><td></td><td>电子票据号码</td></tr><tr><td></td><td>交款人统一社会信用代码</td></tr><tr><td></td><td>校验码</td></tr><tr><td></td><td>交款人</td></tr><tr><td></td><td>开票日期</td></tr><tr><td></td><td>收款单位</td></tr><tr><td></td><td>复核人</td></tr><tr><td></td><td>收款人</td></tr><tr><td></td><td>业务流水号</td></tr><tr><td></td><td>门诊号</td></tr><tr><td></td><td>就诊日期</td></tr><tr><td></td><td>医疗机构类型</td></tr><tr><td></td><td>医保类型</td></tr><tr><td></td><td>医保编号</td></tr><tr><td></td><td>性别</td></tr><tr><td></td><td>医保统筹基金支付</td></tr><tr><td></td><td>其他支付</td></tr><tr><td></td><td>个人账户支付</td></tr><tr><td></td><td>个人现金支付</td></tr><tr><td></td><td>个人自付</td></tr><tr><td></td><td>个人自费</td></tr><tr><td></td><td>病历号</td></tr><tr><td></td><td>住院号</td></tr><tr><td></td><td>住院科别</td></tr><tr><td></td><td>住院时间</td></tr><tr><td></td><td>预缴金额</td></tr><tr><td></td><td>补缴金额</td></tr><tr><td></td><td>退费金额</td></tr><tr><td></td><td>发票属地</td></tr><tr><td></td><td>发票类型</td></tr><tr><td>总金额</td><td>总金额大写</td></tr><tr><td></td><td>总金额小写</td></tr><tr><td>收费大项</td><td>大项名称</td></tr><tr><td></td><td>大项金额</td></tr><tr><td>收费细项</td><td>项目名称</td></tr><tr><td></td><td>数量</td></tr><tr><td></td><td>单位</td></tr><tr><td></td><td>金额</td></tr><tr><td></td><td>备注</td></tr><tr><td>票据其他信息</td><td>入院时间</td></tr><tr><td></td><td>出院时间</td></tr><tr><td></td><td>住院天数</td></tr><tr><td></td><td>自付二</td></tr><tr><td></td><td>自付一</td></tr><tr><td></td><td>起付金额</td></tr><tr><td></td><td>超封顶金额</td></tr><tr><td></td><td>自费</td></tr><tr><td></td><td>本次医保范围内金额</td></tr><tr><td></td><td>累计医保内范围金额</td></tr><tr><td></td><td>门诊大额支付</td></tr><tr><td></td><td>残军补助支付</td></tr><tr><td></td><td>年度门诊大额累计支付</td></tr><tr><td></td><td>单位补充险[原公疗]支付</td></tr><tr><td></td><td>社会保障卡号</td></tr><tr><td></td><td>姓名</td></tr><tr><td></td><td>交易流水号</td></tr><tr><td></td><td>本次支付后个人账户余额</td></tr><tr><td></td><td>基金支付</td></tr><tr><td></td><td>现金支付</td></tr><tr><td></td><td>复核</td></tr><tr><td></td><td>自负</td></tr><tr><td></td><td>结算方式</td></tr><tr><td></td><td>医保统筹/公医记账</td></tr><tr><td></td><td>其他</td></tr><tr><td></td><td>个人支付金额</td></tr><tr><td></td><td>欠费</td></tr><tr><td></td><td>退休补充支付</td></tr><tr><td></td><td>医院类型</td></tr><tr><td></td><td>退款</td></tr><tr><td></td><td>补收</td></tr><tr><td></td><td>附加支付</td></tr><tr><td></td><td>分类自负</td></tr><tr><td></td><td>其它</td></tr><tr><td></td><td>预交款</td></tr><tr><td></td><td>个人缴费</td></tr></table>",
           "example": "无",
@@ -6241,7 +6143,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称对应的值，也就是字段name对应的字符串结果",
           "example": "无",
@@ -6252,7 +6153,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的文本行四点坐标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6263,7 +6163,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的文本行在旋转纠正之后的图像中的像素坐标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -6492,6 +6391,7 @@
           "example": "无",
           "member": "MixedInvoiceItem",
           "name": "MixedInvoiceItems",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7256,7 +7156,6 @@
       "document": "网约车行程单识别结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称(关键字)，支持以下字段：\n发票代码、 机打代码、 发票号码、 发动机号码、 合格证号、 机打号码、 价税合计(小写)、 销货单位名称、 身份证号码/组织机构代码、 购买方名称、 销售方纳税人识别号、 购买方纳税人识别号、主管税务机关、 主管税务机关代码、 开票日期、 不含税价(小写)、 吨位、增值税税率或征收率、 车辆识别代号/车架号码、 增值税税额、 厂牌型号、 省、 市、 发票消费类型、 销售方电话、 销售方账号、 产地、 进口证明书号、 车辆类型、 机器编号、备注、开票人、限乘人数、商检单号、销售方地址、销售方开户银行、价税合计、发票类型。",
           "example": "无",
@@ -7267,7 +7166,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称对应的值，也就是字段name对应的字符串结果。",
           "example": "无",
@@ -7278,7 +7176,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段所在行，下标从0开始，非行字段或未能识别行号的返回-1",
           "example": "1",
@@ -7465,7 +7362,6 @@
       "document": "通行费发票信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "通行费车牌号",
           "example": "京ADF3921",
@@ -7476,7 +7372,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通行费类型",
           "example": "客车",
@@ -7487,7 +7382,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通行日期起",
           "example": "20180114",
@@ -7498,7 +7392,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通行日期止",
           "example": "20180114",
@@ -7509,7 +7402,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "税收分类编码",
           "example": "3040502020301001234",
@@ -7814,7 +7706,6 @@
       "document": "文本的坐标，以四个顶点坐标表示\n注意：此字段可能返回 null，表示取不到有效值",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "左上顶点坐标",
           "example": "",
@@ -7825,7 +7716,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "右上顶点坐标",
           "example": "",
@@ -7836,7 +7726,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "右下顶点坐标",
           "example": "",
@@ -7847,7 +7736,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "左下顶点坐标",
           "example": "",
@@ -7954,7 +7842,6 @@
       "document": "图片大小",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "宽",
           "example": "",
@@ -7965,7 +7852,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高",
           "example": "",
@@ -8036,7 +7922,6 @@
       "document": "二维码/条形码坐标信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "左上顶点坐标（如果是条形码，X和Y都为-1）",
           "example": "",
@@ -8047,7 +7932,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "右上顶点坐标（如果是条形码，X和Y都为-1）",
           "example": "",
@@ -8058,7 +7942,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "右下顶点坐标（如果是条形码，X和Y都为-1）",
           "example": "",
@@ -8069,7 +7952,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "左下顶点坐标（如果是条形码，X和Y都为-1）",
           "example": "",
@@ -8086,7 +7968,6 @@
       "document": "二维码/条形码识别结果信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "类型（二维码、条形码）",
           "example": "无",
@@ -8097,7 +7978,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "二维码/条形码包含的地址",
           "example": "无",
@@ -8108,7 +7988,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "二维码/条形码坐标",
           "example": "无",
@@ -8125,7 +8004,6 @@
       "document": "数学试题识别结构化对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数学试题识别结构化信息数组",
           "example": "[]",
@@ -8136,7 +8014,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "题目主体区域检测框在图片中的像素坐标",
           "example": "{}",
@@ -8153,7 +8030,6 @@
       "document": "试题识别结构化信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "题号",
           "example": "例11",
@@ -8164,7 +8040,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "题型：\n1: \"选择题\"\n2: \"填空题\"\n3: \"解答题\"",
           "example": "1",
@@ -8175,7 +8050,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "题干",
           "example": "test",
@@ -8186,7 +8060,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "选择题选项，包含1个或多个option",
           "example": "[]",
@@ -8197,7 +8070,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所有子题的question属性",
           "example": "[]",
@@ -8208,7 +8080,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "示意图检测框在的图片中的像素坐标",
           "example": "[]",
@@ -9206,7 +9077,6 @@
       "document": "RecognizePhilippinesDrivingLicenseOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "image",
@@ -9216,7 +9086,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
@@ -9226,7 +9095,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否返回人像照片。",
           "example": "true",
@@ -9455,7 +9323,6 @@
       "document": "RecognizePhilippinesTinIDOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否返回人像照片。",
           "example": "true",
@@ -9465,7 +9332,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "image",
@@ -9475,7 +9341,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
@@ -10193,7 +10058,6 @@
       "document": "矩形坐标",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "左上角x",
           "example": "",
@@ -10204,7 +10068,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "左上角y",
           "example": "",
@@ -10215,7 +10078,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "宽度",
           "example": "",
@@ -10226,7 +10088,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高度",
           "example": "",
@@ -10702,7 +10563,6 @@
       "document": "印章信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "印章主体内容",
           "example": "无",
@@ -10713,7 +10573,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "印章坐标",
           "example": "无",
@@ -10724,7 +10583,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "印章其它文本内容",
           "example": "无",
@@ -10735,7 +10593,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "印章类型，表示为:\n圆形印章：0\n椭圆形印章：1\n方形印章：2\n菱形印章：3\n三角形印章：4",
           "example": "0",
@@ -10838,7 +10695,6 @@
       "document": "轮船票字段信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称(关键字)，支持以下字段：\n发票代码、发票号码、日期、票价、始发地、目的地、姓名、时间、发票消费类型、省、市、币种。",
           "example": "",
@@ -10849,7 +10705,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称对应的值，也就是字段Name对应的字符串结果。",
           "example": "",
@@ -10860,7 +10715,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本行在旋转纠正之后的图像中的像素坐标。",
           "example": "",
@@ -11095,7 +10949,6 @@
       "document": "混贴票据中单张发票的内容",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称",
           "example": "发票名称",
@@ -11106,7 +10959,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称对应的值，也就是字段name对应的字符串结果。",
           "example": "XX发票",
@@ -11117,7 +10969,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段属于第几行，用于相同字段的排版，如发票明细表格项目，普通字段使用默认值为-1，表示无列排版。",
           "example": "1",
@@ -11416,7 +11267,6 @@
       "document": "SmartStructuralOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/docume",
@@ -11426,7 +11276,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
@@ -11436,7 +11285,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义结构化功能需返回的字段名称，例：\n若客户只想返回姓名、性别两个字段的识别结果，则输入\nItemNames=[\"姓名\",\"性别\"]",
           "example": "[\"key1\",\"key2\"]",
@@ -11446,7 +11294,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。",
           "example": "无",
@@ -11456,7 +11303,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
           "example": "无",
@@ -11466,7 +11312,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启全文字段识别，默认值为false，开启后可返回全文字段识别结果。",
           "example": "无",
@@ -11625,7 +11470,6 @@
       "document": "智能结构化识别",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称(关键字)。",
           "example": "无",
@@ -11636,7 +11480,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称对应的值。",
           "example": "无",
@@ -11647,7 +11490,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "置信度 0 ~100。",
           "example": "无",
@@ -11658,7 +11500,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本行在旋转纠正之后的图像中的像素\n坐标。",
           "example": "无",
@@ -11669,7 +11510,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段所在行号，下标从0开始，非行字段或未能识别行号的该值返回-1。",
           "example": "1",
@@ -11686,7 +11526,6 @@
       "document": "单元格数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "单元格左上角的列索引",
           "example": "",
@@ -11697,7 +11536,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单元格左上角的行索引",
           "example": "",
@@ -11708,7 +11546,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单元格右下角的列索引",
           "example": "",
@@ -11719,7 +11556,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单元格右下角的行索引",
           "example": "",
@@ -11730,7 +11566,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单元格内识别出的字符串文本，若文本存在多行，以换行符\"\\n\"隔开",
           "example": "",
@@ -11741,7 +11576,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单元格类型",
           "example": "",
@@ -11752,7 +11586,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单元格置信度",
           "example": "",
@@ -11763,7 +11596,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单元格在图像中的四点坐标",
           "example": "",
@@ -11774,7 +11606,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "此字段为扩展字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -11785,7 +11616,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单元格文本属性",
           "example": "",
@@ -11888,7 +11718,6 @@
       "document": "表格内容检测",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "单元格内容\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -11899,7 +11728,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格标题\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -11910,7 +11738,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图像中的文本块类型，0 为非表格文本，\n1 为有线表格，2 为无线表格\n（接口暂不支持日文无线表格识别，若传入日文无线表格，返回0）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -11921,7 +11748,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "表格主体四个顶点坐标（依次为左上角，\n右上角，右下角，左下角）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -12028,7 +11854,6 @@
       "document": "表格标题",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表格名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -12393,7 +12218,6 @@
       "document": "算式识别结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的文本行内容",
           "example": "\"\"",
@@ -12404,7 +12228,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "算式运算结果，true-正确   false-错误或非法参数",
           "example": "true",
@@ -12415,7 +12238,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "保留字段，暂不支持",
           "example": "0",
@@ -12426,7 +12248,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原图文本行坐标，以四个顶点坐标表示（保留字段，暂不支持）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -12437,7 +12258,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "保留字段，暂不支持",
           "example": "\"\"",
@@ -12448,7 +12268,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本行旋转纠正之后在图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）",
           "example": "{}",
@@ -12459,7 +12278,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "算式题型编号：\n‘1’: 加减乘除四则\n‘2’: 加减乘除已知结果求运算因子\n‘3’: 判断大小\n‘4’: 约等于估算\n‘5’: 带余数除法\n‘6’: 分数四则运算\n‘7’: 单位换算\n‘8’: 竖式加减法\n‘9’: 竖式乘除法\n‘10’: 脱式计算\n‘11’: 解方程",
           "example": "\"\"",
@@ -12470,7 +12288,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "错题推荐答案，算式运算结果正确返回为\"\"，算式运算结果错误返回推荐答案 (注：暂不支持多个关系运算符（如1<10<7）、无关系运算符（如frac(1,2)+frac(2,3)）、单位换算（如1元=100角）错题的推荐答案返回)",
           "example": "\"\"",
@@ -12487,7 +12304,6 @@
       "document": "TextDetect请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
@@ -12497,7 +12313,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
@@ -12535,7 +12350,6 @@
       "document": "文字识别结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的文本行内容",
           "example": "无",
@@ -12546,7 +12360,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "置信度 0 ~100",
           "example": "无",
@@ -12557,7 +12370,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本行坐标，以四个顶点坐标表示\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -12568,7 +12380,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "此字段为扩展字段。\nGeneralBasicOcr接口返回段落信息Parag，包含ParagNo。",
           "example": "无",
@@ -12579,7 +12390,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）",
           "example": "无",
@@ -12590,7 +12400,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出来的单字信息包括单字（包括单字Character和单字置信度confidence）， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR",
           "example": "无",
@@ -12601,7 +12410,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单字在原图中的四点坐标， 支持识别的接口：GeneralBasicOCR、GeneralAccurateOCR",
           "example": "无",
@@ -12618,7 +12426,6 @@
       "document": "英文识别结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的文本行内容。",
           "example": "",
@@ -12629,7 +12436,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "置信度 0 ~100。",
           "example": "",
@@ -12640,7 +12446,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本行在原图中的四点坐标。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -12651,7 +12456,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "此字段为扩展字段。目前EnglishOCR接口返回内容为空。",
           "example": "",
@@ -12662,7 +12466,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "英文单词在原图中的四点坐标。",
           "example": "",
@@ -12673,7 +12476,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "候选字符集(包含候选字Character以及置信度Confidence)。",
           "example": "",
@@ -12684,7 +12486,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出来的单词信息（包括单词Character和单词置信度confidence）",
           "example": "",
@@ -12701,7 +12502,6 @@
       "document": "识别结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的文本行内容",
           "example": "无",
@@ -12712,7 +12512,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "坐标，以四个顶点坐标表示",
           "example": "无",
@@ -12729,7 +12528,6 @@
       "document": "数学试题识别结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称（关键字）",
           "example": "",
@@ -12740,7 +12538,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称对应的值，也就是字段Item对应的字符串结果",
           "example": "",
@@ -12751,7 +12548,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）",
           "example": "",
@@ -12768,7 +12564,6 @@
       "document": "数学公式识别结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的文本行内容",
           "example": "",
@@ -12785,7 +12580,6 @@
       "document": "文字识别结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的文本行内容",
           "example": "",
@@ -12796,7 +12590,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "置信度 0 - 100",
           "example": "",
@@ -12807,7 +12600,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本行坐标，以四个顶点坐标表示",
           "example": "",
@@ -12818,7 +12610,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "此字段为扩展字段。\n能返回文本行的段落信息，例如：{\\\"Parag\\\":{\\\"ParagNo\\\":2}}，\n其中ParagNo为段落行，从1开始。",
           "example": "",
@@ -12829,7 +12620,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字的坐标数组，以四个顶点坐标表示\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -12846,7 +12636,6 @@
       "document": "表格识别结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "单元格左上角的列索引",
           "example": "",
@@ -12857,7 +12646,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单元格左上角的行索引",
           "example": "",
@@ -12868,7 +12656,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单元格右下角的列索引",
           "example": "",
@@ -12879,7 +12666,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单元格右下角的行索引",
           "example": "",
@@ -12890,7 +12676,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单元格文字",
           "example": "",
@@ -12901,7 +12686,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单元格类型，包含body（表格主体）、header（表头）、footer（表尾）三种",
           "example": "",
@@ -12912,7 +12696,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "置信度 0 ~100",
           "example": "",
@@ -12923,7 +12706,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本行坐标，以四个顶点坐标表示",
           "example": "",
@@ -12934,7 +12716,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "此字段为扩展字段",
           "example": "",
@@ -12951,7 +12732,6 @@
       "document": "增值税发票识别结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称（关键字）。支持以下字段的识别：\n发票代码、 发票号码、 打印发票代码、 打印发票号码、 开票日期、 购买方识别号、 小写金额、 价税合计(大写)、 销售方识别号、 校验码、 购买方名称、 销售方名称、 税额、 复核、 联次名称、 备注、 联次、 密码区、 开票人、 收款人、 （货物或应税劳务、服务名称）、省、 市、 服务类型、 通行费标志、 是否代开、 是否收购、 合计金额、 是否有公司印章、 发票消费类型、 车船税、 机器编号、 成品油标志、 税率、 合计税额、 （购买方地址、电话）、 （销售方地址、电话）、 单价、 金额、 销售方开户行及账号、 购买方开户行及账号、 规格型号、 发票名称、 单位、 数量、 校验码备选、 校验码后六位备选、发票号码备选、车牌号、类型、通行日期起、通行日期止、发票类型。",
           "example": "无",
@@ -12962,7 +12742,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称对应的值，也就是字段Name对应的字符串结果。",
           "example": "无",
@@ -12973,7 +12752,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段在原图中的中的四点坐标。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -13106,7 +12884,6 @@
       "document": "行驶证主页正面的识别结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "号牌号码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -13117,7 +12894,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车辆类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -13128,7 +12904,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所有人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -13139,7 +12914,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "住址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -13150,7 +12924,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "使用性质\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -13161,7 +12934,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "品牌型号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -13172,7 +12944,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车辆识别代号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -13183,7 +12954,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发动机号码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -13194,7 +12964,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "注册日期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -13205,7 +12974,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发证日期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -13216,7 +12984,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "印章\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -13425,7 +13192,6 @@
       "document": "过路过桥费字段信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称（关键字）。支持以下字段的识别：\n发票代码、发票号码、日期、金额、入口、出口、时间、发票消费类型、高速标志。",
           "example": "",
@@ -13436,7 +13202,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称对应的值，也就是字段Name对应的字符串结果。",
           "example": "",
@@ -13447,7 +13212,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本行在旋转纠正之后的图像中的像素坐标。",
           "example": "",
@@ -14352,7 +14116,6 @@
       "document": "二手车销售统一发票信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "所属税局",
           "example": "吉林",
@@ -14363,7 +14126,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "买方单位/个人",
           "example": "刘超",
@@ -14374,7 +14136,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "买方单位代码/身份证号码",
           "example": "230124****04280718",
@@ -14385,7 +14146,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "买方单位/个人地址",
           "example": "长春市二道区吉林大路高格蓝湾小区705室",
@@ -14396,7 +14156,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "买方单位电话",
           "example": "158****2158",
@@ -14407,7 +14166,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "卖方单位/个人",
           "example": "郝小琼",
@@ -14418,7 +14176,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "卖方单位代码/身份证号码",
           "example": "411081****11256858",
@@ -14429,7 +14186,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "卖方单位/个人地址",
           "example": "长春市绿园区上海绿地小区408室",
@@ -14440,7 +14196,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "卖方单位电话",
           "example": "137****1002",
@@ -14451,7 +14206,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车牌照号",
           "example": "吉A****P",
@@ -14462,7 +14216,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "登记证号",
           "example": "2200****5945",
@@ -14473,7 +14226,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车架号/车辆识别代码",
           "example": "LDCC53****1073689",
@@ -14484,7 +14236,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转入地车辆管理所名称",
           "example": "长春市车辆管理所",
@@ -14495,7 +14246,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "车价合计",
           "example": "46000.00",
@@ -14506,7 +14256,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "经营、拍卖单位",
           "example": "无",
@@ -14517,7 +14266,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "经营、拍卖单位地址",
           "example": "无",
@@ -14528,7 +14276,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "经营、拍卖单位纳税人识别号",
           "example": "无",
@@ -14539,7 +14286,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "经营、拍卖单位开户银行、账号",
           "example": "无",
@@ -14550,7 +14296,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "经营、拍卖单位电话",
           "example": "无",
@@ -14561,7 +14306,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "二手车市场",
           "example": "长春市****二手车交易市场有限公司",
@@ -14572,7 +14316,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "二手车市场纳税人识别号",
           "example": "91220101****Y58W6Y",
@@ -14583,7 +14326,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "二手车市场地址",
           "example": "长春市二道区福安街以西、吉林大路104号",
@@ -14594,7 +14336,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "二手车市场开户银行账号",
           "example": "中国工商银行股份有限公司长春二道支行42002217****0441272",
@@ -14605,7 +14346,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "二手车市场电话",
           "example": "158****2158",
@@ -14990,7 +14730,6 @@
       "document": "增值税发票信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "发票代码",
           "example": "1300000000",
@@ -15001,7 +14740,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发票号码",
           "example": "04000000",
@@ -15012,7 +14750,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开票日期",
           "example": "20191211",
@@ -15023,7 +14760,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购方抬头",
           "example": "城区",
@@ -15034,7 +14770,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购方税号",
           "example": "92XXXXMAXXXXXX",
@@ -15045,7 +14780,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购方地址电话",
           "example": "栾城区北留营村15012345678",
@@ -15056,7 +14790,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购方银行账号",
           "example": "中国农业银行股份有限公司",
@@ -15067,7 +14800,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "销方名称",
           "example": "石家庄市XXX石油经销有限公司",
@@ -15078,7 +14810,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "销方税号",
           "example": "911301047981234567",
@@ -15089,7 +14820,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "销方地址电话",
           "example": "石家庄市桥西区师范街xx号 0311-12345678",
@@ -15100,7 +14830,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "销方银行账号",
           "example": "911301047981234567",
@@ -15111,7 +14840,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "空",
@@ -15122,7 +14850,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "机器编码",
           "example": "661510100000",
@@ -15133,7 +14860,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "票种类型\n01：增值税专用发票，\n02：货运运输业增值税专用发票，\n03：机动车销售统一发票，\n04：增值税普通发票，\n08：增值税电子专用发票（含全电，全电仅新版接口支持），\n10：增值税电子普通发票（含全电，全电仅新版接口支持），\n11：增值税普通发票（卷式），\n14：增值税电子（通行费）发票，\n15：二手车销售统一发票，\n32：深圳区块链发票，\n102：通用机打电子发票",
           "example": "01",
@@ -15144,7 +14870,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检验码",
           "example": "85518065011000000000",
@@ -15155,7 +14880,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否作废（红冲）是否作废（红冲）\nY：已作废，N：未作废，H：红冲，HP：部分红冲，HF：全额红冲",
           "example": "否",
@@ -15166,7 +14890,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否有销货清单 \nY: 有清单 N：无清单 \n卷票无",
           "example": "否",
@@ -15177,7 +14900,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "销货清单标题",
           "example": "无",
@@ -15188,7 +14910,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "销货清单税额",
           "example": "99.9",
@@ -15199,7 +14920,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "不含税金额",
           "example": "129.0",
@@ -15210,7 +14930,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "税额",
           "example": "9.0",
@@ -15221,7 +14940,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "含税金额",
           "example": "123.0",
@@ -15232,7 +14950,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "项目明细",
           "example": "无",
@@ -15243,7 +14960,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "所属税局",
           "example": "深圳",
@@ -15254,7 +14970,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "通行费标志:Y、是;N、否",
           "example": "N",
@@ -15271,7 +14986,6 @@
       "document": "发票商品",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "项目名称",
           "example": "大米",
@@ -15282,7 +14996,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规格型号",
           "example": "个",
@@ -15293,7 +15006,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单位",
           "example": "次",
@@ -15304,7 +15016,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "价格",
           "example": "5",
@@ -15315,7 +15026,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数量",
           "example": "1",
@@ -15326,7 +15036,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "金额",
           "example": "5",
@@ -15337,7 +15046,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "税率(如6%、免税)",
           "example": "免税",
@@ -15348,7 +15056,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "税额",
           "example": "0",
@@ -16146,7 +15853,6 @@
           "disabled": false,
           "document": "图片/PDF的 Base64 值。\n支持的文件格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。\n支持的图片/PDF大小：所下载文件经Base64编码后不超过 7M。文件下载时间不超过 3 秒。\n支持的图片像素：需介于20-10000px之间。\n输入参数 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -16156,7 +15862,6 @@
           "disabled": false,
           "document": "图片/PDF的 Url 地址。\n支持的文件格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。\n支持的图片/PDF大小：所下载文件经 Base64 编码后不超过 7M。文件下载时间不超过 3 秒。\n支持的图片像素：需介于20-10000px之间。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg",
-          "is_base64": false,
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -16166,7 +15871,6 @@
           "disabled": false,
           "document": "是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。",
           "example": "无",
-          "is_base64": false,
           "member": "bool",
           "name": "IsPdf",
           "required": false,
@@ -16176,7 +15880,6 @@
           "disabled": false,
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
           "example": "无",
-          "is_base64": false,
           "member": "uint64",
           "name": "PdfPageNumber",
           "required": false,
@@ -16467,7 +16170,6 @@
       "document": "发票人员信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "名称",
           "example": "XXX公司",
@@ -16478,7 +16180,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "纳税人识别号",
           "example": "110101201801010XXX",
@@ -16489,7 +16190,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地 址、电 话",
           "example": "XXXX 136XXXXXXXXXXXX",
@@ -16500,7 +16200,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开户行及账号",
           "example": "XX银行 621281240200999XXXXX",
@@ -16733,7 +16432,6 @@
       "document": "增值税发票卷票信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称(关键字)，支持以下字段：\n发票代码、合计金额(小写)、合计金额(大写)、开票日期、发票号码、购买方识别号、销售方识别号、校验码、销售方名称、购买方名称、发票消费类型、省、市、是否有公司印章、单价、金额、数量、服务类型、品名、种类。",
           "example": "-",
@@ -16744,7 +16442,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称对应的值，也就是字段Name对应的字符串结果。",
           "example": "-",
@@ -16755,7 +16452,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文本行在旋转纠正之后的图像中的像素坐标。",
           "example": "-",
@@ -16890,7 +16586,6 @@
       "document": "机动车销售统一发票信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "车辆类型",
           "example": "轿车",
@@ -16901,7 +16596,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "厂牌型号",
           "example": "斯柯达牌SVW71419AL",
@@ -16912,7 +16606,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "产地",
           "example": "上海",
@@ -16923,7 +16616,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "合格证号",
           "example": "WAE0X17041xxxxx",
@@ -16934,7 +16626,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "进口证明书号",
           "example": "无",
@@ -16945,7 +16636,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "LSVCA2NP9HN0xxxxx",
           "example": "车架号码/车辆识别代号",
@@ -16956,7 +16646,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "完税证书号",
           "example": "无",
@@ -16967,7 +16656,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "吨位",
           "example": "1.92",
@@ -16978,7 +16666,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限乘人数",
           "example": "5",
@@ -16989,7 +16676,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "发动机号码",
           "example": "328xxx",
@@ -17000,7 +16686,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商检单号",
           "example": "无",
@@ -17011,7 +16696,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主管税务机关代码",
           "example": "16101984500",
@@ -17022,7 +16706,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主管税务机关名称",
           "example": "高新技术产业开发区国家税务局新型工业园税务所",
@@ -17033,7 +16716,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "税率",
           "example": "17",
@@ -17044,7 +16726,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开户行",
           "example": "宁夏银行西安分行营业部",
@@ -17055,7 +16736,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "账号",
           "example": "5100014080000xxxx",
@@ -17066,7 +16746,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "销售地址",
           "example": "无",
@@ -17077,7 +16756,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "销售电话",
           "example": "10987765",
@@ -17088,7 +16766,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "购方身份证",
           "example": "xx",
@@ -17190,7 +16867,6 @@
       "document": "机动车登记证书识别结果",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称(关键字)，支持以下字段：\n【注册登记页】\n车辆型号、车辆识别代号/车架号、发动机号、制造厂名称、轴距、轮胎数、总质量、外廓尺寸、轴数、车辆出厂日期、发证日期、使用性质、车辆获得方式、车辆类型、国产/进口、燃料种类、车身颜色、发动机型号、车辆品牌、编号、转向形式、\n机动车所有人1、身份证明名称1、号码1、登记机关1、登记日期1\n机动车所有人2、身份证明名称2、号码2、登记机关2、登记日期2\n机动车所有人3、身份证明名称3、号码3、登记机关3、登记日期3\n机动车所有人4、身份证明名称4、号码4、登记机关4、登记日期4\n机动车所有人5、身份证明名称5、号码5、登记机关5、登记日期5\n机动车所有人6、身份证明名称6、号码6、登记机关6、登记日期6\n机动车所有人7、身份证明名称7、号码7、登记机关7、登记日期7\n【抵押登记页】\n机动车登记证书编号、身份证明名称/号码、抵押权人姓名/名称、抵押登记日期。",
           "example": "",
@@ -17201,7 +16877,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的字段名称对应的值，也就是字段name对应的字符串结果。",
           "example": "",
@@ -17292,6 +16967,7 @@
           "example": "026",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17301,6 +16977,7 @@
           "example": "111000010001",
           "member": "string",
           "name": "InvoiceCode",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17310,6 +16987,7 @@
           "example": "46564400",
           "member": "string",
           "name": "InvoiceNumber",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17319,6 +16997,7 @@
           "example": "2020年05月28日",
           "member": "string",
           "name": "IssueDate",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17328,6 +17007,7 @@
           "example": "00403507329116165625",
           "member": "string",
           "name": "InvoiceCheckCode",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17337,6 +17017,7 @@
           "example": "016000002977",
           "member": "string",
           "name": "MachineNumber",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17346,6 +17027,7 @@
           "example": "00<9501<4//7+<+012+-XXXX",
           "member": "string",
           "name": "TaxControlCode",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17355,6 +17037,7 @@
           "example": "Buyer",
           "member": "VatInvoiceUserInfo",
           "name": "Buyer",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -17364,6 +17047,7 @@
           "example": "Seller",
           "member": "VatInvoiceUserInfo",
           "name": "Seller",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -17373,6 +17057,7 @@
           "example": "10",
           "member": "string",
           "name": "TaxInclusiveTotalAmount",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17382,6 +17067,7 @@
           "example": "张三",
           "member": "string",
           "name": "InvoiceClerk",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17391,6 +17077,7 @@
           "example": "李四",
           "member": "string",
           "name": "Payee",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17400,6 +17087,7 @@
           "example": "王五",
           "member": "string",
           "name": "Checker",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17409,6 +17097,7 @@
           "example": "10",
           "member": "string",
           "name": "TaxTotalAmount",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17418,6 +17107,7 @@
           "example": "20",
           "member": "string",
           "name": "TaxExclusiveTotalAmount",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17427,6 +17117,7 @@
           "example": "备注",
           "member": "string",
           "name": "Note",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17436,6 +17127,7 @@
           "example": "GoodsInfos",
           "member": "VatInvoiceGoodsInfo",
           "name": "GoodsInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -17452,7 +17144,6 @@
       "document": "VinOCR请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "无",
@@ -17462,7 +17153,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://xx/a.jpg ",
@@ -17556,6 +17246,7 @@
           "example": "无",
           "member": "TextWaybill",
           "name": "TextDetections",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -17572,7 +17263,6 @@
       "document": "运单识别对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "识别出的文本行内容",
           "example": "",
@@ -17589,7 +17279,6 @@
       "document": "英文OCR识别出的单词在原图中的四点坐标数组",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "英文OCR识别出的每个单词在原图中的四点坐标。",
           "example": "",
@@ -17632,7 +17321,6 @@
       "document": "识别出来的单词信息包括单词（包括单词Character和单词置信度confidence）",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "置信度 0 ~100",
           "example": "",
@@ -17643,7 +17331,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "候选字Character",
           "example": "",

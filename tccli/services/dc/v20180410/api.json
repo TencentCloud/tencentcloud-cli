@@ -159,7 +159,6 @@
       "document": "AcceptDirectConnectTunnel请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线拥有者接受共享专用通道申请",
           "example": "",
@@ -187,7 +186,6 @@
       "document": "接入点信息。",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "接入点的名称。",
           "example": "成都-A-西区",
@@ -198,7 +196,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接入点唯一ID。",
           "example": "ap-chengdu-a-xq",
@@ -209,7 +206,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接入点的状态。可用，不可用。",
           "example": "AVAILABLE",
@@ -220,7 +216,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接入点的位置。",
           "example": "成都电信西区803DC",
@@ -231,7 +226,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接入点支持的运营商列表。",
           "example": "[\"ChinaTelecom\"]",
@@ -242,7 +236,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接入点管理的大区ID。",
           "example": "cd",
@@ -253,7 +246,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接入点可用的端口类型列表。1000BASE-T代表千兆电口，1000BASE-LX代表千兆单模光口10km，1000BASE-ZX代表千兆单模光口80km,10GBASE-LR代表万兆单模光口10km,10GBASE-ZR代表万兆单模光口80km,10GBASE-LH代表万兆单模光口40km,100GBASE-LR4代表100G单模光口10km\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"1000BASE-T\", \"1000BASE-LX\"]",
@@ -264,7 +256,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接入点经纬度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"Lat\": \"0.0\", \"Lng\": \"0.0\"}",
@@ -275,7 +266,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接入点所在城市\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "成都",
@@ -286,7 +276,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接入点地域名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "华北",
@@ -297,7 +286,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "接入点类型。VXLAN/QCPL/QCAR\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "VXLAN",
@@ -314,7 +302,6 @@
       "document": "ApplyInternetAddress请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "CIDR地址掩码长度",
           "example": "30",
@@ -324,7 +311,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0:BGP类型地址\n1：中国电信\n2：中国移动\n3：中国联通",
           "example": "0",
@@ -334,7 +320,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0：IPv4\n1:IPv6",
           "example": "0",
@@ -372,7 +357,6 @@
       "document": "BFD配置信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "健康检查次数",
           "example": "",
@@ -383,7 +367,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "健康检查间隔",
           "example": "",
@@ -400,7 +383,6 @@
       "document": "bgp状态信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯侧主互联IP BGP状态",
           "example": "",
@@ -411,7 +393,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯侧备互联IP BGP状态",
           "example": "",
@@ -428,7 +409,6 @@
       "document": "bgp参数，包括Asn，AuthKey",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户侧，BGP Asn",
           "example": "",
@@ -439,7 +419,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户侧BGP密钥",
           "example": "",
@@ -456,7 +435,6 @@
       "document": "坐标，经维度描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "纬度",
           "example": "",
@@ -467,7 +445,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "经度",
           "example": "",
@@ -664,7 +641,6 @@
       "document": "CreateDirectConnectTunnel请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专线 ID，例如：dc-kd7d06of",
           "example": "dc-abcdefgh",
@@ -674,7 +650,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道名称",
           "example": "Test",
@@ -684,7 +659,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线 owner，缺省为当前客户（物理专线 owner）\n共享专线时这里需要填写共享专线的开发商账号 ID",
           "example": "12325464",
@@ -694,7 +668,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络类型，分别为VPC、BMVPC，CCN，默认是VPC\nVPC：私有网络\nBMVPC：黑石网络\nCCN：云联网",
           "example": "VPC",
@@ -704,7 +677,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络地域",
           "example": "ap-guangzhou",
@@ -714,7 +686,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络统一 ID 或者黑石网络统一 ID",
           "example": "vpc-abcdefgh",
@@ -724,7 +695,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关 ID，例如 dcg-d545ddf",
           "example": "dcg-abcdefgh",
@@ -734,7 +704,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专线带宽，单位：Mbps\n默认是物理专线带宽值",
           "example": "100",
@@ -744,7 +713,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "BGP ：BGP路由\nSTATIC：静态\n默认为 BGP 路由",
           "example": "BGP",
@@ -754,7 +722,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "BgpPeer，用户侧bgp信息，包括Asn和AuthKey",
           "example": "无",
@@ -764,7 +731,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "静态路由，用户IDC的网段地址",
           "example": "无",
@@ -774,7 +740,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "vlan，范围：0 ~ 3000\n0：不开启子接口\n默认值是非0",
           "example": "100",
@@ -784,7 +749,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TencentAddress，腾讯侧互联 IP",
           "example": "192.168.1.2/30",
@@ -794,7 +758,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CustomerAddress，用户侧互联 IP",
           "example": "192.168.1.1/30",
@@ -804,7 +767,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TencentBackupAddress，腾讯侧备用互联 IP",
           "example": "192.168.1.1/30",
@@ -814,7 +776,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高速上云服务ID",
           "example": "cas-xxxxxxxx",
@@ -824,7 +785,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启BFD",
           "example": "0",
@@ -834,7 +794,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启NQA",
           "example": "0",
@@ -844,7 +803,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "BFD配置信息",
           "example": "无",
@@ -854,7 +812,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NQA配置信息",
           "example": "无",
@@ -892,7 +849,6 @@
       "document": "DeleteDirectConnect请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线的ID。",
           "example": "",
@@ -920,7 +876,6 @@
       "document": "DeleteDirectConnectTunnel请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道ID",
           "example": "",
@@ -948,7 +903,6 @@
       "document": "DescribeAccessPoints请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "接入点所在的地域。使用DescribeRegions查询\n\n您可以通过调用 DescribeRegions接口获取地域ID。",
           "example": "",
@@ -958,7 +912,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "",
@@ -968,7 +921,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "",
@@ -1014,7 +966,6 @@
       "document": "DescribeDirectConnectTunnelExtra请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道ID",
           "example": "",
@@ -1051,7 +1002,6 @@
       "document": "DescribeDirectConnectTunnels请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件:\n参数不支持同时指定DirectConnectTunnelIds和Filters。\n<li> direct-connect-tunnel-name, 专用通道名称。</li>\n<li> direct-connect-tunnel-id, 专用通道实例ID，如dcx-abcdefgh。</li>\n<li>direct-connect-id, 物理专线实例ID，如，dc-abcdefgh。</li>",
           "example": "",
@@ -1061,7 +1011,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道 ID数组",
           "example": "",
@@ -1071,7 +1020,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
           "example": "",
@@ -1081,7 +1029,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100",
           "example": "",
@@ -1127,7 +1074,6 @@
       "document": "DescribeDirectConnects请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件:",
           "example": "",
@@ -1137,7 +1083,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线 ID数组",
           "example": "",
@@ -1147,7 +1092,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
           "example": "",
@@ -1157,7 +1101,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100",
           "example": "",
@@ -1274,7 +1217,6 @@
       "document": "DescribeInternetAddress请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
           "example": "",
@@ -1284,7 +1226,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值100",
           "example": "",
@@ -1294,7 +1235,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件：\n<li>AddrType, 地址类型。0：BGP 1; 1: 电信， 2：移动， 3：联通</li>\n<li>AddrProto地址类型。0：IPv4 1:IPv6</li>\n<li>Status 地址状态。 0：使用中， 1：已停用， 2：已退还</li>\n<li>Subnet 互联网公网地址，数组</li>\n<InstanceIds>互联网公网地址ID，数组</li>",
           "example": "",
@@ -1375,7 +1315,6 @@
       "document": "DescribePublicDirectConnectTunnelRoutes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道ID",
           "example": "",
@@ -1385,7 +1324,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过滤条件：\nroute-type：路由类型，取值：BGP/STATIC\nroute-subnet：路由cidr，取值如：192.68.1.0/24",
           "example": "",
@@ -1395,7 +1333,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量，默认为0",
           "example": "",
@@ -1405,7 +1342,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100",
           "example": "",
@@ -1451,7 +1387,6 @@
       "document": "物理专线信息列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线ID。",
           "example": "dc-psjiehij",
@@ -1462,7 +1397,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线的名称。",
           "example": "test",
@@ -1473,7 +1407,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线的接入点ID。",
           "example": "ap-beijing-c-jxq",
@@ -1484,7 +1417,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线的状态。\n申请中：PENDING \n申请驳回：REJECTED   \n待付款：TOPAY \n已付款：PAID \n建设中：ALLOCATED   \n已开通：AVAILABLE  \n删除中 ：DELETING\n已删除：DELETED 。",
           "example": "PENDINGPAY",
@@ -1495,7 +1427,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线创建时间。",
           "example": "2020-12-08 16:57:43",
@@ -1506,7 +1437,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线的开通时间。",
           "example": "2021-01-06 10:39:41",
@@ -1517,7 +1447,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "提供接入物理专线的运营商。ChinaTelecom：中国电信， ChinaMobile：中国移动，ChinaUnicom：中国联通， In-houseWiring：楼内线，ChinaOther：中国其他， InternationalOperator：境外其他。",
           "example": "In-houseWiring",
@@ -1528,7 +1457,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "本地数据中心的地理位置。",
           "example": "test",
@@ -1539,7 +1467,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线接入接口带宽，单位为Mbps。",
           "example": "1000",
@@ -1550,7 +1477,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户侧物理专线接入端口类型,取值：100Base-T：百兆电口,1000Base-T（默认值）：千兆电口,1000Base-LX：千兆单模光口（10千米）,10GBase-T：万兆电口10GBase-LR：万兆单模光口（10千米），默认值，千兆单模光口（10千米）",
           "example": "1000Base-LX",
@@ -1561,7 +1487,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运营商或者服务商为物理专线提供的电路编码。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1111",
@@ -1572,7 +1497,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "冗余物理专线的ID。",
           "example": "dc-1234",
@@ -1583,7 +1507,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线调试VLAN。默认开启VLAN，自动分配VLAN。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
@@ -1594,7 +1517,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线调试腾讯侧互联IP。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "192.168.1.2",
@@ -1605,7 +1527,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线调试用户侧互联IP。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "192.168.1.1",
@@ -1616,7 +1537,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线申请者姓名。默认从账户体系获取。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -1627,7 +1547,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线申请者联系邮箱。默认从账户体系获取。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "274907341@qq.com",
@@ -1638,7 +1557,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线申请者联系号码。默认从账户体系获取。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "15802738654",
@@ -1649,7 +1567,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线的过期时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2040-01-06 10:39:41",
@@ -1660,7 +1577,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线计费类型。 NON_RECURRING_CHARGE：一次性接入费用；PREPAID_BY_YEAR：按年预付费。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NON_RECURRING_CHARGE",
@@ -1671,7 +1587,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报障联系人。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
@@ -1682,7 +1597,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报障联系电话。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "15802738654",
@@ -1693,7 +1607,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签键值对\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -1704,7 +1617,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线的接入点类型。",
           "example": "VXLAN",
@@ -1715,7 +1627,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IDC所在城市\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "成都",
@@ -1726,7 +1637,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计费状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NORMAL",
@@ -1737,7 +1647,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线开通时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-12-08 16:57:43",
@@ -1748,7 +1657,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线是否已签署用户协议\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -1759,7 +1667,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线是否为LocalZone\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -1770,7 +1677,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该物理专线下vlan 0的专用通道数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1781,7 +1687,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该物理专线下非vlan 0的专用通道数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
@@ -1792,7 +1697,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线最小带宽\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000",
@@ -1809,7 +1713,6 @@
       "document": "专用通道信息列表",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道ID",
           "example": "",
@@ -1820,7 +1723,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线ID",
           "example": "",
@@ -1831,7 +1733,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道状态\nAVAILABLE:就绪或者已连接\nPENDING:申请中\nALLOCATING:配置中\nALLOCATED:配置完成\nALTERING:修改中\nDELETING:删除中\nDELETED:删除完成\nCOMFIRMING:待接受\nREJECTED:拒绝",
           "example": "",
@@ -1842,7 +1743,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线的拥有者，开发商账号 ID",
           "example": "",
@@ -1853,7 +1753,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道的拥有者，开发商账号 ID",
           "example": "",
@@ -1864,7 +1763,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络类型，分别为VPC、BMVPC、CCN\n VPC：私有网络 ，BMVPC：黑石网络，CCN：云联网",
           "example": "",
@@ -1875,7 +1773,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC地域对应的网络名，如ap-guangzhou",
           "example": "",
@@ -1886,7 +1783,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络统一 ID 或者黑石网络统一 ID",
           "example": "",
@@ -1897,7 +1793,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关 ID",
           "example": "",
@@ -1908,7 +1803,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "BGP ：BGP路由 STATIC：静态 默认为 BGP 路由",
           "example": "",
@@ -1919,7 +1813,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户侧BGP，Asn，AuthKey",
           "example": "",
@@ -1930,7 +1823,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户侧网段地址",
           "example": "",
@@ -1941,7 +1833,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道的Vlan",
           "example": "",
@@ -1952,7 +1843,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TencentAddress，腾讯侧互联 IP",
           "example": "",
@@ -1963,7 +1853,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CustomerAddress，用户侧互联 IP",
           "example": "",
@@ -1974,7 +1863,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道名称",
           "example": "",
@@ -1985,7 +1873,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道创建时间",
           "example": "",
@@ -1996,7 +1883,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道带宽值",
           "example": "",
@@ -2007,7 +1893,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道标签值",
           "example": "",
@@ -2018,7 +1903,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联的网络自定义探测ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2029,7 +1913,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "BGP community开关\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2040,7 +1923,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为Nat通道\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2051,7 +1933,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC地域简码，如gz、cd\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2062,7 +1943,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启BFD\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2073,7 +1953,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道接入点类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2084,7 +1963,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2095,7 +1973,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2106,7 +1983,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "TencentBackupAddress，腾讯侧备用互联 IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2117,7 +1993,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道关联的物理专线是否签署了用户协议\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2128,7 +2003,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高速上云服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2145,7 +2019,6 @@
       "document": "专用通道扩展信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道ID",
           "example": "dcx-xxxxxxxx",
@@ -2156,7 +2029,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线ID",
           "example": "dc-xxxxxxxx",
@@ -2167,7 +2039,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道状态\nAVAILABLE:就绪或者已连接\nPENDING:申请中\nALLOCATING:配置中\nALLOCATED:配置完成\nALTERING:修改中\nDELETING:删除中\nDELETED:删除完成\nCOMFIRMING:待接受\nREJECTED:拒绝",
           "example": "ALLOCATING",
@@ -2178,7 +2049,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线的拥有者，开发商账号 ID",
           "example": "1233453",
@@ -2189,7 +2059,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道的拥有者，开发商账号 ID",
           "example": "12343252",
@@ -2200,7 +2069,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络类型，分别为VPC、BMVPC、CCN\n VPC：私有网络 ，BMVPC：黑石网络，CCN：云联网",
           "example": "VPC",
@@ -2211,7 +2079,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC地域对应的网络名，如ap-guangzhou",
           "example": "ap-guangzhou",
@@ -2222,7 +2089,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "私有网络统一 ID 或者黑石网络统一 ID",
           "example": "vpc-xxxxxxxx",
@@ -2233,7 +2099,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关 ID",
           "example": "dcx-xxxxxxxx",
@@ -2244,7 +2109,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "BGP ：BGP路由 STATIC：静态 默认为 BGP 路由",
           "example": "STATIC",
@@ -2255,7 +2119,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户侧BGP，Asn，AuthKey",
           "example": "无",
@@ -2266,7 +2129,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户侧网段地址",
           "example": "无",
@@ -2277,7 +2139,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "互联网通道公网网段地址",
           "example": "无",
@@ -2288,7 +2149,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道的Vlan",
           "example": "100",
@@ -2299,7 +2159,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯侧互联 IP",
           "example": "192.168.1.1/29",
@@ -2310,7 +2169,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯侧备用互联IP",
           "example": "192.168.1.2/29",
@@ -2321,7 +2179,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户侧互联 IP",
           "example": "192.168.1.3/29",
@@ -2332,7 +2189,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道名称",
           "example": "通道",
@@ -2343,7 +2199,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道创建时间",
           "example": "2020-09-23 00:00:00",
@@ -2354,7 +2209,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道带宽值",
           "example": "2020-09-23 00:00:00",
@@ -2365,7 +2219,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关联的网络自定义探测ID",
           "example": "netid-xxxxxxxx",
@@ -2376,7 +2229,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "BGP community开关",
           "example": "true",
@@ -2387,7 +2239,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否为Nat通道",
           "example": "1",
@@ -2398,7 +2249,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC地域简码，如gz、cd",
           "example": "gz",
@@ -2409,7 +2259,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启BFD",
           "example": "1",
@@ -2420,7 +2269,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启NQA",
           "example": "1",
@@ -2431,7 +2279,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道接入点类型",
           "example": "1",
@@ -2442,7 +2289,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专线网关名称",
           "example": "网关",
@@ -2453,7 +2299,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "VPC名称",
           "example": "VPC",
@@ -2464,7 +2309,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道关联的物理专线是否签署了用户协议",
           "example": "true",
@@ -2475,7 +2319,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "BFD配置信息",
           "example": "无",
@@ -2486,7 +2329,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NQA配置信息",
           "example": "无",
@@ -2497,7 +2339,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "BGP状态",
           "example": "无",
@@ -2508,7 +2349,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启IPv6\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -2519,7 +2359,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯侧互联IPv6地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2402:4e00:4011:1004::5/126",
@@ -2530,7 +2369,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯侧备用互联IPv6地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2402:4e00:4011:1004::5/126",
@@ -2541,7 +2379,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "BGPv6状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
@@ -2552,7 +2389,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户侧互联IPv6地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2402:4e00:4011:1004::5/126",
@@ -2563,7 +2399,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道是否支持巨帧。1 支持，0 不支持\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -2574,7 +2409,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道是否支持高精度BFD。1支持，0不支持\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -2591,7 +2425,6 @@
       "document": "专用通道路由",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道路由ID",
           "example": "dcxr-69sg663r",
@@ -2602,7 +2435,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网段CIDR",
           "example": "10.0.0.0/16",
@@ -2613,7 +2445,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由类型：BGP/STATIC路由",
           "example": "BGP",
@@ -2624,7 +2455,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ENABLE：路由启用，DISABLE：路由禁用",
           "example": "ENABLE",
@@ -2635,7 +2465,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ASPath信息",
           "example": "['123', '342']",
@@ -2646,7 +2475,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "路由下一跳IP",
           "example": "0.0.0.0",
@@ -2663,7 +2491,6 @@
       "document": "DisableInternetAddress请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "公网互联网地址ID",
           "example": "",
@@ -2691,7 +2518,6 @@
       "document": "EnableInternetAddress请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "互联网公网地址ID",
           "example": "",
@@ -2719,7 +2545,6 @@
       "document": "用于条件过滤查询",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要过滤的字段。",
           "example": "",
@@ -2730,7 +2555,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段的过滤值。",
           "example": "",
@@ -2747,7 +2571,6 @@
       "document": "互联网地址详细信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "互联网地址ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2758,7 +2581,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "互联网网络地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2769,7 +2591,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "网络地址掩码长度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2780,7 +2601,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0:BGP\n1:电信\n2:移动\n3:联通\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2791,7 +2611,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0:使用中\n1:已停用\n2:已退还",
           "example": "",
@@ -2802,7 +2621,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "申请时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2813,7 +2631,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "停用时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2824,7 +2641,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "退还时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2835,7 +2651,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2846,7 +2661,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2857,7 +2671,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0:IPv4 1:IPv6\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2868,7 +2681,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "释放状态的IP地址保留的天数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2885,7 +2697,6 @@
       "document": "互联网公网地址统计",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2896,7 +2707,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "互联网公网地址数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -2913,7 +2723,6 @@
       "document": "ModifyDirectConnectAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线的ID。",
           "example": "dcx-abcdefgh",
@@ -2923,7 +2732,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线名称。",
           "example": "abc",
@@ -2933,7 +2741,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "运营商或者服务商为物理专线提供的电路编码。",
           "example": "ABF_123",
@@ -2943,7 +2750,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线调试VLAN。",
           "example": "100",
@@ -2953,7 +2759,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线调试腾讯侧互联 IP。",
           "example": "172.168.1.1/30",
@@ -2963,7 +2768,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线调试用户侧互联 IP。",
           "example": "172.168.1.2/30",
@@ -2973,7 +2777,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线申请者姓名。默认从账户体系获取。",
           "example": "张三",
@@ -2983,7 +2786,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线申请者联系邮箱。默认从账户体系获取。",
           "example": "12345@qq.com",
@@ -2993,7 +2795,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线申请者联系号码。默认从账户体系获取。",
           "example": "18812345678",
@@ -3003,7 +2804,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报障联系人。",
           "example": "张三",
@@ -3013,7 +2813,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报障联系电话。",
           "example": "18812345678",
@@ -3023,7 +2822,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线申请者补签用户使用协议",
           "example": "true",
@@ -3033,7 +2831,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "物理专线带宽",
           "example": "1000",
@@ -3061,7 +2858,6 @@
       "document": "ModifyDirectConnectTunnelAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道ID",
           "example": "",
@@ -3071,7 +2867,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道名称",
           "example": "",
@@ -3081,7 +2876,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户侧BGP，包括Asn，AuthKey",
           "example": "",
@@ -3091,7 +2885,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户侧网段地址",
           "example": "",
@@ -3101,7 +2894,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯侧互联IP",
           "example": "",
@@ -3111,7 +2903,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户侧互联IP",
           "example": "",
@@ -3121,7 +2912,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道带宽值，单位为M。",
           "example": "",
@@ -3131,7 +2921,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯侧备用互联IP",
           "example": "",
@@ -3159,7 +2948,6 @@
       "document": "ModifyDirectConnectTunnelExtra请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道ID",
           "example": "dcx-r3sml04o",
@@ -3169,7 +2957,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道的Vlan",
           "example": "90",
@@ -3179,7 +2966,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户侧BGP，Asn，AuthKey",
           "example": "无",
@@ -3189,7 +2975,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户侧过滤网段地址",
           "example": "无",
@@ -3199,7 +2984,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯侧互联IP",
           "example": "192.168.1.1/29",
@@ -3209,7 +2993,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "腾讯侧备用互联IP",
           "example": "192.168.1.1/29",
@@ -3219,7 +3002,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "用户侧互联IP",
           "example": "192.168.1.1/29",
@@ -3229,7 +3011,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专用通道带宽值",
           "example": "100",
@@ -3239,7 +3020,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "BGP community开关",
           "example": "false",
@@ -3249,7 +3029,6 @@
           "type": "bool"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启BFD",
           "example": "1",
@@ -3259,7 +3038,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启NQA",
           "example": "1",
@@ -3269,7 +3047,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "BFD配置信息",
           "example": "无",
@@ -3279,7 +3056,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NQA配置信息",
           "example": "无",
@@ -3289,7 +3065,6 @@
           "type": "object"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "0：停用IPv6\n1: 启用IPv6",
           "example": "1",
@@ -3299,7 +3074,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "去往用户侧的路由信息",
           "example": "无",
@@ -3309,7 +3083,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启巨帧\n1：开启\n0：不开启",
           "example": "1",
@@ -3337,7 +3110,6 @@
       "document": "nqa配置信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "健康检查次数",
           "example": "",
@@ -3348,7 +3120,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "健康检查间隔",
           "example": "",
@@ -3359,7 +3130,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "健康检查地址",
           "example": "",
@@ -3376,7 +3146,6 @@
       "document": "RejectDirectConnectTunnel请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "无",
           "example": "",
@@ -3404,7 +3173,6 @@
       "document": "ReleaseInternetAddress请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "公网互联网地址ID",
           "example": "",
@@ -3432,7 +3200,6 @@
       "document": "用户侧网段地址",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "用户侧网段地址",
           "example": "",
@@ -3449,7 +3216,6 @@
       "document": "标签键值对",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -3460,7 +3226,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",

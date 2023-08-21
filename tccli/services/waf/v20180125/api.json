@@ -383,7 +383,6 @@
       "document": "DescribeAccessIndex",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否大小写敏感\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -394,7 +393,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "全文索引的分词符，字符串中每个字符代表一个分词符\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -405,7 +403,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否包含中文\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -448,7 +445,6 @@
       "document": "用于 DescribeAccessIndex 的出参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要配置键值或者元字段索引的字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"method\"",
@@ -459,7 +455,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段的索引描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
@@ -476,7 +471,6 @@
       "document": "单条日志数据描述",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "日志时间，单位ms\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1625395948532",
@@ -487,7 +481,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"1ae37c76-df99-4e2b-998c-20f39eba6226\"",
@@ -498,7 +491,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志主题名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -509,7 +501,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志来源IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -520,7 +511,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志文件名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -531,7 +521,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志上报请求包的ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -542,7 +531,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求包内日志的ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -553,7 +541,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志内容的Json序列化字符串\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"{\\\"ipinfo_province\\\":\\\"共享地址\\\",\\\"schema\\\":\\\"http\\\",\\\"referer\\\":\\",
@@ -570,7 +557,6 @@
       "document": "日志KeyValue对",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "日记Key\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -581,7 +567,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志Value\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -598,7 +583,6 @@
       "document": "日志KeyValue对数组，用于搜索访问日志",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "分析结果返回的KV数据对\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[                     {                         \"Key\": \"COUNT(*)",
@@ -615,7 +599,6 @@
       "document": "DescribeAccessIndex接口的出参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "全文索引配置\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
@@ -626,7 +609,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "键值索引配置\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
@@ -637,7 +619,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "元字段索引配置\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
@@ -654,7 +635,6 @@
       "document": "DescribeAccessIndex接口的出参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否大小写敏感\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -665,7 +645,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要建立索引的键值对信息；最大只能配置100个键值对\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -682,7 +661,6 @@
       "document": "DescribeAccessIndex接口的出参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "是否大小写敏感\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
@@ -693,7 +671,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签索引配置中的字段信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -710,7 +687,6 @@
       "document": "用于DescribeAccessIndex接口的出参",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "字段类型，目前支持的类型有：long、text、double\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"text\"",
@@ -721,7 +697,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段的分词符，只有当字段类型为text时才有意义；输入字符串中的每个字符代表一个分词符\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -732,7 +707,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "字段是否开启分析功能\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -743,7 +717,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否包含中文\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
@@ -886,7 +859,6 @@
       "document": "AddCustomWhiteRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则名称",
           "example": "无",
@@ -896,7 +868,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "优先级",
           "example": "无",
@@ -906,7 +877,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期时间",
           "example": "无",
@@ -916,7 +886,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略详情",
           "example": "无",
@@ -926,7 +895,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要添加策略的域名",
           "example": "无",
@@ -936,7 +904,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "放行的详情",
           "example": "无",
@@ -987,7 +954,6 @@
           "disabled": false,
           "document": "需要添加的域名",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -997,7 +963,6 @@
           "disabled": false,
           "document": "需要添加的规则",
           "example": "无",
-          "is_base64": false,
           "member": "uint64",
           "name": "Rules",
           "required": false,
@@ -1007,7 +972,6 @@
           "disabled": false,
           "document": "需要添加的规则url",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Url",
           "required": false,
@@ -1017,7 +981,6 @@
           "disabled": false,
           "document": "规则的方法",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Function",
           "required": false,
@@ -1027,7 +990,6 @@
           "disabled": false,
           "document": "规则的开关，0表示规则关闭，1表示规则打开",
           "example": "无",
-          "is_base64": false,
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -1065,7 +1027,6 @@
           "disabled": false,
           "document": "需要防御的域名",
           "example": "test1.qcloud.com",
-          "is_base64": false,
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -1075,7 +1036,6 @@
           "disabled": false,
           "document": "证书类型，0表示没有证书，CertType=1表示自有证书,2 为托管证书",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "CertType",
           "required": true,
@@ -1085,7 +1045,6 @@
           "disabled": false,
           "document": "表示是否开启了CDN代理，1：有部署CDN，0：未部署CDN",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "IsCdn",
           "required": true,
@@ -1095,7 +1054,6 @@
           "disabled": false,
           "document": "回源类型，0表示通过IP回源,1 表示通过域名回源",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "UpstreamType",
           "required": true,
@@ -1105,7 +1063,6 @@
           "disabled": false,
           "document": "是否开启WebSocket支持，1表示开启，0不开启",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "IsWebsocket",
           "required": true,
@@ -1115,7 +1072,6 @@
           "disabled": false,
           "document": "负载均衡策略，0表示轮询，1表示IP hash",
           "example": "0",
-          "is_base64": false,
           "member": "string",
           "name": "LoadBalance",
           "required": true,
@@ -1125,7 +1081,6 @@
           "disabled": false,
           "document": "值为1时，需要填次参数，表示证书内容",
           "example": "sldfjsl",
-          "is_base64": false,
           "member": "string",
           "name": "Cert",
           "required": false,
@@ -1135,7 +1090,6 @@
           "disabled": false,
           "document": "CertType=1时，需要填次参数，表示证书的私钥",
           "example": "jskljflks",
-          "is_base64": false,
           "member": "string",
           "name": "PrivateKey",
           "required": false,
@@ -1145,7 +1099,6 @@
           "disabled": false,
           "document": "CertType=2时，需要填次参数，表示证书的ID",
           "example": "23424",
-          "is_base64": false,
           "member": "string",
           "name": "SSLId",
           "required": false,
@@ -1155,7 +1108,6 @@
           "disabled": false,
           "document": "Waf的资源ID",
           "example": "slkdfjsldk",
-          "is_base64": false,
           "member": "string",
           "name": "ResourceId",
           "required": false,
@@ -1165,7 +1117,6 @@
           "disabled": false,
           "document": "HTTPS回源协议，填http或者https",
           "example": "https",
-          "is_base64": false,
           "member": "string",
           "name": "UpstreamScheme",
           "required": false,
@@ -1175,7 +1126,6 @@
           "disabled": false,
           "document": "HTTPS回源端口,仅UpstreamScheme为http时需要填当前字段",
           "example": "80",
-          "is_base64": false,
           "member": "string",
           "name": "HttpsUpstreamPort",
           "required": false,
@@ -1185,7 +1135,6 @@
           "disabled": false,
           "document": "是否开启灰度，0表示不开启灰度",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "IsGray",
           "required": false,
@@ -1195,7 +1144,6 @@
           "disabled": false,
           "document": "灰度的地区",
           "example": "[\"gz\",\"bj\"]",
-          "is_base64": false,
           "member": "string",
           "name": "GrayAreas",
           "required": false,
@@ -1205,7 +1153,6 @@
           "disabled": false,
           "document": "UpstreamType=1时，填次字段表示回源域名",
           "example": "www.qq.com",
-          "is_base64": false,
           "member": "string",
           "name": "UpstreamDomain",
           "required": false,
@@ -1215,7 +1162,6 @@
           "disabled": false,
           "document": "UpstreamType=0时，填次字段表示回源IP",
           "example": "[\"1.1.1.1\\n\"]",
-          "is_base64": false,
           "member": "string",
           "name": "SrcList",
           "required": false,
@@ -1225,7 +1171,6 @@
           "disabled": false,
           "document": "是否开启HTTP2,开启HTTP2需要HTTPS支持",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "IsHttp2",
           "required": false,
@@ -1235,7 +1180,6 @@
           "disabled": false,
           "document": "表示是否强制跳转到HTTPS，1强制跳转Https，0不强制跳转",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "HttpsRewrite",
           "required": false,
@@ -1245,7 +1189,6 @@
           "disabled": false,
           "document": "服务有多端口需要设置此字段",
           "example": "无",
-          "is_base64": false,
           "member": "PortItem",
           "name": "Ports",
           "required": false,
@@ -1255,7 +1198,6 @@
           "disabled": false,
           "document": "WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF，cdn-waf表示CDN上的Web防护能力",
           "example": "clb-waf",
-          "is_base64": false,
           "member": "string",
           "name": "Edition",
           "required": false,
@@ -1265,7 +1207,6 @@
           "disabled": false,
           "document": "是否开启长连接，仅IP回源时可以用填次参数，域名回源时这个参数无效",
           "example": "1",
-          "is_base64": false,
           "member": "string",
           "name": "IsKeepAlive",
           "required": false,
@@ -1275,7 +1216,6 @@
           "disabled": false,
           "document": "实例id，上线之后带上此字段",
           "example": "waf-sldfjsl",
-          "is_base64": false,
           "member": "string",
           "name": "InstanceID",
           "required": false,
@@ -1285,7 +1225,6 @@
           "disabled": false,
           "document": "anycast IP类型开关： 0 普通IP 1 Anycast IP",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "Anycast",
           "required": false,
@@ -1295,7 +1234,6 @@
           "disabled": false,
           "document": "src权重",
           "example": "[1.1.1]",
-          "is_base64": false,
           "member": "int64",
           "name": "Weights",
           "required": false,
@@ -1305,7 +1243,6 @@
           "disabled": false,
           "document": "是否开启主动健康检测，1表示开启，0表示不开启",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "ActiveCheck",
           "required": false,
@@ -1315,7 +1252,6 @@
           "disabled": false,
           "document": "TLS版本信息",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "TLSVersion",
           "required": false,
@@ -1325,7 +1261,6 @@
           "disabled": false,
           "document": "加密套件信息",
           "example": "[1，1]",
-          "is_base64": false,
           "member": "int64",
           "name": "Ciphers",
           "required": false,
@@ -1335,7 +1270,6 @@
           "disabled": false,
           "document": "0:不支持选择：默认模版  1:通用型模版 2:安全型模版 3:自定义模版",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "CipherTemplate",
           "required": false,
@@ -1345,7 +1279,6 @@
           "disabled": false,
           "document": "300s",
           "example": "300",
-          "is_base64": false,
           "member": "int64",
           "name": "ProxyReadTimeout",
           "required": false,
@@ -1355,7 +1288,6 @@
           "disabled": false,
           "document": "300s",
           "example": "300",
-          "is_base64": false,
           "member": "int64",
           "name": "ProxySendTimeout",
           "required": false,
@@ -1365,7 +1297,6 @@
           "disabled": false,
           "document": "0:关闭SNI；1:开启SNI，SNI=源请求host；2:开启SNI，SNI=修改为源站host；3：开启SNI，自定义host，SNI=SniHost；",
           "example": "2",
-          "is_base64": false,
           "member": "int64",
           "name": "SniType",
           "required": false,
@@ -1375,7 +1306,6 @@
           "disabled": false,
           "document": "SniType=3时，需要填此参数，表示自定义的host；",
           "example": "test.com",
-          "is_base64": false,
           "member": "string",
           "name": "SniHost",
           "required": false,
@@ -1385,7 +1315,6 @@
           "disabled": false,
           "document": "is_cdn=3时，需要填此参数，表示自定义header",
           "example": "[\"x-real-ip\"]",
-          "is_base64": false,
           "member": "string",
           "name": "IpHeaders",
           "required": false,
@@ -1395,7 +1324,6 @@
           "disabled": false,
           "document": "0:关闭xff重置；1:开启xff重置",
           "example": "0",
-          "is_base64": false,
           "member": "int64",
           "name": "XFFReset",
           "required": false,
@@ -1466,7 +1394,6 @@
       "document": "Waf 攻击自动封禁详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "攻击封禁类型标签",
           "example": "",
@@ -1477,7 +1404,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "攻击次数阈值",
           "example": "",
@@ -1488,7 +1414,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动封禁状态",
           "example": "",
@@ -1499,7 +1424,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "攻击时间阈值",
           "example": "",
@@ -1510,7 +1434,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动封禁时间",
           "example": "",
@@ -1521,7 +1444,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后更新时间",
           "example": "",
@@ -1700,7 +1622,6 @@
       "document": "bot的趋势图对象",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "横坐标",
           "example": "2021-04-22 20:30:00",
@@ -1711,7 +1632,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "value的所属对象",
           "example": "/api/cf/v4/user/get-info",
@@ -1722,7 +1642,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "纵列表",
           "example": "15",
@@ -1733,7 +1652,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Key对应的页面展示内容",
           "example": "/api/cf/v4/user/get-info",
@@ -1750,7 +1668,6 @@
       "document": "CDC场景下负载均衡WAF的集群信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "cdc的集群id",
           "example": "\"cluster-123456\"",
@@ -1761,7 +1678,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "cdc的集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"光明测试环境\"",
@@ -1778,7 +1694,6 @@
       "document": "CDC场景下负载均衡WAF的地域信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "地域",
           "example": "\"gz\"",
@@ -1789,7 +1704,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "该地域对应的集群信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"cluster-123456\"]",
@@ -1806,7 +1720,6 @@
       "document": "CreateAccessExport请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "客户要查询的日志主题ID，每个客户都有对应的一个主题",
           "example": "\"1ae37c76-df99-4e2b-998c-20f39eba6226\"",
@@ -1816,7 +1729,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要查询的日志的起始时间，Unix时间戳，单位ms",
           "example": "1625395948532",
@@ -1826,7 +1738,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要查询的日志的结束时间，Unix时间戳，单位ms",
           "example": "1626000748532",
@@ -1836,7 +1747,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志导出检索语句",
           "example": "\"schema: http\"",
@@ -1846,7 +1756,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志导出数量，最大值100w",
           "example": "100",
@@ -1856,7 +1765,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志导出数据格式。json，csv，默认为json",
           "example": "\"Y29udGV4dC1mMTE4NWE2My1mZTBmLTQ2YTctOTQzOS0zMzFlNGU2Y2EzYTAxNjI",
@@ -1866,7 +1774,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志导出时间排序。desc，asc，默认为desc",
           "example": "\"desc\"",
@@ -1904,22 +1811,18 @@
       "document": "CreateHost请求参数结构体",
       "members": [
         {
-          "Reference": [],
           "disabled": false,
           "document": "防护域名配置信息",
           "example": "无",
-          "is_base64": false,
           "member": "HostRecord",
           "name": "Host",
           "required": true,
           "type": "object"
         },
         {
-          "Reference": [],
           "disabled": false,
           "document": "实例id",
           "example": "aaaa",
-          "is_base64": false,
           "member": "string",
           "name": "InstanceID",
           "required": false,
@@ -1954,7 +1857,6 @@
       "document": "DeleteAccessExport请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "日志导出ID",
           "example": "\"export-61daca5c-f341-4796-aeb3-4f2f598a06c7\"",
@@ -1964,7 +1866,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志主题",
           "example": "\"1ae37c76-df99-4e2b-998c-20f39eba6226\"",
@@ -1992,7 +1893,6 @@
       "document": "DeleteAttackDownloadRecord请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "下载任务记录唯一标记",
           "example": "60001",
@@ -2020,7 +1920,6 @@
       "document": "DeleteCustomWhiteRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "删除的域名",
           "example": "test.qcloudwaf.com",
@@ -2030,7 +1929,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "删除的规则ID",
           "example": "1100000001",
@@ -2114,7 +2012,6 @@
       "document": "DeleteDownloadRecord请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "记录id",
           "example": "xxxxxx-xxxxxx-xxxxxx ",
@@ -2214,7 +2111,6 @@
       "document": "DeleteSession请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "test.com",
@@ -2224,7 +2120,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "clb-waf 或者 sprta-waf",
           "example": "clb-waf",
@@ -2262,7 +2157,6 @@
       "document": "DescribeAccessExports请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "客户要查询的日志主题ID，每个客户都有对应的一个主题",
           "example": "\"1ae37c76-df99-4e2b-998c-20f39eba6226\"",
@@ -2272,7 +2166,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页的偏移量，默认值为0",
           "example": "0",
@@ -2282,7 +2175,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分页单页限制数目，默认值为20，最大值100",
           "example": "100",
@@ -2330,7 +2222,6 @@
       "document": "DescribeAccessFastAnalysis请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "客户要查询的日志主题ID，每个客户都有对应的一个主题",
           "example": "\"1ae37c76-df99-4e2b-998c-20f39eba6226\"",
@@ -2340,7 +2231,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要查询的日志的起始时间，Unix时间戳，单位ms",
           "example": "1625395948532",
@@ -2350,7 +2240,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要查询的日志的结束时间，Unix时间戳，单位ms",
           "example": "1626000748532",
@@ -2360,7 +2249,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询语句，语句长度最大为4096，由于本接口是分析接口，如果无过滤条件，必须传 * 表示匹配所有，参考CLS的分析统计语句的文档",
           "example": "\"schema: http\"",
@@ -2370,7 +2258,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要分析统计的字段名",
           "example": "\"method\"",
@@ -2401,7 +2288,6 @@
           "disabled": false,
           "document": "老版本查询的日志主题ID，新版本传空字符串即可",
           "example": "\"1ae37c76-df99-4e2b-998c-20f39eba6226\"",
-          "is_base64": false,
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -2411,7 +2297,6 @@
           "disabled": false,
           "document": "要查询的日志的起始时间，Unix时间戳，单位ms",
           "example": "1625395948532",
-          "is_base64": false,
           "member": "int64",
           "name": "From",
           "required": true,
@@ -2421,7 +2306,6 @@
           "disabled": false,
           "document": "要查询的日志的结束时间，Unix时间戳，单位ms",
           "example": "1625395948532",
-          "is_base64": false,
           "member": "int64",
           "name": "To",
           "required": true,
@@ -2431,7 +2315,6 @@
           "disabled": false,
           "document": "查询语句，语句长度最大为4096",
           "example": "\"\"",
-          "is_base64": false,
           "member": "string",
           "name": "Query",
           "required": true,
@@ -2441,7 +2324,6 @@
           "disabled": false,
           "document": "柱状图间隔时间差，单位ms",
           "example": "12096000",
-          "is_base64": false,
           "member": "int64",
           "name": "Interval",
           "required": false,
@@ -2666,7 +2548,6 @@
       "document": "DescribeAutoDenyIP请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "",
@@ -2676,7 +2557,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询IP自动封禁状态",
           "example": "",
@@ -2686,7 +2566,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计数标识",
           "example": "",
@@ -2696,7 +2575,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类别",
           "example": "",
@@ -2706,7 +2584,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "有效时间最小时间戳",
           "example": "",
@@ -2716,7 +2593,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "有效时间最大时间戳",
           "example": "",
@@ -2726,7 +2602,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间最小时间戳",
           "example": "",
@@ -2736,7 +2611,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间最大时间戳",
           "example": "",
@@ -2746,7 +2620,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "",
@@ -2756,7 +2629,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制条数",
           "example": "",
@@ -2766,7 +2638,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略名字",
           "example": "",
@@ -2776,7 +2647,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序参数",
           "example": "",
@@ -2932,7 +2802,6 @@
           "disabled": false,
           "document": "域名",
           "example": "test.qcloudwaf.com",
-          "is_base64": false,
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -2942,7 +2811,6 @@
           "disabled": false,
           "document": "偏移量",
           "example": "1",
-          "is_base64": false,
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -2952,7 +2820,6 @@
           "disabled": false,
           "document": "容量",
           "example": "20",
-          "is_base64": false,
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -2962,7 +2829,6 @@
           "disabled": false,
           "document": "过滤数组,name可以是如下的值： RuleID,RuleName,Match",
           "example": "无",
-          "is_base64": false,
           "member": "FiltersItemNew",
           "name": "Filters",
           "required": false,
@@ -2972,7 +2838,6 @@
           "disabled": false,
           "document": "asc或者desc",
           "example": "asc",
-          "is_base64": false,
           "member": "string",
           "name": "Order",
           "required": false,
@@ -2982,7 +2847,6 @@
           "disabled": false,
           "document": "exp_ts或者mod_ts",
           "example": "mod_ts",
-          "is_base64": false,
           "member": "string",
           "name": "By",
           "required": false,
@@ -3234,7 +3098,6 @@
       "document": "DescribeFlowTrend请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "需要获取流量趋势的域名, all表示所有域名",
           "example": "www.baidu.com",
@@ -3244,7 +3107,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "起始时间戳，精度秒",
           "example": "1620144000",
@@ -3254,7 +3116,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结束时间戳，精度秒",
           "example": "1620180000",
@@ -3492,7 +3353,6 @@
       "document": "DescribeIpHitItems请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "",
@@ -3502,7 +3362,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计数标识",
           "example": "",
@@ -3512,7 +3371,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类别",
           "example": "",
@@ -3522,7 +3380,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "有效时间最小时间戳",
           "example": "",
@@ -3532,7 +3389,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "有效时间最大时间戳",
           "example": "",
@@ -3542,7 +3398,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间最小时间戳",
           "example": "",
@@ -3552,7 +3407,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间最大时间戳",
           "example": "",
@@ -3562,7 +3416,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "偏移参数",
           "example": "",
@@ -3572,7 +3425,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "限制数目",
           "example": "",
@@ -3582,7 +3434,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "策略名称",
           "example": "",
@@ -3592,7 +3443,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "排序参数",
           "example": "",
@@ -3602,7 +3452,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IP",
           "example": "",
@@ -3639,7 +3488,6 @@
       "document": "DescribePeakPoints请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询起始时间",
           "example": "2019-12-30 00:00:00",
@@ -3649,7 +3497,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询终止时间",
           "example": "2019-12-30 23:59:59",
@@ -3659,7 +3506,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询的域名，如果查询所有域名数据，该参数不填写",
           "example": "abc.qcloudwaf.com",
@@ -3669,7 +3515,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只有两个值有效，sparta-waf，clb-waf，不传则不过滤",
           "example": "sparta-waf",
@@ -3679,7 +3524,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "WAF实例ID，不传则不过滤",
           "example": "waf_000q3t12p",
@@ -3689,7 +3533,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "十三个值可选：\naccess-峰值qps趋势图\nbotAccess- bot峰值qps趋势图\ndown-下行峰值带宽趋势图\nup-上行峰值带宽趋势图\nattack-Web攻击总数趋势图\ncc-CC攻击总数趋势图\nStatusServerError-WAF返回给客户端状态码次数趋势图\nStatusClientError-WAF返回给客户端状态码次数趋势图\nStatusRedirect-WAF返回给客户端状态码次数趋势图\nStatusOk-WAF返回给客户端状态码次数趋势图\nUpstreamServerError-源站返回给WAF状态码次数趋势图\nUpstreamClientError-源站返回给WAF状态码次数趋势图\nUpstreamRedirect-源站返回给WAF状态码次数趋势图",
           "example": "access",
@@ -3727,7 +3570,6 @@
       "document": "DescribePeakValue请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询起始时间",
           "example": "2019-12-30 00:00:00",
@@ -3737,7 +3579,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间",
           "example": "2019-12-30 23:59:59",
@@ -3747,7 +3588,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "需要查询的域名，当前用户所有域名可以不传",
           "example": "abc.qcloudwaf.com",
@@ -3757,7 +3597,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "只有两个值有效，sparta-waf，clb-waf，不传则不过滤",
           "example": "sparta-waf",
@@ -3767,7 +3606,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "WAF实例ID，不传则不过滤",
           "example": "waf_000q3t12p",
@@ -3777,7 +3615,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "五个值可选：\naccess-峰值qps\ndown-下行峰值带宽\nup-上行峰值带宽\nattack-Web攻击总数\ncc-CC攻击总数趋势图",
           "example": "access",
@@ -3855,7 +3692,6 @@
       "document": "DescribePolicyStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "test.com",
@@ -3865,7 +3701,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "clb-waf或者saas-waf",
           "example": "clb-waf",
@@ -3913,7 +3748,6 @@
       "document": "DescribeRuleLimit请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "\"test.com\"",
@@ -4041,7 +3875,6 @@
       "document": "DescribeWafAutoDenyRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "test.qcloudwaf.com",
@@ -4461,7 +4294,6 @@
           "disabled": false,
           "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "waf",
-          "is_base64": false,
           "member": "string",
           "name": "ResourceIds",
           "output_required": false,
@@ -4473,7 +4305,6 @@
           "disabled": false,
           "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "年月日",
-          "is_base64": false,
           "member": "string",
           "name": "ValidTime",
           "output_required": false,
@@ -4507,7 +4338,6 @@
           "disabled": false,
           "document": "套餐购买地域，clb-waf暂时没有用到\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "gz",
-          "is_base64": false,
           "member": "string",
           "name": "Region",
           "output_required": false,
@@ -4828,7 +4658,6 @@
       "document": "下载攻击日志记录数据项",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "记录ID",
           "example": "",
@@ -4839,7 +4668,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下载任务名",
           "example": "",
@@ -4850,7 +4678,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "任务ID",
           "example": "",
@@ -4861,7 +4688,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "域名",
           "example": "",
@@ -4872,7 +4698,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "当前下载任务的日志条数",
           "example": "",
@@ -4883,7 +4708,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下载任务运行状态：-1-下载超时，0-下载等待，1-下载完成，2-下载失败，4-正在下载",
           "example": "",
@@ -4894,7 +4718,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下载文件URL",
           "example": "",
@@ -4905,7 +4728,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "创建时间",
           "example": "",
@@ -4916,7 +4738,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最后更新修改时间",
           "example": "",
@@ -4927,7 +4748,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过期时间",
           "example": "",
@@ -4938,7 +4758,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下载任务需下载的日志总条数",
           "example": "",
@@ -4955,7 +4774,6 @@
       "document": "DescribeAccessExports接口",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "日志导出任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"export-61daca5c-f341-4796-aeb3-4f2f598a06c7\"",
@@ -4966,7 +4784,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志导出查询语句\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"*\"",
@@ -4977,7 +4794,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志导出文件名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -4988,7 +4804,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志文件大小",
           "example": "0",
@@ -4999,7 +4814,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志导出时间排序\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"desc\"",
@@ -5010,7 +4824,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志导出格式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"json\"",
@@ -5021,7 +4834,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志导出数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6221",
@@ -5032,7 +4844,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志下载状态。Processing:导出正在进行中，Complete:导出完成，Failed:导出失败，Expired:日志导出已过期（三天有效期）",
           "example": "\"Processing\"",
@@ -5043,7 +4854,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志导出起始时间",
           "example": "1625395948532",
@@ -5054,7 +4864,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志导出结束时间",
           "example": "1626000748532",
@@ -5065,7 +4874,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志导出路径",
           "example": "\"\"",
@@ -5076,7 +4884,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志导出创建时间",
           "example": "\"2021-07-13 19:07:15\"",
@@ -5242,7 +5049,6 @@
       "document": "GetAttackHistogram请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "查询的域名，所有域名使用all",
           "example": "",
@@ -5252,7 +5058,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询起始时间",
           "example": "",
@@ -5262,7 +5067,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "查询结束时间",
           "example": "",
@@ -5272,7 +5076,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Lucene语法",
           "example": "",
@@ -5516,7 +5319,6 @@
           "disabled": false,
           "document": "id",
           "example": "waf",
-          "is_base64": false,
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -5528,7 +5330,6 @@
           "disabled": false,
           "document": "Name",
           "example": "waf",
-          "is_base64": false,
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -5540,7 +5341,6 @@
           "disabled": false,
           "document": "资源id",
           "example": "waf",
-          "is_base64": false,
           "member": "string",
           "name": "ResourceIds",
           "output_required": true,
@@ -5552,7 +5352,6 @@
           "disabled": false,
           "document": "地域",
           "example": "gz",
-          "is_base64": false,
           "member": "string",
           "name": "Region",
           "output_required": true,
@@ -5608,7 +5407,6 @@
           "disabled": false,
           "document": "过期时间",
           "example": "年月日",
-          "is_base64": false,
           "member": "string",
           "name": "ValidTime",
           "output_required": true,
@@ -5620,7 +5418,6 @@
           "disabled": false,
           "document": "开始时间",
           "example": "年月日",
-          "is_base64": false,
           "member": "string",
           "name": "BeginTime",
           "output_required": true,
@@ -5720,7 +5517,6 @@
           "disabled": false,
           "document": "clb或saas",
           "example": "clb",
-          "is_base64": false,
           "member": "string",
           "name": "Edition",
           "output_required": true,
@@ -5867,7 +5663,6 @@
       "document": "数据封装",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "ip黑白名单\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5878,7 +5673,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "计数",
           "example": "",
@@ -5895,7 +5689,6 @@
       "document": "ip黑白名单",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "动作",
           "example": "",
@@ -5906,7 +5699,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ip",
           "example": "",
@@ -5917,7 +5709,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "备注",
           "example": "",
@@ -5928,7 +5719,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "来源",
           "example": "",
@@ -5939,7 +5729,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "更新时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
@@ -5950,7 +5739,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "有效截止时间戳",
           "example": "",
@@ -5967,7 +5755,6 @@
       "document": "ip封堵状态数据",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "动作",
           "example": "",
@@ -5978,7 +5765,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类别",
           "example": "",
@@ -5989,7 +5775,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ip",
           "example": "",
@@ -6000,7 +5785,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则名称",
           "example": "",
@@ -6011,7 +5795,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳",
           "example": "",
@@ -6022,7 +5805,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "有效截止时间戳",
           "example": "",
@@ -6039,7 +5821,6 @@
       "document": "封装参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "数组封装",
           "example": "",
@@ -6050,7 +5831,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总数目",
           "example": "",
@@ -6067,7 +5847,6 @@
       "document": "负载均衡的监听器",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡LD的ID",
           "example": "lb-xx",
@@ -6078,7 +5857,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡LD的名称",
           "example": "test",
@@ -6089,7 +5867,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡监听器的ID",
           "example": "lbl-xx",
@@ -6100,7 +5877,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡监听器的名称",
           "example": "test",
@@ -6111,7 +5887,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡实例的IP",
           "example": "1.1.1.1",
@@ -6122,7 +5897,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡实例的端口",
           "example": "80",
@@ -6133,7 +5907,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡LD的地域",
           "example": "gz",
@@ -6144,7 +5917,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "监听器协议，http、https",
           "example": "http",
@@ -6155,7 +5927,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡监听器所在的zone",
           "example": "\"\"",
@@ -6166,7 +5937,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡的VPCID，公网为-1，内网按实际填写\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -6177,7 +5947,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "负载均衡的网络类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "OPEN 公网； INTERNAL 内网",
@@ -6321,7 +6090,6 @@
       "document": "攻击日志统计详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "日志条数",
           "example": "",
@@ -6332,7 +6100,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳",
           "example": "",
@@ -6349,7 +6116,6 @@
       "document": "ModifyAccessPeriod请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "访问日志保存期限，范围为[1, 30]",
           "example": "30",
@@ -6359,7 +6125,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "日志主题",
           "example": "\"1ae37c76-df99-4e2b-998c-20f39eba6226\"",
@@ -6387,7 +6152,6 @@
       "document": "ModifyAreaBanStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "修要修改的域名",
           "example": "",
@@ -6397,7 +6161,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "状态值，0表示关闭，1表示开启",
           "example": "",
@@ -6488,7 +6251,6 @@
       "document": "ModifyCustomWhiteRule请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "编辑的域名",
           "example": "test.qcloudwaf.com",
@@ -6498,7 +6260,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "编辑的规则ID",
           "example": "1100000001",
@@ -6508,7 +6269,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "编辑的规则名称",
           "example": "test",
@@ -6518,7 +6278,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "放行时是否继续执行其它检查逻辑，继续执行地域封禁防护：geoip、继续执行CC策略防护：cc、继续执行WEB应用防护：owasp、继续执行AI引擎防护：ai、继续执行信息防泄漏防护：antileakage。如果多个勾选那么以,串接。",
           "example": "cc",
@@ -6528,7 +6287,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "优先级，1~100的整数，数字越小，代表这条规则的执行优先级越高。",
           "example": "100",
@@ -6538,7 +6296,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则生效截止时间，0：永久生效，其它值为对应时间的时间戳。",
           "example": "1234567",
@@ -6548,7 +6305,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "匹配条件数组",
           "example": "无",
@@ -6976,7 +6732,6 @@
           "disabled": false,
           "document": "域名",
           "example": "test.qcloudwaf.com",
-          "is_base64": false,
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -6986,7 +6741,6 @@
           "disabled": false,
           "document": "触发IP封禁的攻击次数阈值，范围为2~100次",
           "example": "100",
-          "is_base64": false,
           "member": "int64",
           "name": "AttackThreshold",
           "required": true,
@@ -6996,7 +6750,6 @@
           "disabled": false,
           "document": "IP封禁统计时间，范围为1-60分钟",
           "example": "60",
-          "is_base64": false,
           "member": "int64",
           "name": "TimeThreshold",
           "required": true,
@@ -7006,7 +6759,6 @@
           "disabled": false,
           "document": "触发IP封禁后的封禁时间，范围为5~360分钟",
           "example": "120",
-          "is_base64": false,
           "member": "int64",
           "name": "DenyTimeThreshold",
           "required": true,
@@ -7016,7 +6768,6 @@
           "disabled": false,
           "document": "自动封禁状态，0表示关闭，1表示打开",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "DefenseStatus",
           "required": true,
@@ -7051,7 +6802,6 @@
       "document": "ModifyWafAutoDenyStatus请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "WAF 自动封禁配置项",
           "example": "",
@@ -7125,7 +6875,6 @@
       "document": "PeakPoints数组项",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "秒级别时间戳",
           "example": "2",
@@ -7136,7 +6885,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "QPS",
           "example": "1",
@@ -7147,7 +6895,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "上行带宽峰值，单位B",
           "example": "4",
@@ -7158,7 +6905,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "下行带宽峰值，单位B",
           "example": "7",
@@ -7169,7 +6915,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Web攻击次数",
           "example": "8",
@@ -7180,7 +6925,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "CC攻击次数",
           "example": "9",
@@ -7191,7 +6935,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Bot qps",
           "example": "100",
@@ -7202,7 +6945,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "WAF返回给客户端状态码次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -7213,7 +6955,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "WAF返回给客户端状态码次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -7224,7 +6965,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "WAF返回给客户端状态码次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
@@ -7235,7 +6975,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "WAF返回给客户端状态码次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
@@ -7246,7 +6985,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源站返回给WAF状态码次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
@@ -7257,7 +6995,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源站返回给WAF状态码次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
@@ -7268,7 +7005,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "源站返回给WAF状态码次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6",
@@ -7341,7 +7077,6 @@
       "document": "防护域名端口配置信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "监听端口配置",
           "example": "",
@@ -7352,7 +7087,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "与Port一一对应，表示端口对应的协议",
           "example": "",
@@ -7363,7 +7097,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "与Port一一对应,  表示回源端口",
           "example": "",
@@ -7374,7 +7107,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "与Port一一对应,  表示回源协议",
           "example": "",
@@ -7385,7 +7117,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Nginx的服务器ID",
           "example": "",
@@ -7495,7 +7226,6 @@
           "disabled": false,
           "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "waf_000q6ntyb",
-          "is_base64": false,
           "member": "string",
           "name": "ResourceIds",
           "output_required": false,
@@ -7507,7 +7237,6 @@
           "disabled": false,
           "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "年月日",
-          "is_base64": false,
           "member": "string",
           "name": "ValidTime",
           "output_required": false,
@@ -7541,7 +7270,6 @@
           "disabled": false,
           "document": "套餐购买地域，clb-waf暂时没有用到\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "gz",
-          "is_base64": false,
           "member": "string",
           "name": "Region",
           "output_required": false,
@@ -7553,7 +7281,6 @@
           "disabled": false,
           "document": "计费项\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sv_wsm_waf_scene_bot_qpsep_clb",
-          "is_base64": false,
           "member": "string",
           "name": "BillingItem",
           "output_required": false,
@@ -7594,7 +7321,6 @@
       "document": "规则白名单",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "规则Id",
           "example": "",
@@ -7605,7 +7331,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规则列表的id",
           "example": "",
@@ -7616,7 +7341,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求url",
           "example": "",
@@ -7627,7 +7351,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "请求的方法",
           "example": "",
@@ -7638,7 +7361,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间戳",
           "example": "",
@@ -7649,7 +7371,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "开关状态",
           "example": "",
@@ -7669,7 +7390,6 @@
           "disabled": false,
           "document": "客户要查询的日志主题ID，每个客户都有对应的一个主题，新版本此字段填空字符串",
           "example": "\"1ae37c76-df99-4e2b-998c-20f39eba6226\"",
-          "is_base64": false,
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -7679,7 +7399,6 @@
           "disabled": false,
           "document": "要查询的日志的起始时间，Unix时间戳，单位ms",
           "example": "1625395948532",
-          "is_base64": false,
           "member": "int64",
           "name": "From",
           "required": true,
@@ -7689,7 +7408,6 @@
           "disabled": false,
           "document": "要查询的日志的结束时间，Unix时间戳，单位ms",
           "example": "1626000748532",
-          "is_base64": false,
           "member": "int64",
           "name": "To",
           "required": true,
@@ -7699,7 +7417,6 @@
           "disabled": false,
           "document": "查询语句，语句长度最大为4096",
           "example": "\"schema: http\"",
-          "is_base64": false,
           "member": "string",
           "name": "Query",
           "required": true,
@@ -7709,7 +7426,6 @@
           "disabled": false,
           "document": "单次查询返回的日志条数，最大值为100",
           "example": "100",
-          "is_base64": false,
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -7719,7 +7435,6 @@
           "disabled": false,
           "document": "新版本此字段失效，填空字符串，翻页使用Page",
           "example": "\"Y29udGV4dC1mMTE4NWE2My1mZTBmLTQ2YTctOTQzOS0zMzFlNGU2Y2EzYTAxNjI",
-          "is_base64": false,
           "member": "string",
           "name": "Context",
           "required": false,
@@ -7729,7 +7444,6 @@
           "disabled": false,
           "document": "日志接口是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc",
           "example": "\"desc\"",
-          "is_base64": false,
           "member": "string",
           "name": "Sort",
           "required": false,
@@ -7739,7 +7453,6 @@
           "disabled": false,
           "document": "第几页，从0开始。新版本接口字段",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "Page",
           "required": false,
@@ -7827,7 +7540,6 @@
           "disabled": false,
           "document": "查询的域名，所有域名使用all",
           "example": " ",
-          "is_base64": false,
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -7837,7 +7549,6 @@
           "disabled": false,
           "document": "查询起始时间",
           "example": " ",
-          "is_base64": false,
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -7847,7 +7558,6 @@
           "disabled": false,
           "document": "查询结束时间",
           "example": " ",
-          "is_base64": false,
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -7857,7 +7567,6 @@
           "disabled": false,
           "document": "接口升级，这个字段传空字符串,翻页使用Page字段",
           "example": " ",
-          "is_base64": false,
           "member": "string",
           "name": "Context",
           "required": true,
@@ -7867,7 +7576,6 @@
           "disabled": false,
           "document": "Lucene语法",
           "example": " ",
-          "is_base64": false,
           "member": "string",
           "name": "QueryString",
           "required": true,
@@ -7877,7 +7585,6 @@
           "disabled": false,
           "document": "查询的数量，默认10条，最多100条",
           "example": " ",
-          "is_base64": false,
           "member": "int64",
           "name": "Count",
           "required": false,
@@ -7887,7 +7594,6 @@
           "disabled": false,
           "document": "默认为desc，可以取值desc和asc",
           "example": " ",
-          "is_base64": false,
           "member": "string",
           "name": "Sort",
           "required": false,
@@ -7897,7 +7603,6 @@
           "disabled": false,
           "document": "第几页，从0开始",
           "example": "1",
-          "is_base64": false,
           "member": "int64",
           "name": "Page",
           "required": false,
@@ -7972,7 +7677,6 @@
       "document": "waf斯巴达-编辑防护域名中的端口结构",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "nginx Id",
           "example": "",
@@ -7983,7 +7687,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "端口",
           "example": "",
@@ -7994,7 +7697,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "协议",
           "example": "",
@@ -8005,7 +7707,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "后端端口",
           "example": "",
@@ -8016,7 +7717,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "后端协议",
           "example": "",
@@ -8082,7 +7782,6 @@
           "disabled": false,
           "document": "域名",
           "example": "无",
-          "is_base64": false,
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -8092,7 +7791,6 @@
           "disabled": false,
           "document": "规则列表",
           "example": "无",
-          "is_base64": false,
           "member": "uint64",
           "name": "Ids",
           "required": false,
@@ -8102,7 +7800,6 @@
           "disabled": false,
           "document": "开关状态，0表示关闭，1表示开启，2表示只观察",
           "example": "无",
-          "is_base64": false,
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -8112,7 +7809,6 @@
           "disabled": false,
           "document": "设置为观察模式原因，\n1表示业务自身原因观察，2表示系统规则误报上报，3表示核心业务灰度观察，4表示其他",
           "example": "无",
-          "is_base64": false,
           "member": "uint64",
           "name": "Reason",
           "required": false,
@@ -8235,7 +7931,6 @@
       "document": "waf模块的规格",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "自定义CC的规格",
           "example": "0",
@@ -8246,7 +7941,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义策略的规格",
           "example": "0",
@@ -8257,7 +7951,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "黑白名单的规格",
           "example": "0",
@@ -8268,7 +7961,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "信息防泄漏的规格",
           "example": "0",
@@ -8279,7 +7971,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "防篡改的规格",
           "example": "0",
@@ -8290,7 +7981,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "紧急CC的规格",
           "example": "0",
@@ -8301,7 +7991,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "地域封禁的规格",
           "example": "0",
@@ -8312,7 +8001,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自定义CC中配置session",
           "example": "0",
@@ -8323,7 +8011,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "AI的规格",
           "example": "0",
@@ -8334,7 +8021,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "精准白名单的规格",
           "example": "0",
@@ -8345,7 +8031,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "api安全的规格",
           "example": "0",
@@ -8356,7 +8041,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端流量标记的规格",
           "example": "0",
@@ -8367,7 +8051,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "流量标记的规格",
           "example": "0",

@@ -122,7 +122,6 @@
       "document": "建议",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -139,7 +138,6 @@
       "document": "纵横比",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "原文位置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -150,7 +148,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -161,7 +158,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "关系\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "大于",
@@ -172,7 +168,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原文\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -183,7 +178,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -842,7 +836,6 @@
       "document": "检查报告单",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -853,7 +846,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结论\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -1014,7 +1006,6 @@
       "document": "坐标",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "左上角x坐标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1025,7 +1016,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "左上角y坐标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1036,7 +1026,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "宽度，单位像素\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
@@ -1047,7 +1036,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "高度，单位像素\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
@@ -1440,7 +1428,6 @@
       "document": "诊断证明",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "建议\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -1451,7 +1438,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "诊断\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[object]",
@@ -1468,7 +1454,6 @@
       "document": "诊断证明项",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -1479,7 +1464,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -1490,7 +1474,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -1553,7 +1536,6 @@
       "document": "出入院诊断",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "表格位置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -1564,7 +1546,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "出院诊断\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -1575,7 +1556,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "疾病编码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -1586,7 +1566,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入院情况\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -1597,7 +1576,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "出院情况\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -1772,7 +1750,6 @@
       "document": "疾病史",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "主病史\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -1783,7 +1760,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "过敏史\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -1794,7 +1770,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "传染疾病史\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -1805,7 +1780,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "手术史\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -1816,7 +1790,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "输血史\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -2017,7 +1990,6 @@
       "document": "心电图详情",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "心率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2028,7 +2000,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "心房率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2039,7 +2010,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "心室率\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2050,7 +2020,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节律\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2061,7 +2030,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "P波时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2072,7 +2040,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "QRS时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2083,7 +2050,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "QRS电轴\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2094,7 +2060,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "P-R间期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2105,7 +2070,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "P-P间期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2116,7 +2080,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "R-R间期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2127,7 +2090,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "P-J间期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2138,7 +2100,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "Q-T间期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2149,7 +2110,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "qt/qtc间期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2160,7 +2120,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "RV5/SV1振幅\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2171,7 +2130,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "RV5+SV1振幅\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2182,7 +2140,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "PRT电轴\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2193,7 +2150,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "RV5振幅\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2204,7 +2160,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "SV1振幅\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2215,7 +2170,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "RV6/SV2\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2226,7 +2180,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "P/QRS/T电轴\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2243,7 +2196,6 @@
       "document": "心电图诊断",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "心电图诊断",
@@ -2254,7 +2206,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"窦性心律\"]",
@@ -2271,7 +2222,6 @@
       "document": "心电图指标项",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "心率",
@@ -2282,7 +2232,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "62",
@@ -2293,7 +2242,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bpm",
@@ -2304,7 +2252,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原文\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "心率:62bpm",
@@ -2321,7 +2268,6 @@
       "document": "弹性质地",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "原文位置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -2332,7 +2278,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "分数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -2343,7 +2288,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原文\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -2354,7 +2298,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -2365,7 +2308,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -2382,7 +2324,6 @@
       "document": "心电图",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "心电图详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2393,7 +2334,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "心电图诊断\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2410,7 +2350,6 @@
       "document": "内窥镜报告",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "活检部位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2421,7 +2360,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "可见描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2432,7 +2370,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结论\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -2721,7 +2658,6 @@
       "document": "家族疾病史",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "家族成员史\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -2732,7 +2668,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "家族肿瘤史\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -2743,7 +2678,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "家族遗传史\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -3346,7 +3280,6 @@
       "document": "图片处理参数",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "ocr引擎",
           "example": "2",
@@ -3357,7 +3290,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否返回分行文本内容",
           "example": "false",
@@ -3368,7 +3300,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "顺时针旋转角度",
           "example": "0.0",
@@ -3379,7 +3310,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "自动适配方向,仅支持优图引擎",
           "example": "true",
@@ -3390,7 +3320,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "坐标优化",
           "example": "true",
@@ -3401,7 +3330,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否开启图片压缩，开启时imageOriginalSize必须正确填写",
           "example": "true",
@@ -3412,7 +3340,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原始图片大小(单位byes),用来判断该图片是否需要压缩",
           "example": "313106",
@@ -3423,7 +3350,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "采用后台默认值(2048Kb)",
           "example": "300000",
@@ -3496,7 +3422,6 @@
       "document": "组织学等级",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "等级\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -3507,7 +3432,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原文位置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -3518,7 +3442,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原文\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -3535,7 +3458,6 @@
       "document": "组织学类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "浸润\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -3546,7 +3468,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原文位置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -3557,7 +3478,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原文\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -3568,7 +3488,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -3651,7 +3570,6 @@
       "document": "出入院信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "入院时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2011-12-07",
@@ -3662,7 +3580,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "出院时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2011-12-16",
@@ -3673,7 +3590,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "住院天数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "9天",
@@ -3684,7 +3600,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入院诊断\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.年龄相关性白内障(双) :2013-09\\n2.倒睫(双) st.A_const:118.3\\n3.年龄相关性黄斑病变(左)",
@@ -3695,7 +3610,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入院情况\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -3706,7 +3620,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "诊疗经过\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -3717,7 +3630,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "出院诊断\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.年龄相关性白内障(双)\\n2.倒睫(双)\\n3.年龄相关性黄斑病变(左)",
@@ -3728,7 +3640,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "出院医嘱\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -3801,7 +3712,6 @@
       "document": "Ihc信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "原文位置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -3812,7 +3722,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原文\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -3823,7 +3732,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -3834,7 +3742,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "值",
           "example": "object",
@@ -3907,7 +3814,6 @@
       "document": "图片信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "图片id",
           "example": "123",
@@ -3918,7 +3824,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片url",
           "example": "http://wenzhentest-1252949230.cos.ap-guangzhou.myqcloud.com/7bf0",
@@ -3929,7 +3834,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "图片base64编码",
           "example": "“”",
@@ -4135,7 +4039,6 @@
       "document": "检验报告",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "检验指标项\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[object]",
@@ -4430,7 +4333,6 @@
       "document": "侵犯扩散",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "原文位置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -4441,7 +4343,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -4452,7 +4353,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "阳性\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -4463,7 +4363,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原文\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -4648,7 +4547,6 @@
       "document": "淋巴",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "原文\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -4659,7 +4557,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原文位置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -4670,7 +4567,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "部位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -4681,7 +4577,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -4692,7 +4587,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "转移数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -5151,7 +5045,6 @@
       "document": "门诊病历信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "就诊日期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-09-28 14:46",
@@ -5162,7 +5055,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "就诊科室\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "IMC眼科门诊",
@@ -5173,7 +5065,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "就诊医生\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hwn",
@@ -5184,7 +5075,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "临床诊断\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "过敏性结膜炎ou",
@@ -5195,7 +5085,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "眼痒疼数周",
@@ -5206,7 +5095,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "体格检查\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "VACC1.2/1.2\\nNCT 15/12mmHg\\n双眼结膜充血+乳头++角膜透明，前房-，晶体透明，小瞳眼底C/D0.4",
@@ -5217,7 +5105,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查结论\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "过敏性结膜炎",
@@ -5228,7 +5115,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "治疗意见\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "裂隙灯检查ST;普通视力检查ST",
@@ -5245,7 +5131,6 @@
       "document": "药品",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "药品名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -5256,7 +5141,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "商品名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -5267,7 +5151,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "厂商\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -5278,7 +5161,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "医保类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -5289,7 +5171,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "规格\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -5300,7 +5181,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最小包装数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -5311,7 +5191,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最小制剂单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -5322,7 +5201,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "最小包装单位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -5527,7 +5405,6 @@
       "document": "月经史",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "末次月经时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -5538,7 +5415,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "经量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -5549,7 +5425,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "月经初潮年龄\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -5560,7 +5435,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "是否来月经\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -5571,7 +5445,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "月经周期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -5582,7 +5455,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "月经持续天数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -5853,7 +5725,6 @@
       "document": "多发",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "原文位置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -5864,7 +5735,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "原文\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -5875,7 +5745,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -5886,7 +5755,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -5897,7 +5765,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -6164,7 +6031,6 @@
       "document": "孕产史",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "婚史\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -6175,7 +6041,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "孕史\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -7338,7 +7203,6 @@
       "document": "病理报告",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "癌症部位\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -7349,7 +7213,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "癌症部位大小\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[object]",
@@ -7360,7 +7223,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "描述文本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -7371,7 +7233,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "组织学等级\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -7382,7 +7243,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "组织学类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[object]",
@@ -7393,7 +7253,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "IHC信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[object]",
@@ -7404,7 +7263,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "浸润深度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -7415,7 +7273,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "肿瘤扩散\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[object]",
@@ -7426,7 +7283,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "淋巴结\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[object]",
@@ -7437,7 +7293,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "PTNM信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -7448,7 +7303,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "病理报告类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -7459,7 +7313,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报告原文\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -7470,7 +7323,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标本类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -7481,7 +7333,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "结论文本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -7644,7 +7495,6 @@
       "document": "患者信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "患者姓名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "张三",
@@ -7655,7 +7505,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "患者性别\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "男",
@@ -7666,7 +7515,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "患者年龄\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "23",
@@ -7677,7 +7525,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "患者手机号码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1357023xxxx",
@@ -7688,7 +7535,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "患者地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "广东省深圳市",
@@ -7699,7 +7545,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "患者身份证\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4415221992xxxxxxxx",
@@ -7710,7 +7555,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "健康卡号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "UI7821056C",
@@ -7721,7 +7565,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "社保卡号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "489170108",
@@ -7732,7 +7575,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "出生日期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1997-01-01",
@@ -7743,7 +7585,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "民族\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "汉",
@@ -7754,7 +7595,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "婚姻状况\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "未婚",
@@ -7765,7 +7605,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "职业\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "学生",
@@ -7776,7 +7615,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "教育程度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "硕士",
@@ -7787,7 +7625,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "国籍\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "中国",
@@ -7798,7 +7635,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "籍贯\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "广东深圳",
@@ -7809,7 +7645,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "医保类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "居民医保",
@@ -7820,7 +7655,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标准化年龄\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3600个小时",
@@ -7831,7 +7665,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "民族\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "汉",
@@ -7842,7 +7675,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "婚姻代码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
@@ -7853,7 +7685,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "职业代码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "24",
@@ -7864,7 +7695,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "居民医保代码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "06",
@@ -7875,7 +7705,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "床号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "001",
@@ -7978,7 +7807,6 @@
       "document": "个人史",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "出生史\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -7989,7 +7817,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "居住史\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -8000,7 +7827,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "工作史\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -8011,7 +7837,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "吸烟史\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -8022,7 +7847,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "饮酒史\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -8091,7 +7915,6 @@
       "document": "处方单",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "药品列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[object]",
@@ -8434,7 +8257,6 @@
       "document": "报告基本信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "医院名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "金银潭医院",
@@ -8445,7 +8267,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "科室名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "呼吸科",
@@ -8456,7 +8277,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "申请时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-09-12 11:04:26",
@@ -8467,7 +8287,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报告时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-09-13 10:23:26",
@@ -8478,7 +8297,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-09-12 12:04:26",
@@ -8489,7 +8307,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "859453",
@@ -8500,7 +8317,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "影像号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "26995223",
@@ -8511,7 +8327,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "放射号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "785446",
@@ -8522,7 +8337,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检验号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1143355",
@@ -8533,7 +8347,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "门诊号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "867354",
@@ -8544,7 +8357,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "病理号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "27965",
@@ -8555,7 +8367,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "住院号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "546234",
@@ -8566,7 +8377,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "样本号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "629634",
@@ -8577,7 +8387,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标本种类\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -8588,7 +8397,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "病历号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "45568",
@@ -8599,7 +8407,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "报告名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "彩色多普勒超声诊断报告单",
@@ -8610,7 +8417,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "超声号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "96654",
@@ -8621,7 +8427,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "临床诊断\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "淋巴组织增生病",
@@ -8632,7 +8437,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查项目\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -8643,7 +8447,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查方法\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -8654,7 +8457,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "诊断时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -8665,7 +8467,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "体检号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -8676,7 +8477,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "其它时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -8687,7 +8487,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "打印时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -8698,7 +8497,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "未归类时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -8997,7 +8795,6 @@
       "document": "手术记录属性",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "手术日期",
@@ -9008,7 +8805,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-12-16",
@@ -9071,7 +8867,6 @@
       "document": "手术史",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "手术名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -9082,7 +8877,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "手术日期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -9093,7 +8887,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "术前诊断\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -9104,7 +8897,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "术中诊断\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -9115,7 +8907,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "术后诊断\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -9126,7 +8917,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "出院诊断\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "object",
@@ -9750,7 +9540,6 @@
       "document": "文本类型",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "类别Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "11",
@@ -9761,7 +9550,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类别层级\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
@@ -9772,7 +9560,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "类别名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "检验报告",
@@ -9789,7 +9576,6 @@
       "document": "时间",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "具体时间类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -9800,7 +9586,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "时间值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -9965,7 +9750,6 @@
       "document": "病历",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "入院\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
@@ -9976,7 +9760,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主诉\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -9987,7 +9770,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "现病史\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -9998,7 +9780,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "主要症状体征\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -10009,7 +9790,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "辅助检查\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -10020,7 +9800,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "体格检查\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -10031,7 +9810,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "专科检查\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -10042,7 +9820,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "精神检查\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -10053,7 +9830,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "检查记录\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -10064,7 +9840,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "化验结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -10075,7 +9850,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "切口愈合情况\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -10086,7 +9860,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "处理意见\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -10097,7 +9870,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "门诊随访要求\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -10108,7 +9880,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "诊疗经过\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -10119,7 +9890,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "手术经过\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -10130,7 +9900,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "入院情况\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -10141,7 +9910,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "出院情况\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -10152,7 +9920,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "pTNM信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -10163,7 +9930,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "pTNMM信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -10174,7 +9940,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "pTNMN信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -10185,7 +9950,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "pTNMT信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -10196,7 +9960,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "ECOG信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -10207,7 +9970,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "NRS信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -10218,7 +9980,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "KPS信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -10229,7 +9990,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "死亡日期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -10240,7 +10000,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "复发日期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -10251,7 +10010,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "观测天数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -11346,7 +11104,6 @@
       "document": "免疫接种证明",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "免疫接种列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[object]",
@@ -11363,7 +11120,6 @@
       "document": "值",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "等级\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
@@ -11374,7 +11130,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "百分比\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
@@ -11385,7 +11140,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "disabled": false,
           "document": "阳性\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",

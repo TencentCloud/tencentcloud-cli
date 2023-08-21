@@ -314,7 +314,6 @@
       "document": "客户侧集群管理节点信息",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "客户端节点IP",
           "example": "10.0.1.2",
@@ -325,7 +324,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "节点Instance Id",
           "example": "ins-a1b2c3d4",
@@ -336,7 +334,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "初始密码",
           "example": "abcedfg",
@@ -353,7 +350,6 @@
       "document": "客户端节点属性",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "客户端节点IP",
           "example": "10.0.1.2",
@@ -364,7 +360,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端节点服务状态, Active(运行中), Adding(添加中), Destroying(销毁中), Down(已停止)",
           "example": "active",
@@ -375,7 +370,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户端节点类型，extend(扩展节点)，manager(管理节点)",
           "example": "extend",
@@ -574,7 +568,6 @@
       "document": "CreateFileSystem请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统类型, 可填goosefs和goosefsx",
           "example": "goosefsx",
@@ -584,7 +577,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统名",
           "example": "ai_fs",
@@ -594,7 +586,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统备注描述",
           "example": "our test fs",
@@ -604,7 +595,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "vpc网络ID",
           "example": "vpc-a1b2c3d4",
@@ -614,7 +604,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网ID",
           "example": "subnet-m1n1g1h1",
@@ -624,7 +613,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "子网所在的可用区",
           "example": "ap-guangzhou-3",
@@ -634,7 +622,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统关联的tag",
           "example": "无",
@@ -644,7 +631,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "GooseFSx构建时要传递的参数",
           "example": "无",
@@ -708,7 +694,6 @@
       "document": "DeleteFileSystem请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID",
           "example": "x_c60_r3c4fa1f",
@@ -736,7 +721,6 @@
       "document": "DescribeClientNodes请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统Id",
           "example": "x_c60_r3c4fa1f",
@@ -1011,7 +995,6 @@
       "document": "DescribeFileSystems请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "偏移量",
           "example": "0",
@@ -1021,7 +1004,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "每页的数量",
           "example": "20",
@@ -1069,7 +1051,6 @@
       "document": "DetachFileSystemBucket请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID",
           "example": "x_c60_r3c4fa1f",
@@ -1079,7 +1060,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要解绑的Bucket名",
           "example": "mybucket-1250000",
@@ -1107,7 +1087,6 @@
       "document": "ExpandCapacity请求参数结构体",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "文件系统ID",
           "example": "x_c60_r3c4fa1f",
@@ -1117,7 +1096,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "disabled": false,
           "document": "新增扩容的系统容量",
           "example": "4680",
@@ -1271,7 +1249,6 @@
       "document": "GooseFSx文件系统的属性",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "GooseFSx的型号",
           "example": "C60",
@@ -1282,7 +1259,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "容量单位是GB, 比如4608(4.5TB)",
           "example": "4608",
@@ -1293,7 +1269,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要关联映射的bucket列表",
           "example": "无",
@@ -1304,7 +1279,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "客户侧管理节点信息",
           "example": "无",
@@ -1321,7 +1295,6 @@
       "document": "GooseFSx创建时候的属性",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "GooseFSx的型号",
           "example": "C60",
@@ -1332,7 +1305,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "容量单位是GB, 比如4608(4.5TB)",
           "example": "4608",
@@ -1343,7 +1315,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "要关联映射的bucket列表",
           "example": "[{\"mybucket-125\", \"/\"}]",
@@ -1640,7 +1611,6 @@
       "document": "文件系统关联的标签",
       "members": [
         {
-          "default": "",
           "disabled": false,
           "document": "标签键",
           "example": "usage",
@@ -1651,7 +1621,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "disabled": false,
           "document": "标签值",
           "example": "production",
