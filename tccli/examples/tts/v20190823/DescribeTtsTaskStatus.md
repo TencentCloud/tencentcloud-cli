@@ -6,19 +6,20 @@ Input:
 
 ```
 tccli tts DescribeTtsTaskStatus --cli-unfold-argument  \
-    --TaskId ed461a019355c5cd1ce31ab4dfb8cb12
+    --TaskId gz-855e1e59-35c2-4e43-b15a-3409c515d62e
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "ed461a0-19355c5-cd1ce31-ab4dfb8cb12",
+        "RequestId": "28e1a307-0381-4e56-863d-42542993bf87",
         "Data": {
-            "TaskId": "ed461a019355c5cd1ce31ab4dfb8cb12",
+            "TaskId": "gz-855e1e59-35c2-4e43-b15a-3409c515d62e",
             "Status": 0,
             "StatusStr": "waiting in queue",
             "ResultUrl": "",
+            "Subtitles": [],
             "ErrorMsg": ""
         }
     }

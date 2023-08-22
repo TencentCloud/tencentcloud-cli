@@ -4938,8 +4938,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询过滤参数",
-          "example": "xxx",
+          "document": "查询过滤参数:(json序列化的结果）",
+          "example": "{\"FilterObj\":{\"Type\":[],\"Level\":[],\"Status\":[1],\"Region\":[],\"Vpcid\":[],\"SsaAssetCategory\":[],\"VulSource\":[],\"JumpFlag\":0,\"VulId\":[\"101741\"]},\"Search\":{\"VulName\":[],\"AssetName\":[],\"AssetID\":[],\"AssetIpAll\":[]},\"Limit\":10,\"Page\":1,\"By\":\"event_time\",\"Order\":\"desc\"}",
           "member": "string",
           "name": "Params",
           "required": true,
@@ -4957,7 +4957,7 @@
           "example": "无",
           "member": "VulList",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

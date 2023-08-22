@@ -36635,6 +36635,7 @@
           "example": "123456",
           "member": "uint64",
           "name": "RuleGroupId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -36645,6 +36646,7 @@
           "example": "123456",
           "member": "string",
           "name": "DatasourceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -36655,6 +36657,7 @@
           "example": "mysql_test",
           "member": "string",
           "name": "DatasourceName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -36665,6 +36668,7 @@
           "example": "1",
           "member": "uint64",
           "name": "DatasourceType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -36675,6 +36679,7 @@
           "example": "1",
           "member": "uint64",
           "name": "MonitorType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -36685,6 +36690,7 @@
           "example": "2022-02-08 14:30:30",
           "member": "string",
           "name": "UpdateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -36695,6 +36701,7 @@
           "example": "person",
           "member": "string",
           "name": "TableName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -36705,6 +36712,7 @@
           "example": "123456",
           "member": "string",
           "name": "TableId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -36715,6 +36723,7 @@
           "example": "park",
           "member": "string",
           "name": "TableOwnerName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -36725,6 +36734,7 @@
           "example": "无",
           "member": "RuleGroupExecStrategy",
           "name": "ExecStrategy",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -36735,6 +36745,7 @@
           "example": "无",
           "member": "RuleGroupSubscribe",
           "name": "Subscription",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -36745,6 +36756,7 @@
           "example": "123456",
           "member": "string",
           "name": "DatabaseId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -36755,6 +36767,7 @@
           "example": "base1",
           "member": "string",
           "name": "DatabaseName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -36765,6 +36778,7 @@
           "example": "false",
           "member": "bool",
           "name": "Permission",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -36775,6 +36789,7 @@
           "example": "12",
           "member": "uint64",
           "name": "RuleCount",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -36785,6 +36800,7 @@
           "example": "true",
           "member": "bool",
           "name": "MonitorStatus",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -36795,6 +36811,7 @@
           "example": "123456",
           "member": "uint64",
           "name": "TableOwnerUserId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -36805,6 +36822,18 @@
           "example": "qxd324",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-08-01 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true

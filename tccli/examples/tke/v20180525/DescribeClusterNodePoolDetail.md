@@ -15,93 +15,69 @@ Output:
 {
     "Response": {
         "NodePool": {
-            "NodePoolId": "xx",
-            "Name": "xx",
-            "ClusterInstanceId": "xx",
-            "LifeState": "xx",
-            "LaunchConfigurationId": "xx",
-            "AutoscalingGroupId": "xx",
-            "Labels": [
-                {
-                    "Name": "xx",
-                    "Value": "xx"
-                }
-            ],
-            "Taints": [
-                {
-                    "Key": "xx",
-                    "Value": "xx",
-                    "Effect": "xx"
-                }
-            ],
-            "NodeCountSummary": {
-                "ManuallyAdded": {
-                    "Joining": 0,
-                    "Initializing": 0,
-                    "Normal": 0,
-                    "Total": 0
-                },
-                "AutoscalingAdded": {
-                    "Joining": 0,
-                    "Initializing": 0,
-                    "Normal": 0,
-                    "Total": 0
-                }
-            },
-            "AutoscalingGroupStatus": "xx",
-            "MaxNodesNum": 0,
-            "MinNodesNum": 0,
-            "DesiredNodesNum": 0,
-            "NodePoolOs": "xx",
-            "OsCustomizeType": "xx",
-            "ImageId": "xx",
-            "DesiredPodNum": 0,
-            "UserScript": "xx",
-            "Tags": [
-                {
-                    "Key": "xx",
-                    "Value": "xx"
-                }
-            ],
+            "AutoscalingGroupId": "asg-xxx",
+            "AutoscalingGroupStatus": "disabled",
+            "ClusterInstanceId": "cls-xxx",
+            "CreateTime": "2022-08-14 10:47:02",
+            "DataDisks": null,
             "DeletionProtection": true,
+            "DesiredNodesNum": 2,
+            "DesiredPodNum": 64,
+            "DockerGraphPath": "",
             "ExtraArgs": {
-                "Kubelet": [
-                    "xx"
-                ]
+                "Kubelet": []
             },
             "GPUArgs": {
-                "MIGEnable": true,
-                "Driver": {
-                    "Version": "xx",
-                    "Name": "xx"
-                },
                 "CUDA": {
-                    "Version": "xx",
-                    "Name": "xx"
+                    "Name": "",
+                    "Version": ""
                 },
                 "CUDNN": {
-                    "Version": "xx",
-                    "Name": "xx",
-                    "DocName": "xx",
-                    "DevName": "xx"
+                    "DevName": "",
+                    "DocName": "",
+                    "Name": "",
+                    "Version": ""
                 },
                 "CustomDriver": {
-                    "Address": "xx"
+                    "Address": ""
+                },
+                "Driver": {
+                    "Name": "",
+                    "Version": ""
+                },
+                "MIGEnable": false
+            },
+            "ImageId": "",
+            "Labels": [],
+            "LaunchConfigurationId": "asc-xxx",
+            "LifeState": "normal",
+            "MaxNodesNum": 3,
+            "MinNodesNum": 0,
+            "Name": "xxx",
+            "NodeCountSummary": {
+                "AutoscalingAdded": {
+                    "Initializing": 0,
+                    "Joining": 0,
+                    "Normal": 2,
+                    "Total": 2
+                },
+                "ManuallyAdded": {
+                    "Initializing": 0,
+                    "Joining": 0,
+                    "Normal": 1,
+                    "Total": 1
                 }
             },
-            "DockerGraphPath": "xx",
-            "DataDisks": [
-                {
-                    "DiskType": "xx",
-                    "FileSystem": "xx",
-                    "DiskSize": 0,
-                    "AutoFormatAndMount": true,
-                    "MountTarget": "xx",
-                    "DiskPartition": "xx"
-                }
-            ]
+            "NodePoolId": "np-xxx",
+            "NodePoolOs": "tlinux_xxx",
+            "OsCustomizeType": "GENERAL",
+            "PreStartUserScript": "#!/bin/sh\ntouch /tmp/before",
+            "Tags": null,
+            "Taints": [],
+            "Unschedulable": 0,
+            "UserScript": "#!/bin/sh\ntouch /tmp/after"
         },
-        "RequestId": "xx"
+        "RequestId": "68b7b080-7c57-4869-bc54-a518b4902b2d"
     }
 }
 ```

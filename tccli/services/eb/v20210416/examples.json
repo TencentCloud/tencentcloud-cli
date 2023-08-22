@@ -3,7 +3,7 @@
     "CheckRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckRule\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckRule\n<公共请求参数>\n\n{\n    \"Event\": \"xdd\",\n    \"EventPattern\": \"xddx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "规则校验"
       }
@@ -99,14 +99,14 @@
     "DescribeLogStats": [
       {
         "document": "查询每分钟统计值，不以status分组",
-        "input": "{\n  \"StartTime\": 1600000000000,\n  \"EndTime\": 1600000010000,\n  \"EventBusId\": \"eb-xxxx\",\n  \"Filter\": [\n    {\n      \"Key\": \"host\",\n      \"Operator\": \"eq\",\n      \"Value\": \"106.53.106.243\"\n    }]\n}",
-        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"Status\": \"all\",\n                \"Data\": [\n                    {\n                        \"Count\": 0,\n                        \"Timestamp\": 0\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogStats\n<公共请求参数>\n\n{\n    \"StartTime\": 1600000000000,\n    \"EndTime\": 1600000010000,\n    \"EventBusId\": \"eb-xxxx\",\n    \"Filter\": [\n        {\n            \"Key\": \"host\",\n            \"Operator\": \"eq\",\n            \"Value\": \"106.53.106.243\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"Status\": \"all\",\n                \"Data\": [\n                    {\n                        \"Count\": 0,\n                        \"Timestamp\": 0\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"162d46e5-2968-4b4c-9e61-d84ab10f26a6\"\n    }\n}",
         "title": "demo1"
       },
       {
         "document": "查询每分钟统计值，以status分组",
-        "input": "{\n  \"StartTime\": 1600000000000,\n  \"EndTime\": 1600000010000,\n  \"EventBusId\": \"eb-xxx\",\n  \"GroupByStatus\": [\"0\",\"1\"]\n}",
-        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"Status\": \"0\",\n                \"Data\": [\n                    {\n                        \"Count\": 18,\n                        \"Timestamp\": 1675656420000\n                    },\n                    {\n                        \"Timestamp\": 1675656480000\n                    }\n                ]\n            },\n            {\n                \"Status\": \"1\",\n                \"Data\": [\n                    {\n                        \"Count\": 18,\n                        \"Timestamp\": 1675656420000\n                    },\n                    {\n                        \"Timestamp\": 1675656480000\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogStats\n<公共请求参数>\n\n{\n    \"StartTime\": 1600000000000,\n    \"EndTime\": 1600000010000,\n    \"EventBusId\": \"eb-xxx\",\n    \"GroupByStatus\": [\n        \"0\",\n        \"1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"Status\": \"abc\",\n                \"Data\": [\n                    {\n                        \"Count\": 0,\n                        \"Timestamp\": 0\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "demo2"
       }
     ],

@@ -51,8 +51,8 @@
     "CreateNotebookImage": [
       {
         "document": "保存镜像示例",
-        "input": "{\n    \"Kernels\": [\n        \"pytorch_py3\"\n    ],\n    \"ImageInfo\": {\n        \"ImageType\": \"TCR\",\n        \"ImageUrl\": \"ti.com/repo/notebook:test\",\n        \"RegistryRegion\": \"ap-gaungzhou\",\n        \"RegistryId\": \"xx\"\n    },\n    \"NotebookId\": \"nb-67423423534580347\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNotebookImage\n<公共请求参数>\n\n{\n    \"Kernels\": [\n        \"abc\"\n    ],\n    \"ImageInfo\": {\n        \"ImageType\": \"abc\",\n        \"ImageUrl\": \"abc\",\n        \"RegistryRegion\": \"abc\",\n        \"RegistryId\": \"abc\",\n        \"AllowSaveAllContent\": true\n    },\n    \"NotebookId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "保存镜像示例"
       }
     ],

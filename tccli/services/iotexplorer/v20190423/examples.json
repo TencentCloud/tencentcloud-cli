@@ -370,6 +370,14 @@
         "title": "用于获取网关可绑定或解绑的子产品"
       }
     ],
+    "DescribeInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstance\n<公共请求参数>\n\n{\n    \"ProjectId\": \"prj-1aoioii9\",\n    \"InstanceId\": \"ins-BoSq3gRJ27\",\n    \"ProductId\": \"-1\",\n    \"Include\": [\n        \"TotalDevice\",\n        \"ActivateDevice\",\n        \"UsedDeviceNum\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"InstanceId\": \"ins-BoSq3gRJ27\",\n            \"InstanceType\": 0,\n            \"Region\": \"ap-guangzhou\",\n            \"ZoneId\": \"\",\n            \"TotalDeviceNum\": 1000,\n            \"ProjectNum\": 0,\n            \"ProductNum\": 0,\n            \"UsedDeviceNum\": 15,\n            \"CreateTime\": \"2021-05-26T10:57:52+08:00\",\n            \"UpdateTime\": \"2021-07-20T14:52:16+08:00\",\n            \"ExpireTime\": \"0001-01-01T00:00:00Z\",\n            \"TotalDevice\": 15,\n            \"ActivateDevice\": 0\n        },\n        \"RequestId\": \"8bbbaa15-9918-4fd9-a70c-dbb47dwac0ca\"\n    }\n}",
+        "title": "实例详情"
+      }
+    ],
     "DescribeLoRaFrequency": [
       {
         "document": "获取LoRa自定义频点详情",

@@ -329,6 +329,13 @@
       "output": "DescribeDMSTablesResponse",
       "status": "online"
     },
+    "DescribeDataEngine": {
+      "document": "本接口根据名称用于获取数据引擎详细信息",
+      "input": "DescribeDataEngineRequest",
+      "name": "获取数据引擎详细信息",
+      "output": "DescribeDataEngineResponse",
+      "status": "online"
+    },
     "DescribeDataEngines": {
       "document": "本接口（DescribeDataEngines）用于查询DataEngines信息列表",
       "input": "DescribeDataEnginesRequest",
@@ -6195,6 +6202,43 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataEngineRequest": {
+      "document": "DescribeDataEngine请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "House名称",
+          "example": "testHouse",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataEngineResponse": {
+      "document": "DescribeDataEngine返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据引擎详细信息",
+          "example": "无",
+          "member": "DataEngineInfo",
+          "name": "DataEngine",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12736,7 +12780,7 @@
         },
         {
           "disabled": false,
-          "document": "任务当前的状态，0：初始化 1：任务运行中 2：任务执行成功 -1：任务执行失败 -3：用户手动终止。只有任务执行成功的情况下，才会返回任务执行的结果",
+          "document": "任务当前的状态，0：初始化 1：任务运行中 2：任务执行成功  3：数据写入中 4：排队中 -1：任务执行失败 -3：用户手动终止 。只有任务执行成功的情况下，才会返回任务执行的结果",
           "example": "2",
           "member": "int64",
           "name": "State",

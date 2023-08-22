@@ -525,7 +525,26 @@
     },
     "CheckRuleRequest": {
       "document": "CheckRule请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "Event信息",
+          "example": "event消息json字符串",
+          "member": "string",
+          "name": "Event",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "EventPattern信息",
+          "example": "EventPattern json字符串",
+          "member": "string",
+          "name": "EventPattern",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "CheckRuleResponse": {
@@ -1530,6 +1549,7 @@
           "example": "无",
           "member": "StatsLogResponse",
           "name": "Results",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

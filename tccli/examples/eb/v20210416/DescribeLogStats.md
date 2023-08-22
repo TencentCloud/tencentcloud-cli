@@ -5,7 +5,14 @@
 Input: 
 
 ```
-tccli eb DescribeLogStats --cli-unfold-argument ```
+tccli eb DescribeLogStats --cli-unfold-argument  \
+    --StartTime 1600000000000 \
+    --EndTime 1600000010000 \
+    --EventBusId eb-xxxx \
+    --Filter.0.Key host \
+    --Filter.0.Operator eq \
+    --Filter.0.Value 106.53.106.243
+```
 
 Output: 
 ```
@@ -22,7 +29,7 @@ Output:
                 ]
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "162d46e5-2968-4b4c-9e61-d84ab10f26a6"
     }
 }
 ```
@@ -34,7 +41,12 @@ Output:
 Input: 
 
 ```
-tccli eb DescribeLogStats --cli-unfold-argument ```
+tccli eb DescribeLogStats --cli-unfold-argument  \
+    --StartTime 1600000000000 \
+    --EndTime 1600000010000 \
+    --EventBusId eb-xxx \
+    --GroupByStatus 0 1
+```
 
 Output: 
 ```
@@ -42,31 +54,16 @@ Output:
     "Response": {
         "Results": [
             {
-                "Status": "0",
+                "Status": "abc",
                 "Data": [
                     {
-                        "Count": 18,
-                        "Timestamp": 1675656420000
-                    },
-                    {
-                        "Timestamp": 1675656480000
-                    }
-                ]
-            },
-            {
-                "Status": "1",
-                "Data": [
-                    {
-                        "Count": 18,
-                        "Timestamp": 1675656420000
-                    },
-                    {
-                        "Timestamp": 1675656480000
+                        "Count": 0,
+                        "Timestamp": 0
                     }
                 ]
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

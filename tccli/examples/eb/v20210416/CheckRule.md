@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli eb CheckRule --cli-unfold-argument ```
+tccli eb CheckRule --cli-unfold-argument  \
+    --Event xdd \
+    --EventPattern xddx
+```
 
 Output: 
 ```

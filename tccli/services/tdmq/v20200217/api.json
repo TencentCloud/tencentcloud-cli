@@ -3801,6 +3801,15 @@
           "name": "PulsarTopicType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "未消费消息过期时间，单位：秒，取值范围：60秒~15天。",
+          "example": "60",
+          "member": "uint64",
+          "name": "MsgTTL",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9600,6 +9609,15 @@
           "name": "ClusterId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "未消费消息过期时间，单位：秒，取值范围：60秒~15天。\n",
+          "example": "60",
+          "member": "uint64",
+          "name": "MsgTTL",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9613,7 +9631,7 @@
           "example": "3",
           "member": "uint64",
           "name": "Partitions",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9623,7 +9641,7 @@
           "example": "修改分区为3",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13539,7 +13557,7 @@
           "example": "test",
           "member": "string",
           "name": "AverageMsgSize",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13549,7 +13567,7 @@
           "example": "test",
           "member": "string",
           "name": "ConsumerCount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13559,7 +13577,7 @@
           "example": "test",
           "member": "string",
           "name": "LastConfirmedEntry",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13569,7 +13587,7 @@
           "example": "test",
           "member": "string",
           "name": "LastLedgerCreatedTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13579,7 +13597,7 @@
           "example": "test",
           "member": "string",
           "name": "MsgRateIn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13589,7 +13607,7 @@
           "example": "test",
           "member": "string",
           "name": "MsgRateOut",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13599,7 +13617,7 @@
           "example": "test",
           "member": "string",
           "name": "MsgThroughputIn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13609,7 +13627,7 @@
           "example": "test",
           "member": "string",
           "name": "MsgThroughputOut",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13619,7 +13637,7 @@
           "example": "test",
           "member": "string",
           "name": "NumberOfEntries",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13629,7 +13647,7 @@
           "example": "test",
           "member": "int64",
           "name": "Partitions",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -13639,7 +13657,7 @@
           "example": "test",
           "member": "string",
           "name": "ProducerCount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13649,7 +13667,7 @@
           "example": "test",
           "member": "string",
           "name": "TotalSize",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13659,7 +13677,7 @@
           "example": "test",
           "member": "PartitionsTopic",
           "name": "SubTopicSets",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -13669,7 +13687,7 @@
           "example": "test",
           "member": "uint64",
           "name": "TopicType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -13679,7 +13697,7 @@
           "example": "test",
           "member": "string",
           "name": "EnvironmentId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13689,7 +13707,7 @@
           "example": "test",
           "member": "string",
           "name": "TopicName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13699,7 +13717,7 @@
           "example": "test",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13709,7 +13727,7 @@
           "example": "test",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13719,7 +13737,7 @@
           "example": "test",
           "member": "datetime",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13729,7 +13747,7 @@
           "example": "5000",
           "member": "string",
           "name": "ProducerLimit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13739,7 +13757,7 @@
           "example": "5000",
           "member": "string",
           "name": "ConsumerLimit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13749,7 +13767,17 @@
           "example": "1",
           "member": "int64",
           "name": "PulsarTopicType",
-          "required": true,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "未消费消息过期时间，单位：秒\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60",
+          "member": "uint64",
+          "name": "MsgTTL",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         }

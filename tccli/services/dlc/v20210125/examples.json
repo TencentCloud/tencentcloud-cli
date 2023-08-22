@@ -376,6 +376,14 @@
         "title": "DMS查询表列表"
       }
     ],
+    "DescribeDataEngine": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataEngine\n<公共请求参数>\n\n{\n    \"DataEngineName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataEngine\": {\n            \"MaxClusters\": 0,\n            \"DefaultDataEngine\": true,\n            \"UpdateTime\": 0,\n            \"SpendAfter\": 0,\n            \"DataEngineId\": \"xx\",\n            \"CidrBlock\": \"xx\",\n            \"SubAccountUin\": \"xx\",\n            \"AutoResume\": true,\n            \"ClusterType\": \"xx\",\n            \"QuotaId\": \"xx\",\n            \"State\": 0,\n            \"DataEngineName\": \"xx\",\n            \"Mode\": 0,\n            \"Message\": \"xx\",\n            \"CreateTime\": 0,\n            \"EngineType\": \"xx\",\n            \"MinClusters\": 0,\n            \"Size\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "test"
+      }
+    ],
     "DescribeDataEngines": [
       {
         "document": "查询DataEngines信息列表",

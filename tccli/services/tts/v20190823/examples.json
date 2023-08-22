@@ -3,7 +3,7 @@
     "CreateTtsTask": [
       {
         "document": "长文本语音合成请求",
-        "input": "POST / HTTP/1.1\nHost: tts.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: CreateTtsTask\nX-TC-Timestamp: 1599140162\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhxxx2gpbx2/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=0615f73a69c6b054affd69e4b1cbb68fbe84ae8024a9347df4aa5054933adac8\n<公共请求参数>\n\n{\n    \"Text\": \"欢迎使用腾讯云长文本语音合成\",\n    \"ModelType\": 1,\n    \"Volume\": 0,\n    \"Speed\": 0,\n    \"ProjectId\": 0,\n    \"VoiceType\": 101001,\n    \"PrimaryLanguage\": 1,\n    \"SampleRate\": 16000,\n    \"Codec\": \"mp3\",\n    \"CallbackUrl\": \"http://www.callback.com/tts_call\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTtsTask\n<公共请求参数>\n\n{\n    \"Text\": \"欢迎使用腾讯云长文本语音合成\",\n    \"Volume\": 0,\n    \"Speed\": 0,\n    \"ProjectId\": 0,\n    \"ModelType\": 1,\n    \"VoiceType\": 101001,\n    \"PrimaryLanguage\": 1,\n    \"SampleRate\": 16000,\n    \"Codec\": \"mp3\",\n    \"CallbackUrl\": \"http://www.callback.com/tts_call\",\n    \"EnableSubtitle\": true,\n    \"VoiceoverDialogueSplit\": false\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fabc2d63-a1b7-40a0-b4c3-640f78974919\",\n        \"Data\": {\n            \"TaskId\": \"gz-5faa7bc8-6e78-46b9-90ea-5ebba32aa04c\"\n        }\n    }\n}",
         "title": "API调用"
       },
@@ -17,8 +17,8 @@
     "DescribeTtsTaskStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tts.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: DescribeTtsTaskStatus\nX-TC-Timestamp: 1599140162\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhxxx2gpbx2/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=0615f73a69c6b054affd69e4b1cbb68fbe84ae8024a9347df4aa5054933adac8\n<公共请求参数>\n\n{\n    \"TaskId\": \"ed461a019355c5cd1ce31ab4dfb8cb12\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ed461a0-19355c5-cd1ce31-ab4dfb8cb12\",\n        \"Data\": {\n            \"TaskId\": \"ed461a019355c5cd1ce31ab4dfb8cb12\",\n            \"Status\": 0,\n            \"StatusStr\": \"waiting in queue\",\n            \"ResultUrl\": \"\",\n            \"ErrorMsg\": \"\"\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTtsTaskStatus\n<公共请求参数>\n\n{\n    \"TaskId\": \"gz-855e1e59-35c2-4e43-b15a-3409c515d62e\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"28e1a307-0381-4e56-863d-42542993bf87\",\n        \"Data\": {\n            \"TaskId\": \"gz-855e1e59-35c2-4e43-b15a-3409c515d62e\",\n            \"Status\": 0,\n            \"StatusStr\": \"waiting in queue\",\n            \"ResultUrl\": \"\",\n            \"Subtitles\": [],\n            \"ErrorMsg\": \"\"\n        }\n    }\n}",
         "title": "API调用"
       }
     ],

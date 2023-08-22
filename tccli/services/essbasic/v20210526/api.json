@@ -536,8 +536,7 @@
           "member": "UserThreeFactor",
           "name": "UserInfo",
           "required": true,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -546,8 +545,7 @@
           "member": "bool",
           "name": "CertInfoCallback",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -556,8 +554,7 @@
           "member": "bool",
           "name": "UserDefineSeal",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -566,8 +563,7 @@
           "member": "bool",
           "name": "SealImgCallback",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -576,8 +572,7 @@
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -586,8 +581,16 @@
           "member": "string",
           "name": "VerifyChannels",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "设置用户开通自动签时是否绑定个人自动签账号许可。一旦绑定后，将扣减购买的个人自动签账号许可一次（1年有效期），不可解绑释放。不传默认为绑定自动签账号许可。 0-绑定个人自动签账号许可，开通后将扣减购买的个人自动签账号许可一次 1-不绑定，发起合同时将按标准合同套餐进行扣减\t",
+          "example": "无",
+          "member": "int64",
+          "name": "LicenseType",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -2214,6 +2217,15 @@
           "name": "EnableAutoSign",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "设置用户开通自动签时是否绑定个人自动签账号许可。一旦绑定后，将扣减购买的个人自动签账号许可一次（1年有效期），不可解绑释放。不传默认为绑定自动签账号许可。 0-绑定个人自动签账号许可，开通后将扣减购买的个人自动签账号许可一次 1-不绑定，发起合同时将按标准合同套餐进行扣减\t",
+          "example": "无",
+          "member": "int64",
+          "name": "LicenseType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2227,6 +2239,7 @@
           "example": "无",
           "member": "string",
           "name": "SealId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2271,7 +2284,7 @@
         },
         {
           "disabled": false,
-          "document": "非必须，解除协议的本企业签署人列表，默认使用原流程的签署人列表；当解除协议的签署人与原流程的签署人不能相同时（例如原流程签署人离职了），需要指定本企业的其他签署人来替换原流程中的原签署人，注意需要指明ApproverNumber来代表需要替换哪一个签署人，解除协议的签署人数量不能多于原流程的签署人数量",
+          "document": "非必须，解除协议的本企业签署人列表，默认使用原流程的签署人列表；当解除协议的签署人与原流程的签署人不能相同时（例如原流程签署人离职了），需要指定本企业的其他签署人来替换原流程中的原签署人，注意需要指明ApproverNumber来代表需要替换哪一个签署人，已转发的签署人不包含在内，解除协议的签署人数量不能多于原流程的签署人数量",
           "example": "无",
           "member": "ReleasedApprover",
           "name": "ReleasedApprovers",
@@ -3232,6 +3245,16 @@
           "member": "int64",
           "name": "LicenseTo",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设置用户开通自动签时是否绑定个人自动签账号许可。一旦绑定后，将扣减购买的个人自动签账号许可一次（1年有效期），不可解绑释放。不传默认为绑定自动签账号许可。 0-绑定个人自动签账号许可，开通后将扣减购买的个人自动签账号许可一次 1-不绑定，发起合同时将按标准合同套餐进行扣减\t",
+          "example": "无",
+          "member": "int64",
+          "name": "LicenseType",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },

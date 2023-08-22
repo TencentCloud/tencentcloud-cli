@@ -2045,42 +2045,50 @@
       "members": [
         {
           "disabled": false,
-          "document": "cuDNN的版本",
+          "document": "cuDNN的版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "7.5.0",
           "member": "string",
           "name": "Version",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "cuDNN的名字",
+          "document": "cuDNN的名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "libcudnn7_7.5.0.56-1+cuda10.1_amd64.deb",
           "member": "string",
           "name": "Name",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "cuDNN的Doc名字",
+          "document": "cuDNN的Doc名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "libcudnn7-doc_7.5.0.56-1+cuda10.1_amd64.deb",
           "member": "string",
           "name": "DocName",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "cuDNN的Dev名字",
+          "document": "cuDNN的Dev名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "libcudnn7-dev_7.5.0.56-1+cuda10.1_amd64.deb",
           "member": "string",
           "name": "DevName",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "CancelClusterReleaseRequest": {
       "document": "CancelClusterRelease请求参数结构体",
@@ -9280,6 +9288,7 @@
           "example": "无",
           "member": "NodePool",
           "name": "NodePool",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -9325,7 +9334,7 @@
           "example": "无",
           "member": "NodePool",
           "name": "NodePoolSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9335,7 +9344,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13453,24 +13462,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "GPU驱动或者CUDA的版本",
+          "document": "GPU驱动或者CUDA的版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "418.126.02",
           "member": "string",
           "name": "Version",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "GPU驱动或者CUDA的名字",
+          "document": "GPU驱动或者CUDA的名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NVIDIA-Linux-x86_64-418.126.02.run",
           "member": "string",
           "name": "Name",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "ECMEnhancedService": {
       "document": "ECM增强服务",
@@ -17742,6 +17755,15 @@
           "name": "DockerGraphPath",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "base64编码后的自定义脚本",
+          "example": "dG91Y2ggL3RtcC9iZWZvcmU=",
+          "member": "string",
+          "name": "PreStartUserScript",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -18388,7 +18410,7 @@
           "example": "np-xxx",
           "member": "string",
           "name": "NodePoolId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18398,7 +18420,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18408,7 +18430,7 @@
           "example": "cls-xxx",
           "member": "string",
           "name": "ClusterInstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18418,7 +18440,7 @@
           "example": "normal",
           "member": "string",
           "name": "LifeState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18428,7 +18450,7 @@
           "example": "asc-xxx",
           "member": "string",
           "name": "LaunchConfigurationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18438,7 +18460,7 @@
           "example": "asg-xxx",
           "member": "string",
           "name": "AutoscalingGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18448,7 +18470,7 @@
           "example": "无",
           "member": "Label",
           "name": "Labels",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -18458,7 +18480,7 @@
           "example": "无",
           "member": "Taint",
           "name": "Taints",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -18468,7 +18490,7 @@
           "example": "{\"AutoscalingAdded\":{\"Initializing\":0,\"Joining\":0,\"Normal\":1,\"Sh",
           "member": "NodeCountSummary",
           "name": "NodeCountSummary",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -18478,7 +18500,7 @@
           "example": "enabled",
           "member": "string",
           "name": "AutoscalingGroupStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18488,7 +18510,7 @@
           "example": "5",
           "member": "int64",
           "name": "MaxNodesNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -18498,7 +18520,7 @@
           "example": "1",
           "member": "int64",
           "name": "MinNodesNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -18508,7 +18530,7 @@
           "example": "3",
           "member": "int64",
           "name": "DesiredNodesNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -18518,7 +18540,7 @@
           "example": "tlinux2.4x86_64",
           "member": "string",
           "name": "NodePoolOs",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18528,7 +18550,7 @@
           "example": "GENERAL",
           "member": "string",
           "name": "OsCustomizeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18538,7 +18560,7 @@
           "example": "img-xxx",
           "member": "string",
           "name": "ImageId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18548,7 +18570,7 @@
           "example": "16",
           "member": "int64",
           "name": "DesiredPodNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -18558,7 +18580,7 @@
           "example": "无",
           "member": "string",
           "name": "UserScript",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18568,7 +18590,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -18578,7 +18600,7 @@
           "example": "false",
           "member": "bool",
           "name": "DeletionProtection",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -18588,7 +18610,7 @@
           "example": "{\"MountTarget\":\"\",\"DataDiskPartition\":null,\"DockerGraphPath\":\"\",",
           "member": "InstanceExtraArgs",
           "name": "ExtraArgs",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -18598,7 +18620,7 @@
           "example": "无",
           "member": "GPUArgs",
           "name": "GPUArgs",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -18608,7 +18630,7 @@
           "example": "/var/lib/docker",
           "member": "string",
           "name": "DockerGraphPath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18618,7 +18640,7 @@
           "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -18628,8 +18650,28 @@
           "example": "0",
           "member": "int64",
           "name": "Unschedulable",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-05-01 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义脚本,在UserScript前执行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PreStartUserScript",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

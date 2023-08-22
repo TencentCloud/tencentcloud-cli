@@ -1,3 +1,458 @@
+# Release 3.0.834.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 25 次发布
+
+发布时间：2023-08-22 01:08:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [BillDetailAssociatedOrder](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillDetailAssociatedOrder)
+* [BillDetailComponentConfig](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillDetailComponentConfig)
+
+修改数据结构：
+
+* [BillDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillDetail)
+
+	* 新增成员：AssociatedOrder, Formula, FormulaUrl
+
+	* <font color="#dd0000">**修改成员**：</font>PriceInfo
+
+* [BillDetailComponent](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillDetailComponent)
+
+	* 新增成员：ComponentConfig
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 39 次发布
+
+发布时间：2023-08-22 01:15:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAlarm](http://document.tencentcloudapi.woa.com/document/product/614/56466)
+
+	* 新增入参：MultiConditions
+
+	* <font color="#dd0000">**修改入参**：</font>Condition
+
+* [CreateAlarmNotice](http://document.tencentcloudapi.woa.com/document/product/614/56465)
+
+	* 新增入参：NoticeRules
+
+	* <font color="#dd0000">**修改入参**：</font>Type
+
+* [ModifyAlarm](http://document.tencentcloudapi.woa.com/document/product/614/56459)
+
+	* 新增入参：AlarmLevel, MultiConditions
+
+* [ModifyAlarmNotice](http://document.tencentcloudapi.woa.com/document/product/614/56458)
+
+	* 新增入参：NoticeRules
+
+
+新增数据结构：
+
+* [FilePathInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#FilePathInfo)
+* [MultiCondition](http://document.tencentcloudapi.woa.com/document/product/614/56471#MultiCondition)
+* [NoticeRule](http://document.tencentcloudapi.woa.com/document/product/614/56471#NoticeRule)
+
+修改数据结构：
+
+* [AlarmInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#AlarmInfo)
+
+	* 新增成员：MultiConditions
+
+* [AlarmNotice](http://document.tencentcloudapi.woa.com/document/product/614/56471#AlarmNotice)
+
+	* 新增成员：NoticeRules
+
+* [ContainerFileInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#ContainerFileInfo)
+
+	* 新增成员：FilePaths, CustomLabels
+
+* [ContainerStdoutInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#ContainerStdoutInfo)
+
+	* 新增成员：CustomLabels
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 66 次发布
+
+发布时间：2023-08-22 01:21:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/81654)
+
+
+
+## 事件总线(eb) 版本：2021-04-16
+
+### 第 9 次发布
+
+发布时间：2023-08-22 01:23:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CheckRule](http://document.tencentcloudapi.woa.com/document/product/1359/67698)
+
+	* 新增入参：Event, EventPattern
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 22 次发布
+
+发布时间：2023-08-22 01:25:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreatePreparedPersonalEsign](http://document.tencentcloudapi.woa.com/document/product/1668/79307)
+
+	* 新增入参：LicenseType
+
+* [CreateWebThemeConfig](http://document.tencentcloudapi.woa.com/document/product/1668/81398)
+
+	* 新增入参：Agent
+
+* [DescribeUserAutoSignStatus](http://document.tencentcloudapi.woa.com/document/product/1668/79354)
+
+	* 新增出参：LicenseType
+
+
+修改数据结构：
+
+* [AutoSignConfig](http://document.tencentcloudapi.woa.com/document/product/1668/79360#AutoSignConfig)
+
+	* 新增成员：LicenseType
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 81 次发布
+
+发布时间：2023-08-22 01:25:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreatePreparedPersonalEsign](http://document.tencentcloudapi.woa.com/document/product/1595/81620)
+
+	* 新增入参：LicenseType
+
+* [ChannelDescribeUserAutoSignStatus](http://document.tencentcloudapi.woa.com/document/product/1595/81609)
+
+	* 新增出参：LicenseType
+
+
+修改数据结构：
+
+* [AutoSignConfig](http://document.tencentcloudapi.woa.com/document/product/1595/75258#AutoSignConfig)
+
+	* 新增成员：LicenseType
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 25 次发布
+
+发布时间：2023-08-22 01:29:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeInstance](http://document.tencentcloudapi.woa.com/document/product/1081/81656)
+
+新增数据结构：
+
+* [InstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1081/34988#InstanceDetail)
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 34 次发布
+
+发布时间：2023-08-22 01:33:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [LiveStreamTagRecognitionResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamTagRecognitionResult)
+
+修改数据结构：
+
+* [LiveStreamAiRecognitionResultItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamAiRecognitionResultItem)
+
+	* 新增成员：TagRecognitionResultSet
+
+
+
+
+## 号码保护(npp) 版本：2019-08-23
+
+### 第 2 次发布
+
+发布时间：2023-08-22 01:34:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* Get400Cdr
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 38 次发布
+
+发布时间：2023-08-22 01:37:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [UpdateTrigger](http://document.tencentcloudapi.woa.com/document/product/583/81657)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 61 次发布
+
+发布时间：2023-08-22 01:42:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTopic](http://document.tencentcloudapi.woa.com/document/product/1179/46088)
+
+	* 新增入参：MsgTTL
+
+* [ModifyTopic](http://document.tencentcloudapi.woa.com/document/product/1179/46085)
+
+	* 新增入参：MsgTTL
+
+
+修改数据结构：
+
+* [Topic](http://document.tencentcloudapi.woa.com/document/product/1179/46089#Topic)
+
+	* 新增成员：MsgTTL
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 31 次发布
+
+发布时间：2023-08-22 01:44:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateNotebookImage](http://document.tencentcloudapi.woa.com/document/product/851/81416)
+
+	* <font color="#dd0000">**修改入参**：</font>Kernels
+
+
+修改数据结构：
+
+* [ImageInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ImageInfo)
+
+	* 新增成员：AllowSaveAllContent, ImageName
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 79 次发布
+
+发布时间：2023-08-22 01:45:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/457/49431)
+
+	* 新增入参：PreStartUserScript
+
+
+修改数据结构：
+
+* [NodePool](http://document.tencentcloudapi.woa.com/document/product/457/31866#NodePool)
+
+	* 新增成员：CreateTime, PreStartUserScript
+
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 36 次发布
+
+发布时间：2023-08-22 01:47:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [TsfConfigCenter](http://document.tencentcloudapi.woa.com/document/product/649/36099#TsfConfigCenter)
+
+修改数据结构：
+
+* [ConfigRelease](http://document.tencentcloudapi.woa.com/document/product/649/36099#ConfigRelease)
+
+	* 新增成员：ConfigCenters
+
+* [ConfigReleaseLog](http://document.tencentcloudapi.woa.com/document/product/649/36099#ConfigReleaseLog)
+
+	* 新增成员：ReleasedConfigCenter
+
+
+
+
+## 语音合成(tts) 版本：2019-08-23
+
+### 第 7 次发布
+
+发布时间：2023-08-22 01:48:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTtsTask](http://document.tencentcloudapi.woa.com/document/product/1073/57373)
+
+	* 新增入参：EnableSubtitle
+
+
+修改数据结构：
+
+* [DescribeTtsTaskStatusRespData](http://document.tencentcloudapi.woa.com/document/product/1073/57374#DescribeTtsTaskStatusRespData)
+
+	* 新增成员：Subtitles
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 47 次发布
+
+发布时间：2023-08-22 01:51:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetAttackTotalCount](http://document.tencentcloudapi.woa.com/document/product/627/81658)
+
+修改数据结构：
+
+* [DomainsPartInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#DomainsPartInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>Weights, XFFReset
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 18 次发布
+
+发布时间：2023-08-22 01:51:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RuleGroup](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleGroup)
+
+	* 新增成员：CreateTime
+
+
+
+
 # Release 3.0.833.1
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07

@@ -43,11 +43,11 @@
       "status": "online"
     },
     "Get400Cdr": {
-      "document": "直拨话单获取接口",
+      "document": "接口参数不规范，且目前无客户使用\n\n直拨话单获取接口",
       "input": "Get400CdrRequest",
       "name": "直拨话单获取接口",
       "output": "Get400CdrResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetVirtualNum": {
       "document": "直拨获取中间号（App 使用方发起）",

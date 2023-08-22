@@ -124,6 +124,15 @@
         },
         {
           "disabled": false,
+          "document": "是否开启时间戳功能，默认为false。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableSubtitle",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
           "document": "旁白与对白文本解析，分别合成相应风格（仅适用于旁对白音色10510000、100510000），默认 false",
           "example": "false",
           "member": "bool",
@@ -196,7 +205,7 @@
           "example": "\"gz-e049edb8-76ce-4fe7-9e2f-fe3b7a1a4683\"",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -206,7 +215,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -216,7 +225,7 @@
           "example": "\"success\"",
           "member": "string",
           "name": "StatusStr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -226,8 +235,18 @@
           "example": "\"http://test.cos.ap-guangzhou.myqcloud.com\"",
           "member": "string",
           "name": "ResultUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间戳信息，若未开启时间戳，则返回空数组。",
+          "example": "无",
+          "member": "Subtitle",
+          "name": "Subtitles",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -236,7 +255,7 @@
           "example": "\"internal error\"",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -252,7 +271,7 @@
           "example": "无",
           "member": "DescribeTtsTaskStatusRespData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

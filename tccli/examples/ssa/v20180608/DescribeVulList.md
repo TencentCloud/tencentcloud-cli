@@ -14,51 +14,51 @@ Output:
 {
     "Response": {
         "Data": {
-            "Total": 0,
             "List": [
                 {
-                    "VulDetail": "xx",
-                    "AssetSubType": "xx",
-                    "VulSource": "xx",
-                    "VulRepairPlan": "xx",
-                    "ImpactAsset": "xx",
-                    "IsAssetDeleted": "xx",
+                    "Id": "abc",
+                    "VulName": "abc",
                     "Type": 0,
-                    "Status": 0,
-                    "VulUrl": "xx",
-                    "VulRefLink": "xx",
-                    "VulName": "xx",
-                    "SsaAssetCategory": 0,
-                    "UniqId": "xx",
-                    "AssetType": "xx",
-                    "Vpcid": "xx",
-                    "OldIdMd5": "xx",
-                    "DiscoverTime": "xx",
                     "Level": 0,
-                    "ImpactAssetName": "xx",
-                    "Region": "xx",
-                    "PrivateIpAddresses": [
-                        "xx"
-                    ],
-                    "Time": "xx",
-                    "OriginId": 1,
-                    "PublicIpAddresses": [
-                        "xx"
-                    ],
-                    "YzHostId": 1,
-                    "AffectedUrl": "xx",
-                    "IsOpen": true,
-                    "OperateTime": "xx",
-                    "AssetIpAll": [
-                        "xx"
-                    ],
+                    "Status": 0,
+                    "Time": "abc",
                     "ImpactAssetNum": 0,
-                    "VulPath": "xx",
-                    "Id": "xx"
+                    "ImpactAsset": "abc",
+                    "ImpactAssetName": "abc",
+                    "VulDetail": "abc",
+                    "VulRefLink": "abc",
+                    "OldIdMd5": "abc",
+                    "UniqId": "abc",
+                    "OperateTime": "abc",
+                    "IsAssetDeleted": "abc",
+                    "DiscoverTime": "abc",
+                    "OriginId": 1,
+                    "Region": "abc",
+                    "Vpcid": "abc",
+                    "AssetType": "abc",
+                    "AssetSubType": "abc",
+                    "AssetIpAll": [
+                        "abc"
+                    ],
+                    "PublicIpAddresses": [
+                        "abc"
+                    ],
+                    "PrivateIpAddresses": [
+                        "abc"
+                    ],
+                    "VulSource": "abc",
+                    "AffectedUrl": "abc",
+                    "SsaAssetCategory": 0,
+                    "VulUrl": "abc",
+                    "IsOpen": true,
+                    "YzHostId": 1,
+                    "VulRepairPlan": "abc",
+                    "VulPath": "abc"
                 }
-            ]
+            ],
+            "Total": 0
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```
