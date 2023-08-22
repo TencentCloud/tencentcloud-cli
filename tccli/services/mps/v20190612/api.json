@@ -1490,7 +1490,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "插入形式，可选值：\n<li>subtitle-stream：插入字幕轨道</li>\n<li>close-caption：编码到SEI帧</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "插入形式，可选值：\n<li>subtitle-stream：插入字幕轨道</li>\n<li>close-caption-708：CEA-708字幕编码到SEI帧</li>\n<li>close-caption-608：CEA-608字幕编码到SEI帧</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Type",
@@ -13928,11 +13928,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "结果的类型，取值范围：\n<li>FaceRecognition：人脸识别，</li>\n<li>AsrWordsRecognition：语音关键词识别，</li>\n<li>OcrWordsRecognition：文本关键词识别，</li>\n<li>AsrFullTextRecognition：语音全文识别，</li>\n<li>OcrFullTextRecognition：文本全文识别。</li>\n<li>TransTextRecognition：语音翻译。</li>",
+          "document": "结果的类型，取值范围：\n<li>FaceRecognition：人脸识别，</li>\n<li>AsrWordsRecognition：语音关键词识别，</li>\n<li>OcrWordsRecognition：文本关键词识别，</li>\n<li>AsrFullTextRecognition：语音全文识别，</li>\n<li>OcrFullTextRecognition：文本全文识别。</li>\n<li>TransTextRecognition：语音翻译。</li>\n<li>TagRecognition：精彩打点。</li>",
           "example": "FaceRecognition",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13942,7 +13942,7 @@
           "example": "NULL",
           "member": "LiveStreamFaceRecognitionResult",
           "name": "FaceRecognitionResultSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13952,7 +13952,7 @@
           "example": "NULL",
           "member": "LiveStreamAsrWordsRecognitionResult",
           "name": "AsrWordsRecognitionResultSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13962,7 +13962,7 @@
           "example": "NULL",
           "member": "LiveStreamOcrWordsRecognitionResult",
           "name": "OcrWordsRecognitionResultSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13972,7 +13972,7 @@
           "example": "NULL",
           "member": "LiveStreamAsrFullTextRecognitionResult",
           "name": "AsrFullTextRecognitionResultSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13982,7 +13982,7 @@
           "example": "NULL",
           "member": "LiveStreamOcrFullTextRecognitionResult",
           "name": "OcrFullTextRecognitionResultSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13992,9 +13992,19 @@
           "example": "NULL",
           "member": "LiveStreamTransTextRecognitionResult",
           "name": "TransTextRecognitionResultSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "打点结果，当Type 为 TagRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "LiveStreamTagRecognitionResult",
+          "name": "TagRecognitionResultSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -14762,6 +14772,52 @@
           "name": "Url",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LiveStreamTagRecognitionResult": {
+      "document": "直播 AI 打点识别结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "打点事件。",
+          "example": "击杀黑暗暴君",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别片段起始的 PTS 时间，单位：秒。",
+          "example": "899.916",
+          "member": "float",
+          "name": "StartPtsTime",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别片段终止的 PTS 时间，单位：秒。",
+          "example": "899.916",
+          "member": "float",
+          "name": "EndPtsTime",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别片段置信度。取值：0~100。",
+          "example": "100",
+          "member": "float",
+          "name": "Confidence",
+          "output_required": true,
+          "type": "float",
           "value_allowed_null": false
         }
       ],

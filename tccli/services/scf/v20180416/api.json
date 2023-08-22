@@ -308,6 +308,13 @@
       "output": "UpdateNamespaceResponse",
       "status": "online"
     },
+    "UpdateTrigger": {
+      "document": "支持触发器配置更新。\n默认接口请求频率限制：20次/秒\n\n注意：目前只支持timer触发器和ckafka触发器更新！\n\ntimer触发器和ckafka触发器支持更新字段有：Enable、TriggerDesc、Description、CustomArgument。\n\ntimer触发器TriggerDesc支持5段式和7段式的更新。\n\nckafka触发器TriggerDesc支持Retry、MaxMsgNum、TimeOut参数更新，不传值表示原值不变，传值不能为空。\n\nEnable 触发器开启或关闭，传参为OPEN为开启，CLOSE为关闭。不传值表示原值不变，传值不能为空。\n\nDescription 触发器描述，不传值保持原值不变，传值为空则为空。\n\nCustomArgument 触发器用户附加信息（注意：只有timer触发器展示），不传值保持原值不变，传值为空则为空。",
+      "input": "UpdateTriggerRequest",
+      "name": "更新触发器",
+      "output": "UpdateTriggerResponse",
+      "status": "online"
+    },
     "UpdateTriggerStatus": {
       "document": "更新触发器状态的值",
       "input": "UpdateTriggerStatusRequest",
@@ -6804,6 +6811,105 @@
     },
     "UpdateNamespaceResponse": {
       "document": "UpdateNamespace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTriggerRequest": {
+      "document": "UpdateTrigger请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "函数名称",
+          "example": "FuncName",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "触发器名称",
+          "example": "TriggerName",
+          "member": "string",
+          "name": "TriggerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "触发器类型",
+          "example": "timer",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "触发器开启或关闭，传参为OPEN为开启，CLOSE为关闭",
+          "example": "OPEN",
+          "member": "string",
+          "name": "Enable",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数的版本，默认为 $LATEST，建议填写 [$DEFAULT](https://cloud.tencent.com/document/product/583/36149#.E9.BB.98.E8.AE.A4.E5.88.AB.E5.90.8D)方便后续进行版本的灰度发布。",
+          "example": "$DEFAULT",
+          "member": "string",
+          "name": "Qualifier",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数的命名空间",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "TriggerDesc参数",
+          "example": "*/1 * * * * * *",
+          "member": "string",
+          "name": "TriggerDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "触发器描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户附加信息",
+          "example": "无",
+          "member": "string",
+          "name": "CustomArgument",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTriggerResponse": {
+      "document": "UpdateTrigger返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

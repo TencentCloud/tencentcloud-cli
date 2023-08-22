@@ -287,6 +287,13 @@
       "output": "DescribeGatewaySubProductsResponse",
       "status": "online"
     },
+    "DescribeInstance": {
+      "document": "公共实例过期时间 0001-01-01T00:00:00Z，公共实例是永久有效",
+      "input": "DescribeInstanceRequest",
+      "name": "获取实例详情",
+      "output": "DescribeInstanceResponse",
+      "status": "online"
+    },
     "DescribeLoRaFrequency": {
       "document": "提供查询LoRa自定义频点详情的能力",
       "input": "DescribeLoRaFrequencyRequest",
@@ -3687,6 +3694,70 @@
       ],
       "type": "object"
     },
+    "DescribeInstanceRequest": {
+      "document": "DescribeInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-46mU9M9oLd9",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "附加查询返回包含字段值，不传返回0，有效值 ProductNum、ProjectNum、UsedDeviceNum、TotalDevice、ActivateDevice",
+          "example": "[\"ProjectNum\",\"ProductNum\"]",
+          "member": "string",
+          "name": "Include",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "test",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品ID，-1 代表全部产品",
+          "example": "test",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceResponse": {
+      "document": "DescribeInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceDetail",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLoRaFrequencyRequest": {
       "document": "DescribeLoRaFrequency请求参数结构体",
       "members": [
@@ -5906,6 +5977,142 @@
         }
       ],
       "type": "object"
+    },
+    "InstanceDetail": {
+      "document": "实例信息\n公共实例过期时间 0001-01-01T00:00:00Z，公共实例是永久有效",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型（0 公共实例 1 标准企业实例 2专享企业实例）",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域字母缩写",
+          "example": "test",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "区域全拼",
+          "example": "test",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支持设备总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalDeviceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "以注册设备数",
+          "example": "1",
+          "member": "int64",
+          "name": "UsedDeviceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "项目数",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品数",
+          "example": "1",
+          "member": "int64",
+          "name": "ProductNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "1234243",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "234132432",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间，公共实例过期时间 0001-01-01T00:00:00Z，公共实例是永久有效",
+          "example": "23142134123",
+          "member": "datetime_iso",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总设备数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalDevice",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "激活设备数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ActivateDevice",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ListEventHistoryRequest": {
       "document": "ListEventHistory请求参数结构体",

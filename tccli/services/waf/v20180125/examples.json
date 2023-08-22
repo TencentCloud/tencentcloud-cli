@@ -330,6 +330,14 @@
         "title": "攻击日志统计详情"
       }
     ],
+    "GetAttackTotalCount": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=GetAttackTotalCount\n&StartTime=2021-02-01T00:00:00+08:00\n&EndTime=2021-02-25T23:59:59+08:00\n&Domain=xxx\n&QueryString=yyy\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 271652,\n        \"RequestId\": \"9b02bf9e-c89c-42c3-9ae1-685f968fa02d\"\n    }\n}",
+        "title": "攻击总次数"
+      }
+    ],
     "ModifyAccessPeriod": [
       {
         "document": "",

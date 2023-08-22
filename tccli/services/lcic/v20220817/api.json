@@ -3538,7 +3538,7 @@
           "example": "123456",
           "member": "uint64",
           "name": "RoomId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3548,7 +3548,47 @@
           "example": "test",
           "member": "string",
           "name": "UserId",
-          "required": false,
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户设备类型。0: Unknown; 1: Windows; 2: macOS; 3: Android; 4: iOS; 5: Web; 6: Mobile webpage; 7: Weixin Mini Program.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "uint64",
+          "name": "Device",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "录制时长。单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "uint64",
+          "name": "Duration",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "录制文件大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12334",
+          "member": "uint64",
+          "name": "RecordSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "录制url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://url/f0.mp4",
+          "member": "string",
+          "name": "RecordUrl",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -5211,7 +5251,7 @@
         },
         {
           "disabled": false,
-          "document": "最高房间内人数（包括老师），0表示不限制，默认为0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最高房间内人数（不包括老师），0表示不限制，默认为0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "MaxMicNumber",

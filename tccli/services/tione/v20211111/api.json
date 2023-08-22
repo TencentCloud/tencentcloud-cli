@@ -2380,15 +2380,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "要保存的kernel数组",
-          "example": "无",
-          "member": "string",
-          "name": "Kernels",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
           "document": "镜像信息",
           "example": "无",
           "member": "ImageInfo",
@@ -2404,6 +2395,15 @@
           "name": "NotebookId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要保存的kernel数组",
+          "example": "无",
+          "member": "string",
+          "name": "Kernels",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7262,6 +7262,28 @@
           "member": "string",
           "name": "RegistryId",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否允许导出全部内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "AllowSaveAllContent",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "LLM",
+          "member": "string",
+          "name": "ImageName",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true

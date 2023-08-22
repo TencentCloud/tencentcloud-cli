@@ -358,6 +358,14 @@
         "title": "更新命名空间"
       }
     ],
+    "UpdateTrigger": [
+      {
+        "document": "接口调用示例",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTrigger\n<公共请求参数>\n\n{\n    \"Enable\": \"CLOSE\",\n    \"FunctionName\": \"helloworld-xxxxxxxx\",\n    \"TriggerName\": \"\\t\\nSCF-timer-xxxxxxxx\",\n    \"Type\": \"timer\",\n    \"Qualifier\": \"$DEFAULT\",\n    \"Namespace\": \"default\",\n    \"TriggerDesc\": \"0 0 0 */2 * * *\",\n    \"Description\": \"测试\",\n    \"CustomArgument\": \"中文测试\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"375d4028-xxxx-xxxxf-xxxx-2331cb974fc3\"\n    }\n}",
+        "title": "接口调用示例"
+      }
+    ],
     "UpdateTriggerStatus": [
       {
         "document": "",

@@ -5,13 +5,21 @@
 Input: 
 
 ```
-tccli tione CreateNotebookImage --cli-unfold-argument ```
+tccli tione CreateNotebookImage --cli-unfold-argument  \
+    --Kernels abc \
+    --ImageInfo.ImageType abc \
+    --ImageInfo.ImageUrl abc \
+    --ImageInfo.RegistryRegion abc \
+    --ImageInfo.RegistryId abc \
+    --ImageInfo.AllowSaveAllContent True \
+    --NotebookId abc
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

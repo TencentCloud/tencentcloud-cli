@@ -7,15 +7,17 @@ Input:
 ```
 tccli tts CreateTtsTask --cli-unfold-argument  \
     --Text 欢迎使用腾讯云长文本语音合成 \
-    --ModelType 1 \
     --Volume 0 \
     --Speed 0 \
     --ProjectId 0 \
+    --ModelType 1 \
     --VoiceType 101001 \
     --PrimaryLanguage 1 \
     --SampleRate 16000 \
     --Codec mp3 \
-    --CallbackUrl http://www.callback.com/tts_call
+    --CallbackUrl http://www.callback.com/tts_call \
+    --EnableSubtitle True \
+    --VoiceoverDialogueSplit False
 ```
 
 Output: 

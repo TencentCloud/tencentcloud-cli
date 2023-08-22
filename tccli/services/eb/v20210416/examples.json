@@ -3,7 +3,7 @@
     "CheckRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckRule\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckRule\n<公共请求参数>\n\n{\n    \"Event\": \"xdd\",\n    \"EventPattern\": \"xddx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "规则校验"
       }

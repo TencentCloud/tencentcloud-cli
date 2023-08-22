@@ -562,9 +562,9 @@
     ],
     "DescribeSupportProxyVersion": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSupportProxyVersion\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SupportProxyVersions\": [\n            \"xx\"\n        ],\n        \"CurrentProxyVersion\": \"0.0\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "查询支持的数据库代理版本",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSupportProxyVersion\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-abc\",\n    \"ProxyGroupId\": \"cynosdbmysql-proxy-abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SupportProxyVersions\": [\n            \"abc\"\n        ],\n        \"CurrentProxyVersion\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询支持的数据库代理版本"
       }
     ],

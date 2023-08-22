@@ -9556,7 +9556,7 @@
           "example": "无",
           "member": "string",
           "name": "SupportProxyVersions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9566,7 +9566,7 @@
           "example": "无",
           "member": "string",
           "name": "CurrentProxyVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

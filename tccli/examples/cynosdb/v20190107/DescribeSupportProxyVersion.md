@@ -1,12 +1,13 @@
 **Example 1: 查询支持的数据库代理版本**
 
-
+查询支持的数据库代理版本
 
 Input: 
 
 ```
 tccli cynosdb DescribeSupportProxyVersion --cli-unfold-argument  \
-    --ClusterId xx
+    --ClusterId cynosdbmysql-abc \
+    --ProxyGroupId cynosdbmysql-proxy-abc
 ```
 
 Output: 
@@ -14,10 +15,10 @@ Output:
 {
     "Response": {
         "SupportProxyVersions": [
-            "xx"
+            "abc"
         ],
-        "CurrentProxyVersion": "0.0",
-        "RequestId": "xx"
+        "CurrentProxyVersion": "abc",
+        "RequestId": "abc"
     }
 }
 ```
