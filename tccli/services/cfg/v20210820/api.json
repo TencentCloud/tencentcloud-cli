@@ -1803,13 +1803,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "监控指标ID",
+          "document": "演练监控指标ID",
           "example": "1",
           "member": "int64",
           "name": "TaskMonitorId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监控指标ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "MetricId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1817,7 +1827,7 @@
           "example": "1",
           "member": "int64",
           "name": "TaskMonitorObjectTypeId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1827,7 +1837,7 @@
           "example": "io",
           "member": "string",
           "name": "MetricName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1837,7 +1847,7 @@
           "example": "[\"ins1\",\"ins2\"]",
           "member": "string",
           "name": "InstancesIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1847,7 +1857,7 @@
           "example": "中文指标",
           "member": "string",
           "name": "MetricChineseName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1857,7 +1867,7 @@
           "example": "%",
           "member": "string",
           "name": "Unit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -2439,13 +2449,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "监控指标ID",
+          "document": "pk",
           "example": "1",
           "member": "int64",
           "name": "MonitorId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监控指标ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MetricId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2453,7 +2473,7 @@
           "example": "1",
           "member": "int64",
           "name": "ObjectTypeId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2463,7 +2483,7 @@
           "example": "io",
           "member": "string",
           "name": "MetricName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2473,7 +2493,7 @@
           "example": "中文指标",
           "member": "string",
           "name": "MetricChineseName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

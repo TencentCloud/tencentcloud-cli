@@ -1,3 +1,211 @@
+# Release 3.0.835.1
+
+## 应用云渲染(car) 版本：2022-01-10
+
+### 第 2 次发布
+
+发布时间：2023-08-23 01:08:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [StartPublishStream](http://document.tencentcloudapi.woa.com/document/product/1710/80376)
+
+	* 新增入参：PublishStreamArgs
+
+
+
+
+## 云呼叫中心(ccc) 版本：2020-02-10
+
+### 第 40 次发布
+
+发布时间：2023-08-23 01:08:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateSDKLoginToken](http://document.tencentcloudapi.woa.com/document/product/679/49227)
+
+	* 新增入参：OnlyOnce
+
+
+
+
+## 混沌演练平台(cfg) 版本：2021-08-20
+
+### 第 4 次发布
+
+发布时间：2023-08-23 01:08:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TaskMonitor](http://document.tencentcloudapi.woa.com/document/product/1694/79907#TaskMonitor)
+
+	* 新增成员：MetricId
+
+* [TemplateMonitor](http://document.tencentcloudapi.woa.com/document/product/1694/79907#TemplateMonitor)
+
+	* 新增成员：MetricId
+
+
+
+
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 40 次发布
+
+发布时间：2023-08-23 01:11:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeSqlLogs
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* SqlLogItem
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 37 次发布
+
+发布时间：2023-08-23 01:14:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ApplyFirewallTemplate](http://document.tencentcloudapi.woa.com/document/product/1207/81671)
+* [CreateFirewallTemplate](http://document.tencentcloudapi.woa.com/document/product/1207/81670)
+* [CreateFirewallTemplateRules](http://document.tencentcloudapi.woa.com/document/product/1207/81669)
+* [DeleteFirewallTemplate](http://document.tencentcloudapi.woa.com/document/product/1207/81668)
+* [DeleteFirewallTemplateRules](http://document.tencentcloudapi.woa.com/document/product/1207/81667)
+* [DescribeFirewallTemplateApplyRecords](http://document.tencentcloudapi.woa.com/document/product/1207/81666)
+* [DescribeFirewallTemplateQuota](http://document.tencentcloudapi.woa.com/document/product/1207/81665)
+* [DescribeFirewallTemplateRuleQuota](http://document.tencentcloudapi.woa.com/document/product/1207/81664)
+* [DescribeFirewallTemplateRules](http://document.tencentcloudapi.woa.com/document/product/1207/81663)
+* [DescribeFirewallTemplates](http://document.tencentcloudapi.woa.com/document/product/1207/81662)
+* [ModifyFirewallTemplate](http://document.tencentcloudapi.woa.com/document/product/1207/81661)
+* [ReplaceFirewallTemplateRule](http://document.tencentcloudapi.woa.com/document/product/1207/81660)
+* [ResetFirewallTemplateRules](http://document.tencentcloudapi.woa.com/document/product/1207/81659)
+
+新增数据结构：
+
+* [FirewallTemplate](http://document.tencentcloudapi.woa.com/document/product/1207/47576#FirewallTemplate)
+* [FirewallTemplateApplyRecord](http://document.tencentcloudapi.woa.com/document/product/1207/47576#FirewallTemplateApplyRecord)
+* [FirewallTemplateApplyRecordDetail](http://document.tencentcloudapi.woa.com/document/product/1207/47576#FirewallTemplateApplyRecordDetail)
+* [FirewallTemplateRule](http://document.tencentcloudapi.woa.com/document/product/1207/47576#FirewallTemplateRule)
+* [FirewallTemplateRuleInfo](http://document.tencentcloudapi.woa.com/document/product/1207/47576#FirewallTemplateRuleInfo)
+* [InstanceIdentifier](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstanceIdentifier)
+
+
+
+## 云压测(pts) 版本：2021-07-28
+
+### 第 18 次发布
+
+发布时间：2023-08-23 01:16:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpdateScenario](http://document.tencentcloudapi.woa.com/document/product/1597/75184)
+
+	* 新增入参：EnvId
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 32 次发布
+
+发布时间：2023-08-23 01:19:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateNotebook](http://document.tencentcloudapi.woa.com/document/product/851/81417)
+
+	* 新增入参：SSHConfig
+
+* [CreateTrainingTask](http://document.tencentcloudapi.woa.com/document/product/851/74857)
+
+	* <font color="#dd0000">**修改入参**：</font>CodePackagePath, TrainingMode, Output, LogEnable
+
+* [ModifyNotebook](http://document.tencentcloudapi.woa.com/document/product/851/81409)
+
+	* 新增入参：SSHConfig
+
+
+新增数据结构：
+
+* [SSHConfig](http://document.tencentcloudapi.woa.com/document/product/851/74915#SSHConfig)
+
+修改数据结构：
+
+* [NotebookSetItem](http://document.tencentcloudapi.woa.com/document/product/851/74915#NotebookSetItem)
+
+	* 新增成员：SSHConfig
+
+	* <font color="#dd0000">**修改成员**：</font>UserTypes
+
+* [PodInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#PodInfo)
+
+	* 新增成员：Status
+
+	* <font color="#dd0000">**修改成员**：</font>Name, IP
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 19 次发布
+
+发布时间：2023-08-23 01:21:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [UserFileDTO](http://document.tencentcloudapi.woa.com/document/product/1607/77747#UserFileDTO)
+
+	* <font color="#dd0000">**修改成员**：</font>CreateTime, UpdateTime
+
+
+
+
 # Release 3.0.834.1
 
 ## 费用中心(billing) 版本：2018-07-09

@@ -2629,6 +2629,15 @@
           "name": "ImageType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SSH配置信息",
+          "example": "无",
+          "member": "SSHConfig",
+          "name": "SSHConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2642,6 +2651,7 @@
           "example": "NB-xxxx",
           "member": "string",
           "name": "Id",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3014,42 +3024,6 @@
         },
         {
           "disabled": false,
-          "document": "COS代码包路径",
-          "example": "无",
-          "member": "CosPathInfo",
-          "name": "CodePackagePath",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD",
-          "example": "PS_WORKER",
-          "member": "string",
-          "name": "TrainingMode",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "COS训练输出路径",
-          "example": "无",
-          "member": "CosPathInfo",
-          "name": "Output",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "是否上报日志",
-          "example": "true",
-          "member": "bool",
-          "name": "LogEnable",
-          "required": true,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
           "document": "训练框架名称，通过DescribeTrainingFrameworks接口查询，eg：SPARK、PYSPARK、TENSORFLOW、PYTORCH",
           "example": "TENSORFLOW",
           "member": "string",
@@ -3104,12 +3078,30 @@
         },
         {
           "disabled": false,
+          "document": "COS代码包路径",
+          "example": "无",
+          "member": "CosPathInfo",
+          "name": "CodePackagePath",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "启动命令信息，默认为sh start.sh",
           "example": "无",
           "member": "StartCmdInfo",
           "name": "StartCmdInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD",
+          "example": "PS_WORKER",
+          "member": "string",
+          "name": "TrainingMode",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3140,6 +3132,15 @@
         },
         {
           "disabled": false,
+          "document": "COS训练输出路径",
+          "example": "无",
+          "member": "CosPathInfo",
+          "name": "Output",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "CLS日志配置",
           "example": "无",
           "member": "LogConfig",
@@ -3155,6 +3156,15 @@
           "name": "TuningParameters",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否上报日志",
+          "example": "true",
+          "member": "bool",
+          "name": "LogEnable",
+          "required": false,
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -3195,6 +3205,7 @@
           "example": "12312313",
           "member": "string",
           "name": "Id",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3396,6 +3407,7 @@
           "example": "无",
           "member": "string",
           "name": "MappingPath",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3406,6 +3418,7 @@
           "example": "DATASET",
           "member": "string",
           "name": "DataSourceType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3416,6 +3429,7 @@
           "example": "无",
           "member": "DataSetConfig",
           "name": "DataSetSource",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -3426,6 +3440,7 @@
           "example": "无",
           "member": "CosPathInfo",
           "name": "COSSource",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -3436,6 +3451,7 @@
           "example": "无",
           "member": "CFSConfig",
           "name": "CFSSource",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -3446,6 +3462,7 @@
           "example": "无",
           "member": "HDFSConfig",
           "name": "HDFSSource",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -3456,6 +3473,7 @@
           "example": "无",
           "member": "GooseFS",
           "name": "GooseFSSource",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -3466,6 +3484,7 @@
           "example": "无",
           "member": "CFSTurbo",
           "name": "CFSTurboSource",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -6451,6 +6470,7 @@
           "example": "[]",
           "member": "string",
           "name": "PodNames",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6460,6 +6480,7 @@
           "example": "4",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6469,6 +6490,7 @@
           "example": "[{\"Name\":\"train-786801095607790976-5z75pr7skj5s-master-0\",\"IP\":\"\t9.0.0.1\"}]",
           "member": "PodInfo",
           "name": "PodInfoList",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6505,7 +6527,7 @@
           "example": "无",
           "member": "TrainingTaskDetail",
           "name": "TrainingTaskDetail",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8674,6 +8696,15 @@
           "name": "ImageType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SSH配置",
+          "example": "无",
+          "member": "SSHConfig",
+          "name": "SSHConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -9233,7 +9264,7 @@
           "example": "a",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9243,7 +9274,7 @@
           "example": "a",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9253,7 +9284,7 @@
           "example": "PREPAID",
           "member": "string",
           "name": "ChargeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9263,7 +9294,7 @@
           "example": "a a",
           "member": "ResourceConf",
           "name": "ResourceConf",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -9273,7 +9304,7 @@
           "example": "xx",
           "member": "string",
           "name": "ResourceGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9283,7 +9314,7 @@
           "example": "10",
           "member": "uint64",
           "name": "VolumeSizeInGB",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9293,7 +9324,7 @@
           "example": "sss",
           "member": "string",
           "name": "BillingInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9303,7 +9334,7 @@
           "example": "[]",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9313,7 +9344,7 @@
           "example": "xxx",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9323,7 +9354,7 @@
           "example": "x x x",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9333,7 +9364,7 @@
           "example": "xxx",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9343,7 +9374,7 @@
           "example": "100",
           "member": "uint64",
           "name": "RuntimeInSeconds",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9353,7 +9384,7 @@
           "example": "xx",
           "member": "string",
           "name": "ChargeStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9363,7 +9394,7 @@
           "example": "xx",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9373,7 +9404,7 @@
           "example": "xx",
           "member": "string",
           "name": "FailureReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9383,7 +9414,7 @@
           "example": "a",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9393,7 +9424,7 @@
           "example": "a",
           "member": "string",
           "name": "PodName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9403,7 +9434,7 @@
           "example": "2核4G",
           "member": "string",
           "name": "InstanceTypeAlias",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9413,7 +9444,7 @@
           "example": "资源组1",
           "member": "string",
           "name": "ResourceGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9423,7 +9454,7 @@
           "example": "true",
           "member": "bool",
           "name": "AutoStopping",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -9433,7 +9464,7 @@
           "example": "1",
           "member": "uint64",
           "name": "AutomaticStopTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9443,7 +9474,7 @@
           "example": "CFS",
           "member": "string",
           "name": "VolumeSourceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9453,7 +9484,7 @@
           "example": "无",
           "member": "CFSConfig",
           "name": "VolumeSourceCFS",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -9463,7 +9494,7 @@
           "example": "无",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9473,8 +9504,18 @@
           "example": "[\"AIMarket\"]",
           "member": "string",
           "name": "UserTypes",
-          "required": false,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SSH配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SSHConfig",
+          "name": "SSHConfig",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -9677,7 +9718,7 @@
           "example": "train-786801095607790976-5z75pr7skj5s-master-0",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9687,7 +9728,17 @@
           "example": "9.0.0.1",
           "member": "string",
           "name": "IP",
-          "required": false,
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "pod状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -10306,6 +10357,56 @@
         }
       ],
       "usage": "out"
+    },
+    "SSHConfig": {
+      "document": "notebook ssh端口配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启ssh\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公钥信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PublicKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "登录命令\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ssh root@127.0.0.1",
+          "member": "string",
+          "name": "LoginCommand",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ScheduledAction": {
       "document": "定时的事务和行为",
@@ -12569,7 +12670,7 @@
           "example": "train-123311",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12579,7 +12680,7 @@
           "example": "test",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12589,7 +12690,7 @@
           "example": "23131",
           "member": "string",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12599,7 +12700,7 @@
           "example": "31213",
           "member": "string",
           "name": "SubUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12609,7 +12710,7 @@
           "example": "ap-shenzhen",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12619,7 +12720,7 @@
           "example": "TENSORFLOW",
           "member": "string",
           "name": "FrameworkName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12629,7 +12730,7 @@
           "example": "1.12",
           "member": "string",
           "name": "FrameworkVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12639,7 +12740,7 @@
           "example": "tf2.4-py3.8-cpu",
           "member": "string",
           "name": "FrameworkEnvironment",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12649,7 +12750,7 @@
           "example": "无",
           "member": "string",
           "name": "ChargeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12659,7 +12760,7 @@
           "example": "无",
           "member": "string",
           "name": "ResourceGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12669,7 +12770,7 @@
           "example": "[]",
           "member": "ResourceConfigInfo",
           "name": "ResourceConfigInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12679,7 +12780,7 @@
           "example": "[]",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12689,7 +12790,7 @@
           "example": "无",
           "member": "string",
           "name": "TrainingMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12699,7 +12800,7 @@
           "example": "无",
           "member": "CosPathInfo",
           "name": "CodePackagePath",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12709,7 +12810,7 @@
           "example": "无",
           "member": "StartCmdInfo",
           "name": "StartCmdInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12719,7 +12820,7 @@
           "example": "DATASET",
           "member": "string",
           "name": "DataSource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12729,7 +12830,7 @@
           "example": "[]",
           "member": "DataConfig",
           "name": "DataConfigs",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12739,7 +12840,7 @@
           "example": "无",
           "member": "string",
           "name": "TuningParameters",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12749,7 +12850,7 @@
           "example": "无",
           "member": "CosPathInfo",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12759,7 +12860,7 @@
           "example": "true",
           "member": "bool",
           "name": "LogEnable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -12769,7 +12870,7 @@
           "example": "无",
           "member": "LogConfig",
           "name": "LogConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -12779,7 +12880,7 @@
           "example": "无",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12789,7 +12890,7 @@
           "example": "无",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12799,7 +12900,7 @@
           "example": "无",
           "member": "ImageInfo",
           "name": "ImageInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -12809,7 +12910,7 @@
           "example": "1000",
           "member": "uint64",
           "name": "RuntimeInSeconds",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12819,7 +12920,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12829,7 +12930,7 @@
           "example": "无",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12839,7 +12940,7 @@
           "example": "无",
           "member": "string",
           "name": "ChargeStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12849,7 +12950,7 @@
           "example": "567233",
           "member": "string",
           "name": "LatestInstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12859,7 +12960,7 @@
           "example": "tensorborad-123311",
           "member": "string",
           "name": "TensorBoardId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12869,7 +12970,7 @@
           "example": "无",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12879,7 +12980,7 @@
           "example": "无",
           "member": "string",
           "name": "FailureReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12889,7 +12990,7 @@
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12899,7 +13000,7 @@
           "example": "无",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12909,7 +13010,7 @@
           "example": "2.00元/小时",
           "member": "string",
           "name": "BillingInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12919,7 +13020,7 @@
           "example": "无",
           "member": "string",
           "name": "ResourceGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12929,7 +13030,7 @@
           "example": "无",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12939,7 +13040,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12949,7 +13050,7 @@
           "example": "无",
           "member": "string",
           "name": "CallbackUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -12965,7 +13066,7 @@
           "example": "train-123311",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12975,7 +13076,7 @@
           "example": "test",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12985,7 +13086,7 @@
           "example": "TENSORFLOW",
           "member": "string",
           "name": "FrameworkName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12995,7 +13096,7 @@
           "example": "1.12",
           "member": "string",
           "name": "FrameworkVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13005,7 +13106,7 @@
           "example": "tf2.4-py3.8-cpu",
           "member": "string",
           "name": "FrameworkEnvironment",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13015,7 +13116,7 @@
           "example": "PREPAID",
           "member": "string",
           "name": "ChargeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13025,7 +13126,7 @@
           "example": "NOT_BILLING",
           "member": "string",
           "name": "ChargeStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13035,7 +13136,7 @@
           "example": "无",
           "member": "string",
           "name": "ResourceGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13045,7 +13146,7 @@
           "example": "[]",
           "member": "ResourceConfigInfo",
           "name": "ResourceConfigInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13055,7 +13156,7 @@
           "example": "PS_WORKER",
           "member": "string",
           "name": "TrainingMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13065,7 +13166,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13075,7 +13176,7 @@
           "example": "100",
           "member": "uint64",
           "name": "RuntimeInSeconds",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -13085,7 +13186,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13095,7 +13196,7 @@
           "example": "无",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13105,7 +13206,7 @@
           "example": "无",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13115,7 +13216,7 @@
           "example": "无",
           "member": "CosPathInfo",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -13125,7 +13226,7 @@
           "example": "无",
           "member": "string",
           "name": "FailureReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13135,7 +13236,7 @@
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13145,7 +13246,7 @@
           "example": "2.00元/小时",
           "member": "string",
           "name": "BillingInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13155,7 +13256,7 @@
           "example": "无",
           "member": "string",
           "name": "ResourceGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13165,7 +13266,7 @@
           "example": "无",
           "member": "ImageInfo",
           "name": "ImageInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -13175,7 +13276,7 @@
           "example": "无",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13185,7 +13286,7 @@
           "example": "[]",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -13195,7 +13296,7 @@
           "example": "无",
           "member": "string",
           "name": "CallbackUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
