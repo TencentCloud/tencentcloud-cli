@@ -1,14 +1,14 @@
 {
   "actions": {
     "ApplyConcurrent": {
-      "document": "申请并发",
+      "document": "本接口用于申请并发。接口超时时间：20秒。",
       "input": "ApplyConcurrentRequest",
       "name": "申请并发",
       "output": "ApplyConcurrentResponse",
       "status": "online"
     },
     "CreateSession": {
-      "document": "创建会话",
+      "document": "本接口用于创建会话。接口超时时间：5秒。",
       "input": "CreateSessionRequest",
       "name": "创建会话",
       "output": "CreateSessionResponse",
@@ -147,7 +147,7 @@
         },
         {
           "disabled": false,
-          "document": "应用启动参数。\n如果请求的是多应用共享项目，此参数生效；\n如果请求的是关闭预启动的单应用独享项目，此参数生效；\n如果请求的是开启预启动的单应用独享项目，此参数失效。",
+          "document": "应用启动参数。\n如果请求的是多应用共享项目，此参数生效；\n如果请求的是关闭预启动的单应用独享项目，此参数生效；\n如果请求的是开启预启动的单应用独享项目，此参数失效。\n\n注意：在此参数生效的情况下，将会被追加到控制台应用或项目配置的启动参数的后面。\n例如，对于某关闭预启动的单应用独享项目，若在控制台中项目配置的启动参数为bar=0，而ApplicationParameters参数为foo=1，则实际应用启动参数为bar=0 foo=1。",
           "example": "StartFor=1",
           "member": "string",
           "name": "ApplicationParameters",
@@ -184,6 +184,7 @@
           "example": "eyJhYmMiOjEyM30=",
           "member": "string",
           "name": "ServerSession",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -233,6 +234,15 @@
           "member": "string",
           "name": "UserId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "推流参数，推流时携带自定义参数。",
+          "example": "bar=1&foo=2",
+          "member": "string",
+          "name": "PublishStreamArgs",
+          "required": false,
           "type": "string"
         }
       ],

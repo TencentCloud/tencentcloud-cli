@@ -7,6 +7,13 @@
       "output": "ApplyDiskBackupResponse",
       "status": "online"
     },
+    "ApplyFirewallTemplate": {
+      "document": "本接口 (ApplyFirewallTemplate) 用于应用防火墙模板到多个实例。",
+      "input": "ApplyFirewallTemplateRequest",
+      "name": "应用防火墙模板",
+      "output": "ApplyFirewallTemplateResponse",
+      "status": "online"
+    },
     "ApplyInstanceSnapshot": {
       "document": "本接口（ApplyInstanceSnapshot）用于回滚指定实例的系统盘快照。\n<li>仅支持回滚到原系统盘。</li>\n<li>用于回滚的快照必须处于 NORMAL 状态。快照状态可以通过 DescribeSnapshots 接口查询，见输出参数中 SnapshotState 字段解释。</li>\n<li>回滚快照时，实例的状态必须为 STOPPED 或 RUNNING，可通过 DescribeInstances 接口查询实例状态。处于 RUNNING 状态的实例会强制关机，然后回滚快照。</li>",
       "input": "ApplyInstanceSnapshotRequest",
@@ -63,6 +70,20 @@
       "output": "CreateFirewallRulesResponse",
       "status": "online"
     },
+    "CreateFirewallTemplate": {
+      "document": "本接口 (CreateFirewallTemplate) 用于创建防火墙模板。",
+      "input": "CreateFirewallTemplateRequest",
+      "name": "创建防火墙模板",
+      "output": "CreateFirewallTemplateResponse",
+      "status": "online"
+    },
+    "CreateFirewallTemplateRules": {
+      "document": "本接口 (CreateFirewallTemplateRules) 用于创建防火墙模板规则。",
+      "input": "CreateFirewallTemplateRulesRequest",
+      "name": "创建防火墙模板规则",
+      "output": "CreateFirewallTemplateRulesResponse",
+      "status": "online"
+    },
     "CreateInstanceSnapshot": {
       "document": "本接口（CreateInstanceSnapshot）用于创建指定实例的系统盘快照。",
       "input": "CreateInstanceSnapshotRequest",
@@ -103,6 +124,20 @@
       "input": "DeleteFirewallRulesRequest",
       "name": "删除防火墙规则",
       "output": "DeleteFirewallRulesResponse",
+      "status": "online"
+    },
+    "DeleteFirewallTemplate": {
+      "document": "本接口 (DeleteFirewallTemplate) 用于删除防火墙模板。",
+      "input": "DeleteFirewallTemplateRequest",
+      "name": "删除防火墙模板",
+      "output": "DeleteFirewallTemplateResponse",
+      "status": "online"
+    },
+    "DeleteFirewallTemplateRules": {
+      "document": "本接口 (DeleteFirewallTemplateRules) 用于删除防火墙模板规则。",
+      "input": "DeleteFirewallTemplateRulesRequest",
+      "name": "删除防火墙模板规则",
+      "output": "DeleteFirewallTemplateRulesResponse",
       "status": "online"
     },
     "DeleteKeyPairs": {
@@ -250,6 +285,41 @@
       "input": "DescribeFirewallRulesTemplateRequest",
       "name": "查询防火墙规则模板",
       "output": "DescribeFirewallRulesTemplateResponse",
+      "status": "online"
+    },
+    "DescribeFirewallTemplateApplyRecords": {
+      "document": "本接口 (DescribeFirewallTemplateApplyRecords) 用于查询防火墙模板应用记录列表。",
+      "input": "DescribeFirewallTemplateApplyRecordsRequest",
+      "name": "查询防火墙模板应用记录列表",
+      "output": "DescribeFirewallTemplateApplyRecordsResponse",
+      "status": "online"
+    },
+    "DescribeFirewallTemplateQuota": {
+      "document": "本接口 (DescribeFirewallTemplateQuota) 用于查询防火墙模板配额。",
+      "input": "DescribeFirewallTemplateQuotaRequest",
+      "name": "查询防火墙模板配额",
+      "output": "DescribeFirewallTemplateQuotaResponse",
+      "status": "online"
+    },
+    "DescribeFirewallTemplateRuleQuota": {
+      "document": "本接口 (DescribeFirewallTemplateRuleQuota) 用于查询防火墙模板规则配额。",
+      "input": "DescribeFirewallTemplateRuleQuotaRequest",
+      "name": "查询防火墙模板规则配额",
+      "output": "DescribeFirewallTemplateRuleQuotaResponse",
+      "status": "online"
+    },
+    "DescribeFirewallTemplateRules": {
+      "document": "本接口 (DescribeFirewallTemplateRules) 用于查询防火墙模板规则列表。",
+      "input": "DescribeFirewallTemplateRulesRequest",
+      "name": "查询防火墙模板规则列表",
+      "output": "DescribeFirewallTemplateRulesResponse",
+      "status": "online"
+    },
+    "DescribeFirewallTemplates": {
+      "document": "本接口 (DescribeFirewallTemplates) 用于查询防火墙模板列表。",
+      "input": "DescribeFirewallTemplatesRequest",
+      "name": "查询防火墙模板列表",
+      "output": "DescribeFirewallTemplatesResponse",
       "status": "online"
     },
     "DescribeGeneralResourceQuotas": {
@@ -490,6 +560,13 @@
       "output": "ModifyFirewallRulesResponse",
       "status": "online"
     },
+    "ModifyFirewallTemplate": {
+      "document": "本接口 (ModifyFirewallTemplate) 用于修改防火墙模板。",
+      "input": "ModifyFirewallTemplateRequest",
+      "name": "修改防火墙模板",
+      "output": "ModifyFirewallTemplateResponse",
+      "status": "online"
+    },
     "ModifyInstancesAttribute": {
       "document": "本接口（ModifyInstancesAttribute）用于修改实例的属性。\n* “实例名称”仅为方便用户自己管理之用。\n* 支持批量操作。每次请求批量实例的上限为 100。",
       "input": "ModifyInstancesAttributeRequest",
@@ -560,6 +637,13 @@
       "output": "RenewInstancesResponse",
       "status": "online"
     },
+    "ReplaceFirewallTemplateRule": {
+      "document": "本接口 (ReplaceFirewallTemplateRules) 用于替换防火墙模板规则。",
+      "input": "ReplaceFirewallTemplateRuleRequest",
+      "name": "替换防火墙模板规则",
+      "output": "ReplaceFirewallTemplateRuleResponse",
+      "status": "online"
+    },
     "RerunDockerContainer": {
       "document": "重新创建并运行实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询重建情况。",
       "input": "RerunDockerContainerRequest",
@@ -572,6 +656,13 @@
       "input": "ResetAttachCcnRequest",
       "name": "重新申请关联云联网",
       "output": "ResetAttachCcnResponse",
+      "status": "online"
+    },
+    "ResetFirewallTemplateRules": {
+      "document": "本接口 (ResetFirewallTemplateRules) 用于重置防火墙模板下所有规则。",
+      "input": "ResetFirewallTemplateRulesRequest",
+      "name": "重置防火墙模板规则",
+      "output": "ResetFirewallTemplateRulesResponse",
       "status": "online"
     },
     "ResetInstance": {
@@ -679,6 +770,52 @@
     "ApplyDiskBackupResponse": {
       "document": "ApplyDiskBackup返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyFirewallTemplateRequest": {
+      "document": "ApplyFirewallTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板ID。",
+          "example": "lhft-xxxxxxxx",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用防火墙模板的实例列表。",
+          "example": "无",
+          "member": "InstanceIdentifier",
+          "name": "ApplyInstances",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyFirewallTemplateResponse": {
+      "document": "ApplyFirewallTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。",
+          "example": "lgtk-xxxxxxxx",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1693,6 +1830,98 @@
       ],
       "type": "object"
     },
+    "CreateFirewallTemplateRequest": {
+      "document": "CreateFirewallTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板名称。",
+          "example": "DemoTemplate",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "防火墙规则列表。",
+          "example": "无",
+          "member": "FirewallRule",
+          "name": "TemplateRules",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFirewallTemplateResponse": {
+      "document": "CreateFirewallTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙模板ID。",
+          "example": "lhft-xxxxxxxx",
+          "member": "string",
+          "name": "TemplateId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFirewallTemplateRulesRequest": {
+      "document": "CreateFirewallTemplateRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙模板ID。",
+          "example": "lhft-xxxxxxxx",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "防火墙模板规则列表。",
+          "example": "无",
+          "member": "FirewallRule",
+          "name": "TemplateRules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFirewallTemplateRulesResponse": {
+      "document": "CreateFirewallTemplateRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID列表。",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateRuleIdSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateInstanceSnapshotRequest": {
       "document": "CreateInstanceSnapshot请求参数结构体",
       "members": [
@@ -1839,6 +2068,15 @@
           "name": "AutoVoucher",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "防火墙模版ID。若不指定该参数，则使用默认防火墙策略。",
+          "example": "lhft-xxxxxxxx",
+          "member": "string",
+          "name": "FirewallTemplateId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2057,6 +2295,69 @@
     },
     "DeleteFirewallRulesResponse": {
       "document": "DeleteFirewallRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFirewallTemplateRequest": {
+      "document": "DeleteFirewallTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙模板ID。",
+          "example": "lhft-xxxxxxxx",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFirewallTemplateResponse": {
+      "document": "DeleteFirewallTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFirewallTemplateRulesRequest": {
+      "document": "DeleteFirewallTemplateRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙模板ID。",
+          "example": "lhft-xxxxxxxx",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "防火墙模板规则ID列表。",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateRuleIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFirewallTemplateRulesResponse": {
+      "document": "DeleteFirewallTemplateRules返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3270,6 +3571,284 @@
       ],
       "type": "object"
     },
+    "DescribeFirewallTemplateApplyRecordsRequest": {
+      "document": "DescribeFirewallTemplateApplyRecords请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙模板ID。",
+          "example": "lhft-xxxxxxxx",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用任务ID列表。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirewallTemplateApplyRecordsResponse": {
+      "document": "DescribeFirewallTemplateApplyRecords返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙模板应用记录列表。",
+          "example": "无",
+          "member": "FirewallTemplateApplyRecord",
+          "name": "ApplyRecordSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirewallTemplateQuotaRequest": {
+      "document": "DescribeFirewallTemplateQuota请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeFirewallTemplateQuotaResponse": {
+      "document": "DescribeFirewallTemplateQuota返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前可用配额。",
+          "example": "10",
+          "member": "int64",
+          "name": "Available",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总配额。",
+          "example": "50",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirewallTemplateRuleQuotaRequest": {
+      "document": "DescribeFirewallTemplateRuleQuota请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙模板ID。",
+          "example": "lhft-xxxxxxxx",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirewallTemplateRuleQuotaResponse": {
+      "document": "DescribeFirewallTemplateRuleQuota返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前可用配额。",
+          "example": "10",
+          "member": "int64",
+          "name": "Available",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总配额。",
+          "example": "50",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirewallTemplateRulesRequest": {
+      "document": "DescribeFirewallTemplateRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙模板ID。",
+          "example": "lhft-xxxxxxxx",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "防火墙模板规则ID列表。",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateRuleIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirewallTemplateRulesResponse": {
+      "document": "DescribeFirewallTemplateRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙模板规则总数量。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防火墙模板规则信息列表。",
+          "example": "无",
+          "member": "FirewallTemplateRuleInfo",
+          "name": "TemplateRuleSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirewallTemplatesRequest": {
+      "document": "DescribeFirewallTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙模板ID列表。",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器列表。\n<li>template-id</li>按照【防火墙模版所属的ID】进行过滤。\n类型：String\n必选：否\n<li>template-name</li>按照【防火墙模版所属的名称】进行过滤。\n类型：String\n必选：否\n<li>template-type</li>按照【防火墙模版的类型】进行过滤。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 TemplateIds 和 Filters。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirewallTemplatesResponse": {
+      "document": "DescribeFirewallTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板总数量。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防火墙模板列表。",
+          "example": "无",
+          "member": "FirewallTemplate",
+          "name": "TemplateSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeGeneralResourceQuotasRequest": {
       "document": "DescribeGeneralResourceQuotas请求参数结构体",
       "members": [
@@ -3516,6 +4095,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3525,6 +4105,7 @@
           "example": "无",
           "member": "Instance",
           "name": "InstanceSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5423,6 +6004,236 @@
       ],
       "usage": "out"
     },
+    "FirewallTemplate": {
+      "document": "防火墙模板信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板Id。",
+          "example": "lhft-xxxxxx",
+          "member": "string",
+          "name": "TemplateId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板名称。",
+          "example": "DemoTemplate",
+          "member": "string",
+          "name": "TemplateName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板类型。",
+          "example": "PUBLIC",
+          "member": "string",
+          "name": "TemplateType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板状态。",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "TemplateState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板创建时间。",
+          "example": "2021-09-30T04:12:31Z",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FirewallTemplateApplyRecord": {
+      "document": "防火墙模板应用记录。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。",
+          "example": "lgtk-xxxxxxxx",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用模板的时间。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "ApplyTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板规则列表。",
+          "example": "无",
+          "member": "FirewallTemplateRule",
+          "name": "TemplateRuleSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用模板的执行状态。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ApplyState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用成功的实例数量。",
+          "example": "10",
+          "member": "int64",
+          "name": "SuccessCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用失败的实例数量。",
+          "example": "0",
+          "member": "int64",
+          "name": "FailedCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "正在应用中的实例数量。",
+          "example": "0",
+          "member": "int64",
+          "name": "RunningCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用模板的执行细节。",
+          "example": "无",
+          "member": "FirewallTemplateApplyRecordDetail",
+          "name": "ApplyDetailSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FirewallTemplateApplyRecordDetail": {
+      "document": "防火墙模板应用记录详情。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例标识信息。",
+          "example": "无",
+          "member": "InstanceIdentifier",
+          "name": "Instance",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防火墙模板应用状态。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ApplyState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防火墙模板应用错误信息。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FirewallTemplateRule": {
+      "document": "防火墙模板规则信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙模板规则ID。",
+          "example": "lhftr-xxxxxxxxxx",
+          "member": "string",
+          "name": "TemplateRuleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防火墙规则。",
+          "example": "无",
+          "member": "FirewallRule",
+          "name": "FirewallRule",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FirewallTemplateRuleInfo": {
+      "document": "防火墙模板规则信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙模板规则ID。",
+          "example": "lhftr-xxxxxxxxxx",
+          "member": "string",
+          "name": "TemplateRuleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防火墙规则信息。",
+          "example": "无",
+          "member": "FirewallRuleInfo",
+          "name": "FirewallRuleInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "GeneralResourceQuota": {
       "document": "描述通用资源配额信息。\n\n",
       "members": [
@@ -6141,6 +6952,32 @@
         }
       ],
       "usage": "out"
+    },
+    "InstanceIdentifier": {
+      "document": "实例标识信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "lhins-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "InstancePrice": {
       "document": "关于Lighthouse Instance实例的价格信息",
@@ -6900,6 +7737,42 @@
       ],
       "type": "object"
     },
+    "ModifyFirewallTemplateRequest": {
+      "document": "ModifyFirewallTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙模板ID。",
+          "example": "lhft-xxxxxxxx",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模板名称。",
+          "example": "DemoTemplate",
+          "member": "string",
+          "name": "TemplateName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFirewallTemplateResponse": {
+      "document": "ModifyFirewallTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyInstancesAttributeRequest": {
       "document": "ModifyInstancesAttribute请求参数结构体",
       "members": [
@@ -7480,6 +8353,51 @@
       ],
       "type": "object"
     },
+    "ReplaceFirewallTemplateRuleRequest": {
+      "document": "ReplaceFirewallTemplateRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙模板ID。",
+          "example": "lhft-xxxxxxxx",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "防火墙模板规则ID。",
+          "example": "lhftr-xxxxxxxxxx",
+          "member": "string",
+          "name": "TemplateRuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "替换后的防火墙模板规则。",
+          "example": "无",
+          "member": "FirewallRule",
+          "name": "TemplateRule",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceFirewallTemplateRuleResponse": {
+      "document": "ReplaceFirewallTemplateRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RerunDockerContainerRequest": {
       "document": "RerunDockerContainer请求参数结构体",
       "members": [
@@ -7553,6 +8471,52 @@
     "ResetAttachCcnResponse": {
       "document": "ResetAttachCcn返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetFirewallTemplateRulesRequest": {
+      "document": "ResetFirewallTemplateRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板ID。",
+          "example": "lhft-xxxxxxxx",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "重置后的防火墙模板规则列表。",
+          "example": "无",
+          "member": "FirewallRule",
+          "name": "TemplateRules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetFirewallTemplateRulesResponse": {
+      "document": "ResetFirewallTemplateRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "重置后的规则ID列表。",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateRuleIdSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

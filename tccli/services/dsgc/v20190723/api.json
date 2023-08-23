@@ -1,0 +1,197 @@
+{
+  "actions": {
+    "CreateDSPADbMetaResources": {
+      "document": "添加用户云上数据库类型资源",
+      "input": "CreateDSPADbMetaResourcesRequest",
+      "name": "添加用户云上数据库资源",
+      "output": "CreateDSPADbMetaResourcesResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2019-07-23",
+    "api_brief": "数据安全中心接口",
+    "serviceNameCN": "数据安全中心",
+    "serviceShortName": "dsgc"
+  },
+  "objects": {
+    "CreateDSPADbMetaResourcesRequest": {
+      "document": "CreateDSPADbMetaResources请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DSPA实例ID。",
+          "example": "dspa-12345678",
+          "member": "string",
+          "name": "DspaId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型，支持：cdb（云数据库 MySQL）、dcdb（TDSQL MySQL版）、mariadb（云数据库 MariaDB）、postgres（云数据库 PostgreSQL）、cynosdbpg（TDSQL-C PostgreSQL版）、cynosdbmysql（TDSQL-C MySQL版）",
+          "example": "cdb",
+          "member": "string",
+          "name": "MetaType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源所处地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用来标记本次更新是否已经是最后一次，可选值：continue（后续还需要更新）、finished（本次是最后一次更新）。",
+          "example": "continue",
+          "member": "string",
+          "name": "UpdateStatus",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "本次更新的ID号，用来标记一次完整的更新过程。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云上资源列表。",
+          "example": "无",
+          "member": "DspaCloudResourceMeta",
+          "name": "Items",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDSPADbMetaResourcesResponse": {
+      "document": "CreateDSPADbMetaResources返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "本次更新的ID号，用来标记一次完整的更新过程。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源类型，支持：cdb（云数据库 MySQL）、dcdb（TDSQL MySQL版）、mariadb（云数据库 MariaDB）、postgres（云数据库 PostgreSQL）、cynosdbpg（TDSQL-C PostgreSQL版）、cynosdbmysql（TDSQL-C MySQL版）",
+          "example": "无",
+          "member": "string",
+          "name": "MetaType",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DSPA实例ID。",
+          "example": "无",
+          "member": "string",
+          "name": "DspaId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源所处地域。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceRegion",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DspaCloudResourceMeta": {
+      "document": "云上资源元数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户资源ID。",
+          "example": "cdb-xxx",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源名称。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源VIP。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "ResourceVip",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源端口。",
+          "example": "3306",
+          "member": "uint64",
+          "name": "ResourceVPort",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资源被创建时间。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceCreateTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户资源VPC ID 字符串。",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "ResourceUniqueVpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户资源Subnet ID 字符串。",
+          "example": "subnet-xxx",
+          "member": "string",
+          "name": "ResourceUniqueSubnetId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    }
+  },
+  "version": "1.0"
+}

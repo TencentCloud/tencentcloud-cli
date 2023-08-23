@@ -328,20 +328,6 @@
         "title": "查询分布式数据库可售卖分片规格"
       }
     ],
-    "DescribeSqlLogs": [
-      {
-        "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeSqlLogs\n&InstanceId=dcdbt-ovulpcjf\n&Limit=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ce0cbb4-3863-4214-b7b2-d060a3f530d8\",\n        \"TotalCount\": 63,\n        \"StartOffset\": 0,\n        \"EndOffset\": 63,\n        \"Offset\": 0,\n        \"Count\": 0,\n        \"SqlItems\": []\n    }\n}",
-        "title": "拉取SQL日志起始偏移及日志数量"
-      },
-      {
-        "document": "",
-        "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeSqlLogs\n&InstanceId=tdsql-6a0lwzzj\n&Offset=53560502\n&Limit=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c08964d6-e5c2-4a50-9936-2c4a6e0bb640\",\n        \"TotalCount\": 63,\n        \"StartOffset\": 0,\n        \"EndOffset\": 63,\n        \"Offset\": 1,\n        \"Count\": 1,\n        \"SqlItems\": [\n            {\n                \"Offset\": 1,\n                \"User\": \"testaccount\",\n                \"Client\": \"172.16.0.5:47503\",\n                \"DbName\": \"\",\n                \"Sql\": \"select @@version_comment limit 1\",\n                \"SelectRowNum\": 1,\n                \"AffectRowNum\": 0,\n                \"Timestamp\": 1537932957,\n                \"TimeCostMs\": 0,\n                \"ResultCode\": 0\n            }\n        ]\n    }\n}",
-        "title": "拉取SQL日志"
-      }
-    ],
     "DescribeUserTasks": [
       {
         "document": "",

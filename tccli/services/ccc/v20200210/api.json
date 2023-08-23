@@ -1334,6 +1334,15 @@
           "name": "SeatUserId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生成的token是否一次性校验",
+          "example": "false",
+          "member": "bool",
+          "name": "OnlyOnce",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1347,6 +1356,7 @@
           "example": "6bb56a09278740bc80c5dc6dab783eff",
           "member": "string",
           "name": "Token",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1356,6 +1366,7 @@
           "example": "1601371974",
           "member": "int64",
           "name": "ExpiredTime",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1365,6 +1376,7 @@
           "example": "https://29294-22989-29805-29810.cdn-go.cn/tccc-agent-sdk/latest/",
           "member": "string",
           "name": "SdkURL",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

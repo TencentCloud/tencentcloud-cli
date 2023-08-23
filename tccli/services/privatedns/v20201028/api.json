@@ -477,6 +477,7 @@
           "example": "1111",
           "member": "string",
           "name": "RecordId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -921,7 +922,7 @@
           "example": "20",
           "member": "int64",
           "name": "ZoneTotal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -931,7 +932,7 @@
           "example": "7",
           "member": "int64",
           "name": "ZoneVpcCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -941,7 +942,7 @@
           "example": "10000",
           "member": "int64",
           "name": "RequestTotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -951,7 +952,7 @@
           "example": "无",
           "member": "FlowUsage",
           "name": "FlowUsage",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1071,7 +1072,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1081,7 +1082,7 @@
           "example": "无",
           "member": "PrivateZone",
           "name": "PrivateZoneSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1145,7 +1146,7 @@
           "example": "5",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1155,7 +1156,7 @@
           "example": "无",
           "member": "PrivateZoneRecord",
           "name": "RecordSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1192,7 +1193,7 @@
           "example": "无",
           "member": "PrivateZone",
           "name": "PrivateZone",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1219,7 +1220,7 @@
           "example": "ENABLED",
           "member": "string",
           "name": "ServiceStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2098,7 +2099,7 @@
           "example": "ENABLED",
           "member": "string",
           "name": "ServiceStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

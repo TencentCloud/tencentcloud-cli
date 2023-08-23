@@ -8,6 +8,14 @@
         "title": "回滚云硬盘备份点"
       }
     ],
+    "ApplyFirewallTemplate": [
+      {
+        "document": "应用防火墙模板",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyFirewallTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"lhft-6brh0ciy\",\n    \"ApplyInstances\": [\n        {\n            \"InstanceId\": \"lhins-abcd1234\",\n            \"Region\": \"ap-guangzhou\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a880f7ad-a9a0-40a6-b67e-f3ad4f7d9abd\",\n        \"TaskId\": \"lgtk-6brh0ciy\"\n    }\n}",
+        "title": "应用防火墙模板"
+      }
+    ],
     "ApplyInstanceSnapshot": [
       {
         "document": "回滚实例快照",
@@ -72,6 +80,22 @@
         "title": "添加防火墙规则"
       }
     ],
+    "CreateFirewallTemplate": [
+      {
+        "document": "创建防火墙模板及规则",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFirewallTemplate\n<公共请求参数>\n\n{\n    \"TemplateName\": \"test-create\",\n    \"TemplateRules\": [\n        {\n            \"Protocol\": \"TCP\",\n            \"Port\": \"80\",\n            \"CidrBlock\": \"0.0.0.0/0\",\n            \"Action\": \"ACCEPT\",\n            \"FirewallRuleDescription\": \"tcp 80\"\n        },\n        {\n            \"Protocol\": \"UDP\",\n            \"Port\": \"80\",\n            \"CidrBlock\": \"0.0.0.0/0\",\n            \"Action\": \"DROP\",\n            \"FirewallRuleDescription\": \"udp 80\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aa00f8e0-fe60-4902-bee6-5c6162fbd429\",\n        \"TemplateId\": \"lhft-6brh0ciy\"\n    }\n}",
+        "title": "创建防火墙模板"
+      }
+    ],
+    "CreateFirewallTemplateRules": [
+      {
+        "document": "创建防火墙模板规则",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFirewallTemplateRules\n<公共请求参数>\n\n{\n    \"TemplateId\": \"lhft-6brh0ciy\",\n    \"TemplateRules\": [\n        {\n            \"Protocol\": \"TCP\",\n            \"Port\": \"81\",\n            \"CidrBlock\": \"0.0.0.0/0\",\n            \"Action\": \"ACCEPT\",\n            \"FirewallRuleDescription\": \"tcp 80\"\n        },\n        {\n            \"Protocol\": \"UDP\",\n            \"Port\": \"81\",\n            \"CidrBlock\": \"0.0.0.0/0\",\n            \"Action\": \"DROP\",\n            \"FirewallRuleDescription\": \"udp 80\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"740970ad-8118-4cc7-bf35-5ca5352a682f\",\n        \"TemplateRuleIdSet\": [\n            \"lhftr-hmp4bn7q2o\",\n            \"lhftr-b9evg1gakk\"\n        ]\n    }\n}",
+        "title": "创建防火墙模板规则"
+      }
+    ],
     "CreateInstanceSnapshot": [
       {
         "document": "创建实例快照",
@@ -118,6 +142,22 @@
         "input": "https://lighthouse.tencentcloudapi.com/?Action=DeleteFirewallRules\n&InstanceId=lhins-aglzynfg\n&FirewallRules.0.Protocol=TCP\n&FirewallRules.0.Port=80\n&FirewallRules.1.Protocol=UDP\n&FirewallRules.1.Port=22,443\n&FirewallRules.2.Protocol=TCP\n&FirewallRules.2.Port=8000-8081\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b5182261-ab41-4801-a702-be05f2277758\"\n    }\n}",
         "title": "删除防火墙规则"
+      }
+    ],
+    "DeleteFirewallTemplate": [
+      {
+        "document": "删除防火墙模板",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFirewallTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"lhft-6brh0ciy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d8d3a3a-84c0-4a66-a53c-ed4f17f05695\"\n    }\n}",
+        "title": "删除防火墙模板"
+      }
+    ],
+    "DeleteFirewallTemplateRules": [
+      {
+        "document": "删除防火墙模板规则",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFirewallTemplateRules\n<公共请求参数>\n\n{\n    \"TemplateId\": \"lhft-6brh0ciy\",\n    \"TemplateRuleIds\": [\n        \"lhftr-baaj68clja\",\n        \"lhftr-bz6qfqut0i\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"215bc0ee-0700-4eab-b5ee-270c212e8deb\"\n    }\n}",
+        "title": "删除防火墙模板规则"
       }
     ],
     "DeleteKeyPairs": [
@@ -292,6 +332,46 @@
         "input": "https://lighthouse.tencentcloudapi.com/?Action=DescribeFirewallRulesTemplate\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"FirewallRuleSet\": [\n            {\n                \"Action\": \"ACCEPT\",\n                \"AppType\": \"Windows登录(3389)\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"FirewallRuleDescription\": \"放通Windows远程登录\",\n                \"Port\": \"3389\",\n                \"Protocol\": \"TCP\"\n            },\n            {\n                \"Action\": \"ACCEPT\",\n                \"AppType\": \"Linux登录(22)\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"FirewallRuleDescription\": \"放通Linux SSH登录\",\n                \"Port\": \"22\",\n                \"Protocol\": \"TCP\"\n            },\n            {\n                \"Action\": \"ACCEPT\",\n                \"AppType\": \"HTTP(80)\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"FirewallRuleDescription\": \"放通Web服务HTTP(80)，如 Apache、Nginx\",\n                \"Port\": \"80\",\n                \"Protocol\": \"TCP\"\n            },\n            {\n                \"Action\": \"ACCEPT\",\n                \"AppType\": \"HTTPS(443)\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"FirewallRuleDescription\": \"放通Web服务HTTPS(443)，如 Apache、Nginx\",\n                \"Port\": \"443\",\n                \"Protocol\": \"TCP\"\n            },\n            {\n                \"Action\": \"ACCEPT\",\n                \"AppType\": \"MySQL(3306)\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"FirewallRuleDescription\": \"放通MySQL服务(3306)\",\n                \"Port\": \"3306\",\n                \"Protocol\": \"TCP\"\n            },\n            {\n                \"Action\": \"ACCEPT\",\n                \"AppType\": \"SQL Server(1433)\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"FirewallRuleDescription\": \"放通SQL Server服务(1433)\",\n                \"Port\": \"1433\",\n                \"Protocol\": \"TCP\"\n            },\n            {\n                \"Action\": \"ACCEPT\",\n                \"AppType\": \"全部TCP\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"FirewallRuleDescription\": \"放通全部TCP\",\n                \"Port\": \"1-65535\",\n                \"Protocol\": \"TCP\"\n            },\n            {\n                \"Action\": \"ACCEPT\",\n                \"AppType\": \"全部UDP\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"FirewallRuleDescription\": \"放通全部UDP\",\n                \"Port\": \"1-65535\",\n                \"Protocol\": \"UDP\"\n            },\n            {\n                \"Action\": \"ACCEPT\",\n                \"AppType\": \"Ping-ICMP\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"FirewallRuleDescription\": \"放通Ping\",\n                \"Port\": \"ALL\",\n                \"Protocol\": \"ICMP\"\n            },\n            {\n                \"Action\": \"ACCEPT\",\n                \"AppType\": \"ALL\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"FirewallRuleDescription\": \"放通全部TCP、UDP、ICMP(Ping)以及GRE\",\n                \"Port\": \"ALL\",\n                \"Protocol\": \"ALL\"\n            }\n        ],\n        \"RequestId\": \"b9fdb7cc-8afa-4fae-9062-73e41d06f7d3\",\n        \"TotalCount\": 10\n    }\n}",
         "title": "查询防火墙规则模板"
+      }
+    ],
+    "DescribeFirewallTemplateApplyRecords": [
+      {
+        "document": "查询防火墙模板应用记录",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirewallTemplateApplyRecords\n<公共请求参数>\n\n{\n    \"TemplateId\": \"lhft-6brh0ciy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApplyRecordSet\": [\n            {\n                \"ApplyDetailSet\": [\n                    {\n                        \"ApplyState\": \"SUCCESS\",\n                        \"ErrorMessage\": \"\",\n                        \"Instance\": {\n                            \"InstanceId\": \"lhins-abcd1234\",\n                            \"Region\": \"ap-guangzhou\"\n                        }\n                    }\n                ],\n                \"TaskId\": \"lgtk-dodi8tqa\",\n                \"ApplyState\": \"SUCCESS\",\n                \"ApplyTime\": \"2023-06-21T02:47:42Z\",\n                \"FailedCount\": 0,\n                \"RunningCount\": 0,\n                \"SuccessCount\": 1,\n                \"TemplateRuleSet\": [\n                    {\n                        \"FirewallRule\": {\n                            \"Action\": \"ACCEPT\",\n                            \"CidrBlock\": \"0.0.0.0/0\",\n                            \"FirewallRuleDescription\": \"tcp 80\",\n                            \"Port\": \"81\",\n                            \"Protocol\": \"TCP\"\n                        },\n                        \"TemplateRuleId\": \"lhftr-gexf7cmvpq\"\n                    },\n                    {\n                        \"FirewallRule\": {\n                            \"Action\": \"DROP\",\n                            \"CidrBlock\": \"0.0.0.0/0\",\n                            \"FirewallRuleDescription\": \"udp 80\",\n                            \"Port\": \"81\",\n                            \"Protocol\": \"UDP\"\n                        },\n                        \"TemplateRuleId\": \"lhftr-9uxz9zuz62\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"cd7f9d77-c19b-4490-8d5e-42a776383f90\"\n    }\n}",
+        "title": "查询防火墙模板应用记录"
+      }
+    ],
+    "DescribeFirewallTemplateQuota": [
+      {
+        "document": "查询防火墙模板配额",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirewallTemplateQuota\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Available\": 49,\n        \"RequestId\": \"c263d410-adc0-4461-82b1-133db778ff25\",\n        \"Total\": 50\n    }\n}",
+        "title": "查询防火墙模板配额"
+      }
+    ],
+    "DescribeFirewallTemplateRuleQuota": [
+      {
+        "document": "查询防护墙模板规则配额",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirewallTemplateRuleQuota\n<公共请求参数>\n\n{\n    \"TemplateId\": \"lhft-6brh0ciy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Available\": 98,\n        \"RequestId\": \"1a73f3ef-9098-4537-89af-90f59a49abb8\",\n        \"Total\": 100\n    }\n}",
+        "title": "查询防护墙模板规则配额"
+      }
+    ],
+    "DescribeFirewallTemplateRules": [
+      {
+        "document": "查询防火墙模版规则列表",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirewallTemplateRules\n<公共请求参数>\n\n{\n    \"TemplateId\": \"lhft-6brh0ciy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8e3d057f-a651-4c66-b5e3-abb11e305f19\",\n        \"TemplateRuleSet\": [\n            {\n                \"FirewallRuleInfo\": {\n                    \"Action\": \"ACCEPT\",\n                    \"AppType\": \"user-defined\",\n                    \"CidrBlock\": \"0.0.0.0/0\",\n                    \"FirewallRuleDescription\": \"tcp 80\",\n                    \"Port\": \"81\",\n                    \"Protocol\": \"TCP\"\n                },\n                \"TemplateRuleId\": \"lhftr-gexf7cmvpq\"\n            },\n            {\n                \"FirewallRuleInfo\": {\n                    \"Action\": \"DROP\",\n                    \"AppType\": \"user-defined\",\n                    \"CidrBlock\": \"0.0.0.0/0\",\n                    \"FirewallRuleDescription\": \"udp 80\",\n                    \"Port\": \"81\",\n                    \"Protocol\": \"UDP\"\n                },\n                \"TemplateRuleId\": \"lhftr-9uxz9zuz62\"\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询防火墙模版规则列表"
+      }
+    ],
+    "DescribeFirewallTemplates": [
+      {
+        "document": "查询防火墙模板",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirewallTemplates\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0ac2ecce-f83b-4f5b-80d2-9e88a07e98c0\",\n        \"TemplateSet\": [\n            {\n                \"CreatedTime\": \"2023-06-20T08:04:09Z\",\n                \"TemplateId\": \"lhft-6brh0ciy\",\n                \"TemplateName\": \"test-modify\",\n                \"TemplateState\": \"NORMAL\",\n                \"TemplateType\": \"PRIVATE\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询防火墙模板"
       }
     ],
     "DescribeGeneralResourceQuotas": [
@@ -566,6 +646,14 @@
         "title": "修改防火墙规则"
       }
     ],
+    "ModifyFirewallTemplate": [
+      {
+        "document": "修改防火墙模板名称",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFirewallTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"lhft-6brh0ciy\",\n    \"TemplateName\": \"test-modify\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cc75e4c9-b6a9-44c2-9a8f-ef8e78ff0e81\"\n    }\n}",
+        "title": "修改防火墙模板"
+      }
+    ],
     "ModifyInstancesAttribute": [
       {
         "document": "修改两个实例的名称",
@@ -646,6 +734,14 @@
         "title": "续费实例"
       }
     ],
+    "ReplaceFirewallTemplateRule": [
+      {
+        "document": "替换防火墙模板规则",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReplaceFirewallTemplateRule\n<公共请求参数>\n\n{\n    \"TemplateId\": \"lhft-6brh0ciy\",\n    \"TemplateRuleId\": \"lhftr-baaj68clja\",\n    \"TemplateRule\": {\n        \"Protocol\": \"UDP\",\n        \"Port\": \"811\",\n        \"CidrBlock\": \"0.0.0.0/0\",\n        \"Action\": \"DROP\",\n        \"FirewallRuleDescription\": \"udp 80\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"49d3c62e-9daa-4db5-b8f3-2498bb1dde36\"\n    }\n}",
+        "title": "替换防火墙模板规则"
+      }
+    ],
     "RerunDockerContainer": [
       {
         "document": "",
@@ -660,6 +756,14 @@
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetAttachCcn\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-pf78xmcp\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"92de8d42-4ef3-4d43-bf15-8e0d00b66cb9\"\n    }\n}",
         "title": "重新申请关联云联网"
+      }
+    ],
+    "ResetFirewallTemplateRules": [
+      {
+        "document": "重置防火墙模版下所有规则",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetFirewallTemplateRules\n<公共请求参数>\n\n{\n    \"TemplateId\": \"lhft-6brh0ciy\",\n    \"TemplateRules\": [\n        {\n            \"Protocol\": \"TCP\",\n            \"Port\": \"81\",\n            \"CidrBlock\": \"0.0.0.0/0\",\n            \"Action\": \"ACCEPT\",\n            \"FirewallRuleDescription\": \"tcp 80\"\n        },\n        {\n            \"Protocol\": \"UDP\",\n            \"Port\": \"81\",\n            \"CidrBlock\": \"0.0.0.0/0\",\n            \"Action\": \"DROP\",\n            \"FirewallRuleDescription\": \"udp 80\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1bf93010-2454-434a-915d-be102f47700c\",\n        \"TemplateRuleIdSet\": [\n            \"lhftr-gexf7cmvpq\",\n            \"lhftr-9uxz9zuz62\"\n        ]\n    }\n}",
+        "title": "重置防火墙模版下所有规则"
       }
     ],
     "ResetInstance": [

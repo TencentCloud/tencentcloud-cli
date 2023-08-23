@@ -4750,6 +4750,15 @@
           "name": "RoomType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "录制模板。仅可修改还未开始的房间。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744",
+          "example": "0",
+          "member": "uint64",
+          "name": "RecordLayout",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

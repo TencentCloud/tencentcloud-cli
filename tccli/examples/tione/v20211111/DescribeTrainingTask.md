@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tione DescribeTrainingTask --cli-unfold-argument  \
-    --Id xx
+    --Id abc
 ```
 
 Output: 
@@ -14,107 +14,124 @@ Output:
 {
     "Response": {
         "TrainingTaskDetail": {
-            "Id": "xx",
-            "StartTime": "xx",
-            "FrameworkName": "xx",
-            "TrainingMode": "xx",
-            "SubUin": "xx",
-            "ChargeStatus": "xx",
-            "Status": "xx",
-            "UpdateTime": "xx",
-            "VpcId": "xx",
-            "Tags": [
-                {
-                    "TagKey": "xx",
-                    "TagValue": "xx"
-                }
-            ],
-            "CodePackagePath": {
-                "Paths": [
-                    "xx"
-                ],
-                "Region": "xx",
-                "Bucket": "xx"
-            },
-            "TuningParameters": "xx",
-            "ResourceGroupId": "xx",
-            "TensorBoardId": "xx",
-            "LatestInstanceId": "xx",
-            "SubnetId": "xx",
-            "FrameworkVersion": "xx",
+            "Id": "abc",
+            "Name": "abc",
+            "Uin": "abc",
+            "SubUin": "abc",
+            "Region": "abc",
+            "FrameworkName": "abc",
+            "FrameworkVersion": "abc",
+            "FrameworkEnvironment": "abc",
+            "ChargeType": "abc",
+            "ResourceGroupId": "abc",
             "ResourceConfigInfos": [
                 {
-                    "InstanceType": "xx",
-                    "InstanceNum": 1,
+                    "Role": "abc",
                     "Cpu": 1,
-                    "Role": "xx",
                     "Memory": 1,
+                    "GpuType": "abc",
                     "Gpu": 1,
-                    "GpuType": "xx",
-                    "InstanceTypeAlias": "xx"
+                    "InstanceType": "abc",
+                    "InstanceNum": 1,
+                    "InstanceTypeAlias": "abc",
+                    "RDMAConfig": {
+                        "Enable": true
+                    }
                 }
             ],
+            "Tags": [
+                {
+                    "TagKey": "abc",
+                    "TagValue": "abc"
+                }
+            ],
+            "TrainingMode": "abc",
+            "CodePackagePath": {
+                "Bucket": "abc",
+                "Region": "abc",
+                "Paths": [
+                    "abc"
+                ]
+            },
+            "StartCmdInfo": {
+                "StartCmd": "abc",
+                "PsStartCmd": "abc",
+                "WorkerStartCmd": "abc"
+            },
+            "DataSource": "abc",
             "DataConfigs": [
                 {
+                    "MappingPath": "abc",
+                    "DataSourceType": "abc",
                     "DataSetSource": {
-                        "Id": "xx"
-                    },
-                    "CFSSource": {
-                        "Path": "xx",
-                        "Id": "xx"
-                    },
-                    "DataSourceType": "xx",
-                    "HDFSSource": {
-                        "Path": "xx",
-                        "Id": "xx"
+                        "Id": "abc"
                     },
                     "COSSource": {
+                        "Bucket": "abc",
+                        "Region": "abc",
                         "Paths": [
-                            "xx"
-                        ],
-                        "Region": "xx",
-                        "Bucket": "xx"
+                            "abc"
+                        ]
                     },
-                    "MappingPath": "xx"
+                    "CFSSource": {
+                        "Id": "abc",
+                        "Path": "abc",
+                        "MountType": "abc",
+                        "Protocol": "abc"
+                    },
+                    "HDFSSource": {
+                        "Id": "abc",
+                        "Path": "abc"
+                    },
+                    "GooseFSSource": {
+                        "Id": "abc"
+                    },
+                    "CFSTurboSource": {
+                        "Id": "abc",
+                        "Path": "abc"
+                    }
                 }
             ],
-            "FailureReason": "xx",
-            "Remark": "xx",
-            "Name": "xx",
-            "BillingInfo": "xx",
-            "Region": "xx",
-            "ResourceGroupName": "xx",
-            "LogEnable": true,
-            "EndTime": "xx",
+            "TuningParameters": "abc",
             "Output": {
+                "Bucket": "abc",
+                "Region": "abc",
                 "Paths": [
-                    "xx"
-                ],
-                "Region": "xx",
-                "Bucket": "xx"
+                    "abc"
+                ]
             },
-            "ImageInfo": {
-                "ImageUrl": "xx",
-                "RegistryRegion": "xx",
-                "RegistryId": "xx",
-                "ImageType": "xx"
-            },
-            "Uin": "xx",
-            "RuntimeInSeconds": 1,
-            "DataSource": "xx",
-            "ChargeType": "xx",
-            "CreateTime": "xx",
-            "StartCmdInfo": {
-                "PsStartCmd": "xx",
-                "StartCmd": "xx",
-                "WorkerStartCmd": "xx"
-            },
+            "LogEnable": true,
             "LogConfig": {
-                "TopicId": "xx",
-                "LogsetId": "xx"
-            }
+                "LogsetId": "abc",
+                "TopicId": "abc"
+            },
+            "VpcId": "abc",
+            "SubnetId": "abc",
+            "ImageInfo": {
+                "ImageType": "abc",
+                "ImageUrl": "abc",
+                "RegistryRegion": "abc",
+                "RegistryId": "abc",
+                "AllowSaveAllContent": true,
+                "ImageName": "abc"
+            },
+            "RuntimeInSeconds": 1,
+            "CreateTime": "abc",
+            "StartTime": "abc",
+            "ChargeStatus": "abc",
+            "LatestInstanceId": "abc",
+            "TensorBoardId": "abc",
+            "Remark": "abc",
+            "FailureReason": "abc",
+            "UpdateTime": "abc",
+            "EndTime": "abc",
+            "BillingInfo": "abc",
+            "ResourceGroupName": "abc",
+            "Message": "abc",
+            "Status": "abc",
+            "CallbackUrl": "abc"
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

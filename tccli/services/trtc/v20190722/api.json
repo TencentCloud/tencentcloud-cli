@@ -4077,7 +4077,7 @@
         {
           "disabled": false,
           "document": "录制的媒体流类型：\n0：录制音频+视频流（默认）;\n1：仅录制音频流；\n2：仅录制视频流，",
-          "example": "3",
+          "example": "0",
           "member": "uint64",
           "name": "StreamType",
           "required": false,

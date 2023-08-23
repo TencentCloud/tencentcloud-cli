@@ -589,7 +589,7 @@
       "status": "online"
     },
     "DescribeSlowLogs": {
-      "document": "本接口(DescribeSlowLogs)用于获取云数据库实例的慢查询日志。",
+      "document": "本接口(DescribeSlowLogs)用于获取云数据库实例的慢查询日志。说明：若单次查询数据量过大，则有可能响应超时，建议缩短单次查询时间范围，如一小时，避免导致超时。",
       "input": "DescribeSlowLogsRequest",
       "name": "查询慢查询日志",
       "output": "DescribeSlowLogsResponse",
@@ -10534,7 +10534,7 @@
           "example": "3",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10544,7 +10544,7 @@
           "example": "无",
           "member": "SlowLogInfo",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

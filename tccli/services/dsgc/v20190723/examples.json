@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "CreateDSPADbMetaResources": [
+      {
+        "document": "添加用户云上数据库类型资源",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDSPADbMetaResources\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"MetaType\": \"abc\",\n    \"ResourceRegion\": \"abc\",\n    \"UpdateStatus\": \"abc\",\n    \"UpdateId\": \"abc\",\n    \"Items\": [\n        {\n            \"ResourceId\": \"abc\",\n            \"ResourceName\": \"abc\",\n            \"ResourceVip\": \"abc\",\n            \"ResourceVPort\": 1,\n            \"ResourceCreateTime\": \"abc\",\n            \"ResourceUniqueVpcId\": \"abc\",\n            \"ResourceUniqueSubnetId\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"UpdateId\": \"abc\",\n        \"MetaType\": \"abc\",\n        \"DspaId\": \"abc\",\n        \"ResourceRegion\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}
