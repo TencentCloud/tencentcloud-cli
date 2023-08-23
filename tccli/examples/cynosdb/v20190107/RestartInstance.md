@@ -1,12 +1,12 @@
 **Example 1: 重启实例**
 
-
+重启实例
 
 Input: 
 
 ```
 tccli cynosdb RestartInstance --cli-unfold-argument  \
-    --InstanceId xxx
+    --InstanceId "cynosdbmysql-ins-qwerasd"
 ```
 
 Output: 

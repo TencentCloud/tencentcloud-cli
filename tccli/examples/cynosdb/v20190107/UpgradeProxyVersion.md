@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cynosdb UpgradeProxyVersion --cli-unfold-argument  \
-    --ClusterId abc \
-    --ProxyGroupId abc \
-    --SrcProxyVersion abc \
-    --DstProxyVersion abc \
-    --IsInMaintainPeriod abc
+    --ClusterId cynosdbmysql-asd \
+    --ProxyGroupId cynosdbmysql-proxy-asd \
+    --SrcProxyVersion 3.1.0 \
+    --DstProxyVersion 3.2.0 \
+    --IsInMaintainPeriod yes
 ```
 
 Output: 
@@ -18,8 +18,8 @@ Output:
 {
     "Response": {
         "RequestId": "128046",
-        "FlowId": "123",
-        "TaskId": "123"
+        "FlowId": 123,
+        "TaskId": 123
     }
 }
 ```

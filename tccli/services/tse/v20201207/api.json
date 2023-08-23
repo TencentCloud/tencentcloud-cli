@@ -1176,6 +1176,7 @@
           "example": "1 * *",
           "member": "string",
           "name": "Period",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1186,6 +1187,7 @@
           "example": "17:00",
           "member": "string",
           "name": "StartAt",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1196,8 +1198,20 @@
           "example": "50",
           "member": "int64",
           "name": "TargetReplicas",
+          "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "定时伸缩cron表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0 00 00 * * *",
+          "member": "string",
+          "name": "Crontab",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -6067,7 +6081,7 @@
           "example": "group-xxaaa",
           "member": "string",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6077,7 +6091,7 @@
           "example": "prod",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6087,7 +6101,7 @@
           "example": "现网",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6097,7 +6111,7 @@
           "example": "无",
           "member": "CloudNativeAPIGatewayNodeConfig",
           "name": "NodeConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6107,7 +6121,7 @@
           "example": "Running",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6117,7 +6131,7 @@
           "example": "2021-09-09 11:52:30",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6127,7 +6141,7 @@
           "example": "1",
           "member": "int64",
           "name": "IsFirstGroup",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6137,7 +6151,7 @@
           "example": "无",
           "member": "CloudNativeAPIGatewayStrategy",
           "name": "BindingStrategy",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6147,7 +6161,7 @@
           "example": "gateway-xxxx1234",
           "member": "string",
           "name": "GatewayId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6157,7 +6171,7 @@
           "example": "4",
           "member": "int64",
           "name": "InternetMaxBandwidthOut",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6167,7 +6181,7 @@
           "example": "2021-09-09 11:52:30",
           "member": "string",
           "name": "ModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6177,7 +6191,7 @@
           "example": "subnet-xxxx1234",
           "member": "string",
           "name": "SubnetIds",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

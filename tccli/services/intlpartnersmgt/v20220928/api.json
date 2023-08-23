@@ -1798,7 +1798,7 @@
           "example": "2021-08-18",
           "member": "string",
           "name": "AllocatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1808,7 +1808,7 @@
           "example": "usernames",
           "member": "string",
           "name": "Operator",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1818,7 +1818,7 @@
           "example": "123456.78",
           "member": "float",
           "name": "Credit",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -1828,9 +1828,19 @@
           "example": "123.45",
           "member": "float",
           "name": "AllocatedCredit",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分配后的可用信用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456.78",
+          "member": "float",
+          "name": "ClientCreditAfter",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -10,7 +10,7 @@ tccli cynosdb ModifyParamTemplate --cli-unfold-argument  \
     --TemplateId 94 \
     --ParamList.0.CurrentValue 1024 \
     --ParamList.0.ParamName query_cache_size \
-    --TemplateName 5.7常用参数模版-勿删
+    --TemplateName 5.7常用参数模板-勿删
 ```
 
 Output: 

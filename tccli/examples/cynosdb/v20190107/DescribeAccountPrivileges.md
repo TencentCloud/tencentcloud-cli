@@ -1,17 +1,17 @@
 **Example 1: 查询账号已有权限**
 
-
+查询账号已有权限
 
 Input: 
 
 ```
 tccli cynosdb DescribeAccountPrivileges --cli-unfold-argument  \
-    --ClusterId cynosdbmysql-xxxxxxxx \
-    --Host xxx \
-    --AccountName xxx \
-    --Db xxx \
+    --ClusterId cynosdbmysql-xxxxxx \
+    --AccountName test \
+    --Host 1.1.1.1 \
+    --Db testDb \
     --Type table \
-    --TableName xx
+    --TableName testTable
 ```
 
 Output: 

@@ -42,6 +42,13 @@
       "output": "CreateCronJobResponse",
       "status": "online"
     },
+    "CreateEnvironment": {
+      "document": "创建环境",
+      "input": "CreateEnvironmentRequest",
+      "name": "创建环境",
+      "output": "CreateEnvironmentResponse",
+      "status": "online"
+    },
     "CreateFile": {
       "document": "创建文件",
       "input": "CreateFileRequest",
@@ -75,6 +82,13 @@
       "input": "DeleteCronJobsRequest",
       "name": "删除定时任务",
       "output": "DeleteCronJobsResponse",
+      "status": "online"
+    },
+    "DeleteEnvironments": {
+      "document": "删除环境",
+      "input": "DeleteEnvironmentsRequest",
+      "name": "删除环境",
+      "output": "DeleteEnvironmentsResponse",
       "status": "online"
     },
     "DeleteFiles": {
@@ -145,6 +159,13 @@
       "input": "DescribeCronJobsRequest",
       "name": "列出定时任务",
       "output": "DescribeCronJobsResponse",
+      "status": "online"
+    },
+    "DescribeEnvironments": {
+      "document": "查看环境列表",
+      "input": "DescribeEnvironmentsRequest",
+      "name": "查看环境列表",
+      "output": "DescribeEnvironmentsResponse",
       "status": "online"
     },
     "DescribeErrorSummary": {
@@ -299,6 +320,13 @@
       "input": "UpdateCronJobRequest",
       "name": "更新定时任务",
       "output": "UpdateCronJobResponse",
+      "status": "online"
+    },
+    "UpdateEnvironment": {
+      "document": "更新环境",
+      "input": "UpdateEnvironmentRequest",
+      "name": "更新环境",
+      "output": "UpdateEnvironmentResponse",
       "status": "online"
     },
     "UpdateFileScenarioRelation": {
@@ -1170,6 +1198,60 @@
       ],
       "type": "object"
     },
+    "CreateEnvironmentRequest": {
+      "document": "CreateEnvironment请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "project-xx",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境名",
+          "example": "测试环境",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境变量",
+          "example": "[{\"name\":\"key1\",\"value\":\"value2\"},{\"name\":\"key2\",\"value\":\"value2\"}]",
+          "member": "EnvVar",
+          "name": "EnvVars",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "环境描述",
+          "example": "测试环境专用",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEnvironmentResponse": {
+      "document": "CreateEnvironment返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateFileRequest": {
       "document": "CreateFile请求参数结构体",
       "members": [
@@ -1513,6 +1595,15 @@
           "example": "无",
           "member": "string",
           "name": "Owner",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "env-xx",
+          "member": "string",
+          "name": "EnvId",
           "required": false,
           "type": "string"
         }
@@ -1963,6 +2054,42 @@
     },
     "DeleteCronJobsResponse": {
       "document": "DeleteCronJobs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEnvironmentsRequest": {
+      "document": "DeleteEnvironments请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "project-xx",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境ID列表",
+          "example": "[\"env-xx\",\"env-xx\"]",
+          "member": "string",
+          "name": "EnvIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEnvironmentsResponse": {
+      "document": "DeleteEnvironments返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2556,6 +2683,87 @@
           "type": "list",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentsRequest": {
+      "document": "DescribeEnvironments请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目ID列表",
+          "example": "[\"project-xx\"]",
+          "member": "string",
+          "name": "ProjectIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "环境ID列表",
+          "example": "[\"env-xx\"]",
+          "member": "string",
+          "name": "EnvIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "环境名",
+          "example": "测试环境",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大为100",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序的列",
+          "example": "name",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否正序",
+          "example": "true",
+          "member": "bool",
+          "name": "Ascend",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentsResponse": {
+      "document": "DescribeEnvironments返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4229,6 +4437,56 @@
       ],
       "usage": "both"
     },
+    "EnvVar": {
+      "document": "环境变量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "变量引用键，建议为 C_IDENTIFIER 全大写风格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "C_NAME",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "默认 NORMAL，支持 NORMAL、PASSWORD 类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "变量引用值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "value-xx",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "用于变量设置",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ErrorSummary": {
       "document": "错误信息汇总",
       "members": [
@@ -5251,6 +5509,17 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "环境变量列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EnvVar",
+          "name": "EnvVars",
+          "output_required": true,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -6616,6 +6885,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "环境ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "env-xx",
+          "member": "string",
+          "name": "EnvId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7374,6 +7653,69 @@
     },
     "UpdateCronJobResponse": {
       "document": "UpdateCronJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateEnvironmentRequest": {
+      "document": "UpdateEnvironment请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "project-xx",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "env-xx",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境名",
+          "example": "测试环境",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境描述",
+          "example": "测试环境专用",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境变量",
+          "example": "[{\"name\":\"key1\",\"value\":\"value2\"},{\"name\":\"key2\",\"value\":\"value2\"}]",
+          "member": "EnvVar",
+          "name": "EnvVars",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateEnvironmentResponse": {
+      "document": "UpdateEnvironment返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

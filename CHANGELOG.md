@@ -1,3 +1,253 @@
+# Release 3.0.836.1
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 23 次发布
+
+发布时间：2023-08-24 01:16:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateSeal](http://document.tencentcloudapi.woa.com/document/product/1668/79306)
+
+	* 新增入参：SealStyle, SealSize
+
+
+
+
+## 游戏多媒体引擎(gme) 版本：2018-07-11
+
+### 第 20 次发布
+
+发布时间：2023-08-24 01:17:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateScanUser](http://document.tencentcloudapi.woa.com/document/product/607/71481)
+
+	* 新增入参：UserIdString, ExpirationTime
+
+* [DeleteScanUser](http://document.tencentcloudapi.woa.com/document/product/607/71480)
+
+	* 新增入参：UserIdString
+
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 5 次发布
+
+发布时间：2023-08-24 01:18:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [QueryCreditAllocationHistoryData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#QueryCreditAllocationHistoryData)
+
+	* 新增成员：ClientCreditAfter
+
+
+
+
+## 云压测(pts) 版本：2021-07-28
+
+### 第 19 次发布
+
+发布时间：2023-08-24 01:21:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateEnvironment](http://document.tencentcloudapi.woa.com/document/product/1597/81675)
+* [DeleteEnvironments](http://document.tencentcloudapi.woa.com/document/product/1597/81674)
+* [DescribeEnvironments](http://document.tencentcloudapi.woa.com/document/product/1597/81673)
+* [UpdateEnvironment](http://document.tencentcloudapi.woa.com/document/product/1597/81672)
+
+修改接口：
+
+* [CreateScenario](http://document.tencentcloudapi.woa.com/document/product/1597/75220)
+
+	* 新增入参：EnvId
+
+
+新增数据结构：
+
+* [EnvVar](http://document.tencentcloudapi.woa.com/document/product/1597/75228#EnvVar)
+
+修改数据结构：
+
+* [Job](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Job)
+
+	* 新增成员：EnvVars
+
+* [Scenario](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Scenario)
+
+	* 新增成员：EnvId
+
+
+
+
+## 标签(tag) 版本：2018-08-13
+
+### 第 9 次发布
+
+发布时间：2023-08-24 01:23:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeResourceTagsByResourceIdsForBill](http://document.tencentcloudapi.woa.com/document/product/651/81676)
+
+新增数据结构：
+
+* [TagResourceWithTime](http://document.tencentcloudapi.woa.com/document/product/651/35327#TagResourceWithTime)
+
+
+
+## 自动化助手(tat) 版本：2020-10-28
+
+### 第 9 次发布
+
+发布时间：2023-08-24 01:23:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateRegisterCode](http://document.tencentcloudapi.woa.com/document/product/1340/81684)
+* [DeleteRegisterCodes](http://document.tencentcloudapi.woa.com/document/product/1340/81683)
+* [DeleteRegisterInstance](http://document.tencentcloudapi.woa.com/document/product/1340/81682)
+* [DescribeRegisterCodes](http://document.tencentcloudapi.woa.com/document/product/1340/81681)
+* [DescribeRegisterInstances](http://document.tencentcloudapi.woa.com/document/product/1340/81680)
+* [DisableRegisterCodes](http://document.tencentcloudapi.woa.com/document/product/1340/81679)
+* [ModifyRegisterInstance](http://document.tencentcloudapi.woa.com/document/product/1340/81678)
+
+新增数据结构：
+
+* [DefaultParameterConf](http://document.tencentcloudapi.woa.com/document/product/1340/52687#DefaultParameterConf)
+* [RegisterCodeInfo](http://document.tencentcloudapi.woa.com/document/product/1340/52687#RegisterCodeInfo)
+* [RegisterInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1340/52687#RegisterInstanceInfo)
+
+修改数据结构：
+
+* [Command](http://document.tencentcloudapi.woa.com/document/product/1340/52687#Command)
+
+	* 新增成员：DefaultParameterConfs
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 62 次发布
+
+发布时间：2023-08-24 01:24:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateEnvironment](http://document.tencentcloudapi.woa.com/document/product/1179/46081)
+
+	* <font color="#dd0000">**修改入参**：</font>ClusterId
+
+
+
+
+## 微服务引擎 TSE(tse) 版本：2020-12-07
+
+### 第 32 次发布
+
+发布时间：2023-08-24 01:26:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CloudNativeAPIGatewayStrategyCronScalerConfigParam](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyCronScalerConfigParam)
+
+	* 新增成员：Crontab
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 48 次发布
+
+发布时间：2023-08-24 01:27:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddSpartaProtectionAuto](http://document.tencentcloudapi.woa.com/document/product/627/81707)
+* [AddSpartaProtectionsAuto](http://document.tencentcloudapi.woa.com/document/product/627/81688)
+* [DeleteHost](http://document.tencentcloudapi.woa.com/document/product/627/81706)
+* [DeleteSpartaProtection](http://document.tencentcloudapi.woa.com/document/product/627/81705)
+* [DescribeCiphersDetail](http://document.tencentcloudapi.woa.com/document/product/627/81704)
+* [DescribeDomainCountInfo](http://document.tencentcloudapi.woa.com/document/product/627/81703)
+* [DescribeDomainDetailsClb](http://document.tencentcloudapi.woa.com/document/product/627/81702)
+* [DescribeFindDomainList](http://document.tencentcloudapi.woa.com/document/product/627/81701)
+* [DescribeHost](http://document.tencentcloudapi.woa.com/document/product/627/81700)
+* [DescribeHostLimit](http://document.tencentcloudapi.woa.com/document/product/627/81699)
+* [DescribeHosts](http://document.tencentcloudapi.woa.com/document/product/627/81698)
+* [DescribeTlsVersion](http://document.tencentcloudapi.woa.com/document/product/627/81697)
+* [DescribeUserDomainInfo](http://document.tencentcloudapi.woa.com/document/product/627/81696)
+* [DescribeWafInfo](http://document.tencentcloudapi.woa.com/document/product/627/81695)
+* [ModifyDomainIpv6Status](http://document.tencentcloudapi.woa.com/document/product/627/81694)
+* [ModifyDomainsCLSStatus](http://document.tencentcloudapi.woa.com/document/product/627/81693)
+* [ModifyHost](http://document.tencentcloudapi.woa.com/document/product/627/81692)
+* [ModifyHostFlowMode](http://document.tencentcloudapi.woa.com/document/product/627/81691)
+* [ModifyHostMode](http://document.tencentcloudapi.woa.com/document/product/627/81690)
+* [ModifyHostStatus](http://document.tencentcloudapi.woa.com/document/product/627/81689)
+* [ModifyProtectionStatus](http://document.tencentcloudapi.woa.com/document/product/627/81687)
+* [ModifySpartaProtectionMode](http://document.tencentcloudapi.woa.com/document/product/627/81686)
+* [RefreshAccessCheckResult](http://document.tencentcloudapi.woa.com/document/product/627/81685)
+
+新增数据结构：
+
+* [ClbDomainsInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#ClbDomainsInfo)
+* [ClbHostResult](http://document.tencentcloudapi.woa.com/document/product/627/53609#ClbHostResult)
+* [ClbHostsParams](http://document.tencentcloudapi.woa.com/document/product/627/53609#ClbHostsParams)
+* [DomainURI](http://document.tencentcloudapi.woa.com/document/product/627/53609#DomainURI)
+* [FailedInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#FailedInfo)
+* [FindAllDomainDetail](http://document.tencentcloudapi.woa.com/document/product/627/53609#FindAllDomainDetail)
+* [HostDel](http://document.tencentcloudapi.woa.com/document/product/627/53609#HostDel)
+* [HostStatus](http://document.tencentcloudapi.woa.com/document/product/627/53609#HostStatus)
+* [SearchItem](http://document.tencentcloudapi.woa.com/document/product/627/53609#SearchItem)
+* [TLSCiphers](http://document.tencentcloudapi.woa.com/document/product/627/53609#TLSCiphers)
+* [TLSVersion](http://document.tencentcloudapi.woa.com/document/product/627/53609#TLSVersion)
+* [UserDomainInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#UserDomainInfo)
+
+
+
 # Release 3.0.835.1
 
 ## 应用云渲染(car) 版本：2022-01-10

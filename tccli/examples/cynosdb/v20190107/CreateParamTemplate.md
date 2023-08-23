@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cynosdb CreateParamTemplate --cli-unfold-argument  \
-    --TemplateDescription 常用模版 \
+    --TemplateDescription 常用模板 \
     --EngineVersion 5.7 \
     --TemplateId 93 \
-    --TemplateName 5.7常用参数模版
+    --TemplateName 5.7常用参数模板
 ```
 
 Output: 

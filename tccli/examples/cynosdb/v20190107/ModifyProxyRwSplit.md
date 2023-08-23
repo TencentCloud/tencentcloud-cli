@@ -6,21 +6,21 @@ Input:
 
 ```
 tccli cynosdb ModifyProxyRwSplit --cli-unfold-argument  \
-    --ClusterId abc \
-    --ProxyGroupId abc \
-    --ConsistencyType abc \
-    --ConsistencyTimeOut abc \
-    --WeightMode abc \
-    --InstanceWeights.0.InstanceId abc \
+    --ClusterId cynosdbmysql-asd \
+    --ProxyGroupId cynosdbmysql-proxy-qwe \
+    --ConsistencyType eventual \
+    --ConsistencyTimeOut 10 \
+    --WeightMode system \
+    --InstanceWeights.0.InstanceId cynosdbmysql-ins-qwe \
     --InstanceWeights.0.Weight 0 \
-    --FailOver abc \
-    --AutoAddRo abc \
-    --OpenRw abc \
-    --RwType abc \
+    --FailOver  \
+    --AutoAddRo yes \
+    --OpenRw yes \
+    --RwType READONLY \
     --TransSplit True \
-    --AccessMode abc \
-    --OpenConnectionPool abc \
-    --ConnectionPoolType abc \
+    --AccessMode nearby \
+    --OpenConnectionPool yes \
+    --ConnectionPoolType SessionConnectionPool \
     --ConnectionPoolTimeOut 0
 ```
 

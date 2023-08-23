@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli cynosdb ModifyClusterDatabase --cli-unfold-argument  \
-    --OldUserHostPrivileges.0.DbUserName xx \
-    --OldUserHostPrivileges.0.DbHost xx \
-    --OldUserHostPrivileges.0.DbPrivilege xx \
-    --NewUserHostPrivileges.0.DbUserName xx \
-    --NewUserHostPrivileges.0.DbHost xx \
-    --NewUserHostPrivileges.0.DbPrivilege xx \
-    --ClusterId xx \
-    --DbName xx \
-    --Description xx
+    --OldUserHostPrivileges.0.DbUserName test \
+    --OldUserHostPrivileges.0.DbHost 1.1.1.1 \
+    --OldUserHostPrivileges.0.DbPrivilege create \
+    --NewUserHostPrivileges.0.DbUserName test \
+    --NewUserHostPrivileges.0.DbHost 1.1.11.1 \
+    --NewUserHostPrivileges.0.DbPrivilege delete \
+    --ClusterId cynosdbmysql-asd \
+    --DbName testDb \
+    --Description this is a dbtable
 ```
 
 Output: 

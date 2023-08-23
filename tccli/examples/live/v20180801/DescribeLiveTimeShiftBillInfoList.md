@@ -17,19 +17,14 @@ Output:
     "Response": {
         "DataInfoList": [
             {
-                "Domain": "x.com",
-                "Duration": 1,
-                "StoragePeriod": 1,
-                "Time": "2022-05-06T10:30:00Z"
-            },
-            {
-                "Domain": "x.com",
-                "Duration": 1,
-                "StoragePeriod": 1,
-                "Time": "2022-05-06T10:35:00Z"
+                "Domain": "abc",
+                "Duration": 0,
+                "StoragePeriod": 0,
+                "Time": "2023-08-10 20:00:00",
+                "TotalDuration": 0
             }
         ],
-        "RequestId": "ca0bb85f-6b95-4b9f-b85f-fdsafasds"
+        "RequestId": "abc"
     }
 }
 ```

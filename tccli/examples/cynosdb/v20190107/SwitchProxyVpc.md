@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cynosdb SwitchProxyVpc --cli-unfold-argument  \
-    --OldIpReserveHours 0 \
-    --UniqSubnetId xx \
-    --ClusterId xxx \
-    --UniqVpcId xx \
-    --ProxyGroupId xx
+    --OldIpReserveHours 1 \
+    --UniqSubnetId subnet-123 \
+    --ClusterId cynosdbmysql-asd \
+    --UniqVpcId vpc-123 \
+    --ProxyGroupId cynosdbmysql-proxy-qwe
 ```
 
 Output: 
@@ -18,7 +18,7 @@ Output:
 {
     "Response": {
         "RequestId": "128046",
-        "FlowId": "123"
+        "FlowId": 123
     }
 }
 ```

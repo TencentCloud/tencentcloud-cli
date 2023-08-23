@@ -110,6 +110,14 @@
         "title": "查看资源关联的标签"
       }
     ],
+    "DescribeResourceTagsByResourceIdsForBill": [
+      {
+        "document": "批量查看资源关联的标签（计费）",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceTagsByResourceIdsForBill\n<公共请求参数>\n\n{\n    \"ServiceType\": \"cvm\",\n    \"ResourcePrefix\": \"instance\",\n    \"ResourceIds\": [\n        \"test-1234\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Limit\": 15,\n        \"Offset\": 0,\n        \"RequestId\": \"b4fb34f9-83ea-4948-850e-480e47cf9a11\",\n        \"Tags\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"ResourceId\": \"vpc-1234\",\n                \"TagKey\": \"testKey\",\n                \"TagKeyMd5\": \"c0751bd838918952b086812599b4f2e2\",\n                \"TagValue\": \"testValue\",\n                \"TagValueMd5\": \"123fa27d4bf6a6787faebd41f199aa2a\",\n                \"UpdateTime\": \"2023-08-01 11:50:00\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "批量查看资源关联的标签（计费）"
+      }
+    ],
     "DescribeResourceTagsByResourceIdsSeq": [
       {
         "document": "",

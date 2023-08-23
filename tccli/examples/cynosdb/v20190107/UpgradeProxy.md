@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli cynosdb UpgradeProxy --cli-unfold-argument  \
-    --ClusterId abc \
-    --ProxyCount 0 \
-    --Cpu 0 \
-    --Mem 0 \
-    --ProxyGroupId abc \
-    --ReloadBalance abc \
-    --IsInMaintainPeriod abc \
-    --ProxyZones.0.ProxyNodeZone abc \
-    --ProxyZones.0.ProxyNodeCount 0
+    --ClusterId cynosdbmysql-abc \
+    --ProxyCount 2 \
+    --Cpu 2 \
+    --Mem 4 \
+    --ProxyGroupId cynosdbmysql-node-asd \
+    --ReloadBalance auto \
+    --IsInMaintainPeriod no \
+    --ProxyZones.0.ProxyNodeZone ap-guangzhou-3 \
+    --ProxyZones.0.ProxyNodeCount 2
 ```
 
 Output: 

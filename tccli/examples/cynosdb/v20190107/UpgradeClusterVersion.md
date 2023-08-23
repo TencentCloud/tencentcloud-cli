@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cynosdb UpgradeClusterVersion --cli-unfold-argument  \
-    --ClusterId xxx \
+    --ClusterId cynosdbmysql-qwerasd \
     --CynosVersion 2.0.0 \
     --UpgradeType upgradeImmediate
 ```
