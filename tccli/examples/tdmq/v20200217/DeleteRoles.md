@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli tdmq DeleteRoles --cli-unfold-argument  \
-    --RoleNames test_role_1 test_role_2
+    --RoleNames abc \
+    --ClusterId abc
 ```
 
 Output: 

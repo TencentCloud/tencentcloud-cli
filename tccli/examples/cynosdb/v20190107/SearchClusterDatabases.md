@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cynosdb SearchClusterDatabases --cli-unfold-argument  \
-    --ClusterId xxx \
-    --Database xxx
+    --ClusterId cynosdbmysql-qwer \
+    --Database testDb
 ```
 
 Output: 

@@ -520,6 +520,14 @@
         "title": "成功示例"
       }
     ],
+    "ListGatewayDevices": [
+      {
+        "document": " ",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListGatewayDevices\n<公共请求参数>\n\n{\n    \"GatewayId\": \"hijklmno-efgh-5678-ijkl-1234567890abcd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"List\": [\n                {\n                    \"ChannelNum\": 0,\n                    \"DeviceId\": \"12345678-abcd-efgh-ijkl-1234567890abcd\",\n                    \"Ip\": \"192.168.0.1\",\n                    \"Name\": \"gw121138\",\n                    \"Port\": 8090,\n                    \"ProtocolType\": 1,\n                    \"ProtocolTypeName\": \"hik\",\n                    \"Status\": 0,\n                    \"Type\": 1\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"29b0c8a9-dd64-4ece-a42b-4b03f819c56b\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
     "ListGateways": [
       {
         "document": " ",

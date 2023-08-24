@@ -6,9 +6,10 @@ Input:
 
 ```
 tccli tdmq CreateEnvironmentRole --cli-unfold-argument  \
-    --RoleName test_role_1 \
-    --EnvironmentId default \
-    --Permissions produce
+    --EnvironmentId abc \
+    --RoleName abc \
+    --Permissions abc \
+    --ClusterId abc
 ```
 
 Output: 

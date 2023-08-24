@@ -1,3 +1,224 @@
+# Release 3.0.837.1
+
+## 弹性伸缩(as) 版本：2018-04-19
+
+### 第 28 次发布
+
+发布时间：2023-08-25 01:09:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* UpgradeLaunchConfiguration
+
+
+
+## 批量计算(batch) 版本：2017-03-12
+
+### 第 12 次发布
+
+发布时间：2023-08-25 01:10:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [CommandLine](http://document.tencentcloudapi.woa.com/document/product/599/15912#CommandLine)
+
+修改数据结构：
+
+* [Application](http://document.tencentcloudapi.woa.com/document/product/599/15912#Application)
+
+	* 新增成员：Commands
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 40 次发布
+
+发布时间：2023-08-25 01:23:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [SearchCosRechargeInfo](http://document.tencentcloudapi.woa.com/document/product/614/81708)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 59 次发布
+
+发布时间：2023-08-25 01:30:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Package](http://document.tencentcloudapi.woa.com/document/product/1003/48097#Package)
+
+	* <font color="#dd0000">**修改成员**：</font>AppId, PackageId, PackageName, PackageType, PackageRegion, Status, PackageTotalSpec, PackageUsedSpec, HasQuota, BindInstanceInfos, StartTime, ExpireTime
+
+
+
+
+## 智能视图计算平台(iss) 版本：2023-05-17
+
+### 第 4 次发布
+
+发布时间：2023-08-25 01:49:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ListGatewayDevices](http://document.tencentcloudapi.woa.com/document/product/1740/81709)
+
+新增数据结构：
+
+* [GatewayDevice](http://document.tencentcloudapi.woa.com/document/product/1740/81572#GatewayDevice)
+* [ListGatewayDevicesData](http://document.tencentcloudapi.woa.com/document/product/1740/81572#ListGatewayDevicesData)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 63 次发布
+
+发布时间：2023-08-25 02:10:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateEnvironmentRole](http://document.tencentcloudapi.woa.com/document/product/1179/62402)
+
+	* <font color="#dd0000">**修改入参**：</font>ClusterId
+
+* [CreateSubscription](http://document.tencentcloudapi.woa.com/document/product/1179/46075)
+
+	* <font color="#dd0000">**修改入参**：</font>ClusterId
+
+* [CreateTopic](http://document.tencentcloudapi.woa.com/document/product/1179/46088)
+
+	* <font color="#dd0000">**修改入参**：</font>ClusterId
+
+* [DeleteEnvironmentRoles](http://document.tencentcloudapi.woa.com/document/product/1179/62400)
+
+	* <font color="#dd0000">**修改入参**：</font>ClusterId
+
+* [DeleteEnvironments](http://document.tencentcloudapi.woa.com/document/product/1179/46080)
+
+	* <font color="#dd0000">**修改入参**：</font>ClusterId
+
+* [DeleteRoles](http://document.tencentcloudapi.woa.com/document/product/1179/62403)
+
+	* <font color="#dd0000">**修改入参**：</font>ClusterId
+
+* [DeleteTopics](http://document.tencentcloudapi.woa.com/document/product/1179/46087)
+
+	* <font color="#dd0000">**修改入参**：</font>ClusterId
+
+* [DescribeEnvironmentAttributes](http://document.tencentcloudapi.woa.com/document/product/1179/46079)
+
+	* <font color="#dd0000">**修改入参**：</font>ClusterId
+
+* [DescribeEnvironments](http://document.tencentcloudapi.woa.com/document/product/1179/46078)
+
+	* <font color="#dd0000">**修改入参**：</font>ClusterId
+
+* [DescribeRoles](http://document.tencentcloudapi.woa.com/document/product/1179/62399)
+
+	* <font color="#dd0000">**修改入参**：</font>ClusterId
+
+* [DescribeSubscriptions](http://document.tencentcloudapi.woa.com/document/product/1179/46072)
+
+	* <font color="#dd0000">**修改入参**：</font>ClusterId
+
+* [ModifyEnvironmentAttributes](http://document.tencentcloudapi.woa.com/document/product/1179/46077)
+
+	* <font color="#dd0000">**修改入参**：</font>ClusterId
+
+* [ModifyEnvironmentRole](http://document.tencentcloudapi.woa.com/document/product/1179/62398)
+
+	* <font color="#dd0000">**修改入参**：</font>ClusterId
+
+* [ModifyRole](http://document.tencentcloudapi.woa.com/document/product/1179/62397)
+
+	* 新增入参：EnvironmentRoleSets, UnbindAllEnvironment
+
+	* <font color="#dd0000">**修改入参**：</font>ClusterId
+
+* [ModifyTopic](http://document.tencentcloudapi.woa.com/document/product/1179/46085)
+
+	* <font color="#dd0000">**修改入参**：</font>ClusterId
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 49 次发布
+
+发布时间：2023-08-25 02:23:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyApiAnalyzeStatus](http://document.tencentcloudapi.woa.com/document/product/627/81711)
+* [ModifyBotStatus](http://document.tencentcloudapi.woa.com/document/product/627/81710)
+
+修改接口：
+
+* [DescribeAttackOverview](http://document.tencentcloudapi.woa.com/document/product/627/77169)
+
+	* 新增出参：ApiRiskEventCount
+
+
+新增数据结构：
+
+* [TargetEntity](http://document.tencentcloudapi.woa.com/document/product/627/53609#TargetEntity)
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 20 次发布
+
+发布时间：2023-08-25 02:24:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [IntegrationNodeSchema](http://document.tencentcloudapi.woa.com/document/product/1607/77747#IntegrationNodeSchema)
+
+	* 新增成员：Comment
+
+
+
+
 # Release 3.0.836.1
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11

@@ -28863,6 +28863,7 @@
           "example": "123",
           "member": "string",
           "name": "Id",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -28873,6 +28874,7 @@
           "example": "name",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -28883,6 +28885,7 @@
           "example": "String",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -28893,6 +28896,7 @@
           "example": "test",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -28903,6 +28907,7 @@
           "example": "无",
           "member": "RecordField",
           "name": "Properties",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -28913,6 +28918,18 @@
           "example": "无",
           "member": "string",
           "name": "Alias",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true

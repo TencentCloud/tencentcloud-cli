@@ -350,6 +350,13 @@
       "output": "ListDevicesResponse",
       "status": "online"
     },
+    "ListGatewayDevices": {
+      "document": "用于查询网关下挂载的设备列表。",
+      "input": "ListGatewayDevicesRequest",
+      "name": "查询网关下设备列表",
+      "output": "ListGatewayDevicesResponse",
+      "status": "online"
+    },
     "ListGateways": {
       "document": "用于获取网关列表。",
       "input": "ListGatewaysRequest",
@@ -5429,6 +5436,102 @@
       ],
       "usage": "out"
     },
+    "GatewayDevice": {
+      "document": "网关设备数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关接入协议类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ProtocolType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关接入协议名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProtocolTypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备内网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Ip",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Port",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备下通道数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ChannelNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "GatewayVersion": {
       "document": "网关详情版本信息",
       "members": [
@@ -5930,6 +6033,69 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListGatewayDevicesData": {
+      "document": "查询网关设备列表返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关下设备列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GatewayDevice",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关下设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ListGatewayDevicesRequest": {
+      "document": "ListGatewayDevices请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关索引ID（从获取网关列表接口ListGateways中获取）",
+          "example": "无",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListGatewayDevicesResponse": {
+      "document": "ListGatewayDevices返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据",
+          "example": "无",
+          "member": "ListGatewayDevicesData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {

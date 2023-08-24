@@ -6,9 +6,12 @@ Input:
 
 ```
 tccli tdmq DescribeEnvironments --cli-unfold-argument  \
-    --EnvironmentId default \
-    --Offset 0 \
-    --Limit 10
+    --EnvironmentId abc \
+    --Offset 1 \
+    --Limit 1 \
+    --ClusterId abc \
+    --Filters.0.Name abc \
+    --Filters.0.Values abc
 ```
 
 Output: 
@@ -18,21 +21,22 @@ Output:
         "TotalCount": 1,
         "EnvironmentSet": [
             {
-                "EnvironmentId": "xx",
-                "Remark": "xx",
-                "NamespaceName": "xx",
+                "EnvironmentId": "abc",
+                "Remark": "abc",
+                "MsgTTL": 0,
+                "CreateTime": "2020-09-22 00:00:00",
                 "UpdateTime": "2020-09-22 00:00:00",
-                "NamespaceId": "xx",
+                "NamespaceId": "abc",
+                "NamespaceName": "abc",
+                "TopicNum": 0,
                 "RetentionPolicy": {
                     "TimeInMinutes": 0,
                     "SizeInMB": 0
                 },
-                "TopicNum": 0,
-                "MsgTTL": 0,
-                "CreateTime": "2020-09-22 00:00:00"
+                "AutoSubscriptionCreation": true
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

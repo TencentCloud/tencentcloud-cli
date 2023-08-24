@@ -456,6 +456,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务执行命令信息。与Command不能同时指定。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CommandLine",
+          "name": "Commands",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -525,6 +536,23 @@
           "name": "SecretKey",
           "required": true,
           "type": "string"
+        }
+      ],
+      "usage": "both"
+    },
+    "CommandLine": {
+      "document": "任务执行信息描述。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务执行命令。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "echo hello world",
+          "member": "string",
+          "name": "Command",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

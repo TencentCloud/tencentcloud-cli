@@ -6,9 +6,10 @@ Input:
 
 ```
 tccli tdmq ModifyEnvironmentRole --cli-unfold-argument  \
-    --RoleName test_role \
-    --EnvironmentId default \
-    --Permissions produce consume
+    --EnvironmentId abc \
+    --RoleName abc \
+    --Permissions abc \
+    --ClusterId abc
 ```
 
 Output: 

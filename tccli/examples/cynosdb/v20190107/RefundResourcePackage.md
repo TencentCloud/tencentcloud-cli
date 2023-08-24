@@ -7,7 +7,7 @@ Input:
 
 ```
 tccli cynosdb RefundResourcePackage --cli-unfold-argument  \
-    --PackageId abc
+    --PackageId package-abcd1234
 ```
 
 Output: 

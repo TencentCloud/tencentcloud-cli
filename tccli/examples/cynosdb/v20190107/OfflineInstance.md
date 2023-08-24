@@ -1,6 +1,6 @@
-**Example 1: 隔离实例**
+**Example 1: 销毁实例**
 
-
+销毁实例
 
 Input: 
 
