@@ -30,6 +30,14 @@
         "title": "创建周期执行命令"
       }
     ],
+    "CreateRegisterCode": [
+      {
+        "document": "创建注册码。",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRegisterCode\n<公共请求参数>\n\n{\n    \"Description\": \"abc\",\n    \"InstanceNamePrefix\": \"abc\",\n    \"RegisterLimit\": 0,\n    \"EffectiveTime\": 0,\n    \"IpAddressRange\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RegisterCodeId\": \"abc\",\n        \"RegisterCodeValue\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建注册码"
+      }
+    ],
     "DeleteCommand": [
       {
         "document": "",
@@ -44,6 +52,22 @@
         "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInvoker\n<公共请求参数>\n\n{\n    \"InvokerId\": \"ivk-b7s3qa5l\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bc16e010-7b50-4661-88e8-4d2c77d15558\"\n    }\n}",
         "title": "删除执行器"
+      }
+    ],
+    "DeleteRegisterCodes": [
+      {
+        "document": "根据注册码ID删除注册码。",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRegisterCodes\n<公共请求参数>\n\n{\n    \"RegisterCodeIds\": [\n        \"abc\",\n        \"def\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"RequestId\"\n    }\n}",
+        "title": "删除注册码"
+      }
+    ],
+    "DeleteRegisterInstance": [
+      {
+        "document": "根据实例ID删除托管实例。",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRegisterInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除托管实例"
       }
     ],
     "DescribeAutomationAgentStatus": [
@@ -120,12 +144,48 @@
         "title": "查询地域列表"
       }
     ],
+    "DescribeRegisterCodes": [
+      {
+        "document": "根据Filters查询注册码。",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRegisterCodes\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RegisterCodeSet\": [\n            {\n                \"RegisterCodeId\": \"abc\",\n                \"Description\": \"abc\",\n                \"InstanceNamePrefix\": \"abc\",\n                \"RegisterLimit\": 0,\n                \"ExpiredTime\": \"2020-09-22T00:00:00+00:00\",\n                \"IpAddressRange\": \"abc\",\n                \"Enabled\": true,\n                \"RegisteredCount\": 0,\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"UpdatedTime\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "根据Filters查询注册码"
+      },
+      {
+        "document": "根据注册码ID查询注册码。",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRegisterCodes\n<公共请求参数>\n\n{\n    \"RegisterCodeIds\": [\n        \"abc\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RegisterCodeSet\": [\n            {\n                \"RegisterCodeId\": \"abc\",\n                \"Description\": \"abc\",\n                \"InstanceNamePrefix\": \"abc\",\n                \"RegisterLimit\": 0,\n                \"ExpiredTime\": \"2020-09-22T00:00:00+00:00\",\n                \"IpAddressRange\": \"abc\",\n                \"Enabled\": true,\n                \"RegisteredCount\": 0,\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"UpdatedTime\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "根据注册码ID查询注册码"
+      }
+    ],
+    "DescribeRegisterInstances": [
+      {
+        "document": "根据Filters查询托管实例。",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRegisterInstances\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"instance-name\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RegisterInstanceSet\": [\n            {\n                \"RegisterCodeId\": \"abc\",\n                \"InstanceId\": \"abc\",\n                \"InstanceName\": \"abc\",\n                \"MachineId\": \"abc\",\n                \"SystemName\": \"abc\",\n                \"HostName\": \"abc\",\n                \"LocalIp\": \"abc\",\n                \"PublicKey\": \"abc\",\n                \"Status\": \"abc\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"UpdatedTime\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "根据Filters查询托管实例"
+      },
+      {
+        "document": "根据托管实例ID查询托管实例。",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRegisterInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"abc\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RegisterInstanceSet\": [\n            {\n                \"RegisterCodeId\": \"abc\",\n                \"InstanceId\": \"abc\",\n                \"InstanceName\": \"abc\",\n                \"MachineId\": \"abc\",\n                \"SystemName\": \"abc\",\n                \"HostName\": \"abc\",\n                \"LocalIp\": \"abc\",\n                \"PublicKey\": \"abc\",\n                \"Status\": \"abc\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"UpdatedTime\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "根据托管实例ID查询托管实例"
+      }
+    ],
     "DisableInvoker": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableInvoker\n<公共请求参数>\n\n{\n    \"InvokerId\": \"ivk-b7s3qa5l\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6c5b0bd-4273-47c0-8d34-c32822f3ccb0\"\n    }\n}",
         "title": "停止执行器"
+      }
+    ],
+    "DisableRegisterCodes": [
+      {
+        "document": "根据注册码ID禁用注册码。",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableRegisterCodes\n<公共请求参数>\n\n{\n    \"RegisterCodeIds\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "禁用注册码"
       }
     ],
     "EnableInvoker": [
@@ -158,6 +218,14 @@
         "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInvoker\n<公共请求参数>\n\n{\n    \"InvokerId\": \"ivk-b7s3qa5l\",\n    \"Parameters\": \"{\\\"var\\\": \\\"1\\\"}\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7f3acde8-196d-4be4-9fa7-359f79b026bc\"\n    }\n}",
         "title": "修改执行器"
+      }
+    ],
+    "ModifyRegisterInstance": [
+      {
+        "document": "修改托管实例名为\"abc\"",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRegisterInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"InstanceName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改托管实例"
       }
     ],
     "PreviewReplacedCommandContent": [

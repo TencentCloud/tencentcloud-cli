@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cynosdb ModifyDBInstanceSecurityGroups --cli-unfold-argument  \
-    --InstanceId abc \
-    --SecurityGroupIds abc \
-    --Zone abc
+    --InstanceId cynosdbmysql-ins-lkj \
+    --SecurityGroupIds sg-mnbv \
+    --Zone ap-guangzhou-3
 ```
 
 Output: 

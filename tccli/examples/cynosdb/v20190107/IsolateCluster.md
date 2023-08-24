@@ -1,6 +1,6 @@
 **Example 1: 隔离集群**
 
-
+隔离集群
 
 Input: 
 
@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "RequestId": "128046",
-        "FlowId": "123",
+        "FlowId": 123,
         "DealNames": [
             "123"
         ]

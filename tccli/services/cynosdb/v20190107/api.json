@@ -2585,7 +2585,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "复制集群ID数组",
+          "document": "复制集群ID数组，例如[\"cynosdbmysql-bzxxrmtq\",\"cynosdbmysql-qwer\"]",
           "example": "cynosdbpg-bzxxrmtq",
           "member": "string",
           "name": "ClusterIds",
@@ -2594,7 +2594,7 @@
         },
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "集群id，例如\"cynosdbmysql-bzxxrmtq\"",
           "example": "cynosdbpg-bzxxrmtq",
           "member": "string",
           "name": "SourceClusterId",
@@ -2613,7 +2613,7 @@
           "example": "123",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6550,7 +6550,7 @@
           "example": "[\"select\"]",
           "member": "string",
           "name": "Privileges",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10199,7 +10199,7 @@
           "example": "cynosdbmysql-xxx",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10209,7 +10209,7 @@
           "example": "[\"cynosdbmysql-ins-2\",\"cynosdbmysql-ins-6\"]",
           "member": "string",
           "name": "InstanceIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10219,7 +10219,7 @@
           "example": "无",
           "member": "TradePrice",
           "name": "Prices",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10229,7 +10229,7 @@
           "example": "500",
           "member": "int64",
           "name": "InstanceRealTotalPrice",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10239,7 +10239,7 @@
           "example": "500",
           "member": "int64",
           "name": "StorageRealTotalPrice",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10680,7 +10680,7 @@
           "example": "123",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -10690,7 +10690,7 @@
           "example": "[134]",
           "member": "string",
           "name": "DealNames",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -10717,7 +10717,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID数组",
+          "document": "实例ID数组，例如[\"cynosdbbmysql-ins-asd\",\"cynosdbmysql-ins-zxc\"]",
           "example": "[\"cynosdbmysql-ixgbd0di\\n\"]",
           "member": "string",
           "name": "InstanceIdList",
@@ -10745,7 +10745,7 @@
           "example": "123",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10755,7 +10755,7 @@
           "example": "[\"1234\"]",
           "member": "string",
           "name": "DealNames",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11991,7 +11991,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID，例如cynosdbmysql-asd123",
           "example": "cynosdbmysql-xxxxxxx",
           "member": "string",
           "name": "ClusterId",
@@ -12000,7 +12000,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理组ID",
+          "document": "数据库代理组ID，例如cynosdbmysql-proxy-qwe123",
           "example": "无",
           "member": "string",
           "name": "ProxyGroupId",
@@ -12136,6 +12136,7 @@
           "example": "无",
           "member": "int64",
           "name": "FlowId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12145,6 +12146,7 @@
           "example": "无",
           "member": "int64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12307,7 +12309,7 @@
           "example": "123",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12467,13 +12469,12 @@
       "members": [
         {
           "disabled": false,
-          "document": "账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-16",
+          "document": "账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-30",
           "example": "0",
           "member": "string",
           "name": "AccountName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -12482,18 +12483,16 @@
           "member": "string",
           "name": "AccountPassword",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "主机",
+          "document": "主机(%或ipv4地址)",
           "example": "0",
           "member": "string",
           "name": "Host",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -12502,8 +12501,7 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -12512,8 +12510,7 @@
           "member": "int64",
           "name": "MaxUserConnections",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -14718,7 +14715,7 @@
           "example": "123",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15388,7 +15385,7 @@
           "example": "[]",
           "member": "DatabaseTables",
           "name": "Tables",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -15827,7 +15824,7 @@
           "example": "123",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16142,7 +16139,7 @@
           "example": "123",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16371,6 +16368,7 @@
           "example": "无",
           "member": "int64",
           "name": "FlowId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16380,6 +16378,7 @@
           "example": "无",
           "member": "int64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16452,6 +16451,7 @@
           "example": "无",
           "member": "int64",
           "name": "FlowId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16461,6 +16461,7 @@
           "example": "无",
           "member": "int64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

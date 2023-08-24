@@ -2686,19 +2686,19 @@
         },
         {
           "disabled": false,
-          "document": "说明，128个字符以内。",
-          "example": "demo",
-          "member": "string",
-          "name": "Remark",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "Pulsar 集群的ID",
           "example": "pulsar-ge3n43v3wj",
           "member": "string",
           "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "说明，128个字符以内。",
+          "example": "demo",
+          "member": "string",
+          "name": "Remark",
           "required": false,
           "type": "string"
         },
@@ -2732,6 +2732,7 @@
           "example": "default",
           "member": "string",
           "name": "EnvironmentId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2741,6 +2742,7 @@
           "example": "60",
           "member": "uint64",
           "name": "MsgTTL",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2750,6 +2752,7 @@
           "example": "demo",
           "member": "string",
           "name": "Remark",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2759,6 +2762,7 @@
           "example": "namespace-ak7jexmrz2",
           "member": "string",
           "name": "NamespaceId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

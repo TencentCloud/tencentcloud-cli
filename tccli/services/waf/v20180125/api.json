@@ -28,6 +28,20 @@
       "output": "AddSpartaProtectionResponse",
       "status": "online"
     },
+    "AddSpartaProtectionAuto": {
+      "document": "一键接入",
+      "input": "AddSpartaProtectionAutoRequest",
+      "name": "自动添加Saaswaf",
+      "output": "AddSpartaProtectionAutoResponse",
+      "status": "online"
+    },
+    "AddSpartaProtectionsAuto": {
+      "document": "批量添加域名",
+      "input": "AddSpartaProtectionsAutoRequest",
+      "name": "批量添加域名",
+      "output": "AddSpartaProtectionsAutoResponse",
+      "status": "online"
+    },
     "CreateAccessExport": {
       "document": "本接口用于创建访问日志导出",
       "input": "CreateAccessExportRequest",
@@ -77,6 +91,13 @@
       "output": "DeleteDownloadRecordResponse",
       "status": "online"
     },
+    "DeleteHost": {
+      "document": "删除CLB-WAF防护域名\n支持批量操作",
+      "input": "DeleteHostRequest",
+      "name": "删除CLB-WAF防护域名",
+      "output": "DeleteHostResponse",
+      "status": "online"
+    },
     "DeleteIpAccessControl": {
       "document": "Waf IP黑白名单Delete接口",
       "input": "DeleteIpAccessControlRequest",
@@ -89,6 +110,13 @@
       "input": "DeleteSessionRequest",
       "name": "删除CC攻击的session设置",
       "output": "DeleteSessionResponse",
+      "status": "online"
+    },
+    "DeleteSpartaProtection": {
+      "document": "waf斯巴达-删除防护域名",
+      "input": "DeleteSpartaProtectionRequest",
+      "name": "waf斯巴达-删除防护域名",
+      "output": "DeleteSpartaProtectionResponse",
       "status": "online"
     },
     "DescribeAccessExports": {
@@ -133,11 +161,32 @@
       "output": "DescribeAutoDenyIPResponse",
       "status": "deprecated"
     },
+    "DescribeCiphersDetail": {
+      "document": "查询加密套件信息",
+      "input": "DescribeCiphersDetailRequest",
+      "name": "查询加密套件信息",
+      "output": "DescribeCiphersDetailResponse",
+      "status": "online"
+    },
     "DescribeCustomWhiteRule": {
       "document": "获取防护配置中的精准白名单策略列表",
       "input": "DescribeCustomWhiteRuleRequest",
       "name": "查询精准白名单规则",
       "output": "DescribeCustomWhiteRuleResponse",
+      "status": "online"
+    },
+    "DescribeDomainCountInfo": {
+      "document": "获取域名概况",
+      "input": "DescribeDomainCountInfoRequest",
+      "name": "获取域名概况",
+      "output": "DescribeDomainCountInfoResponse",
+      "status": "online"
+    },
+    "DescribeDomainDetailsClb": {
+      "document": "获取一个clb域名详情",
+      "input": "DescribeDomainDetailsClbRequest",
+      "name": "获取一个clb域名详情",
+      "output": "DescribeDomainDetailsClbResponse",
       "status": "online"
     },
     "DescribeDomainDetailsSaas": {
@@ -161,11 +210,39 @@
       "output": "DescribeDomainsResponse",
       "status": "online"
     },
+    "DescribeFindDomainList": {
+      "document": "获取发现域名列表接口",
+      "input": "DescribeFindDomainListRequest",
+      "name": "获取发现域名列表接口",
+      "output": "DescribeFindDomainListResponse",
+      "status": "online"
+    },
     "DescribeFlowTrend": {
       "document": "获取waf流量访问趋势",
       "input": "DescribeFlowTrendRequest",
       "name": "获取waf流量访问趋势",
       "output": "DescribeFlowTrendResponse",
+      "status": "online"
+    },
+    "DescribeHost": {
+      "document": "clb-waf获取防护域名详情",
+      "input": "DescribeHostRequest",
+      "name": "获取防护域名详情",
+      "output": "DescribeHostResponse",
+      "status": "online"
+    },
+    "DescribeHostLimit": {
+      "document": "添加域名的首先验证是否购买了套餐，是否没有达到购买套餐的限制，域名是否已经添加",
+      "input": "DescribeHostLimitRequest",
+      "name": "验证添加的域名是否已经存在",
+      "output": "DescribeHostLimitResponse",
+      "status": "online"
+    },
+    "DescribeHosts": {
+      "document": "clb-waf中获取防护域名列表",
+      "input": "DescribeHostsRequest",
+      "name": "获取防护域名列表",
+      "output": "DescribeHostsResponse",
       "status": "online"
     },
     "DescribeInstances": {
@@ -217,6 +294,13 @@
       "output": "DescribeRuleLimitResponse",
       "status": "online"
     },
+    "DescribeTlsVersion": {
+      "document": "查询用户TLS版本",
+      "input": "DescribeTlsVersionRequest",
+      "name": "查询用户TLS版本",
+      "output": "DescribeTlsVersionResponse",
+      "status": "online"
+    },
     "DescribeUserCdcClbWafRegions": {
       "document": "在CDC场景下，负载均衡型WAF的添加、编辑域名配置的时候，需要展示CDC负载均衡型WAF（cdc-clb-waf)支持的地域列表，通过DescribeUserCdcClbWafRegions既可以获得当前对客户已经开放的地域列表",
       "input": "DescribeUserCdcClbWafRegionsRequest",
@@ -229,6 +313,13 @@
       "input": "DescribeUserClbWafRegionsRequest",
       "name": "获取对客户已经开放的负载均衡型WAF(clb-waf)的地域",
       "output": "DescribeUserClbWafRegionsResponse",
+      "status": "online"
+    },
+    "DescribeUserDomainInfo": {
+      "document": "查询saas和clb的域名信息",
+      "input": "DescribeUserDomainInfoRequest",
+      "name": "查询saas和clb的域名信息",
+      "output": "DescribeUserDomainInfoResponse",
       "status": "online"
     },
     "DescribeVipInfo": {
@@ -250,6 +341,13 @@
       "input": "DescribeWafAutoDenyStatusRequest",
       "name": "描述WAF自动封禁模块详情",
       "output": "DescribeWafAutoDenyStatusResponse",
+      "status": "online"
+    },
+    "DescribeWafInfo": {
+      "document": "获取负载均衡绑定的WAF信息，可以根据租户负载均衡实例ID、负载均衡监听器ID、负载均衡的域名信息来查询对应绑定的 Waf的状态信息。\n查询的范围：负载均衡实例ID、负载均衡实例ID+监听器ID、负载均衡实例ID+监听器ID+域名。\n可能的错误码：ResourceNotFound（没有找到对应的资源）、UnsupportedRegion（目前clb-waf只支持北京、广州、上海、成都、重庆、香港地域）。\n",
+      "input": "DescribeWafInfoRequest",
+      "name": "获取负载均衡绑定的WAF信息",
+      "output": "DescribeWafInfoResponse",
       "status": "online"
     },
     "DescribeWafThreatenIntelligence": {
@@ -308,6 +406,13 @@
       "output": "ModifyCustomWhiteRuleResponse",
       "status": "online"
     },
+    "ModifyDomainIpv6Status": {
+      "document": "修改ipv6开关",
+      "input": "ModifyDomainIpv6StatusRequest",
+      "name": "修改ipv6开关",
+      "output": "ModifyDomainIpv6StatusResponse",
+      "status": "online"
+    },
     "ModifyDomainWhiteRule": {
       "document": "更改某一条规则",
       "input": "ModifyDomainWhiteRuleRequest",
@@ -315,11 +420,60 @@
       "output": "ModifyDomainWhiteRuleResponse",
       "status": "online"
     },
+    "ModifyDomainsCLSStatus": {
+      "document": "修改域名列表的访问日志开关",
+      "input": "ModifyDomainsCLSStatusRequest",
+      "name": "修改域名列表的访问日志开关",
+      "output": "ModifyDomainsCLSStatusResponse",
+      "status": "online"
+    },
+    "ModifyHost": {
+      "document": "clb-waf编辑防护域名配置",
+      "input": "ModifyHostRequest",
+      "name": "编辑防护域名",
+      "output": "ModifyHostResponse",
+      "status": "online"
+    },
+    "ModifyHostFlowMode": {
+      "document": "clb-waf 设置防护域名的流量模式",
+      "input": "ModifyHostFlowModeRequest",
+      "name": "设置防护域名的流量模式",
+      "output": "ModifyHostFlowModeResponse",
+      "status": "online"
+    },
+    "ModifyHostMode": {
+      "document": "clb-waf设置防护域名防护状态",
+      "input": "ModifyHostModeRequest",
+      "name": "设置防护域名防护状态",
+      "output": "ModifyHostModeResponse",
+      "status": "online"
+    },
+    "ModifyHostStatus": {
+      "document": "clb-waf 设置防护域名WAF开关\n支持批量操作。",
+      "input": "ModifyHostStatusRequest",
+      "name": "设置防护域名WAF开关",
+      "output": "ModifyHostStatusResponse",
+      "status": "online"
+    },
+    "ModifyProtectionStatus": {
+      "document": "waf斯巴达-waf开关",
+      "input": "ModifyProtectionStatusRequest",
+      "name": "waf斯巴达-waf开关",
+      "output": "ModifyProtectionStatusResponse",
+      "status": "online"
+    },
     "ModifySpartaProtection": {
       "document": "修改域名配置",
       "input": "ModifySpartaProtectionRequest",
       "name": "修改域名配置",
       "output": "ModifySpartaProtectionResponse",
+      "status": "online"
+    },
+    "ModifySpartaProtectionMode": {
+      "document": "设置waf防护状态",
+      "input": "ModifySpartaProtectionModeRequest",
+      "name": "设置waf防护状态",
+      "output": "ModifySpartaProtectionModeResponse",
       "status": "online"
     },
     "ModifyWafAutoDenyRules": {
@@ -348,6 +502,13 @@
       "input": "PostAttackDownloadTaskRequest",
       "name": "创建搜索下载攻击日志任务",
       "output": "PostAttackDownloadTaskResponse",
+      "status": "online"
+    },
+    "RefreshAccessCheckResult": {
+      "document": "刷新接入检查的结果，后台会生成接入检查任务",
+      "input": "RefreshAccessCheckResultRequest",
+      "name": "刷新接入检查的结果",
+      "output": "RefreshAccessCheckResultResponse",
       "status": "online"
     },
     "SearchAccessLog": {
@@ -1027,6 +1188,33 @@
       ],
       "type": "object"
     },
+    "AddSpartaProtectionAutoRequest": {
+      "document": "AddSpartaProtectionAuto请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "lucas.domain.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddSpartaProtectionAutoResponse": {
+      "document": "AddSpartaProtectionAuto返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AddSpartaProtectionRequest": {
       "document": "AddSpartaProtection请求参数结构体",
       "members": [
@@ -1342,6 +1530,42 @@
     "AddSpartaProtectionResponse": {
       "document": "AddSpartaProtection返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddSpartaProtectionsAutoRequest": {
+      "document": "AddSpartaProtectionsAuto请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "多域名",
+          "example": "“domain1;domain2”",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddSpartaProtectionsAutoResponse": {
+      "document": "AddSpartaProtectionsAuto返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "失败原因",
+          "example": "无",
+          "member": "FailedInfo",
+          "name": "FailedInfos",
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1723,6 +1947,224 @@
       ],
       "usage": "both"
     },
+    "ClbDomainsInfo": {
+      "document": "clb域名详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "1",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名id",
+          "example": "1",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名",
+          "example": "1",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "waf类型",
+          "example": "1",
+          "member": "string",
+          "name": "Edition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否是cdn",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsCdn",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡算法",
+          "example": "11",
+          "member": "LoadBalancerPackageNew",
+          "name": "LoadBalancerSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像模式",
+          "example": "1",
+          "member": "uint64",
+          "name": "FlowMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定clb状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "State",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡类型，clb或者apisix\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "clb",
+          "member": "string",
+          "name": "AlbType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "IsCdn=3时，表示自定义header\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"x-real-ip\"]",
+          "member": "string",
+          "name": "IpHeaders",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cdc类型会增加集群信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"cluster-asd\"",
+          "member": "string",
+          "name": "CdcClusters",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ClbHostResult": {
+      "document": "CLB查询对应绑定的WAF状态的结果参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "WAF绑定的监听器实例",
+          "example": "",
+          "member": "LoadBalancer",
+          "name": "LoadBalancer",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "WAF绑定的域名",
+          "example": "",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "WAF绑定的实例ID",
+          "example": "",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否有绑定WAF，1：绑定了WAF，0：没有绑定WAF",
+          "example": "",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定了WAF的情况下，WAF流量模式，1：清洗模式，0：镜像模式（默认）",
+          "example": "",
+          "member": "uint64",
+          "name": "FlowMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ClbHostsParams": {
+      "document": "CLB回调WAF接口（获取、删除）的参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "负载均衡实例ID，如果不传次参数则默认认为操作的是整个AppId的监听器，如果此参数不为空则认为操作的是对应负载均衡实例。",
+          "example": "",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡监听器ID，，如果不传次参数则默认认为操作的是整个负载均衡实例，如果此参数不为空则认为操作的是对应负载均衡监听器。",
+          "example": "",
+          "member": "string",
+          "name": "ListenerId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "WAF实例ID，，如果不传次参数则默认认为操作的是整个负载均衡监听器实例，如果此参数不为空则认为操作的是对应负载均衡监听器的某一个具体的域名。",
+          "example": "",
+          "member": "string",
+          "name": "DomainId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "CreateAccessExportRequest": {
       "document": "CreateAccessExport请求参数结构体",
       "members": [
@@ -2042,6 +2484,42 @@
       ],
       "type": "object"
     },
+    "DeleteHostRequest": {
+      "document": "DeleteHost请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除的域名列表",
+          "example": "",
+          "member": "HostDel",
+          "name": "HostsDel",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteHostResponse": {
+      "document": "DeleteHost返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败",
+          "example": "",
+          "member": "ResponseCode",
+          "name": "Success",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteIpAccessControlRequest": {
       "document": "DeleteIpAccessControl请求参数结构体",
       "members": [
@@ -2151,6 +2629,51 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSpartaProtectionRequest": {
+      "document": "DeleteSpartaProtection请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名列表",
+          "example": "",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "",
+          "member": "string",
+          "name": "Edition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSpartaProtectionResponse": {
+      "document": "DeleteSpartaProtection返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2686,6 +3209,33 @@
       ],
       "type": "object"
     },
+    "DescribeCiphersDetailRequest": {
+      "document": "DescribeCiphersDetail请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCiphersDetailResponse": {
+      "document": "DescribeCiphersDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "加密套件信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1,1,TLS_EDCHE_RSA_WITH_AES_MD5]",
+          "member": "TLSCiphers",
+          "name": "Ciphers",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCustomRulesRspRuleListItem": {
       "document": "DescribeCustomRules接口回包中的复杂类型",
       "members": [
@@ -2883,6 +3433,128 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainCountInfoRequest": {
+      "document": "DescribeDomainCountInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDomainCountInfoResponse": {
+      "document": "DescribeDomainCountInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "AllDomain",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近发现时间",
+          "example": "1",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入域名总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "WafDomainCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剩下配额",
+          "example": "1",
+          "member": "uint64",
+          "name": "LeftDomainCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开启防护域名数",
+          "example": "1",
+          "member": "uint64",
+          "name": "OpenWafDomain",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainDetailsClbRequest": {
+      "document": "DescribeDomainDetailsClb请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "1",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名id",
+          "example": "1",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainDetailsClbResponse": {
+      "document": "DescribeDomainDetailsClb返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "clb域名详情",
+          "example": "无",
+          "member": "ClbDomainsInfo",
+          "name": "DomainsClbPartInfo",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -3101,6 +3773,98 @@
       ],
       "type": "object"
     },
+    "DescribeFindDomainListRequest": {
+      "document": "DescribeFindDomainList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页容量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "1",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否接入waf",
+          "example": "1",
+          "member": "string",
+          "name": "IsWafDomain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序参数",
+          "example": "updatetime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFindDomainListResponse": {
+      "document": "DescribeFindDomainList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名信息列表",
+          "example": "无",
+          "member": "FindAllDomainDetail",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeFlowTrendRequest": {
       "document": "DescribeFlowTrend请求参数结构体",
       "members": [
@@ -3146,6 +3910,199 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostLimitRequest": {
+      "document": "DescribeHostLimit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "添加的域名",
+          "example": "test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "asdasdas",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流量来源",
+          "example": "clb",
+          "member": "string",
+          "name": "AlbType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostLimitResponse": {
+      "document": "DescribeHostLimit返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成功返回的状态码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResponseCode",
+          "name": "Success",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostRequest": {
+      "document": "DescribeHost请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "www.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名ID",
+          "example": "waf-u23yt9Hj",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "waf_000q6ntyb",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostResponse": {
+      "document": "DescribeHost返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名详情",
+          "example": "无",
+          "member": "HostRecord",
+          "name": "Host",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostsRequest": {
+      "document": "DescribeHosts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防护域名，如果是要查询某一具体的防护域名则传入此参数，要求是准确的域名，此参数不支持模糊搜索",
+          "example": "www.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "防护域名ID，如果是要查询某一具体的防护域名则传入此参数，要求是准确的域名ID，此参数不支持模糊搜索",
+          "example": "waf-u23yt9Hj",
+          "member": "string",
+          "name": "DomainId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "搜索条件，根据此参数对域名做模糊搜索",
+          "example": "aaaa",
+          "member": "string",
+          "name": "Search",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "复杂的搜索条件",
+          "example": "无",
+          "member": "SearchItem",
+          "name": "Item",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "aaaaa",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostsResponse": {
+      "document": "DescribeHosts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防护域名列表的长度",
+          "example": "aaa",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防护域名的列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HostRecord",
+          "name": "HostList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3788,6 +4745,33 @@
       ],
       "type": "object"
     },
+    "DescribeTlsVersionRequest": {
+      "document": "DescribeTlsVersion请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeTlsVersionResponse": {
+      "document": "DescribeTlsVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TLS key value",
+          "example": "{1:TLS 1.0}",
+          "member": "TLSVersion",
+          "name": "TLS",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUserCdcClbWafRegionsRequest": {
       "document": "DescribeUserCdcClbWafRegions请求参数结构体",
       "members": [],
@@ -3832,6 +4816,33 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserDomainInfoRequest": {
+      "document": "DescribeUserDomainInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeUserDomainInfoResponse": {
+      "document": "DescribeUserDomainInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "saas和clb域名信息",
+          "example": "无",
+          "member": "UserDomainInfo",
+          "name": "UsersInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3960,6 +4971,51 @@
           "member": "AutoDenyDetail",
           "name": "WafAutoDenyDetails",
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWafInfoRequest": {
+      "document": "DescribeWafInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CLB回调WAF接口（获取、删除）的参数",
+          "example": "",
+          "member": "ClbHostsParams",
+          "name": "Params",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWafInfoResponse": {
+      "document": "DescribeWafInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回的WAF信息数组的长度，为0则表示没有查询到对应的信息",
+          "example": "",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应的WAF信息的数组。",
+          "example": "",
+          "member": "ClbHostResult",
+          "name": "HostList",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -4351,6 +5407,32 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DomainURI": {
+      "document": "唯一定位Domain",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "luca.qcloud.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "clb-waf",
+          "member": "string",
+          "name": "Edition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4903,6 +5985,32 @@
       ],
       "usage": "out"
     },
+    "FailedInfo": {
+      "document": "失败描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“domain”",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "失败信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“message”",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "FiltersItemNew": {
       "document": "过滤数组",
       "members": [
@@ -4938,6 +6046,92 @@
         }
       ],
       "usage": "both"
+    },
+    "FindAllDomainDetail": {
+      "document": "域名列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户id",
+          "example": "1",
+          "member": "uint64",
+          "name": "Appid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "1",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名ip",
+          "example": "[\"1\",\"2\"]",
+          "member": "string",
+          "name": "Ips",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发现时间",
+          "example": "1",
+          "member": "string",
+          "name": "FindTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名id",
+          "example": "1",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "waf类型",
+          "example": "1",
+          "member": "string",
+          "name": "Edition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否接入waf",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsWafDomain",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "FraudPkg": {
       "document": "业务安全资源信息",
@@ -5197,6 +6391,42 @@
       ],
       "type": "object"
     },
+    "HostDel": {
+      "document": "CLB-WAF删除域名参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "\"test.qcloudwaf.com\"",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名ID",
+          "example": "\"waf-sdnajkf\"",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型",
+          "example": "\"waf_000q6ntyb\"",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "HostRecord": {
       "document": "clb-waf防护域名",
       "members": [
@@ -5382,6 +6612,52 @@
         }
       ],
       "usage": "both"
+    },
+    "HostStatus": {
+      "document": "设置WAF状态的结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "\"test.qcloudwaf.com\"",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名ID",
+          "example": "\"waf_011ntyb\"",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "WAF的开关，1：开，0：关",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "\"waf_000q6ntyb\"",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "InstanceInfo": {
       "document": "一个实例的详细信息",
@@ -6409,6 +7685,70 @@
       ],
       "type": "object"
     },
+    "ModifyDomainIpv6StatusRequest": {
+      "document": "ModifyDomainIpv6Status请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要修改的域名所属的实例ID",
+          "example": "waf",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要修改的域名",
+          "example": "waf",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要修改的域名ID",
+          "example": "waf",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改域名的Ipv6开关为Status （0:关闭 1:开启）",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDomainIpv6StatusResponse": {
+      "document": "ModifyDomainIpv6Status返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回的状态 （0: 操作失败 1:操作成功 2:企业版以上不支持 3:企业版以下不支持 ）",
+          "example": "1",
+          "member": "int64",
+          "name": "Ipv6Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDomainWhiteRuleRequest": {
       "document": "ModifyDomainWhiteRule请求参数结构体",
       "members": [
@@ -6471,6 +7811,369 @@
     },
     "ModifyDomainWhiteRuleResponse": {
       "document": "ModifyDomainWhiteRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDomainsCLSStatusRequest": {
+      "document": "ModifyDomainsCLSStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要修改的域名列表",
+          "example": "无",
+          "member": "DomainURI",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "修改域名的访问日志开关为Status",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDomainsCLSStatusResponse": {
+      "document": "ModifyDomainsCLSStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyHostFlowModeRequest": {
+      "document": "ModifyHostFlowMode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "\"test.qcloudwaf.com\"",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名ID",
+          "example": "\"waf_00tyb\"",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "WAF流量模式，1：清洗模式，0：镜像模式（默认）",
+          "example": "1",
+          "member": "uint64",
+          "name": "FlowMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "\"waf_000q6ntyb\"",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyHostFlowModeResponse": {
+      "document": "ModifyHostFlowMode返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成功的状态码",
+          "example": "无",
+          "member": "ResponseCode",
+          "name": "Success",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyHostModeRequest": {
+      "document": "ModifyHostMode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名ID",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "防护状态：\n10：规则观察&&AI关闭模式，11：规则观察&&AI观察模式，12：规则观察&&AI拦截模式\n20：规则拦截&&AI关闭模式，21：规则拦截&&AI观察模式，22：规则拦截&&AI拦截模式",
+          "example": "21",
+          "member": "uint64",
+          "name": "Mode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "0:修改防护模式，1:修改AI",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "\"waf_0e2v15x\"",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例类型",
+          "example": "\"cdc-clb-waf\"",
+          "member": "string",
+          "name": "Edition",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyHostModeResponse": {
+      "document": "ModifyHostMode返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResponseCode",
+          "name": "Success",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyHostRequest": {
+      "document": "ModifyHost请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "编辑的域名配置信息",
+          "example": "无",
+          "member": "HostRecord",
+          "name": "Host",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "aaa",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyHostResponse": {
+      "document": "ModifyHost返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "编辑的域名ID",
+          "example": "waf-fg9o0r34",
+          "member": "string",
+          "name": "DomainId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyHostStatusRequest": {
+      "document": "ModifyHostStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名状态列表",
+          "example": "",
+          "member": "HostStatus",
+          "name": "HostsStatus",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyHostStatusResponse": {
+      "document": "ModifyHostStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成功的状态码，需要JSON解码后再使用，返回的格式是{\"域名\":\"状态\"}，成功的状态码为Success，其它的为失败的状态码（yunapi定义的错误码）",
+          "example": "",
+          "member": "ResponseCode",
+          "name": "Success",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProtectionStatusRequest": {
+      "document": "ModifyProtectionStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "WAF的版本，clb-waf代表负载均衡WAF、sparta-waf代表SaaS WAF，默认是sparta-waf。",
+          "example": "",
+          "member": "string",
+          "name": "Edition",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProtectionStatusResponse": {
+      "document": "ModifyProtectionStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySpartaProtectionModeRequest": {
+      "document": "ModifySpartaProtectionMode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "防护状态：\n10：规则观察&&AI关闭模式，11：规则观察&&AI观察模式，12：规则观察&&AI拦截模式\n20：规则拦截&&AI关闭模式，21：规则拦截&&AI观察模式，22：规则拦截&&AI拦截模式",
+          "example": "22",
+          "member": "uint64",
+          "name": "Mode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "WAF的版本，clb-waf代表负载均衡WAF、sparta-waf代表SaaS WAF，默认是sparta-waf。",
+          "example": "sparta-waf",
+          "member": "string",
+          "name": "Edition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0是修改规则引擎状态，1是修改AI的状态",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySpartaProtectionModeResponse": {
+      "document": "ModifySpartaProtectionMode返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7362,6 +9065,33 @@
       ],
       "usage": "both"
     },
+    "RefreshAccessCheckResultRequest": {
+      "document": "RefreshAccessCheckResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RefreshAccessCheckResultResponse": {
+      "document": "RefreshAccessCheckResult返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResponseCode": {
       "document": "响应体的返回码",
       "members": [
@@ -7744,6 +9474,42 @@
       ],
       "type": "object"
     },
+    "SearchItem": {
+      "document": "接入列表查询复杂条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志开关",
+          "example": "",
+          "member": "string",
+          "name": "ClsStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "waf开关",
+          "example": "",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量模式",
+          "example": "",
+          "member": "string",
+          "name": "FlowMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "SpartaProtectionPort": {
       "document": "waf斯巴达-编辑防护域名中的端口结构",
       "members": [
@@ -7900,6 +9666,68 @@
       ],
       "type": "object"
     },
+    "TLSCiphers": {
+      "document": "TLS 加密套件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TLS版本ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "VersionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "加密套件ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CipherId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "加密套件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TLS_ECDHE_RSA_WITH_AES_MD5",
+          "member": "string",
+          "name": "CipherName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TLSVersion": {
+      "document": "TLS信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TLSVERSION的ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "VersionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TLSVERSION的NAME\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TLSV1.0",
+          "member": "string",
+          "name": "VersionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "UpsertIpAccessControlRequest": {
       "document": "UpsertIpAccessControl请求参数结构体",
       "members": [
@@ -7971,6 +9799,102 @@
         }
       ],
       "type": "object"
+    },
+    "UserDomainInfo": {
+      "document": "saas和clb信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户id",
+          "example": "1",
+          "member": "uint64",
+          "name": "Appid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "1",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名id",
+          "example": "1",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名",
+          "example": "1",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "waf类型",
+          "example": "1",
+          "member": "string",
+          "name": "Edition",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Level",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指定域名访问日志字段的开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"EnableBody\": 1,\"EnableHeaders\":1}",
+          "member": "string",
+          "name": "WriteConfig",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指定域名是否写cls的开关 1:写 0:不写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Cls",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "VipInfo": {
       "document": "Vip信息",

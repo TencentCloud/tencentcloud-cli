@@ -1,6 +1,6 @@
-**Example 1: 隔离实例访问**
+**Example 1: 隔离实例**
 
-
+隔离实例
 
 Input: 
 
@@ -18,7 +18,7 @@ Output:
         "DealNames": [
             "23456"
         ],
-        "FlowId": "123"
+        "FlowId": 123
     }
 }
 ```

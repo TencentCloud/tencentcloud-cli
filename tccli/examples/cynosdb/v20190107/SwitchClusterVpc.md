@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cynosdb SwitchClusterVpc --cli-unfold-argument  \
-    --ClusterId abc \
-    --UniqVpcId abc \
-    --UniqSubnetId abc \
-    --OldIpReserveHours 0
+    --ClusterId cynosdbmysql-qwe \
+    --UniqVpcId vpc-123 \
+    --UniqSubnetId subnet-123 \
+    --OldIpReserveHours 1
 ```
 
 Output: 

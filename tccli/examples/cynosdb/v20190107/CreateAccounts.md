@@ -1,16 +1,17 @@
 **Example 1: 创建新账号**
 
-
+创建新账号
 
 Input: 
 
 ```
 tccli cynosdb CreateAccounts --cli-unfold-argument  \
-    --ClusterId xxx \
-    --Accounts.0.AccountName xx \
-    --Accounts.0.AccountPassword xxx \
-    --Accounts.0.Description xxx \
-    --Accounts.0.Host xxx
+    --ClusterId abc \
+    --Accounts.0.AccountName test \
+    --Accounts.0.AccountPassword 888888 \
+    --Accounts.0.Host 1.1.1.1 \
+    --Accounts.0.Description abc \
+    --Accounts.0.MaxUserConnections 10
 ```
 
 Output: 

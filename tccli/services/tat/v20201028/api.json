@@ -21,6 +21,13 @@
       "output": "CreateInvokerResponse",
       "status": "online"
     },
+    "CreateRegisterCode": {
+      "document": "接口用于创建注册码。",
+      "input": "CreateRegisterCodeRequest",
+      "name": "创建注册码",
+      "output": "CreateRegisterCodeResponse",
+      "status": "online"
+    },
     "DeleteCommand": {
       "document": "此接口用于删除命令。\n如果命令与执行器关联，则无法被删除。",
       "input": "DeleteCommandRequest",
@@ -33,6 +40,20 @@
       "input": "DeleteInvokerRequest",
       "name": "删除执行器",
       "output": "DeleteInvokerResponse",
+      "status": "online"
+    },
+    "DeleteRegisterCodes": {
+      "document": "此接口用于批量删除注册码。",
+      "input": "DeleteRegisterCodesRequest",
+      "name": "批量删除注册码",
+      "output": "DeleteRegisterCodesResponse",
+      "status": "online"
+    },
+    "DeleteRegisterInstance": {
+      "document": "接口用于删除托管实例。",
+      "input": "DeleteRegisterInstanceRequest",
+      "name": "删除托管实例",
+      "output": "DeleteRegisterInstanceResponse",
       "status": "online"
     },
     "DescribeAutomationAgentStatus": {
@@ -84,11 +105,32 @@
       "output": "DescribeRegionsResponse",
       "status": "online"
     },
+    "DescribeRegisterCodes": {
+      "document": "接口用于查询注册码信息。",
+      "input": "DescribeRegisterCodesRequest",
+      "name": "查询注册码",
+      "output": "DescribeRegisterCodesResponse",
+      "status": "online"
+    },
+    "DescribeRegisterInstances": {
+      "document": "接口用于查询被托管的实例信息。",
+      "input": "DescribeRegisterInstancesRequest",
+      "name": "查询托管实例",
+      "output": "DescribeRegisterInstancesResponse",
+      "status": "online"
+    },
     "DisableInvoker": {
       "document": "此接口用于停止执行器。",
       "input": "DisableInvokerRequest",
       "name": "停用执行器",
       "output": "DisableInvokerResponse",
+      "status": "online"
+    },
+    "DisableRegisterCodes": {
+      "document": "此接口用于批量禁用注册码。",
+      "input": "DisableRegisterCodesRequest",
+      "name": "批量禁用注册码",
+      "output": "DisableRegisterCodesResponse",
       "status": "online"
     },
     "EnableInvoker": {
@@ -117,6 +159,13 @@
       "input": "ModifyInvokerRequest",
       "name": "修改执行器",
       "output": "ModifyInvokerResponse",
+      "status": "online"
+    },
+    "ModifyRegisterInstance": {
+      "document": "接口用于修改托管实例信息。",
+      "input": "ModifyRegisterInstanceRequest",
+      "name": "修改托管实例",
+      "output": "ModifyRegisterInstanceResponse",
       "status": "online"
     },
     "PreviewReplacedCommandContent": {
@@ -252,7 +301,7 @@
           "example": "cmd-aaaaaaaa",
           "member": "string",
           "name": "CommandId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -262,7 +311,7 @@
           "example": "cmdname",
           "member": "string",
           "name": "CommandName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -272,7 +321,7 @@
           "example": "the cmd",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -282,7 +331,7 @@
           "example": "bHMgMTIzCmVjaG8ge3tifX0ge3tjfX0=",
           "member": "string",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -292,7 +341,7 @@
           "example": "SHELL",
           "member": "string",
           "name": "CommandType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -302,7 +351,7 @@
           "example": "/",
           "member": "string",
           "name": "WorkingDirectory",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -312,7 +361,7 @@
           "example": "123",
           "member": "uint64",
           "name": "Timeout",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -322,7 +371,7 @@
           "example": "无",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -332,7 +381,7 @@
           "example": "无",
           "member": "datetime_iso",
           "name": "UpdatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -342,7 +391,7 @@
           "example": "false",
           "member": "bool",
           "name": "EnableParameter",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -352,9 +401,19 @@
           "example": "{\\\"varA\\\": \\\"222\\\"}",
           "member": "string",
           "name": "DefaultParameters",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义参数的默认取值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[         {             \"name\": \"test01\",             \"value\": \"12345\",             \"description\": \"for test01\"         },         {             \"name\": \"test02\",             \"value\": \"12345\",             \"description\": \"for test02\"         }     ]",
+          "member": "DefaultParameterConf",
+          "name": "DefaultParameterConfs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -362,7 +421,7 @@
           "example": "{\\\"cmd_description\\\":{\\\"en\\\":\\\"cmd1\\\",\\\"zh-cn\\\":\\\"cmd1\\\",\\\"name-",
           "member": "string",
           "name": "FormattedDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -372,7 +431,7 @@
           "example": "TAT",
           "member": "string",
           "name": "CreatedBy",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -382,7 +441,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -392,7 +451,7 @@
           "example": "root",
           "member": "string",
           "name": "Username",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -402,7 +461,7 @@
           "example": "https://BucketName-123454321.cos.ap-beijing.myqcloud.com",
           "member": "string",
           "name": "OutputCOSBucketUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -412,7 +471,7 @@
           "example": "aa/bb/cc",
           "member": "string",
           "name": "OutputCOSKeyPrefix",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -722,6 +781,128 @@
       ],
       "type": "object"
     },
+    "CreateRegisterCodeRequest": {
+      "document": "CreateRegisterCode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "注册码描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "注册实列名称前缀。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceNamePrefix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "该注册码允许注册的实列数目。默认限制为10个。",
+          "example": "100",
+          "member": "int64",
+          "name": "RegisterLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "该注册码的有效时间，单位为小时。默认为4小时。",
+          "example": "2",
+          "member": "int64",
+          "name": "EffectiveTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "该注册码限制tat_agent只能从IpAddressRange所描述公网出口进行注册。默认不做限制。",
+          "example": "133.12.234.0/24",
+          "member": "string",
+          "name": "IpAddressRange",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRegisterCodeResponse": {
+      "document": "CreateRegisterCode返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "注册码ID。",
+          "example": "无",
+          "member": "string",
+          "name": "RegisterCodeId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "注册码值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegisterCodeValue",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DefaultParameterConf": {
+      "document": "自定义参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ParameterName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数默认值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ParameterValue",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ParameterDescription",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "DeleteCommandRequest": {
       "document": "DeleteCommand请求参数结构体",
       "members": [
@@ -766,6 +947,60 @@
     },
     "DeleteInvokerResponse": {
       "document": "DeleteInvoker返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRegisterCodesRequest": {
+      "document": "DeleteRegisterCodes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "注册码ID列表。限制输入的注册码ID数量大于0小于100。",
+          "example": "无",
+          "member": "string",
+          "name": "RegisterCodeIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRegisterCodesResponse": {
+      "document": "DeleteRegisterCodes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRegisterInstanceRequest": {
+      "document": "DeleteRegisterInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRegisterInstanceResponse": {
+      "document": "DeleteRegisterInstance返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1255,6 +1490,145 @@
       ],
       "type": "object"
     },
+    "DescribeRegisterCodesRequest": {
+      "document": "DescribeRegisterCodes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "注册码ID。",
+          "example": "无",
+          "member": "string",
+          "name": "RegisterCodeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为 0。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRegisterCodesResponse": {
+      "document": "DescribeRegisterCodes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询到的注册码总数。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "注册码信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RegisterCodeInfo",
+          "name": "RegisterCodeSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRegisterInstancesRequest": {
+      "document": "DescribeRegisterInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器列表。\n\n- instance-name\n\n按照【实例名称】进行过滤。\n类型：String\n必选：否\n\n- instance-id\n\n按照【实例ID】进行过滤。\n类型：String\n必选：否\n\n- register-code-id\n\n按照【注册码ID】进行过滤。\n类型：String\n必选：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为 0。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRegisterInstancesResponse": {
+      "document": "DescribeRegisterInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该实例注册过的注册码总数。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "被托管的实例信息的列表。",
+          "example": "无",
+          "member": "RegisterInstanceInfo",
+          "name": "RegisterInstanceSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DisableInvokerRequest": {
       "document": "DisableInvoker请求参数结构体",
       "members": [
@@ -1272,6 +1646,33 @@
     },
     "DisableInvokerResponse": {
       "document": "DisableInvoker返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableRegisterCodesRequest": {
+      "document": "DisableRegisterCodes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "注册码ID。",
+          "example": "无",
+          "member": "string",
+          "name": "RegisterCodeIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableRegisterCodesResponse": {
+      "document": "DisableRegisterCodes返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2192,6 +2593,42 @@
       ],
       "type": "object"
     },
+    "ModifyRegisterInstanceRequest": {
+      "document": "ModifyRegisterInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例名。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRegisterInstanceResponse": {
+      "document": "ModifyRegisterInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "PreviewReplacedCommandContentRequest": {
       "document": "PreviewReplacedCommandContent请求参数结构体",
       "members": [
@@ -2279,6 +2716,228 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RegisterCodeInfo": {
+      "document": "注册码信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "注册码ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegisterCodeId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "注册码描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "注册实例名称前缀。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceNamePrefix",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该注册码允许注册的实列数目。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "RegisterLimit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该注册码的过期时间，按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "ExpiredTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该注册码限制tat_agent只能从IpAddressRange所描述公网出口进行注册。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "133.12.234.0/24",
+          "member": "string",
+          "name": "IpAddressRange",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该注册码是否可用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该注册码已注册数目。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "RegisteredCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "注册码创建时间，按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "注册码最近一次更新时间，按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "UpdatedTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RegisterInstanceInfo": {
+      "document": "注册实例信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "注册码ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegisterCodeId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "机器ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MachineId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "系统名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Linux",
+          "member": "string",
+          "name": "SystemName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主机IP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HostName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内网IP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LocalIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公钥。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PublicKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "托管状态。\n返回Online表示实例正在托管，返回Offline表示实例未托管。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上次更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "UpdatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -1356,11 +1356,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回格式：\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。\n根据粒度会有不同程度的缩减。",
+          "document": "返回格式：\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。\n根据粒度会有不同程度的缩减。",
           "example": "2022-11-06T16:50:00+08:00",
           "member": "string",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1370,7 +1370,7 @@
           "example": "0.01",
           "member": "float",
           "name": "Bandwidth",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -5400,7 +5400,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "起始时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。",
+          "document": "起始时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。",
           "example": "2020-10-12T00:00:00+08:00",
           "member": "string",
           "name": "StartTime",
@@ -5409,7 +5409,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。\n\n查询的起始和结束时间跨度不支持超过1天。仅支持查询最近14天的数据。",
+          "document": "结束时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。\n\n查询的起始和结束时间跨度不支持超过1天。仅支持查询最近14天的数据。",
           "example": "2020-10-12T00:00:00+08:00",
           "member": "string",
           "name": "EndTime",
@@ -5648,7 +5648,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "起始时间点，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "起始时间点，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。",
           "example": "2019-03-29 09:00:00",
           "member": "string",
           "name": "StartTime",
@@ -5657,7 +5657,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间点，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。\n时间跨度在（0,3小时]，支持最近1个月数据查询。",
+          "document": "结束时间点，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。\n时间跨度在（0,3小时]，支持最近1个月数据查询。",
           "example": "2019-03-29 09:10:00",
           "member": "string",
           "name": "EndTime",
@@ -5730,7 +5730,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "起始时间，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "起始时间，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。",
           "example": "2019-03-01T00:00:00+08:00",
           "member": "string",
           "name": "StartTime",
@@ -5739,7 +5739,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "结束时间，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。",
           "example": "2019-03-01T00:00:00+08:00",
           "member": "string",
           "name": "EndTime",
@@ -7717,7 +7717,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "UTC开始时间，支持最近三个月的查询，查询时间最长跨度为一个月。\n\n使用 UTC 格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "UTC开始时间，支持最近三个月的查询，查询时间最长跨度为一个月。\n\n使用 UTC 格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。",
           "example": "2006-01-02T15:04:05Z",
           "member": "string",
           "name": "StartTime",
@@ -7726,7 +7726,7 @@
         },
         {
           "disabled": false,
-          "document": "UTC结束时间，支持最近三个月的查询，查询时间最长跨度为一个月。\n\n使用 UTC 格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "UTC结束时间，支持最近三个月的查询，查询时间最长跨度为一个月。\n\n使用 UTC 格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。",
           "example": "2006-01-02T15:04:05Z",
           "member": "string",
           "name": "EndTime",
@@ -7754,7 +7754,7 @@
           "example": "无",
           "member": "TimeShiftBillData",
           "name": "DataInfoList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8067,7 +8067,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "结束时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。",
+          "document": "结束时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。",
           "example": "2019-03-01 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -8076,7 +8076,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "结束时间，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见  [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。",
           "example": "2019-03-01 12:00:00",
           "member": "string",
           "name": "EndTime",
@@ -8113,6 +8113,7 @@
           "example": "无",
           "member": "TranscodeTotalInfo",
           "name": "DataInfoList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8410,7 +8411,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "起始时间，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "起始时间，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。",
           "example": "2019-03-01 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -8419,7 +8420,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。\n注：EndTime 和 StartTime 只支持最近1天的数据查询。",
+          "document": "结束时间，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。\n注：EndTime 和 StartTime 只支持最近1天的数据查询。",
           "example": "2019-03-01 00:01:00",
           "member": "string",
           "name": "EndTime",
@@ -8702,7 +8703,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "起始时间，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "起始时间，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。",
           "example": "2019-03-01 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -8711,7 +8712,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。\n注：EndTime 和 StartTime 只支持最近1天的数据查询。",
+          "document": "结束时间，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。\n注：EndTime 和 StartTime 只支持最近1天的数据查询。",
           "example": "2019-03-01 12:00:00",
           "member": "string",
           "name": "EndTime",
@@ -8882,7 +8883,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "起始时间点，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "起始时间点，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。",
           "example": "2019-02-01 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -8891,7 +8892,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间点，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。\n注：EndTime 和 StartTime 只支持最近1天的数据查询。",
+          "document": "结束时间点，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。\n注：EndTime 和 StartTime 只支持最近1天的数据查询。",
           "example": "2019-02-02 00:00:00",
           "member": "string",
           "name": "EndTime",
@@ -9648,7 +9649,7 @@
         },
         {
           "disabled": false,
-          "document": "起始时间点，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "起始时间点，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。",
           "example": "2019-06-21T12:00:00+08:00",
           "member": "string",
           "name": "StartTime",
@@ -9657,7 +9658,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间点，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。\n支持查询最近7天数据，建议查询时间跨度在3小时之内。",
+          "document": "结束时间点，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。\n支持查询最近7天数据，建议查询时间跨度在3小时之内。",
           "example": "2019-06-21T12:01:02+08:00",
           "member": "string",
           "name": "EndTime",
@@ -9901,7 +9902,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "起始时间点，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "document": "起始时间点，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。",
           "example": "2019-03-01T00:00:00+08:00",
           "member": "string",
           "name": "StartTime",
@@ -9910,7 +9911,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间点，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。\n时间跨度在[0,4小时]，支持最近1天数据查询。",
+          "document": "结束时间点，\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)。\n时间跨度在[0,4小时]，支持最近1天数据查询。",
           "example": "2019-03-01T04:00:00+08:00",
           "member": "string",
           "name": "EndTime",

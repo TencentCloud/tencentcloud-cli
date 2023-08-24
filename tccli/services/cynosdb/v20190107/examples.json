@@ -76,14 +76,14 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CopyClusterPasswordComplexity\n<公共请求参数>\n\n{\n    \"ClusterIds\": [\n        \"cynosdbmysql-bzxxrmtq\"\n    ],\n    \"SourceClusterId\": \"cynosdbmysql-bzxxxxxxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": 123\n    }\n}",
         "title": "复制集群密码复杂度"
       }
     ],
     "CreateAccounts": [
       {
-        "document": "",
-        "input": "https://cynosdb.tencentcloudapi.com/?Action=CreateAccounts\n&ClusterId=xxx\n&Accounts.0.AccountName=xx\n&Accounts.0.AccountPassword=xxx\n&Accounts.0.Description=xxx\n&Accounts.0.Host=xxx\n&<公共请求参数>",
+        "document": "创建新账号",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccounts\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"Accounts\": [\n        {\n            \"AccountName\": \"test\",\n            \"AccountPassword\": \"888888\",\n            \"Host\": \"1.1.1.1\",\n            \"Description\": \"abc\",\n            \"MaxUserConnections\": 10\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"176669\"\n    }\n}",
         "title": "创建新账号"
       }
@@ -131,7 +131,7 @@
     "CreateParamTemplate": [
       {
         "document": "创建参数模板",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateParamTemplate\n<公共请求参数>\n\n{\n    \"TemplateDescription\": \"常用模版\",\n    \"EngineVersion\": \"5.7\",\n    \"TemplateId\": \"93\",\n    \"TemplateName\": \"5.7常用参数模版\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateParamTemplate\n<公共请求参数>\n\n{\n    \"TemplateDescription\": \"常用模板\",\n    \"EngineVersion\": \"5.7\",\n    \"TemplateId\": \"93\",\n    \"TemplateName\": \"5.7常用参数模板\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7735dc6-5847-4c9b-a713-9745f9afda34\",\n        \"TemplateId\": 95\n    }\n}",
         "title": "创建参数模板"
       },
@@ -224,8 +224,8 @@
     ],
     "DescribeAccountPrivileges": [
       {
-        "document": "",
-        "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeAccountPrivileges\n&ClusterId=cynosdbmysql-xxxxxxxx\n&Host=xxx\n&AccountName=xxx\n&Db=xxx\n&Type=table\n&TableName=xx\n&<公共请求参数>",
+        "document": "查询账号已有权限",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountPrivileges\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xxxxxx\",\n    \"AccountName\": \"test\",\n    \"Host\": \"1.1.1.1\",\n    \"Db\": \"testDb\",\n    \"Type\": \"table\",\n    \"TableName\": \"testTable\"\n}",
         "output": "{\n    \"Response\": {\n        \"Privileges\": [\n            \"select\",\n            \"update\",\n            \"delete\",\n            \"create\",\n            \"drop\",\n            \"references\",\n            \"index\",\n            \"alter\",\n            \"show_db\",\n            \"create_tmp_table\",\n            \"lock_tables\",\n            \"execute\",\n            \"create_view\",\n            \"show_view\",\n            \"create_routine\",\n            \"alter_routine\",\n            \"event\",\n            \"trigger\"\n        ],\n        \"RequestId\": \"167350\"\n    }\n}",
         "title": "查询账号已有权限"
       }
@@ -619,25 +619,25 @@
     "InquirePriceRenew": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceRenew\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xxx\",\n    \"TimeSpan\": 1,\n    \"TimeUnit\": \"m\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Prices\": [\n            {\n                \"TotalPrice\": 0,\n                \"TotalPriceDiscount\": 0,\n                \"UnitPrice\": 0,\n                \"Discount\": 0.0,\n                \"UnitPriceDiscount\": 0,\n                \"ChargeUnit\": \"xx\"\n            }\n        ],\n        \"ClusterId\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"InstanceIds\": [\n            \"cynosdbmysql-ins-m3hy\"\n        ],\n        \"InstanceRealTotalPrice\": 0,\n        \"StorageRealTotalPrice\": 0\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceRenew\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-aqws\",\n    \"TimeSpan\": 1,\n    \"TimeUnit\": \"m\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"cynosdbmysql-qswe\",\n        \"InstanceIds\": [\n            \"cynosdbmysql-ins-poiu\"\n        ],\n        \"Prices\": [\n            {\n                \"TotalPrice\": 0,\n                \"Discount\": 0,\n                \"TotalPriceDiscount\": 0,\n                \"UnitPrice\": 0,\n                \"UnitPriceDiscount\": 0,\n                \"ChargeUnit\": \"abc\"\n            }\n        ],\n        \"InstanceRealTotalPrice\": 0,\n        \"StorageRealTotalPrice\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "续费集群询价"
       }
     ],
     "IsolateCluster": [
       {
-        "document": "",
+        "document": "隔离集群",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-bzxxrmtq\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\",\n        \"DealNames\": [\n            \"123\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": 123,\n        \"DealNames\": [\n            \"123\"\n        ]\n    }\n}",
         "title": "隔离集群"
       }
     ],
     "IsolateInstance": [
       {
-        "document": "",
+        "document": "隔离实例",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateInstance\n<公共请求参数>\n\n{\n    \"InstanceIdList\": [\n        \"cynosdbmysql-ixgbd0di\"\n    ],\n    \"ClusterId\": \"cynosdbmysql-ins-bzkxxrmt\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"DealNames\": [\n            \"23456\"\n        ],\n        \"FlowId\": \"123\"\n    }\n}",
-        "title": "隔离实例访问"
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"DealNames\": [\n            \"23456\"\n        ],\n        \"FlowId\": 123\n    }\n}",
+        "title": "隔离实例"
       }
     ],
     "ModifyAccountDescription": [
@@ -666,8 +666,8 @@
     ],
     "ModifyAccountPrivileges": [
       {
-        "document": "",
-        "input": "https://cynosdb.tencentcloudapi.com/?Action=ModifyAccountPrivileges\n&ClusterId=xxx\n&Account.AccountName=xxx\n&Account.Host=xx\n&GlobalPrivileges.0=xxx\n&<公共请求参数>",
+        "document": "修改账号权限",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccountPrivileges\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xxxxxxx\",\n    \"Account\": {\n        \"AccountName\": \"test\",\n        \"Host\": \"1.1.1.1\"\n    },\n    \"GlobalPrivileges\": [\n        \"CREATE\"\n    ],\n    \"DatabasePrivileges\": [\n        {\n            \"Db\": \"testDb\",\n            \"Privileges\": [\n                \"DELETE\"\n            ]\n        }\n    ],\n    \"TablePrivileges\": [\n        {\n            \"Db\": \"testDb\",\n            \"TableName\": \"testTable\",\n            \"Privileges\": [\n                \"DROP\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"147706\"\n    }\n}",
         "title": "修改账号权限"
       }
@@ -715,7 +715,7 @@
     "ModifyClusterDatabase": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterDatabase\n<公共请求参数>\n\n{\n    \"OldUserHostPrivileges\": [\n        {\n            \"DbUserName\": \"xx\",\n            \"DbHost\": \"xx\",\n            \"DbPrivilege\": \"xx\"\n        }\n    ],\n    \"NewUserHostPrivileges\": [\n        {\n            \"DbUserName\": \"xx\",\n            \"DbHost\": \"xx\",\n            \"DbPrivilege\": \"xx\"\n        }\n    ],\n    \"ClusterId\": \"xx\",\n    \"DbName\": \"xx\",\n    \"Description\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterDatabase\n<公共请求参数>\n\n{\n    \"OldUserHostPrivileges\": [\n        {\n            \"DbUserName\": \"test\",\n            \"DbHost\": \"1.1.1.1\",\n            \"DbPrivilege\": \"create\"\n        }\n    ],\n    \"NewUserHostPrivileges\": [\n        {\n            \"DbUserName\": \"test\",\n            \"DbHost\": \"1.1.11.1\",\n            \"DbPrivilege\": \"delete\"\n        }\n    ],\n    \"ClusterId\": \"cynosdbmysql-asd\",\n    \"DbName\": \"testDb\",\n    \"Description\": \"this is a dbtable\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f569bea2-0a51-11ec-af61-525400542aa6\"\n    }\n}",
         "title": "创建数据库"
       }
@@ -763,7 +763,7 @@
     "ModifyDBInstanceSecurityGroups": [
       {
         "document": "修改安全组",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSecurityGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"SecurityGroupIds\": [\n        \"abc\"\n    ],\n    \"Zone\": \"abc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSecurityGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-lkj\",\n    \"SecurityGroupIds\": [\n        \"sg-mnbv\"\n    ],\n    \"Zone\": \"ap-guangzhou-3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "修改云数据库安全组"
       }
@@ -795,7 +795,7 @@
     "ModifyParamTemplate": [
       {
         "document": "修改参数模板",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyParamTemplate\n<公共请求参数>\n\n{\n    \"TemplateDescription\": \"勿删\",\n    \"TemplateId\": \"94\",\n    \"ParamList\": [\n        {\n            \"CurrentValue\": \"1024\",\n            \"ParamName\": \"query_cache_size\"\n        }\n    ],\n    \"TemplateName\": \"5.7常用参数模版-勿删\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyParamTemplate\n<公共请求参数>\n\n{\n    \"TemplateDescription\": \"勿删\",\n    \"TemplateId\": \"94\",\n    \"ParamList\": [\n        {\n            \"CurrentValue\": \"1024\",\n            \"ParamName\": \"query_cache_size\"\n        }\n    ],\n    \"TemplateName\": \"5.7常用参数模板-勿删\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"916e8185-4749-45af-899f-e57043164675\"\n    }\n}",
         "title": "修改参数模板"
       }
@@ -811,7 +811,7 @@
     "ModifyProxyRwSplit": [
       {
         "document": "配置数据库代理读写分离",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProxyRwSplit\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"ProxyGroupId\": \"abc\",\n    \"ConsistencyType\": \"abc\",\n    \"ConsistencyTimeOut\": \"abc\",\n    \"WeightMode\": \"abc\",\n    \"InstanceWeights\": [\n        {\n            \"InstanceId\": \"abc\",\n            \"Weight\": 0\n        }\n    ],\n    \"FailOver\": \"abc\",\n    \"AutoAddRo\": \"abc\",\n    \"OpenRw\": \"abc\",\n    \"RwType\": \"abc\",\n    \"TransSplit\": true,\n    \"AccessMode\": \"abc\",\n    \"OpenConnectionPool\": \"abc\",\n    \"ConnectionPoolType\": \"abc\",\n    \"ConnectionPoolTimeOut\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProxyRwSplit\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-asd\",\n    \"ProxyGroupId\": \"cynosdbmysql-proxy-qwe\",\n    \"ConsistencyType\": \"eventual\",\n    \"ConsistencyTimeOut\": \"10\",\n    \"WeightMode\": \"system\",\n    \"InstanceWeights\": [\n        {\n            \"InstanceId\": \"cynosdbmysql-ins-qwe\",\n            \"Weight\": 0\n        }\n    ],\n    \"FailOver\": \"\",\n    \"AutoAddRo\": \"yes\",\n    \"OpenRw\": \"yes\",\n    \"RwType\": \"READONLY\",\n    \"TransSplit\": true,\n    \"AccessMode\": \"nearby\",\n    \"OpenConnectionPool\": \"yes\",\n    \"ConnectionPoolType\": \"SessionConnectionPool\",\n    \"ConnectionPoolTimeOut\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 0,\n        \"TaskId\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "配置数据库代理读写分离"
       }
@@ -835,8 +835,8 @@
     "ModifyVipVport": [
       {
         "document": "",
-        "input": "https://cynosdb.tencentcloudapi.com/?Action=ModifyVipVport\n&ClusterId=xxx\n&InstanceGrpId=xxx\n&Vip=xx.xx.xx.xx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=ModifyVipVport\n&ClusterId=cynosdbmysql-asd\n&InstanceGrpId=cynosdbmysql-grp-qwe\n&Vip=xx.xx.xx.xx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": 123\n    }\n}",
         "title": "修改ip端口"
       }
     ],
@@ -938,8 +938,8 @@
     ],
     "RestartInstance": [
       {
-        "document": "",
-        "input": "https://cynosdb.tencentcloudapi.com/?Action=RestartInstance\n&InstanceId=xxx\n&<公共请求参数>",
+        "document": "重启实例",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=RestartInstance\n&InstanceId=\"cynosdbmysql-ins-qwerasd\"\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
         "title": "重启实例"
       }
@@ -979,7 +979,7 @@
     "SearchClusterTables": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchClusterTables\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xxx\",\n    \"Database\": \"xxx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchClusterTables\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-qwerasd\",\n    \"Database\": \"testDb\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"176466\",\n        \"Tables\": []\n    }\n}",
         "title": "搜索集群数据表列表"
       }
@@ -995,7 +995,7 @@
     "SwitchClusterVpc": [
       {
         "document": "转换网络",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchClusterVpc\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"UniqVpcId\": \"abc\",\n    \"UniqSubnetId\": \"abc\",\n    \"OldIpReserveHours\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchClusterVpc\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-qwe\",\n    \"UniqVpcId\": \"vpc-123\",\n    \"UniqSubnetId\": \"subnet-123\",\n    \"OldIpReserveHours\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": 123\n    }\n}",
         "title": "转换网络"
       }
@@ -1011,8 +1011,8 @@
     "SwitchProxyVpc": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchProxyVpc\n<公共请求参数>\n\n{\n    \"OldIpReserveHours\": \"0\",\n    \"UniqSubnetId\": \"xx\",\n    \"ClusterId\": \"xxx\",\n    \"UniqVpcId\": \"xx\",\n    \"ProxyGroupId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchProxyVpc\n<公共请求参数>\n\n{\n    \"OldIpReserveHours\": 1,\n    \"UniqSubnetId\": \"subnet-123\",\n    \"ClusterId\": \"cynosdbmysql-asd\",\n    \"UniqVpcId\": \"vpc-123\",\n    \"ProxyGroupId\": \"cynosdbmysql-proxy-qwe\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": 123\n    }\n}",
         "title": "转换网络"
       }
     ],
@@ -1027,7 +1027,7 @@
     "UpgradeClusterVersion": [
       {
         "document": "",
-        "input": "https://cynosdb.tencentcloudapi.com/?Action=UpgradeClusterVersion\n&ClusterId=xxx\n&CynosVersion=2.0.0\n&UpgradeType=upgradeImmediate\n&<公共请求参数>",
+        "input": "https://cynosdb.tencentcloudapi.com/?Action=UpgradeClusterVersion\n&ClusterId=cynosdbmysql-qwerasd\n&CynosVersion=2.0.0\n&UpgradeType=upgradeImmediate\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
         "title": "升级Cynos内核版本"
       }
@@ -1043,7 +1043,7 @@
     "UpgradeProxy": [
       {
         "document": "升级数据库代理配置",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeProxy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"ProxyCount\": 0,\n    \"Cpu\": 0,\n    \"Mem\": 0,\n    \"ProxyGroupId\": \"abc\",\n    \"ReloadBalance\": \"abc\",\n    \"IsInMaintainPeriod\": \"abc\",\n    \"ProxyZones\": [\n        {\n            \"ProxyNodeZone\": \"abc\",\n            \"ProxyNodeCount\": 0\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeProxy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-abc\",\n    \"ProxyCount\": 2,\n    \"Cpu\": 2,\n    \"Mem\": 4,\n    \"ProxyGroupId\": \"cynosdbmysql-node-asd\",\n    \"ReloadBalance\": \"auto\",\n    \"IsInMaintainPeriod\": \"no\",\n    \"ProxyZones\": [\n        {\n            \"ProxyNodeZone\": \"ap-guangzhou-3\",\n            \"ProxyNodeCount\": 2\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 0,\n        \"TaskId\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "升级数据库代理配置"
       }
@@ -1051,8 +1051,8 @@
     "UpgradeProxyVersion": [
       {
         "document": "升级数据库代理版本",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeProxyVersion\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"ProxyGroupId\": \"abc\",\n    \"SrcProxyVersion\": \"abc\",\n    \"DstProxyVersion\": \"abc\",\n    \"IsInMaintainPeriod\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\",\n        \"TaskId\": \"123\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeProxyVersion\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-asd\",\n    \"ProxyGroupId\": \"cynosdbmysql-proxy-asd\",\n    \"SrcProxyVersion\": \"3.1.0\",\n    \"DstProxyVersion\": \"3.2.0\",\n    \"IsInMaintainPeriod\": \"yes\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": 123,\n        \"TaskId\": 123\n    }\n}",
         "title": "升级数据库代理版本"
       }
     ]
